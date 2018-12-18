@@ -1,5 +1,5 @@
 ---
-title: Kaynak denetimini yapılandırma ayrıntılarını | Microsoft Docs
+title: Kaynak denetimi yapılandırma ayrıntıları | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,44 +13,45 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fc10c7602f3298b532b4af76e66b43d469416ba5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 85ba74ba9d9beabaefd22607df0fac6ebaaf2235
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825939"
 ---
-# <a name="source-control-configuration-details"></a>Kaynak denetimini yapılandırma ayrıntıları
-Kaynak denetimi uygulamak için proje sistem ya da aşağıdakileri yapmak için Düzenleyicisi'ni düzgün şekilde yapılandırmanız gerekir:
+# <a name="source-control-configuration-details"></a>Kaynak Denetimi Yapılandırma Ayrıntıları
+Kaynak denetimi uygulamak için proje sistemi ya da aşağıdakileri yapmak için düzenleyici düzgün şekilde yapılandırmak gerekir:
 
--   Değiştirilen durumuna geçiş izin iste
+-   Geçiş için durum değiştirme izni iste
 
--   Bir dosyayı kaydetmek için izin iste
+-   Bir dosyayı kaydetmeye izin iste
 
--   Eklemek, kaldırmak veya projedeki dosyaları yeniden adlandırmak için izin iste
+-   Ekleme, kaldırma veya projedeki dosyaları yeniden adlandırmak için izin istemesi
 
-## <a name="request-permission-to-transition-to-changed-state"></a>Değiştirilen durumuna geçiş izin iste
- Bir proje veya Düzenleyicisi değiştirilen (kirli) durumuna geçiş izni çağırarak istemelidir <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2>. Uygulayan her Düzenleyicisi <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData.IsDocDataDirty%2A> çağırmalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QueryEditFiles%2A> ve belgenin ortamından döndürmeden önce değiştirmek için onay almak `True` için <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData.IsDocDataDirty%2A>. Bir proje aslında bir proje dosyası için bir düzenleyici ve sonuç olarak, bir metin düzenleyicisi dosyalarından için yaptığı gibi uygulama durumu değişti izleme proje dosyası için aynı sorumluluğunu vardır. Ortam çözümü değiştirilen durumunu işler, ancak değiştirilen durumu çözümü başvuruyor, ancak, bir proje dosyası veya öğelerinden gibi depolamaz herhangi bir nesnenin işlemelidir. Proje veya Düzenleyicisi öğeyi kalıcılığını yönetmekten sorumlu ise, genel olarak, daha sonra durumu değişti izleme uygulama için sorumludur.
+## <a name="request-permission-to-transition-to-changed-state"></a>Geçiş için durum değiştirme izni iste
+ Bir proje ya da Düzenleyicisi geçiş (değişiklik içeriyor) durum değiştirme izni çağırarak istemelisiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2>. Uygulayan her Düzenleyicisi <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData.IsDocDataDirty%2A> çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QueryEditFiles%2A> ve belge ortamdan döndürmeden önce değiştirmek için onay alma `True` için <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData.IsDocDataDirty%2A>. Bir proje, aslında bir proje dosyası için bir düzenleyici ve sonuç olarak, bir metin düzenleyicisi için dosyaları gibi proje dosyasının durumu değişti izleme uygulama için aynı sorumluluğuna sahip. Ortam değiştirilen çözüm durumunu işler, ancak çözüm başvuruyor, ancak, bir proje dosyası veya öğelerinden gibi depolamaz herhangi bir nesnenin durum değiştirme işlemesi gerekir. Proje veya düzenleyen bir öğe için Kalıcılık yönetmekten sorumlu ise, genel olarak, ardından bu durumu değişti izleme uygulamak için sorumludur.
 
  Yanıt olarak `IVsQueryEditQuerySave2::QueryEditFiles` çağrısı, ortam aşağıdakileri yapabilirsiniz:
 
--   Servis talebi Düzenleyicisi veya proje değiştirilmemiş (temiz) durumda kalması gereken değiştirmek için arama reddeder.
+- Düzenleyici ya da proje çalışması değişmeden (temiz) durumda kalması gereken değiştirmek için çağrı reddeder.
 
--   Belge verileri yeniden yüklenmesi belirtir. Bir proje için ortam proje için verileri yeniden yükleyecektir. Bir düzenleyici üzerinden disk verileri yeniden yüklemeniz gerekir, <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2.ReloadDocData%2A> uygulaması. Verileri yeniden yüklendiğinde her iki durumda da proje veya düzenleyicide bağlamda değiştirebilirsiniz.
+- Belge verilerini yüklenmesi belirtir. Bir proje için proje verileri ortamı yeniden yükler. Bir düzenleyici üzerinden disk verileri yeniden yüklemeniz gerekir, <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2.ReloadDocData%2A> uygulaması. Verileri yeniden yüklendiğinde, her iki durumda da proje veya düzenleyici bağlam değiştirebilirsiniz.
 
- Uygun yükseltmek için karmaşık ve zor bir görev olduğundan `IVsQueryEditQuerySave2::QueryEditFiles` varolan bir kod tabanına üzerine çağrıları. Sonuç olarak, bu çağrıları Düzenleyicisi ve proje oluşturma sırasında tümleşik.
+  Uygun yükseltmek için karmaşık ve zor bir görev olduğundan `IVsQueryEditQuerySave2::QueryEditFiles` varolan bir kod tabanına üzerine çağırır. Sonuç olarak, bu çağrılar Düzenleyicisi ve proje oluşturma sırasında tümleştirilmesi gerekir.
 
-## <a name="request-permission-to-save-a-file"></a>Bir dosyayı kaydetmek için izin iste
- Bir proje veya Düzenleyicisi bir dosyayı kaydetmeden önce çağırmalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFile%2A> veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFiles%2A>. Proje dosyaları için bu çağrılardan bir proje dosyası kaydetmek ne zaman bilir çözümü tarafından otomatik olarak doldurulur. Düzenleyiciler sürece bu çağrıları yapmaktan sorumlu Düzenleyicisi uyarlamasını `IVsPersistDocData2` yardımcı işlevini kullanır <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShell.SaveDocDataToFile%2A>. Düzenleyicinizi uyguluyorsa `IVsPersistDocData2` bu şekilde, ardından çağrısı içinde `IVsQueryEditQuerySave2::QuerySaveFile` veya `IVsQueryEditQuerySave2::QuerySaveFiles` sizin için yapılır.
+## <a name="request-permission-to-save-a-file"></a>Bir dosyayı kaydetmeye izin iste
+ Bir proje veya düzenleyen bir dosyayı kaydetmeden önce çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFile%2A> veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFiles%2A>. Proje dosyaları için bu çağrılar zaman bir proje dosyasını kaydetmeyi bilir çözümü tarafından otomatik olarak doldurulur. Düzenleyiciler sürece bu çağrıları yapmaktan sorumlu Düzenleyicisi uygulamasını `IVsPersistDocData2` yardımcı işlevini kullanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShell.SaveDocDataToFile%2A>. Düzenleyici uyguluyorsa `IVsPersistDocData2` bu şekilde, ardından çağrısı içinde `IVsQueryEditQuerySave2::QuerySaveFile` veya `IVsQueryEditQuerySave2::QuerySaveFiles` sizin yerinize yapılır.
 
 > [!NOTE]
->  Her zaman bu erken önlem aramalarda — diğer bir deyişle, bir seferde düzenleyicinizi olduğunda bir iptal alabilir.
+>  Bu çağrılar sıd'lerde yaptığınız her zaman — diğer bir deyişle, birer birer düzenleyicinizi olduğunda iptal alabilirsiniz.
 
-## <a name="request-permission-to-add-remove-or-rename-files-in-the-project"></a>Eklemek, kaldırmak veya projedeki dosyaları yeniden adlandırmak için izin iste
- Bir proje eklemek, yeniden adlandırmak veya bir dosya veya dizin kaldırmadan önce uygun çağırmalısınız `IVsTrackProjectDocuments2::OnQuery*` Ortamı'ndan izin istemek yöntemi. İzin verilir sonra projeyi işlemi tamamlayın ve ardından uygun çağıran `IVsTrackProjectDocuments2::OnAfter*` ortam işleminin tamamlandığını bildirmek için yöntem. Proje yöntemlerini çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackProjectDocuments2> tüm dosyaları (örneğin, özel) ve yalnızca üst dosyaları için arabirim. Dosya aramaları zorunlu ancak dizin aramaları isteğe bağlıdır. Projenizin dizin bilgilerini sahip sonra uygun çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackProjectDocuments2> yöntemleri, ancak bu bilgileri yok sonra ortamı dizin bilgilerini Infer.
+## <a name="request-permission-to-add-remove-or-rename-files-in-the-project"></a>Ekleme, kaldırma veya projedeki dosyaları yeniden adlandırmak için izin istemesi
+ Bir proje eklemek, yeniden adlandırmak veya bir dosya veya dizin kaldırmadan önce uygun çağırmalıdır `IVsTrackProjectDocuments2::OnQuery*` ortamından izin istemek yöntemi. İzni verildi sonra proje işlemi tamamlayın ve ardından uygun çağrı `IVsTrackProjectDocuments2::OnAfter*` ortamı işleminin tamamlandığını bildirmek için yöntemi. Proje yöntemlerini çağırmanız gerekir <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackProjectDocuments2> tüm dosyalar (örneğin, özel dosyaları) ve yalnızca üst dosyaları için arabirim. Dosya aramaları zorunludur, ancak dizin çağrıları isteğe bağlıdır. Dizin bilgileri projenizi sahip sonra uygun çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackProjectDocuments2> yöntemleri, ancak bu bilgiler yok sonra ortamı dizin bilgileri çıkarımlar.
 
- Proje yöntemlerini çağırmalıdır değil `IVsTrackProjectDocuments2` Proje Aç veya kapat. Bu bilgileri başlangıçta istediğiniz dinleyicileri bekle <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenSolution%2A> olay ve ihtiyaç duyduğunuz bilgileri bulmak için çözüm yineleme. Kapatma işlemi, bu bilgileri gerekli değildir. `IVsTrackProjectDocuments2` tablodan sağlanan <xref:Microsoft.VisualStudio.Shell.Interop.SVsTrackProjectDocuments>.
+ Proje yöntemlerini çağırmalıdır değil `IVsTrackProjectDocuments2` proje açın veya kapatın. Bu bilgileri başlangıçta istediğiniz dinleyicileri için tamamlanmasını bekleyebilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenSolution%2A> olay ve gereksinim duyduğu bilgileri bulmak için çözüm tekrarlayabilirsiniz. Kapanma durumunda bu bilgiler gerekli değildir. `IVsTrackProjectDocuments2` tablodan sağlanan <xref:Microsoft.VisualStudio.Shell.Interop.SVsTrackProjectDocuments>.
 
- Her Ekle, yeniden adlandırın ve kaldırma eylemi için bir `OnQuery*` yöntemi ve bir `OnAfter*` yöntemi. Çağrı `OnQuery*` eklemek için izninizi yöntemi yeniden adlandırın veya dosya veya dizin kaldırın. Çağrı `OnAfter*` dosya veya dizin eklenen, yeniden adlandırılmış veya kaldırıldı ve yeni durum proje durumu yansıtır sonra yöntemi.
+ Her ekleme, yeniden adlandırma ve kaldırma eylemi için bir `OnQuery*` yöntemi ve bir `OnAfter*` yöntemi. Çağrı `OnQuery*` eklemek, izin istemek için yöntemi yeniden adlandırın veya dosya veya dizin kaldırın. Çağrı `OnAfter*` yöntemi sonra dosya veya dizin eklendi, kaldırıldı veya yeniden adlandırılıp ve yeni durum proje durumu yansıtır.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7d82b1ab1e02395dff213aef9ce7e7fe566b77a2
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 14ae4932652d7ee8cdf33a5928fa5e725cdebbf7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49844698"
 ---
 # <a name="idiasymbolgeteditandcontinueenabled"></a>IDiaSymbol::get_editAndContinueEnabled
-Modülü ile derlenen olup olmadığını belirten bir bayrak alır [/Z7, / zi, /zı (hata ayıklama bilgileri biçimi)](/cpp/build/reference/z7-zi-zi-debug-information-format) derleyici anahtar.  
+Modül ile derlenen olup olmadığını belirten bir bayrak alır [/z7, / zi, /zı (hata ayıklama bilgileri biçimi)](/cpp/build/reference/z7-zi-zi-debug-information-format) derleyici anahtarı.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,19 +34,19 @@ HRESULT get_editAndContinueEnabled (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` Düzenle ve devam et; derleme etkinleştirildiyse, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür `TRUE` Düzenle ve devam et; derleme etkinleştirildiyse döndürür, aksi takdirde, `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

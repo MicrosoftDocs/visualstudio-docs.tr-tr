@@ -12,23 +12,24 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b4e21b91ceda5b51a26633b7595aed4e0ee12059
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 40e28eb246b2c4611a15dc4ce2cf6b1b02dd0100
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263187"
 ---
-# <a name="call-tree-view---contention-data"></a>Çağrı ağacı görünümü - Çekişme verileri
+# <a name="call-tree-view---contention-data"></a>Çağrı ağacı görünümü - çakışma verileri
 Çağrı ağacı görünümü profili uygulamada geçiş işlevi yürütme yollarını görüntüler. Ağaç kök uygulama veya bileşenin giriş noktasıdır. Her işlevi düğümü adlı tüm işlevleri, işlevi engellendi sayısı ve diğer iş parçacıkları veya işlemler sahip bir kaynak için contending çünkü işlev engellendi süreyi listeler.  
   
  Çağrı ağacı görünümü çağrısı ağacında üst işlevi tarafından çağrılan işlev örnekleri için değerler. Yüzde değerleri, profil çalıştırmada çekişmeleri toplam sayısı işlevi örneği değerine karşılaştırılmasıyla hesaplanır.  
   
-## <a name="highlighting-the-execution-hot-path"></a>Yürütme etkin yolunuzda vurgulama  
+## <a name="highlight-the-execution-hot-path"></a>Yürütme etkin yolunu Vurgula  
  Çağrı ağacı görünümü genişletin ve işlem ya da çoğu çekişmeleri oluşturulan işlevi yürütme yolunu vurgulayın.  
   
 -   En etkin yol görüntülemek için işlem veya işlevi sağ tıklayın ve ardından **genişletin etkin yolunuzda**.  
   
-## <a name="setting-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlama  
+## <a name="set-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlayın  
  Her profil çalıştırma işleminde bir kök düğüm olarak görünür. Çağrı ağacı görünümü başlangıç düğümünün ayarlamak için başlangıç düğümü olarak ayarlayın ve ardından istediğiniz düğümünü sağ tıklatın **ayarlamak kök**.  
   
  Kök düğüm kümesi olduğunda, Seçili düğümün alt ağacı dışında görünümünden diğer tüm girişleri kaldırın. Kök düğüm özgün düğüme geri sıfırlamak için çağrı ağaç görünümünde sağ tıklayın ve ardından **sıfırlama kök**.  
@@ -53,10 +54,10 @@ ms.lasthandoff: 04/19/2018
 |**İşlem adı**|İşlemin adı.|  
 |**Kaynak dosya**|Bu işlev için tanım içeriyor kaynak dosya.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Çağrı ağacı görünümü](../profiling/call-tree-view.md)   
  [Çağrı ağacı görünümü - izleme](../profiling/call-tree-view-dotnet-memory-instrumentation-data.md)   
  [Çağrı ağacı görünümü - örnekleme](../profiling/call-tree-view-dotnet-memory-sampling-data.md)   
  [Çağrı ağacı görünümü](../profiling/call-tree-view-instrumentation-data.md)   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view-sampling-data.md)
+ [Çağrı ağacı görünümü](../profiling/call-tree-view-sampling-data.md)

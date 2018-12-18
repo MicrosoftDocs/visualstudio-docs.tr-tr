@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9fa89f2a8d3b126e1e4bd8af95ffd4be08f099eb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d13cb943d2ef00b746e8e93d71c1d1576dc5e739
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49813426"
 ---
 # <a name="idebugsettingscallback2geteelocalobject"></a>IDebugSettingsCallback2::GetEELocalObject
-Ölçüm adı verilen bir ifade değerlendiricisi yerel bir nesne alır.  
+Ölçüm adı verilen bir ifade değerlendirici yerel bir nesne alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,7 +45,7 @@ private int GetEELocalObject(
   
 #### <a name="parameters"></a>Parametreler  
  `guidLang`  
- [in] Programlama dili benzersiz tanımlayıcısı.  
+ [in] Programlama diline benzersiz tanımlayıcısı.  
   
  `guidVendor`  
  [in] Satıcı benzersiz tanımlayıcısı.  
@@ -53,10 +54,10 @@ private int GetEELocalObject(
  [in] Ölçüm adı.  
   
  `ppUnk`  
- [out] İfade döndürür değerlendirici yerel nesnesi.  
+ [out] Bir ifade döndürür değerlendirici yerel nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

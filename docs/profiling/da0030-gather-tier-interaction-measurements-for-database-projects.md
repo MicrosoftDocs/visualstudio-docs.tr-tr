@@ -1,5 +1,5 @@
 ---
-title: 'DA0030: Veritabanı projeleri için katman etkileşim ölçümleri toplamak | Microsoft Docs'
+title: 'DA0030: Veritabanı projeleri için katman etkileşim ölçümlerini Topla | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -14,32 +14,34 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: dca42fb108c2465db2b882957ea2bbcb25cd5ef8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0d0fb38348a901582182bdfaec2d7d775ec195f7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49814018"
 ---
-# <a name="da0030-gather-tier-interaction-measurements-for-database-projects"></a>DA0030: Veritabanı projeleri için Katman Etkileşim ölçümlerini topla
+# <a name="da0030-gather-tier-interaction-measurements-for-database-projects"></a>DA0030: veritabanı projeleri için katman etkileşim ölçümlerini Topla
+
 |||  
 |-|-|  
 |Kural Kimliği|DA0030|  
 |Kategori|Profil oluşturma araçları kullanım|  
 |Profil oluşturma yöntemi|Örnekleme|  
-|İleti|Çok katmanlı uygulamalar için etkileşim ölçümleri toplama veritabanı kullanım desenlerini ve anahtar verileri anlamanıza yardım gecikmelerini erişecek. Uygulama yeniden katman etkileşim profil seçeneği etkin profil deneyin.|  
+|İleti|Çok katmanlı uygulamalar için etkileşim ölçümleri toplamayı veritabanı kullanım modellerini ve anahtar veri anlamanıza yardım gecikmeler erişir. Uygulama, katman etkileşim profili oluşturma seçeneği etkin yeniden profil oluşturmayı deneyin.|  
 |Kural türü|Bilgiler|  
-  
+
 ## <a name="cause"></a>Sebep  
- Çağrılar <xref:System.Data> yöntemleridir profil oluşturma verileri önemli bir kısmının ve Çalıştır profil katman etkileşim verileri toplanmadı. Yeniden profil oluşturmak ve katman etkileşim verileri ekleme göz önünde bulundurun.  
-  
-## <a name="rule-description"></a>Kural Tanımı  
- Dahil olmak üzere System.Data ad alanlarında bulunan işlevlerinde önemli etkinlik olduğunda bu kural harekete <xref:System.Data.Linq> <xref:System.Data.Linq>.  
-  
- Çok katmanlı uygulamalar için kendi sunu ve veri katmanlarını katmanlı Hizmetleri kullanın. Genellikle veri katmanı Microsoft Sql Server gibi bir veritabanı yönetim sistemine çalıştıran ayrı bir işlemdir. Veri katmanı bile ayrı bir makineye uygulama geri kalanından çalışıyor olabilir. Örnekleme profiller az fikirler işlevler ve işlem dışı çalışan hizmetler sağlamak veya uzaktan.  
-  
- Profil Araçları ADO.NET hizmetleri zaman uyumsuz çağrıları kullanan bir Microsoft Sql Server veri katmanı ile etkileşim çok katmanlı uygulamalar için zamanlama bilgilerini toplayabilirsiniz. Katman etkileşim profil açıkça etkinleştirmelisiniz. Varsayılan olarak açık değildir.  
-  
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?  
- Bu kural, yalnızca bilgi amaçlıdır ve düzeltme eylemi gerektirmeyebilecek.  
-  
- Visual Studio IDE'den veri profil oluşturma için katman etkileşim verileri ekleme hakkında daha fazla bilgi için bkz: [katman etkileşim verileri toplama](../profiling/collecting-tier-interaction-data.md). Komut satırından katman etkileşim verileri ekleme hakkında daha fazla bilgi için bkz: [katman etkileşim verileri toplama](../profiling/adding-tier-interaction-data-from-the-command-line.md).
+ Çağrılar <xref:System.Data> yöntemlerdir profil oluşturma verilerinin önemli bir kısmı ve profil oluşturma çalışması katman etkileşim verileri toplanan değil. Katman etkileşim verileri ekleme ve yeniden profil oluşturmayı göz önünde bulundurun.  
+
+## <a name="rule-description"></a>Kural açıklaması  
+ Dahil olmak üzere System.Data ad alanlarında bulunan işlevlerinde önemli bir etkinlik olduğunda bu kural tetikler <xref:System.Data.Linq> <xref:System.Data.Linq>.  
+
+ Çok katmanlı uygulamaların katmanlı Hizmetleri, sunu ve veri katmanları için kullanın. Genellikle veri katmanı, bir veritabanı yönetim sistemi gibi Microsoft SQL Server çalıştıran ayrı bir işlemdir. Veri katmanı da ayrı bir makinede uygulama geri kalanından çalışıyor olabilir. Örnekleme profil işlevleri ve işlem dışı çalışan hizmetler küçük bir anlayış sağlayın veya uzaktan.  
+
+ Profil oluşturma araçları, çok katmanlı uygulamaların, zaman uyumsuz çağrıları ADO.NET hizmetleri kullanarak bir Microsoft SQL Server veri katmanı ile etkileşim için zamanlama bilgilerini toplayabilirsiniz. Katman etkileşim profili oluşturma açıkça etkinleştirmeniz gerekir. Varsayılan olarak açık değildir.  
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?  
+ Bu kural yalnızca bilgi amaçlıdır ve düzeltici eylem gerekli değil.  
+
+ Visual Studio IDE içinden veri profil oluşturma için katman etkileşim verileri ekleme hakkında daha fazla bilgi için bkz: [katman etkileşim verileri toplama](../profiling/collecting-tier-interaction-data.md). Komut satırından katman etkileşim verileri ekleme hakkında daha fazla bilgi için bkz: [katman etkileşim verileri toplama](../profiling/adding-tier-interaction-data-from-the-command-line.md).

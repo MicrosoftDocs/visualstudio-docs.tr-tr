@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ee2676b85889226e2fbb9665462d83aa4b0d6520
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2422c2578979b1fc8c5f07ba92aa4117c87042d1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49933917"
 ---
 # <a name="moduleinfoflags"></a>MODULE_INFO_FLAGS
-Bir modül simgelerini durumunu belirtir.  
+Bir modüle ilişkin simgeleri durumunu belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,18 +42,18 @@ public enum enum_MODULE_INFO_FLAGS {
   
 ## <a name="members"></a>Üyeler  
  MIF_SYMBOLS_LOADED  
- En az bir simge kümesine modülü tarafından yüklenen (Aksi halde hiçbir simgeleri yüklenen).  
+ Simge kümesi en az bir modül tarafından yüklenen (Aksi halde sembol yüklenmiş).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değer tarafından döndürülen [Getsymbolsearchınfo](../../../extensibility/debugger/reference/idebugsymbolsearchevent2-getsymbolsearchinfo.md) yöntemi.  
+ Bu değer tarafından döndürülür [Getsymbolsearchınfo](../../../extensibility/debugger/reference/idebugsymbolsearchevent2-getsymbolsearchinfo.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [Getsymbolsearchınfo](../../../extensibility/debugger/reference/idebugsymbolsearchevent2-getsymbolsearchinfo.md)
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [GetSymbolSearchInfo](../../../extensibility/debugger/reference/idebugsymbolsearchevent2-getsymbolsearchinfo.md)

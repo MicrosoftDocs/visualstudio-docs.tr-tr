@@ -1,6 +1,7 @@
 ---
 title: 'CA2207: Değer türü statik alanları satır içi başlatın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,32 +16,34 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0a05dda7678fe4a468f3674cbbb1a401a8612df2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 96e6a8e90b1ebed09408f34e432f5c08dd4da40f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49912311"
 ---
 # <a name="ca2207-initialize-value-type-static-fields-inline"></a>CA2207: Değer türü statik alanları satır içi başlatın
+
 |||
 |-|-|
 |TypeName|InitializeValueTypeStaticFieldsInline|
 |CheckId|CA2207|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Değer türü açık bir statik Oluşturucu bildirir.
+ Bir değer türü açık bir statik Oluşturucu bildirir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Değer türü bildirilmişse, burada tüm değer türü alanları sıfıra ayarlanır ve tüm başvuru türü alanlarını ayarlamak bir varsayılan başlatma uğradığında `null` (`Nothing` Visual Basic'te). Açık bir statik Oluşturucu yalnızca bir örnek oluşturucusu önce çalıştırması garantili olan veya statik üye türü olarak adlandırılır. Örnek oluşturucu çağırmadan türü oluşturduysanız, bu nedenle, statik oluşturucusunu çalıştırmak için kesin değildir.
+## <a name="rule-description"></a>Kural açıklaması
+ Bir değer türü bildirildiğinde, burada tüm değer tür alanları sıfıra ayarlanır ve tüm başvuru türü alanlarını ayarlamak bir varsayılan başlatma uğradığında `null` (`Nothing` Visual Basic'te). Açık bir statik Oluşturucu yalnızca bir örnek oluşturucusu önce çalıştırması garantili olan veya türün statik üyesi çağrılır. Türün örnek oluşturucusu çağırmaya gerek kalmadan oluşturulursa, bu nedenle, statik Oluşturucusu çalıştırmak için garanti edilmez.
 
- Tüm statik verilerin başlatılmış satır içi olduğundan ve hiçbir açık statik Oluşturucu bildirilmiş, C# ve Visual Basic derleyicileri ekleyin `beforefieldinit` MSIL sınıf tanımına bayrağı. Derleyicileri de statik başlatma kodunu içeren özel bir statik oluşturucu ekleyin. Bu özel statik Oluşturucusu herhangi türü statik alanları erişilen önce çalıştırılacak garanti edilmez.
+ Tüm statik verileri başlatılmış satır içi olduğundan ve hiçbir açık bir statik Oluşturucu bildirimi, C# ve Visual Basic derleyicileri ekleyin `beforefieldinit` MSIL sınıf tanımına bayrağı. Derleyiciler, ayrıca statik başlatma kodu içeren özel bir statik oluşturucu ekleyin. Bu özel bir statik Oluşturucu tüm türü statik alanları erişebilmek için önce çalıştırılacak garanti edilir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Düzeltmek için bu kural ihlal başlatmak tüm statik verileri bildirilir ve statik Oluşturucusu kaldırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Düzeltmek için bu kural ihlalini başlatmak tüm statik verileri bildirilir ve statik oluşturucuyu kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="related-rules"></a>İlgili kuralları

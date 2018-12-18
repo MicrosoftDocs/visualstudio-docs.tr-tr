@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f16b82cf448a177a99dfea8cc7b44c1ce69806f9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: fdc3e14560dd53bb4de170c9d87e6fc17ea64523
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49900117"
 ---
 # <a name="idiastackframegetreturnaddress"></a>IDiaStackFrame::get_returnAddress
 Çerçevenin dönüş adresi alır.  
@@ -33,10 +34,10 @@ HRESULT get_returnAddress (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Dönüş adresi çerçevenin döndürür.  
+ [out] Çerçevenin dönüş adresi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackFrame](../../debugger/debug-interface-access/idiastackframe.md)

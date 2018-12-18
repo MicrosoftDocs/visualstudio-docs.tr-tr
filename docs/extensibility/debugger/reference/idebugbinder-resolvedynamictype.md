@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6ac7d69bf1a3308e6eebfb11356506b8ea7fc062
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6b49e3d42e8fbcc39d259c25081405c21ca1bc15
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49892811"
 ---
 # <a name="idebugbinderresolvedynamictype"></a>IDebugBinder::ResolveDynamicType
-Bu yöntem, tam bir değişken türünü döndürür.  
+Bu yöntem, bir değişkenin tam türü döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,10 +46,10 @@ int ResolveDynamicType(
  [in] Bir [IDebugDynamicField](../../../extensibility/debugger/reference/idebugdynamicfield.md) temsil eden bir değişken türü.  
   
  `ppResolved`  
- [out] Döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) değişkenin türü hakkındaki belirli bilgileri verir.  
+ [out] Döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) değişkenin türü hakkında özel bilgiler verir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md)   

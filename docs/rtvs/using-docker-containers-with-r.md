@@ -1,6 +1,6 @@
 ---
 title: R ve Docker kapsayıcıları
-description: R için Docker kapsayıcıları ayarlamak ve Visual Studio ile bağlanabilmek nasıl.
+description: Docker kapsayıcıları için R ayarlayabilir ve bunları Visual Studio ile bağlanma nasıl.
 ms.date: 12/04/2017
 ms.prod: visual-studio-dev15
 ms.technology: vs-rtvs
@@ -11,47 +11,48 @@ ms.reviewer: karthiknadig
 manager: douge
 ms.workload:
 - data-science
-ms.openlocfilehash: d7034476e3346e4f3d4e24713a62920487845440
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: aeb6026bf7f90d07147ef559bdad9feb03e2c005
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35667138"
 ---
-# <a name="using-docker-containers-with-r-tools-for-visual-studio"></a>Docker kapsayıcıları R araçları ile Visual Studio için kullanma
+# <a name="use-docker-containers-with-r-tools-for-visual-studio"></a>Visual Studio için R araçları ile Docker kapsayıcılarını kullanma
 
-R sürümüne yönelik araçları Visual Studio (RTVS) 1.3 + yüklemenin yanı sıra [Windows için Docker](https://www.docker.com/docker-windows), Docker kapsayıcılarını ile çalışmayı destekler.
+Visual Studio (RTVS) sürümünü 1.3 +, yüklemenin yanı sıra için R Araçları [için Docker Windows](https://www.docker.com/docker-windows), Docker kapsayıcıları ile çalışmaya destekler.
 
-## <a name="creating-a-container"></a>Kapsayıcı oluşturma
+## <a name="create-a-container"></a>Bir kapsayıcı oluşturma
 
-1. Seçin **kapsayıcıları...**  sağ köşesinde düğmesinde **çalışma alanları** penceresi (**R Araçlar > Windows > çalışma alanları**). Ürününe sahip değilseniz, pencerenin Windows için Docker yüklü ve yükleme için bir bağlantı sağlar bildirir. Docker yüklenmesi bilgisayarın yeniden başlatılmasını gerektirebilir.
+1. Seçin **kapsayıcıları** sağ köşesindeki düğme **çalışma alanları** penceresi (**R Araçları** > **Windows**  >  **Çalışma alanları**). Öğeniz yoksa pencere için Docker Windows yüklü ve indirme için bir bağlantı sağlar bildirir. Docker yükleme işlemi bilgisayarın yeniden başlatılmasını gerektirebilir.
 
-    ![R araçları Visual Studio (VS2017) için çalışma alanları penceresinde kapsayıcıları komutuyla](media/container-workspaces-window.png)
+    ![Çalışma alanları (VS2017) Visual Studio için R Araçları penceresinde kapsayıcıları komutu](media/container-workspaces-window.png)
 
-1. İçinde **kapsayıcıları** penceresinde, seçin **oluşturma**:
+1. İçinde **kapsayıcıları** penceresinde **Oluştur**:
 
-    ![Kapsayıcıları penceresinde komutu oluşturun](media/containers-window-create.png)
+    ![Kapsayıcıları penceresinde komutu oluştur](media/containers-window-create.png)
 
-1. Seçin ve iletişim gerekli bilgileri tamamlayın **oluşturma**. Girdiğiniz kimlik bilgileri ile daha sonra oturum Linux üzerinde bir hesap oluşturmak için de kullanılır.
+1. İletişim seçip gerekli bilgileri tamamlayın **Oluştur**. Girdiğiniz kimlik bilgileri, ayrıca, daha sonra oturum açtığınızda, Linux üzerinde bir hesap oluşturmak için kullanılır.
 
-    ![Bir kapsayıcı oluşturma sırasında bir kapsayıcı adı ve kimlik bilgilerini girme](media/containers-window-create-fill.png)
+    ![Bir kapsayıcı oluştururken bir kapsayıcı adı ve kimlik bilgilerini girme](media/containers-window-create-fill.png)
 
-1. Görüntü oluşturmak RTVS biraz zaman alabilir. **Çıkış** Visual Studio'daki gösterir ilerleme, ancak çok uzun görüntü sırasında yapmamanın gibi görünebilir yükler; endişelenmeyin hazırlıklı olun. Görüntü yerleşik sonra RTVS kapsayıcı başlatır ve görünür **kapsayıcı** penceresi. Doğru Durma denetimlere kaldırın veya kapsayıcı yeniden başlatın.
+1. Bu görüntüyü derlemek RTVS biraz zaman alabilir. **Çıkış** Visual Studio'daki gösterir, ilerleme, ancak çok uzun görüntü sırasında yapmadan görünmesine indirdiğinden sabırlı olun hazırlıklı olun. Görüntüsü oluşturulur, kapsayıcı RTVS başlar ve görünür sonra **kapsayıcı** penceresi. Doğru Durdur denetimlere kaldırın veya kapsayıcı yeniden başlatın.
 
-    ![Tamamlanmış bir kapsayıcı gösteren kapsayıcıları penceresi](media/containers-window-created.png)
+    ![Zobrazit okno tamamlanmış bir kapsayıcı gösteriliyor](media/containers-window-created.png)
 
-## <a name="connecting-to-a-container"></a>Bir kapsayıcıya bağlanma
+## <a name="connect-to-a-container"></a>Bir kapsayıcıya bağlanma
 
-1. **Yerel çalışan kapsayıcılar** bölümünü **çalışma alanları** penceresinde kapsayıcıları 5444 bağlantı noktasında RTVS arka plan programı çalışmıyor. (Bkz [uzak R Server Linux için](setting-up-remote-r-service-on-linux.md) arka plan programı nasıl yapılandırılacağı ile ilgili ayrıntılar için.)
+1. **Yerel çalışan kapsayıcılar** bölümünü **çalışma alanları** penceresi RTVS arka plan programı 5444 bağlantı noktasında çalışan kapsayıcılar görüntüler. (Bkz [Linux için Uzak R Server](setting-up-remote-r-service-on-linux.md) arka plan programının nasıl yapılandırıldığına ilişkin ayrıntılar için.)
 
-    ![Çalışma alanları penceresi gösteren kullanılabilir kapsayıcıları](media/workspaces-window-running-containers.png)
+    ![Çalışma alanı penceresini gösteren kullanılabilir kapsayıcıları](media/workspaces-window-running-containers.png)
 
-1. Bir kapsayıcıya bağlanmak için kapsayıcı adına çift tıklayın veya Sağdakiyle İleri okunu seçin. Bağlandığınızda, gördüğünüz bir **R etkileşimli** penceresi (bkz [R etkileşimli penceresiyle çalışma](interactive-repl-for-r-in-visual-studio.md)):
+1. Bir kapsayıcıya bağlanmak için kapsayıcı adına çift tıklayın veya sağ İleri okunu seçin. Bağlandığınızda, gördüğünüz bir **R etkileşimli** penceresi (bkz [R etkileşimli penceresi ile iş](interactive-repl-for-r-in-visual-studio.md)):
 
-    ![Çalışma alanları ve REPL penceresinde için bir kapsayıcı açılmış](media/workspaces-window-container-connected.png)
+    ![Çalışma alanları ve REPL penceresinde bir kapsayıcı için açıldı](media/workspaces-window-container-connected.png)
 
-## <a name="using-custom-built-images"></a>Özel olarak geliştirilmiş görüntüleri kullanma
+## <a name="use-custom-built-images"></a>Özel olarak geliştirilmiş görüntülerini kullanma
 
-RTVS algılar ve microsoft/rtvs görüntünün docker dosyasında açıklandığı gibi özel olarak geliştirilmiş görüntüleri kullanılarak oluşturulan kapsayıcıları yönetilmesine izin verir. Burada kullanılan temel görüntü rtvs arka plan programı, R 3.4.2 ve önceden yüklenmiş ortak R paketleri vardır. **Not**: kullanıcı adı ve gerektiğinde burada gösterilen parolasını değiştirin.
+RTVS algılar ve kapsayıcılar docker dosyasında açıklanan microsoft/rtvs görüntü gibi özel oluşturulan görüntüleri kullanılarak oluşturulan yönetilmesine izin verir. Burada kullanılan temel görüntü rtvs arka plan programı, R 3.4.2 ve önceden yüklenmiş ortak R paketleri vardır. **Not**: kullanıcı adı ve parola gerektiğinde burada gösterilen değiştirin.
 
 ```docker
 FROM microsoft/rtvs:1.3-ub1604-r3.4.2
@@ -62,11 +63,11 @@ RUN echo "ruser1:foobar" | chpasswd
 #RUN Rscript --vanilla -e "install.packages(c('AzureML','wordcloud'), repos = 'http://cran.us.r-project.org');"
 ```
 
-Kapsayıcı adının değiştirilmesi bir görüntü oluşturmak için aşağıdaki komutu kullanın ( `--name` bağımsız değişkeni) istenen şekilde:
+Kapsayıcı adının değiştirilmesi bir görüntüsünü oluşturmak için aşağıdaki komutu kullanın ( `--name` bağımsız değişkeni) istenen şekilde:
 
 ```bash
 docker build -t my-rtvs-image:latest .
 docker run -p 6056:5444 --name my-rtvs-container my-rtvs-image:latest rtvsd
 ```
 
-`-p 6056:5444` Bağımsız değişken eşlemeleri rtvs arka plan programı algılamak için RTVS kullanan 6056 oluşturun iç bağlantı noktasına 5444, bağlantı noktası. Kapsayıcı bağlantı noktası 5444 sunan herhangi bir kapsayıcısına listelenen **çalışma alanları** penceresi. Daha sonra **çalışma alanları** kullanarak bir kapsayıcı bağlanmak için pencere `<<unix>>\ruser1` kullanıcı adı ve parola olarak "foobar" olarak docker dosyasında farklı kimlik bilgileri belirtilmediği sürece.
+`-p 6056:5444` Bağımsız değişken eşlemeleri RTVS rtvs arka plan programı algılamak için kullandığı 6056 oluşturun iç bağlantı 5444, bağlantı noktası. Kapsayıcı bağlantı noktasından 5444 sunan herhangi bir kapsayıcı içinde listelenen **çalışma alanları** penceresi. Ardından **çalışma alanları** penceresini kullanarak bir kapsayıcı bağlanmak için `<<unix>>\ruser1` kullanıcı adı ve parola olarak "foobar" olarak docker dosyasında farklı kimlik bilgileri belirtilmediği sürece.

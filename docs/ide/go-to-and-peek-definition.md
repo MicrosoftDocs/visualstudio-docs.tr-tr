@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da tür tanımları görüntüleme | Microsoft Docs
-ms.custom: ''
+title: Tür tanımlarını görüntüleme
 ms.date: 01/10/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
@@ -15,68 +15,68 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 61428294fc9c4afa32a50b4776f03ce1e98b83b9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e7b159eb48e995fa0bca6ea86299d09c1a10cf27
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062088"
 ---
-# <a name="view-type-and-member-definitions"></a>Tür ve üye tanımları görüntüle
+# <a name="view-type-and-member-definitions"></a>Görünüm türü ve üye tanımları
 
-Geliştiriciler genellikle kendi kodunda türleri veya kullandıkları sınıf üyeleri için kaynak kodu tanımları görüntülemeniz gerekir. Visual Studio'da **Tanıma Git** ve **Peek tanımı** özelliklerini kolayca bir tür veya üye tanımını görüntüleme olanak tanır. Meta veriler kaynak kodunu kullanılabilir durumda değilse, bunun yerine görüntülenir.
+Geliştiriciler genellikle kendi kodlarında türler veya sınıf üyeleri kullandıkları için kaynak kod tanımlarını görüntülemek gerekir. Visual Studio'da **tanıma** ve **Özet tanım** özelliklerini kolayca tür veya üyenin tanımı görüntülemek etkinleştirin. Meta veri, kaynak kodu kullanılabilir durumda değilse, bunun yerine görüntülenir.
 
-## <a name="go-to-definition"></a>Tanıma gitme
+## <a name="go-to-definition"></a>Tanıma Git
 
-**Tanıma Git** özelliği bir tür veya üye kaynağına gider ve sonucu yeni bir pencerede açılır. Klavye kullanıcısıysanız metin imlecinizi basın ve sembol adını içinde yere yerleştirin **F12**. Fare kullanıcısıysanız seçin **Tanıma Git** bağlam menüsünden veya kullanım **CTRL tuşuna basıp tıklayın** aşağıdaki bölümde açıklanan işlevselliği.
+**Tanıma** özellik bir türe veya üyeye kaynağına gider ve sonuç yeni bir sekmede açılır. Klavye kullanıcısıysanız yere tuşuna basın ve sembol adını içinde metin imleci yerleştirmeniz **F12**. Fare kullanıcısıysanız seçin **tanıma** bağlam menüsünden veya kullanım **Ctrl tuşuna basıp** aşağıdaki bölümde anlatılan işlevi.
 
-### <a name="ctrl-click-go-to-definition"></a>CTRL tuşuna basıp tıklayın Tanıma Git
+### <a name="ctrl-click-go-to-definition"></a>CTRL tuşunu tanımına Git
 
-Visual Studio 2017 içinde sürüm 15.4, hızlı bir şekilde erişmek için fare kullanıcılar için daha kolay bir yolu yoktur **Tanıma Git**. Simgeler hale tıklanabilir bastığınızda **Ctrl** ve tür veya üye üzerine getirin. Hızlı bir şekilde bir simge tanımına gezinmek için basın **Ctrl** anahtar ve ardından ona tıklayın. Kolay!
+Visual Studio 2017 sürüm 15.4, hızlı erişim için fare kullanıcılar için daha kolay bir yolu yoktur **tanıma**. Semboller hale tıklanabilir bastığınızda **Ctrl** ve türe veya üyeye üzerine gelin. Sembol tanımını hızlıca gezinmek için basın **Ctrl** anahtar ve üzerine tıklayın. Bu kadar kolay!
 
-![Fare tıklatma tanımı animasyon Git](../ide/media/click_gotodef.gif)
+![Fare tıklatın tanımı animasyon Git](../ide/media/click_gotodef.gif)
 
-Fare tıklatma değiştirici tuşa değiştirebileceğiniz **Tanıma Git** giderek **Araçları** > **seçenekleri** > **metin düzenleyicisi**   >  **Genel**, ya da seçerek **Alt** veya **Ctrl + Alt** gelen **kullanım değiştirici tuşa**açılır. Fare tıklatma de devre dışı bırakabilirsiniz **Tanıma Git** kaldırarak **Tanıma Git gerçekleştirmek için etkinleştir fare tıklatma** onay kutusu.
+Fare tıklatın değiştirici tuş değiştirebilirsiniz **tanıma** giderek **Araçları** > **seçenekleri** > **metin düzenleyicisi**   >  **Genel**ve seçim **Alt** veya **Ctrl + Alt** gelen **değiştiricisi anahtar kullan**açılır. Fare tıklatın de devre dışı bırakabilirsiniz **tanıma** kaldırarak **tanıma gerçekleştirmek için fare tıklamasını etkinleştir** onay kutusu.
 
-![Fare tıklatma etkinleştirme tanımına gidin](../ide/media/editor_options_mouse_click_gotodef.png)
+![Fare tıklatın etkinleştirme tanımına Git](../ide/media/editor_options_mouse_click_gotodef.png)
 
-## <a name="peek-definition"></a>Özet tanımı
+## <a name="peek-definition"></a>Tanıma göz at
 
-**Peek tanımı** özellik geçerli konumunuz Düzenleyicisi'nde ayrılmadan bir tür tanımını Önizleme olanak sağlar. Klavye kullanıcısıysanız metin imlecinizi basın ve tür veya üye adı içinde bir yere yerleştirin **Alt + F12**. Fare kullanıcısıysanız seçebileceğiniz **Peek tanımı** ve bağlam menüsünden. Visual Studio 2017 içinde 15.4 ve sonraki sürümleri, yoktur gözlem görünüm tanımı için yeni bir yol fareyi kullanarak. İlk olarak, Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **genel**. Seçeneğini **tanımı gözlem görünümünde açmak** tıklatıp **Tamam** kapatmak için **seçenekleri** iletişim kutusu.
+**Özet tanım** özellik Düzenleyicisi'nde geçerli konumunuzu çıkmadan bir tür tanımı Önizleme olanak sağlar. Klavye kullanıcısıysanız yere tuşuna basın ve tür veya üye adı içindeki metin imleci yerleştirmeniz **Alt + F12**. Fare kullanıcısıysanız seçebileceğiniz **Özet tanım** bağlam menüsünden. Visual Studio 2017 sürüm 15.4 ve üzeri, yoktur göz atma görünümünde bir tanımı için yeni bir yol fareyi kullanarak. İlk olarak, Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **genel**. Seçeneğini **tanımı Özet Görünümü'nde açın** tıklatıp **Tamam** kapatmak için **seçenekleri** iletişim kutusu.
 
-![Fare tıklatma gözlem tanımı seçeneği ayarlama](../ide/media/editor_options_peek_view.png)
+![Fare tıklatın gözlem tanım seçeneği ayarlama](../ide/media/editor_options_peek_view.png)
 
-Daha sonra basın **Ctrl** (veya hangi değiştirici tuşa seçili **seçenekleri**) ve tür veya üye'ye tıklayın.
+Daha sonra basın **Ctrl** (veya hangi değiştirici tuşa seçili olduğundan **seçenekleri**), türe veya üyeye tıklayın.
 
-![Tanımı animasyon Gözat](../ide/media/peek_definition.gif)
+![Özet tanım animasyon](../ide/media/peek_definition.gif)
 
-Açılan pencerede başka bir tanımından peek varsa daire ve açılan görünür oklarını kullanarak gidebilirsiniz bir içerik haritası yolu başlar.
+Başka bir açılan pencere tanımından Özet varsa daire ve açılan menüsü görünen okları kullanarak gidebilirsiniz bir içerik haritası yol başlar.
 
-Daha fazla bilgi için bkz: [nasıl yapılır: Gözat tanımı (Alt + F12) kullanarak görüntüleme ve düzenleme kod](how-to-view-and-edit-code-by-using-peek-definition-alt-plus-f12.md).
+Daha fazla bilgi için [nasıl yapılır: Özet tanım (Alt + F12) kullanarak kodu görüntüleme ve düzenleme](how-to-view-and-edit-code-by-using-peek-definition-alt-plus-f12.md).
 
-## <a name="view-metadata-as-source-code-c"></a>Kaynak kodu (C#) olarak meta verilerini görüntüleme
+## <a name="view-metadata-as-source-code-c"></a>Kaynak kodu olarak meta verileri görüntüleme (C#)
 
-C# türleri veya kaynak kodu kullanılamıyor üyeleri tanımını görüntülediğinizde, bunların meta verilerini bunun yerine görüntülenir. Türleri ve üyeleri ancak kendi uygulamalarını bildirimlerini görebilirsiniz.
+Tanımı görüntülediğinizde C# türleri veya üyeleri kaynak kodu kullanılabilir değil, meta veriler görüntüleniyor. Türleri ve üyeleri, ancak kendi uygulamalarını bildirimlerini görebilirsiniz.
 
-Çalıştırdığınızda **Tanıma Git** veya **Peek tanımı** kaynak kodu kullanılamıyor, bir öğenin bu öğeye ait meta verileri, kaynak kodu görüntülenen bir görünümünü içeren sekmeli belge komutu Kod Düzenleyicisi'nde görüntülenir. Türünün adını ve ardından **[from meta verileri]**, belgenin sekmesinde görünür.
+Çalıştırdığınızda **tanıma** veya **Özet tanım** kaynak kodu kullanılamıyor, bir öğenin bu öğeye ait meta verilerin, kaynak kodu görüntülenen bir görünüm içeren sekmeli belge komutu Kod Düzenleyicisi'nde görünür. Türün adını ve ardından **[meta verilerden]**, belgenin sekmesinde görünür.
 
-Örneğin çalıştırırsanız **Tanıma Git** komutunu <xref:System.Console>, meta verileri <xref:System.Console> Kod düzenleyicisinde C# kaynak kodu olarak görünür. Kod bildiriminden benzer, ancak uygulama göstermez.
+Örneğin çalıştırırsanız, **tanıma** komutunu <xref:System.Console>, meta verileri <xref:System.Console> Kod Düzenleyicisi görünür C# kaynak kodu. Kod bildiriminden benzer, ancak bir uygulama göstermez.
 
-![Kaynak olarak meta veriler](../ide/media/metadatasource.png "MetadataSource")
-
-> [!NOTE]
-> Çalıştırmak çalıştığınızda **Tanıma Git** veya **Peek tanımı** komut türleri veya dahili olarak işaretlenmiş üyeleri için Visual Studio görüntülemez bunların meta verilerini bağımsız olarak mı yoksa kaynak kodu başvuruda bulunan bir arkadaş veya derlemesidir.
-
-### <a name="view-decompiled-source-definitions-instead-of-metadata-c"></a>Meta veriler (C#) yerine kaynak tanımları decompiled görüntüle
-
-Yeni Visual Studio 2017 içinde sürüm 15,6, C# türü veya kaynak kodu kullanılamıyor üye tanımının görüntülediğinizde decompiled kaynak kodu görmek için bir seçenek belirleyebilirsiniz. Bu özelliği etkinleştirmek için tercih **Araçları** > **seçenekleri** menü çubuğundan. Ardından, **metin düzenleyici** > **C#** > **Gelişmiş**seçip **etkinleştirmek decompiled kaynaklarınaGezinti**.
-
-![Decompiled tanımı görüntüleme](media/go-to-definition-decompiled-sources.png)
+![Kaynak olarak Meta Veriler](../ide/media/metadatasource.png)
 
 > [!NOTE]
-> Visual Studio yöntem gövdeleri ILSpy kaynak koda dönüştürme kullanarak yeniden oluşturur. Bu özelliğe erişmek ilk kez ticari marka yasaları ve yazılım lisans ve telif hakkı ilgili yasal Sorumluluklar kabul gerekir.
+> Çalıştırılacak çalıştığınızda **tanıma** veya **Özet tanım** komut türleri veya iç olarak işaretlenmiş üyeleri için Visual Studio görüntülemez meta verilerinin bağımsız olarak, kaynak kodu başvuru bütünleştirilmiş kod veya arkadaş olur.
+
+### <a name="view-decompiled-source-definitions-instead-of-metadata-c"></a>Kaynak koda dönüştürülmüş kaynak tanımları yerine meta verileri görüntüleme (C#)
+
+Yeni Visual Studio 2017 sürüm 15.6, bir seçenek tanımı görüntülediğinizde, kaynak koda dönüştürülmüş kaynak kodu görmek için ayarlayabileceğiniz bir C# tür veya üye, kaynak kodu kullanılamaz. Bu özelliği etkinleştirmek için seçin **Araçları** > **seçenekleri** menü çubuğundan. Ardından, **metin düzenleyici** > **C#** > **Gelişmiş**seçip **kaynak koda dönüştürülmüş kaynaklara gezintiyi etkinleştir** .
+
+![Kaynak koda dönüştürülmüş tanımını görüntüleme](media/go-to-definition-decompiled-sources.png)
+
+> [!NOTE]
+> Visual Studio metot gövdeleri yetenek ılspy kullanarak yeniden oluşturur. Bu özellik, erişim ilk kez ticari marka yasaları ve yazılım lisans ve telif hakkı ile ilgili yasal Sorumluluklar kabul gerekir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Kodda gezinme](../ide/navigating-code.md)
-
-[Nasıl yapılır: Gözat tanımı (Alt + F12) kullanarak görüntüleme ve düzenleme kod](how-to-view-and-edit-code-by-using-peek-definition-alt-plus-f12.md)
+- [Kod gidin](../ide/navigating-code.md)
+- [Nasıl yapılır: Özet tanım (Alt + F12) kullanarak kodu görüntüleme ve düzenleme](how-to-view-and-edit-code-by-using-peek-definition-alt-plus-f12.md)

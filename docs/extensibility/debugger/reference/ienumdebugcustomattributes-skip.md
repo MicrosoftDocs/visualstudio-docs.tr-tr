@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3938cfbf49681f7b94b0406a2eb0a4a22fbe6eb9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e27ebc6e752f6ce9ffdc27d0b80a5a279f6fffcc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49869151"
 ---
 # <a name="ienumdebugcustomattributesskip"></a>IEnumDebugCustomAttributes::Skip
-Belirtilen sayıda özel öznitelikleri bir numaralandırma sırasını atlar.  
+Özel öznitelikler bir numaralandırma dizisinde belirtilen sayıda atlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int Skip(
   
 #### <a name="parameters"></a>Parametreler  
  `celt`  
- [in] Atlamak için öğe sayısı.  
+ [in] Geçilecek öğelerin sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` varsa `celt` kalan öğe sayısından büyüktür; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa `celt` kalan öğeleri sayısından büyüktür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Varsa `celt` sayısından daha büyük bir değer belirtir kalan öğelerden numaralandırması sonuna ayarlanır ve `S_FALSE` döndürülür.  
+ Varsa `celt` numarasından daha büyük bir değer belirtir, kalan öğeleri numaralandırma sonuna ayarlanır ve `S_FALSE` döndürülür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugCustomAttributes](../../../extensibility/debugger/reference/ienumdebugcustomattributes.md)

@@ -18,21 +18,22 @@ f1_keywords:
 - VC.Project.VCNMakeTool.ForcedIncludes
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: 9f38994aa67722e96709f604164818f0bc15ebd6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cace2ed08c82c274649c7554bfe8127ef9c6d152
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39252180"
 ---
 # <a name="nmake-properties-android-c"></a>NMake özellikleri (Android C++)
 
 Özellik | Açıklama
 --- | ---
-Komut satırı derleme | 'Derleme' komutunu çalıştırmak için komut satırını belirtir.
-Tüm komut satırı yeniden oluşturma | 'Rebuild All' komutunu çalıştırmak için komut satırını belirtir.
-Komut satırı Temizle | 'Temiz' komutunu çalıştırmak için komut satırını belirtir.
-Çıkış | Çıkış dosyası oluşturmak için belirtir.
-Önişlemci tanımları | Ön İşlemci kaynak dosyalar tarafından kullanılan tanımlar belirtir.
-Arama Yolu Ekle | Eklenen dosyalar çözmek için Include arama yolu belirtir.
-Zorlanan içerir | Dahil edilen zorlanır dosyalarını belirtir.
-Ek Seçenekler | C++ dosyalarını ayrıştırırken IntelliSense tarafından kullanılacak ek derleyici anahtarları belirtir
+Komut satırı derleme | 'Build' komutu için çalıştırılacak komut satırını belirtir.
+Rebuild all komut satırı | 'Tümünü yeniden derle' komutu için çalıştırılacak komut satırını belirtir.
+Temizle komut satırı | 'Temizle' komutu için çalıştırılacak komut satırını belirtir.
+Çıkış | Oluşturulacak çıkış dosyasını belirtir.
+Önişlemci tanımları | Kullanılan kaynak kodları tarafından önişlemci tanımlarını belirtir.
+Arama Yolu Ekle | Eklenen dosyaların çözümlenmesi için ekleme kodu arama yolunu belirtir.
+Zorlanmış içerir | Dahil edilen zorlanarak eklenmiş dosyaları belirtir.
+Ek Seçenekler | C++ dosyaları ayrıştırılırken IntelliSense tarafından kullanılacak ek derleyici anahtarlarını belirtir

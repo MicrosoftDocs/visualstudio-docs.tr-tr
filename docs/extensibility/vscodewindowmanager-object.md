@@ -1,5 +1,5 @@
 ---
-title: VSCodeWindowManager nesne | Microsoft Docs
+title: VSCodeWindowManager nesnesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,20 +16,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cc4f01240f5f969b91bb3f4cfe46f74a9abb643e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7617062caf233f0711ce2b97d6816af25023ad83
+ms.sourcegitcommit: 56ae5032d99d948aae0548ae318ca2bae97ea962
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39586745"
 ---
 # <a name="vscodewindowmanager-object"></a>VSCodeWindowManager nesnesi
-Dil hizmeti kodu Pencere Yöneticisi uygular ve adornments (örneğin, aşağı açılan çubuğu) yönetilmesinden sorumludur. Daha fazla bilgi için bkz: [eski API'yi kullanarak kod Windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md).  
+Dil hizmeti, kod penceresi Yöneticisi uygular ve Kenarlıklar (örneğin, aşağı açılan çubuk) yönetmekten sorumludur. Daha fazla bilgi için [eski API'yi kullanarak kod Windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md).  
   
- Aşağıdaki tablo arabirimler gösterir `VSCodeWindowManager` nesnesi.  
+ Aşağıdaki tabloda, arabirimler gösterilir `VSCodeWindowManager` nesne.  
   
 |Arabirim|Açıklama|  
 |---------------|-----------------|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager>|Eklenen veya bir kod penceresinden kaldırılmasına adornments (örneğin, aşağı açılan çubukları) sağlar.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager>|Kenarlıklar (örneğin, aşağı açılan çubuk), eklenen veya kaldırılan bir kod penceresinden imkan tanır.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eski API'sini kullanarak kod Windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Eski API'sini kullanarak kod windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)

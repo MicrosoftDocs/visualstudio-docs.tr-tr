@@ -1,5 +1,5 @@
 ---
-title: "Nasıl yapılır: Visual Studio'da tanılama veri bağdaştırıcısı oluşturma | Microsoft Docs"
+title: 'Nasıl yapılır: Tanılama Veri Bağdaştırıcısı Oluşturma'
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -8,122 +8,126 @@ ms.assetid: bd7ad36c-54cb-4d2a-9aea-9d10ad98d7ba
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 22867cab68497afd54c2ffee30bb9ccc73e90862
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 051f5ad7783271c2b0eea26bc3af5c0980f2c1fc
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53068308"
 ---
-# <a name="how-to-create-a-diagnostic-data-adapter"></a>Nasıl yapılır: Tanılama Veri Bağdaştırıcısı Oluşturma
+# <a name="how-to-create-a-diagnostic-data-adapter"></a>Nasıl yapılır: tanılama veri bağdaştırıcısı oluşturma
 
-Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kullanarak bir sınıf kitaplığı oluşturmak ve ardından tanılama veri bağdaştırıcısı API'leri Visual Studio kuruluş tarafından sağlanan Sınıf Kitaplığı'na ekleyin. Bir akış veya dosya olarak istediğiniz herhangi bir bilgi Gönder <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionSink> test çalıştırma sırasında oluşturulan olayları işlerken framework tarafından sağlanan. Akışlar veya gönderilen dosyaları <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionSink> test tamamlandığında test sonuçlarına ek olarak depolanır. Oluşturursanız, bu hatadan test sonuçları veya kullandığınızda [!INCLUDE[mtrlong](../test/includes/mtrlong_md.md)], dosyalar hataya bağlanır.
+Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kullanarak bir sınıf kitaplığı oluşturun ve ardından Sınıf Kitaplığı'na Visual Studio Enterprise tarafından sağlanan tanılama veri bağdaştırıcısı API'leri ekleyin. Bir akış veya dosya olarak istediğiniz herhangi bir bilgi Gönder <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionSink> testi çalıştırması sırasında oluşturulan olayları işlerken çerçeve tarafından sağlanan. Akışlar veya dosyalar gönderilen <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionSink> testleriniz bittiğinde test sonuçlarına ekler olarak depolanır. Oluşturursanız bu hatadan test sonuçlarını veya kullandığınızda [!INCLUDE[mtrlong](../test/includes/mtrlong_md.md)], dosyalar da hataya bağlanır.
 
- Testlerinizi çalıştırdığı makine ya da test altındaki uygulamanızı çalıştırmak için kullandığınız ortamının bir parçası olan bir makineye etkileyen tanılama veri bağdaştırıcısı oluşturabilirsiniz. Örneğin, burada testler dosyalarını test makinenizde toplama veya uygulamanız için Web sunucusu rolündeki sunan makinedeki dosyaları toplama.
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
- Microsoft Test Yöneticisi'ni veya Visual Studio kullanarak test ayarlarınızı oluşturduğunuzda görüntüleyen bir kolay ad tanılama veri bağdaştırıcınızın verebilirsiniz. Test ayarları testlerinizi çalıştırdığınızda, ortamınızda hangi makine rolü özel tanılama veri bağdaştırıcıları çalıştıracağını tanımlamanıza olanak sağlar. Test ayarlarınızı oluşturduğunuzda, tanılama veri bağdaştırıcıları de yapılandırabilirsiniz. Örneğin, Web sunucunuzdan özel günlükleri toplayan tanılama veri bağdaştırıcısı oluşturabilir. Test ayarlarınızı oluşturduğunuzda, bu tanılama veri bağdaştırıcısı makine ya da bu Web sunucusu rolü gerçekleştiren makineler çalıştırmayı seçebilirsiniz ve oluşturulan son üç günlükleri toplamak için test ayarlarınızı yapılandırmasını değiştirebilirsiniz. Test ayarları hakkında daha fazla bilgi için bkz: [toplamak tanılama bilgileri kullanarak Test ayarlarını](../test/collect-diagnostic-information-using-test-settings.md).
+Burada testlerinizi çalıştırdığınız makineyi veya test altındaki uygulamanızı çalıştırmak için kullandığınız ortamın parçası olan makineyi etkileyen tanılama veri bağdaştırıcısı oluşturabilirsiniz. Örneğin, test makinenizde dosyalar burada testler toplama veya uygulamanız için web sunucusu rolündeki sunan makinedeki dosyaları toplama.
 
- Tanılama veri bağdaştırıcınızın görevleri bu noktada testinde gerçekleştirebilmeleri için testlerinizi çalıştırdığınızda olaylar oluşturulur.
+Tanılama veri bağdaştırıcısı Microsoft Test Yöneticisi'ni veya Visual Studio kullanarak test ayarlarınızı oluşturduğunuzda görüntüleyen bir kolay ad verebilirsiniz. Test ayarlarınızı testlerinizi çalıştırdığınızda, ortamınızda hangi makine rolünün belirli tanılama veri bağdaştırıcılarını çalıştıracağını tanımlamanıza olanak sağlar. Test ayarlarınızı oluşturduğunuzda, tanılama veri bağdaştırıcılarınızı yapılandırabilirsiniz. Örneğin, web sunucunuzdan özel günlükleri toplayan tanılama veri bağdaştırıcısı oluşturabilirsiniz. Test ayarlarınızı oluşturduğunuzda, makine veya bu web sunucu rolünü gerçekleştiren makineler üzerinde bu tanılama veri bağdaştırıcısını çalıştırmayı seçebilirsiniz ve oluşturulan son üç günlüğü toplamak üzere test ayarlarınız için yapılandırmayı değiştirebilirsiniz. Test ayarları hakkında daha fazla bilgi için bkz. [test ayarlarını kullanarak tanılama bilgi toplayan](../test/collect-diagnostic-information-using-test-settings.md).
+
+Böylece tanılama veri bağdaştırıcınızın testte o noktada görevleri gerçekleştirebilirsiniz, testlerinizi çalıştırdığınızda olaylar oluşturulur.
 
 > [!IMPORTANT]
-> Özellikle birden çok makinelerde çalışan testleri olduğunda bu olayları farklı iş parçacıklarında, yükseltilmiş. Bu nedenle, olası iş parçacığı sorunlarının farkında ve istemeden özel bağdaştırıcının iç verileri bozuk. Tanılama veri bağdaştırıcınızın iş parçacığı güvenli olduğundan emin olun.
+> Özellikle, birden çok makina üzerinde test çalıştırmalarına sahip olduğunuzda, farklı iş parçacıkları üzerinde bu olaylar oluşturulabilir. Bu nedenle, olası iş parçacığı sorunlarından haberdar olmalı ve istemeden özel bağdaştırıcının iç verilerini bozuk. Tanılama veri bağdaştırıcınızın güvenli iş parçacığı olduğundan emin olun.
 
- Tanılama veri bağdaştırıcınızın oluştururken kullanabileceğiniz anahtar olayların kısmi bir listesi verilmiştir. Tanılama veri bağdaştırıcısı olaylarının tam bir listesi için bkz: Özet <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents> sınıfı.
+Tanılama veri bağdaştırıcınızı oluştururken kullanabileceğiniz anahtar olayların kısmi bir listesi verilmiştir. Tanılama veri bağdaştırıcısı olaylarının tam listesi için bakınız <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents> sınıfı.
 
 |Olay|Açıklama|
-|-----------|-----------------|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.SessionStart>|Test çalışması başlangıcı|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.SessionEnd>|Test çalışması sonu|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseStart>|Test çalışması her testte başlangıcı|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseEnd>|Test çalışması her testte sonu|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestStepStart>|Her bir test adımını bir test başlangıcı|
-|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestStepEnd>|Her bir test adımını bir test sonu|
+|-|-----------------|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.SessionStart>|Test çalıştırmanızın Başlat|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.SessionEnd>|Test çalıştırmanızın sonu|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseStart>|Test çalıştırmasındaki her testin başlatılması|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseEnd>|Test çalıştırmasındaki her testin sonlandırılması|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestStepStart>|Testteki her test adımının Başlat|
+|<xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestStepEnd>|Testteki her test adımı sonu|
 
 > [!NOTE]
-> El ile test tamamlandığında, hiçbir daha fazla veri toplama olayları için tanılama veri bağdaştırıcısı gönderilir. Bir test yeniden çalıştırıldığında yeni bir test durumu tanımlayıcısına sahip olur. Bir kullanıcı bir test sırasında test sıfırlar varsa (hangi başlatır <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseReset> olay), veya değişiklikleri test adımı sonucunu, veri koleksiyonu olayı için tanılama veri bağdaştırıcısı gönderilir, ancak test çalışması tanımlayıcısını aynı kalır. Bir test çalışması sıfırlama olup olmadığını belirlemek için tanılama veri bağdaştırıcınızın test çalışması tanımlayıcısını izlemeniz gerekir.
+> El ile test tamamlandığında, hiçbir daha fazla veri koleksiyonu olayları için tanılama veri bağdaştırıcısı gönderilir. Bir test yeniden çalıştırıldığında yeni bir test durumu tanımlayıcısı olması. Bir kullanıcı test sırasında bir testi sıfırlandırırsa (oluşturursa <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectionEvents.TestCaseReset> olay), ya değişiklikleri test adımı sonucunu, veri koleksiyonu olayı tanı veri bağdaştırıcısı için gönderilen, ancak test durumu tanımlayıcısı aynı kalır. Test çalışmasının sıfırlandığını belirlemek için tanılama veri bağdaştırıcınızda test çalışması tanımlayıcısını izlemelisiniz.
 
- Test ayarlarınızı oluşturduğunuzda, yapılandırma bilgilerine dayalı bir veri dosyası toplayan tanılama veri bağdaştırıcısı oluşturmak için aşağıdaki yordamı kullanın.
+Test ayarlarınızı oluşturduğunuzda sınıflandırdığınız bilgiyi temel alan bir veri dosyası toplayan tanı veri bağdaştırıcısı oluşturmak için aşağıdaki yordamı kullanın.
 
- Özel yapılandırma düzenleyicisi de dahil olmak üzere bir tam örnek tanılama veri bağdaştırıcısı projesi için bkz: [tanılama veri bağdaştırıcısı oluşturmak için örnek proje](../test/sample-project-for-creating-a-diagnostic-data-adapter.md).
+Özel yapılandırma Düzenleyicisi içeren tam bir örnek tanılama veri bağdaştırıcısı için bir proje, bkz: [tanılama veri bağdaştırıcısı oluşturmak için örnek proje](../test/sample-project-for-creating-a-diagnostic-data-adapter.md).
 
-##  <a name="CreateAdapter"></a> Oluşturma ve tanılama veri bağdaştırıcısı yükleme
+##  <a name="create-and-install-a-diagnostic-data-adapter"></a>Oluşturma ve tanılama veri bağdaştırıcısı yükleme
 
-#### <a name="to-create-and-install-a-diagnostic-data-adapter"></a>Tanılama veri bağdaştırıcısı oluşturmak ve yüklemek için
+### <a name="to-create-and-install-a-diagnostic-data-adapter"></a>Tanılama veri bağdaştırıcısı oluşturmak ve yüklemek için
 
-1.  Yeni bir sınıf kitaplığı oluşturun.
+1. Yeni bir sınıf kitaplığı oluşturun.
 
-    1.  Üzerinde **dosya** menüsünde seçin **yeni**, üzerine gelin ve ardından **yeni proje**.
+   1.  Üzerinde **dosya** menüsünde seçin **yeni**, gelin ve ardından **yeni proje**.
 
-    2.  Gelen **proje türleri**, kullanılacak dili seçin.
+   2.  Gelen **proje türleri**, kullanacağınız dili seçin.
 
-    3.  Gelen **Visual Studio yüklenmiş şablonlar**seçin **sınıf kitaplığı**.
+   3.  Gelen **Visual Studio yüklenmiş şablonlar**seçin **sınıf kitaplığı**.
 
-    4.  Tanılama veri bağdaştırıcısı için bir ad yazın.
+   4.  Tanılama veri bağdaştırıcınız için bir ad yazın.
 
-    5.  Seçin **Tamam**.
+   5.  Seçin **Tamam**.
 
-2.  Derleme ekleyin **Microsoft.VisualStudio.QualityTools.ExecutionCommon**.
+2. Bütünleştirilmiş kod Ekle **Microsoft.VisualStudio.QualityTools.ExecutionCommon**.
 
-    1.  Çözüm Gezgini'nde sağ **başvuruları** ve **Başvuru Ekle** komutu.
+   1.  İçinde **Çözüm Gezgini**, sağ **başvuruları** ve **Başvuru Ekle** komutu.
 
-    2.  Seçin **.NET** ve bulun **Microsoft.VisualStudio.QualityTools.ExecutionCommon.dll**.
+   2.  Seçin **.NET** bulun **Microsoft.VisualStudio.QualityTools.ExecutionCommon.dll**.
 
-    3.  Seçin **Tamam**.
+   3.  Seçin **Tamam**.
 
-3.  Derleme ekleyin **Microsoft.VisualStudio.QualityTools.Common**.
+3. Bütünleştirilmiş kod Ekle **Microsoft.VisualStudio.QualityTools.Common**.
 
-    1.  Çözüm Gezgini'nde sağ **başvuruları** seçip **Başvuru Ekle** komutu.
+   1.  İçinde **Çözüm Gezgini**, sağ **başvuruları** seçip **Başvuru Ekle** komutu.
 
-    2.  Seçin **/.NET**, bulun **Microsoft.VisualStudio.QualityTools.Common.dll**.
+   2.  Seçin **/.NET**, bulun **Microsoft.VisualStudio.QualityTools.Common.dll**.
 
-    3.  Seçin **Tamam**.
+   3.  Seçin **Tamam**.
 
-4.  Aşağıdakileri ekleyin `using` deyimlerini Sınıf dosyanıza ekleyin:
+4. Aşağıdaki `using` deyimlerini Sınıf dosyanıza:
 
-    ```csharp
-    using Microsoft.VisualStudio.TestTools.Common;
-    using Microsoft.VisualStudio.TestTools.Execution;
-    using System.Linq;
-    using System.Text;
-    using System.Xml;
-    using System;
-    ```
+   ```csharp
+   using Microsoft.VisualStudio.TestTools.Common;
+   using Microsoft.VisualStudio.TestTools.Execution;
+   using System.Linq;
+   using System.Text;
+   using System.Xml;
+   using System;
+   ```
 
-5.  Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorTypeUriAttribute> için tanılama veri bağdaştırıcısı tanımlamak tanılama veri bağdaştırıcınızın sınıfa değiştirme **şirket**, **ürün**, ve **sürüm** ile Tanılama veri bağdaştırıcınızı uygun bilgileri:
+5. Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorTypeUriAttribute> bir tanılama veri bağdaştırıcınız olarak tanımlamak üzere tanı veri bağdaştırıcınız için sınıfa değiştirerek **şirket**, **ürün**, ve **sürüm** ile Tanılama veri bağdaştırıcınız için uygun bilgileri:
 
-    ```
-    [DataCollectorTypeUri("datacollector://Company/Product/Version")]
-    ```
+   ```csharp
+   [DataCollectorTypeUri("datacollector://Company/Product/Version")]
+   ```
 
-6.  Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorFriendlyNameAttribute> özniteliği parametreleri tanılama veri bağdaştırıcınızı için uygun bilgilerle değiştirerek sınıfına:
+6. Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorFriendlyNameAttribute> parametreleri tanı veri bağdaştırıcınız için uygun bilgi ile değiştirerek sınıfa özniteliği:
 
-    ```
-    [DataCollectorFriendlyName("Collect Log Files", false)]
-    ```
+   ```csharp
+   [DataCollectorFriendlyName("Collect Log Files", false)]
+   ```
 
-     Bu kolay adı test ayarları etkinliğinde görüntülenir.
+    Bu kolay adı, test ayarları etkinliğinde görüntülenir.
 
-    > [!NOTE]
-    > Ayrıca ekleyebileceğiniz <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorConfigurationEditorAttribute> belirtmek için `Type` Düzenleyicisi kullanmak için özel yapılandırma düzenleyicisi bu veri bağdaştırıcısı için ve isteğe bağlı olarak Yardım dosyasını belirtmek için.
-    >
-    > Ayrıca uygulayabilirsiniz <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorEnabledByDefaultAttribute> , her zaman etkin olması gerektiğini belirtmek için.
+   > [!NOTE]
+   > Ayrıca ekleyebilirsiniz <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorConfigurationEditorAttribute> belirtmek için `Type` , düzenleyici için kullanılacak özel yapılandırma düzenleyicinizin bu veri bağdaştırıcısı için ve isteğe bağlı olarak Yardım dosyasını belirtmek için.
+   >
+   > Ayrıca uygulayabilirsiniz <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorEnabledByDefaultAttribute> , her zaman etkin olması gerektiğini belirtmek için.
 
-7.  Tanılama veri bağdaştırıcısı sınıfınız öğesinden devralmalıdır <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollector> gibi sınıfı:
+7. Tanılama veri bağdaştırıcısı sınıfınız devralmalıdır <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollector> sınıfına aşağıdaki gibi:
 
-    ```csharp
-    public class MyDiagnosticDataAdapter : DataCollector
-    ```
+   ```csharp
+   public class MyDiagnosticDataAdapter : DataCollector
+   ```
 
-8.  Yerel değişkenler aşağıdaki şekilde ekleyin:
+8. Yerel değişkenler aşağıdaki şekilde ekleyin:
 
-    ```csharp
-    private DataCollectionEvents dataEvents;
-    private DataCollectionLogger dataLogger;
-    private DataCollectionSink dataSink;
-    private XmlElement configurationSettings;
-    ```
+   ```csharp
+   private DataCollectionEvents dataEvents;
+   private DataCollectionLogger dataLogger;
+   private DataCollectionSink dataSink;
+   private XmlElement configurationSettings;
+   ```
 
-9. Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollector.Initialize*> yöntemi ve **Dispose** yöntemi. İçinde `Initialize` , Initialize yöntemi, veri havuzu, tüm yapılandırma verilerini test ayarlarını ve kullanmak istediğiniz olay işleyicileri şu şekilde Kaydet:
+9. Ekleme <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollector.Initialize*> yöntemi ve bir **Dispose** yöntemi. İçinde `Initialize` , Initialize yöntemi, veri havuzu, tüm yapılandırma verilerini test ayarları ve istediğiniz olay işleyicileri gibi kaydedersiniz:
 
     ```csharp
     public override void Initialize(
@@ -168,7 +172,7 @@ Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kulla
     }
     ```
 
-10. Test sırasında oluşturulan günlük dosyasını toplamak için aşağıdaki olay işleyici kod ve özel yöntemi kullanın:
+10. Test sırasında üretilen günlük dosyasını toplamak için aşağıdaki olay işleyicisini ve özel yöntemi kullanın:
 
     ```csharp
     public void OnTestCaseEnd(sender, TestCaseEndEventArgs e)
@@ -218,14 +222,14 @@ Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kulla
     }
     ```
 
-     Bu dosyalar test sonuçlarına eklenir. Oluşturursanız, bu hatadan test sonuçları veya kullandığınızda [!INCLUDE[mtrlong](../test/includes/mtrlong_md.md)], dosyalar hataya eklenir.
+     Bu dosyalar test sonuçlarına eklenir. Oluşturursanız bu hatadan test sonuçlarını veya kullandığınızda [!INCLUDE[mtrlong](../test/includes/mtrlong_md.md)], dosyalar hataya eklenir.
 
-     Test ayarlarınızda kullanmak için bkz: için veri toplamak üzere kendi Düzenleyicisi kullanmak istiyorsanız, [nasıl yapılır: tanılama veri bağdaştırıcısı bilgisayarınızı veri için bir özel düzenleyici oluşturma](../test/how-to-create-a-custom-editor-for-data-for-your-diagnostic-data-adapter.md).
+     Test ayarlarınızda kullanmak üzere veri toplamak üzere kendi düzenleyicinizi kullanmak isterseniz [nasıl yapılır: tanılama veri bağdaştırıcınızın verileri için özel bir düzenleyici oluşturmak](../test/how-to-create-a-custom-editor-for-data-for-your-diagnostic-data-adapter.md).
 
-11. Bir test test ayarları'nda yapılandırılmış kullanıcı göre tamamlandığında, bir günlük dosyasını toplamak için oluşturmalısınız bir `App.config` dosya ve çözümünüze ekleyin. Bu dosya, aşağıdaki biçime sahiptir ve tanımlamak tanılama veri bağdaştırıcınızın URI'sini içermelidir. Gerçek değerler "Şirket/ProductName/sürüm için" değiştirin.
+11. Bir test test ayarlarında yapılandırdığınız kullanıcı göre sona erdiğinde bir günlük dosyasını toplamak için oluşturmalısınız bir *App.config* dosya ve çözümünüze ekleyin. Bu dosya aşağıdaki biçime sahiptir ve tanımlamak tanı veri bağdaştırıcınızın URI'sini içermelidir. "Şirket/ProductName/Version" için gerçek değerleri değiştirin.
 
     > [!NOTE]
-    > Ardından, tanılama veri bağdaştırıcısı için herhangi bir bilgi yapılandırmak gerekmiyorsa, bir yapılandırma dosyası oluşturmak gerekmez.
+    > Ardından, tanılama veri bağdaştırıcınız için herhangi bir bilgi yapılandırmak ihtiyacınız yoksa, bir yapılandırma dosyası oluşturmak gerekmez.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -251,27 +255,27 @@ Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kulla
     ```
 
     > [!NOTE]
-    > Varsayılan yapılandırma öğesi, ihtiyaç duyduğunuz tüm verileri içerebilir. Kullanıcı test ayarlarında tanılama veri bağdaştırıcısı yapılandırmaz, çalıştırıldığında sonra varsayılan veri tanılama veri bağdaştırıcınızın geçirilir. Eklediğiniz XML çünkü `<DefaultConfigurations>` bölümü bildirilen şema parçası olması olası değil, ürettiği herhangi bir XML hatasını yoksayabilirsiniz.
+    > Varsayılan yapılandırma öğesi, ihtiyaç duyduğunuz herhangi bir veri içerebilir. Kullanıcı test ayarlarında tanı veri bağdaştırıcısı yapılandırmazsa çalıştırıldığında sonra varsayılan veri tanılama veri bağdaştırıcınızı geçirilecektir. Eklediğiniz XML, çünkü `<DefaultConfigurations>` bölümü, bildirilen şemanın parçası olması olası değildir, ürettiği herhangi bir XML hatasını yoksayabilirsiniz.
     >
-    > Yapılandırma dosyaları, yükleme dizinine göre aşağıdaki yolundaki diğer örnekler vardır: **Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\DataCollectors**.
+    > Yapılandırma dosyalarını, yükleme dizinine dayanan aşağıdaki yolda diğer örnekleri vardır: *Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\DataCollectors*.
 
-     Testlerinizi çalıştırdığınızda, bir ortam kullanmak için test ayarlarını yapılandırma hakkında daha fazla bilgi için bkz: [el ile testlerde (VSTS) Tanılama verileri toplama](/vsts/manual-test/mtm/collect-more-diagnostic-data-in-manual-tests).
+     Test ayarlarınızı testlerinizi çalıştırdığınızda kullanacağınız ortam için yapılandırma hakkında daha fazla bilgi için bkz. [el ile testlerde (Azure Test planları) tanılama verilerini toplama](/azure/devops/test/mtm/collect-more-diagnostic-data-in-manual-tests?view=vsts).
 
-     Yapılandırma dosyası yükleme hakkında daha fazla bilgi için bkz: [nasıl yapılır: özel tanılama veri bağdaştırıcısı yükleme](../test/how-to-install-a-custom-diagnostic-data-adapter.md)
+     Yapılandırma dosyasını yükleme hakkında daha fazla bilgi için bkz. [nasıl yapılır: özel tanılama veri bağdaştırıcısı yükleme](../test/how-to-install-a-custom-diagnostic-data-adapter.md)
 
-12. Tanılama veri bağdaştırıcısı derlemenizi oluşturmak için çözümünüzü oluşturun.
+12. Tanılama veri bağdaştırıcı derlemenizi oluşturmak için çözümünüzü derleyin.
 
 13. Özel düzenleyicinizi yükleme hakkında daha fazla bilgi için bkz: [nasıl yapılır: özel tanılama veri bağdaştırıcısı yükleme](../test/how-to-install-a-custom-diagnostic-data-adapter.md).
 
-14. Testlerinizi çalıştırdığınızda, bir ortam kullanmak için test ayarlarını yapılandırma hakkında daha fazla bilgi için bkz: [el ile testlerde (VSTS) Tanılama verileri toplama](/vsts/manual-test/mtm/collect-more-diagnostic-data-in-manual-tests).
+14. Test ayarlarınızı testlerinizi çalıştırdığınızda kullanacağınız ortam için yapılandırma hakkında daha fazla bilgi için bkz. [el ile testlerde (Azure Test planları) tanılama verilerini toplama](/azure/devops/test/mtm/collect-more-diagnostic-data-in-manual-tests?view=vsts).
 
-15. Tanılama veri bağdaştırıcınızı seçmek için önce varolan test ayarlarını seçin veya Microsoft Test Yöneticisi'ni ya da Visual Studio yeni bir tane oluşturun. Bağdaştırıcı gösterilir **veri ve tanılama** sekmesinde test ayarlarınızı sınıfa atadığınız kolay adı.
+15. Tanılama veri bağdaştırıcınızı seçmek için önce varolan test ayarlarını seçin veya Microsoft Test Yöneticisi ya da Visual Studio yeni bir tane oluşturmanız gerekir. Bağdaştırıcı görüntülenir **veri ve tanılama** test ayarlarınızı sınıfa atadığınız yakın ad ile sekmesindeki.
 
-16. Bu test ayarlarını etkin olması için ayarlama. Test ayarları hakkında daha fazla bilgi için bkz: [toplamak tanılama bilgileri kullanarak Test ayarlarını](../test/collect-diagnostic-information-using-test-settings.md).
+16. Bu test ayarları etkin olarak ayarlanmış. Test ayarları hakkında daha fazla bilgi için bkz. [test ayarlarını kullanarak tanılama bilgi toplayan](../test/collect-diagnostic-information-using-test-settings.md).
 
-17. Seçilen tanılama veri bağdaştırıcısı ile test ayarlarını kullanarak testleri çalıştırın.
+17. Seçilen tanılama veri bağdaştırıcısıyla test ayarlarını kullanarak testlerinizi çalıştırın.
 
-   Belirtilen veri dosyası test sonuçlarınızı eklenir.
+    Belirttiğiniz veri dosyası test sonuçlarınıza eklenir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
@@ -283,6 +287,6 @@ Oluşturmak için bir *tanılama veri bağdaştırıcısı*, Visual Studio kulla
 - <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorFriendlyNameAttribute>
 - <xref:Microsoft.VisualStudio.TestTools.Execution.DataCollectorEnabledByDefaultAttribute>
 - [Test ayarlarını kullanarak tanılama bilgileri Topla](../test/collect-diagnostic-information-using-test-settings.md)
-- [El ile testlerde (VSTS) tanılama verisi toplama](/vsts/manual-test/mtm/collect-more-diagnostic-data-in-manual-tests)
-- [(VSTS) test ederken tanılama verisi toplama](/vsts/manual-test/collect-diagnostic-data)
-- [Nasıl yapılır: tanılama veri bağdaştırıcınızın verileri için bir özel düzenleyici oluşturma](../test/how-to-create-a-custom-editor-for-data-for-your-diagnostic-data-adapter.md)
+- [El ile testlerde (Azure Test planları) tanılama verilerini toplayın](/azure/devops/test/mtm/collect-more-diagnostic-data-in-manual-tests?view=vsts)
+- [(Azure Test planları) test sırasında tanılama verilerini toplayın](/azure/devops/test/collect-diagnostic-data?view=vsts)
+- [Nasıl yapılır: tanılama veri bağdaştırıcınızın verileri için özel bir düzenleyici oluşturma](../test/how-to-create-a-custom-editor-for-data-for-your-diagnostic-data-adapter.md)

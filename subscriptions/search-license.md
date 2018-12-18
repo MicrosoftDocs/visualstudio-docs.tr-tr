@@ -1,28 +1,31 @@
 ---
-title: Aramayı ve filtrelemeyi | Microsoft Docs
+title: Arama ve filtre | Microsoft Docs
 author: evanwindom
-ms.author: jaunger
-manager: evelynp
-ms.date: 10/03/2017
-ms.topic: Get-Started-Article
-description: Nasıl Yöneticiler tek tek aboneleri veya grupları Yönetici portalı'nda bulabilirsiniz öğrenin.
+ms.author: tglee
+manager: douge
+ms.date: 06/27/2018
+ms.topic: conceptual
+description: Nasıl Yöneticiler bireysel abonelerinizde veya grupları Yönetici portalı'nda bulabilirsiniz öğrenin.
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 45786b846cb62f5c02d6cc1e0e1c9fcb7dbb1993
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 2caf95d4b24fd686a885a122657b2dc040b80cdf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49883399"
 ---
-# <a name="searching-and-filtering-subscribers-in-visual-studio-subscriptions"></a>Arama ve Visual Studio Aboneliklerde aboneleri filtreleme
-Visual Studio abonelikleri Yönetim Portalı, belirli bir alt kümesini çeşitli ölçütleri temel alarak aboneleri bulmanızı sağlar. Ad, e-posta adresi, abonelik düzeyinde ve çeşitli diğer bilgileri abone listeyi filtreleyebilirsiniz. 
+# <a name="search-and-filter-subscribers-in-visual-studio-subscriptions"></a>Visual Studio abonelikleri arama ve filtre aboneler
 
-1.  Aboneleri, tablonun üstündeki belirli bir grubunu aramak için tıklatın **filtre**.
+Visual Studio abonelikleri Yönetim Portalı, belirli bir alt kümesini aboneleri çeşitli ölçütleri temel alarak bulmanızı sağlar. Ad, e-posta adresi, abonelik düzeyine ve diğer bilgileri abone listeyi filtreleyebilirsiniz.
 
-    ![Filtre aboneleri](_img\edit-license\filter-list.png)
+1. Aboneler belirli bir grubu için aranacak seçin **filtre**.
+   > [!div class="mx-imgBorder"]
+   > ![Abone listesini aramak için filtre seçin](media/filter-list.png)
 
-2.  Arama ölçütü olarak kullanabileceğiniz görüntülenir fazla alan görürsünüz. İstediğiniz aramanızı temel olarak kullanın ve ardından istediğiniz ölçütü seçin **filtre**. Ardından, belirlediğiniz ölçütlere uyan aboneleri listesini görürsünüz.
+2. Aramanızı temel olarak kullanın ve ardından istediğiniz ölçütleri girin **filtre** yeniden.
+   > [!div class="mx-imgBorder"]
+   > ![Abone verileri filtrelemek için kullanılabilir alanları kullanın](media/filter-subscribers.png)
 
-    ![Aboneler Bul](_img\search-filter\search-filter-find.png)
-
+   Abone listenize ardından, seçtiğiniz ölçütlerle eşleşen.

@@ -1,5 +1,5 @@
 ---
-title: Getautoınsertextensions yöntemi | Microsoft Docs
+title: Getautoınsertextensions metodu
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -13,35 +13,36 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 67f6bfcb0ee38acf9abb604f28fa95eeaa605fde
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7e3e0fda420682e4f33c0d22a3e9c8caa920895b
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677283"
 ---
-# <a name="getautoinsertextensions-method"></a>GetAutoInsertExtensions Metodu
-  Hata ayıklama sırasında otomatik olarak eklenmesini olan Office için uygulamalar hakkındaki bilgileri alır.  
+# <a name="getautoinsertextensions-method"></a>Getautoınsertextensions metodu
+  Hata ayıklama sırasında otomatik olarak eklenmesi için Office için uygulamalar hakkında bilgi alır.  
   
- Bu yöntem, gelecekte kullanılmak üzere ayrılmış.  
+ Bu yöntem, gelecekte kullanılmak üzere ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp
 HRESULT GetAutoInsertExtensions(  
     [out, retval] SAFEARRAY(BSTR)* psaExtensionNames  
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
   
 |Parametre|Açıklama|  
 |---------------|-----------------|  
-|*psaExtensionNames*|Office uygulamaları uzantısı adlarını.|  
+|*psaExtensionNames*|Office için uygulamalar uzantı adları.|  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Yöntemi başarıyla tamamlanmış olup olmadığını belirten bir HRESULT değer.  
+## <a name="return-value"></a>Dönüş değeri  
+ Yöntemi başarıyla tamamlanıp tamamlanmadığını belirten bir HRESULT değer.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Her uygulama için eklenecek Office HKEY_CURRENT_USER\Software\Microsoft\Office\WEF\Developer altındaki bir değere karşılık gelen bir Office uygulaması uzantı adı olarak döndürülür. Konak, bu kayıt defteri değerlerini aramak ve uzantıları otomatik olarak ekler.  
+ Her uygulama için eklenecek Office altındaki bir değere karşılık gelen bir Office uygulaması uzantı adı olarak döndürülen **HKEY_CURRENT_USER\Software\Microsoft\Office\WEF\Developer**. Konak, bu kayıt defteri değerlerini arayın ve uzantılar otomatik olarak ekler.  
   
   

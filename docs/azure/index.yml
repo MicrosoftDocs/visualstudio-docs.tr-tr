@@ -1,0 +1,231 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 1027f1a8f8fbad0c236dd0c895fb82a969621ae4
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048508"
+documentType: LandingData
+title: Visual Studio ile Azure Geliştirme
+metadata:
+  title: Azure geliştirme
+  description: Öğreticiler ve Azure'a uygulama ve hizmetlere bağlamak ve Azure hizmetleri geliştirmek hakkında kavramsal makaleler.
+  author: ghogen
+  manager: douge
+  ms.prod: visual-studio-dev15
+  ms.technology: vs-azure
+  ms.topic: landing-page
+  ms.date: 10/09/2018
+  ms.author: ghogen
+  ms.custom: seodec18
+sections:
+- title: Azure'a Yayımlama
+  items:
+  - type: paragraph
+    text: Visual Studio ile hazırlık veya üretim ortamları için uygulamanızı Azure'a dağıtın veya sürekli tümleştirme ve dağıtım (CI/CD) ayarlayın.
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs?view=aspnetcore-2.1
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_NETcore.svg
+      title: Azure’a ASP.NET Core uygulaması yayımlama
+    - href: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet-framework
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_NET.svg
+      title: Bir ASP.NET Web uygulamasını Azure'da yayımlama
+    - href: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/azure/media/index/AzureFunctions.svg
+      title: Azure İşlevleri yayımlama
+    - href: /aspnet/core/host-and-deploy/azure-apps/azure-continuous-deployment?view=aspnetcore-2.1
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_octokitty.svg
+      title: Visual Studio ve Git ile azure'a sürekli dağıtım
+    - href: /azure/devops/pipelines/get-started-yaml?view=vsts&viewFallbackFrom=aspnetcore-2.1
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/azure/devops/_img/index/DevOpsIconPipelines96.svg
+      title: Azure Pipelines ile Azure'a sürekli dağıtım
+    - href: /azure/virtual-machines/windows/publish-web-app-from-visual-studio
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_vmm-cloud.svg
+      title: Azure VM'ye ASP.NET Web Uygulaması yayımlama
+- title: Azure App Services ve Azure işlevleri
+  items:
+  - type: paragraph
+    text: Web uygulamaları ve Azure'da barındırılan bir sunucusuz işlev oluşturmak için öğreticiler
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+      html: <p>Azure'da bir web uygulaması oluşturup</p>
+      image:
+        src: https://docs.microsoft.com/azure/media/index/AppService.svg
+      title: ASP.NET Core
+    - href: /azure/azure-functions/functions-develop-vs
+      html: <p>Sunucusuz kod ile olayları işleme</p>
+      image:
+        src: https://docs.microsoft.com/azure/media/index/AzureFunctions.svg
+      title: Azure işlevleri
+    - href: https://docs.microsoft.com/dotnet/azure/?view=azure-dotnet
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_NET.svg
+      title: .NET ve .NET Core geliştiricileri için Azure SDK
+- title: Kapsayıcı geliştirme
+  items:
+  - type: paragraph
+    text: Docker kapsayıcıları ile geliştirin, Azure'da yayımlama, Kubernetes ve daha fazlasını kullanın.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_categorize.svg
+      text: Kapsayıcı geliştirme
+      href: /visualstudio/containers
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_docker.svg
+      text: Visual Studio'da docker araçları
+      href: /visualstudio/docker/vs-azure-tools-docker-setup
+    - image:
+        src: https://docs.microsoft.com/media/logos/logo_kubernetes.svg
+      text: Kubernetes araçları
+      href: /visualstudio/deployment/tutorial-kubernetes-tools
+- title: Hata ayıklama ve performans izleme
+  items:
+  - type: paragraph
+    text: " Azure uygulamanızda hata ayıklama ve performans izleme hakkında bilgi edinin."
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /visualstudio/debugger/remote-debugging-azure
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_NETcore.svg
+      title: Azure'da IIS üzerinde ASP.NET Core hatalarını ayıklama
+    - href: vs-azure-tools-intellitrace-debug-published-cloud-services.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_debug.svg
+      title: Azure bulut hizmetinde hata ayıklama
+    - href: vs-azure-tools-debug-cloud-services-virtual-machines.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_vmm-cloud.svg
+      title: Bir sanal makine üzerinde çalışan bir uygulamanın hatalarını ayıklama
+    - href: vs-azure-tools-performance-profiling-cloud-services.md
+      html: <p></p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_code-performance.svg
+      title: Azure'da cloud services için ölçü performansı
+- title: Uygulamalarınızı Visual ile azure'a bağlayın Studio bağlı hizmetler
+  items:
+  - type: paragraph
+    text: Hızlı bir şekilde uygulamanızı veya hizmetinizi projenizi çeşitli Azure Hizmetleri için bağlantı kod ve yapılandırmasını otomatik olarak eklemek için Visual Studio bağlı Hizmetler'i kullanarak bağlanın.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/Storage.svg
+      text: Azure Depolama
+      href: vs-azure-tools-connected-services-storage.md
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/KeyVault.svg
+      text: Azure anahtar kasası
+      href: /azure/key-vault/vs-key-vault-add-connected-service
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/ActiveDirectory.svg
+      text: Azure Active Directory
+      href: /azure/active-directory/develop/vs-active-directory-add-connected-service
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg
+      text: Bilişsel Hizmetler
+      href: /visualstudio/azure/cognitive-services-connected-services
+- title: Azure bulut Hizmetleri
+  items:
+  - type: paragraph
+    text: Azure bulut Hizmetleri, Azure depolama ve diğer Azure kaynakları için erişim ile genel Azure hizmetleri oluşturmak için genel amaçlı bir teknolojidir.
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: vs-azure-tools-azure-project-create.md
+      html: <p>Azure bulut hizmeti projesi oluşturma ve yapılandırma</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
+      title: Projeler
+    - href: vs-azure-tools-debugging-cloud-services-overview.md
+      html: <p>Yerel olarak ve Azure bulut hizmetlerinde hata ayıklama</p>
+      image:
+        src: https://docs.microsoft.com//media/common/i_debug.svg
+      title: Hata ayıklama
+    - href: vs-azure-tools-performance-profiling-cloud-services.md
+      html: <p>Visual Studio profil oluşturucu kullanın</p>
+      image:
+        src: https://docs.microsoft.com//media/common/i_code-performance.svg
+      title: Performansını çözümleme
+    - href: vs-azure-tools-publishing-a-cloud-service.md
+      html: <p>Azure'a bulut hizmeti yayımlama</p>
+      image:
+        src: https://docs.microsoft.com//media/common/i_deploy.svg
+      title: Yayımlama
+    - href: vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md
+      html: <p>Bulut Hizmetleri ve Azure'da çalışan sanal makineler izleyip tanılamanıza</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_load-testing.svg
+      title: Tanılamalar
+- title: Visual Studio'da Azure kaynakları ile çalışma
+  items:
+  - type: paragraph
+    text: Visual Studio'daki bulut Gezgini'nde depolama hesapları ve sanal makineler gibi Azure kaynaklarına erişmek için kullanışlı bir yol sağlar.
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: vs-azure-tools-storage-resources-server-explorer-browse-manage.md
+      html: <p>Visual Studio'da erişim Azure depolama hesapları</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_dashboard.svg
+      title: Depolama
+    - href: vs-azure-tools-virtual-machines-access-from-server-explorer.md
+      html: <p>Visual Studio'dan sanal makinelere erişme</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_vmm-cloud.svg
+      title: Sanal Makineler
+- title: Diğer Azure geliştirme kaynakları
+  items:
+  - type: paragraph
+    text: Azure geliştirme iş yükü yüklenmiş, Visual Studio bu sayesinde çeşitli projeleri için proje şablonları sağlar, belirli Azure hizmetlerinin kullanarak geliştirin.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/azure/azure-resource-manager/media/index/azure-resource-manager.svg
+      text: Azure kaynak grubu
+      href: https://docs.microsoft.com/azure/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/Azure-Data-Lake-Analytics-COLOR.svg
+      text: Data Lake Analytics
+      href: https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-data-lake-tools-get-started
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/StreamAnalytics.svg
+      text: Stream Analytics
+      href: https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-vs
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/Fabric.svg
+      text: Service Fabric
+      href: https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started

@@ -26,6 +26,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31470479"
 ---
 # <a name="debugbreak-and-debugbreak"></a>DebugBreak ve __debugbreak
 DebugBreak Win32 işlevi çağırabilir veya [__debugbreak](/cpp/intrinsics/debugbreak) kodunuzda herhangi bir noktada iç. `DebugBreak` ve `__debugbreak` bu konumda bir kesme noktası ayarlama aynı etkiye sahiptir.  

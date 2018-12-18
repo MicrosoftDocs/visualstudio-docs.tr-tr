@@ -18,36 +18,37 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ed5ca91726cdb20df2d77b497bd756fdc344aae6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 460ba44e7e8734e294c6da3628b8f142b241c471
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39155035"
 ---
-# <a name="wpf-msbuild-reference"></a>WPF MSBuild Başvurusu
-Windows Presentation Foundation (WPF), bu bölümde belgelenen ek yapı desteği olan Microsoft derleme altyapısı (MSBuild) genişletir.  
+# <a name="wpf-msbuild-reference"></a>WPF MSBuild başvurusu
+Windows Presentation Foundation (WPF), bu bölümde belgelenen diğer derleme desteğiyle Microsoft yapı engine (MSBuild) genişletir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [. Hedef dosyaları](../msbuild/wpf-dot-targets-files.md)  
- WPF açıklar. Dosyaları hedefler.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [WPF .targets dosyaları](../msbuild/wpf-dot-targets-files.md)  
+ WPF .targets dosyaları açıklar.  
   
- [Görev başvurusu](../msbuild/wpf-msbuild-task-reference.md)  
+ [WPF MSBuild görev başvurusu](../msbuild/wpf-msbuild-task-reference.md)  
  Derleme görevleri kullanılabilir WPF listeler.  
   
  <xref:Microsoft.Build.Tasks>  
- Derleme görevi derleme.  
+ Bir derleme görevi derleme.  
   
  <xref:Microsoft.Build.Tasks.Deployment.Bootstrapper>  
- Derleme görevi dağıtım önyükleyici derleme.  
+ Yapı görev dağıtım önyükleyici derleme.  
   
  <xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities>  
- Derleme görevi dağıtım bildirim yardımcı programı derleme.  
+ Yapı görev dağıtım bildirimi yardımcı programını derleme.  
   
  <xref:Microsoft.Build.Tasks.Hosting>  
- Bir yapı barındırma derleme görev.  
+ Bir derleme, barındırma derleme görevi.  
   
  <xref:Microsoft.Build.Tasks.Windows>  
- Derleme görevi windows derleme.  
+ Yapı görev windows derleme.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [MSBuild](../msbuild/msbuild.md)

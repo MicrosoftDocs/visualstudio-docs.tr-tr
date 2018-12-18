@@ -1,22 +1,25 @@
 ---
-title: Akış Çizelgesi etkinlik tasarımcıları | Microsoft Docs
+title: İş Akışı Tasarımcısı - akış çizelgesi etkinlik tasarımcıları
 ms.date: 11/04/2016
 ms.topic: reference
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 ms.assetid: 8b7b4aa6-d27d-45c8-87c2-641440d38afc
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 35b5e3b3548662e1699723c82e7d12fbdca3ab2b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ef7fc3e956c6b31b1df8346e9b347ca3e094d878
+ms.sourcegitcommit: 30f653d9625ba763f6b58f02fb74a24204d064ea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36755726"
 ---
-# <a name="flowchart-activity-designers"></a>Akış Çizelgesi etkinlik tasarımcıları
+# <a name="flowchart-activity-designers"></a>Flowchart Etkinlik Tasarımcıları
 
-Windows iş akışı Tasarımcısı, iş akışlarınızı oluştururken kullanabileceğiniz sistem tarafından sağlanan etkinliklerin sayısını içerir. Bu bölüm, bir iş akışındaki akış çizelgeleri yönetmek için kullanılan sistem tarafından sağlanan etkinlikleri içerir. Aşağıdaki konular bu etkinlikleri açıklar ve bunların nasıl kullanılacağını hakkında rehberlik sağlar.
+İş Akışı Tasarımcısı, iş akışlarınızı oluştururken kullanabileceğiniz sistem tarafından sağlanan etkinliklerin sayısını içerir. Bu bölüm, bir iş akışındaki akış çizelgeleri yönetmek için kullanılan sistem tarafından sağlanan etkinlikleri içerir. Aşağıdaki konular bu etkinlikleri açıklar ve bunların nasıl kullanılacağını hakkında rehberlik sağlar.
 
 ## <a name="reference"></a>Başvuru
  <xref:System.Activities.Activity>

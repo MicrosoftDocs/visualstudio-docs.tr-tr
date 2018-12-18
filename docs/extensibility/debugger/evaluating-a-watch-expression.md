@@ -1,5 +1,5 @@
 ---
-title: Gözcü ifadesi değerlendirme | Microsoft Docs
+title: Bir Gözcü ifadesini değerlendirme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,28 +14,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5d86b94a457934547037f2428e6284f20de1660d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4f83e7b124745d089f1632060c552b5424e5ccde
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949974"
 ---
-# <a name="evaluating-a-watch-expression"></a>Gözcü ifadesi değerlendirme
+# <a name="evaluate-a-watch-expression"></a>Bir Gözcü ifadesini değerlendirme
 > [!IMPORTANT]
->  Visual Studio 2015'te ifade değerlendiricisi uygulama bu şekilde kullanım dışıdır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için lütfen bkz [CLR ifade Değerlendiricileri](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
+>  Visual Studio 2015'te, bu şekilde ifade değerlendiricisi uygulama kullanım dışı bırakılmıştır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için bkz: [CLR ifade değerlendiricilerini](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
   
- Visual Studio Gözcü ifadesi değerini görüntülemek hazır olduğunda, çağıran [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) sırayla çağıran [EvaluateSync](../../extensibility/debugger/reference/idebugparsedexpression-evaluatesync.md). Bu üreten bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) ifade türü ve değeri içeren nesne.  
+ Visual Studio bir Gözcü ifadesini değerini görüntülemek hazır olduğunda, çağrı [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md), sırayla çağıran [EvaluateSync](../../extensibility/debugger/reference/idebugparsedexpression-evaluatesync.md). Bu işlem üreten bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) ifadenin türü ve değeri içeren nesne.  
   
- Bu uygulanmasını `IDebugParsedExpression::EvaluateSync`, ifade ayrıştırılır ve aynı anda değerlendirilir. Bu uygulama, aşağıdaki görevleri gerçekleştirir:  
+ Bu uygulamada `IDebugParsedExpression::EvaluateSync`, ifade ayrıştırılır ve aynı anda değerlendirilir. Bu uygulama, aşağıdaki görevleri gerçekleştirir:  
   
-1.  Ayrıştırır ve değer ve türünü içeren genel bir nesne oluşturmak için ifadeyi hesaplar. C# ' ta bu olarak temsil edilen bir `object` C++'da bu olarak temsil edilir sırada bir `VARIANT`.  
+1.  Ayrıştırır ve değer ve türünü tutan genel bir nesne oluşturmak için ifadeyi değerlendirir. C# ' ta bu olarak temsil edilen bir `object` ancak C++ ' ta bu olarak temsil edilen bir `VARIANT`.  
   
-2.  Bir sınıf oluşturur (adlı `CValueProperty` Bu örnekte) uygulayan `IDebugProperty2` arabirim ve döndürülecek değer sınıfında depolar.  
+2.  Bir sınıf oluşturur (adlı `CValueProperty` Bu örnekte) uygulayan `IDebugProperty2` arabirim ve sınıfında döndürülecek değeri depolar.  
   
-3.  Döndürür `IDebugProperty2` alanından arabirim `CValueProperty` nesnesi.  
+3.  Döndürür `IDebugProperty2` alanından arabirim `CValueProperty` nesne.  
   
 ## <a name="managed-code"></a>Yönetilen kod  
- Bu bir uygulamasıdır `IDebugParsedExpression::EvaluateSync` yönetilen kod. Yardımcı yöntemi `Tokenize` ayrıştırma ağacı ifadesine ayrıştırır. Yardımcı işlevini `EvalToken` belirteci bir değerine dönüştürür. Yardımcı işlevini `FindTerm` yinelemeli olarak erişir ayrıştırma ağacı çağırma `EvalToken` bir değeri temsil eden ve herhangi bir işlem (ekleme veya çıkarma) ifade uygulayarak her düğüm için.  
+ Bu uygulamasıdır `IDebugParsedExpression::EvaluateSync` yönetilen kod. Yardımcı yöntemi `Tokenize` ayrıştırma ağacı ifadesine ayrıştırır. Yardımcı işlevini `EvalToken` belirteç değerine dönüştürür. Yardımcı işlevini `FindTerm` yinelemeli olarak erişir ayrıştırma ağacı çağırma `EvalToken` bir değeri temsil eden ve herhangi bir işlemi (ekleme veya çıkarma) ifade uygulayarak her düğüm için.  
   
 ```csharp  
 namespace EEMC  
@@ -81,10 +82,10 @@ namespace EEMC
 }  
 ```  
   
-## <a name="unmanaged-code"></a>Yönetilmeyen Kod  
- Bu bir uygulamasıdır `IDebugParsedExpression::EvaluateSync` yönetilmeyen kodunda. Yardımcı işlevini `Evaluate` ayrıştırır ve döndürme ifadeyi hesaplar bir `VARIANT` sonuç değeri tutan. Yardımcı işlevini `VariantValueToProperty` paketleri `VARIANT` içine bir `CValueProperty` nesnesi.  
+## <a name="unmanaged-code"></a>Yönetilmeyen kod  
+ Bu uygulamasıdır `IDebugParsedExpression::EvaluateSync` yönetilmeyen kod. Yardımcı işlevini `Evaluate` ayrıştırır ve döndüren bir ifadeyi değerlendirir bir `VARIANT` sonuç değerini tutan. Yardımcı işlevini `VariantValueToProperty` paketleri `VARIANT` içine bir `CValueProperty` nesne.  
   
-```  
+```cpp  
 [C++]  
 STDMETHODIMP CParsedExpression::EvaluateSync(   
     in  DWORD                 evalFlags,  
@@ -174,6 +175,6 @@ STDMETHODIMP CParsedExpression::EvaluateSync(
 }  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Gözcü penceresi ifade değerlendirme](../../extensibility/debugger/evaluating-a-watch-window-expression.md)   
- [Örnek İfade Değerlendirme Uygulaması](../../extensibility/debugger/sample-implementation-of-expression-evaluation.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Gözcü penceresi ifadesini değerlendirme](../../extensibility/debugger/evaluating-a-watch-window-expression.md)   
+ [Örnek İfade değerlendirme uygulaması](../../extensibility/debugger/sample-implementation-of-expression-evaluation.md)

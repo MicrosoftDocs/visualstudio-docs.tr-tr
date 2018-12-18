@@ -1,6 +1,7 @@
 ---
 title: 'CA2237: ISerializable türleri SerializableAttribute ile işaretleyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,33 +14,38 @@ ms.assetid: 9bd6bb24-a527-43dd-9952-043c0c694f46
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 7121211d474369f55cff36a7b7d388b7ddfc1a24
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8629262da35b9897b789b2fae853bff4eea1aa8f
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551744"
 ---
 # <a name="ca2237-mark-iserializable-types-with-serializableattribute"></a>CA2237: ISerializable türleri SerializableAttribute ile işaretleyin
+
 |||
 |-|-|
 |TypeName|MarkISerializableTypesWithSerializable|
 |CheckId|CA2237|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Harici olarak görünen bir türü uygulayan <xref:System.Runtime.Serialization.ISerializable?displayProperty=fullName> arabirimi ve türü işaretlenmemiş ile <xref:System.SerializableAttribute?displayProperty=fullName> özniteliği. Kural, temel türü seri hale getirilebilir olmayan türetilmiş türler yoksayar.
+ Dışarıdan görünen bir türün uyguladığı <xref:System.Runtime.Serialization.ISerializable?displayProperty=fullName> arabirimi ve türü olarak işaretlenmemiş ile <xref:System.SerializableAttribute?displayProperty=fullName> özniteliği. Kural türetilen türler, temel türü seri hale getirilebilir değil yok sayar.
 
-## <a name="rule-description"></a>Kural Tanımı
- Ortak dil çalışma zamanı tarafından seri hale getirilebilir olarak tanınması için türleri ile işaretlenmelidir <xref:System.SerializableAttribute> türü özel seri hale getirme yordamı uygulaması aracılığıyla kullanıyorsa bile özniteliği <xref:System.Runtime.Serialization.ISerializable> arabirimi.
+## <a name="rule-description"></a>Kural açıklaması
+ Ortak dil çalışma zamanı tarafından seri hale getirilebilir olarak tanınması için türleri ile işaretlenmelidir <xref:System.SerializableAttribute> bir uygulaması aracılığıyla özel seri hale getirme yordamı tür kullansa bile özniteliği <xref:System.Runtime.Serialization.ISerializable> arabirimi.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için uygulama <xref:System.SerializableAttribute> öznitelik türü.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için geçerli <xref:System.SerializableAttribute> öznitelik türü için.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Uygulama etki alanları arasında düzgün çalışması için seri hale getirilebilir gerektiğinden bir özel durum sınıfları için bu kuraldan gizlemek değil.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Uygulama etki alanları arasında düzgün çalışması için seri hale getirilebilir olması gerekir çünkü özel durum sınıfları için bu kuraldan bir uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
  Aşağıdaki örnek kuralını ihlal eden bir tür gösterir. Açıklamadan çıkarın <xref:System.SerializableAttribute> özniteliği kural karşılamak için satır.

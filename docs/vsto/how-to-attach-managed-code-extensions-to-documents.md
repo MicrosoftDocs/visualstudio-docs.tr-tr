@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: belgelere yönetilen kod uzantıları ekleme | Microsoft Docs'
+title: 'Nasıl yapılır: ekleme yönetilen kod uzantıları belgelere'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,13 +16,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: fe415cfb0635f133baf191f027ca7ae0111989a9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c6e39f27caf9d321bb83666d72114a9675091f03
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257051"
 ---
-# <a name="how-to-attach-managed-code-extensions-to-documents"></a>Nasıl Yapılır: Belgelere Yönetilen Kod Uzantıları Ekleme
+# <a name="how-to-attach-managed-code-extensions-to-documents"></a>Nasıl yapılır: ekleme yönetilen kod uzantıları belgelere
   Varolan Microsoft Office Word belgesine veya Microsoft Office Excel çalışma kitabı için özelleştirme derlemesi ekleyebilirsiniz. Belge veya çalışma kitabı Microsoft Office projeleri ve Visual Studio geliştirme araçları tarafından desteklenen herhangi bir dosya biçiminde olabilir. Daha fazla bilgi için bkz: [belge düzeyi özelleştirmeler mimarisi](../vsto/architecture-of-document-level-customizations.md).  
   
  [!INCLUDE[appliesto_alldoc](../vsto/includes/appliesto-alldoc-md.md)]  
@@ -32,11 +33,11 @@ ms.lasthandoff: 04/16/2018
 > [!NOTE]  
 >  Özelleştirme kodunu belirtilen belge yok denetimleri görüyorsa yüklenmesi başarısız olur.  
   
- ![video bağlantı](../vsto/media/playvideo.gif "video bağlantı") ilgili video gösterimi için bkz: [yapmak I: ekleme veya ayırma bir Word belgesi VSTO derlemesinden?](http://go.microsoft.com/fwlink/?LinkId=136782).  
+ ![video bağlantı](../vsto/media/playvideo.gif "video bağlantı") ilgili video gösterimi için bkz: [nasıl I: eklemek veya bir Word belgesi VSTO derlemesinden detach?](http://go.microsoft.com/fwlink/?LinkId=136782).  
   
 ### <a name="to-attach-managed-code-extensions-to-a-document"></a>Yönetilen kod uzantıları belgeye eklemek için  
   
-1.  Microsoft Office gibi bir konsol uygulaması gerektirmez proje veya Windows Forms projesi Microsoft.VisualStudio.Tools.Applications.ServerDocument.dll ve Microsoft.VisualStudio.Tools.Applications.Runtime.dll bir başvuru ekleyin derlemeler.  
+1.  Bir konsol uygulaması veya Windows Forms projesi gibi Microsoft Office gerektirmeyen bir projede bir başvuru ekleyin *Microsoft.VisualStudio.Tools.Applications.ServerDocument.dll* ve  *Microsoft.VisualStudio.Tools.Applications.Runtime.dll* derlemeler.  
   
 2.  Aşağıdakileri ekleyin **içeri aktarmalar** veya **kullanarak** kod dosyanın en üstüne deyimleri.  
   
@@ -52,8 +53,8 @@ ms.lasthandoff: 04/16/2018
   
 4.  Projeyi oluşturun ve uygulamayı özelleştirme iliştirmek istediğiniz bilgisayarda çalıştırın. Bilgisayar Office yüklü çalışma zamanı için Visual Studio 2010 Araçları olması gerekir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [ServerDocument sınıfını kullanarak bir sunucu üzerinde belgeleri yönetme](../vsto/managing-documents-on-a-server-by-using-the-serverdocument-class.md)   
- [Nasıl yapılır: belgelerden yönetilen kod uzantılarını kaldırma](../vsto/how-to-remove-managed-code-extensions-from-documents.md)   
- [Office Çözümlerinde Uygulama ve Dağıtım Bildirimleri](../vsto/application-and-deployment-manifests-in-office-solutions.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [ServerDocument sınıfını kullanarak sunucu üzerinde belgeleri yönetme](../vsto/managing-documents-on-a-server-by-using-the-serverdocument-class.md)   
+ [Nasıl yapılır: belgelerden kaldırma yönetilen kod uzantıları](../vsto/how-to-remove-managed-code-extensions-from-documents.md)   
+ [Office çözümlerinde uygulama ve dağıtım bildirimleri](../vsto/application-and-deployment-manifests-in-office-solutions.md)  
   

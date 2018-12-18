@@ -1,5 +1,5 @@
 ---
-title: Setwefprocessıd yöntemi | Microsoft Docs
+title: Setwefprocessıd yöntemi
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -13,18 +13,19 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 9dbd5a9ffb2ff9b3833dc8007fdfafb4b1a35857
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b426237816bfee53e7c3e50c19e29168b27e16e1
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34693438"
 ---
-# <a name="setwefprocessid-method"></a>SetWefProcessId Yöntemi
+# <a name="setwefprocessid-method"></a>Setwefprocessıd yöntemi
   Web uzantılarının Framework (WEF) içerik çalışacak işlem tanımlayıcısını sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 HRESULT SetWefProcessId(  
     [in] DWORD dwProcessId  
 );  
@@ -36,7 +37,7 @@ HRESULT SetWefProcessId(
 |---------------|-----------------|  
 |*dwProcessId*|WEF içeriğini çalıştırmak için kullanılan işlem tanımlayıcısı.|  
   
-## <a name="return-value"></a>Dönüş Değeri  
+## <a name="return-value"></a>Dönüş değeri  
  Yöntemi başarıyla tamamlanmış olup olmadığını belirten bir HRESULT değer.  
   
 ## <a name="remarks"></a>Açıklamalar  

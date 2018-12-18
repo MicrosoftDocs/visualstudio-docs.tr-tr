@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla e-posta öğesi oluşturma | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla e-posta öğesi oluşturma'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,13 +17,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 3e6fedb9024dcb965917492b3eb8f759c0f6c8ee
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 28b6b1dac69199ff7431eacbe05d8a17a1734763
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35256604"
 ---
-# <a name="how-to-programmatically-create-an-e-mail-item"></a>Nasıl yapılır: Program Aracılığıyla E-posta Öğesi Oluşturma
+# <a name="how-to-programmatically-create-an-email-item"></a>Nasıl yapılır: program aracılığıyla e-posta öğesi oluşturma
   Bu örnek, Microsoft Office Outlook içinde bir e-posta iletisi oluşturur.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
@@ -31,8 +32,8 @@ ms.lasthandoff: 04/16/2018
 ## <a name="example"></a>Örnek  
  [!code-csharp[Trin_OL_CreateMailItem#1](../vsto/codesnippet/CSharp/Trin_OL_CreateMailItem/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Posta öğeleri ile çalışma](../vsto/working-with-mail-items.md)   
- [VSTO Eklentilerini Programlamaya Başlama](../vsto/getting-started-programming-vsto-add-ins.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Posta öğeleriyle çalışma](../vsto/working-with-mail-items.md)   
+ [VSTO eklentileri programlama kullanmaya başlama](../vsto/getting-started-programming-vsto-add-ins.md)  
   
   

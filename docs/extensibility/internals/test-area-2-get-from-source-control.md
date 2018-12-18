@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31133251"
 ---
 # <a name="test-area-2-get-from-source-control"></a>Test alanı 2: Kaynak denetiminden Al
 Bu test alan Get komutu aracılığıyla sürüm deposundan öğeleri alınıyor için test durumları kapsar. Bu test çalışmalarını, hem yerel ve Web projeleri için uygulanabilir.  

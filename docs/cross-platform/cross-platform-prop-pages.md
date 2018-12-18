@@ -10,19 +10,20 @@ ms.author: mblome
 manager: douge
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: df43b6aca056967910c234b55cee97d4d37b4549
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 86859abc73cfabe0994c7628de13e281b58e05ed
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39252407"
 ---
-# <a name="c-cross-platform-property-page-reference"></a>C++ Çapraz Platform özellik sayfası başvurusu
+# <a name="c-cross-platform-property-page-reference"></a>C++ platformlar arası özellik Sayfa başvurusu
 
-Bu bölüm, C++ platformlar arası projelerinde proje özellikleri hakkında bilgi içerir.
+Bu bölüm, C++ platformlar arası projeler, proje özellikleri hakkında bilgi içerir.
 
-- [Genel Proje Özellikleri (Android C++)](general-android-prop-page.md)
-- [Android Hata Ayıklayıcıyı Özellikleri](android-debugger-prop-page.md)
-- [Clang Projesi Özellikleri (Android C++)](clang-android-prop-page.md)
-- [Genel Proje Özellikleri (Android C++ Derleme Görevleri Dosyası)](general-makefile-android-prop-page.md)
+- [Genel proje özellikleri (Android C++)](general-android-prop-page.md)
+- [Android hata ayıklayıcıyı özellikleri](android-debugger-prop-page.md)
+- [Clang projesi özellikleri (Android C++)](clang-android-prop-page.md)
+- [Genel proje özellikleri (Android C++ derleme görevleri dosyası)](general-makefile-android-prop-page.md)
 - [Clang Bağlayıcısı Özellikleri (Android C++)](clanglink-prop-page.md)
-- [NMake Özellikleri (Android C++)](nmake-android-prop-page.md)
+- [NMake özellikleri (Android C++)](nmake-android-prop-page.md)

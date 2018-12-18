@@ -22,24 +22,25 @@ f1_keywords:
 - VC.Project.VCConfiguration.ThumbMode
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: 6e4f7da0c8d1727446c23ad25db2bf64228cbc9a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b72cbb0d2660507a0578781c79a7cbdf60be7d8b
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39252244"
 ---
-# <a name="general-project-properties-android-c"></a>Genel proje özellikleri (Android C++)
+# <a name="general-project-properties-android-c"></a>Genel Proje Özellikleri (Android C++)
 
-Özellik | Açıklama | Seçenekler
+Özellik | Açıklama | Seçenekleri
 --- | ---| ---
-Çıktı dizini | Çıktı dosyası dizini için göreli bir yol belirtir; ortam değişkenleri içerebilir.
-Ara dizini | Ara dosyası dizine göreli bir yol belirtir; ortam değişkenleri içerebilir.
-Hedef Adı | Bu proje oluşturacak olan bir dosya adını belirtir.
-Hedef uzantısı | Bu proje oluşturacak olan bir dosya uzantısı belirtir. (Örnek: .exe veya .dll)
-Temiz üzerinde silme uzantıları | Joker karakter belirtimi üzerinde temiz silmek veya yeniden ara dizinde hangi dosyalarını noktalı virgülle ayrılmış.
-Günlük dosyası oluşturma | Günlük ne zaman oluşturulacağını etkin yazmak için yapılandırma günlük dosyasını belirtir.
-Platform araç takımı | Geçerli yapılandırma oluşturmak için kullanılan araç takımı belirtir; Aksi halde kümesi, varsayılan araç takımı kullanılır.
-Yapılandırma türü | Bu yapılandırma oluşturur çıktı türünü belirtir. | **Dinamik kitaplığı (.so)** -dinamik kitaplığı (.so)<br>**Statik kitaplık (bir)** -statik kitaplık (bir)<br>**Yardımcı programı** - yardımcı programı<br>**Derleme görevleri dosyası** -derleme görevleri dosyası<br>
-Hedef API düzeyi | Android NDK API bu yapılandırma tarafından hedeflenen düzeyi.
-STL kullanımı | Bu yapılandırma için kullanmak üzere hangi C++ Standart Kitaplığı belirtir. | **En az C++ çalışma zamanı kitaplığı (Sistem)**<br>**C++ çalışma zamanı statik kitaplık (gabi ++ _statik)**<br>**C++ çalışma zamanı paylaşılan kitaplığı (gabi ++ _shared)**<br>**STLport çalışma zamanı statik kitaplık (stlport_static)**<br>**STLport çalışma zamanı paylaşılan kitaplığı (stlport_shared)**<br>**GNU STL statik kitaplık (gnustl_static)**<br>**GNU STL paylaşılan kitaplık (gnustl_shared)**<br>**LLVM libc ++ statik kitaplık (c ++ _statik)**<br>**LLVM libc ++ paylaşılan kitaplık (c ++ _shared)**<br>
-Flash modu | Flash mikro mimarisi için yürütülen kodu oluşturur. Bu, yalnızca arm mimarisi için geçerlidir. | **Flash**<br>**ARM**<br>**devre dışı**<br>
+Çıkış dizini | Çıkış dosyası dizinine göreli bir yol belirtir; ortam değişkenleri içerebilir.
+Ara dizin | Ara dosya dizinine göreli bir yol belirtir; ortam değişkenleri içerebilir.
+Hedef Adı | Bu projenin oluşturacağı bir dosya adını belirtir.
+Hedef uzantısı | Bu projenin oluşturacağı dosya uzantısını belirtir. (Örnek: *.exe* veya *.dll*)
+Temizlemede silinecek uzantılar | Joker karakter belirtimi Ara dizindeki, Temizlemede silin veya yeniden dosyalar için noktalı virgülle ayrılmış listesidir.
+Derleme günlüğü dosyası | Günlük kaydı ne zaman oluşturulacağını yazılacak derleme günlüğü dosyasını belirtir.
+Platform araç takımı | Geçerli yapılandırmayı oluşturmak için kullanılan araç kümesini belirtir. Aksi halde, varsayılan araç kümesi kullanılır
+Yapılandırma türü | Bu yapılandırmanın oluşturduğu çıkışın türünü belirtir. | **Dinamik kitaplık (.so)** -dinamik kitaplık (*.so*)<br>**Statik kitaplık (.a)** -statik kitaplık (*.a*)<br>**Yardımcı program** - yardımcı programı<br>**Derleme görevleri dosyası** -derleme görevleri dosyası<br>
+Hedef API düzeyi | Android NDK API düzeyi bu yapılandırmanın hedeflediği.
+STL kullanımı | Bu yapılandırma için kullanmak için hangi C++ Standart Kitaplığı belirtir. | **En düşük C++ çalışma zamanı kitaplığı (system)**<br>**C++ çalışma zamanı statik kitaplığı (gabi ++ _static)**<br>**C++ çalışma zamanı paylaşılan kitaplığı (gabi ++ _shared)**<br>**STLport çalışma zamanı statik kitaplığı (stlport_static)**<br>**STLport çalışma zamanı paylaşılan kitaplığı (stlport_shared)**<br>**GNU STL statik kitaplığı (gnustl_static)**<br>**GNU STL paylaşılan kitaplığı (gnustl_shared)**<br>**LLVM libc ++ statik kitaplığı (c ++ _static)**<br>**LLVM libc ++ paylaşılan kitaplığı (c ++ _shared)**<br>
+Thumb modu | Thumb mikro mimarisi için yürütülen kodu oluşturur. Bu, yalnızca arm mimarisi için geçerlidir. | **Thumb**<br>**ARM**<br>**Devre dışı**<br>

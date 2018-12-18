@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31135863"
 ---
 # <a name="migrating-a-legacy-language-service"></a>Eski dil hizmetini geçirme
 Visual Studio sonraki bir sürüme eski dil hizmeti projesini güncelleştirmek ve source.extension.vsixmanifest dosyası projeye ekleyerek geçirebilirsiniz. Visual Studio düzenleyicisinde, uyum için dil hizmeti önceki gibi çalışmaya devam eder.  

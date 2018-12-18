@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9ec9be314597f2f4fd7fa067db17028c1d8aee72
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ccfb34e03259e67eaca17e2cee7c824e62ce0393
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49925918"
 ---
 # <a name="idebugbinder3getmemorycontext64"></a>IDebugBinder3::GetMemoryContext64
-Bir nesne konumu veya 64-bit bellek adresi bellek bağlamına dönüştürür.  
+Bir nesnenin konumu veya 64-bit bellek adresi bellek bağlamına dönüştürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,13 +50,13 @@ int GetMemoryContext64 (
  [in] 0x50000000 gibi bir 64-bit bellek adresi.  
   
  `ppMemCxt`  
- [out] Döndürür [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesnenin adresi ya da bellek adresi temsil eden arabirim.  
+ [out] Döndürür [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesnenin adresini veya bellek adresini temsil eden arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekler uygulayan bir nesne oluşturur [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md) arabirim ve bellek içerik almak için bu yöntemi kullanır.  
+ Aşağıdaki örnekler uygulayan bir nesne oluşturur [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md) arabirim ve bellek içeriği almak için bu yöntemi kullanır.  
   
 ```cpp  
 HRESULT CValueProperty::GetMemoryContext ( IDebugMemoryContext2** out_ppMemoryContext )  

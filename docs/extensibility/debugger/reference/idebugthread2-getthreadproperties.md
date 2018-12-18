@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 19c31fdc648d59879e03d97862f2b9518720a3eb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 169c33bc000e45ea44600b738a05bd25fd0f6a0a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864593"
 ---
 # <a name="idebugthread2getthreadproperties"></a>IDebugThread2::GetThreadProperties
-Bu iş parçacığı açıklayan özellikleri alır.  
+Bu iş parçacığı tanımlayan özellikleri alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,19 +43,19 @@ int GetThreadProperties (
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [THREADPROPERTY_FIELDS](../../../extensibility/debugger/reference/threadproperty-fields.md) hangi alanlarının belirler numaralandırma `ptp` doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [THREADPROPERTY_FIELDS](../../../extensibility/debugger/reference/threadproperty-fields.md) hangi alanlarının belirleyen sabit listesi `ptp` doldurulacak olan.  
   
  `ptp`  
- [içinde out] A [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı, iş parçacığı özellikleri ile doldurulur.  
+ [out içinde] A [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) iş parçacığı özelliklerini oturum girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntemin döndürdüğü bilgileri genellikle gösterilen **iş parçacığı** hata ayıklama penceresi.  
+ Bu yöntemle döndürülen bilgileri genellikle gösterilen **iş parçacıkları** hata ayıklama penceresine.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CProgram` uygulayan nesne [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CProgram` uygulayan nesne [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) arabirimi.  
   
 ```cpp  
 HRESULT CProgram::GetThreadProperties(THREADPROPERTY_FIELDS dwFields,  

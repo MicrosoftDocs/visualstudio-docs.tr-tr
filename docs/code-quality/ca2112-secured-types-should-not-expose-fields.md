@@ -1,6 +1,7 @@
 ---
 title: 'CA2112: Güvenli türler alanları açığa çıkarmamalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e3fd94add5a2fbb1d77025f44f35bc9456ab1e55
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 538c7ac89643c168086d6bdcb514d88295e482dc
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548367"
 ---
 # <a name="ca2112-secured-types-should-not-expose-fields"></a>CA2112: Güvenli türler alanları açığa çıkarmamalıdır
+
 |||
 |-|-|
 |TypeName|SecuredTypesShouldNotExposeFields|
@@ -30,42 +33,48 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Bir genel ya da korumalı türü genel alanlar içeriyor ve tarafından güvenliği sağlanan bir [bağlantı talepleri](/dotnet/framework/misc/link-demands).
+ Ortak veya korumalı tür ortak alanları içerir ve tarafından güvenli hale getirilen bir [bağlantı talepleri](/dotnet/framework/misc/link-demands).
 
-## <a name="rule-description"></a>Kural Tanımı
+## <a name="rule-description"></a>Kural açıklaması
  Bağlantı talebi tarafından güvenli türde bir örnek kod erişimi varsa, kod türün alanlarına erişmek için bağlantı talebine sahip değildir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için alanları özel yapmak ve ortak özellik veya alan verisi döndüren yöntemler ekleyin. LinkDemand güvenlik denetimlerini türlerinde tür özellikleri ve yöntemleri erişimi koruyun. Bununla birlikte, kod erişim güvenliği alanlar için geçerli değildir.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için alanları ortak olmayan ve ortak özellik veya alan verisi döndüren yöntemler ekleyin. LinkDemand güvenlik denetimleri türlerinde türün özellikleri ve yöntemleri erişimi koruyun. Ancak, kod erişim güvenliği alanlar için geçerli değildir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Güvenlik sorunları hem iyi tasarım, genel alanlar özel yaparak ihlalleri sorununu çözer. Alan güvenli kalması gereken bilgileri barındırmıyorsa bu kural bir uyarıdan gizleyebilirsiniz ve alan içeriğine güvenmeyin.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Hem güvenlik sorunlarını ve iyi bir tasarım, ortak alanları özel hale getirerek ihlalleri düzeltmeniz gerekir. Alanın güvenli kalması gereken bilgi tutmazsa bu kuraldan bir uyarıyı gözardı edebileceğini ve alanın içeriklerine güvenmeyin.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte bir kitaplık türü oluşur (`SecuredTypeWithFields`) güvenli alanlarla bir türü (`Distributor`) kitaplığı türünün örneklerini oluşturabilir ve türleri hatalı geçişleri örneklerine bunları oluşturmak için izne sahip değil ve uygulama kodu türü korur izni yok olsa bile bir örneğinin alanları okuyabilir.
+ Aşağıdaki örnek, bir kitaplık türü oluşur (`SecuredTypeWithFields`) güvenli olmayan alanlarla bir tür (`Distributor`) kitaplığı türün örneğini oluşturabilir ve hatalı geçişleri örnekleri türleri için bunları oluşturma iznine sahip değil ve uygulama kodu Bu tür güvenliğini iznine sahip değil olsa bile bir örneğin alanları okuyabilirsiniz.
 
- Aşağıdaki kitaplık kodu kuralını ihlal ediyor.
+ Aşağıdaki kitaplık kodu kuralı ihlal ediyor.
 
  [!code-csharp[FxCop.Security.LinkDemandOnField#1](../code-quality/codesnippet/CSharp/ca2112-secured-types-should-not-expose-fields_1.cs)]
 
-## <a name="example"></a>Örnek
- Uygulamanın bir örneği güvenli türü korur bağlantı isteği nedeniyle oluşturulamıyor. Aşağıdaki sınıf güvenli türünün bir örneği elde etmek uygulama sağlar.
+## <a name="example-1"></a>Örnek 1
+ Uygulama koruyan güvenli tür bağlantı isteği nedeniyle bir örneği oluşturulamıyor. Aşağıdaki sınıf güvenli türünün bir örneği elde etmek için uygulamayı etkinleştirir.
 
  [!code-csharp[FxCop.Security.LDOnFieldsDistributor#1](../code-quality/codesnippet/CSharp/ca2112-secured-types-should-not-expose-fields_2.cs)]
 
-## <a name="example"></a>Örnek
- Aşağıdaki uygulama güvenli türünün yöntemleri erişim izni alanlarını kodu nasıl erişebilirsiniz gösterilmektedir.
+## <a name="example-2"></a>Örnek 2
+ Aşağıdaki uygulama nasıl güvenli bir türün yöntemlerini erişim izni kod kendi alanlarına erişebilir gösterilmektedir.
 
  [!code-csharp[FxCop.Security.TestLinkDemandOnFields#1](../code-quality/codesnippet/CSharp/ca2112-secured-types-should-not-expose-fields_3.cs)]
 
- Bu örnek şu çıkışı üretir.
+Bu örnek aşağıdaki çıktıyı üretir:
 
- **SecuredTypeWithFields örneği oluşturma. ** 
- **Güvenli tür alanları: 22, 33**
-**güvenli tür alanı değiştirme... ** 
- **Önbelleğe nesne alanları: 99, 33**
+```txt
+Creating an instance of SecuredTypeWithFields.
+Secured type fields: 22, 33
+Changing secured type's field...
+Cached Object fields: 99, 33
+```
+
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1051: Görünür örnek alanlarını bildirmeyin](../code-quality/ca1051-do-not-declare-visible-instance-fields.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Bağlantı talepleri](/dotnet/framework/misc/link-demands) [veri ve modelleme](/dotnet/framework/data/index)
+- [CA1051: Görünür örnek alanlarını bildirmeyin](../code-quality/ca1051-do-not-declare-visible-instance-fields.md)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Bağlantı talepleri](/dotnet/framework/misc/link-demands)
+- [Veri ve Modelleme](/dotnet/framework/data/index)

@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e16fa27bf7938a0e7e6202daa4284cd3f2e6634b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e9498e8795daf5e1d566782461f2505bc8753135
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49884387"
 ---
 # <a name="idiasymbolgetguid"></a>IDiaSymbol::get_guid
 Simgenin genel benzersiz tanıtıcısı (GUID) alır.  
@@ -33,19 +34,19 @@ HRESULT get_guid (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Simgenin GUID döndürür.  
+ [out] Simgenin GUID'i döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

@@ -18,44 +18,45 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 17577684c7adffe46326d2151710e88745c60e1f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 28a7625729989252a29ab1d0f65feec010e9e65f
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44284087"
 ---
 # <a name="debug-64-bit-applications"></a>64 Bit uygulamalarda hata ayıklama
-Yerel bilgisayarda veya uzak bilgisayarda çalışan bir 64-bit uygulama ayıklayabilirsiniz.  
+Yerel bilgisayarda veya uzak bilgisayarda çalışan bir 64-bit uygulamada hata ayıklaması yapabilirsiniz.  
   
- Uzak bir bilgisayarda çalışan bir 64-bit uygulama hata ayıklamak için bkz: [uzaktan hata ayıklama](../debugger/remote-debugging.md).  
+ Bir uzak bilgisayarda çalışan 64-bit bir uygulamada hata ayıklamak için bkz: [uzaktan hata ayıklama](../debugger/remote-debugging.md).  
   
- 64 bit uygulamalarda hata ayıklama için yerel olarak Visual Studio bir 64 bit çalışan işlemi (msvsmon.exe) 32-bit Visual Studio işlemi içinde gerçekleştirilemez düşük düzey işlemler gerçekleştirmek için kullanır.  
+ 64 bit uygulamalarda hata ayıklama için yerel olarak Visual Studio 64 bit çalışan işlemi (msvsmon.exe) 32-bit Visual Studio işlemi içinde gerçekleştirilemez alt düzey işlemleri gerçekleştirmek için kullanır.  
   
- .NET Framework sürüm 3.5 veya önceki kullanan 64 bit işlemleri için karışık mod hata ayıklaması desteklenmiyor.  
+ .NET Framework 3.5 veya daha önceki bir sürümünü kullanan 64 bit işlemleri için karışık mod hata ayıklaması desteklenmiyor.  
   
-## <a name="debug-a-64-bit-application"></a>64 bit bir uygulama hata ayıklama  
- 64 bit bir uygulama hata ayıklama denemek için:  
+## <a name="debug-a-64-bit-application"></a>Bir 64 bit uygulamanın hatalarını ayıklama  
+ Bir 64 bit uygulamanın hatalarını ayıklamaya denemek için:  
   
 1.  Visual Studio çözümü, örneğin bir C# konsol uygulaması oluşturun.  
   
-2.  64-bit Yapılandırma Yöneticisi'ni kullanarak yapılandırmasını ayarlayın. Daha fazla bilgi için bkz: [nasıl yapılır: projeleri hedef platformlar yapılandırma](../ide/how-to-configure-projects-to-target-platforms.md).  
+2.  Yapılandırma Yöneticisi'ni kullanarak 64-bit yapılandırmasını ayarlayın. Daha fazla bilgi için [nasıl yapılır: projeleri hedef platformlar yapılandırma](../ide/how-to-configure-projects-to-target-platforms.md).  
   
-3.  Bu aşamada uzaktan hata ayıklayıcı (msvsmon.exe) 64 bit sürümünü başlatır. 64-bit yapılandırma çözümüyle açık olduğu sürece çalıştırır.  
+3.  Bu aşamada, uzaktan hata ayıklayıcı (msvsmon.exe) 64 bit sürümü başlatır. 64-bit yapılandırmayla çözümünün açık olduğu sürece çalıştırır.  
   
-4.  Hata ayıklama başlatılamıyor. Aynı deneyimi gibi 32-bit yapılandırmasına sahip olmalıdır. Hataları alırsanız aşağıdaki sorun giderme bölümüne bakın.  
+4.  Hata ayıklama başlatılamıyor. Aynı deneyimi, 32-bit yapılandırmasına sahip olmalıdır. Hatalarla karşılaşırsanız, aşağıdaki sorun giderme bölümüne bakın.  
   
 ## <a name="troubleshooting-64-bit-debugging"></a>64-bit hata ayıklama sorunlarını giderme  
- Bir hata görebilirsiniz: "64-bit hata ayıklama işlemi beklenenden uzun sürüyor." Bu durumda, Visual Studio msvsmon.exe 64-bit sürümü için bir istek gönderdi ve geri dönmeniz bu isteğinin sonucunu uzun bir süredir sürdü.  
+ Bir hata görebilirsiniz: "bir 64 bit hata ayıklama işlemi beklenenden uzun sürüyor." Bu durumda, Visual Studio msvsmon.exe 64-bit sürümü için bir istek gönderdi ve geri dönmeniz bu isteğin sonucu için uzun sürdü.  
   
- Bu hata için iki ana nedeni vardır:  
+ Bu hata iki ana nedeni vardır:  
   
--   Ağ güvenlik yazılımının güvenilir olmadığı ağ yığınını neden oldu, bilgisayarınızda yüklü olması ve localhost giden paketlere bıraktı. Tüm ağ güvenlik yazılımı devre dışı bırakmayı deneyin ve bu giderilip giderilmediğine bakın. Bu durumda, rapor yazılım localhost trafiğini engelliyor olabilir, ağ güvenlik yazılımı satıcınıza için.  
+-   Ağ güvenlik yazılımı güvenilir olmadığı ağ yığınını neden bilgisayarınızda yüklü olması ve localhost üzerinde giden paketlerin bıraktı. Tüm ağ güvenlik yazılımı devre dışı bırakmayı deneyin ve bu da çözmediğine bakın. Bu durumda, rapor, yazılım, localhost trafiğiyle engel ağ güvenlik yazılım satıcınıza için.  
   
--   Visual Studio kilitlenebilir veya Performans sorun içine çalışıyor. Sorun düzenli olarak oluşursa, dökümleri, Visual Studio (devenv.exe) ve (msvsmon.exe) çalışan işlem toplar ve bunları Microsoft'a gönderir. Bir sorun raporlama hakkında daha fazla bilgi için bkz: [Visual Studio ile ilgili bir sorun bildirme](../ide/How-to-Report-a-Problem-with-Visual-Studio-2017.md).
+-   Visual Studio ile bir yanıt vermemesine veya performans sorunu içine çalışıyor. Sorun düzenli olarak ortaya Visual Studio (devenv.exe) ve çalışan işleminden (msvsmon.exe) dökümleri toplayın ve bunları Microsoft'a gönderin. Bir sorun bildirme hakkında daha fazla bilgi için bkz: [Visual Studio ile ilgili bir sorun bildirme](../ide/How-to-Report-a-Problem-with-Visual-Studio-2017.md).
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [64-bit uygulamalar](http://msdn.microsoft.com/Library/fd4026bc-2c3d-4b27-86dc-ec5e96018181)   
+ [64-bit uygulamalar](https://docs.microsoft.com/dotnet/framework/64-bit-apps)   
  [Programları 64 Bit için yapılandırma](/cpp/build/configuring-programs-for-64-bit-visual-cpp)   
- [Visual Studio IDE 64-Bit desteği](../ide/visual-studio-ide-64-bit-support.md)   
+ [Visual Studio IDE 64 Bit desteği](../ide/visual-studio-ide-64-bit-support.md)   
  [Döküm dosyalarını kullanma](../debugger/using-dump-files.md)   
- [Uzaktan hata ayıklama](../debugger/remote-debugging.md)
+ [Uzaktan Hata Ayıklama](../debugger/remote-debugging.md)

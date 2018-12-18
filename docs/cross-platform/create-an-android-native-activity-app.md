@@ -12,72 +12,73 @@ ms.author: corob
 manager: douge
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: 51555b660b51c227dd7c80da04f2eecd699c5c96
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0b8a2622c0b4d55376ecb0f3bc6641d41c524962
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49845451"
 ---
-# <a name="create-an-android-native-activity-app"></a>Android yerel etkinlik uygulama oluşturma
-Platformlar arası mobil geliştirme seçeneği için Visual C++ yüklediğinizde Visual Studio 2015 tam olarak işlevsel Android yerel etkinlik uygulamaları oluşturmak için kullanılabilir. Android yerel Geliştirme Seti (NDK) saf C/C++ kod kullanarak Android uygulamanızı çoğunluğu uygulamak olanak tanıyan bir araç setidir. Bazı Java JNI kodu, C/C++ kodu Android ile etkileşim kurmasına izin vermek için bağlantılı olarak görev yapar. Android NDK yerel etkinlik uygulamaları ile Android API Düzey 9 oluşturabilme sunmuştur. Yerel etkinlik kod Unreal Engine veya OpenGL kullanan oyun ve grafik yoğun uygulamalar oluşturmak için yaygın olarak kullanılır. Bu konuda OpenGL kullanan basit bir yerel etkinlik uygulama oluşturulmasını yol gösterecektir. Ek konular düzenleme, oluşturma, hata ayıklama ve yerel etkinlik kod dağıtma Geliştirici yaşam döngüsü yol.  
+# <a name="create-an-android-native-activity-app"></a>Android Yerel Etkinlik Uygulaması Oluşturma
+Visual C++ platformlar arası mobil geliştirme seçeneği için yükleme sırasında Visual Studio 2015, tam olarak işlevsel Android yerel etkinlik uygulamaları oluşturmak için kullanılabilir. Android yerel Geliştirme Seti (NDK) çoğu saf bir C/C++ kod kullanarak Android uygulamanızı uygulama olanak tanıyan bir araç setidir. Bazı Java JNI kod ile Android'e etkileşim kurmak C/C++ kod izin vermek için bağlantılı görür. Android NDK ile Android API Düzey 9 yerel etkinlik uygulamaları oluşturma olanağı sundu. Yerel etkinlik kod Unreal Engine'i veya OpenGL kullanan oyunlar ve grafik kullanımı yoğun uygulamalar oluşturmak için yaygın olarak kullanılır. Bu konu OpenGL kullanan basit bir yerel etkinlik uygulaması oluşturulmasını adım yol gösterir. Ek konular, düzenleme, derleme, hata ayıklama ve yerel etkinlik kod dağıtma, geliştirici yaşam döngüsü ile yol.  
   
  [Gereksinimleri](#req)   
  [Yeni bir yerel etkinlik projesi oluşturma](#Create)   
- [Derleme ve varsayılan Android yerel etkinlik uygulamayı çalıştırma](#BuildHello)  
+ [Varsayılan Android yerel etkinlik uygulaması derleyebilir ve çalıştırabilirsiniz](#BuildHello)  
   
 ##  <a name="req"></a> Gereksinimleri  
- Android yerel etkinlik uygulamayı oluşturmadan önce tüm sistem gereksinimleri karşılanıyor ve Visual Studio 2015'te Visual C++ mobil geliştirme seçeneği yüklü emin olmanız gerekir. Daha fazla bilgi için bkz: [platformlar arası Mobil Geliştirme için Visual C++ yüklemek](../cross-platform/install-visual-cpp-for-cross-platform-mobile-development.md). SDK'ları ve gerekli üçüncü taraf araçları yüklemeye dahil edilir ve Android için Microsoft Visual Studio öykünücüsü yüklü olduğundan emin olun.  
+ Android yerel etkinlik uygulaması oluşturmadan önce tüm sistem gereksinimleri karşılanıyor ve Visual Studio 2015'te Visual C++ mobil geliştirme seçeneği yüklü emin olmanız gerekir. Daha fazla bilgi için [platformlar arası Mobil Geliştirme için Visual C++ yükleme](../cross-platform/install-visual-cpp-for-cross-platform-mobile-development.md). Gerekli üçüncü taraf araçları ve SDK'lar yüklemesine dahil ve Android için Microsoft Visual Studio öykünücü yüklendiğinden emin olun.  
   
 ##  <a name="Create"></a> Yeni bir yerel etkinlik projesi oluşturma  
- Bu öğreticide, önce yeni bir Android yerel etkinlik projesi oluşturun ve ardından oluşturup varsayılan uygulama Visual Studio öykünücüsü Android için çalıştırın.  
+ Bu öğreticide, önce yeni bir Android yerel etkinlik projesi oluşturma sonra oluşturun ve varsayılan uygulamasını Android için Visual Studio öykünücüsü'nün içinde çalıştırın.  
   
 #### <a name="to-create-a-new-project"></a>Yeni bir proje oluşturmak için  
   
-1.  Visual Studio'yu açın. Menü çubuğunda seçin **dosya**, **yeni**, **proje**.  
+1. Visual Studio'yu açın. Menü çubuğunda, **dosya** > **yeni** > **proje**.  
   
-2.  İçinde **yeni proje** iletişim kutusunda **şablonları**, seçin **Visual C++**, **Çapraz Platform**ve ardından  **Yerel etkinlik uygulama (Android)** şablonu.  
+2. İçinde **yeni proje** iletişim kutusunun **şablonları**, seçin **Visual C++** > **Çoklu Platform**seçin **Native-Activity uygulaması (Android)** şablonu.  
   
-3.  Uygulama gibi bir ad verin `MyAndroidApp`ve ardından **Tamam**.  
+3. Uygulama gibi bir ad verin `MyAndroidApp`ve ardından **Tamam**.  
   
-     ![Bir yerel etkinlik projesi oluşturma](../cross-platform/media/cppmdd_newproject.PNG "CppMDD_NewProject")  
+    ![Yerel etkinlik proje oluşturma](../cross-platform/media/cppmdd_newproject.PNG "CppMDD_NewProject")  
   
-     Visual Studio yeni çözüm oluşturur ve Çözüm Gezgini açar.  
+    Visual Studio, yeni bir çözüm oluşturur ve Çözüm Gezgini açılır.  
   
-     ![Çözüm Gezgini'nde yerel etkinlik projeye](../cross-platform/media/cppmdd_rc_na_solutionexp.PNG "CPPMDD_RC_NA_SolutionExp")  
+    ![Çözüm Gezgini'nde yerel etkinlik proje](../cross-platform/media/cppmdd_rc_na_solutionexp.PNG "CPPMDD_RC_NA_SolutionExp")  
   
- Yeni bir Android yerel etkinlik uygulama çözüm iki proje içerir:  
+   Yeni Android yerel etkinlik uygulaması çözümü iki proje içerir:  
   
--   **MyAndroidApp.NativeActivity** başvuruları ve Android yerel bir etkinlik olarak çalıştırmak, uygulamanız için Birleştirici kodunu içerir. Giriş noktaları Birleştirici kodundan uyarlamasını main.cpp içinde olan. Önceden derlenmiş üst bilgiler pch.h içinde ' dir. Bu yerel etkinlik uygulama projesi paketleme projenin toplanma bir paylaşılan kitaplık .so dosyası derlenir.  
+-   `MyAndroidApp.NativeActivity` birleştirici kodlar için uygulamanızı Android'de gibi yerel bir etkinlik çalışmasına ve başvurular içerir. Giriş noktaları tutkal kodun uygulaması olan *Main.cpp öğesi*. Önceden derlenmiş üst bilgiler bulunduğunuz *pch.h*. Bu yerel etkinlik uygulaması projesi paylaşılan kitaplığa derlenir *.so* paketleme projesi tarafından devralındığında dosyası.  
   
--   **MyAndroidApp.Packaging** bir Android cihaz veya öykünücü üzerinde dağıtım için .apk dosyası oluşturur. Bu, kaynakları ve bildirim özellikleri ayarladığınız AndroidManifest.xml dosyasında içerir. Ayrıca, Ant oluşturma işlemi denetimleri build.xml dosyası içerir. Böylece dağıtılan ve doğrudan Visual Studio'dan çalıştırma başlangıç projesi olarak varsayılan olarak ayarlanır.  
+-   `MyAndroidApp.Packaging` oluşturur *.apk* dosyası dağıtım için bir Android cihaz veya öykünücü. Bu kaynaklar içeriyor ve *AndroidManifest.xml* dosya bildirim özelliklerini ayarladığınız yerdir. Ayrıca içerdiği *build.xml* Ant denetleyen dosya oluşturma işlemi. Dağıtılan ve doğrudan Visual Studio'dan çalıştırma varsayılan olarak, başlangıç projesi olarak ayarlanır.  
   
-##  <a name="BuildHello"></a> Derleme ve varsayılan Android yerel etkinlik uygulamayı çalıştırma  
- Derleme ve yükleme ve Kurulum doğrulamak için şablon tarafından oluşturulan uygulama çalıştırın. Bu ilk test için Android için Visual Studio öykünücüsü tarafından yüklenen aygıt profillerinden birini uygulamayı çalıştırın. Başka bir hedef uygulamanızı test etmek isterseniz, hedef öykünücüsü yükünü ya da cihaz bilgisayarınıza bağlayın.  
+##  <a name="BuildHello"></a> Varsayılan Android yerel etkinlik uygulaması derleyebilir ve çalıştırabilirsiniz  
+ Oluşturup yükleme ve Kurulum doğrulamak için şablon tarafından oluşturulan uygulamayı çalıştırın. Bu ilk test için Android için Visual Studio öykünücüsü'nün yüklü cihaz profilleri bir uygulamayı çalıştırın. Başka bir hedef uygulamanızı test etmek isterseniz, hedef öykünücü yükleyin veya cihazı bilgisayarınıza bağlayın.  
   
-#### <a name="to-build-and-run-the-default-native-activity-app"></a>Derleme ve varsayılan yerel etkinlik uygulamayı çalıştırmak için  
+#### <a name="to-build-and-run-the-default-native-activity-app"></a>Derleme ve varsayılan yerel etkinlik uygulaması çalıştırmak için  
   
-1.  Zaten seçili değilse seçin **x86** gelen **çözüm platformları** açılır liste.  
+1.  Zaten seçili değilse, seçin **x86** gelen **çözüm platformları** açılır liste.  
   
-     ![Çözüm platformları açılır x86 seçimi](../cross-platform/media/cppmdd_rc_na_solution_x86.png "CPPMDD_RC_NA_Solution_x86")  
+     ![Çözüm platformları x86 açılan liste seçimine](../cross-platform/media/cppmdd_rc_na_solution_x86.png "CPPMDD_RC_NA_Solution_x86")  
   
-     Varsa **çözüm platformları** listesi değil, seçin **çözüm platformları** gelen **Ekle/Kaldır düğmelerini** listesinde ve platformunuzu seçin.  
+     Varsa **çözüm platformları** seçin, listeyi görüntülenmiyorsa **çözüm platformları** gelen **Ekle/Kaldır düğmeleri** listeleyin ve ardından platformunuzu seçin.  
   
-2.  Menü çubuğunda seçin **yapı**, **yapı çözümü**.  
+2.  Menü çubuğunda, **derleme** > **Çözümü Derle**.  
   
-     Çıktı penceresi çözümde iki proje için yapılandırma işlemi çıktısını görüntüler.  
+     Çıkış penceresi çözümde iki proje için yapı işleminin çıkış görüntüler.  
   
-3.  VS öykünücüsü birini Android telefonunuzu (x86) profilleri dağıtım hedefi olarak seçin.  
+3.  VS öykünücüsü Android telefon (x86) profilleri, dağıtım hedefi seçin.  
   
-     Diğer Öykünücüler yüklediyseniz veya bir Android cihazı bağlı değilse, dağıtım hedef açılır listeden seçebilirsiniz.  
+     Diğer öykünücü yüklü veya bir Android cihazına bağlı, dağıtım hedef açılan listeden seçebilirsiniz.  
   
-4.  Hata ayıklamayı başlatmak için F5'e ya da hata ayıklama olmadan başlatmak için Shift + F5'e basın.  
+4.  Tuşuna **F5** hata ayıklamayı başlatın veya Shift + F5 hata ayıklama olmadan başlat.  
   
-     İşte ne varsayılan uygulama Visual Studio öykünücüsü Android için benzer.  
+     Varsayılan Uygulama Visual Studio öykünücüsü'nde Android için nasıl göründüğüne aşağıda verilmiştir.  
   
-     ![Uygulamanızı çalıştıran öykünücüsü](../cross-platform/media/cppmdd_emulator_running_app.PNG "CppMDD_Emulator_Running_App")  
+     ![Öykünücü, uygulamanızı çalıştıran](../cross-platform/media/cppmdd_emulator_running_app.PNG "CppMDD_Emulator_Running_App")  
   
-     Visual Studio Yük ve kodunuzu dağıtmak için birkaç saniye sürer öykünücüyü başlatır. Uygulamanızı başladıktan sonra kesme noktalarını ayarlayın ve kod üzerinden adım, Yereller inceleyin ve değerleri izlemek için hata ayıklayıcı kullanın.  
+     Visual Studio öykünücü, yüklemek ve kodunuzu dağıtmak için birkaç saniye sürer başlatır. Uygulama başlatıldıktan sonra kesme noktaları ayarlayın ve hata ayıklayıcı kodunuz içinde adım adım, Yereller inceleyin ve izlemek için kullanın.  
   
-5.  Shift + hata ayıklamayı durdurmak için F5 tuşuna basın.  
+5.  Tuşuna **Shift**+**F5** hata ayıklamayı durdurmak için.  
   
-     Öykünücü çalışmaya devam eder ayrı bir işlemdir. Düzenleme, derleme ve kodunuzu birden çok kez aynı öykünücüsü dağıtma.
+     Öykünücüyü çalıştırmak için devam eden ayrı bir işlemdir. Düzenleme, derleme ve kodunuzun birden çok kez aynı öykünücüye dağıtmak.

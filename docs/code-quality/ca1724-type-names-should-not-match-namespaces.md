@@ -1,6 +1,7 @@
 ---
 title: 'CA1724: Tür Adları Ad Alanlarıyla Eşleşmemelidir'
-ms.date: 11/04/2016
+ms.date: 09/28/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c1f9e13f8e02712ba4d0a0a492a9a6588f7a8a5e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: bf359ffcc098fa2b5653c28da302e2777216ea5b
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860270"
 ---
-# <a name="ca1724-type-names-should-not-match-namespaces"></a>CA1724: Tür Adları Ad Alanlarıyla Eşleşmemelidir
+# <a name="ca1724-type-names-should-not-match-namespaces"></a>CA1724: Tür adları, ad alanları ile eşleşmemelidir
+
 |||
 |-|-|
 |TypeName|TypeNamesShouldNotMatchNamespaces|
@@ -30,13 +33,17 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Bir tür adıyla eşleşen bir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] ad alanı adları büyük küçük harf duyarsız bir karşılaştırma.
 
-## <a name="rule-description"></a>Kural Tanımı
- Tür adları tanımlanan ad alanları adlarını değil eşleşmelidir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] sınıf kitaplığı. Bu kuralın ihlali kitaplığın kullanılabilirliğini azaltabilir.
+Bir tür adı, bir veya daha fazla dışarıdan görülebilen türler olan bir başvurulan ad alanı adı ile eşleşir. Ad karşılaştırma büyük/küçük harfe duyarsızdır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Adını eşleşmeyen bir tür adı seçin bir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] sınıf kitaplığı ad.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Yeni geliştirme, hiçbir bilinen senaryolar ortaya burada bu kuraldan bir uyarı bastırma gerekir. Uyarı bastırma önce kullanıcılar kitaplığınızın eşleşen ada göre nasıl yanıltıcı dikkatlice düşünün. Kitaplıkları aktarma için bir uyarı bu kuraldan bastırmak gerekebilir.
+Kullanıcı tarafından oluşturulan tür adları dışarıdan görülebilen türler sahip başvurulan ad alanlarının adlarıyla eşleşmemelidir. Bu kuralın ihlali kitaplığın kitaplığınızın azaltabilir.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Türü olan dışarıdan görülebilen türler başvurulan bir ad alanının adı eşleşmiyorsa gibi yeniden adlandırın.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Yeni geliştirme, hiçbir bilinen senaryolar ortaya burada bu kuraldan bir uyarıyı bastırmak gerekir. Uyarının gösterilmemesi önce kitaplığınızın kullanıcılar tarafından eşleşen adı nasıl yanıltıcı dikkatlice düşünün. Kitaplıkları sevk edilmesi için bu kuraldan bir uyarıyı bastırmak gerekebilir.

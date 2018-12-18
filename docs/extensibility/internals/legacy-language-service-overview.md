@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131755"
 ---
 # <a name="legacy-language-service-overview"></a>Eski dil hizmetine genel bakış
 Bir dil hizmeti belirli uygulamanıza olanak tanıyan Düzenleyicisi destek sağlar [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] özellikleri. Yönetilen paket Framework (MPF) dil hizmet sınıfları, özellikleri sık kullanılan ve diğer özellikleri kısmi desteği için tam destek sağlar.  

@@ -17,13 +17,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4f098b18100bd54e8078ea0c855a1b3e51926b93
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f8973f1536ded24d2fd327aa3eac1ceee795cb54
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262453"
 ---
-# <a name="call-tree-view"></a>Çağrı Ağacı Görünümü
+# <a name="call-tree-view"></a>Çağrı Ağacı görünümü
 Çağrı ağacı görünümü profili uygulamada geçiş işlevi yürütme yollarını görüntüler. Ağaç kök uygulama veya bileşenin giriş noktasıdır. Her işlevi düğüm tüm adlı işlevleri ve bu işlev çağrıları hakkında performans verilerini listeler.  
   
  Çağrı ağacı görünümü de genişletin ve en uzun süre tüketilen veya sık örneklenen bir işlev yürütme yolunu vurgulayın. En ucuz performans yolunu görüntülemek için işlevi sağ tıklayın ve ardından **genişletin etkin yolunuzda**.  
@@ -41,15 +42,15 @@ ms.lasthandoff: 04/19/2018
   
  Çağrı ağacı görünümü sütunlar için tanımları hakkında daha fazla bilgi için aşağıdakilere bakın:  
   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view-sampling-data.md)  
+ [Çağrı ağacı görünümü](../profiling/call-tree-view-sampling-data.md)  
   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view-instrumentation-data.md)  
+ [Çağrı ağacı görünümü](../profiling/call-tree-view-instrumentation-data.md)  
   
  [Çağrı ağacı görünümü - örnekleme](../profiling/call-tree-view-dotnet-memory-sampling-data.md)  
   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view-contention-data.md)  
+ [Çağrı ağacı görünümü](../profiling/call-tree-view-contention-data.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans rapor görünümleri](../profiling/performance-report-views.md)   
  [İzleme veri değerlerini anlama](../profiling/understanding-instrumentation-data-values.md)   
  [Örnekleme veri değerlerini anlama](../profiling/understanding-sampling-data-values.md)

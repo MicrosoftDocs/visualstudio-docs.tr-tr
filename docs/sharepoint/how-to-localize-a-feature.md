@@ -18,16 +18,17 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 08756ce33d97e156d63fd873c63d4d6fc282285b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c143016aaec81c65c118923ff9513bb4607353dc
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120446"
 ---
-# <a name="how-to-localize-a-feature"></a>Nasıl yapılır: Bir Özelliği Yerelleştirme
+# <a name="how-to-localize-a-feature"></a>Nasıl yapılır: bir özelliği yerelleştirme
   Varsayılan olarak, özellik başlıkları ve açıklamaları sabit kodlanmış dize değerlerini kullanın. Özellik başlığı ve açıklamayı yerelleştirme için yerelleştirilmiş kaynaklar başvuru ifadelerle dizeleri değiştirin.  
   
-## <a name="localizing-a-feature"></a>Bir özelliği yerelleştirme  
+## <a name="localize-a-feature"></a>Bir özelliği yerelleştirme  
   
 #### <a name="to-localize-a-feature"></a>Bir özelliği yerelleştirme için  
   
@@ -43,7 +44,7 @@ ms.lasthandoff: 04/16/2018
   
      Örneğin, varsayılan özellik kaynak dosyasında bir dize kimliği girin **başlık** değerini **My özellik başlığı**, ve ikinci bir dize Kimliğini **açıklama** değerini **My özellik açıklaması**. Her bir yerelleştirilmiş kaynak dosya için varsayılan özellik kaynak kullanılan kimlikleri aynı dizeyi kullanın, ancak yerelleştirilmiş dizeleri için değerleri girin.  
   
-5.  Tüm kaynak değerleri girdikten sonra (örneğin, Feature1.feature) özelliği için kısayol menüsünü açın ve ardından **Görünüm Tasarımcısı** özellik Tasarımcısı'nda özelliğini açmak için.  
+5.  Tüm kaynak değerleri girdikten sonra özellik için kısayol menüsünü açın (örneğin, *Feature1.feature*) ve ardından **Görünüm Tasarımcısı** özellik Tasarımcısı'nda özelliğini açmak için.  
   
 6.  Yerelleştirme için **başlık** ve **açıklama** özelliği alanlarında kendi kutularına değerleri girmek için aşağıdaki biçimi kullanın:  
   
@@ -53,7 +54,7 @@ ms.lasthandoff: 04/16/2018
   
      Kimlik dizesi kaynak dosyalarında kullanılan eşleşmelidir.  
   
-7.  Derleme ve uygulamayı çalıştırmak için F5 tuşuna seçin.  
+7.  Seçin **F5** anahtarı oluşturun ve uygulamayı çalıştırın.  
   
 8.  SharePoint'te açmak **Site eylemleri** menüsünde seçin **Site Ayarları**ve ardından **Site eylemleri** bölümü seçin **Site özellikleriyönetme** bağlantı.  
   
@@ -61,10 +62,9 @@ ms.lasthandoff: 04/16/2018
   
      Yerelleştirilmiş özellik başlığı ve açıklamayı uygulamada görüntülenir. Yerelleştirilmiş kaynakları görüntülemek için SharePoint sunucusu kaynak dosyanın kültür eşleşen bir dil paketi olması gerekir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [SharePoint Çözümlerini Yerelleştirme](../sharepoint/localizing-sharepoint-solutions.md)   
  [Nasıl yapılır: kaynak dosyası ekleme](../sharepoint/how-to-add-a-resource-file.md)   
  [Nasıl yapılır: ASPX biçimlendirmesini yerelleştirme](../sharepoint/how-to-localize-aspx-markup.md)   
- [Nasıl yapılır: Kod Yerelleştirme](../sharepoint/how-to-localize-code.md)  
-  
+ [Nasıl yapılır: kod yerelleştirme](../sharepoint/how-to-localize-code.md)  
   

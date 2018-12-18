@@ -1,6 +1,7 @@
 ---
 title: 'CA1303: Harfleri yerelleştirilmiş parametreler olarak göndermeyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -14,50 +15,56 @@ ms.assetid: 904d284e-76d0-4b8f-a4df-0094de8d7aac
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CPP
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 2b621306bab673172c1c437ca0a959e4bc36f6da
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8716a16ea3b141e7c5053e526d92531d0a77bc1e
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47859412"
 ---
 # <a name="ca1303-do-not-pass-literals-as-localized-parameters"></a>CA1303: Harfleri yerelleştirilmiş parametreler olarak göndermeyin
+
 |||
 |-|-|
 |TypeName|DoNotPassLiteralsAsLocalizedParameters|
 |CheckId|CA1303|
 |Kategori|Microsoft.Globalization|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir yöntem bir dize sabit değeri parametre olarak Oluşturucusu veya yönteminde geçirir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] sınıf kitaplığı ve dize yerelleştirilebilir olmalıdır.
+ Bir yöntem bir dize değişmez değer parametre olarak bir oluşturucu veya .NET Framework Sınıf Kitaplığı'nda yöntemi geçirir ve bu dize yerelleştirilebilir olmalıdır.
 
- Bu uyarı, hazır bir dize parametresi ya da özelliği için bir değer olarak geçirilir ve bir veya daha fazla aşağıdaki durumlarda doğru olduğunda ortaya çıkar:
+ Bu uyarı, bir değişmez dize değeri olarak bir parametre veya özellik geçirilir ve bir veya daha fazla aşağıdaki durumlarda true olduğunda ortaya çıkar:
 
--   <xref:System.ComponentModel.LocalizableAttribute> Parametresi ya da özelliğin özniteliği true.
+- <xref:System.ComponentModel.LocalizableAttribute> Özniteliği parametre ya da özelliğin true.
 
--   Parametresi veya özellik adı "Metin", "İletisi" veya "Resim yazısı" içerir.
+- Parametresi veya özellik adı "Metin", "İleti" veya "Başlık" içeriyor.
 
--   Console.Write veya Console.WriteLine yönteme geçirilen dize parametresi "value" veya "biçim" adıdır.
+- "Value" veya "biçim" Console.Write veya Console.WriteLine yönteme geçirilen dize parametresi adıdır.
 
-## <a name="rule-description"></a>Kural Tanımı
- Kaynak kodunda katıştırılmış dize değişmez değerleri yerelleştirme zordur.
+## <a name="rule-description"></a>Kural açıklaması
+ Kaynak koduna gömülü dize değişmez değerleri yerelleştirmek zordur.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için dize sabit değeri bir örneği üzerinden alınan bir dizeyi yerine <xref:System.Resources.ResourceManager> sınıfı.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için dize sabit değeri bir örneği üzerinden alınan bir dize yerine <xref:System.Resources.ResourceManager> sınıfı.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Kod kitaplığı değil yerelleştirilmiş veya dize son kullanıcı ya da kod kitaplığı kullanarak bir geliştirici açık değilse bir uyarı bu kuraldan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Kod kitaplığı yerelleştirilmemiş veya dizenin son kullanıcı veya kod kitaplığı kullanarak bir geliştirici için açık değilse bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
- Kullanıcılar ya da parametre veya adlı özellik yeniden adlandırma ya da bu öğeleri koşullu olarak işaretleme yerelleştirilmiş dizeleri geçirilmemelidir yöntemleri karşı gürültü ortadan kaldırabilirsiniz.
+ Kullanıcılar ya da parametre veya adlı özellik yeniden adlandırma ya da bu öğeleri koşullu olarak işaretleme yerelleştirilmiş dizeleri geçirilmemelidir yöntemleri karşı gürültü ortadan kaldırabilir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte, iki bağımsız değişkenlerinin birini aralık dışında olduğunda aykırı bir yöntemi gösterir. İlk bağımsız değişkeni için özel durum Oluşturucusu bu kuralı ihlal sabit değerli bir dize geçirilir. İkinci bağımsız değişkeni için Oluşturucusu üzerinden alınan bir dizeyi doğru geçirilen bir <xref:System.Resources.ResourceManager>.
+ Aşağıdaki örnek iki bağımsız değişkenlerinden biri aralık dışında olduğunda özel durum oluşturan bir yöntemi gösterir. İlk bağımsız değişken için özel Oluşturucu bu kuralı ihlal bir sabit dizesi geçirilir. İkinci bağımsız değişkeni için oluşturucu üzerinden alınan bir dize doğru geçirilen bir <xref:System.Resources.ResourceManager>.
 
  [!code-cpp[FxCop.Globalization.DoNotPassLiterals#1](../code-quality/codesnippet/CPP/ca1303-do-not-pass-literals-as-localized-parameters_1.cpp)]
  [!code-vb[FxCop.Globalization.DoNotPassLiterals#1](../code-quality/codesnippet/VisualBasic/ca1303-do-not-pass-literals-as-localized-parameters_1.vb)]
  [!code-csharp[FxCop.Globalization.DoNotPassLiterals#1](../code-quality/codesnippet/CSharp/ca1303-do-not-pass-literals-as-localized-parameters_1.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
  [Masaüstü Uygulamalarındaki Kaynaklar](/dotnet/framework/resources/index)

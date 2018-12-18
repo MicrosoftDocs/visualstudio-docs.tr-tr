@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: aa525f50a0ffd18f136cfa23ae05a8e2ba193d0d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0a2824eff43103ee2f8c82fba6131325def0c8ea
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49912730"
 ---
 # <a name="idebugclassfieldenumconstructors"></a>IDebugClassField::EnumConstructors
-Bu sınıf oluşturucular için bir numaralandırıcı oluşturur.  
+Bu sınıf için oluşturucuları için bir numaralandırıcı oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,18 +43,18 @@ int EnumConstructors(
   
 #### <a name="parameters"></a>Parametreler  
  `cMatch`  
- [in] Arasında bir değer [CONSTRUCTOR_ENUM](../../../extensibility/debugger/reference/constructor-enum.md) numaralandırma kurucusuna türünü belirtir numaralandırması.  
+ [in] Bir değer [CONSTRUCTOR_ENUM](../../../extensibility/debugger/reference/constructor-enum.md) oluşturucular için sabit listesi türünü belirten sabit listesi.  
   
  `ppEnum`  
- [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) oluşturucular listesini temsil eden nesne. Oluşturucu yok ise null değeri döndürür.  
+ [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) oluşturucular listesini temsil eden nesne. Hiç Oluşturucusu yoksa null değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK döndürür veya oluşturucu yok ise S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür veya hiç Oluşturucusu varsa S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Numaralandırma her öğenin bir [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) yapıcı yöntemini açıklayan nesne.  
+ Her öğenin sabit bir [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) Oluşturucu yöntemi tanımlayan nesne.  
   
- Oluşturucular listesi derleyici tarafından sağlanan varsayılan oluşturucular genellikle içermez.  
+ Oluşturucular listesi, genellikle derleyici tarafından sağlanan varsayılan oluşturucular içermez.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md)   

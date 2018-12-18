@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fb634f59a3a7eb3b37e70dd87f48b22a07251d0e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b9ed1b803905f403e68053c157b40ec30dc03fbd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840070"
 ---
 # <a name="contextinfo"></a>CONTEXT_INFO
-Bu yapı bellek içerik veya kod içeriği açıklar.  
+Bu yapı, bellek bağlamı veya kod bağlamı açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -52,22 +53,22 @@ public struct CONTEXT_INFO {
   
 ## <a name="members"></a>Üyeler  
  dwFields  
- Kendisine bayraklarını bileşimini [CONTEXT_INFO_FIELDS](../../../extensibility/debugger/reference/context-info-fields.md) hangi alanların doldurulmuş belirten numaralandırma**.**  
+ He bayraklarının bir birleşimi [CONTEXT_INFO_FIELDS](../../../extensibility/debugger/reference/context-info-fields.md) hangi alanların doldurulmuş belirten numaralandırma<strong>.</strong>  
   
  bstrModuleUrl  
- Bağlam bulunduğu modülü adı.  
+ Bağlam bulunduğu modülünün adı.  
   
  bstrFunction  
- Bağlam bulunduğu işlev adı.  
+ Bağlam bulunduğu işlevi adı.  
   
  posFunctionOffset  
- A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) kod bağlamla ilişkili işlevi satır ve sütun uzaklığı tanımlayan yapısı.  
+ A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) kod bağlamı ile ilişkili işlevi satır ve sütun uzaklığı tanımlayan yapısı.  
   
  bstrAddress  
- Belirtilen bağlamda bulunduğu kodda adresi.  
+ Belirtilen bağlamda bulunduğu kod adresi.  
   
  bstrAddressOffset  
- Belirtilen bağlamda bulunduğu kod adresi uzaklığı.  
+ Belirtilen bağlamda bulunduğu kod adres uzaklığı.  
   
  bstrAddressAbsolute  
  Belirtilen bağlamda bulunduğu bellek mutlak bir adres.  
@@ -75,17 +76,17 @@ public struct CONTEXT_INFO {
 ## <a name="remarks"></a>Açıklamalar  
  Bu yapı çağrısından döndürülen [GetInfo](../../../extensibility/debugger/reference/idebugmemorycontext2-getinfo.md) yöntemi.  
   
- Support, bu yapı için tipik bir kullanımdır bir **bellek** hata ayıklama penceresi.  
+ Bu yapı için genel kullanım support biri olan bir **bellek** hata ayıklama penceresine.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetInfo](../../../extensibility/debugger/reference/idebugmemorycontext2-getinfo.md)   
  [CONTEXT_INFO_FIELDS](../../../extensibility/debugger/reference/context-info-fields.md)   
  [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md)

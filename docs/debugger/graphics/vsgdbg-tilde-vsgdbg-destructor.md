@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31471606"
 ---
 # <a name="vsgdbgvsgdbg-destructor"></a>VsgDbg::~VsgDbg (Yok Edici)
 Örneği bozar `VsgDbg` sınıfı. Grafik bilgilerini etkin olarak kaydedilen, grafik günlük dosyası sonlandırılır ve ve etkin olarak grafik bilgilerini yakalama sırasında kullanılan kaynakları serbest bırakılır.  

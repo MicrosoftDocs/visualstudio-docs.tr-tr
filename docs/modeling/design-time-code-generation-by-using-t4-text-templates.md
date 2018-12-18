@@ -15,144 +15,145 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: abe689021506ab71953e2d6556db8608c301f528
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: a41b86068f9f7aedbe10635bf859818c0b468789
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50967460"
 ---
 # <a name="design-time-code-generation-by-using-t4-text-templates"></a>T4 Metin Şablonları Kullanarak Tasarım Zamanı Kodu Oluşturma
-Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluşturmanıza izin, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi. Genellikle, böylece kullanıcılar verilerinden göre oluşturdukları kod farklılık şablonları yazma bir *modeli*. Bir dosya veya uygulama gereksinimleri hakkında önemli bilgiler içeren bir veri modelidir.
+Tasarım zamanı T4 metin şablonları program kodu ve diğer dosyaları, Visual Studio projenize oluşturmanıza olanak tanır. Genellikle, böylece verileri göre hazırlanmasının kod farklılık şablonları yazma bir *model*. Bir dosya veya uygulama gereksinimleri hakkında önemli bilgiler içeren veritabanı modelidir.
 
- Örneğin, bir tablo veya bir diyagram olarak bir iş akışını tanımlayan bir model olabilir. Modelden iş akışı yürütür yazılım oluşturabilir. Kullanıcılarınızın gereksinimleri değiştiğinde, yeni bir iş akışı kullanıcılarla tartışın kolaydır. İş akışı koddan yeniden kodu el ile güncelleştirme değerinden daha güvenilirdir.
+ Örneğin, bir tablo veya diyagramını olarak bir iş akışını tanımlayan bir model olabilir. Modelden, iş akışı yürüten yazılım oluşturabilirsiniz. Kullanıcıların gereksinimleri değiştiğinde, kullanıcılar ile yeni bir iş akışı tartışmak kolay bir işlemdir. İş akışı kodu yeniden kodu el ile güncelleştirme değerinden daha güvenilir oldu.
 
 > [!NOTE]
->  A *modeli* belirli bir uygulamanın durumuyla açıklayan bir veri kaynağıdır. Herhangi bir dosya ya da veritabanı herhangi bir biçimde olabilir. Herhangi bir UML model veya etki alanına özgü dil modeli gibi belirli bir biçimde olmasını yok. Tipik modelleri tablo veya XML dosyaları şeklindedir.
+>  A *modeli* uygulamanın belirli bir yönüyle açıklayan bir veri kaynağıdır. Dosyadan veya veritabanından herhangi bir türden herhangi formunun olabilir. Herhangi bir UML modeli veya etki alanına özgü dil modeli gibi belirli bir biçimde olmasını yok. Tablolar ya da XML dosyası biçiminde tipik modelleridir.
 
- Büyük olasılıkla kod oluşturma ile bilginiz. Kaynaklarında tanımladığınızda bir **.resx** dosyasını, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çözüm, sınıflar ve yöntemler kümesi oluşturulduğunda otomatik olarak. Kaynak dosyasında sınıflar ve yöntemler düzenlemek sahip olması durumuna göre çok daha kolay ve daha güvenilir düzenlemek için kaynakları kolaylaştırır. Metin şablonları ile aynı şekilde, kendi tasarımının bir kaynaktan kodu oluşturabilir.
+ Büyük olasılıkla kod oluşturma ile ilgili bilgi sahibi olduğunuz. Kaynakları tanımladığınızda bir **.resx** dosyası Visual Studio çözümünüzü, sınıflar ve yöntemler kümesi otomatik olarak oluşturulur. Kaynaklar dosyası sınıflar ve yöntemler düzenlemek sahip olması durumuna göre çok daha kolay ve daha güvenilir düzenlemek için kaynaklar kolaylaştırır. Metin şablonları ile aynı şekilde kendi tasarımının bir kaynaktan kod oluşturabilirsiniz.
 
- Metin şablonu oluşturmak istediğiniz metni ve metin değişken bölümlerini oluşturur program kodu karışımını içerir. Program kodunu ve yineleyin veya koşullu olarak oluşturulan metin bölümlerini atlamasını sağlar. Oluşturulan metnin görüntüleyebilirsiniz. kendisini uygulamanızın parçası oluşturacak program kodu olabilir.
+ Bir metin şablonu oluşturmak istediğiniz metni ve değişken bölümlerini oluşturduğu program kodu bir karışımını içerir. Program kodu ve yineleyin veya koşullu olarak oluşturulan metin parçalarını atlamasını sağlar. Oluşturulan metin için kendisini uygulamanızın parçasını oluşturacak program kodu olabilir.
 
 ## <a name="creating-a-design-time-t4-text-template"></a>Tasarım zamanı T4 metin şablonu oluşturma
 
-#### <a name="to-create-a-design-time-t4-template-in-visual-studio"></a>Visual Studio tasarım-zamanı T4 şablon oluşturmak için
+#### <a name="to-create-a-design-time-t4-template-in-visual-studio"></a>Visual Studio'da bir tasarım zamanı T4 şablonu oluşturmak için
 
-1.  Oluşturma bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] proje veya mevcut bir açın.
+1. Visual Studio projesi oluşturun veya mevcut bir açın.
 
-     Örneğin, **dosya** menüsünde seçin **yeni**, **proje**.
+    Örneğin, **dosya** menüsünde seçin **yeni** > **proje**.
 
-2.  Metin şablonu dosyasını projenize ekleyin ve uzantıya sahip bir ad verin **.tt**.
+2. Bir metin şablonu dosyasını projenize ekleyin ve uzantısına sahip bir ad verin **.tt**.
 
-     Bunu yapmak için **Çözüm Gezgini**, projenizin kısayol menüsünden seçin **Ekle**, **yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusu seç **metin şablonu** Orta bölmesinden.
+    Bunu yapmak için **Çözüm Gezgini**, projenizin kısayol menüsünde **Ekle** > **yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusu seç **metin şablonu** Orta bölmeden.
 
-     Dikkat **özel araç** özelliği dosyasının **TextTemplatingFileGenerator**.
+    Dikkat **özel araç** dosyanın özelliği **TextTemplatingFileGenerator**.
 
-3.  Dosyasını açın. Ayrıca, aşağıdaki yönergeleri zaten içerecektir:
+3. Dosyasını açın. Ayrıca, aşağıdaki yönergeleri zaten içerecektir:
 
-    ```
-    <#@ template hostspecific="false" language="C#" #>
-    <#@ output extension=".txt" #>
-    ```
+   ```
+   <#@ template hostspecific="false" language="C#" #>
+   <#@ output extension=".txt" #>
+   ```
 
-     Şablona eklediyseniz bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] projesi language özniteliği olacaktır "`VB`".
+    Şablona eklediyseniz bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] projesi dil özniteliği olacaktır "`VB`".
 
-4.  Bazı metinleri dosyanın sonuna ekleyin. Örneğin:
+4. Metin, dosyanın sonuna ekleyin. Örneğin:
 
-    ```
-    Hello, world!
-    ```
+   ```
+   Hello, world!
+   ```
 
-5.  Dosyayı kaydedin.
+5. Dosyayı kaydedin.
 
-     Görebilirsiniz bir **Güvenlik Uyarısı** şablon çalıştırmak istediğinizi onaylamanızı ister ileti kutusu. **Tamam**'ı tıklatın.
+    Görebileceğiniz bir **Güvenlik Uyarısı** şablonu çalıştırmak istediğinizi onaylamanızı isteyen bir ileti kutusu. **Tamam**'ı tıklatın.
 
-6.  İçinde **Çözüm Gezgini**, şablon dosyası düğümünü genişletin ve uzantıya sahip bir dosyayı bulabilirsiniz **.txt**. Şablondan oluşturulan metin dosyası içerir.
+6. İçinde **Çözüm Gezgini**, şablon dosyası düğümünü genişletin ve uzantıya sahip bir dosyayı bulabilirsiniz **.txt**. Metin şablonundan oluşturulan bir dosya içerir.
 
-    > [!NOTE]
-    >  Projeniz Visual Basic projesinde ise, tıklatmalısınız **tüm dosyaları göster** çıkış dosyasını görmek için.
+   > [!NOTE]
+   >  Projenizi Visual Basic projesi ise,'a tıklamalıdır **tüm dosyaları göster** çıktı dosyasını görmek için.
 
-### <a name="regenerating-the-code"></a>Kod oluşturma
- Aşağıdaki durumlarda hiçbirinde şube dosya oluşturma şablon yürütülecek:
+### <a name="regenerating-the-code"></a>Kod oluşturma işlemi sürüyor
+ Aşağıdaki durumlarda hiçbirinde paketinizle dosyası oluşturmanın bir şablon yürütülecek:
 
--   Şablonu düzenleyebilir ve odak farklı bir değiştirme [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] penceresi.
+- Şablon düzenleyin ve sonra farklı bir Visual Studio penceresine odak değiştirin.
 
--   Şablonu kaydedin.
+- Şablonu kaydedin.
 
--   Tıklatın **tüm şablonları dönüştürme** içinde **yapı** menüsü. Bu, tüm şablonları dönüştürme [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çözümü.
+- Tıklayın **tüm Şablonları Dönüştür** içinde **derleme** menüsü. Bu, Visual Studio çözümünde tüm şablonları dönüştürme.
 
--   İçinde **Çözüm Gezgini**, kısayol menüsünde herhangi dosya, seçin **çalıştırmak özel araç**. Seçili şablonları kümesini dönüştürmek için bu yöntemi kullanın.
+- İçinde **Çözüm Gezgini**, kısayol menüsünden herhangi dosya öğesini **özel aracı Çalıştır**. Seçili şablonları kümesini dönüştürmek için bu yöntemi kullanın.
 
- Ayrıca ayarlayabileceğiniz bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] şablonları okurlar veri dosyalarını değiştiğinde yürütülen böylece proje. Daha fazla bilgi için bkz: [kodu otomatik olarak yeniden](#Regenerating).
+  Böylece şablonları okurlar veri dosyalar değiştiğinde yürütülen bir Visual Studio projesi de ayarlayabilirsiniz. Daha fazla bilgi için [kodu otomatik olarak yeniden](#Regenerating).
 
 ## <a name="generating-variable-text"></a>Değişken metin oluşturma
- Metin şablonları oluşturulan dosyanın içeriğini değiştirmek için program kodu kullanmanıza olanak tanır.
+ Metin şablonları oluşturulan dosyanın içeriğini değiştirmek için program kodu kullanmanıza izin verir.
 
-#### <a name="to-generate-text-by-using-program-code"></a>Program kodunu kullanarak metin oluşturmak için
+#### <a name="to-generate-text-by-using-program-code"></a>Program kodu kullanarak metin oluşturmak için
 
-1.  İçeriğini değiştirme `.tt` dosyası:
+1. İçeriğini değiştirme `.tt` dosyası:
 
-    ```csharp
-    <#@ template hostspecific="false" language="C#" #>
-    <#@ output extension=".txt" #>
-    <#int top = 10;
+   ```csharp
+   <#@ template hostspecific="false" language="C#" #>
+   <#@ output extension=".txt" #>
+   <#int top = 10;
 
-    for (int i = 0; i<=top; i++)
-    { #>
+   for (int i = 0; i<=top; i++)
+   { #>
+      The square of <#= i #> is <#= i*i #>
+   <# } #>
+   ```
+
+   ```vb
+   <#@ template hostspecific="false" language="VB" #>
+   <#@ output extension=".txt" #>
+   <#Dim top As Integer = 10
+
+   For i As Integer = 0 To top
+   #>
        The square of <#= i #> is <#= i*i #>
-    <# } #>
-    ```
+   <#
+   Next
+   #>
+   ```
 
-    ```vb
-    <#@ template hostspecific="false" language="VB" #>
-    <#@ output extension=".txt" #>
-    <#Dim top As Integer = 10
+2. .Tt dosyasını kaydedin ve yeniden oluşturulmuş bir .txt dosyasını inceleyin. 0 sayıların 10 kareleri listeler.
 
-    For i As Integer = 0 To top
-    #>
-        The square of <#= i #> is <#= i*i #>
-    <#
-    Next
-    #>
+   Deyimleri içinde alındığına dikkat edin `<#...#>`ve tek bir ifade içinde `<#=...#>`. Daha fazla bilgi için [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
 
-    ```
-
-2.  .Tt dosyayı kaydedin ve yeniden oluşturulan .txt dosyasını inceleyin. 0'dan sayıların 10 kareleri listeler.
-
- Deyimleri içine alınmış olduğunu fark `<#...#>`ve tek içinde ifadeleri `<#=...#>`. Daha fazla bilgi için bkz: [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
-
- Şablonunuzda kod yazarsanız [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], `template` yönergesi içermelidir `language="VB"`. `"C#"` varsayılandır.
+   Kod yazarsanız [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], `template` yönergesi içermelidir `language="VB"`. `"C#"` varsayılandır.
 
 ## <a name="debugging-a-design-time-t4-text-template"></a>Tasarım zamanı T4 metin şablonuna ilişkin hata ayıklama
- Metin şablonu hata ayıklamak için:
+ Bir metin şablonunda hata ayıklama için:
 
--   INSERT `debug="true"` içine `template` yönergesi. Örneğin:
+- INSERT `debug="true"` içine `template` yönergesi. Örneğin:
 
-     `<#@ template debug="true" hostspecific="false" language="C#" #>`
+   `<#@ template debug="true" hostspecific="false" language="C#" #>`
 
--   Kesme noktaları şablonunda sıradan kodunu yaptığınız şekilde ayarlayın.
+- Kesme noktaları şablonda, sıradan bir kod için yaptığınız şekilde ayarlayın.
 
--   Seçin **hata ayıklama T4 şablon** Çözüm Gezgini'nde metin şablonu dosyasının kısayol menüsünden.
+- Seçin **T4 şablonunda Hata Ayıkla** Çözüm Gezgini'ndeki metin şablonu dosyasının kısayol menüsünden.
 
- Şablon çalıştırın ve kesme noktalarında durdurun. Değişkenleri inceleyin ve kod üzerinden Normal yollardan adım.
+  Şablon çalıştırın ve kesme noktalarında durdurun. Değişkenleri incelemek ve her zamanki yolla kodda adım adım.
 
 > [!TIP]
->  `debug="true"` oluşturulan kodun yönergeleri numaralandırma veya daha fazla satır ekleyerek metin şablonu için daha doğru bir şekilde eşleme oluşturulan kod yapar. Teslim değiştirmeden bırakırsanız, kesme noktaları durumu yanlış Çalıştır durabilir.
+>  `debug="true"` oluşturulan kodun daha doğru bir şekilde daha fazla satır yönergeleri oluşturulan koda numaralandırmasını ekleyerek metin şablonu için eşleme sağlar. Teslim değiştirmeden bırakırsanız, kesme noktaları durumu yanlış çalıştırmasında durabilir.
 >
->  Ancak bile, değil ayıklarken yan tümcesi içinde şablon yönergesi bırakabilirsiniz. Bu, performans çok küçük bir açılan neden olur.
+>  Ancak bile, değil hata ayıklaması yaparken şablon yönergesinde yan tümcesi bırakabilirsiniz. Bu performans çok küçük bir bırakma neden olur.
 
-## <a name="generating-code-or-resources-for-your-solution"></a>Kod veya kaynakları çözümünüz için oluşturma
- Bir modeline bağlı olarak değişebilir program dosyaları oluşturabilir. Bir veritabanı, yapılandırma dosyası, UML modeli, DSL modeli veya başka bir kaynaktan gibi bir giriş modelidir. Birkaç genellikle oluşturmak program dosyaları olan aynı modelden. Bunun için her oluşturulan program dosyası için bir şablon dosyası oluşturun ve tüm şablonları aynı modelin okuma.
+## <a name="generating-code-or-resources-for-your-solution"></a>Koda veya kaynaklara çözümünüz için oluşturma
+ Bir modeline bağlı olarak farklılık gösterir. program dosyaları oluşturabilirsiniz. Bir model, bir veritabanı, yapılandırma dosyası, UML model, DSL model veya diğer kaynak gibi bir giriştir. Birkaç genellikle oluşturmak program dosyaları aynı modelden olan. Bunu başarmak için her oluşturulan program dosyası için bir şablon dosyası oluşturun ve tüm şablonları aynı modelin okuma.
 
-#### <a name="to-generate-program-code-or-resources"></a>Program kodunda veya kaynakları oluşturmak için
+#### <a name="to-generate-program-code-or-resources"></a>Program kodu veya kaynakları oluşturmak için
 
-1.  Çıktı yönergesi .cs, .vb, .resx veya .xml gibi uygun bir tür bir dosya oluşturmak için değiştirin.
+1.  Çıktı yönergesi .cs, .vb, .resx veya .xml gibi uygun türde bir dosya oluşturmak için değiştirin.
 
-2.  Çözüm kod oluşturacak kodu ekleyin. Örneğin, bir sınıf içinde üç tamsayı alan bildirimleri oluşturmak istiyorsanız:
+2.  İstediğiniz çözümü kod üreten kodu ekleyin. Örneğin, bir sınıfta üç tamsayı alan bildirimleri oluşturmak istiyorsanız:
 
     ```csharp
 
-              <#@ template debug="false" hostspecific="false" language="C#" #>
+    <#@ template debug="false" hostspecific="false" language="C#" #>
     <#@ output extension=".cs" #>
     <# var properties = new string [] {"P1", "P2", "P3"}; #>
     // This is generated code:
@@ -181,9 +182,9 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 
     ```
 
-3.  Dosyayı kaydedin ve şimdi aşağıdaki kodu içeren oluşturulan dosyasını inceleyin:
+3.  Dosyayı kaydedin ve artık aşağıdaki kodu içeren oluşturulan dosyasını inceleyin:
 
-    ```
+    ```csharp
     class MyGeneratedClass {
       private int P1 = 0;
       private int P2 = 0;
@@ -192,25 +193,25 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
     ```
 
 ### <a name="generating-code-and-generated-text"></a>Kod ve oluşturulan metin oluşturma
- Program kodunu oluşturduğunuzda, şablonunuzda yürütür oluşturma kodu ve çözümünüzün bir parçası haline gelir elde edilen oluşturulan kod kafa karıştırıcı önlemek en önemlidir. İki dil aynı olması gerekmez.
+ Program kodu oluştururken, şablonunuzda yürütülen kod ile çözümünüzün bir parçası haline gelir elde edilen oluşturulan kod karışmasını önlemek en önemlidir. İki dilden aynı olması gerekmez.
 
- Önceki örnekte iki sürümü vardır. Bir sürümde oluşturma C# ' ta kodudur. Diğer sürüm oluşturma Visual Basic kodudur. Ancak her ikisi tarafından oluşturulan metnin aynıdır ve C# sınıfı olan.
+ Önceki örnekte, iki sürümü vardır. Kod bir sürümde, C# dilinde olduğu. Diğer sürüm kod Visual Basic ' dir. Ancak her ikisini de tarafından oluşturulan metin aynıdır ve C# sınıfı olan.
 
- Aynı şekilde kullanabileceğinizi bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] herhangi bir dil kodu oluşturmak için şablon. Oluşturulan metnin herhangi belirli bir dilde olması gerekmez ve program kodunun olması gerekmez.
+ Aynı şekilde kullanabileceğinizi bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] herhangi bir dilde kod oluşturmak için şablon. Oluşturulan metin herhangi belirli bir dilde olması gerekmez ve program kodu olması gerekmez.
 
 ### <a name="structuring-text-templates"></a>Metin şablonları yapılandırma
- Sağlasa da, iyi bir uygulama, biz şablonu kodu iki bölüme ayırın olma eğilimi gösterir:
+ Birkaç iyi uygulama, biz şablon kodunu iki bölüme ayırın eğilimi gösterir:
 
--   Bir yapılandırma veya değişkenlerinin değerlerini ayarlar, ancak metin blokları içermiyor veri toplama bölümü. Önceki örnekte, bu başlatılması parçasıdır `properties`.
+- Bir yapılandırma veya değişkenleri değerleri ayarlar, ancak metin blokları içermiyor veri toplama bölümü. Önceki örnekte, bu başlatma parçasıdır `properties`.
 
-     Bir mağazadaki modeli oluşturur ve genellikle bir model dosyası okuma için buna bazen "model" bölümüne denir.
+   Mağaza modeli oluşturur ve genellikle bir model dosyasını okuyan buna bazen "modeli" bölümünde verilir.
 
--   Metin oluşturma bölümü (`foreach(...){...}` örnekte), değişkenlerin değerleri kullanır.
+- Metin oluşturma bölümü (`foreach(...){...}` örnekte), değişkenlerin değerleri kullanır.
 
- Bu gerekli bir ayrım değildir, ancak metin içeren bölümü karmaşıklığını azaltarak şablon okuması daha kolay hale getiren bir stil olduğu.
+  Bu gerekli bir ayrım değildir, ancak şablon metni içeren bölümü karmaşıklığını azaltmayı tarafından okunacak kolaylaştıran bir stili.
 
 ## <a name="reading-files-or-other-sources"></a>Okuma dosyaları veya diğer kaynaklar
- Bir model dosyası veya veritabanı erişimi için şablon kodunuzu derlemeleri System.XML gibi kullanabilirsiniz. Bu derlemeler erişmek için bunlar gibi yönergeleri eklemeniz gerekir:
+ Bir model dosyası veya veritabanına erişmek için şablon kodunuz derlemeleri System.XML gibi kullanabilirsiniz. Bu derlemeler erişim kazanmak için şunlar gibi yönergeleri eklemeniz gerekir:
 
 ```
 <#@ assembly name="System.Xml.dll" #>
@@ -218,13 +219,13 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 <#@ import namespace="System.IO" #>
 ```
 
- `assembly` Yönergesi kullanılabilir hale getirir belirtilen derleme şablon kodunuza, başvurular bölümüne aynı şekilde bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi. Otomatik olarak başvurulan System.dll bir başvuru eklemek gerekmez. `import` Yönergesi türleri ile aynı şekilde tam adlarını kullanmadan kullanmanıza imkan tanır `using` bir sıradan program dosyasında yönergesi.
+ `assembly` Yönergesi kullanımınıza belirtilen derleme şablon kodunuz için Visual Studio projenin başvurular bölümüne olarak aynı şekilde. Otomatik olarak başvurulan System.dll bir başvuru eklemek gerekmez. `import` Yönergesi ile aynı şekilde bunların tam nitelikli adlarını kullanarak olmadan türlerini kullanmanıza imkan tanır `using` yönergesi sıradan program dosyasındaki.
 
- Örneğin, aldıktan sonra **System.IO**, yazma:
+ Örneğin, içeri aktardıktan sonra **System.IO**, şunu yazabilirsiniz:
 
 ```csharp
 
-      <# var properties = File.ReadLines("C:\\propertyList.txt");#>
+<# var properties = File.ReadLines("C:\\propertyList.txt");#>
 ...
 <# foreach (string propertyName in properties) { #>
 ...
@@ -234,7 +235,6 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 <# For Each propertyName As String In
              File.ReadLines("C:\\propertyList.txt")
 #>
-
 ```
 
 ### <a name="opening-a-file-with-a-relative-pathname"></a>Göreli bir yol adına sahip bir dosyayı açma
@@ -242,7 +242,6 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 
 ```
 <#@ template debug="false" hostspecific="true" language="C#" #>
-
 ```
 
  Ardından, örneğin yazabilirsiniz:
@@ -254,7 +253,6 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 ...
 <#  foreach (string propertyName in properties { #>
 ...
-
 ```
 
 ```vb
@@ -265,43 +263,42 @@ Tasarım zamanı T4 metin şablonları program kodunu ve diğer dosyalar oluştu
 <#   For Each propertyName As String In properties
 ...
 #>
-
 ```
 
- Aynı zamanda `this.Host.TemplateFile`, geçerli şablon dosyasının adını tanımlar.
+ Ayrıca `this.Host.TemplateFile`, geçerli şablon dosyasına adını tanımlar.
 
- Türü `this.Host` (VB içinde `Me.Host`) olan `Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost`.
+ Türünü `this.Host` (vb'de, `Me.Host`) olan `Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost`.
 
-### <a name="getting-data-from-includevsprvscode-qualityincludesvsprvsmdmd"></a>İçinden verileri alma [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]
- Sağlanan hizmetleri kullanmaya [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]ayarlayın `hostSpecific` özniteliği ve yük `EnvDTE` derleme. Ardından IServiceProvider.GetCOMService() DTE ve diğer hizmetlere erişmek için de kullanabilirsiniz. Örneğin:
+### <a name="getting-data-from-visual-studio"></a>Visual Studio'dan veri alma
+ Visual Studio'da sağlanan hizmetleri kullanmak için ayarlanmış `hostSpecific` özniteliği ve yük `EnvDTE` derleme. İçeri aktarma `Microsoft.VisualStudio.TextTemplating`, içeren `GetCOMService()` genişletme yöntemi.  Ardından IServiceProvider.GetCOMService() DTE ve diğer hizmetlere erişmek için de kullanabilirsiniz. Örneğin:
 
-```scr
+```src
 <#@ template hostspecific="true" language="C#" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="EnvDTE" #>
+<#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
 <#
   IServiceProvider serviceProvider = (IServiceProvider)this.Host;
   EnvDTE.DTE dte = (EnvDTE.DTE) serviceProvider.GetCOMService(typeof(EnvDTE.DTE));
 #>
 
 Number of projects in this VS solution:  <#= dte.Solution.Projects.Count #>
-
 ```
 
 > [!TIP]
->  Metin şablonu kendi uygulama etki alanında çalışır ve Hizmetleri hazırlama tarafından erişilir. Bu durumda GetCOMService() GetService() daha büyük/küçük harf güvenilirdir.
+>  Bir metin şablonu, kendi uygulama etki alanında çalışan ve Hizmetleri hazırlama tarafından erişilir. Bu durumda GetCOMService() GetService() daha büyük/küçük harf güvenilirdir.
 
-##  <a name="Regenerating"></a> Kodu otomatik olarak yeniden oluşturuluyor
- Genellikle, birkaç dosyalarında bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çözümü ile bir giriş model oluşturulur. Her dosya kendi şablonu, ancak tüm aynı modelin başvurur şablonları oluşturulur.
+## <a name="Regenerating"></a> Kodu otomatik olarak yeniden oluşturuluyor
+ Genellikle, bir Visual Studio çözümde çeşitli dosyaları bir giriş modeliyle oluşturulur. Her dosya, kendi şablon, ancak tüm aynı modele başvurur şablonları oluşturulur.
 
- Kaynak modeli değişirse, Çözümdeki tüm şablonları yeniden çalıştırmanız gerekir. Bunu el ile yapmak için seçin **tüm şablonları dönüştürme** üzerinde **yapı** menüsü.
+ Kaynak modeli değişirse, Çözümdeki tüm şablonları yeniden çalıştırmanız gerekir. Bunu el ile yapmak için **tüm Şablonları Dönüştür** üzerinde **derleme** menüsü.
 
- Visual Studio SDK Modelleme yüklü değilse, bir derleme yaptığınızda otomatik olarak dönüştürülen tüm şablonları olabilir. Bunu yapmak için proje dosyanızı (.csproj veya .vbproj) bir metin düzenleyicisinde düzenleyin ve sonra diğer yakın dosyasının sonuna şu satırları ekleyin `<import>` deyimleri:
+ Visual Studio modelleme SDK'yı yüklediyseniz, bir derleme yaptığınızda otomatik olarak dönüştürülen tüm şablonları olabilir. Bunu yapmak için proje dosyanıza (.csproj veya .vbproj) bir metin düzenleyicisinde düzenleyin ve sonra diğer dosyanın sonuna aşağıdaki satırları ekleyin `<import>` ifadeleri:
 
 > [!NOTE]
-> Visual Studio 2017 içinde metin şablonu dönüştürme SDK'sı ve modelleme Visual Studio SDK, Visual Studio'nun belirli özellikleri yüklediğinizde otomatik olarak yüklenir. Daha fazla ayrıntı için bkz: [bu blog gönderisine](https://blogs.msdn.microsoft.com/visualstudioalm/2016/12/12/the-visual-studio-modeling-sdk-is-now-available-with-visual-studio-2017/).
+> Visual Studio 2017'de metin şablonu dönüştürme SDK'sını ve Visual Studio modelleme SDK'sı, Visual Studio'nun belirli özelliklerini yüklediğinizde otomatik olarak yüklenir. Daha fazla ayrıntı için [bu blog gönderisini](https://blogs.msdn.microsoft.com/devops/2016/12/12/the-visual-studio-modeling-sdk-is-now-available-with-visual-studio-2017/).
 
-```
+```xml
 <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v15.0\TextTemplating\Microsoft.TextTemplating.targets" />
 <PropertyGroup>
    <TransformOnBuild>true</TransformOnBuild>
@@ -309,65 +306,67 @@ Number of projects in this VS solution:  <#= dte.Solution.Projects.Count #>
 </PropertyGroup>
 ```
 
- Daha fazla bilgi için bkz: [derleme sürecinde kod oluşturma](../modeling/code-generation-in-a-build-process.md).
+ Daha fazla bilgi için [derleme sürecinde kod oluşturma](../modeling/code-generation-in-a-build-process.md).
 
 ## <a name="error-reporting"></a>Hata Raporlama
- Hata ve uyarı iletilerini yerleştirmek için [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] hata penceresinde, bu yöntemleri kullanabilirsiniz:
+ Visual Studio hata penceresinde hata ve uyarı iletilerini yerleştirmek için bu yöntemleri kullanabilirsiniz:
 
 ```
 Error("An error message");
 Warning("A warning message");
 ```
 
-##  <a name="Converting"></a> Varolan bir dosyanın bir şablona dönüştürme
- Yararlı şablonları bunlar çok, bazı eklenen program kod ile birlikte oluşturdukları dosyaları gibi göründüğünü özelliğidir. Bu şablon oluşturma, kullanışlı bir yöntem önerir. Bir sıradan dosyası gibi bir prototip olarak oluşturmanız bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] dosya ve sonuçta elde edilen dosyasını değişir oluşturma koduna kademeli olarak tanıtır.
+## <a name="Converting"></a> Bir şablon için mevcut bir dosyayı dönüştürme
+ Bunlar çok bunlar birlikte bazı eklenen program kodu üretir dosyaları gibi göründüğünü yer şablonları yararlı bir özelliğidir. Bu şablon oluşturma, kullanışlı bir yöntem önerir. Sıradan bir dosyası gibi bir prototip oluşturmanız bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] dosya ve sonuçta elde edilen dosyanın değişen kod kademeli olarak tanıtır.
 
-#### <a name="to-convert-an-existing-file-to-a-design-time-template"></a>Varolan bir dosyanın bir tasarım zamanı şablona dönüştürmek için
+#### <a name="to-convert-an-existing-file-to-a-design-time-template"></a>Var olan bir dosya için bir tasarım zamanı şablonu dönüştürmek için
 
-1.  İçin [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] proje, gibi oluşturmak istediğiniz türde bir dosya ekleme bir `.cs`, `.vb`, veya `.resx` dosyası.
+1. Visual Studio projenize eklemek gibi oluşturmak istediğiniz türde bir dosya bir `.cs`, `.vb`, veya `.resx` dosya.
 
-2.  Yeni dosyanın çalıştığını emin olmak için test edin.
+2. Yeni dosyanın çalıştığından emin olmak için test edin.
 
-3.  Çözüm Gezgini'nde, dosya adı uzantısına değişiklik **.tt**.
+3. Çözüm Gezgini'nde dosya adı uzantısı için değiştirme **.tt**.
 
-4.  Aşağıdaki özelliklerini doğrulamanızı **.tt** dosyası:
+4. Aşağıdaki özelliklerini doğrulamanızı **.tt** dosyası:
 
-    |||
-    |-|-|
-    |**Özel araç =**|**TextTemplatingFileGenerator**|
-    |**Derleme eylemi =**|**Yok**|
 
-5.  Dosyanın başına aşağıdaki satırları ekleyin:
+   | | |
+   |-|-|
+   | **Özel araç =** | **TextTemplatingFileGenerator** |
+   | **Build Action =** | **Yok** |
 
-    ```
-    <#@ template debug="false" hostspecific="false" language="C#" #>
-    <#@ output extension=".cs" #>
-    ```
 
-     Şablonunuzda şablonunuzda kod yazmak isterseniz [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]ayarlayın `language` özniteliğini `"VB"` yerine `"C#"`.
+5. Dosyanın başına aşağıdaki satırları ekleyin:
 
-     Ayarlama `extension` dosya adı uzantısı, örneğin oluşturmak istediğiniz dosya türü için özniteliğini `.cs`, `.resx`, veya `.xml`.
+   ```
+   <#@ template debug="false" hostspecific="false" language="C#" #>
+   <#@ output extension=".cs" #>
+   ```
 
-6.  Dosyayı kaydedin.
+    Şablonunuzda oluşturma kodunu yazmak isterseniz [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]ayarlayın `language` özniteliğini `"VB"` yerine `"C#"`.
 
-     Belirtilen uzantılı bir dosyası oluşturulur. Kendi dosya türü için doğru özelliklerdir. Örneğin, **yapı eylemi** .cs dosyasının özelliği olacaktır **derleme**.
+    Ayarlama `extension` , örneğin oluşturmak istediğiniz dosya türünü dosya adı uzantısı özniteliği `.cs`, `.resx`, veya `.xml`.
 
-     Oluşturulan dosyanın özgün dosyayla aynı içerik içerdiğini doğrulayın.
+6. Dosyayı kaydedin.
 
-7.  Farklı hale getirmek istediğiniz dosyanın bir kısmını tanımlar. Örneğin, yalnızca belirli koşullar altında görünür bir bölümü veya yinelenen veya nerede belirli değerler farklı bir bölümü. Kod oluşturma ekleyin. Dosyayı kaydedin ve dosyası doğru şekilde oluşturulan doğrulayın. Bu adımı yineleyin.
+    Belirtilen uzantı ile paketinizle bir dosya oluşturulur. Özellikleri, dosya türü için doğrudur. Örneğin, **derleme eylemi** .cs dosyası özelliğini olacak **derleme**.
+
+    Oluşturulan dosyanın özgün dosyayla aynı içerik içerdiğini doğrulayın.
+
+7. Değiştirmek için istediğiniz dosya belirleyin. Örneğin, yalnızca belirli koşullar altında görünür bir bölümü veya bir bölümü, yinelenen veya belirli değerlerin nereden değişir. Oluşturma kodunu ekleyin. Dosyayı kaydedin ve dosyası doğru şekilde oluşturulduğunu doğrulayın. Bu adımı yineleyin.
 
 ## <a name="guidelines-for-code-generation"></a>Kod oluşturma için yönergeler
- Lütfen bakın [yazma T4 metin şablonları için yönergeler](../modeling/guidelines-for-writing-t4-text-templates.md).
+ Lütfen [için T4 metin şablonları yazma yönergeleri](../modeling/guidelines-for-writing-t4-text-templates.md).
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
 |Sonraki adım|Konu|
-|---------------|-----------|
-|Yazma ve hata ayıklama yardımcı işlevleri, eklenen dosyalar ve dış veri kullanan kodu ile daha gelişmiş bir metin şablonu.|[T4 Metin Şablonu Yazma](../modeling/writing-a-t4-text-template.md)|
-|Belgeleri şablonlardan çalışma zamanında oluşturur.|[T4 Metin Şablonları İle Çalışma Süresi Metni Oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md)|
-|Metin oluşturma dışında çalıştırmak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].|[TextTransform Yardımcı Programı ile Dosya Oluşturma](../modeling/generating-files-with-the-texttransform-utility.md)|
-|Verilerinizi bir etki alanına özgü dil biçiminde dönüştürün.|[Etki Alanına Özgü Dilden Kod Oluşturma](../modeling/generating-code-from-a-domain-specific-language.md)|
-|Kendi veri kaynaklarını dönüştürmek için yönerge işlemcileri yazma.|[T4 Metin Dönüştürmeyi Özelleştirme](../modeling/customizing-t4-text-transformation.md)|
+|-|-|
+|Yardımcı işlevleri, dahil edilen dosyalar ve dış veri kullanan kod ile daha gelişmiş bir metin şablonunda hata ayıklama ve yazabilirsiniz.|[T4 Metin Şablonu Yazma](../modeling/writing-a-t4-text-template.md)|
+|Belgelere, çalışma zamanında şablon oluşturma.|[T4 Metin Şablonları İle Çalışma Süresi Metni Oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md)|
+|Visual Studio dışında metin oluşturma çalıştırın.|[TextTransform Yardımcı Programı ile Dosya Oluşturma](../modeling/generating-files-with-the-texttransform-utility.md)|
+|Bir etki alanına özgü dil biçiminde verilerinizi dönüştürün.|[Etki Alanına Özgü Dilden Kod Oluşturma](../modeling/generating-code-from-a-domain-specific-language.md)|
+|Kendi veri kaynaklarınızı dönüştürmek için yönerge işlemcileri yazın.|[T4 Metin Dönüştürmeyi Özelleştirme](../modeling/customizing-t4-text-transformation.md)|
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 

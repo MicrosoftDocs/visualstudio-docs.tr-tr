@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f865194e023ed0311f06988dd026fb2b123aaf4a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9da385dc9f50ec66b45df1c9955f338a6c550467
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905408"
 ---
 # <a name="idebugthread2suspend"></a>IDebugThread2::Suspend
-Bir iş parçacığı askıya alır.  
+Bir iş parçacığını askıya alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,16 +41,16 @@ HRESULT Suspend (
   
 #### <a name="parameters"></a>Parametreler  
  `pdwSuspendCount`  
- [out] Askıya alma sayımı askıya alma işleminden sonra döndürür.  
+ [out] Askıya alma işleminden sonra askıya alma sayımı döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem her çağrı 0 yukarıda askıya alma sayısını artırır. Bu askıya alma sayımı görüntülenen **iş parçacığı** hata ayıklama penceresi.  
+ Bu yöntem her çağrı, askıya alma sayımı 0 yukarıda artırır. Bu askıya alma sayımı görüntülenir **iş parçacıkları** hata ayıklama penceresine.  
   
- Bu yöntem her çağrı için koyulmalıdır sonraki çağrı [Sürdür](../../../extensibility/debugger/reference/idebugthread2-resume.md) yöntemi.  
+ Bu yöntem her çağrı için olmalıdır bir sonraki çağrı [sürdürme](../../../extensibility/debugger/reference/idebugthread2-resume.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)   
- [Devam et](../../../extensibility/debugger/reference/idebugthread2-resume.md)
+ [Resume](../../../extensibility/debugger/reference/idebugthread2-resume.md)

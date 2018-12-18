@@ -1,0 +1,1 @@
+.NET Framework sürüm 4

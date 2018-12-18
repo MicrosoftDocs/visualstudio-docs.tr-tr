@@ -1,5 +1,5 @@
 ---
-title: AsyncVoidMethodBuilder.ObjectIdForDebugger özelliği | Microsoft Docs
+title: Asyncvoidmethodbuilder.objectıdfordebugger özelliği | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,20 +13,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 868deef955ce90f49ce3ba2719903bdcbb38f2a5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cf0f8acbfbdc129371d288d64cc48b3e4b0704ad
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39151489"
 ---
-# <a name="asyncvoidmethodbuilderobjectidfordebugger-property"></a>AsyncVoidMethodBuilder.ObjectIdForDebugger özelliği
-Bu oluşturucu hata ayıklayıcı için benzersiz şekilde tanımlamak için kullanılabilir bir nesneyi alır.  
+# <a name="asyncvoidmethodbuilderobjectidfordebugger-property"></a>Asyncvoidmethodbuilder.objectıdfordebugger özelliği
+Hata ayıklayıcı bu oluşturucuya benzersiz şekilde tanımlamak için kullanılan nesneyi alır.  
   
  **Namespace:** <xref:System.Runtime.CompilerServices?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (mscorlib.dll içinde)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,4 +37,4 @@ private object ObjectIdForDebugger
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  <xref:System.Runtime.CompilerServices.AsyncVoidMethodBuilder>   
- [.NET Framework için Paralel Uzantı Dahili Bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)
+ [.NET Framework için paralel uzantı dahili bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)

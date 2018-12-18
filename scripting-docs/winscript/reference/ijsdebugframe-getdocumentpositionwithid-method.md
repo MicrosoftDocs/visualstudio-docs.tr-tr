@@ -1,16 +1,18 @@
 ---
-title: "Ijsdebugframe::getdocumentpositionwithıd yöntemi | Microsoft Docs"
-ms.custom: 
+title: Ijsdebugframe::getdocumentpositionwithıd yöntemi | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
-apiname: IJsDebugFrame.GetDocumentPositionWithId
-apilocation: jscript9diag.dll
+apiname:
+- IJsDebugFrame.GetDocumentPositionWithId
+apilocation:
+- jscript9diag.dll
 ms.assetid: 48f8eb26-8ae4-4d5c-bd94-796023b03bcb
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -19,6 +21,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24794474"
 ---
 # <a name="ijsdebugframegetdocumentpositionwithid-method"></a>IJsDebugFrame::GetDocumentPositionWithId Metodu
 Bu kullanıcı düzeyinde belge yığın çerçevesinde geçerli konumunu döndürür.  

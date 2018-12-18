@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7556999e1455dcfa0d79b131ee4661a77732990f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4f68da36fc527e0390789df22ed4550a6165adbb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49885848"
 ---
 # <a name="idiasessiongetenumtables"></a>IDiaSession::getEnumTables
-Sembol deposunda bulunan tüm tablolar için bir numaralandırıcı alır.  
+Sembol deposu içerisinde bulunan tüm tablolar için bir numaralandırıcı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT getEnumTables (
   
 #### <a name="parameters"></a>Parametreler  
  `ppEnumTables`  
- [out] Döndürür bir [Idiaenumtables](../../debugger/debug-interface-access/idiaenumtables.md) nesnesi. Sembol deposu tablolarda numaralandırmak için bu arabirimi kullanın.  
+ [out] Döndürür bir [Idiaenumtables](../../debugger/debug-interface-access/idiaenumtables.md) nesne. Bu arabirim, sembol deposundaki tablolar numaralandırmak için kullanın.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Bu örnek kullanan genel bir işlev gösterir `getEnumTables` belirli Numaralandırıcı nesnesi elde etmek için yöntemi. Numaralayıcı bulunursa, işlevi istenen arabirimi atanabilecek bir işaretçi döndürür; Aksi takdirde işlevi döndürür `NULL`.  
+ Bu örnekte kullanan genel bir işlev sunar `getEnumTables` belirli Numaralandırıcı nesnesi elde etmek için yöntemi. Numaralandırıcı bulunursa, işlev istendiği arayüz dönüştürülebilen bir işaretçi döndürür; Aksi halde, işlev döndürür `NULL`.  
   
 ```C++  
 IUnknown *GetTable(IDiaSession *pSession, REFIID iid)  

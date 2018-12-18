@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3a34d9a6f403345bb84f172c416dda62f0109ec2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7f70f685fe8792f698dcc397b2f3fc9ccb6de8dc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927729"
 ---
 # <a name="idebugprocess3getencavailablestate"></a>IDebugProcess3::GetENCAvailableState
-Bu yöntem, geçerli Düzenle ve devam et işleminin durumunu alır. Özel bir bağlantı noktası tedarikçi her zaman döndürmelidir `E_NOTIMPL`.  
+Bu yöntem geçerli Düzenle ve devam et işleminin durumunu alır. Özel bağlantı noktası sağlayıcısı her zaman döndürmelidir `E_NOTIMPL`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetENCAvailableState(
   
 #### <a name="parameters"></a>Parametreler  
  `pReason`  
- [out] Arasında bir değer [EncUnavailableReason](../../../extensibility/debugger/reference/encunavailablereason.md) numaralandırması.  
+ [out] Bir değer [EncUnavailableReason](../../../extensibility/debugger/reference/encunavailablereason.md) sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 > [!NOTE]
->  Özel bir bağlantı noktası tedarikçi her zaman döndürmelidir `E_NOTIMPL`.  
+>  Özel bağlantı noktası sağlayıcısı her zaman döndürmelidir `E_NOTIMPL`.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu durum etkilenebilir [DisableENC](../../../extensibility/debugger/reference/idebugprocess3-disableenc.md).  

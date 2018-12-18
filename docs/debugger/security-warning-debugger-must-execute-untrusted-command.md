@@ -17,33 +17,34 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 77554795772a5a9e2ce5d9bbe9f620923bc20184
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 3e99c56efc5338feeded20621c7467bbf8274bc9
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39510930"
 ---
 # <a name="security-warning-debugger-must-execute-untrusted-command"></a>Güvenlik Uyarısı: Hata Ayıklayıcı Güvenilmeyen Komut Yürütmeli
-Kaynak sunucu kullanırken bu uyarı iletişim kutusu görüntülenir. Hata ayıklayıcı kaynak kodu almak için gereken komut srcsvr.ini dosyasında yer alan kaynak sunucu için güvenilen komutları listesinde olduğunu belirtir. Bu geçerli bir komut ise, srcsvr.ini dosyasına ekleyebilirsiniz. Aksi takdirde, bu çalışmamalıdır. Daha fazla bilgi için bkz: [belirtin simge (.pdb) ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).  
+Kaynak Sunucusu'nu kullanırken, bu uyarı iletişim kutusu görüntülenir. Bu, hata ayıklayıcı kaynak kodunu edinmek için yürütmek için gereken komut kaynak sunucu srcsvr.ini dosyasının içerdiği için güvenilir komutları listesinde olmadığını gösterir. Bu geçerli bir komutsa, srcsvr.ini dosyasına bunu ekleyebilirsiniz. Aksi takdirde, bunu çalıştırmamanız gerekir. Daha fazla bilgi için [belirtin sembol (.pdb) ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).  
   
 ## <a name="message-text"></a>İleti metni  
- **Hata ayıklayıcı kaynak kodu kaynak sunucudan elde etmek için aşağıdaki güvenilmeyen komutu yürütmeniz gerekir.**  
+ **Hata ayıklayıcı kaynak kodunu kaynak sunucudan almak için aşağıdaki güvenilmeyen komutu yürütmelidir.**  
   
- **Hata ayıklama simgesi dosyası ise (\*.pdb) olan olmayan bir bilinen ve güvenilen kaynaktan, bu komut geçersiz ya da çalıştırmak tehlikeli olabilir.**  
+ **Hata ayıklama sembol dosyası varsa (\*.pdb) olduğunu değil bir bilinen ve güvenilir bir kaynaktan, bu komut geçersiz veya çalıştırılması tehlikeli olabilir.**  
   
  **Bu komutu çalıştırmak istiyor musunuz?**  
   
 ## <a name="uielement-list"></a>UIElement Listesi  
  Metin kutusu  
- .Pdb dosyasından çalıştırmak için komutu.  
+ Çalıştırılacak .pdb dosyasından komut.  
   
  Çalıştır  
- Çalıştırılacak komut izin verir.  
+ Çalıştırmak için komuta izin verin.  
   
  Çalıştırma  
- Komutu yürütme ve kaynak sunucudan dosya indirme durdurun.  
+ Komutun yürütülmesini ve kaynak sunucudan dosya indirme durdurun.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Simge (.pdb) belirtin ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)   
- [Hata ayıklama güvenliği](../debugger/debugger-security.md)   
- [Kaynak sunucusu](http://msdn.microsoft.com/library/windows/desktop/ms680641\(v=vs.85\).aspx)
+ [Sembol (.pdb) belirtin ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)   
+ [Hata ayıklayıcısı güvenliği](../debugger/debugger-security.md)   
+ [Kaynak sunucu](/windows/desktop/Debug/source-server-and-source-indexing)

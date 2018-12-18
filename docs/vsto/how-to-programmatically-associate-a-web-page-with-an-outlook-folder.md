@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla bir Web sayfasını Outlook klasörüyle ilişkilendirme | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla bir web sayfasını Outlook klasörüyle ilişkilendirme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,13 +17,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 5495066b05ded6fc49dfe92ed489932d8c75b24d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2cb1ef525917288dc44609b899611db884da9073
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35256471"
 ---
-# <a name="how-to-programmatically-associate-a-web-page-with-an-outlook-folder"></a>Nasıl yapılır: Program Aracılığıyla Web Sayfasını Outlook Klasörüyle İlişkilendirme
+# <a name="how-to-programmatically-associate-a-web-page-with-an-outlook-folder"></a>Nasıl yapılır: program aracılığıyla bir web sayfasını Outlook klasörüyle ilişkilendirme
   Bu örnek için adlı bir klasör denetler `HtmlView` Microsoft Office Outlook'ta. Klasör yoksa kod klasörü oluşturur ve bir Web sayfası atar. Klasörü zaten varsa, kodu klasör içeriğini görüntüler.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
@@ -31,9 +32,9 @@ ms.lasthandoff: 04/16/2018
 ## <a name="example"></a>Örnek  
  [!code-csharp[Trin_OL_HTMLFolder#1](../vsto/codesnippet/CSharp/Trin_OL_HTMLFolder/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Klasörlerle çalışma](../vsto/working-with-folders.md)   
  [Nasıl yapılır: program aracılığıyla klasörü ada göre alma](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
- [Nasıl yapılır: Program Aracılığıyla Özel Klasör Öğeleri Oluşturma](../vsto/how-to-programmatically-create-custom-folder-items.md)  
+ [Nasıl yapılır: program aracılığıyla özel klasör öğeleri oluşturma](../vsto/how-to-programmatically-create-custom-folder-items.md)  
   
   

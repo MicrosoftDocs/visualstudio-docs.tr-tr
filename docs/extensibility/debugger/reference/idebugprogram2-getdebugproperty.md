@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 49c83cb4ca1dccbdf1e28d545bdcaa711e3241a6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7296698f3caf7fd189505c68e1c8b7d6261b1e93
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49888170"
 ---
 # <a name="idebugprogram2getdebugproperty"></a>IDebugProgram2::GetDebugProperty
-Programın özellikleri alır.  
+Programın özelliklerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,12 +44,12 @@ int GetDebugProperty(
  [out] Döndürür bir [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) programın özellikleri temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem tarafından döndürülen özellikleri programa özgüdür. Program birden fazla özelliği döndürme gerekiyorsa sonra [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) bu yöntem tarafından döndürülen nesne ek özellikler ve arama bir kapsayıcıdır [EnumChildren](../../../extensibility/debugger/reference/idebugproperty2-enumchildren.md) yöntemi döndürür bir tüm özelliklerin listesi.  
+ Bu yöntem tarafından döndürülen programa özgü özelliklerdir. Program birden fazla özelliği döndürme gerekiyorsa sonra [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) bu yöntem tarafından döndürülen nesne ek özellikleri ve arama bir kapsayıcıdır [EnumChildren](../../../extensibility/debugger/reference/idebugproperty2-enumchildren.md) yöntemi döndürür bir tüm özelliklerin listesi.  
   
- Bir program herhangi sayısı ve türü aracılığıyla açıklanan ek özellikler getirebilir `IDebugProperty2` arabirimi. Bir IDE genel özellik tarayıcı kullanıcı arabirimi aracılığıyla ek program özelliklerini görüntüleyebilir.  
+ Bir program herhangi sayısı ve türü ile açıklanan ek özellikler getirebilir `IDebugProperty2` arabirimi. Bir IDE ek program özelliklerinin genel özellik tarayıcı kullanıcı arabirimi aracılığıyla görüntülenebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   

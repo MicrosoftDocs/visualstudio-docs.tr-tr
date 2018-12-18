@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31117127"
 ---
 # <a name="idebugoutputstringevent2"></a>IDebugOutputStringEvent2
 Bu arabirim (DE) hata ayıklama altyapısı tarafından bir dize çıktısını almak için oturum hata ayıklama Yöneticisi (SDM) gönderilir.  

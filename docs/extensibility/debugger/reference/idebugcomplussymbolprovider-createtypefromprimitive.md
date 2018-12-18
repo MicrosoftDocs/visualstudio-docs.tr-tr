@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ccffe70b8b1f13c61a9ed444380c3326a5aed2f5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 568a6d6be3efee7fb780c9693ee6076078f7edf9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896425"
 ---
 # <a name="idebugcomplussymbolprovidercreatetypefromprimitive"></a>IDebugComPlusSymbolProvider::CreateTypeFromPrimitive
-Belirtilen ilkel türü bir türü oluşturur.  
+Belirtilen temel türden bir türü oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,19 +46,19 @@ int CreateTypeFromPrimitive(
   
 #### <a name="parameters"></a>Parametreler  
  `dwPrimType`  
- [in] Değeri [CorElementType numaralandırması](/dotnet/framework/unmanaged-api/metadata/corelementtype-enumeration) , ilkel türü temsil eder.  
+ [in] Değerini [CorElementType numaralandırması](/dotnet/framework/unmanaged-api/metadata/corelementtype-enumeration) temsil eden temel türü.  
   
  `pAddress`  
- [in] Bir adresi nesnesinin temsil ettiği bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
+ [in] Bir adres nesnesini temsil ettiği bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
   
  `ppType`  
- [in] Döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesnesi türünü açıklar.  
+ [in] Döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) türü tanımlayan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::CreateTypeFromPrimitive(  

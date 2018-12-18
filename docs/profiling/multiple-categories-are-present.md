@@ -14,20 +14,21 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7362f0a7495a75bc1d34d7f839bf0397787b6173
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e1481d5a6f22606875b0173bf0d3060bb455f022
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257634"
 ---
-# <a name="multiple-categories-are-present"></a>Birden Çok Kategori Mevcut
+# <a name="multiple-categories-are-present"></a>Birden çok kategori mevcut
 Belirli bir zaman aralığı için etkinlik birden fazla tür içeren bir bölümü seçilir. İki renkten görüntülenen dikkat edin, bir dikey diğer bağlı yığın. Bu renkleri üst iki en sık rastlanan etkinlikleri yalnızca belirli bir zaman aralığında gösterir. Bu iki etkinlik sıklıkları birbirine göre Üçe veya dikey çubuk yarısının gösterilir. Daha fazla ayrıntı için iş parçacığı görünüm bu bölümünü yakınlaştırmayı deneyin.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Yürütme zamanı (iş parçacıkları görünümü)](../profiling/execution-time-threads-view.md)   
  [G/ç zamanı (iş parçacıkları görünümü)](../profiling/i-o-time-threads-view.md)   
  [Bellek yönetimi zamanı](../profiling/memory-management-time.md)   
  [Önalım zamanı](../profiling/preemption-time.md)   
  [Bekleme süresi](../profiling/sleep-time.md)   
  [Eşitleme zamanı](../profiling/synchronization-time.md)   
- [UI İşleme Zamanı](../profiling/ui-processing-time.md)
+ [UI işleme zamanı](../profiling/ui-processing-time.md)

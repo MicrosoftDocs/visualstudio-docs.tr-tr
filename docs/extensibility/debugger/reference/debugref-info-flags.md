@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f5864b3503b19e8a473f45e4167aad835181da50
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9957b0aaf81048c5040e3f7ff54f3fa9be742dc1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49858569"
 ---
 # <a name="debugrefinfoflags"></a>DEBUGREF_INFO_FLAGS
-Hata ayıklama başvuru nesnesi hakkında almak için hangi bilgilerin belirtir.  
+Hangi bilgilerin hakkında bir hata ayıklama başvuru nesnesi alınacağını belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -57,48 +58,48 @@ public enum enum_DEBUGREF_INFO_FLAGS {
   
 ## <a name="members"></a>Üyeler  
  DEBUGREF_INFO_NAME  
- Başlatma/kullanım `bstrName` yapısında alan.  
+ Başlat/kullanım `bstrName` yapısında alan.  
   
  DEBUGREF_INFO_TYPE  
- Başlatma/kullanım `bstrType` yapısında alan.  
+ Başlat/kullanım `bstrType` yapısında alan.  
   
  DEBUGREF_INFO_VALUE  
- Başlatma/kullanım `bstrValue` yapısında alan.  
+ Başlat/kullanım `bstrValue` yapısında alan.  
   
  DEBUGREF_INFO_ATTRIB  
- Başlatma/kullanım `dwAttrib` yapısında alan.  
+ Başlat/kullanım `dwAttrib` yapısında alan.  
   
  DEBUGREF_INFO_REFTYPE  
- Başlatma/kullanım `dwRefType` yapısında alan.  
+ Başlat/kullanım `dwRefType` yapısında alan.  
   
  DEBUGREF_INFO_REF  
- Başlatma/kullanım `pReference` yapısında alan.  
+ Başlat/kullanım `pReference` yapısında alan.  
   
  DEBUGREF_INFO_VALUE_AUTOEXPAND  
- Değer alanı varsa, bu nesne türü otomatik genişletilmiş değeri içermelidir.  
+ Değer alanı otomatik olarak genişletilmiş değeri varsa, bu nesne türü içermelidir.  
   
  DEBUGREF_INFO_NONE  
- Hiçbir bayraklarının ayarlandığını gösterir.  
+ Bayrak belirlendiğini gösterir.  
   
  DEBUGREF_INFO_ALL  
- Bayrakları maskesi gösterir.  
+ Maske bayrakları belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu bayrakların geçirilecek [EnumChildren](../../../extensibility/debugger/reference/idebugreference2-enumchildren.md) ve [GetReferenceInfo](../../../extensibility/debugger/reference/idebugreference2-getreferenceinfo.md) hangi alanlarının göstermek için yöntemlerini [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapısı başlatılması üzeresiniz.  
+ Bu bayraklar geçirilen [EnumChildren](../../../extensibility/debugger/reference/idebugreference2-enumchildren.md) ve [GetReferenceInfo](../../../extensibility/debugger/reference/idebugreference2-getreferenceinfo.md) hangi alanları göstermek için yöntemlerini [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapısı olan başlatılacak.  
   
- İçin kullanılan `dwFields` üyesi `DEBUG_REFERENCE_INFO` yapısı döndürüldüğünde hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ İçin kullanılan `dwFields` üyesi `DEBUG_REFERENCE_INFO` yapısı yapısı döndürüldüğünde hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md)   
  [EnumChildren](../../../extensibility/debugger/reference/idebugreference2-enumchildren.md)   
  [GetReferenceInfo](../../../extensibility/debugger/reference/idebugreference2-getreferenceinfo.md)

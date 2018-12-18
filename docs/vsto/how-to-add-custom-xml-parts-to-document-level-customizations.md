@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: belge düzeyi özelleştirmelerine özel XML bölümleri ekleme | Microsoft Docs'
+title: 'Nasıl yapılır: belge düzeyi özelleştirmelerine özel XML bölümleri ekleme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -20,47 +20,47 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: a5126e5ca6eb83df70ed03a7491fdd5d2a98912e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0472ad001dee595f1f8edb77d7a70f1eefb0c024
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744875"
 ---
-# <a name="how-to-add-custom-xml-parts-to-document-level-customizations"></a>Nasıl Yapılır: Belge Düzeyi Özelleştirmelerine Özel XML Bölümleri Ekleme
-  Belge düzeyi özelleştirmelerinde özel bir XML parçasına oluşturarak, bir Microsoft Office Excel çalışma kitabı veya Microsoft Office Word belgesi XML verilerini depolayabilir. Daha fazla bilgi için bkz: [özel XML bölümlerine genel bakış](../vsto/custom-xml-parts-overview.md).  
+# <a name="how-to-add-custom-xml-parts-to-document-level-customizations"></a>Nasıl yapılır: belge düzeyi özelleştirmelerine özel XML bölümleri ekleme
+  Belge düzeyi özelleştirmesinde özel bir XML parçasına oluşturarak, bir Microsoft Office Excel çalışma kitabı veya Microsoft Office Word belgesi içinde XML verileri depolayabilirsiniz. Daha fazla bilgi için [özel XML bölümlerine genel bakış](../vsto/custom-xml-parts-overview.md).  
   
  [!INCLUDE[appliesto_alldoc](../vsto/includes/appliesto-alldoc-md.md)]  
   
 > [!NOTE]  
->  Visual Studio, Microsoft Office PowerPoint için belge düzeyi projelerine sağlamaz. Bir VSTO eklenti kullanarak özel bir XML parçasına PowerPoint sunusunu ekleme hakkında daha fazla bilgi için bkz: [nasıl yapılır: belgeleri tarafından kullanarak VSTO eklentileri için özel XML bölümleri ekleme](../vsto/how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins.md).  
+>  Visual Studio, Microsoft Office PowerPoint için belge düzeyi projelere sağlamaz. Bir VSTO eklentisi kullanarak bir PowerPoint sunumu özel XML bölümleri ekleme hakkında daha fazla bilgi için bkz: [nasıl yapılır: VSTO eklentileri kullanarak belgelere özel XML bölümleri ekleme](../vsto/how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins.md).  
   
-### <a name="to-add-a-custom-xml-part-to-an-excel-workbook"></a>Bir Excel çalışma kitabı için özel bir XML parçasına eklemek için  
+### <a name="to-add-a-custom-xml-part-to-an-excel-workbook"></a>Bir Excel çalışma kitabına özel XML bölümleri ekleme  
   
-1.  Yeni bir ekleme <xref:Microsoft.Office.Core.CustomXMLPart> nesnesine <xref:Microsoft.Office.Core.CustomXMLParts> çalışma kitabı koleksiyonu. <xref:Microsoft.Office.Core.CustomXMLPart> Çalışma kitabında saklamak istediğiniz XML dizesini içerir.  
+1.  Yeni bir <xref:Microsoft.Office.Core.CustomXMLPart> nesnesini <xref:Microsoft.Office.Core.CustomXMLParts> çalışma kitabında koleksiyonu. <xref:Microsoft.Office.Core.CustomXMLPart> Çalışma kitabında depolamak istediğiniz XML dizesi içerir.  
   
      [!code-csharp[Trin_AddCustomXmlPartExcelDocLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartExcelDocLevel/ThisWorkbook.cs#1)]
      [!code-vb[Trin_AddCustomXmlPartExcelDocLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartExcelDocLevel/ThisWorkbook.vb#1)]  
   
-2.  Ekleme `AddCustomXmlPartToWorkbook` yönteme `ThisWorkbook` Excel için belge düzeyi projede sınıfı.  
+2.  Ekleme `AddCustomXmlPartToWorkbook` yönteme `ThisWorkbook` Excel için belge düzeyi projesinde sınıfı.  
   
-3.  Projenizdeki başka koddan yöntemi çağırın. Örneğin, çalışma kitabını kullanıcı oturum açtığında özel XML parçaları oluşturmak için yöntemi çağırın `ThisWorkbook_Startup` olay işleyicisi.  
+3.  Projenizdeki başka bir koddan yöntemi çağırın. Örneğin, kullanıcı çalışma kitabınızı açtığında özel XML parçaları oluşturmak için içinden yöntemi çağırın `ThisWorkbook_Startup` olay işleyicisi.  
   
-### <a name="to-add-a-custom-xml-part-to-a-word-document"></a>Özel bir XML parçasına Word belgesine eklemek için  
+### <a name="to-add-a-custom-xml-part-to-a-word-document"></a>Bir Word belgesi için özel XML bölümleri ekleme  
   
-1.  Yeni bir ekleme <xref:Microsoft.Office.Core.CustomXMLPart> nesnesine <xref:Microsoft.Office.Core.CustomXMLParts> belge koleksiyonu. <xref:Microsoft.Office.Core.CustomXMLPart> Belgede depolamak istediğiniz XML dizesini içerir.  
+1.  Yeni bir <xref:Microsoft.Office.Core.CustomXMLPart> nesnesini <xref:Microsoft.Office.Core.CustomXMLParts> belgedeki koleksiyonu. <xref:Microsoft.Office.Core.CustomXMLPart> Belge içinde depolamak istediğiniz XML dizesi içerir.  
   
      [!code-vb[Trin_AddCustomXmlPartWordDocLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartWordDocLevel/ThisDocument.vb#1)]
      [!code-csharp[Trin_AddCustomXmlPartWordDocLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartWordDocLevel/ThisDocument.cs#1)]  
   
-2.  Ekleme `AddCustomXmlPartToDocument` yönteme `ThisDocument` Word için belge düzeyi projede sınıfı.  
+2.  Ekleme `AddCustomXmlPartToDocument` yönteme `ThisDocument` Word için belge düzeyi projesinde sınıfı.  
   
-3.  Projenizdeki başka koddan yöntemi çağırın. Örneğin, kullanıcı belgeyi açtığında özel XML parçaları oluşturmak için yöntemi çağırın `ThisDocument_Startup` olay işleyicisi.  
+3.  Projenizdeki başka bir koddan yöntemi çağırın. Örneğin, kullanıcının belge açıldığında özel XML parçaları oluşturmak için içinden yöntemi çağırın `ThisDocument_Startup` olay işleyicisi.  
   
-## <a name="robust-programming"></a>Güçlü Programlama  
- Kolaylık olması için bu örnek bir yerel değişken yöntemi olarak tanımlanan bir XML dizesini kullanır. Genellikle, bir dosya veya veritabanı gibi bir dış kaynaktan XML edinmeniz gerekir.  
+## <a name="robust-programming"></a>Güçlü programlama  
+ Kolaylık olması için bu örnek, bir yerel değişken yöntemi olarak tanımlanan bir XML dizesi kullanır. Genellikle, bir dosya veya veritabanı gibi bir dış kaynaktan XML edinmeniz gerekir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Özel XML bölümlerine genel bakış](../vsto/custom-xml-parts-overview.md)   
- [Nasıl Yapılır: VSTO Eklentilerini Kullanarak Belgelere Özel XML Bölümleri Ekleme](../vsto/how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins.md)  
-  
+ [Nasıl yapılır: VSTO eklentileri kullanarak belgelere özel XML bölümleri ekleme](../vsto/how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins.md)  
   

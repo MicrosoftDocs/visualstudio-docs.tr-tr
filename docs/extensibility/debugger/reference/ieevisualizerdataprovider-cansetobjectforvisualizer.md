@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d8848fd5628fbbb7e0e642de2389d6b98375fa6f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e9a70ca947a6b794f74baec9805941c5a9610936
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825726"
 ---
 # <a name="ieevisualizerdataprovidercansetobjectforvisualizer"></a>IEEVisualizerDataProvider::CanSetObjectForVisualizer
-Bu yöntem Görselleştirici güncelleştirilmiş temsil ettiği veri nesnesi yüklü olup olmadığını belirler.  
+Bu yöntem, görselleştiricisi güncelleştirilmiş temsil ettiği veri nesnesi sahip olup olmadığını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int CanSetObjectForVisualizer(
   
 #### <a name="parameters"></a>Parametreler  
  `b`  
- [out] Sıfır olmayan (`TRUE`) Görselleştirici nesnesinde güncelleştirilebilir değilse, sıfır (`FALSE`) başaramazsa.  
+ [out] Sıfır olmayan (`TRUE`) Görselleştirici nesne güncelleştirilebilir, sıfır (`FALSE`) erişilemiyorsa.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir nesne, salt okunur belleğe, örneğin bağlıysa değiştirilebilir olmayabilir.  
+ Bir nesne, salt okunur bellek, örneğin bağlı ise takımdaki herhangi biri olmayabilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEEVisualizerDataProvider](../../../extensibility/debugger/reference/ieevisualizerdataprovider.md)

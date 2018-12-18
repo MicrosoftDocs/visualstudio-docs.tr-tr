@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130318"
 ---
 # <a name="source-control-runtime-details"></a>Kaynak Denetimi çalışma zamanı ayrıntıları
 Kullanıcı bir dosyayı projede kaynak denetimine ya da bir sihirbaz gibi bir Otomasyon denetleyicisi aracılığıyla eklediğinde bir proje için kaynak denetimi eklenir. Bir proje kendisi için kaynak denetimi altında olduğunu belirtmez; Kaynak denetimi destekler, ancak el ile eklenmesi gerekir.  

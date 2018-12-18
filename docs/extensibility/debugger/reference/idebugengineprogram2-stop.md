@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ab5bec65dc3f53681d40743bea694295ff69944b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 17919b42f97d2255325c1ceae119014521325c7b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49860831"
 ---
 # <a name="idebugengineprogram2stop"></a>IDebugEngineProgram2::Stop
-Tüm iş parçacıklarını bu programı çalıştırmayı durdurur.  
+Bu programa tüm iş parçacıkları durdurur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,12 +38,12 @@ int Stop();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu program bir çok program ortamında ayıklanacak olduğunda bu yöntem çağrılır. Başka bir programı durdurma olayından alındığında, bu programı, bu yöntem çağrılır. Bu yöntemin kullanımı zaman uyumsuz olmalıdır; diğer bir deyişle, tüm iş parçacıklarının bu yöntem döndürmeden önce durdurulması gerekir. Bu yöntemin kullanımı çağırmak kadar kolaydır [CauseBreak](../../../extensibility/debugger/reference/idebugprogram2-causebreak.md) Bu program yöntemi.  
+ Bu program bir çok program ortamında ayıklanmakta olan bu yöntem çağrılır. Bu yöntem, bu programda başka bir programı durdurma olaydan alındığında çağrılır. Bu yöntemin uygulanmasını zaman uyumsuz olması gerekir; diğer bir deyişle, tüm iş parçacıkları bu yöntem döndürmeden önce durdurulması gerekir. Bu yöntemin uygulanmasını çağırmak kadar basit [CauseBreak](../../../extensibility/debugger/reference/idebugprogram2-causebreak.md) Bu program yöntemi.  
   
- Hata ayıklama olay yanıt bu yöntem olarak gönderilir.  
+ Hata ayıklama olay yanıt olarak bu yöntem gönderilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngineProgram2](../../../extensibility/debugger/reference/idebugengineprogram2.md)   

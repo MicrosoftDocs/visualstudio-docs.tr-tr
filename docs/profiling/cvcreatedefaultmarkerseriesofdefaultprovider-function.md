@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 418acf8e296446785fb0cda5d0a97f52754050e2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6c68c7870430033d9ff20b94f51e516038c9eba6
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34749193"
 ---
-# <a name="cvcreatedefaultmarkerseriesofdefaultprovider-function"></a>CvCreateDefaultMarkerSeriesOfDefaultProvider İşlevi
+# <a name="cvcreatedefaultmarkerseriesofdefaultprovider-function"></a>CvCreateDefaultMarkerSeriesOfDefaultProvider işlevi
 Varsayılan bir sağlayıcı varsayılan işaret dizi oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```C  
 HRESULT CvCreateDefaultMarkerSeriesOfDefaultProvider(  
    _Out_ PCV_PROVIDER* ppProvider,  
    _Out_ PCV_MARKERSERIES* ppMarkerSeries  
@@ -39,11 +40,11 @@ HRESULT CvCreateDefaultMarkerSeriesOfDefaultProvider(
  `ppMarkerSeries`  
  İşaretçi serisi nesne değişkeni adresidir. Adres boş olamaz, değişkeni herhangi bir değer olabilir.  
   
-## <a name="return-value"></a>Dönüş Değeri  
+## <a name="return-value"></a>Dönüş değeri  
  Hem sağlayıcı hem de işaret serisi başarıyla oluşturulduğunda veya tüm hatalar oluştu. hata kodu var. durumda S_OK. Hata koşulu denetlemek için başarılı/başarısız makroları kullanın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkers.h  
+ **Başlık:** *cvmarkers.h*  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)

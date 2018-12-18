@@ -15,23 +15,24 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c77febb7ad9f41880fef604849af75aa065ff593
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: dd6908a8a0b49f5078e4c0d448ba2dedbe8f720a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872050"
 ---
 # <a name="constants-debug-interface-access-sdk"></a>Sabitler (Arabirim Erişimi SDK'sında Hata Ayıklama)
-Bu dize sabitleri, bir program hata ayıklama veritabanı (PDB) dosyası DIA SDK aracılığıyla çeşitli bölümlerini belirlemek için kullanılabilir.  
+Bu dize sabitleri, program hata ayıklama veritabanı (PDB) dosyası DIA SDK'sı aracılığıyla çeşitli bölümlerini belirlemek için kullanılabilir.  
   
 ## <a name="constants"></a>Sabitler  
  Aşağıdaki C/C++ makroları olarak bildirilir.  
   
 |Makrosu|Değer|  
 |-----------|-----------|  
-|`DiaTable_Symbols`|L "Simgeleri"|  
-|`DiaTable_Sections`|L "Bölüm"|  
-|`DiaTable_SrcFiles`|L "SourceFiles"|  
+|`DiaTable_Symbols`|L "Simge"|  
+|`DiaTable_Sections`|L "Bölümler"|  
+|`DiaTable_SrcFiles`|L "Kaynakdosyalar"|  
 |`DiaTable_LineNums`|L "Lınenumbers"|  
 |`DiaTable_SegMap`|L "SegmentMap"|  
 |`DiaTable_Dbg`|L "Dbg"|  
@@ -39,7 +40,7 @@ Bu dize sabitleri, bir program hata ayıklama veritabanı (PDB) dosyası DIA SDK
 |`DiaTable_FrameData`|L "FrameData"|  
   
 ## <a name="example"></a>Örnek  
- Bu simgeleri birini kullanarak örnek aşağıda verilmiştir:  
+ Şu simgelerden birini kullanarak bir örnek aşağıda verilmiştir:  
   
 ```C++  
 HRESULT GetSymbolTable(IDiaEnumTables *pEnumTables, IDiaTable **pTable)  
@@ -54,10 +55,10 @@ HRESULT GetSymbolTable(IDiaEnumTables *pEnumTables, IDiaTable **pTable)
 ```  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: dia2.h  
+ Üstbilgi: dia2.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Başvuru](../../debugger/debug-interface-access/debug-interface-access-sdk-reference.md)   
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [Arabirimler (arabirim erişimi SDK'SINDA hata ayıklama)](../../debugger/debug-interface-access/interfaces-debug-interface-access-sdk.md)   
  [IDiaEnumTables::Item](../../debugger/debug-interface-access/idiaenumtables-item.md)

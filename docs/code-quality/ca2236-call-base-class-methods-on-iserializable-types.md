@@ -1,6 +1,7 @@
 ---
 title: 'CA2236: ISerializable türler üzerinde taban sınıf yöntemlerini çağırın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,40 +14,45 @@ ms.assetid: 5a15b20d-769c-4640-b31a-36e07077daae
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: b7bc90dfd0cf786bbd4e2494a6c65e2c19ff4eb6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9c5b4dee5a274e88be407e015adc4d20c06605dd
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547652"
 ---
 # <a name="ca2236-call-base-class-methods-on-iserializable-types"></a>CA2236: ISerializable türler üzerinde taban sınıf yöntemlerini çağırın
+
 |||
 |-|-|
 |TypeName|CallBaseClassMethodsOnISerializableTypes|
 |CheckId|CA2236|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Uygulayan türünden bir türü <xref:System.Runtime.Serialization.ISerializable?displayProperty=fullName> arabirimi ve aşağıdaki koşullardan biri doğruysa:
+ Bir tür uygulayan türünden türer <xref:System.Runtime.Serialization.ISerializable?displayProperty=fullName> arabirimi ve aşağıdaki koşullar doğruysa:
 
--   Türü seri hale getirme oluşturucusu, diğer bir deyişle, bir oluşturucu uygulayan <xref:System.Runtime.Serialization.SerializationInfo?displayProperty=fullName>, <xref:System.Runtime.Serialization.StreamingContext?displayProperty=fullName> parametre imzası, ancak temel türü seri hale getirme oluşturucusunun çağırmaz.
+- Diğer bir deyişle, bir Oluşturucu ile seri hale getirme oluşturucusunu türün uyguladığı <xref:System.Runtime.Serialization.SerializationInfo?displayProperty=fullName>, <xref:System.Runtime.Serialization.StreamingContext?displayProperty=fullName> parametre imzası, temel türün seri hale getirme oluşturucusunu çağırmaz, ancak.
 
--   Tür uygular <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=fullName> yöntemi ancak çağrılmayan <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> temel türün yöntemi.
+- Türün uyguladığı <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=fullName> yöntemi ancak arama <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> temel türün yöntemi.
 
-## <a name="rule-description"></a>Kural Tanımı
- İçinde özel seri hale getirme işlemi, bir tür uygulayan <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> alanları ve seri durumdan alanlar için seri hale getirme Oluşturucusu serileştirmek için yöntem. Uygulayan türünden türü varsa <xref:System.Runtime.Serialization.ISerializable> arabirim, temel türü <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi ve Serileştirme Oluşturucusu çağrılabilir seri/Kaldır-serialize için temel türünde alanlar. Aksi takdirde türü değil sıralanabilir ve doğru json'dan seri durumdan çıkarılmış. Türetilmiş bir tür yeni alanları eklemez, türü uygulamak değil gerekir <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi veya seri hale getirme Oluşturucusu veya temel türü eşdeğerleri çağırın.
+## <a name="rule-description"></a>Kural açıklaması
+ Bir özel seri hale getirme işleminde bir türün uyguladığı <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> kendi alanlarına ve seri durumdan çıkarılamıyor alanlar için seri hale getirme oluşturucusunu serileştirmek için yöntemi. Türü uygulayan türünden türer, <xref:System.Runtime.Serialization.ISerializable> arabirim, temel tür <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi ve Serileştirme Oluşturucusu çağrılabilir seri hale getirmek/sona erdirme olanağı-serialize için temel türün alanları. Aksi takdirde, türü değil sıralanabilir ve doğru şekilde json'dan seri. Türetilmiş tür yeni alanları eklemez, türü uygulamak gerekmez, unutmayın <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi ya da seri hale getirme oluşturucusunu veya temel tür eşdeğeri arayın.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için temel türü çağrı <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> karşılık gelen gelen yöntemi veya seri hale getirme Oluşturucusu türetilen tür yöntemi veya Oluşturucusu.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için temel tür çağrı <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi veya serileştirme Oluşturucu öğelerinden karşılık gelen türetilmiş tür yöntem veya Oluşturucu.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, kural seri hale getirme Oluşturucu çağırarak karşılayan türetilmiş bir tür gösterir ve <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi temel sınıf.
+ Aşağıdaki örnek, kural seri hale getirme oluşturucusunu çağırarak karşılayan türetilmiş bir tür gösterir ve <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> yöntemi temel sınıf.
 
  [!code-vb[FxCop.Usage.CallBaseISerializable#1](../code-quality/codesnippet/VisualBasic/ca2236-call-base-class-methods-on-iserializable-types_1.vb)]
  [!code-csharp[FxCop.Usage.CallBaseISerializable#1](../code-quality/codesnippet/CSharp/ca2236-call-base-class-methods-on-iserializable-types_1.cs)]

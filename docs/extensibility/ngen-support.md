@@ -1,5 +1,5 @@
 ---
-title: VSIX v3 Ngen desteği | Microsoft Docs
+title: VSIX v3'te Ngen desteği | Microsoft Docs
 ms.custom: ''
 ms.date: 11/09/2016
 ms.technology:
@@ -11,42 +11,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 146df23bff14bd93558c645521f99f6099a49bde
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3b5f9c7b297d98836ca3e5c017d2a0d440a30470
+ms.sourcegitcommit: 9765b3fcf89375ca499afd9fc42cf4645b66a8a2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46495485"
 ---
-# <a name="ngen-support-in-vsix-v3"></a>VSIX v3 Ngen desteği
+# <a name="ngen-support-in-vsix-v3"></a>VSIX v3’te Ngen desteği
 
-(Sürüm 3) uzantısı Visual Studio 2017 ve yeni VSIX v3 "ngen" biçimi, uzantısı geliştiriciler artık bildirim derlemelerini yükleme zamanında.
+(Sürüm 3) uzantı Visual Studio 2017 ve yeni VSIX v3 ile "ngen" biçim, uzantı geliştiricileri artık bildirim derlemelerini yükleme.
 
-Hangi "ngen" yaptığını anlatan MSDN'den bir alıntı aşağıdadır:
+"Ngen" ne yaptığını anlatan MSDN kitabından aşağıdadır:
 
->Yerel Görüntü Oluşturucusu (Ngen.exe), yönetilen uygulamaların performansını artıran bir araçtır. Ngen.exe, işlemciye özel derlenmiş makine kodu içeren dosyalar olan yerel görüntüler oluşturur ve bunları yerel bilgisayarın yerel görüntü önbelleğine yükler. Çalışma zamanı orijinal derlemeyi derlemek için anlık (JIT) derleyiciyi kullanmak yerine önbellekteki yerel görüntüleri kullanabilir.
+>Native Image Generator (*Ngen.exe*), yönetilen uygulamaların performansını artıran bir araçtır. *Ngen.exe* derlenmiş işlemciye özgü makine kodu içeren dosyalar ve yerel bilgisayarda yerel görüntü önbelleğine yükler yerel görüntüler oluşturur. Çalışma zamanı orijinal derlemeyi derlemek için anlık (JIT) derleyiciyi kullanmak yerine önbellekteki yerel görüntüleri kullanabilir.
 >
->gelen [Ngen.exe (yerel Görüntü Oluşturucu)](https://msdn.microsoft.com/en-us/library/6t9t5wcf(v=vs.110).aspx)
+>gelen [Ngen.exe (yerel Görüntü Oluşturucu)](/dotnet/framework/tools/ngen-exe-native-image-generator)
 
-Derleme bir "ngen" için sırayla VSIX "makine başına örnek başına" yüklenmesi gerekir. Bu extension.vsixmanifest Tasarımcısı'nda "tüm kullanıcılar" onay kutusunu işaretleyerek etkin hale getirilebilir:
+"Ngen" bir derleme için sırada VSIX "makine başına örnek başına" yüklenmesi gerekir. Bu "tüm kullanıcılar" onay kutusunu işaretleyerek etkin hale getirilebilir `extension.vsixmanifest` Tasarımcısı:
 
-![tüm kullanıcılar denetleyin](media/check-all-users.png)
+![tüm kullanıcılar](media/check-all-users.png)
 
 ## <a name="how-to-enable-ngen"></a>Ngen etkinleştirme
 
-Bir derlemeyi Ngen etkinleştirmek için kullanabileceğiniz **özellikleri** Visual Studio'daki.
+Bir derleme için Ngen etkinleştirmek için kullanabileceğiniz **özellikleri** Visual Studio'daki.
 
-Ayarlanabilir 4 özellikleri şunlardır:
+Ayarlanabilir 4 özellikler vardır:
 
-1. **Ngen** (Boole) - Visual Studio yükleyicisi true ise, derleme "ngen" olur.
-2. **Ngen uygulama** (dize) - Ngen derleme bağımlılıkları çözümlemek amacıyla bir uygulamanın app.config dosyasına kullanmanıza olanak sağlar. Bu değer, app.config (Visual Studio yükleme dizini göreli) kullanmak istediğiniz bir uygulama için ayarlanmalıdır.
-3. **Ngen mimarisi** (numaralandırma) - yerel derlemenizi derlemek için mimarisi. Seçenekler şunlardır: bir. NotSpecified b. X86 c. X64 d. Tümü
-4. **Ngen öncelik** (tamsayı) - 1 ile 3 arasında Ngen öncelik düzeyi adresindeki belgelenmiştir [Ngen.exe öncelik düzeyleri](https://msdn.microsoft.com/en-us/library/6t9t5wcf(v=vs.110).aspx#Anchor_3).
+1. **Ngen** (Boolean) - Visual Studio yükleyicisi doğruysa, derleme "ngen" olur.
+2. **Ngen uygulaması** (string) - Ngen sağlayan bir uygulama kullanma olanağına *app.config* derleme bağımlılıkları çözümlemek için dosya. Bu değer için bir uygulama özelliği ayarlanmalıdır *app.config* (Visual Studio yükleme dizini göreli) kullanmak istiyorsunuz.
+3. **Ngen mimarisi** (enum) - derlemenizi yerel olarak derlemek için Mimari. Seçenekler şunlardır: bir. NotSpecified b. X86 c. X64 d. Tümü
+4. **Ngen önceliği** (1 ile 3 arasında tamsayı) - Ngen öncelik düzeyi konumunda belgelenmiştir [Ngen.exe öncelik düzeyleri](/dotnet/framework/tools/ngen-exe-native-image-generator#priority-levels).
 
-Göz atın işte **özellikleri** eylem penceresinde:
+İşte göz **özellikleri** eylem penceresinde:
 
 ![Ngen özellikleri](media/ngen-in-properties.png)
 
-Bu meta verileri VSIX proje .csproj dosya içinde proje başvurusu ekler:
+Bu meta verileri içinde VSIX projenin proje başvurusu ekler *.csproj* dosyası:
 
 ```xml
  <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
@@ -59,8 +60,8 @@ Bu meta verileri VSIX proje .csproj dosya içinde proje başvurusu ekler:
 </ProjectReference>
  ```
 
- >**Not:** tercih ederseniz, doğrudan .csproj dosyasını düzenleyin.
+ >**Not:** tercih ederseniz, .csproj dosyasını doğrudan düzenleyebilirsiniz.
 
 ## <a name="extra-information"></a>Ek bilgi
 
-Özellik Tasarımcı değişiklikleri daha fazlasını proje başvuruları için geçerlidir; Ngen meta veri öğeleri için projenizin içinde ayarlayabilirsiniz (.NET derlemelerini öğeleridir olarak uzun yukarıda açıklanan aynı yöntemleri kullanarak).
+Özellik Tasarımcısı değişiklikleri daha fazlasını proje başvuruları için geçerlidir; Ngen meta veri öğeleri için proje içinde ayarlayabilirsiniz (öğeleri .NET derlemeleri gibi uzun yukarıda açıklanan aynı yöntemleri kullanarak).

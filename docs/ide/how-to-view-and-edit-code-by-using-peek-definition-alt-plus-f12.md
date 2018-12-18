@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da Özet tanımı kullanarak | Microsoft Docs
-ms.custom: ''
+title: Özet tanımı kullanma
 ms.date: 01/10/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 author: gewarren
@@ -9,67 +9,68 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 316b49a08d5a2cddf92a09e583f432db96ce730b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 518256c550f56832c6711ab6d2ca2dae4eb0aa2c
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059658"
 ---
-# <a name="how-to-view-and-edit-code-by-using-peek-definition-altf12"></a>Nasıl yapılır: Gözat tanımı (Alt + F12) kullanarak görüntüleme ve düzenleme kod
+# <a name="how-to-view-and-edit-code-by-using-peek-definition-altf12"></a>Nasıl yapılır: Özet tanım (Alt + F12) kullanarak kodu görüntüleme ve düzenleme
 
-Kullanabileceğiniz **Peek tanımı** görüntülemek ve kodu yazdığınız kodu çıktığınızda geçmeden düzenlemek için komutu. **Tanım Ara** ve **Tanıma Git** aynı bilgileri gösterir, ancak **Peek tanımı** açılır pencerede, gösterir ve **Tanıma Git** gösterir ayrı kod penceresinde kod. **Tanıma Git** tanımı kod penceresine geçiş yapmak, içerik (diğer bir deyişle, etkin kod penceresi, geçerli satır ve imleç konumu) neden olur. Kullanarak **Peek tanımı**, görüntüleyebilir ve tanımını düzenlemek ve özgün kod dosyasında yerinizi tutarken tanım dosyası içinde hareket etme.
+Kullanabileceğiniz **Özet tanım** görüntülemek ve kod yazdığınız uzaklaşmadan kod tanımlarını düzenlemek için komutu. **Özet tanım** ve **tanıma** aynı bilgileri gösterir ancak **Özet tanım** bir açılır pencerede gösterir ve **tanıma** gösterir ayrı bir kod penceresinde kodu. **Tanıma Git** tanım kodu penceresine geçilmesine, bağlamınızın (yani, etkin kod penceresi, geçerli satır ve imleç konumu) neden olur. Kullanarak **Özet tanım**, görüntüleyebilir ve tanımını düzenleyin ve orijinal kod dosyasında yerinizi tutarken tanım dosyası içinde gezinebilirsiniz.
 
-Kullanabileceğiniz **Peek tanımı** C#, Visual Basic ve C++ kodu ile. Visual Basic'te **Peek tanımı** bağlantısını gösterir **Nesne Tarayıcısı** tanımı meta veriler (yerleşik olan Örneğin, .NET Framework türleri) yoksa sembolleri.
+Kullanabileceğiniz **Özet tanım** C#, Visual Basic ve C++ koduna sahip. Visual Basic'te **Özet tanım** bir bağlantısı gösterir **Nesne Tarayıcısı** tanım meta verileri (yerleşik olarak bulunan Örneğin, .NET Framework türleri) olmayan simgeler için.
 
 ## <a name="working-with-peek-definition"></a>Özet Tanım ile Çalışma
 
 ### <a name="to-open-a-peek-definition-window"></a>Bir Özet Tanım penceresi açmak için
 
-1. Seçerek bir tanımı iletiye göz atabilirsiniz **Özet tanımı** türü ya da keşfetmek istediğiniz üye bağlam menüsünden. Seçeneği etkinleştirilirse, Visual Studio 2017 içinde 15.4 ve sonraki sürümleri, siz de tuşlarına basarak Fare kullanarak bir tanımını iletiye göz atabilirsiniz **Ctrl** (veya başka bir değiştiricisi) ve üye adı'nı tıklatın. Veya klavyeden basın **Alt**+**F12**.
+1. Seçerek bir tanıma göz atma **Özet tanımı** için keşfetmek istediğiniz bir türü veya bağlam menüsünden. Seçeneği etkinleştirilirse, Visual Studio 2017 sürüm 15.4 ve üzeri, ayrıca fare tuşuna basarak kullanarak bir Özet tanım **Ctrl** (veya başka bir değiştirici) ve üye adına tıklayarak. Veya, klavyeden basın **Alt**+**F12**.
 
-     Bu gösterimde **Peek tanımı** adlı bir yöntem için pencere `Print()`:
+     Bu resimde **Özet tanım** adlı bir yöntem için pencere `Print()`:
 
-     ![Pencere peek](../ide/media/peekwindow.png "PeekWindow")
+     ![Penceresinde göz at](../ide/media/peekwindow.png)
 
-     Aşağıda tanım penceresi görüntülenir `printer.Print("Hello World!")` özgün dosyasındaki satır. Pencerede, özgün dosyanızdaki kodlardan hiçbiri gizlenmez. İzleyen satırlarını `printer.Print("Hello World!")` altında tanımı penceresi görünür.
+     Tanım penceresinin altında görünür `printer.Print("Hello World!")` özgün dosyadaki bir satır. Pencerede, özgün dosyanızdaki kodlardan hiçbiri gizlenmez. Gelen satırlar `printer.Print("Hello World!")` tanım penceresinin altında görünür.
 
-1. İmleci, gözlem tanımı penceresinde farklı konumlara taşıyın. Özgün kod penceresinde yine de taşıyabilirsiniz.
+1. İmleç, Özet tanımı penceresinde farklı konumlara taşıyabilirsiniz. Özgün kod penceresinde yine de taşıyabilirsiniz.
 
 1. Dizeyi tanım penceresinden kopyalayıp özgün koda yapıştırabilirsiniz. Dizeyi tanım penceresinden sürükleyip özgün koda da bırakabilirsiniz (tanım penceresinden silinmeden).
 
-1. Seçerek tanımı pencerenizi kapatabilir **Esc** anahtar veya **kapatmak** tanımı penceresi sekmesindeki düğmesi.
+1. Seçerek tanım penceresini kapatabilirsiniz **Esc** anahtarı veya **kapatmak** tanım penceresi sekmesindeki düğmesi.
 
-### <a name="open-a-peek-definition-window-from-within-a-peek-definition-window"></a>Peek tanımı penceresi içinde bir gözatma tanımı penceresi açın
+### <a name="open-a-peek-definition-window-from-within-a-peek-definition-window"></a>Bir Özet tanım penceresinin içinden Özet tanım penceresini açın
 
-Zaten varsa bir **Peek tanımı** penceresi açık, çağırabilir **Peek tanımı** yeniden bu pencereyi kodunda üzerinde. Başka bir tanım penceresi açılır. Tanım penceresi sekmesinin yanında, tanım pencereleri arasında gezinmek için kullanabileceğiniz bir dizi içerik haritası noktası görünür. Her bir noktadaki araç ipucu, noktanın temsil ettiği tanım dosyasının dosya adını ve yolunu gösterir.
+Zaten bir **Özet tanım** pencereniz açıksa çağırabilirsiniz **Özet tanım** Bu penceredeki kod üzerinde yeniden. Başka bir tanım penceresi açılır. Tanım penceresi sekmesinin yanında, tanım pencereleri arasında gezinmek için kullanabileceğiniz bir dizi içerik haritası noktası görünür. Her bir noktadaki araç ipucu, noktanın temsil ettiği tanım dosyasının dosya adını ve yolunu gösterir.
 
-   ![Peek pencere gözlem penceresi içinde](../ide/media/peekwithinpeek.png "PeekWithinPeek")
+   ![Pencere bir Özet penceresi içinde Ara](../ide/media/peekwithinpeek.png)
 
-### <a name="peek-definition-with-multiple-results"></a>Birden çok sonuçlarla Özet tanımı
+### <a name="peek-definition-with-multiple-results"></a>Özet tanım ile birden çok sonuç
 
-Kullanırsanız **Peek tanımı** birden fazla tanımı (örneğin, bir parçalı sınıf) kodu, bir sonuç listesi kod tanım görünümü sağında görünür. Listede istediğiniz sonucu seçerek tanımını görüntüleyebilirsiniz.
+Kullanırsanız **Özet tanım** (örneğin, kısmi bir sınıf) birden fazla tanıma sahip kod üzerinde kod tanımı görünümünün sağında bir sonuç listesi görünür. Listede istediğiniz sonucu seçerek tanımını görüntüleyebilirsiniz.
 
-   ![Birden çok sonuç gözlem penceresinden](../ide/media/peekmultiple.png "PeekMultiple")
+   ![Birden çok sonuç penceresinde göz at](../ide/media/peekmultiple.png)
 
-### <a name="edit-inside-the-peek-definition-window"></a>Peek tanımı penceresinin içine Düzenle
+### <a name="edit-inside-the-peek-definition-window"></a>Özet tanım penceresinin içinde düzenlemek
 
-İçinde düzenlemek başlattığınızda bir **Peek tanımı** penceresinde, otomatik olarak değişiklik yaptığınız dosya olarak kod düzenleyicisinde ayrı bir sekmesinde açar ve yaptığınız değişiklikleri yansıtır. Yapmak, Geri Al ve değişiklikleri kaydetmek devam edebilirsiniz **Peek tanımı** penceresi ve sekmesinde bu değişiklikleri yansıtacak şekilde sürdürür. Bile kapatırsanız **Peek tanımı** Değişikliklerinizi kaydetmeden penceresinde, yapabilir, Geri Al ve bırakabilirsiniz tam olarak kaldığınız yerden yukarı çekme sekmesinde, daha fazla değişiklikleri kaydetmek **Peek tanımı** penceresi.
+İçinde düzenleme yapmaya başladığınızda bir **Özet tanım** penceresinde otomatik olarak değişiklik yaptığınız dosya olarak Kod Düzenleyicisi içinde ayrı bir sekmede açılır ve yapmış olduğunuz değişiklikleri yansıtır. Yapabilir, Geri Al ve kaydetmeye devam edebilirsiniz **Özet tanım** penceresi ve sekme bu değişiklikleri yansıtacak şekilde sürdürür. Siz kapatana bile **Özet tanım** penceresinde, değişikliklerinizi kaydetmeden, yapın, geri alma ve daha fazla değişiklik sekmesinde, tam olarak kaldığınız yerden yukarı çekme kaydedin **Özet tanım** penceresi.
 
-   ![Peek penceresi içinde düzenleme](../ide/media/peekedit.png "PeekEdit")
+   ![Bir Özet penceresi içinde düzenleme](../ide/media/peekedit.png)
 
-### <a name="to-change-options-for-peek-definition"></a>Peek tanımı seçeneklerini değiştirmek için
+### <a name="to-change-options-for-peek-definition"></a>Özet tanım seçeneklerini değiştirmek için
 
 1. Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **genel**.
 
-1. Seçeneğini **tanımı gözlem görünümünde açmak**.
+1. Seçeneğini **tanımı Özet Görünümü'nde açın**.
 
-1. Tıklatın **Tamam** kapatmak için **seçenekleri** iletişim kutusu.
+1. Tıklayın **Tamam** kapatmak için **seçenekleri** iletişim kutusu.
 
-   ![Fare tıklatma gözlem tanımı seçeneği ayarlama](../ide/media/editor_options_peek_view.png)  
+   ![Fare tıklatın gözlem tanım seçeneği ayarlama](../ide/media/editor_options_peek_view.png)
 
-### <a name="keyboard-shortcuts-for-peek-definition"></a>Peek tanımı için klavye kısayolları
+### <a name="keyboard-shortcuts-for-peek-definition"></a>Özet tanım klavye kısayolları
 
-Bu klavye kısayollarını kullanabilirsiniz **Peek tanımı** penceresi:
+Bu klavye kısayollarını kullanabilirsiniz **Özet tanım** penceresi:
 
 |İşlevi|Klavye kısayolu|
 |-------------------|:-----------------------:|
@@ -81,10 +82,10 @@ Bu klavye kısayollarını kullanabilirsiniz **Peek tanımı** penceresi:
 |Kod düzenleyicisi penceresi ile tanım penceresi arasında geçiş yapma|**Shift**+**Esc**|
 
 > [!NOTE]
-> Kodda düzenlemek için aynı klavye kısayollarını kullanabilirsiniz bir **Peek tanımı** yazarken penceresini kullanma başka bir yerde Visual Studio'da.
+> Kodu düzenleme için aynı klavye kısayollarını kullanabilirsiniz bir **Özet tanım** aynı pencereyi kullanırsınız başka bir yerde Visual Studio'da.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Kod gidin](../ide/navigating-code.md)  
-[Tanıma ve Özet Tanıma Gitme](../ide/go-to-and-peek-definition.md)  
-[Üretkenlik ipuçları](../ide/productivity-tips-for-visual-studio.md)
+- [Kod gidin](../ide/navigating-code.md)
+- [Tanıma ve Özet Tanıma Gitme](../ide/go-to-and-peek-definition.md)
+- [Üretkenlik ipuçları](../ide/productivity-tips-for-visual-studio.md)

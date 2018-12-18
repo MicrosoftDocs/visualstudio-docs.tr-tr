@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2c1bf2f31d5f4efdd916bfa9a929df096284500f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7c0f0ca55748fb0addef01b79ddf51220b541f49
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49848039"
 ---
 # <a name="ienumdebugthreads2reset"></a>IEnumDebugThreads2::Reset
-Numaralandırma ilk öğeye sıfırlar.  
+Numaralandırma ilk öğeyi sıfırlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ int Reset();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntemi çağrıldıktan sonra sonraki çağrısı [sonraki](../../../extensibility/debugger/reference/ienumdebugthreads2-next.md) yöntemi numaralandırması ilk öğesi döndürür.  
+ Bu yöntem çağrıldığında sonra yapılan sonraki çağrıda [sonraki](../../../extensibility/debugger/reference/ienumdebugthreads2-next.md) yöntemi numaralandırma ilk öğeyi döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md)

@@ -1,5 +1,5 @@
 ---
-title: GUID ve Visual Studio SDK sabitleri | Microsoft Docs
+title: GUID'ler ve sabitler Visual Studio SDK'sı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,25 +14,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 604fe4a8cb007c89ae9d287c1077737cd4854ce5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fb77d090430a69953eb2a7e713fd7de26a772260
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500468"
 ---
-# <a name="guids-and-constants-in-the-visual-studio-sdk"></a>GUID ve Visual Studio SDK sabitleri
-<xref:Microsoft.VisualStudio.VSConstants> Sınıfı ortamı GUID ve sabitleri seçimi erişim sağlar.  
+# <a name="guids-and-constants-in-the-visual-studio-sdk"></a>GUID'ler ve sabitler Visual Studio SDK'sı
+<xref:Microsoft.VisualStudio.VSConstants> Sınıfı ortam GUID'ler ve sabitler seçimi erişim sağlar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [IDE GUID’leri](../extensibility/ide-guids.md)  
- Listeler tarafından sağlanan GUID'ler <xref:Microsoft.VisualStudio.VSConstants>.  
+ Tarafından sağlanan GUID'leri listelenmektedir <xref:Microsoft.VisualStudio.VSConstants>.  
   
- [IDE Sabitleri](../extensibility/ide-constants.md)  
- Listeler tarafından sağlanan SDK sabitleri <xref:Microsoft.VisualStudio.VSConstants>.  
+ [IDE sabitleri](../extensibility/ide-constants.md)  
+ Tarafından sağlanan SDK sabitleri listeler <xref:Microsoft.VisualStudio.VSConstants>.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Yönetilen Kodda COM Sabitleri](../extensibility/com-constants-in-managed-code.md)  
- Standart COM sabitleri yönetilen kod için yönetilen paket framework (MPF) listeler.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Yönetilen kodda COM sabitleri](../extensibility/com-constants-in-managed-code.md)  
+ Standart COM sabitleri, yönetilen kod için yönetilen paket Çerçevesi'nden (MPF) listeler.  
   
- [Proje Sistemlerini Genişletmeye Yönelik IDE Tanımlı Komutlar](../extensibility/internals/ide-defined-commands-for-extending-project-systems.md)  
- Farklı türlerde proje sistemleri genişletmek için kullanılan komut öğeleri listeler.
+ [Proje sistemlerini genişletmeye yönelik IDE tanımlı komutlar](../extensibility/internals/ide-defined-commands-for-extending-project-systems.md)  
+ Proje sistemlerini genişletmeye için kullanılan komut öğeleri farklı türlerini listeler.

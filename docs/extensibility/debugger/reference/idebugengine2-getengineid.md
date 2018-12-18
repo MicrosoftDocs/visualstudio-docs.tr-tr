@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 97d5b4ec655838f32ccff7df562ae4f11bdc9a00
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bd933653613b5819bab229077de0f2f6f6074485
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49935906"
 ---
 # <a name="idebugengine2getengineid"></a>IDebugEngine2::GetEngineID
 Hata ayıklama altyapısı (DE) GUID alır.  
@@ -40,16 +41,16 @@ int GetEngineID(
   
 #### <a name="parameters"></a>Parametreler  
  `pguidEngine`  
- [out] GUID DE değerini döndürür.  
+ [out] DE GUİD'sini döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Tipik GUID'ler bazı örnekleri şunlardır `guidScriptEng`, `guidNativeEng`, veya `guidSQLEng`. Yeni hata ayıklama altyapıları kendi GUID tanımlayıcısı için oluşturur.  
+ Tipik GUID'leri bazı örnekleri şunlardır `guidScriptEng`, `guidNativeEng`, veya `guidSQLEng`. Yeni hata ayıklama altyapıları kendi kimlik GUİD'i oluşturacaksınız.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CEngine` uygulayan nesne [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CEngine` uygulayan nesne [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) arabirimi.  
   
 ```cpp  
 HRESULT CEngine::GetEngineId(GUID *pguidEngine){    

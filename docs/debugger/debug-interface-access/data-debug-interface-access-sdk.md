@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31468378"
 ---
 # <a name="data-debug-interface-access-sdk"></a>Veriler (Arabirim Erişimi SDK'sında Hata Ayıklama)
 Parametreler, yerel değişkenleri, genel değişkenler ve sınıf üyeleri gibi tüm değişkenleri tarafından tanımlanan `SymTagData` simgeler. Sabit değerler (`LocIsConstant`) de bu türü ile tanımlanır.  

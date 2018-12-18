@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 81788423523837b6e8b29a8869abca7b393cf37a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4edfaf7b9ef655473244bdcd18bf6b2c31b8210d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49891407"
 ---
 # <a name="idebugarrayobjectgetcount"></a>IDebugArrayObject::GetCount
-Dizide öğe sayısını alır.  
+Dizideki öğe sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,10 +46,10 @@ int GetCount(
  [out] Sayımını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Dizi nesnesi çok boyutlu olsa bile bu yöntem tüm öğeleri bir dizi nesnesinin tek boyutlu bir dizi olarak görür. Örneğin, dizi verilen `myarray[3][2][6]`, bu yöntem, 36 döndürecektir `pdwElements` parametresi. Kullanım [GetElement](../../../extensibility/debugger/reference/idebugarrayobject-getelement.md) ayrı ayrı öğeler tek bir kerede alma yöntemi.  
+ Çok boyutlu dizi nesnesi olsa bile, bu yöntem, bir dizi nesnesinin tüm öğeleri tek boyutlu dizi görür. Örneğin, bir dizi verilen `myarray[3][2][6]`, bu yöntem, 36 döndürecekti `pdwElements` parametresi. Kullanım [GetElement](../../../extensibility/debugger/reference/idebugarrayobject-getelement.md) aynı anda tek tek tek öğeleri almak için yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugArrayObject](../../../extensibility/debugger/reference/idebugarrayobject.md)

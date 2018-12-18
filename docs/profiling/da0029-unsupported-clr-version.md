@@ -17,26 +17,28 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ad41dc48303fa836e4c15f0e450b3fade60ff646
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5067c9f93a489c09962a9402f4fe7672cbd61108
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49818451"
 ---
-# <a name="da0029-unsupported-clr-version"></a>DA0029: Desteklenmeyen CLR Sürümü
+# <a name="da0029-unsupported-clr-version"></a>DA0029: Desteklenmeyen CLR sürümü
+
 |||  
 |-|-|  
 |Kural Kimliği|DA0029|  
 |Kategori|Profil oluşturma araçları kullanım|  
 |Profil oluşturma yöntemi|Komut satırından profil oluşturma|  
-|İleti|Toplama sırasında desteklenmeyen CLR sürümü algılandı. Yönetilen simgeleri doğru çözülebilir değildir.|  
-|Kural türü|Bilgi.|  
-  
+|İleti|Koleksiyon sırasında desteklenmeyen CLR sürümü algılandı. Yönetilen semboller düzgün çözülemiyor olabilir.|  
+|Kural türü|Bilgiler.|  
+
 ## <a name="cause"></a>Sebep  
  Kullanan bir uygulama profili çalıştığınız [!INCLUDE[net_v11_long](../profiling/includes/net_v11_long_md.md)] profil oluşturma araçları tarafından desteklenmiyor.  
-  
-## <a name="rule-description"></a>Kural Tanımı  
- Bu uyarı, profil oluşturma araçları uygulamasında çalışan yönetilen kod için simgeleri çözümleyemez oluşur. Profil Araçları çalışmakta olan uygulamalar için yönetilen kod simgeleri çözümlenemiyor [!INCLUDE[net_v11_long](../profiling/includes/net_v11_long_md.md)].  
-  
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?  
+
+## <a name="rule-description"></a>Kural açıklaması  
+ Profil oluşturma araçlarından uygulama içinde çalışan yönetilen kod için simgeleri çözme mümkün olmayacaktır. Bu uyarı oluşur. Profil oluşturma araçlarından çalışmakta olan uygulamalar için yönetilen kodu sembol çözümlenemiyor [!INCLUDE[net_v11_long](../profiling/includes/net_v11_long_md.md)].  
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?  
  Yok.

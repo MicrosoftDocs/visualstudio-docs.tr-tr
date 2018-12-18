@@ -1,18 +1,21 @@
 ---
-title: 'Nasıl yapılır: etkinlikler araç kutusuna ekleme | Microsoft Docs'
+title: 'İş Akışı Tasarımcısı - nasıl yapılır: etkinlikler araç kutusuna ekleme'
 ms.date: 11/04/2016
-ms.topic: reference
+ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 ms.assetid: b3a8a785-5928-457a-8a50-30267e29503d
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: acb101f5dff84f7e8d586ce33c63adbe30fa0dbf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a009f36152163e3ac23b85deac4ea99f26092be9
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37118219"
 ---
 # <a name="how-to-add-activities-to-the-toolbox"></a>Nasıl yapılır: etkinlikler araç kutusuna ekleme
 
@@ -27,7 +30,7 @@ Etkinlikler eklenebilir **araç** birkaç farklı şekilde, çözümünüzdeki. 
 3.  Projeyi oluşturun. Yapı başarılı olursa yeni bir kategori **araç** adlı "\<*proje adı*>" Bu kategoride yer alan özel etkinlik birlikte görüntülenir.
 
     > [!NOTE]
-    > Araç kutusu sıfırlarsanız, çözümü yeniden oluşturulmuş olsa bile özel etkinlikler kaldırılır. Özel etkinlikler araç kutusu sıfırlandı sonra yeniden için yeniden [!INCLUDE[vs2010](../misc/includes/vs2010_md.md)].
+    > Araç kutusu sıfırlarsanız, çözümü yeniden oluşturulmuş olsa bile özel etkinlikler kaldırılır. Özel etkinlikler araç kutusu sıfırlandı sonra yeniden için Visual Studio'yu yeniden başlatın.
 
     > [!NOTE]
     > Araç kutusu yalnızca belirli bir ada bir etkinliğin gösterebilir. İki etkinlik farklı derlemelerden aynı sınıf adı varsa, yalnızca biri görüntülenir.
@@ -45,9 +48,9 @@ Etkinlikler eklenebilir **araç** birkaç farklı şekilde, çözümünüzdeki. 
 
 1.  Bir iş akışı çözümü açın.
 
-2.  Gelen **Araçları** menüsünde, select **araç kutusu öğelerini Seç...** .
+2.  Gelen **Araçları** menüsünde, select **araç kutusu öğelerini Seç**.
 
-3.  İçinde **araç kutusu öğelerini Seç** iletişim kutusunda **System.Activities bileşenleri** sekmesinde ardından tıklatın **Gözat...**  eklemek istediğiniz özel etkinlik içeren derlemeye gidin.
+3.  İçinde **araç kutusu öğelerini Seç** iletişim kutusunda **System.Activities bileşenleri** sekmesinde ardından tıklatın **Gözat** özel içeren derlemeye gitmek için eklemek istediğiniz etkinliği.
 
 4.  Derleme seçin ve tıklatın **Tamam**. Özel Etkinlik bileşeni bileşenleri listesine eklenir ve otomatik olarak seçilir.
 

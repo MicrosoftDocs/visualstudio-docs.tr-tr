@@ -9,45 +9,47 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: a706f8cafcdc140752775909be7222d6720c1c92
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 696a874df8050d9a79f7cd07b9fc168acdc6b717
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49897986"
 ---
 # <a name="responding-to-and-propagating-changes"></a>Değişikliklere Yanıt Verme ve Değişiklikleri Yayma
-Bir öğenin oluşturulan, silinmiş veya güncelleştirildiğinde, model diğer bölümleri veya dosyaları, veritabanları veya diğer bileşenleri gibi dış kaynaklara değişikliği yayar kod yazabilirsiniz.
+Bir öğe oluşturulduğunda, silinmiş veya güncelleştirildiğinde, değişiklik modelinin diğer bölümleri veya dosyaları, veritabanları veya diğer bileşenleri gibi dış kaynaklara yayan kod yazabilirsiniz.
 
 ## <a name="in-this-section"></a>Bu Bölümde
  Bir kılavuz olarak aşağıdaki sırayla bu teknikler göz önünde bulundurun:
 
-|Teknik|Senaryolar|Daha fazla bilgi için|
-|---------------|---------------|--------------------------|
-|Hesaplanan etki alanı özelliği tanımlarsınız.|Değeri modeldeki diğer özelliklerinden hesaplanan bir etki alanı özelliği. Örneğin, ilgili öğeler fiyatlar toplamını olan fiyat.|[Hesaplanan ve Özel Depolama Özellikleri](../modeling/calculated-and-custom-storage-properties.md)|
-|Özel depolama etki alanı özelliği tanımlarsınız.|Diğer bölümlerinde modelinin veya harici olarak depolanan bir etki alanı özelliği. Örneğin, modeldeki bir ağacında bir ifade dizesini ayrıştırma.|[Hesaplanan ve Özel Depolama Özellikleri](../modeling/calculated-and-custom-storage-properties.md)|
-|Geçersiz kılma OnValueChanging ve OnDeleting gibi işleyicileri değiştirme|Farklı öğeler eşit tutmak ve dış değerleri modeli ile eşitlenmiş tutar.<br /><br /> Tanımlanmış aralıklara değerlere kısıtlar.<br /><br /> Hemen önce ve özellik değerini ve diğer değişiklikler sonra çağrılır. Bir özel durum atma tarafından değişiklik sonlandırabilir.|[Etki Alanı Özellik Değeri Değişiklik İşleyicileri](../modeling/domain-property-value-change-handlers.md)|
-|Kurallar|Bir değişiklik oldu bir işlem sonuna hemen önce yürütme için sıraya alınan kurallar tanımlayabilirsiniz. Bunlar, geri alma veya yineleme yürütülmez. Deponun bir bölümünü başka ile eşitlenmiş tutmak için bunları kullanın.|[Değişiklikleri Modelin İçinde Yayan Kurallar](../modeling/rules-propagate-changes-within-the-model.md)|
-|Deposu olayları|Modelleme deposu ekleme veya bir öğe veya bağlantıyı silme veya bir özelliğin değerini değiştirmek gibi olayların bildirimleri sağlar. Olay da geri alma ve yineleme üzerinde yürütülür. Deposu olayları deposunda bulunmayan değerleri güncelleştirmek için kullanın.|[Değişiklikleri Modelin Dışına Yayan Olay İşleyicileri](../modeling/event-handlers-propagate-changes-outside-the-model.md)|
-|.NET olayları|Şekilleri fare tıklamaları ve diğer hareketleri yanıt olay işleyicileri sahiptir. Bu olayların her nesne için kaydolmanız gerekir. Kayıt InitializeInstanceResources bir geçersiz kılma genellikle yapılır ve her öğe için yapılması gerekir.<br /><br /> Bu olaylar, genellikle bir işlemin dışında oluşur.|[Nasıl yapılır: Şekil veya Dekoratörde bir Click için Araya Girme](../modeling/how-to-intercept-a-click-on-a-shape-or-decorator.md)|
-|Sınırların kuralları|Sınırların kural, özellikle bir şekli sınırlarına sınırlamak için kullanılır.|[BoundsRules Şekil Konumunu ve Boyutunu Kısıtlamama](../modeling/boundsrules-constrain-shape-location-and-size.md)|
-|Seçim kuralları|Seçim kurallarını özellikle hangi kullanıcı seçebilir kısıtlar.|[Nasıl yapılır: Geçerli Seçime Erişme ve Seçimi Kısıtlama](../modeling/how-to-access-and-constrain-the-current-selection.md)|
-|OnAssocatedPropertyChanged|Şekiller ve bağlayıcılar gölge, ok uçları, renk ve çizgi genişlikleri ve stil gibi özelliklerini kullanarak model öğelerini durumlarını gösterir.|[Modeli Yansıtacak Şekilleri ve Bağlayıcıları Güncelleştirme](../modeling/updating-shapes-and-connectors-to-reflect-the-model.md)|
+|Yöntemi|Senaryolar|Daha fazla bilgi için|
+|-|-|-|
+|Hesaplanan alan özelliği tanımlar.|Değeri, modeldeki diğer özelliklerinden hesaplanan bir alan özelliği. Örneğin, ilgili öğelerin fiyatlar toplamını olan fiyat.|[Hesaplanan ve Özel Depolama Özellikleri](../modeling/calculated-and-custom-storage-properties.md)|
+|Bir depolama özel etki alanı özelliği tanımlayın.|Diğer bölümlerinde modelinin veya harici olarak depolanan bir alan özelliği. Örneğin, bir ağaç modelinde içine bir ifade dizeyi ayrıştırmak.|[Hesaplanan ve Özel Depolama Özellikleri](../modeling/calculated-and-custom-storage-properties.md)|
+|Geçersiz kılma OnValueChanging ve OnDeleting gibi değişiklik işleyicileri|Farklı öğeler eşitlenmiş halde tutun ve dış değerleri modeli ile eşitlenmiş halde tutun.<br /><br /> Tanımlı aralıkları için değerler kısıtlar.<br /><br /> Hemen önce ve sonra özellik değerini ve diğer değişiklikler çağrılır. Bir özel durum tarafından değişiklik sonlandırabilirsiniz.|[Etki Alanı Özellik Değeri Değişiklik İşleyicileri](../modeling/domain-property-value-change-handlers.md)|
+|Kurallar|Yalnızca bir işlem içinde bir değişiklik oldu bitmeden önce yürütme için sıraya alınan kuralları tanımlayabilirsiniz. Bunlar, geri alma veya yineleme üzerinde yürütülmez. Deponun bir bölümünü başka ile eşitlenmiş tutmak için bunları kullanın.|[Değişiklikleri Modelin İçinde Yayan Kurallar](../modeling/rules-propagate-changes-within-the-model.md)|
+|Store olayları|Model Deposu ekleme veya bir öğe veya bağlantı siliniyor veya bir özelliğin değerinin değiştirilmesi gibi olayların bildirimleri sağlar. Olayı, Geri Al ve Yinele da yürütülür. Depoda olmayan değerleri güncelleştirmek için deposu olayları kullanın.|[Değişiklikleri Modelin Dışına Yayan Olay İşleyicileri](../modeling/event-handlers-propagate-changes-outside-the-model.md)|
+|.NET olayları|Fare tıklama ve diğer hareketlerini yanıt olay işleyicileri şekilleri bulunur. Bu olayların her nesne için kaydolması gerekir. Kayıt, genellikle InitializeInstanceResources bir geçersiz kılma gerçekleştirilir ve her öğe için yapılması gerekir.<br /><br /> Bu olaylar, genellikle bir işlemin dışında oluşur.|[Nasıl yapılır: Şekil veya Dekoratörde bir Click için Araya Girme](../modeling/how-to-intercept-a-click-on-a-shape-or-decorator.md)|
+|Sınır kuralları|Sınırları kural, özellikle bir şeklin sınırları sınırlamak için kullanılır.|[BoundsRules Şekil Konumunu ve Boyutunu Kısıtlamama](../modeling/boundsrules-constrain-shape-location-and-size.md)|
+|Seçim kuralları|Seçimi kurallarını, özellikle kullanıcının seçim yapabileceği kısıtlar.|[Nasıl yapılır: Geçerli Seçime Erişme ve Seçimi Kısıtlama](../modeling/how-to-access-and-constrain-the-current-selection.md)|
+|OnAssocatedPropertyChanged|Şekilleri ve bağlayıcıları gibi gölge, ok ucu, renk, çizgi genişliği ve stil özelliklerini kullanarak model öğelerini durumları gösterir.|[Modeli Yansıtacak Şekilleri ve Bağlayıcıları Güncelleştirme](../modeling/updating-shapes-and-connectors-to-reflect-the-model.md)|
 
-## <a name="comparing-rules-and-store-events"></a>**Kuralları ve deposu olayları karşılaştırma**
- Bir modelde değişiklik olduğunda değişiklik notifiers, kuralları ve olayları çalıştırılır.
+## <a name="comparing-rules-and-store-events"></a>**Kuralları ve Store olayları karşılaştırma**
+ Bir modelde değişiklikler olduğunda, değişiklik notifiers, kuralları ve olayları çalıştırılır.
 
- Kuralları genellikle değişikliği oluştu son işlem sırasında uygulanır ve olayları bir işlemde değişiklikler kaydedildikten sonra uygulanır.
+ Kuralları genellikle değişikliği oluştu son işlem sırasında uygulanır ve olayları, bir işlemde değişiklikler gönderildikten sonra uygulanır.
 
- Model nesneleri depolama ve kuralları deposundaki tutarlılığını korumak için dışında ile eşitlemek için deposu olayları kullanın.
+ Deposu olayları Store ve kuralları Store içinde tutarlılık sağlamak için dışında kalan nesneler ile modeli eşitlemek için kullanın.
 
--   **Özel kurallar oluşturmak** soyut bir kuraldan türetilmiş bir sınıf olarak özel bir kural oluşturun. Ayrıca özel kural hakkındaki framework bildirmeniz gerekir. Daha fazla bilgi için bkz: [kuralları yayılması değişiklikleri içindeki Model](../modeling/rules-propagate-changes-within-the-model.md).
+-   **Özel kurallar oluşturarak** soyut bir kuraldan türetilmiş bir sınıf olarak özel bir kural oluşturun. Ayrıca, özel kural hakkındaki framework bildirmeniz gerekir. Daha fazla bilgi için [kuralları yaymak değişiklikleri içinde modeli](../modeling/rules-propagate-changes-within-the-model.md).
 
--   **Olaylara abone olma** bir olaya abone olabilmek bir olay işleyicisi ve temsilci oluşturun. Ardından <xref:Microsoft.VisualStudio.Modeling.Store.EventManagerDirectory%2A>olaya abone olmak için özellik. Daha fazla bilgi için bkz: [olay işleyicileri yayılması değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
+-   **Olaylara abone olma** bir olaya abone önce bir olay işleyicisi ve temsilci oluşturma. Ardından <xref:Microsoft.VisualStudio.Modeling.Store.EventManagerDirectory%2A>özelliği olaya abone olun. Daha fazla bilgi için [olay işleyicileri yaymak değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
 
--   **Değişiklikleri geri alma** bir işlemi geri almak, olayları başlatılır, ancak kurallar uygulanmaz. Bir kural bir değer değiştirir ve bu değişikliği geri alın, değer geri alma eylemi sırasında orijinal değerine sıfırlanır. Bir olay oluşturulduğunda, özgün değerine değeri el ile değiştirmeniz gerekir. Transactons ve geri alma hakkında daha fazla bilgi için bkz: [nasıl yapılır: kullanım modeli güncelleştirmek için işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
+-   **Değişiklikler geri alınıyor** bir işlemin geri, olayları oluştuğunda, ancak kuralları uygulanmaz. Bir kural değeri değiştirir ve bu değişikliği geri alın, değer özgün değerine geri alma işlemi sırasında sıfırlanır. Bir olay oluştuğunda, özgün değerine değeri el ile değiştirmeniz gerekir. Transactons ve geri alma hakkında daha fazla bilgi için bkz: [nasıl yapılır: modeli güncelleştirmek için kullanım işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
 
--   **Kurallar ve olayları için olay bağımsız değişkenleri geçirme** hem olayları ve kuralları geçirilir bir `EventArgs` modeli hakkında bilgi olan parametre değiştirilmiştir.
+-   **Kuralları ve olayları için olay bağımsız değişkenleri geçirme** hem olayları ve kuralları geçirilir bir `EventArgs` modeli hakkında bilgi olan parametresi değiştirildi.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 

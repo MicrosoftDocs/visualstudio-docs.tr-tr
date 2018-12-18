@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c19f5f3c8beedf4a7de5dc5631ed1d795a125d56
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0432fe2861b10b4dedd2151033bf61665465f3b0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49937219"
 ---
 # <a name="idebugprocessex2attach"></a>IDebugProcessEx2::Attach
-Bu yöntem, bir oturum işlemi artık hata ayıklama işlem sizi bilgilendirir.  
+Bu yöntem, bir oturum işlemi artık hata ayıklıyor işlem bildirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int Attach(
   
 #### <a name="parameters"></a>Parametreler  
  `pSession`  
- [in] Bu işlem için ekleme oturum benzersiz olarak tanımlayan bir değer.  
+ [in] Bu işleme iliştirmek oturumun benzersiz olarak tanımlayan bir değer.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Arabirim geçirilen `pSession` yalnızca bir tanımlama bilgisi, bu işlem için; ekleme oturum hata ayıklama Yöneticisi benzersiz olarak tanımlayan bir değer olarak değerlendirilmesi için sağlanan arabirimde yöntemlerin hiçbiri işlev.  
+ Arabirim geçirilen `pSession` yalnızca bir tanımlama bilgisi, bu işleme iliştirmek; oturum hata ayıklama Yöneticisi benzersiz olarak tanımlayan bir değer olarak değerlendirilmesi için sağlanan arabirim yöntemleri hiçbiri işlevsel değildir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcessEx2](../../../extensibility/debugger/reference/idebugprocessex2.md)

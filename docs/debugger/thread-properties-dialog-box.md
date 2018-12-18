@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31476422"
 ---
 # <a name="thread-properties-dialog-box"></a>İş Parçacığı Özellikleri İletişim Kutusu
 Bu iletişim kutusunu Bul belirli bir iş parçacığı hakkında daha fazla kullanın. Bu iletişim kutusunu görüntülemek için odağı taşımak bir [iş parçacıkları görünümü](../debugger/threads-view.md) penceresi veya açık [iletiler görünümünü](../debugger/messages-view.md) ve bir ileti genişletin. Herhangi bir iş parçacığı düğüm ağaçta seçin, sonra seçin **özellikleri** gelen **Görünüm** menüsü.  

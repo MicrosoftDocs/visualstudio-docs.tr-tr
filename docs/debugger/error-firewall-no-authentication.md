@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31481466"
 ---
 # <a name="error-firewall-no-authentication"></a>Hata: Güvenlik Duvarı Kimlik Doğrulaması Yok
 Internet Bağlantısı Güvenlik Duvarı uzak makinesinde uzaktan hata ayıklama izin verecek şekilde ayarlanır değil. İle uzaktan hata ayıklama için `No Authentication`, msvsmon.exe özel durumlar listesine eklenmelidir. Bazı IPSec bağlantı noktaları açma de gerekebilir.  

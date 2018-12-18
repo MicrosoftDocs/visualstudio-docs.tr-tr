@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 077ae868561f58596955ce39a9335f845f00f8b5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e48a9b5f601994a7a32aae38bdafbfdce6da22e7
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34266378"
 ---
 # <a name="c-library-reference"></a>C Kitaplık Başvurusu
 Bu bölüm eşzamanlılık görselleştiricisi SDK'sı için başvuru bilgileri içerir.  
@@ -24,27 +25,3 @@ Bu bölüm eşzamanlılık görselleştiricisi SDK'sı için başvuru bilgileri 
 > [!NOTE]
 >  C dili standart bir alt çizgi ile başlayan tanımlayıcıları kullanımını ayırır (`_`) karakteri kitaplıklar gibi uygulamaları için. Kodunuzda bir alt çizgi ile başlayan adları kullanmayın. Bu kural, adları izleyen öğeleri garanti edilmez ve değiştirilebilir gelecek olan kod davranışını serbest bırakır. Bu nedenlerle, bu kod öğeler bu belgelerden göz ardı edilir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [CvCreateDefaultMarkerSeriesOfDefaultProvider İşlevi](../profiling/cvcreatedefaultmarkerseriesofdefaultprovider-function.md)  
-  
- [CvCreateMarkerSeries İşlevi](../profiling/cvcreatemarkerseries-function.md)  
-  
- [CvCreateMarkerSeriesWithCodePageA İşlevi](../profiling/cvcreatemarkerserieswithcodepagea-function.md)  
-  
- [CvEnterSpan İşlevi](../profiling/cventerspan-function.md)  
-  
- [CvInitProvider İşlevi](../profiling/cvinitprovider-function.md)  
-  
- [CvIsEnabled İşlevi](../profiling/cvisenabled-function.md)  
-  
- [CvLeaveSpan İşlevi](../profiling/cvleavespan-function.md)  
-  
- [CvReleaseMarkerSeries İşlevi](../profiling/cvreleasemarkerseries-function.md)  
-  
- [CvReleaseProvider İşlevi](../profiling/cvreleaseprovider-function.md)  
-  
- [CvWriteAlert İşlevi](../profiling/cvwritealert-function.md)  
-  
- [CvWriteFlag İşlevi](../profiling/cvwriteflag-function.md)  
-  
- [CvWriteMessage İşlevi](../profiling/cvwritemessage-function.md)

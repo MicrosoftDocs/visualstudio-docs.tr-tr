@@ -1,5 +1,5 @@
 ---
-title: Benzetici UWP uygulamaları çalıştırma | Microsoft Docs
+title: Simülatörde UWP uygulamaları çalıştırma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -15,139 +15,140 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - uwp
-ms.openlocfilehash: 99881b657f6d3cb6877c7ce6d1fbf80f4eb1d731
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f8d1ae730947a70cac253866d0257aa4e0216626
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882775"
 ---
-# <a name="run-uwp-apps-in-the-simulator"></a>Benzetici UWP uygulamaları çalıştırma
-UWP uygulamalar için Visual Studio simulator, bir UWP uygulaması taklit eden bir masaüstü uygulamasıdır. Genellikle, yerel makine, bağlı bir aygıt veya bir uzak makine hata ayıklama istersiniz. Ancak, bazı senaryolarda, farklı fiziksel ekran boyutu ve çözüm benzetmek için Visual Studio simulator kullanmak isteyebilirsiniz. Ayrıca, ortak dokunma ve döndürme olaylarının benzetimini yapma ve ağ bağlantısı özellikleri benzetimini yapma.
+# <a name="run-uwp-apps-in-the-simulator"></a>Simülatörde UWP uygulamaları çalıştırma
+UWP uygulamaları için Visual Studio simulator, UWP uygulaması taklit eden bir masaüstü uygulamasıdır. Genellikle, yerel makine, bağlı bir cihaz veya uzak makinede hata ayıklama istersiniz. Ancak, bazı senaryolarda, farklı fiziksel ekran boyutunu ve çözüm benzetmek için Visual Studio simulator kullanmak isteyebilirsiniz. Ayrıca, ortak dokunma ve döndürme olaylarının benzetimini yapma ve ağ bağlantısı özellikleri benzetimi.
   
- Simulator içinde tasarlama, geliştirme, hata ayıklama ve UWP uygulamaları test kullanabilirsiniz bir ortam sağlar. Ancak, Microsoft Store uygulamanızı yayınlamadan önce uygulamanızı gerçek cihazında test etmeniz gerekir.  
+ Simülatör, hangi tasarlayabilir, geliştirme, hata ayıklama ve UWP uygulamalarını test etmek bir ortam sağlar. Ancak, Microsoft Store için uygulamanızı yayımlamadan önce uygulamanızın gerçek bir cihaz üzerinde test etmelisiniz.  
   
- UWP uygulamalar için Visual Studio simulator yalıtılmış bir ortamda yerel makinenizde çalışmaz. Bu nedenle, kurtarılamaz bir sistem genelinde hatası gibi simulator oluşan hataları da tüm makine etkileyebilir.  
+ UWP uygulamaları için Visual Studio simulator, yerel makinenizde yalıtılmış bir ortamda çalıştırmaz. Bu nedenle, tüm makine simulator'da, kurtarılamaz bir sistem genelinde hatası gibi hatalar da etkileyebilir.  
   
 > [!IMPORTANT]
->  Visual Studio 2015 simulator coğrafi konuma düğmesi içermez. Bu durum, Windows 10 simulator coğrafi konuma benzetimi dahil değildir çünkü.
+>  Visual Studio 2015 simülatör coğrafi konum düğmesi içermez. Bu durum, Windows 10 simülatör coğrafi konum simülasyonu içermez çünkü.
   
-##  <a name="BKMK_Set_the_simulator_as_the_target"></a> Simulator hedef olarak ayarlanmış  
- Benzetici UWP uygulamanızı çalıştırmak için seçin **Simulator** bulunan aşağı açılan listesinde yanına **hata ayıklamayı Başlat** hata ayıklayıcı düğmesinde **standart** araç. Bu seçenek yalnızca kullanılabilir değilse, uygulamanızın **hedef Platform Min. Sürüm** geliştirme makinenizdeki işletim sistemi küçük veya eşit. 
+##  <a name="BKMK_Set_the_simulator_as_the_target"></a> Simülatör hedef olarak ayarlanmış.  
+ Simülatörde UWP uygulamanızı çalıştırmak için seçin **simülatör** listesinde yanındaki açılan listeden **hata ayıklamayı Başlat** hata ayıklayıcı düğmesinde **standart** araç çubuğu. Bu seçenek yalnızca kullanılabilir değilse, uygulamanızın **hedef Platform Min. Sürüm** geliştirme yaptığınız makinedeki işletim sistemi küçük veya ona eşit. 
   
- ![Benzetici çalıştıran](../debugger/media/vsrun_f5_simulator.png "VSRUN_F5_Simulator")  
+ ![Simülatörde çalıştırılan](../debugger/media/vsrun_f5_simulator.png "VSRUN_F5_Simulator")  
   
-##  <a name="BKMK_Choose_an_interaction_mode"></a> Bir etkileşim modu seçin  
- Aşağıdaki etkileşim modlarından birini seçebilirsiniz  
+##  <a name="BKMK_Choose_an_interaction_mode"></a> Etkileşim modu seçin  
+ Aşağıdaki etkileşim modları seçebilirsiniz.  
   
--   ![Fare Modu düğmesini](../debugger/media/simulator_mousemodebtn.png "SIMULATOR_MouseModeBtn") fare modu: fare hareketleri etkileşim modunu ayarlar. Fare hareketleri dahil tıklama çift tıklamalar ve drags.  
+-   ![Fare Modu düğmesini](../debugger/media/simulator_mousemodebtn.png "SIMULATOR_MouseModeBtn") fare modu: fare hareketlerini etkileşim modu ayarlar. Fare hareketlerini içerir: tıklama, çift tıkladığında ve etkileyen.  
   
--   ![Başlangıç dokunma öykünme düğmesi](../debugger/media/simulator_starttouchemulationbtn.png "SIMULATOR_StartTouchEmulationBtn") başlangıç dokunma öykünme: etkileşim modunu, tek bir parmak hareketleri touch şekilde ayarlar. Tek parmak olayları dokunarak, sürükleyerek ve geçirmeyi içerir.  
+-   ![Başlangıç dokunma öykünmesi düğmesi](../debugger/media/simulator_starttouchemulationbtn.png "SIMULATOR_StartTouchEmulationBtn") başlangıç dokunma öykünmesi: tek bir parmağınızı hareket dokunması etkileşim modu ayarlar. Tek-parmak olayları dokunarak sürükleme ve çekerek içerir.  
   
-     ![Simulator tek bir parmak hedef](../debugger/media/simulator_onefinger.png "SIMULATOR_OneFinger") tek hedef simgesini simulator olayları konumunu belirtir. Fare işaretçisini konumlandırmak için kullanın.  
+     ![Simülatör tek bir parmak hedef](../debugger/media/simulator_onefinger.png "SIMULATOR_OneFinger") tek hedef simge simülatör içerisindeki konumunu belirtir. Fare işaretçisini konumlandırmak için kullanın.  
   
-     ![Tek bir parmak dokunma hedef](../debugger/media/simulator_onefingerengaged.png "SIMULATOR_OneFingerEngaged") dokunma modunu etkinleştirmek için sol fare düğmesine basın. Örneğin, bir dokunun benzetimini yapmak veya sürükleyin ya da içeri doğru çekin gibi düğmesini basılı için düğmesini tıklatın.  
+     ![Tek bir parmak touch hedef](../debugger/media/simulator_onefingerengaged.png "SIMULATOR_OneFingerEngaged") dokunma modunu etkinleştirmek için farenin sol düğmesine basın. Örneğin, bir dokunun benzetimini yapmak veya doğru kaydırın veya sürüklerken düğmesini basılı için düğmeye tıklayın.  
   
-## <a name="pinch-and-zoom"></a>Çimdik ve Yakınlaştır  
- Çimdik ve iki parmakları hareketleri yakınlaştırmak için etkileşim modunu ayarlar.  
+## <a name="pinch-and-zoom"></a>Sıkıştırma ve yakınlaştırma  
+ Sıkıştırma ve iki parmağınızı hareket yakınlaştırmak için etkileşim modu ayarlar.  
   
--   ![Siimulator iki parmak hedef](../debugger/media/simulator_twofinger.png "SIMULATOR_TwoFinger")  
+-   ![İki Siimulator parmak hedef](../debugger/media/simulator_twofinger.png "SIMULATOR_TwoFinger")  
   
-     Çift hedef simgesini aygıt ekranında iki parmakları konumunu belirtir.  
+     Çift hedef simge cihaz ekranında iki parmağınızı konumunu belirtir.  
   
-    -   Cihaz ekranı nesnesinde üzerinden simgeleri konumlandırmak için fareyi hareket ettirin.  
+    -   Cihaz ekranında nesnenin üzerine simgeleri konumlandırmak için fareyi hareket ettirin.  
   
-    -   Fare tekerleği geriye dönük veya çimdik veya yakınlaştırma önce iki parmakları benzetimli uzaklığı değiştirmek için İleri döndürün.  
+    -   Fare tekerleği geriye veya İleri sıkıştırma veya yakınlaştırma önce iki parmağınızı sanal uzaklığı değiştirmek için döndürün.  
   
--   -   ![Çimdik, yakınlaştırma ve döndürme hedefleri](../debugger/media/simulator_twofingerengaged.png "SIMULATOR_TwoFingerEngaged")  
+-   -   ![Sıkıştırarak yakınlaştırma ve döndürme hedefleri](../debugger/media/simulator_twofingerengaged.png "SIMULATOR_TwoFingerEngaged")  
   
-         Sol düğmesine basın ve (tutarak içinde) yakınlaştırmak için (,) geriye dönük tekerleği döndürün.  
+         Sol düğmesine basın ve (tabletinizde) yakınlaştırmak için (,) geriye dönük tekerleğini döndürün.  
   
     -   Sol düğmesine basın ve (uzaklaştırma) yakınlaştırma için fare tekerleğinin (İleri) döndürün.  
   
 ## <a name="object-rotation"></a>Nesne döndürme  
- **Dokunma öykünme döndürme** düğmesi iki parmakları kullanarak döndürme hareketleri etkileşim modunu ayarlar.  
+ **Dokunma öykünmesi döndürme** düğmesini kullanarak iki parmağınızı döndürme hareketlerine etkileşim modu ayarlar.  
   
--   -   Cihaz ekranı nesnesinde üzerinden simgeleri konumlandırmak için fareyi hareket ettirin.  
+-   -   Cihaz ekranında nesnenin üzerine simgeleri konumlandırmak için fareyi hareket ettirin.  
   
-    -   Fare tekerleği geriye dönük veya nesneyi döndürmek önce iki parmakları benzetimli yönünü değiştirmek için İleri döndürün.  
+    -   Fare tekerleği geriye veya İleri nesneyi önce iki parmağınızı sanal yönünü değiştirmek için döndürün.  
   
--   -   Sol düğmesine basın ve yönünün nesneyi döndürmek için (,) geriye dönük tekerleği döndürün. Fare tekerleği döndürürken iki hedef simgelerinden birini diğer döndürme göreli boyutunu belirtmek için döndürür.  
+-   -   Sol düğmesine basın ve yönünün nesneyi döndürmek için (,) geriye dönük tekerleğini döndürün. Fare tekerleğini döndürün gibi iki hedef simgelerden birini diğer döndürme göre boyutunu göstermek için döndürür.  
   
-    -   Sol düğmesine basın ve nesneyi saat yönünde döndürmek için fare tekerleğinin (İleri) döndürün.  
+    -   Sol düğmesine basın ve saat yönünde nesneyi döndürmek için fare tekerleğini (İleri) döndürün.  
   
 ##  <a name="BKMK_Enable_or_disable_Always_on_top_mode"></a> Etkinleştirmek veya her zaman üst modunu devre dışı  
- Simulator penceresini her zaman diğer windows en üstünde olacak şekilde ayarlayabilirsiniz. **En üstteki pencere geçişi** düğmesini etkinleştirir veya devre dışı bırakır **her zaman üstte** simulator penceresinin modu.  
+ Her zaman diğer windows en üstünde olacak şekilde simülatörü penceresini ayarlayabilirsiniz. **Üstteki pencere geçişi** düğmesini etkinleştirir veya devre dışı bırakır **her zaman üstte** simülatörü penceresini modu.  
   
 ##  <a name="BKMK_Change_the_device_orientation"></a> Cihaz yönlendirmesini değiştirme  
- Herhangi bir yönde 90 derece simulator döndürerek cihaz yönlendirmesini dikey ve yatay arasında geçiş yapabilirsiniz.  
+ 90 derece herhangi bir yönde simülatör döndürerek cihaz yönü dikey ve yatay arasında geçiş yapabilirsiniz.  
   
 > [!NOTE]
->  Simulator saygı [DisplayProperties.AutoRotationPreferences](http://go.microsoft.com/fwlink/?LinkId=249460) projenin özelliği. Örneğin, projenizin yönlendirmesini olarak ayarlar, `Landscape`ve ardından dikey yönlendirmeye simulator döndürme, simulator ekran görüntüsü de döndürülmüş ve yeniden boyutlandırılabilir. Bu ayarları gerçek cihazında sınayın.  
+>  Simülatör saygı [DisplayProperties.AutoRotationPreferences](http://go.microsoft.com/fwlink/?LinkId=249460) projenin özellik. Örneğin, projeniz yönlendirmesini ayarlar `Landscape`ve ardından dikey yönlendirme simülatöre döndürme, simülatör'ü görünen görüntünün ayrıca döndürülmüş ve yeniden boyutlandırıldı. Bu ayarlar gerçek bir cihaz üzerinde test edin.  
   
 > [!NOTE]
->  Bir simulator kenarına görüntülendiği ekran daha büyük şekilde simulator döndürme olursa simulator içinde ekran sığması için otomatik olarak boyutlandırılır. Yeniden döndürme olursa simulator özgün boyutuna boyutlandırılır değil.  
+>  Simülatör bir kenarında görüntülendiği ekran daha büyük olması simülatör döndürürseniz, simülatör içinde ekrana sığacak şekilde otomatik olarak boyutlandırılır. Simülatör özgün boyutuna boyutlandırılır yeniden döndürürseniz değil.  
   
-##  <a name="BKMK_Change_the_simulated_screen_size_and_resolution"></a> Çözümleme ve sanal ekran boyutu değiştirme  
- Benzetimli ekran boyutu ve çözünürlüğü değiştirmek için tercih **değiştirmek çözümleme** paletini temel düğmesine tıklayın ve yeni boyutunu ve çözüm listeden seçin.  
+##  <a name="BKMK_Change_the_simulated_screen_size_and_resolution"></a> Benzetimli ekran boyutunu ve çözümleme değiştirme  
+ Benzetimli ekran boyutunu ve çözümleme değiştirmek için seçin **değiştirme çözümleme** paletinde düğmesini ve listeden yeni boyutu ve çözümü seçin.  
   
- Ekran boyutu ve çözüm olarak listelenen *ekran genişliği inç, piksel genişlik X piksel yükseklik*. Ekran boyutu ve çözümleme benzetilir unutmayın. Seçilen aygıt boyutu ve çözümleme ortak ordinates için konum ortak ordinates simulator üzerinde çevrilir.  
-  
-> [!NOTE]
->  Bit eşlem görüntülerinin ölçeklendirilmiş sürümleri uygulamanızda kaydedebilir ve Windows geçerli ölçek için doğru görüntüyü yükler. Daha fazla bilgi için bkz: [tasarım ve kullanıcı Arabirimi giriş](/windows/uwp/layout/design-and-ui-intro). Ancak, Windows çözümleme sığması için farklı bir resim Çekmeleri şekilde simulator çözümleme değiştirirseniz, durdurmak ve yeni görüntüyü görüntülemek için hata ayıklama oturumu yeniden başlatması.  
-  
-##  <a name="BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store"></a> Microsoft Store göndermelerini, uygulamanızın bir ekran görüntüsü alma  
- Bir uygulamaya Microsoft Store gönderdiğinizde, uygulama ekran görüntüleri eklemeniz gerekir.  
+ Ekran boyutunu ve çözüm olarak listelenen *ekran genişliği inç, piksel genişlik X piksel yüksekliği*. Not ekran boyutunu ve çözümleme benzetimi yapılır. Simülatör üzerinde ortak ordinates konum, seçili cihaz boyutu ve çözümleme için ortak ordinates çevrilir.  
   
 > [!NOTE]
->  Ekran simulator geçerli çözünürlükte kaydedilir. Çözümleme değiştirmek için tercih **değiştirmek çözümleme** düğmesi.  
+>  Bit eşlem resimleri ölçeklendirilmiş sürümlerini uygulamanızda kaydedebilir ve Windows geçerli ölçek için doğru görüntüyü yükler. Daha fazla bilgi için [tasarım ve UI giriş](/windows/uwp/layout/design-and-ui-intro). Ancak, bu Windows farklı bir görüntü çözünürlüğünü uyacak şekilde seçer için simülatör çözümleme değiştirirseniz, yeni resmi görmek için hata ayıklama oturumunuzu yeniden başlatın ve durdurun gerekir.  
   
--   Ekran görüntüleri, uygulamanızın simulator oluşturmak için seçtiğiniz **panoya ekran yakalama** düğmesi.  
+##  <a name="BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store"></a> Uygulamanızı göndermek üzere Microsoft Store görüntüsü yakalama  
+ Bir uygulama için Microsoft Store gönderdiğinizde, uygulama ekran görüntüleri eklemeniz gerekir.  
   
--   Ekran görüntüleri bulunduğu konumun ayarlamak için seçin **ekran ayarları** düğmesine tıklayın ve kısayol menüsünden konumu seçin.  
+> [!NOTE]
+>  Ekran görüntüsü, simülatör geçerli çözünürlükte kaydedilir. Çözünürlüğünü değiştirmek için seçin **değiştirme çözümleme** düğmesi.  
   
-     ![Ekran ayarları bağlam menüsü](../debugger/media/simulator_screenshotsettingscntxmnu.png "SIMULATOR_ScreenShotSettingsCntxMnu")  
+-   Simülatör uygulama ekran görüntüleri oluşturmak için seçin **panoya ekran yakalama** düğmesi.  
+  
+-   Ekran görüntüleri yerleştirildiği konum koymak için **ekran görüntüsü ayarları** düğmesine tıklayın ve kısayol menüsünden konumu seçin.  
+  
+     ![Ekran görüntüsü ayarları bağlam menüsü](../debugger/media/simulator_screenshotsettingscntxmnu.png "SIMULATOR_ScreenShotSettingsCntxMnu")  
   
 ##  <a name="BKMK_Simulate_network_connection_properties"></a> Ağ bağlantısı özellikleri benzetimi  
- Uygulamanızın kullanıcıları ağ bağlantı maliyeti veya veri planı durum değişikliklerini tanıma koruma ve dolaşım veya aşan ek maliyetlerin oluşmasını önlemek için bu bilgileri kullanmak uygulamanızı etkinleştirme tarafından tarifeli ağ bağlantılarında maliyetini Yönet yardımcı olabilecek bir Belirtilen veri aktarımı sınırı. [Windows.Networking.Connectivity](/uwp/api/windows.networking.connectivity) API'ler sağlar, yanıt [NetworkStatusChanged](/uwp/api/windows.networking.connectivity.networkinformation) ve [TriggerType](/uwp/api/windows.applicationmodel.background.systemtrigger) oturum olayları. Bkz: [hızlı başlangıç: tarifeli ağ yönetme maliyet kısıtlamaları](http://msdn.microsoft.com/library/windows/apps/Hh750310.aspx).  
+ Uygulamanızın kullanıcılarına tarifeli ağ bağlantılarında maliyetini ağ bağlantı maliyeti veya veri planı durumu değişiklikleri bilincini korumak ve yinelenen Dolaşım veya aşan ek maliyetler oluşmasını önlemek için bu bilgileri kullanmak için uygulamanızı etkinleştirme yönetmesine yardımcı olabilecek bir Belirtilen veri aktarımı sınırı. [Windows.Networking.Connectivity](/uwp/api/windows.networking.connectivity) API'leri sayesinde yanıt [NetworkStatusChanged](/uwp/api/windows.networking.connectivity.networkinformation) ve [TriggerType](/uwp/api/windows.applicationmodel.background.systemtrigger) oturum olayları. Bkz: [hızlı başlangıç: tarifeli ağ yönetme maliyet kısıtlamaları](https://msdn.microsoft.com/library/windows/apps/Hh750310.aspx).  
   
- Hata ayıklama veya ağ maliyet uyumlu kodunuzu test etmek için simulator aracılığıyla sunulan bir ağ özelliklerini taklit edebilirsiniz [ConnectionProfile](/uwp/api/windows.networking.connectivity.connectionprofile) tarafından döndürülen nesne [GetInternetConnectionProfile](/uwp/api/windows.networking.connectivity.networkinformation).
+ Hata ayıklama veya ağ maliyet uyumlu kodunuzu test etmek için simülatör üzerinden sunulan bir ağın özellikleri taklit [ConnectionProfile](/uwp/api/windows.networking.connectivity.connectionprofile) tarafından döndürülen nesne [GetInternetConnectionProfile](/uwp/api/windows.networking.connectivity.networkinformation).
   
  Ağ özellikleri benzetimini yapmak için:  
   
-1.  Simulator araç çubuğunda seçin **değiştirmek ağ özellikleri** düğmesi.  
+1. Simülatör araç çubuğunda **ağ özelliklerini değiştirme** düğmesi.  
   
-2.  Üzerinde **ağ özelliklerini ayarla** iletişim kutusunda **kullanım benzetimli ağ özellikleri**.  
+2. Üzerinde **ağ özelliklerini ayarla** iletişim kutusunda **kullanım sanal ağ özellikleri**.  
   
-     Benzetim kaldırın ve şu anda bağlı arabirimi ağ özelliklerine dönmek için bu onay kutusunu temizleyin.  
+    Benzetim kaldırın ve şu anda bağlı arabirimi için ağ özellikleri döndürmek için bu onay kutusunu temizleyin.  
   
-3.  Girin bir **profil adı** sanal ağ için. Benzetim tanımlamak için kullanabileceğiniz benzersiz bir ad kullanmanızı öneririz [ProfileName](/uwp/api/windows.networking.connectivity.connectionprofile) özelliği [ConnectionProfile](/uwp/api/windows.networking.connectivity.connectionprofile) nesnesi.  
+3. Girin bir **profil adı** sanal ağ için. Benzetim tanımlamak için kullanabileceğiniz bir benzersiz ad kullanmanızı öneririz [ProfileName](/uwp/api/windows.networking.connectivity.connectionprofile) özelliği [ConnectionProfile](/uwp/api/windows.networking.connectivity.connectionprofile) nesne.  
   
-4.  Seçin [NetworkCostType](/uwp/api/windows.networking.connectivity.networkcosttype) profilinden değeri **ağ maliyet türü** listesi.  
+4. Seçin [NetworkCostType](/uwp/api/windows.networking.connectivity.networkcosttype) profilinden değeri **ağ maliyet türü** listesi.  
   
-5.  Gelen **veri sınırı durum bayrağı** ayarlayabileceğiniz listesinde [ApproachingDataLimit](/uwp/api/windows.networking.connectivity.connectioncost) özelliği veya [OverDataLimit](/uwp/api/windows.networking.connectivity.connectioncost) özelliği true olarak veya seçebilirsiniz  **Veri sınırı altında** her iki değeri false olarak ayarlamak üzere.  
+5. Gelen **veri sınırı durum bayrağı** liste, ayarlayabilirsiniz [ApproachingDataLimit](/uwp/api/windows.networking.connectivity.connectioncost) özelliği veya [OverDataLimit](/uwp/api/windows.networking.connectivity.connectioncost) özelliği true olarak veya tercih edebilirsiniz  **Veri sınırının altında** her iki değeri false olarak ayarlanacak.  
   
-6.  Gelen **gezici durumu** listesinde, ayarlamak [gezici](/uwp/api/windows.networking.connectivity.connectioncost) özelliği.  
+6. Gelen **gezici durumu** listesinde, ayarlamak [gezici](/uwp/api/windows.networking.connectivity.connectioncost) özelliği.  
   
-7.  Seçin **özelliklerini ayarla** ön plan tetikleme tarafından ağ özellikleri benzetimini yapmak için [NetworkStatusChanged](/uwp/api/windows.networking.connectivity.networkinformation) olay ve arka plan [SystemTrigger](/uwp/api/windows.applicationmodel.background.systemtrigger) türü **NetworkStateChange**.  
+7. Seçin **özelliklerini ayarla** ağ özelliklerinin, ön plan tetikleyerek benzetimini yapmak için [NetworkStatusChanged](/uwp/api/windows.networking.connectivity.networkinformation) olay ve arka plan [SystemTrigger](/uwp/api/windows.applicationmodel.background.systemtrigger) türü **NetworkStateChange**.  
   
- **Ağ bağlantılarını yönetme hakkında daha fazla bilgi**  
+   **Ağ Bağlantıları yönetme hakkında daha fazla bilgi**  
   
- [Hızlı Başlangıç: Tarifeli ağ maliyet kısıtlamaları yönetme](http://msdn.microsoft.com/library/windows/apps/Hh750310.aspx)  
+   [Hızlı Başlangıç: Tarifeli ağ maliyet kısıtlamalarını yönetme](https://msdn.microsoft.com/library/windows/apps/Hh750310.aspx)  
   
- [Ağ bilgi örnek](http://code.msdn.microsoft.com/windowsapps/Network-Information-Sample-63aaa201)  
+   [Ağ bilgi örnek](https://code.msdn.microsoft.com/windowsapps/Network-Information-Sample-63aaa201)  
   
- [Enerji kullanımını çözümleme](../profiling/analyze-energy-use-in-store-apps.md)  
+   [Enerji kullanımını çözümleme](../profiling/analyze-energy-use-in-store-apps.md)  
   
- [Windows.Networking.Connectivity](/uwp/api/windows.networking.connectivity)  
+   [Windows.Networking.Connectivity](/uwp/api/windows.networking.connectivity)  
   
- [Arka plan görevleri ile sistem olaylarına tepki vermek nasıl](http://msdn.microsoft.com/en-us/f7c86e86-a7ae-4abb-a923-76b03337a80a)  
+   [Nasıl sistem arka plan görevleri ile olaylara yanıt verme](/previous-versions/windows/apps/hh977058(v=win.10))  
   
- [UWP uygulamalarında askıya alma, sürdürme ve arka plan olayları tetikleme](http://msdn.microsoft.com/library/windows/apps/hh974425.aspx)  
+   [UWP uygulamalarında askıya alma, sürdürme ve arka plan olayları tetikleme](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)  
   
-##  <a name="BKMK_Navigate_the_simulator_with_the_keyboard"></a> Klavye ile simulator gidin  
- Simulator araç çubuğu tuşlarına basarak gezinebilirsiniz **CTRL + ALT + YUKARI OK** odak simulator penceresinden simulator araç çubuğuna geçiş yapmak için. Kullanım **yukarı ok** ve **aşağı ok** araç çubuğu düğmeleri arasında taşımak için.  
+##  <a name="BKMK_Navigate_the_simulator_with_the_keyboard"></a> Simülatör klavye ile gezinme  
+ Simülatör araç çubuğu tuşlarına basarak gezinebilirsiniz **CTRL + ALT + YUKARI OK** odak simülatör araç çubuğuna simülatör penceresinde geçiş yapmak için. Kullanım **yukarı ok** ve **aşağı ok** araç çubuğu düğmeleri arasında taşımak için.  
   
- Simulator tuşlarına basarak kapatabilirsiniz **CTRL + ALT + F4**.  
+ Simülatör tuşlarına basarak kapatabilirsiniz **CTRL + ALT + F4**.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio'dan uygulamaları çalıştırma](../debugger/run-store-apps-from-visual-studio.md)
+ [Visual Studio’dan uygulamaları çalıştırma](../debugger/run-store-apps-from-visual-studio.md)

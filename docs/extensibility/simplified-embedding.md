@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31142938"
 ---
 # <a name="simplified-embedding"></a>Basitleştirilmiş katıştırma
 Basitleştirilmiş katıştırma etkin bir düzenleyicide kendi belge görünüm nesnesi (diğer bir deyişle, yapılmış bir alt) için üst öğe zaman [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowPane> arabirimi onun penceresi komutları işlemek için uygulanır. Basitleştirilmiş katıştırma düzenleyicileri etkin denetimleri barındıramaz. Basitleştirilmiş katıştırma ile bir düzenleyici oluşturmak için kullanılan nesneler aşağıdaki çizimde gösterilmektedir.  

@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 811292ff5f7dd95e127e63d30bf14ee06269ff7d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4bfc596bd1b77c77ea5b54a66ca349a66e50915c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875794"
 ---
 # <a name="idebugcoreserver3getserverfriendlyname"></a>IDebugCoreServer3::GetServerFriendlyName
 Sunucu için bir kolay ad alır.  
@@ -43,15 +44,15 @@ int GetServerFriendlyName(
  [out] Sunucu için bir kolay ad döndürür.  
   
 > [!NOTE]
->  Dize boşaltma çağıran sorumludur.  
+>  Dize boşaltma için çağıran sorumludur.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kullanıcı tarafından başlatılan sunucuları için bu yöntem tarafından döndürülen adı sunucunun tam adıdır. Otomatik başlatılan sunucuları için makinenin sunucu üzerinde çalıştığından adıdır.  
+ Kullanıcı tarafından başlatılan sunucular için bu yöntem tarafından döndürülen adı tam sunucu adıdır. Otomatik başlatılan sunucular için makineye sunucusunun çalıştığını adıdır.  
   
- Makine odaklı için bir ad, çağrı [GetServerName](../../../extensibility/debugger/reference/idebugcoreserver3-getservername.md) yöntemi.  
+ Makine odaklı bir adı için arama [GetServerName](../../../extensibility/debugger/reference/idebugcoreserver3-getservername.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)   

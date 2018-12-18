@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: NamedRange denetimlerinin boyutunu değiştirme | Microsoft Docs'
+title: 'Nasıl yapılır: NamedRange denetimlerinin boyutunu değiştirme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,88 +17,89 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 6d475f9140607ba0ae7415a60a9589aef11a44a1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6d785aba9d08f71aa8530bc2edd015f497caafef
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35676700"
 ---
-# <a name="how-to-resize-namedrange-controls"></a>Nasıl yapılır: NamedRange Denetimlerinin Boyutunu Değiştirme
-  Boyutunu ayarlayabileceğiniz bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetlemek için Microsoft Office Excel belgesi eklediğinizde; ancak, daha sonraki bir zamanda yeniden boyutlandırmak isteyebilirsiniz.  
+# <a name="how-to-resize-namedrange-controls"></a>Nasıl yapılır: NamedRange denetimlerinin boyutunu değiştirme
+  Boyutu ayarlayabileceğiniz bir <xref:Microsoft.Office.Tools.Excel.NamedRange> Microsoft Office Excel belgeye eklediğiniz zaman denetimi; ancak daha sonraki bir zamanda yeniden boyutlandırmak isteyebilirsiniz.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- Adlandırılmış bir aralık tasarım zamanında veya belge düzeyi projelerine çalışma zamanında yeniden boyutlandırabilirsiniz. Adlandırılmış aralıkları çalışma zamanında uygulama düzeyi VSTO eklentileri yeniden boyutlandırabilirsiniz.  
+ Adlandırılmış aralık tasarım zamanında veya belge düzeyi projelere çalışma zamanında yeniden boyutlandırabilirsiniz. Ayrıca, çalışma zamanında uygulama düzeyi VSTO eklentileri adlandırılmış aralıklar boyutlandırabilirsiniz.  
   
- Bu konuda aşağıdaki görevler açıklanmaktadır:  
+ Bu konuda, aşağıdaki görevleri açıklanmaktadır:  
   
--   [Tasarım zamanında NamedRange denetimleri yeniden boyutlandırma](#designtime)  
+-   [Tasarım zamanında NamedRange denetimlerinin boyutunu değiştirme](#designtime)  
   
--   [Belge düzeyi projesindeki çalışma zamanında NamedRange denetimleri yeniden boyutlandırma](#runtimedoclevel)  
+-   [Çalışma zamanında bir belge düzeyi projede NamedRange denetimlerinin boyutunu değiştirme](#runtimedoclevel)  
   
--   [VSTO eklenti projesindeki çalışma zamanında NamedRange denetimleri yeniden boyutlandırma](#runtimeaddin)  
+-   [Çalışma zamanında VSTO eklenti projesinde NamedRange denetimlerinin boyutunu değiştirme](#runtimeaddin)  
   
-##  <a name="designtime"></a> Tasarım zamanında NamedRange denetimleri yeniden boyutlandırma  
- Adlandırılmış bir aralık boyutunda tanımlayarak boyutlandırabilirsiniz **ad tanımla** iletişim kutusu.  
+##  <a name="designtime"></a> Tasarım zamanında NamedRange denetimlerinin boyutunu değiştirme  
+ Adlandırılmış aralık boyutunda tanımlayarak boyutlandırabilirsiniz **tanımlayan adı** iletişim kutusu.  
   
-#### <a name="to-resize-a-named-range-by-using-the-define-name-dialog-box"></a>Adlandırılmış bir aralık ad Tanımla iletişim kutusunu kullanarak yeniden boyutlandırmak için  
+### <a name="to-resize-a-named-range-by-using-the-define-name-dialog-box"></a>Adlandırılmış aralık tanımlayan adı iletişim kutusunu kullanarak yeniden boyutlandırmak için  
   
-1.  Sağ bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetim.  
+1.  Sağ bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetimi.  
   
-2.  Tıklatın **adlandırılmış aralıkları Yönet** kısayol menüsünde.  
+2.  Tıklayın **adlandırılmış aralıkları Yönet** kısayol menüsünde.  
   
-     **Ad tanımla** iletişim kutusu görüntülenir.  
+     **Tanımlayan adı** iletişim kutusu görüntülenir.  
   
-3.  Yeniden boyutlandırma adlandırılmış aralığı seçin.  
+3.  Yeniden boyutlandırmak istediğiniz adlandırılmış aralık seçin.  
   
-4.  Clear **başvurduğu** kutusu.  
+4.  NET **başvurduğu** kutusu.  
   
-5.  Adlandırılmış aralığın boyutunu tanımlamak için kullanmak istediğiniz hücreleri seçin.  
+5.  Adlandırılmış aralık boyutu tanımlamak için kullanmak istediğiniz alanları seçin.  
   
 6.  **Tamam**'ı tıklatın.  
   
-##  <a name="runtimedoclevel"></a> Belge düzeyi projesindeki çalışma zamanında NamedRange denetimleri yeniden boyutlandırma  
- Kullanarak, program aracılığıyla bir adlandırılmış bir aralık boyutlandırabilirsiniz <xref:Microsoft.Office.Tools.Excel.NamedRange.RefersTo%2A> özelliği.  
+##  <a name="runtimedoclevel"></a> Çalışma zamanında bir belge düzeyi projede NamedRange denetimlerinin boyutunu değiştirme  
+ Kullanarak, program aracılığıyla bir adlandırılmış aralık boyutlandırabilirsiniz <xref:Microsoft.Office.Tools.Excel.NamedRange.RefersTo%2A> özelliği.  
   
 > [!NOTE]  
 >  İçinde **özellikleri** penceresinde <xref:Microsoft.Office.Tools.Excel.NamedRange.RefersTo%2A> özelliği salt okunur olarak işaretlenmiş.  
   
-#### <a name="to-resize-a-named-range-programmatically"></a>Adlandırılmış bir aralık programlı olarak yeniden boyutlandırmak için  
+### <a name="to-resize-a-named-range-programmatically"></a>Adlandırılmış aralık programlı olarak yeniden boyutlandırmak için  
   
-1.  Oluşturma bir <xref:Microsoft.Office.Tools.Excel.NamedRange> hücre denetiminde **A1** , `Sheet1`.  
+1.  Oluşturma bir <xref:Microsoft.Office.Tools.Excel.NamedRange> hücre denetimi **A1** , `Sheet1`.  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#4](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet1.cs#4)]
      [!code-vb[Trin_VstcoreHostControlsExcel#4](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet1.vb#4)]  
   
-2.  Adlandırılmış aralığın hücresini dahil etmek için yeniden boyutlandır **B1**.  
+2.  Adlandırılmış aralık hücre içerecek şekilde yeniden boyutlandırın **B1**.  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#5](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet1.cs#5)]
      [!code-vb[Trin_VstcoreHostControlsExcel#5](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet1.vb#5)]  
   
-##  <a name="runtimeaddin"></a> Bir VSTO eklenti projesindeki çalışma zamanında NamedRange denetimleri yeniden boyutlandırma  
- Boyutlandırabilirsiniz bir <xref:Microsoft.Office.Tools.Excel.NamedRange> herhangi bir açık çalışma zamanında denetim. Ekleme hakkında daha fazla bilgi için bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetiminin çalışma sayfasına bir VSTO eklenti kullanarak, bkz: [nasıl yapılır: çalışma sayfalarına NamedRange denetimleri ekleme](../vsto/how-to-add-namedrange-controls-to-worksheets.md).  
+##  <a name="runtimeaddin"></a> Çalışma zamanında VSTO eklenti projesinde NamedRange denetimlerinin boyutunu değiştirme  
+ Yeniden bir <xref:Microsoft.Office.Tools.Excel.NamedRange> herhangi bir açık çalışma zamanında denetim. Ekleme hakkında daha fazla bilgi için bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetiminin çalışma için VSTO eklentisi kullanarak, bkz: [nasıl yapılır: çalışma sayfalarına NamedRange ekleme denetimlerini](../vsto/how-to-add-namedrange-controls-to-worksheets.md).  
   
-#### <a name="to-resize-a-named-range-programmatically"></a>Adlandırılmış bir aralık programlı olarak yeniden boyutlandırmak için  
+### <a name="to-resize-a-named-range-programmatically"></a>Adlandırılmış aralık programlı olarak yeniden boyutlandırmak için  
   
-1.  Oluşturma bir <xref:Microsoft.Office.Tools.Excel.NamedRange> hücre denetiminde **A1** , `Sheet1`.  
+1.  Oluşturma bir <xref:Microsoft.Office.Tools.Excel.NamedRange> hücre denetimi **A1** , `Sheet1`.  
   
      [!code-csharp[Trin_Excel_Dynamic_Controls#10](../vsto/codesnippet/CSharp/Trin_Excel_Dynamic_Controls/ThisAddIn.cs#10)]
      [!code-vb[Trin_Excel_Dynamic_Controls#10](../vsto/codesnippet/VisualBasic/Trin_Excel_Dynamic_Controls/ThisAddIn.vb#10)]  
   
-2.  Adlandırılmış aralığın hücresini dahil etmek için yeniden boyutlandır **B1**.  
+2.  Adlandırılmış aralık hücre içerecek şekilde yeniden boyutlandırın **B1**.  
   
      [!code-csharp[Trin_Excel_Dynamic_Controls#11](../vsto/codesnippet/CSharp/Trin_Excel_Dynamic_Controls/ThisAddIn.cs#11)]
      [!code-vb[Trin_Excel_Dynamic_Controls#11](../vsto/codesnippet/VisualBasic/Trin_Excel_Dynamic_Controls/ThisAddIn.vb#11)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Genişletme Word belgelerini ve Excel çalışma kitaplarını çalışma zamanında VSTO eklentileri](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Word belgelerini ve Excel çalışma kitaplarını VSTO eklentileri çalışma zamanında genişletme](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
  [Office belgelerine çalışma zamanında denetimler ekleme](../vsto/adding-controls-to-office-documents-at-run-time.md)   
  [Office belgelerindeki denetimler](../vsto/controls-on-office-documents.md)   
  [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)   
- [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirme](../vsto/automating-excel-by-using-extended-objects.md)   
+ [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirmek](../vsto/automating-excel-by-using-extended-objects.md)   
  [NamedRange denetimi](../vsto/namedrange-control.md)   
  [Nasıl yapılır: çalışma sayfalarına NamedRange denetimleri ekleme](../vsto/how-to-add-namedrange-controls-to-worksheets.md)   
  [Nasıl yapılır: yer işareti denetimlerini yeniden boyutlandırma](../vsto/how-to-resize-bookmark-controls.md)   
- [Nasıl yapılır: ListObject Denetimlerinin Boyutunu Değiştirme](../vsto/how-to-resize-listobject-controls.md)  
+ [Nasıl yapılır: ListObject denetimlerinin boyutunu değiştirme](../vsto/how-to-resize-listobject-controls.md)  
   
   

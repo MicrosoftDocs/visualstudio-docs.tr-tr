@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b6188ba6842a922fa0758a21c0f496f50889f8b3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f0a043b3842805357de685484fcc4daf935aefcc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49906842"
 ---
 # <a name="idebugmoduleloadevent2getmodule"></a>IDebugModuleLoadEvent2::GetModule
-Yüklenmekte olan modülü alır yüklü.  
+Yüklenmekte olan modül alır yüklü veya kaldırılmış.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,13 +48,13 @@ int GetModule(
  [out] Döndürür bir [IDebugModule2](../../../extensibility/debugger/reference/idebugmodule2.md) yüklenmesi veya kaldırılması modülü temsil eden nesne.  
   
  `pbstrDebugMessage`  
- [içinde out] Bu olay açıklayan isteğe bağlı bir ileti döndürür. Bu parametre bir null değer ise hiçbir ileti istendi.  
+ [out içinde] Bu olay açıklayan isteğe bağlı bir ileti döndürür. Bu parametre null değeri ise, hiçbir ileti istenir.  
   
  `pbLoad`  
- [içinde out] Sıfır olmayan (`TRUE`) modülünün yüklenmesi ve sıfır ise (`FALSE`) modülü kaldırılması durumunda. Bu parametre bir null değer ise, durum yok istendi.  
+ [out içinde] Sıfır olmayan (`TRUE`) Modül yükleme ve sıfır ise (`FALSE`) modülü kaldırma durumunda. Bu parametre null değeri ise, hiçbir durum istenir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModuleLoadEvent2](../../../extensibility/debugger/reference/idebugmoduleloadevent2.md)   

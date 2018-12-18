@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31113100"
 ---
 # <a name="idebugengine2"></a>IDebugEngine2
 Bu arabirimi hata ayıklama altyapısı (DE) temsil eder. Ayarlama ve özel durumları temizlemek için kesme noktaları oluşturulurken bir hata ayıklama oturumu çeşitli yönlerini yönetmek için kullanılır.  

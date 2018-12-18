@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e4a04a505b694d5ed4081b12a39815256ed68d3e
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: d293971cfcd0723485d4a5b21d4e431de64ddd65
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822741"
 ---
 # <a name="idiasymbolgetcontainer"></a>IDiaSymbol::get_container
-Bu işlev bir işaretçi üst/kapsayıcının bu simgeyi temsil eden bir simge alır.  
+Bu işlev, bu sembol üst/kapsayıcı temsil eden bir sembol için bir işaretçi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,19 +34,19 @@ HRESULT get_container(
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Bir işaretçi döndüren bir `IDiaSymbol` bu simge kapsayıcı hakkında bilgileri içeren.  
+ [out] Bir işaretçi döndüren bir `IDiaSymbol` bu simgenin kapsayıcı hakkında bilgileri içeren.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde, S_FALSE veya bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde S_FALSE veya bir hata kodu döndürür.  
   
 > [!NOTE]
->  S_FALSE dönüş değeri, özellik simgesi kullanılabilir olmadığı anlamına gelir.  
+>  S_FALSE dönüş değeri, özellik simge için kullanılabilir olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v8.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

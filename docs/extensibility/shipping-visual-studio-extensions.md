@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31142766"
 ---
 # <a name="shipping-visual-studio-extensions"></a>Visual Studio uzantıları aktarma
 Uzantınızı geliştirme bitirdikten sonra diğer makinelere yüklemeniz, arkadaşlarınız ve iş arkadaşlarınızla paylaşın veya Visual Studio Market'te yayımlayın. Bu bölümde biz yayımlama ve uzantınızı korumak için yapmanız gereken her şey açıklamaktadır: yayımlama, yerelleştirme ve güncelleştirme .vsix dosyalarıyla çalışma.  

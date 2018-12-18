@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: dcd383130c1af1765014adfa438482543c336ede
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 09f2e81699683ec49155faceb375da3d636ed4c4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934047"
 ---
 # <a name="idebugmodule2reloadsymbolsdeprecated"></a>IDebugModule2::ReloadSymbols_Deprecated
-KULLANIMDAN KALKTI. KULLANMAYIN. Bu modül simgelerini yeniden yükler.  
+ARTIK KULLANILMIYOR. KULLANMAYIN. Bu modüle ilişkin simgeleri yeniden yükler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,10 +46,10 @@ int ReloadSymbols(
  [in] Sembol deposu yolu.  
   
  `pbstrDebugMessage`  
- [out] Modül adı modülleri penceresinde sağındaki görüntülenen bir durum veya hata iletisi gibi bir bilgilendirme iletisi döndürür.  
+ [out] Örneğin modül adı modüller penceresini sağındaki görüntülenen bir durum veya hata iletisi, bir bilgilendirme iletisi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Hata ayıklama altyapısı her zaman döndürmelidir `E_FAIL`.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Hata ayıklama altyapısı her zaman döndürmelidir `E_FAIL`.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yöntem artık desteklenmiyor. Uygulama [LoadSymbols](../../../extensibility/debugger/reference/idebugmodule3-loadsymbols.md) yöntemi yerine.  

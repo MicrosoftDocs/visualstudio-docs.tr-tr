@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6521d2a7ffdf5bb285f571e0d3975626f34d84d1
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 773144f81e51167016df3dca1b6ea7beedb3661c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951320"
 ---
 # <a name="idiasymbolgettypes"></a>IDiaSymbol::get_types
-Bu simgenin derleyici özgü türlerinin dizisini alır.  
+Derleyici özel türleri için bu simge dizisini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,16 +39,16 @@ HRESULT get_types (
  [in] Verileri tutmak için arabellek boyutu.  
   
  `pcTypes`  
- [out] Yazılan türleri sayısını döndürür veya `types` parametresi `NULL`, ardından türleri kullanılabilir toplam sayısı.  
+ [out] Yazılan türleri sayısı döndürür veya `types` parametresi `NULL`, ardından kullanılabilir türleri toplam sayısı.  
   
  `types[]`  
- [out] İle doldurulması için bir dizi [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) bu simgenin tüm türleri temsil eden nesne.  
+ [out] İle doldurulacak bir dizi [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) bu simgenin tüm türleri temsil eden nesneleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

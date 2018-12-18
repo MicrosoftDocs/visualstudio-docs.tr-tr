@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 44d7396388d0bac1539a597fa5b72e0bedaba8c7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 74ec5b3cc02efa75e84d52910c02ea693a7ab8a6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903497"
 ---
 # <a name="launchflags"></a>LAUNCH_FLAGS
 Hata ayıklama başlatma bayrakları belirtir.  
@@ -53,23 +54,23 @@ public enum enum_LAUNCH_FLAGS {
  Hata ayıklama olmadan işlem başlatır.  
   
  LAUNCH_ENABLE_ENC  
- KULLANIM, KULLANMAYIN.  
+ KULLANIM DIŞI, KULLANMAYIN.  
   
  LAUNCH_MERGE_ENV  
- İşlem başlatır ve başlatan konak ortamıyla birleştirir.  
+ Bir işlem başlatır ve ortam başlatan konakla birleştirir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerler için bağımsız değişken olarak geçirilen [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) yöntemi.  
+ Bu değerleri bir bağımsız değişken olarak geçirilen [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) yöntemi.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md)

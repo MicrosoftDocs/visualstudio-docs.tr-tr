@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f43a0fe3d7d2ad7c54ee9203037595dade7c6486
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 434a53803dcc08a5d4b07b531b56e913d5311d1a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934801"
 ---
 # <a name="idebugdisassemblystream2getsize"></a>IDebugDisassemblyStream2::GetSize
 Bu çözümü akış yönergelerinde boyutunu alır.  
@@ -40,15 +41,15 @@ int GetSize(
   
 #### <a name="parameters"></a>Parametreler  
  `pnSize`  
- [out] Boyut'ndaki yönergeleri döndürür.  
+ [out] Yönergeleri boyutunu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntemin döndürdüğü değer bir dizi ayırmak için kullanılan [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) sonra geçirilir yapıları [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) yöntemi.  
+ Bu yöntemi tarafından döndürülen değer, bir dizi ayırmak için kullanılabilir [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) geçirilerek yapılar [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDisassemblyStream2](../../../extensibility/debugger/reference/idebugdisassemblystream2.md)   
  [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md)   
- [Okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md)
+ [Read](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md)

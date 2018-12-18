@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31457845"
 ---
 # <a name="compiland"></a>Compiland
 Bir `SymTagCompiland` her derlenecek .exe dosyasına bağlı için simge. Derlenecek dosya bilgileri sembolleriyle arasında bölünür bir `SymTagCompiland` ek derlenecek simgeleri yüklemeden alınabilir, etiket ve ile simgeler bir `SymTagCompilandDetails` ek simgeleri yüklenirken gerektirebilir etiketi.  

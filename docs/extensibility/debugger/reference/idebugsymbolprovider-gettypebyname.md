@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 565972b0f1f7d1f2e5e2ffd751cba60621fe284d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8b95117cd37f9ca6c2bfe3d2276bb03994f7a07b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49924757"
 ---
 # <a name="idebugsymbolprovidergettypebyname"></a>IDebugSymbolProvider::GetTypeByName
-Bu yöntem bir simge türü için bir simge adı eşler.  
+Bu yöntem, bir simge türü için bir sembol adı eşler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,16 +48,16 @@ int GetTypeByName(
  [in] Sembol adı.  
   
  `nameMatch`  
- [in] Türünün uyuştuğundan, örneğin, büyük küçük harfe duyarlı seçer. Arasında bir değer [NAME_MATCH](../../../extensibility/debugger/reference/name-match.md) numaralandırması.  
+ [in] Türü eşleşen, örneğin, büyük/küçük harfe seçer. Bir değer [NAME_MATCH](../../../extensibility/debugger/reference/name-match.md) sabit listesi.  
   
  `ppField`  
- [out] Simge türü olarak döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesnesi.  
+ [out] Simge türü olarak döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, genel bir sürümüdür [GetClassTypeByName](../../../extensibility/debugger/reference/idebugsymbolprovider-getclasstypebyname.md).  
+ Bu yöntem genel sürümüdür [GetClassTypeByName](../../../extensibility/debugger/reference/idebugsymbolprovider-getclasstypebyname.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   

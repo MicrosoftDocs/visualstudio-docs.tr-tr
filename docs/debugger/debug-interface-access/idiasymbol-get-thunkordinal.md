@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ed649ffe02cc27f959bf96b826fc02498beb4acd
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0e3893d7c74d92caa708606c336eb2775c538f1c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49918352"
 ---
 # <a name="idiasymbolgetthunkordinal"></a>IDiaSymbol::get_thunkOrdinal
-Bir işlevin dönüştürücü türü alır.  
+Bir işlev dönüştürücü türünü alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,20 +34,20 @@ HRESULT get_thunkOrdinal (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Arasında bir değer döndürür [THUNK_ORDINAL numaralandırması](../../debugger/debug-interface-access/thunk-ordinal.md) bir işlev dönüştürücü türünü belirtir numaralandırması.  
+ [out] Bir değer döndürür [thunk_ordınal numaralandırması](../../debugger/debug-interface-access/thunk-ordinal.md) bir işlev dönüştürücü türünü belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu özellik geçerli yalnızca simgesi olarak bir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) değerini `SymTagThunk`.  
   
- "Dönüştürücü" (bölümlenmiş adres alanı olarak da bilinir) bir 16 bit adres alanı ile bir 32 bit bellek adres alanı (düz adres alanı olarak da bilinir) arasındaki dönüştürür kod parçasıdır.  
+ Bir "dönüştürücü" dönüştürür (segmentlere ayrılmış adres alanı olarak da bilinir) bir 16 bit adres alanı ile bir 32-bit bellek adres alanı (düz adres alanı olarak da bilinir) arasındaki kod parçasıdır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
  [Thunk_ordınal numaralandırması](../../debugger/debug-interface-access/thunk-ordinal.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 95c95d33c2d31e5476153ddd0d0a9598f67080c8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c7711d185e92b0cc8a29070aa78a4acff835df33
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49846947"
 ---
 # <a name="ipropertyproxyeesideresolveassemblyref"></a>IPropertyProxyEESide::ResolveAssemblyRef
-Belirtilen yönetilen derleme başvurusu konumunu belirler.  
+Belirtilen yönetilen bütünleştirilmiş kod başvurusu konumunu belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,25 +49,25 @@ int ResolveAssemblyRef(
   
 #### <a name="parameters"></a>Parametreler  
  `assemName`  
- [in] Çözmek için derleme adı.  
+ [in] Çözümlenecek derlemenin adı.  
   
  `assemBytes`  
- [out] Döndürür bir [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) başvuru ile ilişkili derleme baytları içeren bir nesne.  
+ [out] Döndürür bir [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) başvuru ile ilişkili derleme baytları içeren nesne.  
   
  `assemPdb`  
- [out] Döndürür bir `IEEDataStorage` simgeyi içeren bir nesne depolamak bu başvuru ile ilişkili veriler.  
+ [out] Döndürür bir `IEEDataStorage` sembolü içeren bir nesne, bu başvuru ile ilişkili veri depolayın.  
   
  `assemLocation`  
  [out] Bu başvuru yolu konumunu döndürür.  
   
  `alr`  
- [out] Arasında bir değer döndürür [ASSEMBLYLOCRESOLUTION](../../../extensibility/debugger/reference/assemblylocresolution.md) bu referansının derlemesinin konumunu belirten numaralandırma.  
+ [out] Bir değer döndürür [ASSEMBLYLOCRESOLUTION](../../../extensibility/debugger/reference/assemblylocresolution.md) bu başvurusunun derleme konumunu belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem bir özel ifade değerlendiricisi tarafından genellikle uygulanmadı.  
+ Bu yöntem, genellikle bir özel ifade değerlendiricisi tarafından uygulanmadı.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IPropertyProxyEESide](../../../extensibility/debugger/reference/ipropertyproxyeeside.md)   

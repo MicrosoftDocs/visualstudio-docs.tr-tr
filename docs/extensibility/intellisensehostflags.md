@@ -16,11 +16,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a096e79a64168f74150103a5f3ba3a8683fe184e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2ad7f97ad7c66fadcfe918176b84e9b54d44814d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825640"
 ---
 # <a name="intellisensehostflags"></a>IntelliSenseHostFlags
 IntelliSense konak bayrakları belirtir.  
@@ -38,18 +39,18 @@ enum IntellisenseHostFlags
 };  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
   
 |Üyeler|Açıklama|  
 |-------------|-----------------|  
-|`IHF_READONLYCONTEXT`|Bağlamı arabelleğine salt okunurdur.|  
+|`IHF_READONLYCONTEXT`|Bağlamı arabelleğine salt okunur.|  
 |`IHF_NOSEPARATESUBJECT`|Konu metin yok. Bağlamı arabelleğine IntelliSense hedef içerir (gelir `!IHF_READONLYCONTEXT`).|  
-|`IHF_SINGLELINESUBJECT`|Konu metni çok-satırı yeteneğine sahip değil.|  
+|`IHF_SINGLELINESUBJECT`|Konu metnini çok-satırı özelliğine sahip değil.|  
 |`IHF_FORCECOMMITTOCONTEXT`|Aynı `CanCommitIntoReadOnlyBuffer`.|  
-|`IHF_OVERTYPE`|(Konu veya bağlam) düzenleme üzerine yazma modunda yapılması gerekir.|  
+|`IHF_OVERTYPE`|(Konu veya bağlam) düzenleme, üzerine yazma modunda yapılmalıdır.|  
   
 ## <a name="requirements"></a>Gereksinimler  
  SingleFileeditor.idl  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.TextManager.Interop>

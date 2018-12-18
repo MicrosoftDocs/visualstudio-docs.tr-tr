@@ -12,50 +12,51 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4438e7967a15384887d00503bde93b7bbd40fe6c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0920c9a506adaf562a8acc77b2b030e461f11ed1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934903"
 ---
-# <a name="how-to-collect-line-level-sampling-data"></a>Nasıl yapılır: Satır Düzeyi Örnekleme Verileri Toplama
-Satır düzeyi örnekleme yüksek özel örnekleri olan bir işlev gibi bir işlemci yoğunluğu işlevinin kodda işlemci, süreyi en çok harcama sahip olduğu belirlemek için profil oluşturucu özelliğidir.  
+# <a name="how-to-collect-line-level-sampling-data"></a>Nasıl yapılır: satır düzeyi örnekleme verileri toplama
+Satır düzeyi örnekleme nerede yüksek dışlamalı örnekleri olan bir işlev gibi yoğun işlemci işlevinin kodundaki işlemci zamanının çoğunu harcama belirlemek için profil oluşturucu özelliğidir.  
   
 ## <a name="overview"></a>Genel Bakış  
- Satır düzeyi örnekleme için profil oluşturucu programı çağrı yığını belirlenen aralıklarla anlatılmaktadır ve bu sonuçları toplar. Bu sonuçları örnekleri durumdayken işlemci yürütülmekte olan hangi yönergeleri gösterir. Özel örnekleri hakkında toplanan verileri ardından satırları kod ve yönerge işaretçisi (IP) belirlemek için analiz edilir.  
+ Satır düzeyi örnekleme profil oluşturucu programı çağrı yığınını belirlenen aralıklarla size yol gösterir ve bu sonuçları toplar. Bu sonuçları örnekleri durumdayken işlemci çağırılma yürütüldüğü hangi yönergeleri gösterir. Dışlamalı örnekler hakkında toplanan verileri satırlık bir kod ve yönerge işaretçisi (IP) belirlemek için analiz edilir.  
   
- Satır düzeyi örnekleme yönetilen yanı sıra yerel kod için çalışır. Satırlar görünümü ve modüller görünümü bu verileri görüntülemek performans raporları içerir.  
+ Satır düzeyi örnekleme yönetilen hem de yerel kod için çalışır. Satırlar görünümü ve modüller görünümü bu verileri görüntüleyen performans raporları içerir.  
   
- Karakter begin/bitiş bilgileri yerel kod için kullanılabilir değil. Çok satırlı deyimleri için satırın başında bilgileri yerel kod için; mevcut değil yalnızca satır sonu bilgisi yok.  
+ Karakter başlamak son bilgileri yerel kod için kullanılabilir değil. Çok satırlı ifadeleri için satırın başında bilgi yerel kod için; mevcut değil yalnızca satır sonu bilgileri kullanılabilir.  
   
 ### <a name="available-data"></a>Kullanılabilir veri  
  Kullanılabilir satır düzeyi örnekleme verileri aşağıdaki bilgileri içerir:  
   
--   İşlev adı.  
+- İşlev adı.  
   
--   İşlev adresi.  
+- İşlev adresi.  
   
--   Satırın başında - örneklenen kodu satır sayısı.  
+- Satırları başlayın - örnek kod satır sayısı.  
   
--   Satır sonu - kaynak satır numarasını bitiş. Bu genellikle tek bir program deyimde birden çok kaynak kodu satır yayıldığında dışında "Satırın başında" veri aynıdır.  
+- Satır sonu - kaynak satırı numarasını bitiş. Bu genellikle "Satırın başında" verileri tek bir program ifadesi birden çok kaynak kod satırlarına yayıldığında dışında aynıdır.  
   
--   Karakter başlamalı - birleşik örnek başlangıç sütunu. Bu genellikle tek bir satıra birden fazla program deyimleri içerdiğinde dışında 0'dır.  
+- Karakter başlayın - toplama örneği başlangıç sütunu. Bu genellikle tek bir satır birden fazla program deyimleri içerdiğinde dışında 0'dır.  
   
--   Karakter son - birleşik örnek sütununun bitiş.  
+- Karakter sonu - toplam örnek sütunun bitiş.  
   
--   IP - birleşik örnek (yalnızca IP görünümü) burada alındığı adresi.  
+- IP - adresi toplama örneği (yalnızca IP görünümü) nereden alındığı.  
   
- İçinde **modülleri** görüntülemek için bir işlev satır düzeyi istatistikleri varsa, altında her işlevi istatistikleri yerleştirilir. Ayrıca, her satırın altında iç içe geçmiş IP düzeyi istatistikleri sunulur.  
+  İçinde **modülleri** görüntülemek için bir işlevi satır düzeyi istatistikleri varsa, her işlevin altında istatistikleri yerleştirilir. Ayrıca, her satırı altında iç içe geçmiş IP düzeyi İstatistikler gösterilir.  
   
 ### <a name="turn-off-line-level-sampling-for-managed-code"></a>Yönetilen kod için satır düzeyi örnekleme devre dışı bırakma  
- Varsayılan olarak, satır düzeyi örnekleme açıktır. Aşağıdakilerden birini yaparak yönetilen kod için satır düzeyi verilerin toplanmasını kapatabilirsiniz:  
+ Varsayılan olarak, satır düzeyi örnekleme etkinleştirilir. Aşağıdaki komutlardan birini kullanarak yönetilen kod için satır düzeyinde veri toplamayı kapatabilirsiniz:  
   
--   Profil oluşturma önce yazın **VSPerfCLREnv /samplelineoff**. Bu uygulamalar ve hizmetler etkiler.  
+-   Profil oluşturmadan önce yazın **VSPerfCLREnv /samplelineoff**. Bu işlem, uygulamaları ve hizmetleri hem de etkiler.  
   
      — veya —  
   
--   Bir uygulama başlatılırken yazın **VSPerfCmd /lineoff \<başka bir bağımsız değişken >**.  
+-   Bir uygulama başlatma sırasında yazın **VSPerfCmd/lineoff \<diğer bağımsız değişkenleri >**.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans oturumlarını yapılandırma](../profiling/configuring-performance-sessions.md)   
- [Araçları verilerini performansını analiz etme](../profiling/analyzing-performance-tools-data.md)
+ [Performans araçları verilerini analiz etme](../profiling/analyzing-performance-tools-data.md)

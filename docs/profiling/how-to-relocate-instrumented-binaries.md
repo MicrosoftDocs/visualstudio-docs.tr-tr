@@ -16,13 +16,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1c138e8b823977d95f2630040a0690628396503d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a060506f818ac000611fc0c29988ed324ae89226
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34843659"
 ---
-# <a name="how-to-relocate-instrumented-binaries"></a>Nasıl yapılır: Araç Haline Getirilmiş İkili Dosyaları Yeniden Konumlandırma
+# <a name="how-to-relocate-instrumented-binaries"></a>Nasıl yapılır: izleme eklenmiş ikili dosyaları yeniden konumlandırma
 
 İzleme sırasında araştırmalar uygulama performansını ölçmek için ikili olarak eklenir. İzleme eklenmiş ikili taşıyabilir seçerek, özgün ikili bir kopyasını işaretlenir ve belirtilen konuma yerleştirin. Bu seçenek, özgün ikili dosyanız yeniden adlandırmak için profil oluşturucu istemiyorsanız yararlıdır. İkili yeniden konumlandırılmasını değil, ikili özgün sürümünün üzerine yazılır.
 

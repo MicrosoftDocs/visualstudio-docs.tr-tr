@@ -1,5 +1,5 @@
 ---
-title: VSTextView nesne | Microsoft Docs
+title: VSTextView nesnesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,30 +16,31 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5be89d01a668fd05e70e73e31ffaf3742317c272
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d5b0b6e640f4fef6cf9508747cff010ff5b5ad6c
+ms.sourcegitcommit: 9765b3fcf89375ca499afd9fc42cf4645b66a8a2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46495420"
 ---
 # <a name="vstextview-object"></a>VSTextView nesnesi
-Metin görünümü, kullanıcıların metin arabelleğinin Unicode metni görüntüleyin ve düzenleyin olanak veren bir penceredir. Esas olarak, hangi kullanıcıların çoğunun düzenleyicisi olarak başvurmak görünümüdür. Görünüm arabelleğinden çeşitli metin katmanları (sözcük kaydırma, anahat metin vb.) ayrı olması nedeniyle görünümü metin arabelleği tam bir temsili olması garanti edilmez. Metin görünümü hakkında daha fazla bilgi için bkz: [eski API kullanarak getirip metin görünümü erişme](../extensibility/accessing-thetext-view-by-using-the-legacy-api.md)  
+Metin görünümünü görüntülemek ve metin arabelleğini Unicode metni düzenlemek kullanıcıların olanak sağlayan bir penceredir. Esas olarak, hangi kullanıcıların çoğu düzenleyici olarak başvurmak görünümüdür. Görünüm arabellekteki çeşitli metin katmanları (sözcük kaydırma, anahat oluşturma metin ve benzeri) ayrılmış olduğundan, görünüm arabellekteki metni tam bir temsilini olmasını garanti edilmez. Metin görünümü hakkında daha fazla bilgi için bkz. [erişimcisinde görünümü eski API'yi kullanarak erişme](../extensibility/accessing-thetext-view-by-using-the-legacy-api.md)  
   
- Aşağıdaki tablo arabirimler gösterir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView> nesnesi.  
+ Aşağıdaki tabloda, arabirimler gösterilir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView> nesne.  
   
 |Arabirim|Açıklama|  
 |---------------|-----------------|  
-|[IDropSource](http://msdn.microsoft.com/library/windows/desktop/ms690071)|Standart OLE arabirimi.|  
-|<xref:Microsoft.VisualStudio.OLE.Interop.IDropTarget>|Standart OLE arabirimi.|  
-|<xref:Microsoft.VisualStudio.OLE.Interop.IObjectWithSite>|Standart OLE arabirimi.|  
-|<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>|Standart OLE arabirimi.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompoundAction>|Bileşik eylemleri (diğer bir deyişle, bir tek geri alma/yineleme biriminde gruplandırılır Eylemler) oluşturulmasını sağlar.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>|Temel yöntemler yönetme ve görünüm erişim sağlar. `IVsTextView` iş parçacığı güvenli değil.|  
-|<xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowPane>|Oluşturur ve bir pencere bölmesine yönetir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsLayeredTextView>|Metin katmanları ile etkileşime girer.|  
+|[IDropSource](/windows/desktop/api/oleidl/nn-oleidl-idropsource)|Standart OLE arabirimidir.|  
+|<xref:Microsoft.VisualStudio.OLE.Interop.IDropTarget>|Standart OLE arabirimidir.|  
+|<xref:Microsoft.VisualStudio.OLE.Interop.IObjectWithSite>|Standart OLE arabirimidir.|  
+|<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>|Standart OLE arabirimidir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompoundAction>|Bileşik eylemleri (diğer bir deyişle, bir tek geri al/Yinele biriminde gruplandırılır eylemleri) oluşturulmasını sağlar.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>|Temel yöntemleri, yönetme ve görüntüleme erişim sağlar. `IVsTextView` Güvenli iş parçacığına sahip değil.|  
+|<xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowPane>|Oluşturur ve bir pencere bölmesi yönetir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsLayeredTextView>|Metin katmanları ile etkileşim kurar.|  
 |<xref:Microsoft.VisualStudio.TextManager.Interop.IVsThreadSafeTextView>|Farklı bir iş parçacığından görünümü işlemleri gerçekleştirir.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Şekiller Düzenle](http://msdn.microsoft.com/en-us/f08872bd-fd9c-4e36-8cf2-a2a2622ef986)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Şekil Düzenle](https://www.microsoft.com/download/details.aspx?id=55984)   
  [VSTextBuffer nesnesi](../extensibility/vstextbuffer-object.md)   
- [Eski API kullanarak getirip metin görünümü erişme](../extensibility/accessing-thetext-view-by-using-the-legacy-api.md)
+ [Eski API'yi kullanarak erişen erişimcisinde görüntüle](../extensibility/accessing-thetext-view-by-using-the-legacy-api.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e0a488c06f009636f7905000529ac7803fb0d6de
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: aa92fb62ba60d1ea1e8907ae66a1353d593d1ab0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49813407"
 ---
 # <a name="unmanagedaddressthisrelative"></a>UNMANAGED_ADDRESS_THIS_RELATIVE
-Bu yapı göreli bir adresi temsil eden bir `this` işaretçisi (`Me` Visual Basic'te).  
+Bu yapı için göreli bir adresi temsil eden bir `this` işaretçi (`Me` Visual Basic'te).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,24 +45,24 @@ public struct UNMANAGED_THIS_RELATIVE {
   
 ## <a name="terms"></a>Koşulları  
  dwOffset  
- Bayt (örneğin, bir sınıf vtable başlangıcı) temel bir konumdan uzaklığı.  
+ Bayt (örneğin, bir sınıf vtable başı) temel bir konumdan uzaklık.  
   
  dwBitOffset  
- Temel bir konumdan bit cinsinden uzaklık (her zaman 0 bit alana başvuran sürece).  
+ Temel bir konumdan bit uzaklığı (her zaman 0 başvuran bir bit alanına sürece).  
   
  dwBitLength  
- Adresini temsil eden bit sayısını (her zaman 0 bit alana başvuran sürece).  
+ Adresini temsil eden bit sayısını (0'her zaman bir bit alanına başvuran sürece).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı birleşim içinde yer [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md) ne zaman yapısı `dwKind` alanını `DEBUG_ADDRESS_UNION` yapısı ayarlanmış `ADDRESS_KIND_UNMANAGED_THIS_RELATIVE` (arasında bir değer [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) numaralandırma).  
+ Bu yapı, birleşim içinde parçasıdır [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md) ne zaman yapısı `dwKind` alanını `DEBUG_ADDRESS_UNION` yapısı ayarlandığında `ADDRESS_KIND_UNMANAGED_THIS_RELATIVE` (arasında bir değer [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) sabit listesi).  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md)

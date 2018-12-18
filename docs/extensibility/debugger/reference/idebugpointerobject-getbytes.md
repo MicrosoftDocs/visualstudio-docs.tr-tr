@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1459a0f99dd4b0ea9c9e998404b1ffe1733cb3bf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 106472037873045b0b30381e6ce901c89b342bae
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49916555"
 ---
 # <a name="idebugpointerobjectgetbytes"></a>IDebugPointerObject::GetBytes
-Bir dizi ardışık bayt olarak işaret değerini alır.  
+Ardışık bir bayt serisi işaret ettiği değer alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int GetBytes(
   
 #### <a name="parameters"></a>Parametreler  
  `dwStart`  
- [in] İşaret nesnesi başından bayt cinsinden uzaklık.  
+ [in] Belirtilen nesnenin başından itibaren bayt cinsinden uzaklık.  
   
  `dwCount`  
  [in] Alınacak bayt sayısı.  
   
  `pBytes`  
- [içinde out] Değeri bir dizi ardışık bayt olarak doldurulan bir dizi nesnesinden belirtilen uzaklığından başlayan işaret.  
+ [out içinde] Değeri bir dizi ardışık bayt olarak doldurulan bir dizi nesnesinden belirtilen uzaklıkta başlayan işaret.  
   
  `pdwBytes`  
  [out] Gerçekte alınan bayt sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, kullanılır bu tarafından temsil edilen işaretçi [IDebugPointerObject](../../../extensibility/debugger/reference/idebugpointerobject.md) bir ilkel türe veya ilkel türler (basit bir bayt dizisi tarafından temsil edilen bir dizi) basit bir dizi gösteriyor.  
+ Bu yöntem kullanılır bu tarafından temsil edilen işaretçinin [IDebugPointerObject](../../../extensibility/debugger/reference/idebugpointerobject.md) işaret türü basit tür veya basit bir dizi temel türlerin (diğer bir deyişle, basit bir bayt dizisi tarafından temsil edilen bir dizi).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPointerObject](../../../extensibility/debugger/reference/idebugpointerobject.md)   

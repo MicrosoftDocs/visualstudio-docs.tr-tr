@@ -1,5 +1,5 @@
 ---
-title: 'İzlenecek yol: bir düzenleyici uzantı DTE nesnesine erişim | Microsoft Docs'
+title: 'İzlenecek yol: Düzenleyici uzantısından DTE nesnesine erişme | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,25 +13,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b888136f51e7893c6ad44ab888d8079ee92d8edf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8ed4343139b3e59dfba7adc71b1c91cdf01c13db
+ms.sourcegitcommit: 56ae5032d99d948aae0548ae318ca2bae97ea962
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39586254"
 ---
-# <a name="walkthrough-accessing-the-dte-object-from-an-editor-extension"></a>İzlenecek yol: bir düzenleyici uzantı DTE nesnesine erişim
-VSPackages içinde çağırarak DTE nesne alabilirsiniz <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> yöntemi DTE nesne türüne sahip. Yönetilen Genişletilebilirlik Çerçevesi (MEF) uzantılarında aldığınız <xref:Microsoft.VisualStudio.Shell.SVsServiceProvider> ve ardından arama <xref:Microsoft.VisualStudio.Shell.ServiceProvider.GetService%2A> yöntemi türüne sahip <xref:EnvDTE.DTE>.  
+# <a name="walkthrough-accessing-the-dte-object-from-an-editor-extension"></a>İzlenecek yol: Düzenleyici uzantısından DTE nesnesine erişme
+Vspackage'larda, çağırarak DTE nesnesi alabilirsiniz <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> DTE nesnesi türü ile yöntemi. Yönetilen Genişletilebilirlik Çerçevesi (MEF) uzantılar, aldığınız <xref:Microsoft.VisualStudio.Shell.SVsServiceProvider> ve sonra çağrı <xref:Microsoft.VisualStudio.Shell.ServiceProvider.GetService%2A> yöntemi türünde <xref:EnvDTE.DTE>.  
   
 ## <a name="prerequisites"></a>Önkoşullar  
- Bu kılavuzda izlemek için Visual Studio SDK'yı yüklemeniz gerekir. Daha fazla bilgi için bkz: [Visual Studio SDK](../extensibility/visual-studio-sdk.md).  
+ Bu izlenecek yolda takip etmek için Visual Studio SDK'yı yüklemeniz gerekir. Daha fazla bilgi için [Visual Studio SDK](../extensibility/visual-studio-sdk.md).  
   
 ## <a name="getting-the-dte-object"></a>DTE nesnesini alma  
   
-#### <a name="to-get-the-dte-object-from-the-serviceprovider"></a>ServiceProvider DTE nesnesini almak için  
+### <a name="to-get-the-dte-object-from-the-serviceprovider"></a>ServiceProvider DTE nesnesini almak için  
   
-1.  Adlı bir C# VSIX proje oluşturma `DTETest`. Bir düzenleyici sınıflandırıcı öğe şablonu ekleyin ve adını `DTETest`. Daha fazla bilgi için bkz: [bir düzenleyici öğesi şablonuyla bir uzantısı oluşturma](../extensibility/creating-an-extension-with-an-editor-item-template.md).  
+1.  Adlı bir C# VSIX projesi oluşturun `DTETest`. Bir düzenleyici sınıflandırıcı öğe şablonu ekleyin ve adlandırın `DTETest`. Daha fazla bilgi için [bir düzenleyici öğesi şablonuyla uzantı oluşturma](../extensibility/creating-an-extension-with-an-editor-item-template.md).  
   
-2.  Aşağıdaki derleme referanslarını projeye ekleyin:  
+2.  Projenin aşağıdaki derleme başvuruları ekleyin:  
   
     -   EnvDTE  
   
@@ -39,7 +40,7 @@ VSPackages içinde çağırarak DTE nesne alabilirsiniz <xref:Microsoft.VisualSt
   
     -   Microsoft.VisualStudio.Shell.Immutable.10.0  
   
-3.  DTETest.cs dosyasına gidin ve aşağıdakileri ekleyin `using` yönergeleri:  
+3.  Git *DTETest.cs* dosyasını bulun ve aşağıdakileri ekleyin `using` yönergeleri:  
   
     ```csharp  
     using EnvDTE;  
@@ -56,14 +57,14 @@ VSPackages içinde çağırarak DTE nesne alabilirsiniz <xref:Microsoft.VisualSt
   
     ```  
   
-5.  İçinde `GetClassifier()` yöntemi, aşağıdaki kodu ekleyin.  
+5.  İçinde `GetClassifier()` yöntemine aşağıdaki kodu ekleyin.  
   
     ```csharp  
     DTE dte = (DTE)ServiceProvider.GetService(typeof(DTE));  
   
     ```  
   
-6.  Kullanmanız gerekiyorsa <xref:EnvDTE80.DTE2> arabirimi, DTE nesnesiyle çevirebilirsiniz.  
+6.  Kullanmanız gerekiyorsa <xref:EnvDTE80.DTE2> arabirimi DTE nesnesi çevirebilirsiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Dil Hizmeti ve Düzenleyici Uzantı Noktaları](../extensibility/language-service-and-editor-extension-points.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Dil hizmeti ve düzenleyici uzantı noktaları](../extensibility/language-service-and-editor-extension-points.md)

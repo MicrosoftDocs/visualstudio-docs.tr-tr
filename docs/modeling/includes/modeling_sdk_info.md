@@ -1,3 +1,11 @@
 ---
+ms.topic: include
+ms.openlocfilehash: 27c5c7126f66ad909264bdd6fb2505e5e8d87c3c
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "48020812"
 ---
->Visual Studio 2017 içinde metin şablonu dönüştürme SDK'sı ve modelleme Visual Studio SDK, Visual Studio'nun belirli özellikleri yüklediğinizde otomatik olarak yüklenir. Daha fazla ayrıntı için bkz: [bu blog gönderisine](https://blogs.msdn.microsoft.com/visualstudioalm/2016/12/12/the-visual-studio-modeling-sdk-is-now-available-with-visual-studio-2017/).
+> [!NOTE]
+> Visual Studio 2017'de **metin şablonu dönüştürme** bileşeni parçası olarak otomatik olarak yüklenir **Visual Studio uzantısı devlopment** iş yükü. Buradan ayrıca yükleyebilirsiniz **tek tek bileşenler** sekmesinde Visual Studio Yükleyicisi'nin altında **kod Araçları** kategorisi. Yükleme **modelleme SDK'sı** bileşenini **tek tek bileşenler** sekmesi.

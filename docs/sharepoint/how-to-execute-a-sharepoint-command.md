@@ -15,13 +15,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 824a747d9253817e1f188730996dac707b3e5ee5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ce195dd34c7c0b509f9de4cbe2cfd14d9a477f87
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120612"
 ---
-# <a name="how-to-execute-a-sharepoint-command"></a>Nasıl yapılır: SharePoint Komutu Yürütme
+# <a name="how-to-execute-a-sharepoint-command"></a>Nasıl yapılır: SharePoint komutu yürütme
   Sunucu nesne modeli bir SharePoint araçları uzantısı'nda kullanmak istiyorsanız, özel bir oluşturmalısınız *SharePoint komutu* API'yi çağırmak için. Komut tanımlayın ve SharePoint araçları uzantısı ile dağıttıktan sonra uzantınızı SharePoint sunucusu nesne modeline çağırmak için komutu çalıştırabilirsiniz. Komutu yürütmek için ExecuteCommand yöntemlerinden birini kullanın bir <xref:Microsoft.VisualStudio.SharePoint.ISharePointConnection> nesnesi.  
   
  SharePoint komutları amacı hakkında daha fazla bilgi için bkz: [SharePoint nesne modellerini çağırma](../sharepoint/calling-into-the-sharepoint-object-models.md).  
@@ -65,16 +66,15 @@ ms.lasthandoff: 04/16/2018
   
 -   İlk parametre aramak istediğiniz komutu tanımlar. Bu dize için geçirdiğiniz değerle <xref:Microsoft.VisualStudio.SharePoint.Commands.SharePointCommandAttribute> komut tanımı üzerinde.  
   
--   İkinci parametre için özel ikinci parametresi, komut geçirmek istediğiniz değerdir. Bu durumda, SharePoint sitesine yükseltiliyor .wsp dosyasının tam yolu değil.  
+-   İkinci parametre için özel ikinci parametresi, komut geçirmek istediğiniz değerdir. Bu durumda, tam yolunu olan *.wsp* SharePoint sitesine yükseltilmekte olan dosya.  
   
 -   Kod örtük iletmez <xref:Microsoft.VisualStudio.SharePoint.Commands.ISharePointCommandContext> komut parametresi. SharePoint Proje sisteminin uzantı ya da bir uzantısı olarak komutu çağırdığınızda Bu parametre komutu otomatik olarak geçirilen **SharePoint bağlantıları** düğümünde **Sunucu Gezgini**. Çözümler, uygulayan bir proje şablonu Sihirbazı olduğu gibi diğer tür <xref:Microsoft.VisualStudio.TemplateWizard.IWizard> arabirimdir, bu parametre **null**.  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
+## <a name="compile-the-code"></a>Kod derleme  
  Bu örnek Microsoft.VisualStudio.SharePoint derlemesine başvuru gerektirir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [SharePoint nesne modellerini çağırma](../sharepoint/calling-into-the-sharepoint-object-models.md)   
  [Nasıl yapılır: bir SharePoint komutu oluşturma](../sharepoint/how-to-create-a-sharepoint-command.md)   
- [İzlenecek yol: Sunucu Gezginini Web Bölümlerini Görüntülemek Üzere Genişletme](../sharepoint/walkthrough-extending-server-explorer-to-display-web-parts.md)  
-  
+ [İzlenecek yol: Web bölümlerini görüntülemek için Sunucu Gezgini genişletme](../sharepoint/walkthrough-extending-server-explorer-to-display-web-parts.md)  
   

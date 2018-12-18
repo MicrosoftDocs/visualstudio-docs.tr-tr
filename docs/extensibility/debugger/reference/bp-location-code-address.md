@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a6d0972b4e326cabd00341db685a0b73c8c104c7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cd694d88348a13aefa1dfd7851c6897523009919
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49930043"
 ---
 # <a name="bplocationcodeaddress"></a>BP_LOCATION_CODE_ADDRESS
-Kodda bir adresinde bir kesme noktası konumu açıklar.  
+Kodda bir adresteki bir kesme noktası konumu açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,28 +38,28 @@ typedef struct _BP_LOCATION_CODE_ADDRESS {
   
 ## <a name="members"></a>Üyeler  
  `bstrContext`  
- Kesme noktası bağlamında, genellikle bir yöntemi veya işlev adı çağrı yığınında görülen olarak.  
+ Kesme noktası bağlamında, genellikle de bir yöntem veya işlev adı olarak görülen bir çağrı yığınında.  
   
  `bstrModuleUrl`  
- Kesme noktası içeren modülü URL'si.  
+ Kesme noktasını içeren modül URL'si.  
   
  `bstrFunction`  
- Kesme noktası içerdiğinden işlevin adı.  
+ Kesme noktasını içeren işlevi adı.  
   
  `bstrAddress`  
- Bağlamak için bir ifade değerlendiricisi tarafından ayrıştırılır kesme noktası adresi bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesnesi.  
+ Bağlamak için bir ifade değerlendiricisi tarafından ayrıştırılan kesme noktası adresini bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesne.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı üyesi olan [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı UNION bir parçası olarak.  
+ Bu yapı üyesidir [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı bir birleşimin parçası olarak.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md)   
  [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md)

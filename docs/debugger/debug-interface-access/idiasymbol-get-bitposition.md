@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 406cfd6c94af4d9dbd3f66b7321241f906e80648
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: bba39752470cf9f282245cbece7f260558b8b21d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49838481"
 ---
 # <a name="idiasymbolgetbitposition"></a>IDiaSymbol::get_bitPosition
-Konum bit konumunu alır. Kullanılabilir [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) olan `LocIsBitField`.  
+Konum bit konumunu alır. Kullanılabilir [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) olduğu `LocIsBitField`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,18 +37,18 @@ HRESULT get_bitPosition (
  [out] Konumun bit konumunu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md)
+ [LocationType Numaralandırması](../../debugger/debug-interface-access/locationtype.md)

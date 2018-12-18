@@ -1,6 +1,7 @@
 ---
 title: 'CA1819: Özellikler diziler döndürmemelidir'
-ms.date: 11/04/2016
+ms.date: 09/28/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: 85fcf312-57f8-438a-8b10-34441fe0bdeb
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 8f98e92174d7f01c6adf174ef5ff27e68ca406ae
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 99fd9627c06b11dae9348a85f417cf152ac1c8c9
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47859039"
 ---
 # <a name="ca1819-properties-should-not-return-arrays"></a>CA1819: Özellikler diziler döndürmemelidir
+
 |||
 |-|-|
 |TypeName|PropertiesShouldNotReturnArrays|
@@ -30,64 +36,60 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Ortak tür genel ya da korumalı bir özelliğinde bir dizi döndürür.
 
-## <a name="rule-description"></a>Kural Tanımı
- Salt okunur özelliği olsa bile, özellik tarafından döndürülen dizi yazma korumalı değildir. Dizi değiştirilmeye kanıt tutulacak özellik dizisinin bir kopyasını döndürmelidir. Tipik olarak, kullanıcılar bu tür bir özellik aramanın performans üzerindeki olumsuz etkilerini anlamayacaktır. Özellikle, bunlar bir dizin oluşturulmuş özellik olarak özelliğini kullanabilirsiniz.
+Ortak türde ortak veya korumalı bir özellik, bir dizi döndürür.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için özelliği bir yöntem olun ya da bir koleksiyon döndürmek için özelliğini değiştirin.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Öznitelikler diziler döndüren özellikleri içerebilir, ancak koleksiyonları döndüren özellikleri içeremez. Türetilen bir özniteliğin bir özellik için yükseltilmiş bir uyarı gizleyebilirsiniz <xref:System.Attribute> sınıfı. Aksi takdirde, bu kural bir uyarıdan engelleme.
+Özellik salt okunur olsa bile özellikleri tarafından döndürülen dizi yazma korumalı değildir. Dizi değiştirilmeye kanıt tutulacak özellik dizisinin bir kopyasını döndürmelidir. Genellikle, kullanıcıların böyle bir özellik çağırma performansı olumsuz etkilerini anlamak olmaz. Özellikle, bunlar bir dizinlenmiş özellik olarak özelliğini kullanabilirsiniz.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Bu kural ihlalini düzeltmek için özelliği bir yöntem yapın veya özelliği bir koleksiyon döndürecek şekilde değiştirin.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Türetilen bir özniteliğin bir özellik için oluşturulan bir uyarıyı bastırmak <xref:System.Attribute> sınıfı. Öznitelikler, dizi döndüren özellikler içerebilir, ancak koleksiyon döndüren özellikler içeremez.
+
+Özelliğin parçası ise uyarıyı gözardı edebileceğini bir [veri aktarım nesnesini (DTO)](/previous-versions/msp-n-p/ff649585(v=pandp.10)) sınıfı.
+
+Aksi takdirde, bu kuraldan bir uyarıyı bastırmayın.
 
 ## <a name="example-violation"></a>Örnek ihlali
 
-### <a name="description"></a>Açıklama
- Aşağıdaki örnekte bu kuralını ihlal eden bir özelliği gösterir.
+Aşağıdaki örnek bu kuralı ihlal eden bir özellik gösterilmektedir:
 
-### <a name="code"></a>Kod
- [!code-csharp[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_1.cs)]
- [!code-vb[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_1.vb)]
+[!code-csharp[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_1.cs)]
+[!code-vb[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_1.vb)]
 
-### <a name="comments"></a>Açıklamalar
- Bu kural ihlal düzeltmek için özelliği bir yöntem olun ya da bir koleksiyonu bir dizi yerine döndürülecek özelliğini değiştirin.
+Bu kural ihlalini düzeltmek için özelliği bir yöntem yapın veya özelliği bir dizi yerine bir koleksiyon döndürecek şekilde değiştirin.
 
-## <a name="change-the-property-to-a-method-example"></a>Bir yöntemi örneği özelliğini değiştirin
+### <a name="change-the-property-to-a-method"></a>Özelliği bir yönteme değiştirme
 
-### <a name="description"></a>Açıklama
- Aşağıdaki örnek, bir yönteme özelliğini değiştirerek ihlali giderir.
+Aşağıdaki örnek, bir yönteme özelliğini değiştirerek ihlali giderir:
 
-### <a name="code"></a>Kod
- [!code-vb[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_2.vb)]
- [!code-csharp[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_2.cs)]
+[!code-vb[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_2.vb)]
+[!code-csharp[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_2.cs)]
 
-## <a name="return-a-collection-example"></a>Bir koleksiyon örnek Döndür
+### <a name="change-the-property-to-return-a-collection"></a>Özelliği bir koleksiyon döndürecek şekilde değiştirin
 
-### <a name="description"></a>Açıklama
- Döndürülecek özelliğini değiştirerek aşağıdaki örnekte ihlali düzeltmeler bir
+Aşağıdaki örnek, döndürülecek özelliği değiştirilerek ihlali giderir bir <xref:System.Collections.ObjectModel.ReadOnlyCollection%601?displayProperty=fullName>:
 
- <xref:System.Collections.ObjectModel.ReadOnlyCollection%601?displayProperty=fullName>.
+[!code-csharp[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_3.cs)]
+[!code-vb[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_3.vb)]
 
-### <a name="code"></a>Kod
- [!code-csharp[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_3.cs)]
- [!code-vb[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_3.vb)]
+## <a name="allow-users-to-modify-a-property"></a>Kullanıcıların bir özellik değiştirmesine izin ver
 
-## <a name="allowing-users-to-modify-a-property"></a>Bir özelliği değiştirmek kullanıcılara izin verme
+Bir özelliği değiştirmek tüketici sınıfı izin vermek isteyebilirsiniz. Aşağıdaki örnek bu kuralı ihlal eden bir okuma/yazma özelliği gösterir:
 
-### <a name="description"></a>Açıklama
- Bir özelliği değiştirmek tüketici sınıfının izin vermek isteyebilirsiniz. Aşağıdaki örnekte bu kuralını ihlal eden bir okuma/yazma özelliği gösterir.
+[!code-csharp[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_4.cs)]
+[!code-vb[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_4.vb)]
 
-### <a name="code"></a>Kod
- [!code-csharp[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_4.cs)]
- [!code-vb[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_4.vb)]
+Aşağıdaki örnek, döndürülecek özelliği değiştirilerek ihlali giderir bir <xref:System.Collections.ObjectModel.Collection%601?displayProperty=fullName>:
 
-### <a name="comments"></a>Açıklamalar
- Döndürülecek özelliğini değiştirerek aşağıdaki örnekte ihlali düzeltmeler bir <xref:System.Collections.ObjectModel.Collection%601?displayProperty=fullName>.
-
-### <a name="code"></a>Kod
- [!code-vb[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_5.vb)]
- [!code-csharp[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_5.cs)]
+[!code-vb[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_5.vb)]
+[!code-csharp[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_5.cs)]
 
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1024: Uygun yerlerde özellikler kullanın](../code-quality/ca1024-use-properties-where-appropriate.md)
+
+- [CA1024: Uygun yerlerde özellikler kullanın](../code-quality/ca1024-use-properties-where-appropriate.md)

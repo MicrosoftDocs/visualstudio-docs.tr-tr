@@ -1,5 +1,5 @@
 ---
-title: Birden çok proje bağlantılar üzerinden ayarları uygulaması | Microsoft Docs
+title: Birden çok proje bağlantısında ayarların uygulanması | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,28 +13,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0dff30ea80fb2de9bf4d90ffa48cd2f9b3d40756
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6d8b8d7d6dc1e596686a2fad7b53363b2387a47b
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500049"
 ---
-# <a name="application-of-settings-across-multiple-project-connections"></a>Birden çok proje bağlantılar üzerinden ayarları uygulama
-Kaynak Denetim Eklentisi Kaynak Denetim eklentisi API 1.2 kullanılarak oluşturulan bir toplu işlem birden çok projeleri veya birden çok bağlantı bağlamları arasında aynı kaynak denetimi işlemi yürütmek için kullanabilirsiniz. Toplu kullanılabilir yedek ortadan kaldırmak için her proje için kullanıcı deneyimini iletişim kutularından.  
+# <a name="application-of-settings-across-multiple-project-connections"></a>Birden çok proje bağlantısında ayarların uygulanması
+Kaynak Denetimi Eklentisi Kaynak Denetimi Eklentisi API sürümü 1.2 kullanılarak oluşturulan bir toplu işlem birden fazla proje veya birden çok bağlantı bağlamları arasında aynı kaynak denetimi işlemi yürütmek için kullanabilirsiniz. Toplu kullanılabilir yedekli ortadan kaldırmak için proje başına kullanıcı deneyiminden iletişim kutuları.  
   
- Bir kullanıcı birden fazla bağlantı kaynak denetim eklentisi API 1.1, (örneğin, iki Web projeleri farklı dosya paylaşımı makinelerde) kullanılarak oluşturulmuş eklenti bir kaynak denetiminde ait birden çok öğe seçer ve bunları denetler, kullanıcı aynı iletişim kutusu görür. sürekli olarak. Kullanıcı olsa bile bu gerçekleşir **tümüne uygula** IDE her bağlantı bağlamı için durumuna sıfırlar çünkü iletişim kutusunda, kutuyu işaretleyin.  
+ Bir kullanıcı birden fazla bağlantı kaynak denetimi eklentisi API sürüm 1.1 (örneğin, iki web projeleri farklı bir dosya paylaşımı makinelerde) kullanılarak oluşturulan bir kaynak denetimi eklentisi içinde ait birden çok öğe seçilir ve bunları denetler, kullanıcı aynı görür iletişim kutusunu tekrar tekrar. Kullanıcı olsa bile, bu senaryo ortaya **tümüne uygula** IDE her bağlantı bağlamı için durumuna sıfırlar çünkü iletişim kutusunda, kutuyu işaretleyin.  
   
 ## <a name="new-capability-flag"></a>Yeni özellik bayrağı  
- `SccBeginBatch` İşlev kümeleri `SCC_CAP_BATCH` bir toplu işlem devam ediyor belirten bayrak  
+ `SccBeginBatch` İşlev kümeleri `SCC_CAP_BATCH` toplu işlem sürmekte olduğunu belirten bayrak.  
   
 ## <a name="new-functions"></a>Yeni işlevleri  
- Aşağıdaki yeni işlevleri toplu işlem destekler:  
+Toplu işlem aşağıdaki yeni işlevleri destekler:  
   
 -   [SccBeginBatch](../../extensibility/sccbeginbatch-function.md)  
   
 -   [SccEndBatch](../../extensibility/sccendbatch-function.md)  
+
   
- `SCCBeginBatch` İşlevi bir grup kaynak denetimi işlemleri başlatır. `SccEndBatch` Grup kapatır. Grupları bulunmayabilir.  
+`SCCBeginBatch` İşlevi, bir grup kaynak denetimi işlemleri başlatır. `SccEndBatch` İşlev grubu kapatır. Grupları bulunmayabilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API Sürümü 1.2’deki Yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API sürümü 1.2 yenilikler nelerdir?](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)

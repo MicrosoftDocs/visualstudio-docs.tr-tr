@@ -1,28 +1,29 @@
 ---
-title: Süresi dolan lisansları işlemek | Microsoft Docs
+title: Süresi dolmuş bir lisans tanıtıcı | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 10/03/2017
 ms.topic: Get-Started-Article
-description: Süresi dolan Visual Studio abonelik yöneticileri nasıl işleyebilir öğrenin
+description: Süresi dolan Visual Studio abonelikleri yöneticileri nasıl işleyebileceğini öğrenin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: f4f1e049ce5f236fc1bce958d698b15637cb265d
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: a5f968eef0418a89d4db78f8d79258bfe6004385
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49815760"
 ---
 # <a name="handling-expired-subscriptions"></a>Abonelikleri işleme süresi
 
-Kullanıcının abonelik sona erdiğinde, bu portalda kırmızı çubuğu adının yanındaki kutuyu aboneleri listesinde belirtilir. Visual Studio abonelik faydaları kullanmaya devam etmek bu aboneleri için lisanslarını yenilemeniz gerekir. 
+Bir kullanıcının abonelik sona erdiğinde, bu portalda aboneleri listesinde adının yanındaki kırmızı bir çubuk gösterilir. Bu aboneleri, Visual Studio abonelik avantajlarının kullanmaya devam etmek, kullanıcıların lisansları yenilemeniz gerekecektir. 
+> [!div class="mx-imgBorder"]
+> ![Süresi dolan abonelikleri listesi](_img/expired-subscriptions/expired-list.png)
 
-![Süresi dolan abonelikleri listesi](_img\expired-subscriptions\expired-list.png) 
+**Abonelik yenileme**
+1.  Toplu Lisanslama satıcınızla veya, Microsoft satıcı ile iletişime geçin. 
+2.  Bunları, anlaşma numarası ve satın alma hesabı sağlar. 
 
-**Abonelikleri yenilemek için**
-1.  Toplu Lisanslama satıcınızla veya Microsoft satıcıya başvurun. 
-2.  Bunları, anlaşma numarası ve satın alma hesap numarası sağlayın. 
-
-Satıcınıza veya Microsoft seller yenileme veya ek abonelikleri işlem satın alma yoluyla yol gösterecektir. Yeni Abonelik Siparişi veren veya sözleşme yenilendikten sonra kullanılabilir olur ve olabilir [abonelerinize atanan](/assign-license/). 
+Satıcınıza veya Microsoft satıcı yenileme ya da işlem ek abonelikleri satın alma yönlendirecektir. Yeni Abonelik Siparişi veren ya da sözleşme yenilenmiş sonra kullanılabilir olur ve olabilir [abonelerinize atanan](assign-license.md). 

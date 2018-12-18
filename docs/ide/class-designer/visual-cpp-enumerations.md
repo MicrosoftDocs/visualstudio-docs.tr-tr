@@ -1,9 +1,8 @@
 ---
-title: Sınıf tasarımcısında Visual C++ numaralandırmaları | Microsoft Docs
-ms.custom: ''
+title: Sınıf Tasarımcısında Visual C++ Numaralandırmaları
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - Class Designer [Visual Studio], enumerations
@@ -13,36 +12,39 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ac804f35c2d917e5443e61d4f2e53cde81165070
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a42dfb65cc70704bbed662e35b2e2eb0e9c237c4
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31922026"
 ---
-# <a name="visual-c-enumerations-in-class-designer"></a>Sınıf Tasarımcısında Visual C++ Numaralandırmaları
-Sınıf Tasarımcısı destekleyen C++ `enum` ve kapsamlı `enum class` türleri. Aşağıda bir örnek verilmiştir:  
-  
+# <a name="visual-c-enumerations-in-class-designer"></a>Sınıf tasarımcısında Visual C++ numaralandırmaları
+
+**Sınıf Tasarımcısı** C++ destekler `enum` ve kapsamlı `enum class` türleri. Aşağıda bir örnek verilmiştir:
+
 ```cpp
-enum CardSuit {  
-   Diamonds = 1,  
-   Hearts = 2,  
-   Clubs = 3,  
-   Spades = 4  
-};  
-  
-// or...  
-enum class CardSuit {  
-   Diamonds = 1,  
-   Hearts = 2,  
-   Clubs = 3,  
-   Spades = 4  
+enum CardSuit {
+   Diamonds = 1,
+   Hearts = 2,
+   Clubs = 3,
+   Spades = 4
 };
-```  
-  
-Sınıf diyagramında C++ numaralandırması Şekil arar ve çalıştığını yapısı şekli gibi etiketi okur dışında **Enum** veya **Enum sınıfı**, mavi yerine pembe ve üst ve sol renkli kenarlık vardır Kenar boşlukları. Numaralandırma şekiller ve yapısı şekiller kare köşeleri vardır.  
-  
-Kullanma hakkında daha fazla bilgi için `enum` yazın, bkz: [numaralandırmalar](/cpp/cpp/enumerations-cpp).  
-  
+
+// or...
+enum class CardSuit {
+   Diamonds = 1,
+   Hearts = 2,
+   Clubs = 3,
+   Spades = 4
+};
+```
+
+Sınıf diyagramında C++ numaralandırması Şekil arar ve çalıştığını yapısı şekli gibi etiketi okur dışında **Enum** veya **Enum sınıfı**, mavi yerine pembe ve üst ve sol renkli kenarlık vardır Kenar boşlukları. Numaralandırma şekiller ve yapısı şekiller kare köşeleri vardır.
+
+Kullanma hakkında daha fazla bilgi için `enum` yazın, bkz: [numaralandırmalar](/cpp/cpp/enumerations-cpp).
+
 ## <a name="see-also"></a>Ayrıca bkz.
-[Visual C++ kodu ile çalışma](working-with-visual-cpp-code.md)   
-[Sabit Listeleri](/cpp/cpp/enumerations-cpp)
+
+- [Visual C++ Kodu ile Çalışma](working-with-visual-cpp-code.md)
+- [Sabit Listeleri](/cpp/cpp/enumerations-cpp)

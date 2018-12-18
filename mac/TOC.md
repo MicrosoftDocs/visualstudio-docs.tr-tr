@@ -1,8 +1,9 @@
 # [Mac için Visual Studio’ya Giriş](index.md)
-## [Xamarin Studio üzerinden Mac için Visual Studio’nun avantajları](benefits-vsmac-over-xs.md)
 # [IDE Turu](ide-tour.md)
 
 # [Yükleme](installation.md)
+## [Bir güvenlik duvarı veya ara sunucunun arkasına yükleme ve burada kullanma](install-behind-a-firewall-or-proxy-server.md)
+## [Bir Önizleme sürümünü yükleme](install-preview.md)
 ## [Güncelleştir](update.md)
 ## [Kaldır](uninstall.md)
 
@@ -21,6 +22,7 @@
 ## [Bir projedeki başvuruları yönetme](managing-references-in-a-project.md)
 ### [İzlenecek yol - Projenize NuGet paketi ekleme](nuget-walkthrough.md)
 ## [Uygulama Kaynaklarını Yönetme](managing-app-resources.md)
+## [Nasıl yapılır: Birden çok çözüm veya örneği açma](open-multiple-solutions.md)
 
 # [Kaynak Düzenleyicisi](source-editor.md)
 ## [Yeniden Düzenle](refactoring.md)
@@ -30,6 +32,7 @@
 ## [Kod Parçacıkları](snippets.md)
 ## [Blok Seçimi](block-selection.md)
 ## [Düzenleyici Temaları](editor-themes.md)
+## [EditorConfig](editorconfig.md)
 ## [Ortak Klavye Kısayolları](keyboard-shortcuts.md)
 
 # [Hata Ayıklama](debugging.md)
@@ -43,6 +46,7 @@
 ### [Yapılandırmaları oluşturma ve düzenleme](create-and-edit-configurations.md)
 
 # [Sürüm Denetimi](version-control.md)
+## [TF Sürüm Denetimi](tf-version-control.md)
 ## [Git Deposu Ayarlama](set-up-git-repository.md)
 ## [Git ile çalışma](working-with-git.md)
 ## [Subversion Deposu Ayarlama](set-up-subversion-repository.md)
@@ -50,13 +54,20 @@
 
 # [İş yükleri](workloads.md)
 ## [ASP.NET Core](asp-net-core.md)
+### [Razor](razor.md)
+### [Javascript](javascript.md)
 ## [Azure](azure-workload.md)
+### [Azure İşlevleri’ne Giriş](azure-functions.md)
+### [Öğretici: Azure İşlevleri](azure-functions-lab.md)
 ### [Bağlı Hizmetler](connected-services.md)
 ## [Unity Oyun Geliştirme](unity-tools.md)
 ### [Kurulum](setup-vsmac-tools-unity.md)
 ### [Unity Araçlarını Kullanma](using-vsmac-tools-unity.md)
+### [Unity’de .NET 4.x kullanma](/visualstudio/cross-platform/unity-scripting-upgrade/?context=visualstudio/mac/context)
+### [Değişiklik Günlüğü](/visualstudio/cross-platform/change-log-visual-studio-tools-for-unity-mac/?context=visualstudio/mac/context)
 
 # [Erişilebilirlik](accessibility.md)
 
 # [Sorun giderme](troubleshooting.md)
+## [Visual Studio Müşteri Deneyimi Geliştirme Programı](visual-studio-experience-improvement-program.md)
 ## [Sorun Bildirin](report-a-problem.md)

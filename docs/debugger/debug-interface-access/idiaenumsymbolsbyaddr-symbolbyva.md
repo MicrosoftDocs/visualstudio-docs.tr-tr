@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6a47c39a417e65d30178a2f878e53196e7f7fb27
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 688d45cce181b7c4ac0b61584a65c7c755b0f2bd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905759"
 ---
 # <a name="idiaenumsymbolsbyaddrsymbolbyva"></a>IDiaEnumSymbolsByAddr::symbolByVA
-Numaralayıcı sanal adres (VA) tarafından bir araması gerçekleştirerek yerleştirir.  
+Sanal adres (VA) tarafından bir arama yaparak Numaralandırıcı yerleştirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ HRESULT symbolByVA (
  [in] Sanal adres.  
   
  ppsymbol  
- [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) bulunan simgeyi temsil eden nesne.  
+ [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) found sembol temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` simgenin bulunamazsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` , sembol bulunamadı. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaenumsymbolsbyaddr](../../debugger/debug-interface-access/idiaenumsymbolsbyaddr.md)   

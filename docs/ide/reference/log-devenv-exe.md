@@ -1,10 +1,9 @@
 ---
-title: -Log (devenv.exe) | Microsoft Docs
-ms.custom: ''
+title: -Log (devenv.exe)
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 helpviewer_keywords:
 - Devenv, /Log switch
 - Log switch [devenv.exe]
@@ -15,29 +14,31 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8fa0fa90e904d4fb7f3e6820ce997a6a93e738f9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fb33eedf322009cfd5602c481bce36beb4126a9b
+ms.sourcegitcommit: 54c65f81a138fc1e8ff1826f7bd9dcec710618cc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51948406"
 ---
 # <a name="log-devenvexe"></a>/Log (devenv.exe)
-Tüm etkinliği, sorun giderme amacıyla günlük dosyasına kaydeder. Çağırdıktan sonra bu dosyayı görünür `devenv /log` en az bir kez. Varsayılan olarak, bu günlük dosyasıdır:  
-  
- *% APPDATA %*\Microsoft\VisualStudio\\*sürüm*\ActivityLog.xml  
-  
- Burada *sürüm* Visual Studio sürümü. Ancak, farklı bir yol ve dosya adını belirtebilir.  
-  
-## <a name="syntax"></a>Sözdizimi  
-  
-```  
-Devenv /log Path\NameOfLogFile  
-```  
-  
-## <a name="remarks"></a>Açıklamalar  
- Bu anahtar, diğer tüm anahtarlardan sonra komut satırının en sonunda görünmelidir.  
-  
- / Log anahtarı ile çağrılan Visual Studio tüm örnekleri için bir günlüğüne kaydedilir. Anahtar oluşturulmadan çağrılan Visual Studio Örnekleri oturum değil.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Devenv Komut Satırı Anahtarları](../../ide/reference/devenv-command-line-switches.md)
+Tüm etkinliği, sorun giderme amacıyla günlük dosyasına kaydeder. Bu dosya çağırdıktan sonra görünür `devenv /log` en az bir kez. Varsayılan olarak, bu günlük dosyasıdır:
+
+ *% APPDATA %* \Microsoft\VisualStudio\\*sürüm*\ActivityLog.xml
+
+ Burada *sürüm* Visual Studio sürümüdür. Ancak, farklı bir yol ve dosya adı belirtebilirsiniz.
+
+## <a name="syntax"></a>Sözdizimi
+
+```cmd
+Devenv /log Path\NameOfLogFile
+```
+
+## <a name="remarks"></a>Açıklamalar
+ Bu anahtar, diğer tüm anahtarlardan sonra komut satırının en sonunda görünmelidir.
+
+ Günlük, / log anahtarı ile çağrılan Visual Studio'nun tüm örnekleri için yazılır. Anahtar olmadan çağrılan Visual Studio örneklerini oturumu değil.
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Devenv komut satırı anahtarları](../../ide/reference/devenv-command-line-switches.md)

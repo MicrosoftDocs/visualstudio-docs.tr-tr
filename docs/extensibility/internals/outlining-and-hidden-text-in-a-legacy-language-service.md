@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31129382"
 ---
 # <a name="outlining-and-hidden-text-in-a-legacy-language-service"></a>Eski dil hizmeti anahat ve gizli metni
 Anahat oluşturma, bir dizi metin satır tek bir satıra daraltmak mümkün kılar. Örneğin, C++'da, yalnızca yöntem imzası gösteren tek bir satır için tüm yöntemleri daraltılabilen. Gizli metni gösterileceğini veya gizleneceğini metin satırlarını dizisidir.  

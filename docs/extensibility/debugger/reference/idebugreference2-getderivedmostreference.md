@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cfa0e6b6755ea884b6dd9b6ba0409a614e80e290
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f6e8998ca881bbeb4a90405ab01577bf6be18f33
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49858361"
 ---
 # <a name="idebugreference2getderivedmostreference"></a>IDebugReference2::GetDerivedMostReference
 Bir başvuru türetilmiş çoğu referansını alır. Daha sonraki kullanımlar için ayrılmıştır.  
@@ -46,7 +47,7 @@ int GetDerivedMostReference(
  Her zaman döndürür `E_NOTIMPL`.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Örneğin, bu özellik uygulayan bir nesne tanımlarsa `ClassRoot` ancak aslında, örnekleme olduğu `ClassDerived` öğesinden türetilen `ClassRoot`, sonra da bu yöntemi döndürür bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nesnesi bir başvuru temsil eden `ClassDerived` nesnesi.  
+ Örneğin, bu özelliği uygulayan bir nesne tanımlar `ClassRoot` ancak aslında örneklemesi olduğu `ClassDerived` sınıfından türetilen `ClassRoot`, sonra da bu yöntemi döndürür bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nesnesi başvuruyu temsil eden `ClassDerived` nesne.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md)

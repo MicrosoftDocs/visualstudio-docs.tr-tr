@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130681"
 ---
 # <a name="project-subtypes"></a>Proje alt türleri
 Proje subtypes özelleştirme veya proje sistemleri davranış flavor izin [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Özelleştirmeleri içeren proje dosyasında ekleme veya öğeleri filtreleme ek verileri kaydetme **Yeni Öğe Ekle** iletişim kutusu, derlemeler nasıl hata ayıklaması ve dağıtılan, denetleme ve projeyi genişletme **özelliği Sayfaları** iletişim kutusu. VSPackages proje alt türleri COM birleştirme kullanarak uygular.  

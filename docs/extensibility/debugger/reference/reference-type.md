@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1c30bb562784d9de0d9b44a2c3169b595bb4bd39
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bcbf8792cf2972c4b419b6309ba2f561b8308812
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49906903"
 ---
 # <a name="referencetype"></a>REFERENCE_TYPE
-Başvuru türü belirtir.  
+Başvuru türünü belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ public enum enum_REFERENCE_TYPE {
   
 ## <a name="members"></a>Üyeler  
  REF_TYPE_WEAK  
- Zayıf başvuru belirtir. Birleştirilemez `REF_TYPE_STRONG`.  
+ Zayıf bir başvuru belirtir. İle birleştirilemez `REF_TYPE_STRONG`.  
   
  REF_TYPE_STRONG  
- Güçlü bir başvuru belirtir. Birleştirilemez `REF_TYPE_WEAK`.  
+ Güçlü bir başvuru belirtir. İle birleştirilemez `REF_TYPE_WEAK`.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Olarak kullanılan `dwRefType` üyesi [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapısı.  
@@ -54,13 +55,13 @@ public enum enum_REFERENCE_TYPE {
  Bir parametre olarak geçirilen [SetReferenceType](../../../extensibility/debugger/reference/idebugreference2-setreferencetype.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md)   
  [SetReferenceType](../../../extensibility/debugger/reference/idebugreference2-setreferencetype.md)

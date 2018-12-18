@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a40211c49f5255dba608d38529f7c56ac990e671
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8833b27d70a92091f809605edc81cd82a8a65f06
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49870009"
 ---
 # <a name="idebugreference2getreferenceinfo"></a>IDebugReference2::GetReferenceInfo
-Alır [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) başvuru açıklar yapısı. Daha sonraki kullanımlar için ayrılmıştır.  
+Alır [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) açıklayan bir başvuru yapısı. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,22 +51,22 @@ int GetReferenceInfo (
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [DEBUGREF_INFO_FLAGS](../../../extensibility/debugger/reference/debugref-info-flags.md) olarak doldurulması için alanları belirlemek numaralandırma [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapısı.  
+ [in] Bayraklarının bir birleşimi [DEBUGREF_INFO_FLAGS](../../../extensibility/debugger/reference/debugref-info-flags.md) olarak doldurulması için alanları belirlemek numaralandırma [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapısı.  
   
  `nRadix`  
- [in] Herhangi bir sayısal bilgi biçimlendirmede kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine biçimlendirmede kullanılacak sayı tabanı.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` süresiz bekleme.  
   
  `rgpArgs`  
  [in] Bir dizi [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nesneleri. Gelecekte kullanılmak üzere ayrılmış; null bir değere ayarlayın.  
   
  `dwArgCount`  
- [in] Başvuru değişkenlerinde sayısı `rgpArgs` dizi. Gelecekte kullanılmak üzere ayrılmış; 0 olarak ayarlayın.  
+ [in] Başvuru bağımsız değişken sayısı `rgpArgs` dizisi. Gelecekte kullanılmak üzere ayrılmış; 0 olarak ayarlayın.  
   
  `pReferenceInfo`  
- [out] A [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) özelliğinin açıklamasını oturum girilir yapısı.  
+ [out] A [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) özelliğin açıklamasını oturum girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Her zaman döndürür `E_NOTIMPL`.  

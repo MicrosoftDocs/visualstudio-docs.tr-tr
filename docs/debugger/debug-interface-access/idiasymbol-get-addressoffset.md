@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d00838fc3f76221293241656743bbf5a2a7f4d26
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 5dba9f8b40bd3246dd07ec2fae76ad6aa8b9c604
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917816"
 ---
 # <a name="idiasymbolgetaddressoffset"></a>IDiaSymbol::get_addressOffset
-Bir adresi konumu uzaklık parçası alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) ayarlanır `LocIsStatic`.  
+Bir adres konumuna uzaklık bölümü alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) ayarlanır `LocIsStatic`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,16 +34,16 @@ HRESULT get_addressOffset (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Uzaklık parçası olan bir adres konumunu döndürür.  
+ [out] Adres konum uzaklık bölümünü döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem üyesinin sanal adres edinmek alacağından bir dış DLL'de bulunan statik üyeleri için bu yöntem tarafından döndürülen uzaklığı 0 olabilir. Sanal adresleri geçerli yalnızca [Idiasession::put_loadaddress](../../debugger/debug-interface-access/idiasession-put-loadaddress.md) yönteminde [Idiasession](../../debugger/debug-interface-access/idiasession.md) arabirimi çağrılıp çağrılmadığını DLL yük adresini belirtmek için sıfır olmayan bir parametre.  
+ Bu yöntem sanal adres üyenin edinmek alacağından dış bir DLL içinde yer alan statik üyeleri için bu yöntem tarafından döndürülen Uzaklık 0 olabilir. Sanal adres geçerli yalnızca [Idiasession::put_loadaddress](../../debugger/debug-interface-access/idiasession-put-loadaddress.md) yönteminde [Idiasession](../../debugger/debug-interface-access/idiasession.md) arabirimi çağrılıp çağrılmadığını DLL yük adresini belirtmek için sıfır olmayan bir parametre.  
   
  Bir adresi bölüm parçası almak için arama [Idiasymbol::get_addresssection](../../debugger/debug-interface-access/idiasymbol-get-addresssection.md) yöntemi.  
   
@@ -50,7 +51,7 @@ HRESULT get_addressOffset (
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

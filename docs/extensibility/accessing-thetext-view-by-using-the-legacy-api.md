@@ -1,5 +1,5 @@
 ---
-title: Eski API kullanarak getirip metin görünümü erişim | Microsoft Docs
+title: Eski API'yi kullanarak erişimcisinde görünümü erişme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,32 +13,33 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 534016bda397ca998740c9fcc8252f4efbc8ccc2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3fe57ab7ef5ac113f1248f89cd62ef5b9ec33ca3
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081829"
 ---
-# <a name="accessing-thetext-view-by-using-the-legacy-api"></a>Eski API kullanarak getirip metin görünümü erişme
-Metni metin arabelleğinde depolanan metin sunumu görülmektedir. Metin görünümü aşağıdaki bölümde gösterildiği gibi eski API kullanarak erişebilirsiniz.
+# <a name="access-the-text-view-by-using-the-legacy-api"></a>Eski API'yi kullanarak metin görünüme erişme
+Metin arabelleğinde depolanan metin metin görünümünü gösterir. Aşağıdaki bölümde gösterildiği gibi eski API'yi kullanarak metin görünümünü erişebilirsiniz.
 
 ## <a name="text-view-object"></a>Metin görünümü nesnesi
- Her görünüm kendi metin arabelleğini ilişkilendirilir ve görünüm veri arabelleği bir penceredir. Aşağıdaki diyagramda tarafından temsil edilen metin görünüm nesnenin anahtar arabirimler gösterilir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>.
+ Her görünüm kendi metin arabelleği ile ilişkilendirilir ve görünüm arabellekteki veriler üzerinde bir penceredir. Aşağıdaki diyagram tarafından temsil edilen metin view nesnesinin anahtar arabirimler gösterilir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>.
 
- ![Visual Studio metin görünümü nesnesi](../extensibility/media/vstextview.gif "vstextview") metin görünümü nesnesi
+ ![Visual Studio metin View nesnesinin](../extensibility/media/vstextview.gif "vstextview") metni görünümü nesnesi
 
- Görünüm metni arabellekte sunan bir yoludur. Görünümde gördüğünüz metin arabelleği tam bir temsili olmaması sözcük kaydırma ve anahat gibi özellikler içerir.
+ Görünüm arabellekteki metni sunan bir yoludur. Görünümü'nde gördüklerinizi arabellekteki metni tam bir temsilini olmaması sözcük kaydırma ve anahat gibi özellikler içerir.
 
- Diğer hizmetlerin veya gelen komutları kesecek ve görünüm üzerlerinde davranır önce bunları üzerinde hareket işlemleri bir görünümünü sağlar. Bunu yapmak için en yaygın hizmeti bir dil hizmetidir. Bir dil hizmeti, örneğin, özel girintileme işlemi hakkındaki diğer davranışını veya araç ipuçları sağlamak ENTER tuşuna komutu müdahale gerekebilir.
+ Diğer hizmetler ve gelen komutları kesecek ve görünümü üzerinde çalışır önce bunlar üzerinde harekete işlemlerin bir görünüm sağlar. Bunu yapmak için en yaygın hizmeti, bir dil hizmetidir. Dil hizmeti, örneğin, girintilendirme özel davranış veya araç ipuçları sağlamak ENTER tuşuna komutunu ıntercept gerekebilir.
 
-## <a name="adding-functionality-to-the-text-view"></a>Metin görünümü işlevsellik ekleme
- Belirli tuş vuruşları işleyerek metin görünümü davranışını özelleştirebilirsiniz. Tuş vuruşları kesmeye uygulamanız <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewFilter> , nesne üzerinde ve komut hedefi sağlayın (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>) İzleyici ve ıntercept komutları.
+## <a name="add-functionality-to-the-text-view"></a>Metin görünümü işlevsellik ekleme
+ Özel tuş vuruşları işleyerek metin görünümü davranışını özelleştirebilirsiniz. Tuş vuruşları kesmeye uygulamanız <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewFilter> , nesneniz üzerinde ve bir komut hedefi belirtin (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>) İzleyici ve ıntercept komutları.
 
- Metin görünümü için komut filtreleri sıralı mimarisi kullanır. Yeni komut filtreleri (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> nesneleri) için dizisi çağrılarak eklenir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView.AddCommandFilter%2A> yöntemi.
+ Metin görünümünü komut filtreleri için sıralı mimarisi kullanır. Yeni komut filtreleri (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> nesneleri) çağırarak sıraya eklenen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView.AddCommandFilter%2A> yöntemi.
 
- Metin görünümü için olay bildirimini kullanarak sağlanır <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewEvents> arabirimi. Metin görünümü değişiklikler bildirim almak için istemci nesneniz üzerinde bu arabirimi uygular. Metin görünümü bu arabirime kullanarak kullanıma <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> görünümden değişikliklerle ilgili bildirim almak için metin görünümü arabirimde.
+ Olay bildirimi için metin görünümünü kullanarak sağlanan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewEvents> arabirimi. Metin görünümünü değişiklikleri bildirim almak için istemci nesneniz üzerinde bu arabirimi uygulayın. Bu arabirim için metin görünümü kullanılarak sunan <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> görünümden değişiklikleri bildirim almak için metin görünümü arabirimi.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-- [Eski API kullanarak görünüm ayarlarını değiştirme](../extensibility/changing-view-settings-by-using-the-legacy-api.md)
-- [Genel ayarları izlemek için metin Yöneticisi'ni kullanma](../extensibility/using-the-text-manager-to-monitor-global-settings.md)
+- [Eski API'yi kullanarak görünüm ayarlarını değiştirme](../extensibility/changing-view-settings-by-using-the-legacy-api.md)
+- [Genel ayarlar izlemek için metin Yöneticisi'ni kullanın](../extensibility/using-the-text-manager-to-monitor-global-settings.md)

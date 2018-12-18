@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: uzantı performans tanılama | Microsoft Docs'
+title: 'Nasıl yapılır: uzantı performansını tanılama | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/08/2016
 ms.technology:
@@ -11,92 +11,93 @@ ms.author: bertaygu
 manager: douge
 ms.workload:
 - bertaygu
-ms.openlocfilehash: 60a7d1c3178d0fd74983d3f1096d01e578a49a00
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d1f2942c9f5987a686226c94e9764b8ab6300050
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934931"
 ---
 # <a name="measuring-extension-impact-in-startup"></a>Başlangıç uzantısı etkileri ölçme
 
-## <a name="focus-on-extension-performance-in-visual-studio-2017"></a>Visual Studio 2017 uzantısı performans odaklanmak
+## <a name="focus-on-extension-performance-in-visual-studio-2017"></a>Visual Studio 2017 uzantı performansını odaklanın
 
-Müşteri geri bildirimi doğrultusunda, Visual Studio 2017 yayımı için odak alanlarına birini başlatma ve çözüm yük performans olmuştur. Visual Studio platform ekip olarak biz başlatma ve çözüm yükleme performansını genel iyileştirme üzerinde çalıştığınız sırada bizim telemetri yüklü uzantıları Ayrıca bu senaryoları hakkında önemli bir etkisi olabilir önerir.
+Müşteri geri bildirimi doğrultusunda, Visual Studio 2017 sürüm için odak alanlarından başlangıç ve çözüm yükleme performansını olmuştur. Visual Studio platformu ekibi, başlangıç ve çözüm yükleme performansını geliştirme konusunda durmaksızın çalışıyoruz. Genel olarak, bu senaryolara yüklü uzantılar da önemli bir etkisi olabilir bizim ölçümleri önerin.
 
-Kullanıcıların bu etkiyi anlamasına yardımcı olmak için yeni bir özellik yavaş uzantıların kullanıcıları bilgilendirmek için Visual Studio'da eklediğimiz. Visual Studio çözümü yükleme veya başlatma aşağı yavaşlamasının yeni bir uzantı algıladığında, kullanıcıların yeni "Visual Studio performans Yönet" iletişim kutusuna işaret IDE içinde bir bildirim görürsünüz. Bu iletişim kutusunu ayrıca her zaman daha önce algılanan uzantıları göz atmak için Yardım menüsünden tarafından erişilebilir.
+Bu etkiyi anlayıp anlamadığını yardımcı olmak için yeni bir özellik yavaş uzantılarının kullanıcılara bildirmek için Visual Studio'da ekledik. Bazı durumlarda, Visual Studio çözüm yükünü veya başlangıç aşağı yavaşlatır yeni bir uzantı algılar. Yavaşlama tespit edildiğinde, kullanıcılar bunları işaret eden yeni "Visual Studio performansını Yönet" iletişim kutusu IDE'de bir bildirim görür. Bu iletişim kutusunu de her zaman daha önce algılanan uzantılara Gözat Yardım menüsü tarafından erişilebilir.
 
-![Visual Studio performansı yönetme](media/manage-performance.png)
+![Visual Studio performansını Yönet](media/manage-performance.png)
 
-Uzantı etkisi nasıl hesaplanır ve nasıl yerel olarak uzantı uzantısı etkileyen bir performans gösterilebilir olmadığını sınamak için analiz edilmeden açıklayarak uzantısı geliştiricilere yardımcı olmak için bu belgenin amaçlar.
+Uzantı geliştiricileri, uzantı etkisi nasıl hesaplandığını açıklayarak yardımcı olmak için bu belgede amaçlar. Bu belge, ayrıca nasıl uzantısı etkisi yerel olarak çözümlenebilir açıklar. Yerel olarak uzantısı etkisini çözümleme uzantısı etkileyen bir performans gösterilebilir uzantı belirler.
 
 > [!NOTE]
-> Bu belge başlatma ve çözüm yük uzantılarını etkisini odaklanır. UI yanıt vermemesine neden olursa uzantıları da Visual Studio performansını etkiler. Bu konu hakkında daha fazla bilgi için bkz: [nasıl yapılır: uzantıları tarafından kaynaklanan tanılamak UI gecikmeler](how-to-diagnose-ui-delays-caused-by-extensions.md).
+> Bu belge, başlangıç ve çözüm yükleme uzantıları etkisini odaklanır. Bunlar UI yanıt veremez duruma gelmesine neden olduğunda uzantıları ayrıca Visual Studio performansını etkiler. Bu konu hakkında daha fazla bilgi için bkz. [nasıl yapılır: uzantılardan kaynaklanan kullanıcı Arabirimi tanılama gecikmeleri](how-to-diagnose-ui-delays-caused-by-extensions.md).
 
 ## <a name="how-extensions-can-impact-startup"></a>Uzantıları başlangıç nasıl etkileyebileceğini
 
-Başlangıç performansı etkileyen uzantıları için en yaygın yolları otomatik yük NoSolutionExists veya ShellInitialized gibi bilinen Başlangıç UI bağlamları birini seçerek biridir. Bu UI bağlamları başlatma sırasında etkinleştirilen ve bu içeriklerden kendi tanımıyla "ProvideAutoLoad" özniteliği dahil herhangi bir paket yüklendi ve o anda başlatıldı.
+Başlangıç performansı etkileyen uzantıları için en yaygın yollarından otomatik yük NoSolutionExists veya ShellInitialized gibi bilinen Başlangıç UI bağlamları birini seçerek biridir. Bu UI bağlamı başlatma sırasında devreye. Dahil herhangi bir paket `ProvideAutoLoad` özniteliği bu bağlamı ile kendi tanımındaki yüklendi ve o anda başlatılır.
 
-Biz uzantı etkisini ölçüyor, biz öncelikle otomatik yük yukarıdaki bağlamlarda tercih bu uzantıları tarafından harcanan süre odaklanır. Ölçülen süreleri dahil ancak bunlarla sınırlı değildir:
+Şu uzantı etkisini ölçmek, öncelikli olarak yukarıdaki bağlamlarda otomatik yük tercih bu uzantıları tarafından harcanan süre odaklanıyoruz. Ölçülen süreleri dahil ancak bunlarla sınırlı değildir:
 
-* Zaman uyumlu paketler için uzantı derlemeleri yükleme
-* Paket sınıfı oluşturucuda zaman uyumlu paketler için harcanan süre
+* Uzantı derleme zaman uyumlu paketleri yükleniyor
+* Zaman uyumlu paketleri paket sınıfı oluşturucusunda harcanan süre
 * Paket başlatma (veya SetSite) yönteminde zaman uyumlu paketler için harcanan süre
-* Zaman uyumsuz paketler için yukarıdaki işlemleri arka plan iş parçacığında çalıştırmak ve bu nedenle izlemeden hariç tutulur
-* Paket başlatma sırasında ana iş parçacığı üzerinde çalışmak üzere zamanlanmış herhangi bir zaman uyumsuz iş harcanan süre
-* Olay işleyicileri, özellikle başlatılan Kabuk bağlam etkinleştirme veya kabuk henüz kaldırılmamış durumu değişikliği için harcanan süre
-* Visual Studio 2017 güncelleştirme 3 ' başlayarak, biz de Kabuk başlatılmadan önce boşta çağrılarını harcadığı zamanı izleme başlayacak. Boşta işleyicileri uzun işlemlerinde ayrıca yanıt vermeyen IDE neden ve kullanıcı tarafından algılanan başlangıç zamanını katkıda bulunun.
+* Zaman uyumsuz paketler için yukarıdaki işlemleri arka plan iş parçacığında çalışır.  Bu nedenle, işlemler, izlemeden hariç tutulur.
+* Paket başlatma sırasında ana iş parçacığı üzerinde çalışmak üzere zamanlanmıştır. herhangi bir zaman uyumsuz iş harcanan süre
+* Olay işleyicileri, özellikle başlatılmamış Kabuk bağlam etkinleştirme veya kabuk zombi durum değişikliği için harcanan süre
+* Visual Studio 2017 güncelleştirme 3 ' başlayarak, ayrıca Kabuk başlatılmadan önce boşta çağrılarında harcanan süre izleme başlayacağız. Boşta işleyicilerde uzun işlemler ayrıca yanıt vermeyen IDE neden ve kullanıcı tarafından algılanan başlangıç zamanını katkıda bulunun.
 
-Otomatik yükleme paketleri gereksinimini kaldırılmasına yardımcı, kullanıcıların bu uzantıyı kullanan veya yüklenirken bir uzantı etkisini azaltmak belirli daha olduğu daha özel durumları için kendi yük ertelemek için Visual Studio 2015 başlayarak birden çok özellik ekledik. otomatik olarak.
+Visual Studio 2015'ten itibaren birçok özelliği ekledik. Bu özellikler, otomatik yük paketler için gereken kaldırma ile yardımcı olur. Özellikleri, ayrıca daha belirli çalışmalarına yüklenecek paketler için gereken erteleyin. Bu gibi durumlarda ise kullanıcılar uzantıyı kullanabilir veya otomatik olarak yüklenirken bir uzantı etkisini azaltmak belirli daha olacağı örnek olarak verilebilir.
 
 Aşağıdaki belgelerde bu özellikler hakkında daha fazla ayrıntı bulabilirsiniz:
 
-[Kural kullanıcı Arabirimi bağlamları temel](how-to-use-rule-based-ui-context-for-visual-studio-extensions.md): kullanıcı Arabirimi bağlamları yerleşik daha zengin bir kurala dayalı altyapısı proje türleri, özellikleri ve yetenekleri dayalı özel bağlamları oluşturmanıza izin. Bu özel bağlamları başlangıç yerine belirli bir özellikle projeyle varlığını gibi daha belirli senaryoları sırasında bir paketi yüklemek için kullanılabilir; izin vermeyi veya [komutu için özel bir bağlam bağlanması için görünürlük](visibilityconstraints-element.md) bir komut durumu Sorgu işleyici kaydetmek için proje özellikleri veya böylece gereksinimini bir paketi yüklemek için kullanılabilir başka koşullar göre.
+[Kural tabanlı UI bağlamı](how-to-use-rule-based-ui-context-for-visual-studio-extensions.md): oluşturulan kullanıcı Arabirimi bağlamları daha zengin bir kural tabanlı altyapısı, özellikleri, proje türlerine göre özel bağlamları oluşturmanıza olanak sağlar ve öznitelikleri. Özel bağlamları daha özel senaryoları sırasında bir paket yüklemek için kullanılabilir. Bu belirli senaryolar başlangıç yerine belirli bir özelliğine sahip bir proje varlığını içerir. Ayrıca özel bağlamları izin [komutu için özel bir bağlam bağlanması için görünürlük](visibilityconstraints-element.md) proje bileşenleri veya kullanılabilir başka koşullar göre. Bu özellik bir komut durumu Sorgu işleyici kaydetmek için bir paket yükleme gereğini ortadan kaldırır.
 
-[Zaman uyumsuz paket Destek](how-to-use-asyncpackage-to-load-vspackages-in-the-background.md): paket yükleme otomatik yük öznitelik veya bir zaman uyumsuz hizmet sorgu tarafından istenmişse zaman uyumsuz olarak arka planda yüklenmesi için Visual Studio paketler Visual Studio 2015'te yeni AsyncPackage temel sınıf sağlar . Bu arka planda yükleme IDE uzantısı arka planda başlatılır ve kritik senaryolarda başlatma ve çözüm yük gibi etkilenen olmayacaktır yanıt verebilir durumda kalmasını sağlar.
+[Zaman uyumsuz paket desteği](how-to-use-asyncpackage-to-load-vspackages-in-the-background.md): Visual Studio paketleri paket yükleme, otomatik yük özniteliği veya bir zaman uyumsuz hizmet sorgu tarafından istendi, zaman uyumsuz olarak arka planda yüklenecek Visual Studio 2015'te yeni AsyncPackage temel sınıf sağlar . Bu arka plan IDE yanıt vermeye devam edebilir yüklenmesine izin verir. Uzantı arka planda başlatılır ve başlangıç ve çözüm yükleme gibi kritik senaryolar etkilenen mıydı bile olsa, IDE yanıt veriyor.
 
-[Zaman uyumsuz Hizmetleri](how-to-provide-an-asynchronous-visual-studio-service.md): zaman uyumsuz paket desteğiyle de Hizmetleri zaman uyumsuz olarak sorgulanıyor ve zaman uyumsuz Hizmetleri kaydettirebilir destek eklediğimiz. Çekirdek Visual Studio Hizmetleri zaman uyumsuz sorgu iş çoğunluğu arka plan iş parçacıkları oluşur zaman uyumsuz sorgu destekleyecek şekilde dönüştürme daha da önemlisi çalışıyoruz. SComponentModel (Visual Studio MEF ana bilgisayarı) şimdi tamamen zaman uyumsuz yüklenirken desteklemek uzantılarına izin vermek için zaman uyumsuz sorgu destekleyen ana Hizmetleri biridir.
+[Zaman uyumsuz Hizmetleri](how-to-provide-an-asynchronous-visual-studio-service.md): zaman uyumsuz paket desteği sayesinde, hizmetleri zaman uyumsuz olarak sorgulamak ve zaman uyumsuz Hizmetleri kaydettirebilir için destek ekledik. Çoğu zaman uyumsuz sorgu iş arka plan iş parçacıklarında gerçekleşmesi zaman uyumsuz sorgu desteklemek için temel Visual Studio Hizmetleri dönüştürmeyle ilgili daha da önemlisi çalışıyoruz. SComponentModel (Visual Studio MEF ana bilgisayarı) artık tamamen zaman uyumsuz yüklemeyi destekleyecek kadar uzantılarına izin vermek için zaman uyumsuz sorgu desteklediği önemli hizmetler biridir.
 
-## <a name="reducing-impact-of-auto-loaded-extensions"></a>Yüklenen uzantıları otomatik etkisini azaltma
+## <a name="reducing-impact-of-auto-loaded-extensions"></a>Otomatik etkisini azaltma uzantılar yüklendi
 
-Bir paket hala başlangıçta yüklenen otomatik olması gerekiyorsa, başlangıç etkileyen uzantısı olasılığını azaltmak için paket başlatma sırasında çalışmanın en aza indirmek önemlidir.
+Bir paket hala başlangıçta yüklenen otomatik olarak yapması gerekiyorsa, paket başlatma sırasında çalışmanın en aza indirmek önemlidir. Paket başlatma çalışmayı en aza başlangıç etkileyen uzantı olasılığını azaltır.
 
-Paket başlatma masraflı olmaya neden olabilecek bazı örnekler şunlardır:
+Paket başlatma pahalı neden olabilecek bazı örnekler şunlardır:
 
-### <a name="use-of-synchronous-package-load-instead-of-asynchronous-package-load"></a>Zaman uyumsuz paket yük yerine zaman uyumlu paket yükleme kullanımı
+### <a name="use-of-synchronous-package-load-instead-of-asynchronous-package-load"></a>Zaman uyumsuz paket yükleme yerine zaman uyumlu paket yük kullanımı
 
-Zaman uyumlu paketler ana iş parçacığı üzerinde varsayılan olarak yüklenen olduğundan, zaman uyumsuz paket temel sınıf daha önce belirtildiği gibi kullanmanız yüklenen otomatik paketleriniz varsa uzantısı sahipleri öneririz. Zaman uyumsuz yüklemesini desteklemek için bir otomatik yüklenen paket değiştirme de bunu aşağıdaki diğer sorunları çözmek kolaylaştırır.
+Zaman uyumlu paketleri ana iş parçacığı üzerinde varsayılan olarak yüklenir çünkü zaman uyumsuz paket taban sınıfı yerine daha önce bahsedildiği gibi kullanmak için otomatik yüklenen paketler sahip uzantı sahipleri öneririz. Zaman uyumsuz yükleme desteklemek için bir otomatik yüklenen paket değiştirme ayrıca aşağıdaki diğer sorunları gidermek kolaylaştırır.
 
-### <a name="synchronous-filenetwork-io-requests"></a>Zaman uyumlu dosya/ağ g/ç isteği
+### <a name="synchronous-filenetwork-io-requests"></a>Zaman uyumlu bir dosya/ağ g/ç isteği
 
-İdeal olarak etkilerini makine durumuna bağlıdır ve bazı durumlarda uzun süreler için engelleyebilirsiniz eşzamanlı dosya veya ağ g/ç istek ana iş parçacığına da kaçınılmalıdır.
+İdeal olarak ana iş parçacığında eşzamanlı dosya veya ağ g/ç istek kaçınılmalıdır. Etkilerine makine durumuna bağlı olacaktır ve bazı durumlarda uzun süreler için engelleyebilirsiniz.
 
-Zaman uyumsuz paketi yükleme ve zaman uyumsuz g/ç API'lerini kullanarak paket başlatma ana iş parçacığı bu gibi durumlarda engellemez ve kullanıcılar g/ç istekleri arka planda gerçekleşir ancak Visual Studio ile etkileşim kurmaya devam edebilir olmanız gerekir.
+Zaman uyumsuz paketi yükleme ve zaman uyumsuz g/ç API'leri kullanarak ana iş parçacığı bu gibi durumlarda, paket başlatma engellemediğinden emin olmanız gerekir. Ayrıca, kullanıcılar g/ç istekleri arka planda gerçekleşir, ancak Visual Studio ile etkileşim kurmak devam edebilirsiniz.
 
-### <a name="early-initialization-of-services-components"></a>Hizmetleri, bileşenleri, erken başlatma
+### <a name="early-initialization-of-services-components"></a>Hizmet bileşenleri erken başlatma
 
-Paket başlatma ortak yaklaşımlar tarafından kullanılan ya da bu paketin paket Oluşturucusu veya Initialize yöntemi tarafından sağlanan hizmetleri başlatmak için biridir. Bu hizmetleri kullanılmaya hazır sağlar, ancak bu hizmetlerin hemen kullanılmasa yükleme paketini gereksiz maliyeti de ekleyebilirsiniz. Bunun yerine paket başlatma çalışmanın en aza indirmek için isteğe bağlı bu tür hizmetlerinin başlatılması.
+Paket başlatma ortak yaklaşımlar biri tarafından kullanılan veya bu pakette bir paket tarafından sağlanan hizmetleri başlatmak için `constructor` veya `initialize` yöntemi. Bu hizmetleri kullanılmaya hazır olmasını sağlar, ancak bu hizmetlere hemen kullanılmıyorsa yükleme paketini gereksiz maliyeti de ekleyebilirsiniz. Bunun yerine paket başlatmanın çalışmayı en aza indirmek için isteğe bağlı tür hizmetlerin başlatılması gerekir.
 
-Bir paket tarafından sağlanan küresel hizmetler için yalnızca bir bileşen tarafından istendiğinde gevşek hizmeti başlatmak için bir işlev alır AddService yöntemlerini kullanabilirsiniz. Paket içinde kullanılan hizmetler için Lazy kullanabilir<T> veya AsyncLazy<T> Hizmetleri başlatılmadı/sorgulanan ilk kullanımda olduğundan emin olmak için.
+Bir paketi tarafından sağlanan küresel hizmetler için kullandığınız `AddService` yöntemleri yalnızca bir bileşen tarafından istendiğinde gevşek hizmeti başlatmak için bir işlevi alır. Lazy kullanabileceğiniz paket içinde kullanılan hizmetler için<T> veya AsyncLazy<T> Hizmetleri başlatılmış/sorgulanan ilk kullanımda olduğundan emin olmak için.
 
-## <a name="measuring-impact-of-auto-loaded-extensions-using-activity-log"></a>Etkinlik günlüğü kullanarak uzantıları otomatik etkisini ölçmek yüklendi
+## <a name="measuring-impact-of-auto-loaded-extensions-using-activity-log"></a>Etkinlik günlüğü kullanarak uzantılara otomatik etkisini ölçmek yüklendi
 
-Visual Studio 2017 güncelleştirme 3'den itibaren Visual Studio etkinlik günlüğü şimdi paketleri performans etkisini girişlerinde başlatma ve çözüm yüklenmesi sırasında içerir. Bu ölçümler görmek için/log anahtarı ile Visual Studio'yu başlatın ve ActivityLog.xml dosyasını açın gerekiyor.
+Visual Studio 2017 güncelleştirme 3'te başlayarak, Visual Studio etkinlik günlüğü artık girişleri performans etkisini paketleri için başlangıç ve çözüm yükleme sırasında içerir. Bu ölçümler görmek için Visual Studio'yu/log anahtarı ile başlatın ve açmak sahip *ActivityLog.xml* dosya.
 
-Etkinlik günlüğünde Girişleri "Visual Studio performansı yönetme" kaynağı altında olur ve aşağıdaki gibi görünür:
+Etkinlik günlüğü'ndeki girişleri altında "Visual Studio performansını Yönet" kaynağı olur ve aşağıdaki örnekteki gibi görünecektir:
 
 ```Component: 3cd7f5bf-6662-4ff0-ade8-97b5ff12f39c, Inclusive Cost: 2008.9381, Exclusive Cost: 2008.9381, Top Level Inclusive Cost: 2008.9381```
 
-Bu, pakette "Visual Studio 2008 ms başlangıç olarak harcanan GUID 3cd7f5bf-6662-4ff0-ade8-97b5ff12f39c ile" anlamına gelir. Visual Studio savigs kullanıcı olduğu gibi bir paket etkisini hesaplanırken birincil sayı olarak üst düzey maliyet dikkate nota bakın bunlar uzantısı, pakette için devre dışı bıraktığınızda.
+Bu örnek, bir paket GUID "3cd7f5bf-6662-4ff0-ade8-97b5ff12f39c" ile Visual Studio 2008 ms başlangıç harcadığı gösterir. Visual Studio, bu paket uzantısı devre dışı bıraktığınızda tasarruf kullanıcıları görmek olduğu gibi bir paket etkisini hesaplarken birincil sayı olarak en üst düzey maliyet dikkate unutmayın.
 
-## <a name="measuring-impact-of-auto-loaded-extensions-using-perfview"></a>Otomatik etkisini ölçmek uzantılarını PerfView kullanarak yüklendi
+## <a name="measuring-impact-of-auto-loaded-extensions-using-perfview"></a>Otomatik etkisini ölçülmesine PerfView kullanma uzantılar yüklendi
 
-Kod çözümleme paket başlatma yavaşlatabilir kod yollarını belirlemenize yardımcı olabilecek olsa da, Visual Studio başlangıç paketi yük etkisini anlamak için PerfView gibi uygulamaları kullanarak izleme de kullanabilir.
+Kod Analizi paketi başlatma yavaşlatabilir kod yollarını belirlemeye yardımcı olabilecek olsa da Visual Studio başlangıç paketi yük etkisini anlamak için PerfView gibi uygulamaları kullanarak izlemeyi de kullanabilir.
 
-PerfView etkin bir uygulama ya da CPU kullanımı veya sistem çağrıları engelleme nedeniyle yollarında anlamanıza yardımcı olacak bir sistem geniş izleme aracıdır. Aşağıda PerfView adresinde kullanarak bir örnek uzantısı çözümleme üzerinde bir örnek şudur [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=28567).
+PerfView sistem genelinde izleme aracıdır. Bu araç, CPU kullanımı veya sistem çağrıları engelleyici nedeniyle, bir uygulamada etkin yolları anlamak yardımcı olur. PerfView adresinde kullanarak bir örnek uzantısı çözümleme hakkında hızlı bir örnek aşağıdadır [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=28567).
 
-**Kod örneği:**
+**Örnek kod:**
 
-Bu örnek örneği temel alarak göstermek için tasarlanmış aşağıdaki kodu durumda bazı gecikme nedenler:
+Bu örnekte, örneği temel göstermek için tasarlanmış olan aşağıdaki kod, bazı yaygın gecikme nedenleri durumda:
 
 ```csharp
 protected override void Initialize()
@@ -139,45 +140,45 @@ private void DoMoreWork()
 
 **Bir izleme PerfView ile kaydetme:**
 
-Yüklü uzantınız ile Visual Studio ortamınızın Kurulumu sonra PerfView açarak ve toplama iletişim "Topla" menüsünden açmak başlangıç izlemesi kaydedebilirsiniz.
+Yüklü uzantınız ile Visual Studio ortamınızı ayarladıktan sonra PerfView açma ve açma başlangıç izlemesi kaydedebilirsiniz **toplamak** iletişim kutusundan **toplamak** menüsü.
 
 ![perfview toplama menüsü](media/perfview-collect-menu.png)
 
-Çağrı yığınları CPU tüketimi için varsayılan seçenekleri sağlar ancak biz de engelleme sürede ilgi olduğundan, "Saat iş parçacığı" yığınları da etkinleştirmeniz gerekir. Ayarları hazır olduğunuzda "Üzerinde koleksiyonunu Başlat"'i tıklatın ve kaydı başladıktan sonra Visual Studio'yu başlatın.
+CPU tüketimi için varsayılan seçenekleri çağrı yığınları sağlar ancak biz de engelleme sürede ilgi olduğundan, ayrıca etkinleştirmelisiniz **iş parçacığı zaman** yığınları. Ayarları hazır olduğunuzda tıklayabilirsiniz **toplamaya Başla** ve kayıt başlatıldıktan sonra Visual Studio'yu başlatın.
 
-Koleksiyon durdurmadan önce Visual Studio tam olarak başlatılmadan, ana pencereyi tamamen görünür olduğundan ve otomatik olarak göster herhangi UI parçalarını uzantınız varsa, bunlar ayrıca görünür olduğundan emin olmak istersiniz. Visual Studio tamamen yüklenmeden ve uzantınızı başlatıldı sonra izleme çözümlemek için kaydı durdurabilirsiniz.
+Koleksiyon durdurmadan önce Visual Studio tamamen başlatılır, otomatik olarak gösteren bir UI parçalarını uzantınız varsa bunlar da görülebilir ve, ana pencereyi tamamen görünür olduğundan emin olmanız gerekir. Visual Studio tamamen yüklendikten sonra uzantınızı başlatılır, izlemeyi analiz etmek için kaydı durdurabilirsiniz.
 
-**Bir izleme PerfView ile çözümleme:**
+**Bir izleme PerfView ile analiz ediliyor:**
 
-Kayıt tamamlandıktan sonra PerfView otomatik olarak izleme açın ve Seçenekleri'ni genişletin.
+Kayıt tamamlandıktan sonra PerfView otomatik olarak izlemeyi açmak ve Seçenekleri'ni genişletin.
 
-Bu örneğin amaçları doğrultusunda, biz çoğunlukla "Gelişmiş grubunun" altında bulabilirsiniz "İş parçacığı zaman yığınları" görünümünde ilgilendiğiniz. Bu görünüm, CPU süresi ve disk g/ç veya işleyicilerinin bekleyen gibi engellenen zaman dahil olmak üzere bir yöntem tarafından bir iş parçacığı üzerinde harcanan toplam süreyi gösterir.
+Bu örneğin amacı doğrultusunda, biz ağırlıklı olarak ilgilendiğiniz **iş parçacığı zamanı yığınları** altında bulabileceğiniz görünümü **Gelişmiş Grup**. Bu görünüm, hem CPU süresi ve disk g/ç veya tutamaçları bekleyen gibi engellenme süresi dahil olmak üzere bir yöntem tarafından bir iş parçacığı üzerinde harcanan toplam zamanı gösterir.
 
- ![iş parçacığı zaman yığınları](media/perfview-thread-time-stacks.png)
+ ![iş parçacığı zamanı yığınları](media/perfview-thread-time-stacks.png)
 
- "Zaman Yığınlar İş parçacığı" görünümü açılırken analiz başlatmak için "devenv" işlem seçmeniz gerekir.
+ Açma sırasında **iş parçacığı zamanı yığınları** görünümünde, seçmeniz gereken **devenv** analiz başlatmak için işlem.
 
-İş parçacığı zaman yığınları daha ayrıntılı bir analiz için kendi Yardım menüsünü altında okumak nasıl hakkında yönergeler PerfView açıklanmıştır. Bu örneğin amaçları doğrultusunda, yalnızca yığınları bizim paketleri modül adı ve başlangıç iş parçacığı ile ekleyerek bu görünümü daha fazla filtrelemek istiyoruz.
+PerfView zamanı yığınları daha ayrıntılı analiz için kendi Yardım menüsü altında iş parçacığı okuma hakkında yönergeler ayrıntılı içerir. Bu örneğin amacı doğrultusunda, bu görünümü yalnızca bizim paketleri modül adı ve başlangıç iş parçacığı yığınlarıyla dahil ederek filtre istiyoruz.
 
-1. Varsayılan olarak eklenen herhangi bir gruplama kaldırmak için boş metin için "GroupPats" ayarlayın.
-2. ", Derleme adı kısmını içerecek şekilde IncPats" ve başlangıç iş parçacığı kümesi yanı sıra mevcut işlem Filtresi. Bu durumda, "devenv; olmalıdır Başlangıç iş parçacığı; MakeVsSlowExtension".
+1. Ayarlama **GroupPats** varsayılan olarak eklenen herhangi bir gruplama kaldırmak için boş metin.
+2. Ayarlama **IncPats** derleme adı ve başlangıç iş parçacığı mevcut filtresi ek dahil edilecek. Bu durumda, olmalıdır **devenv; Başlangıç iş parçacığı; MakeVsSlowExtension**.
 
-Şimdi görünümü yalnızca uzantısı ilgili derlemeler ile ilişkilendirilmiş maliyetini gösterir. Bu görünümde, başlangıç iş parçacığı "Inc" (her ikisi de dahil maliyet) sütunu altında listelenen her zaman bizim filtrelenmiş uzantısı ilgili ve başlangıç etkileyen.
+Görünümü artık yalnızca uzantısı ilgili derlemeleri ile ilişkili olan maliyet gösteriyor. Bu görünümde, istediğiniz zaman, altında listelenen **dahil edilen (kapsamlı maliyeti)** başlangıç etkileyen ve filtrelenmiş uzantımızı ilgili başlangıç iş parçacığı sütunu.
 
-Bazı ilginç çağrısı Yukarıdaki örnek için yığınları olacaktır:
+Örneğin yukarıdaki bazı ilginç çağrı yığınlarını olacaktır:
 
-1. System.IO sınıfını kullanarak g/ç: Bu çerçeveleri dahil maliyetini izlemeye, çok pahalı olmayabilir olsa da, dosya g/ç hızı makine başka bir makine değişir bu yana bir sorunun olası bir nedeni oldukları.
+1. GÇ kullanarak `System.IO` sınıfı: Bu kareler kapsamlı maliyetini izlemede çok pahalı olmayabilir ancak dosya g/ç hızı makineden makineye farklılık gösterir, soruna neden olabilir olduğundan.
 
-  ![Sistem GÇ çerçeveler](media/perfview-system-io-frames.png)
+   ![Sistem g/ç çerçeveler](media/perfview-system-io-frames.png)
 
-2. Diğer zaman uyumsuz iş üzerinde bekleyen çağrılar engelleme: dahil süre bu durumda ana iş parçacığı engellenmiş zaman uyumsuz iş tamamlanma zamanı temsil eder.
+2. Diğer zaman uyumsuz işler, bekleyen çağrılar engelleme: kapsamlı süre bu durumda, ana iş parçacığı, zaman uyumsuz iş tamamlanma engellendi süreyi temsil eder.
 
-  ![engelleme çağrısı çerçeveler](media/perfview-blocking-call-frames.png)
+   ![engelleme çağrı çerçeveler](media/perfview-blocking-call-frames.png)
 
-Bir etkisini belirlemek yararlı olacak izleme görünümlerinde biri "Görüntü yük yığınları" olacaktır. "İş parçacığı zaman yığınları" görünüme uygulanan gibi aynı filtre uygulamak ve otomatik yüklenen paketiniz tarafından yürütülen kod nedeniyle yüklenen tüm derlemelere öğrenin.
+Diğer görünümlerde etkisini belirlemek yararlı olacak izleme biri olacak **görüntü yük yığınları**. Aynı Filtreler uygulanmış olarak uygulayabilirsiniz **iş parçacığı zamanı yığınları** görüntülemek ve otomatik yüklenen paketi tarafından çalıştırılan koda nedeniyle yüklenmiş tüm derlemeleri bulabilirsiniz.
 
-Her ek derlemeyi başlangıç yavaş makinelerde önemli ölçüde yavaşlatabilir ek disk I/O gerektireceğini gibi bir paket başlatma yordam içinde yüklenen derlemeler sayısını en aza indirmek önemlidir.
+Her ek derleme, başlangıç daha yavaş makinelerde önemli ölçüde yavaşlatabilir ek disk GÇ içerecektir gibi bir paket başlatma yordamı içine yüklenen derlemeler sayısını en aza indirmek önemlidir.
 
 ## <a name="summary"></a>Özet
 
-Visual Studio Başlangıç biz sürekli geri bildirim alma üzerinde alanları biri olmuştur. Bileşenleri ve yükledikleri uzantıları bakılmaksızın deneyimi tutarlı bir başlangıç tüm kullanıcılar için daha önce belirtildiği gibi Amacımız olduğunu ve bu hedefe ulaşmak yardımcı olmak için uzantı sahipleriyle birlikte çalışmaya isteriz. Yukarıdaki yönergelere başlangıç uzantıları etkisini anlama ve ya da yük otomatik olarak veya zaman uyumsuz olarak kullanıcı üretkenliği üzerindeki etkiyi en aza indirmek için yüklemek için gereken önleme yardımcı olmalıdır.
+Visual Studio Başlangıç sürekli geri bildirim aldığımız üzerinde alanlarından olmuştur. Hedefimiz daha önce belirtildiği gibi tüm kullanıcıların deneyimi bileşenleri ve uzantıları yüklü olduğu bağımsız olarak tutarlı bir başlangıç içindir. Bu hedefe ulaşmak yardımcı yardımcı olmak için uzantı sahipleriyle birlikte çalışmak istiyoruz. Yukarıdaki yönergeleri uzantıları etkilenmesinden başlangıç anlaşılması ve ya da otomatik olarak yük veya zaman uyumsuz olarak kullanıcının üretkenliği üzerindeki etkiyi en aza indirmek için yüklemek için gereken önleme yardımcı olabilir.

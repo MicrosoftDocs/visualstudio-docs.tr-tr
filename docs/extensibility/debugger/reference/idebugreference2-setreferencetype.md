@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c57ab701ead4a9e60a163c50f4f241fbe60a012b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f36192a194e1ced3815813f87925496d2ce07979
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49843034"
 ---
 # <a name="idebugreference2setreferencetype"></a>IDebugReference2::SetReferenceType
-Başvuru türü ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
+Başvuru türünü ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,7 +41,7 @@ int SetReferenceType (
   
 #### <a name="parameters"></a>Parametreler  
  `dwRefType`  
- [in] Arasında bir değer [REFERENCE_TYPE](../../../extensibility/debugger/reference/reference-type.md) başvuru türünü belirtir numaralandırması.  
+ [in] Bir değer [REFERENCE_TYPE](../../../extensibility/debugger/reference/reference-type.md) başvuru türünü belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Her zaman döndürür `E_NOTIMPL`.  

@@ -1,11 +1,11 @@
 ---
 title: IDebugExpression::GetResultAsDebugProperty | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IDebugExpression.GetResultAsDebugProperty
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IDebugExpression::GetResultAsDebugProperty
 ms.assetid: 9075bf2f-d5bb-464e-b6c2-3fa3215e9ae0
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24794288"
 ---
 # <a name="idebugexpressiongetresultasdebugproperty"></a>IDebugExpression::GetResultAsDebugProperty
 Hata ayıklama özelliği ve işlemin dönüş değeri olarak ifade değerlendirme sonucunu döndürür.  

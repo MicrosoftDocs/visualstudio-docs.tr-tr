@@ -21,26 +21,27 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 8b4ddc41e519466bbd48de4bbcbdad060bd93ef7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0ee3f5765c3be3228453ef6c870335bde5e999d8
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51295026"
 ---
-# <a name="additional-information-for-sharepoint-errors"></a>SharePoint Hataları için Ek Bilgi
-  Sorun gidermede yardım bulabilirsiniz [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları hataları ve sorun giderme konuları ve Microsoft Developer Network (MSDN) ortak forumlar uyarılar.  
+# <a name="additional-information-for-sharepoint-errors"></a>SharePoint hataları için ek bilgi
+  Sorun gidermede yardım bulabilirsiniz [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları hataları ve sorun giderme konuları ve genel forumları uyarılar.  
   
-## <a name="troubleshooting-errors-and-issues"></a>Hatalarını ve sorunlarını giderme  
- Bazı yaygın hatalar ve diğer sorunlar ile ilgili Yardım için [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları, aşağıdaki konulara bakın:  
+## <a name="troubleshoot-errors-and-issues"></a>Hatalarını ve sorunlarını giderin
+ Bazı yaygın hatalar ve diğer sorunları ile ilgili Yardım için [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları, aşağıdaki konulara bakın:  
   
--   [SharePoint Çözümlerinde Sorun Giderme](../sharepoint/troubleshooting-sharepoint-solutions.md)  
+-   [SharePoint çözümlerinde sorun giderme](../sharepoint/troubleshooting-sharepoint-solutions.md)  
   
--   [SharePoint Çözümlerinde Hata Ayıklama](../sharepoint/debugging-sharepoint-solutions.md)  
+-   [SharePoint çözümlerinde hata ayıklama](../sharepoint/debugging-sharepoint-solutions.md)  
   
--   [SharePoint Paketleme ve Dağıtım Sorunlarını Giderme](../sharepoint/troubleshooting-sharepoint-packaging-and-deployment.md)  
+-   [SharePoint paketleme ve dağıtım sorunlarını giderme](../sharepoint/troubleshooting-sharepoint-packaging-and-deployment.md)  
   
-## <a name="other-resources"></a>Diğer Kaynaklar  
- Aşağıdaki tabloda [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları forumlar ve diğer kaynakları MSDN'de kullanılabilir.  
+## <a name="other-resources"></a>Diğer kaynaklar
+ Aşağıdaki tabloda [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint araçları forumlar ve diğer kaynaklardır.  
   
 |Terim|Tanım|  
 |----------|----------------|  
@@ -48,9 +49,9 @@ ms.lasthandoff: 04/16/2018
 |[Visual Studio forumları](http://go.microsoft.com/fwlink/?LinkID=150452)|Hakkında sorular için bir forum sağlar [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].|  
 |[Microsoft Yardım ve Destek](http://go.microsoft.com/fwlink/?LinkID=108287)|Bilgi Bankası (BB) makalelerine, indirmeler ve güncelleştirmelere, destek Web yayınlarına ve diğer hizmetlere erişimi sağlar.|  
   
- Gereksinim duyduğunuz yanıtları hala bulamazsanız, çevrimiçi destek seçenekleri, Microsoft Ürün Destek Hizmetleri ile iletişim veya Bilgi Bankası makaleleri arama yapma gibi erişebilirsiniz. Daha fazla bilgi için bkz: [Microsoft Help ve Destek](http://go.microsoft.com/fwlink/?LinkID=155371) sayfası.  
+ İhtiyaç duyduğunuz yanıtları hala bulamıyorsanız, Microsoft Ürün Destek Hizmetleri ile irtibat veya Bilgi Bankası makalelerini ararken gibi çevrimiçi destek seçeneklerini erişebilirsiniz. Daha fazla bilgi için [Microsoft Help ve Destek](http://go.microsoft.com/fwlink/?LinkID=155371) sayfası.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [SharePoint Çözümleri Oluşturma ve Hatalarını Ayıklama](../sharepoint/building-and-debugging-sharepoint-solutions.md)  
+## <a name="see-also"></a>Ayrıca bkz.
+ [Derleme ve SharePoint çözümlerinde hata ayıklama](../sharepoint/building-and-debugging-sharepoint-solutions.md)  
   
-  
+ 

@@ -13,16 +13,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: de4d9fb3d0d90c5832620e8ab8642b491c0b68f1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1d1582560611a5c47e3b5e24767d9a2b9c03f5a9
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263919"
 ---
-# <a name="instrumentation-method-data-views"></a>İzleme Metodu Veri Görünümleri
+# <a name="instrumentation-method-data-views"></a>İzleme yöntemi veri görünümleri
 Bu bölüm, görünümler ve raporlar izleme metodunu kullanarak oluşturulan profil oluşturucu veri dosyalarının için başvuru bilgileri içerir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [Özet Görünümü](../profiling/summary-view-instrumentation-data.md)  
  En uzun süre kullanılan işlevler ve ayrı ayrı çoğu çalıştı mı işlevleri listeler.  
   
@@ -45,15 +46,15 @@ Bu bölüm, görünümler ve raporlar izleme metodunu kullanarak oluşturulan pr
  [İşlem Görünümü](../profiling/process-view.md)  
  Tüm listeleri işlem başlangıç, bitiş ve yaşam süresini profili bu wer işler.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="related-sections"></a>İlgili bölümler  
  [Örnekleme yöntemi veri görünümleri](../profiling/profiler-sampling-method-data-views.md)  
  Görünümler ve raporlar örnekleme yöntemini kullanarak oluşturulan profil oluşturucu veri dosyalarının için başvuru bilgileri.  
   
  [.NET bellek verisi görünümleri](../profiling/dotnet-memory-data-views.md)  
  .NET bellek verileri dahil Profil Oluşturucu veri dosyalarını raporlar ve görünümler için başvuru bilgileri.  
   
- [Kaynak Çakışması Veri Görünümleri](../profiling/resource-contention-data-views.md)  
+ [Kaynak çakışması veri görünümleri](../profiling/resource-contention-data-views.md)  
  Görünümler ve raporlar iş parçacığı Çekişme yöntemi kullanılarak oluşturulan profil oluşturucu veri dosyalarının için başvuru bilgileri.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İzleme veri değerlerini anlama](../profiling/understanding-instrumentation-data-values.md)

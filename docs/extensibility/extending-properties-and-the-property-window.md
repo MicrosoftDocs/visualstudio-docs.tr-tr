@@ -1,5 +1,5 @@
 ---
-title: Özellikler ve özellik penceresi genişletme | Microsoft Docs
+title: Özellikleri ve özellik penceresini genişletme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -17,20 +17,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3d03a9c31afed5a737a2f33e1cece490e7dd91b5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8f599c31e674a93ef44d83763a238575bff459e2
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39639984"
 ---
-# <a name="extending-properties-and-the-property-window"></a>Özellikler ve özellik penceresi genişletme
-**Özellikleri** penceresini görüntülemek ve tasarım zamanı özellikleri ve olayları seçili nesnelerin düzenlemek için kullanılır.  
+# <a name="extend-properties-and-the-property-window"></a>Özellikler ve özellik penceresini genişletme
+**Özellikleri** penceresini görüntülemek ve seçilen nesnelerin olaylarını ve tasarım zamanı özelliklerini düzenlemek için kullanılır.  
   
- Bir nesne seçtiğinizde, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], bu nesnenin ortak özellikleri görünür **özellikleri** penceresi. Daha fazla bilgi için bkz: [Özellikler penceresi genel bakış](../extensibility/internals/properties-window-overview.md).  
+ Bir nesneyi seçtiğinizde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], o nesnenin ortak özellikler görünür **özellikleri** penceresi. Daha fazla bilgi için [özellikler penceresine genel bakış](../extensibility/internals/properties-window-overview.md).  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Özellikleri ve Özellik Penceresini Kullanıma Sunma](../extensibility/exposing-properties-to-the-properties-window.md)  
- Özellikler penceresinde görüntülenen özel özelliklerinizi nasıl sağlayabilirsiniz açıklanmaktadır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Özellikler ve özellik penceresini kullanıma sunma](../extensibility/exposing-properties-to-the-properties-window.md)  
+ Özellikler penceresinde görüntülenen özel özelliklerinizi nasıl sahip açıklar.  
   
- [Proje Özelliklerini Alma](../extensibility/getting-project-properties.md)  
- Proje Özellikleri alınacağı açıklanmaktadır.
+ [Proje özelliklerini alma](../extensibility/getting-project-properties.md)  
+ Proje özellikleri açıklanmaktadır.

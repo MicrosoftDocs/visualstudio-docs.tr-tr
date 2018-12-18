@@ -1,10 +1,9 @@
 ---
-title: Ayarlama geçerli yığın çerçevesini komutu | Microsoft Docs
-ms.custom: ''
+title: Geçerli Yığın Çerçevesini Ayarla Komutu
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - debug.setcurrentstackframe
 helpviewer_keywords:
@@ -16,33 +15,36 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f8851530dec3e5e1a2c3e829c1508155a2dbda8a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 95f8c762f16eb4a784ccc2cffb5bfa27d215370e
+ms.sourcegitcommit: fe5a72bc4c291500f0bf4d6e0778107eb8c905f5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "33704804"
 ---
 # <a name="set-current-stack-frame-command"></a>Geçerli Yığın Çerçevesini Ayarla Komutu
-Belirli Yığın çerçevesi ayarlamanıza olanak sağlar.  
-  
-## <a name="syntax"></a>Sözdizimi  
-  
-```  
-Debug.SetCurrentStackFrame index  
-```  
-  
-## <a name="arguments"></a>Arguments  
- `index`  
- Gerekli. Yığın çerçevesi tarafından dizinini seçer.  
-  
-## <a name="example"></a>Örnek  
-  
-```  
->Debug.SetCurrentStackFrame 1  
-```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio komutları](../../ide/reference/visual-studio-commands.md)   
- [Komut penceresi](../../ide/reference/command-window.md)   
- [Bul/komut kutusu](../../ide/find-command-box.md)   
- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)
+Belirli Yığın çerçevesi ayarlamanıza olanak sağlar.
+
+## <a name="syntax"></a>Sözdizimi
+
+```cmd
+Debug.SetCurrentStackFrame index
+```
+
+## <a name="arguments"></a>Arguments
+ `index`
+
+ Gerekli. Yığın çerçevesi tarafından dizinini seçer.
+
+## <a name="example"></a>Örnek
+
+```cmd
+>Debug.SetCurrentStackFrame 1
+```
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Visual Studio Komutları](../../ide/reference/visual-studio-commands.md)
+- [Komut Penceresi](../../ide/reference/command-window.md)
+- [Bul/komut kutusu](../../ide/find-command-box.md)
+- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)

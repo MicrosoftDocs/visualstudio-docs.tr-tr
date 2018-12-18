@@ -1,5 +1,5 @@
 ---
-title: MSBuild en iyi yöntemleri | Microsoft Docs
+title: MSBuild en iyi yöntemler | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: msbuild
@@ -13,24 +13,25 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a2572e300c666462c5f514452a40f810a349040f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8f32626f02e0381ab285d1d6ae1b3127022da438
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39078205"
 ---
-# <a name="msbuild-best-practices"></a>MSBuild En İyi Yöntemleri
-MSBuild komut dosyaları yazmak için aşağıdaki en iyi uygulamaları öneririz:  
+# <a name="msbuild-best-practices"></a>MSBuild en iyi uygulamalar
+MSBuild komut dosyaları yazmak için aşağıdaki en iyi yöntemleri öneririz:  
   
--   Varsayılan özellik değerleri, kullanarak en iyi şekilde işlenir `Condition` özniteliği ve komut satırında bildirme varsayılan değeri geçersiz bir özellik tarafından. Örneğin, kullanın  
+-   Varsayılan özellik değerleri, kullanarak en iyi şekilde işlenir `Condition` özniteliği ve komut satırında bildirme varsayılan değerini geçersiz kılınabilir bir özellik tarafından. Örneğin, kullanın  
   
-     `<MyProperty Condition="'$(MyProperty)' == ''">`  
+```xml
+<MyProperty Condition="'$(MyProperty)' == ''">
+   MyDefaultValue
+</MyProperty>
+```
   
-     `MyDefaultValue`  
+-   Öğe seçtiğinizde joker karakterler kaçının. Bunun yerine, dosyaları açıkça belirtin. Bu, eklediğinizde veya dosyaları silme oluşabilecek hatalar izlemenizi kolaylaştırır.  
   
-     `</MyProperty>`  
-  
--   Öğeler seçtiğinizde joker karakterler kaçının. Bunun yerine, dosyaları açıkça belirtin. Bu, ekleyin veya dosya sildiğinizde oluşabilecek hatalar izlemek kolaylaştırır.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Gelişmiş kavramlar](../msbuild/msbuild-advanced-concepts.md)

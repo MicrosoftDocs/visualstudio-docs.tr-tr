@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3805111c76068adee930be95baaedd57c19cb692
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7238eaf454dbd1ff25f29383da03cf9f276acc2d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49856008"
 ---
 # <a name="idebugsettingscallback2geteemetricstring"></a>IDebugSettingsCallback2::GetEEMetricString
-Adı verilen bir ifade değerlendiricisi ölçümü değer dizisini alır.  
+Bir ifade değerlendirici ölçüm adı verilen değer dizesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,7 +45,7 @@ private int GetEEMetricString(
   
 #### <a name="parameters"></a>Parametreler  
  `guidLang`  
- [in] Programlama dili benzersiz tanımlayıcısı.  
+ [in] Programlama diline benzersiz tanımlayıcısı.  
   
  `guidVendor`  
  [in] Satıcı benzersiz tanımlayıcısı.  
@@ -53,10 +54,10 @@ private int GetEEMetricString(
  [in] Ölçüm adı.  
   
  `pbstrValue`  
- [out] Ölçüm değeri dize döndürür.  
+ [out] Ölçüm değeri bir dize döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

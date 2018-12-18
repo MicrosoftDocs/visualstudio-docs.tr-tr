@@ -1,89 +1,96 @@
+items:
 - name: Sürüm Denetimi
   href: /visualstudio/version-control/index
 - name: Genel Bakış
   items:
-    - name: Git hakkında bilgi edinin
-      href: /vsts/git/tutorial/gitworkflow?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Doğru sürüm denetimini seçme
-      href: /vsts/tfvc/comparison-git-tfvc?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: Git hakkında bilgi edinin
+    href: /azure/devops/repos/git/gitworkflow?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Doğru sürüm denetimini seçme
+    href: /azure/devops/repos/tfvc/comparison-git-tfvc?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Hızlı Başlangıçlar
   items:
-    - name: Git deposu oluşturma - Web
-      href: /vsts/git/create-new-repo?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Git deposu oluşturma - CLI
-      href: /vsts/git/share-your-code-in-git-cmdline?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Kodunuzu Git’te paylaşma
-      href: /vsts/git/share-your-code-in-git-vs-2017?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Depoyu VSTS Git deposuna aktarma
-      href: /vsts/git/import-git-repository?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Kodunuzu TFVC’de paylaşma
-      href: /vsts/tfvc/share-your-code-in-tfvc-vs?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: Git deposu oluşturma - Web
+    href: /azure/devops/repos/git/create-new-repo?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Git deposu oluşturma - CLI
+    href: /azure/devops/repos/git/share-your-code-in-git-cmdline?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Kodunuzu Git’te paylaşma
+    href: /azure/devops/repos/git/share-your-code-in-git-vs-2017?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Azure Repos’a depo aktarma
+    href: /azure/devops/repos/git/import-git-repository?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Kodunuzu TFVC’de paylaşma
+    href: /azure/devops/repos/tfvc/share-your-code-in-tfvc-vs?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Öğreticiler
   items:
-    - name: Git
-      href: /vsts/git/gitquickstart?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-      items:
-        - name: Yeni depo oluşturma
-          href: /vsts/git/tutorial/creatingrepo?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Mevcut bir depoyu kopyalama
-          href: /vsts/git/tutorial/clone?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Çalışmayı işlemelerle kaydetme
-          href: /vsts/git/tutorial/commits?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Dallarda iş oluşturma
-          href: /vsts/git/tutorial/branches?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Gönderme ile kod paylaşma
-          href: /vsts/git/tutorial/pushing?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Getirme ve çekme ile kodu güncelleştirme
-          href: /vsts/git/tutorial/pulling?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Çekme istekleriyle kodu gözden geçirme
-          href: /vsts/git/tutorial/pullrequest?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Yeniden temellendirme ile değişiklikleri uygulama
-          href: /vsts/git/tutorial/rebase?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Tek tek seçme ile değişiklikleri kopyalama
-          href: /vsts/git/tutorial/cherry-pick?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Birleştirme çakışmalarını çözümleme
-          href: /vsts/git/tutorial/merging?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Değişiklikleri geri alma
-          href: /vsts/git/tutorial/undo?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Dosyaları yoksayma
-          href: /vsts/git/tutorial/ignore-files?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: Geçmişi gözden geçirme
-          href: /vsts/git/tutorial/history?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: TFVC
-      items:
-        - name: 'İzlenecek yol: Bir hatayı düzeltme ve kodunuzun gözden geçirilmesini sağlama'
-          href: /vsts/tfvc/day-life-alm-developer-suspend-work-fix-bug-conduct-code-review?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-        - name: 'Visual Studio: Kodu Gözden Geçirme'
-          href: /vsts/tfvc/get-code-reviewed-vs?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: Git
+    href: /azure/devops/repos/git/gitquickstart?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    items:
+    - name: Yeni depo oluşturma
+      href: /azure/devops/repos/git/creatingrepo?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Mevcut bir depoyu kopyalama
+      href: /azure/devops/repos/git/clone?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Çalışmayı işlemelerle kaydetme
+      href: /azure/devops/repos/git/commits?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Dallarda iş oluşturma
+      href: /azure/devops/repos/git/branches?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Gönderme ile kod paylaşma
+      href: /azure/devops/repos/git/pushing?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Getirme ve çekme ile kodu güncelleştirme
+      href: /azure/devops/repos/git/pulling?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Çekme istekleriyle kodu gözden geçirme
+      href: /azure/devops/repos/git/pullrequest?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Yeniden temellendirme ile değişiklikleri uygulama
+      href: /azure/devops/repos/git/rebase?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Tek tek seçme ile değişiklikleri kopyalama
+      href: /azure/devops/repos/git/cherry-pick?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Birleştirme çakışmalarını çözümleme
+      href: /azure/devops/repos/git/merging?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Değişiklikleri geri alma
+      href: /azure/devops/repos/git/undo?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Dosyaları yoksayma
+      href: /azure/devops/repos/git/ignore-files?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: Geçmişi gözden geçirme
+      href: /azure/devops/repos/git/review-history?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: TFVC
+    items:
+    - name: 'İzlenecek yol: Bir hatayı düzeltme ve kodunuzun gözden geçirilmesini sağlama'
+      href: /azure/devops/repos/tfvc/day-life-alm-developer-suspend-work-fix-bug-conduct-code-review?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+    - name: 'Visual Studio: Kodu Gözden Geçirme'
+      href: /azure/devops/repos/tfvc/get-code-reviewed-vs?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Kavramlar
   items:
-    - name: Git’te geçmiş
-      href: /vsts/git/concepts/history?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Geçmiş basitleştirmesi
-      href: /vsts/git/concepts/history-simplification?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Dal düzeni
-      href: /vsts/git/concepts/git-branching-guidance?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Çatallar
-      href: /vsts/git/concepts/forks?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Kimlik doğrulaması
-      href: /vsts/git/auth-overview?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Git’te tarihleri anlama
-      href: /vsts/git/concepts/git-dates?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Git’te adları anlama
-      href: /vsts/git/concepts/git-names?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: Git’te geçmiş
+    href: /azure/devops/repos/git/history?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Geçmiş basitleştirmesi
+    href: /azure/devops/articles/git-log-history-simplification?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Dal düzeni
+    href: /azure/devops/repos/git/git-branching-guidance?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Çatallar
+    href: /azure/devops/repos/git/forks?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Kimlik doğrulaması
+    href: /azure/devops/repos/git/auth-overview?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Git’te tarihleri anlama
+    href: /azure/devops/repos/git/git-dates?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Git’te adları anlama
+    href: /azure/devops/repos/git/git-names?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Nasıl Yapılır Kılavuzları
   items:
-    - name: SSH ile kimlik doğrulaması
-      href: /vsts/git/use-ssh-keys-to-authenticate?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Git Credential Manager ile kimlik doğrulaması
-      href: /vsts/git/set-up-credential-managers?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: SSH ile kimlik doğrulaması
+    href: /azure/devops/repos/git/use-ssh-keys-to-authenticate?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Git Credential Manager ile kimlik doğrulaması
+    href: /azure/devops/repos/git/set-up-credential-managers?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Başvuru
   items:
-    - name: Komut başvurusu
-      href: /vsts/git/command-prompt?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
-    - name: Sık sorulan sorular
-      href: /vsts/git/tutorial/howto?toc=/visualstudio/version-control/toc.json&bc=/vsts/git/breadcrumb/vc/toc.json
+  - name: Komut başvurusu
+    href: /azure/devops/repos/git/command-prompt?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
+  - name: Sık sorulan sorular
+    href: /azure/devops/repos/git/howto?toc=/visualstudio/version-control/toc.json&bc=/azure/devops/repos/git/breadcrumb/vc/toc.json
 - name: Kaynaklar
   items:
-    - name: Git kullanmayı öğrenin
-      href: 'https://www.visualstudio.com/learn-git/'
+  - name: Git nedir
+    href: /azure/devops/repos/get-started/what-is-repos#git
+ms.openlocfilehash: 9b2a5968cba8e1aefa09d7e10b9a5c0e2632f96f
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44279420"

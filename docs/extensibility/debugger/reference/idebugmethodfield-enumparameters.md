@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 112b91c2155c28b37b2222a99a45893fcb56e98c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7405b451a29af71a2cad3ad3e4a36692737d8d53
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910465"
 ---
 # <a name="idebugmethodfieldenumparameters"></a>IDebugMethodField::EnumParameters
 Yöntem parametreleri için bir numaralandırıcı oluşturur.  
@@ -40,17 +41,17 @@ int EnumParameters(
   
 #### <a name="parameters"></a>Parametreler  
  `ppParams`  
- [out] Döndüren bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) parametresiz varsa, boş bir değer döndürür; yönteme parametre listesini temsil eden nesne.  
+ [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) yöntem için parametrelerin listesini temsil eden nesne; hiç parametre varsa, aksi durumda null değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK döndürür veya parametresiz varsa S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür veya parametresiz varsa S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Her öğe bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) parametreleri farklı türlerde temsil eden nesne. Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) tam olarak ne tür parametresi bir nesneyi temsil ediyor belirlemek için her bir nesne üzerinde yöntemi.  
+ Her öğe bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) farklı parametre türleri temsil eden nesne. Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) tam olarak hangi tür parametresi bir nesneyi temsil belirlemek için her bir nesne üzerindeki yöntemi.  
   
- Bir parametre değişken adını ve türünü içerir. İlk parametre olarak bir sınıf yöntemi genellikle "Bu" işaretçidir.  
+ Bir parametre hem değişken adını ve türünü içerir. İlk parametre olarak sınıf yöntemi genellikle "Bu" işaretçisidir.  
   
- Yalnızca bir parametre türlerini gereklidir, çağrı [EnumArguments](../../../extensibility/debugger/reference/idebugmethodfield-enumarguments.md) yöntemi.  
+ Yalnızca bir parametre türleri gereklidir, çağrı [EnumArguments](../../../extensibility/debugger/reference/idebugmethodfield-enumarguments.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md)   

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: dc42a7be878ce52f4d951171c6b5cb08e195d564
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b827e1f7e26fb98e9d49de4e9fe2388e46ee07cb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49831178"
 ---
 # <a name="sccaddfilesfromscc-function"></a>SccAddFilesFromSCC işlevi
-Bu işlev dosyaların listesini kaynak denetiminden açık projeye ekler.  
+Bu işlev, kaynak denetiminden dosyaların listesini açık projeye ekler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,44 +41,44 @@ SCCRTN SccAddFilesFromSCC(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pContext  
- [in] Kaynak Denetim eklentisi bağlam işaretçi.  
+ [in] Kaynak Denetimi Eklentisi bağlam işaretçisi.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  lpUser  
- [içinde out] Kullanıcı adı (kadar SCC_USER_SIZE, null Sonlandırıcı dahil olmak üzere).  
+ [out içinde] Kullanıcı adı (en fazla SCC_USER_SIZE, null sonlandırıcıyı da dahil olmak üzere).  
   
  lpAuxProjPath  
- [içinde out] Proje tanımlayan yardımcı dize (en fazla `SCC_PRJPATH_`null Sonlandırıcı dahil BOYUTU).  
+ [out içinde] Proje tanımlayan yardımcı dize (en fazla `SCC_PRJPATH_`BOYUTU, null sonlandırıcıyı da dahil olmak üzere).  
   
  cFiles  
  [in] Tarafından verilen dosya sayısı `lpFilePaths`.  
   
  lpFilePaths  
- [içinde out] Geçerli projeye eklemek için dosya adları dizisi.  
+ [out içinde] Geçerli projeye eklemek için dosya adları dizisi.  
   
  lpDestination  
- [in] Yazılacak dosyaların nerede hedef yolu.  
+ [in] Yazılacak dosyalar nerede hedef yolu.  
   
  lpComment  
- [in] Eklenmekte olan dosyaların her biri için uygulanacak açıklama.  
+ [in] Eklenmekte olan dosyalar her öğesine uygulanması için açıklama.  
   
  pbResults  
- [içinde out] Başarı (sıfır olmayan veya doğru) belirtmek için set ya da hata bayrakları dizisi (sıfır veya FALSE) her dosya için (dizinin boyutu en az olmalıdır `cFiles` uzun).  
+ [out içinde] Başarılı (sıfır olmayan veya TRUE) olduğunu belirtmek için set ya da hata bayrakları dizisi (sıfır ya da FALSE) her dosya için (dizinin boyutu en az olmalıdır `cFiles` uzun).  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_E_PROJNOTOPEN|Proje açık değil.|  
-|SCC_E_OPNOTPERFORMED|Bağlantı tarafından belirtilen aynı projeye değil `lpAuxProjPath.`|  
-|SCC_E_NOTAUTHORIZED|Kullanıcı veritabanını güncelleştirmek için yetkili değil.|  
+|SCC_E_OPNOTPERFORMED|Bağlantı tarafından belirtildiği gibi aynı projeye değil `lpAuxProjPath.`|  
+|SCC_E_NOTAUTHORIZED|Veritabanını güncellemek için kullanıcı yetkili değil.|  
 |SCC_E_NONSPECIFICERROR|Bilinmeyen hata.|  
-|SCC_I_RELOADFILE|Bir dosya veya projeyi yeniden yüklenmesi gerekiyor.|  
+|SCC_I_RELOADFILE|Bir dosya veya projenin yeniden yüklenmesi gerekiyor.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)

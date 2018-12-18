@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a0b7ac4f7cde93d4637906202f7b4c643750d8e0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e9c1bd0887c8d154501a87ea9a2227e079bbb083
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872765"
 ---
 # <a name="idebugenumfieldgetstringfromvalue"></a>IDebugEnumField::GetStringFromValue
-Bu yöntem değerini verilen numaralandırma sabiti adını alır.  
+Bu yöntem, değeri verilen numaralandırma sabiti adını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int GetStringFromValue(
   
 #### <a name="parameters"></a>Parametreler  
  `value`  
- [in] Numaralandırma adını sabit almak istediğiniz için değer.  
+ [in] Alınacağı adı numaralandırma sabit değeri.  
   
  `pbstrValue`  
- [out] Numaralandırma sabiti adını döndürür.  
+ [out] Sabit listesi sabitinin adı döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` değeri ilişkili adı yok ya da bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` değeri ilişkili adı yok ya da bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Sabit listede tanımlanan ilk ad aynı değeriyle ilişkili birden fazla adı varsa, döndürülür.  
+ İlk numaralandırmada tanımlanan adla aynı değeri ile ilişkili birden fazla adı varsa, döndürülür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEnumField](../../../extensibility/debugger/reference/idebugenumfield.md)

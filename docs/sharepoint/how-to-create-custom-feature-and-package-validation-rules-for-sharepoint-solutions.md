@@ -16,13 +16,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 0c68df756e24fc45603d34dd6982a09889bd5203
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1d36b049aefe9eb574809cfedf4aa1f2ebddbc4c
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120580"
 ---
-# <a name="how-to-create-custom-feature-and-package-validation-rules-for-sharepoint-solutions"></a>Nasıl yapılır: SharePoint Çözümleri için Özel Özellik ve Paket Doğrulama Kuralları Oluşturma
+# <a name="how-to-create-custom-feature-and-package-validation-rules-for-sharepoint-solutions"></a>Nasıl yapılır: özel özellik ve paket doğrulama kuralları SharePoint çözümleri için oluşturma
   Visual Studio tarafından üretilen çözüm paketi doğrulamak için özel doğrulama kuralları oluşturabilirsiniz. Seçerek bir özelliğin tamamı veya paket tam doğrulama gerçekleştirebilirsiniz **doğrulama** bir paket veya özelliği bağlam menüsünden **PackagingExplorer**. Paket ya da özellik geçerli bir durumda olacaktır, belirlemek için projeye yeni SharePonit proje öğeleri veya özellikleri eklediğinizde, kısmi doğrulama gerçekleştirilir.  
   
 ### <a name="to-create-a-custom-package-validation-rule"></a>Özel paket doğrulama kuralı oluşturmak için  
@@ -49,17 +50,16 @@ ms.lasthandoff: 04/16/2018
  [!code-vb[SPExtensibility.FeatureValidation#1](../sharepoint/codesnippet/VisualBasic/featurevalidation/extension/customvalidationrule.vb#1)]
  [!code-csharp[SPExtensibility.FeatureValidation#1](../sharepoint/codesnippet/CSharp/featurevalidation/extension/customfeaturevalidationrule.cs#1)]  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
+## <a name="compile-the-code"></a>Kod derleme  
  Bu örnekte aşağıdaki derlemelere başvuruları gerektirir:  
   
 -   Microsoft.VisualStudio.SharePoint.  
   
 -   System.ComponentModel.Composition.  
   
-## <a name="deploying-the-extension"></a>Uzantısını dağıtma  
- Uzantıyı dağıtmak için oluşturma bir [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] uzantısı (VSIX) paketini derleme ve uzantısıyla dağıtmak istediğiniz diğer dosyalar için. Daha fazla bilgi için bkz: [dağıtma uzantıları Visual Studio'da SharePoint araçları için](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md).  
+## <a name="deploy-the-extension"></a>Uzantısı dağıtma  
+ Uzantıyı dağıtmak için oluşturma bir [!include[vsprvs](../sharepoint/includes/vsprvs-md.md)] uzantısı (VSIX) paketini derleme ve uzantısıyla dağıtmak istediğiniz diğer dosyalar için. Daha fazla bilgi için bkz: [dağıtmak uzantıları SharePoint için Visual Studio Araçları](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [SharePoint Paketleme ve Dağıtımını Genişletme](../sharepoint/extending-sharepoint-packaging-and-deployment.md)  
-  
+## <a name="see-also"></a>Ayrıca bkz.
+ [SharePoint paketleme ve dağıtımını genişletme](../sharepoint/extending-sharepoint-packaging-and-deployment.md)  
   

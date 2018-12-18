@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 28ddbc6d2da448be163fcd84c90e55290265c361
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5d63b410fc8cae67e27c15d4ed87c59bbed982d8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825848"
 ---
 # <a name="idebugcomplussymbolprovideraresymbolsloaded"></a>IDebugComPlusSymbolProvider::AreSymbolsLoaded
-Hata ayıklama simgeleri verilen uygulama etki alanı tanımlayıcısı için belirtilen Modülü yüklü olan belirler.  
+Uygulama etki alanı tanımlayıcısı verilen Belirtilen modül için hata ayıklama simgeleri yüklü olan belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,10 +48,10 @@ int AreSymbolsLoaded (
  [in] Modül için benzersiz tanımlayıcı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Hata ayıklama simgeleri yüklerse döndürür `S_OK`; Aksi halde döndürür `S_FALSE`.  
+ Hata ayıklama sembolleri yüklerse döndürür `S_OK`; Aksi halde döndürür `S_FALSE`.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::AreSymbolsLoaded(  

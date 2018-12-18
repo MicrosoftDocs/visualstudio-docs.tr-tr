@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c81bdc6586766cb4a241bf29e653cb1b10f66f2f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 490381f183a19e33fd391b133562fc2a463c6ee9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920852"
 ---
 # <a name="idebugportrequest2getportname"></a>IDebugPortRequest2::GetPortName
 Bağlantı noktası adını alır.  
@@ -43,10 +44,10 @@ int GetPortName(
  [out] Bağlantı noktası adını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [IDebugPortRequest2](../../../extensibility/debugger/reference/idebugportrequest2.md) arabirimi genellikle geçirilir hata ayıklama paketinden (istemci) bir bağlantı almak için bir bağlantı noktası tedarikçiye (sunucu) bir bağlantı noktası. Hata ayıklama paketi ve bağlantı noktası sağlayıcı bağlantı noktası için olası seçenekleri farkında. Bağlantı noktası, basit bir dize tanımlayabilir, sonra `IDebugPortRequest2::GetPortName` yöntemi bağlantı oluşturmak için yeterli bilgi sahiptir. Aksi durumda, ek arabirimler sunucusu kullanılarak alınabilir istemci tarafından sağlanabilir `IDebugPortRequest2::QueryInterface`.  
+ [IDebugPortRequest2](../../../extensibility/debugger/reference/idebugportrequest2.md) arabirimi genellikle geçirilen bir hata ayıklama paketi (istemci) bir bağlantı almak için bir bağlantı noktası sağlayıcısı için (sunucu) için bir bağlantı noktası. Hata ayıklama paketi hem de bağlantı noktası sağlayıcısı bağlantı noktası için olası seçeneklerin farkındayız. Bağlantı noktası, basit bir dize tanımlayabilir, ardından `IDebugPortRequest2::GetPortName` yöntemi bağlantı kurmak için yeterli bilgi vardır. Aksi takdirde, ek arabirimleri sunucusu kullanılarak elde edilebilir istemci tarafından sağlanabilir `IDebugPortRequest2::QueryInterface`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPortRequest2](../../../extensibility/debugger/reference/idebugportrequest2.md)

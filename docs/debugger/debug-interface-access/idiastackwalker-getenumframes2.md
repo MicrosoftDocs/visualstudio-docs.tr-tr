@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 834b202d406ce7ae2e2a5b2ec80b8f7c46f0f576
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: ca384e594a9e8a295f291739589bed1eb92dd044
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49854045"
 ---
 # <a name="idiastackwalkergetenumframes2"></a>IDiaStackWalker::getEnumFrames2
-Belirli platform türü için bir yığın çerçeve Numaralayıcı alır.  
+Belirli bir platform türü için bir yığın çerçevesi Numaralandırıcı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,19 +37,19 @@ Belirli platform türü için bir yığın çerçeve Numaralayıcı alır.
   
 #### <a name="parameters"></a>Parametreler  
  `cpuid`  
- [in] Arasında bir değer [CV_CPU_TYPE_e numaralandırması](../../debugger/debug-interface-access/cv-cpu-type-e.md) platform türünü belirten numaralandırma.  
+ [in] Bir değer [CV_CPU_TYPE_e numaralandırması](../../debugger/debug-interface-access/cv-cpu-type-e.md) platform türünü belirten numaralandırma.  
   
  `pHelper`  
- [in] Yardımcı [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md) nesnesi.  
+ [in] Yardımcı [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md) nesne.  
   
  `ppEnum`  
  [out] Döndürür bir [Idiaenumstackframes](../../debugger/debug-interface-access/idiaenumstackframes.md) listesini içeren bir nesne [Idiastackframe](../../debugger/debug-interface-access/idiastackframe.md) nesneleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yalnızca x86 için yığın çerçeve listesini almak için platform, çağrı [IDiaStackWalker::getEnumFrames](../../debugger/debug-interface-access/idiastackwalker-getenumframes.md) yöntemi.  
+ X86 için yığın çerçeve listesini almak için platform, çağrı [IDiaStackWalker::getEnumFrames](../../debugger/debug-interface-access/idiastackwalker-getenumframes.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiastackwalker](../../debugger/debug-interface-access/idiastackwalker.md)   

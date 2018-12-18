@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 879201b11c74ab15897a5fba9550ddbe243cddc5
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: a6a0dfff78c54c1e051e04c33ae73d82691bf0d0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896399"
 ---
 # <a name="idialinenumbergetlinenumberend"></a>IDiaLineNumber::get_lineNumberEnd
-Sona ereceği deyiminin veya ifadesinin kaynak tabanlı satır numarasını alır.  
+Sona ereceği bir deyim veya ifade tabanlı kaynak satır numarasını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT get_lineNumberEnd (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Satır numarası deyiminin veya ifadesinin bittiği döndürür. Değerin sıfır ise, son bilgi yok.  
+ [out] Sona ereceği deyiminin veya ifadesinin satır numarasını döndürür. Değer sıfır ise son bilgileri mevcut değil.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaLineNumber](../../debugger/debug-interface-access/idialinenumber.md)

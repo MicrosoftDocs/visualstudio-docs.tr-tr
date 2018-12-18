@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6c5733bfa889a38c1d143fdd3bfbd8f208fed13a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 44692c4715db3db8f65a85bd66a129b4d17e5138
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855553"
 ---
 # <a name="threadpropertyfields"></a>THREADPROPERTY_FIELDS
-Bir iş parçacığı hakkında hangi bilgilerin alınması belirtir.  
+Alınacak bir iş parçacığı hakkında bilgiler olduğunu belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -53,41 +54,41 @@ public enum enum_THREADPROPERTY_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  TPF_ID  
- Başlatma/kullanım `dwThreadId` alanını [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı.  
+ Başlat/kullanım `dwThreadId` alanını [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı.  
   
  TPF_SUSPENDCOUNT  
- Başlatma/kullanım `dwSuspendCount` alanını `THREADPROPERTIE`S yapısı.  
+ Başlat/kullanım `dwSuspendCount` alanını `THREADPROPERTIE`S yapısı.  
   
  TPF_STATE  
- Başlatma/kullanım `dwThreadState` alanını `THREADPROPERTIE`S yapısı.  
+ Başlat/kullanım `dwThreadState` alanını `THREADPROPERTIE`S yapısı.  
   
  TPF_PRIORITY  
- Başlatma/kullanım `bstrPriority` alanını `THREADPROPERTIE`S yapısı.  
+ Başlat/kullanım `bstrPriority` alanını `THREADPROPERTIE`S yapısı.  
   
  TPF_NAME  
- Başlatma/kullanım `bstrName` alanını `THREADPROPERTIE`S yapısı.  
+ Başlat/kullanım `bstrName` alanını `THREADPROPERTIE`S yapısı.  
   
  TPF_LOCATION  
- Başlatma/kullanım `bstrLocation` alanını `THREADPROPERTIE`S yapısı.  
+ Başlat/kullanım `bstrLocation` alanını `THREADPROPERTIE`S yapısı.  
   
  TPF_ALLFIELDS  
- Tüm alanlar belirtir.  
+ Tüm alanları belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerler için bağımsız değişken olarak geçirilen [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md) hangi alanlarının belirtmek için yöntemi [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı başlatılması üzeresiniz.  
+ Bu değerleri bir bağımsız değişken olarak geçirilen [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md) hangi alanları göstermek için yöntemi [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı olan başlatılacak.  
   
- Bu değerleri de içinde kullanılan `dwFields` üyesi `THREADPROPERTIES` hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ Bu değerleri de kullanılan `dwFields` üyesi `THREADPROPERTIES` yapısı hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md)   
  [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md)

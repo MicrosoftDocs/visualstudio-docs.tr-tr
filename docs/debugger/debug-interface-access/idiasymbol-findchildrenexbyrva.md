@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2c80d50d2e1d3fb5a34b5508a8b67569fb0417cb
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: d1a77ba8527698271356fdc324ccefac2dc0f650
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49938870"
 ---
 # <a name="idiasymbolfindchildrenexbyrva"></a>IDiaSymbol::findChildrenExByRVA
-Belirtilen sanal adreste (RVA) geçerli öğenin alt öğelerine simgenin alır.  
+Belirlediğiniz göreli sanal adresten (RVA) geçerli olan alt simge alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,30 +38,30 @@ HRESULT findChildrenExByRVA (
   
 #### <a name="parameters"></a>Parametreler  
  `symtag`  
- [in] ' Da tanımlandığı gibi alınması için alt simge etiketleri belirtir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md). Kümesine `SymTagNull` alınması tüm alt öğeleri için.  
+ [in] Alınacak, alt simge etiketleri sınıfında tanımlandığı gibi belirtir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md). Kümesine `SymTagNull` alınacak tüm alt öğeleri için.  
   
  `name`  
- [in] Alınacak öğenin alt öğelerine adını belirtir. Kümesine `NULL` alınması tüm alt öğeleri için.  
+ [in] Alınacak alt adını belirtir. Kümesine `NULL` alınacak tüm alt öğeleri için.  
   
  `compareFlags`  
- [in] Ad eşleştirme için uygulanacak karşılaştırma seçeneklerini belirtir. Gelen değerleri [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma tek başına veya birlikte kullanılabilir.  
+ [in] Ad eşleştirme için uygulanacak karşılaştırma seçeneklerini belirtir. Değerlerini [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma, tek başına veya birlikte kullanılabilir.  
   
  `address`  
  [in] RVA belirtir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumsymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) alt simge listesini içeren nesne alındı.  
+ [out] Döndürür bir [Idiaenumsymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) alt simge listesini içeren bir nesne alındı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Döndürür `S_OK` simgenin en az bir alt bulunamadı ya da döndürür `S_FALSE` alt öğesi bulundu; Aksi takdirde bir hata kodu döndürür.  
+ Döndürür `S_OK` simgenin en az bir alt öğe bulunamadı ya da döndürür `S_FALSE` alt öğe bulundu; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen yerel semboller dinamik aralık bilgileri içerir.  
+ Döndürülen yerel semboller dinamik aralık bilgilerini içerir.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Dia2.h  
+ Üstbilgi: Dia2.h  
   
- Kitaplığı: diaguids.lib  
+ Kitaplık: diaguids.lib  
   
  DLL: msdia100.dll  
   
@@ -69,4 +70,4 @@ HRESULT findChildrenExByRVA (
  [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)   
  [Idiaenumsymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)   
  [Idiasession::findchildren](../../debugger/debug-interface-access/idiasession-findchildren.md)   
- [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md)
+ [NameSearchOptions Numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md)

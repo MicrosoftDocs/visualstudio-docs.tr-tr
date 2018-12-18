@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: bb62fb0a830c8c3bf6bb9b7ca186e001573b7b37
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9deadc13f8cbe3678282bb2d9ac619959ecd26b3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875924"
 ---
 # <a name="modulesymbolsearchinfo"></a>MODULE_SYMBOL_SEARCH_INFO
 Arandığını sembol arama yolları hakkındaki durum bilgilerini içerir.  
@@ -43,21 +44,21 @@ public struct MODULE_SYMBOL_SEARCH_INFO {
   
 #### <a name="parameters"></a>Parametreler  
  `dwValidFields`  
- Bayraklarını bileşimini [SYMBOL_SEARCH_INFO_FIELDS](../../../extensibility/debugger/reference/symbol-search-info-fields.md) bu yapısı içinde açıklanan arama bilgileri türünü belirtme numaralandırması.  
+ Bayraklarının bir birleşimi [SYMBOL_SEARCH_INFO_FIELDS](../../../extensibility/debugger/reference/symbol-search-info-fields.md) bu yapısı içinde açıklanan arama bilgi türünü belirten sabit listesi.  
   
  `bstrVerboseSearchInfo`  
- Arama yolu ve tek bir dize halinde birleştirilmiş sonuçları.  
+ Arama yolu ve tek bir dize olarak birleştirilmiş sonuçlar.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yapı çağrısından döndürülen [GetSymbolInfo](../../../extensibility/debugger/reference/idebugmodule3-getsymbolinfo.md) yöntemi.  
   
- Varsa `bstrVerboseSearchInfo` alanı boş değil ve ardından arama yolları ve arama sonuçlarını listesini içerir. Listenin sonucu tarafından izlenen bir üç nokta ("..."), ve ardından bir yolu biçimlendirilir. Birden fazla yol sonuç çifti varsa, her bir çifti "\r\n" (satır-return/satır besleme) çifti tarafından ayrılır. Desen şöyle görünür:  
+ Varsa `bstrVerboseSearchInfo` alanı boş değil ve ardından arama yolları ve bu arama sonuçlarının bir listesini içerir. Listenin sonuca göre ve ardından üç nokta ("..."), ardından bir yol ile biçimlendirilir. Birden fazla yol sonuç çifti varsa, her bir çifti "\r\n" (satır başı-başı/satır besleme) çifti tarafından ayrılmış. Desen şöyle görünür:  
   
- \<yolu >... \<sonuç > \r\n\<yolu >... \<sonuç > \r\n\<yolu >... \<sonuç >  
+ \<yolu >... \<sonucu > \r\n\<yolu >... \<sonucu > \r\n\<yolu >... \<sonucu >  
   
- Son girişi \r\n sırası yok unutmayın.  
+ En son giriş \r\n dizisi yok unutmayın.  
   
- Olası işte `bstrVerboseSearchInfo` standart dışı gönderilen dize.  
+ Olası bir işte `bstrVerboseSearchInfo` standart çıkış için gönderilen bir dize.  
   
  `c:\symbols\user32.pdb... File not found.`  
   
@@ -66,12 +67,12 @@ public struct MODULE_SYMBOL_SEARCH_INFO {
  `\\symbols\symbols\user32.dll\0a8sd0ad8ad\user32.pdb... Symbols loaded.`  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetSymbolInfo](../../../extensibility/debugger/reference/idebugmodule3-getsymbolinfo.md)

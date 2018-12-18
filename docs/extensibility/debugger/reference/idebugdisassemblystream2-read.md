@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d9143abac4ce10a2b7305889e1d1a5236c1e9b07
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a5e59ea6c5ab01485b3c022f0504aeae55c3882a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49902638"
 ---
 # <a name="idebugdisassemblystream2read"></a>IDebugDisassemblyStream2::Read
-Ayrıştırılmış akışında geçerli konumundan başlayarak yönergeleri okur.  
+Ayrıştırılmış kodu stream'de geçerli konumundan başlayarak yönergeleri okur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,30 +47,30 @@ int Read(
   
 #### <a name="parameters"></a>Parametreler  
  `dwInstructions`  
- [in] Ayrıştırmak için yönergeler sayısı. Bu değer ayrıca uzunluk üst sınırı olan `prgDisassembly` dizi.  
+ [in] Ayrıştırmak için yönergeler sayısı. Bu değer ayrıca uzunluğunun üst sınırı olan `prgDisassembly` dizi.  
   
  `dwFields`  
- [in] Bayraklarını bileşimini [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md) hangi alanlarının belirten numaralandırma `prgDisassembly` doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md) hangi alanları gösteren numaralandırma `prgDisassembly` doldurulması için.  
   
  `pdwInstructionsRead`  
- [out] Gerçekte çözülürken yönerge sayısını döndürür.  
+ [out] Aslında çözülürken yönerge sayısını döndürür.  
   
  `prgDisassembly`  
- [out] Bir dizi [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) artık hata ayıklayabildiğinize yönerge her bir yapı kodunda bir artık hata ayıklayabildiğinize girilir yapıları. Bu dizi uzunluğu, tarafından dikte edilir `dwInstructions` parametresi.  
+ [out] Bir dizi [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) ayrıştırılmış kodu, ayrıştırılmış yönerge başına bir yapı doldurulur yapılar. Bu dizinin uzunluğu tarafından dikte `dwInstructions` parametresi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Geçerli kapsamda kullanılabilir yönergeleri sayısı çağırarak elde edilebilir [GetSize](../../../extensibility/debugger/reference/idebugdisassemblystream2-getsize.md) yöntemi.  
+ Geçerli kapsamdaki kullanılabilir olan yönergeleri sayısı çağrılarak alınabilir [GetSize](../../../extensibility/debugger/reference/idebugdisassemblystream2-getsize.md) yöntemi.  
   
- Burada sonraki yönerge okunur gelen geçerli konumu çağırarak değiştirilebilir [Seek](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md) yöntemi.  
+ Burada sonraki yönergesi okuma geçerli konumu çağırarak değiştirilebilir [arama](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md) yöntemi.  
   
- `DSF_OPERANDS_SYMBOLS` Bayrağı eklenebilir `DSF_OPERANDS` içinde bayrak `dwFields` sembol adları yönergeleri ayırma zaman kullanılması gerektiğini belirtmek için parametre.  
+ `DSF_OPERANDS_SYMBOLS` Bayrağı eklenebilir `DSF_OPERANDS` bayrağını `dwFields` sembol adlarını yönergeleri derlemesini açma işlemlerini uygulama zaman kullanılması gerektiğini belirtmek için parametre.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDisassemblyStream2](../../../extensibility/debugger/reference/idebugdisassemblystream2.md)   
  [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md)   
  [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md)   
  [GetSize](../../../extensibility/debugger/reference/idebugdisassemblystream2-getsize.md)   
- [Arama](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md)
+ [Seek](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md)

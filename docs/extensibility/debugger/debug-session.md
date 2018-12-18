@@ -1,5 +1,5 @@
 ---
-title: Hata ayıklama oturumu | Microsoft Docs
+title: Oturum hatalarını ayıklama | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,19 +13,20 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cf0fd986e5a3c0dbbe515e0338c4ca6007fd4162
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 67734025b70ee6f910ed46f034dcfb1b10135cc3
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203783"
 ---
-# <a name="debug-session"></a>Oturum hata ayıklama
-Hata ayıklayıcı mimarisi bakımından bir **oturum**:  
+# <a name="debug-session"></a>Oturum hatalarını ayıklama
+Hata ayıklayıcı mimarisi bakımından bir *oturumu*:  
   
--   İlgili veya ilgisiz belirlenen tüm işler, başlatılan veya silinmiş IDE tek bir örneğinden bağlı olur.  
+-   İlgili veya ilgisiz tüm kümesini işler, başlatılan veya IDE'nin tek bir örneğinden bağlı olur.  
   
--   Bir oturum hata ayıklama Yöneticisi (SDM) tarafından uygulanır. Daha fazla bilgi için bkz: [oturum hata ayıklama Yöneticisi](../../extensibility/debugger/session-debug-manager.md).  
+-   Oturum hata ayıklama Yöneticisi (SDM) tarafından uygulanır. Daha fazla bilgi için [oturum hata ayıklama Yöneticisi](../../extensibility/debugger/session-debug-manager.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Oturum hata ayıklama Yöneticisi](../../extensibility/debugger/session-debug-manager.md)   
- [Hata Ayıklayıcı Kavramları](../../extensibility/debugger/debugger-concepts.md)
+ [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)

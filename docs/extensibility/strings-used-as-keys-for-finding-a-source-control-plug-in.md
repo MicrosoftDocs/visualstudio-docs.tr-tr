@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31137680"
 ---
 # <a name="strings-used-as-keys-for-finding-a-source-control-plug-in"></a>Kaynak denetimi eklenti bulmak için anahtar olarak kullanılan dizeleri
 Kaynak denetimi hakkında bilgi eklenti bulmak için kayıt defteri erişim tuşları dizelerdir.  

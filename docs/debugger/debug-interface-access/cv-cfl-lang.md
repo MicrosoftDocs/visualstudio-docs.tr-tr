@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c383fd188c035dfacf41cdf86a84b4afe8dfa40d
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 63426af550894df0e9796babaec91ff5758bbf1e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49909922"
 ---
 # <a name="cvcfllang"></a>CV_CFL_LANG
-Uygulama veya bağlantılı modülü kaynak kod dilini belirtir.  
+Bağlantılı modül ve uygulama kaynak kod dilini belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,43 +50,43 @@ typedef enum CV_CFL_LANG {
   
 ## <a name="elements"></a>Öğeleri  
  CV_CFL_C  
- C. uygulama dildir  
+ Uygulama dilidir C.  
   
  CV_CFL_CXX  
- Uygulama, C++ dilidir.  
+ C++ uygulama dilidir.  
   
  CV_CFL_FORTRAN  
  Uygulama, FORTRAN dilidir.  
   
  CV_CFL_MASM  
- Uygulama, Microsoft makro derleyici dilidir.  
+ Uygulama, Microsoft Macro Assembler dilidir.  
   
  CV_CFL_PASCAL  
  Uygulama, Pascal dilidir.  
   
  CV_CFL_BASIC  
- Uygulama, BASIC dilidir.  
+ Uygulama, temel dilidir.  
   
  CV_CFL_COBOL  
  Uygulama, COBOL dilidir.  
   
  CV_CFL_LINK  
- Uygulama bir bağlayıcı tarafından oluşturulan bir modüldür.  
+ Uygulama bağlayıcı tarafından oluşturulan bir modüldür.  
   
  CV_CFL_CVTRES  
- CVTRES aracıyla dönüştürülen bir kaynak modül uygulamasıdır.  
+ CVTRES aracıyla dönüştürülen bir kaynak modülü uygulamasıdır.  
   
  CV_CFL_CVTPGD  
- Uygulama CVTPGD aracı ile oluşturulan bir en iyi duruma getirilmiş POGO modüldür.  
+ Uygulama CVTPGD aracıyla oluşturulan POGO en iyi duruma getirilmiş bir modüldür.  
   
  CV_CFL_CSHARP  
  Uygulama C# dilidir.  
   
  CV_CFL_VB  
- Uygulama, Visual Basic dilidir.  
+ Visual Basic uygulama dilidir.  
   
  CV_CFL_ILASM  
- Uygulama Ara dile derleme (diğer bir deyişle, ortak dil çalışma zamanı (CLR) derleme) dilidir.  
+ Uygulama dili Ara dil (diğer bir deyişle, ortak dil çalışma zamanı (CLR) derleme) derlemesidir.  
   
  CV_CFL_JAVA  
  Java uygulama dilidir.  
@@ -94,17 +95,17 @@ typedef enum CV_CFL_LANG {
  Uygulama, Jscript dilidir.  
   
  CV_CFL_MSIL  
- Uygulama dilidir bir bilinmeyen Microsoft Ara dili (MSIL), kullanarak büyük olasılıkla bir sonucu [/LTCG (bağlama zamanı kodu oluşturma)](/cpp/build/reference/ltcg-link-time-code-generation) geçin.  
+ Uygulama dilidir bir bilinmeyen Microsoft Ara dil (MSIL) kullanarak, büyük olasılıkla bir sonuç [/LTCG (bağlama zamanı kodu oluşturma)](/cpp/build/reference/ltcg-link-time-code-generation) geçin.  
   
  CV_CFL_HLSL  
- Uygulama, yüksek düzey gölgelendirici dil dilidir.  
+ Uygulama, yüksek düzey gölgelendirici dili dilidir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu numaralandırma değerleri için yapılan bir çağrı tarafından döndürülen [Idiasymbol::get_language](../../debugger/debug-interface-access/idiasymbol-get-language.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: cvconst.h  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [IDiaSymbol::get_language](../../debugger/debug-interface-access/idiasymbol-get-language.md)

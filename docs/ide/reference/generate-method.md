@@ -1,19 +1,20 @@
 ---
-title: Visual Studio'da bir yöntem oluşturma | Microsoft Docs
-ms.custom: ''
+title: Bir yöntem oluşturma
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 492c61661ad72b1a2207ce06fef4266930da9ebd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1e5cf156c6c17e8a9bf1fb9f40f75c1e72b7be94
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057184"
 ---
 # <a name="generate-a-method-in-visual-studio"></a>Visual Studio'da bir yöntem oluşturma
 
@@ -27,45 +28,45 @@ Bu kod oluşturma için geçerlidir:
 
 **Ne zaman:** yeni bir yöntem ve düzgün bir şekilde, otomatik olarak bildirmek istiyor.
 
-**Neden:** ancak, bu özellik bildirimi otomatik olarak oluşturur, yöntemi ve parametreleri, kullanmadan önce bildirebilirsiniz.
+**Neden:** ancak bu özellik bildirimi otomatik olarak oluşturur, yöntemi ve parametreleri, kullanmadan önce bildirebilirsiniz.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. İmlecinizi satıra yerleştirin kırmızı dalgalı olduğu. Kırmızı dalgalı henüz mevcut olmayan bir yöntemi gösterir.
+1. İmlecinizi satıra Yerleştir kırmızı dalgalı olduğu. Kırmızı dalgalı çizgi henüz mevcut olmayan bir yöntemi gösterir.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu C#](media/method-highlight-cs.png)
+       ![Vurgulanmış kodu C#](media/method-highlight-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu VB](media/method-highlight-vb.png)
+       ![Vurgulanmış kodu VB](media/method-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
    - **Fare**
-     - Sağ tıklatıp **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
-     - Kırmızı dalgalı getirin ve'ı tıklatın ![Ampul](media/bulb-cs.png) görüntülenen simge.
-     - &nbsp; ![Ampul](media/bulb-cs.png) metin imleci kırmızı dalgalı satırıyla açıksa sol kenar boşluğunda görüntülenen simgesine.
+      - Sağ tıklayıp **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
+      - Kırmızı dalgalı çizgi gelin ve tıklayın ![Ampul](media/bulb-cs.png) Bu simge görünür.
+      - &nbsp; ![Ampul](media/bulb-cs.png) kırmızı dalgalı çizgi içeren satırda metin imleci ise sol kenar boşluğunda görünür simge.
 
-    ![Yöntem Önizleme oluşturma](media/method-preview-cs.png)
+      ![Önizleme yöntemi oluşturma](media/method-preview-cs.png)
 
-1. Seçin **üretme yöntemi** açılır menüsünden.
+3. Seçin **metodunu üret** aşağı açılan menüden.
 
    > [!TIP]
-   > Kullanım **Önizleme değişiklikleri** önizleme penceresinin altındaki bağlantıyı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak seçiminizi yaptıktan önce.
+   > Kullanım **değişiklik önizlemesi** Önizleme pencerenin alt kısmındaki bağlantı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak, seçim yapmadan önce.
 
-   Yöntemi, kullanımdan çıkarımı yapılan herhangi bir parametre ile oluşturulur.
+   Yöntemi, kullanımdan çıkarılan herhangi bir parametre ile oluşturulur.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-      ![Yöntem sonuç C# oluştur](media/method-result-cs.png)
+       ![Yöntem sonuç C# oluştur](media/method-result-cs.png)
 
    - Visual Basic:
 
-      ![Yöntem sonuç VB oluştur](media/method-result-vb.png)
+       ![Yöntem sonuç VB oluştur](media/method-result-vb.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

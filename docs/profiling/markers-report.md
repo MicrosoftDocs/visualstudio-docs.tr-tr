@@ -12,34 +12,35 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3b46cb18e1972d22010ce356f1d9208f391f6d79
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2ccb9c11d39d0500eab0698dc2907ab983964753
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49881631"
 ---
 # <a name="markers-report"></a>İşaretçiler Raporu
-İşaretçiler raporu görüntülenen zaman çerçevesi içinde işaretlerinin listeler.  Yatay kaydırma veya yakınlaştırma veya yolları, gizleme görünmesini veya kayboluyor işaretçileri neden olabilir. Rapor her işaret ilgili bu bilgiler içerir:  
+İşaretçiler raporu görüntülenen zaman çerçevesi içinde işaretlerinin listeler.  Yatay yakınlaştırma veya kulvarları, gizleme görünmesini veya kaybolmasını işaretçileri neden olabilir. Rapor, her işaret hakkındaki bu bilgileri içerir:  
   
--   Ne zaman onu, izlemeyi Başlat göre başladığı zaman.  
+- Bu, göreli izleme başlangıcını başladığında süre.  
   
--   Süresi. Anlık gösterdiğinden süresi bayrakları ve iletileri için sıfır olur.  
+- Süresi. Süre bayrakları ve iletileri için sıfır çünkü bir anı temsil ederler.  
   
--   Bu üretilen iş parçacığı kimliği.  
+- Oluşturulan iş parçacığı kimliği.  
   
--   Bu oluşturulan olay izleme için Windows (ETW) sağlayıcısı.  
+- Bu oluşturulan olay izleme için Windows (ETW) sağlayıcısı.  
   
--   İşaretçi seri içinden yazıldı.  
+- İşaret serisi içinden yazılmıştır.  
   
--   Ait olduğu olay kategorisi.  
+- Olayların ait kategori.  
   
--   Kendi önem düzeyi.  
+- Kendi önem düzeyi.  
   
--   (Aralık, bayrak veya ileti) türü.  
+- (Aralık, bayrağı veya ileti) türü.  
   
--   Neyin temsil ettiğini bir üst düzey açıklaması  
+- Neyin temsil üst düzey açıklaması  
   
- Seçin **verme** düğmesi işaretçiler raporu bir CSV dosyası olarak kaydedin. Diğer uygulamalar veya Araçlar CSV dosyasındaki veri kullanabilirsiniz.  
+  Seçin **dışarı** düğmesini işaretçiler raporu CSV dosyası olarak kaydedin. Diğer uygulamalar veya Araçlar CSV dosyasındaki verileri kullanabilirsiniz.  
   
 > [!NOTE]
->  İşaretçiler raporu 1.000 işaretleyicileri görüntüleyebilirsiniz. Tüm işaretlerin görmek için bir CSV dosyasına tam raporu dışarı aktarın.
+>  İşaretçiler raporu 1.000 işaretleyicileri görüntüleyebilirsiniz. Tüm işaretleri görmek için bir CSV dosyasına tam raporu dışarı aktarın.

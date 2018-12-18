@@ -1,5 +1,5 @@
 ---
-title: Test kaynak denetimi eklentiler için Kılavuzu | Microsoft Docs
+title: Test kaynak denetimi eklentileri için Kılavuzu | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -17,83 +17,84 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 37af6a289b59b6066a71836e4d44e380b584ec70
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8df70ef5fcaffb7fe2e06df5b6d47e526ff5162f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49828266"
 ---
-# <a name="test-guide-for-source-control-plug-ins"></a>Kaynak denetimi eklentiler için test Kılavuzu
-Bu bölümde, kaynak denetim eklentisi ile test etmek için yönergeler sağlanmaktadır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. En yaygın test alanları yanı sıra bazı sorunlu olabilecek daha karmaşık alanlar kapsamlı bir bakış sağlanır. Bu genel bakışta test çalışmalarının kapsamlı bir liste olması düşünülmemiştir.  
+# <a name="test-guide-for-source-control-plug-ins"></a>Kaynak Denetimi Eklentileri için Test Kılavuzu
+Bu bölümde, kaynak denetimi eklentisi ile test etmek için yönergeler sağlanmaktadır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Test en yaygın alanlara ek olarak bazı sorunlu olabilecek daha karmaşık alanları kapsamlı bir bakış sağlanır. Bu genel bakış, test çalışmalarının kapsamlı bir liste olarak tasarlanmamıştır.  
   
 > [!NOTE]
->  Bazı hata düzeltmeleri ve en son geliştirmeleri [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE mevcut kaynak denetim daha önce önceki sürümlerini kullanırken karşılaşılan değil eklentileri sorunları ortaya çıkarmaya [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Hiçbir eklenti için önceki sürümü bu yana yapılan değişiklikler olsa bile bu bölümde, numaralandırılmış alanlar için eklenti, mevcut kaynak denetimi test kesinlikle önerilir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
+>  Bazı hata düzeltmeleri ve geliştirmeleri en son [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE, var olan kaynak denetimi daha önce önceki sürümlerini kullanırken karşılaşılan değil eklentileri ile ilgili sorunlar ortaya [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Hiçbir eklenti için önceki sürümden itibaren yapılan değişiklikler olsa bile, var olan kaynak denetimi eklentisi Bu bölümde, numaralandırılan alanlarda test önemle tavsiye edilir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
   
 ## <a name="common-preparation"></a>Ortak hazırlama  
- Bir makine [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ve yüklü, hedef kaynak denetim eklentisi gereklidir. Benzer şekilde yapılandırılmış ikinci bir makine açık kaynak denetimi testlerden bazıları için kullanılabilir.  
+ Bir makine [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ve yüklü, hedef kaynak denetimi eklentisi gereklidir. Benzer şekilde yapılandırılmış bir ikinci makine, açık kaynak denetimi testlerden bazıları için kullanılabilir.  
   
-## <a name="definition-of-terms"></a>Terimlerin tanımı  
+## <a name="definition-of-terms"></a>Koşulları tanımı  
  Bu test Kılavuzu amacıyla aşağıdaki terim tanımları kullanın:  
   
  İstemci projesi  
- Herhangi bir proje türü kullanılabilir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kaynak denetimi tümleştirmesinin destekleyen (örneğin, [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)], [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], veya [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)]).  
+ Herhangi bir proje türü kullanılabilir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kaynak denetimi tümleştirmesini destekleyen (örneğin, [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)], [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], veya [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)]).  
   
  Web projesi  
- Web projeleri dört tür vardır: dosya sistemi, yerel IIS, uzak siteleri ve FTP.  
+ Web projeleri dört tür vardır: dosya sistemi, yerel IIS, uzak sitelerin ve FTP.  
   
--   Dosya sistemi projeleri bir yerel yol oluşturulur, ancak dahili bir UNC yolu erişilen ve istemci projeleri benzediğini IDE içinde kaynak denetiminden altına yerleştirilmiş olarak yüklenmesi için Internet Information Services (IIS) gerektirmez.  
+- Dosya sistemi projeleri bir yerel yolda oluşturulur, ancak dahili olarak bir UNC yolu erişilen ve istemci projeleri gibi IDE içinde kaynak denetimi altında yerleştirilmiş olarak yüklenmesi için Internet Information Services (IIS) gerektirmez.  
   
--   Yerel IIS projeleri aynı makinede yüklü olduğundan ve erişilen IIS yerel makineye işaret eden bir URL ile birlikte çalışın.  
+- Yerel IIS projeleri aynı makineye yüklenir ve erişilen IIS yerel makineye işaret eden bir URL ile çalışın.  
   
--   Uzak siteleri projeleri Ayrıca IIS hizmetleri altında oluşturulan, ancak IIS server makinesinde ve değil, kaynak denetimindeki yerleştirilen içinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE.  
+- Uzak siteleri projeleri aynı zamanda bir IIS hizmetleri altında oluşturulan, ancak IIS sunucu makinesinde ve değil, kaynak denetimi altında yerleştirilmiş içinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE.  
   
--   FTP projeleri uzak bir FTP sunucusu üzerinden erişilen ancak kaynak denetimi altında yerleştirilemez.  
+- FTP projeleri uzak bir FTP sunucusu üzerinden erişilen ancak kaynak denetimi altında yerleştirilemez.  
   
- Kaydı  
- Çözüm ya da kaynak denetimi altında proje için başka bir terim.  
+  Liste  
+  Çözüm veya projeyi kaynak denetimi altında için başka bir terim.  
   
- Sürüm deposu  
- Kaynak Denetim eklentisi API aracılığıyla erişilen kaynak denetim veritabanı.  
+  Sürüm Store  
+  Kaynak Denetimi Eklentisi API aracılığıyla erişilen kaynak denetimi veritabanı.  
   
-## <a name="test-areas-covered-in-this-section"></a>Bu bölümde yer alan test alanları  
+## <a name="test-areas-covered-in-this-section"></a>Bu bölümde yer alan test alanlarını  
   
--   [Test alanı 1: Kaynak denetiminden Aç / ekleyin](../../extensibility/internals/test-area-1-add-to-open-from-source-control.md)  
+-   [Test Alanı 1: Kaynak Denetimine Ekleme/Kaynak Denetiminden Açma](../../extensibility/internals/test-area-1-add-to-open-from-source-control.md)  
   
     -   Case 1a: kaynak denetimine Çözüm Ekle  
   
-    -   Case 1b: kaynak denetiminden çözümü açın  
+    -   Case 1b: kaynak denetiminden çözüm Aç  
   
-    -   Case 1c: kaynak denetiminden çözüme ekleyin  
+    -   Case 1c: kaynak denetiminden çözüm ekleyin  
   
 -   [Test Alanı 2: Kaynak Denetiminden Alma](../../extensibility/internals/test-area-2-get-from-source-control.md)  
   
--   [Test alanı 3: Kullanıma / kullanıma almayı geri al](../../extensibility/internals/test-area-3-check-out-undo-checkout.md)  
+-   [Test Alanı 3: Kullanıma Alma/Kullanıma Almayı Geri Alma](../../extensibility/internals/test-area-3-check-out-undo-checkout.md)  
   
-    -   Durum 3: Kullanıma / kullanıma almayı geri al  
+    -   3. durum: Kullanıma / kullanıma almayı geri al  
   
     -   Case 3a: gözden geçirin  
   
-    -   Case 3b: Checkout bağlantısı kesildi  
+    -   3b durum: kullanıma alma bağlantısı kesildi  
   
-    -   Case 3c: Sorgu düzenleme/sorguyu kaydetmek (QEQS)  
+    -   Case 3c: Sorgu düzenleme/sorgu kaydetme (QEQS)  
   
     -   3B case: Sessiz kullanıma alma  
   
-    -   Case 3e: kullanıma almayı geri alma  
+    -   Case 3e: geri alma  
   
 -   [Test Alanı 4: İade Etme](../../extensibility/internals/test-area-4-check-in.md)  
   
-    -   Case 4a: öğeler  
+    -   Case 4a: öğeleri değiştirdiği  
   
     -   Case 4b: dosya ekleme  
   
-    -   Bu durumda 4 c: projelerine ekleme  
+    -   Case 4 c: Proje ekleme  
   
 -   [Test Alanı 5: Kaynak Denetimini Değiştirme](../../extensibility/internals/test-area-5-change-source-control.md)  
   
     -   Case 5a: bağlama  
   
-    -   Case 5b: bağlantı kesme  
+    -   Case 5b: Unbind  
   
     -   Case 5c: yeniden bağlayın  
   

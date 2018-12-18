@@ -1,0 +1,44 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 3aa9639c75d791d21803f803536042d0c4cdc3b2
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062447"
+documentType: LandingData
+title: Visual Studio'da bilişsel hizmetler
+metadata:
+  title: Bilişsel hizmetler | Microsoft Docs
+  meta.description: Tutorials and conceptual articles about connecting apps and services to cognitive services in Azure.
+  ms.custom: seohack18
+  author: ghogen
+  manager: douge
+  ms.prod: visual-studio-dev15
+  ms.technology: vs-azure
+  ms.topic: landing-page
+  ms.date: 10/09/2018
+  ms.author: ghogen
+sections:
+- title: Bilişsel Hizmetler'e görselle uygulamalarınızı bağlayın Studio bağlı hizmetler
+  items:
+  - type: paragraph
+    text: "Visual Studio için bir dizi güçlü yapay zeka işlevselliği sağlayan Bilişsel hizmetler gibi Azure hizmetlerini çeşitli uygulama veya hizmet projenizi bağlama için kullanışlı bir yol sağlar. Tüm yapılandırma sizin için otomatik olarak yapılır beri büyük ölçüde Visual Studio bağlı Hizmetler'i kullanarak geliştirme sürecini basitleştirir. Bir öğretici için hangi hizmet desteği projenize eklemek istediğiniz seçin:"
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg
+      text: Metin Analizi
+      href: /azure/cognitive-services/text-analytics/vs-text-connected-service
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg
+      text: Bing haber arama
+      href: /azure/cognitive-services/bing-news-search/vs-bing-news-search-connected-service
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg
+      text: Yüz tanıma API'si
+      href: /azure/cognitive-services/face/vs-face-connected-service
+    - image:
+        src: https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg
+      text: Görüntü İşleme
+      href: /azure/cognitive-services/computer-vision/vs-computer-vision-connected-service

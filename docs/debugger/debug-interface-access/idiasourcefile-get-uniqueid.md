@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3714ce733b0388e3ac462a9495360171971a6750
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e2c2996513f3e6464d8f94522c2b427213882f6a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49860792"
 ---
 # <a name="idiasourcefilegetuniqueid"></a>IDiaSourceFile::get_uniqueId
-Bu görüntü için benzersiz bir basit tamsayı anahtar değeri alır.  
+Bu görüntü için benzersiz olan bir basit tamsayı anahtar değeri alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT get_uniqueId (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Bu görüntü için benzersiz bir basit tamsayı anahtar değeri döndürür.  
+ [out] Bu görüntü için benzersiz olan bir basit tamsayı anahtar değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Dizeleri satır numarası işleme hızlandırabilir yerine anahtarları karşılaştırma.  

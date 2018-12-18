@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: afe999ea56dbbdfd2179307f69ec12df92c612e9
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d145b57b2cacce68b609ddc7aea5cef41cf69762
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34764624"
 ---
 # <a name="disk-operations-report-threads-view"></a>Disk İşlemleri Raporu (İş Parçacıkları Görünümü)
 Disk işlemleri raporu disk kanallarında disk g/ç işlemlerini gösterir.  
@@ -43,5 +44,5 @@ Disk işlemleri raporu disk kanallarında disk g/ç işlemlerini gösterir.
   
 -   Milisaniye cinsinden yazma gecikmesi  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

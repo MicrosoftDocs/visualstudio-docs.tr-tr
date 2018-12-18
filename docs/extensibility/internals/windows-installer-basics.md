@@ -1,5 +1,5 @@
 ---
-title: Windows Installer temel kavramları | Microsoft Docs
+title: Windows Installer temel bilgileri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,64 +14,65 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8fba35aba1e1947ee4eeeb59ca2225253e2aa3a8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 73d1462cd6a5dacf57939ae06e7b490235483a60
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49843138"
 ---
-# <a name="windows-installer-basics"></a>Windows Installer temelleri
-Windows Installer yükler ve uygulamalar veya yazılım ürünleri bir kullanıcının bilgisayarındaki, Windows Installer bileşenleri (WICs veya yalnızca bileşenleri de denir) olarak adlandırılan birimler halinde bu görevleri gerçekleştiren kaldırır. Bir GUID temel birimidir, yükleme ve başvuru Windows Yükleyicisi'ni kullanarak kurulumlarını sayım her WIC tanımlar.  
+# <a name="windows-installer-basics"></a>Temel Windows Installer Bilgileri
+Windows Installer yükler ve uygulamalar veya yazılım ürünlerinin bir kullanıcının bilgisayarında Windows Yükleyici bileşenlerini (bazen WICs veya yalnızca bileşenleri olarak adlandırılır) olarak adlandırılan birimler içinde bu görevleri gerçekleştirmeye kaldırır. Bir GUID, yükleme ve başvuru sayımı Windows Installer kullanarak ayarları için temel birimdir her WIC tanımlar.  
   
- Windows Installer'ın kapsamlı belgeler için Platform SDK konusuna bakın [Windows Installer](http://msdn.microsoft.com/library/aa372866.aspx).  
+ Windows Installer'ın kapsamlı belgeler için Platform SDK'sı, konusuna [Windows Installer](http://msdn.microsoft.com/library/aa372866.aspx).  
   
-## <a name="authoring-a-vspackage"></a>Bir VSPackage yazma  
- Windows Installer, Windows Installer yüklemek, kaldırmak veya bir ürün onarmak için ve Kurulum kullanıcı arabirimi (UI) çalıştırmak için gereken bilgileri içeren yükleme paketleri kullanır. Her yükleme paketi bir yükleme veritabanı, bir özet bilgileri akış ve veri akışlarını yüklemesinin çeşitli bölümlerini içeren bir .msi dosyası içerir. Yükleyici kullanmak için bir yükleme yazmanız gerekir. Yükleyici bileşenleri kavramı çevresinde yüklemeleri düzenler ve ilişkisel bir veritabanında yüklenmesiyle ilgili bilgileri depolar için kapsamlı bir yükleme paketi yazma işlemi aşağıdaki adımları kapsar:  
+## <a name="authoring-a-vspackage"></a>VSPackage geliştirme  
+ Windows Installer, Windows Installer yükleme, kaldırma veya bir ürünü onarın ve Kurulum kullanıcı arabirimi (UI) çalıştırmak için gereken bilgileri içeren yükleme paketleri kullanır. Her yükleme paketini yükleme veritabanı, Özet bilgi akışı ve veri akışları için yükleme çeşitli kısımlarını içeren bir .msi dosyasını içerir. Yükleyici kullanmak için bir yükleme yazmanız gerekir. Yükleyici bileşenlerini kavramı çevresinde yüklemeleri düzenler ve yükleme hakkında bilgi ilişkisel bir veritabanında depolar için geniş bir yükleme paketi yazma işlemi aşağıdaki adımları kapsar:  
   
-1.  Sürüm oluşturma ve yan yana stratejileri desteklemek için yazma kurulumunuzu planlayın.  
+1. Sürüm oluşturma ve yan yana stratejileri desteklemek için yazma kurulumunuzu planlayın.  
   
-2.  Kullanıcılara sunulması için özellikleri tanımlayın.  
+2. Kullanıcılara sunulması için özellikleri tanımlayın.  
   
-3.  VSPackage ve bağımlılıkları bileşenlerine düzenleyin.  
+3. VSPackage'ı ve bağımlılıkları bileşenlerine düzenleyin.  
   
-4.  Yükleme veritabanı bilgileri ile doldurun.  
+4. Yükleme veritabanı bilgileri ile doldurun.  
   
-5.  Yükleme paketi doğrulayın.  
+5. Yükleme paketini doğrula.  
   
- Bu belge, öncelikle birinci ve üçüncü adımları işleminin ile ilgilidir. Sürüm ve sonraki sürümleri için hesap stratejisi bakım çerçeve için şu adımları sırasında VSPackage özelliklerinizi WICs organize [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Kalan üç adımı ayrıntı Platform SDK'sındaki Windows Installer belgelerinde ele alınmaktadır.  
+   Bu belge, öncelikli olarak birinci ve üçüncü adımlarla işleminin ilgilidir. Sürüm oluşturma ve hizmet sunma stratejisi sonraki sürümleri için hesap için çerçeve için bu adımları sırasında VSPackage özelliklerinizi WICs düzenlemenize [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Kalan üç adımı ayrıntılı olarak Windows Installer Platform SDK belgelerinde ele alınmaktadır.  
   
-## <a name="key-terms"></a>Anahtar terimleri  
- Windows Installer teknolojisi ilgili anahtar terimlerin tanımları verilmiştir.  
+## <a name="key-terms"></a>Önemli terimler  
+ İçin Windows Yükleyici teknolojisi ilgili anahtar terimlerin tanımları aşağıda verilmiştir.  
   
  Kaynak  
- Dosyaları, kayıt defteri anahtarlarını, kısayolları, veya vb., yüklenmiş olabilir bir bilgisayar. Bu kaynakları mantıksal olarak Windows Installer bileşenlerine gruplandırılır.  
+ Dosyaları, kayıt defteri anahtarlarını, kısayolları, veya vb., yüklenmiş olabilir bir bilgisayara. Bu kaynakları mantıksal olarak Windows Yükleyici bileşenlerini gruplandırılır.  
   
- Windows Installer bileşeni (WIC)  
- Yüklü olan ve bir birim olarak kaldırılması ilgili kaynaklar mantıksal bir gruplandırmasını gösteren yükleme temel birimidir. Windows Installer bileşenleri bir benzersiz bileşen kimliği veya GUID tarafından tanımlanır. Ayrıca, Windows Installer, başvuru WIC düzeyinde sayım tutar. En yüksek sürüm esneklik için DLL gibi birden fazla birincil kaynağı verilen WIC içerir. Tanımlamak ve bir WIC doldurmak, bir GUID vermek ve bunu dağıttıktan sonra birleşim değiştiremeyeceğinizi unutmayın. Daha fazla bilgi için bkz: [bileşenleri düzenleme uygulamalara](http://msdn.microsoft.com/library/aa370561.aspx).  
+ Windows Installer component (WIC)  
+ Yükleme yüklü olan ve kaldırılmış bir birim olarak ilgili kaynakların mantıksal bir gruplandırmasını gösteren temel birimidir. Windows Yükleyici bileşenlerini bir bileşen benzersiz kimliği veya GUID tarafından tanımlanır. Ayrıca, Windows Installer WIC düzeyinde sayım, başvuru tutar. En yüksek sürüm esneklik için bir DLL gibi birden fazla birincil kaynak belirli bir WIC içerir. Sizi tanımlamak ve bir WIC doldurmak, bir GUID verin ve dağıttıktan sonra kendi bileşim değiştiremeyeceğinizi unutmayın. Daha fazla bilgi için [bileşenleri düzenleme uygulamalarınızı](/windows/desktop/Msi/organizing-applications-into-components).  
   
- Paket (Redist paketi)  
- .Msi dosyası ve dış kaynak dosyalar bu dosyayı işaret edebilir oluşur dağıtım birimidir. Bir paketi, Windows Installer UI çalıştırın ve yükleme veya uygulamayı kaldırmak için gereken tüm bilgileri içerir.  
+ Paket (yeniden dağıtılabilir paketi)  
+ .Msi dosyasını ve dış kaynak dosyaları bu dosyayı işaret ediyor olabilir oluşan bir dağıtım birimidir. Bir paketi Windows Installer kullanıcı arabirimini çalıştırın ve yüklemek veya uygulamayı kaldırmak için gereken tüm bilgileri içerir.  
   
  .msi dosyası  
- Yönergeler ve bir uygulamayı yüklemek için gerekli verileri içeren bir COM yapılandırılmış depolama dosyası. Her paketi en az bir .msi dosyası içerir. .Msi dosyasını yükleyici veritabanı, bir özet bilgileri akış ve büyük olasılıkla bir veya daha fazla dönüşümler ve iç kaynak dosyaları içerir. Dosyaların yüklenmesine bir dolap sıkıştırılmış ve .msi dosyasını akışında depolanan veya depolanan, sıkıştırılmış veya sıkıştırılmamış kaynak ortamdaki .msi dosyası dışında. Daha fazla bilgi için bkz: [Windows Installer dosya uzantıları](http://msdn.microsoft.com/library/aa372842\(VS.85\).aspx).  
+ Yönergeler ve bir uygulamayı yüklemek için gereken verileri içeren bir COM yapılandırılmış depolama dosyası. Her paket, en az bir .msi dosyasını içerir. .Msi dosyasını yükleyici veritabanı, bir Özet bilgi akışı ve büyük olasılıkla bir veya daha fazla dönüşümler ve iç kaynak dosyaları içerir. Yüklenecek dosyaları bir dolap sıkıştırılmış ve .msi dosyasına bir akışa depolanır veya depolanan, sıkıştırılmış veya sıkıştırılmamış kaynak ortamdaki .msi dosyasını dışında. Daha fazla bilgi için [Windows Installer dosya uzantıları](/windows/desktop/Msi/windows-installer-file-extensions).  
   
 ## <a name="windows-installer-rules-enforcement"></a>Windows Installer kuralları zorlama  
- İki kural kümesini kurulumunuzu ait bileşenleri kaynaklarına dağıtımını belirler. İkinci Küme yükleme yazar olarak zorlaması gereken sırada bir kural kümesi Windows Installer kendisi tarafından korunur.  
+ İki kural kümesi kurulumunuzu ait bileşenleri kaynaklarında dağıtımını belirleyin. İkinci Küme yükleme yazarı olarak uygulamalıdır sırada bir kural kümesi Windows Installer kendisi tarafından korunur.  
   
 > [!NOTE]
->  Yalnızca .msi dosyanızın bir doğrulama çalıştırırsanız Windows Installer kural zorlama oluşur. Bununla birlikte, bu kurallar en iyi yöntemler olarak işlemek için dikkatli olmalıdır. Daha fazla bilgi için bkz: [bir yükleme veritabanı doğrulama](http://msdn.microsoft.com/library/aa372477\(VS.85\).aspx) ve [paket doğrulama](http://msdn.microsoft.com/library/aa370569\(VS.85\).aspx).  
+>  Yalnızca .msi dosyasının bir doğrulama çalıştırırsanız, Windows Installer kural zorlama gerçekleşir. Bununla birlikte, bu kurallar en iyi yöntemler olarak değerlendirilecek dikkatli olmalıdır. Daha fazla bilgi için [yükleme veritabanı doğrulanıyor](/windows/desktop/Msi/validating-an-installation-database) ve [paket doğrulama](/windows/desktop/Msi/package-validation).  
   
 #### <a name="installer-enforced-rules"></a>Yükleyici tarafından zorlanan kuralları  
   
--   Belirli bir bileşene tüm dosyaları aynı dizinine yüklenmelidir. Buna karşılık, klasörlere ayırmak için yüklenen dosyalar bileşenleri ayırmak için ait olmalıdır.  
+-   Belirli bir bileşene tüm dosyalar aynı dizinine yüklenmelidir. Buna karşılık, dosya klasörleri ayırmak için yüklü bileşenleri ayrı ait olmalıdır.  
   
--   Bileşen başına yalnızca bir anahtar yolu olabilir. Tüm bileşen temsil eden yalnızca bir dosya veya kayıt defteri anahtarı anahtar yoludur.  
+-   Bileşen başına yalnızca bir anahtar yolu olabilir. Tüm bileşeni gösteren basit bir dosya veya kayıt defteri anahtarı anahtar yoludur.  
   
 #### <a name="component-provider-responsibilities"></a>Bileşen sağlayıcısı sorumlulukları  
   
--   Sonraki sürümlerde de ayrı ayrı sevk edilebilir herhangi iki kaynakları ayrı bileşenlerinde var olmalıdır. Yalnızca, bu kaynakları hiçbir zaman ayrı olarak sevk belirli zaman kaynakları aynı bileşenin gruplandırılmalıdır. Aslında, önerilir tüm birincil kaynaklar (örneğin, DLL'ler) her zaman ayrı WICs içinde yok. Daha fazla bilgi için bkz: [tanımlama yükleyici bileşenleri](http://msdn.microsoft.com/library/aa368269\(VS.85\).aspx).  
+-   Sonraki sürümlerde de ayrı olarak sevk herhangi iki kaynakları ayrı bileşenler var olmalıdır. Yalnızca bu kaynakları hiçbir zaman ayrı olarak sevk edilir, belirli işiniz kaynakları aynı bileşenin gruplandırılmalıdır. Aslında, önerilir tüm birincil kaynaklar (örneğin, dll) her zaman ayrı WICs içinde mevcut. Daha fazla bilgi için [tanımlama yükleyici bileşenlerini](/windows/desktop/Msi/defining-installer-components).  
   
--   Şimdiye kadar sürümlü bir kaynak içinde birden fazla WIC sevk etmesi.  
+-   Tutulan kaynak hiç olmadığı kadar içinde birden fazla WIC sevk etmesi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Bileşen kuralları bozuk olması durumunda ne olur?](http://msdn.microsoft.com/library/aa372795\(VS.85\).aspx)
+ [Bileşen kuralları bozuk olması durumunda ne olur?](/windows/desktop/Msi/what-happens-if-the-component-rules-are-broken)

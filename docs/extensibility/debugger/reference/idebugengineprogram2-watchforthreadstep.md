@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3f7c897c4c5b8488766f72723f3e85909281abbf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 17be4d47db15a80b2560d71f747e5b93b7e17474
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868345"
 ---
 # <a name="idebugengineprogram2watchforthreadstep"></a>IDebugEngineProgram2::WatchForThreadStep
-İzleyen yürütme için (veya yürütme için izlemeyi durdurur) verilen iş parçacığı üzerinde gerçekleşmesi için.  
+Yürütme için izler (veya yürütme için izlemeyi durdurur) belirli bir iş parçacığı üzerinde gerçekleşmesi için.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,24 +47,24 @@ int WatchForThreadStep(
   
 #### <a name="parameters"></a>Parametreler  
  `pOriginatingProgram`  
- [in] Bir [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) adım adım program temsil eden nesne.  
+ [in] Bir [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) basamaklı program temsil eden nesne.  
   
  `dwTid`  
  [in] İzlemek için iş parçacığı tanımlayıcısını belirtir.  
   
  `fWatch`  
- [in] Sıfır olmayan (`TRUE`) anlamına gelir başlangıç tarafından tanımlanan iş parçacığı üzerine yürütülmek izlerken `dwTid`; Aksi halde, sıfır (`FALSE`) anlamına gelir Durdur üzerinde yürütme için izlemeyi `dwTid`.  
+ [in] Sıfır olmayan (`TRUE`) anlamına gelir Başlat tarafından tanımlanan iş parçacığı üzerindeki yürütme için izlemeyi `dwTid`; Aksi takdirde, sıfır (`FALSE`) anlamına gelir, üzerinde yürütme için İzlemeyi Durdur `dwTid`.  
   
  `dwFrame`  
- [in] Adım türünü denetleyen bir çerçeve dizinini belirtir. Bu olduğunda değeri sıfır (0) "adımla" adım türüdür ve iş parçacığı tarafından tanımlanan her program durması gerektiğini `dwTid` yürütür. Zaman `dwFrame` sıfır, değil "Atla" ve yalnızca iş parçacığı tarafından tanıtılan program durması gerektiğini adım türüdür `dwTid` dizinini, eşit ya da daha yığında çerçevesinde çalıştıran `dwFrame`.  
+ [in] Adım türü denetleyen bir çerçeve dizinini belirtir. Bu olduğunda değeri sıfır (0) "adımla" adımı türüdür ve iş parçacığı tarafından tanımlanan her program durması gerektiğini `dwTid` yürütür. Zaman `dwFrame` sıfır olan "Atla" ve yalnızca tarafından iş parçacığı tanıtılan program durması gerektiğini adım türüdür `dwTid` dizini eşit veya daha yığın çerçeve çalışıyor `dwFrame`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Ne zaman oturum hata ayıklama Yöneticisi'ni (SDM) adımları tarafından tanımlanan bir program `pOriginatingProgram` parametresi bildirir iliştirilmiş tüm diğer programları bu yöntemini çağırarak.  
+ Ne zaman oturum hata ayıklama Yöneticisi (SDM) tarafından tanımlanan, bir program adımları `pOriginatingProgram` parametresi bildirir diğer tüm eklenmiş programlardan bu yöntemi çağırarak.  
   
- Bu yöntem, yalnızca aynı iş parçacığı atlama için geçerlidir.  
+ Bu yöntem, yalnızca aynı iş parçacığı Adımlama için geçerlidir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngineProgram2](../../../extensibility/debugger/reference/idebugengineprogram2.md)   

@@ -1,6 +1,7 @@
 ---
 title: 'CA2114: Yöntem güvenliği türün bir üst kümesi olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 915104e26f16005b8e0b8c4fa092be7c40d1ff7f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 66fe0031380139c55942a1a47f71066a327d5e24
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551434"
 ---
 # <a name="ca2114-method-security-should-be-a-superset-of-type"></a>CA2114: Yöntem güvenliği türün bir üst kümesi olmalıdır
+
 |||
 |-|-|
 |TypeName|MethodSecurityShouldBeASupersetOfType|
@@ -30,33 +33,41 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Bildirim temelli güvenlik türüne sahip ve yöntemlerinden biri sahip aynı güvenlik eylemi bildirimsel güvenliği ve güvenlik eylem [bağlantı talepleri](/dotnet/framework/misc/link-demands), ve türü tarafından kullanıma izinler izinler kümesini değildir yöntemi işaretlidir.
+ Bildirim temelli güvenlik türünde yöntemlerinden birine sahip aynı güvenlik eylemi için bildirime dayalı güvenlik ve güvenlik eylem [bağlantı talepleri](/dotnet/framework/misc/link-demands), ve türüne göre kullanıma izinleri izinler kümesini değildir. yöntem tarafından iade.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bir yöntemi, hem aynı eylemi için bir yöntem ve türü düzeyi bildirimsel güvenliği sahip olmamalıdır. İki denetimleri birleştirilmez; yalnızca yöntemi düzeyi talep uygulanır. Örneğin, bir tür izin talep `X`, ve yöntemlerinden birini talep izin `Y`, kod izni yok `X` yöntemi yürütülemedi.
+## <a name="rule-description"></a>Kural açıklaması
+ Hem yöntem düzeyine hem de tür düzeyine bir bildirim temelli güvenlik aynı eylem için bir yöntem olmamalıdır. İki denetimleri birleştirilmez; yöntem düzeyi isteğe uygulanır. Örneğin, bir tür izin talep ederse `X`, ve yöntemlerinden birini talepleri izni `Y`, kod izni yok `X` metodunu yürütmek için.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Her iki eylemler gerekli olduğundan emin olmak için kodunuzu gözden geçirin. Her iki Eylemler gerekirse, yöntem düzeyi eylem türü düzeyinde belirtilen güvenlik içerdiğinden emin olun. Örneğin türünüz izin talep, `X`, ve kendi yöntemi izin talep gerekir `Y`, yöntem açıkça talep `X` ve `Y`.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Her iki eylem gerekli olduğundan emin olmak için kodunuzu gözden geçirin. Her iki eylem gerekiyorsa, yöntem düzeyi eylem tür düzeyindeki güvenlik içerdiğinden emin olun. Örneğin türüne izin talep ederse `X`, ve onun yöntemi de izin talep gerekir `Y`, yöntemi açıkça talep `X` ve `Y`.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural bir uyarıdan yöntemi türü tarafından belirtilen güvenlik gerektirmiyorsa gizlemek güvenlidir. Ancak, bu normal bir senaryo değildir ve dikkatli tasarımını gözden geçirme gereksinimini gösterebilir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yöntem türü tarafından belirtilen güvenliği gerektirmiyorsa, bu kuraldan bir uyarıyı bastırmak güvenlidir. Ancak, sıradan bir senaryo değildir ve dikkatli bir tasarım incelemesi için bir gereksinimi olduğunu gösteriyor olabilir.
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnek, bu kural ihlal tehlikeleri göstermek için ortam izinleri kullanır. Bu örnekte, uygulama kodu tarafından türü gerekli izni reddetmeden önce güvenli türünün bir örneğini oluşturur. Gerçek dünya tehdit senaryoda, uygulama nesnesinin bir örneği elde etmek için bir başka yolu gerektirir.
+## <a name="example-1"></a>Örnek 1
 
- Aşağıdaki örnekte, kitaplık taleplerini yazma izni bir tür için ve bir yöntem için okuma izni.
+Aşağıdaki örnek, bu kuralın ihlali tehlikeleri göstermek için ortam izinleri kullanır. Bu örnekte, uygulama kodu türü tarafından gerekli izni reddetme önce güvenli türün bir örneğini oluşturur. Tehdit gerçek dünya senaryosunda, uygulama nesnesinin bir örneği elde etmek için başka bir yolu olması gerekir.
 
- [!code-csharp[FxCop.Security.MethodLevelSecurity#1](../code-quality/codesnippet/CSharp/ca2114-method-security-should-be-a-superset-of-type_1.cs)]
+Aşağıdaki örnekte, kitaplık taleplerini yazma izni bir tür için ve bir yöntem için okuma izni.
 
-## <a name="example"></a>Örnek
- Aşağıdaki uygulama kodu türü düzeyi güvenlik gereksinimleri karşılamıyor olsa bile yöntemini çağırarak kitaplığının güvenlik açığı gösterir.
+[!code-csharp[FxCop.Security.MethodLevelSecurity#1](../code-quality/codesnippet/CSharp/ca2114-method-security-should-be-a-superset-of-type_1.cs)]
 
- [!code-csharp[FxCop.Security.TestMethodLevelSecurity#1](../code-quality/codesnippet/CSharp/ca2114-method-security-should-be-a-superset-of-type_2.cs)]
+## <a name="example-2"></a>Örnek 2
 
- Bu örnek şu çıkışı üretir.
+Aşağıdaki uygulama kodu, güvenlik gereksinimleri karşılamıyor olsa bile yöntemi çağırarak Kitaplığı'nın güvenlik açığı gösterir.
 
- **[Tüm izinleri] Kişisel bilgi: 16/6/1964 12:00:00 AM**
- **[yazma izni (talep türüne göre)] kişisel bilgiler: 16/6/1964 12:00:00 AM**
- **[Hayır okuma izni () yöntemi tarafından talep)] kişisel bilgileri erişilemedi: isteği başarısız oldu.**
-## <a name="see-also"></a>Ayrıca Bkz.
- [Güvenli kodlama yönergeleri](/dotnet/standard/security/secure-coding-guidelines) [bağlantı talepleri](/dotnet/framework/misc/link-demands) [veri ve modelleme](/dotnet/framework/data/index)
+[!code-csharp[FxCop.Security.TestMethodLevelSecurity#1](../code-quality/codesnippet/CSharp/ca2114-method-security-should-be-a-superset-of-type_2.cs)]
+
+Bu örnek aşağıdaki çıktıyı üretir:
+
+```txt
+[All permissions] Personal information: 6/16/1964 12:00:00 AM
+[No write permission (demanded by type)] Personal information: 6/16/1964 12:00:00 AM
+[No read permission (demanded by method)] Could not access personal information: Request failed.
+```
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Güvenli Kodlama Yönergeleri](/dotnet/standard/security/secure-coding-guidelines)
+- [Bağlantı talepleri](/dotnet/framework/misc/link-demands)
+- [Veri ve Modelleme](/dotnet/framework/data/index)

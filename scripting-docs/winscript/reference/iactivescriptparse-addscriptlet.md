@@ -1,11 +1,11 @@
 ---
 title: IActiveScriptParse::AddScriptlet | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IActiveScriptParse.AddScriptlet
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IActiveScriptParse_AddScriptlet
 ms.assetid: 824929f4-4dd3-473a-92d9-0b96acea2f14
-caps.latest.revision: 
+caps.latest.revision: 7
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24793490"
 ---
 # <a name="iactivescriptparseaddscriptlet"></a>IActiveScriptParse::AddScriptlet
 Kod Resimli komut dosyasına ekler. Bu yöntem, burada betik kalıcı durumunu konak belgeyle birbirine ve ana bilgisayar komut dosyasını geri yüklemek için sorumlu olduğu ortamlarda kullanılır yerine ile bir `IPersist*` arabirimi. Kod parçacıklarını iç olayları eklenecek HTML belgesinde katıştırılmış kod izin HTML komut dosyası dilleri birincil örnekler (örneğin, ONCLICK="button1.text='Exit'").  

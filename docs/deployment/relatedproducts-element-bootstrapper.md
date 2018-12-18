@@ -1,5 +1,5 @@
 ---
-title: '&lt;RelatedProducts&gt; öğe (Önyükleyici) | Microsoft Docs'
+title: '&lt;RelatedProducts&gt; öğesi (Önyükleyici) | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -23,18 +23,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 574b7180efb7495b755d823c798ffa0c21339390
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c541a9775025183a3b3ffbf21ef5b72c3f00cc87
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077817"
 ---
-# <a name="ltrelatedproductsgt-element-bootstrapper"></a>&lt;RelatedProducts&gt; öğe (Önyükleyici)
-`RelatedProducts` Öğesi bağlı ya da geçerli ürün dahil diğer ürünleri tanımlar.  
+# <a name="ltrelatedproductsgt-element-bootstrapper"></a>&lt;RelatedProducts&gt; öğesi (Önyükleyici)
+`RelatedProducts` Öğe bağlı ya da geçerli ürün dahil diğer ürünleri tanımlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <RelatedProducts>  
     <DependsOnProduct  
         Code  
@@ -50,38 +51,38 @@ ms.lasthandoff: 04/19/2018
 </RelatedProducts>  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `RelatedProducts` Bir alt öğedir `Product` öğesi. Özniteliklere sahiptir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `RelatedProducts` Öğesi alt öğesi olan `Product` öğesi. Bu öznitelikleri yok.  
   
 ## <a name="dependsonproduct"></a>DependsOnProduct  
- `DependsOnProduct` Öğesi geçerli ürün adlandırılmış ürüne bağlı bağlıdır ve adlandırılmış ürünün geçerli bir önce yüklenmesi gerektiğini belirtir. Bir alt öğesi değil `RelatedProducts` öğesi. A `RelatedProducts` öğesi bir veya daha fazla olabilir `DependsOnProduct` öğeleri.  
+ `DependsOnProduct` Öğesi geçerli ürün adlandırılmış ürüne bağlı bağlıdır ve önce geçerli bir adlandırılmış ürünün yüklenmesi gerektiğini belirtir. Bir alt öğesidir `RelatedProducts` öğesi. A `RelatedProducts` öğesi bir veya daha fazla olabilir `DependsOnProduct` öğeleri.  
   
  `DependsOnProduct` Aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Code`|Kod adı tarafından belirtilen bulunan ürünün `ProductCode` özniteliği `Product` öğesi. Daha fazla bilgi için bkz: [ \<ürün > öğesi](../deployment/product-element-bootstrapper.md).|  
+|`Code`|Kod adı tarafından belirtilen bulunan ürünün `ProductCode` özniteliği `Product` öğesi. Daha fazla bilgi için [ \<ürün > öğesi](../deployment/product-element-bootstrapper.md).|  
   
 ## <a name="eitherproducts"></a>EitherProducts  
- `EitherProducts` Öğesi tanımlar sıfır veya daha fazla `DependsOnProduct` öğeleri ve öznitelikleri yoktur. En az bir `DependsOnProduct` bu kümesinde geçerli ürün önce yüklenmesi gerekir. A `RelatedProducts` öğesi sıfır veya daha fazla olabilir `EitherProducts` öğeleri.  
+ `EitherProducts` Sıfır veya daha fazla öğe tanımlar `DependsOnProduct` öğeleri ve öznitelikleri yok. En az bir `DependsOnProduct` bu kümesinde geçerli bir ürün önce yüklenmelidir. A `RelatedProducts` öğesi sıfır veya daha fazla olabilir `EitherProducts` öğeleri.  
   
 ## <a name="includesproduct"></a>IncludesProduct  
- `IncludesProduct` Öğesi güveninin bir ürünün geçerli yüklemede ve ayrı bir yükleme gerektirmez. Bir alt öğesi değil `RelatedProducts` öğesi. A `RelatedProducts` öğesi bir veya daha fazla olabilir `IncludesProduct` öğeleri.  
+ `IncludesProduct` Öğeyi belirten bir ürünün geçerli yükleme işlemine dahildir ve ayrı bir yükleme gerektirmez. Bir alt öğesidir `RelatedProducts` öğesi. A `RelatedProducts` öğesi bir veya daha fazla olabilir `IncludesProduct` öğeleri.  
   
  `IncludesProduct` Aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Code`|Kod adı tarafından belirtilen bulunan ürünün `ProductCode` özniteliği `Product` öğesi. Daha fazla bilgi için bkz: [ \<ürün > öğesi](../deployment/product-element-bootstrapper.md).|  
+|`Code`|Kod adı tarafından belirtilen bulunan ürünün `ProductCode` özniteliği `Product` öğesi. Daha fazla bilgi için [ \<ürün > öğesi](../deployment/product-element-bootstrapper.md).|  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneğinde Microsoft Installer yüklenmiş belirtir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)]ve bu nedenle ayrı bir yükleme gerekmez.  
+ Aşağıdaki kod örneği ile Microsoft Installer yüklendiğini belirtir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)]ve bu nedenle ayrı bir yükleme gerekmez.  
   
-```  
+```xml  
 <RelatedProducts>  
     <IncludesProduct Code="Microsoft.Windows.Installer.2.0" />  
 </RelatedProducts>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [\<Ürün > öğesi](../deployment/product-element-bootstrapper.md)

@@ -1,6 +1,6 @@
 ---
-title: 'Nasıl yapılır: COM istemcilerinde ve sunucularında RPC hata ayıklamasını kullanarak hata ayıklama | Microsoft Docs'
-ms.custom: ''
+title: RPC hata ayıklamasını kullanarak COM istemcilerinde ve sunucularda hata ayıklama | Microsoft Docs
+ms.custom: seodec18
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
 ms.topic: conceptual
@@ -27,31 +27,32 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1404d81502aaa0579c20511f3eecafa86607df0d
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 6c5a6b2dc47e1d0e6c52df3cc77fc5b90f4d75e3
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049033"
 ---
 # <a name="how-to-debug-com-clients-and-servers-using-rpc-debugging"></a>Nasıl Yapılır: RPC Hata Ayıklamasını Kullanarak COM İstemcilerinde ve Sunucularda Hata Ayıklama
-COM istemci/sunucu uygulamalarının hata ayıklamak için uzak yordam çağrısı (RPC) hata ayıklama'ı kullanabilirsiniz. RPC kullanmak için hata ayıklama etkinleştirmeniz gerekir. RPC etkin ayıklama, ne zaman, istemci, hata ayıklayıcı sunucu çağrısından adımla sunucuya ekler ve kendi kodda hata ayıklama olanak tanır. Hata ayıklayıcı eklendiğinde, tüm hata ayıklama özellikleri ile istemci ve sunucu işlemlerini kullanabilirsiniz.  
+COM istemci/sunucu uygulamalarında hata ayıklamak için uzak yordam çağrısı (RPC) hata ayıklama'ı kullanabilirsiniz. RPC kullanmak için hata ayıklamayı etkinleştirmeniz gerekir. RPC hata ayıklama etkin, hata ayıklayıcı istemciden gelen sunucu çağrı geçtiğinizde sunucuya ekler ve kendi kod hatalarını ayıklamanıza olanak tanır. Hata ayıklayıcı eklendiğinde, tüm hata ayıklama özellikleri ile istemci ve sunucu işlemlerini kullanabilirsiniz.  
   
 ### <a name="to-enable-rpc-debugging"></a>RPC hata ayıklamasını etkinleştirmek için  
   
-1.  Üzerinde **Araçları** menüsünde tıklatın **seçenekleri**.  
+1.  Üzerinde **Araçları** menüsünü tıklatın **seçenekleri**.  
   
-2.  İçinde **seçenekleri** iletişim kutusu, tıklatın **hata ayıklama** klasör.  
+2.  İçinde **seçenekleri** iletişim kutusu, tıklayın **hata ayıklama** klasör.  
   
-3.  Tıklatın **yerel** sayfası.  
+3.  Tıklayın **yerel** sayfası.  
   
 4.  Seçin **RPC hata ayıklama** onay kutusu.  
   
     > [!NOTE]
-    >  RPC çağrıları hata ayıklamak için Administrator veya Power User ayrıcalıkları olmalıdır.  
+    >  RPC çağrıları hata ayıklamak için yönetici veya İleri kullanıcı ayrıcalıkları olmalıdır.  
   
     > [!NOTE]
-    >  Yalnızca yerel bir hata ayıklayıcısı uzak sunucuya eklenmişse Microsoft Windows Vista çalıştıran bir uzak sunucuya Adımlama RPC çalışır. Aksi takdirde, RPC çağrısı bir hata iletisi başarısız olur. Aksi takdirde RPC çağrısı tamamlanır ancak step INTO RPC çağrısı çalışmaz.  
+    >  Yalnızca yerel bir hata ayıklayıcı uzak sunucuya bağlıysa, Microsoft Windows Vista çalıştıran bir uzak sunucuya Adımlama RPC çalışır. Aksi takdirde bir hata iletisi öykünücüsüne yönelik RPC çağrısı başarısız olur. Aksi takdirde öykünücüsüne yönelik RPC çağrısı tamamlanır, ancak step INTO öykünücüsüne yönelik RPC çağrısı çalışmaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [COM sunucusunda ve kapsayıcısında hata ayıklama](../debugger/com-server-and-container-debugging.md)  
- [Visual Studio'da hata ayıklamayı](../debugger/index.md) [özelliği turu hata ayıklayıcı](../debugger/debugger-feature-tour.md)
+ [COM Sunucusunda ve Kapsayıcısında Hata Ayıklama](../debugger/com-server-and-container-debugging.md)  
+ [Visual Studio'da hata ayıklama](../debugger/index.md) [hata ayıklayıcısı özellik turu](../debugger/debugger-feature-tour.md)

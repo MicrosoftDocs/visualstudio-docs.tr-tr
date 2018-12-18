@@ -1,6 +1,7 @@
 ---
 title: 'CA2103: Kesinlik temelli güvenliği gözden geçirin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d107690e8835f118861832da99b4aef92e86a5cc
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0f8975e3118e9907bf4688efe93dc60646b6d80b
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547710"
 ---
 # <a name="ca2103-review-imperative-security"></a>CA2103: Kesinlik temelli güvenliği gözden geçirin
+
 |||
 |-|-|
 |TypeName|ReviewImperativeSecurity|
@@ -32,16 +35,18 @@ ms.lasthandoff: 04/19/2018
 ## <a name="cause"></a>Sebep
  Bir yöntem zorunlu güvenliği kullanır ve durum bilgileri veya dönüş değerlerini kullanarak izin oluşturursa, izin talebi etkin durumdayken değişebilir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Kesinlik temelli güvenliği yönetilen nesneleri öznitelikleri Eylemler ve izinler meta verilerini depolamak için kullandığı bildirimsel güvenliği karşılaştırılan kodu yürütme sırasında izinleri ve güvenlik eylemleri belirlemek için kullanır. Çünkü izin nesnesi durumunu ayarlamak ve çalışma zamanına kadar kullanılamaz bilgileri kullanarak güvenlik eylemleri seçin, kesinlik temelli güvenliği çok esnektir. İle birlikte, eylem etkin olduğu sürece, bir izin durumu durumda belirlemek için çalışma zamanı bilgileri değişmeden risk esneklik birlikte gelir.
+## <a name="rule-description"></a>Kural açıklaması
+ Kesinlik temelli güvenlik izinleri ve güvenlik eylemleri bildirime dayalı güvenlik öznitelikleri, Eylemler ve izinler meta verileri depolamak için kullandığı karşılaştırıldığında kod yürütülürken belirtmek için yönetilen nesneleri kullanır. Kesinlik temelli güvenlik çok esnektir çünkü bir izin nesnesi durumunu ayarlamak ve çalışma zamanına kadar kullanılabilir olmayan bilgileri kullanarak güvenlik eylemleri seçin. İle birlikte esneklik eylemin yürürlükte olduğu sürece, bir izin durumu değil kalan belirlemek için kullandığınız çalışma zamanı bilgileri değişmeden riskini ortaya çıktı.
 
- Bildirime dayanan güvenliği mümkün olduğunca kullanın. Bildirim temelli talepleri anlamak daha kolay.
+ Bildirime dayanan güvenliği mümkün olduğunca kullanın. Bildirim temelli talepleri anlamak kolaydır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- İzin durumu izni kullanılan sürece değiştirebilirsiniz bilgileri kalmaz emin olmak için kesinlik temelli güvenlik taleplerini gözden geçirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Kesinlik temelli güvenlik taleplerini izin durumu izni kullanılmakta olduğu sürece, değiştirebileceğiniz hakkında bilgi kullanmayan emin olmak için gözden geçirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Verileri değiştirme izni bağlı değildir, bu kural bir uyarıdan gizlemek güvenlidir. Ancak, kesinlik temelli isteğe bağlı bildirim temelli eşdeğerine değiştirmek iyidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Değişen veri iznini kullanmayan varsa bu kuraldan bir uyarıyı bastırmak güvenlidir. Ancak, bildirim temelli eşdeğerine kesinlik temelli talep değiştirmek iyidir.
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Güvenli kodlama yönergeleri](/dotnet/standard/security/secure-coding-guidelines) [veri ve modelleme](/dotnet/framework/data/index)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Güvenli Kodlama Yönergeleri](/dotnet/standard/security/secure-coding-guidelines)
+- [Veri ve Modelleme](/dotnet/framework/data/index)

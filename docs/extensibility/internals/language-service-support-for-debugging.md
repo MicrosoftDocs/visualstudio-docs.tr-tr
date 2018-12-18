@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31128667"
 ---
 # <a name="language-service-support-for-debugging"></a>Hata ayıklama için dil hizmeti desteği
 Bir dil hizmeti aracılığıyla bir hata ayıklayıcı desteği özellikleri sağlayabilir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageDebugInfo> arabirimi. Kesme noktaları doğrulama ve ifadeleri için listesini sağladığı bu özellikleri **otomobiller** penceresi.  

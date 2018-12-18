@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 03fbc1499372221a815eb639442af586f7020cf1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b3eaf98fe0c60a23f519bd6ec86ae6c674ac3b4e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49877042"
 ---
 # <a name="idebugactivatedocumentevent2getdocumentcontext"></a>IDebugActivateDocumentEvent2::GetDocumentContext
-Hata ayıklama paketi tarafından etkin hale belgesinde konumda açıklar belge bağlamını alır.  
+Hata ayıklama paketi tarafından etkin hale için belgeyi konumu tanımlayan belge bağlamını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,13 +42,13 @@ int GetDocumentContext (
   
 #### <a name="parameters"></a>Parametreler  
  `ppDocContext`  
- [out] Döndürür bir [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) kaynak dosya belgesindeki bir konumu temsil eden nesne.  
+ [out] Döndürür bir [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) bir konumda bir kaynak dosyası belgeyi temsil eden nesne.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu konum, düzeltme işareti, örneğin göstermek için kullanılabilir.  
+ Bu konum, örneğin işaretini göstermek için kullanılabilir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugActivateDocumentEvent2](../../../extensibility/debugger/reference/idebugactivatedocumentevent2.md)   

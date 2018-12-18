@@ -17,30 +17,31 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c7460b287b22ead961a5701fe4f8fa8bb22fc2d2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1c679acf7ce6a767702da05bde6fb4a1e6f8a7df
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34572221"
 ---
 # <a name="vsperfreport"></a>VSPerfReport
-VSPerfReport komut satırı aracını kullanarak raporlar oluşturmak için kullanılan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma veri dosyaları profil oluşturma araçları. Varsayılan rapor bir .csv dosyası biçimidir.  
+VSPerfReport komut satırı aracını kullanarak raporlar oluşturmak için kullanılan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma veri dosyaları profil oluşturma araçları. Varsayılan rapor biçiminde olan bir. *csv* dosya.  
   
  VSPerfReport aşağıdaki söz dizimini kullanır:  
   
-```  
+```cmd  
 VSPerfReport [/U] vspfilename [/options]  
 ```  
   
- Unutmayın `filename` geçerli bir .vsp veya .vsps dosyası olmalıdır.  
+ Unutmayın `filename` geçerli olması gerekir. *Vsp* veya. *vsps* dosya.  
   
- VSPerfReport komut satırı aracı .vsp veya .vsps dosyaları karşılaştırmak için de kullanılır. Fark ("fark") raporu oluşturmak için aşağıdaki sözdizimini kullanın:  
+ VSPerfReport komut satırı aracı karşılaştırmak için de kullanılır. *vsp* veya. *vsps* dosyaları. Fark ("fark") raporu oluşturmak için aşağıdaki sözdizimini kullanın:  
   
-```  
+```cmd  
 VSPerfReport [/U] /diff vspfilename1 vspfilename2 [/options]  
 ```  
   
- `vspfilename1 and vspfilename2` Geçerli .vsp veya .vsps dosyaları olmalıdır.  
+ `vspfilename1 and vspfilename2` geçerli olmalıdır. *vsp* veya. *vsps* dosyaları.  
   
 ## <a name="symbol-files"></a>Simge dosyaları  
  İşlev adları ve satır numaralarını gibi sembol bilgilerini görüntülemek için VSPerfReport simgenin erişmesi (. PDB) dosyaları profili bileşenlerini ve Windows simge dosyaları. Daha fazla bilgi için bkz: [nasıl yapılır: simge dosyası konumlarını komut satırından belirtme](../profiling/how-to-specify-symbol-file-locations-from-the-command-line.md).  
@@ -57,7 +58,7 @@ VSPerfReport [/U] /diff vspfilename1 vspfilename2 [/options]
 |**ClearPackedSymbols**|Daha önce katıştırılmış simgeleri bir profil oluşturucu veri dosyasından kaldırır. Paket sembolleri ikinci çalıştırmadan önce bu komutu çalıştırmak zaman.|  
 |**SymbolPath:** `path`|Bir veya daha fazla arama yolları veya de Profil Oluşturucu veri dosyası simgelerini içeren simge sunucuları belirtir.|  
 |**DebugSymPath**|Simgeler ve olup bulunan Aranan konumları listeler. Bu seçenek, simge çözümleme sorunlarını gidermek kullanışlıdır.|  
-|**Paket sembolleri**|Simgeler profil oluşturma veri (.vsp) dosyasına kaydeder, böylece simge (.pdb) dosyalarını, çözümlemesi için gerekli değildir.|  
+|**Paket sembolleri**|Kaydeder simgeleri profil oluşturma veri (.vsp) dosyasına dolayısıyla bu simgeyi (. *pdb*) dosyalarını, çözümlemesi için gerekli değildir.|  
 |**Çıkış:** *yolu*&#124;*dosya adı*|Oluşturulan rapora dosyaları için alternatif bir konum belirtir. Varsayılan olarak, raporları geçerli dizinde oluşturulur.|  
 |**SummaryFile**|Analiz etmek ve .vsps Özet dosyasında çözümlenen bilgilerini kaydedin.|  
 |**PrintMarks**|Adları ve damgaları tüm işaretleri için belirtilen rapor dosyasında gösterir.|  
@@ -84,11 +85,11 @@ VSPerfReport [/U] /diff vspfilename1 vspfilename2 [/options]
   
 |Seçenekler|Açıklama|  
 |-------------|-----------------|  
-|**fark**  `vspfile1 vspfile2`|İki rapor dosyaları (.vsp veya .vsps) dosyalar karşılaştırın. Özet Seçenekleri fark seçeneği kullanılarak yoksayılacak.|  
+|**fark**  `vspfile1 vspfile2`|İki rapor dosyalarını karşılaştırma (. *Vsp* veya. *vsps*) dosyaları. Özet Seçenekleri fark seçeneği kullanılarak yoksayılacak.|  
 |**Fark:**[*değeri*]|Bu Eşik değerin altına iki değerler arasındaki farkın göz ardı edilir. Ayrıca, bu eşiğin altında değerlerle yeni veriler gösterilmez.|  
 |**DiffTable:**[*tablename*]|Dosyaları karşılaştırmak için bu belirli tabloyu kullanın. İşlevler tablosuna varsayılandır.|  
 |**DiffColumn:**[*columnname*]|Bu belirli sütun karşılaştırma değerlerini kullanın. Varsayılan özel örnekler yüzde sütundur.|  
 |**QueryDiffTables**|Geçerli tablolar ve sütunlar sağlanan iki rapor dosyaların listesi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Performans Raporu Görünümleri](../profiling/performance-report-views.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Performans rapor görünümleri](../profiling/performance-report-views.md)

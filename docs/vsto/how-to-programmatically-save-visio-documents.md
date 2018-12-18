@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla Visio belgelerini kaydetme | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla Visio belgelerini kaydetme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,72 +16,73 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 7a98ff5a7b7df6e2e609ac2d3bf89d7fd4b23648
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a9f065a32fc26d372b97a31eb70836451b31fa00
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50670734"
 ---
-# <a name="how-to-programmatically-save-visio-documents"></a>Nasıl yapılır: Program Aracılığıyla Visio Belgelerini Kaydetme
-  Microsoft Office Visio belgeleri kaydetmek için birkaç yolu vardır:  
+# <a name="how-to-programmatically-save-visio-documents"></a>Nasıl yapılır: program aracılığıyla Visio belgelerini kaydetme
+  Microsoft Office Visio belgelerini kaydetme için birkaç yol vardır:  
   
--   Varolan bir belgedeki değişiklikleri kaydedin.  
+- Varolan bir belgeyi değişiklikleri kaydedin.  
   
--   Yeni bir belge kaydetme veya bir belgeyi yeni adla kaydet.  
+- Yeni bir belge kaydetme ya da bir belgeyi yeni bir adla kaydedin.  
   
--   Belirtilen bağımsız değişkenlerle bir belgeyi kaydedin.  
+- Belge, belirtilen bağımsız değişkenler ile kaydedin.  
   
- Daha fazla bilgi için VBA başvuru belgelerine bakın [Microsoft.Office.Interop.Visio.Document.Save](https://msdn.microsoft.com/library/office/ff766478.aspx) yöntemi, [Microsoft.Office.Interop.Visio.Document.SaveAs](https://msdn.microsoft.com/library/office/ff765824.aspx) yöntemi ve [ Microsoft.Office.Interop.Visio.Document.SaveAsEx](https://msdn.microsoft.com/library/office/ff768149.aspx) yöntemi.  
+  Daha fazla bilgi için bkz: VBA başvuru belgelerine [Microsoft.Office.Interop.Visio.Document.Save](/office/vba/api/Visio.Document.Save) yöntemi [Microsoft.Office.Interop.Visio.Document.SaveAs](/office/vba/api/Visio.Document.SaveAs) yöntemi ve [ Microsoft.Office.Interop.Visio.Document.SaveAsEx](/office/vba/api/Visio.Document.SaveAsEx) yöntemi.  
   
-## <a name="saving-an-existing-document"></a>Varolan bir belgeyi kaydetme  
+## <a name="save-an-existing-document"></a>Var olan bir belgeyi Kaydet  
   
-#### <a name="to-save-a-document"></a>Bir belgeyi kaydetmek için  
+### <a name="to-save-a-document"></a>Bir belgeyi kaydetme  
   
--   Daha önce kaydedilmiş bir belgenin Microsoft.Office.Interop.Visio.Document.Save sınıfının yöntemini çağırın.  
+-   Çağrı `Microsoft.Office.Interop.Visio.Document.Save` yöntemi `Microsoft.Office.Tools.Visio.Document` önceden kaydedilmiş bir belgenin sınıfı.  
   
      Bu kod örneği kullanmak için çalıştırın `ThisAddIn` projenizdeki sınıfı.  
   
     > [!NOTE]  
-    >  Yeni bir Visio belgesi henüz kaydedilmedi olursa yöntemini bir özel durum oluşturur.  
+    >  `Microsoft.Office.Interop.Visio.Document.Save` Yöntemi yeni bir Visio belgesi henüz kaydedilmedi, bir özel durum oluşturur.  
   
      [!code-csharp[Trin_VstcoreVisioAutomationAddIn#11](../vsto/codesnippet/CSharp/trin_vstcorevisioautomationaddin/ThisAddIn.cs#11)]
      [!code-vb[Trin_VstcoreVisioAutomationAddIn#11](../vsto/codesnippet/VisualBasic/trin_vstcorevisioautomationaddin/ThisAddIn.vb#11)]  
   
-## <a name="saving-a-document-with-a-new-name"></a>Belgeye yeni bir adla kaydetme  
- Yeni bir belge veya yeni bir adı olan bir belgeyi kaydetmek için Microsoft.Office.Interop.Visio.Document.SaveAs yöntemini kullanın. Bu yöntem, yeni dosya adı belirtin gerektirir.  
+## <a name="save-a-document-with-a-new-name"></a>Belgeye yeni bir adla kaydet  
+ Kullanım `Microsoft.Office.Interop.Visio.Document.SaveAs` yeni bir belge ya da yeni bir ada sahip bir belge kaydetmek için yöntemi. Bu yöntem, yeni dosya adı belirtmeniz gerekir.  
   
-#### <a name="to-save-the-active-visio-document-with-a-new-name"></a>Yeni bir adla etkin Visio belgesini kaydetmek için  
+### <a name="to-save-the-active-visio-document-with-a-new-name"></a>Etkin Visio belgesini yeni bir adla kaydetmek için  
   
--   Dosya adını içeren tam bir yol kullanarak kaydetmek istediğiniz Microsoft.Office.Interop.Visio.Document.SaveAsEx Microsoft.Office.Interop.Visio.Document.SaveAs yöntemini çağırın. Bu klasörde aynı adı taşıyan bir dosya zaten varsa, sessiz bir şekilde üzerine yazılır.  
+-   Çağrı `Microsoft.Office.Interop.Visio.Document.SaveAs` yöntemi `Microsoft.Office.Tools.Visio.Document` bir dosya adı dahil tam nitelenmiş bir yol kullanarak kaydetmek istediğiniz. Bu klasörde zaten o adda bir dosya varsa dosyanın sessizce üzerine yazılır.  
   
      Bu kod örneği kullanmak için çalıştırın `ThisAddIn` projenizdeki sınıfı.  
   
      [!code-csharp[Trin_VstcoreVisioAutomationAddIn#10](../vsto/codesnippet/CSharp/trin_vstcorevisioautomationaddin/ThisAddIn.cs#10)]
      [!code-vb[Trin_VstcoreVisioAutomationAddIn#10](../vsto/codesnippet/VisualBasic/trin_vstcorevisioautomationaddin/ThisAddIn.vb#10)]  
   
-## <a name="saving-a-document-with-a-new-name-and-specified-arguments"></a>Belgeye yeni bir ad ve belirtilen bağımsız değişkenlerle kaydetme  
- Belgeye uygulamak için geçerli tüm bağımsız değişkenleri belirtin ve bir belgeyi yeni adla kaydet için yöntemini kullanın.  
+## <a name="save-a-document-with-a-new-name-and-specified-arguments"></a>Belgeye yeni bir ad ve belirtilen bağımsız değişkenler ile Kaydet  
+ Kullanım `Microsoft.Office.Interop.Visio.Document.SaveAsEx` yöntemi, bir belgeyi yeni bir adla kaydedin ve belgeye uygulamak için uygulanabilir tüm bağımsız değişkenleri belirtin.  
   
-#### <a name="to-save-document-with-a-new-name-and-specified-arguments"></a>Yeni bir ad ve belirtilen bağımsız değişkenlerle belgeyi kaydetmek için  
+### <a name="to-save-document-with-a-new-name-and-specified-arguments"></a>Belgeyi yeni bir ad ve belirtilen bağımsız değişkenler ile kaydetmek için  
   
--   Dosya adını içeren tam bir yol kullanarak kaydetmek istediğiniz Microsoft.Office.Interop.Visio.Document.SaveAsEx, yöntemini çağırın. Bu klasörde aynı adı taşıyan bir dosya zaten varsa, özel durum oluşur.  
+-   Çağrı `Microsoft.Office.Interop.Visio.Document.SaveAsEx` yöntemi `Microsoft.Office.Tools.Visio.Document` bir dosya adı dahil tam nitelenmiş bir yol kullanarak kaydetmek istediğiniz. Bu klasörde zaten o adda bir dosya ise bir özel durum oluşturulur.  
   
-     Aşağıdaki kod örneğinde etkin belgeyi yeni adla kaydeder, belgeyi salt okunur olarak işaretler ve belge belgelerin en son kullanılan listesini gösterir. Bu kod örneği kullanmak için çalıştırın `ThisAddIn` projenizdeki sınıfı.  
+     Aşağıdaki kod örneği etkin belgeyi yeni adla kaydeder, belgeyi salt okunur olarak işaretler ve belgelerin en son kullanılan listede belge gösterir. Bu kod örneği kullanmak için çalıştırın `ThisAddIn` projenizdeki sınıfı.  
   
      [!code-csharp[Trin_VstcoreVisioAutomationAddIn#12](../vsto/codesnippet/CSharp/trin_vstcorevisioautomationaddin/ThisAddIn.cs#12)]
      [!code-vb[Trin_VstcoreVisioAutomationAddIn#12](../vsto/codesnippet/VisualBasic/trin_vstcorevisioautomationaddin/ThisAddIn.vb#12)]  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
- Bu kod örneği için şunlar gerekir:  
+## <a name="compile-the-code"></a>Kod derleme  
+ Bu kod örneği için aşağıdakiler gereklidir:  
   
--   Yeni bir adı olan bir belgeyi kaydetmek için bir dizin adlı `Test` Belgelerim klasörünü (Windows XP ve önceki sürümler için) veya belgeler klasöründe (Windows Vista için) bulunması gerekir.  
+-   Yeni bir ada sahip bir belge kaydetmek için adında bir dizin `Test` bulunmalıdır *Belgelerim* klasöründe (Windows XP ve daha önce) veya *belgeleri* klasöründe (Windows Vista için).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visio çözümleri](../vsto/visio-solutions.md)   
  [Visio nesne modeline genel bakış](../vsto/visio-object-model-overview.md)   
  [Nasıl yapılır: program aracılığıyla yeni Visio belgeleri oluşturma](../vsto/how-to-programmatically-create-new-visio-documents.md)   
  [Nasıl yapılır: program aracılığıyla Visio belgelerini açma](../vsto/how-to-programmatically-open-visio-documents.md)   
- [Nasıl yapılır: program aracılığıyla Visio belgeleri kapatma](../vsto/how-to-programmatically-close-visio-documents.md)   
- [Nasıl yapılır: Program Aracılığıyla Visio Belgelerini Yazdırma](../vsto/how-to-programmatically-print-visio-documents.md)  
+ [Nasıl yapılır: Visio belgelerini program aracılığıyla kapatma](../vsto/how-to-programmatically-close-visio-documents.md)   
+ [Nasıl yapılır: program aracılığıyla Visio belgelerini yazdırma](../vsto/how-to-programmatically-print-visio-documents.md)  
   
   

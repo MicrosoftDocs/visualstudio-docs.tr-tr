@@ -13,11 +13,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5b7c15cb1e363a00f3d330a0c5cc5c9927c7e2b7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 90035daf13008122e7d529408a6de0389b311628
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262375"
 ---
 # <a name="call-tree-view---sampling-data"></a>Çağrı ağacı görünümü - örnekleme verileri
 Çağrı ağacı görünümü profili uygulamada geçiş işlevi yürütme yollarını görüntüler.  
@@ -29,10 +30,10 @@ ms.lasthandoff: 04/19/2018
   
  Çağrı ağacı görünümü çağrısı ağacında üst işlevi tarafından çağrılan işlev örnekleri için değerler. Yüzde değerleri, profil oluşturma çalıştırma örnekleri toplam sayısı işlevi örneği değerine karşılaştırarak hesaplanır.  
   
-## <a name="highlighting-the-execution-hot-path"></a>Yürütme etkin yolunuzda vurgulama  
+## <a name="highlight-the-execution-hot-path"></a>Yürütme etkin yolunu Vurgula  
  Çağrı ağacı görünümü genişletin ve işlem ya da en sık örneklenen işlevi yürütme yolunu vurgulayın. En etkin yol görüntülemek için işlem veya işlevi sağ tıklayın ve ardından **genişletin etkin yolunuzda**.  
   
-## <a name="setting-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlama  
+## <a name="set-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlayın  
  Profil oluşturma Çalıştır her işlem, bir kök düğümü olarak görüntülenir. Çağrı ağacı görünümü başlangıç düğümünün ayarlamak için seçin ve başlangıç düğümü olarak ayarlamak istediğiniz düğümünü sağ tıklatın **ayarlamak kök**.  
   
  Kök düğüm kümesi olduğunda, Seçili düğümün alt ağacı dışında görünümünden diğer tüm girişleri kaldırın. Kök düğüm özgün düğüme geri sıfırlamak için çağrı ağacı Görünümü penceresinde sağ tıklatın ve seçin **sıfırlama kök**.  
@@ -53,9 +54,9 @@ ms.lasthandoff: 04/19/2018
 |**Kapsayıcı örnekleri**|Çağrı ağacı üst işlevinde tarafından çağrıldığında, bu işlevde toplanan örnek sayısı. Bu sayı işlev tarafından adı veriliyordu işlevleri toplanan örnekleri içerir.|  
 |**Kapsayıcı örnekleri %**|Üst işlev çağrısı ağacında tarafından çağrıldığında, bu işlevin kapsayıcı örnekleri olan tüm örneklerini profil çalıştırmada yüzdesi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
- [Çağrı ağacı görünümü - profil oluşturucu örnekleme verileri](../profiling/call-tree-view-sampling-data.md)   
+ [Çağrı ağacı görünümü - profil oluşturucu örnekleme verileri](../profiling/call-Tree-view-sampling-data.md)   
  [Çağrı ağacı görünümü - örnekleme](../profiling/call-tree-view-dotnet-memory-sampling-data.md)   
  [Çağrı ağacı görünümü - izleme](../profiling/call-tree-view-dotnet-memory-instrumentation-data.md)   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view-instrumentation-data.md)
+ [Çağrı ağacı görünümü](../profiling/call-tree-view-instrumentation-data.md)

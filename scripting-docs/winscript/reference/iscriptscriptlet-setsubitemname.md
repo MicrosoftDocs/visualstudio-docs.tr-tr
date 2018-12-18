@@ -1,11 +1,11 @@
 ---
 title: IScriptScriptlet::SetSubItemName | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IScriptScriptlet.SetSubItemName
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IScriptScriptlet::SetSubItemName
 ms.assetid: 619f222f-b4c3-4c7b-9d19-e4e7037343a6
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24796316"
 ---
 # <a name="iscriptscriptletsetsubitemname"></a>IScriptScriptlet::SetSubItemName
 Son tanımlayıcı Resimli 's nesne ana bilgisayarın tam adını ayarlar.  

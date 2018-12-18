@@ -1,311 +1,337 @@
 ---
-title: Kod değişikliklerini ve diğer geçmişi CodeLens ile bulma | Microsoft Docs
-ms.custom: ''
+title: CodeLens ile kod değişikliklerini ve diğer geçmişi bulma
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
+f1_keywords:
+- VS.ToolsOptionsPages.Text_Editor.All_Languages.CodeLens
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1e20081320109e5334360d0cc1f38b187f05d574
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e11b7458c5d26d56252b228522c53b00ebadb35b
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220306"
 ---
 # <a name="find-code-changes-and-other-history-with-codelens"></a>CodeLens ile kod değişikliklerini ve diğer geçmişi bulma
 
-Kodunuzu - düzenleyiciden ayrılmadan ne olduğunu bulun sırada üzerindeki çalışmanızı odaklanmalarını. References ve kod, bağlantılı hatalar, iş öğelerini, kod gözden geçirme ve birim testleri değişiklikler bulun.
+CodeLens, kodunuzu ne olduğunu Bul sırada sayesinde yalnızca işinize odaklanmanıza olanak tanır&ndash;düzenleyicisinden çıkmadan. Başvurular bir parça kodu, kod, bağlı hataları, iş öğeleri, kod incelemeleri ve birim testleri değişiklikleri bulabilirsiniz.
 
 > [!NOTE]
-> CodeLens yalnızca Visual Studio Enterprise ve Visual Studio Professional sürümlerinde kullanılabilir. Visual Studio Community Edition'da kullanılabilir değil.  
+> CodeLens, yalnızca Visual Studio Enterprise ve Visual Studio Professional sürümlerinde kullanılabilir. Visual Studio Community Edition'da kullanılabilir değil.
 
-Nerede ve nasıl kodunuzun tek tek parçaları çözümünüz içinde kullanılan bakın:  
+Nerede ve nasıl kodunuzu ayrı bölümlerini çözümünüzde kullanılan bakın:
 
-![Kod düzenleyicisinde CodeLens göstergeleri](../ide/media/codelensoverview.png "CodeLensOverview")  
+![Kod Düzenleyicisi'nde CodeLens göstergeleri](../ide/media/codelens-overview.png)
 
-Düzenleyiciden ayrılmadan kodunuzu değişiklikler hakkında ekibinize başvurun:  
+Düzenleyiciden çıkmadan kodunuzda yapılan değişiklikler hakkında takımınıza başvurun:
 
-![CodeLens &#45; ekibinize başvurun](../ide/media/codelensovervew2.png "CodeLensOvervew2")  
+![CodeLens - takımınızın başvurun](../ide/media/codelens-contact-info.png)
 
-Bakın veya CodeLens kapatıp açmak istediğiniz göstergeleri seçmek için Git **Araçları** > **seçenekleri** > **metin düzenleyici**  >  **Tüm diller** > **CodeLens**.  
+Görmek için veya CodeLens kapatıp açmak istediğiniz göstergeleri seçmek için Git **Araçları** > **seçenekleri** > **metin düzenleyici**  >  **Tüm diller** > **CodeLens**.
 
-## <a name="FindReferences"></a> Kodunuzu başvuruları Bul
+## <a name="find-references-to-your-code"></a>Kodunuzda başvuruları Bul
 
-İhtiyacınız vardır:
+C# veya Visual Basic kodu başvuruları bulabilirsiniz.
 
--  Visual Studio Enterprise veya Visual Studio Professional
+1. Seçin **başvuruları** göstergesi veya tuşuna **Alt**+**2**.
 
--  C# veya Visual Basic kodu
+   ![CodeLens başvuruları](../ide/media/codelens-view-references.png)
 
-Seçin **başvuruları** göstergesi (**Alt + 2**). Görürseniz **0 başvuruları**, C# veya Visual Basic kodundan başvuru içermeyen. Bu gibi diğer öğeleri başvurularından içermeyen **.xaml** ve **.aspx** dosyaları.
+   > [!NOTE]
+   > Göstergenin gösteriliyorsa **0 başvuru**, C# veya Visual Basic kodundan başvurularınız. Ancak, olabilir başvuruları diğer öğeleri gibi *.xaml* ve *.aspx* dosyaları.
 
-![CodeLens &#45; Seç başvuruları göstergesi](../ide/media/codelensviewreferenceslist.png "CodeLensViewReferencesList")  
+2. Başvuru kodu, fareyle üzerine başvuru listesinde görüntülenecek.
 
-Başvuru kodu görmek için başvuru üstünde fareyi hareket ettirin.  
+   ![CodeLens - Özet başvurusu](../ide/media/codelens-peek-reference.png)
 
-![CodeLens &#45; Peek başvuru](../ide/media/codelensviewreferencespeekreference.png "CodeLensViewReferencesPeekReference")  
+3. Başvuruyu içeren dosyayı açmak için başvuruyu çift tıklayın.
 
-Başvuru içeren dosyayı açmak için başvuru çift tıklatın.  
+### <a name="code-maps"></a>Kod haritaları
 
-Bu kod ve kendi başvurular arasındaki ilişkileri görmek için [bir kod Haritası oluşturma](../modeling/map-dependencies-across-your-solutions.md) ve **Göster tüm başvuruları** kod Haritası kısayol menüsünde.
+Kod ve başvuruları, arasındaki ilişkileri görmek için [bir kod Haritası oluşturun](../modeling/map-dependencies-across-your-solutions.md). Kod Haritası kısayol menüsünde seçin **tüm başvuruları göster**.
 
-![CodeLens &#45; kod Haritası başvurular](../ide/media/codelensmappedreferences.png "CodeLensMappedReferences")  
+![CodeLens - kod haritasında başvuruları](../ide/media/codelensmappedreferences.png)
 
-## <a name="FindCodeHistory"></a> Kodunuzu 's geçmişi ve bağlantılı öğeler Bul
+## <a name="a-namefind-code-historyfind-changes-in-your-code"></a><a name="find-code-history"/>Kodunuzda değişiklikler Bul
 
-Kodunuzu neler olduğunu öğrenmek için kodun geçmişini gözden geçirin. Ya da diğer dalların kullanılabilirliği etkilenmeden değişiklikleri kodunuzu nasıl etkileyebileceğini daha iyi anlayabilirsiniz şekilde kodunuza birleştirilmiş önce değişiklikleri gözden geçirin.
+Kodunuzun geçmişini, kodunuzu ne olduğunu görmek için inceleyin. Ya da önce dala değişiklikleri kodunuzu nasıl etkileyeceğini daha iyi anlayabilmeniz için kodunuza birleştirilmiş değişiklikleri gözden geçirin.
 
-İhtiyacınız vardır:
+İhtiyacın var:
 
 - Visual Studio Enterprise veya Visual Studio Professional
 
-- Team Foundation Server 2013 veya üzeri, Visual Studio Team Services veya Git
+- Team Foundation Server 2013 veya üzeri, Azure DevOps Services veya Git
 
-- [Lync 2010 veya üzeri ya da Skype Kurumsal](https://technet.microsoft.com/office/dn788773), kod düzenleyicisinden ekibinize başvurun
+- [Skype Kurumsal'a](/skypeforbusiness/) ekibinizin kod düzenleyicisinden başvurma
 
-Team Foundation sürüm denetimi (TFVC'yi) veya Git ile depolanan C# veya Visual Basic kod için sınıf ve yöntem düzeylerinde CodeLens ayrıntıları alın (*kod öğe düzeyinde* göstergeleri). Git deponuz TfGit içinde barındırılıyorsa, TFS iş öğelerine bağlantılar da alın.  
+Team Foundation sürüm denetimi (TFVC) veya Git ile depolanan C# veya Visual Basic kodu için sınıf ve yöntem düzeylerinde CodeLens ayrıntıları alın (*kod öğe düzeyinde* göstergeleri). Git deponuzu TfGit içinde barındırılıyorsa, aynı zamanda TFS iş öğelerinin bağlantılarını alın.
 
-![Kod öğesi&#45;düzey göstergeleri](../ide/media/codelenselementlevelindicators.png "CodeLensElementLevelIndicators")  
+![Code öğesi düzeyi göstergeleri](../ide/media/codelens-element-level-indicators.png)
 
-Tüm diğer Visual Studio düzenleyicisinde açabileceğiniz dosya türlerinde, CodeLens tek bir yerde dosyanın tamamı için pencerenin alt kısmında ayrıntıları (*dosya düzeyinde* göstergeleri).
+İçin dosya türlerini dışında *.cs* veya *.vb*, CodeLens ayrıntıları için dosyanın tamamını tek bir yerde pencerenin alt kısmında aldığınız (*dosya düzeyinde* göstergeleri).
 
-![Dosya&#45;CodeLens göstergeleri düzey](../ide/media/almcodelensfilelevelindicators.png "ALMCodeLensFileLevelIndicators")  
+![Dosya düzeyinde CodeLens göstergeleri](../ide/media/almcodelensfilelevelindicators.png)
 
-Göstergeleri seçmek üzere klavyeyi kullanmak için basılı **Alt** ilgili sayı tuşlarını görüntülemek için anahtar.  
+### <a name="code-element-level-indicators"></a>Code öğesi düzeyi göstergeleri
 
-![Klavye erişim numaraları görmek için Alt tuşuna basın](../ide/media/codelensaltkeyindicators.png "CodeLensAltKeyIndicators")  
+Yaptıkları kod öğe düzeyi göstergelerini kimin kodunuzu ve hangi değişiklikleri görmenize olanak tanır. C# ve Visual Basic kodu için kod öğesi düzeyi göstergelerini kullanılabilir.
 
-### <a name="find-changes-in-your-code"></a>Kodunuzda değişiklikleri Bul
+Team Foundation Server veya Azure DevOps Hizmetleri'ndeki Team Foundation sürüm denetimi (TFVC) kullandığınızda gördüğünüz budur:
 
-Kim, C# veya Visual Basic kodu değiştirildi ve bunlar kodu öğe düzeyinde göstergeleri yapılan değişiklikleri bulun. Team Foundation Server ya da Visual Studio Team Services Team Foundation sürüm denetimi (TFVC'yi) kullandığınızda, gördükleri budur.  
+![CodeLens: Kodunuzu tfvc'de Get değişiklik geçmişi](../ide/media/codelens-code-changes.png)
 
-![CodeLens: Get değişiklik geçmişini TFVC'yi kodunuzda için](../ide/media/codelenscodechanges.png "CodeLensCodeChanges")  
+Varsayılan süre son 12 ay değeridir. Team Foundation Server'da kodunuzu depolanmışsa çalıştırarak süreyi değiştirebilirsiniz [TFSConfig komut](/tfs/server/ref/command-line/tfsconfig-cmd) ile [Codeındex komutu](../ide/codeindex-command.md) ve **/indexHistoryPeriod**bayrağı.
 
-Varsayılan süre son 12 ay değeridir. Team Foundation Server'da kodunuzu depolanırsa, bu çalıştırarak değiştirebilirsiniz [TFSConfig komut](/vsts/tfs-server/command-line/tfsconfig-cmd) ile [Codeındex komutu](../ide/codeindex-command.md) ve **/indexHistoryPeriod** bayrağı.
+Bir yıl önce bu da dahil olmak üzere tüm değişikliklerin, ayrıntılı bir geçmişini görmek için seçin **tüm dosya değişikliklerini göster**:
 
-Önce birden fazla bir yıldan dahil olmak üzere tüm değişiklikleri ayrıntılı bir geçmişini görmek için seçin **tüm dosya değişiklikleri göstermek**.  
+![Tüm kod değişiklikleri göster](../ide/media/codelens-show-all-file-changes.png)
 
-![Tüm kod değişiklikleri göstermek](../ide/media/codelensshowsallchanges.png "CodeLensShowsAllChanges")  
+**Geçmişi** penceresi açılır:
 
-Bu açılır **geçmişi** değişiklik kümelerini penceresi.  
+![Geçmiş penceresinde tüm kod değişiklikleri](../ide/media/codelenscodechangeshistory.png)
 
-![Tüm kod değişiklikleri Geçmişi penceresini](../ide/media/codelenscodechangeshistory.png "CodeLensCodeChangesHistory")  
+Dosyalarınızı Git deposunda ve kod öğe düzeyinde değişiklik göstergesini seçin gördüğünüz budur:
 
-Olduğunda, dosyalarınızı Git deposunda ve kod öğe düzeyinde değişiklikleri göstergesi seçtiğiniz gördüğünüz budur.  
+![CodeLens: Kodunuzu Git Get değişiklik geçmişi](../ide/media/codelens-code-changes-git.png)
 
-![CodeLens: Get değişiklik geçmişini Git kodunuzda için](../ide/media/codelenscodechangesgit.png "CodeLensCodeChangesGit")  
+### <a name="file-level-indicators"></a>Dosya düzeyi göstergelerini
 
-Pencerenin altındaki dosya düzeyinde göstergeleri değişiklikleri (C# ve Visual Basic dosyaları dışında) tüm bir dosyayı bulun.  
+Pencerenin alt kısmındaki dosya düzeyi göstergelerini tüm bir dosyayı değişiklikleri bulun:
 
-![CodeLens: kod dosyası ayrıntılara](../ide/media/codelensfilelevel.png "CodeLensFileLevel")  
+![CodeLens: kod dosyası ayrıntıları alın.](../ide/media/codelens-file-level.png)
 
-Bir değişiklik hakkında daha fazla bilgi almak için bu öğeyi sağ tıklatın. TFVC'yi veya Git kullanmanıza bağlı olarak bir dizi dosya sürümlerini karşılaştırın, ayrıntılarını görüntülemek ve değişiklik izleme, seçili dosya sürümünü alın ve bu değişikliği yazarı e-posta seçenekleri alın. Bu ayrıntılar bazıları Takım Gezgini'nde görünür.  
+> [!NOTE]
+> Dosya düzeyi göstergelerini C# ve Visual Basic dosyaları için kullanılabilir değil.
 
-Kimin kodunuzu zaman içinde değişmesi de görebilirsiniz. Bu düzenleri ekibinizin değişiklikleri bulmanıza ve bunların etkisini değerlendirmenize yardımcı olabilir.  
+Bir değişiklik hakkında daha fazla bilgi almak için bu öğeye sağ tıklayın. TFVC veya Git kullanmanıza bağlı olarak, dosya sürümlerini karşılaştırın, ayrıntılarını görüntülemek ve değişiklik izleme, dosyanın seçili sürümünü almak ve bu değişikliği yazarı e-posta için seçenek vardır. Bu ayrıntılar bazıları görünür **Takım Gezgini**.
 
-![CodeLens: Bkz: kod değişikliklerini geçmiş bir grafik olarak](../ide/media/codelens.png "CodeLens")  
+Ayrıca, zaman içinde kodu kimin değiştirdiğini görebilirsiniz. Bu, takımınızın değişiklikleri kalıpları bulmasına ve etkilerini değerlendirmenize yardımcı olabilir.
 
-#### <a name="find-changes-in-your-current-branch"></a>Değişiklikler, geçerli dal Bul
+![CodeLens: kod değişiklikleri geçmişi grafik olarak bakın.](../ide/media/codelens.png)
 
-Birden çok dal - ana dala ve bir alt geliştirme - kararlı kod çiğnemekten riskini azaltmak için takımınızın olduğunu varsayın:  
+### <a name="find-changes-in-your-current-branch"></a>Güncel dalınızda değişiklikler Bul
 
-![CodeLens: kodunuzu zaman dallandırılmış Bul](../ide/media/codelensfirstbranchconceptual.png "CodeLensFirstBranchConceptual")  
+Takımınızın birden çok dal, ana dal ve kararlı kod bölme riskini azaltmak için bir alt geliştirme dalı olabilir.
 
-Kodunuzu kaç kişinin değişti ve kaç tane değişiklik yapıldı bulun (**Alt + 6**), ana dal:  
+![CodeLens: kodunuzun ne zaman dallandırılmış Bul](../ide/media/codelensfirstbranchconceptual.png)
 
-![CodeLens: kaç tane dalınızda değişiklikleri Bul](../ide/media/codelensbranchchanges.png "CodeLensBranchChanges")  
+Kodunuzu kaç kişinin değiştirdiğini ve kaç tane değişiklik tuşlarına basarak ana dalda yapılan bulabilirsiniz **Alt**+**6**:
 
-#### <a name="find-when-your-code-was-branched"></a>Kodunuzu zaman dallandırılmış Bul
+![CodeLens: kaç tane değişiklik dalınızda bulun.](../ide/media/codelens-branch-changes.png)
 
-Alt dala kodunuzda Örneğin, geliştirme şube buraya gidin. Değişiklikleri göstergesi seçin (**Alt + 6**):  
+### <a name="find-when-your-code-was-branched"></a>Kodunuzun ne zaman dallandırılmış Bul
 
-![CodeLens: kodunuzu zaman dallandırılmış Bul](../ide/media/codelensfirstbranchscreenshot.png "CodeLensFirstBranchScreenshot")  
+Kodunuzu dallandırılmış zaman bulmak için alt öğe dalı kodunuzda gidin. Ardından, **değişiklikleri** göstergesi veya tuşuna **Alt**+**6**:
 
-#### <a name="find-incoming-changes-from-other-branches"></a>Dala gelen değişikliklerden Bul
+![CodeLens: kodunuzun ne zaman dallandırılmış Bul](../ide/media/codelens-first-branch.png)
 
-![CodeLens: Kod değişikliklerini diğer dalları Bul](../ide/media/codelensbranchchangecheckinconceptual.png "CodeLensBranchChangeCheckinConceptual")  
+### <a name="find-incoming-changes-from-other-branches"></a>Diğer dallardan değişiklikleri bulun
 
-.. geliştirme bu hata düzeltme dal burada biçiminde yazarsınız:
+![CodeLens: kod değişikliklerini diğer dalları bulun.](../ide/media/codelensbranchchangecheckinconceptual.png)
 
-![CodeLens: Başka bir dala değişikliği iade](../ide/media/codelensbranchchangedevscreenshot.png "CodeLensBranchChangeDevScreenshot")  
+Gelen değişiklikleri görüntüleyebilirsiniz. Aşağıdaki ekran görüntüsünde, "Dev" daldaki bir hata düzeltmesi yapıldı:
 
-Bu değişiklik, geçerli dalı (ana) ayrılmadan gözden geçirebilirsiniz:  
+![CodeLens: Başka bir dalla değişikliği iade](../ide/media/codelens-branch-changes-dev.png)
 
-![CodeLens: başka bir daldan gelen değişikliği görmek](../ide/media/codelensbranchchangemainscreenshot.png "CodeLensBranchChangeMainScreenshot")  
+Güncel dalı ("ana") çıkmadan değişiklik gözden geçirebilirsiniz:
 
-#### <a name="find-when-changes-got-merged"></a>Değişiklikleri birleştirilmiş olduğunda Bul
+![CodeLens: bkz. başka bir daldan gelen değiştirme](../ide/media/codelens-branch-changes-main.png)
 
-Hangi değişikliklerin dalınızda dahil edilen görebilmeniz için:  
+### <a name="find-when-changes-got-merged"></a>Değişiklikleri birleştirdiğimde Bul
 
-![CodeLens &#45; birleştirilmiş dalları arasındaki değişiklikleri](../ide/media/codelensbranchmergedconceptual.png "CodeLensBranchMergedConceptual")  
+Böylece hangi değişikliklerin dalınızda bulunan belirleyebilir, ne zaman değişiklikleri birleştirilmiş, görebilirsiniz:
 
-Örneğin, ana dala kodunuzda artık geliştirme dalındaki hata düzeltmesi sahiptir:  
+![CodeLens - dallar arasında birleştirilen değişiklikleri](../ide/media/codelensbranchmergedconceptual.png)
 
-![CodeLens &#45; birleştirilmiş dalları arasındaki değişiklikleri](../ide/media/codelensbranchmergedscreenshot.png "CodeLensBranchMergedScreenshot")  
+Örneğin, ana dalda kodunuz artık "Dev" dalından hata düzeltmesi sahiptir:
 
-#### <a name="compare-an-incoming-change-with-your-local-version-shift--f10"></a>Gelen bir değişiklik, yerel sürümü (SHIFT + F10) ile karşılaştırın
+![CodeLens - dallar arasında birleştirilen değişiklikleri](../ide/media/codelens-branch-merged.png)
 
-![CodeLens: yerel gelen değişikliğiyle karşılaştırma](../ide/media/codelensbranchincomingchangemenu.png "CodeLensBranchIncomingChangeMenu")  
+### <a name="compare-an-incoming-change-with-your-local-version"></a>Gelen bir değişiklik yerel sürüm ile Karşılaştır
 
-Ayrıca, değişiklik çift tıklatabilirsiniz.
+Yerel sürümünüzle birlikte gelen bir değişikliği tuşlarına basarak karşılaştırma **Shift**+**F10**, veya değişiklik kümesini çift tıklayın.
 
-#### <a name="what-do-the-icons-mean"></a>Simgeler ne anlama geliyor?
+![CodeLens: gelen değişiklik yerel ile Karşılaştır](../ide/media/codelens-branch-incoming-change-menu.png)
 
-|**Simgesi**|**Değişiklik alınacağı yeri?**|  
-|--------------|-----------------------------------------|  
-|![CodeLens: Geçerli dal simgesinden değiştirme](../ide/media/codelensbranchcurrenticon.png "CodeLensBranchCurrentIcon")|Geçerli dalı|  
-|![CodeLens &#45; değiştirmek üst şube simgesinden](../ide/media/codelensbranchparenticon.png "CodeLensBranchParentIcon")|Ana dal|  
-|![CodeLens: Değiştirme alt şube simgesinden](../ide/media/codelensbranchchildicon.png "CodeLensBranchChildIcon")|Bir alt dal|  
-|![CodeLens &#45; değiştirmek eş şube simgesinden](../ide/media/codelensbranchpeericon.png "CodeLensBranchPeerIcon")|Bir eş dal|  
-|![CodeLens &#45; değiştirmek şube daha fazla koyma simgesinden](../ide/media/codelensbranchfurtherawayicon.png "CodeLensBranchFurtherAwayIcon")|Bir dal daha üst, alt ya da eş koyma|  
-|![CodeLens: üst simgesinden birleştirme](../ide/media/codelensbranchmergefromparenticon.png "CodeLensBranchMergeFromParentIcon")|Ana dal gelen alt dala birleştirme|
-|![CodeLens: alt şube simgesinden birleştirme](../ide/media/codelensbranchmergefromchildicon.png "CodeLensBranchMergeFromChildIcon")|Alt dala gelen birleştirme ana dala|  
-|![CodeLens: ilişkisiz şube simgesinden birleştirme](../ide/media/codelensbranchmergefromunrelatedicon.png "CodeLensBranchMergeFromUnrelatedIcon")|İlişkisiz bir şube (temelsiz birleştirme) gelen birleştirme|  
+### <a name="branch-icons"></a>Dal simgeleri
 
-### <a name="find-linked-work-items"></a>Bağlantılı iş öğelerini bulma
+Simge **dal** sütun bildirir dal nasıl ilişkili olduğunu içinde çalışmakta olduğunuz dalı için.
 
-![CodeLens &#45; iş öğelerini bulmak için belirli bir kod](../ide/media/codelensworkitems.png "CodeLensWorkItems")  
+|**Simgesi**|**Değişiklik geldiği:**|
+|--------------| - |
+|![CodeLens: geçerli dal simgesini değiştirme](../ide/media/codelensbranchcurrenticon.png)|Geçerli dal|
+|![CodeLens: üst dalı simgesini değiştirme](../ide/media/codelensbranchparenticon.png)|Üst dal|
+|![CodeLens: alt öğe dalı simgesini değiştirme](../ide/media/codelensbranchchildicon.png)|Bir alt öğe dalı|
+|![CodeLens: Eş dal simgesini değiştirme](../ide/media/codelensbranchpeericon.png)|Bir eş dal|
+|![CodeLens: dal daha koyma simgesini değiştirme](../ide/media/codelensbranchfurtherawayicon.png)|Daha fazla dal parent, child veya eş daha kaldı|
+|![CodeLens: üst simge Birleştir](../ide/media/codelensbranchmergefromparenticon.png)|Üst dalından bir alt öğe dalı birleştirme|
+|![CodeLens: alt öğe dalı simgesinden Birleştir](../ide/media/codelensbranchmergefromchildicon.png)|Bir alt dalından ana dala birleştirme|
+|![CodeLens: ilişkisiz dal simgesinden Birleştir](../ide/media/codelensbranchmergefromunrelatedicon.png)|İlişkisiz bir daldan (tabansız birleştirme) birleştirme|
 
-### <a name="find-linked-code-reviews"></a>Bağlantılı kod incelemeleri Bul
+## <a name="linked-work-items"></a>Bağlantılı iş öğeleri
 
-![CodeLens &#45; görüntülemek kod gözden geçirme istekleri](../ide/media/codelenscodereviews.png "CodeLensCodeReviews")  
+Seçerek bağlantılı iş öğelerini bulma **iş öğelerini** göstergesi veya basarak **Alt**+**8**.
 
-### <a name="find-linked-bugs"></a>Bağlantılı hataları bulma
+![CodeLens - belirli bir kod için çalışma öğeleri bulun](../ide/media/codelens-work-items.png)
 
-![CodeLens &#45; Bul hatalar bağlantılı değişiklik kümesinin](../ide/media/codelensbugschangesets.png "CodeLensBugsChangesets")  
+## <a name="linked-code-reviews"></a>Bağlantılı kod incelemeleri
 
-### <a name="contact-the-owner-of-an-item"></a>Bir öğenin sahibiyle iletişime geçin
+Bağlantılı kod incelemeleri seçerek bulmak **incelemeleri** göstergesi. Klavyeyi kullanmak için basılı **Alt** anahtar ve tuşuna **sol ok** veya **sağ ok** gösterge seçeneklerini gidin.
 
-![Bir öğe sahibine başvurun](../ide/media/codelenscontactitemowner.png "CodeLensContactItemOwner")  
+![CodeLens - kodu görüntüle isteklerini gözden geçirme](../ide/media/codelens-code-reviews.png)
 
-Kişi Seçenekleri görmek için bir öğe için kısayol menüsünü açın. Lync veya Skype Kurumsal yüklü varsa, bu seçenekleri bakın:  
+## <a name="linked-bugs"></a>Bağlantılı hataları
 
-![Bir öğe için seçenekleri başvurun](../ide/media/codelensitemcontactmenu.png "CodeLensItemContactMenu")  
+Seçerek bağlantılı hataları bulun **hataları** göstergesi veya basarak **Alt**+**7**.
 
-##  <a name="FindRunUnitTests"></a> Kodunuz için birim testleri bulma
+![CodeLens - bağlı değişiklik kümelerini Bul hataları](../ide/media/codelens-bugs-changesets.png)
 
-Mevcut açmadan kodunuz için birim testleri hakkında daha fazla bilgi **Test Gezgini**. İhtiyacınız vardır:  
+## <a name="contact-the-owner-of-an-item"></a>Bir öğenin sahibiyle iletişime geçin
 
--   Visual Studio Enterprise veya Visual Studio Professional  
-  
--   C# veya Visual Basic kodu  
-  
--   A [birim testi projesi](../test/unit-test-your-code.md) olan uygulama kodunuz için birim testleri  
-  
-1.  Birim testlerini içeren uygulama koduna gidin.  
-  
-2.  Bu kod için testleri gözden geçirin (**Alt + 3**).  
-  
-     ![CodeLens &#45; Seç test durumu Kod düzenleyicisinde](../ide/media/codelenschoosetestindicator.png "CodeLensChooseTestIndicator")  
-  
-3.  Bir uyarı simgesi görürseniz ![CodeLens &#45; birim testleri çalıştırma henüz uyarı](../ide/media/codelenstestwarningicon.png "CodeLensTestWarningIcon"), testleri çalıştırın.  
-  
-     ![CodeLens &#45; görünüm birim testleri değil çalıştırma henüz](../ide/media/codelenstestsnotyetrun.png "CodeLensTestsNotYetRun")  
-  
-4.  Bir testin tanımı gözden geçirmek için kod dosyası düzenleyicisinde açmak için CodeLens göstergesi penceresinde test öğesini çift tıklatın.  
-  
-     ![CodeLens &#45; birim testi Tanıma Git](../ide/media/codelensunittestdefinition.png "CodeLensUnitTestDefinition")  
-  
-5.  Testin sonuçları gözden geçirin. Test durum göstergesi seçin (![CodeLens &#45; birim testi başarısız simgesi](../ide/media/codelenstestfailedicon.png "CodeLensTestFailedIcon") veya ![CodeLens &#45; birim testi geçirilen simgesi] (../ide/media/codelenstestpassedicon.png "CodeLensTestPassedIcon")), veya basın **Alt + 1**.  
-  
-     ![CodeLens &#45; bkz birim test sonucu](../ide/media/codelensunittestresult.png "CodeLensUnitTestResult")  
-  
-6.  Bu test kaç kişinin değiştirilmesi, kimin bu test değiştirilmiş veya bu test için kaç tane değişikliklerin yapıldığı görmek için [, kodun geçmişi ve bağlantılı öğeler Bul](#FindCodeHistory).
+Öğeyi yazarı seçerek bulma **yazarlar** göstergesi veya basarak **Alt**+**5**.
 
-##  <a name="QA"></a> SORU- CEVAP
+![Bir öğenin sahibiyle iletişime geçin](../ide/media/codelens-contact-item-owner.png)
 
-###  <a name="ChangeOrTurnOff"></a> S: CodeLens nasıl kapatma veya açma? Veya görmek için hangi göstergeleri seçin?
+İlgili kişi seçeneklerini görmek için bir öğe için kısayol menüsünü açın. Lync veya Skype Kurumsal'a yüklü olan bu seçenekleri görürsünüz:
 
-**Y:** göstergeleri kapalı veya açık başvurular göstergesi dışında kapatabilirsiniz. Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **tüm diller**  >  **CodeLens**.  
-  
- Göstergeleri açık olduğunda, CodeLens seçenekleri göstergelerini açabilirsiniz.  
-  
- ![CodeLens &#45; dışı göstergeleri Aç](../ide/media/codelensturnoffonindicatorsfromcode.png "CodeLensTurnOffOnIndicatorsFromCode")  
-  
- CodeLens dosya düzeyinde göstergeleri açıp Düzenleyicisi penceresinin alt kısmında Köşeli Çift Ayraca simgeleri kullanarak kapatabilirsiniz.  
-  
- ![Dosya Aç&#45;açma ve kapatma göstergeleri düzey](../ide/media/codelensfilelevelonandoff.png "CodeLensFileLevelOnAndOff")  
-  
-###  <a name="NoIndicators"></a> S: CodeLens nerede?
+![Bir öğe için ilgili kişi seçeneklerini](../ide/media/codelens-item-contact-menu.png)
 
-**Y:** yöntemi, sınıf, dizin oluşturucu ve özellik düzeyinde C# ve Visual Basic kodu CodeLens görünür. Tüm dosya türleri için dosya düzeyinde CodeLens görünür.
+## <a name="associated-unit-tests"></a>İlişkili birim testleri
 
-- CodeLens açık olduğundan emin olun. Git **Araçları**, **seçenekleri**, **metin düzenleyici**, **tüm diller**, **CodeLens**.  
+Mevcut birim testleri, C# veya Visual Basic kodunuzda açmadan bulabilir **Test Gezgini**.
 
-- Kodunuzu TFS'de depolanıyorsa, kod dizinini kullanarak açık olduğundan emin olun [Codeındex komutu](../ide/codeindex-command.md) ile [TFS Config komutunu](/vsts/tfs-server/command-line/tfsconfig-cmd).
+1. İlişkili uygulama koduna gidin [birim testi kodu](../test/unit-test-your-code.md).
 
-- TFS ilişkili göstergeler yalnızca iş öğeleri koda bağlandığında ve bağlantılı iş öğelerini açmak için izniniz olduğunda görünür. [Ekip üyesi izinlere sahip olduğunuzu doğrulayın](/vsts/work/scale/multiple-teams).
+2. Zaten varsa, test CodeLens Göstergeleri yüklemek için uygulamanızı oluşturun. Emin [bulma tarafından derlenen bütünleştirilmiş kodlar](../test/test-explorer-faq.md#assembly-based-discovery) açıktır.
 
-- Uygulama kodu birim testleri sahip olmadığında birim testi göstergeleri görünmüyor. Test durumu göstergeleri test projesinde otomatik olarak görüntülenir. Birim testleri uygulama kodunuz var, ancak test göstergeleri görünmüyor biliyorsanız, çözümü oluşturma deneyin (**Ctrl + Shift + B**).
+3. Kod için testleri tuşlarına basarak gözden **Alt**+**3**.
 
-### <a name="q-why-dont-i-see-the-work-item-details-for-a-commit"></a>Bir yürütme iş öğesi ayrıntılarını neden göremiyorum?
+     ![CodeLens - seçin Kod Düzenleyicisi'nde test durumu](../ide/media/codelens-choose-test-indicator.png)
 
-**Y:** CodeLens TFS'de iş öğeleri bulamadığından bu durum oluşabilir. Olanlar sahip takım projesine bağlı olduğunuzu denetleyin iş öğelerini ve görmek için izinlere sahip olanlar iş öğeleri. Yürütme açıklama TFS'de iş öğesi kimlikleri hakkında yanlış bilgi varsa, bu da gerçekleşebilir.  
+4. Bir uyarı simgesi görürseniz ![uyarı simgesi](../ide/media/codelenstestwarningicon.png), testleri henüz çalıştırmak henüz, bu nedenle bunları çalıştırın.
 
-###  <a name="NoLync"></a> Lync veya Skype göstergeleri neden göremiyorum?
+     ![CodeLens - görünüm birim testleri henüz Çalıştır](../ide/media/codelens-tests-not-yet-run.png)
 
-**Y:** bunlar görünmez Lync veya Skype Kurumsal oturum açtınız değil, bunların yüklü yoksa veya desteklenen bir yapılandırma yok. Ancak posta göndermeye devam edebilir:  
+5. Bir testin tanımını gözden geçirmek için düzenleyicide kod dosyasını açmak için CodeLens göstergesi penceresinde test öğesini çift tıklayın.
 
-![CodeLens &#45; kişi değişiklik sahibi tarafından posta](../ide/media/codelenscodesendmailchangesetnolync1.png "CodeLensCodeSendMailChangesetNoLync1")  
+     ![CodeLens - birim testi tanımına Git](../ide/media/codelens-unit-test-definition.png)
 
- **Hangi Lync ve Skype yapılandırmaları desteklenir?**
+6. Test sonuçlarını gözden geçirmek için test durumu göstergesini seçin (![başarısız test simgesini](../ide/media/codelenstestfailedicon.png) veya ![testi geçildi simgesi](../ide/media/codelenstestpassedicon.png)), veya basın **Alt**+**1**.
 
--   Skype Kurumsal (32 bit veya 64 bit)  
+     ![CodeLens - bkz. birim testi sonucu](../ide/media/codelens-unit-test-result.png)
 
--   Lync 2010 veya daha sonra tek başına (32 bit veya 64 bit), ancak değil Lync Basic 2013 ile Windows 8.1  
+7. Bu testi kaç kişinin değiştirdiğini, bu testi kimin değiştirdiğini veya kaç değişiklik bu test ile yapılan görmek için [kodunuzun geçmişini bulun](#find-code-history) ve bağlantılı öğe.
 
-CodeLens Lync farklı sürümlerine sahip desteklemiyor veya Skype yüklü. Bunlar, Visual Studio'nun tüm yerelleştirilmiş sürümleri için yerelleştirilmiş olabilir değil.  
+## <a name="keyboard-shortcuts"></a>Klavye kısayolları
 
-### <a name="q-how-do-i-change-the-font-and-color-for-codelens"></a>S: CodeLens için yazı tipi ve renk nasıl değiştirebilirim?
+Göstergeleri seçmek için klavyeyi kullanmak için basılı tutun **Alt** seçmek istediğiniz anahtar ilgili sayı tuşlarını görüntülemek, ardından göstergesini karşılık gelen tuşuna basın.
 
-**Y:** Git **Araçları** > **seçenekleri** > **ortam** > **yazı tiplerini ve renkleri**.  
+![Klavye erişim numaraları](../ide/media/codelens-alt-keys.png)
 
-![CodeLens &#45; yazı tipi ve renk ayarlarını değiştir](../ide/media/codelensoptionsfontscolorssettings.png "CodeLensOptionsFontsColorsSettings")  
+> [!NOTE]
+> Seçilecek **incelemeleri** göstergesi, basılı **Alt** gezinmek için sol ve sağ ok tuşlarını kullanarak.
+
+## <a name="q--a"></a>Soru - Yanıt
+
+### <a name="q-how-do-i-turn-codelens-off-or-on-or-choose-which-indicators-to-see"></a>S: CodeLens açma veya kapatma, veya nasıl görmek için hangi göstergelerini seçin?
+
+**Y:** göstergeleri kapalı veya açık başvuru göstergesini dışında etkinleştirebilirsiniz. Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **tüm diller**  >  **CodeLens**.
+
+Göstergeler açık olduğunda, CodeLens seçeneklerini göstergelerden açabilirsiniz.
+
+![CodeLens - veya devre dışı bırakma göstergeleri](../ide/media/codelensturnoffonindicatorsfromcode.png)
+
+CodeLens dosya düzeyi göstergelerini açma ve kapatma köşeli çift ayraç simgelerini Düzenleyicisi penceresinin alt kısmında kullanarak etkinleştirin.
+
+![Dosya düzeyi göstergelerini açıp kapatma](../ide/media/codelensfilelevelonandoff.png)
+
+### <a name="q-where-is-codelens"></a>S: CodeLens nerede?
+
+**Y:** yöntemi, sınıfı, dizin oluşturucu ve özellik düzeyinde C# ve Visual Basic kodu CodeLens görünür. CodeLens dosya düzeyi tüm dosya türleri için görünür.
+
+- CodeLens açık olduğundan emin olun. Git **Araçları** > **seçenekleri** > **metin düzenleyici** > **tüm diller**  >  **CodeLens**.
+
+- Kodunuzu TFS içinde depolanır, kod dizini oluşturma kullanarak açık olduğundan emin olun [Codeındex komutu](../ide/codeindex-command.md) ile [TFS Yapılandırma komut](/tfs/server/ref/command-line/tfsconfig-cmd).
+
+- DevOps ile ilgili göstergeler, yalnızca bağlı iş öğesi için kod ve bağlı iş öğelerini açma izniniz olduğunda görünür. Sahip olduğunuzu onaylamak [takım üyesi izinlerine](/azure/devops/organizations/security/view-permissions?view=vsts).
+
+- Birim test göstergeleri, uygulama kodu birim testlere sahip olmadığında görünmez. Test durumu göstergeleri test projesinde otomatik olarak görüntülenir. Uygulama kodunuzun birim testleri var, ancak test göstergeleri görünmüyorsa biliyorsanız, çözümü derlemeyi deneyin (**Ctrl**+**Shift**+**B**).
+
+### <a name="q-why-dont-i-see-the-work-item-details-for-a-commit"></a>S: işleme iş öğesi ayrıntılarını neden göremiyorum?
+
+**Y:** Azure panoları veya TFS iş öğeleri CodeLens bulamadığından gerçekleşebilir. Bu olan projesine bağlı değilseniz denetleyin, çalışma öğeleri ve bunları görme iznine sahip iş öğeleri. İş öğesi ayrıntıları, yürütme açıklama iş öğesi kimlikleri Azure panoları veya TFS yanlış bilgi olup olmadığını da göstermeyebilir.
+
+### <a name="q-why-dont-i-see-the-skype-indicators"></a>S: neden Skype göstergeleri göremiyorum?
+
+**Y:** Skype Kurumsal'a oturum açmadıysanız, Lync yüklü veya desteklenen bir yapılandırmaya sahip değilseniz, Skype göstergeleri görünmez. Bununla birlikte, e-posta göndermeye devam edebilir:
+
+![CodeLens - posta yoluyla iletişim değişiklik kümesi sahibi](../ide/media/codelenscodesendmailchangesetnolync1.png)
+
+**Hangi Skype ve Lync yapılandırmaları desteklenir?**
+
+- Skype Kurumsal'a (32 bit veya 64-bit)
+
+- Lync 2010 veya daha sonra tek başına (32 bit veya 64-bit), ancak değil, Lync Basic 2013 ile Windows 8.1
+
+CodeLens, farklı Lync sürümlerine sahip desteklemiyor veya Skype yüklü. Bunlar, Visual Studio'nun tüm yerelleştirilmiş sürümleri için yerelleştirilmiş olmayabilir.
+
+### <a name="q-how-do-i-change-the-font-and-color-for-codelens"></a>S: nasıl yazı tipi ve renk için CodeLens değiştirebilirim?
+
+**Y:** Git **Araçları** > **seçenekleri** > **ortam** > **yazı tipleri ve renkler**.
+
+![CodeLens - yazı tipi ve renk ayarlarını değiştir](../ide/media/codelensoptionsfontscolorssettings.png)
 
 Klavyeyi kullanmak için:
 
-1.  Tuşuna **Alt + T + O** açmak için **seçenekleri** kutusu.  
+1. Tuşuna **Alt**+**T**+**O** açmak için **seçenekleri** iletişim kutusu.
 
-2.  Basın **yukarı ok** veya **aşağı ok** gitmek için **ortam** düğümü tuşuna basarak **sol ok** düğümü genişletmek için.  
+2. Basın **yukarı ok** veya **aşağı ok** gitmek için **ortam** düğümünü tuşuna **sol ok** düğümü genişletmek için.
 
-3.  Tuşuna **aşağı ok** gitmek için **yazı tiplerini ve renkleri**.  
+3. Tuşuna **aşağı ok** gitmek için **yazı tipleri ve renkler**.
 
-4.  Basın **sekmesini** gitmek için **ayarlarını göster** listelemek ve tuşuna basarak **aşağı ok** seçmek için **CodeLens**.  
+4. Basın **sekmesini** gitmek için **ayarlarını göster** listelemek ve tuşuna **aşağı ok** seçmek için **CodeLens**.
 
 ### <a name="q-can-i-move-the-codelens-heads-up-display"></a>S: CodeLens ekran göstergesi görüntüsünü taşıyabilir miyim?
 
-**Y:** Evet, seçin ![CodeLens &#45; bir pencere olarak yerleştirme](../ide/media/codelensdockwindow.png "CodeLensDockWindow") CodeLens bir pencere olarak sabitlemek için.  
+**Y:** Evet, seçin ![Dock simgesi](../ide/media/codelensdockwindow.png) Codelens'i pencere olarak yerleştirmek için.
 
-![CodeLens göstergesi penceresini yerleştirme](../ide/media/codelensselectdockwindow.png "CodeLensSelectDockWindow")  
+![CodeLens göstergesi penceresinde Dock düğmesi](../ide/media/codelensselectdockwindow.png)
 
-![Yerleşik CodeLens başvuruları penceresi](../ide/media/codelensreferencesdockedwindow.png "CodeLensReferencesDockedWindow")  
+![Yerleşik CodeLens başvuruları pencere](../ide/media/codelensreferencesdockedwindow.png)
 
 ### <a name="q-how-do-i-refresh-the-indicators"></a>S: Göstergeleri nasıl yenileyebilirim?
 
-**Y:** Bu gösterge üzerinde bağlıdır:  
+**Y:** Bu gösterge üzerinde bağlıdır:
 
--   **Başvuruları**: kod değiştiğinde bu gösterge otomatik olarak güncelleştirir. Bu gösterge ayrı bir pencerede yerleşik varsa, gösterge el ile burada yenileme:  
+- **Başvuruları**: kod değiştiğinde bu gösterge otomatik olarak güncelleştirir. Varsa **başvuruları** göstergesi ayrı bir pencerede yerleştirilmiş, göstergenin Yenile'yi **Yenile**:
 
-     ![CodeLens &#45; pencere olarak Yerleştir](../ide/media/codelensviewreferencesdocked.png "CodeLensViewReferencesDocked")  
+     ![Yenile düğmesi CodeLens başvurularda](../ide/media/codelensviewreferencesdocked.png)
 
--   **Takım**: Burada Bu göstergeler el ile yenileme:  
+- **Takım**: seçerek bu göstergelerini Yenile **CodeLens takım göstergelerini Yenile** sağ tıklatma menüsünden:
 
-     ![CodeLens &#45; yenileme göstergeleri](../ide/media/codelensrefreshindicatorsfromcode.png "CodeLensRefreshIndicatorsFromCode")  
+     ![CodeLens takım göstergeleri menü öğesi Yenile](../ide/media/codelensrefreshindicatorsfromcode.png)
 
--   **Test**: [Bul kodunuz için birim testleri](#FindRunUnitTests) Bu gösterge yenilenecek.  
+- **Test**: [kodunuz için birim testleri bulmak](#associated-unit-tests) yenilemek için **Test** göstergesi.
 
-###  <a name="LocalVersion"></a> S: "Yerel sürümü" nedir?
+### <a name="q-whats-local-version"></a>S: "Yerel sürüm" nedir?
 
-**Y:** **yerel sürümü** ok yerel sürümünüzde bu dosyanın en son değişiklik gösterir. Üstüne veya altına sunucunun daha yeni değişiklik olduğunda, göründükleri **yerel sürümü** bağlı olarak değişiklik kümelerini sıralamak için kullanılan sırayı oku.
+**Y:** **yerel sürüm** ok yerel sürümünüzde bir dosyanın en son değişiklik kümesini işaret eder. Üstüne veya altına sunucunun daha yeni değişiklik kümeleri olduğunda, göründükleri **yerel sürüm** ok, değişiklik kümelerini sıralarken kullanılan düzene bağlı olarak.
 
-### <a name="q-can-i-manage-how-codelens-processes-code-to-show-history-and-linked-items"></a>S: CodeLens geçmişi ve bağlantılı öğeler göstermek için kod nasıl işlediği yönetebilirim?
+### <a name="q-can-i-manage-how-codelens-processes-code-to-show-history-and-linked-items"></a>CodeLens kod geçmişini ve ilişkili öğeleri göstermek için nasıl işlediği yönetebilir miyim?
 
-**Y:** Evet, kodunuzu TFS'de ise, kullan [Codeındex komutu](../ide/codeindex-command.md) ile [TFS Config komutunu](/vsts/tfs-server/command-line/tfsconfig-cmd).
+**Y:** Evet. Kodunuzu TFS içinde ise, kullanın [Codeındex komutu](../ide/codeindex-command.md) ile [TFS Yapılandırma komut](/tfs/server/ref/command-line/tfsconfig-cmd).
+
+### <a name="q-my-codelens-test-indicators-no-longer-appear-in-my-file-when-i-first-open-my-solution-how-can-i-load-them"></a>S: Alanım CodeLens test göstergeleri, artık çözümüm'ı ilk kez açtığınızda my dosyasında görünür. Bunları nasıl yüklenmesi miyim?
+
+**Y:** dosyanıza yüklemek için CodeLens test göstergeleri almak için projenizi yeniden derleyin. Emin [bulma tarafından derlenen bütünleştirilmiş kodlar](../test/test-explorer-faq.md#assembly-based-discovery
+) açıktır. Kod dosyalar yüklendiğinde performansını geliştirmek için Visual Studio artık test göstergeleri için kaynak bilgileri getirir. Test göstergeleri, bir derlemeden sonra veya bir testi içinde çift tıklayarak gittiğinizde yüklenir **Test Gezgini**.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Kod Düzenleyicisi'nde yazma](../ide/writing-code-in-the-code-and-text-editor.md)
+- [Kod Düzenleyicisi özellikleri](../ide/writing-code-in-the-code-and-text-editor.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c49e4254df9ec06813499237054ec916bb4b6c1b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a1210b84a52aa15d3c8e1bb73bc58d1fbe48a19d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920358"
 ---
 # <a name="idebugbinderbind"></a>IDebugBinder::Bind
-Bu yöntem, bellek bağlamı veya sembolün geçerli değeri içeren nesneyi alır.  
+Bu yöntem, bellek bağlamı veya sembolün geçerli değerini içeren nesneyi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,13 +48,13 @@ int Bind(
  [in] [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) tarafından başvurulan alt içeren `pField`.  
   
  `pField`  
- [in] [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) simgenin temsil eden.  
+ [in] [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) temsil eden bir simge.  
   
  `ppObject`  
- [out] Döndürür `IDebugObject` sembolün örneğini temsil eden.  
+ [out] Döndürür `IDebugObject` sembol örneğini temsil eden.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md)   

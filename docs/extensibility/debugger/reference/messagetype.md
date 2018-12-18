@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3fa09d938e0e7c3853431369c7e0634242df2ee0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 66c254b56d5f7755a3578814ad5f3de7898f2f88
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872232"
 ---
 # <a name="messagetype"></a>MESSAGETYPE
 Neden ve ileti türünü belirtir.  
@@ -51,36 +52,36 @@ public enum enum_MESSAGETYPE {
   
 ## <a name="members"></a>Üyeler  
  MT_OUTPUTSTRING  
- İleti için çıkış penceresini gönderilmesi gerektiğini belirtir. Bu gelen birbirini dışlayan `MT_MESSAGEBOX`.  
+ İleti için çıkış penceresine gönderilen olduğunu gösterir. Bu gelen birbirini dışlayan `MT_MESSAGEBOX`.  
   
  MT_MESSAGEBOX  
- İleti bir ileti kutusu içinde gösterilen olduğunu gösterir. Bu gelen birbirini dışlayan `MT_OUTPUTSTRING`.  
+ İleti bir ileti kutusunda gösterilecek gösterir. Bu gelen birbirini dışlayan `MT_OUTPUTSTRING`.  
   
  MT_TYPE_MASK  
- İletinin hedef ayırmak için bir maskesi değeri.  
+ İleti için hedef yalıtmak için bir maske değeri.  
   
  MT_REASON_EXCEPTION  
- Bir özel durum nedeniyle bir ileti kutusu gösterilen olduğunu gösterir. Bu gelen birbirini dışlayan `MT_REASON_TRACEPOINT`.  
+ Bir özel durum sonucu olarak bir ileti kutusu gösterilmekte olduğunu gösterir. Bu gelen birbirini dışlayan `MT_REASON_TRACEPOINT`.  
   
  MT_REASON_TRACEPOINT  
- Bir ileti kutusu bir tracepoint basarsa sonucunda gösterildikten gösterir. Birbirini dışlayan budur `MT_REASON_EXCEPTION`.  
+ Bir ileti kutusu sonucunda bir izleme noktasına ulaşma gösterilmekte olduğunu gösterir. Bu birbirini dışlayan olan `MT_REASON_EXCEPTION`.  
   
  MT_REASON_MASK  
- Gösterildikten ileti nedeni ayırmak için bir maskesi değeri.  
+ Gösterilen iletiyi nedeni yalıtmak için bir maske değeri.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerleri döndürüldüğü kaynak [GetMessage](../../../extensibility/debugger/reference/idebugmessageevent2-getmessage.md) ve [GetErrorMessage](../../../extensibility/debugger/reference/idebugerrorevent2-geterrormessage.md) yöntemleri.  
+ Bu değerleri döndürülen [GetMessage](../../../extensibility/debugger/reference/idebugmessageevent2-getmessage.md) ve [GetErrorMessage](../../../extensibility/debugger/reference/idebugerrorevent2-geterrormessage.md) yöntemleri.  
   
- Neden değerlerden biri birleştirilebilir bit kullanarak çıktı hedef değerlerden biriyle `OR`.  
+ Neden değerlerinden birleştirilebilir bit düzeyinde kullanarak çıkış hedef değerlerden biriyle `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetMessage](../../../extensibility/debugger/reference/idebugmessageevent2-getmessage.md)   
  [GetErrorMessage](../../../extensibility/debugger/reference/idebugerrorevent2-geterrormessage.md)

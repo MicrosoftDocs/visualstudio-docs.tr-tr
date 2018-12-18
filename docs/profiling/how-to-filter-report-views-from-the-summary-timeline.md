@@ -10,11 +10,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a8e2eb675b63d0c0e270e1a38bc005ae29b0595d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fb2c9bc8d0bcec6bc4a07c03dc18f07286cd77c1
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34815502"
 ---
 # <a name="how-to-filter-report-views-from-the-summary-timeline"></a>Nasıl yapılır: Özet zaman çizelgesinden rapor görünümlerini filtreleme
 Özet görünümü zaman çizelgesi grafiğinde bir zaman diliminin belirterek performans raporlarında görüntülenen verileri filtreleyebilirsiniz. Raporları filtre uygularken, belirttiğiniz zaman diliminin dahil etmek için profil oluşturma veri dosyası reanalyzed.  

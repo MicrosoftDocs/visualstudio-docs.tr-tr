@@ -1,0 +1,382 @@
+items:
+- name: SharePoint Çözümleri Oluşturma
+  href: create-sharepoint-solutions.md
+  items:
+  - name: SharePoint Geliştirmeye Başlarken
+    href: getting-started-sharepoint-development-in-visual-studio.md
+    items:
+    - name: SharePoint Hataları için Ek Bilgi
+      href: additional-information-for-sharepoint-errors.md
+  - name: SharePoint Çözümleri Geliştirme
+    href: developing-sharepoint-solutions.md
+    items:
+    - name: SharePoint Projesi ve Proje Öğesi Şablonları
+      href: sharepoint-project-and-project-item-templates.md
+    - name: Bir SharePoint Projesine Öğeler Ekleme
+      href: how-to-add-items-to-a-sharepoint-project.md
+    - name: SharePoint için Site Sütunları, İçerik Türleri ve Listeler Oluşturma
+      href: creating-site-columns-content-types-and-lists-for-sharepoint.md
+      items:
+      - name: 'İzlenecek yol: SharePoint için Site Sütunu, İçerik Türü ve Liste Oluşturma'
+        href: walkthrough-create-a-site-column-content-type-and-list-for-sharepoint.md
+    - name: Olay Alıcısı Oluşturma
+      href: how-to-create-an-event-receiver.md
+    - name: Belirli bir Liste Örneği için Olay Alıcı Oluşturma
+      href: how-to-create-an-event-receiver-for-a-specific-list-instance.md
+    - name: SharePoint İş Akışı Çözümleri Oluşturma
+      href: creating-sharepoint-workflow-solutions.md
+      items:
+      - name: İş Akışlarında Form Desteği
+        href: form-support-in-workflows.md
+      - name: 'İzlenecek yol: Bir SharePoint İş Akışı Çözümü Oluşturma ve Hatalarını Ayıklama'
+        href: walkthrough-creating-and-debugging-a-sharepoint-workflow-solution.md
+      - name: 'İzlenecek yol: İlişkilendirme ve Başlatma Formları ile İş Akışı Oluşturma'
+        href: walkthrough-creating-a-workflow-with-association-and-initiation-forms.md
+      - name: 'İzlenecek yol: Bir Uygulama Sayfasını Bir İş Akışına Ekleme'
+        href: walkthrough-add-an-application-page-to-a-workflow.md
+      - name: 'İzlenecek yol: Özel Site İş Akışı Faaliyeti Oluşturma'
+        href: walkthrough-create-a-custom-site-workflow-activity.md
+      - name: "İzlenecek yol: Bir SharePoint Tasarımcısı Yeniden Kullanılabilir İş Akışını Visual Studio'ya İçeri Aktarma"
+        href: walkthrough-import-a-sharepoint-designer-reusable-workflow-into-visual-studio.md
+    - name: SharePoint için Sayfa Oluşturma
+      href: creating-pages-for-sharepoint.md
+      items:
+      - name: SharePoint için Uygulama Sayfaları Oluşturma
+        href: creating-application-pages-for-sharepoint.md
+      - name: Uygulama Sayfası Oluşturma
+        href: how-to-create-an-application-page.md
+      - name: 'İzlenecek Yol: SharePoint Uygulama Sayfası Oluşturma'
+        href: walkthrough-creating-a-sharepoint-application-page.md
+    - name: SharePoint için Web Bölümleri Oluşturma
+      href: creating-web-parts-for-sharepoint.md
+      items:
+      - name: SharePoint Web Bölümü Oluşturma
+        href: how-to-create-a-sharepoint-web-part.md
+      - name: Tasarımcı Kullanarak SharePoint Web Bölümü Oluşturma
+        href: how-to-create-a-sharepoint-web-part-by-using-a-designer.md
+      - name: 'İzlenecek yol: SharePoint için bir Web Bölümü Oluşturma'
+        href: walkthrough-creating-a-web-part-for-sharepoint.md
+      - name: 'İzlenecek Yol: Tasarımcı Kullanarak SharePoint için bir Web Bölümü Oluşturma'
+        href: walkthrough-creating-a-web-part-for-sharepoint-by-using-a-designer.md
+      - name: 'İzlenecek yol: SharePoint için OData Görüntüleyen bir Silverlight Web Parçası Oluşturma'
+        href: walkthrough-creating-a-silverlight-web-part-that-displays-odata-for-sharepoint.md
+    - name: Web Bölümleri veya Uygulama Sayfaları için Yeniden Kullanılabilir Denetimler Oluşturma
+      href: creating-reusable-controls-for-web-parts-or-application-pages.md
+      items:
+      - name: Bir SharePoint Uygulama Sayfası veya Web Bölümü için Kullanıcı Denetimi Oluşturma
+        href: how-to-create-a-user-control-for-a-sharepoint-application-page-or-web-part.md
+    - name: İş Verilerini SharePoint ile Tümleştirme
+      href: integrating-business-data-into-sharepoint.md
+      items:
+      - name: İş Verileri Bağlantı Modeli Oluşturma
+        href: creating-a-business-data-connectivity-model.md
+        items:
+        - name: BDC Modeli Oluşturma
+          href: how-to-create-a-bdc-model.md
+        - name: Bir SharePoint Projesine Mevcut bir BDC Modeli Dosyası Ekleme
+          href: how-to-add-an-existing-bdc-model-file-to-a-sharepoint-project.md
+        - name: Yerelleştirilmiş Adları, Özellikleri ve İzinleri Belirtmek için Kaynak Dosyası Kullanma
+          href: how-to-use-a-resource-file-to-specify-localized-names-properties-and-permissions.md
+        - name: Bir BDC Özelliğine Özel bir Derlemeyi Dahil Etme
+          href: how-to-include-a-custom-assembly-in-a-bdc-feature.md
+      - name: İş Verileri Bağlantı Modeli Tasarlama
+        href: designing-a-business-data-connectivity-model.md
+        items:
+        - name: BDC Modeli Tasarım Araçlarına Genel Bakış
+          href: bdc-model-design-tools-overview.md
+        - name: Modele bir Varlık Ekleme
+          href: how-to-add-an-entity-to-a-model.md
+        - name: Bulucu Metodu Ekleme
+          href: how-to-add-a-finder-method.md
+        - name: Belirli bir Bulucu Metodu Ekleme
+          href: how-to-add-a-specific-finder-method.md
+        - name: Bir Yaratıcı Metodu Ekleme
+          href: how-to-add-a-creator-method.md
+        - name: Bir Silici Metodu Ekleme
+          href: how-to-add-a-deleter-method.md
+        - name: Bir Güncelleştirici Metodu Ekleme
+          href: how-to-add-an-updater-method.md
+        - name: Bir Metoda Parametre Ekleme
+          href: how-to-add-a-parameter-to-a-method.md
+        - name: Bir Parametrenin Tür Tanımlayıcısını Tanımlama
+          href: how-to-define-the-type-descriptor-of-a-parameter.md
+        - name: Metot Örneği Tanımlama
+          href: how-to-define-a-method-instance.md
+        - name: Özel Özellik Ekleme
+          href: how-to-add-a-custom-property.md
+        - name: Bir Bulucu Metoduna Filtre Tanımlayıcısı Ekleme
+          href: how-to-add-a-filter-descriptor-to-a-finder-method.md
+        - name: Varlıklar Arasında İlişkilendirme Oluşturma
+          href: creating-an-association-between-entities.md
+        - name: Varlıklar Arasında İlişkilendirme Oluşturma
+          href: how-to-create-an-association-between-entities.md
+        - name: "İzlenecek yol: İş Verileri Kullanarak SharePoint'te Dış Liste Oluşturma"
+          href: walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data.md
+    - name: SharePoint için Site Tanımları Oluşturma
+      href: creating-site-definitions-for-sharepoint.md
+      items:
+      - name: 'İzlenecek yol: Temel bir Site Tanımı Projesi Oluşturma'
+        href: walkthrough-create-a-basic-site-definition-project.md
+    - name: Mevcut bir SharePoint Sitesinden Öğeleri İçeri Aktarma
+      href: importing-items-from-an-existing-sharepoint-site.md
+      items:
+      - name: 'İzlenecek yol: Mevcut bir SharePoint Sitesinden Öğeleri İçeri Aktarma'
+        href: walkthrough-import-items-from-an-existing-sharepoint-site.md
+      - name: Yeniden Kullanılabilir İş Akışlarını İçeri Aktarma Yönergeleri
+        href: guidelines-for-importing-reusable-workflows.md
+      - name: Bir Ana Sayfa veya Temayı İçeri Aktarma
+        href: how-to-import-a-master-page-or-theme.md
+      - name: 'İzlenecek yol: Bir Görüntü İçeren Özel bir Ana Sayfa ve Site Sayfasını İçeri Aktarma'
+        href: walkthrough-import-a-custom-master-page-and-site-page-with-an-image.md
+    - name: Çözüme Dosyaları Dahil Etmek için Modül Kullanma
+      href: using-modules-to-include-files-in-the-solution.md
+      items:
+      - name: Modül Kullanarak Dosyaları İçerme
+        href: how-to-include-files-by-using-a-module.md
+    - name: Sunucu Gezgini Kullanarak SharePoint Bağlantılarına Gözatma
+      href: browsing-sharepoint-connections-using-server-explorer.md
+      items:
+      - name: SharePoint Bağlantıları Ekleme veya Kaldırma
+        href: how-to-add-or-remove-sharepoint-connections.md
+    - name: Proje Öğelerinde Paketleme ve Dağıtım Bilgileri Sağlama
+      href: providing-packaging-and-deployment-information-in-project-items.md
+      items:
+      - name: Denetimleri Güvenli Denetim Olarak İşaretleme
+        href: how-to-mark-controls-as-safe-controls.md
+      - name: Proje Çıktı Başvurusu Ekleme
+        href: how-to-add-a-project-output-reference.md
+    - name: Eşlenmiş Klasörler Ekleme ve Kaldırma
+      href: how-to-add-and-remove-mapped-folders.md
+    - name: Korumalı Çözümle İlgili Konular
+      href: sandboxed-solution-considerations.md
+    - name: SharePoint Çözümleri için Güvenlik
+      href: security-for-sharepoint-solutions.md
+    - name: URL Seçici İletişim Kutusu
+      href: url-picker-dialog-box-sharepoint-development-in-visual-studio.md
+  - name: SharePoint Çözümlerini Yerelleştirme
+    href: localizing-sharepoint-solutions.md
+    items:
+    - name: Kaynak Dosyası Ekleme
+      href: how-to-add-a-resource-file.md
+    - name: Bir Özelliği Yerelleştirme
+      href: how-to-localize-a-feature.md
+    - name: ASPX İşaretlemesini Yerelleştirme
+      href: how-to-localize-aspx-markup.md
+    - name: Kod Yerelleştirme
+      href: how-to-localize-code.md
+  - name: SharePoint Çözümleri Oluşturma ve Hatalarını Ayıklama
+    href: building-and-debugging-sharepoint-solutions.md
+    items:
+    - name: SharePoint Çözümleri Derleme
+      href: how-to-build-sharepoint-solutions.md
+    - name: SharePoint Çözümlerinde Hata Ayıklama
+      href: debugging-sharepoint-solutions.md
+    - name: SharePoint Kodunu Doğrulama ve Hata Ayıklama
+      href: verifying-and-debugging-sharepoint-code.md
+      items:
+      - name: "İzlenecek yol: IntelliTrace'i Kullanarak SharePoint Uygulamasında Hata Ayıklama"
+        href: walkthrough-debugging-a-sharepoint-application-by-using-intellitrace.md
+    - name: SharePoint Uygulamaları için Performans Profili Oluşturma
+      href: profiling-the-performance-of-sharepoint-applications.md
+      items:
+      - name: 'İzlenecek Yol: SharePoint Uygulaması için Profil Oluşturma'
+        href: walkthrough-profiling-a-sharepoint-application.md
+    - name: Korumalı Çözümler ve Grup Çözümleri Arasındaki Farklılıklar
+      href: differences-between-sandboxed-and-farm-solutions.md
+    - name: SharePoint Tarafından Desteklenen MSBuild Özellikleri
+      href: msbuild-properties-supported-by-sharepoint.md
+    - name: SharePoint Çözümlerinde Sorun Giderme
+      href: troubleshooting-sharepoint-solutions.md
+  - name: SharePoint Çözümlerini Paketleme ve Dağıtma
+    href: packaging-and-deploying-sharepoint-solutions.md
+    items:
+    - name: SharePoint Özellikleri Oluşturma
+      href: creating-sharepoint-features.md
+      items:
+      - name: SharePoint Çözümlerine Özellik Ekleme
+        href: how-to-add-a-feature-to-sharepoint-solutions.md
+      - name: Bir SharePoint Özelliğini Özelleştirme
+        href: how-to-customize-a-sharepoint-feature.md
+      - name: SharePoint Özelliklerine Öğe Ekleme ve Kaldırma
+        href: how-to-add-and-remove-items-to-sharepoint-features.md
+      - name: Özellik Bağımlılıkları Ekleme ve Kaldırma
+        href: how-to-add-and-remove-feature-dependencies.md
+      - name: 'İzlenecek yol: Özellik Olay Alıcıları Ekleme'
+        href: walkthrough-add-feature-event-receivers.md
+    - name: SharePoint Çözüm Paketleri Oluşturma
+      href: creating-sharepoint-solution-packages.md
+      items:
+      - name: Bir SharePoint Çözüm Paketini Özelleştirme
+        href: how-to-customize-a-sharepoint-solution-package.md
+      - name: Paket Tasarımcısını Kullanarak Bir Pakete Özellikler ve Öğeler Ekleme ve Kaldırma
+        href: how-to-add-and-remove-features-and-items-to-a-package-by-using-the-package-designer.md
+      - name: Paketleme Gezgini'ni Kullanarak Bir Pakete Özellikler ve Öğeler Ekleme ve Kaldırma
+        href: how-to-add-and-remove-features-and-items-to-a-package-by-using-the-packaging-explorer.md
+      - name: Ek Derlemeler Ekleme ve Kaldırma
+        href: how-to-add-and-remove-additional-assemblies.md
+      - name: MSBuild Görevlerini Kullanarak bir SharePoint Çözüm Paketi Oluşturma
+        href: how-to-create-a-sharepoint-solution-package-by-using-msbuild-tasks.md
+      - name: MSBuild Hedeflerini Kullanarak SharePoint Çözüm Paketini Özelleştirme
+        href: how-to-customize-a-sharepoint-solution-package-by-using-msbuild-targets.md
+    - name: SharePoint Çözüm Paketlerini Dağıtma, Yayımlama ve Yükseltme
+      href: deploying-publishing-and-upgrading-sharepoint-solution-packages.md
+      items:
+      - name: Bir SharePoint Çözümünü Yerel bir SharePoint Sitesine Dağıtma ve Yayımlama
+        href: how-to-deploy-and-publish-a-sharepoint-solution-to-a-local-sharepoint-site.md
+      - name: Uzak bir Sunucudaki SharePoint Çözümlerini Dağıtma, Yayımlama ve Yükseltme
+        href: how-to-deploy-publish-and-upgrade-sharepoint-solutions-on-a-remote-server.md
+      - name: SharePoint Dağıtım Komutlarını Ayarlama
+        href: how-to-set-sharepoint-deployment-commands.md
+      - name: SharePoint Dağıtım Yapılandırmasını Düzenleme
+        href: how-to-edit-a-sharepoint-deployment-configuration.md
+      - name: 'İzlenecek yol: Proje Görev Listesi Tanımını Dağıtma'
+        href: walkthrough-deploying-a-project-task-list-definition.md
+    - name: Değiştirilebilir Parametreler
+      href: replaceable-parameters.md
+    - name: SharePoint Paketleme ve Dağıtım Sorunlarını Giderme
+      href: troubleshooting-sharepoint-packaging-and-deployment.md
+    - name: Özellik ve Paket Bildirimleriyle XML Birleştirme
+      href: merging-xml-in-feature-and-package-manifests.md
+  - name: SharePoint Geliştirme Örnekleri ve İzlenecek Yollar
+    href: sharepoint-development-samples-and-walkthroughs.md
+    items:
+    - name: SharePoint Geliştirme Örnekleri
+      href: sharepoint-development-samples.md
+    - name: SharePoint Geliştirme Yönergeleri
+      href: sharepoint-development-walkthroughs.md
+  - name: SharePoint Araçlarını Visual Studio'da Genişletme
+    href: extending-the-sharepoint-tools-in-visual-studio.md
+    items:
+    - name: SharePoint Araç Uzantılarının Programlama Modeline Genel Bakış
+      href: overview-of-the-programming-model-of-sharepoint-tools-extensions.md
+    - name: SharePoint Proje Sistemini Genişletme
+      href: extending-the-sharepoint-project-system.md
+      items:
+      - name: Özel SharePoint Proje Öğesi Türleri Tanımlama
+        href: defining-custom-sharepoint-project-item-types.md
+        items:
+        - name: Bir SharePoint Proje Öğesi Türü Tanımlama
+          href: how-to-define-a-sharepoint-project-item-type.md
+        - name: Özel bir SharePoint Proje Öğe Türüne bir Kısayol Menü Öğesi Ekleme
+          href: how-to-add-a-shortcut-menu-item-to-a-custom-sharepoint-project-item-type.md
+        - name: Özel bir SharePoint Proje Öğe Türüne Özellik Ekleme
+          href: how-to-add-a-property-to-a-custom-sharepoint-project-item-type.md
+        - name: SharePoint Proje Öğeleri için Öğe Şablonları ve Proje Şablonları Oluşturma
+          href: creating-item-templates-and-project-templates-for-sharepoint-project-items.md
+        - name: 'İzlenecek yol: Öğe Şablonu, Bölüm 1 ile Özel bir Eylem Proje Öğesi Oluşturma'
+          href: walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-1.md
+        - name: 'İzlenecek yol: Öğe Şablonu, Bölüm 2 ile Özel bir Eylem Proje Öğesi Oluşturma'
+          href: walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-2.md
+        - name: 'İzlenecek yol: Proje Şablonu, Bölüm 1 ile bir Site Sütunu Proje Öğesi Oluşturma'
+          href: walkthrough-creating-a-site-column-project-item-with-a-project-template-part-1.md
+        - name: 'İzlenecek yol: Proje Şablonu, Bölüm 2 ile bir Site Sütunu Proje Öğesi Oluşturma'
+          href: walkthrough-creating-a-site-column-project-item-with-a-project-template-part-2.md
+      - name: SharePoint Proje Öğelerini Genişletme
+        href: extending-sharepoint-project-items.md
+        items:
+        - name: Bir SharePoint Proje Öğesi Uzantısı Oluşturma
+          href: how-to-create-a-sharepoint-project-item-extension.md
+        - name: Bir SharePoint Proje Öğe Uzantısına bir Kısayol Menü Öğesi Ekleme
+          href: how-to-add-a-shortcut-menu-item-to-a-sharepoint-project-item-extension.md
+        - name: Özel bir SharePoint Proje Öğe Uzantısına Özellik Ekleme
+          href: how-to-add-a-property-to-a-sharepoint-project-item-extension.md
+        - name: 'İzlenecek yol: Bir SharePoint Proje Öğesi Türünü Genişletme'
+          href: walkthrough-extending-a-sharepoint-project-item-type.md
+      - name: SharePoint Projelerini Genişletme
+        href: extending-sharepoint-projects.md
+        items:
+        - name: Bir SharePoint Proje Uzantısı Oluşturma
+          href: how-to-create-a-sharepoint-project-extension.md
+        - name: Bir Kısayol Menü Öğesini SharePoint Projelerine Ekleme
+          href: how-to-add-a-shortcut-menu-item-to-sharepoint-projects.md
+        - name: SharePoint Projelerine Özellik Ekleme
+          href: how-to-add-a-property-to-sharepoint-projects.md
+        - name: 'İzlenecek Yol: SharePoint Proje Uzantısı Oluşturma'
+          href: walkthrough-creating-a-sharepoint-project-extension.md
+      - name: SharePoint Paketleme ve Dağıtımını Genişletme
+        href: extending-sharepoint-packaging-and-deployment.md
+        items:
+        - name: Dağıtım Adımları Yürütüldüğünde Kodu Çalıştırma
+          href: how-to-run-code-when-deployment-steps-are-executed.md
+        - name: Bir SharePoint Projesi Dağıtıldığında veya Geri Çekildiğinde Kodu Çalıştırma
+          href: how-to-run-code-when-a-sharepoint-project-is-deployed-or-retracted.md
+        - name: Dağıtım Çakışmalarını İşleme
+          href: how-to-handle-deployment-conflicts.md
+        - name: 'İzlenecek Yol: SharePoint Projeleri için Özel bir Dağıtım Adımı Oluşturma'
+          href: walkthrough-creating-a-custom-deployment-step-for-sharepoint-projects.md
+        - name: SharePoint Çözümleri için Özel Özellik ve Paket Doğrulama Kuralları Oluşturma
+          href: how-to-create-custom-feature-and-package-validation-rules-for-sharepoint-solutions.md
+      - name: SharePoint Proje Sisteminin Uzantılarında Veri Kaydetme
+        href: saving-data-in-extensions-of-the-sharepoint-project-system.md
+      - name: SharePoint Proje Sistem Türleri ve Diğer Visual Studio Proje Türleri Arasında Dönüştürme
+        href: converting-between-sharepoint-project-system-types-and-other-visual-studio-project-types.md
+    - name: Sunucu Gezgininde SharePoint Bağlantılarını Genişletme
+      href: extending-the-sharepoint-connections-node-in-server-explorer.md
+      items:
+      - name: Sunucu Gezgininde SharePoint Düğümünü Genişletme
+        href: how-to-extend-a-sharepoint-node-in-server-explorer.md
+      - name: Sunucu Gezginine Özel bir SharePoint Düğümü Ekleme
+        href: how-to-add-a-custom-sharepoint-node-to-server-explorer.md
+      - name: Sunucu Gezgininde Yerleşik bir SharePoint Düğümü için Veri Alma
+        href: how-to-get-data-for-a-built-in-sharepoint-node-in-server-explorer.md
+      - name: 'İzlenecek yol: Sunucu Gezginini Web Bölümlerini Görüntülemek Üzere Genişletme'
+        href: walkthrough-extending-server-explorer-to-display-web-parts.md
+    - name: SharePoint Araç Uzantıları için Programlama Kavramları ve Özellikler
+      href: programming-concepts-and-features-for-sharepoint-tools-extensions.md
+      items:
+      - name: SharePoint Nesne Modellerini Çağırma
+        href: calling-into-the-sharepoint-object-models.md
+        items:
+        - name: Bir SharePoint Komutu Oluşturma
+          href: how-to-create-a-sharepoint-command.md
+        - name: Bir SharePoint Komutu Yürütme
+          href: how-to-execute-a-sharepoint-command.md
+        - name: 'İzlenecek yol: Bir Sunucu Gezgini Uzantısında SharePoint İstemcisi Nesne Modelini Çağırma'
+          href: walkthrough-calling-into-the-sharepoint-client-object-model-in-a-server-explorer-extension.md
+      - name: SharePoint Proje Hizmetini Kullanma
+        href: using-the-sharepoint-project-service.md
+        items:
+        - name: SharePoint Proje Hizmetini Alma
+          href: how-to-retrieve-the-sharepoint-project-service.md
+      - name: SharePoint Araç Uzantıları ile Özel Verileri İlişkilendirme
+        href: associating-custom-data-with-sharepoint-tools-extensions.md
+    - name: Visual Studio'da SharePoint Araçları için Hata Ayıklama Uzantıları
+      href: debugging-extensions-for-the-sharepoint-tools-in-visual-studio.md
+    - name: Visual Studio'da SharePoint Araçları için Hata Ayıklama Uzantıları
+      href: deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md
+    - name: Başvuru
+      href: reference-sharepoint-tools-extensibility.md
+      items:
+      - name: SharePoint Proje Öğesi Şema Başvurusu
+        href: sharepoint-project-item-schema-reference.md
+        items:
+        - name: ExtensionData Öğesi
+          href: extensiondata-element.md
+        - name: ExtensionDataItem Öğesi
+          href: extensiondataitem-element.md
+        - name: FeatureProperties Öğesi
+          href: featureproperties-element.md
+        - name: FeatureProperty Öğesi
+          href: featureproperty-element.md
+        - name: Dosya Öğesi
+          href: files-element.md
+        - name: ProjectItem Öğesi
+          href: projectitem-element.md
+        - name: ProjectItemFile Öğesi
+          href: projectitemfile-element.md
+        - name: ProjectItemFolder Öğesi
+          href: projectitemfolder-element.md
+        - name: ProjectOutputFile Öğesi
+          href: projectoutputfile-element.md
+        - name: SafeControl Öğesi
+          href: safecontrol-element.md
+        - name: SafeControls Öğesi
+          href: safecontrols-element.md
+      - name: API Başvurusu
+        href: api-reference-sharepoint-tools-extensibility.md
+ms.openlocfilehash: 66550d094a6b411cc3e06c2f9f6b5bfb5b9aa0e4
+ms.sourcegitcommit: 55f7ce2d5d2e458e35c45787f1935b237ee5c9f8
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42635222"

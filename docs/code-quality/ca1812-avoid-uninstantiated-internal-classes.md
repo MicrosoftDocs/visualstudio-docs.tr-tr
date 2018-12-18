@@ -1,6 +1,7 @@
 ---
 title: 'CA1812: Örneklendirilmemiş iç sınıflardan kaçının'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cf39d775c5602aaddf5b9487d175ddbbdd70d52e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 45ff6e07abb77623fe1007ef5e13556e26852224
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49827473"
 ---
 # <a name="ca1812-avoid-uninstantiated-internal-classes"></a>CA1812: Örneklendirilmemiş iç sınıflardan kaçının
+
 |||
 |-|-|
 |TypeName|AvoidUninstantiatedInternalClasses|
@@ -30,44 +33,48 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir derleme düzeyi türünün örneği, derleme içindeki kod tarafından oluşturulmaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bu kural türü oluşturuculardan birine çağrısına bulmaya çalışır ve hiçbir çağrı bulunursa, bir ihlali raporlar.
+Bir derleme düzeyi türünün örneği, derleme içindeki kod tarafından oluşturulmaz.
 
- Bu kural tarafından aşağıdaki türlerden incelenmesi değil:
+## <a name="rule-description"></a>Kural açıklaması
 
--   Değer türleri
+Bu kural, bir türü oluşturucular bir çağrı bulmaya çalışır ve hiçbir çağrı bulunursa bir ihlali bildirir.
 
--   Soyut türler
+Aşağıdaki türleri bu kural tarafından incelenir değil:
 
--   Numaralandırmalar
+- Değer türleri
 
--   Temsilciler
+- Soyut türler
 
--   Derleyici yayılan dizi türleri
+- Numaralandırmalar
 
--   Olamaz başlatılamaz ve tanımlayan türleri `static` (`Shared` Visual Basic'te) yalnızca yöntemleri.
+- Temsilciler
 
- Uygularsanız <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute?displayProperty=fullName> analiz ediliyor. derlemeye olarak işaretlenmiş oluşturucular üzerinde bu kural gerçekleşmez `internal` bir alan bir başkası tarafından kullanılıp kullanılmadığını bildiremez çünkü `friend` derleme.
+- Derleyici yayılan dizi türleri
 
- Bu sınırlamaya geçici çalışamaz olsa bile [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kod analizi, dış tek başına FxCop gerçekleşeceği iç oluşturucularda her varsa `friend` derlemedir analiz mevcut.
+- Olamaz başlatılamaz ve tanımlayan türler `static` (`Shared` Visual Basic'te) yalnızca yöntemleri.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için türünü kaldırmak veya onu kullanan kodu ekleyin. Türü yalnızca statik yöntemler içeriyorsa, varsayılan bir ortak örnek oluşturucu yayma derleyici önlemek için türü için aşağıdakilerden birini ekleyin:
+Uygularsanız, <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute?displayProperty=fullName> analiz ediliyor. derlemeye olarak işaretlenmiş tüm oluşturucular üzerinde bu kural gerçekleşmez `internal` alana bir başkası tarafından kullanılıp kullanılmadığını bildiremez çünkü `friend` derleme.
 
--   İçin özel bir oluşturucu türleri hedefleyen [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] 1.0 ve 1.1 sürümleri.
+Visual Studio Kod Analizi bu sınırlamaya geçici bir çözüm çalışamaz olsa da, dış tek başına FxCop iç oluşturucularda her meydana gelir `friend` derlemesidir analiz mevcut.
 
--   `static` (`Shared` Visual Basic'te) değiştiricisi için türleri hedefleyen [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural bir uyarıdan gizlemek güvenlidir. Bu uyarı aşağıdaki durumlarda bastırmak öneririz:
+Bu kural ihlalini düzeltmek için türünü kaldırın veya onu kullanan kodu ekleyin. Tür yalnızca statik yöntemler içeriyorsa, derleyici varsayılan bir ortak örnek oluşturucusu yayma gelen önlemek için türü için aşağıdakilerden birini ekleyin:
 
--   Sınıfı gibi geç bağlama yansıma yöntemleri ile oluşturulan <xref:System.Activator.CreateInstance%2A?displayProperty=fullName>.
+- .NET Framework sürümleri 1.0 ve 1.1 hedef türleri için özel bir oluşturucu.
 
--   Sınıfı çalışma zamanı tarafından otomatik olarak oluşturulur veya [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)]. Örneğin, uygulayan sınıflar <xref:System.Configuration.IConfigurationSectionHandler?displayProperty=fullName> veya <xref:System.Web.IHttpHandler?displayProperty=fullName>.
+- `static` (`Shared` Visual Basic) değiştirici için türleri hedefleyen [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].
 
--   Sınıfının yeni bir kısıtlamaya sahip bir genel tür parametresi olarak geçirilir. Örneğin, aşağıdaki örnekte, bu kural ortaya koyar.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan bir uyarıyı bastırmak güvenlidir. Aşağıdaki durumlarda bu uyarının gösterilmemesi gerektiğini öneririz:
+
+- Sınıfı gibi geç bağlanan yansıma yöntemleri ile oluşturulan <xref:System.Activator.CreateInstance%2A?displayProperty=fullName>.
+
+- Sınıfı çalışma zamanı tarafından otomatik olarak oluşturulan veya [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)]. Örneğin, uygulayan sınıflar <xref:System.Configuration.IConfigurationSectionHandler?displayProperty=fullName> veya <xref:System.Web.IHttpHandler?displayProperty=fullName>.
+
+- Sınıfının yeni bir kısıtlamaya sahip bir genel tür parametresi geçirilir. Örneğin, aşağıdaki örnekte, bu kural oluşturacak.
 
     ```csharp
     internal class MyClass
@@ -88,11 +95,12 @@ ms.lasthandoff: 04/19/2018
     mc.Create();
     ```
 
- Bu durumda, bu uyarıyı gizlemek önerilir.
+  Bu durumda, bu uyarının gösterilmemesi önerilir.
 
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1811: Çağrılmayan özel kodlardan kaçının](../code-quality/ca1811-avoid-uncalled-private-code.md)
 
- [CA1801: Kullanılmayan parametreleri gözden geçir](../code-quality/ca1801-review-unused-parameters.md)
+[CA1811: Çağrılmayan özel kodlardan kaçının](../code-quality/ca1811-avoid-uncalled-private-code.md)
 
- [CA1804: Kullanılmayan yerel öğeleri kaldırın](../code-quality/ca1804-remove-unused-locals.md)
+[CA1801: Kullanılmayan parametreleri gözden geçir](../code-quality/ca1801-review-unused-parameters.md)
+
+[CA1804: Kullanılmayan yerel öğeleri kaldırın](../code-quality/ca1804-remove-unused-locals.md)

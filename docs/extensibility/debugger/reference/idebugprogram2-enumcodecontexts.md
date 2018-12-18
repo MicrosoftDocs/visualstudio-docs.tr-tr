@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c90afe268a68d6a72e4444dd78a5748d30ddf7b6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ddd3f6f3fe06b0a02a1df992561428aa04895748
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49902522"
 ---
 # <a name="idebugprogram2enumcodecontexts"></a>IDebugProgram2::EnumCodeContexts
-Bir kaynak dosyası belirtilen konumda kod bağlamları listesini alır.  
+Belirli bir pozisyon kaynak dosyada kod bağlamları listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int EnumCodeContexts(
   
 #### <a name="parameters"></a>Parametreler  
  `pDocPos`  
- [in] Bir [IDebugDocumentPosition2](../../../extensibility/debugger/reference/idebugdocumentposition2.md) IDE bilinen bir kaynak dosyasında soyut bir konumu temsil eden nesne.  
+ [in] Bir [IDebugDocumentPosition2](../../../extensibility/debugger/reference/idebugdocumentposition2.md) IDE'ye bilinen kaynak dosyada soyut bir konumu temsil eden nesne.  
   
  `ppEnum`  
  [out] Döndürür bir [IEnumDebugCodeContexts2](../../../extensibility/debugger/reference/ienumdebugcodecontexts2.md) kod bağlamları listesini içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, oturum hata ayıklama Yöneticisi'ni (SDM) sağlar veya bir kaynak dosya konumu kod konuma eşlemek için IDE. Kaynak kod (örneğin, C++ Şablonları) birden çok bloklarını oluşturursa birden fazla kod bağlam döndürülür.  
+ Bu yöntem, hata ayıklama oturumu Yöneticisi (SDM) sağlar. veya bir kaynak dosya konumu kod konuma eşlemek için IDE. Kaynak birden fazla blok kod (C++ şablonları gibi) oluşturuyorsa, birden fazla kod bağlamı döndürülür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   

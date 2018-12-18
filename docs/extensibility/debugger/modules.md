@@ -1,5 +1,5 @@
 ---
-title: Modülleri | Microsoft Docs
+title: Modüller | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,21 +14,22 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f587e015263336436588d14edeeb5c6935872950
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8750c1f6676966be8564fbf4a175a66fa180a401
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39233171"
 ---
 # <a name="modules"></a>Modüller
-Hata ayıklayıcı mimarisi bakımından bir **Modülü**:  
+Hata ayıklayıcı mimarisi bakımından bir *Modülü*:  
   
--   Kodu, yürütülebilir bir dosyanın veya bir DLL gibi fiziksel bir kapsayıcıdır.  
+-   Kod, bir yürütülebilir dosya veya bir DLL gibi fiziksel bir kapsayıcıdır.  
   
--   , Simgeler yeniden yükleyin ve kendisini açıklar. Modül açıklamaları IDE modülleri penceresinde görüntülenir.  
+-   Onun semboller yeniden yükleyin ve kendisini açıklar. Modül tanımları, IDE'nin modülleri penceresinde görüntülenir.  
   
--   Tarafından temsil edilen bir [IDebugModule2](../../extensibility/debugger/reference/idebugmodule2.md) modülü açıklamak için hata ayıklama altyapısı tarafından oluşturulan arabirimi.  
+-   Tarafından temsil edilen bir [IDebugModule2](../../extensibility/debugger/reference/idebugmodule2.md) arabirimi, modül tanımlamak için hata ayıklama altyapısı tarafından oluşturuldu.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)   
  [IDebugModule2](../../extensibility/debugger/reference/idebugmodule2.md)

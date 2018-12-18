@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Yük testi senaryosunda için test karışımını | Microsoft Docs
+title: Bir yük testi senaryosunun test karışımı
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -11,80 +11,86 @@ ms.assetid: 303e1d70-5d98-424a-b51e-e0898e16d3f8
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 9c7f0cb4c25c99c7ab68400d63e1ec52253a5f61
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3b3bd0ae4df657d7234a77413003b18d5db86138
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52895996"
 ---
-# <a name="edit-the-test-mix-to-specify-which-web-performance-unit-and-coded-ui-tests-to-include-in-a-load-test-scenario"></a>Hangi Web başarımı, birim ve kodlanmış UI testleri bir yük testi senaryosunda içerecek şekilde belirlemek için Test Karışımını düzenleme
+# <a name="edit-the-test-mix-to-specify-which-web-performance-unit-and-coded-ui-tests-to-include-in-a-load-test-scenario"></a>Hangi web performansı, birim ve kodlanmış UI testleri yük testi senaryosunda içerecek şekilde belirlemek için test karışımını düzenle
 
-*Test karışımı* bir senaryo senaryoda içerilen Web performansı ve birim testleri seçimi ve bu testlerin senaryoda dağıtımını bir birleşimidir. Dağıtım için belirli bir testi bir yük testi çalışma sırasında sanal bir kullanıcı tarafından seçilir olasılık belirtebileceğiniz bir ayardır.
+*Test karışımı* bir senaryo seçimini web senaryosu ve bu testlerin dağıtımını içeren senaryoda bulunan başarım ve birim testlerini birleşimidir. Dağıtım için belirli bir testin bir yük testi çalışması sırasında sanal bir kullanıcı tarafından seçilir olasılık belirtebileceğiniz bir ayardır.
 
- Bir yük testi için test kümesi ekledikten sonra *test karışımı* karışımı seçenekleri diğer gibi çalışır. Sanal kullanıcı, bir test karışımında belirtilen olasılığa dayanarak, rastgele seçer. Örneğin, iki testler, her yüzde 50 karışımında varsa, ilk testi yaklaşık yarım saatte çalıştırmak yeni bir sanal kullanıcı seçer. Bir 50/50 karışımında bir test uzun ise ve diğeri kısaysa, uzun testten daha fazla yük gelir.
+Bir yük testi için test kümesini ekledikten sonra *test karışımı* karıştırmak seçenekleri diğer gibi çalışır. Sanal kullanıcı test karışımında belirtilen olasılığını göre rastgele seçer. Örneğin, iki testler, her yüzde 50 karışımında varsa, ilk yaklaşık yarım saat test yeni bir sanal kullanıcı seçer. Bir 50/50 karışımında bir test uzun ve diğeri kısaysa, uzun test çalıştırmasından daha fazla yük gelir.
 
- Karışıma testleri ekledikten sonra bunları kaldırabilirsiniz. Test karışımı dağıtımını Karışım denetimini kullanarak da değiştirebilirsiniz. Karışım denetimi, kolayca bir senaryoda testlerin dağıtımını ayarlamanıza olanak sağlar.
+Testler için karışımı ekledikten sonra bunları kaldırabilirsiniz. Ayrıca, dağıtım, test karışımını karıştırma denetimini kullanarak değiştirebilirsiniz. Karıştırma denetimini senaryosunda testlerin dağıtımını kolayca ayarlamanıza olanak tanır.
 
 > [!NOTE]
-> Dağıtım, belirli bir testi bir yük testi çalışma sırasında sanal bir kullanıcı tarafından seçilir olasılık ölçüsüdür. Dağıtım yüzde olarak ifade edilir. Bu nedenle, bir senaryoda içerilen tüm testler için dağıtım sayılarının toplamını 100'dür. Örneğin, bir senaryo yalnızca bir test içeriyorsa, bu test için dağıtım yüzde 100'dür.
+> Dağıtım, belirli bir testin bir yük testi çalışması sırasında sanal bir kullanıcı tarafından seçilir olasılık ölçüsüdür. Dağıtım bir yüzdesi olarak ifade edilir. Bu nedenle, bir senaryoda bulunan tüm testler için dağıtım sayıların toplamını 100'dür. Örneğin, bir senaryo sadece bir test içeriyorsa, dağıtım için test yüzde 100 ' dir.
 
-## <a name="add-new-tests-to-a-test-mix-in-an-existing-scenario"></a>Varolan bir senaryoyu Test karışımında yeni testleri ekleme
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
-Yeni Yük Testi Sihirbazı'nı kullanarak yeni bir senaryoya oluşturduğunuzda, yeni senaryonun test karışımı eklemek için Web performansı ve birim testleri belirtebilirsiniz.
+## <a name="add-new-tests-to-a-test-mix-in-an-existing-scenario"></a>Varolan bir senaryoyu test karışımında yeni testler ekleyin
 
-Yük Testi Düzenleyicisini kullanarak karışımına senaryo için daha fazla Web performansı ve birim testleri ekleyebilirsiniz.
+Kullanarak yeni bir senaryo oluşturduğunuzda **Yeni Yük Testi Sihirbazı**, yeni senaryo test karışımını eklemek için web performansı ve birim testleri belirtebilirsiniz.
 
-![Mevcut bir yük testi için test ekleme](../test/media/ltest_addingtests.png "LTest_AddingTests")
+Senaryo metin karışımını kullanarak daha fazla web başarım ve birim testleri ekleyebilirsiniz **Yük Testi Düzenleyicisi**.
 
-### <a name="to-add-more-tests-to-an-existing-scenario"></a>Daha fazla testleri varolan bir senaryoyu eklemek için
+![Varolan yük testi için test ekleme](../test/media/ltest_addingtests.png)
 
-1.  Bir yük testi açın.
-
-2.  Yük Testi Düzenleyicisi'nde, varolan bir senaryoyu sağ tıklayın ve ardından **testler Ekle**.
-
-     **Testler Ekle** iletişim kutusu görüntülenir. Tüm Web performans, birim ve senaryonuzda olmayan kodlanmış UI testleri çözümünüzdeki senaryoya eklemek kullanılabilir.
-
-3.  İçinde **kullanılabilir testler** bölmesinde Web performans, birim ve eklemek istediğiniz kodlanmış UI testleri seçin. Testleri eklemek için sağ oka seçin **seçili testleri** bölmesi.
-
-4.  Testleri eklemeyi bitirdiğinizde, seçin **Tamam**.
-
-     Testler için test karışımını eklenir. Yeni bir dağıtım testleri test karışımında otomatik olarak atanır.
-
-5.  (İsteğe bağlı) Test dağıtımını belirtmek için karıştırma denetimini ayarlayın. Daha fazla bilgi için bkz: [karışımı denetimi hakkında](../test/edit-the-test-mix-to-specify-which-web-browsers-types-in-a-load-test-scenario.md).
-
-##  <a name="EditingTestMixRemoveTest"></a> Senaryodan testleri kaldırma
- ![Varolan yük testten test kaldırma](../test/media/ltest_removetest.png "LTest_RemoveTest")
-
-### <a name="to-remove-tests-from-a-scenario"></a>Senaryodan testleri kaldırmak için
+### <a name="to-add-more-tests-to-an-existing-scenario"></a>Daha fazla test için varolan bir senaryoyu eklemek için
 
 1.  Bir yük testi açın.
 
-2.  Yük Testi Düzenleyicisi'nde, yük testi ağacında, istediğiniz bir test ve kaldırmak senaryoyu **Test Karışımını düzenleme**. **Test Karışımını düzenleme** iletişim kutusu görüntülenir.
+2.  İçinde **Yük Testi Düzenleyicisi**, varolan bir senaryoyu sağ tıklayın ve ardından **Test Ekle**.
 
-3.  Web performans, birim ve kodlanmış UI testi kılavuzdaki seçin ve ardından **kaldırmak**.
+     **Test Ekle** iletişim kutusu görüntülenir. Tüm web performansı, birim ve çözümünüzü senaryonuzda olmayan kodlanmış UI testlerini senaryoya eklemek kullanılabilir.
+
+3.  İçinde **kullanılabilir testler** bölmesinde, web performansı, birim ve eklemek istediğiniz kodlanmış UI testleri seçin. Testler eklemek için sağ oku seçerek **Seçili testler** bölmesi.
+
+4.  Testleri eklemeyi bitirdiğinizde seçin **Tamam**.
+
+     Testleri test karışımına eklenir. Yeni dağıtım, test karışımını testler için otomatik olarak atanır.
+
+5.  (İsteğe bağlı) Test dağıtımını belirtmek için karıştırma denetimini ayarlayın. Daha fazla bilgi için [karışımı denetimi ile ilgili](../test/edit-the-test-mix-to-specify-which-web-browsers-types-in-a-load-test-scenario.md).
+
+##  <a name="remove-tests-from-a-scenario"></a>Testleri bir senaryodan Kaldır
+ ![Varolan bir yük testi bir test kaldırılıyor](../test/media/ltest_removetest.png)
+
+### <a name="to-remove-tests-from-a-scenario"></a>Testleri bir senaryodan kaldırmak için
+
+1.  Bir yük testi açın.
+
+2.  İçinde **Yük Testi Düzenleyicisi**, ağaç yük testi, test ve select kaldırmak istediğiniz senaryoyu **Test Karışımını Düzenle**. **Test Karışımını Düzenle** iletişim kutusu görüntülenir.
+
+3.  Kılavuzda web performansı, birim ve kodlanmış UI testi seçin ve sonra **Kaldır**.
 
     > [!NOTE]
-    > Test kaldırdıktan sonra tercih edilen dağıtımınız için test karışımını ayarlayın.
+    > Test kaldırdıktan sonra test karışımını, tercih edilen dağıtım için ayarlayın.
 
-4.  Testleri kaldırma bitirdikten sonra Seç **Tamam**.
+4.  Testleri kaldırmayı bitirdiğinizde seçin **Tamam**.
 
 ##  <a name="EditingTestMixAboutMixControl"></a> Karışım denetimi hakkında
- Karışım denetimi, testleri, tarayıcı türleri veya bir yük testi senaryosunda ağ türleri arasında dağıtılmış yük yüzdesini ayarlamanıza olanak sağlar. Yüzde değerleri kaydırıcılar hareket ettirilerek ayarlanır. Testler için karışımı ayarlamak, bir sanal kullanıcının bir yük testi senaryosunda belirli bir testi çalıştırma olasılığını belirtir.
+ Karıştırma denetimini testleri, tarayıcı türleri veya bir yük testi senaryosuna ağ türleri arasında dağıtılmış yük yüzdesi ayarlamanızı sağlar. Yüzde değerleri kaydırıcılar hareket ettirilerek ayarlanır. Testler için karışımı ayarlamak, bir sanal kullanıcının bir yük testi senaryosunda belirli bir testi çalıştırma olasılığını belirtir.
 
- Kaydırıcıyı taşıdığınızda, tüm kullanılabilir öğelerin yüzde değerleri değiştirin. İkiden fazla öğe varsa, ekleme veya kaldırma tutar diğer öğeler arasında eşit olarak dağıtılır. Bu davranışı geçersiz kılmak mümkündür. Belirli bir öğe için kilit sütunundaki onay kutusunu seçerseniz, o öğe için belirtilen yüzde değerini kilitlersiniz. Ardından, kaydırıcıyı taşıdığınızda, ekleme veya kaldırma tutarı yalnızca kalan kilidi açılmış öğeler için uygulanır.
+ Bir kaydırıcı taşıdığınızda, tüm kullanılabilir öğeleri yüzde değerlerini değiştirin. İkiden fazla öğe varsa, ekleme veya kaldırma miktarı diğer öğeler arasında eşit olarak dağıtılır. Bu davranışı geçersiz kılmak mümkündür. Belirli bir öğe için kilit sütunundaki onay kutusunu seçerseniz, o öğe için belirtilen yüzde değerini kilitlersiniz. Ardından, bir kaydırıcıyı taşıdığınızda, ekleme veya kaldırma miktarı yalnızca kilidi kalan tüm öğeleri uygulanır.
 
- **Dağıt** düğmesi yüzdeyi tüm öğeler arasında eşit ayırmak için kullanılır. Örneğin, üç öğe varsa, seçme **Dağıt** 34, 33 ve 33 yüzde değerlerini ayarlar.
+ **Dağıt** düğmesi yüzdeyi tüm öğeler arasında eşit olarak ayırmak için kullanılır. Örneğin, üç öğeye sahipseniz seçme **Dağıt** yüzde değerlerini 34, 33 ve 33 olarak ayarlar.
 
 > [!WARNING]
->  **Dağıt** düğmesi kilitli olan tüm öğeleri geçersiz kılar.
+> **Dağıt** düğmesi kilitli olan öğeleri geçersiz kılar.
 
- Yüzde değerleri doğrudan yazmanız da mümkündür **%** Kaydırıcıları kullanmak yerine sütun. Bir yüzde değeri doğrudan girerseniz, diğer öğeler otomatik olarak ayarlar değil.
+
+ Yüzde değerlerini doğrudan yazmak mümkündür **%** Kaydırıcıları kullanmak yerine sütun. Bir yüzde değeri doğrudan giriyorsanız, diğer öğeler otomatik olarak ayarlar değil.
 
 > [!NOTE]
->  Kaydırıcıları toplamı % 100 eklemez veya yüzde değerleri girilen devre dışı bırakılır **%** sütunu olan ondalık basamaktır.
+> Toplam % 100 eklemez veya girilen yüzde değerleri kaydırıcılar devre dışı **%** ondalıksa sütun.
 
- Yüzde değerlerini el ile girdiğinizde, tüm öğelerin toplamının %100 olduğundan emin olmanız gerekir. Bir karışımı kaydettiğinizde, toplam %100 değilse, yüzde değerlerini oldukları gibi kabul etmeniz veya geri gidip onları ayarlamanız istenir. Oldukları gibi bunları kabul etmeyi seçerseniz, bunlar % 100'e eşit olarak bölünecek.  Örneğin, iki öğe varsa ve el ile bunları % 80 ve % 40 olarak ayarlamanız, ilk öğe (120 bölünmüş 80) % 66.67 ayarlamak ve ikinci öğe %33.33 (120 bölünmüş 40) ayarlayın.
+
+ Yüzde değerlerini el ile girdiğinizde, tüm öğelerin toplamının %100 olduğundan emin olmanız gerekir. Bir karışımı kaydettiğinizde, toplam %100 değilse, yüzde değerlerini oldukları gibi kabul etmeniz veya geri gidip onları ayarlamanız istenir. Oldukları gibi bunları kabul etmeyi seçerseniz, % 100 olarak dağıtılır.  Örneğin, iki öğeniz varsa ve el ile bunları %80 ve % 40 olarak ayarlarsanız, ilk öğeye (120 bölünmüş 80) % 66.67 ayarlayın ve ikinci öğe %33.33 (40 120 bölünmüş) ayarlayın.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

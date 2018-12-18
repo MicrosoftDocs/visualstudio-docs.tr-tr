@@ -1,5 +1,5 @@
 ---
-title: Numaralandırmalar | Microsoft Docs
+title: Numaralandırıcılar | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,40 +13,41 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 84102435092096b7154a46100e9d857a31537482
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e555ca317dea79d1fe3b856a7c449d01f0b792af
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39636232"
 ---
-# <a name="enumerators"></a>Numaralandırmalar
-Bu bölümde, kaynak denetim eklentisi hakkında bilmeniz gereken kaynak denetim eklentisi API'sindeki Numaralandırıcı veri türleri listelenmektedir.  
+# <a name="enumerators"></a>Numaralandırıcılar
+Bu bölümde, kaynak denetimi eklentisi hakkında bilmeniz gereken kaynak denetimi eklentisi API Numaralandırıcı veri türlerini listeler.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [Komut kodu](../extensibility/command-code-enumerator.md)  
  Seçeneklerini numaralandırır [SccGetCommandOptions](../extensibility/sccgetcommandoptions-function.md) ve [SccPopulateList](../extensibility/sccpopulatelist-function.md) işlevleri.  
   
  [İleti](../extensibility/message-enumerator.md)  
- Yazdırma geri arama için kullanılan bayrakları numaralandırır [LPTEXTOUTPROC](../extensibility/lptextoutproc.md).  
+ Yazdırma geri çağırma için kullanılan bayrakları numaralandırır [LPTEXTOUTPROC](../extensibility/lptextoutproc.md).  
   
  [Dosya durum kodu](../extensibility/file-status-code-enumerator.md)  
- Kaynak denetimi altındaki bir dosyaya durumunu belirtin adlandırılmış sabit değerleri içerir.  
+ Kaynak denetimi altındaki bir dosyayı durumunu belirten adlandırılmış sabit değerleri içerir.  
   
  [Dizin durum kodu](../extensibility/directory-status-code-enumerator.md)  
- Kaynak denetimi altında bir dizin durumunu belirtin adlandırılmış sabit değerleri içerir.  
+ Kaynak denetimi altında bir dizin durumunu belirten adlandırılmış sabit değerleri içerir.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Kaynak Denetimi Eklentisi Oluşturma](../extensibility/internals/creating-a-source-control-plug-in.md)  
- Kaynak Denetim eklentisi SDK'sı tanımlar ve bulunan kaynaklar açıklanır.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Kaynak Denetimi Eklentisi oluşturma](../extensibility/internals/creating-a-source-control-plug-in.md)  
+ Kaynak Denetimi Eklentisi SDK tanımlar ve dahil edilen kaynaklar açıklanır.  
   
  [SccGetCommandOptions](../extensibility/sccgetcommandoptions-function.md)  
- Verilen komut için Gelişmiş Seçenekleri kullanıcıya sorar.  
+ Verilen komutu için Gelişmiş Seçenekleri kullanıcıya sorar.  
   
  [SccPopulateList](../extensibility/sccpopulatelist-function.md)  
- Bunların geçerli durum için dosyaları listesi inceler. Ayrıca, kullanır `pfnPopulate` işlevi çağıran bir dosya için ölçüt eşleşmediğinde bildirmek için `nCommand`.  
+ Bunların geçerli durum için dosyaların listesini inceler. Ayrıca, kullandığı `pfnPopulate` işlevi bir dosya için ölçüt eşleşmediğinde çağrıyı yapana bunu bildirmesi `nCommand`.  
   
  [LPTEXTOUTPROC](../extensibility/lptextoutproc.md)  
- Tarafından kullanılan geri çağırma işlevini açıklar [SccOpenProject](../extensibility/sccopenproject-function.md) IDE'yi eklenti kaynak denetiminden iletileri görüntülemek için.  
+ Tarafından kullanılan geri çağırma işlevi açıklar [SccOpenProject](../extensibility/sccopenproject-function.md) kaynak denetimi eklentisi IDE üzerinden alınan iletileri görüntülemek için.  
   
- [Kaynak Denetimi Eklentileri](../extensibility/source-control-plug-ins.md)  
- Kaynak Denetim eklentisi API'ndaki tüm öğelerin listesi sağlar.
+ [Kaynak denetimi eklentileri](../extensibility/source-control-plug-ins.md)  
+ Kaynak Denetimi Eklentisi API içindeki tüm öğelerin tam listesini sağlar.

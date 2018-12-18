@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0e582caefd6c6fba214c29747de2221dfc115587
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7c21aa69b27a7ceeddecc6d95608d86d71045038
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49836586"
 ---
 # <a name="ienumdebugfieldsclone"></a>IEnumDebugFields::Clone
-Bu yöntem bir kopyasını ayrı bir nesne olarak geçerli numaralandırması döndürür.  
+Bu yöntem bir kopyasını ayrı bir nesne olarak geçerli bir sabit listesi döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int Clone(
  [out] Bu numaralandırma ayrı bir nesne gibi bir kopyasını döndürür.  
   
 ## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Numaralandırma kopyasını bu yöntem çağrılır aynı anda özgün ile aynı duruma sahiptir. Ancak, kopyanın ve özgün 's durumları ayrıdır ve tek tek değiştirilebilir.  
+ Numaralandırma kopyasını bu yöntemin çağrıldığı zaman orijinal ile aynı duruma sahiptir. Ancak, kopyanın ve orijinalin durumları ayrıdır ve ayrı ayrı değiştirilebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md)

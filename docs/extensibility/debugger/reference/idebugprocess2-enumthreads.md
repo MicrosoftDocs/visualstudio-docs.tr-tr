@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 786a3b4b5988b66e1fccc624154eeef67285ec84
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c916e8b176444a8af81cb874c394e9eb832a01b4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49939715"
 ---
 # <a name="idebugprocess2enumthreads"></a>IDebugProcess2::EnumThreads
-İşlemde çalışan tüm iş parçacıklarının listesi alır.  
+Bir işlemde çalışan tüm iş parçacıklarının listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,15 +41,15 @@ int EnumThreads(
   
 #### <a name="parameters"></a>Parametreler  
  `ppEnum`  
- [out] Döndürür bir [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md) işlemdeki tüm programlardaki tüm iş parçacıklarının listesi içeren nesne.  
+ [out] Döndürür bir [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md) tüm programlar işlemdeki tüm iş parçacıklarının listesini içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, her programın çalışan iş parçacıklarının numaralandırır ve bunları bir iş parçacığı işlem görünüme birleştirir. Tek bir iş parçacığı içinde birden çok program çalışabilir; Bu yöntemi yalnızca bir kez o iş parçacığı numaralandırır.  
+ Bu yöntem, her programda çalışan iş parçacıkları numaralandırır ve ardından bunları iş parçacığı bir işlem görünüme birleştirir. Tek bir iş parçacığı, birden çok programlarında çalışabilir; Bu yöntem yalnızca bir kez iş parçacığı numaralandırır.  
   
- Bu yöntem işlemin iş parçacıklarının çoğaltmaları olmadan bir listesini sunar. Aksi durumda, belirli bir programı çalışan iş parçacıklarının numaralandırmak için kullanmanız [EnumThreads](../../../extensibility/debugger/reference/idebugprogram2-enumthreads.md) yöntemi.  
+ Bu yöntem, çoğaltmaları olmadan işlem iş parçacıklarının listesini gösterir. Aksi takdirde, belirli bir programı çalışan iş parçacıkları listeleme için kullanın [EnumThreads](../../../extensibility/debugger/reference/idebugprogram2-enumthreads.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   

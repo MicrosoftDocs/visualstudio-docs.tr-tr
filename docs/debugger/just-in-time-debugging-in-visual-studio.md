@@ -1,9 +1,9 @@
 ---
-title: 'Nasıl yapılır: tam zamanında hata ayıklayıcı için yanıt | Microsoft Docs'
+title: Tam zamanında hata ayıklayıcı devre dışı bırakma | Microsoft Docs
 ms.custom: ''
-ms.date: 05/23/17
+ms.date: 05/23/18
 ms.technology: vs-ide-debug
-ms.topic: conceptual
+ms.topic: troubleshooting
 helpviewer_keywords:
 - debugging [Visual Studio], Just-In-Time
 - Just-In-Time debugging
@@ -13,40 +13,37 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c506e12fc8e6637e2b53852587e6a37c57cbf5ce
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 147e16bab14a6a038622804cf9c57e5fdc92bf02
+ms.sourcegitcommit: c5e72875206b8c5737c29d5b1ec7b86eec747303
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49382785"
 ---
-# <a name="how-to-respond-to-the-just-in-time-debugger"></a>Nasıl yapılır: tam zamanında hata ayıklayıcı için yanıt
+# <a name="disable-the-just-in-time-debugger"></a>Tam zamanında hata ayıklayıcı devre dışı bırak 
 
-Zaman içinde sadece gördüğünüzde almalıdır Eylemler hata ayıklayıcı iletişim kutusu bağımlı ne yapmanız çalıştığınız:
+Tam zamanında hata ayıklayıcı iletişim kutusu içinde çalışan bir uygulamanın hata oluştuğunda açın ve uygulama devam etmesini engelleyebilir. 
 
-#### <a name="if-you-want-to-fix-or-debug-the-error-visual-studio-users"></a>Düzeltin veya (Visual Studio kullanıcılar) hata ayıklama istiyorsanız
+Tam zamanında hata ayıklayıcı, hata ayıklama için Visual Studio'yu başlatmak için seçeneği sunar. Olmalıdır [Visual Studio](http://visualstudio.microsoft.com) veya başka bir seçilen hata ayıklayıcı hata hakkında ayrıntılı bilgi görüntülemek veya hata ayıklarken için yüklü. 
 
-- Sahip olmanız gerekir [Visual Studio yüklüyse](https://www.microsoft.com/en-us/download/details.aspx?id=48146) hata hakkında ayrıntılı bilgi görüntülemek ve hata ayıklamak deneyin. Daha fazla bilgi için bkz: [Just-In-Time hata ayıklayıcısı ile hata ayıklama](../debugger/debug-using-the-just-in-time-debugger.md). Hatayı çözün ve uygulama düzeltme, hatayı gidermek için uygulama sahibine başvurun.
+Visual Studio sürümünü kullanıyorsanız ve hata ayıklama için bkz. denemek istiyorsanız [tam zamanında hata ayıklayıcı ile hata ayıklama](../debugger/debug-using-the-just-in-time-debugger.md). Hatayı düzeltin veya tam zamanında hata ayıklayıcı açmasının tutmak istediğiniz olamaz varsa [Visual Studio'dan devre dışı bırakma, Just-ın-Time hata ayıklama](debug-using-the-just-in-time-debugger.md#BKMK_Enabling). 
 
-#### <a name="if-you-want-to-prevent-the-just-in-time-debugger-dialog-box-from-appearing"></a>Just-In-Time hata ayıklayıcı iletişim kutusunun görüntülenmesini engellemek istiyorsanız
+Visual Studio yüklü, ancak artık iş olsaydı gerekebilir [Windows kayıt defterinden devre dışı bırakma, Just-ın-Time hata ayıklama](debug-using-the-just-in-time-debugger.md#disable-just-in-time-debugging-from-the-windows-registry). 
 
-Zaman içinde sadece önlemek üzere adım atabilirsiniz görünmesini hata ayıklayıcı iletişim kutusu. Uygulama hata işleme, uygulama normal olarak çalıştırabilirsiniz.
+Visual Studio yüklü yoksa, tam zamanında hata ayıklamayı veya sunucu tarafı hata ayıklamasını devre dışı bırakarak hata ayıklamayı engelleyebilir. 
 
-1. (Web uygulamaları) Bir web uygulamasını çalıştırmak çalışıyorsanız, komut dosyası hata ayıklaması devre dışı bırakabilirsiniz.
-
-    Internet Explorer veya Edge'i için Internet Seçenekleri iletişim kutusunda komut dosyası hata ayıklaması devre dışı bırakın. Bu ayarlardan erişebilirsiniz **Denetim Masası** > **ağ ve Internet** > **Internet Seçenekleri** (tam adımlar bağlıdır, Windows sürümü ve tarayıcınızı).
-
-    ![JITInternetOptions](../debugger/media/jitinternetoptions.png "JITInternetOptions")
-
-    Ardından hata bulunduğu web sayfasını yeniden açın. Bu ayarı değiştirmek sorunu çözmezse, sorunu düzeltmek için web uygulaması sahibine başvurun.
-
-3. (Visual Studio kullanıcılar) Visual Studio yüklü (veya nesneniz varsa daha önce yüklenmiş ve bu kaldırılamaz), [devre dışı bırak sadece zamanında hata ayıklama](../debugger/debug-using-the-just-in-time-debugger.md) ve uygulamayı yeniden çalıştırmayı deneyin.
-
-    > [!IMPORTANT]
-    > Zaman içinde sadece devre dışı bırakırsanız hata ayıklama ve uygulama karşılaştığında işlenmeyen bir özel durum (bir hata), bir standart hata iletişim kutusu yerine görürsünüz veya uygulama kilitlenme askıda veya. Hata (veya uygulama sahibi tarafından) düzeltilene kadar uygulama normal şekilde çalışmaz.
-
-2. (ASP.NET ve IIS) IIS'de bir ASP.NET Web uygulaması barındırıyorsanız, sunucu tarafı hata ayıklamasını devre dışı bırakın.
-
-    IIS Yöneticisi'nde, sunucu düğümüne sağ tıklayın ve seçin **özellikler görünümüne geç**. ASP.NET bölümü altında seçin **.NET derleme** ve seçtiğiniz emin **False** (adımları IIS eski sürümleri farklı) hata ayıklama davranışı olarak.
+- Bir web uygulamasını çalıştırmak çalışıyorsanız, komut dosyası hata ayıklaması devre dışı bırakın:
   
-## <a name="see-also"></a>Ayrıca Bkz.    
- [Hata ayıklayıcı temel bilgileri](../debugger/debugger-basics.md)   
+  Windows içinde **Denetim Masası** > **ağ ve Internet** > **Internet Seçenekleri**seçin **betik hata ayıklama (devre dışı bırak Internet Explorer)** ve **devre dışı bırak (diğer) ayıklamasını**. Uygulanacak adımlar ve ayarlarını Windows ve tarayıcınızı sürümünüze bağlıdır.
+  
+  ![JIT Internet Seçenekleri](../debugger/media/jitinternetoptions.png "JIT Internet Seçenekleri")
+  
+- IIS'de ASP.NET web uygulaması barındırıyorsanız, sunucu tarafı hata ayıklamasını devre dışı bırakın:
+
+  1. IIS Yöneticisi'nde **özellikler görünümü**altında **ASP.NET** bölümünde, çift **.NET derleme**, veya seçin ve ardından **açık özellik**içinde **eylemleri** bölmesi. 
+  1. Altında **davranışı** > **hata ayıklama**seçin **False**. IIS eski sürümlerinde adımlar farklıdır.
+
+Tam zamanında hata ayıklama devre dışı bıraktıktan sonra uygulamaya normal olarak çalışır ve hatayı işlemek mümkün olabilir. 
+
+Uygulamanın yine işlenmemiş bir hata varsa bir hata iletisini görebilirsiniz veya uygulama kilitlenme veya askıda olabilir. Uygulamayı, normalde hata düzeltilene kadar çalışmayacaktır. Uygulama sahibine başvurun ve sorunu gidermek için isteyin deneyebilirsiniz.
+

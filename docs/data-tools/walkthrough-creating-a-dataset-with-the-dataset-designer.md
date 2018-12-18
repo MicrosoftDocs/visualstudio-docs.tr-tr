@@ -11,41 +11,30 @@ helpviewer_keywords:
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 67fcfb001dab733ae53e0b16a78858f94b5b8e23
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 32a093e59d918f34ddf5da9cbb5edb13c96b2777
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37117933"
 ---
-# <a name="walkthrough-creating-a-dataset-with-the-dataset-designer"></a>İzlenecek Yol: Veri Kümesi Tasarımcısı ile Veri Kümesi Oluşturma
+# <a name="walkthrough-create-a-dataset-with-the-dataset-designer"></a>İzlenecek yol: bir veri kümesi Tasarımcısı ile oluşturma
 
-Bu kılavuzu kullanarak bir veri kümesi oluşturacaksınız **veri kümesi Tasarımcısı**. Bu yeni proje oluşturma ve yeni bir ekleme işleminde size sürer **DataSet** ona öğesi. Sihirbaz kullanmadan bir veritabanı tablolarında temel tabloları oluşturma öğreneceksiniz.
-
-Bu örneklerde gösterilen görevler aşağıdakileri içerir:
-
--   Yeni bir oluşturma **Windows Forms uygulaması** projesi.
-
--   Boş bir ekleme **DataSet** proje öğesi.
-
--   Oluşturma ve bir veri kaynağına sahip bir veri kümesi oluşturarak, uygulamanızda yapılandırma **veri kümesi Tasarımcısı**.
-
--   Northwind veritabanına bir bağlantı oluşturma **Sunucu Gezgini**.
-
--   Tabloları, veritabanındaki tabloların göre kümesindeki ile TableAdapters oluşturma.
-
-[!INCLUDE[note_settings_general](../data-tools/includes/note_settings_general_md.md)]
+Bu kılavuzda, bir veri kümesini kullanarak oluşturduğunuz **veri kümesi Tasarımcısı**. Yeni proje oluşturma ve yeni bir ekleme işleminde size gereken makaleyi **DataSet** ona öğesi. Sihirbaz kullanmadan bir veritabanı tablolarında temel tabloları oluşturma öğreneceksiniz.
 
 ## <a name="prerequisites"></a>Önkoşullar
+
 Bu kılavuzda, SQL Server Express LocalDB ve Northwind örnek veritabanı kullanılır.
 
 1.  SQL Server Express LocalDB yoksa, araçtan yüklemek [SQL Server Express indirme sayfası](https://www.microsoft.com/sql-server/sql-server-editions-express), aracılığıyla veya **Visual Studio yükleyicisi**. Visual Studio Yükleyicisi'nde, SQL Server Express LocalDB parçası olarak yüklenebilir **veri depolama ve işleme** iş yükü veya tek bir bileşen olarak.
 
 2.  Northwind örnek veritabanı, şu adımları izleyerek yükleyin:
 
-    1. Visual Studio'da açın **SQL Server Nesne Gezgini** penceresi. (SQL Server Nesne Gezgini parçası olarak yüklü **veri depolama ve işleme** Visual Studio yükleyicisi iş yükündeki.) Genişletme **SQL Server** düğümü. Yerel veritabanı örneğinde sağ tıklatıp **yeni sorgu...** .
+    1. Visual Studio'da açın **SQL Server Nesne Gezgini** penceresi. (SQL Server Nesne Gezgini parçası olarak yüklü **veri depolama ve işleme** Visual Studio yükleyicisi iş yükündeki.) Genişletme **SQL Server** düğümü. Yerel veritabanı örneğinde sağ tıklatıp **yeni sorgu**.
 
        Sorgu Düzenleyicisi penceresini açar.
 
@@ -55,13 +44,11 @@ Bu kılavuzda, SQL Server Express LocalDB ve Northwind örnek veritabanı kullan
 
        Kısa bir süre sonra sorgu yürütme tamamlandıktan ve Northwind veritabanı oluşturulur.
 
-## <a name="creating-a-new-windows-forms-application-project"></a>Yeni bir Windows Forms uygulaması projesi oluşturma
+## <a name="create-a-new-windows-forms-application-project"></a>Yeni bir Windows Forms uygulaması projesi oluşturma
 
-#### <a name="to-create-a-new-windows-forms-application-project"></a>Yeni bir Windows Forms uygulaması projesi oluşturmak için
+1. Visual Studio'da üzerinde **dosya** menüsünde, select **yeni** > **proje**.
 
-1. Visual Studio'da üzerinde **dosya** menüsünde, select **yeni**, **proje...** .
-
-2. Genişletin **Visual C#** veya **Visual Basic** sol bölmesinde, ardından **Windows Klasik Masaüstü**.
+2. Genişletin **Visual C#** veya **Visual Basic** sol bölmesinde, ardından **Windows Masaüstü**.
 
 3. Orta bölmede seçin **Windows Forms uygulaması** proje türü.
 
@@ -69,11 +56,9 @@ Bu kılavuzda, SQL Server Express LocalDB ve Northwind örnek veritabanı kullan
 
      Visual Studio projeye ekler **Çözüm Gezgini** ve yeni bir form tasarımcısında görüntüleyin.
 
-## <a name="adding-a-new-dataset-to-the-application"></a>Yeni bir veri kümesi için uygulama ekleme
+## <a name="add-a-new-dataset-to-the-application"></a>Yeni bir veri kümesi için uygulama ekleme
 
-#### <a name="to-add-a-new-dataset-item-to-the-project"></a>Yeni bir veri kümesi öğe projeye eklemek için
-
-1.  Üzerinde **proje** menüsünde, select **Yeni Öğe Ekle...** .
+1.  Üzerinde **proje** menüsünde, select **Yeni Öğe Ekle**.
 
      **Yeni Öğe Ekle** iletişim kutusu görüntülenir.
 
@@ -83,9 +68,7 @@ Bu kılavuzda, SQL Server Express LocalDB ve Northwind örnek veritabanı kullan
 
      Visual Studio ekler adlı bir dosya **NorthwindDataset.xsd** projeye ve bunun içinde açılacak **veri kümesi Tasarımcısı**.
 
-## <a name="creating-a-data-connection-in-server-explorer"></a>Sunucu Gezgini'nde bir veri bağlantısı oluşturma
-
-#### <a name="to-create-a-connection-to-the-northwind-database"></a>Northwind veritabanına bir bağlantı oluşturmak için
+## <a name="create-a-data-connection-in-server-explorer"></a>Sunucu Gezgini'nde bir veri bağlantısı oluştur
 
 1.  Üzerinde **Görünüm** menüsünde tıklatın **Sunucu Gezgini**.
 
@@ -93,10 +76,11 @@ Bu kılavuzda, SQL Server Express LocalDB ve Northwind örnek veritabanı kullan
 
 3.  Northwind örnek veritabanı bağlantı oluşturun.
 
-## <a name="creating-the-tables-in-the-dataset"></a>Veri kümesini tabloları oluşturma
+## <a name="create-the-tables-in-the-dataset"></a>Veri kümesini tabloları oluşturma
+
 Bu bölümde, tablolar kümesine eklemek açıklanmaktadır.
 
-#### <a name="to-create-the-customers-table"></a>Müşteriler tablosu oluşturmak için
+### <a name="to-create-the-customers-table"></a>Müşteriler tablosu oluşturmak için
 
 1.  Oluşturduğunuz veri bağlantısı genişletin **Sunucu Gezgini**, genişletin ve ardından **tabloları** düğümü.
 
@@ -104,21 +88,19 @@ Bu bölümde, tablolar kümesine eklemek açıklanmaktadır.
 
      A **müşteriler** veri tablosu ve **TableAdapter** kümesine eklenir.
 
-#### <a name="to-create-the-orders-table"></a>Siparişler tablosu oluşturmak için
+### <a name="to-create-the-orders-table"></a>Siparişler tablosu oluşturmak için
 
 -   Sürükleme **siparişleri** tablosunda **Sunucu Gezgini** üzerine **veri kümesi Tasarımcısı**.
 
      Bir **siparişleri** veri tablosu **OrdersTableAdapter**ve arasında veri ilişkisi **müşteriler** ve **siparişleri** tabloları eklenir veri kümesi.
 
-#### <a name="to-create-the-orderdetails-table"></a>Sipariş Ayrıntıları tablosu oluşturmak için
+### <a name="to-create-the-orderdetails-table"></a>Sipariş Ayrıntıları tablosu oluşturmak için
 
 -   Sürükleme **sipariş ayrıntılarını** tablosunda **Sunucu Gezgini** üzerine **veri kümesi Tasarımcısı**.
 
      Bir **sipariş ayrıntılarını** veri tablosu **OrderDetailsTableAdapter**ve arasında veri ilişkisi **siparişleri** ve **sipariş ayrıntıları** tabloları veri kümesine eklenir.
 
 ## <a name="next-steps"></a>Sonraki Adımlar
-
-### <a name="to-add-functionality-to-your-application"></a>Uygulamanıza işlevsellik ekleme
 
 -   Veri kümesi kaydedin.
 
@@ -133,5 +115,4 @@ Bu bölümde, tablolar kümesine eklemek açıklanmaktadır.
 - [Visual Studio’da veri kümeleri oluşturma ve yapılandırma](../data-tools/create-and-configure-datasets-in-visual-studio.md)
 - [Visual Studio'da verilere Windows Forms denetimleri bağlama](../data-tools/bind-windows-forms-controls-to-data-in-visual-studio.md)
 - [Visual Studio'da verilere denetimler bağlama](../data-tools/bind-controls-to-data-in-visual-studio.md)
-- [Verileri doğrulama](../data-tools/validate-data-in-datasets.md)
-- [Verileri Kaydetme](../data-tools/saving-data.md)
+- [Veri doğrulama](../data-tools/validate-data-in-datasets.md)

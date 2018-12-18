@@ -1,5 +1,5 @@
 ---
-title: Paralel iş parçacıklarında değişkenleri bir izleme ayarlama | Microsoft Docs
+title: Paralel iş parçacıklarında değişkenleri bir izleme ayarlayın | Microsoft Docs
 ms.custom: ''
 ms.date: 04/25/2017
 ms.technology: vs-ide-debug
@@ -19,73 +19,74 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9a142b512c5bbaf5d93dc0302aa39db92fb7c7ae
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e9381479fdfa3d64f3504e947f49411b99d53e2d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49857958"
 ---
-# <a name="set-a-watch-on-variables-in-parallel-threads-in-visual-studio"></a>Visual Studio'da paralel iş parçacıklarında değişkenleri bir izleme ayarlama
-Paralel Gözcü penceresi içinde aynı anda tek bir ifade birden çok iş parçacığı üzerinde tutan değerleri görüntüleyebilirsiniz. Her satır bir uygulamada çalıştırılan bir iş parçacığını temsil eder, ancak bir iş parçacığı içinde birden çok satır temsil edilebilir. Daha açık belirtmek gerekirse, her satır, işlev imzası geçerli yığın çerçevesinde işlevi eşleşen bir işlev çağrısını temsil eder. Sıralama, yeniden sıralamak, kaldırmak ve sütunları öğeleri grubu. Bayrak, bayrakla dondurmak, (askıya) ve (devam) iş parçacıklarının çözme. Aşağıdaki sütunlar görüntülenir **paralel Gözcü** penceresi:  
+# <a name="set-a-watch-on-variables-in-parallel-threads-in-visual-studio"></a>Visual Studio'da paralel iş parçacıklarında değişkenleri bir izleme ayarlayın
+Paralel İzleme penceresinde aynı anda birden çok iş parçacığında bir ifade tutan değerleri görüntüleyebilirsiniz. Her satır bir uygulama içinde çalışan bir iş parçacığını temsil eder, ancak bir iş parçacığı içinde birden çok satır gösterilebilir. Daha açık belirtmek gerekirse her satır, işlev imzası geçerli yığın çerçevesinde işlevi eşleşen bir işlev çağrısını temsil eder. Sıralama, yeniden sıralama, kaldırmak ve sütunları olan öğeleri gruplayın. Bayrak, işaretsiz dondurma, (askıya) ve (devam) iş parçacıklarını çözme. Aşağıdaki sütunlar görüntülenir **paralel izleme** penceresi:  
   
--   Özel dikkat edilmesi gereken istediğiniz bir iş parçacığı işaretleyebilirsiniz bayrağı sütun.  
+- Özel dikkat edilmesi gereken istediğiniz bir iş parçacığını işaretle Bayrak sütunu.  
   
--   Sarı bir ok geçerli iş parçacığının gösterir geçerli iş parçacığı sütununun (yeşil bir ok süslü kuyruklu geçerli olmayan bir iş parçacığı geçerli hata ayıklayıcı bağlamını sahip olduğunu gösterir).  
+- Sarı bir ok geçerli iş parçacığı gösterir geçerli iş parçacığı sütunu (kıvrık kuyruklu yeşil bir ok, geçerli olmayan bir iş parçacığı geçerli hata ayıklayıcı bağlam olduğunu gösterir).  
   
--   Makine, işlem, kutucuğu, görev ve iş parçacığı görüntüleyebilirsiniz yapılandırılabilir bir sütun.  
+- Makine, işlem, döşeme, görev ve iş parçacığı görüntüleyebilirsiniz yapılandırılabilir bir sütun.  
   
-    > [!TIP]
-    >  Değiştirilen görev bilgileri **paralel Gözcü** penceresinde, ilk açmanız **görev** penceresi.  
+  > [!TIP]
+  >  Değiştirilen Görev bilgilerine **paralel izleme** penceresinde ilk açmanız gerektiğini **görev** penceresi.  
   
--   Boş *Gözcü Ekle* sütunları, hangi girebilirsiniz izlemek için ifadeler.  
+- Boş *izleme Ekle* izlemek için ifadeleri, girebileceğiniz sütun.  
   
- [!INCLUDE[note_settings_general](../data-tools/includes/note_settings_general_md.md)]  
+  [!INCLUDE[note_settings_general](../data-tools/includes/note_settings_general_md.md)]  
   
 ### <a name="to-display-the-parallel-watch-window"></a>Paralel İzleme penceresini görüntülemek için  
   
 1.  Kodda bir kesme noktası ayarlayın.  
   
-2.  Menü çubuğunda seçin **hata ayıklama**, **hata ayıklamayı Başlat**. Uygulamayı kesme ulaşmak için bekleyin.  
+2.  Menü çubuğunda, **hata ayıklama**, **hata ayıklamayı Başlat**. Uygulama kesme noktasına ulaşmak bekler.  
   
-3.  Menü çubuğunda seçin **hata ayıklama**, **Windows**, **paralel Gözcü**ve ardından Gözcü penceresi seçin. Dörde kadar windows açabilirsiniz.  
+3.  Menü çubuğunda, **hata ayıklama**, **Windows**, **paralel izleme**, Gözcü penceresi seçin. Dört adede kadar windows açabilirsiniz.  
   
-### <a name="to-add-a-watch-expression"></a>Gözcü ifadesi eklemek için  
+### <a name="to-add-a-watch-expression"></a>Bir Gözcü ifadesini eklemek için  
   
--   Boş birini *Gözcü Ekle* sütunları ve Gözcü ifadesi girin.  
+-   Boş birini *izleme Ekle* sütunları ve ardından bir Gözcü ifadesini girin.  
   
-### <a name="to-flag-or-unflag-a-thread"></a>Bayrak veya bir iş parçacığı bayrakla  
+### <a name="to-flag-or-unflag-a-thread"></a>Bir iş parçacığını işaretleme veya işaretini kaldırma için  
   
--   Satır bayrağı sütunu seçin (ilk sütun) veya iş parçacığı için kısayol menüsünü açın ve seçin **bayrağı** veya **Unflag**.  
+-   Satır için bayrak sütunu seçin (ilk sütun) veya iş parçacığı için kısayol menüsünü açın ve seçin **bayrağı** veya **Unflag**.  
   
-### <a name="to-display-only-flagged-threads"></a>Yalnızca görüntülemek için iş parçacıklarını bayrakla  
+### <a name="to-display-only-flagged-threads"></a>Yalnızca bayraklı iş parçacıklarını görüntülemek için  
   
--   Seçin **Göster'i yalnızca işaretlenen** sol üst köşesindeki düğmesini **paralel Gözcü** penceresi.  
+-   Seçin **Göster bayrağı yalnızca** sol alt köşesindeki düğme **paralel izleme** penceresi.  
   
-### <a name="to-switch-to-another-thread"></a>Başka bir iş parçacığı için geçiş yapmak için  
+### <a name="to-switch-to-another-thread"></a>Başka bir iş parçacığına geçiş yapmak için  
   
--   Geçerli iş parçacığı sütun çift tıklayın (ikinci sütun). (Klavye: satırı seçin ve Enter tuşuna basın.)  
+-   Geçerli iş parçacığı sütunu çift tıklayın (ikinci sütun). (Klavye: satırı seçin ve Enter tuşuna basın.)  
   
 ### <a name="to-sort-a-column"></a>Bir sütunu sıralamak için  
   
 -   Sütun başlığı seçin.  
   
-### <a name="to-group-threads"></a>Grup iş parçacığı  
+### <a name="to-group-threads"></a>İş parçacıklarını gruplandırma  
   
--   Paralel Gözcü penceresi için kısayol menüsünü açın, seçin **Group By**ve ardından uygun alt menü öğesini seçin.  
+-   Paralel İzleme penceresi kısayol menüsünü açın, **Group By**ve ardından uygun alt öğeyi seçin.  
   
-### <a name="to-freeze-or-thaw-threads"></a>Freeze veya iş parçacığı çözme  
+### <a name="to-freeze-or-thaw-threads"></a>Dondurma veya çözme iş parçacığı  
   
--   Satır için kısayol menüsünü açın ve seçin **Dondur** veya **çözme**.  
+-   Satır için kısayol menüsünü açın ve seçin **dondurma** veya **çözme**.  
   
-### <a name="to-export-the-data-in-the-parallel-watch-window"></a>Paralel Gözcü penceresi verileri dışarı aktarmak için  
+### <a name="to-export-the-data-in-the-parallel-watch-window"></a>Paralel İzleme penceresinde verileri dışarı aktarmak için  
   
--   Seçin **Excel'de Aç** düğmesine tıklayın ve ardından **Excel'de Aç** veya **CSV'ye aktar**.  
+-   Seçin **Excel'de Aç** düğmesine ve ardından **Excel'de Aç** veya **CSV'ye aktar**.  
   
-### <a name="to-filter-by-a-boolean-expression"></a>Boole ifadesine göre filtre uygulamak için  
+### <a name="to-filter-by-a-boolean-expression"></a>Bir Boole ifadesine göre filtre uygulamak için  
   
--   Boole ifadesinde girin **Boole ifadesine göre filtrele** kutusu. Hata ayıklayıcı her iş parçacığı içeriği için ifadeyi hesaplar. Yalnızca değerin olduğu satırları `true` görüntülenir.  
+-   Bir Boole ifadesi girin **Boole ifadesine göre filtrele** kutusu. Hata ayıklayıcı, her iş parçacığı bağlamı için ifadeyi hesaplar. Değeri satır `true` görüntülenir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Birden çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
+ [Çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
  [Nasıl yapılır: GPU iş parçacıkları penceresini kullanma](../debugger/how-to-use-the-gpu-threads-window.md)   
  [İzlenecek yol: C++ AMP Uygulamasında Hata Ayıklama](/cpp/parallel/amp/walkthrough-debugging-a-cpp-amp-application)

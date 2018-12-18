@@ -10,96 +10,97 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2833c3ae2a8f03b69314db9e3723a640c4327587
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 88e313b7db1306465bce530eea41e875227abc0e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855189"
 ---
 # <a name="walkthrough-missing-objects-due-to-misconfigured-pipeline"></a>İzlenecek Yol: Yanlış Yapılandırılmış Ardışık Düzen Nedeniyle Eksik Nesneler
-Bu kılavuzda nasıl kullanılacağı ortaya [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] unset piksel gölgelendirici nedeniyle eksik olan bir nesneyi araştırmak için grafik tanılama araçları.  
+Bu izlenecek yolda nasıl kullanılacağını gösterir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] nedeniyle bir unset piksel gölgelendiricisi eksik olan bir nesne incelemek için grafik tanılama araçları.  
   
- Bu kılavuzda bu görevler gösterilmektedir:  
+ Bu örneklerde bu görevler gösterilir:  
   
--   Kullanarak **grafik olay listesi** sorunun olası kaynakları bulmak için.  
+-   Kullanarak **grafik olay listesi** olası sorun kaynaklarını bulmak için.  
   
 -   Kullanarak **grafik ardışık düzen aşamaları** etkisini incelemek için penceresine `DrawIndexed` Direct3D API çağrısı.  
   
--   Gölgelendirici aşama ayarlanmadı onaylamak için cihaz bağlamı inceleniyor.  
+-   Gölgelendirici aşaması ayarlanmadı onaylamak için cihaz bağlamı inceleniyor.  
   
--   Kullanarak **grafik ardışık düzen aşamaları** penceresi ile birlikte **grafik olay Çağırma yığını** unset piksel gölgelendirici kaynağı bulmaya yardımcı olacak.  
+-   Kullanarak **grafik ardışık düzen aşamaları** penceresi ile birlikte **grafik olay çağrı yığını** unset piksel gölgelendiricisi kaynağını bulmaya yardımcı olacak.  
   
 ## <a name="scenario"></a>Senaryo  
- 3-b bir uygulamada bir nesne eksik olduğunda bunun bazen nesne işlenmeden önce gölgelendirici aşamaları birini ayarlanmamış olmasıdır. Basit işleme gereksinimlerine sahip uygulamalar bu hatanın kaynağını genellikle bir yerde nesnenin çizim çağrısı çağrı yığınında bulunur. Ancak, bir iyileştirme gölgelendirici programları, dokuları veya ortak en aza indirmek için diğer verileri bazı uygulamalar toplu birlikte nesneleri durumu-yükü değiştirin. Bu uygulamaların hatanın kaynağını toplu sistemde kaçınma yerine çizim çağrısı çağrı yığınında bulunan. Basit işleme gereksinimlerine sahip bir uygulama bu kılavuzda senaryosunu gösterir ve böylece hatanın kaynağını çağrı yığınında bulunabilir.  
+ Bir nesneyi 3B bir uygulamada eksik olduğunda, nesne oluşturulmadan önce gölgelendirici aşamalarının biri ayarlanmadı bazen olmasıdır. Basit işleme gereksinimlerine sahip uygulamalar, bu hata genellikle bulunduğu yere nesnenin çizim çağrısı çağrı yığınında kaynağıdır. Ancak, bir iyileştirme gölgelendirici program, doku veya ortak en aza indirmek için diğer verileri bazı uygulamalar toplu birlikte nesneler durumu-ek yükü değişikliği. Bu uygulamalar, hatanın kaynağını toplu işlem sistemine kaçınma yerine çizim çağrısı çağrı yığınında bulunur. Basit işleme gereksinimlerine sahip bir uygulama bu kılavuzdaki senaryoyu göstermektedir ve bu nedenle hatanın kaynağının çağrı yığınında bulunabilir.  
   
- Bu senaryoda, test etmek için uygulamayı çalıştırdığınızda, arka plan beklendiği gibi işlenir ancak nesnelerden görünmüyor. Böylece uygulama ayıklayabilirsiniz grafik Tanılama'yı kullanarak, bir grafik günlüğüne sorun yakalayın. Sorun uygulamada şöyle görünür:  
+ Bu senaryoda, test etmek için uygulamayı çalıştırdığınızda, arka plan beklendiği gibi işlenir ancak nesnelerinden birine görünmez. Böylece uygulamanın hatalarını ayıklayabilir miyim grafik tanılamayı kullanarak sorunu bir grafik günlüğüne yakalayın. Sorun, uygulamada şu şekilde görünür:  
   
- ![Nesne görülemeyen](media/gfx_diag_demo_misconfigured_pipeline_problem.png "gfx_diag_demo_misconfigured_pipeline_problem")  
+ ![Nesne'ne görülemeyen](media/gfx_diag_demo_misconfigured_pipeline_problem.png "gfx_diag_demo_misconfigured_pipeline_problem")  
   
 ## <a name="investigation"></a>Araştırma  
  Grafik tanılama araçlarını kullanarak, test sırasında yakalanan çerçeveleri incelemek için grafik günlük belgesi yükleyebilirsiniz.  
   
-#### <a name="to-examine-a-frame-in-a-graphics-log"></a>Grafik günlük çerçevede incelemek için  
+#### <a name="to-examine-a-frame-in-a-graphics-log"></a>Grafik günlüğünde bir çerçeveyi incelemek için  
   
-1.  İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], eksik nesne sergiler bir çerçeve içeren bir grafik günlük belgesi yükleyin. Yeni bir grafik günlük sekmesi görünür [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Bu sekme üst kısmında seçili çerçeve işleme hedef çıkışıdır. Alt parçasıdır **çerçeve listesi**, küçük resim olarak her yakalanan çerçeve görüntüler.  
+1. İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], eksik nesne sergiler çerçeveyi içeren grafik günlük belgesi yükleyin. Yeni bir grafik günlüğü sekmesi görünür [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Bu sekmenin üst kısmında seçilen çerçevenin işleme hedefi çıktısı ' dir. Alt parçasıdır **çerçeve listesi**, bir küçük resim her yakalanan çerçeve görüntüler.  
   
-2.  İçinde **çerçeve listesi**, nesne görüntülenmez gösteren bir çerçeve seçin. İşleme hedefi seçili çerçeve yansıtacak şekilde güncelleştirilir. Bu senaryoda, grafik şöyle sekmesi görünür oturum:  
+2. İçinde **çerçeve listesi**, nesne görüntülenmez gösteren bir çerçeve seçin. İşleme hedefi, Seçilen çerçevenin yansıtacak şekilde güncelleştirilir. Bu senaryoda, grafik sekmesi şu şekilde görünür günlük:  
   
-     ![Grafik belge Visual Studio'da oturum](media/gfx_diag_demo_misconfigured_pipeline_step_1.png "gfx_diag_demo_misconfigured_pipeline_step_1")  
+    ![Grafik belgesi Visual Studio'da oturum](media/gfx_diag_demo_misconfigured_pipeline_step_1.png "gfx_diag_demo_misconfigured_pipeline_step_1")  
   
- Sorun gösteren bir çerçeve seçtikten sonra kullanarak tanılamak başlayabilirsiniz **grafik olay listesi**. **Grafik olay listesi** etkin çerçeveyi işlemek için yapılan her Direct3D API çağrısı içerir — örneğin, aygıt durumunu ayarlamak için oluşturun ve arabellek güncelleştirmek ve çerçevede görünen nesneler çizmek için. Çok çeşitli çağrıları — çizim, gönderme, kopyalama veya Temizle çağrıları — genellikle (ancak her zaman) olduğundan ilginç olan uygulama beklendiği gibi çalışırken işleme hedefi karşılık gelen bir değişiklik. Draw çağrıları özellikle ilginç olduklarından her bir uygulama oluşturulmasını geometri temsil eder.  
+   Sorunu gösteren bir çerçeveyi seçtikten sonra kullanarak tanılamak başlayabilirsiniz **grafik olay listesi**. **Grafik olay listesi** etkin çerçeveye işlemek için yapılan her Direct3D API çağrısı içerir — örneğin, cihaz durumunu ayarlamak için oluşturun ve arabellek güncelleştirin ve çerçeve içinde görünen nesneler çizmek için. Pek çok çağrıları — Örneğin, çizim, gönderme, kopyalama veya açık çağrıları — olmadığı için genellikle (ama her zaman kullanılmaz) ilginç olan uygulamada beklendiği gibi çalışırken işleme hedefi karşılık gelen bir değişiklik. Çizim çağrıları özellikle ilgi çekici olduğu her bir uygulama oluşturulmasını geometri temsil eder.  
   
- İşleme hedefi içermiyor bildiğiniz için eksik nesne aynı zamanda var. yok görünüyor, diğer hataları, kullanabileceğiniz **grafik olay listesi** ile birlikte **grafik ardışık düzen aşamaları**hangi çağrısı çizin belirlemek için aracı eksik nesnenin geometriye karşılık gelir. **Grafik ardışık düzen aşamaları** penceresi işleme hedef üzerindeki etkisini bağımsız olarak her çizim çağrı gönderildiği geometri gösterir. Draw çağrılar ilerlerken, ardışık düzen aşamaları etkin her aşamanın akıp, her çağrısı ile ilişkili olan geometrinin göstermek için güncelleştirilir ve işleme hedef çıkış aramayı tamamladıktan sonra işleme hedefi durumunu gösterecek şekilde güncelleştirilir.  
+   İşleme hedefi içermiyor bildiğiniz eksik nesne de vardır değil gibi görünüyor, diğer hatalar, kullanabileceğiniz **grafik olay listesi** ile birlikte **grafik ardışık düzen aşamaları**, çizim çağrısı çıktılarının belirlemek için aracı için eksik nesne geometrisinin karşılık gelir. **Grafik ardışık düzen aşamaları** penceresi işleme hedefi üzerindeki etkisini bağımsız olarak her bir çizim çağrısına gönderildiği geometri gösterir. Çizim çağrıları arasında taşırken, ardışık düzen aşamaları her etkin bir aşama akan, her çağrısıyla ilişkili geometri gösterecek şekilde güncelleştirilir ve işleme hedefi çıktısı aramayı tamamladıktan sonra işleme hedefi durumunu göstermek için güncelleştirilir.  
   
-#### <a name="to-find-the-draw-call-for-the-missing-geometry"></a>Draw çağrısı için eksik geometri bulmak için  
+#### <a name="to-find-the-draw-call-for-the-missing-geometry"></a>Çizim çağrısı için eksik geometri bulmak için  
   
-1.  Açık **grafik olay listesi** penceresi. Üzerinde **grafik tanılama** araç seçin **olay listesi**.  
+1. Açık **grafik olay listesi** penceresi. Üzerinde **grafik tanılama** araç seçin **olay listesi**.  
   
-2.  Açık **grafik ardışık düzen aşamaları** penceresi. Üzerinde **grafik tanılama** araç seçin **ardışık düzen aşamaları**.  
+2. Açık **grafik ardışık düzen aşamaları** penceresi. Üzerinde **grafik tanılama** araç seçin **ardışık düzen aşamaları**.  
   
-3.  Her taşırken çağrısı çizim **grafik olay listesi** penceresinde, izleme **grafik ardışık düzen aşamaları** eksik nesne penceresi. Bu işlemi kolaylaştırmak için "Çiz" girin **arama** sağ üst köşesinde kutusunda **grafik olay listesi** penceresi. Yalnızca "Çiz" başlıklarını olayları içeren bu listeyi filtreler.  
+3. Her geçerken çağrı çizin **grafik olay listesi** penceresi, watch **grafik ardışık düzen aşamaları** eksik nesnesinin penceresi. Bunu kolaylaştırmak için "Çiz" girin **arama** sağ üst köşesinde kutusunda **grafik olay listesi** penceresi. Bu, yalnızca başlıklarında "Çiz" olan olaylar içeren listenin filtreler.  
   
-     İçinde **grafik ardışık düzen aşamaları** penceresinde **giriş Assembler** aşama, dönüştürülmüş önce nesnenin geometri gösterir ve **köşe gölgelendirici** aşama aynı gösterir Bunu dönüştürüldükten sonra nesnesi. Bu senaryoda, dikkat **grafik ardışık düzen aşamaları** penceresi şunu gösterir **giriş Assembler** ve **köşe gölgelendirici** aşamaları ancak **piksel gölgelendirici**  çizim çağrıların biri için aşaması.  
+    İçinde **grafik ardışık düzen aşamaları** penceresinde **giriş Assembler** aşama, dönüştürülen önce nesne geometrisinin gösterir ve **köşe gölgelendiricisi** aşama aynı gösterir Bunu dönüştürüldükten sonra nesne. Bu senaryoda, dikkat **grafik ardışık düzen aşamaları** penceresi şunu gösterir **giriş Assembler** ve **köşe gölgelendiricisi** aşamaları ancak **piksel gölgelendiricisi**  aşaması için bir çizim çağrıları.  
   
-    > [!NOTE]
-    >  Başka kanal aşamaları — Örneğin, hull gölgelendirici, etki alanı gölgelendirici veya geometri gölgelendirici aşamaları — nesneyi işlemek, sorunun nedenini herhangi biri olabilir. Genellikle, sorun sonucu görüntülenmez veya beklenmeyen bir biçimde görüntülenen erken aşamada ilişkilidir.  
+   > [!NOTE]
+   >  Diğer, ardışık düzen aşamaları — Örneğin, kabuk gölgelendiricisi, etki alanı gölgelendiricisi ve geometri gölgelendirici aşamalarının — nesneyi işlemek, sorunun nedenini herhangi biri olabilir. Genellikle, erken aşama sonucu görüntülenmez veya beklenmedik bir şekilde görüntülenir sorun ilgilidir.  
   
-4.  Eksik nesnesine karşılık gelen çizim çağrısı ulaştığında durdurun. Bu senaryoda, **grafik ardışık düzen aşamaları** penceresi gösterir geometri GPU verilmiş (varlığını tarafından gösterilen **giriş Assembler** aşama) ve dönüştürülen ( tarafındanbelirtildiğigibi **Köşe gölgelendirici** aşama), bir etkin piksel gölgelendirici olmasını değil gözükmüyor olduğundan işleme hedef görünmüyor ancak (yokluğu tarafından gösterilen **piksel gölgelendirici** aşama). Bu senaryoda, eksik nesnesinde siluet bile görebilirsiniz **çıkış birleşme** aşaması:  
+4. Eksik bir nesneye karşılık gelen bir çizim çağrısı ulaştığında durdurun. Bu senaryoda, **grafik ardışık düzen aşamaları** pencere geometri GPU'ya verildiğini gösterir (yokluğuyla **giriş Assembler** aşama) ve dönüştürülen ( tarafındanbelirtilir **Köşe gölgelendirici** aşama), bir etkin piksel gölgelendiricisi olması değil gözükmüyor olduğundan işleme hedefi görünmez, ancak (yokluğuyla **piksel gölgelendiricisi** aşama). Bu senaryoda, eksik nesnesinin siluet bile görebilirsiniz **çıkış Birleştiricisi** aşama:  
   
-     ![DrawIndexed olay ve ardışık düzen üzerindeki etkisi](media/gfx_diag_demo_misconfigured_pipeline_step_2.png "gfx_diag_demo_misconfigured_pipeline_step_2")  
+    ![DrawIndexed olay ve işlem hattı üzerindeki etkisini](media/gfx_diag_demo_misconfigured_pipeline_step_2.png "gfx_diag_demo_misconfigured_pipeline_step_2")  
   
- Uygulama eksik nesnenin geometri çizim çağrısı verilen onaylayın ve piksel gölgelendirici aşama etkin olmayan Bul sonra bulguları onaylamak için aygıt durumunu inceleyebilirsiniz. Kullanabileceğiniz **grafik nesnesi tablosu** cihaz bağlamı ve diğer Direct3D nesne verilerini incelemek için.  
+   Uygulamayı bir çizim çağrısı eksik nesne geometrisinin için verilen onaylayın ve piksel gölgelendirici aşaması etkin bulma sonra bulgularınızı onaylamak için cihaz durumunu inceleyebilirsiniz. Kullanabileceğiniz **Graphics Object Table** cihaz bağlamı ve diğer Direct3D nesne verilerini incelemek için.  
   
 #### <a name="to-examine-device-context"></a>Cihaz bağlamı incelemek için  
   
-1.  Açık **d3d11 cihaz bağlamı**. İçinde **grafik ardışık düzen aşamaları** penceresinde, seçin **ID3D11DeviceContext** parçası olan bağlantıyı `DrawIndexed` pencerenin üst kısmında görüntülenir çağrısı.  
+1. Açık **d3d11 cihaz bağlamı**. İçinde **grafik ardışık düzen aşamaları** penceresinde seçin **ID3D11DeviceContext** parçası olan bağlantıyı `DrawIndexed` pencerenin üst kısmında görüntülenen çağrısı.  
   
-2.  Görüntülenen aygıt durumunu incelemek **d3d11 cihaz bağlamı** sekmesini hiçbir piksel gölgelendirici çizim araması sırasında etkin olduğunu doğrulayın. Bu senaryoda, **gölgelendirici genel bilgiler**— altında görüntülenen **piksel gölgelendirici durumu**— gölgelendirici gösterir **NULL**:  
+2. Görüntülenen cihaz durumunu incelemek **d3d11 cihaz bağlamı** hiçbir piksel gölgelendiricisi çizim çağrısı sırasında etkin olduğunu onaylamak için sekmesinde. Bu senaryoda, **gölgelendirici genel bilgileri**— altında görüntülenen **piksel gölgelendirici durumu**— gölgelendirici olduğunu gösterir **NULL**:  
   
-     ![Piksel gölgelendirici durumunu D3D 11 cihaz bağlamı gösterir](media/gfx_diag_demo_misconfigured_pipeline_step_4.png "gfx_diag_demo_misconfigured_pipeline_step_4")  
+    ![Piksel gölgelendirici durumu 11 D3D cihaz bağlamı gösterir](media/gfx_diag_demo_misconfigured_pipeline_step_4.png "gfx_diag_demo_misconfigured_pipeline_step_4")  
   
- Piksel gölgelendirici ayarlandı olduğunu doğruladıktan sonra uygulama tarafından sonraki adım, uygulamanızın kaynak kodunda konumu bulmak için gölgelendirici ayarlandığı NULL'dur. Kullanabileceğiniz **grafik olay listesi** ile birlikte **grafik olay Çağırma yığını** bu konumu bulunamıyor.  
+   Piksel gölgelendiricisinin ayarlandı olduğunu doğruladıktan sonra uygulamanız tarafından sonraki adım, uygulamanızın kaynak kodunda konumu bulmak için gölgelendirici ayarlandığı null. Kullanabileceğiniz **grafik olay listesi** ile birlikte **grafik olay çağrı yığını** bu konumu bulunamadı.  
   
-#### <a name="to-find-where-the-pixel-shader-is-set-in-your-apps-source-code"></a>Uygulamanızın kaynak kodunda piksel gölgelendirici ayarlandığı bulmak için  
+#### <a name="to-find-where-the-pixel-shader-is-set-in-your-apps-source-code"></a>Piksel gölgelendirici uygulamanızın kaynak kodunda belirlendiği bulmak için  
   
-1.  Bul `PSSetShader` eksik nesnesine karşılık gelen çağrısı. İçinde **grafik olay listesi** penceresinde "çizin; girin "İçinde PSSetShader **arama** sağ üst köşesinde kutusunda **grafik olay listesi** penceresi. Böylece yalnızca "PSSetShader" olayları ve "Çiz" başlıklarını olayları içeren bu listeyi filtreler. İlk seçin `PSSetShader` eksik nesne çizim çağrısından önce görüntülenen çağrısı.  
+1. Bulma `PSSetShader` eksik nesnesine karşılık gelen çağrı. İçinde **grafik olay listesi** penceresinde "Çiz; girin "İçinde PSSetShader **arama** sağ üst köşesinde kutusunda **grafik olay listesi** penceresi. Bu, yalnızca "PSSetShader" olaylar ve kendi başlıklarında "Çiz" olan olaylar içeren listenin filtreler. İlk seçin `PSSetShader` eksik nesnesinin çizim çağrısından önce görüntülenen çağrısı.  
   
-    > [!NOTE]
-    >  `PSSetShader` içinde görünmez **grafik olay listesi** penceresini bu çerçevesinde ayarlanmadı. Bu genellikle yalnızca tek bir piksel gölgelendirici tüm nesneler için kullanılıyorsa veya varsa oluşur `PSSetShader` çağrısı bu çerçevesinde istemeden atlandı. Her iki durumda da, uygulamanızın kaynak kodunu arama olan öneririz `PSSetShader` çağrıları ve kullanım ayıklama teknikleri geleneksel bu çağrıları davranışını incelemek için.  
+   > [!NOTE]
+   >  `PSSetShader` görünmez **grafik olay listesi** penceresini bu çerçevesinde ayarlanmadı. Bu genellikle yalnızca tek bir piksel gölgelendiricisi tüm nesneleri için kullanılıyorsa veya gerçekleşir `PSSetShader` çağrısı sırasında bu çerçeve istemeden atlandı. Her iki durumda da, uygulamanın kaynak kodunu arama olan öneririz `PSSetShader` bu çağrılar davranışını incelemek için çağrıları ve geleneksel hata ayıklama teknikleri kullanın.  
   
-2.  Açık **grafik olay Çağırma yığını** penceresi. Üzerinde **grafik tanılama** araç seçin **grafik olay Çağırma yığını**.  
+2. Açık **grafik olay çağrı yığını** penceresi. Üzerinde **grafik tanılama** araç seçin **grafik olay çağrı yığını**.  
   
-3.  Çağrı yığını bulmaya `PSSetShader` uygulamanızın kaynak kodunu çağırın. İçinde **grafik olay Çağırma yığını** penceresinde en üstteki arama seçin ve piksel gölgelendirici ayarlanmış değerini inceleyin. Piksel gölgelendirici ayarlanabilir, doğrudan boş veya null değeri, işlev veya başka bir duruma geçirilen bağımsız değişken nedeniyle oluşabilir. Doğrudan ayarlı değilse null değeri çağrı yığını yere kaynağını bulun olabilir. Bu senaryoda, piksel gölgelendirici doğrudan ayarlayın, Bul `nullptr` en üstteki işlevinde adlı `CubeRenderer::Render`:  
+3. Çağrı yığınını bulmaya `PSSetShader` uygulamanızın kaynak kodunda çağırın. İçinde **grafik olay çağrı yığını** penceresinde en üst çağrı seçin ve piksel gölgelendiricisi ayarlanır değerini inceleyin. Piksel gölgelendirici ayarlanabilir, doğrudan boş veya null değeri, işlev veya başka bir duruma geçirilen bağımsız değişken nedeniyle oluşabilir. Doğrudan ayarlanmamışsa null değeri çağrı yığınını yere kaynağı bulacağından olabilir. Bu senaryoda, piksel gölgelendiricisi doğrudan kümesi olduğunu keşfedin `nullptr` en üstteki işlevinde olarak adlandırılmış `CubeRenderer::Render`:  
   
-     ![Piksel gölgelendirici başlatma değil kod](media/gfx_diag_demo_misconfigured_pipeline_step_5.png "gfx_diag_demo_misconfigured_pipeline_step_5")  
+    ![Piksel gölgelendirici başlatmak olmayan kod](media/gfx_diag_demo_misconfigured_pipeline_step_5.png "gfx_diag_demo_misconfigured_pipeline_step_5")  
   
-    > [!NOTE]
-    >  Çağrı yığını inceleyerek null değer Kaynak bulamazsanız, üzerinde koşullu kesme noktası ayarlamanızı öneririz `PSSetShader` çağrısı sağlayacak şekilde piksel gölgelendirici ayarladığınızda programın yürütülmesi keser null. Sonra uygulamayı hata ayıklama modunda yeniden başlatın ve null değer kaynağı bulmak için geleneksel hata ayıklama teknikleri kullanabilirsiniz.  
+   > [!NOTE]
+   >  Çağrı yığını inceleyerek kaynağı null değerini bulamazsanız, üzerinde bir koşullu kesme noktası ayarlamanızı öneririz `PSSetShader` çağrı piksel gölgelendiricisi ayarladığınızda, programın yürütülmesini keser, null. Sonra uygulamayı hata ayıklama modunda yeniden başlatın ve null değer kaynağı bulmak için geleneksel hata ayıklama teknikleri kullanabilirsiniz.  
   
- Sorunu gidermek için ilk parametresinin kullanarak doğru piksel gölgelendirici atama `ID3D11DeviceContext::PSSetShader` API çağrısı.  
+   Sorunu gidermek için ilk parametresini kullanarak doğru piksel gölgelendiricisi atama `ID3D11DeviceContext::PSSetShader` API çağrısı.  
   
- ![Düzeltilmiş C&#43; &#43; kaynak kodu](media/gfx_diag_demo_misconfigured_pipeline_step_6.png "gfx_diag_demo_misconfigured_pipeline_step_6")  
+   ![Düzeltilmiş C&#43; &#43; kaynak kodu](media/gfx_diag_demo_misconfigured_pipeline_step_6.png "gfx_diag_demo_misconfigured_pipeline_step_6")  
   
- Kod düzelttikten sonra yeniden oluşturmak ve uygulamayı yeniden işleme sorun çözülür doğrulamak için çalıştırın:  
+   Kod düzelttikten sonra yeniden oluşturmak ve yeniden işleme sorunun çözüldüğünü doğrulamak için uygulamayı çalıştırın:  
   
- ![Nesne şimdi görüntülenen](media/gfx_diag_demo_misconfigured_pipeline_resolution.jpg "gfx_diag_demo_misconfigured_pipeline_resolution")
+   ![Nesne artık görüntülenen](media/gfx_diag_demo_misconfigured_pipeline_resolution.jpg "gfx_diag_demo_misconfigured_pipeline_resolution")

@@ -1,5 +1,5 @@
 ---
-title: Performans koleksiyon yöntemleri anlama | Microsoft Docs
+title: Performans toplama metotlarını anlama | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -13,104 +13,105 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cd5a584402473d9576376d6357dd67e6c47f391c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d278f8ca6019dd8a29d5e4c57e1e191137a32972
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677191"
 ---
-# <a name="understanding-performance-collection-methods"></a>Performans koleksiyon yöntemleri anlama
+# <a name="understand-performance-collection-methods"></a>Performans bilgilerini toplama metotlarını anlama
 
-Profil oluşturma Visual Studio Araçları performans verilerini toplamak için kullanabileceğiniz beş yöntemleri sağlar. Bu konuda farklı yöntemleri açıklar ve belirli bir yöntem ile veri toplama uygun olabilir bazı senaryolar önerir.
+Visual Studio Profil Araçları performans verilerini toplamak için kullanabileceğiniz beş yöntemler sağlar. Bu konu, farklı yöntemleri açıklar ve bazı senaryolarda belirli bir yöntem ile veri toplama uygun olabilir önerir.
 
 > [!NOTE]
-> Gelişmiş güvenlik özellikleri Windows 8 ve Windows Server 2012 Visual Studio profil oluşturucu bu platformlarda toplar şekilde önemli değişiklikler gerekmiştir. UWP uygulamalar için yeni koleksiyon teknikler de gerekir. Bkz: [Windows 8 ve Windows Server 2012 uygulamaların performans araçları](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).
+> Windows 8 ve Windows Server 2012'deki Gelişmiş güvenlik özellikleri Visual Studio profil oluşturucu bu platformlarda veri toplayan bir şekilde önemli değişiklikler gerekmiştir. UWP uygulamaları, ayrıca yeni toplama teknikleri gerektirir. Bkz: [Windows 8 ve Windows Server 2012 uygulamalarında performans araçları](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).
 
 |Yöntem|Açıklama|
 |------------|-----------------|
-|[Örnekleme](#sampling)|Bir uygulama tarafından gerçekleştirilen iş hakkında istatistiksel veriler toplar.|
-|[İzleme](#instrumentation)|Zamanlama hakkında ayrıntılı bilgiler toplar her işlev çağrısı.|
+|[Örnekleme](#sampling)|Bir uygulama tarafından gerçekleştirilen işin hakkında istatistiksel veriler toplar.|
+|[İzleme](#instrumentation)|Her işlev çağrısının hakkında ayrıntılı zamanlama bilgi toplar.|
 |[Eşzamanlılık](#concurrency)|Çok iş parçacıklı uygulamalar hakkında ayrıntılı bilgi toplar.|
-|[.NET bellek](#net_memory)|Ayrıntılı .NET bellek ayırma ve atık toplama ile ilgili bilgiler toplar.|
-|[Katman etkileşimli](#tier_interaction)|Bir SQL Server veritabanı için zaman uyumlu ADO.NET işlev çağrıları hakkında bilgi toplar.<br /><br /> Katman etkileşim profil, herhangi bir sürümünü Visual Studio kullanarak toplanabilir. Ancak, katman etkileşimli profil oluşturma verilerini, yalnızca Visual Studio kuruluş içinde görüntülenebilir.|
+|[.NET bellek](#net-memory)|Ayrıntılı .NET bellek ayırma ve atık toplama hakkında bilgi toplar.|
+|[Katman etkileşimi](#tier-interaction)|Zaman uyumlu bir SQL Server veritabanına ADO.NET işlev çağrıları hakkında bilgi toplar.<br /><br /> Katman etkileşim profili oluşturma, herhangi bir Visual Studio sürümünü kullanarak toplanabilir. Ancak, yalnızca Visual Studio Enterprise'da katman etkileşimli profil oluşturma veri görüntülenebilir.|
 
-Bazı profil oluşturma yöntemlerini kullanarak, yazılım ve donanım performans sayaçları gibi ek verilerini de toplayabilirsiniz. Daha fazla bilgi için bkz: [ek performans verileri toplama](../profiling/collecting-additional-performance-data.md).
+Bazı profil oluşturma yöntemlerini kullanarak, yazılım ve donanım performans sayaçları gibi ek verileri toplayabilirsiniz. Daha fazla bilgi için [ek performans verileri toplama](../profiling/collecting-additional-performance-data.md).
 
-## <a name="sampling"></a> Örnekleme
+## <a name="sampling"></a>Örnekleme
 
-Örnekleme profili oluşturma yöntemi, profil çalıştırılması sırasında bir uygulama tarafından gerçekleştirilen iş hakkında istatistiksel veriler toplar. Örnekleme yöntemi basit ve uygulama yöntemlerini yürütülmesi üzerinde çok az etkisi yoktur.
+Örnekleme profili oluşturma yöntemi, bir profil oluşturma çalışması sırasında bir uygulama tarafından gerçekleştirilen iş hakkında istatistiksel veriler toplar. Örnekleme yöntemi basit ve uygulama yöntemlerini yürütülmesi çok az etkisi.
 
-Örnekleme profili oluşturma Visual Studio Araçları'nın varsayılan yöntemdir. Aşağıdakiler için yararlı olur:
+Örnekleme profil oluşturma Visual Studio Araçları'nın varsayılan yöntemdir. Aşağıdakiler için kullanışlıdır:
 
-- İlk explorations, uygulamanızın performansını.
-- İşlemci (CPU) kullanımı ile ilgili performans sorunlarını.
+- Uygulamanızın performansını ilk araştırmaları.
+- İşlemci (CPU) kullanımına ilgili performans sorunlarını araştırmanıza.
 
-Örnekleme profili oluşturma yöntemi, belirlenen aralıklarla Bilgisayar işlemcisi keser ve işlev çağrı yığını toplar. Özel örnek sayımları yürütüyor işlevi için artırılır ve kapsayıcı sayıları tüm işlevleri çağırma çağrı yığınında artırılır. Bu sayıları profili modülü, işlev, kaynak kodu satır ve yönergesi için toplamları örnekleme raporlar görüntülemektedir.
+Örnekleme profili oluşturma yöntemi, belirlenen aralıklarla Bilgisayar işlemcisi keser ve işlev çağrı yığını toplar. Dışlamalı örnek sayımları yürüten işlevi artırılır ve tüm çağrı yığınında çağırma işlevlerini içeren sayılar işlevin artırılır. Profili oluşturulan modülü, işlev, kaynak kod satırı ve yönerge için bu sayıları toplamı örnekleme raporlar sunar.
 
-Varsayılan olarak, profil oluşturucu örnekleme aralığı için CPU döngülerini ayarlar. Aralık türü için başka bir CPU performans sayacı değiştirebilir ve sayacı olay sayısı için bir aralığı ayarlayabilirsiniz. Ayrıca, bir SQL server veritabanına ADO.NET yoluyla yapılan sorguları hakkında bilgi sağlayan katman etkileşim profiling(TIP) verileri toplayabilir.
+Varsayılan olarak, profil oluşturucu örnekleme aralığı için CPU döngülerini ayarlar. Aralık türü için başka bir CPU performans sayacı değiştirebilir ve aralığını sayacı olay sayısını ayarlayabilirsiniz. ADO.NET ile bir SQL server veritabanına yapılan sorguları hakkında bilgi sağlayan katman etkileşim profiling(TIP) verileri de toplayabilirsiniz.
 
 [Örnekleme kullanarak performans istatistikleri toplama](../profiling/collecting-performance-statistics-by-using-sampling.md)
 
 [Örnekleme veri değerlerini anlama](../profiling/understanding-sampling-data-values.md)
 
-[Örnekleme yöntemi veri görünümleri](../profiling/profiler-sampling-method-data-views.md)
+[Örnek metodu veri görünümleri](../profiling/profiler-sampling-method-data-views.md)
 
-## <a name="instrumentation"></a> İzleme
+## <a name="instrumentation"></a>İzleme
 
-İzleme profili oluşturma yöntemi, bir profili uygulamasında işlev çağrıları için ayrıntılı zamanlama toplar. Profil oluşturma araçları aşağıdakiler için yararlıdır:
+İzleme profili oluşturma metodu profili oluşturulmuş bir uygulamada işlev çağrıları için ayrıntılı zamanlama toplar. İzleme profil aşağıdakiler için yararlıdır:
 
-- Giriş/Çıkış darboğazları disk g/ç gibi araştırılıyor.
+- Disk g/ç gibi giriş/çıkış performans sorunlarını araştırma.
 - Belirli bir modülün incelenmesi veya işlevler kümesi kapatın.
 
-İzleme yöntemi kodu Araçlı dosyasındaki her işlev ve bu işlevler tarafından yapılan her işlev çağrısı için zamanlama bilgilerini yakalar ikili bir dosyaya yerleştirir. Bir dosyaya yazmak gibi işlemleri için işletim içine bir işlevi çağırdığı zaman araçları da tanımlar. İzleme raporları bir işlevi veya kaynak kodu satır harcanan toplam süreyi göstermek için dört değerleri kullanır:
+Araçlar yöntemini kod izleme eklenmiş dosyanın her işlevde ve bu işlevler tarafından yapılan her işlev çağrısı için zamanlama bilgilerini yakalayan bir ikili dosyaya ekler. Bir dosyaya yazmak gibi işlemler için işletim içine bir işlevi çağırdığında, araçları da tanımlar. İzleme raporları, bir işlev veya kaynak kodu satır için harcanan toplam zamanı temsil eden dört değerleri kullanın:
 
-- Geçen Inclusive - işlevi veya kaynak satırı yürütmek için geçen toplam süre.
+- Geçen Inclusive - işlevi veya kaynak satırı yürütmek için harcanan toplam süre.
 
-- Uygulama Inclusive - işlevi veya kaynak satırı yürütülürken, ancak işletim sistemi çağrılarında harcanan zaman hariç harcanan süre.
+- Uygulama Inclusive - işlevi veya kaynak satırı yürütülürken, ancak işletim sistemi çağrılarında harcanan süre hariç geçen süre.
 
-- Geçen özel - işlevi veya kaynak kodu satır gövdesinde kod yürütmek için geçen süre. İşlev veya kaynak satırı tarafından çağrılan işlevler yürütmek için harcanan süre dışlandı.
+- Geçen dışlamalı - işlevi veya kaynak kod satırı gövdesinde kod yürütürken harcanan süre. İşlev veya kaynak satırı tarafından çağrılan işlevleri yürütmek için harcanan süre dahil değildir.
 
-- Uygulama özel - işlevi veya kaynak kodu satır gövdesinde kod yürütmek için geçen süre. İşletim sistemi ve işlev veya kaynak satırı tarafından çağrılan işlevler yürütmek için harcanan süre çağrıları yürütmek için geçen süre dışlandı.
+- Uygulama özel - işlevi veya kaynak kod satırı gövdesinde kod yürütürken harcanan süre. İşletim sistemi ve işlev veya kaynak satırı tarafından çağrılan işlevleri yürütmek için harcanan süre çağrıları yürütmek için harcanan süre dahil değildir.
 
-İzleme metodunu kullanarak CPU ve yazılım performans sayaçları de toplayabilir.
+Araçlar yöntemini kullanarak, hem CPU hem de yazılım performans sayaçları de toplayabilir.
 
 [İzleme veri değerlerini anlama](../profiling/understanding-instrumentation-data-values.md)
 
 [İzleme kullanarak ayrıntılı zamanlama verileri toplama](../profiling/collecting-detailed-timing-data-by-using-instrumentation.md)
 
-[İzleme Metodu Veri Görünümleri](../profiling/instrumentation-method-data-views.md)
+[İzleme metodu veri görünümleri](../profiling/instrumentation-method-data-views.md)
 
-## <a name="concurrency"></a> Eşzamanlılık
+## <a name="concurrency"></a>Eşzamanlılık
 
-Eşzamanlılık profili oluşturma, birden çok iş parçacıklı uygulamalar hakkında bilgi toplar. Paylaşılan bir kaynağa erişim beklemek için bu rekabeti iş parçacıklarının her zaman ayrıntılı çağrı yığını bilgileri toplar profil kaynak çekişmesini zorlandı. Eşzamanlılık görselleştirme ayrıca birden çok iş parçacıklı uygulamanızın kendisini, donanım, işletim sistemi ve diğer işlemleri ana bilgisayar ile nasıl etkileşim kurduğu hakkında daha fazla genel bilgi toplar:
+Eşzamanlılık profil oluşturması, çok iş parçacıklı uygulamalar hakkında bilgi toplar. Paylaşılan bir kaynağa erişim için beklenecek toplar profil oluşturma kaynak çekişmesini, rakip iş parçacıkları her zaman ayrıntılı çağrı yığını bilgileri zorla. Eşzamanlılık görselleştirmesi ayrıca kendisi, donanım, işletim sistemi ve diğer işlemleri ana bilgisayarda birden çok iş parçacıklı uygulamanızın nasıl etkileşim hakkında daha fazla genel bilgi toplar:
 
-- Kaynak çakışması raporları çekişmeleri ve modüller, İşlevler, kaynak kod satırlarını ve bekleme gerçekleştiği yönergeleri için bir kaynak için bekleyen harcanan toplam süreyi toplam sayısını görüntüler. Oluşma gibi zaman çizelgesi grafikleri çekişmeleri da gösterir.
+- Kaynak Çekişme raporları Çekişme ve modüller, İşlevler, kaynak kod satırlarına ve yönergeleri bekleniyor gerçekleştiği için bir kaynak beklerken geçen toplam süre toplam sayısını görüntüler. Bunlar oluştuğundan zaman çizelgesi grafikleri de çakışmaları gösterir.
 
-- Eşzamanlılık görselleştiricisi performans sorunları, CPU yetersiz kullanım, iş parçacığı Çekişme, iş parçacığı geçiş, eşitleme gecikmeler, çakışan g/ç alanlarının ve diğer bilgileri bulmak için kullanabileceğiniz grafik bilgilerini görüntüler. Mümkün olduğunda veri yığını ve kaynak çağırmak için grafik çıktısı bağlantılar kod. Eşzamanlılık görselleştirme verileri, yalnızca komut satırı ve Windows uygulamaları için toplanabilir.
+- Eşzamanlılık görselleştiricisi performans sorunları, CPU Tıkanıklığı, iş parçacığı Çekişme, iş parçacığı geçişi, eşitleme gecikmeleri, çakışan I/O alanları ve diğer bilgileri bulmak için kullanabileceğiniz grafik bilgilerini görüntüler. Mümkün olduğunda, yığın ve kaynak çağırmak üzere grafik çıktı bağlantıları veri kod. Eşzamanlılık görselleştirme verileri yalnızca komut satırı ve Windows uygulamaları için toplanabilir.
 
 [Kaynak çakışması veri değerlerini anlama](../profiling/understanding-resource-contention-data-values.md)
 
 [İş parçacığı ve işlem eşzamanlılık verileri toplama](../profiling/collecting-thread-and-process-concurrency-data.md)
 
-[Kaynak Çakışması Veri Görünümleri](../profiling/resource-contention-data-views.md)
+[Kaynak çakışması veri görünümleri](../profiling/resource-contention-data-views.md)
 
 [Eşzamanlılık görselleştiricisi](../profiling/concurrency-visualizer.md)
 
-## <a name="net_memory"></a> .NET bellek
+## <a name="net-memory"></a>.NET bellek
 
-.NET bellek ayırma profil oluşturma yöntemi, bir .NET Framework nesnesinin profili uygulamadaki her ayırma bilgisayar işlemci kesintiye uğratır. Nesne yaşam verisi ayrıca toplandığında, profil oluşturucu işlemci her .NET Framework atık toplama sonra kesintiye uğratır.
+.NET bellek ayırma profil oluşturma yöntemi, bilgisayar işlemci, profili oluşturulmuş bir uygulama .NET Framework nesnesinin her ayırma kesintiye uğratır. Nesne yaşam verisi ayrıca toplandığında, profil oluşturucu işlemci her .NET Framework çöp toplamanın ardından kesintiye uğratır.
 
-Profil Oluşturucu türü, boyut ve bir ayırma oluşturulan ya da bir atık toplama zarar görmüş nesne sayısı hakkında bilgiler toplar.
+Profil Oluşturucu türü, boyut ve sayısının bir ayırmayı oluşturulan ya da bir çöp toplama tahrip edilmiş nesne hakkında bilgi toplar.
 
-- Ayırma olay oluştuğunda profil oluşturucu işlevi çağrı yığını hakkında ek bilgi toplar. Şu anda yürütülmekte işlevi için özel ayırma sayıları artırılır ve tüm işlevleri çağırma çağrı yığınında için kapsayıcı sayısı artar. .NET raporları profili türleri, modüller, İşlevler, kaynak kod satırlarını ve yönergeler için bu sayıları toplamları sunar.
+- Profil Oluşturucu, bir ayırma olayını ortaya çıktığında, işlev çağrı yığını hakkında daha fazla bilgi toplar. Dışlamalı ayırma sayıları şu anda yürütülmekte olan işlevi artırılır ve çağrı yığınında çağıran tüm işlevler için içeren sayılar işlevin artırılır. Profili oluşturulan türler, modüller, İşlevler, kaynak kod satırlarına ve yönergeler için bu sayıları toplamı .NET raporlar sunar.
 
-- Çöp toplama ortaya çıktığında, profil oluşturucu zarar görmüş nesneler hakkındaki verileri ve her atık toplama oluşturmada nesneler hakkında bilgi toplar. Çalıştırma profili oluşturma sonunda, profil oluşturucu değil açıkça zarar görmüş nesneler hakkındaki verileri kaydeder. Nesne ömrü rapor ayrıldı her tür toplamlarını profil Çalıştır görüntüler.
+- Bir çöp toplama ortaya çıktığında, Profil Oluşturucu veri tahrip edilmiş nesneler hakkında ve her çöp toplama nesil nesneler hakkında bilgi toplar. Profil oluşturma çalışması sonunda, profil oluşturucu değil açıkça tahrip edilmiş nesneleri hakkında daha fazla veri kaydeder. Nesne ömrü rapor toplamları ayrılmış her türü için profil oluşturma çalıştırmasını görüntüler.
 
-.NET bellek profili oluşturma örnekleme veya araçları modunda kullanılabilir. Nesne ömrü benzersiz to.NET bellek profili oluşturma, raporları ve seçtiğiniz modu ayırma etkilemez:
+.NET bellek profili oluşturma, örnekleme veya izleme modunda kullanılabilir. Seçtiğiniz moda ayırma etkilemez ve nesne yaşam süresi benzersiz to.NET bellek profili oluşturma, raporları:
 
-- .NET bellek çalıştırdığınızda örnekleme modunda profil profiler.NET bellek ayırma olayları aralığı olarak kullanır ve raporlarında (bunlar dahil) ve özel değerler olarak ayrılan nesneleri ve ayrılan toplam bayt sayısını görüntüler.
+- .NET bellek çalıştırdığınızda örnekleme modu profil oluşturma profiler.NET bellek ayırma olayları ve aralık olarak kullanır ve raporlarında dahil ve hariç değerler olarak ayrılan nesneler ve ayrılan toplam bayt sayısını görüntüler.
 
-- .NET bellek profili oluşturma araçları modunda çalıştırdığınızda, birlikte (bunlar dahil) ve özel ayırma değerleri ayrıntılı zamanlama bilgileri toplanır.
+- .NET bellek profili oluşturma araçları modda çalıştırdığınızda, birlikte dahil ve hariç ayırma değerleri ayrıntılı zamanlama bilgileri toplanır.
 
 [Bellek ayırma ve nesne yaşam verisi değerlerini anlama](../profiling/understanding-memory-allocation-and-object-lifetime-data-values.md)
 
@@ -118,19 +119,19 @@ Profil Oluşturucu türü, boyut ve bir ayırma oluşturulan ya da bir atık top
 
 [.NET bellek verisi görünümleri](../profiling/dotnet-memory-data-views.md)
 
-## <a name="tier_interaction"></a> Katman etkileşimli
+## <a name="tier-interaction"></a>Katman etkileşimi
 
-Katman etkileşimli profil oluşturma ekler bilgi zaman uyumlu hakkında bir profil oluşturma veri dosyası [!INCLUDE[vstecado](../data-tools/includes/vstecado_md.md)] arasında çağıran bir [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] sayfa veya başka bir uygulama ve [!INCLUDE[ssNoVersion](../data-tools/includes/ssnoversion_md.md)] veritabanı. Veri sayısı ve zaman çağrılarının ve maksimum ve minimum içerir. Katman etkileşimli veri örnekleme, izleme, .NET bellek veya eşzamanlılık yöntemleri ile toplanan verileri profil için eklenebilir.
+Katman etkileşimli profil oluşturma ekler bilgi hakkında zaman uyumlu bir profil oluşturma veri dosyasını [!INCLUDE[vstecado](../data-tools/includes/vstecado_md.md)] arasında çağıran bir [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] sayfa veya diğer uygulama ve [!INCLUDE[ssNoVersion](../data-tools/includes/ssnoversion_md.md)] veritabanı. Veri sayısı ve zaman çağrıları ve maksimum ve minimum içerir. Örnekleme, izleme, .NET bellek veya eşzamanlılık yöntemi ile toplanan verileri profil oluşturma için katman etkileşim verileri eklenebilir.
 
-![Katman etkileşimli profil oluşturma veri](../profiling/media/tierinteraction_profilingtools.png "TierInteraction_ProfilingTools")
+![Katman etkileşim profili verileri](../profiling/media/tierinteraction_profilingtools.png "TierInteraction_ProfilingTools")
 
 Profil oluşturma araçları tarafından toplanan katman etkileşim verileri
 
 [Katman etkileşim verileri toplama](../profiling/collecting-tier-interaction-data.md)
 
-[Katman Etkileşimi Görünümleri](../profiling/tier-interaction-views.md)
+[Katman etkileşimi görünümleri](../profiling/tier-interaction-views.md)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Nasıl yapılır: bir Web sitesi için performans verilerini topla](../profiling/how-to-collect-performance-data-for-a-web-site.md)  
-[Performans profili oluşturma Başlangıç Kılavuzu](../profiling/beginners-guide-to-performance-profiling.md)
+[Nasıl yapılır: bir web sitesi performans verileri toplama](../profiling/how-to-collect-performance-data-for-a-web-site.md)  
+[Performans profili oluşturma Başlangıç kılavuzu](../profiling/beginners-guide-to-performance-profiling.md)

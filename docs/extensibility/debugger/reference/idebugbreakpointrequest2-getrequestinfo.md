@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c9cfbf39ad6ff0dc889f18276a0aad2e4510434c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 80bba52a25d6931a83724ffb17e9e34d2bbf923b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864315"
 ---
 # <a name="idebugbreakpointrequest2getrequestinfo"></a>IDebugBreakpointRequest2::GetRequestInfo
-Bu kesme isteği açıklar kesme noktası isteği bilgilerini alır.  
+Bu kesme noktası istek tanımlayan kesme noktası isteği bilgilerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int GetRequestInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) hangi alanların belirler numaralandırma `pBPRequestInfo` parametresi doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) hangi alanların belirleyen sabit listesi `pBPRequestInfo` parametresi doldurulması üzeresiniz.  
   
  `pBPRequestInfo`  
- [out] Belirtir [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md) kesme isteği açıklama oturum doldurulacak yapısı.  
+ [out] Belirtir [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md) kesme noktası istek açıklaması ile doldurulacak yapısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CDebugBreakpointRequest` gösteren nesne [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CDebugBreakpointRequest` gösteren nesne [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) arabirimi.  
   
 ```  
 HRESULT CDebugBreakpointRequest::GetRequestInfo(  

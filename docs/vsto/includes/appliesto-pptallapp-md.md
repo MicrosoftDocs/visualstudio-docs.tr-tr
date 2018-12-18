@@ -1,3 +1,3 @@
-  **Uygulama alanı:** Bu konu başlığı altındaki bilgiler, PowerPoint için VSTO eklentisi projelerine yöneliktir. Daha fazla bilgi için bkz: [Office uygulaması ve proje türüne göre kullanılabilen özellikler](../../vsto/features-available-by-office-application-and-project-type.md).
+  **İçin geçerlidir:** VSTO eklemek için bu konudaki bilgiler, geçerli\-PowerPoint projelerinde. Daha fazla bilgi için [Office uygulaması ve proje türüne göre kullanılabilen özellikler](../../vsto/features-available-by-office-application-and-project-type.md).
 
   

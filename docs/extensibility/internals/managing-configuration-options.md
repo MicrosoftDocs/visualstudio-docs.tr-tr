@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31134766"
 ---
 # <a name="managing-configuration-options"></a>Yapılandırma seçenekleri yönetme
 Yeni bir proje türü oluşturduğunuzda, projenizin ne nasıl oluşturulacak, paketlenmiş, dağıtılan ve çalışma belirlemek proje ve çözüm yapılandırma ayarlarını yönetmeniz gerekir. Aşağıdaki konular, proje ve çözüm yapılandırması tartışın.  

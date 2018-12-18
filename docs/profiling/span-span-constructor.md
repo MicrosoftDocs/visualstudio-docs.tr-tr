@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 927d65b8b936200a1e174a7225591690183f1821
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9fe89b289601775fad8c102e696e799edce1c50c
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677888"
 ---
 # <a name="spanspan-constructor"></a>span::span Oluşturucusu
 Yeni bir örneğini başlatır `span` sınıfı.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 span(  
    const marker_series& _Series,  
    _In_ LPCTSTR _Format,  
@@ -57,7 +58,7 @@ span(
  Geçerli işaret serisi bağlamı.  
   
  `_Format`  
- Metin içeren bileşik biçim dizesi bağımsız değişken listesinde nesnelere karşılık gelen, sıfır veya daha fazla biçimi öğeleri ile intermixed.  
+ Bağımsız değişken listesindeki nesnelere karşılık gelen sıfır veya daha fazla biçim öğeleri ile karıştırılmış, metin içeren bir bileşik biçimlendirme dizesi.  
   
  `_Importance`  
  Önem düzeyi.  
@@ -66,9 +67,9 @@ span(
  Kategori.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkersobj.h  
+ **Başlık:** *cvmarkersobj.h*  
   
  **Namespace:** Concurrency::diagnostic
  
- ## <a name="see-also"></a>Ayrıca Bkz.
- [span Sınıfı](../profiling/span-class.md)
+ ## <a name="see-also"></a>Ayrıca bkz.
+ [span sınıfı](../profiling/span-class.md)

@@ -1,11 +1,11 @@
 ---
-title: Visual Studio'da web performans testi için özel doğrulama kuralı kodlama | Microsoft Docs
+title: Web performans testi için özel bir doğrulama kuralı kodlama
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
 - custom validation rules
 - validation rules, creating
-- Web performance tests, creating custom validation rules
+- web performance tests, creating custom validation rules
 - rules, validation
 - validation rules
 ms.assetid: 989124bc-1a86-41f7-b37d-8f9e54dd4f0b
@@ -15,51 +15,55 @@ dev_langs:
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 0c2e3eb6d9b0411a078c5d7531105230dfc82457
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 407c6e5b8beec118ce8f25edb35e66722990e8ca
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53047680"
 ---
-# <a name="coding-a-custom-validation-rule-for-a-web-performance-test"></a>Web performans testi için özel bir doğrulama kuralı kodlama
+# <a name="code-a-custom-validation-rule-for-a-web-performance-test"></a>Kodu bir web performans testi için özel doğrulama kuralı
 
-Kendi doğrulama kuralları oluşturabilirsiniz. Bunu yapmak için bir doğrulama kuralı sınıfından kendi kural sınıf türetin. Doğrulama kuralları türetilen <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule> temel sınıfı.
+Kendi doğrulama kuralları oluşturabilirsiniz. Bunu yapmak için kendi kural sınıfı bir doğrulama kuralı sınıfından türetilir. Doğrulama kuralları türetilen <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule> temel sınıfı.
 
 > [!NOTE]
-> Özel ayıklama kuralları da oluşturabilirsiniz. Daha fazla bilgi için bkz: [özel kod ve eklentiler yük testleri için oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md).
+> Özel ayıklama kuralları oluşturabilirsiniz. Daha fazla bilgi için [özel kod ve yük testleri için eklentiler oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md).
 
-## <a name="to-create-custom-validation-rules"></a>Özel doğrulama kuralları oluşturmak için
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
-1.  Bir Test içeren bir Web performans testi projesi açın.
+## <a name="to-create-custom-validation-rules"></a>Özel doğrulama kurallarını oluşturmak için
 
-2.  (İsteğe bağlı) Doğrulama kuralı depolanacağı ayrı bir sınıf kitaplığı projesi oluşturun.
+1.  Bir Test içeren bir web performans testi projesi açın.
+
+2.  (İsteğe bağlı) Doğrulama kuralınızı depolanacağı ayrı bir sınıf kitaplığı projesi oluşturun.
 
     > [!IMPORTANT]
-    > Testlerinizi bulunan aynı projede sınıfı oluşturabilirsiniz. Bununla birlikte, kural yeniden kullanmak istiyorsanız, kuralınız depolanacağı ayrı bir sınıf kitaplığı projesi oluşturmak en iyisidir. Ayrı bir projesi oluşturursanız, bu yordamdaki isteğe bağlı adımları tamamlamanız gerekir.
+    > Sınıfı, testlerinizi bulunan aynı projede oluşturabilirsiniz. Ancak, kural yeniden kullanmak isterseniz, kural depolanacağı ayrı bir sınıf kitaplığı projesi oluşturun en iyisidir. Ayrı bir proje oluşturursanız, bu yordam isteğe bağlı adımları tamamlamanız gerekir.
 
-3.  (İsteğe bağlı) Sınıf kitaplığı projesinde Microsoft.VisualStudio.QualityTools.WebTestFramework DLL için bir başvuru ekleyin.
+3.  (İsteğe bağlı) Sınıf kitaplığı projesinde Microsoft.VisualStudio.QualityTools.WebTestFramework DLL'ye bir başvuru ekleyin.
 
-4.  Türeyen bir sınıf oluşturun <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule> sınıfı. Uygulama <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule.Validate*> ve <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule.RuleName*> üyeleri.
+4.  Türetilen bir sınıf oluşturmanız <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule> sınıfı. Uygulama <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule.Validate*> ve <xref:Microsoft.VisualStudio.TestTools.WebTesting.ValidationRule.RuleName*> üyeleri.
 
-5.  (İsteğe bağlı) Yeni bir sınıf kitaplığı projesi oluşturun.
+5.  (İsteğe bağlı) Yeni sınıf kitaplığı projesi oluşturun.
 
 6.  (İsteğe bağlı) Test projesinde özel doğrulama kuralı içeren sınıf kitaplığı projesine bir başvuru ekleyin.
 
-7.  Bir Web performans testinde Test projesinde açın **Web Performans Testi Düzenleyicisi**.
+7.  Bir web performans testinde Test projesinde, açık **Web Performans Testi Düzenleyicisi**.
 
-8.  Web performans testi isteğine özel doğrulama kuralı eklemek için bir istek seçin sağ tıklayın ve **doğrulama kuralı Ekle**.
+8.  Bir web performans testi isteği için özel doğrulama kuralı eklemek için bir istek ve select sağ **doğrulama kuralı Ekle**.
 
-     **Doğrulama kuralı Ekle** iletişim kutusu görüntülenir. Özel doğrulama kuralınızı görürsünüz **bir kural seçin** önceden tanımlanmış doğrulama kuralları ile birlikte listesi. Özel doğrulama kuralı seçin ve ardından **Tamam**.
+     **Doğrulama kuralı Ekle** iletişim kutusu görüntülenir. Özel doğrulama kuralınızı göreceğiniz **bir kural seçin** birlikte önceden tanımlanmış doğrulama kuralları listesi. Özel doğrulama kuralınızı seçin ve ardından **Tamam**.
 
-9. Web performans testi çalıştırın.
+9. Web performans testinizi çalıştırın.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki kod, özel bir doğrulama kuralı uygulaması gösterir. Bu doğrulama kuralı önceden tanımlanmış gerekli etiket doğrulama kuralı davranışını taklit eder. Bu örnek, kendi özel doğrulama kuralları için bir başlangıç noktası olarak kullanın.
+Aşağıdaki kod, özel doğrulama kuralı uygulanışı gösterilmektedir. Bu doğrulama kuralı önceden tanımlanmış etiketi gerekli doğrulama kuralı davranışını taklit eder. Bu örnekte, kendi özel doğrulama kuralları için bir başlangıç noktası olarak kullanın.
 
 > [!WARNING]
->  Özel Doğrulayıcı sağlayıcısı kodunda ortak özellikleri null değerler olamaz.
+> Özel Doğrulayıcı sağlayıcısı için kodunda genel özellikleri null değer olamaz.
 
 ```csharp
 using System;
@@ -136,11 +140,11 @@ namespace SampleWebTestRules
             {
                 if (numTagsFound > 0)
                 {
-                    e.Message = String.Format("Only found {0} occurences of the tag", numTagsFound);
+                    e.Message = String.Format("Only found {0} occurrences of the tag", numTagsFound);
                 }
                 else
                 {
-                    e.Message = String.Format("Did not find any occurences of tag '{0}'", RequiredTagName);
+                    e.Message = String.Format("Did not find any occurrences of tag '{0}'", RequiredTagName);
                 }
             }
         }
@@ -231,9 +235,9 @@ Namespace SampleWebTestRules
             ' If the validation fails, set the error text that the user sees
             If Not (validated) Then
                 If numTagsFound > 0 Then
-                    e.Message = String.Format("Only found {0} occurences of the tag", numTagsFound)
+                    e.Message = String.Format("Only found {0} occurrences of the tag", numTagsFound)
                 Else
-                    e.Message = String.Format("Did not find any occurences of tag '{0}'", RequiredTagName)
+                    e.Message = String.Format("Did not find any occurrences of tag '{0}'", RequiredTagName)
                 End If
             End If
         End Sub
@@ -250,4 +254,4 @@ End Namespace
 - <xref:Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleRequestTime>
 - <xref:Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleRequiredAttributeValue>
 - <xref:Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleRequiredTag>
-- [Web performans testi için özel ayıklama kuralı kodlama](../test/code-a-custom-extraction-rule-for-a-web-performance-test.md)
+- [Web performans testi için özel bir ayıklama kuralı kodlama](../test/code-a-custom-extraction-rule-for-a-web-performance-test.md)

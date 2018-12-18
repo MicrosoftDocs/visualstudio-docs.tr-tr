@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9e1cf6b88a306fbb6cb127ec8174b5030a6d4d88
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0b2fa3ed234532ad3de02a31d4600f10f5375ad3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49850080"
 ---
 # <a name="idiasymbolgetoffset"></a>IDiaSymbol::get_offset
-Simgenin konumu uzaklığı alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) olan `LocIsRegRel` veya `LocIsBitField`.  
+Sembol konumunun uzaklığını alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) olduğu `LocIsRegRel` veya `LocIsBitField`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,24 +34,24 @@ HRESULT get_offset (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Uzaklık simgenin konumu bayt cinsinden döndürür.  
+ [out] Sembol konumunun bayt uzaklığını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Daha önceden belirlenen bazı bilinen noktasından uzaklığı. Örneğin, uzaklığı bir `LocIsBitField` konum türü genellikle içeren sınıf başından.  
+ Uzaklık daha önceden belirlenen bazı bilinen noktasından dayalıdır. Örneğin, uzaklığı bir `LocIsBitField` konum türü, genellikle kapsayan sınıfı başlangıcından.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md)
+ [LocationType Numaralandırması](../../debugger/debug-interface-access/locationtype.md)

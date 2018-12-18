@@ -1,5 +1,5 @@
 ---
-title: GetScheduledTasksForDebugger yöntemi | Microsoft Docs
+title: GetScheduledTasksForDebugger metodu | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,32 +13,33 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 20cde88083acd38df780468927faec5fbd142b67
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 648d48f34681865a34654ed9f82bd790d77b2395
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231170"
 ---
-# <a name="getscheduledtasksfordebugger-method"></a>GetScheduledTasksForDebugger yöntemi
+# <a name="getscheduledtasksfordebugger-method"></a>GetScheduledTasksForDebugger Metodu
 Tüm zamanlanmış görevlerin dizisini alır.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .method assembly hidebysig instance class System.Threading.Tasks.Task[] GetScheduledTasksForDebugger() cil managed  
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Tüm zamanlanmış görevler dizisi. Her görev yürütüyor veya yürütülmesi tamamlandı.  
+ Tüm zamanlanmış görevlerin dizisi. Her görev, yürütülmekte olan veya yürütülmesi tamamlandı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem iş parçacığı içinde korumalı değil ve diğer örnekleriyle aynı anda kullanılmamalıdır <xref:System.Threading.Tasks.TaskScheduler> yalnızca hata ayıklayıcı diğer tüm iş parçacıklarını askıya aldı olduğunda bu hata ayıklayıcı'dan çağrılmalıdır.  
+ Bu yöntem iş parçacığı güvenli değildir ve diğer örnekleri aynı anda kullanmamalısınız <xref:System.Threading.Tasks.TaskScheduler>. Bu yöntem bir hata ayıklayıcı'dan aramanızı yalnızca hata ayıklayıcı, diğer tüm iş parçacıkları askıya aldı.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [TaskScheduler sınıfı](../../extensibility/debugger/taskscheduler-class-internal-members.md)

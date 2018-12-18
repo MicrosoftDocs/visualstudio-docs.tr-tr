@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fb793eb5c35c4ca9ee22a58496ebe175b83c68e4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3955905252b2293d3c200640ea33d5c23c8fd208
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49844464"
 ---
 # <a name="sccget-function"></a>SccGet işlevi
-Bu işlev, görüntüleme ve derleme ancak düzenlemek için bir veya daha fazla dosyalarının bir kopyasını alır. Çoğu sistemlerinde, dosyalar salt okunur olarak etiketlenir.  
+Bu işlev, bir veya daha fazla dosyaları görüntülemek ve derleme ancak düzenleme için bir kopyasını alır. Çoğu sistemde, dosyaları salt okunur olarak etiketlenir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,18 +38,18 @@ SCCRTN SccGet(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  nFiles  
- [in] Belirtilen dosya sayısı `lpFileNames` dizi.  
+ [in] Belirtilen dosya sayısı `lpFileNames` dizisi.  
   
  lpFileNames  
- [in] Alınacak dosyaların tam olarak nitelenmiş adlar dizisi.  
+ [in] Alınacak dosyaların tam adları dizisi.  
   
  fOptions  
  [in] Komut bayrakları (`SCC_GET_ALL`, `SCC_GET_RECURSIVE`).  
@@ -56,52 +57,52 @@ SCCRTN SccGet(
  pvOptions  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Alma işlemi başarılı.|  
 |SCC_E_FILENOTCONTROLLED|Dosya kaynak denetimi altında değil.|  
-|SCC_E_OPNOTSUPPORTED|Kaynak Denetim sistem bu işlemi desteklemiyor.|  
-|SCC_E_FILEISCHECKEDOUT|Kullanıcı şu anda kullanıma alınmış dosya alınamıyor.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
-|SCC_E_NOSPECIFIEDVERSION|Belirtilen bir geçersiz sürüm veya tarih/saat.|  
+|SCC_E_OPNOTSUPPORTED|Kaynak denetim sistemi bu işlemi desteklemiyor.|  
+|SCC_E_FILEISCHECKEDOUT|Kullanıcı şu anda kullanıma alınmış dosyası alınamıyor.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
+|SCC_E_NOSPECIFIEDVERSION|Belirtilen bir sürümü geçersiz veya tarih/saat.|  
 |SCC_E_NONSPECIFICERROR|Belirli olmayan hata; Dosya eşitlenmedi.|  
 |SCC_I_OPERATIONCANCELED|İşlem tamamlanmadan önce iptal edildi.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için yetkili değil.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlev bir sayısı ve alınması için dosyaların adlarını dizisi ile çağrılır. IDE bayrağı geçerse `SCC_GET_ALL`, öğeleri buna `lpFileNames` dosyaları ancak dizinleri olup olmadığı ve alınmasına izin verilen dizinlerdeki kaynak denetimi altındaki tüm dosyaları olan.  
+ Bu işlev, bir sayı ve bir dizi Alınacak dosya adları ile çağrılır. IDE bayrağı geçerse `SCC_GET_ALL`, öğeler buna `lpFileNames` dosyaları ancak dizin olmayan ve alınacak belirli dizinlerdeki kaynak denetimi altındaki tüm dosyaları olan.  
   
  `SCC_GET_ALL` Bayrağı ile birleştirilebilir `SCC_GET_RECURSIVE` belirli dizinlerdeki tüm dosyaları ve tüm alt dizinler de almak için bayrak.  
   
 > [!NOTE]
->  `SCC_GET_RECURSIVE` hiçbir zaman olmadan iletilmesi gereken `SCC_GET_ALL`. Ayrıca, dizinleri C:\A ve C:\A\B üzerinde bir özyinelemeli geçirilen her ikisini de almak istiyorsanız C:\A\B ve onun tüm alt dizinler gerçekte iki kez alınır olduğunu unutmayın. IDE'nin sorumluluğundadır — ve kaynak denetim eklentinin — bu gibi çoğaltmaları dizi dışında tutulduğundan emin olmak için.  
+>  `SCC_GET_RECURSIVE` hiçbir zaman olmadan geçirilmelidir `SCC_GET_ALL`. Ayrıca unutmayın dizinleri *C:\A* ve *C:\A\B* özyinelemeli get, geçirilen *C:\A\B* ve tüm alt dizinlerinde aslında iki kez alınır. IDE'nin sorumluluğundadır — ve kaynak denetim eklentinin — bunun gibi yinelenen dizinin dışında tutulduğundan emin olmak için.  
   
- Son olarak, bir kaynak denetim olsa bile eklenti belirtilen `SCC_CAP_GET_NOUI` bayrağı belirten bir Get komutu için bir kullanıcı arabirimi yok, bu işlev hala dosyaları almak için IDE tarafından çağrılan başlatma. Bayrağı yalnızca IDE Get menü öğesi göstermez ve herhangi bir UI sağlamak eklenti olmadığını beklenen anlamına gelir.  
+ Son olarak, bir kaynak denetim bile eklenti belirtilen `SCC_CAP_GET_NOUI` başlatma, Get komutu için bir kullanıcı arabirimi yok, bu işlev hala dosyaları almak için IDE tarafından çağrılan belirten bayrağı. Bayrağı yalnızca IDE Get menü öğesini görüntülemez ve herhangi bir UI sağlamak eklenti değil, beklenen anlamına gelir.  
   
-## <a name="renaming-and-sccget"></a>Yeniden adlandırma ve SccGet  
- Durum: bir kullanıcı dosyayı, örneğin,.txt, kullanıma ve değiştirdiği. .Txt denetlenebilir önce ikinci bir kullanıcı.txt kaynak denetimi veritabanında b.txt yeniden adlandırır, b.txt denetler, dosyaya bazı değişiklikleri yapar ve dosyayı denetler. İlk kullanıcı ilk kullanıcı için b.txt.txt dosyasının yerel kendi sürümünü yeniden adlandırır ve dosyanın get mu ikinci kullanıcı tarafından yapılan değişiklikleri istemektedir. Ancak, sürüm numaraları ve yerel önbellek hala.txt ilk sürümü yerel olarak depolanır ve bu nedenle kaynak denetimi farklar çözümlenemiyor düşünmektedir.  
+## <a name="rename-files-and-sccget"></a>Dosyaları ve SccGet yeniden adlandır  
+ . Durum: Örneğin, bir dosyayı kullanıma bir kullanıcı denetimleri *.txt*ve onu değiştirir. Önce *.txt* iade edilmelidir, ikinci bir kullanıcı olarak yeniden adlandırır *.txt* için *b.txt* kaynak denetim veritabanında kullanıma *b.txt*, yapar bazı değişiklikler dosyanın ve dosyanın olup olmadığını denetler. İlk kullanıcı ilk kullanıcı kendi yerel sürümü ile yeniden adlandırır. Bu nedenle, ikinci kullanıcı tarafından yapılan değişiklikleri istediği *.txt* dosyasını *b.txt* ve dosya çubuğunda bir get yapar. Bununla birlikte, sürüm numaraları ve yerel önbellek ilk sürümü hala gördüğü *.txt* yerel olarak depolanır ve kaynak denetimi farklar çözümlenemiyor.  
   
- Kaynak denetimi sürümlerinin yerel önbelleği burada kaynak denetim veritabanı ile eşitlenmemiş hale bu sorunu çözmek için iki yolu vardır:  
+ Kaynak Denetimi sürümü, yerel önbellek burada kaynak denetimi veritabanı ile eşitlenmemiş hale gelir, bu sorunu çözmek için iki yolu vardır:  
   
-1.  Kaynak denetim veritabanında şu anda kullanıma alınmış bir dosyayı yeniden adlandırma izin vermez.  
+1.  Kaynak denetim veritabanında şu anda kullanıma alınmış dosya yeniden adlandırılırken izin vermez.  
   
 2.  "Eski Sil"tarafından yeni Ekle"ve ardından" denk yapın. Bunu yapmanın bir yolu algoritmasıdır.  
   
-    1.  Çağrı [SccQueryChanges](../extensibility/sccquerychanges-function.md) işlevi b.txt kaynak denetimi veritabanında.txt, yeniden adlandırma hakkında bilgi edinin.  
+    1.  Çağrı [SccQueryChanges](../extensibility/sccquerychanges-function.md) işlevi, yeniden adlandırma hakkında bilgi edinmek için *.txt* için *b.txt* kaynak denetim veritabanındaki.  
   
-    2.  Yerel.txt b.txt için yeniden adlandırın.  
+    2.  Yerel Yeniden Adlandır *.txt* için *b.txt*.  
   
-    3.  Çağrı `SccGet` .txt ve b.txt işlevi.  
+    3.  Çağrı `SccGet` işlevi hem *.txt* ve *b.txt*.  
   
-    4.  .Txt kaynak denetim veritabanında var olmadığından yerel sürüm önbelleğini eksik.txt sürüm bilgilerini temizlenir.  
+    4.  Çünkü *.txt* yok kaynak denetim veritabanında eksik olan yerel sürüm önbellek temizlenir *.txt* sürüm bilgisi.  
   
-    5.  Kullanıma alınmış b.txt dosyası yerel b.txt dosyasını içerikleriyle birleştirilir.  
+    5.  *B.txt* kullanıma alınan dosya içeriğini yerel ile birleştirilmiş *b.txt* dosya.  
   
-    6.  Güncelleştirilmiş b.txt dosya artık denetlenebilir.  
+    6.  Güncelleştirilmiş *b.txt* dosya artık iade edilmelidir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
- [Özel Komutlar Tarafından Kullanılan Bit Bayrakları](../extensibility/bitflags-used-by-specific-commands.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+ [Özel komutlar tarafından kullanılan bit bayrakları](../extensibility/bitflags-used-by-specific-commands.md)

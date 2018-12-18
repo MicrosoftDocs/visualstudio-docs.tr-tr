@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e59059380ab2ad4010fcce524d2323c02ab47ed7
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 728c9af4470cfaa96d333cd41d119a342bc680ed
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49931057"
 ---
 # <a name="idiastackframegetbase"></a>IDiaStackFrame::get_base
-Çerçevenin taban adresi alır.  
+Çerçevenin temel adresi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT get_base (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Temel adres döndürür.  
+ [out] Taban adresi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackFrame](../../debugger/debug-interface-access/idiastackframe.md)

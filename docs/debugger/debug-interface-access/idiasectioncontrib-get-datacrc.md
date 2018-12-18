@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 705486da2822774037e105a79a8a6181d237239c
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 872f4cf70d24ce1da1dd5cf193632ffb2f55a320
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903094"
 ---
 # <a name="idiasectioncontribgetdatacrc"></a>IDiaSectionContrib::get_dataCrc
-Bölümündeki verileri Döngüsel artıklık denetimi (CRC) alır.  
+Bölümünde veri Döngüsel artıklık denetimi (CRC) alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT get_dataCrc (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Veri CRC bölümünde döndürür.  
+ [out] Verilerin CRC bölümünde döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md)

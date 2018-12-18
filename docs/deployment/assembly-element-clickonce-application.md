@@ -18,26 +18,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 31ac0f127dea4d668afe66c064b5e871d927f04e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fd872053117388e9e08dcb8c4c2bfedcba622fd4
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077096"
 ---
 # <a name="ltassemblygt-element-clickonce-application"></a>&lt;derleme&gt; öğesi (ClickOnce uygulaması)
-Uygulama bildirimi için üst düzey öğesi.  
+Uygulama bildirimi için üst düzey öğe.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
   
       <assembly  
    manifestVersion  
 />  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `assembly` Öğesi kök öğe ve gereklidir. İçinde ilk öğe olmalıdır bir `assemblyIdentity` öğesi. Bildirim öğeleri şu ad alanlarından birinde olmalıdır:  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `assembly` Öğesi kök öğe ve gereklidir. Alt ilk bağımsız öğe olmalıdır bir `assemblyIdentity` öğesi. Bildirim öğeler şu ad alanlarından birinde olmalıdır:  
   
  `urn:schemas-microsoft-com:asm.v1`  
   
@@ -45,7 +46,7 @@ Uygulama bildirimi için üst düzey öğesi.
   
  `http://www.w3.org/2000/09/xmldsig#`  
   
- Bütünleştirilmiş kodun alt öğeleri de kalıtım veya etiketleme yoluyla bu ad alanları olması gerekir.  
+ Derlemenin alt öğeleri, bu ad alanlarında, devralma veya etiketleme tarafından da olması gerekir.  
   
  `assembly` Öğesi aşağıdaki özniteliklere sahiptir.  
   
@@ -54,9 +55,9 @@ Uygulama bildirimi için üst düzey öğesi.
 |`manifestVersion`|Gerekli. `manifestVersion` Özniteliği ayarlanmalıdır `1.0`.|  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneği gösterilmektedir bir `assembly` için bir uygulama bildirimi öğesinde bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama. Bu kod örneği sağlanan daha büyük bir örneğin parçasıdır [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).  
+ Aşağıdaki kod örneğinde gösterilmiştir bir `assembly` öğesi için bir uygulama bildiriminde bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama. Bu kod örneği, sağlanan daha büyük bir örneğin parçasıdır [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).  
   
-```  
+```xml
 <asmv1:assembly   
   xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd"   
   manifestVersion="1.0"   
@@ -70,6 +71,6 @@ Uygulama bildirimi için üst düzey öğesi.
   xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md)   
- [\<Assembly > öğesi](../deployment/assembly-element-clickonce-deployment.md)
+ [\<derleme > öğesi](../deployment/assembly-element-clickonce-deployment.md)

@@ -13,14 +13,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e8ddfb73e6871a30cabcece0711b0cf5b4c63175
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a9b175cb5dd0c555aeaaafb30b7927c3fc81bff4
+ms.sourcegitcommit: c9a01c599ce19a5845605b3b28c0229fd0abb93f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52281764"
 ---
 # <a name="vsperfaspnetcmd"></a>VSPerfASPNetCmd
-**VSPerfASPNetCmd.exe** komut satırı aracı sağlar, ASP.Net Web siteleri profiline gerektirmeden ortam değişkenlerini ayarlama veya bilgisayarınızı yeniden başlatın. Kullanım **VSPerfASPNetCmd.exe** yerine [VSPerfCmd](../profiling/vsperfcmd.md) zaman ASP.NET Web siteleri profil ve tarafından sağlanan ek işlevsellik gerekmez **VSPerfCmd**. Hakkında daha fazla bilgi için **VSPerfASPNetCmd**, bkz: [VSPerfASPNETCmd ile Hızlı Web sitesi profil](../profiling/rapid-web-site-profiling-with-vsperfaspnetcmd.md). **VSPerfASPNetCmd** bir ASP.NET Web sitesi profilini bağımsız profil oluşturucu kullanırken kullanmak için tercih edilen komut satırı aracıdır.  
+**VSPerfASPNetCmd.exe** komut satırı aracı sayesinde profili ASP.Net web sitelerine gerektirmeden ortam değişkenlerini ayarlama veya bilgisayarınızı yeniden başlatın. Kullanım **VSPerfASPNetCmd.exe** yerine [VSPerfCmd](../profiling/vsperfcmd.md) ne zaman, ASP.NET Web sitesini profil ve tarafından sağlanan ek işlevsellik gerekmeyen **VSPerfCmd**. Hakkında daha fazla bilgi için **VSPerfASPNetCmd**, bkz: [VSPerfASPNETCmd ile hızlı web sitesi profili oluşturma](../profiling/rapid-web-site-profiling-with-vsperfaspnetcmd.md). **VSPerfASPNetCmd** bağımsız profil oluşturucuyu bir ASP.NET web sitesinin profilini çıkarmak için kullanırken kullanmak için tercih edilen komut satırı aracıdır.  
   
 ## <a name="syntax"></a>Sözdizimi  
  **vsperfaspnetcmd** [/*seçenekleri*] *Web sitesi*  
@@ -29,16 +30,16 @@ ms.lasthandoff: 04/19/2018
   
 |Seçenek|Açıklama|  
 |------------|-----------------|  
-|**/ Örnek** veya   **/s**|Örnekleme yöntemini kullanarak profilleri Web sitesi. **/ Örnek** varsayılan yöntemdir. / Örnek birlikte kullanılamaz **/izleme**.|  
-|**/ İzleme** veya **/t**|İzleme metodunu kullanarak profilleri Web sitesi. / İzleme ile kullanılamaz **/örnek**.|  
-|**/ Bellek**[**:**`Type`] veya **/m**[**:**{**bir**&#124;**l**}]|Bellek ayırma profilleri ve isteğe bağlı olarak nesne yaşam süresi (çöp toplama) profilleri. **/ Bellek** örnekleme veya izleme yöntemi ile kullanılabilir.<br /><br /> *Tür* şunlardan biri olabilir:<br /><br /> -   **ayırma** (veya **bir**) bellek ayırma yalnızca verileri toplar.<br />-   **Ömür** (veya **l**) bellek ayırma ve nesne yaşam verisi toplar.<br /><br /> Varsayılan `Type` olan **ayırma**.|  
-|**/ İpucu** veya **/i**|Ayrıntılı ASP.NET istek ve ADO.NET arama bilgilerini profil oluşturma verileri ekler. **/ İpucu** ile birlikte kullanılabilir ve örnekleme veya izleme metodunu kullanılabilir **/Memory** seçeneği.|  
-|**Çıkış:** `File` veya   **/o:**`File`|Profil oluşturma verileri (.vsp) dosya yolu ve dosya adını belirtir.|  
-|**/ NoWait** veya **/n**|Böylece komut istemi penceresinde ek komutlar kullanılabilir komut hemen komut istemi döndürür. Yazmanız gerekir **VSPerfASPNETCmd shutdown** profil oluşturma devre dışı bırakmak için ayrı bir komut satırında.|  
-|**/ Paket sembolleri**[: {**üzerinde**&#124;**kapalı**} veya **/p**[: {**üzerinde**&#124;**Kapalı**}|Simgeler (işlev ve parametresi adları, vb.), veri (.vsp) dosyası profil katıştırır.|  
-|**/ Kapat:** `Website`veya   **/d:**`Website`|Profil oluşturma devre dışı bırakır. Kullandıktan sonra komut satırındaki tek seçenek olarak kullanın **/nowait** seçeneği, başla veya profil oluşturucu beklenmedik şekilde sona erer. Özgün kullandığınız aynı URL'yi belirtin **VSPerfASPNETCmd** komutu.|  
-|`Website`|Profili için Web sitesi URL'si.|  
+|**/ Örnek** veya **/s**|Örnekleme metodu kullanılarak profilleri Web sitesi. **/ Örnek** için varsayılan yöntemdir. / Örnek ile birlikte kullanılamaz **/Trace**.|  
+|**/ İzleme** veya **/t**|Araçlar yöntemini kullanarak profilleri Web sitesi. / İzleme ile birlikte kullanılamaz **/Sample**.|  
+|**/ Bellek**[**:**`Type`] veya **/m**[**:**{**bir**&#124;**l**}]|Bellek ayırma profilini oluşturur ve isteğe bağlı olarak, nesne kullanım ömrü (atık toplama) profilleri. **/ Bellek** örnekleme veya araç haline getirme yöntemi ile kullanılabilir.<br /><br /> *Tür* aşağıdakilerden biri olabilir:<br /><br /> -   **ayırma** (veya **bir**) yalnızca bellek ayırma verileri toplar.<br />-   **yaşam süresi** (veya **l**) bellek ayırma ve nesne yaşam süresi verisi toplar.<br /><br /> Varsayılan `Type` olduğu **ayırma**.|  
+|**/ İpucu** veya **/i**|Profil oluşturma verileri ayrıntılı ASP.NET isteğinin ve ADO.NET çağrı bilgilerini ekler. **/ İpucu** örnekleme veya araç haline getirme yöntemi ile kullanılabilir ve ile kullanılabilir **/Memory** seçeneği.|  
+|**Çıkış:** `File` veya   **/o:**`File`|Profil oluşturma veri yolu ve dosya adını belirtir (. *Vsp*) dosyası.|  
+|**/ NoWait** veya **/n**|Ek komutlar komut istemi penceresinde kullanılabilir böylece komut hemen sor döndürür. Yazmanız gerekir **VSPerfASPNETCmd/shutdown** profil oluşturma devre dışı bırakmak için ayrı bir komut satırında.|  
+|**/ PackSymbols**[: {**üzerinde**&#124;**kapalı**} veya **/p**[: {**üzerinde**&#124;**Kapalı**}|Semboller (işlev ve parametre adları, vb.), profil oluşturma verilerini katıştırır (. *Vsp*) dosyası.|  
+|**/ Shutdown:** `Website`veya   **/d:**`Website`|Profil oluşturma kapatır. Kullandıktan sonra bir komut satırında tek seçenek olarak kullanın **/nowait** profil oluşturma, başlatmak için seçeneği veya profil oluşturucuyu beklenmedik şekilde sona erer. Özgün kullandığınız aynı URL'yi belirtin **VSPerfASPNETCmd** komutu.|  
+|`Website`|Profili oluşturulacak Web sitesi URL'si.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Profil oluşturma VSPerfASPNETCmd ile Hızlı Web sitesi](../profiling/rapid-web-site-profiling-with-vsperfaspnetcmd.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Profil oluşturma VSPerfASPNETCmd ile hızlı web sitesi](../profiling/rapid-web-site-profiling-with-vsperfaspnetcmd.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)

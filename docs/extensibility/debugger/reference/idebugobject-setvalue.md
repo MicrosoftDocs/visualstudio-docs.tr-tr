@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ae6f8f589c0dca8c97e1a9664d9eaa93bf9e8741
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f1b78a4513aab8a9c4d2c539a592799dffdcea53
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49850977"
 ---
 # <a name="idebugobjectsetvalue"></a>IDebugObject::SetValue
-Ardışık bayt serisinden nesnenin değerini ayarlar.  
+Nesnenin değerini ardışık bir bayt serisinden ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int SetValue(
   
 #### <a name="parameters"></a>Parametreler  
  `pValue`  
- [in] Yeni değer temsil eden bir bayt dizisi.  
+ [in] Yeni değeri temsil eden bir bayt dizisi.  
   
  `nSize`  
- [in] Değer bayt cinsinden boyutu.  
+ [in] Değerin bayt cinsinden boyutu.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Dizideki bu kopyalanır [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) tüm mevcut değerini değiştirerek nesnesi. Yeni değer boyutu mevcut değeri daha büyük veya küçük olabilir. Bu `IDebugObject` bir null başvuru olamaz.  
+ Dizideki değerleri bu kopyalanır [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) herhangi bir mevcut değer değiştirme, nesne. Yeni değer boyutu, mevcut değerinden küçük veya çok büyük olabilir. Bu `IDebugObject` bir null başvuru olamaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)   

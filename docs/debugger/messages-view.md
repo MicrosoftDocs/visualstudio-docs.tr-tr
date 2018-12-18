@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31477085"
 ---
 # <a name="messages-view"></a>İletiler Görünümü
 Her penceresinde bir ilişkili ileti akışı vardır. Bu ileti akışı iletilerin görüntüleme penceresi görüntüler. Bir pencere tanıtıcının, ileti kodu ve iletinizi gösterilir. Bir iş parçacığı veya işlem de iletiler görünümünü oluşturabilirsiniz. Bu, bir özel işlem veya pencere Başlatma iletilerinin yakalamak için özellikle yararlıdır iş parçacığı tarafından sahip olunan tüm windows gönderilen iletileri görüntülemenize olanak sağlar.  

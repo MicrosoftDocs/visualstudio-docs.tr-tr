@@ -16,39 +16,40 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cef7e1e09d81c4ff0fb28198ff9a4d68f1e9c501
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 050d9b060fe9976dc9262b2878f570abbdc9bb42
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39636908"
 ---
-# <a name="locationfieldmruprefix-element-visual-studio-templates"></a>LocationFieldMRUPrefix Öğesi (Visual Studio Şablonları)
+# <a name="locationfieldmruprefix-element-visual-studio-templates"></a>LocationFieldMRUPrefix öğesi (Visual Studio şablonları)
 En son kullanılan (MRU) yollarında belirtir **yeni proje** ve **Yeni Öğe Ekle** iletişim kutusu.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <LocationFieldMRUPrefix> ... </LocationFieldMRUPrefix>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu öğe yalnızca aracılığıyla oluşturulan şablonlar için kullanılması gereken [!INCLUDE[vsipprvsip](../extensibility/includes/vsipprvsip_md.md)].  
+ Bu öğe yalnızca aracılığıyla oluşturulan şablonlarını için kullanılması gereken [!INCLUDE[vsipprvsip](../extensibility/includes/vsipprvsip_md.md)].  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

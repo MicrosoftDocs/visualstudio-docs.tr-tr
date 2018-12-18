@@ -25,18 +25,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 533e4254b6222af1713691a0c448cad1383cd273
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: a4fb9f61242490b30e1b89132f4e79fbb56d48de
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37056022"
 ---
 # <a name="using-run-time-checks-without-the-c-run-time-library"></a>C Çalışma Zamanı Kitaplığını Kullanmadan Çalışma Zamanı Denetimlerini Kullanma
 C çalışma zamanı kitaplığı olmadan programınızı bağlantı varsa, kullanarak **/NODEFAULTLIB**ve çalışma zamanı denetimleri kullanmak istiyorsanız, RunTmChk.lib ile bağlamanız gerekir.  
   
  `_RTC_Initialize` çalışma zamanı denetimleri için programınızın başlatır. C çalışma zamanı kitaplığı ile bağlantı değil varsa, programınızı çağırmadan önce çalışma zamanı hata denetimleri ile derlenmiş olup olmadığını görmek için denetlemelisiniz `_RTC_Initialize`aşağıdaki gibi:  
   
-```  
+```cpp
 #ifdef __MSVC_RUNTIME_CHECKS  
     _RTC_Initialize();  
 #endif  
@@ -44,7 +45,7 @@ C çalışma zamanı kitaplığı olmadan programınızı bağlantı varsa, kull
   
  C çalışma zamanı kitaplığı ile bağlantı değil, ayrıca adlı bir işlev tanımlamalıdır `_CRT_RTC_INITW`. `_CRT_RTC_INITW` Kullanıcı tanımlı işlev raporlama işlevi, aşağıdaki gibi varsayılan hata olarak yükler:  
   
-```  
+```cpp
 // C version:  
 _RTC_error_fnW __cdecl _CRT_RTC_INITW(  
         void *res0, void **res1, int res2, int res3, int res4)  

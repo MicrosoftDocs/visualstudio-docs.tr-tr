@@ -1,5 +1,5 @@
 ---
-title: Office çözümlerinin işbirlikçi geliştirme | Microsoft Docs
+title: Office çözümlerinin işbirlikçi geliştirme
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,13 +18,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 10415a6983c158ae1c117a5b3f9a8b2e1c546a0e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9bf85dd1ba39df35e337f1b6b80099e3d5bcd774
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34267782"
 ---
-# <a name="collaborative-development-of-office-solutions"></a>Office Çözümlerinin İşbirlikçi Geliştirmesi
+# <a name="collaborative-development-of-office-solutions"></a>Office çözümlerinin işbirlikçi geliştirme
   Birden çok geliştiricilerin Office projesinde, diğer Visual Studio projelerinde birlikte aynı şekilde çalışabilir. Office farklı konumlarda yüklü olsa bile visual Studio Microsoft Office yüklemesini her bilgisayarda doğru bulur. Ancak, farkında olmanız gereken bazı önemli noktalar vardır.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
@@ -35,7 +36,7 @@ ms.lasthandoff: 04/16/2018
  Proje kaynak denetiminde yerine ağ paylaşımında barındırılıyorsa çözümü açın ve derleme sınamak birlikte çalışan geliştiricilerin etkinleştirmek için bazı ek adımlar izlenmelidir.  
   
 ## <a name="source-control-requires-checking-out-all-files"></a>Kaynak Denetimi tüm dosyaları kullanıma alma gerektirir  
- Projeler için kaynak denetimi kullanırsanız, bir kod dosyasında altındaki tüm dosyaların kullanıma **Çözüm Gezgini** (ThisDocument, ThisWorkbook veya ThisAddIn kod dosyaları gibi) kod dosyası her değiştirdiğinizde bile Varsayılan olarak gizli dosyalar. Yalnızca üst düzey kod dosyasını kullanıma işaretlerseniz, yaptığınız değişiklikler kaybolabilir.  
+ Projeler için kaynak denetimi kullanırsanız, bir kod dosyasında altındaki tüm dosyaların kullanıma **Çözüm Gezgini** (gibi *ThisDocument*, *ThisWorkbook*, veya *ThisAddIn* kod dosyaları) kod dosyası her değiştirdiğinizde, varsayılan olarak gizli dosyalar bile. Yalnızca üst düzey kod dosyasını kullanıma işaretlerseniz, yaptığınız değişiklikler kaybolabilir.  
   
  Yaptığınız değişiklikleri yaptıktan sonra tüm dosyalar geri denetleyin. Projelerdeki gizli kod dosyaları hakkında daha fazla bilgi için bkz: [Visual Studio ortamında Office projeleri](../vsto/office-projects-in-the-visual-studio-environment.md).  
   
@@ -44,9 +45,9 @@ ms.lasthandoff: 04/16/2018
   
  Derleme zamanında otomatik olarak oluşturulan geçici sertifikalar parolalarla değil. Sertifikalar geliştiricinin oturum açma adı ve diğer kişisel bilgileri içerir. Geçici sertifikalar tarafından imzalanan özelleştirmeler dağıtıyorsanız, diğerlerinin bu bilgilere erişmek olabilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Office çözümleri güvenliğini sağlama](../vsto/securing-office-solutions.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Office çözümleri güvenli](../vsto/securing-office-solutions.md)   
  [Tasarlama ve Office çözümleri oluşturma](../vsto/designing-and-creating-office-solutions.md)   
- [Office Çözümleri Oluşturma](../vsto/building-office-solutions.md)  
+ [Office çözümleri oluşturma](../vsto/building-office-solutions.md)  
   
   

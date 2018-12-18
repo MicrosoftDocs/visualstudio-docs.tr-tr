@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 51b68475b9ef0374f95febabc2997524bfd61259
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4b72b8b7d1531a75568e97ac4d18c85f80508f9d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49869008"
 ---
 # <a name="idiaaddressmapsetimageheaders"></a>IDiaAddressMap::set_imageHeaders
-Ayarlar göreli sanal adres çevirisi etkinleştirmek için üstbilgiler görüntü.  
+Kümeleri göreli sanal adres çevirisi'ni etkinleştirmek için üst görüntü.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,21 +36,21 @@ HRESULT set_imageHeaders (
   
 #### <a name="parameters"></a>Parametreler  
  cbData  
- [in] Üstbilgi veri baytı sayısı. Olmalıdır `n*sizeof(IMAGE_SECTION_HEADER)` burada `n` bölüm üstbilgilerinde yürütülebilir dosya sayısıdır.  
+ [in] Üst bilgi veri baytı sayısı. Olmalıdır `n*sizeof(IMAGE_SECTION_HEADER)` burada `n` bölüm başlıkları, yürütülebilir dosya sayısıdır.  
   
  veri]  
- [in] Bir dizi `IMAGE_SECTION_HEADER` görüntü üst bilgileri olarak kullanılmak üzere yapıları.  
+ [in] Bir dizi `IMAGE_SECTION_HEADER` yapıları görüntü üst bilgi olarak kullanılacak.  
   
  originalHeaders  
- [in] Kümesine `FALSE` görüntü üstbilgileri yeni görüntüden varsa `TRUE` bir yükseltmeden önce özgün görüntü yansıtmak durumunda. Genellikle, bu ayarlanır `TRUE` çağrıları birlikte, yalnızca [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi.  
+ [in] Ayarlayın `FALSE` görüntü üstbilgileri yeni görüntüden varsa `TRUE` varsa bunlar orijinal görüntünün bir yükseltmeden önce yansıtır. Genellikle, bu ayarlanır `TRUE` çağrıları ile birlikte, yalnızca [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `IMAGE_SECTION_HEADER` Yapısı Winnt.h içinde bildirilen ve yürütülebilir görüntü bölüm başlığı biçimi temsil eder.  
+ `IMAGE_SECTION_HEADER` Yapısı Winnt.h içinde bildirilmiş ve yürütülebilir görüntü bölümü üstbilgi biçimi temsil eder.  
   
- Göreli sanal adres hesaplamalar bağlı `IMAGE_SECTION_HEADER` değerleri. Genellikle, DIA Bu program veritabanı (.pdb) dosyasından alır. Bu değerleri eksikse DIA göreli sanal adresleri hesaplayamadı ve [Idiaaddressmap::get_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-get-relativevirtualaddressenabled.md) yöntemi döndürür `FALSE`. İstemci ardından çağırmalısınız [Idiaaddressmap::put_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-put-relativevirtualaddressenabled.md) görüntü eksik görüntü üstbilgileri sağladıktan sonra göreli sanal adres hesaplamalar etkinleştirmek için yöntemi.  
+ Göreli sanal adres hesaplamalar bağlı `IMAGE_SECTION_HEADER` değerleri. DIA genellikle, bu program veritabanı (.pdb) dosyası alır. Bu değerleri eksikse DIA göreli sanal adreslerine duyduğunu hesaplayamadığını ve [Idiaaddressmap::get_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-get-relativevirtualaddressenabled.md) yöntemi döndürür `FALSE`. İstemci ardından çağırmalıdır [Idiaaddressmap::put_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-put-relativevirtualaddressenabled.md) göreli sanal adres hesaplamalar görüntünün kendisi eksik görüntü üst bilgiler girdikten sonra etkinleştirmek için yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaaddressmap](../../debugger/debug-interface-access/idiaaddressmap.md)   

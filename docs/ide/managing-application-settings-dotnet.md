@@ -1,9 +1,8 @@
 ---
-title: Uygulama ayarları (.NET) yönetme | Microsoft Docs
-ms.custom: ''
+title: Uygulama ayarlarını yönetme (.NET)
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
 - msvse_settingsdesigner.err.nameblank
@@ -14,94 +13,95 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fe0daf11aa2cb6b8eb4d0e07bfd079f531831f29
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e4ea61199159e68f3707b6dac4d3a6c1f5ea7635
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50671793"
 ---
-# <a name="managing-application-settings-net"></a>Uygulama ayarları (.NET) yönetme
+# <a name="manage-application-settings-net"></a>Uygulama ayarlarını yönetme (.NET)
 
-Uygulama ayarları, uygulama bilgilerini dinamik olarak depolamak etkinleştirin. Ayarlar, uygulama kodu (örneğin bir bağlantı dizesi), kullanıcı tercihleri ve çalışma zamanında gereken diğer bilgileri dahil edilmemesi gereken istemci bilgisayarda bilgileri depolamanıza olanak sağlar.
+Uygulama ayarları, uygulama bilgilerini dinamik olarak depolamanıza olanak sağlar. Ayarları, uygulama kodu (örneğin bir bağlantı dizesi), kullanıcı tercihlerine ve çalışma zamanında gereken diğer bilgilere dahil edilmemesi gereken istemci bilgisayarda bilgileri depolamak sağlar.
 
-Uygulama ayarları, Visual Studio'nun önceki sürümlerinde kullanılan dinamik özelliklerini değiştirin.
+Uygulama ayarları, Visual Studio'nun önceki sürümlerinde kullanılan dinamik özellikleri değiştirir.
 
-Her uygulama ayarı benzersiz bir ad olmalıdır. Ad harf, sayı veya bir rakamla başlayamaz olmayan bir alt çizgi herhangi bir bileşimi olabilir ve boşluk içermemelidir. Ad aracılığıyla değiştirilebilir `Name` özelliği.
+Her uygulama ayarının benzersiz bir ad olmalıdır. Ad harf, sayı veya bir rakamla başlamaz bir alt çizgi herhangi bir birleşimi olabilir ve boşluk olamaz. Adı aracılığıyla değiştirilir `Name` özelliği.
 
-Uygulama ayarları, XML olarak serileştirilmiş veya olan herhangi bir veri türü depolanabilir bir `TypeConverter` uygulayan `ToString` / `FromString`. En yaygın türleri `String`, `Integer`, ve `Boolean`, ancak değerler olarak da depolayabilirsiniz <xref:System.Drawing.Color>, <xref:System.Object>, veya bir bağlantı dizesi olarak.
+Uygulama ayarları, XML'e seri veya veri türü olarak depolanabilir bir `TypeConverter` uygulayan `ToString` / `FromString`. En yaygın türler `String`, `Integer`, ve `Boolean`, ancak değerleri olarak da depolayabilirsiniz <xref:System.Drawing.Color>, <xref:System.Object>, veya bir bağlantı dizesi.
 
-Uygulama ayarları de bir değer içeriyor. Değeri **değeri** özelliği ve ayarının veri türüyle eşleşmelidir.
+Uygulama ayarları, ayrıca bir değer tutar. İle değerin ayarlanması **değer** özelliği ve ayarın veri türüyle eşleşmelidir.
 
 Ayrıca, uygulama ayarları, tasarım zamanında bir form veya denetim özelliğine bağlanabilir.
 
 Uygulama ayarları kapsamına göre iki tür vardır:
 
-- Uygulama kapsamlı ayarları, bir Web hizmeti veya bir veritabanı bağlantı dizesi için bir URL gibi bilgileri için kullanılabilir. Bu değerleri uygulama ile ilişkilendirilmiş. Bu nedenle, kullanıcılar bunları çalışma zamanında değiştiremezsiniz.
+- Uygulama kapsamlı ayarlar, bir web hizmeti veya veritabanı bağlantı dizesi için URL gibi bilgilere için kullanılabilir. Bu değerler uygulamayla ilişkilendirilir. Bu nedenle, kullanıcılar bunları çalışma zamanında değiştiremez.
 
-- Kullanıcı kapsamlı ayarları, bir form veya bir yazı tipi tercihi son konumunu kalıcı yapma gibi bilgileri için kullanılabilir. Kullanıcılar çalışma zamanında bu değerleri değiştirebilirsiniz.
+- Kullanıcı kapsamlı ayarları, son konum bir form veya bir yazı tipi tercihini kalıcı yapma gibi bilgileri için kullanılabilir. Kullanıcılar, çalışma zamanında bu değerleri değiştirebilir.
 
-Kullanarak bir ayar türünü değiştirebilirsiniz **kapsam** özelliği.
+Bir ayarın türünü kullanarak değiştirebileceğiniz **kapsam** özelliği.
 
-Proje sistemi uygulama ayarları iki XML dosyasında depolar:
+Proje sistemi uygulama ayarlarını iki XML dosyasında depolar:
 
-- ilk uygulama ayarı oluşturduğunuzda tasarım zamanında oluşturulan bir app.config dosyası
+- bir *app.config* ilk uygulama ayarını oluşturduğunuzda tasarım zamanında oluşturulan dosya
 
-- uygulama çalıştıran kullanıcının herhangi bir kullanıcı ayarı değeri değiştiğinde çalışma zamanında oluşturulan user.config dosyası.
+- bir *user.config* uygulamayı çalıştıran kullanıcının, herhangi bir kullanıcı ayarı değerini değiştiğinde çalışma zamanında oluşturulan dosya.
 
-Kullanıcı ayarları değişikliklerini uygulama özellikle Bunu yapmak için bir yöntem çağırır sürece diske yazılan değil dikkat edin.
+Kullanıcı ayarlarındaki değişikliklerin, uygulama özellikle Bunu yapmak için bir yöntem çağırmadığı sürece diske yazılmadığına dikkat edin.
 
-## <a name="creating-application-settings-at-design-time"></a>Tasarım zamanında uygulama ayarları oluşturma
+## <a name="create-application-settings-at-design-time"></a>Tasarım zamanında uygulama ayarları oluşturma
 
-Tasarım zamanında uygulama ayarları iki yolla oluşturabilirsiniz: kullanarak **ayarları** sayfasında **Proje Tasarımcısı**, veya kullanarak **özellikleri** penceresi bir form veya denetimi, bir özellik için bir ayar bağlamanıza olanak sağlar.
+Tasarım zamanında uygulama ayarları iki şekilde oluşturabilirsiniz: kullanarak **ayarları** sayfasının **Proje Tasarımcısı**, kullanarak veya **özellikleri** penceresi için bir form veya Denetim ayarı bir özelliğe bağlayabileceğiniz olanak tanır.
 
-Bir uygulama kapsamlı ayarı (örneğin, bir veritabanı bağlantı dizesi veya sunucu kaynaklarını başvuru), oluşturduğunuzda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ile app.config kaydeder `<applicationSettings>` etiketi. (Bağlantı dizeleri altında kaydedilir `<connectionStrings>` etiketi.)
+Bir uygulama kapsamlı ayar (örneğin, bir veritabanı bağlantı dizesi, veya sunucu kaynaklarına bir başvuru) oluşturduğunuzda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] içinde kaydeder *app.config* ile `<applicationSettings>` etiketi. (Bağlantı dizeleri altına kaydedilir `<connectionStrings>` etiketi.)
 
-Kullanıcı kapsamlı (örneğin, varsayılan yazı tipi, giriş sayfası veya pencere boyutu), bir ayar oluşturduğunuzda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ile app.config kaydeder `<userSettings>` etiketi.
+Kullanıcı kapsamlı (örneğin, varsayılan yazı tipi, giriş sayfası veya pencere boyutu), bir ayar oluşturduğunuzda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] içinde kaydeder *app.config* ile `<userSettings>` etiketi.
 
 > [!IMPORTANT]
-> Bağlantı dizeleri app.config dosyasında depoladığınızda, parolalar veya bağlantı dizesinde sunucu yolları gibi hassas bilgileri ortaya önlemek için önlemler almanız gerekir.
+> Bağlantı dizelerini depoladığınız zaman *app.config*, parolalar veya bağlantı dizesinde sunucu yolları gibi hassas bilgileri açıklanmaması için önlem almalısınız.
 >
-> Bağlantı dizesi bilgileri bir dış kaynaktan izlerseniz, bir kullanıcı kimliği ve parolası, dikkatli olmanız gerekir sağladığını bir kullanıcı gibi bağlantınızı oluşturmak için kullandığınız değerleri emin olmak için dize içeremez ek bağlantı dizesi parametreleri bağlantınızı davranışını değiştirebilirsiniz.
+> Bağlantı dizesi bilgilerini bir dış kaynaktan izlerseniz, bir kullanıcı kimliği ve parolası, dikkatli olmalıdır sağlayan bir kullanıcı gibi bağlantınızı oluşturmak için kullandığınız değerleri emin olmak için dize içermiyor ek bağlantı dizesi parametreleri bağlantınızı davranışını değiştirebilirsiniz.
 >
-> Yapılandırma dosyasındaki hassas bilgileri şifrelemek için korumalı yapılandırma özelliğini kullanmayı düşünün. Bkz: [koruma bağlantı bilgilerini](/dotnet/framework/data/adonet/protecting-connection-information) daha fazla bilgi için.
+> Yapılandırma dosyasındaki hassas bilgileri şifrelemek için korumalı yapılandırma özelliğini kullanmayı düşünün. Daha fazla bilgi için [bağlantı bilgilerini korumak](/dotnet/framework/data/adonet/protecting-connection-information).
 
 > [!NOTE]
-> Sınıf kitaplıkları için hiçbir yapılandırma dosyası modeli olduğundan uygulama ayarlarının Sınıf Kitaplığı projelerinde geçerli değildir. Bir yapılandırma dosyasına sahip Office DLL projesi için Visual Studio araçlarını istisnadır.
+> Sınıf kitaplıkları için bir yapılandırma dosyası modeli olmadığından, uygulama ayarları sınıf kitaplığı projeleri için geçerli değildir. Bir yapılandırma dosyası olabilen DLL Office projesi için Visual Studio Araçları istisnadır.
 
-## <a name="using-customized-settings-files"></a>Özelleştirilmiş ayarları dosyalarını kullanma
+## <a name="use-customized-settings-files"></a>Özelleştirilmiş ayar dosyalarını kullanma
 
-Projeniz için uygun ayar gruplarını yönetimi için özelleştirilmiş ayarları dosyaları ekleyebilirsiniz. Tek bir dosyada bulunan ayarları yüklenen ve bir birim olarak kaydedilir. Bu nedenle, ayarları için ayrı dosyaları depolamak için sık kullanılan ve sık kullanılan grupları, yükleme ve ayarları kaydediliyor zamandan tasarruf edebilirsiniz.
+Ayar gruplarının kolay yönetimi için projenize özelleştirilmiş ayar dosyaları ekleyebilirsiniz. Tek bir dosyada bulunan ayarlar yüklenir ve bir birim olarak kaydedilir. Ayrı dosyalarda ayarlarını depolama, sık kullanılan ve kullanılmayan gruplar zaman yükleme ve ayarları kaydediliyor kaydedebilirsiniz.
 
-Örneğin, projenize SpecialSettings.settings gibi bir dosya ekleyebilirsiniz. Ancak, `SpecialSettings` sınıfı açık değil `My` ad alanı, **görünümü kodu** içeren özel ayarları dosyayı okuyabilir `Partial Class SpecialSettings`.
+Örneğin, bir dosya gibi ekleyebilirsiniz *SpecialSettings.settings* projenize. Ancak, `SpecialSettings` sınıfı gösterilmese de `My` ad alanı, **kodu görüntüle** içeren özel ayarlar dosyasını okuyabilir `Partial Class SpecialSettings`.
 
-Ayarları Tasarımcısı ilk proje sistemi oluşturan Settings.settings dosyayı arar; Bu, Proje Tasarımcısı görüntüler varsayılan dosyasıdır **ayarları** sekmesi. Settings.Settings My proje klasöründe bulunan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] projeleri ve Özellikler klasöründe [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] projeleri. Proje Tasarımcısı sonra projenin kök klasöründe diğer ayarları dosyaları arar. Bu nedenle, özel ayarları dosyanız var. moduna geçirmelisiniz. Bir .settings dosyayı projenize başka bir yerde eklerseniz, Proje Tasarımcısı bulması mümkün olmaz.
+**Ayarlar Tasarımcısı** ilk arar *Settings.settings* dosya proje sisteminin oluşturduğu; bu dosya varsayılan dosya **Proje Tasarımcısı** görüntüler **ayarları** sekmesi. *Settings.Settings* bulunan *Projem* klasör [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] projeleri ve *özellikleri* klasör [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] projeleri. **Proje Tasarımcısı** projenin kök klasöründeki diğer ayarlar dosyalarını arar. Bu nedenle, özel ayarlar dosyanızı buraya koymanız gerekir. Eklerseniz bir *.settings* projenize, başka bir yerde dosyasında **Proje Tasarımcısı** bulmak mümkün olmayacaktır.
 
-## <a name="accessing-or-changing-application-settings-at-run-time-in-visual-basic"></a>Erişimi veya Visual Basic çalışma zamanında uygulama ayarlarını değiştirme
+## <a name="access-or-change-application-settings-at-run-time-in-visual-basic"></a>Visual Basic'te çalışma zamanında uygulama ayarları erişim veya değiştirme
 
-Visual Basic projelerinde, uygulama ayarları çalışma zamanında kullanarak erişebilirsiniz `My.Settings` nesnesi. Üzerinde **ayarları** sayfasında, **görüntülemek kod** Settings.vb dosyasını görüntülemek için düğmeye. Settings.vb tanımlar `Settings` ayarları sınıfındaki bu olayları işlemek sağlar sınıfı: <xref:System.Configuration.ApplicationSettingsBase.SettingChanging>, <xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>, <xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>, ve <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>. Dikkat `Settings` Settings.vb sınıfında değil yalnızca kullanıcı sahip olunan kodu değil tüm oluşturulan sınıf görüntüleyen bir parçalı sınıf. Uygulama ayarları kullanarak erişim hakkında daha fazla bilgi için `My.Settings` nesne için bkz: [erişme uygulama ayarları (.NET Framework)](/dotnet/visual-basic/developing-apps/programming/app-settings/accessing-application-settings).
+Visual Basic projelerinde, uygulama ayarları çalışma zamanında kullanarak erişebileceğiniz `My.Settings` nesne. Üzerinde **ayarları** sayfasında **kod** görüntülemek için düğmeyi *Settings.vb* dosya. *Settings.vb* tanımlar `Settings` ayarlar sınıfındaki bu olayları işlemenizi sağlar sınıfını: <xref:System.Configuration.ApplicationSettingsBase.SettingChanging>, <xref:System.Configuration.ApplicationSettingsBase.PropertyChanged>, <xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded>, ve <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>. Dikkat `Settings` sınıfını *Settings.vb* görüntüler yalnızca kullanıcıya ait kodu, tüm oluşturulan sınıfı değil kısmi bir sınıftır. Kullanarak uygulama ayarlarına erişme hakkında daha fazla bilgi için `My.Settings` nesne, bkz: [erişim uygulama ayarları (.NET Framework)](/dotnet/visual-basic/developing-apps/programming/app-settings/accessing-application-settings).
 
-(Örneğin, bir form konumunu) çalışma zamanında kullanıcı değişiklikleri kullanıcı kapsamlı ayarlarının değerleri user.config dosyasında depolanır. Varsayılan değerleri app.config dosyasında hala kaydedilir dikkat edin.
+Kullanıcı değişiklikleri (örneğin, formun konumu) çalışma zamanında depolanan kullanıcı kapsamlı ayarların değerleri bir *user.config* dosya. Varsayılan değerlerin hala kaydedilen bildirimi *app.config*.
 
-Tüm kullanıcı kapsamlı ayarları uygulama sınamada örneğin çalışma zamanı sırasında değiştirdiyseniz ve bu ayarları varsayılan değerlerine sıfırlamak istediğiniz tıklatın **Eşitle** düğmesi.
+Kullanıcı kapsamlı ayarları uygulamayı test etme, örneğin, çalışma zamanında değiştirilmiş ve bu ayarları varsayılan değerlerine sıfırlamak istiyorsanız **Eşitle** düğmesi.
 
-Kullanmanız önerilir `My.Settings` nesne ve erişim ayarlarını varsayılan .settings dosyasına. Bu özellikler ayarlarına atamak için ayarları tasarımcısını kullanabilirsiniz ve ayrıca, kullanıcı ayarlarını uygulama kapatma önce otomatik olarak kaydedilir, çünkü. Ancak, Visual Basic uygulamanızın ayarlarını doğrudan erişebilirsiniz. Bu durumda, zorunda erişim `MySettings` sınıfı ve proje kökündeki özel .settings dosyasında kullanın. Bir C# uygulaması için yaptığınız gibi Ayrıca kullanıcı ayarlarını uygulama sonlandırmadan önce kaydetmeniz gerekir; Bu aşağıdaki bölümde açıklanmıştır.
+Kullanmanızı öneririz `My.Settings` nesne ve varsayılan *.settings* ayarlara erişmek için dosya. Kullanabileceğiniz olmasıdır **ayarlar Tasarımcısı** ayarları ve kullanıcı için Ayrıca, özellikler atamak için ayarlar uygulama kapatma önce otomatik olarak kaydedilir. Ancak, Visual Basic uygulamasında ayarlarına doğrudan erişebilirsiniz. Bu durumda, zorunda erişim `MySettings` sınıfı ve özel bir kullanın *.settings* projenin köküne dosya. Bir C# uygulaması için yaptığınız gibi uygulamayı sonlandırmadan önce kullanıcı ayarlarını kaydetmeniz gerekir; Bu, aşağıdaki bölümde açıklanmıştır.
 
-## <a name="accessing-or-changing-application-settings-at-run-time-in-c"></a>Erişimi veya çalışma zamanında C# uygulama ayarlarını değiştirme #
+## <a name="access-or-change-application-settings-at-run-time-in-c"></a>C# ' de çalışma zamanında erişim ya da değişiklik uygulama ayarları #
 
-Visual Basic, C# gibi dışındaki dillerde, erişmelisiniz `Settings` aşağıda gösterildiği gibi doğrudan sınıf [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] örnek.
+Visual Basic, C# gibi dışındaki dillerde, erişmelisiniz `Settings` doğrudan, aşağıda gösterildiği gibi sınıf [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] örnek.
 
 ```csharp
 Properties.Settings.Default.FirstUserSetting = "abc";
 ```
 
-Aynı zamanda açıkça çağırmalısınız `Save` kullanıcı ayarlarını sürdürmek için bu sarmalayıcı sınıfı yöntemi. Genellikle bunu `Closing` ana formun olay işleyicisi. Aşağıdaki C# örnek bir çağrı gösterilmektedir `Save` yöntemi.
+Açıkça çağırmalıdır `Save` kullanıcı ayarlarını korumak için bu sarmalayıcı sınıfının yöntemi. Genellikle bunu `Closing` olay işleyicisi ana formu. Aşağıdaki C# örneği için bir çağrı gösterir `Save` yöntemi.
 
 ```csharp
 Properties.Settings.Default.Save();
 ```
 
-Uygulama Ayarları'nda erişme hakkında genel bilgi için `Settings` sınıfı için bkz: [uygulama ayarlarına genel bakış (.NET Framework)](/dotnet/framework/winforms/advanced/application-settings-overview). Bu ayarları yineleme yapma hakkında daha fazla bilgi için bkz [forum gönderisi](http://social.msdn.microsoft.com/Forums/vstudio/40fbb470-f1e8-4a02-a4a0-9f62b54d0fc4/is-this-possible-propertiessettingsdefault?forum=csharpgeneral).
+Üzerinden uygulama ayarlarına erişme hakkında genel bilgi `Settings` sınıfı [uygulama ayarlarına genel bakış (.NET Framework)](/dotnet/framework/winforms/advanced/application-settings-overview). Ayarlar üzerinden yineleme hakkında daha fazla bilgi için bkz. Bu [forum gönderisi](https://social.msdn.microsoft.com/Forums/vstudio/40fbb470-f1e8-4a02-a4a0-9f62b54d0fc4/is-this-possible-propertiessettingsdefault?forum=csharpgeneral).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Uygulama ayarları (.NET Framework) erişme](/dotnet/visual-basic/developing-apps/programming/app-settings/accessing-application-settings)
+- [Erişim uygulama ayarları (.NET Framework)](/dotnet/visual-basic/developing-apps/programming/app-settings/accessing-application-settings)

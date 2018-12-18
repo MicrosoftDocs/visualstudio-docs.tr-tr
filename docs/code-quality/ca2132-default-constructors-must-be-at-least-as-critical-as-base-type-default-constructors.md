@@ -1,6 +1,7 @@
 ---
 title: 'CA2132: Varsayılan oluşturucular en az taban tür varsayılan oluşturucular kadar kritik olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -11,13 +12,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c0d878fb51625ff9a56fcf70c6ebbbe661dc2abb
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 66e1f402e082eb1ee42faa3e04ea319dca3ed1d5
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45546780"
 ---
 # <a name="ca2132-default-constructors-must-be-at-least-as-critical-as-base-type-default-constructors"></a>CA2132: Varsayılan oluşturucular en az taban tür varsayılan oluşturucular kadar kritik olmalıdır
+
 |||
 |-|-|
 |TypeName|DefaultConstructorsMustHaveConsistentTransparency|
@@ -26,23 +29,26 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 > [!NOTE]
->  Bu uyarı yalnızca CoreCLR (Silverlight Web uygulamalarına özeldir CLR sürüm) çalıştıran kod uygulanır.
+> Bu uyarı yalnızca CoreCLR (Silverlight web uygulamalarına özel olan CLR sürümü) çalışan kodu uygulanır.
 
 ## <a name="cause"></a>Sebep
- Varsayılan Oluşturucu türetilmiş sınıf saydamlık özniteliğinin temel sınıfı saydamlığı olarak kritik olarak değil.
 
-## <a name="rule-description"></a>Kural Tanımı
- Türleri ve sahip üyeler <xref:System.Security.SecurityCriticalAttribute> Silverlight uygulama kodu tarafından kullanılamaz. Kritik güvenlik türleri ve üyeleri, yalnızca Silverlight sınıf kütüphanesi için .NET Framework'ündeki güvenilen kod tarafından kullanılabilir. Türetilmiş sınıftaki ortak veya korumalı oluşturma, onun temel sınıfından aynı düzeyde veya daha saydam olması gerektiğinden uygulama içindeki sınıf SecurityCritical olarak işaretlenmiş bir sınıftan türeyemez.
+Türetilmiş bir sınıfın varsayılan oluşturucusu saydamlık özniteliklerini temel sınıf saydamlığı önemli değildir.
 
- Bir taban türü bir public ya da korumalı saydam olmayan varsayılan oluşturucu varsa CoreCLR platform kodunu sonra türetilmiş bir tür varsayılan oluşturucusu devralma kuralları uyma gerekir. Türetilen türde de varsayılan bir oluşturucu olmalıdır ve bu Oluşturucusu kritik varsayılan oluşturucu temel türün en az olmalıdır.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- İhlali düzeltmek için türünü kaldırmak veya güvenlik saydam olmayan türden türetilmiş değil.
+Türleri ve üyeleri olan <xref:System.Security.SecurityCriticalAttribute> Silverlight uygulama kodu tarafından kullanılamaz. Kritik güvenlik türleri ve üyeleri, yalnızca Silverlight sınıf kütüphanesi için .NET Framework'ündeki güvenilen kod tarafından kullanılabilir. Türetilmiş sınıftaki ortak veya korumalı oluşturma, onun temel sınıfından aynı düzeyde veya daha saydam olması gerektiğinden uygulama içindeki sınıf SecurityCritical olarak işaretlenmiş bir sınıftan türeyemez.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıları bastırma değil. Uygulama kodu tarafından bu kural ihlalleri türüyle yüklenemiyor reddediyor CoreCLR sonuçlanacak bir <xref:System.TypeLoadException>.
+Ortak veya korumalı saydam olmayan varsayılan bir oluşturucu bir taban türü varsa, CoreCLR platform kodunu ardından türetilmiş bir tür varsayılan oluşturucu devralma kurallara uyan gerekir. Türetilmiş bir tür aynı zamanda bir varsayılan oluşturucusu olmalıdır ve bu oluşturucu temel tür kritik varsayılan oluşturucu en az olmalıdır.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+İhlali gidermek için türü kaldırın veya güvenlik saydam olmayan türden türetilmiş değil.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıları bastırmayın. Uygulama kodu tarafından bu kural ihlalleri türüyle yüklenecek reddediyor CoreCLR sonuçlanır bir <xref:System.TypeLoadException>.
 
 ### <a name="code"></a>Kod
- [!code-csharp[FxCop.Security.CA2132.DefaultConstructorsMustHaveConsistentTransparency#1](../code-quality/codesnippet/CSharp/ca2132-default-constructors-must-be-at-least-as-critical-as-base-type-default-constructors_1.cs)]
 
-### <a name="comments"></a>Açıklamalar
+[!code-csharp[FxCop.Security.CA2132.DefaultConstructorsMustHaveConsistentTransparency#1](../code-quality/codesnippet/CSharp/ca2132-default-constructors-must-be-at-least-as-critical-as-base-type-default-constructors_1.cs)]

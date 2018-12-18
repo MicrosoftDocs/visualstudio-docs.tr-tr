@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fc844885a7efa1784b985eb3901de80a47c5efe4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b4c62a12c54a716a02146190b91f1f95365333b9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917134"
 ---
 # <a name="idebugexceptionevent2getexception"></a>IDebugExceptionEvent2::GetException
-Bu olay şu özel durum ayrıntılı bir açıklamasını alır.  
+Bu olay harekete geçirilen özel durum ayrıntılı bir açıklamasını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetException(
   
 #### <a name="parameters"></a>Parametreler  
  `pExceptionInfo`  
- [içinde out] Bir [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) özel durum açıklaması oturum girilir yapısı.  
+ [out içinde] Bir [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) özel durumun açıklama oturum girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [Yalnızca C++] Tüm dizelerde boşaltma çağıran sorumludur [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) yapısı hem de serbest [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) yapısında nesnesi.  
+ [Yalnızca C++] Tüm dizeler boşaltma için çağıran sorumludur [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) yapısı serbest yanı sıra [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) yapısında nesne.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExceptionEvent2](../../../extensibility/debugger/reference/idebugexceptionevent2.md)   

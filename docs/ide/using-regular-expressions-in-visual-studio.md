@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da normal ifadeler kullanarak | Microsoft Docs
+title: Normal ifadeler kullanma
 ms.date: 03/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -17,21 +18,22 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b2cd32695eb07217205048040cc888e097b4fe5b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 40983e4180db9530983217d581b898806dd85d27
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53063804"
 ---
-# <a name="using-regular-expressions-in-visual-studio"></a>Visual Studio'da normal ifadeler kullanma
+# <a name="use-regular-expressions-in-visual-studio"></a>Visual Studio'da normal ifadeler kullanma
 
 Visual Studio kullanan [.NET Framework normal ifadeleri](/dotnet/standard/base-types/regular-expressions) metin bulma ve değiştirme için.
 
 ## <a name="replacement-patterns"></a>Değiştirme desenleri
 
-Numaralı yakalama grubu kullanmak için normal ifade deseni parantezlerde grubuyla koyun. Kullanım `$number`, burada `number` belirli, numaralandırılmış bir grubu değiştirme desende belirtmek için 1'den başlayarak bir tamsayıdır. Örneğin, gruplandırılmış normal ifade `(\d)([a-z])` iki grupları tanımlar: tek bir ondalık basamak içeren ilk grubu ve ikinci grup arasında tek bir karakter içeriyor **bir** ve **z**. İfade dört eşleşmeleri aşağıdaki dizeyi bulur: **1a 2b 3c 4d**. Değiştirme dizesini `z$1` yalnızca ilk grubu başvuruyor ve dizeye dönüştürür **z1 z2 z3 z4**.
+Numaralandırılmış yakalama grubu kullanmak için normal ifade deseninde ayraç grubuyla alın. Kullanım `$number`burada `number` bir değiştirme deseninde belirli, numaralı grubu belirtmek için 1'den başlayarak bir tamsayıdır. Örneğin, gruplanan normal ifadeyle `(\d)([a-z])` iki grupları tanımlar: ilk grubu tek bir ondalık basamak içeren ve ikinci grubu arasında tek bir karakter içeren **bir** ve **z**. İfade, aşağıdaki dizede dört eşleşme bulur: **1a 2b 3c 4d**. Değiştirme dizesi `z$1` yalnızca ilk grubu başvuruyor ve bir dizeye dönüştürür **z1 z2 z3 z4**.
 
-Değiştirme desenleri kullanılan normal ifadeler hakkında daha fazla bilgi için bkz: [(.NET Kılavuzu) normal ifadelerdeki değişimler](/dotnet/standard/base-types/substitutions-in-regular-expressions).
+Değiştirme desenlerinde kullanılan düzenli ifadeler hakkında daha fazla bilgi için bkz: [(.NET Kılavuzu) normal ifadelerdeki değişimler](/dotnet/standard/base-types/substitutions-in-regular-expressions).
 
 ## <a name="regular-expression-examples"></a>Normal ifade örnekleri
 
@@ -39,38 +41,39 @@ Bazı örnekler şunlardır:
 
 |Amaç|İfade|Örnek|
 |-------------|----------------|-------------|
-|Herhangi bir tek karakteri (dışında bir satır sonu) eşleşmesi|biçimindeki telefon numarasıdır.|`a.o` "geçici" içindeki "aro" ve "hakkında" içindeki "abo" ancak değil "eri" "arasında" ile eşleşir.|
-|Önündeki ifadeyi sıfır veya daha çok tekrarı eşleşen (mümkün olduğunca sayıda karakteri eşleştirmek)|*|`a*r` "dolapta" "r", "ark" "ar" ve "aardvark" "aar" ile eşleşir|
-|Sıfır veya daha fazla kez herhangi bir karakteri eşleştirmek (joker karakter *)|.*|c.*e eşleşen "yasadışı etkinlik" "cke", "comment" "comme" ve "Code" "code"|
-|Önündeki ifadeyi bir veya daha fazla oluşumları eşleşen (mümkün olduğunca sayıda karakteri eşleştirmek)|+|`e.+e` "Besleyici" ancak değil "ee" "eede" ile eşleşir.|
-|Bir veya daha fazla (joker?) herhangi bir karakter eşleşmesi|.+|e. + e "Besleyici" ancak değil "ee" "eede" ile eşleşir.|
-|Önündeki ifadeyi sıfır veya daha çok tekrarı eşleşen (mümkün olduğu kadar az karakterle eşleşen)|*?|`e.*?e` "Besleyici" ancak değil "eede" "ee" ile eşleşir.|
-|Önündeki ifadeyi bir veya daha fazla oluşumları eşleşen (mümkün olduğu kadar az karakterle eşleşen)|+?|`e.+?e` "Telefo" ve "Kurumsal" ancak değil tam sözcükleri "Kuruluş" "erprise" ile eşleşir.|
-|Bir satır veya dize başlangıcını eşleşme dizeye sabitleme|^|`^car` yalnızca bir satır başında görüntülendiğinde "araba" word eşleşir.|
-|Satırın sonuna eşleşme dizeye sabitleme|\r?$|`End\r?$` "yalnızca ne zaman bir satırın sonunda görüntülenir son" ile eşleşir.|
-|Kümedeki herhangi bir tek karakterle eşleşen|[abc]|`b[abc]` "ba", "bb" ve "bc" ile eşleşir.|
-|Karakter aralığı içinde herhangi bir karakter eşleşmesi|[a-f]|`be[n-t]` "içindeki"arasında","altında"içindeki" ben"ve"bes"içindeki"yanındaki"ancak değil"altında"sonuç" eşleşir.|
-|Yakalama ve örtük olarak parantez içinde yer alan ifade sayı|()|`([a-z])X\1` "aXa" ve "bXb" ancak değil "aXb" ile eşleşir. İlk ifade grubu "[a-z]" "\1" başvuruyor.|
-|Bir eşleşme geçersiz kıl|(?!abc)|`real (?!ity)` eşleşme "gerçek" "Gayrimenkul" ve "gerçekten" ancak değil söz "gerçekte." Bu ayrıca ikinci "gerçek" (ancak değil ilk "gerçek") "realityreal içinde" bulur.|
-|Belirli bir karakter kümesi değil herhangi bir karakter eşleşmesi|[^ abc]|`be[^n-t]` "bef" ile eşleşen "önce", "arka plan", "beh" ve "bel" içindeki "altında" ancak değil "altında".|
-|Eşleşen ifadesinden önce veya simgesinden sonra bir.|&#124;|`(sponge&#124;mud) bath` eşleşme "Sünger banyo" ve "mud banyo."|
-|Kaçış aşağıdaki ters eğik çizgi karakteri| \\ |`\^` karakterle eşleşir ^.|
-|Önceki karakter veya grubun yinelenme sayısını belirtin|{x}, x yineleme sayısı,|`x(ab){2}x` "xababx" ile eşleşen ve `x(ab){2,3}x` "xababx" ve "xabababx" ancak değil "xababababx" ile eşleşir.|
-|Burada "X" Unicode numarasıdır bir Unicode karakter sınıfında metinle eşleşen. Unicode karakter sınıfları hakkında daha fazla bilgi için bkz:<br /><br /> [Unicode standart 5.2 karakter özelliklerini](http://www.unicode.org/versions/Unicode5.2.0/ch04.pdf).|\p{X}|`\p{Lu}` "T" ve "Thomas Doe"nun "D" ile eşleşir.|
-|Word sınır eşleşmesi|`\b` (Karakter sınıf dışında \b bir word sınırı ve karakter içinde sınıfı bir geri belirtir).|`\bin` "içinde" değil "pinto ancak" "İç içinde" eşleşir.|
-|Satır sonu (yeni bir satır ve ardından başka bir deyişle, bir satır başı) eşleşmesi.|\r?\n|`End\r?\nBegin` "Bitiş" ve "yalnızca bir satır son dizede"Bitiş"olduğunda ve"Başlangıç"sonraki satıra ilk dizesinde başlayın" ile eşleşir.|
-|Alfasayısal bir karakterle eşleşmesi|\w|`a\wd` eşleşme "Ekle" ve "a1d" ancak değil "d".|
-|Herhangi bir boşluk karakteri eşleştirmek.|(? ([^ \r\n])\s)|`Public\sInterface` "Ortak arabirimi" tümceciği eşleşir.|
-|Sayısal bir karakterle eşleşmesi|\d|`\d` eşleşme ve "3.", "3456", "2" içindeki 23" ve"1.","1".|
-|Unicode karakter eşleşmesi|\uXXXX burada XXXX Unicode karakter değerini belirtir.|`\u0065` "e" karakteri ile eşleşir.|
-|Tanımlayıcı eşleşmesi|\b(_\w+&#124;[\w-[0-9\_]]\w*)\b|Eşleşme "type1" ama & type1 "veya" #define ".|
-|Tırnak işaretleri içine bir dizeyle eşleştir|((\\".+?\\")&#124;('.+?'))|Tek veya çift tırnak içine herhangi bir dizeyle eşleşir.|
-|Bir onaltılık sayı eşleşmesi|\b0[xx]([0-9a-FA-F]\)\b|"0xc67f" ancak değil "0xc67fc67f" ile eşleşmez.|
-|Eşleşme tamsayılar ve ondalık basamaklar|\b[0-9]*\\.\*[0-9]+\b|"1,333" eşleşir.|
+|(Satır sonu hariç) tek bir karakterle eşleştir|biçimindeki telefon numarasıdır.|`a.o` "Around" öğesinde "ARO" ve "about" öğesinde "abo" ancak değil "eri" "arasında" ile eşleşir.|
+|Önünde gelen ifadenin sıfır veya daha çok tekrarı ile eşleştir (mümkün olduğu kadar çok karakterle Eşleştir)|*|`a*r` "rack" daki "r", "ark" içinde "ar" ve "aardvark", "aar" ile eşleşir.|
+|Sıfır veya daha fazla kez herhangi bir karakterle eşleştir (joker karakter *)|.*|`c.*e` "comme" "racket", "comment" "comme" ve "Code" ve "code" ile eşleşir.|
+|Önünde gelen ifadenin bir veya daha çok tekrarı ile eşleştir (mümkün olduğu kadar çok karakterle Eşleştir)|+|`e.+d` "eed" içindeki "eede" ile eşleşir ancak değil "ed" eşleşir.|
+|Bir veya daha fazla (joker?) herhangi bir karakterle eşleştir|.+|`e.+e` "eede" ile eşleşir ancak değil "ee" içindeki "eede" ile eşleşir.|
+|Önünde gelen ifadenin sıfır veya daha çok tekrarı ile eşleştir (mümkün olduğu kadar az karakterle Eşleştir)|*?|`e.*?e` "eede" ile eşleşir ancak "eede" içinde "ee" ile eşleşir.|
+|Önünde gelen ifadenin bir veya daha çok tekrarı ile eşleştir (mümkün olduğu kadar az karakterle Eşleştir)|+?|`e.+?e` "Telefo" ve "erprise" ile "Kurumsal" ancak değil tüm "enterprise" kelimesinin eşleşir.|
+|Eşleşme dizesini bir satırın veya dizenin başına bağlantı|^|`^car` yalnızca satırın başında göründüğünde "car" sözcüğü eşleştirir.|
+|Eşleşme dizesini bir satırın sonuna Bağla|\r?$|`end\r?$` "yalnızca, bir satırın sonunda göründüğünde end" ile eşleşir.|
+|Eşleşme dizesini dosyanın sonuna bağlantı|$|`end$` "yalnızca bu dosyanın sonunda göründüğünde end" ile eşleşir.|
+|Bir kümedeki tek bir karakterle eşleştir|[abc]|`b[abc]` "ba", "bb" ve "bc" ile eşleşir.|
+|Karakter aralığındaki herhangi bir karakterle eşleştir|[a-f]|`be[n-t]` "içinde"between","beneath"içinde" ben"ve"bes""beside", ancak"below"bet" eşleşir.|
+|Yakalama ve parantez içinde yer alan ifadesi örtük olarak numaralandır|()|`([a-z])X\1` "aXa" ve "bXb" ancak değil "aXb" ile eşleşir. "\1", ilk ifade grubu "[a-z]" anlamına gelir.|
+|Eşlemeyi geçersiz kıl|(?!abc)|`real(?!ity)` "gerçek" bir "realty" ve "really" eşleşir ancak değil içinde "gerçeklik." Ayrıca ikinci "real" (ancak değil ilk "real") "realityreal" içinde bulur.|
+|Belirli bir karakter kümesinde olmayan herhangi bir karakterle eşleştir|[^ abc]|`be[^n-t]` "önce", "behind", "beh" içinde "bef" ile eşleşir ve "BEh" "below", ancak "beneath".|
+|Önce ifadesi veya bir sonraki eşleştirin.|&#124;|`(sponge\|mud) bath` "sponge bath" ve "mud bath" ile eşleşir|
+|Eğik çizgiyi takip eden karakterden çıkış yapın| \\ |`\^` bir karakterle eşleşir ^.|
+|Önceki karakterin veya grubun oluşum sayısını belirtin|{x}, burada x oluşum sayısıdır|`x(ab){2}x` "xababx" ile eşleşir ve `x(ab){2,3}x` "xababx" ve "xabababx ile eşleşir" ancak değil "xababababx" ile eşleşir.|
+|Bir Unicode karakter sınıfı metinde eşleştirin. Unicode karakter sınıfları hakkında daha fazla bilgi için bkz.<br /><br /> [Unicode standart 5.2 karakter özellikleri](http://www.unicode.org/versions/Unicode5.2.0/ch04.pdf).|\p{X}, "X" değerinin Unicode numarası olduğu.|`\p{Lu}` "T" ve "Thomas Doe" içinde "D" ile eşleşir.|
+|Bir sözcük sınırını eşleştir|\b (bir karakter sınıfı dışında `\b` bir sözcük sınırını belirler ve bir karakter sınıfı içinde `\b` Geri Al ile eşleşir.)|`\bin` "içinde" inside "içinde" değil "pinto" eşleşir.|
+|Satır sonu (yeni bir satır tarafından izlenen diğer bir deyişle, bir satır başı) eşleştirin.|\r?\n|`End\r?\nBegin` "Son" ve "olduğunda yalnızca"End"bir satırdaki son dizeyse ve"Begin"sonraki satırdaki ilk dizedir Begin" ile eşleşir.|
+|Herhangi bir alfasayısal karakteri eşleştir|\w|`a\wd` eşleşme "Ekle" ve "a1d ile eşleşir" ancak "a d".|
+|Bir boşluk karakteriyle Eşleştir.|(? ([^ \r\n])\s)|`Public\sInterface` ' % s'ifadesinin "Ortak arabirim" ile eşleşir.|
+|Bir sayısal karakterle eşleştir|\d|`\d` eşleşiyor ve "3", "3456" 23" içinde" 2"ve"1"içinde"1".|
+|Unicode karakterini eşleştir|\uXXXX nerede XXXX Unicode karakter değerini belirtir.|`\u0065` "e" karakteriyle eşleşir.|
+|Tanımlayıcı eşleştir|\b [\_\w-[0-9]] [\_\w]*\b|Eşleşme "type1" değil "& type1" veya "#define".|
+|Tırnak işaretleri içindeki bir dizeyle eşleştir|((\\".+?\\")&#124;('.+?'))|Tek veya çift tırnak içindeki herhangi bir dizeyle eşleşir.|
+|Onaltılık bir sayıyla eşleştir|\b0[xx]([0-9a-FA-F]\)\b|"0xc67f ile eşleşir" ancak "0xc67fc67f" ile eşleşir.|
+|Eşleşme tamsayıları ve ondalık sayıları|\b[0-9]*\\.\*[0-9]+\b|"1.333" eşleşir.|
 
 > [!TIP]
-> Windows işletim sistemlerinde, çoğu satırları "\r\n" (ve ardından yeni bir satır başı) içinde sona. Bu karakterler görünmez, ancak Düzenleyicisi'nde mevcut olan ve .NET normal ifade hizmetine geçirilir.
+> Windows işletim sistemlerinde satırların çoğu "\r\n" (bir yeni satırın izlediği bir satır başı) bitmelidir. Bu karakterler görünür değildir ancak düzenleyicide bulunur ve .NET normal ifade hizmetine iletilir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Metin Bulma ve Değiştirme](../ide/finding-and-replacing-text.md)
+- [Metin bulma ve değiştirme](../ide/finding-and-replacing-text.md)

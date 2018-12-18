@@ -17,11 +17,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6b484ce1bd47d01092ff28d60b457012805cb16e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b0d52fb5d50a75207a0aad49f7b29cfc66b8e889
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154202"
 ---
 # <a name="suspendtracking"></a>SuspendTracking
 Geçerli bağlamda izleme askıya alır.  
@@ -32,11 +33,11 @@ Geçerli bağlamda izleme askıya alır.
 HRESULT WINAPI SuspendTracking(void);  
 ```  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Bir **HRESULT** ile **başarılı** izleme askıya alınırsa biti ayarlanmamış.  
+## <a name="return-value"></a>Dönüş değeri  
+ Bir **HRESULT** ile **başarılı** izleme askıya alındı, biti ayarlanmamış.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** FileTracker.h  
+ **Başlık:** *FileTracker.h*  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ResumeTracking](../msbuild/resumetracking.md)

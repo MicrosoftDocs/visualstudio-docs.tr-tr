@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4be7cf2239b77314646df8285d1a89953f9401fd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: db00126b72399610e0e270c1cd0f736171f52fce
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903510"
 ---
 # <a name="idebugmodoptgetmodopts"></a>IDebugModOpt::GetModOpts
-İsteğe bağlı değiştiricileri listesini alır.  
+İsteğe bağlı değiştiricilere listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,10 +50,10 @@ int GetModOpts(
  [out] Seçenekleri içeren bir dizi döndürür.  
   
  `pceltFetched`  
- [içinde out] Döndürülen öğe sayısını `rgelt` dizi.  
+ [out içinde] Döndürülen öğe sayısını `rgelt` dizisi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModOpt](../../../extensibility/debugger/reference/idebugmodopt.md)

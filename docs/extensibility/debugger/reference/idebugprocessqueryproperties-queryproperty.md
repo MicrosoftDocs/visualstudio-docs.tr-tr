@@ -13,11 +13,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 58ea20def0fa79d6847a28716301f7e2b5136c0e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a2ff40f850186e97888fd409d2387e15873851b7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49893955"
 ---
 # <a name="idebugprocessquerypropertiesqueryproperty"></a>IDebugProcessQueryProperties::QueryProperty
 Hata ayıklama işlemi belirtilen özellik değeri için bu yöntemi sorgular.  
@@ -40,17 +41,17 @@ int QueryProperty(
  `dwPropType`  
  [in] Sorgulanan özelliği tanımı. Değerler şunlardır:  
   
--   PROCESS_PROPERTY_COMMAND_LINE = 1  
+- PROCESS_PROPERTY_COMMAND_LINE = 1  
   
--   PROCESS_PROPERTY_CURRENT_DIRECTORY = 2  
+- PROCESS_PROPERTY_CURRENT_DIRECTORY = 2  
   
--   PROCESS_PROPERTY_ENVIRONMENT_VARIABLES = 3  
+- PROCESS_PROPERTY_ENVIRONMENT_VARIABLES = 3  
   
- `pvarPropValue`  
- [out] Özelliğin değeri.  
+  `pvarPropValue`  
+  [out] Özelliğin değeri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yöntem nadiren kullanılır.  

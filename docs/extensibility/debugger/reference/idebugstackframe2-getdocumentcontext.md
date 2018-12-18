@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 14e7374fbea697b86d9ee838a6b8a76a57f920ff
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 908aef9ab784300ef4a9d30b8d16df14ff78b91d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49942198"
 ---
 # <a name="idebugstackframe2getdocumentcontext"></a>IDebugStackFrame2::GetDocumentContext
 Bu yığın çerçevesi için belge bağlamını alır.  
@@ -40,13 +41,13 @@ int GetDocumentContext (
   
 #### <a name="parameters"></a>Parametreler  
  `ppCxt`  
- [out] Döndürür bir [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) bir kaynak belgedeki geçerli konumu temsil eden nesne.  
+ [out] Döndürür bir [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) kaynak belge geçerli konumu temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, arama daha hızlıdır [GetCodeContext](../../../extensibility/debugger/reference/idebugstackframe2-getcodecontext.md) yöntemi ve ardından çağırma [GetDocumentContext](../../../extensibility/debugger/reference/idebugcodecontext2-getdocumentcontext.md) kodu bağlamı yöntemi. Ancak, bu yöntem her hata ayıklama altyapısı (DE) gerçekleştireceksiniz garanti edilmez.  
+ Bu yöntem, arama daha hızlıdır [GetCodeContext](../../../extensibility/debugger/reference/idebugstackframe2-getcodecontext.md) yöntemi ve ardından arama [GetDocumentContext](../../../extensibility/debugger/reference/idebugcodecontext2-getdocumentcontext.md) kod bağlamı yöntemi. Ancak, her hata ayıklama altyapısı (DE) bu yöntemi uygular garanti edilmez.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugStackFrame2](../../../extensibility/debugger/reference/idebugstackframe2.md)   

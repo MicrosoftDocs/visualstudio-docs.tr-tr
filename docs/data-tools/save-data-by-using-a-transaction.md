@@ -14,37 +14,40 @@ ms.assetid: 8b835e8f-34a3-413d-9bb5-ebaeb87f1198
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 8b4fd7ad7168edc155227f9c26cb6f93454240dd
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 28beeec474af9b05153e787c6cbe22034d09b350
+ms.sourcegitcommit: 1df0ae74af03bcf0244129a29fd6bd605efc9f61
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50750994"
 ---
 # <a name="how-to-save-data-by-using-a-transaction"></a>Nasıl yapılır: bir işlemi kullanarak veri kaydetme
-Kullanarak bir işlemde veri kaydetme <xref:System.Transactions> ad alanı. Kullanım <xref:System.Transactions.TransactionScope> sizin için otomatik olarak yönetilen bir işlemde katılmak için nesne.
 
-İşlemler kullanan projelerin başvuru el ile eklemeniz gerekir böylece projeleri System.Transactions derlemesine başvuru oluşturulmaz.
+Kullanarak bir işlemde veri kaydetme <xref:System.Transactions> ad alanı. Kullanım <xref:System.Transactions.TransactionScope> sizin için otomatik olarak yönetilen bir işlem katılmak için nesne.
 
-Örneği oluşturmak için bir işlem uygulamak için en kolay yolu olan bir <xref:System.Transactions.TransactionScope> nesnesinde bir `using` deyimi. (Daha fazla bilgi için bkz: [kullanarak deyimi](/dotnet/visual-basic/language-reference/statements/using-statement), ve [deyimiyle](/dotnet/csharp/language-reference/keywords/using-statement).) İçinde çalışan bir kod `using` deyimi işlemde katılır.
+Projeleri başvurusuyla oluşturulmaz *System.Transactions* derleme, bu nedenle el ile işlem kullanan projeler için bir başvuru eklemeniz gerekir.
 
-İşlem gerçekleştirmeyi çağrı <xref:System.Transactions.TransactionScope.Complete%2A> yöntemi kullanarak son deyim olarak engelleyin.
+Örneği oluşturmak için bir işlem uygulamak için en kolay yolu olan bir <xref:System.Transactions.TransactionScope> nesnesine bir `using` deyimi. (Daha fazla bilgi için [Using deyimi](/dotnet/visual-basic/language-reference/statements/using-statement), ve [Using deyimi](/dotnet/csharp/language-reference/keywords/using-statement).) İçinde çalışan kodu `using` deyimi, işlem sırasında katılan.
 
-İşlem geri almak için bir özel durum çağrılmadan önce throw <xref:System.Transactions.TransactionScope.Complete%2A> yöntemi.
+Hareketi tamamlamak için çağrı <xref:System.Transactions.TransactionScope.Complete%2A> yöntemi kullanarak son deyim olarak engelleyin.
 
-## <a name="to-add-a-reference-to-the-systemtransactionsdll"></a>System.Transactions.dll başvuru eklemek için
+İşlem geri almak için çağrılmadan önce bir özel durum throw <xref:System.Transactions.TransactionScope.Complete%2A> yöntemi.
 
-1.  Üzerinde **proje** menüsünde, select **Başvuru Ekle**.
+## <a name="to-add-a-reference-to-the-systemtransactionsdll"></a>System.Transactions.dll bir başvuru eklemek için
 
-2.  Üzerinde **.NET** sekmesinde (**SQL Server** SQL Server projeleri için sekme), select **System.Transactions**ve ardından **Tamam**.
+1.  Üzerinde **proje** menüsünde **Başvuru Ekle**.
 
-     Bir başvuru System.Transactions.dll projeye eklenir.
+2.  Üzerinde **.NET** sekme (**SQL Server** SQL Server projeleri için sekmesinde), select **System.Transactions**ve ardından **Tamam**.
 
-## <a name="to-save-data-in-a-transaction"></a>Bir işlemde veri kaydetme
+     Bir başvuru *System.Transactions.dll* projeye eklenir.
 
--   Kullanarak içinde verileri kaydetmek için kod ekleme deyimi, işlem içerir. Aşağıdaki kod oluşturma ve örneği gösterir bir <xref:System.Transactions.TransactionScope> kullanarak bir nesne deyimi:
+## <a name="to-save-data-in-a-transaction"></a>Bir işlemde verileri kaydetmek için
+
+-   Kullanarak içinde verileri kaydetmek için kod ekleme deyimi, işlem içerir. Aşağıdaki kod nasıl oluşturulup örneğini gösterir. bir <xref:System.Transactions.TransactionScope> kullanarak bir nesne ifadesi:
 
      [!code-vb[VbRaddataSaving#11](../data-tools/codesnippet/VisualBasic/save-data-by-using-a-transaction_1.vb)]
      [!code-csharp[VbRaddataSaving#11](../data-tools/codesnippet/CSharp/save-data-by-using-a-transaction_1.cs)]

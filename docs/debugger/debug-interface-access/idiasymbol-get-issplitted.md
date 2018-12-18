@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 15420c56dfa16f1bbb4566b1afe3fc7ac958fc07
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 15c30577900a2d2e192bdc2dea45fc89846b102b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49919338"
 ---
 # <a name="idiasymbolgetissplitted"></a>IDiaSymbol::get_isSplitted
-Veri simgesi bir toplama veya diğer simgelerin koleksiyonu bölündü olup olmadığını belirten bir bayrak alır; gerçekten daha büyük bir simge parçası olsalar derleyici simgeleri ayrı varlıklar olarak değerlendirir.  
+Veri simgesi bir toplama veya diğer semboller koleksiyonu bölünmüş olup olmadığını belirten bir bayrak alır; bunlar gerçekten daha büyük bir simge bir parçası olmasına rağmen derleyici sembolleri ayrı varlıklar olarak değerlendirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,22 +34,22 @@ HRESULT get_isSplitted(
   
 #### <a name="parameters"></a>Parametreler  
  `pFlag`  
- [out] Döndürür `TRUE` simgenin; simgelerin toplama bölerseniz hata verir `FALSE`.  
+ [out] Döndürür `TRUE` sembol simgeleri; toplama ayırırsanız, aksi takdirde döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [Idiasymbol::get_isaggregated](../../debugger/debug-interface-access/idiasymbol-get-isaggregated.md) yöntemi döndürür `TRUE` bölünmüş simgesi parçası olan tüm sembolleri için.  
+ [Idiasymbol::get_isaggregated](../../debugger/debug-interface-access/idiasymbol-get-isaggregated.md) yöntemi döndürür `TRUE` bölünmüş sembol parçası olan tüm sembolleri için.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v8.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

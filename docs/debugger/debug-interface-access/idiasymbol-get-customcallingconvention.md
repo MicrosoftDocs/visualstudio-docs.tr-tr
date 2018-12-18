@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: db3d72e8561250ee49a19eec0974db0eeeba5660
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 65475255af9607462bee4a76a58319481f42e56a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903107"
 ---
 # <a name="idiasymbolgetcustomcallingconvention"></a>IDiaSymbol::get_customCallingConvention
-İşlev özel çağırma sahip olup olmadığını belirten bir bayrak alır.  
+İşlev özel bir çağırma kuralı olup olmadığını belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,19 +34,19 @@ HRESULT get_customCallingConvention(
   
 #### <a name="parameters"></a>Parametreler  
  `pFlag`  
- [out] Döndürür `TRUE` işlevi bir özel çağırma; varsa, aksi takdirde, döndürür `FALSE`, bilinen çağırma işlevi vardır.  
+ [out] Döndürür `TRUE` işlev özel bir çağırma kuralı; varsa döndürür, aksi takdirde, `FALSE`, bilinen bir çağırma kuralı işlevi vardır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v8.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

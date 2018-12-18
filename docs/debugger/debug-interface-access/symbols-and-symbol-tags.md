@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31471226"
 ---
 # <a name="symbols-and-symbol-tags"></a>Simgeler ve Simge Etiketleri
 Derlenmiş bir program hata ayıklama bilgilerini program veritabanı (.pdb) dosyasında hata ayıklama arabirimi erişim (DIA) SDK API'leri kullanılarak erişilebilir simgeler olarak depolanır. Tüm sembolleri sahip bir [Idiasymbol::get_symtag](../../debugger/debug-interface-access/idiasymbol-get-symtag.md) ve [Idiasymbol::get_symındexıd](../../debugger/debug-interface-access/idiasymbol-get-symindexid.md) özelliği. `symTag` Özelliği tarafından tanımlanan simgesi türünü gösterir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) numaralandırması. `symIndexId` Özelliği bir `DWORD` bir simge, her örneği için benzersiz tanımlayıcı içeren değer.  

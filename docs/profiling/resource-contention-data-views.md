@@ -18,6 +18,7 @@ ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31581038"
 ---
 # <a name="resource-contention-data-views"></a>Kaynak Çakışması Veri Görünümleri
 Bu bölüm görünümler ve iş parçacığı çakışma profil oluşturma verileri içeren Profil Oluşturucu veri dosyalarının raporları için başvuru bilgileri içerir.  

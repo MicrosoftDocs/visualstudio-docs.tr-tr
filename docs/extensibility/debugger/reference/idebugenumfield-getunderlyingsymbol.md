@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 150ac86dc78581655b0d6369dbe9c8c57c1a23f8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a3caadc10f08d4c3ddb28b03269323913701e91a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822260"
 ---
 # <a name="idebugenumfieldgetunderlyingsymbol"></a>IDebugEnumField::GetUnderlyingSymbol
-Bu yöntem bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) , numaralandırma adını temsil eder.  
+Bu yöntem döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) , numaralandırma adını temsil eder.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,15 +41,15 @@ int GetUnderlyingSymbol(
   
 #### <a name="parameters"></a>Parametreler  
  `ppField`  
- [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) bu numaralandırma adını tanımlayan.  
+ [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) açıklayan bu sabit listesi adı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Numaralandırma adını kullanarak bir bellek konumuna bağlı numaralandırma türü de içeren [bağlama](../../../extensibility/debugger/reference/idebugbinder-bind.md).  
+ Numaralandırma adını kullanarak bir bellek konumuna bağlı sabit listesi türü de içeren [bağlama](../../../extensibility/debugger/reference/idebugbinder-bind.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEnumField](../../../extensibility/debugger/reference/idebugenumfield.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   
- [Bağlama](../../../extensibility/debugger/reference/idebugbinder-bind.md)
+ [Bind](../../../extensibility/debugger/reference/idebugbinder-bind.md)

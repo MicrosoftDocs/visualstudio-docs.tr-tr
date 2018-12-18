@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8e44f70741e6f47bc628a7952979bead0bfba23d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 67885ea85c1ac171fa3a22b025a6e74c969e6c54
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49883347"
 ---
 # <a name="idebugmodule3isusercode"></a>IDebugModule3::IsUserCode
-Veya modülü kullanıcı kodu olup olmadığını gösteren bilgi alır.  
+Veya modülü kullanıcı kod olup olmadığını gösteren şirket bilgilerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int IsUserCode(
   
 #### <a name="parameters"></a>Parametreler  
  `pfUser`  
- [out] Sıfır olmayan (`TRUE`) kullanıcı kodu modülü temsil ediyorsa, sıfır (`FALSE`) mevcut değilse.  
+ [out] Sıfır olmayan (`TRUE`) kullanıcı kodu modülü temsil ediyorsa, sıfır (`FALSE`) kullanmıyorsa.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModule3](../../../extensibility/debugger/reference/idebugmodule3.md)

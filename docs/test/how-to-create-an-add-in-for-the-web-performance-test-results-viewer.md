@@ -1,5 +1,5 @@
 ---
-title: Web Performans Testi Sonuçları Görüntüleyicisi için Visual Studio eklentisi oluşturma | Microsoft Docs
+title: Web Performans Test Sonuçları Görüntüleyicisi eklenti oluşturma
 ms.date: 10/20/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -9,156 +9,160 @@ ms.assetid: 1118c604-4b1b-4b21-a04e-45995b676fa8
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: aa163381415060d189899e7defd64a8935c4ea94
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6672bd1e38dee5b27d350b9d2e12626cef122115
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53068347"
 ---
-# <a name="how-to-create-a-visual-studio-add-in-for-the-web-performance-test-results-viewer"></a>Nasıl yapılır: Web Başarım Testi Sonuçları Görüntüleyicisi için bir Visual Studio Eklentisi Oluşturma
+# <a name="how-to-create-a-visual-studio-add-in-for-the-web-performance-test-results-viewer"></a>Nasıl yapılır: Web Performans Test Sonuçları Görüntüleyicisi için bir Visual Studio eklentisi oluşturma
 
-Şu ad alanlarından kullanarak Web Performans Testi Sonuçları Görüntüleyicisi için UI genişletebilirsiniz:
+Kullanıcı Arabiriminde genişletebileceğiniz **Web Performans Test Sonuçları Görüntüleyicisi** aşağıdaki ad alanlarını kullanarak:
 
 -   <xref:Microsoft.VisualStudio.TestTools.LoadTesting>
 
 -   <xref:Microsoft.VisualStudio.TestTools.WebTesting>
 
-Ayrıca, bulunan LoadTestPackage DLL için bir başvuru eklemeniz gerekir *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\PrivateAssemblies* klasör.
+Ayrıca, bulunan LoadTestPackage DLL'ye bir başvuru eklemeniz gerekir *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\PrivateAssemblies* klasör.
 
--   Web Performans Testi Sonuçları Görüntüleyicisi'nin UI genişletmek için Visual Studio eklentisi ve bir kullanıcı denetimi oluşturmanız gerekir. Aşağıdaki yordamlarda, eklentiyi oluşturma açıklanmaktadır kullanıcı denetimi ve Web Performans Testi Sonuçları Görüntüleyicisi'nin UI genişletmek gerekli sınıfların gerçekleştirme.
+Genişletmek için **Web Performans Test Sonuçları Görüntüleyicisi**'s UI, Visual Studio eklentisi ve bir kullanıcı denetimi oluşturmalısınız. Aşağıdaki yordamlar eklenti, kullanıcı denetimi oluşturma işlemleri açıklanmaktadır ve nasıl uygulanacağını genişletmek gereken sınıfların **Web Performans Test Sonuçları Görüntüleyicisi**ait kullanıcı Arabirimi.
 
-## <a name="create-or-open-a-solution-that-contains-an-aspnet-web-application-and-a-web-performance-and-load-test-project"></a>Oluşturun veya bir ASP.NET Web uygulaması ve Web performansı ve yük testi projesi içeren bir çözüm açın
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
-### <a name="to-prepare-for-extending-the-web-performance-test-results-viewer"></a>Web Performans Testi Sonuçları Görüntüleyicisi genişletmek için hazırlamak için
+## <a name="create-or-open-a-solution-that-contains-an-aspnet-web-application-and-a-web-performance-and-load-test-project"></a>Bir ASP.NET web uygulaması ve web performansı ve yük testi projesi içeren bir çözüm açın veya oluşturun
 
-Oluşturabilir veya, bir ASP.NET Web uygulaması içeren deneyimleyebilirsiniz ve Web performansı ve yük ile bir veya daha fazla Web performans testleri ASP.NET Web uygulaması için projeyi test üretim dışı çözümü açın.
+### <a name="to-prepare-for-extending-the-web-performance-test-results-viewer"></a>Web Performans Test Sonuçları Görüntüleyicisi'ni genişletmek üzere hazırlanmak için
+
+Oluşturabilir veya ASP.NET web uygulaması içeren deneme yapabileceğiniz ve bir web performansı ve yük proje ASP.NET web uygulaması için bir veya daha fazla web performans testleri test üretim dışı çözümü açın.
 
 > [!NOTE]
-> Bir ASP.NET Web uygulaması oluşturabilir ve Web performansı ve yük test etme yordamları izleyerek Web performans testleri içeren projesi [nasıl yapılır: Web hizmet testi oluşturma](../test/how-to-create-a-web-service-test.md) ve [oluşturma ve çalıştırma kodlanmış web performans testi](../test/generate-and-run-a-coded-web-performance-test.md).
+> Bir ASP.NET web uygulamasını oluşturabilir ve web performansı ve yük testi içindeki yordamları izleyerek web performans testleri içeren proje [nasıl yapılır: web hizmeti testi oluşturma](../test/how-to-create-a-web-service-test.md) ve [oluştur ve Çalıştır kodlanmış web performans testi](../test/generate-and-run-a-coded-web-performance-test.md).
 
-## <a name="create-a-visual-studio-add-in"></a>Visual Studio eklentisi oluşturma
+## <a name="create-a-visual-studio-add-in"></a>Visual Studio eklenti oluşturma
 
-Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bir derlenmiş DLL ' dir. Derleme, fikri mülkiyet korunmasına yardımcı olur ve performansı artırır. Eklentiler el ile oluşturabilirsiniz, ancak Eklenti Sihirbazı'nı kullanmayı daha kolay bulabilirsiniz. Bu sihirbaz, bir işlev ancak temel oluşturduktan sonra hemen çalıştırılabilen eklentisi oluşturur. Eklenti Sihirbazı temel programı oluşturduktan sonra kodu ekleyin ve özelleştirin.
+Bir Visual Studio tümleşik geliştirme ortamında (IDE) çalışan derlenmiş DLL eklentidir. Derleme fikri mülkiyetinizi korur ve performansı geliştirir. Eklentileri elle oluşturabilseniz de bunu kullanmayı daha kolay bulabilirsiniz **Eklenti Sihirbazı**. Bu sihirbaz bir işlevsel fakat basit oluşturduktan sonra hemen çalıştırabilirsiniz eklenti oluşturur. Sonra **Eklenti Sihirbazı** temel programı oluşturduktan kodu ekleyin ve özelleştirin.
 
- Eklenti Sihirbazı'nı bir görünen ad ve açıklama eklentiniz için sağlamanıza olanak tanır. Her ikisi de görünür **Eklenti Yöneticisi**. İsteğe bağlı olarak, ekleyen Sihirbazı kodu oluşturmasını sağlayabilirsiniz **Araçları** menü eklenti açmak için bir komutu. Ayrıca özel görüntülemeyi seçebilirsiniz **hakkında** eklentiniz için iletişim kutusu. Sihirbaz tamamlandığında, eklentiyi uygulayan yalnızca bir sınıfı olan yeni bir proje sahip. Bu sınıf, Bağlan olarak adlandırılır.
+ **Eklenti Sihirbazı** bir görünen ad ve açıklama eklentiniz için sağlamanıza olanak tanır. Her ikisi de görünür **Eklenti Yöneticisi**. İsteğe bağlı olarak, ekleyen Sihirbazı kodu oluşturmasını sağlayabilirsiniz **Araçları** menüsünde eklentiyi açmak için bir komutu. Ayrıca özel görüntülemeyi seçebilirsiniz **hakkında** eklentiniz için iletişim kutusu. Sihirbaz tamamlandığında, eklentiyi uygulayan yalnızca bir sınıfı olan yeni bir proje vardır. Bu sınıf, Bağlan olarak adlandırılır.
 
- Kullanacağınız **Eklenti Yöneticisi** bu konunun sonundaki.
+ Kullanacağınız **Eklenti Yöneticisi** bu makalenin sonunda.
 
 ### <a name="to-create-an-add-in-by-using-the-add-in-wizard"></a>Eklenti Sihirbazı'nı kullanarak bir eklenti oluşturmak için
 
-1.  Çözüm Gezgini'nde çözüme sağ tıklayın, seçin **Ekle** ve ardından **yeni proje**.
+1. İçinde **Çözüm Gezgini**, çözüme sağ tıklayın, seçin **Ekle**ve ardından **yeni proje**.
 
-     Yeni Proje iletişim kutusu görüntülenir.
+    **Yeni proje** iletişim kutusu görüntülenir.
 
-2.  Altında **yüklü şablonlar**, genişletin **diğer proje türleri** seçip **genişletilebilirlik**.
+2. Altında **yüklü şablonlar**, genişletme **diğer proje türleri** seçip **genişletilebilirlik**.
 
-3.  Şablonları listesinde seçin **Visual Studio eklentisi**.
+3. Şablonlar listesinde seçin **Visual Studio eklentisini**.
 
-4.  Adı altında eklenti için bir ad yazın. Örneğin, **WebPerfTestResultsViewerAddin**.
+4. Altında **adı**, eklenti için bir ad yazın. Örneğin, **WebPerfTestResultsViewerAddin**.
 
-5.  Seçin **Tamam**.
+5. Seçin **Tamam**.
 
-     Visual Studio eklentisi Sorgu Sihirbazı'nı başlatır.
+    Visual Studio **Eklenti Sihirbazı** başlatır.
 
-6.  Seçin **sonraki**.
+6. Seçin **sonraki**.
 
-7.  Üzerinde **bir programlama dili seç** sayfasında, eklenti yazmak için kullanmak istediğiniz programlama dilini seçin.
+7. Üzerinde **bir programlama dili seçin** sayfasında, eklentiyi yazmak için kullanmak istediğiniz programlama dilini seçin.
 
-    > [!NOTE]
-    > Bu konuda Visual C# örnek kodunu kullanır.
+   > [!NOTE]
+   > Bu konu Visual C# örnek kodunu kullanır.
 
-8.  Üzerinde **seçin uygulama ana bilgisayarı** sayfasında **Visual Studio** ve temizleyin **Visual Studio makroları**.
+8. Üzerinde **seçin, bir uygulama ana bilgisayarı** sayfasında **Visual Studio** temizleyin **Visual Studio Macros**.
 
 9. Seçin **sonraki**.
 
-10. Bir ad ve açıklama eklentiniz için yazın **bir ad ve açıklama girin** sayfası.
+10. Bir ad ve eklentiniz için bir açıklama yazın **bir ad ve açıklama girin** sayfası.
 
-     Eklenti oluşturulduktan sonra adını ve açıklamasını görüntülenen **kullanılabilir eklentiler** listesinde **Eklenti Yöneticisi**. Böylece kullanıcılar hangi eklentiniz öğrenebilirsiniz eklentiniz açıklamasına yeterli ayrıntı yok, nasıl çalışır ve benzeri ekleyin.
+     Eklentiyi oluşturduktan sonra adını ve açıklamasını görüntülenen **kullanılabilir eklentiler** listesinde **Eklenti Yöneticisi**. Eklentinizin açıklamasına yeterli ayrıntı kullanıcıların hangi eklentinizi edinebilirsiniz işe yaradığını, nasıl çalıştığını ve benzeri ekleyin.
 
 11. Seçin **sonraki**.
 
-12. Üzerinde **eklenti seçeneklere** sayfasında, **my ana bilgisayar uygulaması başladığında yüklemek için eklenti ister misiniz**.
+12. Üzerinde **eklenti seçeneklerini seçin** sayfasında **my ana bilgisayar uygulaması başladığında yüklenmesini eklenti istiyorum**.
 
 13. Kalan onay kutularını temizleyin.
 
-14. Üzerinde **seçme 'Yardım konusu' bilgilerini** sayfasında, görüntülenecek eklentiniz hakkında bilgileri istediğinizi belirtebilirsiniz bir **hakkında** iletişim kutusu. Görüntülenecek bilgi istiyorsanız seçin **my 'İlgili' kutusu bilgileri sunmak için eklenti Evet, istiyorum** onay kutusu.
+14. Üzerinde **'Yardım konusu' bilgilerini seçme** sayfasında, görüntülenecek eklentinizi hakkında bilgi isteyip istemediğinizi belirtebilirsiniz bir **hakkında** iletişim kutusu. Görüntülenecek bilgi istiyorsanız seçin **my 'Hakkında' kutusu bilgi sunmak için eklenti Evet, istiyorum** onay kutusu.
 
-     Visual Studio eklenebilir bilgi **hakkında** sürüm numarası, destek ayrıntıları, lisans verilerini ve benzeri iletişim kutusu içerir.
+     Visual Studio için eklenebilir bilgi **hakkında** iletişim kutusunda, sürüm numarası, destek ayrıntıları, lisans verisi vb. içerir.
 
 15. Seçin **sonraki**.
 
-16. Seçtiğiniz seçenekleri görüntülenmiyor **Özet** gözden geçirmeniz için sayfa. Memnun kaldığınızda **son** eklenti oluşturmak için. Bir şey değiştirmek istiyorsanız, tercih **geri** düğmesi.
+16. Seçtiğiniz seçenekler görüntülenir **özeti** sayfasını gözden geçirmenizi sağlar. Memnun kaldığınızda **son** eklenti oluşturmak için. Bir şey değiştirmek istiyorsanız, seçin **geri** düğmesi.
 
-     Yeni bir çözüm ve Proje oluşturulur ve yeni eklenti için Connect.cs dosyası Kod Düzenleyicisi'nde görüntülenir.
+     Yeni çözüm ve Proje oluşturulur ve *Connect.cs* yeni eklenti görüntülenir dosya **Kod Düzenleyicisi**.
 
-     Bir kullanıcı denetimi oluşturan aşağıdaki yordam bu WebPerfTestResultsViewerAddin projesi tarafından başvurulacak sonra Connect.cs dosyasına kod ekleyeceksiniz.
+     Kod ekleyeceksiniz *Connect.cs* bu WebPerfTestResultsViewerAddin projesi tarafından başvurulacak olan bir kullanıcı denetimi oluşturur aşağıdaki yordamda sonra dosya.
 
- Bir eklenti oluşturulduktan sonra etkinleştirilmeden önce onu Visual Studio ile kaydetmeniz gerekir **Eklenti Yöneticisi**. Bunun için bir .addin dosya adı uzantısına sahip bir XML dosyası kullanarak.
+    Bir eklenti oluşturulduktan sonra etkinleştirilmeden önce Visual Studio ile kaydetmelisiniz **Eklenti Yöneticisi**. Sahip bir XML dosyası kullanarak bunu bir *.addin* dosya adı uzantısı.
 
- .Addin dosyasının içinde görüntülemek için Visual Studio gerektirir bilgiler açıklanmaktadır **Eklenti Yöneticisi**. Visual Studio başladığında, tüm kullanılabilir .addin dosyaları için .addin dosya konumuna bakar. Herhangi bir bulursa, XML dosyasını okur ve verir **Eklenti Yöneticisi** eklenti tıklandığında başlatmak için gereken bilgileri.
+    *.Addin* dosya içinde görüntülemek için Visual Studio gerektiren bilgilerin açıklar **Eklenti Yöneticisi**. Visual Studio başladığında bakar *.addin* dosya konumu için tüm kullanılabilir *.addin* dosyaları. Herhangi birini bulursa, XML dosyasını okur ve verir **Eklenti Yöneticisi** eklenti tıklatıldığında başlatmak için gerekli bilgileri.
 
- Bir eklenti Eklenti Sihirbazı'nı kullanarak oluşturduğunuz .addin dosyası otomatik olarak oluşturulur.
+    *.Addin* dosyası, eklenti kullanarak oluşturduğunuzda otomatik olarak oluşturulursa **Eklenti Sihirbazı**.
 
 ### <a name="add-in-file-locations"></a>Eklenti dosyası konumları
 
-.Addin dosyasının iki kopyasını Eklenti Sihirbazı tarafından otomatik olarak şu şekilde oluşturulur:
+İki kopyalar *.addin* dosyaları tarafından otomatik olarak oluşturulur **Eklenti Sihirbazı**gibi:
 
-|**. Eklentisi dosya konumu**|**Açıklama**|
-|------------------------------|----------------------------|---------------------|
-|Kök proje klasörü|Eklenti projesi dağıtımı için kullanılır. Proje düzenleme kolaylığı için dahil ve XCopy tarzı dağıtımının yerel yolu vardır.|
-|Eklenti klasörü|Eklenti hata ayıklama ortamında çalıştırmak için kullanılır. Her zaman geçerli yapı yapılandırması çıkış yoluna işaret etmelidir.|
+|**. Eklenti dosyası**|**Açıklama**|
+|-|----------------------------|-|
+|Kök proje klasörü|Eklenti projesinin dağıtımı için kullanılır. Projeye düzenleme kolaylığı dahil ve XCopy tarzı dağıtımının yerel yolu vardır.|
+|Eklenti klasörü|Eklentinin hata ayıklama ortamında çalıştırılması için kullanılır. Her zaman geçerli yapı yapılandırmasının çıktı yolunu göstermelidir.|
 
-## <a name="create-a-windows-form-control-library-project"></a>Windows Form denetimi kitaplığı projesi oluşturma
+## <a name="create-a-windows-form-control-library-project"></a>Bir Windows Form denetim kitaplığı projesi oluşturun
 
-Önceki yordamda oluşturduğunuz Visual Studio Eklentisi örneği oluşturmak için bir Windows Forms Denetim Kitaplığı projeye başvuruda bulunan bir <xref:System.Windows.Forms.UserControl> sınıfı.
+Önceki yordamda oluşturduğunuz Visual Studio eklentisi bir örneğini oluşturmak için bir Windows Forms Denetim Kitaplığı projesine başvuran bir <xref:System.Windows.Forms.UserControl> sınıfı.
 
-### <a name="to-create-a-control-to-be-used-in-the-web-test-results-viewer"></a>Web Testi Sonuçları Görüntüleyicisi'nde kullanılacak bir denetim oluşturmak için
+### <a name="to-create-a-control-to-be-used-in-the-web-test-results-viewer"></a>Web Test Sonuçları Görüntüleyicisi'nde kullanılmak üzere bir denetim oluşturmak için
 
-1.  Çözüm Gezgini'nde çözüme sağ tıklayın, seçin **Ekle** ve ardından **yeni proje**.
+1.  İçinde **Çözüm Gezgini**, çözüme sağ tıklayın, seçin **Ekle**ve ardından **yeni proje**.
 
      **Yeni proje** iletişim kutusu görüntülenir.
 
-2.  Altında **yüklü şablonlar**, genişletin **ya da Visual Basic** veya **Visual C#** seçip **Windows**.
+2.  Altında **yüklü şablonlar**, genişletme **Visual Basic** veya **Visual C#** seçip **Windows**.
 
     > [!NOTE]
-    > Bu konuda Visual C# örnek kodunu kullanır.
+    > Bu konu Visual C# örnek kodunu kullanır.
 
-3.  Şablonları listesinde seçin **Windows Forms Denetim Kitaplığı**.
+3.  Şablonlar listesinde seçin **Windows Forms Denetim Kitaplığı**.
 
 4.  Altında **adı**, eklenti için bir ad yazın. Örneğin, **WebPerfTestResultsViewerControl**.
 
 5.  Seçin **Tamam**.
 
-     Çözüm Gezgini ve UserControl1.cs WebPerfTestResultsViewerControl eklenen Windows forms denetimi kitaplığı projesi Tasarım modunda görüntülenir.
+     Windows forms denetim kitaplığı projesi WebPerfTestResultsViewerControl eklenir **Çözüm Gezgini** ve *UserControl1.cs* Tasarım modunda görüntülenir.
 
-6.  Araç Kutusu'ndan sürükleyin bir <xref:System.Windows.Forms.DataGridView> userControl1 yüzeyine.
+6.  Gelen **araç kutusu**, sürükleyin bir <xref:System.Windows.Forms.DataGridView> userControl1 yüzeyine sürükleyin.
 
-7.  Eylem etiketi karakter tıklayın (![akıllı etiket karakteri](../test/media/vs_winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) sağ üst köşesindeki <xref:System.Windows.Forms.DataGridView> ve aşağıdaki adımları izleyin:
+7.  Eylem etiket karakterini tıklayın (![akıllı etiket karakterini](../test/media/vs_winformsmttagglyph.gif)) sağ üst köşesindeki <xref:System.Windows.Forms.DataGridView> ve aşağıdaki adımları izleyin:
 
-    1.  Seçin **Ana kapsayıcıda yerleştir**.
+    1.  Seçin **üst kapsayıcıya Yerleştir**.
 
-    2.  Onay kutularını temizleyin **eklemeyi etkinleştir**, **düzenlemeyi etkinleştir**, **Enable Deleting** ve **sütun yeniden sıralamayı etkinleştir**.
+    2.  Onay kutularını temizleyin **eklemeyi etkinleştir**, **düzenlemeyi etkinleştir**, **silmeyi etkinleştir** ve **sütun yeniden sıralamayı etkinleştir**.
 
-    3.  Seçin **sütun eklemek**.
+    3.  Seçin **sütun ekleme**.
 
          **Sütun Ekle** iletişim kutusu görüntülenir.
 
-    4.  İçinde **türü** aşağı açılan listesinden, **DataGridViewTextBoxColumn**.
+    4.  İçinde **türü** aşağı açılan listesinden **DataGridViewTextBoxColumn**.
 
-    5.  "Column1" metin temizleyin **üstbilgi metni**.
+    5.  "Column1" metnini temizleyin **üst bilgi metni**.
 
-    6.  Seçin **eklemek**.
+    6.  Seçin **ekleme**.
 
     7.  Seçin **Kapat**.
 
-8.  Özellikler penceresinde değiştirin **(ad)** özelliği <xref:System.Windows.Forms.DataGridView> için **resultControlDataGridView**.
+8.  İçinde **özellikleri** penceresinde değişiklik **(ad)** özelliği <xref:System.Windows.Forms.DataGridView> için **resultControlDataGridView**.
 
-9. Tasarım yüzeyi ve select sağ **görünümü kodu**.
+9. Tasarım yüzeyi ve select sağ **kodu görüntüle**.
 
-     UserControl1.cs dosyası Kod Düzenleyicisi'nde görüntülenir.
+     *UserControl1.cs* dosya görüntülendiği **Kod Düzenleyicisi**.
 
-10. Örneklenen adını değiştirmek <xref:System.Windows.Forms.UserControl> UserContro1 sınıfından resultControl için:
+10. Örneklenen adını değiştirmek <xref:System.Windows.Forms.UserControl> UserContro1'dan resultControl sınıfına:
 
     ```csharp
     namespace WebPerfTestResultsViewerControl
@@ -171,39 +175,39 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
             }
     ```
 
-     Sonraki yordamda resultControl sınıfına başvuracak WebPerfTestResultsViewerAddin projesinin Connect.cs dosyasına kod ekleyeceksiniz.
+     Sonraki yordamda, WebPerfTestResultsViewerAddin proje için kod ekleyeceksiniz *Connect.cs* resultControl sınıfına başvuracak dosyası.
 
-     Bazı ek kod Connect.cs dosyasına daha sonra eklemek olacaktır.
+     İçin bazı ek kod ekleme *Connect.cs* daha sonra dosya.
 
-## <a name="add-code-to-the-webperftestresultsvieweraddin"></a>WebPerfTestResultsViewerAddin için kod ekleme
+## <a name="add-code-to-the-webperftestresultsvieweraddin"></a>Webperftestresultsvieweraddin'e kod ekleyin
 
-### <a name="to-add-code-to-the-visual-studio-add-in-to-extend-the-web-test-results-viewer"></a>Visual Studio Web Testi Sonuçları Görüntüleyicisi genişletmek için eklenti için kod eklemek için
+### <a name="to-add-code-to-the-visual-studio-add-in-to-extend-the-web-test-results-viewer"></a>Visual Studio Web Test Sonuçları Görüntüleyicisi'ni genişletmek için eklenti için kod eklemek için
 
-1.  Çözüm Gezgini'nde sağ **başvuruları** seçin ve WebPerfTestResultsViewerAddin proje düğümünde **Başvuru Ekle**.
+1.  İçinde **Çözüm Gezgini**, sağ **başvuruları** seçip WebPerfTestResultsViewerAddin proje düğümünü **Başvuru Ekle**.
 
-2.  İçinde **Başvuru Ekle** iletişim kutusunda, seçin **.NET** sekmesi.
+2.  İçinde **Başvuru Ekle** iletişim kutusunda **.NET** sekmesi.
 
-3.  Seçin ve aşağı kaydırma **Microsoft.VisualStudio.QualityTools.WebTestFramework** ve **System.Windows.Forms**.
+3.  Aşağı kaydırın ve select **Microsoft.VisualStudio.QualityTools.WebTestFramework** ve **System.Windows.Forms**.
 
 4.  Seçin **Tamam**.
 
-5.  Sağ **başvuruları** düğümü yeniden ve select **Başvuru Ekle**.
+5.  Sağ **başvuruları** düğümünü tekrar ve select **Başvuru Ekle**.
 
-6.  İçinde **Başvuru Ekle** iletişim kutusunda, seçin **Gözat** sekmesi.
+6.  İçinde **Başvuru Ekle** iletişim kutusunda **Gözat** sekmesi.
 
-7.  İçin açılan seçin **konum** ve % ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\PrivateAssemblies gidin ve Microsoft.VisualStudio.QualityTools.LoadTestPackage.dll seçin dosya.
+7.  Seçmek için açılan **konum** gidin *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\PrivateAssemblies* seçip  *Microsoft.VisualStudio.QualityTools.LoadTestPackage.dll* dosya.
 
 8.  Seçin **Tamam**.
 
-9. WebPerfTestResultsViewerAddin proje düğümüne sağ tıklayın ve seçin **Başvuru Ekle**.
+9. WebPerfTestResultsViewerAddin proje düğümünü sağ tıklatın ve seçin **Başvuru Ekle**.
 
-10. İçinde **Başvuru Ekle** iletişim kutusunda, seçin **projeleri** sekmesi.
+10. İçinde **Başvuru Ekle** iletişim kutusunda **projeleri** sekmesi.
 
-11. Altında **proje adı**seçin **WebPerfTestResultsViewerControl** proje ve seçin **Tamam**.
+11. Altında **proje adı**seçin **WebPerfTestResultsViewerControl** projesini ve ardından **Tamam**.
 
-12. Connect.cs dosyası Solution Explorer'da hala açık değilse, sağ **Connect.cs** dosya WebPerfTestResultsViewerAddin projesinde ve seçin **görünümü kodu**.
+12. Varsa *Connect.cs* dosya içinde hala açık değilse **Çözüm Gezgini**, sağ **Connect.cs** dosya WebPerfTestResultsViewerAddin projesindeki ve seçin **Kod**.
 
-13. Connect.cs dosyasında aşağıdaki kullanım deyimini ekleyin:
+13. İçinde *Connect.cs* dosyasında, aşağıdaki kullanım deyimlerini ekleyin:
 
     ```csharp
     using System.IO;
@@ -214,9 +218,9 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
     using WebPerfTestResultsViewerControl;
     ```
 
-14. Connect.cs dosyası en alta kadar kaydırın kaydırın. GUID'lerini listesini eklemeniz <xref:System.Windows.Forms.UserControl> Web Performans Testi Sonuçları Görüntüleyicisi birden fazla örneğini açık olması durumunda. Bu listeyi kullanan kodu ekleyeceksiniz.
+14. Listenin sonuna kaydırın *Connect.cs* dosya. İçin bir GUID'ler listesi eklemeniz <xref:System.Windows.Forms.UserControl> olasılığına karşı birden fazla örneğini **Web Performans Test Sonuçları Görüntüleyicisi** açıktır. Bu liste kullanan kodu ekleyeceksiniz.
 
-     İkinci bir dize listesi, daha sonra kod OnDiscconection yönteminde kullanılır.
+     Daha sonra kod OnDiscconection yönteminde ikinci bir dize listesi kullanılır.
 
     ```csharp
     private DTE2 _applicationObject;
@@ -225,7 +229,7 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
     private Dictionary<Guid, List<UserControl>> m_controls = new Dictionary<Guid, List<UserControl>>();        private List<string> temporaryFilePaths = new List<string>();
     ```
 
-15. Connect.cs dosyası Bağlan adında bir sınıf oluşturur <xref:Extensibility.IDTExtensibility2> sınıfı ve Visual Studio eklentisi uygulanması için bazı yöntemler de içerir. Yöntemlerden birini eklenti yüklenmekte olduğuna dair bildirim alan OnConnection yöntemidir. OnConnection yönteminde Web Performans Testi Sonuçları Görüntüleyicisi için genişletilebilirlik paketinizi oluşturmak için LoadTestPackageExt sınıfını kullanır. OnConnection yöntemine aşağıdaki kodu ekleyin:
+15. *Connect.cs* dosya Bağlan adında bir sınıf oluşturur <xref:Extensibility.IDTExtensibility2> sınıfı ve ayrıca Visual Studio eklentisi uygulanması için bazı yöntemler içerir. Yöntemlerden biri eklentinin yüklenmekte olduğuna dair bildirim alan OnConnection yöntemine var. OnConnection yöntemine için genişletilebilirlik paketinizi oluşturmak için LoadTestPackageExt sınıfını kullanacağı **Web Performans Test Sonuçları Görüntüleyicisi**. Aşağıdaki kodu OnConnection yöntemine ekleyin:
 
     ```csharp
     public void OnConnection(object application, ext_ConnectMode connectMode, object addInInst, ref Array custom)
@@ -237,7 +241,7 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
             }
     ```
 
-16. Yönteminin Webtestresultviewerext_windowcreated yöntemi ve OnConnection yöntemine eklediğiniz loadTestPackageExt.WebTestResultViewerExt.WindowCreated olay işleyicisi için oluşturmak için bağlan sınıfına aşağıdaki kodu ekleyin, WindowCreated yöntemi çağırır.
+16. OnConnection yöntemine eklediğiniz loadTestPackageExt.WebTestResultViewerExt.WindowCreated olay işleyicisi ve Webtestresultviewerext_windowcreated yöntemi WebTestResultViewerExt_WindowCreated yöntemi oluşturmak için bağlan sınıfına aşağıdaki kodu ekleyin, WebTestResultViewerExt_WindowCreated yöntemi çağırır.
 
     ```csharp
             void WebTestResultViewerExt_WindowCreated(object sender, WebTestResultViewerExt.WindowCreatedEventArgs e)
@@ -259,7 +263,7 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
     }
     ```
 
-18. OnConnection yöntemine eklediğiniz loadTestPackageExt.WebTestResultViewerExt.WindowClosed için olay işleyicisini WebTesResultViewer_WindowClosed yöntemi oluşturmak için bağlan sınıfına aşağıdaki kodu ekleyin:
+18. OnConnection yöntemine eklediğiniz loadTestPackageExt.WebTestResultViewerExt.WindowClosed olay işleyicisi WebTesResultViewer_WindowClosed yöntemi oluşturmak için bağlan sınıfına aşağıdaki kodu ekleyin:
 
     ```csharp
     void WebTesResultViewer_WindowClosed(object sender, WebTestResultViewerExt.WindowClosedEventArgs e)
@@ -271,34 +275,34 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
     }
     ```
 
-     Kod için Visual Studio eklentisi tamamladığınıza göre resultControl güncelleştirme yöntemi eklemeniz gerekir WebPerfTestResultsViewerControl projesindeki.
+     Visual Studio eklentisi için kod tamamlandıktan sonra WebPerfTestResultsViewerControl projesindeki resultControl güncelleştirme yöntemi eklemeniz gerekir.
 
-## <a name="add-code-to-the-webperftestresultsviewercontrol"></a>Kodu WebPerfTestResultsViewerControl'a ekleyin
+## <a name="add-code-to-the-webperftestresultsviewercontrol"></a>WebPerfTestResultsViewerControl'a kod ekleyin
 
 ### <a name="to-add-code-to-the-user-control"></a>Kullanıcı denetimine kod eklemek için
 
-1.  Çözüm Gezgini'nde WebPerfTestResultsViewerControl proje düğümüne sağ tıklayın ve seçin **özellikleri**.
+1.  İçinde **Çözüm Gezgini**, WebPerfTestResultsViewerControl proje düğümünü sağ tıklatın ve seçin **özellikleri**.
 
-2.  Seçin **uygulama** sekmesini ve ardından **hedef framework** aşağı açılan liste ve seçin **.NET Framework 4** ve özellikleri'ni kapatın.
+2.  Seçin **uygulama** sekmesine ve ardından **hedef Framework'ü** aşağı açılan listesinden **.NET Framework 4** kapatın **özellikleri**.
 
-     Web Performans Testi Sonuçları Görüntüleyicisi genişletmek için gereken DLL başvurularını desteklemek için bu gereklidir.
+     Bu genişletmek için gerekli DLL başvurularını desteklemek için gerekli **Web Performans Test Sonuçları Görüntüleyicisi**.
 
-3.  Çözüm Gezgini'nde WebPerfTestResultsViewerControl projeye sağ **başvuruları** düğümü ve select **Başvuru Ekle**.
+3.  İçinde **Çözüm Gezgini**, WebPerfTestResultsViewerControl projesindeki **başvuruları** düğümünü seçip alt **Başvuru Ekle**.
 
-4.  İçinde **Başvuru Ekle** iletişim kutusu, tıklatın **.NET** sekmesi.
+4.  İçinde **Başvuru Ekle** iletişim kutusu, tıklayın **.NET** sekmesi.
 
-5.  Seçin ve aşağı kaydırma **Microsoft.VisualStudio.QualityTools.WebTestFramework**.
+5.  Aşağı kaydırın ve select **Microsoft.VisualStudio.QualityTools.WebTestFramework**.
 
 6.  Seçin **Tamam**.
 
-7.  UserControl1.cs dosyasında aşağıdaki kullanım deyimini ekleyin:
+7.  İçinde *UserControl1.cs* dosyasında, aşağıdaki kullanım deyimlerini ekleyin:
 
     ```csharp
     using Microsoft.VisualStudio.TestTools.WebTesting;
     using Microsoft.VisualStudio.TestTools.WebTesting.Rules;
     ```
 
-8.  Çağrılan ve WebTestRequestResult Connect.cs dosyasına WebPerfTestResultsViewerAddin WebTestResultViewer_SelectedChanged yönteminden geçirilen güncelleştirme yöntemi ekleyin. Update yöntemi DataGridView WebTestRequestResult geçirilen çeşitli özellikleri ile doldurur.
+8.  Çağrılan ve WebTestRequestResult WebPerfTestResultsViewerAddin WebTestResultViewer_SelectedChanged yöntemini'dan geçirilen güncelleştirme yöntemi eklemeniz *Connect.cs* dosya. Güncelleştirme yöntemi, DataGridView öğesini WebTestRequestResult öğesi içinden geçirilen çeşitli özelliklerle doldurur.
 
     ```csharp
     public void Update(WebTestRequestResult WebTestResults)
@@ -323,45 +327,45 @@ Bir eklenti Visual Studio tümleşik geliştirme ortamı (IDE) çalıştıran bi
             }
     ```
 
-## <a name="build-the-webperftestresultsvieweraddin-solution"></a>WebPerfTestResultsViewerAddin çözümü oluşturun
+## <a name="build-the-webperftestresultsvieweraddin-solution"></a>WebPerfTestResultsViewerAddin çözümünü oluşturun
 
 ### <a name="to-build-the-solution"></a>Çözümü derlemek için
 
--   Üzerinde **yapı** menüsünde, select **yapı çözümü**.
+-   Üzerinde **derleme** menüsünde **Çözümü Derle**.
 
 ## <a name="register-the-webperftestresultsvieweraddin-add-in"></a>WebPerfTestResultsViewerAddin Eklentisini Kaydet
 
-### <a name="to-register-the-add-in-using-the-add-in-manager"></a>Eklenti Yöneticisi'ni kullanarak olarak kaydetmek için
+### <a name="to-register-the-add-in-using-the-add-in-manager"></a>Eklenti Yöneticisi'ni kullanarak eklentiyi kaydetmek için
 
-1.  Üzerinde **Araçları** menüsünde, select **Eklenti Yöneticisi**.
+1.  Üzerinde **Araçları** menüsünde **Eklenti Yöneticisi**.
 
 2.  **Eklenti Yöneticisi** iletişim kutusu görüntülenir.
 
-3.  WebPerfTestResultsViewerAddin eklentide onay kutusunu seçin **kullanılabilir eklentiler** sütun ve clear onay kutularını altında **başlangıç** ve **komut satırı**sütun.
+3.  İçinde WebPerfTestResultsViewerAddin eklentisi onay kutusunu seçin **kullanılabilir eklentiler** sütun ve clear altındaki onay kutularını **başlangıç** ve **komut satırı**sütunları.
 
 4.  Seçin **Tamam**.
 
-## <a name="run-the-web-performance-test-using-the-build-the-webperftestresultsvieweraddin-add-in"></a>Yapı WebPerfTestResultsViewerAddin eklentisi kullanarak Web performans testini çalıştırma
+## <a name="run-the-web-performance-test-using-the-build-the-webperftestresultsvieweraddin-add-in"></a>WebPerfTestResultsViewerAddin eklentisi yapıyı kullanarak web performans testini çalıştırma
 
-### <a name="to-run-the-new-vs-add-in-for-the-web-test-results-viewer"></a>Web Testi Sonuçları Görüntüleyicisi için yeni VS eklentisini çalıştırmak için
+### <a name="to-run-the-new-vs-add-in-for-the-web-test-results-viewer"></a>Web Testi Sonuçları Görüntüleyicisi için yeni VS eklentiyi çalıştırmak için
 
-1.  Web performans testini çalıştırma ve Web Performans Testi Sonuçları Görüntüleyicisi'nde görüntülenen Örnek başlıklı WebPerfTestResultsViewerAddin eklentinin yeni sekmede görürsünüz.
+1.  Web performans testinizi çalıştırın ve görüntülenen Örnek başlıklı WebPerfTestResultsViewerAddin eklentisi yeni sekmesini göreceksiniz **Web Performans Testi Sonuçları Görüntüleyicisi**.
 
-2.  DataGridView üzerinde sunulan özelliklerini görmek için sekmesini seçin.
+2.  DataGridView üzerinde sunulan özellikleri görüntülemek için sekmeyi seçin.
 
 ## <a name="net-framework-security"></a>.NET Framework Güvenliği
 
-Otomatik olarak etkinleştirme amaçlı eklentiler engelleyerek güvenliğini artırmak için Visual Studio ayarlarında sağlar bir **Araçlar Seçenekler** adlı sayfası **/makroları güvenlik**.
+Kötü niyetli eklentilerin otomatik olarak etkinleşmesini engelleyerek güvenliği geliştirmek için Visual Studio ayarları sunar bir **Araçlar Seçenekler** sayfası **/makro güvenliği**.
 
-Ayrıca, bu seçenekler sayfası, Visual Studio için arama klasörleri belirtmenize olanak sağlar. Eklentisi kayıt dosyaları. Bu konumları sınırlamanıza olanak tanıyarak güvenliği artırır burada. Eklentisi kayıt dosyaları okuyabilir. Bu, kötü amaçlı önlemeye yardımcı olur. Kasıtsız olarak kullanılan eklentisi dosyaları.
+Ayrıca, bu seçenekler sayfası, Visual Studio arar klasörleri belirtmenizi sağlar *. Eklenti* kayıt dosyaları. Bu, konumları sınırlandırmanıza olanak tanıyarak güvenliği artırır burada *. Eklenti* kayıt dosyaları okuyabilir. Bu kötü amaçlı *. Eklenti* istemeden kullanılmasını dosyaları.
 
  **Eklenti güvenlik ayarları**
 
- İçin seçenekler sayfası ayarlarında güvenlik aşağıdaki gibidir Eklentisi:
+ Seçenekler sayfası için ayarlar güvenlik şu şekildedir Eklentisi:
 
--   **Yüklenecek eklenti bileşenlerine izin verin.** Varsayılan olarak seçilidir. Seçili olduğunda, eklentiler Visual Studio'da yüklemesine izin verilir. Seçili olmadığında, Visual Studio yüklenmesini eklentiler yasaktır.
+-   **Yüklenecek eklenti bileşenlerine izin ver.** Varsayılan olarak seçilidir. Bu onay kutusu seçildiğinde, eklentileri Visual Studio yüklemesine izin verilir. Seçili değilse, eklentileri Visual Studio içerisine yüklenmeleri yasaktır.
 
--   **Bir URL'den yüklenecek eklenti bileşenlerine izin verin.** Varsayılan olarak seçili değildir. Seçili olduğunda, eklentiler dış Web sitelerinden yüklenmesine izin verilmez. Seçili olmadığında, uzak eklentiler Visual Studio'da yüklenmesini yasaktır. Ardından bir eklenti herhangi bir nedenden dolayı yüklenemiyorsa, Web'den yüklenemiyor. Bu ayar, yalnızca yükleme denetler eklentisi DLL. . Eklentisi kayıt dosyaları her zaman yerel sistemde bulunması gerekir.
+-   **Bir URL'den yüklenecek eklenti bileşenlerine izin ver.** Varsayılan olarak seçili değildir. Bu onay kutusu seçildiğinde, eklentiler dış Web sitelerinden yüklenebilir. Seçili değilse, uzak eklentilerin Visual Studio içerisine yüklenmeleri yasaktır. Ardından herhangi bir nedenle bir eklenti yüklenemiyor, Web'den yüklenemez. Bu ayar yalnızca yüklenmesini denetler eklenti DLL'in. *. Eklenti* kayıt dosyalarının yerel sistemde her zaman bulunmalıdır.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
@@ -371,4 +375,4 @@ Ayrıca, bu seçenekler sayfası, Visual Studio için arama klasörleri belirtme
 - <xref:Microsoft.VisualStudio.TestTools.WebTesting.Rules>
 - <xref:System.Windows.Forms.UserControl>
 - <xref:System.Windows.Forms.DataGrid>
-- [Özel kod ve eklentiler yük testleri için oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md)
+- [Özel kod ve yük testleri için eklentiler oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md)

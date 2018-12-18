@@ -10,13 +10,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0ddfe3d7bdc4cb274a7b70dca48e45794d5f1cac
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1903b61fce39bdd68b471472530857d720bac906
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34766028"
 ---
-# <a name="net-framework-usage-performance-rules"></a>.NET Framework Kullanımı Performans Kuralları
+# <a name="net-framework-usage-performance-rules"></a>.NET Framework kullanımı performans kuralları
 .NET Framework kullanımı kategorideki performans kuralları iyileştirilebilir ve ayrıca çöp toplama ve performans sorunları için araştırılan kilit çakışması gibi daha genel kullanım düzenlerini tanımlamak belirli yöntemleri tanımlar.  
   
 |||  
@@ -33,6 +34,6 @@ ms.lasthandoff: 04/19/2018
 |[DA0021: Yüksek oranda Gen 1 çöp koleksiyonları](../profiling/da0021-high-rate-of-gen-1-garbage-collections.md)|.NET bellek nesneleri görece yüksek sayıda nesil 1 çöp toplama kazanılır. Çok kısa süreli nesneleri oluşturma 0 koleksiyonu yaşarsanız, bellek yönetimi maliyetini kolayca aşırı haline gelebilir.|  
 |[DA0022: Yüksek oranda Gen 2 çöp koleksiyonları](../profiling/da0022-high-rate-of-gen-2-garbage-collections.md)|Çok sayıda .NET bellek nesneleri nesil 2 çöp toplama kazanılır. Çok fazla kısa süreli nesne 1. nesil koleksiyonu yaşarsanız, bellek yönetimi maliyetini kolayca aşırı haline gelebilir. Kilit çakışmaları oranı kuralı DA0005 üst eşik değerini aştığında, bu kural ateşlenir.|  
 |[DA0023: Yüksek GC CPU süresi](../profiling/da0023-high-gc-cpu-time.md)|Profil oluşturma sırasında toplanan sistem performans verileri, toplam uygulama işleme süresi ile karşılaştırıldığında, çöp toplama harcanan süreyi önemli olduğunu gösterir.|  
-|[DA0024: Aşırı GC CPU Süresi](../profiling/da0024-excessive-gc-cpu-time.md)|Profil oluşturma sırasında toplanan sistem performans verileri, toplam uygulama işleme süresi ile karşılaştırıldığında, çöp toplama harcanan süreyi aşırı yüksek olduğunu gösterir. Çöp toplama harcanan süre miktarını kural DA0023 üst eşik değerini aştığında bu kural ateşlenir.|  
-|[DA0038: Yüksek Oranda Kilit çakışmaları](../profiling/da0038-high-rate-of-lock-contentions.md)|Toplanan sistem performans verilerini profil oluşturma verileri, önemli ölçüde yüksek oranda kilit çakışmaları uygulama yürütmesi sırasında oluştuğunu gösterir. Yeniden çekişmeleri nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak profil oluşturmayı düşünün.|  
-|[DA0039: Çok Yüksek Oranda Kilit çakışmaları](../profiling/da0039-very-high-rate-of-lock-contentions.md)|Toplanan sistem performans verilerini profil oluşturma verileri, bir aşırı yüksek oranda kilit çakışmaları uygulama yürütmesi sırasında oluştuğunu gösterir. Yeniden çekişmeleri nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak profil oluşturmayı düşünün. Kilit çakışmaları oranı kuralı DA0038 üst eşik değerini aştığında, bu kural ateşlenir.|
+|[DA0024: Aşırı GC CPU süresi](../profiling/da0024-excessive-gc-cpu-time.md)|Profil oluşturma sırasında toplanan sistem performans verileri, toplam uygulama işleme süresi ile karşılaştırıldığında, çöp toplama harcanan süreyi aşırı yüksek olduğunu gösterir. Çöp toplama harcanan süre miktarını kural DA0023 üst eşik değerini aştığında bu kural ateşlenir.|  
+|[DA0038: Yüksek oranda kilit çakışmaları](../profiling/da0038-high-rate-of-lock-contentions.md)|Toplanan sistem performans verilerini profil oluşturma verileri, önemli ölçüde yüksek oranda kilit çakışmaları uygulama yürütmesi sırasında oluştuğunu gösterir. Yeniden çekişmeleri nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak profil oluşturmayı düşünün.|  
+|[DA0039: Çok yüksek oranda kilit çakışmaları](../profiling/da0039-very-high-rate-of-lock-contentions.md)|Toplanan sistem performans verilerini profil oluşturma verileri, bir aşırı yüksek oranda kilit çakışmaları uygulama yürütmesi sırasında oluştuğunu gösterir. Yeniden çekişmeleri nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak profil oluşturmayı düşünün. Kilit çakışmaları oranı kuralı DA0038 üst eşik değerini aştığında, bu kural ateşlenir.|

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 53bcabdc6817aedcc8749e11b1e53030d5fa75ea
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 8d54e0dce9d792efa93beb35d5e2a215db672031
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908960"
 ---
 # <a name="idiasymbolgetconstructor"></a>IDiaSymbol::get_constructor
-Kullanıcı tanımlı veri türü Oluşturucusu veya yıkıcı sahip olup olmadığını belirten bir bayrak alır.  
+Kullanıcı tanımlı veri türü bir oluşturucu veya yıkıcıya sahip olup olmadığını belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,19 +34,19 @@ HRESULT get_constructor (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` Oluşturucusu veya yıkıcı; kullanıcı tanımlı veri türü varsa, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür `TRUE` kullanıcı tanımlı veri türü bir oluşturucu veya yıkıcı; varsa döndürür, aksi takdirde, `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

@@ -19,11 +19,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f6679e781e564a58d6a98b7d0190f2f2b4e9fa74
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 9c85f990d08a41bd4b4ee25190d0c5b6bd99d340
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37058028"
 ---
 # <a name="limitations-on-script-debugging"></a>Betik Hata Ayıklamasında Sınırlamalar
 [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Bu konudaki sınırlamalar istemci tarafı komut dosyası hata ayıklamayı destekler.  
@@ -44,7 +45,7 @@ ms.lasthandoff: 04/18/2018
 ## <a name="breakpoint-mapping-and-duplicate-lines"></a>Kesme noktası eşleme ve yinelenen satırları  
  Sunucu tarafı ve istemci tarafı komut dosyasında karşılık gelen konumu bulmak için her satırda kod kesme noktası eşleme algoritması inceler. Algoritma, her satırın benzersiz olduğunu varsayar. İki veya daha fazla satır aynı kodu içerir ve bu yinelenen satırlar birinde bir kesme noktası belirleyerek, kesme noktası eşleme algoritması istemci-tarafı dosyasında yanlış yinelenen seçebilirsiniz. Bunu önlemek için kesme burada ayarladığınız satır için bir açıklama ekleyin. Örneğin:  
   
-```  
+```csharp
 i++ ;  
 i ++; // I added a comment, so this line is now unique  
 i ++;  

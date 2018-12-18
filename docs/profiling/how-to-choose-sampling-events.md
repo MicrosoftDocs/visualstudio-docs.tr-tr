@@ -20,13 +20,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: da44be7f972a75e143e00346bf4a39d0bdf65c27
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b8af903abb15d06d8d76d73cca4a9c337d45ee45
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34765638"
 ---
-# <a name="how-to-choose-sampling-events"></a>Nasıl Yapılır: Örnekleme Olayları Seçme
+# <a name="how-to-choose-sampling-events"></a>Nasıl yapılır: örnekleme olayları seçme
 Varsayılan olarak, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları profili işlem tarafından kullanılan işlemci döngülerinin sayısı olarak belirtilen bir aralıkta performans verilerini toplar. Varsayılan döngüleri bir aralık içinde 10,000,000, yaklaşık 1 GH bilgisayarda 0,01 saniye olan sayısıdır. Bir aralık içinde döngüsü sayısını değiştirebilirsiniz ve örnek olay değiştirebilirsiniz. Aşağıdaki örnek olayları kullanılabilir:  
   
 -   Saat döngüleri - CPU bağımlı sorunları için.  
@@ -59,9 +60,9 @@ Varsayılan olarak, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] pr
   
 5.  Örnek olay seçtiğinizde, bir varsayılan aralık değeri örnekleme görüntülenen **örnekleme aralığı** metin kutusu. Gerekirse, metin kutusuna istediğiniz değeri girebilirsiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans oturumlarını yapılandırma](../profiling/configuring-performance-sessions.md)   
  [Nasıl yapılır: Koleksiyon yöntemleri seçme](../profiling/how-to-choose-collection-methods.md)   
  [CPU ve Windows sayaçları](../profiling/cpu-and-windows-counters.md)   
  [Örnekleme veri değerlerini anlama](../profiling/understanding-sampling-data-values.md)   
- [Komut satırından profil oluşturma](../profiling/using-the-profiling-tools-from-the-command-line.md)
+ [Komut satırından profil](../profiling/using-the-profiling-tools-from-the-command-line.md)

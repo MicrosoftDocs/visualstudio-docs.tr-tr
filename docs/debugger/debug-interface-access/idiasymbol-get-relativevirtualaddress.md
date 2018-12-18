@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0d5c1655930e4f4e841a9cff4f2146aaf5749381
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 5056c149559cfb6760890fb960ec608042839e4d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949792"
 ---
 # <a name="idiasymbolgetrelativevirtualaddress"></a>IDiaSymbol::get_relativeVirtualAddress
-Konumun göreli sanal adres (RAV) alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) ayarlanır `LocIsStatic`.  
+Konumun göreli sanal adres (RVA) alır. Şu durumlarda kullanın [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md) ayarlanır `LocIsStatic`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_relativeVirtualAddress (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Konumun göreli sanal adresini döndürür.  
+ [out] Konumun göreli sanal adres döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="example"></a>Örnek  
   
@@ -51,4 +52,4 @@ pSymbol->get_relativeVirtualAddress( &rva );
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [LocationType numaralandırması](../../debugger/debug-interface-access/locationtype.md)
+ [LocationType Numaralandırması](../../debugger/debug-interface-access/locationtype.md)

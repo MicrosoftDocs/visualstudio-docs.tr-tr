@@ -1,6 +1,7 @@
 ---
 title: 'CA2234: Dizeler yerine System.Uri nesneleri gönderin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,36 +14,42 @@ ms.assetid: 14616b37-74c4-4286-b051-115d00aceb5f
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CPP
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 086f902aeb89d8ee3cc63fc21a3364cfcb480266
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fcc7994e67e268aff21af925632d2ee9cf102ff4
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547168"
 ---
 # <a name="ca2234-pass-systemuri-objects-instead-of-strings"></a>CA2234: Dizeler yerine System.Uri nesneleri gönderin
+
 |||
 |-|-|
 |TypeName|PassSystemUriObjectsInsteadOfStrings|
 |CheckId|CA2234|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- "URI", "Uri", "urn", "Urn", "url" veya "Url"; adını içeren bir dize parametresi olan bir yöntemine bir çağrı yapılır. ve sahip karşılık gelen bir yöntemi aşırı yüklemesini yöntemi bildiri türü içeren bir <xref:System.Uri?displayProperty=fullName> parametresi.
+ Adında "URI", "Uri", "urn", "Urn", "url" veya "Url" içeren bir dize parametresi olan bir yönteme bir çağrı yapılır. ve metodun bildirim türü olan bir aşırı yüklemeye uyan yöntemi içerir. bir <xref:System.Uri?displayProperty=fullName> parametresi.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bir parametre adı ortası büyük/küçük harf kuralına göre belirteçleri bölün ve ardından her belirteç "URI", "Uri", "urn", "Urn", "url" veya "Url" eşit olup olmadığını görmek için denetlenir. Bir eşleşme varsa, parametre Tekdüzen Kaynak Tanımlayıcısı (URI) temsil eden varsayılır. Bir URI'nın dize sunumu ayrıştırma ve hataları kodlama eğilimindedir ve güvenlik açıklarına yol açabilir. <xref:System.Uri> Sınıfı, güvenli ve güvenli bir şekilde bu hizmetleri sağlar. Bir URI gösterimini ilgili yalnızca farklı iki aşırı arasında bir seçim olduğunda, kullanıcının alan aşırı seçmesi gereken bir <xref:System.Uri> bağımsız değişkeni.
+## <a name="rule-description"></a>Kural açıklaması
+ Parametre adları camel casing standardına göre belirteçleri bölün ve ardından her belirteç "URI", "Uri", "urn", "Urn", "url" veya "Url" eşit olup olmadığını görmek için denetlenir. Bir eşleşme varsa, parametre bir Tekdüzen Kaynak Tanımlayıcısı (URI) gösterdiği kabul edilir. Bir URI'nın dize sunumu ayrıştırma ve hataları kodlama eğilimindedir ve güvenlik açıklarına yol açabilir. <xref:System.Uri> Sınıfı bu hizmetleri güvenli bir biçimde sunar. URI ilgili yalnızca farklı iki aşırı yükler arasında bir seçim olduğunda kullanıcı alan aşırı yüklemesini seçmelidir bir <xref:System.Uri> bağımsız değişken.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için alan aşırı yüklemesini çağırın <xref:System.Uri> bağımsız değişkeni.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için alan aşırı yüklemesini çağırmak <xref:System.Uri> bağımsız değişken.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Dize parametresi bir URI temsil etmez, bu kural bir uyarıdan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Dize parametresi bir URI temsil etmiyorsa, bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bir yöntemi gösterir `ErrorProne`, kural ve bir yöntem ihlal `SaferWay`, doğru çağıran <xref:System.Uri> aşırı yükleme.
+ Aşağıdaki örnek bir yöntemi gösterir `ErrorProne`, kural ve bir yöntem ihlal `SaferWay`, doğru bir şekilde çağıran <xref:System.Uri> aşırı yükleme.
 
  [!code-vb[FxCop.Usage.PassUri#1](../code-quality/codesnippet/VisualBasic/ca2234-pass-system-uri-objects-instead-of-strings_1.vb)]
  [!code-cpp[FxCop.Usage.PassUri#1](../code-quality/codesnippet/CPP/ca2234-pass-system-uri-objects-instead-of-strings_1.cpp)]

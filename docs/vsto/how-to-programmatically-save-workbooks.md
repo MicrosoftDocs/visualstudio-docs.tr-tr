@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: çalışma kitaplarını program aracılığıyla kaydetme | Microsoft Docs'
+title: 'Nasıl yapılır: çalışma kitaplarını program aracılığıyla kaydetme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,79 +17,80 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 4f3421c5a00d062fb49cc73b8a7f2ba592dc5d74
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6fc715518f31031c65667a2480d7e14111105202
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677163"
 ---
-# <a name="how-to-programmatically-save-workbooks"></a>Nasıl yapılır: Çalışma Kitaplarını Program Aracılığıyla Kaydetme
-  Bir çalışma kitabını kaydetmek için birkaç yolu vardır. Bir çalışma kitabı yolu değiştirmeden kaydedebilirsiniz. Çalışma kitabı önce kaydedilmemiş olan, bir yolu belirterek çalışma kitabını kaydetmeniz gerekir. Açık bir yol olmadığında, Microsoft Office Excel dosyası oluşturulduğunda verilen ada sahip geçerli klasörde kaydeder. Bellekteki açık çalışma kitabını değiştirmeden çalışma kitabının bir kopyasını da kaydedebilirsiniz.  
+# <a name="how-to-programmatically-save-workbooks"></a>Nasıl yapılır: çalışma kitaplarını program aracılığıyla kaydetme
+  Bir çalışma kitabını kaydetmek için çeşitli yollar vardır. Bir çalışma kitabı yolu değiştirmeden kaydedebilirsiniz. Çalışma kitabını önce kaydedilmedi, yolu belirterek, çalışma kitabını kaydetmeniz gerekir. Açık bir yol Microsoft Office Excel dosya oluşturulduğunda verilen ada sahip geçerli klasöre kaydeder. Ayrıca, çalışma kitabını Aç bellekte değiştirmeden çalışma kitabının bir kopyasını kaydedebilirsiniz.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-## <a name="saving-a-workbook-without-changing-the-path"></a>Bir çalışma kitabı yolu değiştirmeden kaydetme  
+## <a name="save-a-workbook-without-changing-the-path"></a>Bir çalışma kitabı yolu değiştirmeden kaydedin.  
   
-#### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
+### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.Save%2A> ThisWorkbook sınıfı yöntemi.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.Save%2A> yöntemi `ThisWorkbook` sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#4](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/ThisWorkbook.cs#4)]
      [!code-vb[Trin_VstcoreExcelAutomation#4](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/ThisWorkbook.vb#4)]  
   
-#### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Bir VSTO eklenti etkin çalışma kitabını kaydetmek için  
+### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Etkin çalışma kitabının VSTO eklentisi kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.Save%2A> etkin çalışma kitabını kaydetmek için yöntem. Aşağıdaki kod örneğini kullanmak için bunu çalıştırabilir `ThisAddIn` Excel için VSTO eklenti projesindeki sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.Save%2A> etkin çalışma kitabını kaydetmek için yöntemi. Aşağıdaki kod örneğinde kullanmak amacıyla içinde çalıştırın `ThisAddIn` Excel için VSTO eklenti projesinde sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomationAddIn#3](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#3)]
      [!code-vb[Trin_VstcoreExcelAutomationAddIn#3](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#3)]  
   
-## <a name="saving-a-workbook-with-a-new-path"></a>Çalışma kitabını yeni bir yol ile kaydetme  
+## <a name="save-a-workbook-with-a-new-path"></a>Yeni bir yol ile bir çalışma kitabını kaydedin  
  Belirtilen çalışma kitabı, bir dosya biçimi, bir parola, bir erişim modu ve isteğe bağlı olarak belirterek yeni bir konuma veya yeni bir adla kaydedebilirsiniz.  
   
 > [!NOTE]  
->  Ayarlamak isteyebilirsiniz <xref:Microsoft.Office.Interop.Excel._Application.DisplayAlerts%2A> özelliğine **False** etkileşimi gerektiren bazı biçimlerde kaydetme çünkü ile yeni bir yolu çalışma kitabını kaydetmeden önce. Bu özelliği ayarlamak **False** Excel'in tüm varsayılanları kullanmasına neden olur.  
+>  Ayarlamak isteyebilirsiniz <xref:Microsoft.Office.Interop.Excel._Application.DisplayAlerts%2A> özelliğini **False** etkileşimi gerektirir çünkü bazı biçimlerde ile yeni bir yol çalışma kitabını kaydetmeden önce. Bu özelliği ayarlamak **False** Excel'in tüm varsayılanlar kullanmasına neden olur.  
   
-#### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
+### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.SaveAs%2A> yöntemi `ThisWorkbook` sınıfı. Aşağıdaki kod örneğini kullanmak için bunu çalıştırabilir `ThisWorkbook` sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.SaveAs%2A> yöntemi `ThisWorkbook` sınıfı. Aşağıdaki kod örneğinde kullanmak amacıyla içinde çalıştırın `ThisWorkbook` sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#5](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/ThisWorkbook.cs#5)]
      [!code-vb[Trin_VstcoreExcelAutomation#5](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/ThisWorkbook.vb#5)]  
   
-#### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Bir VSTO eklenti etkin çalışma kitabını kaydetmek için  
+### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Etkin çalışma kitabının VSTO eklentisi kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.SaveAs%2A> yöntemi yeni bir yol etkin çalışma kitabını kaydedin. Aşağıdaki kod örneğini kullanmak için bunu çalıştırabilir `ThisAddIn` Excel için VSTO eklenti projesindeki sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.SaveAs%2A> etkin çalışma kitabının yeni bir yola kaydetmek için yöntemi. Aşağıdaki kod örneğinde kullanmak amacıyla içinde çalıştırın `ThisAddIn` Excel için VSTO eklenti projesinde sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomationAddIn#4](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#4)]
      [!code-vb[Trin_VstcoreExcelAutomationAddIn#4](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#4)]  
   
-## <a name="saving-a-copy-of-the-workbook"></a>Çalışma kitabının bir kopyasını kaydetme  
- Bellekteki açık çalışma kitabını değiştirmeden, bir dosyaya çalışma kitabının bir kopyasını kaydedebilirsiniz. Çalışma kitabının konumunu değiştirmeden yedek kopya oluşturmak istediğinizde bu kullanışlıdır.  
+## <a name="save-a-copy-of-the-workbook"></a>Çalışma kitabının bir kopyasını Kaydet  
+ Bellekte açık çalışma kitabını değiştirmeden, çalışma kitabının bir kopyasını bir dosyaya kaydedebilirsiniz. Çalışma kitabı konumunu değiştirmeden bir yedek kopya oluşturmak istediğinizde bu kullanışlıdır.  
   
-#### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
+### <a name="to-save-a-workbook-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş bir çalışma kitabını kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.SaveCopyAs%2A> yöntemi `ThisWorkbook` sınıfı. Aşağıdaki kod örneğini kullanmak için bunu çalıştırabilir `ThisWorkbook` sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Workbook.SaveCopyAs%2A> yöntemi `ThisWorkbook` sınıfı. Aşağıdaki kod örneğinde kullanmak amacıyla içinde çalıştırın `ThisWorkbook` sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#6](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/ThisWorkbook.cs#6)]
      [!code-vb[Trin_VstcoreExcelAutomation#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/ThisWorkbook.vb#6)]  
   
-#### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Bir VSTO eklenti etkin çalışma kitabını kaydetmek için  
+### <a name="to-save-the-active-workbook-in-a-vsto-add-in"></a>Etkin çalışma kitabının VSTO eklentisi kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.SaveCopyAs%2A> etkin çalışma kitabının bir kopyasını kaydetmek için yöntem. Aşağıdaki kod örneğini kullanmak için bunu çalıştırabilir `ThisAddIn` Excel için VSTO eklenti projesindeki sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Workbook.SaveCopyAs%2A> etkin çalışma kitabının bir kopyasını kaydetmek için yöntemi. Aşağıdaki kod örneğinde kullanmak amacıyla içinde çalıştırın `ThisAddIn` Excel için VSTO eklenti projesinde sınıfı.  
   
      [!code-csharp[Trin_VstcoreExcelAutomationAddIn#5](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#5)]
      [!code-vb[Trin_VstcoreExcelAutomationAddIn#5](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#5)]  
   
-## <a name="robust-programming"></a>Güçlü Programlama  
- Etkileşimli olarak kaydetmek veya çalışma kitabını kopyalama yöntemlerden herhangi birini iptal ediliyor, kodunuzda bir çalışma zamanı hatası oluşturur. Örneğin, yordamı çağıran, <xref:Microsoft.Office.Tools.Excel.Workbook.SaveAs%2A> yöntemi ancak Excel'den istemleri devre dışı yapar ve kullanıcı tıklama **iptal** istendiğinde, Excel çalışma zamanı hatası oluşturur.  
+## <a name="robust-programming"></a>Güçlü programlama  
+ Etkileşimli olarak kaydetmek veya çalışma kitabını kopyalama yöntemlerden herhangi birini iptal ediliyor, kodunuzda bir çalışma zamanı hatası oluşturur. Örneğin, yordamı çağıran, <xref:Microsoft.Office.Tools.Excel.Workbook.SaveAs%2A> yöntemi ancak devre dışı ister Excel'de yapar ve kendi kullanıcı tıklama **iptal** istendiğinde, Excel çalışma zamanı hatası oluşturur.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çalışma kitaplarıyla çalışma](../vsto/working-with-workbooks.md)   
  [Çalışma kitabı konak öğesi](../vsto/workbook-host-item.md)   
- [Nasıl yapılır: program aracılığıyla çalışma kitaplarını kapatma](../vsto/how-to-programmatically-close-workbooks.md)   
+ [Nasıl yapılır: çalışma kitaplarını program aracılığıyla kapatma](../vsto/how-to-programmatically-close-workbooks.md)   
  [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)   
  [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)   
- [Konak Öğelerine ve Denetimlerine Genel Bakış](../vsto/host-items-and-host-controls-overview.md)  
+ [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)  
   
   

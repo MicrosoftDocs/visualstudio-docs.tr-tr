@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f41b0e5973af8e0cb65f093f51137059084c9792
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af349d8568d50e2059ab33ad54b14f499c7b6afd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49913468"
 ---
 # <a name="idebugdocumentcontext2compare"></a>IDebugDocumentContext2::Compare
 Bu belge bağlamları belirli bir dizi belge bağlamına karşılaştırır.  
@@ -46,22 +47,22 @@ int Compare(
   
 #### <a name="parameters"></a>Parametreler  
  `compare`  
- [in] Arasında bir değer [DOCCONTEXT_COMPARE](../../../extensibility/debugger/reference/doccontext-compare.md) karşılaştırma türünü belirten numaralandırma.  
+ [in] Bir değer [DOCCONTEXT_COMPARE](../../../extensibility/debugger/reference/doccontext-compare.md) karşılaştırma türünü belirten sabit listesi.  
   
  `rgpDocContextSet`  
- [in] Bir dizi [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) için karşılaştırılan belge bağlamları temsil eden nesne.  
+ [in] Bir dizi [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) karşılaştırılan belge bağlamı temsil eden nesneleri.  
   
  `dwDocContextSetLen`  
- [in] Karşılaştırılacak belge bağlamları dizi uzunluğu.  
+ [in] Karşılaştırılacak belge bağlamları dizinin uzunluğu.  
   
  `pdwDocContext`  
- [out] Dizine döndürür `rgpDocContextSet` karşılaştırmayı ilk belge bağlam dizisi.  
+ [out] Dizine döndürür `rgpDocContextSet` karşılaştırmayı ilk belge bağlamı dizisi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Döndürür `S_OK` bir eşleşme bulunmazsa. Döndürür `S_FALSE` eşleşme bulunmazsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) uygulayan aynı hata ayıklama altyapısı tarafından dizideki geçirilen nesneleri uygulanan `IDebugDocumentContext2` üzerinde; Aksi halde, çağrılan nesne karşılaştırma geçerli değil.  
+ [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) uygulayan aynı hata ayıklama altyapısı tarafından dizide geçirilen nesneleri uygulanan `IDebugDocumentContext2` üzerinde; Aksi takdirde, çağrılan nesne karşılaştırma geçerli değil.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md)   

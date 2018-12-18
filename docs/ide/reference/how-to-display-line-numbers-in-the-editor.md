@@ -1,9 +1,8 @@
 ---
-title: 'Nasıl yapılır: düzenleyicide satır numaralarını görüntüleme | Microsoft Docs'
-ms.custom: ''
+title: 'Nasıl Yapılır: Düzenleyicide Satır Numaralarını Görüntüleme'
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - line numbers, displaying
@@ -16,33 +15,34 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 31ae874831dd7ecf68253e2ee3fa62e920e02ec6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3d7977fde404570808f0ee2d6514249a5e73286a
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52388856"
 ---
 # <a name="how-to-display-line-numbers-in-the-editor"></a>Nasıl Yapılır: Düzenleyicide Satır Numaralarını Görüntüleme
-Görüntülemek veya kodunuzda numaralandırma satırı gizlemek.  
-  
-> [!NOTE]
->  Etkin ayarlarınıza bağlı olarak, burada açıklanan olanlardan görünür menü komutları ve iletişim kutuları farklı olabilir. Ayarlarınızı değiştirmek için açık **araçları / içeri ve dışarı aktarma ayarları**. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md).  
-  
-## <a name="display-line-numbers-in-code"></a>Koddaki görünen satır numaraları  
- Satır numaraları kodunuzu eklenmez; sadece başvuru olup olmadıklarını. Buna, yazdırmak için satır numaralarını istiyorsanız **yazdırma** iletişim kutusunda **satır numaralarını dahil** onay kutusunu.  
-  
-#### <a name="to-display-line-numbers-in-code"></a>Satır numaraları kodda görüntülemek için  
-  
-1.  Menü çubuğunda seçin **Araçları**, **seçenekleri**. Genişletme **metin düzenleyici** düğümünü ve ardından her iki düğüm kullanıyorsanız, dil için veya **tüm diller** satır numaralarını tüm dillerde etkinleştirmek için. Ya da yazabilirsiniz **satır numarası** içinde **hızlı başlatma** kutusu.  
-  
+
+Görüntülemek veya satır kodunuzu numaralarını gösterip gizleyebilirsiniz.
+
+## <a name="display-line-numbers-in-code"></a>Kod içinde satır numaralarını görüntüleyin
+
+Satır numaraları kodunuza eklenmez; Bunlar yalnızca başvuru için hedeflenmiştir. Buna yazdırılacak satır numaraları istiyorsanız **yazdırma** iletişim kutusunda **satır numaralarını dahil etme** onay kutusu.
+
+### <a name="to-display-line-numbers-in-code"></a>Kod içinde satır numaralarını görüntülemek için
+
+1.  Menü çubuğunda, **Araçları**, **seçenekleri**. Genişletin **metin düzenleyici** düğümünü ve ardından kullandığınız dil düğümünü veya **tüm diller** tüm dillerdeki satır numaralarını açmak. Ya da yazabilirsiniz **satır numarası** içinde **hızlı başlatma** kutusu.
+
 2.  Seçin **satır numaraları** onay kutusu.
 
-    ![Düzenleyicide satır numaralarını görüntüleme seçeneklerini](../../ide/reference/media/vs_displaylinenumbers.png "VS_DisplayLineNumbers")
-  
+    ![Düzenleyicide satır numaralarını görüntüleme seçenekleri](../../ide/reference/media/vs_displaylinenumbers.png)
+
 > [!NOTE]
->  Dil veya ayarları bağlı olarak seçmeniz gerekebilir **tüm ayarları göster** onay kutusuna **seçenekleri** ortaya çıkarmak için iletişim kutusu **tüm diller** alt düğümü.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Düzenleyiciyi özelleştirme](../../ide/customizing-the-editor.md)   
- [Metin Düzenleyici Seçenekleri iletişim kutusu](../../ide/reference/text-editor-options-dialog-box.md)   
- [Kod yazma](../../ide/writing-code-in-the-code-and-text-editor.md)
+> Dilinize ya da ayarlarınıza bağlı olarak, seçmeniz gerekebilir **tüm ayarları göster** onay kutusuna **seçenekleri** açığa çıkarmak için iletişim kutusu **tüm diller** alt düğümü.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Düzenleyiciyi Özelleştirme](../../ide/customizing-the-editor.md)
+- [Metin Düzenleyici Seçenekleri iletişim Kutusu](../../ide/reference/text-editor-options-dialog-box.md)
+- [Kod Düzenleyicisi özellikleri](../../ide/writing-code-in-the-code-and-text-editor.md)

@@ -1,5 +1,5 @@
 ---
-title: Kaynak Denetim eklentileri ile çalışmaya başlama | Microsoft Docs
+title: Kaynak denetimi eklentileri ile çalışmaya başlama | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,30 +14,31 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3f5c88d932fd2915273c86924d2df8f1233baeed
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2f1eb4f76616f6a5f6791cbcd1b8a5770d1dcabb
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39498106"
 ---
-# <a name="getting-started-with-source-control-plug-ins"></a>Kaynak Denetim eklentileri ile çalışmaya başlama
-Kaynak denetimi eklenti oluşturmak için kaynak denetimi eklentisi API tanımlanan işlevler uygulayan DLL oluşturun ve ardından DLL ile kaydetmek için [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kaynak kodu sürüm denetimi içinde kullanmak için kullanılabilir hale getirmek için.  
+# <a name="get-started-with-source-control-plug-ins"></a>Kaynak denetimi eklentileri ile çalışmaya başlama
+Kaynak Denetimi Eklentisi oluşturmak için kaynak denetimi eklentisi API'içinde tanımlanan işlevleri uygulayan bir DLL'yi oluşturmak ve ardından DLL ile kaydetmek için [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kaynak kod sürüm denetiminde kullanmak için kullanılabilir hale getirmek için.  
   
- Kaynak Denetim eklentisi API (sürüm 1.1, 1.2 ve 1.3) üç sürümü kaynak denetim eklentileri için kullanılabilir. Kaynak Denetim eklentisi burada belgelenen API 1.3 sürümüdür. Kaynak Denetim eklentileri ile tamamen uyumlu olacak şekilde tasarlanmıştır sürüm 1.1 ve 1.2 destekleme. [Kaynak denetim eklentisi API sürümü 1.3 yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-3.md) bölümü kaynak denetim eklentisi API'ın en son sürümü yeni özellikler ayrıntıları.  
+ Kaynak Denetimi Eklentisi API (sürüm 1.1, 1.2 ve 1.3) üç sürümü, kaynak denetimi eklentileri için kullanılabilir. Kaynak Denetimi Eklentisi API burada belgelenmektedir 1.3 sürümüdür. Kaynak denetimi eklentileri ile tamamen uyumlu olacak şekilde tasarlandığı 1.1 ve 1.2 sürümleri destekleme. [Kaynak denetimi eklentisi API sürümü 1.3 yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-3.md) bölümde kaynak denetimi eklentisi API'ın en son sürümünde desteklenen yeni özellikler açıklanmaktadır.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Nasıl Yapılır: Kaynak Denetimi Eklentisi Yükleme](../../extensibility/internals/how-to-install-a-source-control-plug-in.md)  
- Kaynak denetiminde DLL bağlama için gerekli kayıt defteri girdileri nasıl oluşturulacağı açıklanmaktadır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Nasıl yapılır: kaynak denetimi eklentisi yükleme](../../extensibility/internals/how-to-install-a-source-control-plug-in.md)  
+ Bir DLL kaynak denetimine bağlamak için gerekli kayıt defteri girdilerini olun açıklar.  
   
- [Kaynak Denetimi Eklentisi API Sürümü 1.3’teki Yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-3.md)  
- Kaynak Denetim eklentisi API 1.3 sürümünde yapılan değişiklikler kısa bir genel bakış sağlar.  
+ [Kaynak Denetimi Eklentisi API sürümü 1.3 yenilikler nelerdir?](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-3.md)  
+ Kaynak Denetimi Eklentisi API 1.3 sürümünde yapılan değişikliklerin kısa bir genel bakış sağlar.  
   
- [Kaynak Denetimi Eklentisi API Sürümü 1.2’deki Yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)  
- Kaynak Denetim eklentisi API sürüm 1.2 içinde yapılan değişiklikleri kısa bir genel bakış sağlar.  
+ [Kaynak Denetimi Eklentisi API sürümü 1.2 yenilikler nelerdir?](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)  
+ Kaynak Denetimi Eklentisi API 1.2 sürümünde yapılan değişikliklerin kısa bir genel bakış sağlar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Kaynak Denetimi Eklentileri](../../extensibility/source-control-plug-ins.md)  
- Kaynak Denetim eklentisi API'ndaki tüm öğelerin listesi sağlar.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Kaynak denetimi eklentileri](../../extensibility/source-control-plug-ins.md)  
+ Kaynak Denetimi Eklentisi API içindeki tüm öğelerin tam listesini sağlar.  
   
- [Kaynak Denetimi Eklentisi Oluşturma](../../extensibility/internals/creating-a-source-control-plug-in.md)  
- Kaynak Denetim eklentisi SDK'sı tanımlar ve bulunan kaynaklar açıklanır.
+ [Kaynak Denetimi Eklentisi oluşturma](../../extensibility/internals/creating-a-source-control-plug-in.md)  
+ Kaynak Denetimi Eklentisi SDK tanımlar ve dahil edilen kaynaklar açıklanır.

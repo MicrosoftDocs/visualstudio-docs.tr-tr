@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31129449"
 ---
 # <a name="model-for-source-control-packages"></a>Kaynak denetim paketleri için modeli
 Aşağıdaki modeli kaynak denetim uygulaması örneği temsil eder. Modeldeki uygulamanız gereken arabirimleri ve çağırmalısınız Ortam Hizmetleri bakın. Tüm hizmetler gibi gerçekten hizmeti aracılığıyla elde belirli bir arabirim yöntemleri çağırın. Sınıf adları, kaynak denetimi nasıl gerçekleştirildiği görmeyi kolaylaştırmak için tanımlanır.  

@@ -1,21 +1,23 @@
 ---
 layout: LandingPage
-title: Uygulamalarınızı Visual Studio ile profil oluşturma | Microsoft Docs
-description: Bilgi nasıl uygulamaları, hizmetleri ve tercih ettiğiniz dilde araçları performansını profil için Visual Studio 2017 kullanın.
+title: Profil oluşturma kullanarak ölçü uygulama performansını | Microsoft Docs
+description: Bilgi nasıl uygulamaları, hizmetleri ve araçları, tercih ettiğiniz dilde performans profil için Visual Studio 2017'yi kullanın.
+ms.custom: seodec18
 ms.topic: landing-page
 ms.technology: vs-ide-debug
 author: mikejo5000
 ms.author: mikejo
 manager: douge
-ms.openlocfilehash: f574f5e1e87f8fb35a9e8333f7290a8406ede1d7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 972e4b8b58229786d403451ddfd7a49a3fe4d6a0
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53065551"
 ---
-# <a name="profiling-in-visual-studio"></a>Visual Studio'da profil oluşturma
+# <a name="measure-app-performance-in-visual-studio"></a>Visual Studio'da uygulama performansını ölçmeye
 
-Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer uygulama düzeyi sorunları tanılamanıza yardımcı. Bu araçları ile Hata Ayıklayıcısı'ndaki uygulamanızı çalıştırın zaman içinde verileri (örneğin, değişken değerleri, işlev çağrılarını ve olaylar) birikebilir. Kodunuzu yürütülmesi sırasında farklı noktalarda uygulamanız durumunu görüntüleyebilirsiniz. 
+Profil oluşturma ve tanılama araçları bellek ve CPU kullanımı ve diğer uygulama düzeyi sorunları tanılamanıza yardımcı olur. Bu araçları ile hata ayıklayıcıda uygulamanızı çalıştırdığınız zaman içinde verileri (örneğin, değişken değerleri, işlev çağrıları ve olayları) birikebilir. Kodunuzun yürütülmesi sırasında farklı noktalarda, uygulamanızın durumunu görüntüleyebilirsiniz. 
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -25,11 +27,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_road-map.svg" alt="">
+                            <img src="/media/common/i_road-map.svg" alt="Feature Tour of the Profiler">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Profil Oluşturucu özellik turu</h3>
+                        <h3>Profiler özellik turu</h3>
                     </div>
                 </div>
             </div>
@@ -43,11 +45,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_code-performance.svg" alt="">
+                            <img src="/media/common/i_code-performance.svg" alt="Get Started with the Diagnostics Tools (CPU Usage)">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Tanılama Araçları (CPU kullanımı) ile çalışmaya başlama</h3>
+                        <h3>(CPU kullanımı) tanılama araçları ile çalışmaya başlama</h3>
                     </div>
                 </div>
             </div>
@@ -61,11 +63,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_video.svg" alt="">
+                            <img src="/media/common/i_video.svg" alt="Watch a Video on the Diagnostics Tools">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Tanılama araçları bir videoyu izleyin</h3>
+                        <h3>Tanılama araçları da bir Video izleyin</h3>
                     </div>
                 </div>
             </div>
@@ -79,11 +81,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_code-performance.svg" alt="">
+                            <img src="/media/common/i_code-performance.svg" alt="Get Started analyzing Memory Usage">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Bellek kullanımını çözümleme kullanmaya başlama</h3>
+                        <h3>Bellek kullanımını analiz etme kullanmaya başlayın</h3>
                     </div>
                 </div>
             </div>
@@ -97,11 +99,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="Analyze Resource Consumption (XAML)">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Kaynak tüketimi (XAML) Çözümle</h3>
+                        <h3>(XAML) kaynak tüketimini analiz etme</h3>
                     </div>
                 </div>
             </div>
@@ -115,11 +117,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="Analyze Network Usage (UWP Apps)">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Ağ kullanımı (UWP uygulamaları) Çözümle</h3>
+                        <h3>(UWP uygulamaları) ağ kullanımını analiz etme</h3>
                     </div>
                 </div>
             </div>
@@ -133,11 +135,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="Analyze GPU Usage (Direct3D)">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>GPU kullanımı (Direct3D) Çözümle</h3>
+                        <h3>(Direct3D) GPU kullanımını analiz etme</h3>
                     </div>
                 </div>
             </div>
@@ -151,11 +153,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="Analyze Energy Use (UWP Apps)">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>(UWP uygulamaları) enerji kullanımını çözümleme</h3>
+                        <h3>(UWP uygulamaları) enerji kullanımını analiz etme</h3>
                     </div>
                 </div>
             </div>
@@ -169,11 +171,11 @@ Profil oluşturma ve tanılama araçları, bellek ve CPU kullanımı ve diğer u
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_whats-new.svg" alt="">
+                            <img src="/media/common/i_whats-new.svg" alt="See What&#39;s New in Profiling Tools">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Gördükleri&#39;s'deki yenilikler Profil Araçları</h3>
+                        <h3>Gördükleri&#39;yeni profil oluşturma araçları, s</h3>
                     </div>
                 </div>
             </div>

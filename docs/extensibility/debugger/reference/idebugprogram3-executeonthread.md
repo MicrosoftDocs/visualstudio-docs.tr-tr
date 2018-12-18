@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8aff643014da16ed9644573a77cb8444836d713d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: afca4a97380d010897ca1dfb7c6229f3f1897ef9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49865953"
 ---
 # <a name="idebugprogram3executeonthread"></a>IDebugProgram3::ExecuteOnThread
-Hata ayıklayıcı programı yürütür. İş parçacığı, hangi iş parçacığı üzerinde kullanıcı programı yürütürken görüntüleyen hata ayıklayıcı bilgi vermek için döndürülür.  
+Hata ayıklayıcı programın yürütür. İş parçacığı üzerinde hangi iş parçacığının kullanıcı program çalıştırılırken görüntüleyen hata ayıklayıcı bilgiler vermemiz döndürülür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,21 +38,21 @@ int ExecuteOnThread(
   
 #### <a name="parameters"></a>Parametreler  
  `pThread`  
- [in] Bir [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) nesnesi.  
+ [in] Bir [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir hata ayıklayıcısı durdurma sonra yürütmeye devam edebilir üç farklı yolu vardır:  
+ Bir hata ayıklayıcı durduruluyor sonra yürütmeye devam edebilir üç farklı yolu vardır:  
   
--   Yürütün: herhangi bir önceki adımı iptal edin ve kadar sonraki kesme ve benzeri çalıştırın.  
+- Yürütün: herhangi bir önceki adımı iptal etmek ve vb. sonraki kesme noktasına kadar çalıştırın.  
   
--   Adım: herhangi bir eski adımı iptal edin ve yeni adımı tamamlayana kadar çalıştırın.  
+- Adım: eski herhangi bir adımı iptal edin ve yeni adım tamamlanana kadar çalıştırın.  
   
--   Devam Et: yeniden çalıştırın ve herhangi bir eski adımın etkin bırakın.  
+- Devam Et: yeniden çalıştırın ve herhangi bir eski adımı etkin bırakın.  
   
- İş parçacığı geçirilen `ExecuteOnThread` , iptal etmek için adım karar verirken yararlıdır. Yürütme çalışan iş parçacığı, bilmiyorsanız tüm adımları iptal eder. İş parçacığı bilgiyle yalnızca etkin iş parçacığı üzerinde Adım iptal gerekir.  
+  İş parçacığı geçirilen `ExecuteOnThread` hangi iptal etmek için kullanmak adımda saptarken yararlı olur. Tüm adımları Yürüt çalışan iş parçacığı, bilmiyorsanız, iptal eder. İş parçacığı bilgiyle etkin iş parçacığı üzerinde adımı iptal etmek yeterlidir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Yürütme](../../../extensibility/debugger/reference/idebugprogram2-execute.md)   

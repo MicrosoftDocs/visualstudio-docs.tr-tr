@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: c04ecdc1de848a95ad9f5051cc9ec54da02a3625
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a0dd74f25ed5dc7f76b9d35ae3d2d9833f8e4ab8
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255531"
 ---
 # <a name="modules-view---net-memory-instrumentation-data"></a>Modüller görünümü - .NET bellek izleme verileri
 .NET bellek ayırma verileri izleme metodunu kullanarak toplanan modülleri görünümünü profil Çalıştır yürütüldü modüller tarafından bellek ve zamanlama verileri gruplandırır. Profil oluşturma verilerini modülü işlevler için modülü düğümünün altında listelenir.  
@@ -98,7 +99,7 @@ ms.lasthandoff: 04/19/2018
 |**En fazla uygulama özel süresi**|-Bir işlev için bu işlevi çağrısı, en fazla uygulama özel süresi.<br />-Bir modül için işlevleri modülünde yapılan tüm çağrıların en fazla uygulama özel süresi.|  
 |**Min uygulama özel süresi**|-Bir işlev için bu modülü veya işlev çağrısının minimum uygulama özel süresi.<br />-Bir modül için işlevleri modülünde yapılan tüm çağrıların en az uygulama özel süresi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Modüller görünümü - örnekleme](../profiling/modules-view-dotnet-memory-sampling-data.md)   
  [Modüller görünümü](../profiling/modules-view-instrumentation-data.md)   
  [Modüller Görünümü](../profiling/modules-view-sampling-data.md)

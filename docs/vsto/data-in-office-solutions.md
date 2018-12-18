@@ -1,5 +1,5 @@
 ---
-title: Office çözümlerindeki veriler | Microsoft Docs
+title: Office çözümlerindeki veriler
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,39 +17,40 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 9b67ef7bec9b44510711c07195a8114b730d87dc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 87aca3cea98f97ff2a27efb41f912f1295939718
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263460"
 ---
-# <a name="data-in-office-solutions"></a>Office Çözümlerindeki Veriler
+# <a name="data-in-office-solutions"></a>Office çözümlerindeki veriler
   Office çözümlerini almak veya verileri değiştirme olanağı verir. Visual Studio kullanarak Office çözümleri oluşturduğunuzda verilerle çalışmak birkaç farklı yolu vardır.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Office Çözümlerinde Verileri Denetimlere Bağlama](../vsto/binding-data-to-controls-in-office-solutions.md)  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Office çözümlerinde denetimlere veri bağlama](../vsto/binding-data-to-controls-in-office-solutions.md)  
  Office çözümlerinde denetimlere veri bağlama açıklar.  
   
- [Özel XML Bölümlerine Genel Bakış](../vsto/custom-xml-parts-overview.md)  
+ [Özel XML bölümlerine genel bakış](../vsto/custom-xml-parts-overview.md)  
  Office çözümlerindeki verilerle çalışmak için özel XML bölümleri kullanmayı açıklar.  
   
- [Belge Düzeyi Özelleştirmelerdeki Önbelleğe Alınmış Veriler](../vsto/cached-data-in-document-level-customizations.md)  
+ [Belge düzeyi özelleştirmelerinde önbelleğe alınan veriler](../vsto/cached-data-in-document-level-customizations.md)  
  Office uygulaması başlatmadan erişilebilen bir katıştırılmış veri adası verilerini depolamak açıklar.  
   
- [Belge Düzeyi Özelleştirmelerde XML Şemaları ve Verileri](../vsto/xml-schemas-and-data-in-document-level-customizations.md)  
+ [XML şemaları ve verileri belge düzeyi özelleştirmeleri](../vsto/xml-schemas-and-data-in-document-level-customizations.md)  
  XML verilerine bağlı denetimleri oluşturmak için belge düzeyi özelleştirmelerde XML şemaları kullanmayı açıklar.  
   
- [Office Çözümlerinde Yerel Veritabanı Dosyaları Kullanmaya Genel Bakış](../vsto/using-local-database-files-in-office-solutions-overview.md)  
+ [Office çözümleri genel bakış yerel veritabanı dosyaları kullanma](../vsto/using-local-database-files-in-office-solutions-overview.md)  
  Veritabanı dosyaları içine projelerinizi ve çevrimdışı kullanım için verileri önbelleğe aldığınızda içe aktarmayı açıklar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Visual Studio'da veri erişimi](/visualstudio/data-tools/accessing-data-in-visual-studio)  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Visual Studio'da verilere erişim](/visualstudio/data-tools/accessing-data-in-visual-studio)  
  Visual Studio'da veri ile nasıl çalışılacağını konuları listeler.  
   
- [Verileri Kaydetme](/visualstudio/data-tools/saving-data)  
+ [Verileri kaydetme](/visualstudio/data-tools/saving-data)  
  Veri kaynağına veri kümesindeki değiştirme ve değişiklikleri yazma dahil olmak üzere veri kümeleri ile çalışma hakkında konulara bağlantılar yedekleme sağlar.  
   
- [Office Çözümleri Tasarlama ve Oluşturma](../vsto/designing-and-creating-office-solutions.md)  
+ [Tasarlama ve Office çözümleri oluşturma](../vsto/designing-and-creating-office-solutions.md)  
  Visual Studio kullanarak Office projeleri oluşturma kullanmaya başlama hakkında bilgi için bağlantılar sağlar.  
   
   

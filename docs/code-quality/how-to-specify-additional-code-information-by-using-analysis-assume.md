@@ -1,38 +1,40 @@
 ---
-title: 'Nasıl yapılır: __analysis_assume Kullanarak Ek Kod Bilgileri Belirtme'
+title: 'Nasıl yapılır: _Analysis_assume kullanarak ek kod bilgileri belirtme'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 f1_keywords:
-- __analysis_assume
+- _Analysis_assume
 helpviewer_keywords:
-- __analysis_assume
+- _Analysis_assume
 ms.assetid: 51205d97-4084-4cf4-a5ed-3eeaf67deb1b
 author: mikeblome
 ms.author: mblome
 manager: wpickett
 ms.workload:
 - multiple
-ms.openlocfilehash: 50a5daa7080041e6d80f7867888616d2225a1768
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ce8102bbc790019490c4dc2a2ccbfab7d8c33981
+ms.sourcegitcommit: 928885ace538bef5b25961358d4f166d648f196a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/27/2018
+ms.locfileid: "32031533"
 ---
-# <a name="how-to-specify-additional-code-information-by-using-analysisassume"></a>Nasıl yapılır: __analysis_assume Kullanarak Ek Kod Bilgileri Belirtme
+# <a name="how-to-specify-additional-code-information-by-using-analysisassume"></a>Nasıl yapılır: _Analysis_assume kullanarak ek kod bilgileri belirtme
 Çözümleme işleminin yardımcı olmak ve Uyarıları azaltmak C/C++ kodu için kod analizi aracı için ipuçları sağlayabilir. Ek bilgi sağlamak için aşağıdaki işlev kullanın:
 
- `__analysis_assume(`  `expr`  `)`
+ `_Analysis_assume(`  `expr`  `)`
 
  `expr` -true değerlendirileceği varsayılır herhangi bir ifade.
 
  Kod çözümleme aracı ifade tarafından temsil edilen koşul işlevi burada görünür ve ifade, örneğin, bir değişkene atama tarafından değiştirilinceye kadar doğrudur noktasında doğru olduğunu varsayar.
 
 > [!NOTE]
->  `__analysis_assume` kodu iyileştirme etkilemez. Kod çözümleme aracı dışında `__analysis_assume` no-op tanımlanır.
+>  `_Analysis_assume` kodu iyileştirme etkilemez. Kod çözümleme aracı dışında `_Analysis_assume` no-op tanımlanır.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki kod `__analysis_assume` kod çözümleme uyarısı düzeltmek için [C6388](../code-quality/c6388.md):
+ Aşağıdaki kod `_Analysis_assume` kod çözümleme uyarısı düzeltmek için [C6388](../code-quality/c6388.md):
 
 ```
 #include<windows.h>
@@ -50,7 +52,7 @@ void test( )
 {
   char *pc = (char*)malloc(5);
   FreeAndNull(pc);
-  __analysis_assume(pc == NULL);
+  _Analysis_assume(pc == NULL);
   f(pc);
 }
 ```

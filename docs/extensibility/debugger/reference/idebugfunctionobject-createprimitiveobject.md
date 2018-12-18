@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 477bdb12cef6711c6b946b3ddd8d9550e48c01b0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b397bded186623b09bc868d6b4af97cd0d4d5388
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49854565"
 ---
 # <a name="idebugfunctionobjectcreateprimitiveobject"></a>IDebugFunctionObject::CreatePrimitiveObject
 Basit bir tamsayı gibi bir temel veri nesnesi oluşturur.  
@@ -42,16 +43,16 @@ int CreatePrimitiveObject(
   
 #### <a name="parameters"></a>Parametreler  
  `ot`  
- [in] Arasında bir değer [Nesne_türü](../../../extensibility/debugger/reference/object-type.md) oluşturmak için temel türünü temsil eden numaralandırma.  
+ [in] Bir değer [Nesne_türü](../../../extensibility/debugger/reference/object-type.md) oluşturmak için temel türünü temsil eden sabit listesi.  
   
  `ppObject`  
- [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) yeni oluşturulan nesnenin temsil eden.  
+ [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) temsil eden yeni oluşturulan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Tarafından temsil edilen işlevi parametresi basit bir nesneyi temsil eden nesne oluşturmak için bu yöntemi çağırın [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi. Örneğin, ifade dizesini "myString(5)" ise, bu yöntem 5 tamsayı temsil eden bir nesne oluşturmak için kullanılacak.  
+ Tarafından temsil edilen işlevi parametresi basit bir nesneyi temsil eden bir nesne oluşturmak için bu yöntemi çağırın [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi. Örneğin, bir ifade dize "myString(5)" ise bu yöntem 5 tamsayıyı temsil eden bir nesne oluşturmak için kullanılacak.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md)

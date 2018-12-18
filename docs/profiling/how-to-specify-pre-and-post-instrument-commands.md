@@ -16,13 +16,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 65c6bd02ae2a89f8ea8e66cb6d7b943344450375
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d8ce82bea823307e02b719fbfae43fe0697aca65
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844644"
 ---
-# <a name="how-to-specify-pre--and-post-instrument-commands"></a>Nasıl yapılır: Ön ve Son İzleme Komutları Belirtme
+# <a name="how-to-specify-pre--and-post-instrument-commands"></a>Nasıl yapılır: ön ve son izleme komutları belirtme
 
 Önce veya ikili dosyaların bir performans oturumunda işaretlendiğine sonra çalışan komutlar belirtebilirsiniz. Komut satırından verilebilmesi için herhangi bir komuttan ön izleme veya bir son izleme olayı olarak belirtilebilir. Örneğin, ikili dosyaları işaretlendiğine sonra çalıştırılan bir toplu iş dosyasında güçlü ad anahtar ile bir derlemenin bildirimin otomatikleştirmek komutları belirtebilirsiniz.
 
@@ -32,7 +33,7 @@ Profil oluşturma çalıştırmada tüm izleme eklenmiş ikili dosyalar ya da bi
 
  **32-bit bilgisayarlar**
 
-32-bit bilgisayarlarda, varsayılan profil oluşturucu Araçlar önyükleme sürücüsü\Program Files\Microsoft Visual Studio 10.0\Team Araçlar\Performans araçları dizinidir.
+32-bit bilgisayarlarda, varsayılan profil oluşturucu Araçlar dizinidir *önyükleme sürücüsü\Program Files\Microsoft Visual Studio 10.0\Team Araçlar\Performans Araçları*.
 
 **64-bit bilgisayarlar**
 
@@ -40,11 +41,11 @@ Profil oluşturma çalıştırmada tüm izleme eklenmiş ikili dosyalar ya da bi
 
 - 32-bit uygulamalar için varsayılan profil oluşturucu Araçlar dizindir:
 
-     *Sürücü*\Program dosyaları (x86) \Microsoft Visual Studio 10.0\Team Araçlar\Performans araçları
+     *önyükleme sürücüsü\Program dosyaları (x86) \Microsoft Visual Studio 10.0\Team Araçlar\Performans araçları*
 
 - 64-bit uygulamalar için varsayılan profil oluşturucu Araçlar dizindir:
 
-     *Sürücü*\Program dosyaları (x86) \Microsoft Visual Studio 10.0\Team Araçlar\Performans Tools\x64
+     *önyükleme sürücüsü\Program dosyaları (x86) \Microsoft Visual Studio 10.0\Team Araçlar\Performans Tools\x64*
 
 ## <a name="to-specify-pre-instrument-commands"></a>Ön izleme komutları belirtmek için
 

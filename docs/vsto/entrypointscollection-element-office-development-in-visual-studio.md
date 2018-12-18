@@ -1,5 +1,5 @@
 ---
-title: "&lt;entryPointsCollection&gt; öğesi (Visual Studio'da Office Geliştirme) | Microsoft Docs"
+title: "&lt;entryPointsCollection&gt; öğesi (Visual Studio'da Office Geliştirme)"
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,18 +17,19 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 357e2b4d7aedb82b63676055f1ad1215171a25cf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 119cff9135b2b65f09d265aed2af3a7e2d500d60
+ms.sourcegitcommit: 1466ac0f49ebf7448ea4507ae3f79acb25d51d3e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/22/2018
+ms.locfileid: "34447911"
 ---
 # <a name="ltentrypointscollectiongt-element-office-development-in-visual-studio"></a>&lt;entryPointsCollection&gt; öğesi (Visual Studio'da Office Geliştirme)
   `entryPointsCollection` Öğesinin `vstav3` ad alanı içeren tüm `entryPoints` Office çözümleriyle ilgili bir öğe.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <entryPointsCollection>  
   <entryPoints>  
     <entryPoint>  
@@ -58,7 +59,7 @@ ms.lasthandoff: 04/16/2018
   
 ### <a name="code"></a>Kod  
   
-```  
+```xml  
 <vstav3:entryPointsCollection>  
     <vstav3:entryPoints>  
       <vstav3:entryPoint   
@@ -97,14 +98,14 @@ ms.lasthandoff: 04/16/2018
   </vstav3:entryPointsCollection>  
 ```  
   
-## <a name="vsto-add-in-example"></a>VSTO eklentileri örneği  
+## <a name="vsto-add-in-example"></a>VSTO eklenti örneği  
   
 ### <a name="description"></a>Açıklama  
  Aşağıdaki kod örneği gösterilmektedir bir `entryPointsCollection` kullanılarak dağıtılan bir uygulama düzeyi çözümü için bir uygulama bildirimi öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği sağlanan daha büyük bir örneğin parçasıdır [uygulama bildirimleri Office çözümleri için](../vsto/application-manifests-for-office-solutions.md).  
   
 ### <a name="code"></a>Kod  
   
-```  
+```xml  
 <vstav3:entryPointsCollection>  
     <vstav3:entryPoints>  
       <vstav3:entryPoint   
@@ -126,7 +127,7 @@ ms.lasthandoff: 04/16/2018
   
 ### <a name="code"></a>Kod  
   
-```  
+```xml  
 <vstav3:entryPointsCollection>  
       <vstav3:entryPoints   
         id="ContosoExcel">  
@@ -177,9 +178,9 @@ ms.lasthandoff: 04/16/2018
     </vstav3:entryPointsCollection>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md)   
  [Office çözümleri için dağıtım bildirimleri](../vsto/deployment-manifests-for-office-solutions.md)   
- [ClickOnce Uygulama Bildirimi](/visualstudio/deployment/clickonce-application-manifest)  
+ [ClickOnce Uygulama bildirimi](/visualstudio/deployment/clickonce-application-manifest)  
   
   

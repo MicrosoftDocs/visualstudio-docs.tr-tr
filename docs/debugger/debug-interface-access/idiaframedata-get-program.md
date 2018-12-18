@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2c78c6f1c2c6e8368efd86dc3ffa03a021e46da3
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 125c809f32b34b077fae0bb661ef9c2f010a4b8b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849469"
 ---
 # <a name="idiaframedatagetprogram"></a>IDiaFrameData::get_program
-Geçerli işlevi çağırmadan önce ayarlayın kayıt hesaplamak için kullanılan program dizesini alır.  
+Geçerli işlevi çağırmadan önce ayarlanmış kayıt hesaplamak için kullanılan program dizesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,23 +34,23 @@ HRESULT get_program (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Program dize döndürür.  
+ [out] Program dizeyi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Program dize giriş kurabilmek için yorumlanan makroları dizisidir. Örneğin, tipik yığın çerçevesi program dizesi kullanabilir `"$T0 $ebp = $eip $T0 4 + ^ = $ebp $T0 ^ = $esp $T0 8 + ="`. Biçim burada işleçleri işlenenler izleyin ters Lehçe gösterimidir. `T0` Yığında geçici bir değişkeni temsil eder. Bu örnekte aşağıdaki adımları gerçekleştirir:  
+ Program dize prolog kurulabilmesi yorumlanır makroları dizisidir. Örneğin, tipik bir yığın çerçevesi program dize kullanabilirsiniz `"$T0 $ebp = $eip $T0 4 + ^ = $ebp $T0 ^ = $esp $T0 8 + ="`. Burada işleçler işlenenlerin izleyin, ters Lehçe gösterimi biçimidir. `T0` geçici bir değişkende temsil eder. Bu örnek, aşağıdaki adımları gerçekleştirir:  
   
-1.  YAZMAÇ içeriğini taşımak `ebp` için `T0`.  
+1. Kaydının içeriğini taşımak `ebp` için `T0`.  
   
-2.  Ekleme `4` değerine `T0` bir adresi oluşturmak, o adresinden değerini almak ve kayıttaki değeri depolamak için `eip`.  
+2. Ekleme `4` değerine `T0` bir adresi üretmek, adresten değeri Al ve kayıttaki değeri depolamak için `eip`.  
   
-3.  Depolanan adresinden değeri Al `T0` ve değeri kayıttaki depola `ebp`.  
+3. Depolanan adresinden değer elde `T0` ve kayıttaki değeri depola `ebp`.  
   
-4.  Ekleme `8` değerine `T0` ve değeri kayıttaki depola `esp`.  
+4. Ekleme `8` değerine `T0` ve kayıttaki değeri depola `esp`.  
   
- Program dize CPU ve geçerli yığın çerçevesi tarafından temsil edilen işlevi için ayarlanan çağırma belirli olduğuna dikkat edin.  
+   Program dize CPU ve geçerli yığın çerçevesi tarafından temsil edilen işlev için ayarlanan çağırma kuralı için özel olduğunu unutmayın.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)

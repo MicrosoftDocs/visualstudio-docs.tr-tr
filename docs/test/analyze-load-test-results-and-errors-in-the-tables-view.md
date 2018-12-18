@@ -1,5 +1,5 @@
 ---
-title: Yük testi sonuçlarını ve hatalarını Visual Studio'da çözümleme | Microsoft Docs
+title: Yük testi sonuçlarını ve hatalarını çözümleme
 ms.date: 10/19/2016
 ms.topic: conceptual
 f1_keywords:
@@ -21,227 +21,231 @@ ms.assetid: 0a84bda3-6051-45eb-9c7f-d57419e1f97d
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 1ef22fcdfeb1b3ccf0005940ca2f7201545482f8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f77653f8a099f66d751880c412e1532d4a23e656
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53068571"
 ---
-# <a name="analyze-load-test-results-and-errors-in-the-tables-view-of-the-load-test-analyzer"></a>Yük testi sonuçlarını ve hatalarını Yük Testi Çözümleyicisinin Tablo görünümünde analiz eder.
+# <a name="analyze-load-test-results-and-errors-in-the-tables-view-of-the-load-test-analyzer"></a>Yük testi sonuçlarını ve hatalarını Yük Testi Çözümleyicisinin Tablo görünümünde çözümleyin
 
-Yük testi sonuçlarını görüntülediğinizde, verileri çözümlemek için farklı yollar sağlar farklı bölmeleri görüntüleyebilirsiniz. Bu zaman içinde nasıl değiştiğini görmek için bir grafik olarak verilerini görüntüleyebilir veya verileri ayrıntılı tablolar olarak görüntüleyebilirsiniz.
+Yük testi sonuçlarını görüntülemek, verileri analiz etmek için farklı şekillerde sağlayan farklı bölmeler görüntüleyebilirsiniz. Verileri, zaman içinde nasıl değiştiğini görmek için bir grafik olarak görüntüleyebileceğiniz veya verileri ayrıntılı tablo olarak görüntüleyebilirsiniz.
 
-Tablo görünümüne geçiş yapmak için tercih **tabloları** yük testi araç çubuğunda. Farklı tablolar arasında geçiş yapmak için kullanın **tablo** tablo kılavuz yukarıda araç çubuğundaki aşağı açılan listesinde. Tablo görünümünde, aynı anda en fazla dört tabloları görüntüleyebilirsiniz. Daha fazla bilgi için bkz: [döşeme yük testi tabloları](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#tile-load-test-tables) bu konuda.
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
-Performans sayaçları için bir tabloda gösterilen Çoğu sayısal değer tüm yük testi toplu. Adlandırılmış sütunlar **son** istisnadır ve en son örnekleme aralığından değeri temsil eder.
+Tablo görünümüne geçmek için seçin **tabloları** üzerinde **yük testi** araç çubuğu. Farklı tablolar arasında geçiş yapmak için kullanın **tablo** tablo kılavuz yukarıda araç çubuğundaki aşağı açılan listesinde. Tablo Görünümü'nde, aynı anda en fazla dört tabloları görüntüleyebilirsiniz. Daha fazla bilgi için [kutucuk yük testi tabloları](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#tile-load-test-tables) bu konuda.
 
-> [!NOTE]
-> Adlandırılmış sütunlar **son** yalnızca bir yük testi yürütülürken kullanılabilir. Bir yük testi tamamlandıktan sonra bu sütunlar kullanılamaz.
-
- Çoğu tabloları sıralamak istediğiniz sütunun başlığını seçerek sıralayabilirsiniz. Varsayılan olarak, bazı tablolar kullanılabilir tüm sütunları görüntüleme. Sütunlar kullanılabiliyorsa tablolar, sütunlar ekleyebilirsiniz. Sütun eklemek için tabloyu sağ tıklatın ve ardından **Sütun Ekle/Kaldır**.
+Performans sayaçları için bir tabloda gösterilen Çoğu sayısal değer tüm yük testi bunların toplamı olur. Adlandırılmış sütunlar **son** bir özel durum ve en son örnekleme aralığının değeri temsil eder.
 
 > [!NOTE]
-> Ek analiz için Excel gibi diğer uygulamalara tablodan veri kopyalayabilirsiniz.
+> Adlandırılmış sütunlar **son** yalnızca bir yük testi yürütülürken kullanılabilir. Bu sütunlar bir yük testi tamamlandıktan sonra kullanılabilir değil.
+
+Üzerinde sıralama yapmak istediğiniz sütunun başlığını seçerek birçok tabloları sıralayabilirsiniz. Varsayılan olarak, tüm kullanılabilir sütunları bazı tablolar görüntülemez. Sütunları varsa, tablolar, sütunlar ekleyebilirsiniz. Sütun eklemek için tablonun sağ tıklayın ve ardından **sütunları Ekle/Kaldır**.
+
+> [!NOTE]
+> Ek çözümleme için Excel gibi diğer uygulamalara bir tablodan veri kopyalayabilirsiniz.
 
 ## <a name="the-load-test-tables"></a>Yük testi tabloları
 
- Aşağıdaki tabloda yükleme testi çalışmalarını çözümlemek için kullanılabilir olan tabloları listeler.
+Aşağıdaki tabloda, yük testi çalışmaları çözümlemek için kullanılabilir olan tabloları listeler.
 
 |Tablo adı|Açıklama|
-|----------------|-----------------|
-|Hatalar|Yük testi sırasında oluşan hataların listesini görüntüler. Daha fazla bilgi için bkz: [hataları Table](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-errors-table) Bu konu başlığı ve [yük testi sonuçlarını çözümleme](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|
-|Sayfaları|Yük testi sırasında erişilen sayfalar listesini görüntüler. Bu tablodaki bazı verileri, yalnızca bir yük testi tamamlandıktan sonra kullanılabilir. Daha fazla bilgi için bkz: [nasıl yapılır: Görünümü Web sayfası yanıt](../test/how-to-view-web-page-response-time-in-a-load-test.md).|
-|istekleri|Bir yük testi sırasında verilen bireysel isteklere ilişkin ayrıntıları görüntüler. Bu, tüm HTTP istekleri ve resimler gibi bağımlı istekleri içerir. Daha fazla bilgi için bkz: [istekleri Table](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-requests-table) bu konuda.|
-|SQL izleme|SQL izleme sonuçlarını görüntüler. Bu tablo yalnızca bir yük testi tamamlandıktan sonra ve yalnızca SQL izleme test sırasında kullanıldıysa mevcuttur. Daha fazla bilgi için bkz: [SQL izleme veri tablosu](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-sql-trace-data-table) bu konuda.|
-|Testler|Tek tek testlerin görüntüler ayrıntılarını bir yük testi sırasında çalıştırın. Daha fazla bilgi için bkz: [testleri Table](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-tests-table) bu konuda.|
-|Eşikleri|Yük testi çalıştırması sırasında gerçekleşen eşik kuralı ihlallerini listesini görüntüler. Daha fazla bilgi için bkz: [eşik kuralı ihlallerini çözümleme](../test/analyze-threshold-rule-violations-in-load-tests.md).|
-|İşlemler|Yük testi sırasında oluşan işlemleri listesini görüntüler. Daha fazla bilgi için bkz: [işlemleri Table](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-transactions-table) bu konuda.|
-|Aracılar|Yalnızca yük testlerini test denetleyicisi ve test aracıları kullanıyorsa görüntüler. Yük testi sırasında kullanılan aracıların listesini görüntüler. Aracılar tablosu kaç aracı test ve bu istekleri kaç tanesinin başarısız istekleri içerir. Ayrıca, aracılar tablosu aracı test yük testleri test karışımında ve bu, testleri sayısını içeren kaç tanesinin başarısız.|
-|Test Ayrıntıları|Yük testi için test karışımını dahil testler için ayrıntılarını görüntüler. Ayrıntılar test, test, senaryoyu test başlatıldığı zamanı, testin çalışması için geçen süre ve test geçirilen ya da başarısız olmuşsa gösteren test sonucu uzunluğu adını içerir. Test başarısız olursa, bir bağlantı bulunur **ayrıntıları** sütun. Web Performans Testi Düzenleyicisi başarısız isteğin vurgulandığı alacak bağlantı seçebilirsiniz.|
+|-|-|
+|Hatalar|Yük testi çalıştırması sırasında oluşan hataların listesini görüntüler. Daha fazla bilgi için [hataları tablosu](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-errors-table) bu konuda, ve [Çözümle yük testi sonuçları](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|
+|Sayfaları|Yük testi çalıştırması sırasında erişilen sayfalarının bir listesini görüntüler. Yalnızca bir yük testi tamamlandıktan sonra bu tabloya bazı veriler kullanılabilir. Daha fazla bilgi için [nasıl yapılır: web sayfası yanıtını görüntüleme](../test/how-to-view-web-page-response-time-in-a-load-test.md).|
+|İstekleri|Bir yük testi sırasında verilen tek tek isteklerin ayrıntılarını görüntüler. Bu, tüm HTTP isteklerini ve resimler gibi bağımlı istekleri içerir. Daha fazla bilgi için [Requests tablosuna](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-requests-table) bu konuda.|
+|SQL izleme|SQL izleme sonuçlarını görüntüler. Bu tabloda yalnızca bir yük testi tamamlandıktan sonra ve yalnızca SQL izleme test sırasında kullanıldıysa kullanılabilir. Daha fazla bilgi için [SQL izleme verileri tablo](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-sql-trace-data-table) bu konuda.|
+|Testler|Görüntüler Ayrıntılar bireysel testler için bir yük testi sırasında çalıştırın. Daha fazla bilgi için [testler tablosu](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-tests-table) bu konuda.|
+|Eşikleri|Yük testi çalıştırması sırasında gerçekleşen bir eşik kuralı ihlallerini listesini görüntüler. Daha fazla bilgi için [eşik kuralı ihlallerini çözümleme](../test/analyze-threshold-rule-violations-in-load-tests.md).|
+|İşlemler|Bir yük testi çalıştırması sırasında gerçekleşen işlemleri listesini görüntüler. Daha fazla bilgi için [işlem tablonuzu](../test/analyze-load-test-results-and-errors-in-the-tables-view.md#the-transactions-table) bu konuda.|
+|Aracılar|Yalnızca Yük testinizi test denetleyicisi ve test aracıları kullanıyorsa görüntüler. Yük testi çalıştırması sırasında kullanılan aracılarının listesini görüntüler. Aracıları tablo, kaç tane test aracısı ve bu istekleri kaç tanesinin başarısız istekleri içerir. Ayrıca, aracıları tabloyu test aracısı yük testleri test karışımında ve bunlardan testlerin sayısı içeren kaç başarısız oldu.|
+|Test ayrıntıları|Yük testi için test karışımını dahil testler için ayrıntıları görüntüler. Ayrıntılar, test, test, senaryoyu test başlangıç zamanı, test çalıştırmak için geçen süre ve test geçti veya başarısız belirten test sonucu uzunluğunu adını içerir. Test başarısız olursa, bir bağlantı bulunur **ayrıntıları** sütun. Web Performans Testi Düzenleyicisi için vurgulanan başarısız istekle alacak bağlantıyı seçebilirsiniz.|
 
-## <a name="collect-percentile-data"></a>Yüzdelik veri toplamak
+## <a name="collect-percentile-data"></a>Yüzdelik veri topla
 
- Bazı yük testi tabloları ağ öykünmesine dayanan gruplara ayrılmış yüzde birlik verileri ve yanıt sürelerini içeren ek sütunlar içerebilir. Varsayılan olarak, bu veriler toplanmaz. Yüzdelik veriler yalnızca bir veritabanına sonuçları kaydettiğinizde ve yerel olarak değil kaydettiğinizde kullanılabilir. Daha fazla bilgi için bkz: [yük testi sonuçları havuzu yük testi sonuçlarını yönetme](../test/manage-load-test-results-in-the-load-test-results-repository.md). Ayrıca, içinde bu verileri toplamak için **Yük Testi Düzenleyicisi**altında **çalıştırma ayarları** belirli çalışmaya değiştirmek için ayarı düğümü düğümünü seçin. İçinde **özellikleri** penceresinde için **zamanlama ayrıntıları depolama** özelliği, select **StatisticsOnly** veya **AllIndividualDetails**. Daha fazla bilgi için bkz: [nasıl yapılır: Görünümü Web sayfası yanıt](../test/how-to-view-web-page-response-time-in-a-load-test.md).
+ Bazı yük testi tabloları yüzde birlik veri ve yanıt sürelerini üzerindeki ağ öykünme göre gruplara ayrılmış içeren ek sütunlar içerebilir. Varsayılan olarak, bu verileri toplanmaz. Yüzdelik veri yalnızca sonuçları veritabanına kaydetme ve yerel olarak değil kaydettiğinizde kullanılabilir. Daha fazla bilgi için [yönetme yük testi sonuçları yük testi sonuçları deposunda](../test/manage-load-test-results-in-the-load-test-results-repository.md). Ayrıca, bu verileri toplamak için **Yük Testi Düzenleyicisi**altında **çalıştırma ayarları** belirli çalıştırma ayarını düğüm değiştirmek için düğümü seçin. İçinde **özellikleri** penceresinde için **Zamanlama Ayrıntıları Deposu** özelliği, select **StatisticsOnly** veya **AllIndividualDetails**. Daha fazla bilgi için [nasıl yapılır: web sayfası yanıtını görüntüleme](../test/how-to-view-web-page-response-time-in-a-load-test.md).
 
 ## <a name="the-requests-table"></a>İstekler tablosu
 
- **İstekleri** tablosu bir yük testi sırasında verilen bireysel isteklere ayrıntılarını görüntüler. Bu, tüm HTTP istekleri ve resimler gibi bağımlı istekleri içerir. Bir istek birçok testleri ve senaryoları dahil olduğundan tablo test ve senaryoya göre istekleri listeler.
+ **İstekleri** tablo, bir yük testi sırasında verilen tek tek isteklerin ayrıntılarını görüntüler. Bu, tüm HTTP isteklerini ve resimler gibi bağımlı istekleri içerir. Bir istek birçok testleri ve senaryoya dahil olduğundan tablo, test ve senaryoya göre istekleri listeler.
 
  Aşağıdaki tablo sütunları listeler **istekleri** tablosu:
 
 |Sütun|Açıklama|Varsayılan olarak görünür|
-|------------|-----------------|------------------------|
-|**İstek**|İstek URL'si. Örneğin, home.html veya turuncu arrow.gif.|Evet|
-|**Senaryo**|Senaryo adı.|Evet|
-|**Test**|Test adı.|Evet|
-|**Toplam**|Yük testi sırasında verilen bu Web performans testi isteği toplam sayısı çalıştırın. Toplam, başarılı ve başarısız istekleri içerir, ancak Web sunucusuna verilmediğinden önbelleğe alınan istekleri içermez.|Evet|
-|**Geçirilen**|İsteği yayınlandı ve geçirilen sayısı.|Hayır|
-|**Başarısız**|İsteği yayınlandı ve başarısız sayısı. Bu sütunda yer alan girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz **yük testi hataları** iletişim kutusu. Daha fazla bilgi için bkz: [yük testi sonuçlarını çözümleme](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|Evet|
-|**Önbelleğe alınmış**|Toplam istek önbelleğe alınma sayısı.|Hayır|
-|**İsteği/sn**|Yük testi sırasında isteğin saniye başına oranı.|Hayır|
-|**Geçirilen/sn**|Bu istek, geçirilen bu isteğin örnekleri için yük testi sırasında saniye başına oranı.|Hayır|
-|**Saniye başına başarısız oldu**|Bu istek, bu isteğin başarısız örnekleri için yük testi sırasında saniye başına oranı.|Hayır|
-|**İlk bayta kalan süre**|Yanıt ilk baytını almak için geçen ortalama süre istek Web sunucusuna gönderilen zamandan itibaren ölçülür. Saniye birimleridir.|Hayır|
-|**Yanıt süresi**|Tüm isteğine yanıt olarak, almak için geçen ortalama süre istek Web sunucusuna gönderilen zamandan itibaren ölçülür. Saniye birimleridir.|Evet|
-|**İçerik uzunluğu**|İstek yanıtı içeriğini ortalama uzunluğu. Bayt birimleridir.|Evet|
+|-|-|-|
+|**İstek**|İsteğin URL'si. Örneğin, *home.html*, veya *turuncu arrow.gif*.|Evet|
+|**Senaryo**|Senaryonun adı.|Evet|
+|**Test**|Testin adı.|Evet|
+|**Toplam**|Çalıştırılan yük testi sırasında verilen bu web performans testi isteği toplam sayısı. Toplam başarılı ve başarısız istekler dahildir, ancak önbelleğe alınmış istekler web sunucusuna verilmediği içermez.|Evet|
+|**Geçirilen**|İstek verilen ve geçirilen sayısı.|Hayır|
+|**Başarısız**|İstek verilen ve başarısız sayısı. Bu sütun girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz **yük testi hataları** iletişim kutusu. Daha fazla bilgi için [Çözümle yük testi sonuçları](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|Evet|
+|**Önbelleğe alınmış**|Toplam istek önceden önbelleğe alınmış sayısı.|Hayır|
+|**İsteği/sn**|Yük testi çalıştırması sırasında istek saniye oranı.|Hayır|
+|**Geçirilen/sn**|Bu istek, geçirilen bu isteğin örnekleri için yük testi sırasında saniye oranı.|Hayır|
+|**Saniye başına başarısız oldu**|Bu istek, başarısız olan bu isteğin örnekleri için yük testi sırasında saniye oranı.|Hayır|
+|**İlk bayta kalan süre**|Yanıtı ilk baytı almanın ortalama süresi isteğin web sunucusuna gönderilen zamandan itibaren ölçülür. Saniye birimleridir.|Hayır|
+|**Yanıt süresi**|Bir istek için tüm yanıt almak için ortalama süresi isteğin web sunucusuna gönderilen zamandan itibaren ölçülür. Saniye birimleridir.|Evet|
+|**İçerik uzunluğu**|Ortalama isteğe yanıt içeriği uzunluğu. Bayt birimleridir.|Evet|
 
 ## <a name="the-tests-table"></a>Testler tablosu
 
- **Testleri** tablo bir yük testi sırasında tek tek testleri çalıştırmak için ayrıntıları görüntüler. Bir test birçok senaryoda dahil edilebilir çünkü tablo testleri test ve senaryoya göre listeler.
+ **Testleri** tablo, bir yük testi sırasında bireysel testler için ayrıntıları görüntüler. Bir test pek çok senaryoda eklenebilir olduğundan tablo, testleri test ve senaryoya göre listeler.
 
  Aşağıdaki tablo sütunları listeler **testleri** tablo.
 
 |Sütun|Açıklama|Varsayılan olarak görünür|
-|------------|-----------------|------------------------|
-|**Test**|Test adı.|Evet|
-|**Senaryo**|Senaryo adı.|Evet|
-|**Toplam**|Test senaryosunda çalıştırılma toplam sayısı. Bu testin başarılı ve başarısız sayısını içerir.|Evet|
+|-|-|-|
+|**Test**|Testin adı.|Evet|
+|**Senaryo**|Senaryonun adı.|Evet|
+|**Toplam**|Test senaryosunda çalıştırılma sayısı. Bu, test başarılı ve başarısız olma sayısı içerir.|Evet|
 |**Geçirilen**|Test senaryosunda çalıştırın ve geçirilen sayısı.|Evet|
-|**Başarısız**|Test senaryosunda çalıştırılma ve başarısız olma sayısı. Bu sütunda yer alan girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz **yük testi hataları** iletişim kutusu. Daha fazla bilgi için bkz: [yük testi sonuçlarını çözümleme](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|Evet|
-|**Testleri/sn**|Test yük testi sırasında saniye başına oranı.|Evet|
-|**Geçirilen/sn**|Bu test, geçirilen bu test örnekleri için yük testi sırasında saniye başına oranı.|Hayır|
-|**Saniye başına başarısız oldu**|Bu test, başarısız bu test örnekleri için yük testi sırasında saniye başına oranı.|Hayır|
-|**Test süresi**|Test yük testi sırasında ortalama yürütme süresi. Saniye birimleridir.|Evet|
-|**% 90 test süresi**|Test süresi 90 yüzdelik değer.|Hayır|
-|**% 95 test süresi**|Test süresi için 95 yüzdelik değer.|Evet|
-|**İstekleri ve Test**|Varsa bir Web performans testinde istekleri ortalama sayısı sınayın.|Hayır|
+|**Başarısız**|Testin senaryoda çalıştırın ve başarısız olma sayısı. Bu sütun girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz **yük testi hataları** iletişim kutusu. Daha fazla bilgi için [Çözümle yük testi sonuçları](../test/analyze-load-test-results-using-the-load-test-analyzer.md).|Evet|
+|**Testleri/sn**|Test yük testi çalıştırması sırasında saniye oranı.|Evet|
+|**Geçirilen/sn**|Bu test, geçirilen bu test örnekleri için yük testi sırasında saniye oranı.|Hayır|
+|**Saniye başına başarısız oldu**|Bu testi, başarısız olan bu test örnekleri için yük testi sırasında saniye oranı.|Hayır|
+|**Test süresi**|Yük testi çalıştırması sırasında testi yürütmek için geçen ortalama süre. Saniye birimleridir.|Evet|
+|**%90 test süresi**|Test süresi 90. yüzdebirlik değeri.|Hayır|
+|**%95 test süresi**|Test süresi 95. yüzdebirlik değeri.|Evet|
+|**İstekleri ve Test**|Testi varsa bir web performans testindeki istekleri ortalama sayısı.|Hayır|
 
-## <a name="the-transactions-table"></a>İşlemler tablosu
+## <a name="the-transactions-table"></a>İşlem tablosu
 
- **İşlemleri** tablo bir yük testi çalıştırması sırasında gerçekleşen işlemlerin bir listesini görüntüler. Bir Web performans testinde tanımlanan işlemlere ya da bir birim testi içinde tanımlanan zamanlayıcılar işlemleri bakın. İşlem, veritabanı işlemleri için başvurmuyor.
+ **İşlemleri** tablo, bir yük testi çalıştırması sırasında gerçekleşen işlemleri listesini görüntüler. İşlem bir web performans testi içinde tanımlanan işlemlere ya da bir birim testi içinde tanımlanan sayaçlara başvurur bakın. İşlem, veritabanı işlemlerine başvurmaz.
 
  Aşağıdaki tablo sütunları listeler **işlemleri** tablo.
 
 > [!NOTE]
-> Tüm sütunları görüntülemek için etkin çalışma ayarı ile ilişkilendirilen zamanlama ayrıntıları depolama özelliğini etkinleştirmeniz gerekir. Daha fazla bilgi için bkz: [nasıl yapılır: zamanlama ayrıntıları depolama özelliğini belirtme](../test/how-to-specify-the-timing-details-storage-property-for-a-load-test.md).
+> Tüm sütunları görüntülemek için etkin çalışma ayarı ile ilişkili Zamanlama Ayrıntıları Deposu özelliğini etkinleştirmeniz gerekir. Daha fazla bilgi için [nasıl yapılır: zamanlama ayrıntıları depolama özelliğini belirtme](../test/how-to-specify-the-timing-details-storage-property-for-a-load-test.md).
 
-|Sütun|Açıklama|Zamanlama Ayrıntıları olmadan görünür|
-|------------|-----------------|------------------------------------|
-|**İşlem**|İşlem adı.|Evet|
-|**Senaryo**|Senaryo adı.|Evet|
-|**Test**|Test adı.|Evet|
-|**Toplam**|Yük testi sırasında verilen işlemlerin toplam sayısı.|Evet|
-|**İşlem süresi**|Yük testi sırasında işlem yürütme süresi. Web performans testleri için süresi hesaplamadaki dahil düşünün. Saniye birimleridir.|Hayır|
-|**Yanıt süresi**|Çalıştıran bir yük testinde Web performans testi işlemi için yanıt süresi. Yanıt süresi düşünme içermez, yanıt süresi işlem süresi'nden farklı işlem sırasında oluşan zaman. Saniye birimleridir.|Hayır|
-|**Ortalama İşlem süresi**|Ortalama işlem süresi. Bu süre düşünme sürelerini içerir. Örneğin, üç istekleri sahip ve her bir Düşünme süresi içeriyorsa, bu kez içerecektir olanlar düşünme sürelerini ve çalıştırmak için gerçek süre ister.|Hayır|
-|**Ortalama Yanıt süresi**|Yük testi Web performans testi işlemde için ortalama yanıt süresi. Yanıt süresi düşünme içermez, yanıt süresi işlem süresi'nden farklı işlem sırasında oluşan zaman. Saniye birimleridir.|Hayır|
-|**Min yanıt süresi**|Düşünme sürelerini içermez.|Hayır|
-|**En büyük yanıt süresi**|Düşünme sürelerini içermez.|Hayır|
-|**Ortalama yanıt süresi**|Düşünme sürelerini içermez.|Hayır|
-|**% 90 yanıt süresi**|İşlem süresi 90 yüzdelik değer. Düşünme sürelerini içermez. **Not:** bu Visual Studio Team System 2008 Test Yükleme kullanılan Aracısı'ndan, farklı **% 90 işlem süresi** değeri.|Hayır|
-|**% 95 yanıt süresi**|İşlem süresi için 95 yüzdelik değer. Düşünme sürelerini içermez. **Not:** bu Visual Studio Team System 2008 Test Yükleme kullanılan Aracısı'ndan, farklı **% 95 işlem süresi** değeri.|Hayır|
-|**% 99 yanıt süresi**|İşlem süresi için 99 yüzdelik değer. Düşünme sürelerini içermez.|Hayır|
-|**Std Dev yanıt süresi**|Düşünme sürelerini içermez.|Hayır|
+|Sütun|Açıklama|Zamanlama Ayrıntıları olmadan da görünür|
+|-|-|-|
+|**İşlem**|İşlemin adı.|Evet|
+|**Senaryo**|Senaryonun adı.|Evet|
+|**Test**|Testin adı.|Evet|
+|**Toplam**|Yük testi çalıştırması sırasında gerçekleştirilen işlemlerin toplam sayısı.|Evet|
+|**İşlem süresi**|Yük testi çalıştırması sırasında işlem yürütme süresi. Web performans testleri için süresi hesaplamaya dahil düşünün. Saniye birimleridir.|Hayır|
+|**Yanıt süresi**|Yük testi içinde web performans testi işlemi için yanıt süresi. Yanıt süresi Düşünme zamanlarını içermez, yanıt süresi farklı işlem süresi'nden, işlem sırasında gerçekleşen zaman. Saniye birimleridir.|Hayır|
+|**Ortalama İşlem süresi**|Ortalama işlem süresi. Bu süre Düşünme süreleri de dahildir. Örneğin, üç taleplere sahip ve her bir Düşünme süresi vardır, bu kez içerecektir olanlar Düşünme süreleri ve yürütmek için gerçek süre ister.|Hayır|
+|**Ortalama Yanıt süresi**|Yük testi içinde web performans testi işlemi için ortalama yanıt süresi. Yanıt süresi Düşünme zamanlarını içermez, yanıt süresi farklı işlem süresi'nden, işlem sırasında gerçekleşen zaman. Saniye birimleridir.|Hayır|
+|**En az yanıt süresi**|Bu, Düşünme zamanlarını içermez.|Hayır|
+|**En yüksek yanıt süresi**|Bu, Düşünme zamanlarını içermez.|Hayır|
+|**ORTANCA yanıt süresi**|Bu, Düşünme zamanlarını içermez.|Hayır|
+|**% 90 yanıt süresi**|İşlem süresi 90. yüzdebirlik değeri. Bu, Düşünme zamanlarını içermez. **Not:** bu Visual Studio Team System 2008 Test Yükleme kullanılan Aracısı, farklı **%90 işlem süresi** değeri.|Hayır|
+|**% 95 yanıt süresi**|95. yüzdebirlik işlem süresi için. Bu, Düşünme zamanlarını içermez. **Not:** bu Visual Studio Team System 2008 Test Yükleme kullanılan Aracısı, farklı **%95 işlem süresi** değeri.|Hayır|
+|**% 99 yanıt süresi**|İşlem süresi 99. yüzdebirlik değeri. Bu, Düşünme zamanlarını içermez.|Hayır|
+|**Std sapma yanıt süresi**|Bu, Düşünme zamanlarını içermez.|Hayır|
 
-## <a name="the-errors-table"></a>Hatalar tablosu
+## <a name="the-errors-table"></a>Hataları tablosu
 
- Bir yük testi çalıştırdığınızda oluşan hataları çözümleyebilirsiniz. Hataları çözümleme ve testlerinizi ayarlama yük test işlemi önemli bir parçasıdır. Herhangi bir hata oluştuysa, bir **hataları** köprü yük testi durum çubuğunda görünür ve oluşan hataların sayısını belirtir. Hatalar tablosunu görüntülemek için köprü seçin.
+ Bir yük testi çalıştırdığınızda oluşan hataları analiz edebilirsiniz. Hataları analiz etme ve testlerinizi ayarlama yük test işleminin önemli bir parçasıdır. Herhangi bir hata oluştuysa, bir **hataları** köprü yük testi durum çubuğunda görünür ve oluşan hataların sayısını belirtir. Hatalar tablosunu görüntülemek için köprüyü seçin.
 
- Hataları, yükleme sırasında oluşan hataları test grupları türüne ve alt hatanın tarafından tablo. Ayrıca bir **toplam** oluşan tüm hataların toplam sayısını belirten tablodaki satır.
+ Hata türü ve alt hata türüne göre grupları bir yükleme sırasında oluşan hatalar test tablo. Ayrıca bir **toplam** gerçekleşen tüm hataların toplam sayısını belirten bir tablo satır.
 
  Hataları tablo şu sütunları içerir:
 
 |Sütun|Açıklama|Varsayılan olarak görünür|
-|------------|-----------------|------------------------|
+|-|-|-|
 |Tür|Hata türü. Örneğin, HTTP hatası.|Evet|
 |SubType|Hatanın alt türü. Örneğin, LoadTestException.|Evet|
-|Sayısı|Yük testi sırasında gerçekleşen bu tür hataların sayısı. Bu sütunda yer alan girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz.|Evet|
-|Son ileti|Hatayı açıklayan ileti. Örneğin, 404 - NotFound.|Evet|
+|Sayısı|Bu türdeki yük testi sırasında oluşan hataları sayısı. Bu sütun girişleri köprü olarak gösteriliyor. Hataları ayrı ayrı bir listesini görüntülemek için herhangi bir köprüye seçebilirsiniz.|Evet|
+|Son ileti|Hatayı açıklayan ileti. Örneğin, 404 - bulunamadı.|Evet|
 
- Daha fazla bilgi için bkz: [yük testi tabloları ile çalışma](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
+ Daha fazla bilgi için [yük testi tablolarla çalışma](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
 
-### <a name="drilling-down-to-the-error-list"></a>Hata listesinde ayrıntıya gitmek
+### <a name="drill-down-to-the-error-list"></a>Hata listesinde detaya gidin
 
-Hataları tablosu hatalarını türüne ve alt hata türüne göre gruplandırır. Tek tek hataların tablosunu görüntülemek için görüntü **yük testi hataları** iletişim kutusu. İletişim kutusunu görüntülemek için bir köprü seçin **sayısı** hatalar tablosunun sütun. İletişim kutusunu doldurulur hataları tablosunda bir satırı sağ tıklayıp seçerek görüntüleyebilirsiniz **hataları**.
+Hata türü ve alt hata türüne göre gruplandırır tablo. Hataları ayrı ayrı tablosunu görüntülemek için görüntü **yük testi hataları** iletişim kutusu. İletişim kutusunu görüntülemek için köprü seçin **sayısı** hataları tablosunda sütun. İletişim kutusu doldurulur hataları tablosunda bir satıra sağ tıklayıp seçerek görüntüleyebilirsiniz **hataları**.
 
 > [!NOTE]
-> Yalnızca ilk 1.000 örnekleri hata türüne ve alt birleşiminden toplanır. Görüntülediğinizde **yük testi hataları** iletişim kutusu, en fazla ilk 1.000 örnekleri hata görürsünüz.
+> Herhangi bir hata türüne ve alt birleşimini yalnızca ilk 1.000 örnekleri toplanır. Görüntülediğinizde **yük testi hataları** iletişim kutusu, en fazla hata ilk 1.000 örnekler göreceksiniz.
 
 **Yük testi hataları** tablo şu sütunları içerir:
 
 |Sütun|Açıklama|
-|------------|-----------------|
-|**Saat**|Hatanın gerçekleştiği süre boyunca yük test edin.|
-|**Aracı**|Hatanın gerçekleştiği Aracı bilgisayarın adı. Test denetleyicileri ve test aracılarını kullanarak yük testlerini çalıştırdığınızda, bu önemlidir. Daha fazla bilgi için bkz: [yüklemek ve test aracılarını yapılandırma](../test/lab-management/install-configure-test-agents.md).|
-|**Test**|Web performans adını test hangi hata oluştu.|
-|**Senaryo**|Hatanın gerçekleştiği senaryonun adı.|
-|**İstek**|Hata meydana geldiği istek URL'si.|
+|-|-|
+|**saat**|Hatanın gerçekleştiği süre boyunca yük test edin.|
+|**Aracı**|Hatanın gerçekleştiği aracı bilgisayar adı. Test denetleyicileri ve test aracılarını kullanarak yük testi çalıştırdığınızda, bu önemlidir. Daha fazla bilgi için [yüklemek ve test denetleyicisilerinin](../test/lab-management/install-configure-test-agents.md).|
+|**Test**|Web performans adını test, bir hata oluştu.|
+|**Senaryo**|Hatanın gerçekleştiği Senaryo adı.|
+|**İstek**|Hatanın gerçekleştiği istek URL'si.|
 |**Türü**|Hata türü. Örneğin, HTTP hatası.|
-|**Alt türü**|Hatanın alt türü. Örneğin, LoadTestException.|
-|**Metin**|Hata iletisinin metni. Örneğin, 404 - NotFound.|
-|**Yığını**|Bu sütundaki boş veya word girişler **yığın** köprü olarak biçimlendirilir. Hata yığını izlemesi görüntülemek için köprüye seçebilirsiniz.|
-|**Ayrıntıları**|Bu sütundaki boş veya word girişler **TestLog** köprü olarak biçimlendirilir. Bu bağlantıyı yük testindeki hataları ayırmanıza yardımcı olabilir. Örneğin, seçme **TestLog** bir Web performans testi istek hatasını bağlantıdaki Web Performans Testi Sonuçları Görüntüleyicisi'ndeki Web performans testi sonuçları açın ve istek hatası vurgulayın.|
+|**Alt tür**|Hatanın alt türü. Örneğin, LoadTestException.|
+|**Metin**|Hata iletisi metni görüntülenir. Örneğin, 404 - bulunamadı.|
+|**Yığın**|Bu sütundaki boş veya word girişler **yığın** köprü olarak biçimlendirilir. Hatanın bir yığın izlemesini görüntülemek için köprüyü seçebilirsiniz.|
+|**Ayrıntıları**|Bu sütundaki boş veya word girişler **TestLog** köprü olarak biçimlendirilir. Bu bağlantı, yük testi hataları yalıtmaya yardımcı olabilir. Örneğin, seçme **TestLog** bir web performans testi isteği hatası bağlantısını için Web Performans Test Sonuçları Görüntüleyicisi'ndeki web performans test sonuçları açın ve istek hatası vurgulayın.|
 
 > [!NOTE]
-> Tablo, sütun başlıklarının seçerek sıralayabilirsiniz.
+> Tablo, sütun üst bilgilerini seçerek sıralayabilirsiniz.
 
-## <a name="the-sql-trace-data-table"></a>SQL izleme veri tablosu
+## <a name="the-sql-trace-data-table"></a>SQL izleme verileri tablo
 
-Daha sonra çözümlemek için bir yük testi sırasında SQL izleme verilerini toplayabilir. İzleme verilerini toplamak yavaş çalışan sorguları ve saklı yordamlar SQL Server veritabanında sınanan tanımlamanıza olanak sağlar.
+Daha sonra çözümlemek için bir yük testi sırasında izlenecek SQL izleme verilerini toplayabilir. İzleme verilerini toplamak, test edilen SQL Server veritabanında saklı yordamlar ve en yavaş çalışan sorguları belirlemenize olanak tanır.
 
-SQL izleme etkinleştirilirse, izleme verilerini içeren yük testi sırasında bir dosya oluşturulur. Bu veriler yük testi sonuçları deposu test çalıştırması sonunda otomatik olarak kaydedilir ve izleme dosyası silinir. İzleme verilerini analiz **SQL İzleme** yük testlerini tamamlandıktan sonra tablo.
+SQL izleme etkin olduğunda izleme verilerini içeren yük testi çalıştırması sırasında bir dosya oluşturulur. Bu veriler yük testi sonuçları Store test çalışmasının sonunda otomatik olarak kaydedilir ve izleme dosyası silindi. İzleme verilerini analiz **SQL İzleme** yük testi tamamlandıktan sonra tablo.
 
 ### <a name="to-view-sql-trace-data"></a>SQL izleme verilerini görüntülemek için
 
-1. Yük Testi Çözümleyicisi'nde seçin **tabloları** tablo kılavuzunun görüntülendiğinden emin olmak için araç çubuğunda.
+1. Yük Testi Çözümleyicisi'nde seçin **tabloları** araç çubuğundaki tablo kılavuzunu görüntülendiğinden emin olun.
 
 2. İçinde **tablo** aşağı açılan liste kutusunda **SQL İzleme**.
 
-3. Çalışma sırasında toplanan izleme verilerini kılavuzda görüntülenir. Tablo en yavaş üst süreye göre sıralanmış yavaş çalışan SQL işlemleri listeler. Genellikle, **süresi** incelemek için ilk sütun bir sütundur. Veri milisaniye cinsinden gösterilir.
+3. Kılavuzda çalıştırma sırasında toplanan izleme verileri görüntülenir. Tablo, en yavaş üst süreye göre sıralanmış yavaş çalışan SQL işlemleri listeler. Genellikle, **süresi** incelemek için ilk sütunda bir sütundur. Milisaniye cinsinden veriler görüntülenir.
 
-   Görüntülenen sütunlar aşağıdaki gibidir:
+   Görüntülenen sütunları aşağıdaki gibidir:
 
-    - Event sınıfı
+    - **Olay sınıfı**
 
-    - Süre
+    - **Süresi**
 
-    - CPU
+    - **CPU**
 
-    - Okur
+    - **Okur**
 
-    - Yazma
+    - **Yazar**
 
-    - TextData
+    - **TextData**
 
-    - StartTime
+    - **startTime**
 
-    - EndTime
+    - **EndTime**
 
-   Bu sütunlarda belirtilen verilerden farklı SQL olaylarını izlemek isterseniz, Visual Studio'dan ayrı SQL Profiler aracını kullanarak kendi özel SQL izleme ayarlayabilirsiniz.
+   Bu sütunlarda belirtilen veri dışında SQL olaylarını izlemek istiyorsanız, Visual Studio'dan ayrı SQL Profiler aracını kullanarak kendi özel SQL izleme ayarlayabilirsiniz.
 
-## <a name="tile-load-test-tables"></a>Yük testi tabloları döşeme
+## <a name="tile-load-test-tables"></a>Kutucuk yük testi tabloları
 
-Yük testi sonuçlarını görüntülediğinizde, ayrıntılı tablolar olarak verilerini görüntüleyebilir. Tablo görünümüne geçiş yapmak için tercih **tabloları** yük testi araç çubuğunda. Kullanılabilir tabloların hataları, sayfalar, istekleri, SQL izleme, testleri, eşikleri ve işlemleri ' dir. Daha fazla bilgi için bkz: [yük testi tabloları ile çalışma](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
+Yük testi sonuçlarını görüntülemek, verileri ayrıntılı tablo olarak görüntüleyebilirsiniz. Tablo görünümüne geçmek için seçin **tabloları** üzerinde **yük testi** araç çubuğu. Kullanılabilir tablolar **hataları**, **sayfaları**, **istekleri**, **SQL İzleme**, **testleri**,  **Eşikleri**, ve **işlemleri**. Daha fazla bilgi için [yük testi tablolarla çalışma](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
 
-Tablo görünümünde, aynı anda en fazla dört tabloları çakışmadan görüntüleyebilirsiniz.
+Tablo Görünümü'nde çakışmadan aynı anda en fazla dört tabloları görüntüleyebilirsiniz.
 
-### <a name="to-tile-tables"></a>Tabloları döşeme
+### <a name="to-tile-tables"></a>Kutucuğa tabloları
 
-1. Yük Testi Çözümleyicisi araç çubuğunda seçin **tabloları**.
+1. Üzerinde **Yük Testi Çözümleyicisi** araç seçin **tabloları**.
 
-     Tablo görünümü açılır. Varsayılan düzen iki yatay bölmedir.
+     Tablo görünümü açılır. Varsayılan düzen iki yatay Panel ' dir.
 
-2. Yük Testi Çözümleyicisi araç çubuğunda düzeni düğmesini seçin ve ardından aşağıdaki seçeneklerden birini seçin:
+2. Üzerinde **Yük Testi Çözümleyicisi** araç seçin **Düzen** düğmesine tıklayın ve sonra aşağıdaki seçeneklerden birini seçin:
 
-    - Bir paneli
+    - **Tek bir Panel**
 
-    - İki yatay bölme
+    - **İki yatay panel**
 
-    - Üç yatay bölme
+    - **Üç yatay panel**
 
-    - Dört yatay bölme
+    - **Dört yatay panel**
 
-3. Farklı tablolar arasında geçiş yapmak için her panelinde Tablo Kılavuz yukarıdaki açılır listeyi kullanın.
+3. Farklı tablolar arasında geçiş yapmak için her panelinde Tablo Kılavuz Yukarıdaki açılan listeyi kullanın.
 
     > [!NOTE]
-    > Aynı tabloda birden fazla panelinde görüntülenemiyor. Zaten başka bir panelinde görüntülenen bir tabloya bir bölmede görüntülenen tablo değiştirirseniz, tablolar bölmelere geçiş yapar.
+    > Aynı tabloda birden fazla panelde görüntülenemiyor. Zaten başka bir panel içinde görüntülenen bir tabloya bir bölmede görüntülenen tablo değiştirirseniz panellerin tabloları geçin.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Yük testi sonuçlarını çözümleme](../test/analyze-load-test-results-using-the-load-test-analyzer.md)
-- [Nasıl yapılır: yük testi sonuçlarını çözümleme için erişim](../test/how-to-access-load-test-results-for-analysis.md)
+- [Nasıl yapılır: erişim yük testi sonuçlarını çözümleme](../test/how-to-access-load-test-results-for-analysis.md)
 - [Grafik görünümünde yük testi sonuçlarını çözümleme](../test/analyze-load-test-results-in-the-graphs-view.md)
 - [Eşik kuralı ihlallerini çözümleme](../test/analyze-threshold-rule-violations-in-load-tests.md)
-- [Yük testi sonuçları havuzu yük testi sonuçlarını yönetme](../test/manage-load-test-results-in-the-load-test-results-repository.md)
-- [Yük Testi Sonuçları Özeti genel bakış](../test/load-test-results-summary-overview.md)
+- [Yük testi sonuçları deposu içindeki yük testi sonuçlarını yönetme](../test/manage-load-test-results-in-the-load-test-results-repository.md)
+- [Yük testi sonuçları özetine genel bakış](../test/load-test-results-summary-overview.md)

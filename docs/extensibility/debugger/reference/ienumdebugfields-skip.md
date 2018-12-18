@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6c2a87f0f03bca4e52e40a7f6a79273f06683aae
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: abfc04a0d790a51d9ae347d9516c246bcf2a3655
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873740"
 ---
 # <a name="ienumdebugfieldsskip"></a>IEnumDebugFields::Skip
 Bu yöntem, belirtilen sayıda öğeyi atlar.  
@@ -40,13 +41,13 @@ int Skip(
   
 #### <a name="parameters"></a>Parametreler  
  `celt`  
- [in] Atlamak için öğe sayısı.  
+ [in] Geçilecek öğelerin sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` varsa `celt` kalan öğe sayısından büyüktür; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa `celt` kalan öğeleri sayısından büyüktür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Varsa `celt` sayısından daha büyük bir değer belirtir kalan öğelerden numaralandırması sonuna ayarlanır ve `S_FALSE` döndürülür.  
+ Varsa `celt` numarasından daha büyük bir değer belirtir, kalan öğeleri numaralandırma sonuna ayarlanır ve `S_FALSE` döndürülür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md)

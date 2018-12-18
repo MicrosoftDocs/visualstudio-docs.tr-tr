@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 67ac5bad37ad5df85022ba6572da44d32de39736
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b0ac385eaff1344d21b47e902e7c76d7f4c39343
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49869768"
 ---
 # <a name="idebugprogrampublisher2publishprogram"></a>IDebugProgramPublisher2::PublishProgram
-Bu yöntem, bir program hata ayıklama altyapılarını (DEs) kullanılabilir ve oturum hata ayıklama Yöneticisi hale getirir.  
+Bu yöntem, bir program hata ayıklama altyapısı (DEs) için kullanılabilir ve oturum hata ayıklama Yöneticisi sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,19 +45,19 @@ int PublishProgram(
   
 #### <a name="parameters"></a>Parametreler  
  `Engines`  
- [in] Başlatabilir veya bu program için ekleme GUID'ler DEs için bir dizi.  
+ [in] Başlatabilir veya bu programa ekleme GUID'ler DEs için bir dizi.  
   
  `szFriendlyName`  
- [in] (Bu menüleri veya kullanıcıya sunulan iletişim kutuları görüntülenir) programı için kolay ad.  
+ [in] (Bu Bu menüler ya da iletişim kutuları kullanıcıya görünür) programı için kolay ad.  
   
  `pDebuggeeInterface`  
- [in] `IUnknown` programı arabirimi (Bu değer, bir tanımlama bilgisi olarak program benzersiz olarak tanımlamak için kullanılır; bu aynı değer "program yayımdan kaldırmak için" kullanılır)  
+ [in] `IUnknown` programı arabirimi (Bu değer bir tanımlama bilgisi program benzersiz olarak tanımlanabilmesi için kullanılır; bu değer "program yayımdan kaldırmak için" kullanılır)  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir program hata ayıklama için artık kullanılabilir hale getirmek için arama [UnpublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-unpublishprogram.md).  
+ Bir programı hata ayıklama için artık kullanılabilir hale getirmek için çağrı [UnpublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-unpublishprogram.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md)   

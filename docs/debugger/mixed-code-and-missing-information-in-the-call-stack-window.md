@@ -3,7 +3,7 @@ title: Kod ve eksik bilgiler çağrı yığını penceresinde karışık | Micro
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
-ms.topic: conceptual
+ms.topic: troubleshooting
 dev_langs:
 - CSharp
 - VB
@@ -25,20 +25,21 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9b2733cbf5d9b833ac23ee573e1f39e9c8750224
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: cdcde5a0a597d038015c80f5d26add66158542ff
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49850939"
 ---
 # <a name="mixed-code-and-missing-information-in-the-call-stack-window"></a>Çağrı Yığını Penceresinde Karışık Kod ve Eksik Bilgiler
-Çağrı yığınları yönetilen ve yerel kodu arasındaki farklar nedeniyle, hata ayıklayıcı kodu karışımı yazdığında tam çağrı yığını her zaman gösterilemiyor. Yerel kod yönetilen kod aradığında, aşağıdaki tutarsızlıklar karşılaşabilirsiniz **çağrı yığını** penceresi:  
+Yönetilen ve yerel kod için çağrı yığınlarını arasındaki farklar nedeniyle, hata ayıklayıcı kod karışımı yazdığında tam çağrı yığınını her zaman gösteremez. Yerel kod yönetilen kodu çağırdığında, aşağıdaki tutarsızlıklar görebilirsiniz **çağrı yığını** penceresi:  
   
--   Yönetilen kod yukarıda hemen yerel çerçeve eksik **çağrı yığını** penceresi. Daha fazla bilgi için bkz: [nasıl yapılır: yerel çerçeveler çağrı yığını penceresinde olmadığında yönetilen kodların dışına Adımlama](../debugger/how-to-step-out-of-managed-code-when-native-frames-are-missing-from-the-call-stack-window.md).  
+- Yönetilen kod hemen üstündeki yerel çerçeve eksik **çağrı yığını** penceresi. Daha fazla bilgi için [nasıl yapılır: yerel çerçeveler eksik çağrı yığını penceresinde olmadığında yönetilen kodların dışına Adımlama](../debugger/how-to-step-out-of-managed-code-when-native-frames-are-missing-from-the-call-stack-window.md).  
   
--   Hata ayıklayıcı dışında başlatılan karışık mod uygulamaları için **çağrı yığını** pencere, yalnızca yönetilen kod görüntüleyebilir ve yerel çerçeveler hiçbiri görünür olacaktır.  
+- Karışık mod uygulamaları hata ayıklayıcı dışında tarafından başlatılan **çağrı yığını** pencere, yalnızca yönetilen kod görüntüleyebilir ve yerel çerçeveler hiçbiri görünür olur.  
   
- Her iki durumda oldukça seyrek kullanılır. Yönetilen kod için en yerel çağrılarında çağrı yığınları doğru görünür.  
+  Her iki durumda oldukça nadir. Yönetilen kod için yerel en çağrılarında doğru çağrı yığınlarını görünür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: çağrı yığını penceresini kullanma](../debugger/how-to-use-the-call-stack-window.md)
+ [Nasıl Yapılır: Çağrı Yığını Penceresini Kullanma](../debugger/how-to-use-the-call-stack-window.md)

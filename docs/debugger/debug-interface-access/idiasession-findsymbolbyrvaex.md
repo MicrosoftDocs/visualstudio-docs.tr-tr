@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 809598b5203878b70b57a061b75bc60d4dc84bac
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: d7dc9cfb435da1a4204c8a7ed23e398478aef0ea
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832439"
 ---
 # <a name="idiasessionfindsymbolbyrvaex"></a>IDiaSession::findSymbolByRVAEx
-İçeriyor veya belirtilen göreli sanal adres (RAV) ve uzaklık için en yakın olan bir belirtilen simge türü alır.  
+İçeriyor veya belirtilen göreli sanal adres (RVA) ve uzaklığı için en yakın olan bir belirtilen simge türü alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,16 +40,16 @@ HRESULT findSymbolByRVAEx (
  [in] RVA belirtir.  
   
  `symtag`  
- [in] Bulunacak simge türü. Değerleri gerçekleştirilecek [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) numaralandırması.  
+ [in] Bulunacak simge türü. Değerleri verilerinden alınır [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) sabit listesi.  
   
  `ppSymbol`  
- [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) simgenin temsil eden nesnesi alınamadı.  
+ [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) sembol temsil eden bir nesne alındı.  
   
  `displacement`  
- [out] Belirtilen göreli sanal adres uzaklık belirten bir değer döndürür `rva`.  
+ [out] Belirtilen göreli sanal adres bir uzaklığı belirten bir değeri döndürür `rva`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
   
@@ -61,4 +62,4 @@ pSession->findSymbolByRVAEx( rva, SymTagFunction, &pFunc, &disp );
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

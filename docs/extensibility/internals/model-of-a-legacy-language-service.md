@@ -1,5 +1,5 @@
 ---
-title: Eski dil hizmetinin model | Microsoft Docs
+title: Eski dil hizmeti, model | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,42 +13,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 943f0f013045e3082af3069ed4d45aaed1096869
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 381c5b37cdc5d8a166003bdf7dd931dd95e6dcb3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49943095"
 ---
-# <a name="model-of-a-legacy-language-service"></a>Eski dil hizmet modeli
-Bir dil hizmeti belirli bir dil için özellikler ve öğeler tanımlar ve düzenleyici bu dile özgü bilgileri sağlamak için kullanılır. Örneğin, düzenleyici sözdizimi renklendirmesi desteklemek için öğeleri ve dil anahtar sözcükleri bilmesi gerekir.  
+# <a name="model-of-a-legacy-language-service"></a>Eski Dil Hizmetinin Modeli
+Dil hizmeti belirli bir dil özellikleri ve öğeleri tanımlar ve bilgileri o dile özgü Düzenleyici sağlamak için kullanılır. Örneğin, düzenleyici söz dizimi renklendirmesi desteklemek için öğeleri ve dil anahtar sözcükleri bilmesi gerekir.  
   
- Dil hizmeti yakından Düzenleyicisi ve düzenleyici içeren görünümü tarafından yönetilen metin arabelleği ile çalışır. Microsoft IntelliSense **hızlı bilgi** seçeneği dil hizmeti tarafından sağlanan bir özelliği bir örnektir.  
+ Dil hizmeti metin arabelleğini yöneten Düzenleyicisi ve düzenleyici içeren görünümü ile yakın bir tümleştirmede çalışır. Microsoft IntelliSense **hızlı bilgi** seçeneği dil hizmeti tarafından sağlanan bir özellik örneğidir.  
   
-## <a name="a-minimal-language-service"></a>En az bir dil hizmeti  
- En temel dil hizmeti aşağıdaki iki nesne içerir:  
+## <a name="a-minimal-language-service"></a>Bir Minimal dil hizmeti  
+ En temel dil hizmeti, aşağıdaki iki nesne içerir:  
   
--   *Dil hizmeti* uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo> arabirimi. Bir dil hizmeti adı, dosya adı uzantıları, kod Pencere Yöneticisi ve Renklendirici içeren dili hakkında bilgi yer almaktadır.  
+- *Dil hizmeti* uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo> arabirimi. Bir dil hizmeti adı, dosya adı uzantıları, kod penceresi Yöneticisi ve Renklendirici dahil dil hakkında bilgi içerir.  
   
--   *Renklendirici* uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorizer> arabirimi.  
+- *Renklendirici* uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorizer> arabirimi.  
   
- Aşağıdaki kavramsal çizim temel dil hizmet modeli gösterir.  
+  Aşağıdaki kavramsal çizimi temel dil hizmetinin modeli gösterilmektedir.  
   
- ![Dil Hizmet Modeli grafiği](../../extensibility/media/vslanguageservicemodel.gif "vsLanguageServiceModel")  
-Temel dil hizmet modeli  
+  ![Dil hizmetinin Modeli grafiği](../../extensibility/media/vslanguageservicemodel.gif "vsLanguageServiceModel")  
+  Temel dil hizmetinin modeli  
   
- Belge penceresi konakları *belge görünümü* bu durumda düzenleyicisinin [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] çekirdek Düzenleyici. Belge görünümü ve metin arabelleği Düzenleyicisi tarafından sahibi olur. Bu nesneler çalışmak [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] özel belge pencere olarak adlandırılan bir *kod penceresi*. Kod penceresi bulunan bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame> oluşturulan ve IDE tarafından denetlenen nesne.  
+  Belge penceresi konakları *belge görünümü* bu durumda düzenleyicinin [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] çekirdek Düzenleyici. Düzenleyici tarafından belge görünümü ve metin arabelleğini sahibi olur. Bu nesneler ile çalışma [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] adlı bir özel belge penceresi bir *kod penceresi*. Kod penceresi bulunan bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame> oluşturulur ve IDE tarafından denetlenen nesne.  
   
- Belirtilen uzantılı bir dosya yüklendiğinde Düzenleyicisi bu uzantısıyla ilişkili dil hizmeti bulur ve için kod penceresi çağırarak geçirir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo.GetCodeWindowManager%2A> yöntemi. Dil hizmeti döndürür bir *kod Pencere Yöneticisi*, hangi uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> arabirimi.  
+  Düzenleyici belirli bir uzantıya sahip bir dosya yüklendiğinde, bu uzantıyla ilişkili dil hizmeti bulur ve kod penceresinde çağırarak geçirir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo.GetCodeWindowManager%2A> yöntemi. Dil hizmeti döndürür bir *kod penceresinde Yöneticisi*, uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> arabirimi.  
   
- Aşağıdaki tabloda, modeldeki nesneleri genel bir bakış sağlar.  
+  Aşağıdaki tablo modelindeki nesneler genel bir bakış sağlar.  
   
-|Bileşen|Nesne|İşlev|  
-|---------------|------------|--------------|  
-|Metin arabelleği|<xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>|Unicode okuma/yazma metin akış. Diğer Kodlamalar kullanmak metin için mümkündür.|  
-|Kod penceresi|<xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow>|Bir veya daha fazla metin görünümleri içeren bir belge penceresi. Zaman [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] olan birden çok belge arabirimi (MDI) modunda bir MDI alt kod penceredir.|  
-|Metin görünümü|<xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>|Kullanıcının gidin ve klavye ve fare kullanarak metin görüntüleme sağlayan bir pencere. Metin görünümü kullanıcıya bir düzenleyicisi olarak görünür. Metin görünümlerde sıradan Düzenleyici pencerelerini, çıktı penceresi ve komut penceresi kullanabilirsiniz. Ayrıca, bir veya daha fazla metin görünümler kod penceresi içinde yapılandırabilirsiniz.|  
-|Metin Yöneticisi|Tarafından yönetilen <xref:Microsoft.VisualStudio.TextManager.Interop.SVsTextManager> hizmet, hangi elde gelen bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManager> işaretçi|Daha önce açıklanan tüm bileşenleri tarafından paylaşılan ortak bilgileri tutan bir bileşeni.|  
-|Dil hizmeti|Uygulamaya bağlıdır; uygular <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo>|Düzenleyici sözdizimi vurgulama, deyim tamamlama ve eşleşen ayraç gibi dile özgü bilgiler sağlayan bir nesne.|  
+| Bileşen | Nesne | İşlev |
+|------------------| - | - |
+| Metin arabelleği | <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer> | Unicode okuma/yazma metin akışına. Bu, diğer kodlamaları kullanılacak metin için mümkündür. |
+| Kod penceresi | <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow> | Bir veya daha fazla metin görünümlerini içeren bir belge penceresi. Zaman [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] olan çok Belgeli Arabirim (MDI) modunda bir MDI alt kod penceredir. |
+| Metin görünümü | <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView> | Kullanıcının gidin ve klavyeyi ve fareyi kullanarak metin görüntüleme sağlayan bir pencere. Metin görünümü kullanıcı için bir düzenleyici olarak görüntülenir. Metin görünümlerde sıradan Düzenleyici pencerelerini ve çıktı penceresini komut penceresi kullanabilirsiniz. Ayrıca, kod penceresi içinde bir veya daha fazla metin görünümlerini yapılandırabilirsiniz. |
+| Metin Yöneticisi | Tarafından yönetilen <xref:Microsoft.VisualStudio.TextManager.Interop.SVsTextManager> hizmeti, hangi elde gelen bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManager> işaretçi | Daha önce açıklanan tüm bileşenleri tarafından paylaşılan ortak bilgisini tutar bileşeni. |
+| Dil hizmeti | Uygulamaya bağlıdır; uygulayan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo> | Düzenleyici söz dizimi vurgulama, ifade tamamlama ve Ayraç eşleştirme gibi dile özgü bilgiler sağlayan bir nesne. |
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Özel Düzenleyicilerde Belge Verileri ve Belge Görünümü](../../extensibility/document-data-and-document-view-in-custom-editors.md)

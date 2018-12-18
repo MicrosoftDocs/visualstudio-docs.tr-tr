@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c592220267444818f7310895974b92cd02c69a62
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 487ac0f77307a58aab36fdfd55fad67d4bc9ce51
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49948544"
 ---
 # <a name="idebugprocess3getenginefilter"></a>IDebugProcess3::GetEngineFilter
-Kullanılabilir hata ayıklama altyapıları için benzersiz tanımlayıcı dizisini alır.  
+Kullanılabilir hata ayıklama altyapıları için benzersiz tanımlayıcıları dizisini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,10 +40,10 @@ public int GetEngineFilter(
   
 #### <a name="parameters"></a>Parametreler  
  `pEngineArray`  
- [out] Hata ayıklama altyapıları için benzersiz tanımlayıcı içeren bir yapısı başvuru.  
+ [out] Hata ayıklama altyapıları için benzersiz tanımlayıcıları içeren bir yapıya başvurusu.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess3](../../../extensibility/debugger/reference/idebugprocess3.md)   

@@ -14,31 +14,32 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 266fe85bedeea2c7e3dae7726d113d66a4b2b1e8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 523ef45d52a81a475eca0e3560243e0eb8357bbd
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39232461"
 ---
 # <a name="evaluation-context"></a>Değerlendirme bağlamı
 > [!IMPORTANT]
->  Visual Studio 2015'te ifade değerlendiricisi uygulama bu şekilde kullanım dışıdır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için lütfen bkz [CLR ifade Değerlendiricileri](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
+>  Visual Studio 2015'te, bu şekilde ifade değerlendiricisi uygulama kullanım dışı bırakılmıştır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için bkz: [CLR ifade değerlendiricilerini](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
   
- Hata ayıklama altyapısı (DE) ifade değerlendiricisi (EE) çağırdığında için üç bağımsız değişken geçirildi [EvaluateSync](../../extensibility/debugger/reference/idebugparsedexpression-evaluatesync.md) aşağıdaki tabloda gösterildiği gibi bulma ve sembolleri değerlendirmek için bağlamı belirlemek.  
+ Hata ayıklama altyapısı (DE) (EE) üç bağımsız değişken ifade değerlendiricisi, çağırdığında geçirilir [EvaluateSync](../../extensibility/debugger/reference/idebugparsedexpression-evaluatesync.md) bulma ve değerlendirme sembolleri bağlam aşağıdaki tabloda gösterildiği gibi belirleyin.  
   
 ## <a name="arguments"></a>Arguments  
   
 |Bağımsız Değişken|Açıklama|  
 |--------------|-----------------|  
-|`pSymbolProvider`|Bir [IDebugSymbolProvider](../../extensibility/debugger/reference/idebugsymbolprovider.md) simgenin tanımlamak için kullanılacak simge işleyici (SH) belirten arabirimi.|  
-|`pAddress`|Bir [IDebugAddress](../../extensibility/debugger/reference/idebugaddress.md) geçerli yürütme noktası belirtir arabirimi. Yürütülen kod içeren yöntemi bulmak için kullanılabilir.|  
-|`pBinder`|Bir [IDebugBinder](../../extensibility/debugger/reference/idebugbinder.md) adı verilen bir simge türü ve değeri bulmak için kullanılan arabirim.|  
+|`pSymbolProvider`|Bir [IDebugSymbolProvider](../../extensibility/debugger/reference/idebugsymbolprovider.md) sembolü tanımlamak için kullanılacak sembol işleyici (SH) belirten arabirimi.|  
+|`pAddress`|Bir [IDebugAddress](../../extensibility/debugger/reference/idebugaddress.md) arabirimi geçerli yürütme noktasını belirtir. Bu arabirim, yürütülen kod içeren yöntemi bulur.|  
+|`pBinder`|Bir [IDebugBinder](../../extensibility/debugger/reference/idebugbinder.md) arabirim adı verilen bir simgenin türünü ve değerini bulur.|  
   
- `IDebugParsedExpression::EvaluateSync` döndüren bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) sonuç değeri ve türünü temsil eden arabirim.  
+ `IDebugParsedExpression::EvaluateSync` döndürür bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) sonuç değerini ve türünü temsil eden arabirim.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Anahtar ifade değerlendiricisi arabirimleri](../../extensibility/debugger/key-expression-evaluator-interfaces.md)   
- [Yerel öğeler görüntüleme](../../extensibility/debugger/displaying-locals.md)   
+ [Yerel öğeleri görüntüleme](../../extensibility/debugger/displaying-locals.md)   
  [EvaluateSync](../../extensibility/debugger/reference/idebugparsedexpression-evaluatesync.md)   
  [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md)   
  [IDebugSymbolProvider](../../extensibility/debugger/reference/idebugsymbolprovider.md)   

@@ -1,5 +1,5 @@
 ---
-title: 'İzlenecek yol: bir SharePoint uygulama profili oluşturma | Microsoft Docs'
+title: 'İzlenecek yol: bir SharePoint uygulaması için profil oluşturma | Microsoft Docs'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,69 +18,70 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: f6eb4e9f78a9defaafb774551e301d6101cc40d0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5db5e9408a64df80311667267561ee69234fd7d5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49852758"
 ---
-# <a name="walkthrough-profiling-a-sharepoint-application"></a>İzlenecek Yol: SharePoint Uygulaması için Profil Oluşturma
-  Bu kılavuz, profil oluşturma araçları Visual Studio'da SharePoint uygulaması performansını iyileştirmek için nasıl kullanılacağını gösterir. Örnek Uygulama özellik olay alıcısı performansını düşürür bir boşta döngü içeren bir SharePoint özelliğini olay alıcıdır. Visual Studio profil oluşturucu bulun ve proje en pahalı (yavaş gerçekleştirerek) parçası olarak da bilinen ortadan kaldırmanıza olanak tanır *etkin yolunuzda*.  
+# <a name="walkthrough-profile-a-sharepoint-application"></a>İzlenecek yol: bir SharePoint uygulama profili
+  Bu izlenecek yol, profil oluşturma araçlarını Visual Studio'da bir SharePoint uygulama performansını iyileştirmek için nasıl kullanılacağını gösterir. Örneğin, özellik olayı alıcısını performansını düşürür bir boşta döngü içeren bir SharePoint özelliği olay alıcısı uygulamasıdır. Visual Studio profil oluşturucu, bulun ve proje en pahalı (yavaş gerçekleşir) parçası olarak da bilinen ortadan sağlar *etkin yolu*.  
   
- Bu kılavuz aşağıdaki görevler gösterilmiştir:  
+ Bu izlenecek yol aşağıdaki görevleri gösterir:  
   
--   [Bir özellik ve özellik olay alıcısı ekleme](#BKMK_AddFtrandFtrEvntReceiver).  
+- [Bir özellik ve özellik olayı alıcısını ekleme](#BKMK_AddFtrandFtrEvntReceiver).  
   
--   [Yapılandırma ve SharePoint uygulaması dağıtma](#BKMK_ConfigSharePointApp).  
+- [Yapılandırma ve SharePoint uygulaması dağıtma](#BKMK_ConfigSharePointApp).  
   
--   [SharePoint uygulaması çalıştıran](#BKMK_RunSPApp).  
+- [SharePoint uygulaması çalıştıran](#BKMK_RunSPApp).  
   
--   [Görüntüleme ve profil oluşturma sonuçları yorumlayarak](#BKMK_ViewResults).  
+- [Görüntüleme ve profil oluşturma sonuçları yorumlayarak destek sağlama](#BKMK_ViewResults).  
   
- [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
+  [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
   
 ## <a name="prerequisites"></a>Önkoşullar  
  Bu izlenecek yolu tamamlamak için aşağıdaki bileşenlere ihtiyacınız vardır:  
   
--   Microsoft Windows ve SharePoint sürümleri desteklenir. [!INCLUDE[crdefault](../sharepoint/includes/crdefault-md.md)] [SharePoint çözümleri geliştirmek için gereksinimler](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
+-   Microsoft Windows ve SharePoint sürümleri desteklenir.
   
 -   [!INCLUDE[vs_dev11_long](../sharepoint/includes/vs-dev11-long-md.md)].  
   
-## <a name="creating-a-sharepoint-project"></a>SharePoint Projesi Oluşturma  
+## <a name="create-a-sharepoint-project"></a>Bir SharePoint projesi oluşturma
  İlk olarak, bir SharePoint projesi oluşturun.  
   
 #### <a name="to-create-a-sharepoint-project"></a>Bir SharePoint projesi oluşturmak için  
   
-1.  Menü çubuğunda seçin **dosya**, **yeni**, **proje** görüntülemek için **yeni proje** iletişim kutusu.  
+1. Menü çubuğunda, **dosya** > **yeni** > **proje** görüntülenecek **yeni proje** iletişim kutusu.  
   
-2.  Genişletme **SharePoint** ya da düğümünde **Visual C#** veya **Visual Basic**ve ardından **2010** düğümü.  
+2. Genişletin **SharePoint** ya da düğümünde **Visual C#** veya **Visual Basic**ve ardından **2010** düğümü.  
   
-3.  Şablonlar bölmesinde seçin **SharePoint 2010 proje** şablonu.  
+3. Şablonlar bölmesinde seçin **SharePoint 2010 projesi** şablonu.  
   
-4.  İçinde **adı** kutusuna **ProfileTest**ve ardından **Tamam** düğmesi.  
+4. İçinde **adı** kutusuna **ProfileTest**ve ardından **Tamam** düğmesi.  
   
-     **SharePoint Özelleştirme Sihirbazı'nı** görüntülenir.  
+    **SharePoint Özelleştirme Sihirbazı** görünür.  
   
-5.  Üzerinde **hata ayıklama için site ve güvenlik düzeyini belirtmek** sayfasında, istediğiniz site tanımı hata ayıklamak için SharePoint server site için URL'yi girin veya varsayılan konumu kullanın (http://*sistem adı*/) .  
+5. Üzerinde **hata ayıklama için site ve güvenlik düzeyini belirtin** sayfasında, site tanımı hata ayıklamak istediğiniz sunucu için SharePoint sitesi URL'sini girin veya varsayılan konumu kullanın (http://<em>sistem adı</em>/) .  
   
-6.  İçinde **bu SharePoint çözüm için güven düzeyini nedir?** bölümünde, seçin **Grup çözümü olarak dağıtma** seçenek düğmesi.  
+6. İçinde **bu SharePoint çözümünün güven düzeyi nedir?** bölümünde, seçin **Grup çözümü olarak Dağıt** seçenek düğmesini.  
   
-     Şu anda, yalnızca profili küme çözümleri kullanabilirsiniz. Küme çözümleri karşı korumalı çözümler hakkında daha fazla bilgi için bkz: [Korumalı çözüm değerlendirmeleri](../sharepoint/sandboxed-solution-considerations.md).  
+    Şu anda, yalnızca profili Grup çözümlerini kullanabilirsiniz. Grup çözümlerini karşı korumalı çözümler hakkında daha fazla bilgi için bkz. [korumalı çözümle ilgili konular](../sharepoint/sandboxed-solution-considerations.md).  
   
-7.  Seçin **son** düğmesi. Proje görünür **Çözüm Gezgini**.  
+7. Seçin **son** düğmesi. Proje görünür **Çözüm Gezgini**.  
   
-##  <a name="BKMK_AddFtrandFtrEvntReceiver"></a> Bir özellik ve özellik olay alıcısı ekleme  
- Ardından, bir özellik proje özelliği için olay alıcı birlikte ekleyin. Bu olay alıcısı profili için kodu içerir.  
+## <a name="add-a-feature-and-feature-event-receiver"></a>Bir özellik ve özelliği olay alıcısı Ekle
+ Ardından, bir özellik proje özelliği için bir olay alıcısı birlikte ekleyin. Bu olay alıcısı, profili oluşturulacak kodu içerecek.  
   
-#### <a name="to-add-a-feature-and-feature-event-receiver"></a>Bir özellik ve özellik olay alıcısı eklemek için  
+#### <a name="to-add-a-feature-and-feature-event-receiver"></a>Bir özellik ve özellik olayı alıcısını eklemek için  
   
-1.  İçinde **Çözüm Gezgini**, kısayol menüsünü açın **özellikleri** düğümü seçin **Özellik Ekle**ve adı varsayılan değerinde bırakın **Feature1**.  
+1.  İçinde **Çözüm Gezgini**, kısayol menüsünü açın **özellikleri** düğümünü seçin **Özellik Ekle**ve adı varsayılan değerde bırakın **özellik1**.  
   
-2.  İçinde **Çözüm Gezgini**, kısayol menüsünü açın **Feature1**ve ardından **olay alıcısı Ekle**.  
+2.  İçinde **Çözüm Gezgini**, kısayol menüsünü açın **özellik1**ve ardından **olay alıcısı Ekle**.  
   
-     Bu özellik ile çeşitli kılınan olay işleyicileri için bir kod dosyası ekler ve dosyayı düzenlemek için açar.  
+     Bu, özellikle birden çok derleme dışı bırakılan olay işleyicileri için bir kod dosyası ekler ve dosyasını düzenleme için açar.  
   
-3.  Olay alıcı sınıfında aşağıdaki değişken bildirimlerini ekleyin.  
+3.  Olay alıcısı sınıfında, aşağıdaki değişken bildirimlerini ekleyin.  
   
     ```vb  
     ' SharePoint site/subsite.  
@@ -94,7 +95,7 @@ ms.lasthandoff: 04/16/2018
     private string webUrl = "/";  
     ```  
   
-4.  Değiştir `FeatureActivated` aşağıdaki kodla yordamı.  
+4.  Değiştirin `FeatureActivated` aşağıdaki kodla yordamı.  
   
     ```vb  
     Public Overrides Sub FeatureActivated(properties As SPFeatureReceiverProperties)  
@@ -153,7 +154,7 @@ ms.lasthandoff: 04/16/2018
     }  
     ```  
   
-5.  Aşağıdaki yordamı ekleyin `FeatureActivated`yordamı.  
+5.  Aşağıdaki yordam Ekle `FeatureActivated`yordamı.  
   
     ```vb  
   
@@ -182,102 +183,101 @@ ms.lasthandoff: 04/16/2018
   
 6.  İçinde **Çözüm Gezgini**, proje için kısayol menüsünü açın (**ProfileTest**) ve ardından **özellikleri**.  
   
-7.  İçinde **özellikleri** iletişim kutusunda, seçin **SharePoint** sekmesi.  
+7.  İçinde **özellikleri** iletişim kutusunda **SharePoint** sekmesi.  
   
-8.  İçinde **etkin Dağıtım Yapılandırması** listesinde, seçin **Hayır etkinleştirme**.  
+8.  İçinde **etkin Dağıtım Yapılandırması** listesinde **Hayır etkinleştirme**.  
   
-     Bu dağıtım yapılandırması seçerek SharePoint özelliğinde daha sonra el ile etkinleştirebilir sağlar.  
+     Bu dağıtım yapılandırması seçme özelliği daha sonra SharePoint el ile etkinleştirmek sağlar.  
   
 9. Projeyi kaydedin.  
   
-##  <a name="BKMK_ConfigSharePointApp"></a> Yapılandırma ve SharePoint uygulaması dağıtma  
- SharePoint Proje hazırdır, yapılandırın ve SharePoint sunucusuna dağıtın.  
+## <a name="configure-and-deploy-the-sharepoint-application"></a>Yapılandırma ve SharePoint uygulaması dağıtma
+ SharePoint Proje hazır olduğuna göre yapılandırın ve SharePoint sunucusuna dağıtın.  
   
 #### <a name="to-configure-and-deploy-the-sharepoint-application"></a>Yapılandırma ve SharePoint uygulaması dağıtma  
   
-1.  Üzerinde **Çözümle** menüsünde seçin **başlatma performans Sihirbazı**.  
+1.  Üzerinde **Çözümle** menüsünde seçin **performans Sihirbazını Başlat**.  
   
-2.  ' Nın sayfasında **performans Sihirbazı**, olarak profil oluşturma yöntemi bırakın **CPU örnekleme** ve **sonraki** düğmesi.  
+2.  ' Nın sayfasında **performans Sihirbazı**, leave yöntemi olarak profil oluşturma **CPU örnekleme** ve **sonraki** düğmesi.  
   
-     Bir profil oluşturma yöntemlerini durumlarda profil daha gelişmiş kullanılabilir. Daha fazla bilgi için bkz: [anlama performans koleksiyon yöntemleri](/visualstudio/profiling/understanding-performance-collection-methods).  
+     Bir profil oluşturma yöntemlerini durumlarda profil oluşturma daha gelişmiş kullanılabilir. Daha fazla bilgi için [anlama performans koleksiyon metotları](/visualstudio/profiling/understanding-performance-collection-methods).  
   
-3.  Sayfasında iki **performans Sihirbazı**, profil hedefi olarak bırakın **ProfileTest** ve **sonraki** düğmesi.  
+3.  İki sayfasındaki **performans Sihirbazı**, profil hedefi olarak bırakın **ProfileTest** ve **sonraki** düğmesi.  
   
-     Birden çok proje bir çözüm varsa, bunlar bu listede görüntülenir.  
+     Bir çözümde birden çok proje varsa, bunlar bu listede görüntülenir.  
   
-4.  Sayfasında üç **performans Sihirbazı**, Temizle **etkinleştirmek katman etkileşim profil** onay kutusunu işaretleyin ve ardından **sonraki** düğmesi.  
+4.  Üç sayfasındaki **performans Sihirbazı**temizleyin **Katman etkileşimi profil oluşturmayı etkinleştir** onay kutusunu işaretleyin ve ardından **sonraki** düğmesi.  
   
-     Katman etkileşim profil oluşturma (TIP) özelliği, bu sorgu veritabanları uygulamaların performansını ölçmek için yararlıdır ve kaç kez göstermek için bir web sayfası istendi. Bu veriler bu örnek için gerekli olmadığından, biz bu özellik izin vermez.  
+     Ve sayısını göstermek için bir web sayfası istenen katman etkileşim profili oluşturma (TIP) özelliği, veritabanlarında sorgulama uygulamalarının performansını ölçmek için kullanışlıdır. Verilerin bu örnek için gerekli olmadığı için Biz bu özellik etkin değildir.  
   
-5.  Sayfasında dört **performans Sihirbazı**, bırakın **Sihirbaz tamamlandıktan sonra profil oluşturmayı Başlat** seçili kutuyu işaretleyin ve ardından **son** düğmesi.  
+5.  Dört sayfasındaki **performans Sihirbazı**, bırakın **Sihirbaz sonlandıktan sonra profil oluşturmayı Başlat** seçili onay kutusunu işaretleyin ve ardından **son** düğmesi.  
   
-     Sihirbazın sunucu uygulama profilini sağlar, görüntüler **performans Gezgini** penceresi ve ardından derlemeleri dağıtır ve SharePoint uygulaması çalıştırır.  
+     Sihirbaz, uygulama sunucusunda profil oluşturmayı etkinleştirir, görüntüler **performans Gezgini** penceresi ve sonra yapı dağıtır ve SharePoint uygulaması çalışır.  
   
-##  <a name="BKMK_RunSPApp"></a> SharePoint uygulaması çalıştırma  
- SharePoint'teki özelliği etkinleştir tetikleme `FeatureActivation` çalıştırmak için olay kod.  
+## <a name="run-the-sharepoint-application"></a>SharePoint uygulaması çalıştırma
+ SharePoint özelliği etkinleştir tetikleme `FeatureActivation` olay kodu çalıştırmak için.  
   
 #### <a name="to-run-the-sharepoint-application"></a>SharePoint uygulamayı çalıştırmak için  
   
-1.  SharePoint'te açmak **Site eylemleri** menüsünde ve ardından **Site Ayarları**.  
+1.  SharePoint'te açın **Site eylemleri** menüsünü seçip **Site Ayarları**.  
   
-2.  İçinde **Site eylemleri** listesinde, seçin **site özelliklerini Yönet** bağlantı.  
+2.  İçinde **Site eylemleri** listesinde **site özelliklerini Yönet** bağlantı.  
   
-3.  İçinde **özellikleri** listesinde, seçin **etkinleştirme** düğmesine **ProfileTest Feature1**.  
+3.  İçinde **özellikleri** listesinde **etkinleştirme** düğmesinin yanındaki **ProfileTest özellik1**.  
   
-     Yapıldığında bir duraklama adlı boşta döngü nedeniyle bunu `FeatureActivated` işlevi.  
+     Çağrılma yeri boşta döngü nedeniyle bu, bunu yaptığınızda bir duraklama olan `FeatureActivated` işlevi.  
   
-4.  Üzerinde **hızlı başlatma** çubuğu, seçin **listeler** ve ardından **listeler** listesinde, seçin **duyuruları**.  
+4.  Üzerinde **hızlı başlatma** çubuğundan **listeler** ve ardından **listeler** listesinde **duyuruları**.  
   
-     Yeni bir duyuru özelliği etkinleştirildi belirten listesine eklendiğini dikkat edin.  
+     Yeni bir duyuru özelliği etkinleştirildi belirten listeye eklendiğini dikkat edin.  
   
 5.  SharePoint sitesi kapatın.  
   
-     SharePoint kapattıktan sonra Profil Oluşturucu oluşturur ve bir örnek profil oluşturma raporu görüntüler ve .vsp dosyası olarak kaydeder **ProfileTest** projenin klasör.  
+     SharePoint kapattıktan sonra Profil Oluşturucu oluşturur ve bir örnek profili oluşturma raporu görüntüler ve .vsp dosyası olarak kaydeder **ProfileTest** projesinin klasörüne.  
   
-##  <a name="BKMK_ViewResults"></a> Görüntüleme ve profil oluşturma sonuçları yorumlama  
+## <a name="view-and-interpret-the-profile-results"></a>Görüntüleme ve profili sonuçları yorumlama
  Çalıştırın ve SharePoint uygulama profili, test sonuçlarını görüntüleyin.  
   
-#### <a name="to-view-and-interpret-the-profiling-results"></a>Görüntülemek ve profil oluşturma sonuçları yorumlamak için  
+#### <a name="to-view-and-interpret-the-profile-results"></a>Görüntüleme ve profili sonuçları yorumlama
   
-1.  İçinde **en tek tek iş yapan işlevlerin** bölüm örnek profil oluşturma raporu dikkat `TimeCounter` listesinin en üstüne olan.  
+1.  İçinde **en bireysel işleri yapan işlevler** bölümde örnek profili oluşturma raporu dikkat `TimeCounter` listesinin en üstüne olduğu.  
   
-     Bu konumu belirten `TimeCounter` uygulamada büyük performans sorunları biri anlamı örnekleri, en yüksek sayıda işlevleriyle biri. Bu durum değil tanıtım amacıyla bu şekilde tasarlanmış bilerek olduğundan, ancak önler.  
+     Bu konum belirten `TimeCounter` büyük uygulama performans sorunlarını biri anlamı örnekleri, en yüksek sayısını işlevleriyle biriydi. Bu durumda değilse bu şekilde tanıtım amacıyla tasarlanmış bilerek olduğundan, ancak önler.  
   
-2.  İçinde **en tek tek iş yapan işlevlerin** bölümünde, seçin `ProcessRequest` Maliyet dağıtımı görüntülemek için bağlantıyı `ProcessRequest` işlevi.  
+2.  İçinde **en bireysel işleri yapan işlevler** bölümünde, seçin `ProcessRequest` Maliyet dağıtımı görüntülemek için bağlantıyı `ProcessRequest` işlevi.  
   
-     İçinde **işlevleri adlı** bölümü `ProcessRequest`, dikkat **FeatureActiviated** işlevi listelenmiş olarak en ucuz işlevini çağırdı.  
+     İçinde **işlevlerin çağrılma** bölümü `ProcessRequest`, dikkat **FeatureActiviated** işlevi listelenmiş olarak en pahalı işlevini çağırdı.  
   
-3.  İçinde **işlevleri adlı** bölümünde, seçin **FeatureActivated** düğmesi.  
+3.  İçinde **işlevlerin çağrılma** bölümünde, seçin **FeatureActivated** düğmesi.  
   
-     İçinde **işlevleri adlı** bölümü **FeatureActivated**, `TimeCounter` işlevi listelenmiş olarak en ucuz işlevini çağırdı. İçinde **işlevi kod görünümü** bölmesi, vurgulanmış kodu (`TimeCounter`) etkin olduğunu ve burada düzeltilmesi gereken gösterir.  
+     İçinde **işlevlerin çağrılma** bölümü **FeatureActivated**, `TimeCounter` işlevi listelenmiş olarak en pahalı işlevini çağırdı. İçinde **işlev kod görünümü** bölmesinde, vurgulanmış kodu (`TimeCounter`) etkin olduğundan ve düzeltme gerekmesi halinde gösterir.  
   
-4.  Profil oluşturma raporu örnek kapatın.  
+4.  Örnek profili oluşturma raporu kapatın.  
   
-     Herhangi bir zamanda yeniden raporu görüntülemek için .vsp dosyasında açma **performans Gezgini** penceresi.  
+     İstediğiniz zaman tekrar raporu görüntülemek için .vsp açın **performans Gezgini** penceresi.  
   
-## <a name="fixing-the-code-and-reprofiling-the-application"></a>Kod çözme ve uygulama Reprofiling  
- SharePoint uygulama etkin nokta işlevinde belirlenmiştir, bunu düzeltin.  
+## <a name="fix-the-code-and-reprofile-the-application"></a>Kodu düzeltin ve uygulama reprofile
+ Etkin nokta işlevi SharePoint uygulaması olarak belirlenmiştir, bunu düzeltin.  
   
-#### <a name="to-fix-the-code-and-reprofile-the-application"></a>Kod onarın ve uygulama reprofile  
+#### <a name="to-fix-the-code-and-reprofile-the-application"></a>Kodu düzeltin ve uygulama reprofile  
   
-1.  Özellik olay alıcı kod çıkışı açıklama `TimeCounter` yöntem çağrısı `FeatureActivated` adlı öğesinden önlemek için.  
+1.  Açıklama özelliği olay alıcısı kodda `TimeCounter` yöntem çağrısı `FeatureActivated` çağırılmasını önlemek için.  
   
 2.  Projeyi kaydedin.  
   
-3.  İçinde **performans Gezgini**hedefler klasörünü açın ve ardından **ProfileTest** düğümü.  
+3.  İçinde **performans Gezgini**, Hedefler klasörü açın ve ardından **ProfileTest** düğümü.  
   
-4.  Üzerinde **performans Gezgini** araç, **Eylemler** sekmesinde, seçin **Başlat profil** düğmesi.  
+4.  Üzerinde **performans Gezgini** araç, **eylemleri** sekmesini, **profil oluşturmayı Başlat** düğmesi.  
   
-     Uygulama reprofiling önce profil özelliklerinden herhangi birini değiştirmek isterseniz seçin **performans Sihirbazı başlatın** yerine düğmesine tıklayın.  
+     Uygulama reprofiling önce profil oluşturma özelliklerinden herhangi birini değiştirmek isterseniz seçin **performans Sihirbazını Başlat** yerine düğme.  
   
-5.  ' Ndaki yönergeleri izleyin **SharePoint uygulaması çalıştıran** bölümü, daha önce bu konuda.  
+5.  Bölümündeki yönergeleri **SharePoint uygulaması çalıştıran** bölümünde, bu konudaki daha önce.  
   
-     Boşta döngü çağrısı ortadan göre özelliği çok daha hızlı etkinleştirmelisiniz. Profil oluşturma örnek raporu bu yansıtmalıdır.  
+     Bu özellik, boşta döngü çağrısı ortadan göre çok daha hızlı etkinleştirmelisiniz. Örnek profili oluşturma raporu bu yansıtmalıdır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [Performans Gezgini](/visualstudio/profiling/performance-explorer)   
  [Performans oturumuna genel bakış](/visualstudio/profiling/performance-session-overview)   
  [Performans profili oluşturma Başlangıç Kılavuzu](/visualstudio/profiling/beginners-guide-to-performance-profiling)   
- [Visual Studio Profil Oluşturucu ile uygulama engelleri bulun](http://go.microsoft.com/fwlink/?LinkID=137266)  
-  
+ [Visual Studio Profiler uygulama performans sorunlarını bulun](http://go.microsoft.com/fwlink/?LinkID=137266)  
   

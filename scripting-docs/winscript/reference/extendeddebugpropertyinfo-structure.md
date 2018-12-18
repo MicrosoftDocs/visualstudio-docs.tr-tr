@@ -1,11 +1,11 @@
 ---
-title: "Extendeddebugpropertyınfo yapısı | Microsoft Docs"
-ms.custom: 
+title: Extendeddebugpropertyınfo yapısı | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - ExtendedDebugPropertyInfo
@@ -14,18 +14,19 @@ apilocation:
 helpviewer_keywords:
 - ExtendedDebugPropertyInfo structure
 ms.assetid: f2cf6477-454b-4d13-95da-ae4c90daa175
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: ee06b0ace93f068e0530a3aa62b8c28d11069f44
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 62b9f3b5877f7919a57e9747355276e438240796
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49888911"
 ---
 # <a name="extendeddebugpropertyinfo-structure"></a>ExtendedDebugPropertyInfo Yapısı
-Genişletir `DebugPropertyInfo` genişletilmiş özellik ayırdetmek için ek üyeleriyle yapısı.  
+Genişletir `DebugPropertyInfo` yapısı ile genişletilmiş özelliği nitelemek için ek üyeler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,13 +49,13 @@ typedef struct ExtendedDebugPropertyInfo{
   
 ## <a name="members"></a>Üyeler  
  `dwValidFields`  
- Hangi alanların başlatılmış belirtmek için kullanılan bir numaralandırılmış veri türü.  
+ Hangi alanların başlatılır belirtmek için kullanılan bir listelenmiş veri türü.  
   
  `bstrName`  
  Bir bağlam içinde özellik adı.  
   
  `bstrType`  
- Özellik biçimlendirilmiş bir dize olarak yazın.  
+ Özelliği, biçimlendirilmiş dize olarak yazın.  
   
  `bstrValue`  
  Özellik değeri olarak biçimlendirilmiş bir dize.  
@@ -63,10 +64,10 @@ typedef struct ExtendedDebugPropertyInfo{
  Özelliğin tam adı.  
   
  `dwAttrib`  
- Hata ayıklama özellik öznitelikleri bayrakları belirtir numaralandırması.  
+ Hata ayıklama özellik öznitelikleri için bayrakları belirtir bir sabit listesi.  
   
  `pDebugProp`  
- `IDebugProperty`Buna karşılık gelen nesne `ExtendedDebugPropertyInfo`.  
+ `IDebugProperty` Bunun için karşılık gelen nesne `ExtendedDebugPropertyInfo`.  
   
  `nDISPID`  
  Dağıtım kimliği.  
@@ -75,13 +76,13 @@ typedef struct ExtendedDebugPropertyInfo{
  Genişletilmiş özellik türü.  
   
  `varValue`  
- VARIANT sığabilecek, genişletilmiş özellik değeri.  
+ VARIANT sığabilen, genişletilmiş özellik değeri.  
   
  `plbValue`  
- Özellik değeri gerçek veri bayt sayısı.  
+ Özellik değerinin gerçek veri baytı.  
   
  `pDebugExtProp`  
- `IDebugExtendedProperty`Buna karşılık gelen nesne `ExtendedDebugPropertyInfo`.  
+ `IDebugExtendedProperty` Bunun için karşılık gelen nesne `ExtendedDebugPropertyInfo`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Debugpropertyınfo yapısı](../../winscript/reference/debugpropertyinfo-structure.md)   

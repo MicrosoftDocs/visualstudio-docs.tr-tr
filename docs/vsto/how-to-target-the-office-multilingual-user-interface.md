@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: Office Çok Dilde Kullanıcı arabirimini hedefleme | Microsoft Docs'
+title: 'Nasıl yapılır: Office Çok Dilde Kullanıcı arabirimini hedefleme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -20,28 +20,29 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 54b305311b686f527a79092280fbc33c3974247e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1b917479598b73f71a0f3092c874276a700717d6
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262039"
 ---
-# <a name="how-to-target-the-office-multilingual-user-interface"></a>Nasıl Yapılır. Office Çok Dilde Kullanıcı Arabirimini Hedefleme
+# <a name="how-to-target-the-office-multilingual-user-interface"></a>Nasıl yapılır: Office Çok Dilde Kullanıcı arabirimini hedefleme
   Çok Dilde Kullanıcı Arabirimi (MUI) son kullanıcı kullanıcı arabirimi (UI) dilini değiştirme olanağı sağlayan bir Microsoft Office özelliğidir. Örneğin, İngilizce bir kullanıcı Arabirimi ile çalışan bir son kullanıcı için İspanyolca dil UI değiştirebilirsiniz.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
- Uygulamanız birden çok dil Office sürümlerini kullanan kişiler tarafından kullanılacaksa, otomatik olarak (kullanıcı yüklü doğru kaynakları varsa) kullanıcının bilgisayarında Office tarafından kullanılan dil ile eşleşen UI dizelerinizi dilini değiştirmek için kod ekleyebilirsiniz.  
+ Uygulamanız çok sayıda dillerde Office kullanan kişiler tarafından kullanılacaksa, otomatik olarak (kullanıcı yüklü doğru kaynakları varsa) kullanıcının bilgisayarında Office tarafından kullanılan dil ile eşleşen UI dizelerinizi dilini değiştirmek için kod ekleyebilirsiniz.  
   
-### <a name="to-check-the-current-office-ui-setting"></a>Geçerli Office UI ayarını denetlemek için  
+## <a name="to-check-the-current-office-ui-setting"></a>Geçerli Office UI ayarını denetlemek için  
   
 1.  Kullanım <xref:System.Threading.Thread.CurrentUICulture%2A> geçerli iş parçacığının özelliği. Şu anda kullanıcının bilgisayar üzerinde çalışan Office sürümü tarafından kullanılan dil ile eşleşen UI dizelerinizi dilinin ayarlayın.  
   
      [!code-vb[Trin_VstcoreCreatingExcel#10](../vsto/codesnippet/VisualBasic/Trin_VstcoreCreatingExcelVB/Sheet1.vb#10)]
      [!code-csharp[Trin_VstcoreCreatingExcel#10](../vsto/codesnippet/CSharp/Trin_VstcoreCreatingExcelCS/Sheet1.cs#10)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: birincil birlikte çalışma derlemeleriyle Office uygulamalarını](../vsto/how-to-target-office-applications-through-primary-interop-assemblies.md)   
- [Office Çözümlerinde Geç Bağlama](../vsto/late-binding-in-office-solutions.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Nasıl yapılır: birincil birlikte çalışma derlemeleriyle hedef Office uygulamaları](../vsto/how-to-target-office-applications-through-primary-interop-assemblies.md)   
+ [Office çözümlerinde geç bağlama](../vsto/late-binding-in-office-solutions.md)  
   
   

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e1e1dc8cd22b529eafd6183578be7de6ffe69549
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d70aa31e7574e9fcdb0ed4e8d89847e832f3739b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832779"
 ---
 # <a name="connectionprotocol"></a>CONNECTION_PROTOCOL
-Hata ayıklama sunucu ve hata ayıklama paket (DE) arasında iletişim kurmak için kullanılan protokolü gösterir.  
+Hata ayıklama paketi (DE) ve hata ayıklama sunucusu arasında iletişim kurmak için kullanılan protokolü belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -52,36 +53,36 @@ public enum CONNECTION_PROTOCOL {
   
 #### <a name="parameters"></a>Parametreler  
  CONNECTION_NONE  
- Bağlantı bir sunucuya yapıldı.  
+ Bir sunucuya bağlantı yapıldı.  
   
  CONNECTION_UNKNOWN  
- Bir bağlantı oluşturulmasıyla, ancak bilinmeyen bir türüdür.  
+ Bir bağlantı yapıldı, ancak bilinmeyen bir türüdür.  
   
  CONNECTION_LOCAL  
  Yerel bir sunucuya bağlantısıdır.  
   
  CONNECTION_PIPE  
- Bir adlandırılmış kanal bir bağlantıdır.  
+ Bir adlandırılmış kanal bağlantıdır.  
   
  CONNECTION_TCPIP  
- Bağlantı TCP/IP'yi kullanır.  
+ Bağlantı, TCP/IP'yi kullanır.  
   
  CONNECTION_HTTP  
- Bağlantı (bir Web sunucusu üzerinden) HTTP kullanır.  
+ Bağlantı HTTP (bir Web sunucusu üzerinden) kullanır.  
   
  CONNECTION_OTHER  
- Başka türden bir bağlantı kuruldu (Bu değer şu anda kullanılmamaktadır).  
+ Başka türde bir bağlantı kuruldu (Bu değer şu anda kullanılmamaktadır).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerleri döndürüldüğü kaynak [GetConnectionProtocol](../../../extensibility/debugger/reference/idebugcoreserver3-getconnectionprotocol.md) yöntemi.  
+ Bu değerleri döndürülen [GetConnectionProtocol](../../../extensibility/debugger/reference/idebugcoreserver3-getconnectionprotocol.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetConnectionProtocol](../../../extensibility/debugger/reference/idebugcoreserver3-getconnectionprotocol.md)

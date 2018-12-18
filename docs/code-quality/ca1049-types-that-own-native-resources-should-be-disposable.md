@@ -1,6 +1,7 @@
 ---
 title: 'CA1049: Yerel kaynaklara sahip olan türler atılabilir olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: 084e587d-0e45-4092-b767-49eed30d6a35
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 6484d6d6313db543f0e80a1e66c3051839fe0a06
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f9a2eeb032951df86d38075220c14fe98488edef
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45552002"
 ---
 # <a name="ca1049-types-that-own-native-resources-should-be-disposable"></a>CA1049: Yerel kaynaklara sahip olan türler atılabilir olmalıdır
+
 |||
 |-|-|
 |TypeName|TypesThatOwnNativeResourcesShouldBeDisposable|
@@ -30,21 +36,23 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir türüne başvuran bir <xref:System.IntPtr?displayProperty=fullName> alan, bir <xref:System.UIntPtr?displayProperty=fullName> alanında veya bir <xref:System.Runtime.InteropServices.HandleRef?displayProperty=fullName> alan, ancak uygulamayan <xref:System.IDisposable?displayProperty=fullName>.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bu kural varsayar <xref:System.IntPtr>, <xref:System.UIntPtr>, ve <xref:System.Runtime.InteropServices.HandleRef> alanları yönetilmeyen kaynakları işaretçiler depolar. Yönetilmeyen kaynakları tahsis türleri uygulamanız gerekir <xref:System.IDisposable> isteğe bağlı olarak bu kaynakları serbest bırakır ve kaynakları tutun nesnelerin ömrü kısaltmak için arayanlara izin vermek için.
+Bir türe başvuran bir <xref:System.IntPtr?displayProperty=fullName> alan, bir <xref:System.UIntPtr?displayProperty=fullName> alanın veya bir <xref:System.Runtime.InteropServices.HandleRef?displayProperty=fullName> alan, ancak uygulamıyor <xref:System.IDisposable?displayProperty=fullName>.
 
- Yönetilmeyen kaynakları temizlemek için önerilen tasarım deseni örtülü ve kullanarak bu kaynakları boşaltmak için açık bir şekilde sağlamaktır <xref:System.Object.Finalize%2A?displayProperty=fullName> yöntemi ve <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> yöntemi, sırasıyla. Çöp toplayıcı çağrıları <xref:System.Object.Finalize%2A> yöntemi nesnenin nesne artık erişilebilir olması belirlendikten sonra belirsiz bir süre. Sonra <xref:System.Object.Finalize%2A> çağrılır, ek bir atık toplama nesne serbest için gereklidir. <xref:System.IDisposable.Dispose%2A> Açıkça isteğe bağlı olarak, kaynaklar, atık toplayıcı bırakılırsa serbest ' den önceki kaynakları serbest bırakmak arayan bir yöntem sağlar. Yönetilmeyen kaynakları, temizler sonra <xref:System.IDisposable.Dispose%2A> çağırmalıdır <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName> bilmesi için Atık toplayıcısının olanak yöntemi <xref:System.Object.Finalize%2A> çağrılacak; artık sahip bu ek çöp toplama gereksinimini ortadan kaldırır ve kısaltır nesne ömrü.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için uygulama <xref:System.IDisposable>.
+Bu kural, varsayar <xref:System.IntPtr>, <xref:System.UIntPtr>, ve <xref:System.Runtime.InteropServices.HandleRef> alanları yönetilmeyen kaynakları işaretçileri depolayın. Yönetilmeyen kaynakların tahsis türlerini uygulamanız gerekir <xref:System.IDisposable> bağlı kaynakları serbest bırakmak ve kaynakları tutan nesnelerin yaşam süreleri kısaltmak için arayanlara izin vermek için.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Yönetilmeyen bir kaynak türü başvurmaması durumunda bu kural bir uyarıdan gizlemek güvenlidir. Aksi takdirde, bu kural bir uyarıdan çünkü engelleme uygulamak için hata <xref:System.IDisposable> yönetilmeyen kaynakları kullanılamıyor veya kapatacağı hale gelmesine neden olabilir.
+Yönetilmeyen kaynakları temizlemek için önerilen tasarım desenini örtük ve kullanarak bu kaynakları serbest bırakmak için açık bir yol sağlamaktır <xref:System.Object.Finalize%2A?displayProperty=fullName> yöntemi ve <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> yöntemi, sırasıyla. Çöp toplayıcı çağrıları <xref:System.Object.Finalize%2A> nesnenin artık erişilebilir olması belirlendikten sonra bazı belirsiz zaman bir nesnenin yöntemi. Sonra <xref:System.Object.Finalize%2A> çağrılır, ek bir çöp toplama, nesne için gereklidir. <xref:System.IDisposable.Dispose%2A> Yöntemi arayan açıkça bağlı kaynakları çöp Toplayıcıya bırakılırsa serbest bırakılır'den önceki kaynakları serbest bırakmak sağlar. Yönetilmeyen kaynakları temizler sonra <xref:System.IDisposable.Dispose%2A> çağırmalıdır <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName> biliyor atıktoplayıcı olanak yöntemi <xref:System.Object.Finalize%2A> çağrılacak; artık sahip bu ek çöp toplama işlemine ihtiyacı ortadan kaldırır ve kısaltır nesne ömrü.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için uygulama <xref:System.IDisposable>.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yönetilmeyen bir kaynağı türü başvurmuyorsa bu kuraldan bir uyarıyı bastırmak güvenlidir. Aksi takdirde, bu kuraldan bir uyarıyı çünkü bastırmayın uygulamak için hata <xref:System.IDisposable> yönetilmeyen kaynakları kullanılamıyor veya kapatacağı kilitlenmesine neden olabilir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, uygulayan bir tür gösterir <xref:System.IDisposable> bir yönetilmeyen kaynak temizleme.
+ Aşağıdaki örnek, uygulayan bir tür gösterir <xref:System.IDisposable> bir yönetilmeyen kaynağı temizlemek için.
 
  [!code-csharp[FxCop.Design.UnmanagedResources#1](../code-quality/codesnippet/CSharp/ca1049-types-that-own-native-resources-should-be-disposable_1.cs)]
  [!code-vb[FxCop.Design.UnmanagedResources#1](../code-quality/codesnippet/VisualBasic/ca1049-types-that-own-native-resources-should-be-disposable_1.vb)]
@@ -58,5 +66,7 @@ ms.lasthandoff: 04/19/2018
 
  [CA1001: Atılabilir alanlara sahip olan türler atılabilir olmalıdır](../code-quality/ca1001-types-that-own-disposable-fields-should-be-disposable.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Yönetilmeyen kaynakları Temizleme](/dotnet/standard/garbage-collection/unmanaged) [Dispose düzeni](/dotnet/standard/design-guidelines/dispose-pattern)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Yönetilmeyen Kaynakları Temizleme](/dotnet/standard/garbage-collection/unmanaged)
+- [Dispose Deseni](/dotnet/standard/design-guidelines/dispose-pattern)

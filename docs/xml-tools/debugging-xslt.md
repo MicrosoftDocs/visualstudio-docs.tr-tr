@@ -1,9 +1,8 @@
 ---
-title: XSLT hata ayıklama | Microsoft Docs
-ms.custom: ''
+title: XSLT hata ayıklama
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-xml-tools
 ms.topic: conceptual
 ms.assetid: 344940bd-c41e-4ed9-8458-3e3aa8e6bb37
 author: gewarren
@@ -11,49 +10,27 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3ab34eead94f6d70fb18a8c6a6a2194abba460c2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 55c52d1ed054d5005a68f160e0b5442fbd02c3f1
+ms.sourcegitcommit: bc43970c000f07c9cc2051f1264a9742943a9755
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51348545"
 ---
 # <a name="debugging-xslt"></a>XSLT hata ayıklama
-XSLT hata ayıklamak için Visual Studio hata ayıklayıcısı kullanabilirsiniz. Hata ayıklayıcı XSLT yürütme durumlarını görüntüleme ayarı kesme noktalarını destekler ve benzeri. XSLT hata ayıklama, Visual Studio Team System ve Professional Edition'da kullanılabilir.  
-  
-## <a name="in-this-section"></a>Bu Bölümde  
- [XSLT Hata Ayıklayıcısındaki Yenilikler](../xml-tools/what-s-new-in-the-xslt-debugger.md)  
- XSLT hata ayıklayıcı bu sürümündeki yeni özellikleri açıklar.  
-  
- [Nasıl Yapılır: XSLT Hatalarını Ayıklamaya Başlama](../xml-tools/how-to-start-debugging-xslt.md)  
- XSLT hata ayıklayıcısını başlatmak üzere açıklar.  
-  
- [Nasıl Yapılır: XSLT ile Kesme Noktaları Kullanma](../xml-tools/how-to-use-breakpoints-with-xslt.md)  
- Kesme noktaları bir stil sayfası içinden kullanmayı açıklar.  
-  
- [Nasıl Yapılır: Bir XPath İfadesini Değerlendirme](../xml-tools/how-to-evaluate-an-xpath-expression.md)  
- Bir XPath ifadesi kullanarak değerlendirmek açıklar **QuickWatch** iletişim kutusu.  
-  
- [İzlenecek Yol: XSLT Stil Sayfasında Hata Ayıklama](../xml-tools/walkthrough-debug-an-xslt-style-sheet.md)  
- XSLT stil sayfasını hata ayıklamak gösterilmiştir.  
-  
- [XSLT Varsayılan Şablonları](../xml-tools/xslt-default-templates.md)  
- XSLT hata ayıklayıcı varsayılan şablonları nasıl işlediğini açıklar.  
-  
- [Hata Ayıklayıcı Kullanıcı Arabirimi (XSLT)](../xml-tools/debugger-user-interface-xslt.md)  
- İletişim kutuları ve XSLT hata ayıklayıcı windows açıklar.  
-  
- [XSLT Profil Oluşturucusu](../xml-tools/xslt-profiler.md)  
- XSLT profil oluşturucu erişmek açıklar.  
-  
-## <a name="related-sections"></a>İlgili Bölümler  
- [XSLT Stil Sayfalarını Düzenleme](../xml-tools/editing-xslt-style-sheets.md)  
- Stil sayfaları düzenlemek için XML Düzenleyicisi'ni kullanarak açıklanır.  
-  
- [XML Verileriyle Çalışırken Dikkat Edilecek Güvenlik Konuları](../xml-tools/security-considerations-when-working-with-xml-data.md)  
- XML Düzenleyicisi'ni veya XSLT hata ayıklayıcı çalışırken hakkında bilmeniz gereken güvenlik konuları anlatılmaktadır.  
-  
- [Visual Studio’da hata ayıklama](../debugger/debugging-in-visual-studio.md)  
- Visual Studio hata ayıklayıcısı tanıtır.  
-  
- [XSLT başvurusu](http://msdn.microsoft.com/678bcd68-cbbb-4be5-9dd2-40f94488a1cf)  
- XSLT öğeleri ve işlevleri için başvuru bilgileri sağlar.
+
+XSLT hata ayıklamak için Visual Studio Hata Ayıklayıcısı'nı kullanabilirsiniz. XSLT yürütme durumlarını görüntüleme ayarı kesme noktaları, hata ayıklayıcı destekler ve benzeri.
+
+> [!NOTE]
+> XSLT hata ayıklayıcısı yalnızca Visual Studio 2017 Enterprise sürümünde kullanılabilir.
+
+## <a name="xslt-profiler"></a>XSLT Profil Oluşturucusu
+
+[XSLT Profil Oluşturucusu](../xml-tools/xslt-profiler.md) geliştiricilerin ölçmesine, değerlendirme ve performans ile ilgili sorunları XSLT kodda ayrıntılı XSLT performans raporlar oluşturarak hedef olanak veren bir araçtır.
+
+## <a name="related-sections"></a>İlgili bölümler
+
+- [XSLT stil sayfalarını düzenleme](../xml-tools/editing-xslt-style-sheets.md) stil sayfaları düzenlemek için XML Düzenleyicisi'ni kullanarak açıklanır.
+- [XML verileriyle çalışırken güvenlik konuları](../xml-tools/security-considerations-when-working-with-xml-data.md) hakkında XML Düzenleyicisi'ni veya XSLT hata ayıklayıcı çalışırken bilmeniz gereken güvenlik sorunlarını ele alınmaktadır.
+- [Visual Studio'da hata ayıklama](../debugger/debugging-in-visual-studio.md) Visual Studio hata ayıklayıcısını tanıtır.
+- [XSLT başvurusu](https://msdn.microsoft.com/678bcd68-cbbb-4be5-9dd2-40f94488a1cf) XSLT öğeleri ve işlevleri için başvuru materyalleri sağlar.

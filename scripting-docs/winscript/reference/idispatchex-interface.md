@@ -1,74 +1,75 @@
 ---
 title: Idispatchex arabirimi | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - IDispatchEx interface, about IDispatchEx
 - IDispatchEx interface
 ms.assetid: 37a3303f-f78e-4b5b-aac8-b836c92819de
-caps.latest.revision: "12"
+caps.latest.revision: 12
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: 9a100a193f5e3abcb076fb8aaf3d64a0d0c38833
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 22ccc54dee335fd8c81343557d2f32c48eb30560
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49837925"
 ---
 # <a name="idispatchex-interface"></a>IDispatchEx Arabirimi
-`IDispatchEx`, bir uzantısı olarak `IDispatch` özellikleri arabirimi, uygun komut dosyası dili gibi dinamik diller için. Bu bölümde açıklanmıştır `IDispatchEx` kendisini arasındaki farklar arabirim `IDispatch` ve `IDispatchEx`ve uzantıları için stratejinin. Okuyucular aşina olduğunuzu beklenir `IDispatch` ve erişimi `IDispatch` belgeleri.  
+`IDispatchEx`, uzantısı `IDispatch` arabirimi özellikleri uygun komut dosyası dilleri gibi dinamik dilleri için. Bu bölümde açıklanmaktadır `IDispatchEx` kendisini arasındaki farklar arabirim `IDispatch` ve `IDispatchEx`ve uzantıları için stratejinin. Okuyucular aşina olduğunuzu beklenmektedir `IDispatch` ve erişimi `IDispatch` belgeleri.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `IDispatch`Microsoft Visual Basic for temelde geliştirilmiştir. Birincil sınırlandırılmasıdır `IDispatch` olan bu nesneler statik olduğunu varsayar. Nesneleri çalışma zamanı sırasında değiştirmeyin olduğundan, diğer bir deyişle, tür bilgileri tam olarak bunları derleme zamanında tanımlayabilirsiniz. Visual Basic Scripting Edition (VBScript) gibi komut dosyası dilleri bulunan dinamik çalışma zamanı modelleri ve [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] ve nesne modelleri dinamik HTML gerektiren daha esnek bir arabirim olarak.  
+ `IDispatch` Microsoft Visual Basic için temel olarak geliştirilmiştir. Birincil SORUMLULUĞUN `IDispatch` olan nesneleri statik olduğunu varsayar. Nesneler, çalışma zamanı sırasında değiştirmeyin olduğundan, diğer bir deyişle, tür bilgilerini tam olarak bunları derleme zamanında tanımlayabilirsiniz. Visual Basic Scripting Edition (VBScript) gibi komut dosyası dilleri içinde bulunan dinamik çalışma zamanı modelleri ve [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] ve nesne modellerini daha esnek bir arabirim gibi dinamik HTML gerektirir.  
   
- `IDispatchEx`tüm hizmetlerini sağlamak için geliştirilmiştir `IDispatch` komut dosyası dili gibi daha dinamik geç bağlama dilleri için uygun olan bazı uzantılar yanı sıra. Ek özelliklerinin `IDispatchEx` tarafından sağlanan ötesinde `IDispatch` şunlardır:  
+ `IDispatchEx` tüm hizmetleri sağlamak üzere geliştirilmiştir `IDispatch` komut dosyası dilleri gibi daha dinamik geç bağlanan diller için uygun olan bazı uzantılar yanı sıra. Ek özellikleri `IDispatchEx` tarafından sağlananlar dışında `IDispatch` şunlardır:  
   
--   Yeni üyeler nesneye ("expando") ekleme — kullanmak `GetDispID` ile `fdexNameEnsure` bayrağı.  
+- Bir nesneye ("expando") yeni üyeler eklemek — kullanın `GetDispID` ile `fdexNameEnsure` bayrağı.  
   
--   Bir nesnenin üyelerine silmek — kullanmak `DeleteMemberByName` veya `DeleteMemberByDispID`.  
+- Bir nesnenin üyelerine Sil — kullanın `DeleteMemberByName` veya `DeleteMemberByDispID`.  
   
--   Büyük küçük harfe duyarlı gönderme işlemleri — kullanmak `fdexNameCaseSensitive` veya `fdexNameCaseInsensitive`.  
+- Büyük/küçük harfe dağıtma işlemleri — kullanın `fdexNameCaseSensitive` veya `fdexNameCaseInsensitive`.  
   
--   Örtük ada sahip üye için arama — kullanmak `fdexNameImplicit`.  
+- Örtük ada sahip üye için arama — kullanın `fdexNameImplicit`.  
   
--   Bir nesnenin DISPID değerleri listeleme — kullanmak `GetNextDispID`.  
+- Bir nesnenin DISPID değeri listeleme — kullanın `GetNextDispID`.  
   
--   DISPID eşlemesinden öğe adı için — kullanmak `GetMemberName`.  
+- DISPID haritasına öğe adı — kullanın `GetMemberName`.  
   
--   Nesne üyeleri özelliklerini alın — kullanmak `GetMemberProperties`.  
+- Nesne üyeleri özelliklerini alın — kullanın `GetMemberProperties`.  
   
--   Yöntem çağırma ile `this` işaretçi — kullanmak `InvokeEx` DISPATCH_METHOD ile.  
+- Yöntem çağırma ile `this` işaretçi — kullanın `InvokeEx` DISPATCH_METHOD ile.  
   
--   Ad alanı üst nesnenin almak için ad alanları kavramı destekleyen tarayıcılarda izin — kullanmak `GetNameSpaceParent`.  
+- Bir nesnenin adı alanı üst elde etmek için ad alanları kavramını destekleyen tarayıcılar izin — kullanın `GetNameSpaceParent`.  
   
- Nesneleri destekleyen `IDispatchEx` de destekleyebilir `IDispatch` geriye dönük uyumluluk için. Destek nesnelerin dinamik doğasını `IDispatchEx` için birkaç şifrelemelerini `IDispatch` bu nesnelerin arabirimi. Örneğin, `IDispatch` aşağıdaki varsayım yapmaz:  
+  Nesneleri destekleyen `IDispatchEx` de destekleyebilir `IDispatch` geriye dönük uyumluluk için. Destek nesneleri dinamik doğasını `IDispatchEx` birkaç şifrelemelerini `IDispatch` söz konusu nesnelerin arabirimi. Örneğin, `IDispatch` aşağıdaki varsayım yapmaz:  
   
--   Üye ve parametre DISPID değerleri nesne ömrü boyunca sabit kalmalıdır. Bu, bir istemcinin DISPID değerleri bir kez elde ve daha sonra kullanmak üzere önbelleğe almasını sağlar.  
+- DISPID değeri parametresi ve üye nesne ömrü boyunca sabit kalması gerekir. Bu, bir istemcinin DISPID değeri bir kez elde ve daha sonra kullanmak üzere önbelleğe sağlar.  
   
- Bu yana `IDispatchEx` ekleme ve silme üyelerinin geçerli DISPID değerleri kümesi durumda sabit sağlar. Ancak, `IDispatchEx` DISPID ve üye adı arasında eşleme sabit kalmasını gerektirir. Üye silinirse anlamına gelir:  
+  Bu yana `IDispatchEx` eklenmesini ve üyelerinin geçerli DISPID değeri kümesini silme değil kalan sabit sağlar. Ancak, `IDispatchEx` DISPID ve üye adına arasındaki eşlemeyi sabit kalmasını gerektirir. Üye silinirse anlamına gelir:  
   
--   Aynı ada sahip bir üye oluşturulana kadar DISPID yeniden kullanılamaz.  
+- Aynı ada sahip bir üye oluşturulana kadar DISPID kullanılamayacak.  
   
--   DISPID için geçerli kalır `GetNextDispID`.  
+- DISPID için geçerli kalmalıdır `GetNextDispID`.  
   
--   DISPID düzgün biçimde herhangi biri tarafından kabul edilmesi gereken `IDispatch` veya `IDispatchEx` yöntemleri — üye silindi olarak algılar ve bir uygun hata kodunu (genellikle DISP_E_MEMBERNOTFOUND veya S_FALSE) döndürür.  
+- DISPID düzgün biçimde herhangi biri tarafından kabul edilmesi gereken `IDispatch` veya `IDispatchEx` yöntemleri — üye silindi olarak tanınması ve uygun hata kodunu (genellikle DISP_E_MEMBERNOTFOUND veya S_FALSE) döndürür.  
   
 ## <a name="examples"></a>Örnekler  
- Bu [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] işlevi test() kod şunları gerçekleştirir:  
+ Bu [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] işlevi test() kodda şunları yapar:  
   
--   Çağırarak yeni bir nesne oluşturur `Object` oluşturucusu ve değişken Obj. yeni nesneye bir işaretçi atar  
+- Çağırarak yeni bir nesne oluşturur `Object` oluşturucusu ve değişken Obj. yeni nesneye bir işaretçi atar  
   
--   Nesne Elem adlı yeni bir öğesi oluşturur ve bu öğeye işlevi kat gösteren bir işaretçi atar.  
+- Nesnesinde Elem adlı yeni bir öğe oluşturur ve bu öğeye bir işaretçi işlevi cat atar.  
   
--   Bu işlevi çağırır. Bir yöntem olarak çağrılan bu yana `this` işaretçi Obj. nesnesine başvuruyor Yeni bir öğe işlevi ekler çubuğuna nesne.  
+- Bu işlevi çağırır. Bir yöntem çağrılan beri `this` işaretçi Obj. nesnesine başvurur İşlev yeni bir öğe ekler çubuğuna nesnesinin.  
   
- Tam HTML kodu verilmiştir:  
+  Tam HTML kodu verilmiştir:  
   
 ```  
 <html>  
@@ -99,7 +100,7 @@ test();
 </html>  
 ```  
   
- Bu aynı Web sayfasında yerleştirilmiş bir denetimin bir gönderme işaretçi tarayıcıdan komut dosyası motorları elde edilemedi. Denetimin ardından işlevi test() uygulamak:  
+ Bu aynı Web sayfasına yerleştirilen bir denetim, tarayıcıda betik altyapısına gönderme işaretçi elde edebilir. Denetimin ardından işlevi test() uygulayabilir:  
   
 ```  
 <html>  
@@ -117,25 +118,25 @@ function cat()
 </html>  
 ```  
   
- Kod denetimden, test, aynı şeyi yapar [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] işlevi `test()`. Bu dağıtım çağrılar içine çalışan yapılır Not [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] altyapısı ve altyapı durumunu değiştirin:  
+ Kod denetiminden, test, aynı şeyi yapar [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] işlevi `test()`. Bu gönderme çağrıları içine çalışması yapıldığını unutmayın [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] altyapısı ve altyapının durumunu değiştirin:  
   
--   Cat işlevini kullanarak gönderme işaretçisini alır `GetDispID()`.  
+- Cat işlevi kullanarak gönderme işaretçi `GetDispID()`.  
   
--   Nesne işlevini kullanarak gönderme işaretçisini alır `GetDispID()`.  
+- Nesne işlevi kullanarak gönderme işaretçi `GetDispID()`.  
   
--   Nesne işlev çağrısı yaparak bir nesne oluşturur `InvokeEx()` ve yeni oluşturulan nesnesine gönderme işaretçi alır.  
+- Bir nesne nesne işlevini çağırarak oluşturur `InvokeEx()` ve yeni oluşturulmuş nesne için bir gönderme işaretçi alır.  
   
--   Elem, yeni bir öğe nesnesi kullanılarak oluşturur `GetDispID()` ile `fdexNameEnsure` bayrağı.  
+- Nesnesini kullanarak Elem, yeni bir öğe oluşturur `GetDispID()` ile `fdexNameEnsure` bayrağı.  
   
--   Gönderme işaretçi öğesi kullanarak kat koyar `InvokeEx()`.  
+- Öğesini kullanarak cat için gönderme işaretçi koyar `InvokeEx()`.  
   
--   Cat gönderme işaretçisine çağırarak bir yöntem olarak çağırır `InvokeEx()` ve gönderme işaretçiyi yapılandırılmış nesne olarak geçirme `this` işaretçi.  
+- Çağırarak cat gönderme işaretçisi bir yöntem çağırır `InvokeEx()` ve gönderme işaretçiyi yapılandırılmış nesne olarak geçirerek `this` işaretçi.  
   
--   Yeni bir öğe kat yöntemi oluşturur çubuğunda geçerli `this` nesnesi.  
+- Cat yöntemi yeni bir öğe oluşturur çubuğunda geçerli `this` nesne.  
   
--   Doğrular yeni öğe çubuğu, oluşturulan nesneyi kullanarak öğelerini numaralandırma tarafından oluşturulan `GetNextDispID()`.  
+- Doğrular yeni bir öğe, çubuk, oluşturulan nesneyi kullanarak öğeleri numaralandırarak oluşturulduğu `GetNextDispID()`.  
   
- Kodu test denetimi için:  
+  Test denetimi için kod:  
   
 ```  
    BOOL test(IDispatchEx *pdexScript)  
@@ -237,4 +238,4 @@ LDone:
 ```  
   
 ## <a name="methods"></a>Yöntemler  
- [Idispatchex yöntemleri](../../winscript/reference/idispatchex-methods.md)
+ [IDispatchEx Metotları](../../winscript/reference/idispatchex-methods.md)

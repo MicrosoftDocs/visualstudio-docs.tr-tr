@@ -1,5 +1,5 @@
 ---
-title: AsyncVoidMethodBuilder.m_objectIdForDebugger alan | Microsoft Docs
+title: Asyncvoidmethodbuilder.m_objectıdfordebugger alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,27 +13,28 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 70ddf5566d7f897bbe44eca3d9d21f9183efd69d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3e9b0fc96eca5582be01745f4fe934cfe812bc65
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39155431"
 ---
-# <a name="asyncvoidmethodbuildermobjectidfordebugger-field"></a>AsyncVoidMethodBuilder.m_objectIdForDebugger alan
-Bu oluşturucu benzersiz şekilde tanımlamak için hata ayıklayıcı tarafından kullanılan gevşek başlatılmış nesneyi temsil eder.  
+# <a name="asyncvoidmethodbuildermobjectidfordebugger-field"></a>Asyncvoidmethodbuilder.m_objectıdfordebugger alanı
+Bu oluşturucu benzersiz olarak tanımlanabilmesi için hata ayıklayıcı tarafından kullanılan gevşek başlatılan nesneyi temsil eder.  
   
  **Namespace:** <xref:System.Runtime.CompilerServices?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (mscorlib.dll içinde)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .field private object m_objectIdForDebugger  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:System.Runtime.CompilerServices.AsyncVoidMethodBuilder>   
- [.NET Framework için Paralel Uzantı Dahili Bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)
+ [.NET Framework için paralel uzantı dahili bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)

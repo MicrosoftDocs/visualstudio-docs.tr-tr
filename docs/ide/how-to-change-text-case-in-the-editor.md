@@ -1,9 +1,8 @@
 ---
-title: Büyük veya küçük harf Visual Studio düzenleyicisinde metni dönüştürmek | Microsoft Docs
-ms.custom: ''
+title: Metin büyük veya küçük harfe Dönüştür
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - editors, text case
@@ -14,34 +13,37 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: abf75a29192c3c10dc754213779bb13b6aebac4e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7165ea27c18e78fc7f9ee2ac790ff6d4d9e52c13
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059291"
 ---
-# <a name="how-to-change-text-case-in-the-editor"></a>Nasıl yapılır: düzenleyicide küçük harf değiştirme
-Seçili metni durumunun tümü büyük harf ya da tüm küçük harfe dönüştürmek için menü komutlarını veya klavye kısayollarını kullanabilirsiniz.  
-  
+# <a name="how-to-change-text-case-in-the-editor"></a>Nasıl yapılır: düzenleyicide büyük/küçük harf değiştirme
+
+Seçili metni büyük tümü büyük harf veya küçük harflerle dönüştürülecek menü komutlarını veya klavye kısayollarını kullanabilirsiniz.
+
 > [!NOTE]
-> İletişim kutuları ve menü komutlarını gördüğünüz etkin ayarlarınıza veya edition bağlı olarak bu makaledeki açıklanana farklı olabilir. Ayarlarınızı, örneğin değiştirmek için **genel** veya **Visual C++** ayarları seçebilirsiniz **Araçları** > **içeri ve dışarı aktarma ayarları**ve ardından **tüm ayarlara**.
-  
-## <a name="to-switch-text-to-upper-case"></a>Metni büyük harflere geçiş yapmak için  
-  
-1.  Dönüştürmek istediğiniz metni seçin.  
-  
-2.  Üzerinde **Düzenle** menüsünde, select **Gelişmiş**.  
-  
-3.  Metin tüm büyük harflere dönüştürülecek seçin **olun büyük**, veya basın **Ctrl**+**Shift**+**U**.  
-  
-    — veya —  
-  
-    Tüm küçük metin dönüştürmek için **olun küçük**, veya basın **Ctrl**+**U**.  
-  
+> İletişim kutuları ve menü komutları gördüğünüz, etkin ayarlarınıza ve sürüm bağlı olarak bu makalede açıklanan olanlardan farklı olabilir. Ayarlarınızı, örneğin değiştirileceğini **genel** veya **Visual C++** ayarları seçebilirsiniz **Araçları** > **içeri ve dışarı aktarma ayarları**ve ardından **tüm ayarları Sıfırla**.
+
+## <a name="to-switch-text-to-upper-case"></a>Metni büyük harfe geçiş yapmak için
+
+1.  Dönüştürmek istediğiniz metni seçin.
+
+2.  Üzerinde **Düzenle** menüsünde **Gelişmiş**.
+
+3.  Metni büyük harfe dönüştürülecek seçin **olun büyük**, veya basın **Ctrl**+**Shift**+**U**.
+
+    — veya —
+
+    Metni küçük harfe dönüştürmek için **olun küçük**, veya basın **Ctrl**+**U**.
+
     > [!TIP]
-    > Bu değişiklikten önce biçimlendirme önceki durumuna geri döndürmek için seçin **geri** gelen **Düzenle** menüsü.  
-  
+    > Bu değişiklikten önce biçimlendirme önceki durumuna geri döndürmek için seçin **geri** gelen **Düzenle** menüsü.
+
 ## <a name="see-also"></a>Ayrıca bkz.
-[Düzenleyiciyi özelleştirme](../ide/customizing-the-editor.md)   
-[Metin Düzenleyici Seçenekleri iletişim kutusu](../ide/reference/text-editor-options-dialog-box.md)   
-[Kod yazma](../ide/writing-code-in-the-code-and-text-editor.md)
+
+- [Düzenleyiciyi özelleştirme](../ide/customizing-the-editor.md)
+- [Metin Düzenleyici Seçenekleri iletişim kutusu](../ide/reference/text-editor-options-dialog-box.md)
+- [Kod Düzenleyicisi özellikleri](../ide/writing-code-in-the-code-and-text-editor.md)

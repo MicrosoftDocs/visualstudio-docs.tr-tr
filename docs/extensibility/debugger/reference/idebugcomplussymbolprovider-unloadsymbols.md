@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 35ae8e84b82f1ea2d965396f662879ed1cfe1531
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7d24ade16c99377da46267305251b3be688048a2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896126"
 ---
 # <a name="idebugcomplussymbolproviderunloadsymbols"></a>IDebugComPlusSymbolProvider::UnloadSymbols
-Belirtilen modül bellekten hata ayıklama simgelerini kaldırır.  
+Bellek Belirtilen modül için hata ayıklama sembollerini kaldırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,13 +45,13 @@ int UnloadSymbols(
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::UnloadSymbols(  

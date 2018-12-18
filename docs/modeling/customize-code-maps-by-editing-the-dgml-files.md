@@ -20,68 +20,71 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 7ee92121e57b7c3f6391d290ff0c5fde0d689e3c
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 21a32cf13f598c894ebc7841f5ef4a0af3af82ed
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49878979"
 ---
 # <a name="customize-code-maps-by-editing-the-dgml-files"></a>DGML dosyalarını düzenleyerek kod haritalarını özelleştirme
-Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçimlendirme dili (.dgml) dosyasını düzenleyebilirsiniz. Örneğin, özel stiller belirtin, özellikleri ve kategorileri kod öğeleri ve bağlantıları veya bağlantı belgeleri veya URL'leri kod öğeleri veya bağlantılar atamak için öğelerini düzenleyebilirsiniz. DGML öğeleri hakkında daha fazla bilgi için bkz: [yönlendirilmiş grafik biçimlendirme dili (DGML) başvurusu](../modeling/directed-graph-markup-language-dgml-reference.md).
 
- Kod haritanın .dgml dosyasını bir metin veya XML Düzenleyicisi'ni düzenleyin. Harita Visual Studio çözümünün parçası ise seçin **Çözüm Gezgini**kısayol menüsünü açın ve seçin **birlikte Aç**, **(metin) XML Düzenleyicisi**.
+Bir kod Haritası özelleştirmek için kendi yönlendirilmiş grafik işaretleme dili (.dgml) dosyasını düzenleyebilirsiniz. Örneğin, öğeleri özel stilleri belirtmek, özellikleri ve kategorileri kod öğeleri ve bağlantılarına veya bağlantı belgeler veya URL'ler için kod öğeleri veya bağlantıları atamak için düzenleyebilirsiniz. DGML öğeleri hakkında daha fazla bilgi için bkz. [yönlendirilmiş grafik işaretleme dili (DGML) başvurusu](../modeling/directed-graph-markup-language-dgml-reference.md).
+
+Kod Haritası'nın .dgml dosyasını bir metin veya XML Düzenleyicisi'ni düzenleyin. Harita, Visual Studio çözümünün parçası ise, seçin **Çözüm Gezgini**, kısayol menüsünü açın ve seçin **birlikte Aç**, **XML (metin) Düzenleyicisi**.
 
 > [!NOTE]
->  Kod haritaları oluşturmak için Visual Studio Enterprise olması gerekir. Visual Studio'da kod Haritası düzenlediğinizde, kullanılmayan DGML öğelerini ve özniteliklerini .dgml dosyasını kaydettiğinizde, onları silerek temizler. Yeni bağlantıları el ile eklediğinizde ayrıca kod öğeleri otomatik olarak oluşturur. .dgml dosyasını kaydettiğinizde, bir öğeye eklediğiniz tüm öznitelikler kendilerini alfabetik sırada yeniden düzenleyebilir.
+> Kod haritaları oluşturmak için Visual Studio Enterprise sürümünde olması gerekir. Visual Studio'da bir kod Haritası düzenlediğinizde, tüm kullanılmayan DGML öğelerini ve özniteliklerini .dgml dosyasını kaydettiğinizde onları silerek temizler. El ile yeni bağlantılar eklediğiniz zaman ayrıca kod öğeleri otomatik olarak oluşturur. .dgml dosyasını kaydettiğinizde, bir öğeye eklediğiniz tüm öznitelikler kendilerini alfabetik sırada yeniden düzenleyebilir.
 
-##  <a name="OrganizeNodes"></a> Grup kod öğeleri
- Yeni gruplar eklemek veya bir gruba varolan düğümleri dönüştürebilirsiniz.
+## <a name="OrganizeNodes"></a> Kod öğeleri grubu
+ Yeni gruplar ekleyebilir veya var olan düğümleri bir gruba Dönüştür.
 
-1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
+1. .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Kod öğesi için bir grubu dönüştürmek için Bul `<Node/>` bu kodu öğesinin öğesinin.
+2. Bir kod öğesi bir gruba dönüştürmek için bulma `<Node/>` Bu kod öğesi için öğesi.
 
-     \- veya -
+    \- veya -
 
-     Yeni bir grup eklemek için Bul `<Nodes>` bölümü. Yeni bir ekleme `<Node/>` öğesi.
+    Yeni grubu eklemek için Bul `<Nodes>` bölümü. Yeni bir `<Node/>` öğesi.
 
-3.  İçinde `<Node/>` öğesi ekleme bir `Group` öznitelik grubu genişletilmiş veya daraltılmış görüntülenip görüntülenmeyeceğini belirtin. Örneğin:
+3. İçinde `<Node/>` öğe, Ekle bir `Group` grubun genişletilmiş veya daraltılmış olarak görünüp görünmediğini belirtmek için özniteliği. Örneğin:
 
-    ```xml
-    <Nodes>
-       <Node Id="MyFirstGroup" Group="Expanded" />
-       <Node Id="MySecondGroup" Group="Collapsed" />
-    </Nodes>
-    ```
+   ```xml
+   <Nodes>
+      <Node Id="MyFirstGroup" Group="Expanded" />
+      <Node Id="MySecondGroup" Group="Collapsed" />
+   </Nodes>
+   ```
 
-4.  İçinde `<Links>` bölümünde, olduğundan emin olun bir `<Link/>` Grup code öğesi ve kendi alt kod öğeleri arasındaki her ilişki için varolan aşağıdaki özniteliklere sahip öğe:
+4. İçinde `<Links>` bölümünde, emin bir `<Link/>` grubu kod öğesi ve onun alt kod öğeleri arasındaki her ilişki için aşağıdaki özniteliklere sahip öğe:
 
-    -   A `Source` Grup code öğesi belirten özniteliği
+   - A `Source` grubu kod öğesi belirten özniteliği
 
-    -   A `Target` alt kod öğesi belirten özniteliği
+   - A `Target` alt kod öğesi belirten özniteliği
 
-    -   A `Category` belirten özniteliği bir `Contains` Grup code öğesi ve kendi alt kod öğesi arasındaki ilişki
+   - A `Category` belirten özniteliği bir `Contains` grubu kod öğesinden ve onun alt kod öğesi arasındaki ilişki
 
      Örneğin:
 
-    ```xml
-    <Links>
-       <Link Category="Contains" Source="MyFirstNewGroup" Target="FirstGroupChildOne" />
-       <Link Category ="Contains" Source="MyFirstNewGroup" Target="FirstGroupChildTwo" />
-       <Link Category ="Contains" Source="MySecondNewGroup" Target="SecondGroupChildOne" />
-       <Link Category="Contains" Source="MySecondNewGroup" Target="SecondGroupChildTwo" />
-    </Links>
-    ```
+   ```xml
+   <Links>
+      <Link Category="Contains" Source="MyFirstNewGroup" Target="FirstGroupChildOne" />
+      <Link Category ="Contains" Source="MyFirstNewGroup" Target="FirstGroupChildTwo" />
+      <Link Category ="Contains" Source="MySecondNewGroup" Target="SecondGroupChildOne" />
+      <Link Category="Contains" Source="MySecondNewGroup" Target="SecondGroupChildTwo" />
+   </Links>
+   ```
 
-     Hakkında daha fazla bilgi için `Category` özniteliği için bkz: [kod öğeleri ve bağlantıları için kategoriler atayın](#AssignCategories).
+    Hakkında daha fazla bilgi için `Category` özniteliği için bkz: [kod öğeleri ve bağlantılara kategoriler atama](#AssignCategories).
 
-##  <a name="ChangeGraphStyle"></a> Harita stilini değiştirme
- Haritanın .dgml dosyasını düzenleyerek haritanın kenarlık renk ve arka plan rengini değiştirebilirsiniz. Bağlantıların ve kod öğeleri stilini değiştirmek için bkz: [bağlantıların ve kod öğeleri stilini değiştirme](#Highlight).
+## <a name="ChangeGraphStyle"></a> Harita stilini değiştirme
+ Haritanın .dgml dosyasını düzenleyerek haritanın kenarlık rengini ve arka plan rengini değiştirebilirsiniz. Kod öğeleri ve bağlantıların stilini değiştirmek için bkz [kod öğeleri ve bağlantıların stilini değiştirme](#Highlight).
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  İçinde `<DirectedGraph>` öğesi, kendi stilini değiştirmek için aşağıdaki özniteliklerin herhangi birini ekleyin:
+2.  İçinde `<DirectedGraph>` öğesinde, stilini değiştirmek için aşağıdaki özniteliklerin herhangi birini ekleyin:
 
      Arka plan rengi
 
@@ -104,25 +107,25 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </DirectedGraph>
     ```
 
-##  <a name="Highlight"></a> Bağlantıların ve kod öğeleri stilini değiştirme
+## <a name="Highlight"></a> Kod öğeleri ve bağlantıların stilini değiştirme
 
-###  <a name="CreateCustomStyles"></a>
- Aşağıdaki kod öğeleri özel stiller uygulayabilirsiniz:
+### <a name="CreateCustomStyles"></a>
+ Aşağıdaki kod öğeleri özel stilleri uygulayabilirsiniz:
 
--   Tek kod öğeleri ve bağlantıları
+-   Tek bir kod öğeleri ve bağlantılarına
 
--   Kod öğeleri ve bağlantılar grupları
+-   Kod öğeleri ve bağlantı grupları
 
--   Kod öğeleri ve belirli koşullara göre bağlantılar grupları
+-   Kod öğeleri ve belirli koşullara göre bağlantı grupları
 
 > [!TIP]
->  Çok sayıda kod öğeleri veya bağlantılar stilleri yinelenen varsa, bu kod öğeleri veya bağlantılar için bir kategori uygulama ve sonra bu kategoriye stil uygulayarak düşünebilirsiniz. Daha fazla bilgi için bkz: [kod öğeleri ve bağlantıları için kategoriler atayın](#AssignCategories) ve [atamak özellikleri kod öğeleri ve bağlantıları](#AssignProperties).
+>  Stilleri birçok kod öğeleri veya bağlantı arasında tekrarlanan varsa, bu kod öğeleri veya bağlantılara bir kategoriyi uygulama ve ardından bu kategoriye bir stil uygulamadan düşünebilirsiniz. Daha fazla bilgi için [kod öğeleri ve bağlantılara kategori atama](#AssignCategories) ve [kod öğeleri ve bağlantılara özellikler atama](#AssignProperties).
 
-##### <a name="to-apply-a-custom-style-to-a-single-code-element"></a>Tek code öğesi için özel bir stil uygulamak için
+##### <a name="to-apply-a-custom-style-to-a-single-code-element"></a>Bir tek bir kod öğesi için özel bir stil uygulamak için
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Kod öğenin Bul `<Node/>` öğesi. Stilini özelleştirmek için bu özelliklerden herhangi birini ekleyin:
+2.  Kod öğesinin Bul `<Node/>` öğesi. Stilini özelleştirmek için bu özelliklerden herhangi birini ekleyin:
 
      Arka plan rengi
 
@@ -178,7 +181,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     FontStyle="FontStyleName"
     ```
 
-     Örneğin, belirtebilirsiniz `Italic` metin stili.
+     Örneğin, belirtebilirsiniz `Italic` metin stili olarak.
 
      Doku
 
@@ -194,7 +197,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
      Şekil
 
-     Simge ile şeklini değiştirmek için `Shape` özelliğine `None` ve `Icon` simge dosyası yolu için özellik.
+     Şekli bir simgeyle değiştirmek için Ayarla `Shape` özelliğini `None` ayarlayıp `Icon` özelliğini simge dosyasının yolu.
 
     ```xml
     Shape="ShapeFilePathLocation"
@@ -213,9 +216,9 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Bul `<Link/>` hem kaynak kod öğesi hem de hedef code öğesi isimlerini içeren öğe.
+2.  Bulma `<Link/>` adlarını kaynak kod öğesi ve hedef kod öğe içeren öğe.
 
-3.  İçinde `<Link/>` öğesi, stilini özelleştirmek için aşağıdaki özniteliklerin herhangi birini ekleyin:
+3.  İçinde `<Link/>` öğesinde, stilini özelleştirmek için aşağıdaki özniteliklerin herhangi birini ekleyin:
 
      Anahat ve ok ucu rengi
 
@@ -245,81 +248,81 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
 ##### <a name="to-apply-custom-styles-to-a-group-of-code-elements-or-links"></a>Kod öğeleri veya bağlantılar grubuna özel stiller uygulamak için
 
-1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
+1. .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Varsa bir `<Styles></Styles>` öğesi olmayabilir, altında bir tane ekleyin `<DirectedGraph></DirectedGraph>` öğeden sonra `<Links></Links>` öğesi.
+2. Varsa bir `<Styles></Styles>` öğe mevcut değilse, altında bir tane ekleyin `<DirectedGraph></DirectedGraph>` öğeden sonra `<Links></Links>` öğesi.
 
-3.  İçinde `<Styles></Styles>` öğesi altında `<Style/>` öğesi ve aşağıdaki öznitelikleri belirtebilirsiniz:
+3. İçinde `<Styles></Styles>` öğesi altında `<Style/>` öğesi ve aşağıdaki öznitelikleri belirtin:
 
-    -   `TargetType="Node` &#124; `Link | Graph"`
+   - `TargetType="Node` &#124; `Link | Graph"`
 
-    -   `GroupLabel="` *NameInLegendBox* `"`
+   - `GroupLabel="` *NameInLegendBox* `"`
 
-    -   `ValueLabel="` *NameInStylePickerBox* `"`
+   - `ValueLabel="` *NameInStylePickerBox* `"`
 
      Tüm hedef türlere özel bir stil uygulamak için bir koşul kullanmayın.
 
-##### <a name="to-apply-a-conditional-style-to-groups-of-code-elements-or-links"></a>Kod öğeleri veya bağlantılar gruplarına koşullu bir stil uygulamak için
+##### <a name="to-apply-a-conditional-style-to-groups-of-code-elements-or-links"></a>Kod öğeleri veya bağlantı gruplarına koşullu bir stil uygulamak için
 
-1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
+1. .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  İçinde `<Style/>` öğesi ekleme bir `<Condition/>` içeren öğe bir `Expression` bir Boole değeri döndüren bir ifadeye belirtmek için özniteliği.
+2. İçinde `<Style/>` öğe, Ekle bir `<Condition/>` öğesini içeren bir `Expression` bir Boole değeri döndüren bir ifadeyi belirtmek için özniteliği.
 
-     Örneğin:
+    Örneğin:
 
-    ```xml
-    <Condition Expression="MyCategory"/>
-    ```
+   ```xml
+   <Condition Expression="MyCategory"/>
+   ```
 
-     - veya -
+    - veya -
 
-    ```xml
-    <Condition Expression="MyCategory > 100"/>
-    ```
+   ```xml
+   <Condition Expression="MyCategory > 100"/>
+   ```
 
-     - veya -
+    - veya -
 
-    ```xml
-    <Condition Expression="HasCategory('MyCategory')"/>
-    ```
+   ```xml
+   <Condition Expression="HasCategory('MyCategory')"/>
+   ```
 
-     Bu ifade aşağıdaki Backus-Naur Form (BNF) sözdizimini kullanır:
+    Bu ifade aşağıdaki Backus-Naur Form (BNF) sözdizimini kullanır:
 
-     <Expression> ::= <BinaryExpression> &#124; <UnaryExpression> &#124; "("<Expression>")" &#124; <MemberBindings> &#124; <Literal> &#124; <Number>
+    <Expression> ::= <BinaryExpression> &#124; <UnaryExpression> &#124; "("<Expression>")" &#124; <MemberBindings> &#124; <Literal> &#124; <Number>
 
-     <BinaryExpression> ::= <Expression> <Operator> <Expression>
+    <BinaryExpression> ::= <Expression> <Operator> <Expression>
 
-     <UnaryExpression> ::= "!" <Expression> &#124; "+" <Expression> &#124; "-" <Expression>
+    <UnaryExpression> ::= "!" <Expression> &#124; "+" <Expression> &#124; "-" <Expression>
 
-     <Operator> :: = "<" &#124; "\<=" &#124; "=" &#124; "> =" &#124; ">" &#124; "! =" &#124; "veya" &#124; "ve" &#124; "+" &#124; "*" &#124; "/" &#124; "-"
+    <Operator> :: = "<" &#124; "\<=" &#124; "=" &#124; "> =" &#124; ">" &#124; "! =" &#124; "veya" &#124; "ve" &#124; "+" &#124; "*" &#124; "/" &#124; "-"
 
-     <MemberBindings> ::= <MemberBindings> &#124; <MemberBinding> "." <MemberBinding>
+    <MemberBindings> ::= <MemberBindings> &#124; <MemberBinding> "." <MemberBinding>
 
-     <MemberBinding> ::= <MethodCall> &#124; <PropertyGet>
+    <MemberBinding> ::= <MethodCall> &#124; <PropertyGet>
 
-     <MethodCall> ::= <Identifier> "(" <MethodArgs> ")"
+    <MethodCall> ::= <Identifier> "(" <MethodArgs> ")"
 
-     <PropertyGet> :: Tanıtıcısı =
+    <PropertyGet> :: Tanımlayıcısı =
 
-     <MethodArgs> ::= <Expression> &#124; <Expression> "," <MethodArgs> &#124; <empty>
+    <MethodArgs> ::= <Expression> &#124; <Expression> "," <MethodArgs> &#124; <empty>
 
-     <Identifier> ::= [^. ]*
+    <Identifier> ::= [^. ]*
 
-     <Literal> :: = tek veya çift tırnak içine alınmış dize sabit değeri
+    <Literal> :: = tek veya çift tırnak içinde dize sabit değeri
 
-     <Number> :: isteğe bağlı bir ondalık ayırıcısı olan rakam dizesiyle =
+    <Number> :: = isteğe bağlı ondalık noktası ile rakamlar dizesi
 
-     Birden çok belirtebilirsiniz `<Condition/>` öğeleri tüm stil uygulamak için true olmalıdır.
+    Birden çok belirtebilirsiniz `<Condition/>` tüm stil uygulamak için true olması gereken öğeler.
 
-3.  Sonra bir sonraki satırdaki `<Condition/>` öğesi, bir veya daha çok eklemek `<Setter/>` belirtmek için öğesi bir `Property` özniteliğini ve bir sabit `Value` özniteliği ya da bir hesaplanan `Expression` harita, kod öğeleri ya da uyan bağlantılara uygulamak için özniteliği Koşul.
+3. Sonra bir sonraki satırdaki `<Condition/>` öğesi, bir veya birden çok eklemeye `<Setter/>` öğeleri belirtmek için bir `Property` özniteliğini ve sabitlenmiş `Value` özniteliği veya bir hesaplanan `Expression` haritası, kod öğeleri veya uyan bağlantılara uygulamak için özniteliği Koşul.
 
-     Örneğin:
+    Örneğin:
 
-    ```xml
-    <Setter Property="BackGround" Value="Green"/>
-    ```
+   ```xml
+   <Setter Property="BackGround" Value="Green"/>
+   ```
 
- Kod öğesi yeşil görüntülenir veya kırmızı bağlı basit tam bir örnek, aşağıdaki iki koşul belirtir, `Passed` kategori ayarlanmış `True` veya `False`:
+   Basit tam bir örnek, aşağıdaki iki koşul, bir kod öğesi yeşil görünür veya kırmızı bağlı belirtir. kendi `Passed` kategori ayarı `True` veya `False`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -345,7 +348,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
  Aşağıdaki tabloda kullanabileceğiniz bazı örnek koşullar bulunmaktadır:
 
- Yazı tipi boyutunu ayrıca Kod öğesi boyutunu değiştirir kod satırı sayısını bir işlevi olarak ayarlayın. Bu örnek, birden çok özelliği ayarlamak için tek bir koşullu ifade kullanır. `FontSize` ve `FontFamily`.
+ Bir kod öğesi boyutunu da değiştiren bir kod satırı sayısını işlevi olarak yazı tipi boyutunu ayarlayın. Bu örnek, birden çok özelliği ayarlamak için tek bir koşullu ifade kullanır. `FontSize` ve `FontFamily`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -368,15 +371,15 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 </DirectedGraph>
 ```
 
- Temel bir kod öğesi arka plan rengini ayarlama `Coverage` özelliği. Stiller, benzer göründükleri sırada değerlendirilir `if-else` deyimleri.
+ Temel bir kod öğesinin arka plan rengini ayarlamak `Coverage` özelliği. Stilleri, benzer göründükleri sırayla değerlendirilir `if-else` deyimleri.
 
  Bu örnekte:
 
-1.  Varsa `Coverage` > 80, ardından `Background` yeşil özelliğine.
+1.  Varsa `Coverage` > 80 ise ayarlayın `Background` özelliğini yeşile.
 
-2.  Else IF `Coverage` > 50 ardından `Background` turuncu gölgeye özelliğine dayalı değerine göre `Coverage` özelliği.
+2.  Else if `Coverage` > 50 ise ayarlayın `Background` göre turuncu gölgeye özelliğini değerini temel alarak `Coverage` özelliği.
 
-3.  Else ayarlamak `Background` kırmızı gölgeye özelliğine dayalı değerine göre `Coverage` özelliği.
+3.  Ayarlayın `Background` özelliğini kırmızı gölgeye değerini temel alarak `Coverage` özelliği.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -405,7 +408,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 </DirectedGraph>
 ```
 
- Ayarlama `Shape` özelliğine `None` böylece simgesini şeklini değiştirir. Kullanım `Icon` simgenin konumunu belirtmek için özellik.
+ Ayarlama `Shape` özelliğini `None` simgenin şekille yer değiştirmesi. Kullanım `Icon` simgenin konumunu belirtmek için özellik.
 
 ```xml
 <DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
@@ -434,14 +437,14 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 </DirectedGraph>
 ```
 
-##  <a name="AssignProperties"></a> Kod öğeleri ve bağlantılara özellikler ata
- Kod öğeleri ve bağlantıları özellikler atayarak düzenleyebilirsiniz. Örneğin, böylece bunları grup kendi stilini değiştirin veya gizleme belirli özelliklere sahip kod öğeleri seçebilirsiniz.
+## <a name="AssignProperties"></a> Kod öğeleri ve bağlantılara özellikler atama
+ Kod öğeleri ve bağlantıları onlara özellikler atayarak düzenleyebilirsiniz. Örneğin, böylece gruplamak, stillerini değiştirebilmek veya gizleyebilmek belirli özellikleri olan kod öğeleri seçebilirsiniz.
 
-#### <a name="to-assign-a-property-to-a-code-element"></a>Kod öğesi için bir özellik atamak için
+#### <a name="to-assign-a-property-to-a-code-element"></a>Bir kod öğesi için bir özellik atamak için
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Bul `<Node/>` bu kodu öğesinin öğesinin. Özelliğin adını ve değerini belirtin. Örneğin:
+2.  Bulma `<Node/>` Bu kod öğesi için öğesi. Özelliğin adını ve değerini belirtin. Örneğin:
 
     ```xml
     <Nodes>
@@ -449,7 +452,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Nodes>
     ```
 
-3.  Ekleme bir `<Property/>` öğesine `<Properties>` bölüm öznitelikleri gibi görünen adı ve veri türü belirtin:
+3.  Ekleme bir `<Property/>` öğesine `<Properties>` bölümünde görünen adı ve veri türü gibi öznitelikleri belirtmek için:
 
     ```xml
     <Properties>
@@ -461,9 +464,9 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Bul `<Link/>` hem kaynak kod öğesi hem de hedef code öğesi isimlerini içeren öğe.
+2.  Bulma `<Link/>` adlarını kaynak kod öğesi ve hedef kod öğe içeren öğe.
 
-3.  İçinde `<Node/>` öğesi, özelliğin adını ve değerini belirtin. Örneğin:
+3.  İçinde `<Node/>` öğesinde, özelliğin adını ve değerini belirtin. Örneğin:
 
     ```xml
     <Links>
@@ -471,7 +474,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Links>
     ```
 
-4.  Ekleme bir `<Property/>` öğesine `<Properties>` bölüm öznitelikleri gibi görünen adı ve veri türü belirtin:
+4.  Ekleme bir `<Property/>` öğesine `<Properties>` bölümünde görünen adı ve veri türü gibi öznitelikleri belirtmek için:
 
     ```xml
     <Properties>
@@ -479,16 +482,16 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Properties>
     ```
 
-##  <a name="AssignCategories"></a> Kod öğeleri ve bağlantıları için kategoriler atayın
- Aşağıdaki bölümlerde, kategoriler atayarak kod öğeleri nasıl düzenleyebilirsiniz göstermek ve hiyerarşik oluşturabilirsiniz nasıl yardımcı kategorileri kod öğelerini düzenlemek ve devralma kullanarak alt kategorileri öznitelikleri ekleyin.
+## <a name="AssignCategories"></a> Kod öğeleri ve bağlantılara kategoriler atama
+ Aşağıdaki bölümlerde, onlara kategoriler atayarak kod öğeleri nasıl düzenleyebilirsiniz göstermek ve hiyerarşik oluşturabilirsiniz nasıl yardımcı olacak kategoriler kod öğelerini düzenlemek ve devralma kullanarak alt kategorilere öznitelikler ekleyin.
 
-#### <a name="to-assign-a-category-to-a-code-element"></a>Kod öğesi için bir kategori atamak için
+#### <a name="to-assign-a-category-to-a-code-element"></a>Bir kod öğesi için bir kategori atamak için
 
 -   .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
--   Bul `<Node/>` istediğiniz kod öğesinin öğesinin.
+-   Bulma `<Node/>` istediğiniz kod öğesi için öğesi.
 
--   İçinde `<Node/>` öğesi ekleme bir `Category` özniteliği kategorisinin adını belirtin. Örneğin:
+-   İçinde `<Node/>` öğe, Ekle bir `Category` kategorinin adını belirtmek için özniteliği. Örneğin:
 
     ```xml
     <Nodes>
@@ -496,7 +499,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Nodes>
     ```
 
-     Ekleme bir `<Category/>` öğesine `<Categories>` kullanabileceğiniz bölümüne `Label` özniteliği bu kategori için görüntü metnini belirtin:
+     Ekleme bir `<Category/>` öğesine `<Categories>` kullanabileceğiniz bölümüne `Label` o kategorinin görüntü metnini belirtmek için özniteliği:
 
     ```xml
     <Categories>
@@ -508,9 +511,9 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Bul `<Link/>` hem kaynak kod öğesi hem de hedef code öğesi isimlerini içeren öğe.
+2.  Bulma `<Link/>` adlarını kaynak kod öğesi ve hedef kod öğe içeren öğe.
 
-3.  İçinde `<Link/>` öğesi ekleme bir `Category` özniteliği kategorisinin adını belirtin. Örneğin:
+3.  İçinde `<Link/>` öğe, Ekle bir `Category` kategorinin adını belirtmek için özniteliği. Örneğin:
 
     ```xml
     <Links>
@@ -518,7 +521,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Links>
     ```
 
-4.  Ekleme bir `<Category/>` öğesine `<Categories>` kullanabileceğiniz bölümüne `Label` özniteliği bu kategori için görüntü metnini belirtin:
+4.  Ekleme bir `<Category/>` öğesine `<Categories>` kullanabileceğiniz bölümüne `Label` o kategorinin görüntü metnini belirtmek için özniteliği:
 
     ```xml
     <Categories>
@@ -530,7 +533,7 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
 
 1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Ekleme bir `<Category/>` üst kategori öğesi ve ardından ekleyin `BasedOn` özniteliği çocuk kategorisinin `<Category/>` öğesi.
+2.  Ekleme bir `<Category/>` öğesi üst kategori için ve ardından eklemek `BasedOn` özniteliği alt kategorinin `<Category/>` öğesi.
 
      Örneğin:
 
@@ -548,94 +551,94 @@ Kod Haritası özelleştirmek için bir haritanın yönlendirilmiş grafik biçi
     </Categories>
     ```
 
-     Bu örnekte, arka planını `MyFirstNode` yeşil olduğundan kendi `Category` öznitelik devralır `Background` özniteliği `MyParentCategory`.
+     Bu örnekte, arka planını `MyFirstNode` yeşil olduğundan, `Category` inherits özniteliği `Background` özniteliği `MyParentCategory`.
 
-##  <a name="AddReferences"></a> Bağlantı belge veya kod öğeleri ve bağlantıları URL'leri
- Belgeler veya URL'ler kod öğeleri veya bağlantılar haritanın .dgml dosyasını düzenleyerek ve ekleyerek bağlayabilirsiniz bir `Reference` özniteliğini `<Node/>` kod öğesinin öğesinin veya `<Link/>` öğesi için bir bağlantı. Ardından, açın ve bu içeriği code öğesi veya bağlantı görüntüleyin. `Reference` Özniteliği o içeriğin yolunu belirtir. Bu, .dgml dosya konumu veya mutlak yol ile göreli bir yol olabilir.
+## <a name="AddReferences"></a> Kod öğeleri ve bağlantılar belgeler veya URL'ler bağlama
+ Belgeler veya URL'ler için kod öğeleri veya bağlantılara haritanın .dgml dosyasını düzenleyerek ve ekleyerek bağlayabilirsiniz bir `Reference` özniteliğini `<Node/>` öğesi için bir kod öğesi veya `<Link/>` bağlantısını için öğesi. Ardından, açın ve kod öğesi veya bağlantı bu içeriği görüntüleme. `Reference` Özniteliği o içeriğin yolunu belirtir. Bu, .dgml dosya konumu veya mutlak yol ile göreli bir yol olabilir.
 
 > [!CAUTION]
 >  Göreli yollar kullanıyorsanız ve .dgml dosyası farklı bir konuma taşınırsa, bu yollar artık çözümlenmez. Bağlantılı içeriği açmaya ve görüntülemeye çalıştığınızda, içeriğin görüntülenemediğini bildiren bir hata ortaya çıkar.
 
  Örneğin, aşağıdaki kod öğeleri bağlamak isteyebilirsiniz:
 
--   Bir sınıfa değişiklikleri açıklamak için kod öğesine bir sınıf için bir iş code öğesi, belge veya başka bir .dgml dosya URL'sini bağlayabilirsiniz.
+-   Sınıfta yapılan değişiklikleri açıklamak için bir iş kod öğesi, belge veya başka bir .dgml dosyasının URL'sini bir sınıf için kod öğesi bağlayabilirsiniz.
 
--   Yazılımın mantıksal mimarisi katmanda temsil eden bir grup kodu öğesi için bir bağımlılık diyagramı bağlayabilirsiniz.
+-   Bir bağımlılık diyagramını yazılımın mantıksal mimarisinde bir katmanı gösteren bir grup kod öğesi bağlayabilirsiniz.
 
--   Bir arabirimi kullanıma sunan bir bileşen hakkında daha fazla bilgi göstermek için bu arabirimin kod öğesine bileşen diyagramı bağlayabilirsiniz.
+-   Bir arabirimi kullanıma sunan bir bileşen hakkında daha fazla bilgi göstermek için bu arabirim için kod öğesi için Bileşen diyagramını bağlayabilirsiniz.
 
--   Kod öğesi bir Team Foundation Server iş öğesi, hataya veya kod öğesine ilgili diğer bazı bilgilere bağlayın.
+-   Bir kod öğesi Team Foundation Server çalışma öğesine, hataya veya kod öğesine ilgili bazı diğer bilgilere bağlayın.
 
-#### <a name="to-link-a-document-or-url-to-a-code-element"></a>Bir belge veya URL bir kod öğesine bağlamak için
+#### <a name="to-link-a-document-or-url-to-a-code-element"></a>Bir belgeye veya URL'ye kod öğesine bağlamak için
 
-1.  .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
+1. .Dgml dosyasını bir metin veya XML düzenleyicisinde açın.
 
-2.  Bul `<Node/>` istediğiniz kod öğesinin öğesinin.
+2. Bulma `<Node/>` istediğiniz kod öğesi için öğesi.
 
-3.  Aşağıdaki tabloda yer alan görevlerden birini gerçekleştirin:
+3. Aşağıdaki tabloda yer alan görevlerden birini gerçekleştirin:
 
-     Tek bir kod öğesi
+    Tek bir kod öğesinden
 
-    -   İçinde `<Node/>` veya `<Link/>` öğesi ekleme bir `Reference` code öğesi konumunu belirtmek için öznitelik.
+   - İçinde `<Node/>` veya `<Link/>` öğe, Ekle bir `Reference` kod öğesinin konumunu belirtmek için özniteliği.
 
-        > [!NOTE]
-        >  Yalnızca bir bulunabilir `Reference` öğesi başına öznitelik.
-
-     Örneğin:
-
-    ```xml
-    <Nodes>
-       <Node Id="MyNode" Reference="MyDocument.txt" />
-    </Nodes>
-    <Properties>
-       <Property Id="Reference" Label="My Document" DataType="System.String" IsReference="True" />
-    </Properties>
-    ```
-
-     Birden çok kod öğeleri
-
-    1.  İçinde `<Node/>` veya `<Link/>` öğesi, her başvurunun konumunu belirtmek için yeni bir öznitelik ekleyin.
-
-    2.  İçinde `<Properties>` bölümü:
-
-        1.  Ekleme bir `<Property/>` öğesi için her yeni başvuru türü.
-
-        2.  Ayarlama `Id` özniteliğini yeni başvuru özniteliği adını.
-
-        3.  Ekleme `IsReference` özniteliği ve ayarlamak `True` başvuruyu kod öğenin üzerinde görünür yapmak için **başvuru Git** kısayol menüsü.
-
-        4.  Kullanım `Label` kod öğenin üzerinde görüntülenecek metni belirtmek için özniteliği **başvuru gidin** kısayol menüsü.
+     > [!NOTE]
+     >  Tek sahip `Reference` öğe başına özniteliği.
 
      Örneğin:
 
-    ```xml
-    <Nodes>
-       <Node Id="MyNode" SequenceDiagram="MySequenceDiagram.sequencediagram" ActiveBugs="MyActiveBugs.wiq"/>
-    </Nodes>
-    <Properties>
-       <Property Id="SequenceDiagram" Label="My Sequence Diagram" DataType="System.String" IsReference="True" />
-       <Property Id="ActiveBugs" Label="Active Bugs" DataType="System.String" IsReference="True" />
-    </Properties>
-    ```
+   ```xml
+   <Nodes>
+      <Node Id="MyNode" Reference="MyDocument.txt" />
+   </Nodes>
+   <Properties>
+      <Property Id="Reference" Label="My Document" DataType="System.String" IsReference="True" />
+   </Properties>
+   ```
 
-     Haritada kod öğesinin adı altı çizili olarak görünür. Kod öğesi veya bağlantı için kısayol menüsü açtığınızda göreceğiniz bir **başvuru Git** seçmenizi bağlantılı kod öğeleri içeren kısayol menüsü.
+    Birden çok kod öğeleri
 
-4.  Kullanım `ReferenceTemplate` öznitelik başvurusu bu dizeyi yinelenen yerine birden çok başvuru tarafından kullanılan bir URL gibi ortak bir dize belirtin.
+   1. İçinde `<Node/>` veya `<Link/>` öğesi, her başvurunun konumunu belirtmek için yeni bir öznitelik ekleyin.
 
-     `ReferenceTemplate` Özniteliği başvuru değeri için bir yer tutucu belirtir. Aşağıdaki örnekte, `{0}` yer tutucu `ReferenceTemplate` öznitelik değerleri tarafından değiştirilecek `MyFirstReference` ve `MySecondReference` öznitelikleri `<Node/>` öğesinin tam yol üretmek için:
+   2. İçinde `<Properties>` bölümü:
 
-    ```xml
-    <Nodes>
-       <Node Id="MyNode" MyFirstReference="MyFirstDocument" MySecondReference="MySecondDocument"/>
-       <Node Id="MySecondNode" MyFirstReference="AnotherFirstDocument" MySecondReference="AnotherSecondDocument"/>
-    </Nodes>
-    <Properties>
-       <Property Id="MyFirstReference" Label="My First Document" DataType="System.String" IsReference="True" ReferenceTemplate="http://www.Fabrikam.com/FirstDocuments/{0}.asp"/>
-       <Property Id="MySecondReference" Label="My Second Document" DataType="System.String" IsReference="True" ReferenceTemplate=" http://www.Fabrikam.com/SecondDocuments/{0}.asp"/>
-    </Properties>
-    ```
+      1.  Ekleme bir `<Property/>` her yeni başvuru türü için öğesi.
 
-5.  Başvurulan code öğesi veya eşlemesinden kod öğeleri görüntülemek için kod öğesi veya bağlantı için kısayol menüsünü açın. Seçin **başvuru Git** ve ardından kod öğesi.
+      2.  Ayarlama `Id` özniteliğini yeni başvuru özniteliğinin adına.
+
+      3.  Ekleme `IsReference` özniteliği ve değerini `True` başvuruyu kod öğenin üzerinde görünür yapmak için **Git başvurusu için** kısayol menüsü.
+
+      4.  Kullanım `Label` kod öğenin üzerinde görüntü metnini belirtmek için özniteliği **başvuru Git** kısayol menüsü.
+
+      Örneğin:
+
+   ```xml
+   <Nodes>
+      <Node Id="MyNode" SequenceDiagram="MySequenceDiagram.sequencediagram" ActiveBugs="MyActiveBugs.wiq"/>
+   </Nodes>
+   <Properties>
+      <Property Id="SequenceDiagram" Label="My Sequence Diagram" DataType="System.String" IsReference="True" />
+      <Property Id="ActiveBugs" Label="Active Bugs" DataType="System.String" IsReference="True" />
+   </Properties>
+   ```
+
+    Harita üzerinde kod öğe adı altı çizili olarak görünür. Kod öğesi veya bağlantının kısayol menüsünü açtığınızda, göreceğiniz bir **başvuru Git** seçmeniz için bağlantılı kod öğeleri içeren bir kısayol menüsü.
+
+4. Kullanım `ReferenceTemplate` başvuruda o dizeyi yinelemek yerine birden çok başvuru tarafından kullanılan bir URL gibi ortak bir dizeyi belirtmek için özniteliği.
+
+    `ReferenceTemplate` Özniteliği başvuru değeri için bir yer tutucu belirtir. Aşağıdaki örnekte, `{0}` yer tutucu `ReferenceTemplate` öznitelik değerleriyle değiştirilecektir `MyFirstReference` ve `MySecondReference` öznitelikleri `<Node/>` tam yol üretmek için:
+
+   ```xml
+   <Nodes>
+      <Node Id="MyNode" MyFirstReference="MyFirstDocument" MySecondReference="MySecondDocument"/>
+      <Node Id="MySecondNode" MyFirstReference="AnotherFirstDocument" MySecondReference="AnotherSecondDocument"/>
+   </Nodes>
+   <Properties>
+      <Property Id="MyFirstReference" Label="My First Document" DataType="System.String" IsReference="True" ReferenceTemplate="http://www.Fabrikam.com/FirstDocuments/{0}.asp"/>
+      <Property Id="MySecondReference" Label="My Second Document" DataType="System.String" IsReference="True" ReferenceTemplate=" http://www.Fabrikam.com/SecondDocuments/{0}.asp"/>
+   </Properties>
+   ```
+
+5. Başvurulan kod öğesi veya eşlemesinden kod öğeleri görüntülemek için kod öğesi veya bağlantının kısayol menüsünü açın. Seçin **başvuru Git** ve ardından kod öğesi.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 

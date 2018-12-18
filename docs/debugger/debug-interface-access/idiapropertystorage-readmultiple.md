@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1747d55de37777a9919f4709a62fbaff4b6d8a2a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0b8be22e2a855f19c412725833fa18e182ebff6d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49904061"
 ---
 # <a name="idiapropertystoragereadmultiple"></a>IDiaPropertyStorage::ReadMultiple
-Geçerli özellik kümesi özelliklerinden okuma belirtildi.  
+Okuma özellikleri geçerli özellik kümesinden belirtildi.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,16 +36,16 @@ HRESULT ReadMultiple(
   
 #### <a name="parameters"></a>Parametreler  
  `cpspec`  
- [in] Belirtilen özellikleri sayısı `rgpspec` dizi. Sıfır ise, yöntem hiçbir özellikleri döndürür ancak döndürmüyor `S_OK` başarı kod olarak.  
+ [in] Belirtilen özellikleri sayısı `rgpspec` dizisi. Sıfır ise, yöntem hiçbir özellik döndürür ancak iade `S_OK` bir başarı kodu olarak.  
   
  `rgpspec`  
- [in] Okunacak özellikleri dizisi. Özelliklerini özellik kimliği veya isteğe bağlı bir dize adı tarafından belirtilebilir. Dizi belirli bir sırada özelliklerini belirtmek gerekli değildir. Dizi basit özellikleri için dönüş yinelenen özellik değerlerini sonuçta yinelenen özellikler içerebilir. İkinci kez açmak için bir denemede erişim reddedildi olmayan basit özellikler döndürmelidir. Dizi özellik kimlikleri ve dize bir karışımını içerebilir. Bu dizi en az olmalıdır `cpspec` özellik değerlerinin sayısı.  
+ [in] Okunacak özellikleri dizisi. Özellikler, bir özellik kimliği veya isteğe bağlı dize adı belirtilebilir. Dizideki herhangi belirli bir sırada özelliklerini belirtmek gerekli değildir. Dizi basit özellikleri için döndürülecek yinelenen özellik değerlerini bunun sonucunda yinelenen özellikler içerebilir. Basit olmayan özellikler, bunları ikinci kez açmak için bir denemede erişim reddedildi döndürmelidir. Dizi özelliği kimlikleri ve dize bir karışımını içerebilir. Bu dizi en az olmalıdır `cpspec` özellik değerlerini sayısı.  
   
  `rgvar`  
- [içinde out] Bir dizi `PROPVARIANT` her bir özellik için değerlerle doldurulacak yapıları (Microsoft.VisualStudio.OLE.Interop ad alanında). Dizi en az olmalıdır `cpspec` öğeleri boyutu. Arayan dizideki başlatma gerekmez.  
+ [out içinde] Bir dizi `PROPVARIANT` yapıları (Microsoft.VisualStudio.OLE.Interop ad alanında) her bir özellik için değerlerle doldurulacak. Dizi en az olmalıdır `cpspec` öğeleri boyutu. Çağıranın dizideki değerleri başlatma gerekmez.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` , bir veya daha fazla özellik bulunamadı. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` , bir veya daha fazla özellik bulunamadı. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bir özellik bulunamadı varsa, karşılık gelen bir giriş `rgvar` dizi içeren bir `VARIANT` türüyle `VT_EMPTY`.  

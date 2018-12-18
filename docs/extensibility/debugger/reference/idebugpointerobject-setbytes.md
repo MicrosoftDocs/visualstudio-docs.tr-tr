@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a8234117d7965c4f2e471855d39ed0c3cee1f88c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9f3a496eb0212863f2ed08479216ac6ca546009f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49891511"
 ---
 # <a name="idebugpointerobjectsetbytes"></a>IDebugPointerObject::SetBytes
-Bir dizi ardışık bayt işaret değerini ayarlar.  
+Art arda bayt dizisinden işaret değeri ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int SetBytes(
   
 #### <a name="parameters"></a>Parametreler  
  `dwStart`  
- [in] İşaret nesnesi başından bayt cinsinden uzaklık.  
+ [in] Belirtilen nesnenin başından itibaren bayt cinsinden uzaklık.  
   
  `dwCount`  
- [in] Ayarlamak için bayt sayısı.  
+ [in] Ayarlanacak bayt sayısı.  
   
  `pBytes`  
- [in] Yeni değer temsil eden bir bayt dizisi. Bu değer, verilen uzaklıkta başlayan nesne içinde depolanır.  
+ [in] Yeni değeri temsil eden bir bayt dizisi. Bu değer, belirtilen uzaklıkta başlayan belirli nesne içinde depolanır.  
   
  `pdwBytes`  
- [out] Bayt sayısı gerçekte kümesi getirir.  
+ [out] Bayt sayısı gerçekte ayarlamak döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, kullanılır bu tarafından temsil edilen işaretçi [IDebugPointerObject](../../../extensibility/debugger/reference/idebugpointerobject.md) bir ilkel türe veya ilkel türler (basit bir bayt dizisi tarafından temsil edilen bir dizi) basit bir dizi gösteriyor. Bu `IDebugPointerObject` nesne (bunu işaret etmelidir bellekteki bir adresi) bir null başvuru olamaz.  
+ Bu yöntem kullanılır bu tarafından temsil edilen işaretçinin [IDebugPointerObject](../../../extensibility/debugger/reference/idebugpointerobject.md) işaret türü basit tür veya basit bir dizi temel türlerin (diğer bir deyişle, basit bir bayt dizisi tarafından temsil edilen bir dizi). Bu `IDebugPointerObject` nesne (onu işaret etmelidir bir bellek adresi) bir null başvuru olamaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [GetBytes](../../../extensibility/debugger/reference/idebugpointerobject-getbytes.md)   

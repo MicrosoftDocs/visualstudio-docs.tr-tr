@@ -16,18 +16,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8ff675a7940f5fda61fcf1836a4023ffb8f586b3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1555703c92695090a3c8ac7b04e7a35dadcd7627
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34749206"
 ---
-# <a name="cvisenabled-function"></a>CvIsEnabled İşlevi
+# <a name="cvisenabled-function"></a>Cvısenabled işlevi
 Herhangi bir oturumunda belirtilen ETW sağlayıcı etkin olup olmadığını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```C  
 HRESULT CvIsEnabled(  
    _In_ PCV_PROVIDER pProvider  
 );  
@@ -48,11 +49,11 @@ HRESULT CvIsEnabledEx(
  `pProvider`  
  Geçerli sağlayıcı nesnesi. NULL olamaz.  
   
-## <a name="return-value"></a>Dönüş Değeri  
+## <a name="return-value"></a>Dönüş değeri  
  Sağlayıcı etkinse S_OK. Sağlayıcı şu anda devre dışıysa S_FALSE. Hata kodu vardı herhangi bir hata durumunda. BAŞARISIZ makrosu S_OK/S_FALSE için denetleyin ve hata koşulu için denetlemek için kullanın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkers.h  
+ **Başlık:** *cvmarkers.h*  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9b78ba89b56c6d8c473060e39d402ee46e4ae15f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: fc12e9251bd452edc3fdede1a5f7414462162301
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49847701"
 ---
 # <a name="idiasymbolgetrank"></a>IDiaSymbol::get_rank
-FORTRAN çok boyutlu bir dizi derecesini (dimensions sayısı) alır.  
+' % S'boyut (boyut sayısı) FORTRAN çok boyutlu bir dizi sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,16 +34,16 @@ HRESULT get_rank (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Dimensions sayısı içinde FORTRAN çok boyutlu bir dizi döndürür.  
+ [out] Boyutların sayısı FORTRAN çok boyutlu bir dizi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Burada dizi bildirilen olarak bir dizi boyut sayısını başvurduğu derece `myarray[1,2,3]`. Bu örnek 3 ve 3 boyutları derecesini sahiptir. RANK her boyut için oluşan bir dizi kavramı kullanan C++ için geçerli değildir (diğer bir deyişle, `myarray[1][2][3]`).  
+ Burada dizisi olarak bildirilen bir dizideki boyutların sayısı derecesi başvurduğu `myarray[1,2,3]`. Bu örnekte, 3 ila 3 boyutlu bir dereceli. Boyut her boyut için oluşan bir dizi kavramını kullanan C++ için geçerli değildir (diğer bir deyişle, `myarray[1][2][3]`).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

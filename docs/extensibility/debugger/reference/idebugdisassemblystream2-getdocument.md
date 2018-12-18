@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8585a777ace0d49749570d4efcbd78f133fb0edd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5b0d697a7596f7582a69466193534d4f8908f2fc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822208"
 ---
 # <a name="idebugdisassemblystream2getdocument"></a>IDebugDisassemblyStream2::GetDocument
-Bu giriş akışı ile ilişkili kaynak belge alır.  
+Bu giriş akışı ile ilişkilendirilen kaynak belge alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,10 +49,10 @@ int GetDocument(
  [out] Döndürür bir [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md) belgeyi temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, gerçek bir dosyasında depolanmaz metin dosyalarınız hata ayıklama motorları tarafından uygulanır.  
+ Bu yöntem, gerçek bir dosyasında saklanmaz metin belgeleriniz hata ayıklama altyapısı tarafından uygulanır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDisassemblyStream2](../../../extensibility/debugger/reference/idebugdisassemblystream2.md)   

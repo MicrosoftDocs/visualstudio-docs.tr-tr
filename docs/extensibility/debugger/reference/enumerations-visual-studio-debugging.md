@@ -14,13 +14,14 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 84319a9f88b898094f40d266440da996ef33cb91
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1a9fe9c7ad6b46adefb4f32ceaf3dd13b351cafb
+ms.sourcegitcommit: f685fa5e2df9dc307bf1230dd9dc3288aaa408b5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36233766"
 ---
-# <a name="enumerations-visual-studio-debugging"></a>Numaralandırmalar (Visual Studio hata ayıklama)
+# <a name="enumerations-visual-studio-debugging"></a>Sabit Listeler (Visual Studio Hata Ayıklama)
 Şunlardır sabit listeleri için [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] hata ayıklama SDK.  
   
  [AD_PROCESS_ID_TYPE](../../../extensibility/debugger/reference/ad-process-id-type.md)  
@@ -114,7 +115,7 @@ ms.lasthandoff: 04/16/2018
  Ayrıştırılmış akış kapsamını belirtir.  
   
  [DisplayKind](../../../extensibility/debugger/reference/displaykind.md)  
- Gelen yapılacak bilgi türleri temsil eden geçerli değerlerini sıralar bir bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesne ve kullanıcıya görüntüler.  
+ Gelen yapılacak bilgi türleri temsil eden geçerli değerlerini sıralar bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesne ve kullanıcıya görüntüler.  
   
  [DOCCONTEXT_COMPARE](../../../extensibility/debugger/reference/doccontext-compare.md)  
  İki belge bağlamları karşılaştırma ölçütlerini belirtir.  

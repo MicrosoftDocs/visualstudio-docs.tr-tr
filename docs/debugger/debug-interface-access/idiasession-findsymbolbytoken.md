@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3f7152a3953475ac2622033101ca739b0b8ee300
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4758aeb569e0218d219ddca06042f4b32e61e467
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49935984"
 ---
 # <a name="idiasessionfindsymbolbytoken"></a>IDiaSession::findSymbolByToken
-Belirtilen meta veri simgesi içeren simge alır.  
+Belirtilen meta veri belirteci içeren simgeyi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,13 +39,13 @@ HRESULT findSymbolByToken (
  [in] Belirteç belirtir.  
   
  `symtag`  
- [in] Bulunacak simge türü. Değerleri gerçekleştirilecek [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) numaralandırması.  
+ [in] Bulunacak simge türü. Değerleri verilerinden alınır [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) sabit listesi.  
   
  `ppSymbol`  
- [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) simgenin temsil eden nesnesi alınamadı.  
+ [out] Döndürür bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) sembol temsil eden bir nesne alındı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
   
@@ -56,4 +57,4 @@ pSession->findSymbolByToken( token, SymTagFunction, &pFunc );
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

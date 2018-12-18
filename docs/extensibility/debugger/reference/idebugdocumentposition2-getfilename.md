@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 81417fbb025fdea70a4b9fb51f0b49fb0257cd8a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f77d7f89bd7970a17c78414393cd8856a6f62b4d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872335"
 ---
 # <a name="idebugdocumentposition2getfilename"></a>IDebugDocumentPosition2::GetFileName
-Belgenin konumunu içeren kaynak dosyasının dosya adını alır.  
+Belge konumu içeren kaynak dosyasının dosya adını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int GetFileName(
  [out] Kaynak dosyasının dosya adını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir kaynak dosyası her zaman (kaynak dosya diskte, örneğin olmayabilir) bir dosya adına sahip değil.  
+ Bir kaynak dosyası (kaynak dosya diskte, örneğin olmayabilir) bir dosya adı her zaman olmayabilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentPosition2](../../../extensibility/debugger/reference/idebugdocumentposition2.md)

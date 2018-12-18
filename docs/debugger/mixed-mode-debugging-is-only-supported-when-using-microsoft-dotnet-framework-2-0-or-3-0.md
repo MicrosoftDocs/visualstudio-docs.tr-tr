@@ -1,5 +1,5 @@
 ---
-title: Karışık mod hata ayıklaması yalnızca desteklenen Microsoft .NET Framework 2.0 veya 3.0 kullanırken | Microsoft Docs
+title: Karışık modda hata ayıklama yalnızca Microsoft .NET Framework 2.0 veya 3.0 sürümü kullanılırken desteklenir | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -17,42 +17,43 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5492c79fa15582c5aeaf9b7794958a37bd569313
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 9d51a0ca72840b20e23eaaa9db3a82382a3fa012
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44284074"
 ---
 # <a name="mixed-mode-debugging-is-only-supported-when-using-microsoft-net-framework-20-or-30"></a>Karışık Modda Hata Ayıklama Yalnızca Microsoft .NET Framework 2.0 veya 3.0 Sürümü Kullanılırken Desteklenir
-Daha önce Microsoft .NET Framework sürümleri 2.0, destek 64 bit işlemleri karışık modda hata ayıklama için sağlamaz. Bu hata ayıklarken, yerel koda yönetilen koddan ya da yerel koddan yönetilen koda adım edilemez olduğunu anlamına gelir.  
+Daha önce Microsoft .NET Framework sürümleri 2.0 64-bit işlemlerinin karışık mod hata ayıklama için destek sağlıyor musunuz. Bu, hata ayıklama sırasında yerel kod için yönetilen kod veya yönetilen koda yerel koddan girilemiyor anlamına gelir.  
   
  Bu sorunu gidermek için şunları yapabilirsiniz:  
   
 -   Microsoft .NET Framework 2.0 veya 3.0 kullanmak için projenizin güncelleştirin.  
   
--   Yönetilen ve yerel kod hata ayıklama ayrı hata ayıklama oturumu.  
+-   Yönetilen ve yerel kodunuzu ayrı hata ayıklama oturumlarında hata ayıklayın.  
   
--   Aşağıdaki yordamlarda açıklandığı gibi karma kodunuzu bir 32 bitlik işlem olarak hata ayıklama.  
+-   Karma kodunuzu bir 32 bitlik işlem olarak, aşağıdaki yordamlarda açıklandığı gibi hata ayıklayın.  
   
-### <a name="to-change-the-operating-system-to-32-bit-visual-basic-or-c"></a>İşletim sisteminin 32-bit (Visual Basic veya C#) değiştirmek için  
-  
-1.  İçinde **Çözüm Gezgini**, projenize sağ tıklayın ve ardından **özellikleri** kısayol menüsünde.  
-  
-2.  Özellik sayfaları tıklatın **derleme** veya **hata ayıklama** sekmesi.  
-  
-3.  Tıklatın **Platform**ve ardından **x86** platformları listesinden.  
-  
-     Varsayılan olarak, Visual Basic ve C# Derleyicileri herhangi bir CPU'da çalıştırmak için kod oluşturur. Bir 64-bit bilgisayarda 64 bit işlemleri olarak bu ikili dosyaları çalıştırın. Bir 32 bitlik işlem olarak çalıştırmak için seçmelisiniz **Win32**değil **AnyCPU**.  
-  
-### <a name="to-change-the-operating-system-to-32-bit-cc"></a>İşletim sisteminin 32-bit (C/C++) değiştirmek için  
+### <a name="to-change-the-operating-system-to-32-bit-visual-basic-or-c"></a>İşletim sistemi 32 bit (Visual Basic veya C#) değiştirileceğini  
   
 1.  İçinde **Çözüm Gezgini**, projenize sağ tıklayın ve ardından **özellikleri** kısayol menüsünde.  
   
-     Özellik sayfaları tıklatın **Platform**ve ardından **Win32** platformları listesinden.  
+2.  Özellik Sayfaları'nda tıklatın **derleme** veya **hata ayıklama** sekmesi.  
+  
+3.  Tıklayın **Platform**ve ardından **x86** platformlar listesinden.  
+  
+     Varsayılan olarak, Visual Basic ve C# Derleyicileri herhangi bir CPU üzerinde çalıştırmak için kod üretir. Bu ikili dosyalar, bir 64 bit bilgisayarda 64 bit işlem çalıştırın. Bir 32 bit işlemde çalıştırmak için seçmelisiniz **Win32**değil **AnyCPU**.  
+  
+### <a name="to-change-the-operating-system-to-32-bit-cc"></a>İşletim sistemi 32-bit (C/C++) değiştirileceğini  
+  
+1.  İçinde **Çözüm Gezgini**, projenize sağ tıklayın ve ardından **özellikleri** kısayol menüsünde.  
+  
+     Özellik Sayfaları'nda tıklatın **Platform**ve ardından **Win32** platformlar listesinden.  
   
 ### <a name="to-correct-this-error"></a>Bu hatayı düzeltmek için  
   
--   Bkz: [SQL hata ayıklama Kurulumu ayarı](http://msdn.microsoft.com/en-us/3db09e68-edcc-42de-9c22-4e97cfd55ab3).  
+-   Bkz: [SQL hata ayıklamayı kurma](/previous-versions/visualstudio/visual-studio-2010/s4sszxst(v=vs.100)).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [64 Bit uygulamalarda hata ayıklama](../debugger/debug-64-bit-applications.md)
+ [64 Bit Uygulamalarda Hata Ayıklama](../debugger/debug-64-bit-applications.md)

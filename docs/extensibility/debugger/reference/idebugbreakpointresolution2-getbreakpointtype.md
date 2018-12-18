@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d3c25a1c83f91de1e97dd4f328ea68c572867f0c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3a98ccf6e211233aed6099f554733a51f40c3363
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875275"
 ---
 # <a name="idebugbreakpointresolution2getbreakpointtype"></a>IDebugBreakpointResolution2::GetBreakpointType
 Bu çözüm tarafından temsil edilen kesme noktası türünü alır.  
@@ -40,16 +41,16 @@ int GetBreakpointType(
   
 #### <a name="parameters"></a>Parametreler  
  `pBPType`  
- [out] Arasında bir değer döndürür [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) numaralandırması bu kesme noktası türünü belirtir.  
+ [out] Bir değer döndürür [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) Bu Kesme noktasının türünü belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürürse E_FAIL `bpResLocation` alanındaki ilişkili [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı geçerli değil.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. E_FAIL döndürür `bpResLocation` ilişkili alan [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı geçerli değil.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kesme noktası örneğin bir kodu veya bir veri kesme noktası olabilir.  
+ Kesme noktası bir kod veya veri kesme noktası, örneğin olabilir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CDebugBreakpointResolution` gösteren nesne [IDebugBreakpointResolution2](../../../extensibility/debugger/reference/idebugbreakpointresolution2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CDebugBreakpointResolution` gösteren nesne [IDebugBreakpointResolution2](../../../extensibility/debugger/reference/idebugbreakpointresolution2.md) arabirimi.  
   
 ```  
 HRESULT CDebugBreakpointResolution::GetBreakpointType(BP_TYPE* pBPType)    

@@ -17,14 +17,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 35fef17924d0ef4bc431742258d12b03667a25bc
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2b6cb8676f95ff86efbcfbe421872cf2d9a3f47c
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39150806"
 ---
 # <a name="starttrackingcontext"></a>StartTrackingContext
-İzleme bağlamı başlatın.  
+Bir izleme bağlamına başlayın.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,8 +40,8 @@ HRESULT WINAPI StartTrackingContext(LPCTSTR intermediateDirectory, LPCTSTR taskN
  [in] `taskName`  
  İzleme bağlamı tanımlar. Bu ad, günlük dosyası adı oluşturmak için kullanılır.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Bir **HRESULT** ile **başarılı** izleme bağlamı oluşturduysanız biti ayarlanmamış.  
+## <a name="return-value"></a>Dönüş değeri  
+ Bir **HRESULT** ile **başarılı** izleme bağlamına oluşturulduysa biti ayarlanmamış.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** FileTracker.h
+ **Başlık:** *FileTracker.h*

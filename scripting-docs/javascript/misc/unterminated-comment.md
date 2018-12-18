@@ -1,5 +1,5 @@
 ---
-title: Sonlandırılmayan açıklama | Microsoft Docs
+title: Sonlandırılmamış açıklama | Microsoft Docs
 ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-client-threshold
@@ -21,13 +21,14 @@ author: mikejo5000
 ms.author: mikejo
 manager: ghogen
 ms.openlocfilehash: 9fde5d5edd7e81060b088e4940d752aa05e65ded
-ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868111"
 ---
 # <a name="unterminated-comment"></a>Sonlandırılmayan açıklama
-Çok satır yorum blok başladı, ancak bunu doğru olarak sonlandırılmadı. Çok satırlı açıklamalar başlar ile bir "/\*" birleşimi ve geriye doğru ile biten "\*/" birleşimi. Bir örnek verilmiştir:  
+Çok satırlı açıklama bloğu başladı, ancak düzgün bir şekilde, sona ermedi değil. Çok satırlı açıklamalar başlar ile bir "/\*" birleşimi ve geriye doğru ile biten "\*/" birleşimi. Bir örnek verilmiştir:  
   
 ```JavaScript  
 /* This is a comment  

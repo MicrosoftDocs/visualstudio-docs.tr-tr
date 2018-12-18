@@ -1,7 +1,9 @@
 ---
-title: Paralel etkinlik Tasarımcısı | Microsoft Docs
+title: İş Akışı Tasarımcısı - Parallel etkinlik Tasarımcısı
 ms.date: 11/04/2016
 ms.topic: reference
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 f1_keywords:
 - System.Activities.Statements.Parallel.UI
 ms.assetid: 0306dc3b-075a-4091-ac3a-96486fbabed5
@@ -10,38 +12,43 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b1c3f24af736dfd3762de7942ba1f52442dfd20c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 76e0d7646645c7d86859de7f79ff22a46131c4a5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49863769"
 ---
-# <a name="parallel-activity-designer"></a>Paralel etkinlik Tasarımcısı
-<xref:System.Activities.Statements.Parallel> Etkinlik alt etkinlikler koleksiyonu eşzamanlı olarak yürütür.
+# <a name="parallel-activity-designer"></a>Parallel Etkinlik Tasarımcısı
+
+<xref:System.Activities.Statements.Parallel> Etkinliği çocuk etkinliklerinin bir koleksiyonu aynı anda yürütür.
 
 ## <a name="the-parallel-activity"></a>Paralel etkinlik
- <xref:System.Activities.Statements.Parallel> Etkinlik kendi alt etkinlikler depolayan bir <xref:System.Activities.Statements.Parallel.Branches%2A> koleksiyonu. Kullanım <xref:System.Activities.Statements.Parallel> yerine etkinlik <xref:System.Activities.Statements.Sequence> alt etkinliklerin bazıları boş giderseniz etkinlik.
 
- <xref:System.Activities.Statements.Parallel> Etkinliği olan bir <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> bir kullanıcı tarafından belirtilen içeren özelliği [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] ifade. <xref:System.Activities.Statements.Parallel> Etkinlik her dal tamamlandıktan sonra bu özellik değerlendirir. Değerlendirilirse **True**, sonra <xref:System.Activities.Statements.Parallel> etkinlik tamamlandıktan dala çalıştırmadan. Varsa <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> için değerlendirmez **True**, sonra <xref:System.Activities.Statements.Parallel> tüm alt etkinliklerinin tamamlandığında etkinliği tamamlar.
+<xref:System.Activities.Statements.Parallel> Etkinlik alt etkinlikleriyle depolayan bir <xref:System.Activities.Statements.Parallel.Branches%2A> koleksiyonu. Kullanım <xref:System.Activities.Statements.Parallel> yerine etkinlik <xref:System.Activities.Statements.Sequence> çocuk etkinliklerinin bazıları boş giderseniz etkinlik.
 
-### <a name="using-the-parallel-activity-designer"></a>Paralel etkinlik Tasarımcısı'nı kullanarak
- **Paralel** etkinlik Tasarımcısı bulunabilir **akış denetimi** kategorisini **araç**, hangi tıklayarak erişildiğinde **araç**sol tarafındaki sekmesinde [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] (Alternatif olarak, seçin **araç** gelen **Görünüm** menüsü veya CTRL + ALT + X.)
+<xref:System.Activities.Statements.Parallel> Etkinliğinde bir <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> içeren bir kullanıcı özelliği belirtilen Visual Basic ifade. <xref:System.Activities.Statements.Parallel> Her dal tamamlandıktan sonra bu özellik etkinlik değerlendirir. Değerlendirilirse **True**, ardından <xref:System.Activities.Statements.Parallel> etkinliği tamamlandıktan diğer dalları çalıştırmadan. Varsa <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> için değerlendirilmiyor **True**, ardından <xref:System.Activities.Statements.Parallel> etkinliği tamamlandıktan tüm alt etkinliklerinin tamamladıktan sonra.
 
- **Paralel** gelen etkinlik Tasarımcısı sürüklenebilir **araç** ve oturum bırakılan [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] yüzey yerde etkinlik tasarımcıları normalde yerleştirilir, örneğin, bir içinde**Dizisi** etkinlik Tasarımcısı. İçine bırakmadan sonra [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)], oluşturduğu bir <xref:System.Activities.Statements.Parallel> içeren varsayılan etkinlik bir <xref:System.Activities.Activity.DisplayName%2A> , **paralel**
+### <a name="using-the-parallel-activity-designer"></a>Paralel etkinlik Tasarımcısını kullanma
 
- Bir etkinlik eklemek için <xref:System.Activities.Statements.Parallel.Branches%2A> paralel etkinlik koleksiyonu sürükleyin bazı diğer etkinlik Tasarımcısı'ndan **araç** ve üçgen bırakın **paralel** etkinlik Tasarımcısı. Üçgenler dallarda etkinlikleri flank. Bu yordamı tekrarlayarak ek etkinlikler eklenebilir. Etkinlikler, bunların içinde bırakarak sıralanabilir **paralel** etkinlik Tasarımcısı.
+Erişim **paralel** etkinlik Tasarımcısı'nda **akış denetimi** kategorisi **araç kutusu**.
 
-### <a name="parallel-activity-properties-in-the-workflow-designer"></a>İş Akışı Tasarımcısı'nda paralel etkinlik özellikleri
- Aşağıdaki tabloda paralel etkinlik özelliklerini gösterir ve Tasarımcısı'nda nasıl kullanıldığını açıklar.
+**Paralel** etkinlik Tasarımcısı, gelen sürüklenebilir **araç kutusu** ve etkinlik tasarımcıları normalde, örneğin, bir içineyerleştirilenheryerdeişakışıTasarımcısıyüzeyineaçınbırakılan**Dizisi** etkinlik Tasarımcısı. İş akışı tasarımcıya bırakılırken sonra oluşturduğu bir <xref:System.Activities.Statements.Parallel> içeren varsayılan olarak, etkinlik bir <xref:System.Activities.Activity.DisplayName%2A> , **paralel**
+
+Bir etkinlik eklemek için <xref:System.Activities.Statements.Parallel.Branches%2A> paralel etkinlik koleksiyonunu sürükleyin bazı diğer etkinlik Tasarımcısı'ndan **araç kutusu** ve bu üçgen bırak **paralel** etkinlik Tasarımcısı. Bu üçgen dalları etkinlikleri flank. Bu yordamı tekrarlayarak ek etkinlikler eklenebilir. Etkinlikler, bunların içinde sürükleyip bırakarak sıralanabilir **paralel** etkinlik Tasarımcısı.
+
+### <a name="parallel-activity-properties-in-the-workflow-designer"></a>İş akışı tasarımcısında paralel etkinlik özellikleri
+
+Aşağıdaki tabloda, paralel etkinlik özelliklerini gösterir ve Tasarımcısı'nda nasıl kullanıldığını açıklar.
 
 |Özellik adı|Gerekli|Kullanım|
-|-------------------|--------------|-----------|
-|<xref:System.Activities.Activity.DisplayName%2A>|False|Etkinlik Tasarımcısı kolay görünen adını başlığı belirtir. Varsayılan değer **paralel**. Değer, isteğe bağlı olarak düzenlenebilir **özellikleri** ızgara veya doğrudan başlığındaki etkinlik Tasarımcısı.|
-|<xref:System.Activities.Statements.Parallel.Branches%2A>|Doğru|Yürütülecek alt etkinlikler koleksiyonunu içerir.|
-|<xref:System.Activities.Statements.Parallel.CompletionCondition%2A>|False|Bir dal tamamlandıktan sonra değerlendirilir. Değerlendirilirse **doğru**, ardından zamanlanmış dalları iptal edilir. Bu özellik ayarlı değil ya da değerlendiren **yanlış**, tüm alt etkinliklerinin tamamlandığında etkinliği tamamlar. Varsayılan değer **null**.|
+|-|--------------|-|
+|<xref:System.Activities.Activity.DisplayName%2A>|False|Üst bilgide etkinlik Tasarımcısı kolay görünen adını belirtir. Varsayılan değer **paralel**. Değer, isteğe bağlı olarak düzenlenebilir **özellikleri** kılavuz veya doğrudan etkinlik Tasarımcısı başlığı.|
+|<xref:System.Activities.Statements.Parallel.Branches%2A>|Doğru|Yürütülecek çocuk etkinliklerinin koleksiyonunu içerir.|
+|<xref:System.Activities.Statements.Parallel.CompletionCondition%2A>|False|Bir dal tamamlandıktan sonra değerlendirilir. Değerlendirilirse **True**, ardından zamanlanmış dalları iptal edilir. Bu özelliği ayarlı değil veya değerlendiren **False**, tüm alt etkinliklerinin tamamladığında etkinliği tamamlar. Varsayılan değer **null**.|
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Sırası](../workflow-designer/sequence-activity-designer.md)
+- [Sequence](../workflow-designer/sequence-activity-designer.md)
 - [ParallelForEach\<T >](../workflow-designer/parallelforeach-t-activity-designer.md)
 - [Denetim Akışı](../workflow-designer/control-flow-activity-designers.md)

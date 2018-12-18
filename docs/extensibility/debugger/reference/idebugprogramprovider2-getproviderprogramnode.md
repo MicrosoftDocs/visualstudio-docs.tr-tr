@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1b6984a89d39dc99351acaa0e37f2c3d9b1e47f1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d26b74928985feefda3acdc8594c35096fc4e0b4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49821333"
 ---
 # <a name="idebugprogramprovider2getproviderprogramnode"></a>IDebugProgramProvider2::GetProviderProgramNode
 Belirli bir programı program düğümünü alır.  
@@ -50,31 +51,31 @@ int GetProviderProgramNode(
   
 #### <a name="parameters"></a>Parametreler  
  `Flags`  
- [in] Bayraklarını bileşimini [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) numaralandırması. Aşağıdaki bayraklar bu çağrı için tipik şunlardır:  
+ [in] Bayraklarının bir birleşimi [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) sabit listesi. Bu çağrı için tipik aşağıdaki bayraklar:  
   
 |Bayrağı|Açıklama|  
 |----------|-----------------|  
 |`PFLAG_REMOTE_PORT`|Çağıran uzak makinede çalışıyor.|  
-|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (dizimi hakkında ek bilgi her düğüm için döndürülecek).|  
+|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (taşıma hakkında ek bilgi, her düğüm için de döndürülür).|  
 |`PFLAG_ATTACHED_TO_DEBUGGEE`|Arayan bağlı, ancak hata ayıklayıcı tarafından başlatılan değil.|  
   
  `pPort`  
- [in] Arama işlemi bağlantı noktası çalışıyor.  
+ [in] Çağırma işlemi bağlantı noktası çalışıyor.  
   
  `processId`  
- [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programı içeren işlem Kimliğini söz konusu bulunduran yapısı.  
+ [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programını içeren işlemin Kimliğini söz konusu tutan yapı.  
   
  `guidEngine`  
- [in] Program (varsa) bağlı hata ayıklama altyapısı GUID.  
+ [in] GUID (varsa) programı iliştirildiği hata ayıklama altyapısı.  
   
  `programId`  
- [in] Program düğümü almak istediğiniz programın kimliği.  
+ [in] Program düğüm alınacağı program kimliği.  
   
  `ppProgramNode`  
- [out] Bir [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) istenen program düğümünü temsil eden nesne.  
+ [out] Bir [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) istenen program düğümü temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md)   

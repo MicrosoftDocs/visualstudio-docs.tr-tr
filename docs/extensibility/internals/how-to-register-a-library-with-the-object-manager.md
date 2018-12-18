@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: bir kitaplık nesnesi Yöneticisi ile kaydetme | Microsoft Docs'
+title: 'Nasıl yapılır: nesne yöneticisine kitaplık kaydetme | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -17,28 +17,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 30bf2775c358b107fe299f0d60bc00a2030465e4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 61976fbc63efd4c15e5ed88a159ea8e73bdf38f3
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39513328"
 ---
-# <a name="how-to-register-a-library-with-the-object-manager"></a>Nasıl yapılır: bir kitaplık nesnesi Yöneticisi ile kaydetme
-Simgeler gözatma araçları, gibi **sınıf görünümü**, **Nesne Tarayıcısı**, **çağrısı tarayıcı** ve **Bul simgesi sonuçlarınızı**, görüntülemenizi sağlar projenizi veya dış bileşenlere simgeler. Ad alanları, sınıflar, arabirimler, yöntemleri ve diğer dil öğeleri simgeleri içerir. Kitaplıkları bu simgeleri izlemek ve bunlara kullanıma [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] araçları verileri ile doldurur Nesne Yöneticisi.  
+# <a name="how-to-register-a-library-with-the-object-manager"></a>Nasıl yapılır: nesne yöneticisine kitaplık kaydetme
+Sembol tarama araçlarını, gibi **sınıf görünümü**, **Nesne Tarayıcısı**, **çağrı tarayıcısı** ve **sembol sonuçları Bul**, etkinleştirdiğiniz görüntülemek Projenizdeki veya dış bileşenler semboller. Simgeler, ad alanları, sınıflar, arabirimler, yöntemleri ve diğer dil öğelerini içerir. Kitaplıkları bu sembolleri izlemek ve bunlara üzerinden kullanıma sunacaksınız [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] araçları verilerle dolduran Nesne Yöneticisi.  
   
- Nesne Yöneticisi'ni, kullanılabilir tüm kitaplıkları izler. Her kitaplık sembolleri için simgenin tarama araçları sağlamadan önce ile Nesne Yöneticisi'ni kaydetmeniz gerekir.  
+ Nesne Yöneticisi, kullanılabilir tüm kitaplıkları izler. Her kitaplık nesne yöneticisine semboller için Sembol tarama araçlarını sağlamadan önce kaydetmeniz gerekir.  
   
- Genellikle, bir VSPackage yüklediğinde, bir kitaplık kaydedin. Ancak, bunu başka bir zamanda gerektiğinde yapılabilir. VSPackage kapatıldığında kitaplığı kaydını silin.  
+ Genellikle, bir VSPackage'ı yüklerken bir kitaplık kaydedin. Ancak, bunu başka bir zaman gerektiği şekilde gerçekleştirebilirsiniz. VSPackage'ı kapatıldığında kitaplığı kaydını silin.  
   
- Bir kitaplık kaydetmek için kullanın <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterLibrary%2A> yöntemi. Yönetilen kod kitaplığı durumunda kullanmak <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterSimpleLibrary%2A> yöntemi.  
+ Kitaplığa kaydetmek için kullanın <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterLibrary%2A> yöntemi. Bir yönetilen kod kitaplık için kullanmak <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterSimpleLibrary%2A> yöntemi.  
   
- Bir kitaplık kaydını silmek için kullanılmasını <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.UnregisterLibrary%2A> yöntemi.  
+ Bir tür kitaplığının kaydını silmek için kullanın <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.UnregisterLibrary%2A> yöntemi.  
   
- Nesne Yöneticisi ' ni bir başvuru almak için <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2>, geçirmek <xref:Microsoft.VisualStudio.Shell.Interop.SVsObjectManager> kimliği için hizmet `GetService` yöntemi.  
+ Nesne Yöneticisi ' ni bir başvuru almak <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2>, geçmesi <xref:Microsoft.VisualStudio.Shell.Interop.SVsObjectManager> kimliği için hizmet `GetService` yöntemi.  
   
-## <a name="registering-and-unregistering-a-library-with-the-object-manager"></a>Kaydetme ve bir kitaplık nesnesi Yöneticisi ile kaydı siliniyor  
+## <a name="register-and-unregister-a-library-with-the-object-manager"></a>Kaydolun ve nesne yöneticisine kitaplık kaydını sil  
   
-#### <a name="to-register-a-library-with-the-object-manager"></a>Bir kitaplık nesnesi Yöneticisi ile kaydetmek için  
+### <a name="to-register-a-library-with-the-object-manager"></a>Nesne yöneticisine kitaplık kaydetmek için  
   
 1.  Bir kitaplığı oluşturun.  
   
@@ -57,7 +58,7 @@ Simgeler gözatma araçları, gibi **sınıf görünümü**, **Nesne Tarayıcıs
   
     ```  
   
-2.  Bir nesne için bir başvuru elde <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2> yazın ve arama <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterSimpleLibrary%2A> yöntemi.  
+2.  Bir nesnenin bir başvuru elde <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2> yazın ve arama <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.RegisterSimpleLibrary%2A> yöntemi.  
   
     ```vb  
     Private Sub RegisterLibrary()  
@@ -111,9 +112,9 @@ Simgeler gözatma araçları, gibi **sınıf görünümü**, **Nesne Tarayıcıs
   
     ```  
   
-#### <a name="to-unregister-a-library-with-the-object-manager"></a>Bir kitaplık nesnesi Yöneticisi ile kaydını kaldırmak için  
+### <a name="to-unregister-a-library-with-the-object-manager"></a>Nesne yöneticisine kitaplık kaydını kaldırmak için  
   
-1.  Bir nesne için bir başvuru elde <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2> yazın ve arama <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.UnregisterLibrary%2A> yöntemi.  
+1.  Bir nesnenin bir başvuru elde <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2> yazın ve arama <xref:Microsoft.VisualStudio.Shell.Interop.IVsObjectManager2.UnregisterLibrary%2A> yöntemi.  
   
     ```vb  
     Private Sub UnregisterLibrary()  
@@ -166,7 +167,7 @@ Simgeler gözatma araçları, gibi **sınıf görünümü**, **Nesne Tarayıcıs
   
     ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eski dil hizmeti genişletilebilirliği](../../extensibility/internals/legacy-language-service-extensibility.md)   
- [Simgenin tarama araçları destekleme](../../extensibility/internals/supporting-symbol-browsing-tools.md)   
- [Nasıl Yapılır: Kitaplık Tarafından Sağlanan Sembollerin Listelerini Nesne Yöneticisine Sunma](../../extensibility/internals/how-to-expose-lists-of-symbols-provided-by-the-library-to-the-object-manager.md)
+ [Sembol tarama araçlarını destekler](../../extensibility/internals/supporting-symbol-browsing-tools.md)   
+ [Nasıl yapılır: nesne yöneticisine kitaplık tarafından sağlanan sembollerin listelerini kullanıma sunma](../../extensibility/internals/how-to-expose-lists-of-symbols-provided-by-the-library-to-the-object-manager.md)

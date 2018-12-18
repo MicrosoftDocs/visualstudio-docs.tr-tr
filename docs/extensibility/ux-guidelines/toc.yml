@@ -1,0 +1,40 @@
+- name: Visual Studio Kullanıcı Deneyimi Yönergeleri
+  href: visual-studio-user-experience-guidelines.md
+  items:
+    - name: UX Temel Bileşenleri
+      href: ux-essentials-for-visual-studio.md
+    - name: Yazı Tipleri ve Biçimlendirme
+      href: fonts-and-formatting-for-visual-studio.md
+    - name: Renkler ve Stil
+      href: colors-and-styling-for-visual-studio.md
+      items:
+        - name: Paylaşılan Renkler
+          href: shared-colors-for-visual-studio.md
+        - name: Renk Değeri Başvurusu
+          href: color-value-reference-for-visual-studio.md
+    - name: Görüntüler ve Simgeler
+      href: images-and-icons-for-visual-studio.md
+      items:
+        - name: Görsel Dil Sözlüğü
+          href: visual-language-dictionary-for-visual-studio.md
+    - name: Menüler ve Komutlar
+      href: menus-and-commands-for-visual-studio.md
+    - name: Etkileşim Desenleri
+      href: interaction-patterns-for-visual-studio.md
+      items:
+        - name: Uygulama Desenleri
+          href: application-patterns-for-visual-studio.md
+        - name: Yaygın Denetim Desenleri
+          href: common-control-patterns-for-visual-studio.md
+        - name: Bileşik Desenler
+          href: composite-patterns-for-visual-studio.md
+    - name: UI Metni ve Yardımı
+      href: ui-text-and-help-for-visual-studio.md
+    - name: İletişim Kutusu Düzeni
+      href: layout-for-visual-studio.md
+    - name: Bildirimler ve İlerleme Durumu
+      href: notifications-and-progress-for-visual-studio.md
+    - name: Animasyonlar
+      href: animations-for-visual-studio.md
+    - name: Değerlendirme Araçları
+      href: evaluation-tools-for-visual-studio.md

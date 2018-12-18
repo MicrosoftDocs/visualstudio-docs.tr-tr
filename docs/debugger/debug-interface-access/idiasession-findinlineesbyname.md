@@ -12,14 +12,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2551e68e2563570d4b72df2438bd747da36e59ac
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 47d01237d7e2235f2d50e82a8fd599384e930d2c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896269"
 ---
 # <a name="idiasessionfindinlineesbyname"></a>IDiaSession::findInlineesByName
-Belirtilen bir adla eşleşen tüm satır içi işlevlerin satır numarası bilgilerini yinelemek bir istemci izin veren bir numaralandırmasını alır.  
+Belirtilen adla eşleşen tüm satır içine alınmış işlevlerin satır numarası bilgisi yineleme yapmak bir istemci sağlayan bir sabit listesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,16 +34,16 @@ HRESULT findInlineesByName (
   
 #### <a name="parameters"></a>Parametreler  
  `name`  
- [in] Karşılaştırma için kullanılacak adı belirtir.  
+ [in] Karşılaştırma için kullanılacak adını belirtir.  
   
  `option`  
- [in] Ad arama yapmayı uygulanan karşılaştırma seçeneklerini belirtir. Gelen değerleri [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma tek başına veya birlikte kullanılabilir.  
+ [in] Ad arama uygulanan karşılaştırma seçeneklerini belirtir. Değerlerini [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma, tek başına veya birlikte kullanılabilir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) alındı satır numaralarını listesini içeren nesne.  
+ [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) alınan satır numaralarının listesini içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   

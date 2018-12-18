@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d2f7d5430326f57acf686b90f911445cc36dbf02
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7d6df39bcd02fe74e2c6ada24d341cd3d2fdfb75
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49932942"
 ---
 # <a name="idebugproperty3getstringchars"></a>IDebugProperty3::GetStringChars
-Bu özellik ile ilişkili dizeyi alır ve bir kullanıcı tarafından sağlanan arabellek depolar.  
+Bu özellik ile ilişkili dizeyi alır ve bir kullanıcı tarafından sağlanan arabelleğinde depolar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,24 +45,24 @@ int GetStringChars(
   
 #### <a name="parameters"></a>Parametreler  
  `buflen`  
- [in] En fazla karakter sayısı, kullanıcı tarafından sağlanan arabellek basılı tutabilirsiniz.  
+ [in] En fazla karakter sayısı, kullanıcı tarafından sağlanan arabellek barındırabilir.  
   
  `rgString`  
  [out] Bir dize döndürür.  
   
- [C++ yalnızca] `rgString` Unicode karakter dizesi alan arabellek bir işaretçidir. Bu arabelleğin en az olmalıdır `buflen` boyutu (bayt değil) karakter.  
+ [C++ yalnızca] `rgString` Unicode karakter dizesinin alan arabellek işaretçisidir. Bu arabelleğin en az olmalıdır `buflen` boyutu (bayt değil) karakter.  
   
  `pceltFetched`  
- [out] Burada gerçekten arabellekte depolanan karakter sayısını döndürülür. (Olabilir `NULL` c++.)  
+ [out] Burada aslında arabellekteki depolanan karakter sayısı döndürülür. (Olabilir `NULL` c++.)  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- C++'da, arabellek en az olduğunu güvence altına almaya dikkatli olunması gerekir `buflen` Unicode karakter uzunluğunda. Unicode karakter 2 bayt uzun olduğunu unutmayın.  
+ C++'da, arabelleğin en az olduğunu sağlamak üzere dikkatli olunması gerekir `buflen` Unicode karakter uzunluğuna sahip. Bir Unicode karakter 2 bayt uzunluğunda olduğunu unutmayın.  
   
 > [!NOTE]
->  C++'da, döndürülen dize sonlandırma bir null karakter içermez. Verilen `pceltFetched` dizesinde karakter sayısını belirtir.  
+>  C++'da, döndürülen dizeye Sonlandırıcı null karakterini içermez. Verilen `pceltFetched` dizedeki karakter sayısını belirtir.  
   
 ## <a name="example"></a>Örnek  
  

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31146825"
 ---
 # <a name="using-visual-studio-interop-assemblies"></a>Visual Studio birlikte çalışma derlemeleri kullanma
 Visual Studio birlikte çalışma derlemeleri yönetilen uygulamaların Visual Studio genişletilebilirlik sağlayan COM arabirimleri erişmesine izin verin. Düz COM arabirimleri ile birlikte çalışma sürümlerine arasında bazı farklar vardır. Örneğin, HRESULTs genellikle int değerler olarak temsil edilir ve özel durumlar olarak aynı şekilde ele alınması gerekir ve parametreleri (özellikle out Parametreleri) farklı şekilde işlenir.  

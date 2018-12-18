@@ -9,26 +9,28 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 397e60225740c34d1d70555ccd8294522550a3e1
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 806e0984ce0309ff071e595725615034a7d42f09
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882528"
 ---
 # <a name="accessing-models-from-text-templates"></a>Metin Şablonlarından Modellere Erişme
-Metin şablonları kullanarak raporu dosyalarını, kaynak kodu dosyaları ve etki alanına özgü dil modellerinde bağlı diğer metin dosyaları oluşturabilirsiniz. Metin şablonları hakkında temel bilgiler için bkz: [kod oluşturma ve T4 metin şablonları](../modeling/code-generation-and-t4-text-templates.md). Metin şablonları, DSL ayıklarken Deneysel modunda çalışır ve DSL dağıtmış olan bir bilgisayarda da çalışır.
+Metin şablonları kullanarak rapor dosyaları, kaynak kodu dosyaları ve etki alanına özgü dil modelleri tabanlı diğer metin dosyaları oluşturabilirsiniz. Temel metin şablonları hakkında daha fazla bilgi için [kod oluşturma ve T4 metin şablonları](../modeling/code-generation-and-t4-text-templates.md). Metin şablonlarını DSL'nizi ayıklanırken Deneysel modda çalışır ve DSL dağıtmış olan bir bilgisayar üzerinde de çalışır.
 
 > [!NOTE]
->  DSL çözüm, örnek metin şablonu oluşturduğunuzda  **\*.tt** dosyaları, hata ayıklama projede oluşturulur. Etki alanı sınıflarının adlarını değiştirdiğinizde, bu şablonları artık çalışmaz. Bununla birlikte, bunlar gereken temel yönergeleri içerir ve, DSL eşleşecek şekilde güncelleştirebilirsiniz örnekler sağlar.
+>  Bir DSL çözümü, örnek metin şablonu oluşturduğunuzda  **\*.tt** dosyaları, hata ayıklama projede oluşturulur. Etki alanı sınıflarının adları değiştirdiğinizde, bu şablonları artık çalışmayacak. Bununla birlikte, bunlar gereken temel yönergeleri içerir ve DSL'nizi eşleşecek şekilde güncelleştirebilirsiniz örnekler sunar.
 
- Metin şablonundan bir model erişmek için:
+ Bir model bir metin şablonundan erişmek için:
 
--   Şablon yönergesi devral özelliğini ayarla <xref:Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation>. Bu deposuna erişim sağlar.
+- Şablon yönergesi için devral özelliğini <xref:Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation>. Bu, Store için erişim sağlar.
 
--   Yönerge işlemcileri erişmek istediğiniz DSL için belirtin. Etki alanı sınıfları, özellikleri ve ilişkileri metin şablonu kodda kullanabilmesi için bu, DSL derlemelerde yükler. Ayrıca, belirttiğiniz modeli dosyası yükler.
+- Yönerge işlemcileri, erişmek istediğiniz DSL için belirtin. Bu, böylece kendi etki alanı sınıfları, özellikleri ve ilişkileri metin şablonunuzu kodda kullanabilirsiniz DSL'nizi için derlemeleri yükler. Ayrıca, belirttiğiniz model dosyası yükler.
 
- A `.tt` dosyası aşağıdaki örneğe benzer, hata ayıklama projesinde oluşturulursa, yeni bir oluşturduğunuzda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] DSL en az dil şablonu çözümden.
+  A `.tt` DSL Minimal dil şablondan yeni bir Visual Studio çözümü oluşturduğunuzda, dosya aşağıdaki örneğe benzer hata ayıklama projede oluşturulur.
 
 ```
 <#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
@@ -48,60 +50,58 @@ Here is a list of elements in the model:
 <#
   }
 #>
-
 ```
 
- Bu şablonla ilgili aşağıdaki noktaları dikkat edin:
+ Bu şablon ilgili şu noktalara dikkat edin:
 
--   Şablon, etki alanı sınıfları, özellikleri ve DSL tanımı içinde tanımlanan ilişkileri kullanabilirsiniz.
+- Şablon, etki alanı sınıfları, özellikleri ve DSL tanım içinde tanımlanan ilişkileri kullanabilirsiniz.
 
--   Belirttiğiniz modeli dosyası şablon yüklendiğinde `requires` özelliği.
+- Belirttiğiniz model dosyası şablon yüklendikten `requires` özelliği.
 
--   Bir özelliğin `this` kök öğe içeriyor. Buradan, kodunuzu diğer model öğelerine gidebilirsiniz. Özelliğin adı genellikle, DSL kök etki alanı sınıfı ile aynıdır. Bu örnek, `this.ExampleModel`.
+- Bir özelliğin `this` kök öğe içeriyor. Burada, kodunuzun diğer model öğelerine gidebilirsiniz. Özelliğin adı genellikle kök etki alanı sınıfı, DSL'nin ile aynıdır. Bu örnekte olduğu `this.ExampleModel`.
 
--   Kod parçaları yazılmış olan dil C# olsa da, herhangi bir türde metin oluşturabilir. Alternatif olarak kod yazabilirsiniz [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] özelliği ekleyerek `language="VB"` için `template` yönergesi.
+- C# kod parçalarını yazıldığı dili olmasına karşın, herhangi bir türdeki metin oluşturabilirsiniz. Alternatif olarak kod yazabileceğiniz [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] özelliği ekleyerek `language="VB"` için `template` yönergesi.
 
--   Şablon hatalarını ayıklamak için ekleme `debug="true"` için `template` yönergesi. Şablon başka bir kopyasında açılır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bir özel durum oluşursa. Hata ayıklayıcı kodda belirli bir noktada içine kesmek istediğinizden, deyim takın. `System.Diagnostics.Debugger.Break();`
+- Şablon hata ayıklamak için ekleme `debug="true"` için `template` yönergesi. Bir özel durum oluşursa, şablonu Visual Studio'nun başka bir örneği açılır. Kodda belirli bir noktada hata ayıklayıcısına kesmek istiyorsanız, deyim Ekle `System.Diagnostics.Debugger.Break();`
 
-     Daha fazla bilgi için bkz: [T4 metin şablonuna ilişkin hata ayıklama](../modeling/debugging-a-t4-text-template.md).
+   Daha fazla bilgi için [bir T4 metin şablonuna ilişkin hata ayıklama](../modeling/debugging-a-t4-text-template.md).
 
-## <a name="about-the-dsl-directive-processor"></a>DSL yönerge işlemcisi hakkında
- Şablon DSL tanımı'nda tanımlanan etki alanı sınıflarını kullanabilirsiniz. Bu genellikle şablon başlangıcı görünür bir yönerge tarafından getirilene. Önceki örnekte verilmiştir.
+## <a name="about-the-dsl-directive-processor"></a>DSL yönerge işlemcisini hakkında
+ Şablon, DSL tanım içinde tanımlanan alan sınıfları kullanabilirsiniz. Bu genellikle şablon başlangıcı görünür bir yönerge tarafından getirilir. Önceki örnekte, aşağıda verilmiştir.
 
 ```
 <#@ MyLanguage processor="MyLanguageDirectiveProcessor" requires="fileName='Sample.myDsl1'" #>
 ```
 
- Yönerge adı ( `MyLanguage`, bu örnekte), DSL adından türetilir. Bunu çağıran bir *yönerge işlemcisi* , DSL bir parçası olarak oluşturulur. Kendi kaynak kodunda bulabilirsiniz **Dsl\GeneratedCode\DirectiveProcessor.cs**.
+ Yönergenin adı ( `MyLanguage`, bu örnekte) DSL'nizi adından türetilir. Çağırdığı bir *yönerge işlemcisi* , DSL'nin bir parçası olarak oluşturulur. Kendi kaynak kodunda bulabilirsiniz **Dsl\GeneratedCode\DirectiveProcessor.cs**.
 
- DSL yönerge işlemcisi iki asıl görevleri gerçekleştirir:
+ DSL yönerge işlemcisini asıl iki görevleri gerçekleştirir:
 
--   Etkili bir şekilde derleme ve içeri aktarma yönergeleri, DSL başvuran şablona ekler. Bu şablon kodunda, etki alanı sınıflarını kullanmanıza olanak sağlar.
+-   Etkili bir şekilde derleme ve içeri aktarma yönergeleri DSL'nizi başvuran şablona ekler. Bu, etki alanı sınıfları şablon kodunda kullanmanızı sağlar.
 
--   Belirttiğiniz dosya yükler `requires` parametresi ve bir özellik ayarlar `this` yüklenen modeli kök öğesine başvuruyor.
+-   Belirttiğiniz dosya yükler `requires` parametre ve bir özellik ayarlar `this` yüklenen modelin kök öğesine başvuruyor.
 
-## <a name="validating-the-model-before-running-the-template"></a>Şablon çalıştırmadan önce model doğrulama
- Şablon yürütülmeden önce doğrulanacak model neden olabilir.
+## <a name="validating-the-model-before-running-the-template"></a>Şablonu çalıştırmadan önce model doğrulama
+ Şablon yürütülmeden önce doğrulanması modeli neden olabilir.
 
 ```
 <#@ MyLanguage processor="MyLanguageDirectiveProcessor" requires="fileName='Sample.myDsl1';validation='open|load|save|menu'" #>
-
 ```
 
  Şunlara dikkat edin:
 
-1.  `filename` Ve `validation` parametreleri ayrılmış olan ";" ve diğer ayırıcılar veya boşluk olması gerekir.
+1. `filename` Ve `validation` parametreleri ile ayrılmış ";" ve diğer ayırıcı veya boşluk olması gerekir.
 
-2.  Doğrulama kategori listesi, hangi doğrulama yöntemlerini yürütülecek belirler. Birden çok kategori ile ayrılmalıdır "&#124;" ve diğer ayırıcılar veya boşluk olması gerekir.
+2. Doğrulama kategori listesi, hangi doğrulama yöntemlerinin yürütülecek belirler. Birden çok kategori ile ayrılmalıdır "&#124;" ve diğer ayırıcı veya boşluk olması gerekir.
 
- Bir hata bulunursa, hatalar penceresinde bildirilir ve sonuç dosyası bir hata iletisi içerir.
+   Bir hata bulunursa hataları penceresinde bildirilir ve sonuç dosyası bir hata iletisi içerir.
 
-##  <a name="Multiple"></a> Metin şablonundan birden fazla modeli erişme
+## <a name="Multiple"></a> Bir metin şablonundan birden çok modellere erişme
 
 > [!NOTE]
->  Bu yöntem, aynı şablonu birden fazla modellerinde Okuma olanak tanır ancak ModelBus başvuruları desteklemez. ModelBus başvurular birbirine modelleri okumak için bkz: [kullanarak Visual Studio ModelBus metin şablonunda](../modeling/using-visual-studio-modelbus-in-a-text-template.md).
+>  Bu yöntem, aynı şablonu birden çok modeli okumanıza izin verir ancak ModelBus odkazy entit. ModelBus başvurularını birbirine modelleri için bkz [metin şablonunda Visual Studio ModelBus kullanarak](../modeling/using-visual-studio-modelbus-in-a-text-template.md).
 
- Birden fazla model aynı metin şablonundan erişmek isterseniz, her modeli için bir kez oluşturulan yönerge işlemcisi çağırmanız gerekir. Her modelinde dosya adını belirtmeniz gerekir `requires` parametresi. Kök etki alanı sınıf için kullanmak istediğiniz adları belirtmelisiniz `provides` parametresi. İçin farklı değerler belirtmeniz gerekir `provides` her yönerge çağrılarının parametreleri. Örneğin, Library.xyz, School.xyz ve Work.xyz adlı üç modeli dosyalarının olduğunu varsayın. Aynı metin şablonundan erişmek için aşağıdaki ayarlara benzer üç yönerge çağrıları yazmanız gerekir.
+ Birden fazla model aynı metin şablonundan erişmek istiyorsanız, üretilen bir yönerge işlemcisine her model için bir kez çağırmanız gerekir. Her model dosya adını belirtmeniz gerekir `requires` parametresi. Kök etki alanı sınıfı için kullanmak istediğiniz adları belirtmelisiniz `provides` parametresi. İçin farklı değerler belirtmeniz gerekir `provides` her yönerge çağrılarının parametreleri. Örneğin, üç model dosyaları Library.xyz School.xyz ve Work.xyz adlı sahip olduğunuzu varsaymaktadır. Bunları aynı metin şablonundan erişmek için aşağıdaki sorguyu benzer üç yönerge çağrıları yazmanız gerekir.
 
 ```
 <#@ ExampleModel processor="<YourLanguageName>DirectiveProcessor" requires="fileName='Library.xyz'" provides="ExampleModel=LibraryModel" #>
@@ -110,9 +110,9 @@ Here is a list of elements in the model:
 ```
 
 > [!NOTE]
->  Bu kod örneği en az bir dil çözüm şablona dayalı bir dil içindir.
+>  Bu kod örneği, en az bir dil çözümü şablonu temel alan bir dil içindir.
 
- Metin şablonu modellerinde erişmek için artık aşağıdaki örnekte koda benzer bir kod yazabilirsiniz.
+ Metin şablonunuzu modellerinde erişmek için artık aşağıdaki örnekte koda benzer bir kod yazabilirsiniz.
 
 ```csharp
 <#
@@ -136,22 +136,22 @@ For Each element As ExampleElement In Me.WorkModel.Elements
 #>
 ```
 
-## <a name="loading-models-dynamically"></a>Modelleri dinamik olarak yükleme
- Çalışma zamanında yüklemek için hangi modelleri belirlemek istiyorsanız, bir model dosyası dinamik olarak DSL özgü yönergesi kullanmak yerine, program kodunuzda yükleyebilirsiniz.
+## <a name="loading-models-dynamically"></a>Modeller dinamik olarak yükleme
+ Çalışma zamanında yükleme için hangi modelleri belirlemek istiyorsanız, bir model dosyası dinamik olarak DSL özgü yönergesi kullanmak yerine, program kodunda yükleyebilirsiniz.
 
- Şablon kodu bu DSL tanımlanan etki alanı sınıflarını kullanabilmesi için ancak DSL özgü yönergesi işlevleri DSL ad alanı içe aktarmak için biridir. Yönergesi kullanmadığınızdan eklemelisiniz  **\<derleme >** ve  **\<alma >** yük tüm modelleri için yönergeleri. Yük farklı modelleri aynı DSL tüm örneklerini varsa bu kolaydır.
+ Böylece şablon kodunu bu DSL içinde tanımlanan alan sınıfları kullanabilirsiniz ancak DSL özgü yönergesi işlevlerini DSL ad alanını içeri aktarmak için biridir. Yönergesi kullanmadığınızdan eklemelisiniz  **\<derleme >** ve  **\<alma >** yük tüm modellerine yönelik yönergeleri. Bu yük farklı modelleri aynı DSL tüm örneklerini olduğunda kolay bir işlemdir.
 
- Dosyasını yüklemek için en etkili kullanarak yöntemdir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ModelBus. Tipik bir senaryoda, metin şablonu DSL özgü yönergesi ilk modeli normal şekilde yüklemek için kullanır. Bu model başka bir model ModelBus başvurular içerir. ModelBus başvurulan model açın ve belirli bir öğesine erişmek için kullanabilirsiniz. Daha fazla bilgi için bkz: [kullanarak Visual Studio ModelBus metin şablonunda](../modeling/using-visual-studio-modelbus-in-a-text-template.md).
+ Dosya yüklemek için en etkili yöntem Visual Studio Modelbus'ı kullanmaktır. Tipik bir senaryoda, metin şablonunuzu bir DSL özgü yönergesi ilk modeli normal şekilde yüklemek için kullanır. Bu model, başka bir Modeli'ne ModelBus başvuruları içerecektir. ModelBus başvurulan model açmak ve belirli bir öğeye erişmek için kullanabilirsiniz. Daha fazla bilgi için [metin şablonunda Visual Studio ModelBus kullanarak](../modeling/using-visual-studio-modelbus-in-a-text-template.md).
 
- Daha az normal bir senaryoda, yalnızca bir dosya adı, elinizde bir model dosyası açmak isteyebilirsiniz ve geçerli olmayabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi. Bu durumda, açıklanan teknikleri kullanarak dosyayı açabilmek için [nasıl yapılır: Program kodundaki dosyasından Model açmak](../modeling/how-to-open-a-model-from-file-in-program-code.md).
+ Daha az normal bir senaryoda, yalnızca bir dosya adı, elinizde bir model dosyasını açmak isteyebilirsiniz ve geçerli Visual Studio projesinde olmayabilir. Bu durumda, açıklanan tekniği kullanarak dosyayı açabilmek için [nasıl yapılır: Program kodunda dosyadan Model açma](../modeling/how-to-open-a-model-from-file-in-program-code.md).
 
 ## <a name="generating-multiple-files-from-a-template"></a>Bir şablondan birden çok dosya oluşturma
- Çeşitli dosyalar - oluşturmak istiyorsanız, örneğin, bir modeldeki her öğe için ayrı bir dosya oluşturmak için birkaç olası yaklaşım vardır. Varsayılan olarak, her şablon dosyasından tek bir dosya oluşturulur.
+ Çeşitli dosyalar - oluşturmak istiyorsanız, bir model, her öğe için ayrı bir dosya oluşturmak için birkaç olası yaklaşım vardır. Varsayılan olarak, her şablon dosyasına ait yalnızca bir dosya oluşturulur.
 
 ### <a name="splitting-a-long-file"></a>Uzun dosya bölme
- Bu yöntemde, tek bir sınırlayıcıyla ayrılmış bir dosya oluşturmak için bir şablon kullanın. Ardından, dosyayı kendi bölün. Tek dosya ve bölmek için diğer oluşturmak için iki şablonları vardır.
+ Bu yöntemde, tek bir sınırlayıcıyla ayrılmış bir dosya oluşturmak için bir şablon kullanın. Ardından dosyayı parçasına bölün. Tek dosya ve diğer bölmek için oluşturmak için iki şablonlar vardır.
 
- **LoopTemplate.t4** uzun tek dosya oluşturur. Tıkladığınızda, doğrudan bu işlenmesi gerektiğini değil çünkü dosya uzantısını ".t4" olduğuna dikkat edin **tüm şablonları dönüştürme**. Bu şablon kesimleri ayıran sınırlayıcı dizeyi belirtir bir parametre alır:
+ **LoopTemplate.t4** uzun tek dosya oluşturur. Tıkladığınızda, doğrudan bu işlenmemesi çünkü dosya uzantısını ".t4" olduğuna dikkat edin **tüm Şablonları Dönüştür**. Bu şablon, segmentleri ayıran sınırlayıcıyı dizeyi belirtir. bir parametre alır:
 
 ```
 <#@ template ninherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
@@ -171,10 +171,9 @@ For Each element As ExampleElement In Me.WorkModel.Elements
    // Here you generate more content derived from the element.
   }
 #>
-
 ```
 
- `LoopSplitter.tt` çağırır `LoopTemplate.t4`ve sonra sonuçta elde edilen dosyasını kendi parçalara ayırır. Model okumaz çünkü bu şablonu bir modelleme şablonu olmasını olmadığından emin dikkat edin.
+ `LoopSplitter.tt` çağıran `LoopTemplate.t4`ve ardından sonuç dosyası, segmentlere ayırır. Modeli okumak değil çünkü bu şablon bir modelleme şablonu gerekmez, dikkat edin.
 
 ```
 <#@ template hostspecific="true" language="C#" #>
@@ -213,5 +212,4 @@ For Each element As ExampleElement In Me.WorkModel.Elements
      File.WriteAllText(Path.Combine(dir, parts[0] + ".txt"), parts[1]);
   }
 #>
-
 ```

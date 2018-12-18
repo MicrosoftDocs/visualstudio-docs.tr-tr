@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 33ddeedf423c75f35486680082138706b6d5823f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: a7f8b9c0f670522e9ea8b2d6fa46e79e3f01594d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49938064"
 ---
 # <a name="idiasymbolgetcompilername"></a>IDiaSymbol::get_compilerName
-Oluşturmak için kullanılan derleyici adını döndürür [derlenecek](../../debugger/debug-interface-access/compiland.md).  
+Derleyicinin oluşturmak için kullanılan adı döndürür [derlenecek](../../debugger/debug-interface-access/compiland.md).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_compilerName (
   
 #### <a name="parameters"></a>Parametreler  
  `pName`  
- Derleyici Unicode adını içerecek BSTR işaretçi.  
+ Derleyici Unicode adını içeren bir BSTR işaretçisi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
   
@@ -47,7 +48,7 @@ HRESULT get_compilerName (
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v8.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

@@ -1,6 +1,7 @@
 ---
 title: 'CA1720: Tanımlayıcılar tür adları içermemelidir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d8a981dc4c8ccd016836ea55b2ecd624e781c5a8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 32abf9a2c11a8381b5f204a2388a85f7fd5d8230
+ms.sourcegitcommit: 1abb9cf4c3ccb90e3481ea8079272c98aad12875
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50143131"
 ---
 # <a name="ca1720-identifiers-should-not-contain-type-names"></a>CA1720: Tanımlayıcılar tür adları içermemelidir
+
 |||
 |-|-|
 |TypeName|IdentifiersShouldNotContainTypeNames|
@@ -30,112 +33,112 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Dışarıdan görünür bir üye içindeki bir parametre adı bir veri türü adı içeriyor.
+ Dışarıdan görünen üye bir parametre adını veri türü adı içerir.
 
- -veya-
+ veya
 
- Dile özgü veri türü adı dışarıdan görünür bir üyenin adını içerir.
+ Açıkça görünen üyenin adı dil özellikli veri türü adı içerir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Parametreleri ve üyeleri adlarını daha iyi geliştirme araçları tarafından sağlanacak beklenen tipine açıklamak üzere daha anlamları iletişim kurmak için kullanılır. Veri türü adı kullanılmalıdır üyelerin adları için dile özgü bir yerine bir dilden bağımsız adını kullanın. Örneğin, C# türü adı 'int yerine', Int32 dilden bağımsız veri türü adı kullanın.
+## <a name="rule-description"></a>Kural açıklaması
+ Parametreleri ve üyelerin adları, daha iyi geliştirme araçları tarafından sağlanan bekleniyor, türü tanımlamak üzere daha anlamları iletişim kurmak için kullanılır. Bir veri türü adı kullanılmalıdır, üyelerinin adları için dile özgü bir yerine dilden bağımsız bir ad kullanın. Örneğin, C# türü adı 'int yerine', verileri dilden bağımsız tür adı, Int32 kullanın.
 
- Her ayrık belirteç parametresi veya üye adına aşağıdaki dile özgü veri türü adları karşı büyük küçük harf duyarsız bir biçimde denetlenir:
+ Parametre ya da üye adını ayrık her belirteç aşağıdaki dile bağlı veri türü adları karşı duyarlı bir şekilde denetlenir:
 
--   bool
+- bool
 
--   WChar
+- WChar
 
--   int8
+- Int8
 
--   UInt8
+- UInt8
 
--   kısa
+- kısa
 
--   UShort
+- UShort
 
--   int
+- int
 
--   UInt
+- UInt
 
--   Tamsayı
+- Tamsayı
 
--   Uınteger
+- Uınteger
 
--   uzun
+- uzun
 
--   ULong
+- ULong
 
--   İmzasız
+- İşaretsiz
 
--   İmzalı
+- İmzalı
 
--   Kayan nokta
+- kayan nokta
 
--   Float32
+- float32
 
--   Float64
+- float64
 
- Ayrıca, bir parametre adları büyük küçük harf duyarsız bir biçimde da aşağıdaki dilden bağımsız veri türü adları karşı denetlenir:
+Ayrıca, bir parametre adlarını büyük küçük harf duyarlı bir şekilde de aşağıdaki dilden bağımsız veri türü adları karşı denetlenir:
 
--   Nesne
+- Nesne
 
--   Obj
+- obj
 
--   Boole değeri
+- Boole değeri
 
--   Char
+- Char
 
--   Dize
+- Dize
 
--   SByte
+- SByte
 
--   Bayt
+- Bayt
 
--   UByte
+- UByte
 
--   Int16
+- Int16
 
--   UInt16
+- UInt16
 
--   Int32
+- Int32
 
--   UInt32
+- UInt32
 
--   Int64
+- Int64
 
--   UInt64
+- UInt64
 
--   IntPtr
+- IntPtr
 
--   PTR
+- PTR
 
--   İşaretçi
+- İşaretçi
 
--   UInptr
+- UInptr
 
--   UPtr
+- UPtr
 
--   UPointer
+- UPointer
 
--   Tek
+- Tek
 
--   Çift
+- Çift
 
--   Ondalık
+- Ondalık
 
--   Guid
+- Guid
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- **Bir parametre karşı harekete ise:**
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ **Bir parametre karşı harekete varsa:**
 
- Veri türü tanımlayıcısı parametresi adına daha iyi anlamlarını açıklar bir terim veya 'value' gibi daha genel bir terim değiştirin.
+ Parametre adını veri türü tanımlayıcısı, daha iyi anlamını açıklayan bir terim ya da 'value' gibi daha genel bir terim ile değiştirin.
 
- **Üye karşı harekete ise:**
+ **Üye karşı harekete varsa:**
 
- Bunun anlamı, bir dilden bağımsız eşdeğeri ya da 'value' gibi daha genel bir terim daha iyi tanımlayan bir terim dile özgü veri türü tanımlayıcısı üyenin adını değiştirin.
+ Bunun anlamı, bir dil bağımsız eşdeğeriyle ya da 'value' gibi daha genel bir terim daha iyi açıklayan bir terim ile dile bağlı veri türü tanımlayıcısı ' üye adını değiştirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Tür tabanlı parametre ve üye adları ara sıra kullanılmasını uygun olabilir. Ancak, yeni geliştirme, hiçbir bilinen için senaryolar ortaya burada bu kuraldan bir uyarı bastırma. Önceki sevk sahip kitaplıkları için bu kural bir uyarıdan bastırmak gerekebilir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Parametre ve üye adları türüne göre ara sıra kullanılmasını uygun olabilir. Ancak, hiçbir bilinen yeni geliştirme için senaryolar ortaya burada bu kuraldan bir uyarıyı bastırmak. Daha önce sevk kitaplıkları için bu kuraldan bir uyarıyı bastırmak olabilir.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [CA1709: Tanımlayıcıların büyük/küçük harfleri doğru yazılmalıdır](../code-quality/ca1709-identifiers-should-be-cased-correctly.md)

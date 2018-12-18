@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 41709f658da15001b6f604b78bf081edefd88b8c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ac7acc5d12ecce72119f19a51b1f4313a1aabe08
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926412"
 ---
 # <a name="idebugsymbolprovidergetcontainerfield"></a>IDebugSymbolProvider::GetContainerField
 Bu yöntem, hata ayıklama adresi içeren alanı alır.  
@@ -42,13 +43,13 @@ int GetContainerField(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [in] Tarafından temsil edilen adresi bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
+ [in] Tarafından temsil edilen adrese bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
   
  `ppContainerField`  
- [out] Tarafından temsil edilen bir kapsayıcı alan döndüren bir [IDebugContainerField](../../../extensibility/debugger/reference/idebugcontainerfield.md) arabirimi.  
+ [out] Tarafından temsil edilen bir kapsayıcı alan döndürür bir [IDebugContainerField](../../../extensibility/debugger/reference/idebugcontainerfield.md) arabirimi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   

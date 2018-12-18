@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla geçerli Outlook öğesini belirleme | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla geçerli Outlook öğesini belirleme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,14 +18,15 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: e18c9fabd3d568d7663be9fecd6724edbafdbdfd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 519fd1572b3ebb1faf8cc7adc6d5a9ba2773d67b
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257056"
 ---
-# <a name="how-to-programmatically-determine-the-current-outlook-item"></a>Nasıl yapılır: Program Aracılığıyla Geçerli Outlook Öğesini Belirleme
-  Bu örnek Explorer.SelectionChange olay adı geçerli klasörde ve seçili öğe hakkında bazı bilgileri görüntülemek için kullanır. Kod, daha sonra seçilen öğeyi görüntüler.  
+# <a name="how-to-programmatically-determine-the-current-outlook-item"></a>Nasıl yapılır: program aracılığıyla geçerli Outlook öğesini belirleme
+  Bu örnekte `Explorer.SelectionChange` adı geçerli klasörde ve seçili öğe hakkında bazı bilgileri görüntülemek için olay. Kod, daha sonra seçilen öğeyi görüntüler.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
@@ -33,14 +34,14 @@ ms.lasthandoff: 04/16/2018
  [!code-vb[Trin_OL_CurrentItem#1](../vsto/codesnippet/VisualBasic/Trin_OL_CurrentItem/thisaddin.vb#1)]
  [!code-csharp[Trin_OL_CurrentItem#1](../vsto/codesnippet/CSharp/Trin_OL_CurrentItem/thisaddin.cs#1)]  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
+## <a name="compile-the-code"></a>Kod derleme  
  Bu örnek gerektirir:  
   
 -   Randevu, kişi ve Microsoft Office Outlook e-posta öğeleri.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Outlook nesne modeline genel bakış](../vsto/outlook-object-model-overview.md)   
  [Nasıl yapılır: program aracılığıyla klasörü ada göre alma](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
- [Nasıl yapılır: Program Aracılığıyla Belirli bir Kişi Arama](../vsto/how-to-programmatically-search-for-a-specific-contact.md)  
+ [Nasıl yapılır: program aracılığıyla belirli bir kişi arama](../vsto/how-to-programmatically-search-for-a-specific-contact.md)  
   
   

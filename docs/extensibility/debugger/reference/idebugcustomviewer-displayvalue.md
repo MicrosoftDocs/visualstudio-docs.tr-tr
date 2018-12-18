@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 017e1e7a27839dae91559468c62be353bbd43b4e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 44295cb6cc3635d099a93ef62c7d4ae4e2bdd4cd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833849"
 ---
 # <a name="idebugcustomviewerdisplayvalue"></a>IDebugCustomViewer::DisplayValue
 Bu yöntem, belirtilen değeri görüntülemek için çağrılır.  
@@ -49,7 +50,7 @@ int DisplayValue(
  [in] Ana penceresi  
   
  `dwID`  
- [in] Birden fazla türünü destekleyen özel görüntüleyiciler kimliği.  
+ [in] Birden fazla tür destekleyen özel görüntüleyiciler kimliği.  
   
  `pHostServices`  
  [in] Ayrılmış. Her zaman null.  
@@ -58,12 +59,12 @@ int DisplayValue(
  [in] Görüntülenecek değerini almak için kullanılan arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem gerekli penceresi oluşturun, değerini görüntülemek, giriş için bekleyin ve penceresini tüm çağırana dönmeden önce kapatın görünen "kalıcı" olmamasıdır. Bu yöntem tüm yönlerini özelliğin değerden pencere yok etme için kullanıcı girişi bekleniyor için çıkış için bir pencere için görüntüleme işlemelidir anlamına gelir.  
+ Bu yöntem gerekli penceresi oluştur, değerini görüntülemek, giriş bekle ve, tüm çağırana döndürmeden önce pencereyi görüntüle "modal" olmamasıdır. Başka bir deyişle, yöntem özelliğin değeri, bir pencere yok etme için kullanıcı girişini beklerken için çıktı penceresini oluşturmasını görüntüleme tüm yönlerini işlemesi gerekir.  
   
- Değer değiştirme desteklemek için verilen [IDebugProperty3](../../../extensibility/debugger/reference/idebugproperty3.md) nesne kullanabilirsiniz [SetValueAsStringWithError](../../../extensibility/debugger/reference/idebugproperty3-setvalueasstringwitherror.md) yöntemi — değeri bir dize olarak ifade edilebilir değilse. Aksi takdirde, özel bir arabirim oluşturmak için gerekli olur — bu uygulama ifade değerlendiricisi özel `DisplayValue` yöntemi — uygular aynı nesne üzerinde `IDebugProperty3` arabirimi. Bu özel arabirim rasgele boyutu veya karmaşıklık verileri değiştirme yöntemlerini sağlamanız.  
+ Değer değiştirme desteklemek için verilen [IDebugProperty3](../../../extensibility/debugger/reference/idebugproperty3.md) nesne kullanabileceğiniz [SetValueAsStringWithError](../../../extensibility/debugger/reference/idebugproperty3-setvalueasstringwitherror.md) yöntemi — değeri bir dize olarak ifade edilebilir değilse. Aksi takdirde, özel arabirim oluşturmak gerekli olan — bunu uygulama ifade değerlendiricisi özel `DisplayValue` yöntemi — uygulayan aynı nesne üzerinde `IDebugProperty3` arabirimi. Bu özel arabirim yöntemleri bir rastgele boyut ve karmaşıklıktaki verileri değiştirmek için sağlamanız.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCustomViewer](../../../extensibility/debugger/reference/idebugcustomviewer.md)   

@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 899afbc801baee88dd941763b559845b90be8500
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ed136217f9f5c7cffc72ba03562d308723ef5029
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867786"
 ---
 # <a name="idebugboundbreakpoint2getpendingbreakpoint"></a>IDebugBoundBreakpoint2::GetPendingBreakpoint
-Belirtilen ilişkili kesme noktası oluşturulduğu bekleyen kesme noktası alır.  
+Belirtilen bağlı Kesme noktasının oluşturulduğu bekleyen kesme noktasının alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,16 +42,16 @@ int GetPendingBreakpoint(
   
 #### <a name="parameters"></a>Parametreler  
  `ppPendingBreakpoint`  
- [out] Döndürür [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) bağlı kesme noktası oluşturmak için kullanılan bekleyen kesme temsil eden nesne.  
+ [out] Döndürür [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) bağlı kesme noktası oluşturmak için kullanılan bekleyen kesme noktasının temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bekleyen bir kesme noktası, bir veya daha çok programlar uygulanabilir kod bir kesme noktası bağlamak için gereken tüm gerekli bilgileri koleksiyonu olarak düşünülebilir.  
+ Bekleyen kesme noktası, bir kesme noktası için bir veya daha çok programlar uygulanabilir kodu bağlamak için gereken tüm gerekli bilgileri koleksiyonu olarak düşünülebilir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CBoundBreakpoint` gösteren nesne [IDebugBoundBreakpoint2](../../../extensibility/debugger/reference/idebugboundbreakpoint2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CBoundBreakpoint` gösteren nesne [IDebugBoundBreakpoint2](../../../extensibility/debugger/reference/idebugboundbreakpoint2.md) arabirimi.  
   
 ```  
 HRESULT CBoundBreakpoint::GetPendingBreakpoint(  

@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 31d27f90c0c898ff053401e186d0b153939bc760
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d67626778aefe67c5f0973da8b74fc0b7e776ebb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876158"
 ---
 # <a name="idebugcomplussymbolproviderreplacesymbols"></a>IDebugComPlusSymbolProvider::ReplaceSymbols
-Belirtilen veri akışında dosyalarla geçerli hata ayıklama simgeleri değiştirir.  
+Geçerli hata ayıklama sembolleri, belirtilen veri akışında değerlerle değiştirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,16 +47,16 @@ int ReplaceSymbols(
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `pStream`  
  [in] Yeni semboller içeren veri akışı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::ReplaceSymbols(  

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b91d23cdd92943a40dfa649e82964b101f68739d
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 32c8fa5c6f3cd8ec3cf1cead397eadadb99e050d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49909947"
 ---
 # <a name="idiasessionfindfile"></a>IDiaSession::findFile
-Kaynak dosyaları derlenecek ve adını alır.  
+Derlenecek dosya ve ada göre kaynak dosyaları alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,19 +37,19 @@ HRESULT findFile (
   
 #### <a name="parameters"></a>Parametreler  
  `pCompiland`  
- [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) araması için bağlamı olarak kullanılacak derlenecek temsil eden nesne. Bu parametre kümesine `NULL` tüm derlenecek dosyalar kaynak dosya bulunamadı.  
+ [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) arama bağlamı olarak kullanılacak derlenecek temsil eden nesne. Bu parametre kümesine `NULL` kaynak dosyaları tüm derleme bulunamıyor.  
   
  `name`  
- [in] Alınacak kaynak dosya adını belirtir. Bu parametre kümesine `NULL` tüm kaynak dosyaları alınması için.  
+ [in] Alınacak kaynak dosyasının adını belirtir. Bu parametre kümesine `NULL` tüm kaynak dosyaları alınacak.  
   
  `option`  
- [in] Ad arama yapmayı uygulanan karşılaştırma seçeneklerini belirtir. Gelen değerleri [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma tek başına veya birlikte kullanılabilir.  
+ [in] Ad arama uygulanan karşılaştırma seçeneklerini belirtir. Değerlerini [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma, tek başına veya birlikte kullanılabilir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumsourcefiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md) alınan kaynak dosyaların bir listesini içeren nesne.  
+ [out] Döndürür bir [Idiaenumsourcefiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md) kaynak dosyaların listesini içeren bir nesne alındı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
   
@@ -61,4 +62,4 @@ pSession->findFile( NULL, L"sourcefile.cpp", nsFNameExt, &pEnum );
  [Idiaenumsourcefiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md)   
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md)
+ [NameSearchOptions Numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md)

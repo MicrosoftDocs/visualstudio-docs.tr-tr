@@ -10,16 +10,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 210dc624bbdaac7aaa0297167416d684629eb07f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f1ed732e33706defed975a3a05986f53081b4337
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34548186"
 ---
-# <a name="command-line-profiling-tools-reference"></a>Komut Satırı Profil Araçları Başvurusu
+# <a name="command-line-profiling-tools-reference"></a>Komut satırı profil oluşturma araçları başvurusu
 Komut satırı performans araçları uygulamalarını komut isteminden profil programcıların izin verin. Aşağıdaki komut satırı profil oluşturma araçları, komut isteminden profil kodu izin verir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [VSInstr](../profiling/vsinstr.md)  
  VSInstr.exe izleme seçeneklerini listeler.  
   

@@ -1,5 +1,5 @@
 ---
-title: .Ofs dosyasındaki bir veya daha fazla özellik seçilen ileti sınıfı için geçerli değildir | Microsoft Docs
+title: .ofs dosyasındaki bir veya daha fazla özellik seçilen ileti sınıfı için geçerli değil
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -15,24 +15,27 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 7ac9f5ab05ba6ed858946b5f665d850eea51c230
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cfae8533337bbe18c89dbb670fb58a0c89c6c54c
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34692505"
 ---
 # <a name="one-or-more-properties-in-the-ofs-file-are-not-valid-for-the-message-class-selected"></a>.ofs dosyasındaki bir veya daha fazla özellik seçilen ileti sınıfı için geçerli değil
-  Outlook'ta tasarlanan form bölgesini içeri aktardığınızda, bu hata görünür, ancak bir veya daha fazla alan form bölgesi üzerindeki son sayfasında, seçtiğiniz ileti sınıfları ile uyumlu olmadığında **Yeni Form bölgesi** Sihirbazı.  
+  Outlook'ta tasarlanan form bölgesini içeri aktardığınızda, bu hata görünür, ancak bir veya daha fazla alan form bölgesi üzerindeki son sayfasında, seçtiğiniz ileti sınıfları ile uyumlu olmayan **Yeni Form bölgesi** Sihirbazı.  
+
+Örneğin, seçebilirsiniz **görev (IPM. Görev)** son sayfasında **Yeni Form bölgesi** Sihirbazı. Form bölgesini varsa bir **iş adresi** alan, bir görev iş adresi sahip olmadığından bu hatayı alırsınız. Bu nedenle, **iş adresi** alanı ile uyumlu değildir `IPM.Task` ileti sınıfı.  
   
- Örneğin, seçebilirsiniz **görev (IPM. Görev)** son sayfasında **Yeni Form bölgesi** Sihirbazı. Form bölgesini içeriyorsa bir **iş adresi** alan, bir görev iş adresi olmadığından bu hatayı alırsınız. Bu nedenle, **iş adresi** alan IPM ile uyumlu değil. Görev ileti sınıfı.  
+ Seçtiğiniz **görev (IPM. Görev)** son sayfasında **Yeni Form bölgesi** Sihirbazı. Form bölgesini varsa bir **iş adresi** alan, bir görev iş adresi sahip olmadığından bu hatayı alırsınız. Bu nedenle, **iş adresi** alanı ile uyumlu değildir `IPM.Task` ileti sınıfı.  
   
-### <a name="to-correct-this-error"></a>Bu hatayı düzeltmek için  
+## <a name="to-correct-this-error"></a>Bu hatayı düzeltmek için  
   
 -   Sihirbazın son sayfasında **Yeni Form bölgesi** Sihirbazı, form bölgesini alanları ile uyumlu bir ileti sınıfı seçin.  
   
--   Outlook Form tasarımcısında son sayfasında, seçmek için planlama ileti sınıfları ile uyumlu olmayan alanlarını kaldırın **Yeni Form bölgesi** Sihirbazı.  
+-   Outlook Form tasarımcısında ileti sınıflarıyla uyumlu olmayan alanlarını kaldırın. Son sayfasında, seçmek için planlama alanları kaldırmak **Yeni Form bölgesi** Sihirbazı.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [İzlenecek Yol: Outlook'ta Tasarlanan Form Bölgesini İçeri Aktarma](../vsto/walkthrough-importing-a-form-region-that-is-designed-in-outlook.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [İzlenecek yol: Outlook'ta tasarlanan form bölgesini içeri aktarma](../vsto/walkthrough-importing-a-form-region-that-is-designed-in-outlook.md)  
   
   

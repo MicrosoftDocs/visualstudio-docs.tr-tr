@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: hata ayıklama ayarlarını belirtme | Microsoft Docs'
+title: 'Nasıl yapılır: hata ayıklayıcısı ayarlarını belirtme | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -21,29 +21,30 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 489966bb3a596551e1b687f3dedac228171f7ebf
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 04d309c8d0395869e1a86b4b01dfaba4245447bd
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44279208"
 ---
 # <a name="how-to-specify-debugger-settings"></a>Nasıl Yapılır: Hata Ayıklama Ayarlarını Belirtme
-İçinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], hata ayıklayıcı davranış değişkenleri nasıl görüntüleneceğini, belirli uyarılar olup sunulur, kesme noktaları nasıl ayarlanır ve en son çalışan programları etkilemesi dahil olmak üzere, çeşitli ayarları belirtebilirsiniz. Hata ayıklayıcı ayarlarında belirttiğiniz **seçenekleri** iletişim kutusu.  
+İçinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], hata ayıklayıcı davranış değişkenleri gösterilme biçimini, belirli uyarılar olup olmadığını sunulur, kesme noktaları nasıl ayarlanacağını ve bozucu çalışan programları nasıl etkilediğini dahil olmak üzere, çeşitli ayarları belirtebilirsiniz. Hata ayıklayıcı ayarlarında belirttiğiniz **seçenekleri** iletişim kutusu.  
   
 ### <a name="to-set-debugger-options"></a>Hata ayıklayıcı seçeneklerini ayarlamak için  
   
-1.  Üzerinde **Araçları** menüsünde tıklatın **seçenekleri**.  
+1.  Üzerinde **Araçları** menüsünü tıklatın **seçenekleri**.  
   
 2.  İçinde **seçenekleri** açık iletişim kutusunu **hata ayıklama** klasör.  
   
-3.  İçinde **hata ayıklama** klasörü, istediğiniz seçenekleri kategorisini seçin.  
+3.  İçinde **hata ayıklama** klasör seçenekleri kategorisini seçin.  
   
-     En yaygın seçenekler bulunur **genel** kategorisi. Daha fazla bilgi için bkz: [genel, hata ayıklama, Seçenekler iletişim kutusu](../debugger/general-debugging-options-dialog-box.md).  
+     En yaygın seçenekler bulunur **genel** kategorisi. Daha fazla bilgi için [genel, hata ayıklama, Seçenekler iletişim kutusu](../debugger/general-debugging-options-dialog-box.md).  
   
-4.  Seçin veya istenilen seçeneği veya seçeneklerini temizleyin. Seçenekler hakkında Yardım almak için F1 tuşuna basın.  
+4.  Seçin veya istenen seçeneği veya seçenekleri temizleyin. Seçenekler hakkında Yardım almak için F1 tuşuna basın.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Genel, hata ayıklama, Seçenekler iletişim kutusu](../debugger/general-debugging-options-dialog-box.md)   
- [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](http://msdn.microsoft.com/Library/009d225f-ef65-463f-a146-e4c518f86103)   
+ [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](https://msdn.microsoft.com/library/bcew296c.aspx)   
  [Hata ayıklayıcı ayarları ve hazırlığı](../debugger/debugger-settings-and-preparation.md)   
  [Genel Derleme Komutları ve Özellikler Makroları](/cpp/ide/common-macros-for-build-commands-and-properties)

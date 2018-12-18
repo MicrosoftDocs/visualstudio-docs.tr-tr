@@ -12,13 +12,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: baf4edeb67d9c1c66ce6e6542b9684b29a8c358b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6005bfcd4c69220c26929a8ad57f0e37923f388c
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34265507"
 ---
-# <a name="callercallee-view---net-memory-instrumentation-data"></a>Arayan/Aranan görünümü - NET bellek izleme verileri
+# <a name="callercallee-view---net-memory-instrumentation-data"></a>Arayan/Aranan görünümü - .NET bellek izleme verileri
 Arayan/Aranan görünümü .NET bellek izleme metodunu kullanarak toplanan verileri profil ayırma ve seçili işlev ve seçilen bu işlev üst ve alt işlevlerini için zamanlama verilerini görüntüler. Arayan/Aranan görünümü üç kılavuzları içerir.  
   
  **Geçerli işlevi** Orta kılavuzunda görüntülenir ve bellek profili oluşturma seçili işlevi hakkında bilgi gösterir. Tüm örneklenen işlev çağrıları değerlerini içerir.  
@@ -104,8 +105,8 @@ Arayan/Aranan görünümü .NET bellek izleme metodunu kullanarak toplanan veril
 |**En fazla uygulama özel süresi**|Bu işlevi bu bağlamda çağrısı en fazla uygulama özel saati.|  
 |**Min uygulama özel süresi**|Bu işlevi bu bağlamda çağrısı minimum uygulama özel saati.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Arayan/Aranan görünümü - .NET bellek örnekleme verileri](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
  [Arayan/Aranan görünümü - izleme verileri](../profiling/caller-callee-view-instrumentation-data.md)   
- [Arayan / Aranan görünümü - örnekleme verileri](../profiling/caller-callee-view-sampling-data.md)
+ [Arayan/Aranan görünümü - örnekleme verileri](../profiling/caller-callee-view-sampling-data.md)

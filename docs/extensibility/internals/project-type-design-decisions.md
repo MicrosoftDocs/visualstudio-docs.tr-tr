@@ -16,51 +16,52 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c28c6f29454feed94407d6e37c3432247b9a4a26
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3bd6d2188b46093c5bfe18f9cabe985a953c000f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49869489"
 ---
-# <a name="project-type-design-decisions"></a>Proje türü tasarım kararları
-Yeni bir proje türü oluşturmadan önce proje türü ile ilgili bazı tasarım kararlarını olmanız gerekir. Hangi tür projelerinizi içerecek öğeleri, proje dosyalarını kalıcı nasıl ve ne taahhüt modeli kullanacağınıza karar vermeniz gerekir.  
+# <a name="project-type-design-decisions"></a>Proje Türü Tasarım Kararları
+Yeni bir proje türü oluşturmadan önce proje türü ile ilgili çeşitli tasarım kararları yapmalısınız. Hangi türde projelerinizi içerecek öğeleri, proje dosyaları kalıcı nasıl ve hangi taahhüt modeli kullanacağınıza karar vermeniz gerekir.  
   
 ## <a name="project-items"></a>Proje öğeleri  
- Projenizi dosyaları veya soyut nesneleri kullanacak mısınız? Dosyaları kullanırsanız, başvuru veya dizin tabanlı dosyaları olacak mı? Yerel veya uzak olarak dosyaları veya soyut nesnelere giderek misiniz?  
+ Projenizi dosya ya da soyut nesneler kullanacak mısınız? Dosyaları kullanıyorsanız, başvuru veya dizin tabanlı dosyaları olacak mı? Yerel veya uzak dosyaları veya soyut nesnelere giderek misiniz?  
   
- Proje öğeleri, dosyaları veya Internet üzerinden veritabanı deposu veya veri bağlantıları nesneleri gibi daha soyut nesneler olabilir. Öğeleri dosyalar olduğunda, proje başvurusu tabanlı veya bir dizin tabanlı proje olabilir.  
+ Proje öğelerinde, dosyaları veya bir veritabanı havuzu veya veri bağlantıları nesneleri gibi daha soyut nesneleri Internet üzerinden olabilir. Öğeleri dosyalarıdır, proje başvurusu tabanlı veya dizin tabanlı bir proje olabilir.  
   
- Başvuru tabanlı projelerde öğeleri birden çok projede yer alabilir. Ancak, bir öğeyi temsil eden gerçek dosya yalnızca bir dizinde bulunur. Dizin tabanlı projelerde tüm proje öğeleri dizin yapısında mevcut.  
+ Başvuru tabanlı projelerde birden fazla projede öğeleri görünür. Ancak, bir öğeyi temsil eden gerçek dosyayı yalnızca bir dizinde bulunur. Dizin tabanlı projelerde dizin yapısında tüm proje öğeleri var.  
   
- Yerel öğeler, uygulamanın yüklü olduğu bilgisayarda depolanır. Uzak öğeleri, bir yerel ağda ayrı bir sunucuda veya başka bir yerde Internet'te depolanabilir.  
+ Yerel öğeler, uygulamanın yüklendiği bilgisayarda depolanır. Uzak öğeler, yerel bir ağda ayrı bir sunucuya veya başka bir yerde Internet üzerinde depolanabilir.  
   
 ## <a name="project-file-persistence"></a>Proje dosyası kalıcılığı  
- Ortak düz dosya sistemleri veya yapılandırılmış depolama verilerinin depolanacağı? Standart Düzenleyici ya da bir projeye özgü düzenleyici kullanarak dosyaları açılacak?  
+ Veriler yaygın düz dosya sistemleri veya yapılandırılmış depolama alanında depolanır? Standart Düzenleyici veya projeye özgü Düzenleyicisi'ni kullanarak dosyaları açılacak?  
   
  Verilerini kalıcı hale getirmek için çoğu uygulama verilerini bir dosyaya kaydedin ve kullanıcı geri gerekir veya gözden geçirme bilgi değiştirdiğinizde okuyun.  
   
- Tek bir dosyada kalıcı verilerini depolamak üzere birkaç Bileşen Nesne Modeli (COM) nesneleri ihtiyacınız olduğunda bileşik dosyalar olarak da bilinir yapılandırılmış depolama genellikle kullanılır. Yapılandırılmış depolama ile birkaç farklı yazılım bileşenleri tek disk dosya paylaşabilir.  
+ Bileşik dosyalar olarak da bilinir, yapılandırılmış bir depolamada, genellikle birçok bileşen nesne modeli (COM) nesne tek bir dosyada kalıcı verilerini depolamak gerektiğinde kullanılır. Yapılandırılmış depolama ile birçok farklı yazılım bileşenlerini tek disk dosya paylaşabilir.  
   
- Projenizdeki öğeleri kalıcılığını ilgili olarak dikkate alınması gereken birkaç seçeneğiniz vardır. Aşağıdaki seçeneklerden birini gerçekleştirebilirsiniz:  
+ Öğeler, projenizdeki için Kalıcılık ile ilgili dikkate alınması gereken birkaç seçeneğiniz vardır. Aşağıdaki seçeneklerden herhangi birini gerçekleştirebilirsiniz:  
   
--   Değiştirildi, tek tek her dosyayı kaydedin.  
+- Her dosyayı ayrı ayrı da değiştirildiğinde kaydedin.  
   
--   Pek çok işlem tek bir yakalama **kaydetmek** işlemi.  
+- Pek çok işlem tek bir yakalama **Kaydet** işlemi.  
   
--   Dosyaları yerel olarak kaydedin ve ardından bir sunucuya yayımlayın veya uzak bir nesne bir veri bağlantısı öğeyi temsil ettiğinde proje öğeleri kaydetmek için başka bir yaklaşım kullanın.  
+- Dosyaları yerel olarak kaydedin ve ardından bir sunucuda yayımlayın veya uzak bir nesne için bir veri bağlantısı öğesi temsil ettiğinde proje öğeleri kaydedilirken başka bir yaklaşım kullanın.  
   
- Kalıcılık hakkında daha fazla bilgi için bkz: [proje kalıcılığı](../../extensibility/internals/project-persistence.md) ve [açma ve kaydetme proje öğeleri](../../extensibility/internals/opening-and-saving-project-items.md).  
+  Kalıcılık hakkında daha fazla bilgi için bkz: [proje kalıcılığı](../../extensibility/internals/project-persistence.md) ve [açma ve kaydetme proje öğeleri](../../extensibility/internals/opening-and-saving-project-items.md).  
   
 ## <a name="project-commitment-model"></a>Proje taahhüt modeli  
  Kalıcı veri nesneleri açılacak doğrudan modu veya hizmetteki modunda?  
   
- Veri nesneleri doğrudan modunda açıldığında, verilere yapılan değişiklikleri hemen veya kullanıcı dosyayı el ile kaydettiğinde dahil edilmiştir.  
+ Veri nesneleri doğrudan modda açıldığında, verilerde yapılan değişiklikleri hemen veya kullanıcının dosyayı el ile kaydettiğinde dahil edilir.  
   
- Veri nesneleri, işlenen modunu kullanarak açıldığında değişiklikler bellekte geçici bir konuma kaydedilir ve kullanıcı el ile dosyayı kaydetmeyi seçerse kadar iletilmez. Bu sırada, tüm değişiklikleri birlikte olmalıdır veya hiçbir değişiklik yapılmaz.  
+ Veri nesneleri, hizmetteki modunu kullanarak açıldığında değişiklikleri bellekte geçici bir konuma kaydedilir ve kullanıcı dosyayı kaydetmeyi el ile seçer kadar iletilmez. O zaman tüm değişiklikleri birlikte olmalıdır veya hiçbir değişiklik yapılmaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Denetim listesi: Yeni proje türleri oluşturma](../../extensibility/internals/checklist-creating-new-project-types.md)   
- [Açıp kaydederek proje öğeleri](../../extensibility/internals/opening-and-saving-project-items.md)   
+ [Açma ve proje öğelerini kaydetme](../../extensibility/internals/opening-and-saving-project-items.md)   
  [Proje kalıcılığı](../../extensibility/internals/project-persistence.md)   
  [Proje modeli öğeleri](../../extensibility/internals/elements-of-a-project-model.md)   
  [Proje modeli çekirdek bileşenleri](../../extensibility/internals/project-model-core-components.md)   

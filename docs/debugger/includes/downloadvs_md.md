@@ -13,10 +13,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 0e254e1f34feffcb900f60ed96e54a234ca16fe6
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: fb72389364c75716d8a77ca479dcda0f033f3630
+ms.sourcegitcommit: c57ae28181ffe14a30731736661bf59c3eff1211
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38943901"
 ---
-[Visual Studio Community’yi indirin](https://www.visualstudio.com/vs/#downloadvs) veya [Visual Studio sürümlerini karşılaştırın](https://www.visualstudio.com/vs/compare/)
+[Visual Studio Community’yi indirin](https://visualstudio.microsoft.com/vs/#downloadvs) veya [Visual Studio sürümlerini karşılaştırın](https://visualstudio.microsoft.com/vs/compare/)

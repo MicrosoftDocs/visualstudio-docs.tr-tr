@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 966d31889d7979732af20f5e3f95546e87af6598
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8f092666833b80dd59ed4b7b3345c379078ce2bf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49862963"
 ---
 # <a name="doccontextcompare"></a>DOCCONTEXT_COMPARE
-İki belge bağlamları karşılaştırma ölçütlerini belirtir.  
+İki belge bağlamları karşılaştırma ölçütü belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,29 +48,29 @@ enum enum_DOCCONTEXT_COMPARE {
   
 ## <a name="members"></a>Üyeler  
  DOCCONTEXT_EQUAL  
- Hedef belge bağlamına eşittir listedeki ilk belge bağlam bulun.  
+ Hedef belge bağlamına eşit olan listesinde ilk belge bağlamı bulur.  
   
  DOCCONTEXT_LESS_THAN  
- Hedef belge bağlamı'dan küçük listedeki ilk belge bağlam bulun.  
+ Hedef belge bağlamı'dan küçük listedeki ilk belge bağlamı bulun.  
   
  DOCCONTEXT_GREATER_THAN  
- Hedef belge bağlamı büyük listesinde ilk belge bağlam bulur.  
+ Hedef belge bağlamı büyük listesinde ilk belge bağlamı bulur.  
   
  DOCCONTEXT_SAME_DOCUMENT  
- İlk belge bağlam hedef belge bağlamı aynı belgedeki listesinde bulabilirsiniz.  
+ Aynı belgede hedef belge bağlamı olarak listede ilk belge içeriği bulabilirsiniz.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken olarak geçirilen [karşılaştırmak](../../../extensibility/debugger/reference/idebugdocumentcontext2-compare.md) yöntemi.  
+ Bağımsız değişken olarak geçirilen [karşılaştırma](../../../extensibility/debugger/reference/idebugdocumentcontext2-compare.md) yöntemi.  
   
- Bu değerler, listedeki ilk belge içeriği bulmak için bir karşılaştırma ölçütü belirtmek için kullanılır. Bir belge bağlamı belge bağlamları listesini kendisini karşı karşılaştırmak için verilen `IDebugDocumentContext2::Compare` yöntemi. Karşılaştırma işleci olduğu listesindeki ilk belge bağlamda `true` sonra döndürülür.  
+ Bu değerler, listedeki ilk belge içeriği bulmak için karşılaştırma ölçütleri belirtmek için kullanılır. Bir belge bağlamına belge bağlamları listesini kendisine karşı karşılaştırmak için verilen `IDebugDocumentContext2::Compare` yöntemi. Karşılaştırma işleci olan listede ilk belge bağlamı `true` sonra döndürülür.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [Karşılaştırma](../../../extensibility/debugger/reference/idebugdocumentcontext2-compare.md)
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Compare](../../../extensibility/debugger/reference/idebugdocumentcontext2-compare.md)

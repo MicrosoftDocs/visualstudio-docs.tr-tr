@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 17cd40938d177f3ea74af13bd84fcf1b873dd650
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 40ee5cb4bf552b04683c4c2119a8c43a595b2105
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49900312"
 ---
 # <a name="getnametype"></a>GETNAME_TYPE
 Alınacak dosya adı türünü belirtir.  
@@ -53,38 +54,38 @@ public enum enum_GETNAME_TYPE {
   
 ## <a name="members"></a>Üyeler  
  GN_NAME  
- Belge veya içeriği kolay adını belirtir.  
+ Belge veya bağlam kolay adı belirtir.  
   
  GN_FILENAME  
  Belge veya bağlam tam yolunu belirtir.  
   
  GN_BASENAME  
- Temel dosya adı yerine bir belge veya bağlam tam yolunu belirtir.  
+ Bir temel dosya adı yerine bir belge veya bağlam tam yolunu belirtir.  
   
  GN_MONIKERNAME  
- Belgenin veya bağlam benzersiz bir ad bir bilinen ad biçiminde belirtir.  
+ Belge veya bağlam benzersiz bir adla bir bilinen ad biçiminde belirtir.  
   
  GN_URL  
  Belge veya bağlam URL adını belirtir.  
   
  GN_TITLE  
- Varsa, belgenin, bir başlığı belirtir.  
+ Varsa, bir belgenin başlığını belirtir.  
   
  GN_STARTPAGEURL  
- Başlangıç sayfası URL'si işlemleri için alır.  
+ İşlemler için başlangıç sayfası URL'si alır.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerler için parametre olarak geçirilen [GetName](../../../extensibility/debugger/reference/idebugdocument2-getname.md), [GetName](../../../extensibility/debugger/reference/idebugdocumentcontext2-getname.md), ve [GetName](../../../extensibility/debugger/reference/idebugprocess2-getname.md) yöntemleri ne tür bir geri dönmek için ad belirtin.  
+ Bu değerler için parametre olarak geçirilen [GetName](../../../extensibility/debugger/reference/idebugdocument2-getname.md), [GetName](../../../extensibility/debugger/reference/idebugdocumentcontext2-getname.md), ve [GetName](../../../extensibility/debugger/reference/idebugprocess2-getname.md) ne tür bir geri dönmek için ad belirtmek için yöntemleri.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetName](../../../extensibility/debugger/reference/idebugdocument2-getname.md)   
  [GetName](../../../extensibility/debugger/reference/idebugdocumentcontext2-getname.md)   
  [GetName](../../../extensibility/debugger/reference/idebugprocess2-getname.md)

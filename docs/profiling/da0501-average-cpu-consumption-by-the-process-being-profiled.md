@@ -14,25 +14,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: eebc0ecdb38dd1b252cac9c9bf2e1bcd007d5851
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f9612c895f7453d250b4f37c06e3630901602685
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49847122"
 ---
-# <a name="da0501-average-cpu-consumption-by-the-process-being-profiled"></a>DA0501: İşlemin ortalama CPU kullanımının profili oluşturuluyor.
+# <a name="da0501-average-cpu-consumption-by-the-process-being-profiled"></a>DA0501: Ortalama CPU kullanımının profili oluşturuluyor işlem.
+
 |||  
 |-|-|  
 |Kural Kimliği|DA501|  
 |Kategori|Kaynak İzleme|  
 |Profil oluşturma yöntemi|Tümü|  
-|İleti|Ortalama CPU kullanımının profili oluşturuluyor işlem.|  
+|İleti|Profil oluşturulan işlem tarafından ortalama CPU kullanımı.|  
 |Kural türü|Bilgiler|  
-  
- Örnekleme, .NET bellek veya kaynak çakışması yöntemlerini kullanarak profil, bu kural tetiklemek için en az 10 örnekleri toplamanız gerekir.  
-  
-## <a name="rule-description"></a>Kural Tanımı  
- Bu ileti bir işlemci yönergeleri uygulamadan çalıştırmakla meşgul zamanın yüzde olarak bildirir. Bildirilen ortalama profili oluşturuluyor işlem etkin olan tüm ölçüm aralıklarında değerdir. Değerini birden fazla işlemciye sahip bir makinede % 100'den büyük olabilir.  
-  
+
+ Örnekleme, .NET bellek ve kaynak çekişmesi yöntemleri kullanılarak profili, bu kural tetiklemek için en az 10 örnekleri toplamanız gerekir.  
+
+## <a name="rule-description"></a>Kural açıklaması  
+ Bu ileti bir işlemci yönergeleri uygulamadan çalıştırmakla meşgul olduğu sürenin yüzdesini bildirir. Bildirilen değer profil oluşturulan işlem etkin olduğu tüm ölçüm aralıklarında bir ortalamadır. Değeri, birden çok işlemcili bir makinede % 100'den daha büyük olabilir.  
+
 ## <a name="how-to-use-rule-data"></a>Kural verileri kullanma  
- Farklı sürümlerini performansını veya programın derlemeleri karşılaştırmak için veya farklı bir test senaryoları altında uygulamanın performansını anlamak için kuralı değeri kullanın.
+ Kural değeri, farklı sürümlerin performans veya programın yapıları karşılaştırmak veya farklı test senaryoları altında uygulama performansını anlamak için kullanın.

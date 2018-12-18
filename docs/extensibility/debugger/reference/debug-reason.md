@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 47cfd171d23420396c6d7ab5416db32cc05511f0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3f3fccdd43b7d26a5bb2dcc5799d77afff6614d1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868371"
 ---
 # <a name="debugreason"></a>DEBUG_REASON
 Hata ayıklama için işlem neden başlatıldı belirtir.  
@@ -49,30 +50,30 @@ public enum enum_DEBUG_REASON {
   
 #### <a name="parameters"></a>Parametreler  
  DEBUG_REASON_ERROR  
- Belirli olmayan bir hata oluştu (diğer hiçbiri uygun neden olduğunda bu varsayılan koşulu olarak kullanılır).  
+ Belirli olmayan bir hata oluştu (yok, diğer uygun neden olduğunda bu bir varsayılan koşul olarak kullanılır).  
   
  DEBUG_REASON_USER_LAUNCHED  
- İşlem, kullanıcının isteği üzerine başlatıldı.  
+ İşlem, kullanıcının isteğiyle başlatıldı.  
   
  DEBUG_REASON_USER_ATTACHED  
- Zaten çalışan işlemi kullanıcı tarafından bağlanmıştır.  
+ Zaten çalışan işlemi kullanıcı tarafından eklendi.  
   
  DEBUG_REASON_AUTO_ATTACHED  
- Bunu başlatıldı, işlem için otomatik olarak bağlanmıştır.  
+ Başlatıldığında işlemi otomatik olarak depolamaya bağlanmıştır.  
   
  DEBUG_REASON_CAUSALITY  
- İşlem nedeniyle başlatılan bir *zaman içinde sadece* (JIT) hata ayıklama olay.  
+ İşlem şu nedenle başlatıldı bir *Just-ın-Time* (JIT) hata ayıklama olay.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen [GetDebugReason](../../../extensibility/debugger/reference/idebugprocess3-getdebugreason.md) yöntemi.  
+ Öğesinden döndürülen [GetDebugReason](../../../extensibility/debugger/reference/idebugprocess3-getdebugreason.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetDebugReason](../../../extensibility/debugger/reference/idebugprocess3-getdebugreason.md)

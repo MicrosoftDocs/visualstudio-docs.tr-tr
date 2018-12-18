@@ -1,40 +1,44 @@
 ---
 title: Proje öğeleri ekleme ve kaldırma
-description: Bu belge, eklemek ve Mac için Visual Studio Proje öğeleri kaldırmak açıklar
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+description: Bu belge, ekleme ve Mac için Visual Studio'da proje öğeleri kaldırma açıklar
+author: conceptdev
+ms.author: crdun
+ms.date: 05/06/2018
 ms.assetid: 4071689D-1C21-42D7-8963-550E7BCB4B67
-ms.openlocfilehash: f3fb3d133fb87d7d101018006433e5e75a5b0ec4
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: dc37b3a376b99c39d4216ba0ae2b05d707d11484
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51296300"
 ---
 # <a name="adding-and-removing-project-items"></a>Proje öğeleri ekleme ve kaldırma
 
-Proje düğümüne sağ tıklayarak projeniz için yeni proje öğeleri ekleyebilirsiniz **çözüm paneli** ve göz **Ekle > yeni dosya**:
+' Nde proje düğümüne sağ tıklayarak yeni proje öğeleri projenize ekleyebilirsiniz **çözüm bölmesi** öğesine göz atarak **Ekle > yeni dosya**:
 
 ![Yeni proje öğesi ekleyin](media/add-and-remove-project-items-image1.png)
 
-Bu yeni dosya varsayılan şablonları boş sınıflar ya da boş numaralandırmalar gibi ek olarak oluşturduğunuz uygulama türüne göre dosya şablonları sağlayan iletişim kutusu görüntüler. Örneğin, bir iOS uygulaması yazıyorsanız, seçebileceğiniz **film şeridi** yeni bir boş film şeridi dosya oluşturmak için:
+Bu varsayılan şablonları boş sınıflar ya da boş bir sabit listeleri gibi ek olarak, oluşturmakta olduğunuz uygulama türüne göre dosya şablonları sağlayan yeni dosya iletişim kutusunda görüntüler. Örneğin, bir iOS uygulaması yazıyorsanız, seçebileceğiniz **film şeridi** yeni ve boş bir görsel taslak dosyası oluşturmak için:
 
-![Yeni boş film şeridi iOS Ekle](media/add-and-remove-project-items-image2.png)
+![Yeni boş görsel taslak iOS Ekle](media/add-and-remove-project-items-image2.png)
 
 ## <a name="adding-existing-files"></a>Varolan dosyaları ekleme
 
-Var olan dosyaları proje düğümüne sağ tıklayıp seçerek projenize ekleyebilirsiniz **Ekle > dosyaları Ekle...** . Alternatif olarak, bir klasörün tamamına eklemek için seçin **Ekle > varolan klasörü Ekle...** . Sisteminiz için gerekli öğe eklemek arama yapmanıza olanak tanıyan dosya tarayıcısı görüntüler.
-
+Var olan dosyalar proje düğümüne sağ tıklatıp seçerek projenize ekleyebilirsiniz **Ekle > Dosya Ekle...** . Alternatif olarak, klasörün tamamını eklemek için seçin **Ekle > mevcut klasörü Ekle...** . Bu, sisteminiz için gerekli öğe eklemek arama sayesinde dosya tarayıcısı görüntüler.
 
 ## <a name="removing-items"></a>Öğeleri kaldırma
 
-Bir öğeyi geçerli projeden kaldırmak için öğeyi sağ tıklatın ve seçin **Kaldır**
+Bir öğe geçerli projenizden kaldırmak için öğeyi sağ tıklatıp seçin **Kaldır**
 
 ![Öğeyi Kaldır](media/add-and-remove-project-items-image3.png)
 
-Bu silme öğesi iletişim kutusunu görüntüler. Projeden kaldırmak için seçeneklerden birini seçin:
+Bu silme öğesi iletişim kutusunu açar. Projeden kaldırmak için seçeneklerden birini seçin:
 
-![Öğesi iletişim Sil](media/add-and-remove-project-items-image4.png)
+![Öğe iletişim Sil](media/add-and-remove-project-items-image4.png)
 
 * **Silme** -proje ve disk öğeyi kaldırır.
-* **Projeden kaldırmak** - öğesi projeden kaldırır, ancak diskten kaldırmayacaktır 
+* **Projeden Kaldır** - öğesi projeden kaldırır ancak diskten kaldırmaz
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+* [(Windows üzerinde) Visual Studio'da projeler ve çözümler](/visualstudio/ide/solutions-and-projects-in-visual-studio)

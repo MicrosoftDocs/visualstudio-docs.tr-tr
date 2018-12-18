@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3dedc9e3218d56c4e58f35c70b3bce8bf4dd8ae7
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e2e517f03a13debfd13dacfe92b4bb08bfddc727
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849066"
 ---
 # <a name="idiaenumsourcefilesskip"></a>IDiaEnumSourceFiles::Skip
-Belirtilen sayıda kaynak dosyalarında bir numaralandırma sırasını atlar.  
+Bir numaralandırma sıralı kaynak dosyalarında belirtilen sayıda atlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT Skip (
   
 #### <a name="parameters"></a>Parametreler  
  celt  
- [in] Kaynak dosyaları atlamayı numaralandırması dizisindeki sayısı.  
+ [in] Sabit listesi sırası atlamak için kaynak dosya sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` atlamak için daha fazla kaynak dosya yoksa.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` atlamak için daha fazla kaynak dosya yoksa.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaEnumSourceFiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md)

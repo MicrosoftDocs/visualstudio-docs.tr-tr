@@ -1,12 +1,10 @@
 ---
 title: Linting R kodu
-description: R linting seçenekleri de dahil, Visual Studio'nun yapı içinde linting desteği ile çalışmaya nasıl.
-ms.date: 01/15/2018
+description: Visual Studio'nun yapı içinde linting lint seçenekleri dahil olmak üzere, R desteği ile çalışmayı öğrenin.
+ms.date: 07/02/2018
 ms.prod: visual-studio-dev15
 ms.technology: vs-rtvs
 ms.topic: conceptual
-dev_langs:
-- R
 f1_keywords:
 - vs.toolsoptionspages.text_editor.r.lint
 author: kraigb
@@ -14,64 +12,65 @@ ms.author: kraigb
 manager: douge
 ms.workload:
 - data-science
-ms.openlocfilehash: d8b88e327af895d39335695b16b44bf17efdb18b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4eaeb0165c049b035555fa63130746baa5fa208f
+ms.sourcegitcommit: e5a382de633156b85b292f35e3d740f817715d47
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38978303"
 ---
-# <a name="linting-r-code-in-visual-studio"></a>Visual Studio'da linting R kodu
+# <a name="lint-r-code-in-visual-studio"></a>Visual Studio'da lint R kodu
 
-Linting, olası hatalar, biçimlendirme sorunları ve diğer kod gürültü alacaklardır boşluk gibi ortaya çıkarmak üzere kod çözümleyen bir işlemdir. Linting nasıl tanımlayıcıları, takımları ve diğer ortak durumları içinde çok yararlı olduğu adlandırıldığı gibi belirli kodlama kurallarını teşvik yardımcı olur.
+Bir lint alacaklardır boşluk gibi diğer kod gürültü olası hataları ve biçimlendirme sorunları ortaya çıkarmak için kod analiz eder. Bir lint kullanarak da tanımlayıcıları nasıl adlandırıldığı gibi belirli kodlama kurallarını teşvik yardımcı olur. Bu tür kuralları içinde takımlar ve işbirliğine dayalı diğer durumlarda yararlı olur.
 
-R araçları için Visual Studio (RTVS) davranışını çeşitli seçenekleri bu makalede açıklanan aracılığıyla denetlenir R, yerleşik linting sağlar. Bu seçenekler bulunan **aracı > Seçenekler > Metin Düzenleyicisi > R > tüy**.
+R araçları için Visual Studio (RTVS) R davranışını çeşitli seçenekler ve bu makalede açıklanan aracılığıyla denetlenir, bir yerleşik lint sağlar. Bu seçenekler bulunan **Araçları** > **seçenekleri** > **metin düzenleyici** > **R**  >  **Lint**.
 
-Linting varsayılan olarak devre dışıdır. Linting etkinleştirmek için ayarlanmış **tüm > etkinleştirmek tüy** seçeneği true.
+Lint, varsayılan olarak devre dışıdır. Povolit lint ayarlayın **tüm** > **etkinleştirme lint** seçeneğini **True**.
 
-Siz yazarken etkinleştirildiğinde, linting Düzenleyicisi'nde uygulanır. Sorunlar yeşil dalgalı çizgiler görüntülenir. Aşağıdaki grafikte, örneğin, RTVS kullanımı gibi altı linting sorunları belirlemiştir `=` yerine `<-` işlev bağımsız değişkenleri, geçici aralığı eksikliği atama için Pascal çalışması ve büyük tanımlayıcıları ve kullanımını kullanımını bir noktalı virgül. Bir sorun getirildiğinde, bir açıklama sağlar.
+Siz yazarken etkin olduğunda, lint aracı Düzenleyicisi'nde çalışır. Sorunlar, yeşil dalgalı çizgiler olarak görüntülenir. Aşağıdaki grafikte, örneğin, RTVS kullanımı dahil olmak üzere altı lint sorunları belirlemiştir `=` yerine `<-` atama, işlev bağımsız değişkenlerinin etrafındaki boşluğu olmaması için baş harfleri büyük ve büyük harf tanımlayıcıları ve noktalı virgül kullanımını kullanın . Bir sorun geldiğinizde, bir açıklama sağlar.
 
-![Linting R kodu örnekleri](media/linting-01.png)
+![Lint çıkış R kodu örnekleri](media/linting-01.png)
 
-Genellikle bir proje veya dosya gereksinimlerine bağlı olarak linting seçeneklerini değiştirin. Örneğin, bir çevrimiçi indirmelere'nden örnek kodu kullanabilirsiniz `=` yerine `<-` Pascal durum tanımlayıcıları yanı sıra. Bu gibi durumlarda varsayılan linting seçenekleri bayrak çünkü kodun sık linting uyarıları gösterir. Bu kod, böylece, ile çalışma yalnızca her örneğinin düzeltilmesi zaman harcama yerine seçenekleri devre dışı bırakabilirsiniz yapılırken.
+Genellikle, bir proje veya dosya gereksinimlerine bağlı olarak lint seçenekleri de değiştirin. Örneğin, bir çevrimiçi kursu'nden örnek kodu kullanabilirsiniz `=` yerine `<-` Pascal harf tanımlayıcıları ile birlikte. Bu gibi durumlarda varsayılan lint seçenekleri bayrak çünkü bu tür kod sık kullanılan bir lint uyarılarını gösterir. Kodla çalışırken, daha sonra her örneği düzeltme zaman harcadığı yerine seçenekleri devre dışı bırakabilirsiniz.
 
-## <a name="assignment-group"></a>Atama grubu
+## <a name="assignment-group"></a>Grup ataması
 
-| Seçenek | Varsayılan değer | Linting etkisi |
+| Seçenek | Varsayılan değer | Lint etkisi |
 | --- | --- | --- |
-| Zorla \<- | `True` | Ne zaman tanımlayan `<-` ataması için kullanılmaz. |
+| **Zorla \<-** | **TRUE** | Ne zaman tanımlayan `<-` ataması için kullanılmaz. |
 
 ## <a name="naming-group"></a>Grup adlandırma
 
-Bu seçenekler farklı adlandırma kuralları kullanmak tanımlayıcıları bayrak:
+Bu seçenekler farklı adlandırma kurallarını kullanmasını tanımlayıcıları bayrağı:
 
-| Seçenek | Varsayılan değer | Linting etkisi |
+| Seçenek | Varsayılan değer | Lint etkisi |
 | --- | --- | --- |
-| Bayrak camelCase | `False` | CamelCase kullanmak bayrakları tanımlayıcıları. |
-| Bayrak uzun adları | `False` | Tanımlayıcıları bayrakları, adlandırılmış "Max adı uzunluğu" ayarı aşabilir. |
-| Birden çok nokta bayrak | `True` | Birden çok nokta kullanmak bayrakları tanımlayıcıları. |
-| Bayrak PascalCase | `True` | PascalCase kullanmak bayrakları tanımlayıcıları. |
-| Bayrak snake_case | `False` | Alt çizgiler kullanın bayrakları tanımlayıcıları. |
-| Büyük harfli bayrağı | `True` | Tümü büyük harf kullanın bayrakları tanımlayıcıları. |
-| Max adı uzunluğu | 32 | "Ayar bayrağı uzun adlarla" uygulanan uzunluğu. |
+| **CamelCase bayrak** | **False** | Bayrakları tanımlayıcıları camelCase kullanın. |
+| **Bayrağı uzun adları** | **False** | Tanımlayıcı adları aşan bayrakları **en fazla ad uzunluğu** ayarı. |
+| **Birden çok nokta bayrak** | **TRUE** | Birden çok nokta kullanmak bayrakları tanımlayıcıları. |
+| **PascalCase bayrak** | **TRUE** | Bayrakları tanımlayıcıları PascalCase kullanın. |
+| **Snake_case bayrak** | **False** | Bayrakları tanımlayıcılar alt çizgi kullanın. |
+| **Büyük harfli bayrağı** | **TRUE** | Tümü büyük harf kullanın bayrakları tanımlayıcıları. |
+| **En fazla ad uzunluğu** | **32** | İle uygulanan uzunluğu **bayrak uzun adları** ayarı. |
 
 ## <a name="spacing-group"></a>Aralık grubu
 
-Bunların tümü ayarlanır, bu seçenekleri `True` burada linter aralığı sorunlarını tanımlar varsayılan olarak, Denetim: önce virgüller, açma ve kapama süslü konumlar, işleçler, geçici geçici işlev adları boşluk sonra (ve () içindeki.
+Her biri ayarlanmışsa, bu seçenekler **True** varsayılan olarak, burada lint aralığı sorunları tanımlar denetim: önce açma ve kapatma küme konumlarını işleçler etrafındaki virgülün yanındaki işlev adları boşluk sonra (ve iç boşluk ().
 
-## <a name="statements-group"></a>İfadeleri Grup
+## <a name="statements-group"></a>Grup ifadeleri
 
-| Seçenek | Varsayılan değer | Linting etkisi |
+| Seçenek | Varsayılan değer | Lint etkisi |
 | --- | --- | --- |
-| Birden Çok | `True` | Birden çok deyime aynı çizgi üzerinde olduğunda tanımlar. |
-| Noktalı virgül | `True` | Noktalı virgül kullanımlarını tanımlar. |
+| **Birden çok** | **TRUE** | Birden çok deyime aynı çizgi üzerinde olduğunda tanımlar. |
+| **Noktalı virgül** | **TRUE** | Noktalı virgül kullanımları tanımlar. |
 
 ## <a name="text-group"></a>Metin grubu
 
-| Seçenek | Varsayılan değer | Linting etkisi |
+| Seçenek | Varsayılan değer | Lint etkisi |
 | --- | --- | --- |
-| Satır uzunluğu sınırı | `False` | "En fazla satır uzunluğu" seçeneğini uzun satırları linter bayraklar onaylanmadığını ayarlar. |
-| En fazla satır uzunluğu | 80 | "Satır uzunluğu sınırı" seçeneği tarafından uygulanan satır uzunluğunu belirler. |
+| **Satır uzunluğu sınırı** | **False** | Daha uzun satırları lint bayraklar ayarlar **en fazla satır uzunluğu** seçeneği. |
+| **En fazla satır uzunluğu** | **80** | Satır uzunluğu tarafından uygulanan ayarlar **satır uzunluğu sınırı** seçeneği. |
 
 ## <a name="whitespace-group"></a>Boşluk grubu
 
-Her biri için ayarlanır, bu seçenekleri `True` burada linter boşluk sorunları tanımlar varsayılan olarak, Denetim: sekmelerinde kullanımını çift-tırnak, boş satırları izleyen ve sondaki boşluk kullanımı.
+Her biri ayarlanmışsa, bu seçenekler **True** varsayılan olarak, burada lint boşluk sorunları tanımlar denetimi: kullanımı sekmeler, çift-tırnak, boş satırları öndeki ve sondaki kullanımı.

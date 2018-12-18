@@ -12,17 +12,18 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ec882cc5797eb99370beac5e28b87ca0b981cf2a
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 524f6f575725fed754c3873af8a9ff62a3c3686f
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34477554"
 ---
-# <a name="understanding-instrumentation-data-values"></a>İzleme Veri Değerlerini Anlama
+# <a name="understand-instrumentation-data-values"></a>İzleme veri değerlerini anlama
 
 *Araçları* ayrıntılı zamanlama bilgileri işlev çağrıları, satırları ve profili uygulama yönergeleri için profil oluşturma Visual Studio kayıtların yöntemi
 
-İzleme yöntemi başında ve diğer işlevleri bu işlevler tarafından hedef işlevleri profili ikili ve önce ve sonra her çağrısı sonunu kod yerleştirir. Eklenen kod aşağıdaki kaydeder:
+İzleme yöntemi başında ve diğer işlevleri bu işlevler tarafından hedef işlevleri profili ikili ve önce ve sonra her çağrısı sonunu kod yerleştirir. Eklenen kod, aşağıdaki bilgileri kaydeder:
 
 - Bu koleksiyon olay öncekinin arasındaki aralığı.
 
@@ -98,5 +99,5 @@ Uygulama özel aralıklarına modülü, iş parçacığı veya işlem işlevi ol
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Araçları verilerini performansını analiz etme](../profiling/analyzing-performance-tools-data.md)  
-[Nasıl yapılır: Koleksiyon yöntemleri seçme](../profiling/how-to-choose-collection-methods.md)
+[Performans araçları verilerini analiz etme](../profiling/analyzing-performance-tools-data.md)  
+[Nasıl yapılır: Toplama metotlarını seçme](../profiling/how-to-choose-collection-methods.md)

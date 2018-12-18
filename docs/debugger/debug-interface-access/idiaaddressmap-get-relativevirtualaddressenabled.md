@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 25159556d44ca37d7938e67e67f1b9900a05010b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: aa61da69f30b759ade63798d681ae8036bcd8ece
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849092"
 ---
 # <a name="idiaaddressmapgetrelativevirtualaddressenabled"></a>IDiaAddressMap::get_relativeVirtualAddressEnabled
-Hesaplama ve göreli sanal adresleri (RAV) kullanımını etkinleştirilip etkinleştirilmediğini gösterir.  
+Göreli sanal adreslerine (RVA) kullanılması ve hesaplama etkin olup olmadığını gösterir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,15 +34,15 @@ HRESULT get_relativeVirtualAddressEnabled (
   
 #### <a name="parameters"></a>Parametreler  
  pRetVal  
- [out] Döndürür `TRUE` RVAs hesaplama etkinleştirilirse.  
+ [out] Döndürür `TRUE` RVA hesaplanması etkinse.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Segment başlangıçta PDB dosyasından yüklenmiş ise RVAs etkinleştirilir. RVAs kullanımını geçici olarak çağırarak devre dışı bırakılabilir [Idiaaddressmap::put_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-put-relativevirtualaddressenabled.md) yöntemi.  
+ Parçaları bir PDB dosyasındaki ilk yüklenmiş olan, RVA etkinleştirilir. RVA kullanımını geçici olarak çağırarak devre dışı bırakılabilir [Idiaaddressmap::put_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-put-relativevirtualaddressenabled.md) yöntemi.  
   
- Ayrıca, yeni görüntüyü üstbilgileri çağırarak kurulabilir [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemi için bir çağrı tarafından izlenen `put_relativeVirtualAddressEnabled` yeni görüntü üstbilgilerini kullanma RVAs kullanımını etkinleştirmek için yöntemi.  
+ Ayrıca, yeni görüntüyü üstbilgileri çağırarak kurulabilir [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemine bir çağrı tarafından izlenen `put_relativeVirtualAddressEnabled` kullanarak yeni görüntüyü üstbilgileri RVA kullanımını etkinleştirmek için yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaaddressmap](../../debugger/debug-interface-access/idiaaddressmap.md)   

@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: çalışma sayfasında satırları program aracılığıyla gruplama | Microsoft Docs'
+title: 'Nasıl yapılır: çalışma sayfasında satırları program aracılığıyla gruplama'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -23,21 +23,22 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 894e3971c257a6461aa975a9d6bb1cf933234440
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: aa9624f90a337fb85ba2868b3b5c4f3cb1553ffb
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35258742"
 ---
-# <a name="how-to-programmatically-group-rows-in-a-worksheet"></a>Nasıl yapılır: Çalışma Sayfasında Satırları Program Aracılığıyla Gruplama
+# <a name="how-to-programmatically-group-rows-in-a-worksheet"></a>Nasıl yapılır: çalışma sayfasında satırları program aracılığıyla gruplama
   Bir veya daha fazla satırı gruplayabilirsiniz. Bir çalışma sayfasına bir grup oluşturmak için kullanın bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetimi veya yerel bir Excel aralık nesnesi.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-## <a name="using-a-namedrange-control"></a>NamedRange denetimi kullanma  
+## <a name="use-a-namedrange-control"></a>NamedRange denetimi kullanın  
  Eklerseniz bir <xref:Microsoft.Office.Tools.Excel.NamedRange> denetimi için belge düzeyi proje tasarım zamanında denetimi program aracılığıyla bir grup oluşturmak için kullanabilirsiniz. Aşağıdaki örnekte, üç olduğunu varsayar <xref:Microsoft.Office.Tools.Excel.NamedRange> denetimleri aynı çalışma sayfası üzerinde: `data2001`, `data2002`, ve `dataAll`. Her adlandırılmış bir aralık çalışma tam bir satıra ifade eder.  
   
-#### <a name="to-create-a-group-of-namedrange-controls-on-a-worksheet"></a>NamedRange denetimlerinin çalışma sayfası üzerinde bir grup oluşturmak için  
+### <a name="to-create-a-group-of-namedrange-controls-on-a-worksheet"></a>NamedRange denetimlerinin çalışma sayfası üzerinde bir grup oluşturmak için  
   
 1.  Üç adlandırılmış aralıkları çağırarak grup <xref:Microsoft.Office.Tools.Excel.NamedRange.Group%2A> her aralığın yöntemi. Bu kod sayfa sınıfında değil yerleştirilmelidir `ThisWorkbook` sınıfı.  
   
@@ -47,10 +48,10 @@ ms.lasthandoff: 04/16/2018
     > [!NOTE]  
     >  Satır çözmek için arama <xref:Microsoft.Office.Tools.Excel.NamedRange.Ungroup%2A> yöntemi.  
   
-## <a name="using-native-excel-ranges"></a>Yerel Excel aralıklarını kullanma  
+## <a name="use-native-excel-ranges"></a>Yerel Excel aralıkları kullanın  
  Kod adında üç Excel aralıklarında olduğunu varsayar `data2001`, `data2002`, ve `dataAll` çalışma sayfası üzerinde.  
   
-#### <a name="to-create-a-group-of-excel-ranges-in-a-worksheet"></a>Bir çalışma sayfasında Excel aralıklarında bir grup oluşturmak için  
+### <a name="to-create-a-group-of-excel-ranges-in-a-worksheet"></a>Bir çalışma sayfasında Excel aralıklarında bir grup oluşturmak için  
   
 1.  Üç adlandırılmış aralıkları çağırarak grup <xref:Microsoft.Office.Interop.Excel.Range.Group%2A> her aralığın yöntemi. Aşağıdaki örnekte, üç olduğunu varsayar <xref:Microsoft.Office.Interop.Excel.Range> adlı denetimleri `data2001`, `data2002`, ve `dataAll` aynı çalışma sayfası üzerinde. Her adlandırılmış bir aralık çalışma tam bir satıra ifade eder.  
   
@@ -60,10 +61,10 @@ ms.lasthandoff: 04/16/2018
     > [!NOTE]  
     >  Satır çözmek için arama <xref:Microsoft.Office.Interop.Excel.Range.Ungroup%2A> yöntemi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çalışma sayfaları ile çalışma](../vsto/working-with-worksheets.md)   
  [NamedRange denetimi](../vsto/namedrange-control.md)   
  [Nasıl yapılır: çalışma sayfalarına NamedRange denetimleri ekleme](../vsto/how-to-add-namedrange-controls-to-worksheets.md)   
- [Office Çözümlerinde İsteğe Bağlı Parametreler](../vsto/optional-parameters-in-office-solutions.md)  
+ [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)  
   
   

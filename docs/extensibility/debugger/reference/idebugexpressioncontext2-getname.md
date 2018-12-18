@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 84ac767c8e2cd53045dec9921f6d90300f1a87e0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5664710d69b8c6d7af315de600fd1fcd27a2b36d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873532"
 ---
 # <a name="idebugexpressioncontext2getname"></a>IDebugExpressionContext2::GetName
 Değerlendirme bağlamı adını alır.  
@@ -43,10 +44,10 @@ int GetName(
  [out] Değerlendirme bağlamı adını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerlendirme bağlamı açıklaması adıdır. Bu genellikle bu tam değerlendirme bağlamına başvuruyor bir ifade değerlendiricisi tarafından ayrıştırılabilir bir şeydir. Örneğin, c++'ta adı aşağıdaki gibidir:  
+ Bu değerlendirme bağlamı açıklamasını addır. Bu genellikle bu tam değerlendirme içeriğe başvuruda bulunan bir ifade değerlendiricisi tarafından ayrıştırılan bir şeydir. Örneğin, c++'ta adı aşağıdaki gibidir:  
   
 ```  
 "{ function-name, source-file-name, module-file-name }"  

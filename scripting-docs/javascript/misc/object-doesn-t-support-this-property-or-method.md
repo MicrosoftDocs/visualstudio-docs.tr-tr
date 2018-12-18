@@ -25,6 +25,7 @@ ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "24788870"
 ---
 # <a name="object-doesn39t-support-this-property-or-method"></a>Nesne mevcut değil&#39;t destek bu özelliği veya yöntemi
 Bir özellik veya var olmayan yöntem bu nesne için belirttiğiniz. Tüm nesneler, tüm özellikleri ve yöntemleri destekler.  

@@ -7,32 +7,32 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 75e7c058d1cc852386e1df897127b96781b60c50
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 7afd12aa6277983f8b50eb1d7adfdd8396f8f960
+ms.sourcegitcommit: ef828606e9758c7a42a2f0f777c57b2d39041ac3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39567275"
 ---
-# <a name="embedding-a-diagram-in-a-windows-form"></a>Windows Forms'a Diyagram Ekleme
-Windows denetiminde hangi görünür, DSL diyagramı katıştırmak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] penceresi.
+# <a name="embed-a-diagram-in-a-windows-form"></a>Windows Formunda bir Diyagram ekleme
 
-## <a name="embedding-a-diagram"></a>Bir diyagram katıştırma
+Bir DSL diyagramı Visual Studio penceresinde görünür bir Windows Denetim ekleyin.
 
-#### <a name="to-embed-a-dsl-diagram-in-a-windows-control"></a>Bir Windows denetiminde DSL diyagramı eklemek için
+## <a name="embed-a-dsl-diagram-in-a-windows-control"></a>Bir DSL diyagramı Windows denetimi ekleme
 
-1.  Yeni bir ekleme **kullanıcı denetimi** DslPackage projesine dosyasını.
+1.  Yeni bir **kullanıcı denetimi** DslPackage projeye dosya.
 
-2.  Panel denetimi kullanıcı denetimine ekleyin. Bu panoyu DSL diyagramı içerir.
+2.  Panel denetimi, kullanıcı denetimine ekleyin. Bu panelde DSL diyagramı içerir.
 
-     İhtiyaç duyduğunuz diğer denetimleri ekleyin.
+     İhtiyacınız olan diğer denetimleri ekleyin.
 
-     Denetimlerin bağlantı özelliklerini ayarlayın.
+     Denetimin bağlantı özelliklerini ayarlayın.
 
-3.  Çözüm Gezgini'nde, kullanıcı denetimi dosyasını sağ tıklatıp **görünümü kodu**. Bu oluşturucu ve değişken kodu ekleyin:
+3.  Çözüm Gezgini'nde, kullanıcı denetimi dosyaya sağ tıklayın ve **kodu görüntüle**. Bu oluşturucu ve değişken için kodu ekleyin:
 
     ```csharp
-
     internal UserControl1(MyDSLDocView docView, Control content)
       : this()
     {
@@ -40,12 +40,11 @@ Windows denetiminde hangi görünür, DSL diyagramı katıştırmak [!INCLUDE[vs
       this.docView = docView;
     }
     private MyDSLDocView docView;
-
     ```
 
-4.  Aşağıdaki içeriğe sahip DslPackage proje için yeni bir dosya ekleyin:
+4.  Aşağıdaki içeriğe sahip DslPackage projeye yeni bir dosya ekleyin:
 
-    ```
+    ```csharp
     using System.Windows.Forms;
     namespace Company.MyDSL
     {
@@ -64,19 +63,17 @@ Windows denetiminde hangi görünür, DSL diyagramı katıştırmak [!INCLUDE[vs
             }
             return container;
     } } } }
-
     ```
 
-5.  DSL sınamak için F5 tuşuna basın ve bir örnek model dosyasını açın. Diyagram içindeki denetim görünür. Araç kutusu ve diğer özellikleri normal şekilde çalışır.
+5.  DSL test etmek için basın **F5** ve bir örnek model dosyasını açın. Denetim içinde diyagramda görünür. Araç kutusu ve diğer özellikler normal şekilde çalışır.
 
-#### <a name="updating-the-form-using-store-events"></a>Formu deposu olayları kullanarak güncelleştirme
+## <a name="update-the-form-using-store-events"></a>Formu deposu olayları kullanarak güncelleştirme
 
-1.  Form Tasarımcısı'nda eklemek bir **ListBox** adlı `listBox1`. Bu öğeleri listesini modelde görüntüler. Kullanarak modeli ile synchronism içinde tutulacak *olayları depolamak*. Daha fazla bilgi için bkz: [olay işleyicileri yayılması değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
+1.  Form Tasarımcısı'nda ekleme bir **ListBox** adlı `listBox1`. Bu modelde öğeleri listesi görüntülenir. Kullanarak modeli ile eşitlenir *olayları depolamak*. Daha fazla bilgi için [olay işleyicileri yaymak değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
 
-2.  Özel kod dosyasında daha fazla ile DocView sınıfı yöntemleri geçersiz kılın:
+2.  Özel kod dosyasında, daha fazla DocView sınıfı yöntemleri geçersiz kıl:
 
-    ```
-
+    ```csharp
     partial class MyDSLDocView
     {
      /// <summary>
@@ -113,14 +110,12 @@ Windows denetiminde hangi görünür, DSL diyagramı katıştırmak [!INCLUDE[vs
      {
        container.Remove(e.ModelElement as ExampleElement);
      }
-
     ```
 
-3.  Kullanıcı denetiminin arkasındaki kodda için eklenebilir ve Kaldırılabilir öğeleri dinlemek için yöntemleri ekleyin:
+3.  Kullanıcı denetimi arkasındaki kodda eklenebilen ve kaldırılabilen öğelerde dinlemek için yöntemleri ekleyin:
 
-    ```
-
-          public partial class UserControl1 : UserControl { ...
+    ```csharp
+    public partial class UserControl1 : UserControl { ...
 
     private ExampleModel modelRoot;
 
@@ -142,14 +137,13 @@ Windows denetiminde hangi görünür, DSL diyagramı katıştırmak [!INCLUDE[vs
         listBox1.Items.Add(c.Name);
       }
     }
-
     ```
 
-4.  DSL test etmek için F5 tuşuna basın ve deneysel örneğinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], örnek model dosyasını açın.
+4.  DSL test etmek için basın **F5** ve bir örnek model dosyasını Visual Studio'nun deneysel örneğinde açın.
 
-     Liste kutusu modeldeki öğelerin bir listesini gösterir ve herhangi bir ekleme veya silme işlemi ve geri alma ve yineleme sonrasında doğru olduğundan emin dikkat edin.
+     Liste kutusu model içinde öğeleri listesini gösterir ve sonra tüm ekleme veya silmeyi ve sonra geri al ve Yinele doğru olup olmadığını dikkat edin.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [Program Kodunda Modeli Gezinme ve Güncelleştirme](../modeling/navigating-and-updating-a-model-in-program-code.md)
 - [Etki Alanına Özgü Dili Özelleştirmek için Kod Yazma](../modeling/writing-code-to-customise-a-domain-specific-language.md)

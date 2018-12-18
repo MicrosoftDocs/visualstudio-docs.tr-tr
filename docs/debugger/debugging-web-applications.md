@@ -20,26 +20,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d8638bccca59bdcf497feeeef2b311cc22e5d79c
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0e649e5d795df537e48afe3dad738c73ee5b7b51
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39178923"
 ---
 # <a name="debugging-web-applications"></a>Web Uygulamalarında Hata Ayıklama
-Bu bölümde, Web uygulamaları birçok hata ayıklama açıklanmaktadır.  
+Bu bölümde, birden fazla Web uygulamalarında hata ayıklamak açıklanmaktadır.  
   
 ## <a name="in-this-section"></a>Bu Bölümde   
- [İstemci tarafı komut dosyası hata ayıklama](../debugger/client-side-script-debugging.md)  
- Test ve istemci tarafı komut içinde ele alınmıştır [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] sayfaları.  
+ [İstemci tarafı betikte hata ayıklama](../debugger/client-side-script-debugging.md)  
+ Test betikleri ve istemci tarafı betiklerde anlatılmaktadır [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] sayfaları.  
   
 ## <a name="related-sections"></a>İlgili Bölümler  
  [ASP.NET uygulamalarında hata ayıklama](../debugger/how-to-enable-debugging-for-aspnet-applications.md)  
  Hata ayıklamayı etkinleştirmek için gereken adımları açıklar [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] uygulamalar.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Web uygulamaları ve komut dosyası hata ayıklama](../debugger/debugging-web-applications-and-script.md)   
+ [Web uygulamalarında ve betikte hata ayıklama](../debugger/debugging-web-applications-and-script.md)   
  [Hata ayıklayıcı ayarları ve hazırlığı](../debugger/debugger-settings-and-preparation.md)   
- [Hata ayıklayıcı temel bilgileri](../debugger/debugger-basics.md)   
+ [Hata ayıklayıcı temel bilgileri](../debugger/getting-started-with-the-debugger.md)   
  [Visual Studio’da hata ayıklama](../debugger/index.md)  
- [Hata ayıklayıcı özelliği turu](../debugger/debugger-feature-tour.md)
+ [Hata ayıklayıcısı özellik turu](../debugger/debugger-feature-tour.md)

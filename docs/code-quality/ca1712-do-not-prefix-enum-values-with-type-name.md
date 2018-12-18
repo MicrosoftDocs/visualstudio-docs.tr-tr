@@ -1,6 +1,7 @@
 ---
 title: 'CA1712: Numaralandırma değerleri için tür adıyla önek kullanmayın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,21 @@ ms.assetid: df0e3a12-67bf-48f1-a10b-2ef60484a5c7
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CPP
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 5b6d8a5ebba4f746c7418fcfb28a61d98949441e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9db561355fb59ec187ef87ee767c4706ebddffb9
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547873"
 ---
 # <a name="ca1712-do-not-prefix-enum-values-with-type-name"></a>CA1712: Numaralandırma değerleri için tür adıyla önek kullanmayın
+
 |||
 |-|-|
 |TypeName|DoNotPrefixEnumValuesWithTypeName|
@@ -30,21 +37,21 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Numaralandırma adı numaralandırma türünün adı ile başlayan bir üye içeriyor.
+ Bir sabit listesi adı numaralandırma türü adı ile başlayan bir üye içeriyor.
 
-## <a name="rule-description"></a>Kural Tanımı
- Tür bilgileri geliştirme araçları tarafından sağlanacak beklendiğinden numaralandırma üyeleri adlarını tür adıyla önek değil.
+## <a name="rule-description"></a>Kural açıklaması
+ Tür bilgilerini geliştirme araçları tarafından sağlanacak beklendiğinden numaralandırma üyelerinin adları tür adıyla öneklenmemiştir.
 
- Adlandırma kuralları hedefleyen ortak dil çalışma zamanı kitaplıkları için genel bir bakış sağlar. Bu yeni bir yazılım kitaplığı öğrenmek için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığa sahip olan kişi tarafından geliştirilmiştir müşteri güvenini artırır süreyi azaltır.
+ Adlandırma kuralları, ortak dil çalışma zamanını hedefleyen kitaplıkları için genel bir bakış sağlar. Bu, yeni bir yazılım kitaplığı öğrenmek için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığına sahip olan kişi tarafından geliştirilmiştir müşterilerinizin size olan güvenini artırır süreyi azaltır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal gidermek için numaralandırma üyesi türü adı öneki kaldırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için sabit listesi üyesi türü adı ön eki kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek düzeltilmiş sürüm tarafından izlenen yanlış adlandırılmış numaralandırma gösterir.
+ Aşağıdaki örnek, düzeltilmiş sürümü tarafından izlenen bir yanlış adlandırılmış bir numaralandırmayı gösterir.
 
  [!code-csharp[FxCop.Naming.EnumValues#1](../code-quality/codesnippet/CSharp/ca1712-do-not-prefix-enum-values-with-type-name_1.cs)]
  [!code-cpp[FxCop.Naming.EnumValues#1](../code-quality/codesnippet/CPP/ca1712-do-not-prefix-enum-values-with-type-name_1.cpp)]
@@ -57,5 +64,6 @@ ms.lasthandoff: 04/19/2018
 
  [CA2217: Numaralandırmaları FlagsAttribute ile işaretlemeyin](../code-quality/ca2217-do-not-mark-enums-with-flagsattribute.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Enum?displayProperty=fullName>
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Enum?displayProperty=fullName>

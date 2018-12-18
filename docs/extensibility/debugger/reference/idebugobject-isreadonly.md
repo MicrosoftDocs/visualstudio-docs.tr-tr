@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 84cac5c66dd20dc9641fee7f05b456b25cbe2ffc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4238895b236db6dd75cbf384adc78284f34d073f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49936023"
 ---
 # <a name="idebugobjectisreadonly"></a>IDebugObject::IsReadOnly
-Bu nesne salt okunur olup olmadığını belirler.  
+Bu nesne, salt okunur olup olmadığını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int IsReadOnly(
  [out] Sıfır olmayan döndürür (`TRUE`) Bu nesne, salt okunur; Aksi takdirde, sıfır döndürür (`FALSE`).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Salt okunur bir nesne oluşturulduktan sonra değiştirilen onun değerine sahip olamaz.  
+ Salt okunur bir nesne oluşturulduktan sonra bir değer olamaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)

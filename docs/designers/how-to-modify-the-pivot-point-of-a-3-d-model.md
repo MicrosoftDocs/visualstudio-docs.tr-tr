@@ -1,6 +1,7 @@
 ---
-title: 'Nasıl yapılır: bir 3B modelin Pivot noktası değiştirme'
+title: 'Nasıl yapılır: 3B modelin Pivot noktasını değiştirme'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: c20b4ec8-29f5-4ca5-bc39-d4548ca6f573
@@ -9,40 +10,41 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d39d8a9406574f3e8959818051a70660042eab92
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 352685e6b31aa688ff51f9564f141fa800c348d8
+ms.sourcegitcommit: e5a382de633156b85b292f35e3d740f817715d47
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38977825"
 ---
-# <a name="how-to-modify-the-pivot-point-of-a-3d-model"></a>Nasıl yapılır: bir 3B modelin Pivot noktası değiştirme
+# <a name="how-to-modify-the-pivot-point-of-a-3d-model"></a>Nasıl yapılır: 3B modelin pivot noktasını değiştirme
 
-Bu makalede Model Düzenleyicisinde değiştirmek için nasıl kullanılacağı gösterilmektedir *pivot noktası* 3D model. Pivot noktası, nesne döndürme ve ölçeklendirme için matematiksel merkezini tanımlar alanda noktasıdır.
+Bu makalede değiştirmek için Model Düzenleyicisi'ni kullanmayı gösteren *pivot noktası* 3B modeli. Pivot noktası matematik nesnenin döndürme ve ölçeklendirme merkezini tanımlayan alanında noktasıdır.
 
-## <a name="modify-the-pivot-point-of-a-3d-model"></a>Pivot noktası 3D model değiştirme
+## <a name="modify-the-pivot-point-of-a-3d-model"></a>3B modelin pivot noktasını değiştirme
 
-Pivot noktası değiştirerek 3D model kökeni tanımlayabilirsiniz.
+Kaynak 3B modelin pivot noktası değiştirerek tanımlayabilirsiniz.
 
-Olduğundan emin olun **özellikleri** penceresi ve **araç** görüntülenir.
+Emin olun **özellikleri** penceresi ve **araç kutusu** görüntülenir.
 
-1.  Başlangıç bölümünde açıklanan bir gibi varolan bir 3B modeli [nasıl yapılır: temel bir 3B Model oluşturmak](../designers/how-to-create-a-basic-3-d-model.md).
+1.  Başlangıç makalesinde bir gibi mevcut bir 3B model ile [nasıl yapılır: temel 3B model oluşturma](../designers/how-to-create-a-basic-3-d-model.md).
 
-2.  Pivot modu girin. Üzerinde **Model Düzenleyicisinde modu** araç, seçin **Özet modu** düğmesi Özet modunu etkinleştirin. Geçici bir kutu görünür **Özet modu** Model Düzenleyicisinde şimdi Özet modunda olduğunu belirtmek için düğmesi. Pivot modunda pivot noktası world alanı nesnesinde yapısı yerine nesnesinin çevirisi gibi işlemleri etkiler.
+2.  Pivot modu girin. Üzerinde **Model Düzenleyicisi modu** araç seçin **Pivot modu** pivot modunu etkinleştirmek için düğme. Bir kutu çevresinde görünen **Pivot modu** Model Düzenleyicisi artık pivot modunda olduğunu belirtmek için düğme. Pivot modu, dünya alanındaki nesne yapısını yerine nesnenin pivot noktası çeviri gibi işlemleri etkiler.
 
-3.  Pivot noktası nesnesinin değiştirin. İçinde **seçin** modu, nesneyi seçin ve ardından **modeli Görüntüleyicisi** araç seçin **çevir** aracı. Pivot noktası temsil eden bir kutusu tasarım yüzeyine görüntülenir. Pivot noktası nesnesinin değiştirmek için kutunun taşıyın.
+3.  Nesnenin pivot noktasını değiştirme. İçinde **seçin** modu, nesneyi seçin ve ardından **Model Görüntüleyici** araç seçin **çevir** aracı. Pivot noktasını temsil eden bir kutu tasarım yüzeyinde görünür. Nesnenin pivot noktasını değiştirme için kutusunu taşıyın.
 
-     Kutunun taşıyarak, tüm üç boyutta pivot noktası taşıyabilirsiniz. Pivot noktası bir eksen boyunca çevirmek için bu eksen için karşılık gelen oku taşıyın. Çeviri tarafından etkilenen eksen göstermek üzere sarı bir renk için okları ve kutusunu değiştirin.
+     Kutunun taşıyarak, tüm üç farklı boyutta pivot noktasını taşıyabilirsiniz. Pivot noktası bir ekseni çevirmek için bu eksen için karşılık gelen oku taşıyın. Çeviri tarafından etkilenen eksen göstermek üzere bir sarı renk kutusu ve oklar değiştirin.
 
      Pivot noktası kullanarak da belirtebilirsiniz **Özet çeviri** özelliğinde **özellikleri** penceresi.
 
     > [!TIP]
-    > Nesne döndürerek yeni pivot noktası etkisini görüntüleyebilirsiniz. Döndürmek için kullanın **Döndür** aracı veya değiştirme **döndürme** özelliği.
+    > Yeni pivot noktası etkisini nesnesi döndürerek görüntüleyebilirsiniz. Döndürmek için kullanın **Döndür** aracı veya değiştirme **döndürme** özelliği.
 
-Değiştirilen pivot noktası olan bir model şöyledir:
+Değiştirilen pivot noktası olan bir model şu şekildedir:
 
-![Değiştirilen pivot noktası olan bir ev modelinin](../designers/media/digit-modified-model.png "basamaklı değiştiren modeli")
+![Değiştirilen pivot noktası olan bir ev modeli](../designers/media/digit-modified-model.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Nasıl yapılır: temel bir 3B modeli oluşturma](../designers/how-to-create-a-basic-3-d-model.md)
-- [Model Düzenleyicisi](../designers/model-editor.md)
+- [Nasıl yapılır: Temel 3B model oluşturma](../designers/how-to-create-a-basic-3-d-model.md)
+- [Model düzenleyicisi](../designers/model-editor.md)

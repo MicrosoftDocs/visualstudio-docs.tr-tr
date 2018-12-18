@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1f56f9b2ffcb09ea8399b6d949cc781f5a99e7c2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b2f32c90adf1732cac1542935a8a6ce2da983c35
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500650"
 ---
-# <a name="customdatasignature-element-visual-studio-templates"></a>CustomDataSignature Öğesi (Visual Studio Şablonları)
-Özel verileri bulmak için metin imza belirtir.  
+# <a name="customdatasignature-element-visual-studio-templates"></a>CustomDataSignature öğesi (Visual Studio şablonları)
+Özel veri bulunacak metin imza belirtir.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -33,29 +34,29 @@ ms.lasthandoff: 04/16/2018
 <CustomDataSignature>"string"</CustomDataSignature>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve onu ya da nasıl görüntüleneceğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve ya da nasıl görüntüleneceğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Özel verileri bulmak için gerekli metin imzası olan bir dize metindir.  
+ Metin özel verileri bulmak için gerekli olan metin imzası olan bir dizedir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  `CustomDataSignature` İsteğe bağlı bir öğedir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

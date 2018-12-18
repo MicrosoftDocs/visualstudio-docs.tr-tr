@@ -15,32 +15,33 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8dd2cc4409dbdb7650454715e133fd76dda5b780
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 49c64928e10f534c8bcbdfdb1a573edb09570c7e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49879161"
 ---
 # <a name="expression-evaluator"></a>İfade değerlendirici
-İfade değerlendiricileri (EE) IDE kesme modunda olduğunda kullanıcı tarafından görüntülenmesine izin vermeden ayrıştırma ve çalışma zamanında değişkenleri ve ifadeler değerlendirmek için bir dil söz dizimi inceleyin.  
+İfade değerlendiricilerini (EE), bunları IDE kesme modundayken, kullanıcı tarafından görüntülenmesine izin verme ayrıştırılamadı ve çalışma zamanında değişkenleri ve ifadeleri değerlendirin dilinin sözdizimi inceleyin.  
   
-## <a name="using-expression-evaluators"></a>İfade Değerlendiricileri kullanma  
- İfadeler kullanarak oluşturulur [ParseText](../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md) şekilde yöntemi:  
+## <a name="use-expression-evaluators"></a>İfade değerlendiricilerini kullan  
+ İfadeleri kullanarak oluşturulan [ParseText](../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md) yöntemini aşağıdaki gibi:  
   
-1.  Hata ayıklama altyapısı (DE) uygulayan [IDebugExpressionContext2](../../extensibility/debugger/reference/idebugexpressioncontext2.md) arabirimi.  
+1. Hata ayıklama altyapısı (DE) uygulayan [IDebugExpressionContext2](../../extensibility/debugger/reference/idebugexpressioncontext2.md) arabirimi.  
   
-2.  Hata ayıklama paketini alır bir `IDebugExpressionContext2` nesnesinin bir [IDebugStackFrame2](../../extensibility/debugger/reference/idebugstackframe2.md) arabirimi ve çağrıları `IDebugStackFrame2::ParseText` yöntemi elde etmek üzere bir [IDebugExpression2](../../extensibility/debugger/reference/idebugexpression2.md) nesnesi.  
+2. Hata ayıklama paketi alır bir `IDebugExpressionContext2` nesnesinden bir [IDebugStackFrame2](../../extensibility/debugger/reference/idebugstackframe2.md) arabirimi ve çağrıları `IDebugStackFrame2::ParseText` almak için yöntemi bir [IDebugExpression2](../../extensibility/debugger/reference/idebugexpression2.md) nesne.  
   
-3.  Hata ayıklama paket çağrıları [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) yöntemi veya [EvaluateAsync](../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) ifadesinin değerini almak için yöntemi. `IDebugExpression2::EvaluateAsync` Komut/hemen penceresinden olarak adlandırılır. Diğer tüm kullanıcı Arabirimi bileşenlerini çağrı `IDebugExpression2::EvaluateSync`.  
+3. Hata ayıklama paketi çağrıları [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) yöntemi veya [EvaluateAsync](../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) ifadenin değerini almak için yöntemi. `IDebugExpression2::EvaluateAsync` Komut/hemen penceresinden çağrılır. Diğer tüm kullanıcı Arabirimi bileşenleri çağırma `IDebugExpression2::EvaluateSync`.  
   
-4.  İfade değerlendirme sonucu bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) adını, türünü ve ifade değerlendirme sonucu değerini içeren nesne.  
+4. İfade değerlendirmesinin sonucu olan bir [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) adı, tür ve ifade değerlendirme sonucu değerini içeren bir nesne.  
   
- İfade değerlendirme sırasında EE simgesi sağlayıcısı bileşeninden bilgileri gerektirir. Sembol sağlayıcı tanımlama ve ayrıştırılmış ifade anlamak için kullanılan simgesel bilgileri sağlar.  
+   İfade değerlendirme sırasında EE sembol sağlayıcısı bileşenini bilgileri gerektirir. Sembol sağlayıcısı ayrıştırılmış ifade anlama ve tanımlamak için kullanılan bir sembolik bilgi sağlar.  
   
- Zaman uyumsuz ifade değerlendirme tamamlandığında, zaman uyumsuz bir olay tarafından oturumu hata ayıklama Yöneticisi'ni (SDM) üzerinden DE IDE ifade değerlendirme tamamlandığını bildirmek için gönderilir. Zaman uyumlu ifade değerlendirme tamamlandığında değerlendirme sonucu için çağrısından döndürülen `IDebugExpression2::EvaluateSync` yöntemi.  
+   Zaman uyumsuz bir ifade değerlendirme tamamlandıktan sonra zaman uyumsuz bir olay tarafından oturum hata ayıklama Yöneticisi (SDM) üzerinden DE IDE ifade değerlendirme tamamlandıktan bildirim gönderilir. Ve değerlendirme sonucu ardından çağrısından döndürülen `IDebugExpression2::EvaluateSync` yöntemi.  
   
-## <a name="implementation-notes"></a>Uygulama Notları  
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] Hata ayıklama motorları beklediğiniz ortak dil çalışma zamanı (CLR) arabirimleri kullanarak ifade değerlendiricisi ile iletişim kurabilecek şekilde. Sonuç olarak, bir ifade değerlendiricisi gerçekleştiğine ile [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama motorları CLR desteklemesi gerekir (hata ayıklama arabirimleri tüm CLR tam bir listesi yer debugref.doc içinde bulunabilir, [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)]).  
+## <a name="implementation-notes"></a>Uygulama notları  
+ [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] Hata ayıklama motorlarını beklediğiniz ortak dil çalışma zamanı (CLR) arabirimlerini kullanarak ifade değerlendiricisi ile bahsedeceğiz. Sonuç olarak, bir ifade değerlendiricisi çalıştığını ile [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama motorlarını CLR desteklemesi gerekir (tüm CLR hata ayıklama arabirimleri tam listesi parçası olan debugref.doc içinde bulunabilir, [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)]).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata Ayıklayıcı Bileşenleri](../../extensibility/debugger/debugger-components.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata ayıklayıcı bileşenleri](../../extensibility/debugger/debugger-components.md)

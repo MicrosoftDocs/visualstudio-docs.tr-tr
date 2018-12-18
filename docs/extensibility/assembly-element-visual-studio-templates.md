@@ -16,20 +16,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 97e6209fdf446d88ed79ef741c3584b2bc4f5602
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 195faf23ecb2fca019b4948b3150ab6f9c00f5ec
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39155470"
 ---
-# <a name="assembly-element-visual-studio-templates"></a>Assembly Öğesi (Visual Studio Şablonları)
-Bu derleme başvurusu projelerine ekleme için şablonu kullanan bir derleme hakkındaki bilgileri belirtir.  
+# <a name="assembly-element-visual-studio-templates"></a>Assembly öğesi (Visual Studio şablonları)
+Projelere derlemeye bir başvuru eklemek için şablonu kullanan bir derlemeyle ilgili bilgileri belirtir.  
   
  \<VSTemplate >  
  \<TemplateContent >  
- \<Başvuruları >  
  \<Başvuru >  
- \<derleme >  
+ \<Başvuru >  
+ \<Derleme >  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,25 +38,25 @@ Bu derleme başvurusu projelerine ekleme için şablonu kullanan bir derleme hak
 <Assembly> AssemblyName </Assembly>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
 |[Başvuru](../extensibility/reference-element-visual-studio-templates.md)|Öğe bir projeye eklendiğinde eklemek için derleme başvurusu belirtir.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Bu metin öğe şablonu örneği oluşturulduğunda bir projeye eklemek için derlemeyi belirtir. Bu derleme adı aşağıdaki yollardan birinde belirtilmelidir:  
+ Bu metin, öğe şablonu örneği oluşturulduğunda bir projeye Eklenecek derlemeyi belirtir. Bu derleme adı aşağıdaki yollardan birinde belirtilmelidir:  
   
 -   Tam derleme adı. Örneğin:  
   
@@ -72,12 +73,12 @@ Bu derleme başvurusu projelerine ekleme için şablonu kullanan bir derleme hak
     ```  
   
 ## <a name="remarks"></a>Açıklamalar  
- `Assembly` gerekli bir alt öğesidir `Reference`.  
+ `Assembly` gerekli alt öğesi olan `Reference`.  
   
- `Reference`, `References,` Ve `Assembly` öğeleri sahip .vstemplate dosyaları yalnızca kullanılabilir bir `Type` öznitelik değerini `Item`.  
+ `Reference`, `References,` Ve `Assembly` öğeleri yalnızca kullanılabilir *.vstemplate* sahip dosyalar bir `Type` öznitelik değerini `Item`.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek gösterilmektedir `TemplateContent` bir öğe şablonu öğesidir. Bu XML System.dll ve System.Data.dll derleme başvurularını ekler.  
+ Aşağıdaki örnekte gösterilmiştir `TemplateContent` öğe şablonu öğesidir. Bu XML başvuruları ekler *System.dll* ve *System.Data.dll* derlemeler.  
   
 ```  
 <TemplateContent>  
@@ -97,6 +98,6 @@ Bu derleme başvurusu projelerine ekleme için şablonu kullanan bir derleme hak
 </TemplateContent>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

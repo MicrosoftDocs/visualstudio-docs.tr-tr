@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d9a6249506356f586a2e00d2b2c2bf73eb0283c0
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 23fb08303840c8d90644a292cac8832e29641246
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49863743"
 ---
 # <a name="idiasymbolgetvalue"></a>IDiaSymbol::get_value
 Bir sabit değerini alır.  
@@ -33,16 +34,16 @@ HRESULT get_value (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [içinde out] A `VARIANT` bir sabit değeri girilir nesnesi.  
+ [out içinde] A `VARIANT` nesnesini bir sabitin değeriyle doldurulur.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Sağlanan değişken bu yönteme geçirilen önce başlatılması gerekir. Daha fazla bilgi için bkz.  
+ Bu yönteme geçirilmeden önce sağlanan değişken başlatılmalıdır. Daha fazla bilgi için örneğe bakın.  
   
 ## <a name="example"></a>Örnek  
   

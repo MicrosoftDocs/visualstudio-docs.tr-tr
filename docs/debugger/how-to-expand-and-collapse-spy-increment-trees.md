@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31473644"
 ---
 # <a name="how-to-expand-and-collapse-spy-trees"></a>Nasıl yapılır: Spy++ Ağaçlarını Genişletme ve Daraltma.
 Genişletme ve iki yöntemi kullanarak Windows, işlemleri ve iş parçacıklarını görünümleri daraltma: penceresinde veya kullanarak simgeleri tıklayarak **ağaç** menüsü. + Ve - simgeleri ağacında Visual C++ proje penceresinde yaptığınız gibi davranacak.  

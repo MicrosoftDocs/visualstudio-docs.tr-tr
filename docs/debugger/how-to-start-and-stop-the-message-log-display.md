@@ -19,6 +19,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31481080"
 ---
 # <a name="how-to-start-and-stop-the-message-log-display"></a>Nasıl yapılır: İleti Günlüğü Görüntülemeyi Başlatma ve Durdurma
 Zaman bir [iletiler görünümünü](../debugger/messages-view.md) penceredir etkin bir **günlüğü Başlat** veya **Günlüğü Durdur** seçim görünür Spy ++ üzerinde **iletileri** menüsünde ve karşılık gelen **günlüğü Başlat** veya **Günlüğü Durdur** araç çubuğu düğmesi etkin hale gelir.  

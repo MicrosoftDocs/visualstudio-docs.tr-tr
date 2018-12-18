@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31120042"
 ---
 # <a name="idebugportevents2"></a>IDebugPortEvents2
 Bu arabirim, işlem ve program oluşturma ve yok etme belirli bir bağlantı noktası dinleyicisi (genellikle oturum hata ayıklama Yöneticisi [SDM] veya bir hata ayıklama altyapısı) bildirir. Bu bilgiler bağlantı noktası üzerinde çalışan programları ve işlemleri gerçek zamanlı bir görünümünü sunmak için kullanılabilir.  

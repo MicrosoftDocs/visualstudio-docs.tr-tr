@@ -1,0 +1,62 @@
+---
+title: Kimliğe göre performans kuralları | Microsoft Docs
+ms.custom: ''
+ms.date: 11/15/2016
+ms.prod: visual-studio-dev14
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- vs-ide-debug
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: 9a1c934c-4798-4df9-a8ef-eb17ef06b6a2
+caps.latest.revision: 14
+author: MikeJo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b78e586bdc2859364097fc03bfe4a667a481680e
+ms.sourcegitcommit: af428c7ccd007e668ec0dd8697c88fc5d8bca1e2
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51737800"
+---
+# <a name="performance-rules-by-id"></a>Kimliğe Göre Performans Kuralları
+[!INCLUDE[vs2017banner](../includes/vs2017banner.md)]
+
+Uyarı|Açıklama|  
+|-------------|-----------------|  
+|[DA0001: Birleştirmeler için StringBuilder kullanın](../profiling/da0001-use-stringbuilder-for-concatenations.md)|System.String.Concat çağrıları, profil oluşturma verilerinin önemli bir kısmı aynıdır. Kullanmayı <xref:System.Text.StringBuilder> birden çok kesimi dizeleri oluşturmak için sınıf.|  
+|[DA0002: VSPerfCorProf.dll eksik](../profiling/da0002-vsperfcorprof-dll-is-missing.md)|Profil Oluşturucu, profil oluşturma çalışması süresince VSPerfCorProf.dll bulunamadı. Profil Oluşturucu veri koleksiyonu için komut satırı araçları gerekli ortam değişkenlerini başlatmak için VSPerfCLREnv.cmd Aracı'nı kullanarak olmadan kullanıldığında, bu uyarı oluşur.|  
+|[DA0003: Pek çok çekirdek örneği](../profiling/da0003-many-kernel-samples.md)|Uygulama için toplanan çağrı yığını örnekleri önemli bir kısmı çekirdek modunda yürütülüyor. Farklı bir profil oluşturma yöntemini kullanarak uygulamanızın profilini oluşturmanız göz önünde bulundurun.|  
+|[DA0004: Yüksek işlemci kullanımı](../profiling/da0004-high-processor-usage.md)|İşlemci (CPU) kullanımı, profil oluşturma Araçlar yöntemini kullanarak toplanan veriyi önemli ölçüde yüksek. Örnekleme profili oluşturma yöntemi bir CPU profili oluşturma uygulama bağlı kullanmayı düşünün.|  
+|[DA0005: Sık kullanılan GC2 koleksiyonları](../profiling/da0005-frequent-gc2-collections.md)|Çok sayıda .NET bellek nesneleri nesil 2 çöp toplamada kazanılır.|  
+|[DA0006: Değer türleri için Eşittir()'lerin üzerine yaz](../profiling/da0006-override-equals-parens-for-value-types.md)|Profil oluşturma verilerinin önemli bir kısmı çağrılarıdır Equals yöntemini veya bir genel değer türü eşitlik işleçleri. Daha verimli bir yöntem uygulamayı düşünün.|  
+|[DA0007: Denetim akışı için özel durumlar kullanmaktan kaçının](../profiling/da0007-avoid-using-exceptions-for-control-flow.md)|Yüksek oranda .NET Framework özel durum işleyicileri profil oluşturma verileri adı veriliyordu. Oluşan özel durumların sayısını azaltmak için başka bir denetim akışı mantığı kullanmayı düşünün.|  
+|[DA0008: Toplanan örnek az](../profiling/da0008-few-samples-collected.md)|Yalnızca birkaç örnek içinde profil oluşturma çalıştırmasını toplanmadı. Uzun bir veya daha hızlı çalışmasını örnekleme hızı daha geçerli sonuçlar için göz önünde bulundurun.|  
+|[DA0009: JIT yüksek % zaman](http://msdn.microsoft.com/en-us/b60c1767-515c-41d9-81c2-c70d0b7024fd)|Uygulama yürütme süresi önemli bir yüzdesinde yalnızca zamanında (JIT) derleyicinin geçen süre.|  
+|[DA0010: Pahalı GetHashCode](../profiling/da0010-expensive-gethashcode.md)|Profil oluşturma verilerinin önemli bir kısmı GetHashCode metot türü çağrılarıdır veya yöntemi bellek ayırır.|  
+|[DA0011: Pahalı CompareTo](../profiling/da0011-expensive-compareto.md)|CompareTo Yöntemi türü, pahalıdır veya bellek ayırır.|  
+|[DA0012: Önemli miktarda Yansıma](../profiling/da0012-significant-amount-of-reflection.md)|System.Reflection yöntemleri InvokeMember ve GetMember gibi veya türü yöntemleri MemberInvoke gibi profil oluşturma verilerinin önemli bir kısmı çağrılarıdır. Mümkün olduğunda yöntemlerine bağımlı derlemelerin erken bağlama bu yöntemler yerine göz önünde bulundurun.|  
+|[DA0013: Yüksek oranda String.Split veya String.Substring kullanımı](../profiling/da0013-high-usage-of-string-split-or-string-substring.md)|System.String.Split veya System.String.Substring yöntemlere yapılan çağrılar, profil oluşturma verilerinin bir signifiicant bölümüdür. Bir dizedeki bir alt dizenin bulunup bulunmadığını test ediyorsanız System.String.IndexOf veya System.String.IndexOfAny kullanmayı düşünün.|  
+|[DA0014: Aşırı yüksek oranda diske etkin bellek sayfalaması gerçekleşiyor.](../profiling/da0014-extremely-high-rates-of-paging-active-memory-to-disk.md)|Profil oluşturma çalıştırmasını içinde toplanan sistem performans verileri, yüksek oranda diske gelen ve giden etkin bellek Sayfalaması profil oluşturma çalışması süresince oluştuğunu gösterir. Bu düzey genellikle disk belleği fiyatları, uygulama performansını ve yanıt hızını etkiler. Algoritmalar düzeltilmesi tarafından bellek ayırmaları azaltmayı göz önünde bulundurun. Uygulamanızın bellek gereksinimlerini göz önünde bulundurun gerekebilir. Daha fazla belleğe sahip bir bilgisayarda yeniden profil çalışıyor.|  
+|[DA0017: Yüksek oranda diske etkin bellek sayfalaması gerçekleşiyor.](../profiling/da0017-high-rates-of-paging-active-memory-to-disk.md)|Profil oluşturma çalıştırmasını içinde toplanan sistem performans verileri, yüksek oranda bir disk gelen ve giden etkin bellek Sayfalaması profil oluşturma çalışması süresince oluştuğunu gösterir. Bu düzey genellikle disk belleği fiyatları, uygulama performansını ve yanıt hızını etkiler. Algoritmalar düzeltilmesi tarafından bellek ayırmaları azaltmayı göz önünde bulundurun. Uygulamanızın bellek gereksinimlerini göz önünde bulundurun gerekebilir. Daha fazla belleğe sahip bir bilgisayarda yeniden profil çalışıyor.|  
+|[DA0018: 32 bitlik Uygulama işlem tarafından yönetilen bellek sınırlarında çalışıyor](../profiling/da0018-32-bit-application-running-at-process-managed-memory-limits.md)|Profil oluşturma çalışması sırasında toplanan sistem verilerini, .NET Framework bellek yığınlardaki yönetilen yığınlar için 32-bit işlem içinde büyüyebilir en büyük boyutu yaklaşıldığında gösterir. Profilli işlemin olan etkin olduğu sırada yığınlar değerini gözlemlenen en yüksek değer bildirdi. Uygulama tarafından yönetilen kaynaklarının kullanımını en iyi duruma getirme göz önünde bulundurun.|  
+|[DA0021: Yüksek oranda Gen 1 çöp koleksiyonları](../profiling/da0021-high-rate-of-gen-1-garbage-collections.md)|Bellek for.NET Framework nesneleri önemli bir kısmı, 1. nesil çöp toplama için nesil 0 veri toplama karşılaştırıldığında iadesi profil oluşturma sırasında toplanan sistem performans verilerini gösterir.|  
+|[DA0022: Yüksek oranda Gen 2 çöp koleksiyonları](../profiling/da0022-high-rate-of-gen-2-garbage-collections.md)|Bellek for.NET Framework nesneleri önemli bir kısmı karşılaştırıldığında nesil 0 çöp toplama ve kuşak 1 çöp koleksiyonları 2. iadesi profil oluşturma sırasında toplanan sistem performans verilerini gösterir.|  
+|[DA0023: Yüksek GC CPU süresi](../profiling/da0023-high-gc-cpu-time.md)|Profil oluşturma sırasında toplanan sistem performansı verilerini toplam uygulama işleme süresi ile karşılaştırıldığında, çöp toplamaya harcanan süreyi önemli olduğunu gösterir.|  
+|[DA0024: Aşırı GC CPU Süresi](../profiling/da0024-excessive-gc-cpu-time.md)|Profil oluşturma sırasında toplanan sistem performansı verilerini toplam uygulama işleme süresi ile karşılaştırıldığında, çöp toplamaya harcanan süreyi aşırı yüksek olduğunu gösterir.|  
+|[DA0026: Aşırı çekirdek CPU süresi işleme](../profiling/da0026-excessive-kernel-cpu-time-processing.md)|Çekirdek modunda yürütülen oranda CPU süresi, kullanıcı modunda harcanan süreyi aştı. Yeniden profil oluşturmayı hem de örnekleme yüksek çekirdek modu yürütme sürelerini nedenini belirlemek için sistem çağrıları (syscalls) sayısını göz önünde bulundurun.|  
+|[DA0029: Desteklenmeyen CLR Sürümü](../profiling/da0029-unsupported-clr-version.md)|.NET Framework'te profil oluşturma araçları tarafından desteklenmeyen bir sürüm 1.1 kullanan bir uygulama profili çalışıyorsunuz.|  
+|[DA0030: Veritabanı projeleri için Katman Etkileşim ölçümlerini topla](../profiling/da0030-gather-tier-interaction-measurements-for-database-projects.md)|Çağrılar <xref:System.Data> yöntemlerdir profil oluşturma verilerinin önemli bir kısmı ve profil oluşturma çalışması katman etkileşim verileri toplanan değil. Katman etkileşim verileri ekleme ve yeniden profil oluşturmayı göz önünde bulundurun.|  
+|[DA0038: Yüksek Oranda Kilit çakışmaları](../profiling/da0038-high-rate-of-lock-contentions.md)|Toplanan sistem performansı verilerini profil oluşturma verileriyle birlikte önemli ölçüde yüksek oranda kilit çakışması uygulama yürütme sırasında oluştuğunu gösterir. Çekişme nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak yeniden profil oluşturmayı göz önünde bulundurun.|  
+|[DA0039: Çok Yüksek Oranda Kilit çakışmaları](../profiling/da0039-very-high-rate-of-lock-contentions.md)|Toplanan sistem performansı verilerini profil oluşturma verileriyle birlikte bir aşırı yüksek oranda kilit çakışması uygulama yürütme sırasında oluştuğunu gösterir. Çakışma nedenini bulmak için eşzamanlılık profili oluşturma yöntemi kullanarak yeniden profil oluşturmayı göz önünde bulundurun.|  
+|[DA0501: İşlemin ortalama CPU kullanımının profili oluşturuluyor.](../profiling/da0501-average-cpu-consumption-by-the-process-being-profiled.md)|Bu ileti bir işlemci yönergeleri uygulamadan çalıştırmakla meşgul olduğu sürenin yüzdesini bildirir. Bildirilen değer profil oluşturulan işlem etkin olduğu tüm ölçüm aralıklarında bir ortalamadır. Değeri, birden çok işlemcili bir makinede % 100'den daha büyük olabilir.|  
+|[DA0502: İşlemin maksimum CPU kullanımının profili oluşturuluyor](../profiling/da0502-maximum-cpu-consumption-by-the-process-being-profiled.md)|Bu ileti, en yüksek işlemci yönergeleri uygulamadan çalıştırmakla meşgul olduğu süre yüzdesi bildirir. Profil oluşturulan işlem etkin olduğu tüm ölçüm aralıklarında arasında bildirilen en yüksek değeri bildirilen değerdir. Yüzde, birden çok işlemcili bir makinede % 100'den daha büyük olabilir.|  
+|[DA0503: İşlem için Bayt Cinsinden Ortalama Çalışma Kümesinin profili oluşturuluyor](../profiling/da0503-average-working-set-in-bytes-for-the-process-being-profiled.md)|Bu ileti, ortalama bayt (çalışma kümesi) işlemi şu anda kullandığı fiziksel bellek miktarını bildirir. İşlem çalışma kümesi, işlemin adres alanından şu anda fiziksel bellekte bulunan sayfaları temsil eder.|  
+|[DA0504: İşlem için izin verilen Bayt Cinsinden En Büyük Çalışma Kümesinin profili oluşturuluyor](../profiling/da0504-maximum-working-set-in-bytes-for-the-process-being-profiled.md)|Bu ileti, en fazla bayt cinsinden işlem şu anda kullandığı fiziksel bellek miktarını bildirir. İşlem çalışma kümesi, işlemin adres alanından şu anda fiziksel bellekte bulunan sayfaları temsil eder. Bu kural, profil oluşturma etkinken işlem çalışma kümesi için maksimum değeri bildirir.|  
+|[DA0505: İşlem için izin verilen Ortalama Özel Bayt Sayısının profili oluşturuluyor](../profiling/da0505-average-private-bytes-allocated-for-the-process-being-profiled.md)|Bu ileti, ortalama bayt (özel baytlar) işlem ayrılmış bir sanal bellek miktarını bildirir. Özel baytlar yalnızca işlem içinde çalışan iş parçacığı tarafından erişilebilir bir işlem tarafından ayrılan sanal bellek konumları temsil eder.|  
+|[DA0506: İşlem için izin verilen Maksimum Özel Bayt Sayısının profili oluşturuluyor](../profiling/da0506-maximum-private-bytes-allocated-for-the-process-being-profiled.md)|Bu ileti, en fazla bayt (özel baytlar) işlem ayrılmış bir sanal bellek miktarını bildirir. Özel baytlar yalnızca işlem içinde çalışan iş parçacığı tarafından erişilebilir bir işlem tarafından ayrılan sanal bellek konumları temsil eder.|
+
+
+

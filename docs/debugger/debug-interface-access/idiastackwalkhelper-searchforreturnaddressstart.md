@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5b92068c935c90e6cfe278b5f07a995c941b8a89
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 016f2e3ab816b7def9aa0ef1e40ef5727063eb25
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49895775"
 ---
 # <a name="idiastackwalkhelpersearchforreturnaddressstart"></a>IDiaStackWalkHelper::searchForReturnAddressStart
-Bir dönüş adresi hiç veya neredeyse belirtilen yığını adres için belirtilen yığın çerçevesi arar.  
+Belirtilen yığın çerçevesinin dönüş adresi veya belirtilen yığın adresi yakın arar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,13 +39,13 @@ HRESULT searchForReturnAddressStart(
  [in] Bir [Idiaframedata](../../debugger/debug-interface-access/idiaframedata.md) geçerli yığın çerçevesini temsil eden nesne.  
   
  `startAddress`  
- [in] Sanal bellek adresi arama başlayacağı.  
+ [in] Bir sanal bellek adres aramaya başlanacak.  
   
  `ReturnAddress`  
- [out] Yakın işlevi dönüş adresi döndürür `startAddress`.  
+ [out] En yakın işlevi dönüş adresi döndürür `startAddress`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)   

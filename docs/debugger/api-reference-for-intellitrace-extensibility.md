@@ -1,7 +1,7 @@
 ---
 title: IntelliTrace genişletilebilirliği için API Başvurusu | Microsoft Docs
 ms.custom: ''
-ms.date: 11/04/2016
+ms.date: 11/07/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 helpviewer_keywords:
@@ -12,23 +12,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 907b47aacf7ad0d63c79f22dcf992ac042dd2e7e
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 04ac7a4947576b8c06741ac2c407c35e3663acd0
+ms.sourcegitcommit: bc43970c000f07c9cc2051f1264a9742943a9755
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51349523"
 ---
-# <a name="api-reference-for-intellitrace-extensibility"></a>IntelliTrace Genişletilebilirliği için API Başvurusu
-Bu bölümdeki bilgileri kullanarak okuyup .itrace dosyaları uygulamanızda kod çözme IntelliTrace genişletilebilirlik API'leri kullanabilirsiniz.  
+# <a name="api-reference-for-intellitrace-extensibility"></a>IntelliTrace genişletilebilirliği için API Başvurusu
+
+Bu bölümdeki bilgileri kullanarak, okuma ve uygulamanızda .itrace dosyaları kodlayıp kod çözebilirsiniz IntelliTrace genişletilebilirlik API'leri kullanabilirsiniz.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- API'ler bir ad alanında bulunan Bu IntelliTrace genişletilebilirliği  
+## <a name="in-this-section"></a>Bu bölümde
+
+Bu ad alanı, IntelliTrace genişletilebilirlik API'leri içerir:
   
--   <xref:Microsoft.VisualStudio.IntelliTrace>  
+- <xref:Microsoft.VisualStudio.IntelliTrace>  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [IntelliTrace](../debugger/intellitrace.md)  
- IntelliTrace ile hata ayıklama hakkında bilgi sağlar.  
+## <a name="related-sections"></a>İlgili bölümler
+
+[IntelliTrace](../debugger/intellitrace.md)  
+IntelliTrace ile hata ayıklama hakkında bilgi sağlar.  
   
- [MSDN kod Galerisi'nden](http://go.microsoft.com/fwlink/?LinkId=166091)  
- IntelliTrace genişletilebilirliği kullanmayı gösteren bir örnek uygulama barındırır.
+[Geliştirici kodu örnekleri](https://code.msdn.microsoft.com/)  
+IntelliTrace genişletilebilirliğin nasıl kullanılacağını gösteren bir örnek uygulama barındırır.

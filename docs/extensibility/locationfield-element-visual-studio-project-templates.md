@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0877d374317e3a7142996b012ff6abefc6b94724
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 76ed39186796b692dd6bc93ab0eaea50f217b7af
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39636291"
 ---
-# <a name="locationfield-element-visual-studio-project-templates"></a>LocationField Öğesi (Visual Studio Proje Şablonları)
-Belirtir desteklemediğini **konumu** metin kutusu **yeni proje** iletişim kutusu etkin, devre dışı veya proje şablonu için gizli.  
+# <a name="locationfield-element-visual-studio-project-templates"></a>LocationField öğesi (Visual Studio Proje şablonları)
+Belirtir olup olmadığını **konumu** metin kutusu **yeni proje** iletişim kutusu etkin, devre dışı veya gizli proje şablonu.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -34,41 +35,41 @@ Belirtir desteklemediğini **konumu** metin kutusu **yeni proje** iletişim kutu
 <LocationField> Enabled/Disabled/Hidden </LocationField>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Aşağıdaki bölümlerde öznitelik, alt öğeler ve üst öğeler açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje**.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje**.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Geçerli metin değerleri şunlardır:  
+ Geçerli bir metin değerleri şunlardır:  
   
--   `Enabled`, hangi belirtir **konumu** kutusunun **yeni proje** iletişim kutusu etkindir.  
+-   `Enabled`, hangi belirtir **konumu** kutusunun **yeni proje** iletişim kutusu etkin.  
   
--   `Disabled`, hangi belirtir **konumu** kutusunun **yeni proje** iletişim kutusu devre dışıdır.  
+-   `Disabled`, hangi belirtir **konumu** kutusunun **yeni proje** iletişim kutusu devre dışı bırakıldı.  
   
 -   `Hidden`, hangi belirtir **konumu** kutusunun **yeni proje** iletişim kutusu gizlenir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Varsayılan değer `Enabled` şeklindedir.  
   
- **Konumu** metin kutusu **yeni proje** iletişim kutusunda yeni projeler kaydedilir varsayılan dizini değiştirmek kullanıcıların sağlar.  
+ **Konumu** metin kutusu **yeni proje** iletişim kutusu yeni projeler kaydedilir varsayılan dizinini değiştirme olanağı sağlar.  
   
- Belirtilen değer `Location` temel proje sistemi destekliyorsa öğesi iletişim kutusu tarafından yalnızca dikkate.  
+ İçinde belirtilen değerle `Location` temel proje sistemi destekliyorsa öğesi iletişim kutusu tarafından yalnızca kabul.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için meta veriler gösterilmektedir bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
+ Meta veriler için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -95,6 +96,6 @@ Belirtir desteklemediğini **konumu** metin kutusu **yeni proje** iletişim kutu
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

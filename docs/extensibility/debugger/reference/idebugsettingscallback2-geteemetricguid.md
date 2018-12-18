@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 040cae9a9c5bdba36c984f4aeef33beae42a0355
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: aace68800226b5e81fdd1e0584366e6b294aac9c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49906864"
 ---
 # <a name="idebugsettingscallback2geteemetricguid"></a>IDebugSettingsCallback2::GetEEMetricGuid
-Adı verilen bir ifade değerlendiricisi ölçümü için benzersiz tanımlayıcıyı alır.  
+Bir ifade değerlendirici ölçüm adı verilen benzersiz tanımlayıcısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,7 +45,7 @@ HRESULT GetEEMetricGuid(
   
 #### <a name="parameters"></a>Parametreler  
  `guidLang`  
- [in] Programlama dili benzersiz tanımlayıcısı.  
+ [in] Programlama diline benzersiz tanımlayıcısı.  
   
  `guidVendor`  
  [in] Satıcı benzersiz tanımlayıcısı.  
@@ -56,7 +57,7 @@ HRESULT GetEEMetricGuid(
  [out] Ölçüm benzersiz tanımlayıcısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

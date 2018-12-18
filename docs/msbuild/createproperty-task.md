@@ -20,53 +20,55 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 817d888a14d20b4778b28f81811b876c6d97ad61
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c5b281a33856e1db2b45ccade79f7490cfd808ad
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49948830"
 ---
-# <a name="createproperty-task"></a>CreateProperty Görevi
-Geçirilen değerleri özellikleri doldurur. Bu, bir özellik veya dize diğerine kopyalanması için değerler sağlar.  
-  
+# <a name="createproperty-task"></a>CreateProperty görevi
+Özellikler, geçirilen değerlerle doldurur. Bu, bir özellik veya dize diğerine kopyalanması için değerler sağlar.  
+
 ## <a name="attributes"></a>Öznitelikler  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır `CreateProperty` görev.  
-  
-|Parametre|Açıklama|  
-|---------------|-----------------|  
-|`Value`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Yeni özellik kopyalamak için bir değer belirtir.|  
-|`ValueSetByTask`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Aynı değeri içeren `Value` parametresi. Yalnızca tarafından belirlenen output özelliği zorunda kalmamak istemiyorsanız bu parametreyi kullanın [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] zaman onu atlar kapsayan hedef çıkışları güncel olduğundan.|  
-  
+ Parametreleri aşağıdaki tabloda açıklanmıştır `CreateProperty` görev.  
+
+
+| Parametre | Açıklama |
+|------------------| - |
+| `Value` | İsteğe bağlı `String` çıkış parametresi.<br /><br /> Yeni özelliğe kopyalamak için bir değer belirtir. |
+| `ValueSetByTask` | İsteğe bağlı `String` çıkış parametresi.<br /><br /> Aynı değeri içeren `Value` parametresi. Belirlediği çıktı özelliği kaçınmak istiyorsanız bu parametreyi kullanın [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] zaman bunu atlar kapsayan hedef çıkışları güncel olduğundan. |
+
 ## <a name="remarks"></a>Açıklamalar  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Tasks.TaskExtension> sınıfı, kendisi <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
-  
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Tasks.TaskExtension> kendisi sınıfının devraldığı <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
+
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek kullanır `CreateProperty` oluşturmak için görev `NewFile` özellik değerlerinin birleşimini kullanarak `SourceFilename` ve `SourceFileExtension` özelliği.  
-  
+ Aşağıdaki örnekte `CreateProperty` oluşturmak için görev `NewFile` özellik değerlerinin birleşimini kullanarak `SourceFilename` ve `SourceFileExtension` özelliği.  
+
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
-  
+
     <PropertyGroup>  
         <SourceFilename>Module1</SourceFilename>  
         <SourceFileExtension>vb</SourceFileExtension>  
     </PropertyGroup>  
-  
+
     <Target Name="CreateProperties">  
-  
+
         <CreateProperty  
             Value="$(SourceFilename).$(SourceFileExtension)">  
             <Output  
                 TaskParameter="Value"  
                 PropertyName="NewFile" />  
         </CreateProperty>  
-  
+
     </Target>  
-  
+
 </Project>  
 ```  
-  
- Değeri, projenin çalıştırdıktan sonra `NewFile` özelliği `Module1.vb`.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+
+ Proje değerini çalıştırdıktan sonra `NewFile` özelliği *Module1.vb*.  
+
+## <a name="see-also"></a>Ayrıca bkz.  
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)   
  [Görevler](../msbuild/msbuild-tasks.md)

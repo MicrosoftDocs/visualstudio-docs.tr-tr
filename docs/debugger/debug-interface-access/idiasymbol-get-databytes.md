@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a1e87eb61c70f3c3be28058c2acbc39f24d919c9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 98febaa0d72071ac990cb88cec2d56845b3e9d67
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49911830"
 ---
 # <a name="idiasymbolgetdatabytes"></a>IDiaSymbol::get_dataBytes
-OEM simgesi veri baytını alır.  
+OEM sembol verileri baytını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,22 +39,22 @@ HRESULT get_dataBytes (
  [in] Verileri tutmak için arabellek boyutu.  
   
  `pcbData`  
- [out] Yazılan bayt sayısı döndürür veya `data` parametresi `NULL`, kullanılabilir bayt sayısını döndürür.  
+ [out] Yazılan bayt sayısını döndürür veya `data` parametresi `NULL`, kullanılabilir bayt sayısını döndürür.  
   
  `data[]`  
- [out] Oturum veri baytı girilir arabelleği.  
+ [out] Oturum veri baytı doldurulmuş bir arabellek.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

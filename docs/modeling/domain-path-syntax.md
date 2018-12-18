@@ -9,12 +9,14 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: a5b1cc36ba82d0713bc8a03fc8b0760af4f65164
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 984b27b65b251a1e87c72962e488fd0d4036a4d0
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34749550"
 ---
 # <a name="domain-path-syntax"></a>Etki Alanı Yolu Sözdizimi
 DSL tanımları XPath benzeri bir sözdizimi bir modelde belirli öğeleri bulmak için kullanın.
@@ -25,7 +27,7 @@ DSL tanımları XPath benzeri bir sözdizimi bir modelde belirli öğeleri bulma
 
  *RelationshipName.PropertyName/! Rolü*
 
- ![CommentReferencesSubjects başvuru ilişkisi](../modeling/media/dsl_reference.png "dsl_reference")
+ ![CommentReferencesSubjects başvuru ilişkisi](../modeling/media/dsl_reference.png)
 
  Sözdizimi ağacı modelinin erişir. Örneğin, etki alanı ilişkisinin **CommentReferencesSubjects** Yukarıdaki çizimde sahip bir **konuları** rol. Yol kesimi **/! Subjectt** yolu üzerinden erişilen öğelerde tamamlandığını belirtir **konuları** rol.
 

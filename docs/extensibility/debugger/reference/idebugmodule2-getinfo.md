@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8eb4f06899b7b3bc30453282463c9402e45c2aee
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 859a85b51e83d438ea4051e2506c2dc0696768b8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49820688"
 ---
 # <a name="idebugmodule2getinfo"></a>IDebugModule2::GetInfo
-Bu modül hakkındaki bilgileri alır.  
+Bu modül hakkında bilgi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,16 +44,16 @@ int GetInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [MODULE_INFO_FIELDS](../../../extensibility/debugger/reference/module-info-fields.md) hangi alanları olarak belirten numaralandırma `pInfo` doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [MODULE_INFO_FIELDS](../../../extensibility/debugger/reference/module-info-fields.md) hangi alanları belirten numaralandırma `pInfo` doldurulması için.  
   
  `pInfo`  
- [içinde out] A [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md) modülü açıklamasını oturum girilir yapısı.  
+ [out içinde] A [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md) modül açıklaması ile doldurulmuş yapısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md) yapısı görüntülenen modülünün adını içeren **modülleri** penceresi.  
+ [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md) yapısı görüntülenen modülünün adı içeren **modülleri** penceresi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModule2](../../../extensibility/debugger/reference/idebugmodule2.md)   

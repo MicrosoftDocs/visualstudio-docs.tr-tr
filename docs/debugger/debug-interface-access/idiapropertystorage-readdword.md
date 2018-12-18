@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7353ef9f1aca7348adf681bfe627441e409906e6
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 109d5c7c63674ac0b1b72f0b2e538e2993552e7c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49842696"
 ---
 # <a name="idiapropertystoragereaddword"></a>IDiaPropertyStorage::ReadDWORD
-Okur `DWORD` özelliği kümesindeki bir değer.  
+Okur `DWORD` değerlerde özellik kümesi.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -34,13 +35,13 @@ HRESULT ReadDWORD (
   
 #### <a name="parameters"></a>Parametreler  
  `id`  
- [in] Okunacak özellik tanımlayıcısını (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
+ [in] Okunacak özellik tanımlayıcısı (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
   
  `pValue`  
  [out] Özellik değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_INVALIDARG` özellik türü değilse `DWORD`.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_INVALIDARG` özelliği türü değilse `DWORD`.  
   
 ## <a name="remarks"></a>Açıklamalar  
  A `DWORD` Windows 32-bit işaretsiz tamsayı olarak tanımlanır.  

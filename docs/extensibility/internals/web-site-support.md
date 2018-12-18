@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31139857"
 ---
 # <a name="web-site-support"></a>Web sitesi desteği
 Bir Web sitesi proje sistemi Web projeleri oluşturan bir proje sistemidir. Web projeleri, Web uygulamaları sırayla oluşturun. Bir Web sitesi projesini kod ilişkili her Web sayfası için bir yürütülebilir dosyası oluşturur. Başka bir yürütülebilir dosya kaynak kodu dosyalarından /App_Code klasöründe oluşturulur.  

@@ -1,10 +1,9 @@
 ---
-title: Satıra Git | Microsoft Docs
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+title: Satıra Gitme
+ms.date: 05/18/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - vs.gotoline
 helpviewer_keywords:
@@ -16,19 +15,26 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 79b88ae959ef2fb4e63b30ced7c28d5c7c4a13ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bfbe70232537556bee826653d533bab8728e3d1c
+ms.sourcegitcommit: 1466ac0f49ebf7448ea4507ae3f79acb25d51d3e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/22/2018
+ms.locfileid: "34446520"
 ---
-# <a name="go-to-line"></a>Satıra Gitme
-Bu iletişim kutusu, etkin belgedeki belirli bir çizgi taşımanıza olanak sağlar. Bu iletişim kutusunu erişmek için bir belgeyi düzenlemek için açın ve sonra seçin **gitmek için** üzerinde **Düzenle** menüsü.  
-  
- Satır numarası (1 - `n`)  
- Satır sayısı, taşımak istediğiniz etkin belgede girmenize olanak sağlar. Girilen sayı 1 arasında olmalıdır ve `n`, geçerli belgede bulunan satır sayısı.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kodda yer işaretleri ayarlama](../../ide/setting-bookmarks-in-code.md)   
- [Metin bulma ve değiştirme](../../ide/finding-and-replacing-text.md)   
- [Kod yazma](../../ide/writing-code-in-the-code-and-text-editor.md)
+# <a name="go-to-line-dialog-box"></a>Satıra Git iletişim kutusu
+
+**Satıra Git** iletişim kutusu, etkin belgedeki belirli bir satıra gitme sağlar. Bu iletişim kutusunu erişmek için bir belgeyi düzenlemek için açın ve ardından **Düzenle** > **gitmek için** > **satıra Git** veya basın **Ctrl**  + **G**.
+
+![Visual Studio'da satıra Git iletişim kutusu](media/go-to-line-dialog-box.png)
+
+## <a name="line-number-1---n"></a>Satır numarası (1 - \<n >)
+
+İçinde **satır sayısı (1 - \<n >)** kutusunda, etkin belgedeki taşımak istediğiniz satır numarasını girin. Girilen sayı 1 ve son satır numarası geçerli belgede arasında olması gerekir.
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Git komutlarını kullanarak kod bulma](../../ide/go-to.md)
+- [Kodda yer işaretleri ayarlama](../../ide/setting-bookmarks-in-code.md)
+- [Metin bulma ve değiştirme](../../ide/finding-and-replacing-text.md)
+- [Kod Düzenleyicisi özellikleri](../../ide/writing-code-in-the-code-and-text-editor.md)

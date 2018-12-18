@@ -1,9 +1,9 @@
 ---
-title: Genişletilmiş nesneleri kullanarak Word'ü Otomatikleştirme | Microsoft Docs
+title: Genişletilmiş nesneleri kullanarak Word'ü otomatikleştirirken
 ms.custom: ''
 ms.date: 02/02/2017
-ms.technology:
-- office-development
+ms.technology: office-development
+ms.prod: visual-studio-dev15
 ms.topic: conceptual
 dev_langs:
 - VB
@@ -18,56 +18,57 @@ helpviewer_keywords:
 - host controls, Word
 - host controls [Office development in Visual Studio], Word
 - Word [Office development in Visual Studio], host controls
-author: TerryGLee
-ms.author: tglee
+author: John-Hart
+ms.author: johnhart
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: d639f1916799341c749164b32559b2ea3ba82428
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 85d3adc2ff156f6967d7590788c749d0343c7c0f
+ms.sourcegitcommit: 20c0991d737c540750c613c380cd4cf5bb07de51
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248156"
 ---
-# <a name="automating-word-by-using-extended-objects"></a>Genişletilmiş Nesneleri Kullanarak Word'ü Otomatikleştirme
-  Visual Studio'da Word çözümleri geliştirdiğinizde, kullanabileceğiniz *konak öğelerini* ve *konak kontrolü*Çözümlerinizdeki s. Bunlar gibi bazı yaygın olarak kullanılan nesneler Word nesne modeli (Word için birincil birlikte çalışma derlemesi tarafından sunulan başka bir deyişle, nesne modeli) genişleten nesnelerdir <xref:Microsoft.Office.Interop.Word.Document> ve <xref:Microsoft.Office.Interop.Word.ContentControl> nesneleri. Genişletilmiş nesneler esas alan Word nesneleri gibi davranır, ancak nesnelere ek olaylar ve veri bağlama özellikleri ekleyin.  
+# <a name="automate-word-by-using-extended-objects"></a>Genişletilmiş nesneleri kullanarak Word'ü otomatikleştirirken
+  Visual Studio'da Word çözümleri geliştirirken kullanabileceğiniz *konak öğelerini* ve *konak kontrolü*Çözümlerinizdeki s. Bunlar gibi Word nesne modeli (Word için birincil birlikte çalışma derlemesi tarafından sunulan diğer bir deyişle, nesne modeli) yaygın olarak kullanılan belirli nesneleri genişleten nesnelerdir <xref:Microsoft.Office.Interop.Word.Document> ve <xref:Microsoft.Office.Interop.Word.ContentControl> nesneleri. Genişletilmiş nesneler temel aldıkları Word nesneleri gibi davranırlar fakat nesnelere veri bağlama becerileri ve ek olaylar ekleyin.  
   
  [!INCLUDE[appliesto_wdalldocapp](../vsto/includes/appliesto-wdalldocapp-md.md)]  
   
- Bunlar kullanılabileceği bağlamı çözüm her tür için farklı olmasına rağmen konak denetimlerinin ve konak öğelerinin VSTO eklentileri ve belge düzeyi özelleştirmeleri kullanılabilir. Daha fazla bilgi için bkz: [konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md).  
+ Bu kullanılabilecek bağlam çözümü her tür için farklı olmasına karşın konak denetimlerinin ve konak öğelerinin VSTO eklentileri hem belge düzeyi özelleştirmeleri için de kullanılabilir. Daha fazla bilgi için [konak öğelerini ve denetimlerine genel bakış için ana bilgisayar](../vsto/host-items-and-host-controls-overview.md).  
   
-## <a name="document-host-item"></a>Belge Konak Öğesi  
- Word projeleri verin erişmenizi <xref:Microsoft.Office.Tools.Word.Document> konak öğesi. <xref:Microsoft.Office.Tools.Word.Document> Konak öğesi ana bilgisayar denetimleri ve Windows Forms denetimleri de dahil olmak üzere, diğer denetimler için kapsayıcı olarak davranır ve yüzeyinde denetimler hakkında bilgi tutar. <xref:Microsoft.Office.Tools.Word.Document> Konak öğesi de aynı üyeleri çoğunu sağlar <xref:Microsoft.Office.Interop.Word.Document> Word nesne modelindeki karşılık gelen sınıf olan sınıf.  
+## <a name="document-host-item"></a>Belge konak öğesi  
+ Word projeleri verin erişmenizi <xref:Microsoft.Office.Tools.Word.Document> konak öğesi. <xref:Microsoft.Office.Tools.Word.Document> Konak öğesi konak denetimleri ve Windows Forms denetimleri de dahil olmak üzere, diğer denetimler için kapsayıcı olarak davranır ve yüzeyinde denetimler hakkında bilgi içerir. <xref:Microsoft.Office.Tools.Word.Document> Konak öğesi de aynı üyeleri çoğunu sağlar <xref:Microsoft.Office.Interop.Word.Document> Word nesne modelinde karşılık gelen sınıf olan sınıf.  
   
- Daha fazla bilgi için bkz: [belge konak öğesi](../vsto/document-host-item.md).  
+ Daha fazla bilgi için [belge konak öğesi](../vsto/document-host-item.md).  
   
 ## <a name="word-host-controls"></a>Word konak denetimleri  
- Word için yardımcı denetimleri oluşturmak, düzenlemek ve belgeleri otomatikleştirmek birkaç konak vardır. Çoğu işlevleri, alma, sunma ve verileri koruma içerir. Bu ana bilgisayar denetimleri, olaylar ve dekiler yerel Word nesne modelinde bulunmayan veri bağlama özellikleri sağlar.  
+ Word için yardımcı denetimler oluşturmak, düzenlemek ve belgeleri otomatikleştirmek birden çok konak vardır. Çoğu işlevleriyle alma, sunmak ve veri koruma içerir. Bu konak denetimleri, olayları ve yerel Word nesne modelinde karşılıkları olmayan veri bağlama özellikleri sağlar.  
   
- Belge düzeyi projelerine tasarım zamanında belgenize herhangi bir konak kontrolü ekleyebilir veya çalışma zamanında içerik ve yer işareti denetimleri ekleyebilirsiniz. VSTO eklenti projelerinde, içerik ve yer işareti denetimleri herhangi bir açık belgeye çalışma zamanında ekleyebilirsiniz.  
+ Belge düzeyinde projelerde, tasarım zamanında belgenize herhangi bir ana bilgisayar denetimi ekleyebilirsiniz veya içerik denetimleri ve yer işareti denetimlerini çalışma zamanında ekleyebilirsiniz. VSTO eklenti projesinde herhangi bir açık belgeye çalışma zamanında içerik denetimleri ve yer işareti denetimi ekleyebilirsiniz.  
   
- Word projelerinde kullanabileceğiniz ana bilgisayar denetimleri hakkında daha fazla bilgi için aşağıdaki konulara bakın:  
+ Word projelerinde kullanabileceğiniz konak denetimleri hakkında daha fazla bilgi için aşağıdaki konulara bakın:  
   
--   [İçerik Denetimleri](../vsto/content-controls.md)  
+-   [İçerik denetimleri](../vsto/content-controls.md)  
   
--   [Yer İşareti Denetimi](../vsto/bookmark-control.md)  
+-   [Yer işareti denetimi](../vsto/bookmark-control.md)  
   
--   [XMLNode Denetimi](../vsto/xmlnode-control.md)  
+-   [XMLNode denetimi](../vsto/xmlnode-control.md)  
   
--   [XMLNodes Denetimi](../vsto/xmlnodes-control.md)  
+-   [XMLNodes denetimi](../vsto/xmlnodes-control.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: Word belgelerine içerik denetimleri ekleme](../vsto/how-to-add-content-controls-to-word-documents.md)   
  [Nasıl yapılır: Word belgelerine yer işareti denetimi ekleme](../vsto/how-to-add-bookmark-controls-to-word-documents.md)   
  [Nasıl yapılır: Word belgelerine XMLNode denetimleri ekleme](../vsto/how-to-add-xmlnode-controls-to-word-documents.md)   
  [Nasıl yapılır: Word belgelerine XMLNodes denetimleri ekleme](../vsto/how-to-add-xmlnodes-controls-to-word-documents.md)   
- [Nasıl yapılır: yer işareti denetimlerini yeniden boyutlandırma](../vsto/how-to-resize-bookmark-controls.md)   
- [İzlenecek yol: içerik denetimlerini kullanarak şablon oluşturma](../vsto/walkthrough-creating-a-template-by-using-content-controls.md)   
+ [Nasıl yapılır: Yer işareti denetimlerini yeniden boyutlandırma](../vsto/how-to-resize-bookmark-controls.md)   
+ [İzlenecek yol: İçerik denetimlerini kullanarak şablon oluşturma](../vsto/walkthrough-creating-a-template-by-using-content-controls.md)   
  [İzlenecek yol: İçerik denetimlerini özel XML bölümlerine bağlama](../vsto/walkthrough-binding-content-controls-to-custom-xml-parts.md)   
  [İzlenecek yol: Yer işaretleri için kısayol menüleri oluşturma](../vsto/walkthrough-creating-shortcut-menus-for-bookmarks.md)   
  [Word çözümleri](../vsto/word-solutions.md)   
  [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)   
  [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)   
- [VSTO Eklentilerindeki Word Belgelerini ve Excel Çalışma Kitaplarını Çalışma Zamanında Genişletme](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)  
+ [Word belgelerini ve Excel çalışma kitaplarını VSTO eklentileri çalışma zamanında genişletme](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)  
   
   

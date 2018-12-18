@@ -16,13 +16,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 251dac9f457e1103173de01f0a9522c8199a9571
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f5e86cd1318d4b0db35ce6fa0e0abd925100fe34
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34548443"
 ---
-# <a name="collecting-tier-interaction-data"></a>Katman etkileşim verileri toplama
+# <a name="collect-tier-interaction-data"></a>Katman etkileşim verileri toplama
 
 Katman etkileşim profil veritabanları ADO.NET Hizmetleri aracılığıyla iletişim çok katmanlı uygulamaların işlevlerini yürütme sürelerinin hakkında ek bilgi sağlar. Verileri yalnızca zaman uyumlu işlev çağrıları için toplanır.
 
@@ -48,4 +49,4 @@ Performans Sihirbazı bir hata nedeniyle, katman etkileşim verileri toplama se�
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Katman Etkileşimleri Görünümü](../profiling/tier-interactions-view.md)
+[Katman etkileşimleri görünümü](../profiling/tier-interactions-view.md)

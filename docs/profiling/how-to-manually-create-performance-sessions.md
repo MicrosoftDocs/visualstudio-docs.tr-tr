@@ -16,13 +16,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fbcd319ac2a2a4a1a327388c22a57d28515a2247
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d0bf92b01828764652cd75de648b1def01bb722c
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844088"
 ---
-# <a name="how-to-manually-create-performance-sessions"></a>Nasıl Yapılır: Performans Oturumlarını Elle Oluşturma
+# <a name="how-to-manually-create-performance-sessions"></a>Nasıl yapılır: performans oturumlarını elle oluşturma
 Bir performans oturumu el ile oluşturabilirsiniz. Bir proje ile açmak zorunda değilsiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Bunu yapmak için. Daha fazla bilgi için bkz: [performans oturumlarını yapılandırma](../profiling/configuring-performance-sessions.md).  
   
 ### <a name="to-manually-create-a-performance-session"></a>Performans oturum el ile oluşturmak için  
@@ -37,6 +38,6 @@ Bir performans oturumu el ile oluşturabilirsiniz. Bir proje ile açmak zorunda 
   
      Yeni bir ikili eklenir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans Gezgini](../profiling/performance-explorer.md)   
  [Başlarken](../profiling/getting-started-with-performance-tools.md)

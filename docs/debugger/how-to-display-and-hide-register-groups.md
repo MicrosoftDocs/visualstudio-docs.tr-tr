@@ -21,27 +21,30 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a06c6da95cfbdd899557f228d607d1cb06b0ecb3
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: abd617a1b787896f296976ba21f76d3eafbd13c4
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52388614"
 ---
-# <a name="how-to-display-and-hide-register-groups"></a>Nasıl Yapılır: Yazmaç Gruplarını Görüntüleme ve Gizleme
-**Kaydeder** penceredir yalnızca adres düzeyi hata ayıklama içinde etkinse kullanılabilir **seçenekleri** iletişim kutusu, **hata ayıklama** düğümü, **genel**kategorisi.  
-  
- Görünmesine için **kaydeder** penceresi yazmaçlar gruplar halinde düzenler. Sağ tıklattığınızda, **kaydeder** penceresini görüntüleme veya aşağıdaki yordamı izleyerek uygun gördüğünüz şekilde gizleme bu grupları içeren bir kısayol menüsü görürsünüz.  
-  
+# <a name="how-to-display-and-hide-register-groups-c-c-visual-basic-f"></a>Nasıl yapılır: görüntüleme ve gizleme yazmaç gruplarını (C#, C++, Visual Basic F#)
+
+**Kaydeder** pencere, yalnızca adres seviyesinde hata ayıklamayı etkin değilse kullanılabilir **seçenekleri** iletişim kutusu, **hata ayıklama** düğümünün **genel**kategorisi.
+
+Dağınıklığı, azaltmak için **kaydeder** penceresi kayıtları gruplar halinde düzenler. Sağ varsa **kaydeder** penceresinde görüntüleme ya da aşağıdaki yordamı izleyerek gördüğünüz şekilde Gizle bu grupları içeren bir kısayol menüsü göreceksiniz.
+
 > [!NOTE]
->  Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için tercih **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md).  
-  
-### <a name="to-display-or-hide-register-groups"></a>YAZMAÇ gruplarını gizleyin veya gösterin için  
-  
-1.  Sağ **kaydeder** penceresi.  
-  
-2.  Kısayol menüsünde göstermek veya gizlemek istediğiniz yazmaç gruplarını seçin.  
-  
-     Seçilemez böylece üzerinde hata ayıklama donanım tarafından desteklenmeyen yazmaç gruplarını kısayol menüsünde devre dışı bırakılır.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: yazmaçlar penceresini kullanma](../debugger/how-to-use-the-registers-window.md)
+> Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için seçin **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için [ayarlarına](../ide/environment-settings.md#reset-settings).
+
+## <a name="display-or-hide-register-groups"></a>YAZMAÇ gruplarını görüntüleme veya gizleme
+
+1.  Sağ **kaydeder** penceresi.
+
+2.  Kısayol menüsünde, göstermek veya gizlemek istediğiniz yazmaç gruplarını seçin.
+
+     Seçilemez bu nedenle üzerinde hata ayıklama donanım tarafından desteklenmeyen yazmaç gruplarını kısayol menüsünde, devre dışı bırakıldı.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Nasıl Yapılır: Yazmaçlar Penceresini Kullanma](../debugger/how-to-use-the-registers-window.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f625be9ce000f0e768d3aa9fc3bf7a205f273d27
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 96bb99d53fc88392110e10d1eabad2f23f1ba182
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49911988"
 ---
 # <a name="idiasymbolgethascastoperator"></a>IDiaSymbol::get_hasCastOperator
-Kullanıcı tanımlı veri türü tanımlanan tüm atama işleçleri sahip olup olmadığını belirten bir bayrak alır.  
+Kullanıcı tanımlı veri türü için tanımlanan tüm atama işleçleri olup olmadığını belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,19 +34,19 @@ HRESULT get_hasCastOperator (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndüren bir `TRUE` tanımlanan; cast işleçleri kullanıcı tanımlı veri türü varsa, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür bir `TRUE` Aksi halde, kullanıcı tanımlı veri türünün tanımlanan; herhangi bir tür dönüştürme işlecini varsa döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

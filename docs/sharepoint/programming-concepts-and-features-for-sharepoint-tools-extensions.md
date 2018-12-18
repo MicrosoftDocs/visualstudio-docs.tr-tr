@@ -15,30 +15,30 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 67aa5bcb83b1ab820286ad70a74cd36c101dbe86
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3347b36f64ac84082bee5c3087c035571c6a6b08
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120552"
 ---
-# <a name="programming-concepts-and-features-for-sharepoint-tools-extensions"></a>SharePoint Araç Uzantıları için Programlama Kavramları ve Özellikler
+# <a name="programming-concepts-and-features-for-sharepoint-tools-extensions"></a>SharePoint araç uzantıları için programlama kavramları ve Özellikler
   Birkaç önemli programlama kavramları ve Visual Studio'da SharePoint araçları için ilgili özellikleri vardır. Bu kavramları ve Özellikler çoğu SharePoint araç uzantıları önemli bir rol oynar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [SharePoint Nesne Modellerini Çağırma](../sharepoint/calling-into-the-sharepoint-object-models.md)  
+## <a name="in-this-section"></a>Bu bölümde
+ [SharePoint nesne modellerini çağırma](../sharepoint/calling-into-the-sharepoint-object-models.md)  
  SharePoint istemci ve SharePoint server nesnesi modellerden SharePoint araç Uzantıları'nı kullanarak karşılaştırır ve nasıl oluşturabileceğiniz konusunda bilgi sağlayan *SharePoint komutları* SharePoint sunucusu nesne modeline çağırmak için.  
   
- [SharePoint Proje Hizmetini Kullanma](../sharepoint/using-the-sharepoint-project-service.md)  
+ [SharePoint Proje hizmetini kullanma](../sharepoint/using-the-sharepoint-project-service.md)  
  SharePoint Proje hizmeti SharePoint araç uzantıları için sağlar ve uzantıları farklı türde hizmetinde alma yönergeleri sağlanır özellikleri açıklar.  
   
- [SharePoint Araç Uzantıları ile Özel Verileri İlişkilendirme](../sharepoint/associating-custom-data-with-sharepoint-tools-extensions.md)  
+ [SharePoint araç uzantıları ile özel verileri ilişkilendirme](../sharepoint/associating-custom-data-with-sharepoint-tools-extensions.md)  
  Belirli türde bir nesne SharePoint araç uzantıları ile özel verileri ilişkilendirme açıklar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [Visual Studio'da SharePoint araçları genişletme](../sharepoint/extending-the-sharepoint-tools-in-visual-studio.md)   
  [SharePoint Proje sistemini genişletme](../sharepoint/extending-the-sharepoint-project-system.md)   
  [Sunucu Gezgininde SharePoint bağlantıları düğümünü genişletme](../sharepoint/extending-the-sharepoint-connections-node-in-server-explorer.md)   
- [Visual Studio'da SharePoint araçları için hata ayıklama uzantıları](../sharepoint/debugging-extensions-for-the-sharepoint-tools-in-visual-studio.md)   
- [Visual Studio'da SharePoint Araçları için Hata Ayıklama Uzantıları](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md)  
-  
+ [Uzantıları Visual Studio'da SharePoint araçları için hata ayıklama](../sharepoint/debugging-extensions-for-the-sharepoint-tools-in-visual-studio.md)   
+ [Visual Studio'da SharePoint araçları için uzantıları dağıtma](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md)  
   

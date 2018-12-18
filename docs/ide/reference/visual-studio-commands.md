@@ -1,10 +1,9 @@
 ---
-title: Visual Studio komutları | Microsoft Docs
-ms.custom: ''
+title: Komutlar
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 helpviewer_keywords:
 - Visual Studio, commands
 - commands, Visual Studio
@@ -15,68 +14,70 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c4fc6746648e57903bd0da45bc15758b30a60801
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: da258aab0a9c4e100591bf33abff710b1cf54f53
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53063467"
 ---
 # <a name="visual-studio-commands"></a>Visual Studio Komutları
-Visual Studio komutları bir komuttan çağrılacak izin **komutu** penceresinde **hemen** penceresinde veya **Bul/komut** kutusu. Her durumda, büyüktür işareti (`>`) bir arama ya da hata ayıklama işlemi yerine bir komut izlemek için olduğunu belirtmek için kullanılır.  
-  
- Komutlar ve bunların sözdiziminde tam listesini bulabilirsiniz **klavye, ortam seçenekleri** iletişim kutusu.  
-  
- Visual Studio komutları kaçış karakteri hemen ardından karakter tam anlamıyla yerine bir denetim karakteri olarak yorumlanır anlamına gelir şapka (^) karakterdir. Bu anahtar adları dışında bir parametre veya anahtar değer düz tırnak işaretleri ("), boşluk, başında bir eğik çizgi, belirliyorsanız düzeltme işaretleri veya başka bir değişmez değer karakterler katıştırmak için kullanılabilir. Örneğin,  
-  
-```  
->Edit.Find ^^t /regex  
-```  
-  
- İç veya dış tırnak işaretleri olup bir şapka aynı çalışır. Bir şapka satırında son karakter ise, yoksayılır.  
-  
- IDE yerelleştirilmiş sürümleri komut adları IDE yerel dilini veya İngilizce girilebilir. Örneğin, ya da yazabilirsiniz `File.NewFile` veya `Fichier.NouveauFichier` aynı komutu çalıştırmak için Fransızca IDE'de.  
-  
- Birçok komut diğer adları var. Komut diğer adları listesi için bkz: [Visual Studio komut diğer adları](../../ide/reference/visual-studio-command-aliases.md).  
-  
- Aşağıdaki komutları, bağımsız değişkenler ve/veya anahtarları alın.  
-  
-|Komut adı|Açıklama|  
-|------------------|-----------------|  
-|[Varolan öğeyi Ekle](../../ide/reference/add-existing-item-command.md)|Varolan bir dosyayı geçerli çözüme ekler ve açar.|  
-|[Varolan projeyi Ekle](../../ide/reference/add-existing-project-command.md)|Varolan projeyi geçerli çözüme ekler.|  
-|[Yeni Öğe Ekle](../../ide/reference/add-new-item-command.md)|Geçerli çözüme bir .htm, .css, .txt veya çerçeve gibi yeni bir çözüm öğesi ekler ve açar.|  
-|[Diğer ad](../../ide/reference/alias-command.md)|Tam komut, tam komut ve bağımsız değişkenler için yeni bir diğer ad veya hatta başka bir diğer ad oluşturur.|  
-|[Deyimi değerlendir](../../ide/reference/evaluate-statement-command.md)|Değerlendirir ve belirli deyim görüntüler.|  
-|[Bul](../../ide/reference/find-command.md)|Bir alt kümesi üzerinde kullanılabilir seçenekleri kullanarak dosyaları arar **bulma ve değiştirme** denetim.|  
-|[Dosyalarda Bul](../../ide/reference/find-in-files-command.md)|Bir alt kümesi üzerinde kullanılabilir seçenekleri kullanarak dosyaları arar [dosyalarda Bul](../../ide/find-in-files.md).|  
-|[Git](../../ide/reference/go-to-command.md)|İmleç belirtilen satıra taşır.|  
-|[Liste çağrı yığını](../../ide/reference/list-call-stack-command.md)|Geçerli çağrı yığını görüntüler.|  
-|[Liste Ayrıştırma](../../ide/reference/list-disassembly-command.md)|Hata ayıklama işlemi başlar ve hataların nasıl işleneceğini belirtmenizi sağlar.|  
-|[Liste bellek](../../ide/reference/list-memory-command.md)|Belirtilen aralığı bellek içeriğini görüntüler.|  
-|[Liste modülleri](../../ide/reference/list-modules-command.md)|Geçerli işlem için modüllerini listeler.|  
-|[Liste kaydeder](../../ide/reference/list-registers-command.md)|Yazmaçları listesini görüntüler.|  
-|[Kaynak listesi](../../ide/reference/list-source-command.md)|Kaynak kodu belirtilen satır görüntüler.|  
-|[Liste iş parçacıkları](../../ide/reference/list-threads-command.md)|İş parçacıklarının geçerli programa görüntüler.|  
-|[Günlük komut penceresi çıktısı](../../ide/reference/log-command-window-output-command.md)|Kopya tüm giriş ve bir dosyaya komut penceresinde çıktı.|  
-|[Yeni dosya](../../ide/reference/new-file-command.md)|Yeni bir dosya oluşturur ve şu anda seçili projeye ekler.|  
-|[Dosya Aç](../../ide/reference/open-file-command.md)|Varolan bir dosyayı açar ve bir düzenleyicide belirtmenize olanak tanır.|  
-|[Proje Aç](../../ide/reference/open-project-command.md)|Varolan projeyi açar ve geçerli çözüme proje eklemenizi sağlar.|  
-|[Çözümü Aç](../../ide/reference/open-solution-command.md)|Varolan bir çözümü açar.|  
-|[Yazdırma](../../ide/reference/print-command.md)|İfade değerlendirir ve sonuçları veya belirtilen metni görüntüler.|  
-|[Hızlı Bakış Komutu](../../ide/reference/quick-watch-command.md)|Seçili ya da belirtilen metni görüntüleyen **ifade** alanını **Hızlı Bakış** iletişim kutusu.|  
-|[Değiştir](../../ide/reference/replace-command.md)|Bir alt kümesi üzerinde kullanılabilir seçenekleri kullanarak dosyaları metinde değiştirir **bulma ve değiştirme** denetim.|  
-|[Dosyalarda Değiştir](../../ide/reference/replace-in-files-command.md)|Bir alt kümesini kullanılabilir seçenekleri kullanarak dosyaları metinde değiştirir [dosyalarda Değiştir](../../ide/replace-in-files.md).|  
-|[Geçerli yığın çerçevesini Ayarla](../../ide/reference/set-current-stack-frame-command.md)|Belirli Yığın çerçevesi görüntülemenize izin verir.|  
-|[Geçerli iş parçacığının ayarlayın](../../ide/reference/set-current-thread-command.md)|Belirli bir iş parçacığı görüntülemenize izin verir.|  
-|[Sayı tabanını Ayarla](../../ide/reference/set-radix-command.md)|Görüntülemek için bayt sayısını belirler.|  
-|[Kabuk](../../ide/reference/shell-command.md)|İçinden programları başlatır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] komutu komut isteminden yürütülen gibi sorgulamanıza.|  
-|[ShowWebBrowser Komutu](../../ide/reference/showwebbrowser-command.md)|Bir Web tarayıcı penceresinde da tümleşik geliştirme ortamı (IDE) ya da dış IDE içinde belirttiğiniz URL'yi görüntüler.|  
-|[Start](../../ide/reference/start-command.md)|Hata ayıklama işlemi başlar ve hataların nasıl işleneceğini belirtmenizi sağlar.|  
-|[Yol](../../ide/reference/symbol-path-command.md)|Simgelerini aramak hata ayıklayıcı için dizinler listesinde ayarlar.|  
-|[Kesme](../../ide/reference/toggle-breakpoint-command.md)|Dosya geçerli konumda geçerli durumuna bağlı olarak açmak veya kapatmak kesme noktası etkinleştirir.|  
-|[İzle Komutu](../../ide/reference/watch-command.md)|Oluşturur ve belirtilen bir örneğini açar bir **izleme** penceresi.|  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Komut penceresi](../../ide/reference/command-window.md)   
- [Bul/komut kutusu](../../ide/find-command-box.md)   
- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)
+
+Visual Studio komutları bir komut çağırmanıza olanak tanır **komut** penceresinde **hemen** penceresinde veya **Bul/komut** kutusu. Her durumda, büyüktür işareti (`>`) bir arama veya hata ayıklama işlemi yerine bir komut takip etmek olduğunu belirtmek için kullanılır.
+
+Komutların ve sözdizimlerinin tam listesini bulabilirsiniz **klavye, ortam seçenekleri** iletişim kutusu.
+
+Visual Studio komutları için kaçış karakteri bir şapka (^) karakterdir, hemen ardından karakteri yerine birebir yorumlandığı bir denetim karakteri olarak yorumlanır anlamına gelir. Bu anahtar adları dışında bir parametre veya anahtar değerine düz tırnak ("), boşluk, önde gelen eğik çizgiler, düzeltme işaretleri veya diğer bir hazır bilgi karakterleri katıştırmak için kullanılabilir. Örneğin,
+
+```
+>Edit.Find ^^t /regex
+```
+
+İç veya dış tırnak işaretleri olup olmadığını şapka işareti aynı şekilde çalışır. Şapka işareti satırdaki son karakterse, yoksayılır.
+
+IDE yerelleştirilmiş sürümlerinde, komut adları IDE'nin kendi dilinde veya İngilizce girilebilir. Örneğin, yazabilirsiniz `File.NewFile` veya `Fichier.NouveauFichier` aynı komutu yürütmek için Fransızca IDE'de.
+
+Birçok komutun eş adları vardır. Komut diğer adları listesi için bkz. [Visual Studio komut diğer adları](../../ide/reference/visual-studio-command-aliases.md).
+
+Aşağıdaki komutları, bağımsız değişkenler ve/veya anahtarlar alır.
+
+| Komut adı | Açıklama |
+| - | - |
+| [Varolan öğeyi Ekle](../../ide/reference/add-existing-item-command.md) | Geçerli çözüme var olan bir dosya ekler ve onu açar. |
+| [Varolan Proje Ekle](../../ide/reference/add-existing-project-command.md) | Mevcut bir projeyi çözüme ekler. |
+| [Yeni Öğe Ekle](../../ide/reference/add-new-item-command.md) | Geçerli çözüme .htm, .css, .txt veya frameset gibi yeni bir çözüm öğesi ekler ve onu açar. |
+| [Diğer ad](../../ide/reference/alias-command.md) | Tam komut, tam komut ve bağımsız değişkenler için yeni bir diğer ad veya hatta başka bir diğer ad oluşturur. |
+| [Deyimi değerlendir](../../ide/reference/evaluate-statement-command.md) | Değerlendirir ve verilen deyimi görüntüler. |
+| [Bul](../../ide/reference/find-command.md) | Dosyaları bulunan seçenekler kümesini kullanarak arar **Bul ve Değiştir** denetimi. |
+| [Dosyalarda Bul](../../ide/reference/find-in-files-command.md) | Dosyaları bulunan seçenekler kümesini kullanarak arar [dosyalarda Bul](../../ide/find-in-files.md). |
+| [Git](../../ide/reference/go-to-command.md) | İmleci belirtilen satıra taşır. |
+| [Çağrı yığınını Listele](../../ide/reference/list-call-stack-command.md) | Geçerli çağrı yığınını görüntüler. |
+| [Ayrıştırılmış kodu listele](../../ide/reference/list-disassembly-command.md) | Hata ayıklama işlemini başlatır ve hataların nasıl işleneceğini belirtmenizi sağlar. |
+| [Belleği Listele](../../ide/reference/list-memory-command.md) | Belirtilen bellek aralığının içeriklerini görüntüler. |
+| [Modüllerin listesini](../../ide/reference/list-modules-command.md) | Geçerli işlem için modülleri listeler. |
+| [Yazmaçları Listele](../../ide/reference/list-registers-command.md) | Kayıtların listesini görüntüler. |
+| [Kaynağı Listele](../../ide/reference/list-source-command.md) | Belirtilen kaynak kodu satırlarını görüntüler. |
+| [İş parçacıklarını Listele](../../ide/reference/list-threads-command.md) | Geçerli programdaki iş parçacıklarının listesini görüntüler. |
+| [Günlük komut penceresi çıktısı](../../ide/reference/log-command-window-output-command.md) | Kopya, tüm giriş ve çıkışı bir dosyaya komut penceresinden. |
+| [Yeni dosya](../../ide/reference/new-file-command.md) | Yeni bir dosya oluşturur ve şu anda seçili olan projeye ekler. |
+| [Dosya Aç](../../ide/reference/open-file-command.md) | Varolan bir dosyayı açar ve bir düzenleyici belirtmenize olanak tanır. |
+| [Proje Aç](../../ide/reference/open-project-command.md) | Varolan projeyi açar ve geçerli çözüme projeyi eklemenize olanak sağlar. |
+| [Yazdırma](../../ide/reference/print-command.md) | İfadeyi değerlendirir ve sonuçları veya belirtilen metni görüntüler. |
+| [Hızlı Bakış Komutu](../../ide/reference/quick-watch-command.md) | Seçilen veya belirtilen metni görüntüler **ifade** alanını **Hızlı Bakış** iletişim kutusu. |
+| [Değiştir](../../ide/reference/replace-command.md) | Metin dosyalarında bulunan seçenekler kümesini kullanarak değiştirir **Bul ve Değiştir** denetimi. |
+| [Dosyalarda Değiştir](../../ide/reference/replace-in-files-command.md) | Metin dosyalarında bulunan seçenekler kümesini kullanarak değiştirir [dosyalarda Değiştir](../../ide/replace-in-files.md). |
+| [Geçerli yığın çerçevesini Ayarla](../../ide/reference/set-current-stack-frame-command.md) | Belirli bir yığın çerçevesini görüntülemenize olanak sağlar. |
+| [Geçerli iş parçacığı](../../ide/reference/set-current-thread-command.md) | Belirli bir iş parçacığını görüntülemenize olanak sağlar. |
+| [Tabanı Ayarla](../../ide/reference/set-radix-command.md) | Görüntülenecek bayt sayısını belirler. |
+| [Kabuk](../../ide/reference/shell-command.md) | İçinden programları başlatır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] komutu komut istemi'nden yürüttüğünü artırmadığı. |
+| [ShowWebBrowser Komutu](../../ide/reference/showwebbrowser-command.md) | Tümleşik geliştirme ortamı (IDE) veya IDE dışında içindeki bir web tarayıcı penceresinde belirttiğiniz URL'yi görüntüler. |
+| [Start](../../ide/reference/start-command.md) | Hata ayıklama işlemini başlatır ve hataların nasıl işleneceğini belirtmenizi sağlar. |
+| [Yolu](../../ide/reference/symbol-path-command.md) | Hata ayıklayıcının simge araması dizinler listesini ayarlar. |
+| [İki durumlu kesme noktası](../../ide/reference/toggle-breakpoint-command.md) | Dosyadaki geçerli konumda geçerli durumuna bağlı olarak kesme noktasını açar veya devre dışı bırakır. |
+| [İzle Komutu](../../ide/reference/watch-command.md) | Oluşturur ve belirtilen bir örneğini açar bir **Watch** penceresi. |
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Komut Penceresi](../../ide/reference/command-window.md)
+- [Bul/Komut Kutusu](../../ide/find-command-box.md)
+- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)

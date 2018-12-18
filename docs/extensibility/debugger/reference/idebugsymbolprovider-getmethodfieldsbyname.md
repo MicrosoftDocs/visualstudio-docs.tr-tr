@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 628cddc126e9617c918bf0d6f47c8fae46c09c0c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fa59d97cb95309f6a291d3c17ffee431cd596be3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822286"
 ---
 # <a name="idebugsymbolprovidergetmethodfieldsbyname"></a>IDebugSymbolProvider::GetMethodFieldsByName
-Bu yöntem temsil eden bir tam yöntemi ad alanını alır.  
+Bu yöntem, alanın temsil eden bir tam yöntem adı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,16 +48,16 @@ int GetMethodFieldsByName(
  [in] Yöntem adı.  
   
  `nameMatch`  
- [in] Türünün uyuştuğundan, örneğin, büyük küçük harfe duyarlı seçer.  
+ [in] Türü eşleşen, örneğin, büyük/küçük harfe seçer.  
   
  `ppEnum`  
- [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) bu yöntemle ilişkili alanlar için Numaralandırıcı.  
+ [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) bu yöntem ile ilişkilendirilmiş alanlar için bir numaralandırıcı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu, örneğin aşırı yüklüyse bir yöntem ile birden çok alan ilişkili olabilir.  
+ Bu, örneğin aşırı yüklüyse yöntemi birden çok alan ile ilişkilendirilebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   

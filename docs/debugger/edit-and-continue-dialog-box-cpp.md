@@ -21,16 +21,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e8ae9efb799c508c1ca086799e1ee444743a8d20
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 2c6d598605f229f306571e792c9b4dcfadfbda92
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44278303"
 ---
 # <a name="edit-and-continue-dialog-box-c"></a>Düzenle ve devam et iletişim kutusu (C++)
-Düzenle ve yerel koda yapılan değişiklikleri uygulanamadı devam edin. Bu geçici bir durum olabilir. Bazen Düzenle ve devam et, yerel kod değişikliklerini hemen uygulanamıyor ancak bunları daha sonra (örneğin, tamamlandıktan sonra şimdi yürütme yordamı geçerli çağrısı) hata ayıklama oturumu sırasında uygulayabilirsiniz. Daha fazla bilgi için bkz: [Düzenle ve devam et](../debugger/edit-and-continue.md).  
+Düzenle ve devam yerel koda yapılan değişiklikleri uygulanamadı. Bu geçici bir durum olabilir. Bazen Düzenle ve devam et yerel kod değişikliklerini hemen uygulanamaz, ancak bunları daha sonra (örneğin, tamamlandıktan sonra artık çalıştırma yordamı için geçerli çağrının) hata ayıklama oturumu sırasında uygulayabilirsiniz. Daha fazla bilgi için [Düzenle ve devam et](../debugger/edit-and-continue.md).  
   
- Hala hata ayıklarken hata düzeltme, hata ayıklamayı durdurun ve kod düzeltin veya hatayı yok sayıp ve hata ayıklama devam etmek için kodu düzenleyebilirsiniz. Düzeltme yapmadan devam ederseniz, kod değişikliklerinizin hemen uygulanmaz.  
+ Yine de hata ayıklama sırasında hatayı düzeltin, hata ayıklamayı durdurmak ve kod düzeltmesi veya hatasını görmezden Gel ve hata ayıklamaya devam etmek için kodu düzenleyebilirsiniz. Düzeltmesi yapmadan devam ederseniz, kod değişiklikleriniz hemen uygulanmaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](http://msdn.microsoft.com/Library/009d225f-ef65-463f-a146-e4c518f86103)
+ [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](https://msdn.microsoft.com/library/bcew296c.aspx)

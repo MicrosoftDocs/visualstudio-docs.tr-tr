@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31476799"
 ---
 # <a name="warning-script-debugging-disabled"></a>Uyarı: Betik Hata Ayıklaması Devre Dışı
 Komut dosyası hata ayıklaması Internet Explorer'da şu anda devre dışı  

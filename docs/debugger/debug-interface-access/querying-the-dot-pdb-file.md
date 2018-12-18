@@ -15,18 +15,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3b552300926ae0448aacd084b54934f03527f81e
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: a13f98e9d1507c0044057099d61b625e1142929e
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44282059"
 ---
 # <a name="querying-the-pdb-file"></a>.Pdb Dosyasını Sorgulama
-Program veritabanı dosyası (uzantısı .pdb) türü ve derleme ve projesi bağlanıyor boyunca toplanan simgesel hata ayıklama bilgilerini içeren bir ikili dosyadır. PDB dosyası ile C/C++ programı derleme oluşturulduğunda **/zi** veya **/zı** veya [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)], [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], veya [!INCLUDE[jsprjscript](../../debugger/debug-interface-access/includes/jsprjscript_md.md)] ile program **/debug** seçeneği. Nesne dosyaları hata ayıklama bilgisi için .pdb dosyasına başvurular içeriyor. Pdb dosyaları hakkında daha fazla bilgi için bkz: [PDB dosyalarını](http://msdn.microsoft.com/en-us/1761c84e-8c2c-4632-9649-b5f99964ed3f). DIA uygulama çeşitli simgeler, nesneleri ve yürütülebilir görüntü içindeki veri öğeleri hakkındaki ayrıntıları almak için aşağıdaki genel adımları kullanabilirsiniz.  
+Program veritabanı dosyası (.pdb uzantısına) türü ve, derleme ve bağlama proje boyunca toplanan sembolik hata ayıklama bilgisini içeren bir ikili dosyadır. Bir PDB dosyası ile C/C++ programı derleme oluşturulduğunda **/zi** veya **/zi** veya [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)], [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], veya [!INCLUDE[jsprjscript](../../debugger/debug-interface-access/includes/jsprjscript_md.md)] ile program **/debug** seçeneği. Başvuru için hata ayıklama bilgisi .pdb dosyasına nesne dosyaları içerir. Pdb dosyaları hakkında daha fazla bilgi için bkz. [PDB dosyaları](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/yd4f8bd1(v=vs.100)). DIA uygulama çeşitli simgeler, nesneleri ve veri öğeleri bir yürütülebilir görüntü içinde hakkındaki ayrıntıları almak için aşağıdaki genel adımları kullanabilirsiniz.  
   
 ### <a name="to-query-the-pdb-file"></a>.Pdb dosyasını sorgulama  
   
-1.  Bir veri kaynağı oluşturarak elde bir [Idiadatasource](../../debugger/debug-interface-access/idiadatasource.md) arabirimi.  
+1.  Oluşturarak bir veri kaynağı alma bir [Idiadatasource](../../debugger/debug-interface-access/idiadatasource.md) arabirimi.  
   
     ```C++  
     CComPtr<IDiaDataSource> pSource;  
@@ -56,7 +57,7 @@ Program veritabanı dosyası (uzantısı .pdb) türü ve derleme ve projesi bağ
     }  
     ```  
   
-3.  Çağrı [Idiadatasource::opensession](../../debugger/debug-interface-access/idiadatasource-opensession.md) açmak için bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) hata ayıklama bilgileri erişmek için.  
+3.  Çağrı [Idiadatasource::opensession](../../debugger/debug-interface-access/idiadatasource-opensession.md) açmak için bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) hata ayıklama bilgileri erişim elde etmek için.  
   
     ```C++  
     CComPtr<IDiaSession> psession;  
@@ -66,7 +67,7 @@ Program veritabanı dosyası (uzantısı .pdb) türü ve derleme ve projesi bağ
     }  
     ```  
   
-4.  Yöntemleri kullanın `IDiaSession` sorgulamak için veri kaynağındaki simgeler.  
+4.  Yöntemi kullanarak `IDiaSession` sorgulamak için veri kaynağındaki simge.  
   
     ```C++  
     CComPtr<IDiaSymbol> pglobal;  
@@ -76,7 +77,7 @@ Program veritabanı dosyası (uzantısı .pdb) türü ve derleme ve projesi bağ
     }  
     ```  
   
-5.  Kullanım `IDiaEnum*` hata ayıklama bilgileri saymak ve simgeler veya diğer öğeleri aracılığıyla taramak için arabirimleri.  
+5.  Kullanım `IDiaEnum*` arabirimleri saymak ve simgeler veya diğer öğeleri taramak için hata ayıklama bilgileri.  
   
     ```C++  
     CComPtr<IDiaEnumTables> pTables;  

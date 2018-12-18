@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6b38ef58238032530252fa487e320d1bd52d4098
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f06223ffc68ed4728f8cd9181575dac361af1bdc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849144"
 ---
 # <a name="idebugfunctionposition2getoffset"></a>IDebugFunctionPosition2::GetOffset
 Kaynak belgedeki işlevi konumunu alır.  
@@ -40,10 +41,10 @@ int GetOffset(
   
 #### <a name="parameters"></a>Parametreler  
  `pPosition`  
- [içinde out] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) işlevi konumunu belgede girilir yapısı.  
+ [out içinde] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) işlevi bir belge konumunu girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionPosition2](../../../extensibility/debugger/reference/idebugfunctionposition2.md)   

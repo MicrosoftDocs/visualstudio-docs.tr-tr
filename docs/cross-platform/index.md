@@ -1,22 +1,25 @@
 ---
 layout: LandingPage
+title: C++ ile Mobil Geliştirme
+description: Yerel C++ uygulamaları, iOS için oluşturma Visual Studio ile Android ve Windows cihazlar.
+ms.date: 10/31/2018
 author: jasongroce
-ms.author: apexprodleads
+ms.author: jasgro
 ms.topic: landing-page
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-mobile
-title: C++ belgeleri ile Mobil Geliştirme | Microsoft Docs
-description: İOS, yerel C++ uygulamaları oluşturma Visual Studio ile Android ve Windows cihazları.
 ms.workload:
 - apexprodleads
-ms.openlocfilehash: e190ad0dbe908fb1d4549023729d60db88177ea6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 59d244e4224e408c43fbcee44d103313fcfa1d1e
+ms.sourcegitcommit: 1df0ae74af03bcf0244129a29fd6bd605efc9f61
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50751043"
 ---
 # <a name="mobile-development-with-c-documentation"></a>C++ belgeleri ile Mobil Geliştirme
 
-İOS, yerel C++ uygulamaları oluşturma Visual Studio ile Android ve Windows cihazları.
+İOS, Android ve Windows için yerel C++ uygulamaları oluşturma Visual Studio ile cihazları.
 
 <ul class="panelContent cardsF">
     <li>
@@ -26,12 +29,12 @@ ms.lasthandoff: 04/16/2018
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_setup.svg" alt="">
+                            <img src="/media/common/i_setup.svg" alt="Set up Visual C++ for cross-platform mobile apps">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Platformlar arası Mobil Geliştirme için Visual C++ yüklemek</h3>
-                        <p>Platformlar arası mobil uygulamaları oluşturmak için gerekli araçları ayarlayın.</p>
+                        <h3>Platformlar arası Mobil Geliştirme için Visual C++'ı yükleme</h3>
+                        <p>Platformlar arası mobil uygulamalar oluşturmak için gereken araçları ayarlayın.</p>
                     </div>
                 </div>
             </div>
@@ -45,12 +48,12 @@ ms.lasthandoff: 04/16/2018
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_learn-about.svg" alt="">
+                            <img src="/media/common/i_learn-about.svg" alt="Learn about Visual C++ for cross-platform mobile develpment">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Platformlar arası Mobil Geliştirme için Visual C++ hakkında bilgi edinin</h3>
-                        <p>Visual C++ ile platformlar arası mobil geliştirme özetini alın.</p>
+                        <p>Visual C++ ile platformlar arası Mobil Geliştirme için genel bir bakış edinin.</p>
                     </div>
                 </div>
             </div>
@@ -64,12 +67,12 @@ ms.lasthandoff: 04/16/2018
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_xplat-code.svg" alt="">
+                            <img src="/media/common/i_xplat-code.svg" alt="Cross-platform mobile development examples">
                         </div>
                     </div>
                     <div class="cardText">
                         <h3>Platformlar arası mobil geliştirme örnekleri</h3>
-                        <p>Size örnekleri ile platformlar arası mobil geliştirme başlatıldı.</p>
+                        <p>Platformlar arası mobil geliştirme ile çalışmaya başlamanıza yardımcı olmak için örneklere bakın.</p>
                     </div>
                 </div>
             </div>
@@ -88,7 +91,7 @@ ms.lasthandoff: 04/16/2018
                 <div class="card">
                     <div class="cardText">
                         <h3><a href="/cpp/visual-cpp-in-visual-studio">Visual C++</a></h3>
-                        <p><a href="/cpp/ide/ide-and-tools-for-visual-cpp-development">Visual C++ Geliştirme Araçları ve IDE</a><p>
+                        <p><a href="/cpp/ide/ide-and-tools-for-visual-cpp-development">Visual C++ geliştirme araçları ve IDE</a><p>
                     </div>
                 </div>
             </div>

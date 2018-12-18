@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d809a5f06be6facd43265fb00e25fc08aabd1f81
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 21ceb40f54c4af0285576545efb0d228e65af493
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876080"
 ---
 # <a name="idebugdocumenttextevents2onupdatetextattributes"></a>IDebugDocumentTextEvents2::onUpdateTextAttributes
-Hata ayıklama paket metin özniteliklerini belgede güncelleştirildiğini bildirir.  
+Hata ayıklama paketi metin özniteliklerini belgede güncelleştirildiğini bildirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,13 +43,13 @@ int onUpdateTextAttributes(
   
 #### <a name="parameters"></a>Parametreler  
  `pos`  
- [in] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) metin özniteliklerini burada güncelleştirildi gösterir yapısı.  
+ [in] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) metin özniteliklerini burada güncelleştirildi gösteren yapısı.  
   
  `dwNumToUpdate`  
- [in] Metin güncelleştirildi karakter sayısını belirtir.  
+ [in] Güncelleştirilen metin karakter sayısını belirtir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentTextEvents2](../../../extensibility/debugger/reference/idebugdocumenttextevents2.md)   

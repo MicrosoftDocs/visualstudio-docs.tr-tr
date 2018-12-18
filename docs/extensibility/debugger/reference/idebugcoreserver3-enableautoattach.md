@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: bf32eb5d8771f95ec155a93d1fe1e770e0cc2d52
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e5fc3ab0767a7077860c82acefc9554ba1228cee
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49831126"
 ---
 # <a name="idebugcoreserver3enableautoattach"></a>IDebugCoreServer3::EnableAutoAttach
-Otomatik ekleme için belirtilen hata ayıklama altyapısı sağlar.  
+Belirtilen hata ayıklama altyapılarını otomatik iliştirme sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int EnableAutoAttach(
   
 #### <a name="parameters"></a>Parametreler  
  `rgguidSpecificEngines`  
- [in] Otomatik ekleme olarak işaretlemek için her hata ayıklama altyapısı GUID'lerini dizisi.  
+ [in] Her hata ayıklama altyapısı otomatik iliştirme olarak işaretlemek için GUID'lere dizisi.  
   
  `celtSpecificEngines`  
- [in] Belirtilen altyapısı sayısı `rgguidSpecificEngines`.  
+ [in] Belirtilen alt yapılarının sayısını `rgguidSpecificEngines`.  
   
  `pszStartPageUrl`  
- [in] Otomatik ekleme yapılırken kullanılacak başlangıç URL'si.  
+ [in] Otomatik-eklerken kullanılacak başlangıç URL'si.  
   
  `pbstrSessionID`  
- [out] Otomatik bağlı oturum kimliği.  
+ [out] Otomatik eklenen oturum kimliği.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde hata kodunu döndürür. Bir hata kodu `E_AUTO_ATTACH_NOT_REGISTERED`, belirten auto-attach sınıf üreticisi kaydedilmedi.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür. Bir hata kodu `E_AUTO_ATTACH_NOT_REGISTERED`, auto-attach sınıf üreteci kaydedilmemiş gösterir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Belirtilen URL ile ilişkili bir program başlatıldığında, belirtilen hata ayıklama motorları otomatik olarak başlatıldığını bağlı ve.  
+ Belirtilen URL ile ilişkili bir program başladığında, belirtilen hata ayıklama motorlarını otomatik olarak başlatıldığını bağlı ve.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)

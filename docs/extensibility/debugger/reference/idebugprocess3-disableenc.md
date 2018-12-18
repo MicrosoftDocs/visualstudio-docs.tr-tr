@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2da464c82332f6fc4f9bcd57ee8197e111e9fa0a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bc769e7386777dbf59dadbbe93b53bc9cac01ce0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875872"
 ---
 # <a name="idebugprocess3disableenc"></a>IDebugProcess3::DisableENC
-Bu yöntem açıkça devre dışı bırakır düzenleyin ve bu işlemi devam (ve tüm programları içerir). Özel bir bağlantı noktası tedarikçi her zaman döndürmelidir `E_NOTIMPL`.  
+Bu yöntemi açıkça devre dışı düzenleyin ve bu işlemi devam (ve tüm programlar içerir). Özel bağlantı noktası sağlayıcısı her zaman döndürmelidir `E_NOTIMPL`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,16 +40,16 @@ HRESULT DisableENC(
   
 #### <a name="parameters"></a>Parametreler  
  `reason`  
- [in] Arasında bir değer [EncUnavailableReason](../../../extensibility/debugger/reference/encunavailablereason.md) numaralandırması.  
+ [in] Bir değer [EncUnavailableReason](../../../extensibility/debugger/reference/encunavailablereason.md) sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 > [!NOTE]
->  Özel bir bağlantı noktası tedarikçi her zaman döndürmelidir `E_NOTIMPL`.  
+>  Özel bağlantı noktası sağlayıcısı her zaman döndürmelidir `E_NOTIMPL`.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir kez Düzenle ve devam bir işlem için devre dışı, bu işlem yalnızca yeniden başlatarak yeniden etkinleştirilebilir.  
+ Düzenleme ve devam et için bir işlemi devre dışı bırakıldı, bu işlem yalnızca yeniden başlatarak yeniden etkinleştirilebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess3](../../../extensibility/debugger/reference/idebugprocess3.md)   

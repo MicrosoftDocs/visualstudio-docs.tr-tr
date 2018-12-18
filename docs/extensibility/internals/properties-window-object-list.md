@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130142"
 ---
 # <a name="properties-window-object-list"></a>Özellikler penceresi nesne listesi
 Nesne listesinde **özellikleri** penceredir açılan listesini diğer nesnelere bir veya daha fazla seçili Windows'a kullanılabilir seçimi değiştirmenize izin verir. Bu liste içinde farklı bir nesne seçerek tetikleyen bir çağrı <xref:Microsoft.VisualStudio.Shell.Interop.ISelectionContainer.SelectObjects%2A> ortamında yeni bir nesne seçili olduğunu bildirmek için. Görüntülenen bilgileri **özellikleri** penceresi yeni seçilen nesnesiyle ilişkili özellikleri göstermek için sonra değiştirilir.  

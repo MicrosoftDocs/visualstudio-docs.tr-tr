@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b26005e6e7062fcf5a3a6f0a9aba4ac7a79b92f7
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0cd7069b9b84ba088c7a40255a8805fc8bb2c394
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49858049"
 ---
 # <a name="idiasectioncontribgetnopad"></a>IDiaSectionContrib::get_nopad
-Bölüm sonraki bellek sınırına dolgu uygulanması değil olup olmadığını belirten bir bayrak alır.  
+Bölüm sonraki bellek sınırına sıfır değil olup olmadığını belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_nopad(
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` bölüm sonraki bellek sınırına; dolgu uygulanması değil, aksi takdirde döndürür `FALSE`.  
+ [out] Döndürür `TRUE` bölümü sonraki bellek sınırına; sıfır değil, aksi halde döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu genellikle yalnızca eski dosyaları görülen bir özelliktir.  
+ Bu, genellikle yalnızca eski dosyaları görülen bir özelliktir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md)

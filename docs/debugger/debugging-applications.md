@@ -20,6 +20,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31472668"
 ---
 # <a name="debugging-applications"></a>Uygulamalarda Hata Ayıklama
 Aşağıdaki bölümler, belirli uygulama türleri için hata ayıklama ile ilgilidir. Farklı uygulama türleri ve farklı dillerde farklı ayarlar ve teknikler gerektirir ve mevcut farklı ayıklanacak gereken sorunlar.  

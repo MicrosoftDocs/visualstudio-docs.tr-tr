@@ -10,13 +10,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0591b646c8311004d9c08b2fb1a9fcdf2ab1908a
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2c173fb5cdea4c18f3d470bd1e92bd7f9b68a62e
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34814573"
 ---
-# <a name="how-to-filter-reports-from-the-command-line"></a>Nasıl yapılır: Komut Satırından Raporları Filtreleme
+# <a name="how-to-filter-reports-from-the-command-line"></a>Nasıl yapılır: komut satırından raporları filtreleme
 Seçeneklerini kullanarak **VSPerfReport** komut, filtre belirli zaman diliminin profil oluşturma veri dosyası, raporları veya verileri bir veya daha fazla işlemler veya iş parçacığı kısıtlamak. Bu komut hakkında daha fazla bilgi için bkz: [VSPerfReport](../profiling/vsperfreport.md).  
   
 |Seçenekler|Açıklama|  

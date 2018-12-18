@@ -1,19 +1,21 @@
 ---
 ms.technology: vs-ai-tools
-ms.openlocfilehash: f11a66fd06a2b0b3b23d35c3153c5dd26fab282e
-ms.sourcegitcommit: 8cbe6b38b810529a6c364d0f1918e5c71dee2c68
+ms.openlocfilehash: ebf412dbeb4e0ecc391c52d7da5ea49d12e6231f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49930368"
 ---
-# <a name="view-recent-job-performance-and-details"></a>Son iş performans ve Ayrıntılar görüntüleyin
-İşler gönderilmeden sonra durumlarını, süre ve daha fazla bilgi görmek için iş listesini görüntüleyebilirsiniz.
+# <a name="view-recent-job-performance-and-details"></a>Son iş performans ve ayrıntıları görüntüleme
 
-1. İçinde **Sunucu Gezgini** belirli işlem bağlamı genişletin
-1. Çift **işleri**
-1. Bu işlem bağlamına gönderilen işlerinin listesini görürsünüz.
-1. Belirli bir seçin **iş** görüntülemek için listede ayrıntıları
+İşler gönderildikten sonra bunların durumunu, süresini ve daha fazlasını görmek için iş listesini görüntüleyebilirsiniz.
 
-![işleri izleme](media\job-details\monitor-jobs.png)
+1. İçinde **Sunucu Gezgini**, belirli bir işlem bağlamı genişletin.
+2. Çift **işleri**.
+3. Bu işlem bağlamına gönderilen bir iş listesi görürsünüz.
+4. Belirli bir seçin **iş** görüntülemek için listede ayrıntıları.
 
-> Linux VM'ler için gönderilen iş geçmişi VM tmp dizininde depolanır. Bu nedenle, yeniden başlatılıncaya kadar her iş geçmişi temizlenir. İş Geçmişi kalıcı kaydı için Azure, daha sonra işi Gönder (VM'nizi işlem bağlamı olarak seçerek) Azure Machine Learning için Machine learning bir işlem bağlamında olarak VM Lütfen yapılandırın.
+![İşleri izleme](media/job-details/monitor-jobs.png)
+
+> Linux Vm'leri için gönderilen iş geçmişi VM/tmp dizininde depolanır. Bu nedenle, yeniden başlatılıncaya kadar her iş geçmişini temizlenir. İş geçmişinizi kalıcı bir kayıt için lütfen Azure, ardından işi Gönder (işlem bağlamı olarak sanal makinenizin seçerek), Azure Machine Learning Machine learning işlem bağlamında olarak sanal makinenizin yapılandırın.

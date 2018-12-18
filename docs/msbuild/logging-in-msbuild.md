@@ -12,31 +12,32 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 80a73f2433f942c35413f77143203c06cd9447a5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8d866f0bc3181b6f338ec0b07df0ad5ff0e51010
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39079167"
 ---
 # <a name="logging-in-msbuild"></a>MSBuild'de Günlük Kaydı
-Günlük bir yapı ilerlemesini izlemek bir yol sağlar. Günlüğe kaydetme yakalamaları olayları, iletilerini, uyarıları ve hataları günlük dosyasında oluşturun.  
+Günlük bir oluşturmanın ilerleyişini izlemek bir yol sağlar. Olaylar, iletileri, uyarılar ve bir günlük dosyasındaki hataları günlüğe kaydetme yakalamaları oluşturun.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Derleme günlüklerini alma](../msbuild/obtaining-build-logs-with-msbuild.md)  
- Oturum açmayı çeşitli yönlerini açıklar [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Derleme günlükleri alın](../msbuild/obtaining-build-logs-with-msbuild.md)  
+ Oturum açmanın çeşitli yönlerini açıklar [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].  
   
- [Günlükçüleri Derleme](../msbuild/build-loggers.md)  
- Tek işlemcili Günlükçü oluşturmak için gereken adımlar açıklanır.  
+ [Günlükçüleri derleme](../msbuild/build-loggers.md)  
+ Bir tek işlemcili Günlükçü oluşturmak için gereken adımlar açıklanmaktadır.  
   
- [Birden Çok İşlemcili Ortamda Oturum Açma](../msbuild/logging-in-a-multi-processor-environment.md)  
- Günlük bir birden çok işlemcili ortamda ve iki birden çok işlemcili günlük modellerinde nasıl çalıştığı açıklanmaktadır.  
+ [Birden çok işlemcili ortamda oturum açma](../msbuild/logging-in-a-multi-processor-environment.md)  
+ Birden çok işlemcili ortamı ve iki çok işlemcili günlük kaydetme modellerinde günlüğe kaydetme nasıl çalıştığı açıklanır.  
   
- [Birden Çok İşlemciye Duyarlı Günlükçüler Yazılıyor](../msbuild/writing-multi-processor-aware-loggers.md)  
- Birden çok işlemciye duyarlı günlükçüler oluşturma ve ConfigurableForwardingLogger kullanmak nasıl özetlenir.  
+ [Birden çok işlemciye duyarlı günlükçüler yazma](../msbuild/writing-multi-processor-aware-loggers.md)  
+ Birden çok işlemciye duyarlı günlükçüler oluşturma ve ConfigurableForwardingLogger kullanmayı açıklar.  
   
- [İletme Günlükçüleri Oluşturma](../msbuild/creating-forwarding-loggers.md)  
- Özel iletme günlükçüleri oluşturma açıklanmaktadır.  
+ [İletme günlükçüleri oluşturma](../msbuild/creating-forwarding-loggers.md)  
+ Özel iletme günlükçüleri oluşturma işlemini açıklar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Paralel olarak birden çok proje derleme](../msbuild/building-multiple-projects-in-parallel-with-msbuild.md)  
- Birden çok proje daha hızlı paralel olarak çalıştırarak nasıl oluşturulacağını açıklar.
+ Paralel çalıştırarak daha hızlı birden çok proje nasıl oluşturulduğu açıklanır.

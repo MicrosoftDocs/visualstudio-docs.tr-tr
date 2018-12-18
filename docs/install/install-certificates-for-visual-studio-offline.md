@@ -1,8 +1,9 @@
 ---
-title: Visual Studio çevrimdışı yükleme için gerekli sertifikaları yükleyin | Microsoft Docs
-description: Visual Studio çevrimdışı yükleme için sertifikaları yüklemeyi öğrenin.
+title: Çevrimdışı yükleme için gerekli sertifikaları yükleme
+description: Visual Studio'yu çevrimdışı yükleme için sertifikaları yüklemeyi öğrenin.
 ms.date: 08/30/2017
 ms.technology: vs-acquisition
+ms.custom: seodec18
 ms.prod: visual-studio-dev15
 ms.topic: conceptual
 helpviewer_keywords:
@@ -14,35 +15,38 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 70d6b30f3b264e5bdffc5f9c0f36ba17e67e8a5d
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: b2d171082e43e822faa1a9fdf9a88ff4de0b7bff
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53158898"
 ---
-# <a name="install-certificates-required-for-visual-studio-offline-installation"></a>Visual Studio çevrimdışı yükleme için gerekli sertifikaları yükleyin
+# <a name="install-certificates-required-for-visual-studio-offline-installation"></a>Visual Studio'yu çevrimdışı yükleme için gerekli sertifikaları yükleme
 
-Visual Studio, öncelikle bu yana birçok bileşen düzenli olarak güncelleştirilen bir internet'e bağlı makineye yüklenmesi için tasarlanmıştır. Ancak, bazı ek adımlar ile çalışan bir yerde Visual Studio ortamında dağıtmak mümkündür Internet bağlantısı kullanılamıyor.
+Visual Studio, İnternet'e bağlı bir makinede, birçok bileşen düzenli olarak güncelleştirilen bu yana yüklenmesi için birincil olarak tasarlanmıştır. Ancak, bazı ek adımlar, Visual Studio ortamında çalışan bir yerde dağıtmak mümkün mü internet bağlantısı kullanılamıyor.
 
-Visual Studio Kurulumu altyapısı güvenilir yalnızca içerik yükler. Bunu Authenticode imzaları içerik karşıdan yükleniyor ve yüklemeden önce tüm içeriği güvenilen doğrulama denetleyerek yapar. Bu, ortamınız indirme konumu burada tehlikeye saldırılarına karşı güvenli tutar. Visual Studio Kurulumu, bu nedenle birkaç standart Microsoft kök ve ara sertifika yüklü olmasını gerektirir ve yukarı tarih kullanıcının makinede. Makine Windows Update ile güncel tutulmuştur, imzalama sertifikaları genellikle güncel demektir. Makinenin Internet'e bağlı olup olmadığını yükleme sırasında Visual Studio gerektiğinde dosya imzaları doğrulamak sertifikaları yenileme. Makine çevrimdışıysa, sertifikalar olmalıdır başka bir yolu yenilenir.
+Visual Studio Kurulum altyapısı güvenilen yalnızca içeriği yükler. Bunu Authenticode imzaları içerik indiriliyor ve yüklemeden önce tüm içeriği güvenilen doğrulama denetleyerek yapar. Bu ortamınızı indirme konumuna burada tehlikeye saldırılarına karşı güvenli tutar. Visual Studio Kurulum, bu nedenle birkaç standart Microsoft kök ve ara sertifika yüklü olmasını gerektirir ve yukarı başından bu yana bir kullanıcının makine üzerinde. İmzalama sertifikaları genellikle makine Windows Update ile güncel tutulmuştur, güncel demektir. Makinenin internet'e bağlı olup olmadığını, yükleme sırasında Visual Studio gerektiğinde dosya imzaları doğrulamak sertifikaları yenileme. Makine çevrimdışı ise, sertifikalar olmalıdır başka bir şekilde yenilendi.
 
-## <a name="how-to-refresh-certificates-when-offline"></a>Sertifikaları çevrimdışıyken yenileme
+## <a name="how-to-refresh-certificates-when-offline"></a>Çevrimdışıyken sertifikaları yenileme
 
-Yükleme veya çevrimdışı bir ortamda sertifikaları güncelleştirme için üç seçeneğiniz vardır.
+Yükleme veya çevrimdışı bir ortamda sertifikaları güncelleştirme için üç seçenek vardır.
 
-### <a name="option-1---manually-install-certificates-from-a-layout-folder"></a>Seçenek 1 - sertifikalar bir düzen klasörden el ile yükleme
+### <a name="option-1---manually-install-certificates-from-a-layout-folder"></a>1. seçenek - sertifikaları bir düzen klasöründen el ile yükleyin
 
-Bir ağ düzeni oluşturduğunuzda, gerekli sertifikaları Sertifikalar klasörüne yüklenir. Daha sonra el ile sertifikalar sertifika dosyaların her biri çift ve Sertifika Yöneticisi sihirbazda tıklatarak yükleyebilirsiniz. İçin bir parola istenirse, boş bırakın.
+Bir ağ düzeni oluşturduğunuzda, gerekli sertifikaları Sertifikalar klasörüne yüklenir. Daha sonra el ile sertifikalar tarafından her bir sertifika dosyasını çift tıklatarak ve ardından Sertifika Yöneticisi Sihirbazı yükleyebilirsiniz. İçin bir parola istenirse, boş bırakın.
 
-### <a name="option-2---distribute-trusted-root-certificates-in-an-enterprise-environment"></a>Seçenek 2 - güvenilen kök dağıtmak bir kuruluş ortamında sertifikaları
+**Güncelleştirme**: Visual Studio 2017 sürüm 15,8 önizleme 2 veya daha sonra bunları el ile için her sertifika dosyaları sağ tıklayarak sertifikayı yükle'i seçip ardından Sertifika Yöneticisi sihirbazda tıklayarak sertifikaları'nı yükleyin.
 
-En son kök sertifikası olmayan çevrimdışı makinelerle kuruluşlar için bir yönetici yönergeleri kullanabilirsiniz [güvenilen kökler yapılandırmanız ve izin verilmeyen sertifikaları](https://technet.microsoft.com/library/dn265983.aspx) sayfa bunları güncelleştirin.
+### <a name="option-2---distribute-trusted-root-certificates-in-an-enterprise-environment"></a>2. seçenek - güvenilen kök dağıtmak bir kuruluş ortamında sertifikaları
 
-### <a name="option-3---install-certificates-as-part-of-a-scripted-deployment-of-visual-studio"></a>Seçenek 3 - Visual Studio komut dosyalı bir dağıtımının bir parçası olarak yükleme sertifikaları
+En son kök sertifikaların olması değil çevrimdışı makinelerle kuruluşlar için bir yönetici yönergeleri kullanabilirsiniz [yapılandırma Güvenilen Kökleri ve izin verilmeyen sertifikaları](https://technet.microsoft.com/library/dn265983.aspx) bunları güncelleştirmek için sayfa.
 
-Visual Studio dağıtım istemci iş istasyonlarına çevrimdışı bir ortamda komut dosyalarını oluşturuyorsanız, aşağıdaki adımları izlemelisiniz:
+### <a name="option-3---install-certificates-as-part-of-a-scripted-deployment-of-visual-studio"></a>Seçenek 3 - bir komut dosyası dağıtım Visual Studio'nun bir parçası olarak yükleme sertifikaları
 
-1. Kopya [sertifika yönetim aracı](/dotnet/framework/tools/certmgr-exe-certificate-manager-tool) (certmgr.exe) yükleme paylaşımına (örneğin, \\server\share\vs2017). Certmgr.exe dahil değildir ancak kendisi, Windows'un parçası olarak kullanılabilir olarak parçası [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
+Visual Studio'nun istemci iş istasyonları için çevrimdışı bir ortamda dağıtım komut dosyası oluşturma, şu adımları izlemelidir:
+
+1. Kopyalama [Sertifika Yöneticisi Aracı](/dotnet/framework/tools/certmgr-exe-certificate-manager-tool) (certmgr.exe) yükleme paylaşımına (örneğin, \\server\share\vs2017). Certmgr.exe dahil değildir ancak Windows kendisini bir parçası olarak olarak kullanılabilir parçası [Windows SDK'sı](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
 2. Bir toplu iş dosyası aşağıdaki komutlarla oluşturun:
 
@@ -59,69 +63,71 @@ Visual Studio dağıtım istemci iş istasyonlarına çevrimdışı bir ortamda 
 
    certmgr.exe -add -c certificates\vs_installer_opc.SignCertificates.p12 -n "Microsoft Root Certificate Authority" -s -r LocalMachine root
    ```
+   **Güncelleştirme**: Visual Studio 2017 sürüm için 15,8 Preview 2 veya daha sonra toplu iş dosyası aşağıdaki komutlarla oluşturun:
 
-3. Toplu iş dosyasını istemciye dağıtın. Bu komut, yükseltilmiş bir işleminden çalıştırmanız gerekir.
+   ```cmd
+   certmgr.exe -add [layout path]\certificates\manifestSignCertificates.cer -n "Microsoft Root Certificate Authority 2011" -s -r LocalMachine root
 
-## <a name="what-are-the-certificates-files-in-the-certificates-folder"></a>Sertifikalar klasörünü sertifikaları dosyalarında nelerdir?
+   certmgr.exe -add [layout path]\certificates\manifestCounterSignCertificates.cer -n "Microsoft Root Certificate Authority 2010" -s -r LocalMachine root
 
-Üç. P12 bu klasördeki dosyaların her bir ara sertifika ve bir kök sertifikası içerir. Windows Update ile güncel çoğu sistemleri bu sertifikaların zaten yüklü.
+   certmgr.exe -add [layout path]\certificates\vs_installer_opc.SignCertificates.cer -n "Microsoft Root Certificate Authority" -s -r LocalMachine root
+   ```
+
+3. Toplu iş dosyası, istemciye dağıtın. Bu komutu yükseltilmiş bir işlemden çalıştırılmalıdır.
+
+## <a name="what-are-the-certificates-files-in-the-certificates-folder"></a>Sertifikaları klasöründe bulunan sertifikaları dosyaları nelerdir?
+
+Üç. P12 bu klasördeki dosyalar her bir ara sertifika ve bir kök sertifikası içerir. Windows Update ile güncel çoğu sistemleri, bu sertifikaların yüklü sahiptir.
 
 * **ManifestSignCertificates.p12** içerir:
-    * Ara Sertifika: **Microsoft kod imzalama PCA 2011**
+    * Ara Sertifika: **Microsoft kod PCA 2011 imzalama**
         * Gerekli değildir. Varsa, bazı senaryolarda performansı artırır.
     * Kök sertifika: **Microsoft kök sertifika yetkilisi 2011**
-        * En son Windows güncelleştirmeleri yüklü olmayan Windows 7 Service Pack 1 sistemlerde gerekli.
+        * Windows 7 Service Pack 1 sistemlerinde yüklü en son Windows güncelleştirmelerini sahip olmaması gerekir.
 * **ManifestCounterSignCertificates.p12** içerir:
     * Ara Sertifika: **Microsoft zaman damgası PCA 2010**
         * Gerekli değildir. Varsa, bazı senaryolarda performansı artırır.
     * Kök sertifika: **Microsoft kök sertifika yetkilisi 2010**
-        * En son Windows güncelleştirmeleri yüklü olmayan Windows 7 Service Pack 1 sistemler için gereklidir.
+        * En son Windows güncelleştirmelerini yüklü olmayan Windows 7 Service Pack 1 sistemler için gereklidir.
 * **Vs_installer_opc. SignCertificates.p12** içerir:
-    * Ara Sertifika: **Microsoft kod imzalama PCA**
-        * Tüm sistemler için gereklidir. Tüm güncelleştirmeleri Windows Update'ten uygulanan sistemleriyle bu sertifikayı olmayabilir unutmayın.
+    * Ara Sertifika: **Microsoft kod PCA imzalama**
+        * Tüm sistemler için gereklidir. Tüm güncelleştirmelerin Windows Update'ten uygulandığı sistemleri bu sertifikayı olmayabilir unutmayın.
     * Kök sertifika: **Microsoft kök sertifika yetkilisi**
-        * Gerekli. Bu sertifika, Windows 7 veya üstünü çalıştıran sistemleri ile gelir.
+        * Gerekli. Bu sertifika, Windows 7 veya üzerini çalıştıran sistemleriyle birlikte gelir.
 
-## <a name="why-are-the-certificates-from-the-certificates-folder-not-installed-automatically"></a>Neden sertifikaları otomatik olarak yüklenmemiş sertifikaları klasöründen misiniz?
+**Güncelleştirme**: Visual Studio 2017 sürüm için 15,8 önizleme 2 veya sonraki sürümü, Visual Studio yükleyicisi, sistemde yüklü için yalnızca kök sertifikaları gerektirir.
 
-İmza bir çevrimiçi ortamda doğrulandığında, Windows API'ları indirmek ve sertifikaları sisteme eklemek için kullanılır. Sertifika güvenilir ve yönetim ayarları izin doğrulama Bu işlem sırasında oluşur. Bu doğrulama işlemi, en çevrimdışı ortamlarda gerçekleşemez. Sertifikaları el ile yükleme sertifikaları Güvenilen ve bunların kuruluşun güvenlik ilkesi karşıladığından emin olmak kuruluş yöneticileri sağlar.
+## <a name="why-are-the-certificates-from-the-certificates-folder-not-installed-automatically"></a>Neden sertifikaları otomatik olarak yüklü olmayan sertifikalar klasöründen?
 
-## <a name="checking-if-certificates-are-already-installed"></a>Sertifikalar zaten yüklü olmadığı denetleniyor
+Bir imza bir çevrimiçi ortamda doğrulandığında, Windows API'ları indirmek ve sertifikaları sisteme eklemek için kullanılır. Bu işlem sırasında sertifika güvenilir değil ve yönetim ayarları izin doğrulaması gerçekleşir. Bu doğrulama sürecini en çevrimdışı ortamlarda gerçekleştirilemez. Sertifikaları el ile yükleme sertifikaları Güvenilen ve kendi kuruluşları güvenlik ilkesine uyum sağlamak kuruluş yöneticileri sağlar.
 
-Yükleme sistemde kontrol etmenin bir yolu şu adımları takip etmektir:
+## <a name="checking-if-certificates-are-already-installed"></a>Sertifika zaten yüklü olup olmadığını denetleme
+
+Yükleme sistemde denetleyin yollarından biri, şu adımları takip etmektir:
 1. Çalıştırma **mmc.exe**.<br/>
   a. Dosyasına tıklayın ve ardından **Ekle/Kaldır ek bileşenini**.<br/>
   b. Çift **sertifikaları**seçin **bilgisayar hesabı**ve ardından **sonraki**.<br/>
-  c. Seçin **yerel bilgisayar**, tıklatın **son**ve ardından **Tamam**.<br/>
-  d. Genişletme **sertifikalar (yerel bilgisayar)**.<br/>
-  e. Genişletme **güvenilen kök sertifika yetkilileri**ve ardından **Sertifikalar**.<br/>
-    * Bu gerekli kök sertifikalar listesini denetler.<br/>
+  c. Seçin **yerel bilgisayar**, tıklayın **son**ve ardından **Tamam**.<br/>
+  d. Genişletin **sertifikalar (yerel bilgisayar)**.<br/>
+  e. Genişletin **güvenilen kök sertifika yetkilileri**ve ardından **sertifikaları**.<br/>
+    * Gerekli kök sertifika için bu listeyi kontrol edin.<br/>
 
-   f. Genişletme **Ara Sertifika Yetkilileri**ve ardından **Sertifikalar**.<br/>
+   f. Genişletin **Ara Sertifika Yetkilileri**ve ardından **sertifikaları**.<br/>
     * Gerekli Ara sertifikaları için bu listeyi kontrol edin.<br/>
 
-2. Dosya ve Seç'i tıklatın **Ekle/Kaldır ek bileşenini**.<br/>
-  a. Çift **sertifikaları**seçin **kullanıcı hesabım**, tıklatın **son**ve ardından **Tamam**.<br/>
-  b. Genişletme **Sertifikalar – Geçerli kullanıcı**.<br/>
-  c. Genişletme **Ara Sertifika Yetkilileri**ve ardından **Sertifikalar**.<br/>
+2. Dosya ve select **Ekle/Kaldır ek bileşenini**.<br/>
+  a. Çift **sertifikaları**seçin **kullanıcı hesabım**, tıklayın **son**ve ardından **Tamam**.<br/>
+  b. Genişletin **Sertifikalar – Geçerli kullanıcı**.<br/>
+  c. Genişletin **Ara Sertifika Yetkilileri**ve ardından **sertifikaları**.<br/>
     * Gerekli Ara sertifikaları için bu listeyi kontrol edin.<br/>
 
-Sertifika adlarını da olsalar **çıkarılan** sütunları, yüklü olması gerekir.  Ara Sertifika yalnızca içinde olduğunda **geçerli kullanıcı** ara sertifika deposu, sonra da günlüğe kaydedilen kullanıcı için kullanılabilir. Diğer kullanıcılar için yüklemeniz gerekebilir.
+Sertifika adları içinde değilse **çıkarılan** sütunları yüklü olması gerekir.  Bir ara sertifika yalnızca içinde ise **geçerli kullanıcının** ara sertifika deposu, sonra da günlüğe kaydedilen kullanıcı için kullanılabilir. Diğer kullanıcılar için yüklemeniz gerekebilir.
 
-## <a name="install-visual-studio"></a>Visual Studio yükleme
+## <a name="install-visual-studio"></a>Visual Studio'yu yükleme
 
-Sertifikalar yüklendikten sonra Visual Studio dağıtımını yönergeleri kullanarak geçebilmeniz [bir ağ yüklemesinden dağıtma](create-a-network-installation-of-visual-studio.md#deploying-from-a-network-installation) bölümünde "Visual Studio bir ağ yüklemesi oluşturma".
+Sertifikalar'ı yükledikten sonra Visual Studio'nun dağıtım yönergeleri kullanarak devam edebilirsiniz [ağ yüklemesinden dağıtma](create-a-network-installation-of-visual-studio.md#deploying-from-a-network-installation) sayfası "oluşturma Visual Studio'nun bir ağ yükleme" bölümü.
 
-## <a name="get-support"></a>Destek alma
-
-Bazı durumlarda, şeyler yanlış gidebilirsiniz. Visual Studio yüklemenizin başarısız olursa bkz [sorun giderme Visual Studio 2017 yükleme ve yükseltme sorunlarını](troubleshooting-installation-issues.md) sayfası. Sorun giderme adımlarını hiçbiri yardımcı, bize yükleme Yardımı (yalnızca İngilizce) için canlı sohbet tarafından başvurabilirsiniz. Ayrıntılar için bkz [Visual Studio destek sayfası](https://www.visualstudio.com/vs/support/#talktous).
-
-Birkaç diğer destek seçenekleri şunlardır:
-
-* Ürün sorunları bize bildirebilirsiniz [bir sorun bildirmek](../ide/how-to-report-a-problem-with-visual-studio-2017.md) hem Visual Studio Yükleyicisi ve Visual Studio IDE görünür aracı.
-* Üzerinde bir ürün önerisi bizimle paylaşın [UserVoice](https://visualstudio.uservoice.com/forums/121579).
-* Ürün sorunlarını izlemek ve yanıtlar bulmak [Visual Studio Geliştirici topluluğu](https://developercommunity.visualstudio.com/).
-* ABD ve diğer Visual Studio geliştiriciler aracılığıyla devreye [Gitter topluluk Visual Studio konuşmada](https://gitter.im/Microsoft/VisualStudio). (Bu seçenek gerektiren bir [GitHub](https://github.com/) hesabı.)
+[!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

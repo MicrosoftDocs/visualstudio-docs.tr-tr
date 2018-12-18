@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a61e8a3cadeeadf0657ca6fe293a527113505a0b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2e49933c0bdc5b9a98c165aebd8e263bca2a2be5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867526"
 ---
 # <a name="namematch"></a>NAME_MATCH
-Adlarını eşleştirmek için örnek seçeneğini seçer.  
+Adları eşleşen servis talebi seçeneğini seçer.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,16 +45,16 @@ public enum NameMatchOptions {
   
 ## <a name="members"></a>Üyeler  
  nmNone  
- Hiçbir seçenek belirtildi.  
+ Hiçbir seçenek belirtilmedi.  
   
  nmCaseSensitive  
- Eşleştirilecek adları büyük küçük harfe duyarlı olduğunu gösterir.  
+ Eşleştirilecek adların büyük küçük harfe duyarlı olup olmadığını gösterir.  
   
  nmCaseInsensitive  
- Eşleştirilecek adları büyük küçük harfe duyarlı değildir gösterir.  
+ Eşleştirilecek adları büyük/küçük harfe olmadığını gösterir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken olarak aşağıdaki yöntemlere iletilen:  
+ Bağımsız değişken olarak aşağıdaki yöntemlere geçilen:  
   
 -   [GetTypeByName](../../../extensibility/debugger/reference/idebugsymbolprovider-gettypebyname.md)  
   
@@ -64,14 +65,14 @@ public enum NameMatchOptions {
 -   [GetMethodFieldsByName](../../../extensibility/debugger/reference/idebugsymbolprovider-getmethodfieldsbyname.md)  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetTypeByName](../../../extensibility/debugger/reference/idebugsymbolprovider-gettypebyname.md)   
  [GetClassTypeByName](../../../extensibility/debugger/reference/idebugsymbolprovider-getclasstypebyname.md)   
  [EnumFields](../../../extensibility/debugger/reference/idebugcontainerfield-enumfields.md)   

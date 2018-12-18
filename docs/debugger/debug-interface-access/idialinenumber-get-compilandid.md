@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ca0df8a2955bcd2fa52728512896d7e1ac280f6e
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 080e45965802a09c5cc3d3a452e96342aa5a20f9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950894"
 ---
 # <a name="idialinenumbergetcompilandid"></a>IDiaLineNumber::get_compilandId
 Bu satırı katkıda derlenecek için benzersiz bir tanımlayıcı alır.  
@@ -33,10 +34,10 @@ HRESULT get_compilandId (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `DWORD` bu satırı katkıda derlenecek için benzersiz tanımlayıcı içerir.  
+ [out] Döndürür `DWORD` bu satırı katkıda derlenecek için benzersiz tanımlayıcısını içermektedir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaLineNumber](../../debugger/debug-interface-access/idialinenumber.md)

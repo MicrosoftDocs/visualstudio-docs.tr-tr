@@ -13,16 +13,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 691723e27cc2927733fe82aa1f79e9fd1d9d663d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 21df85a54071a6fffe03483856c55194af08a2da
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263971"
 ---
-# <a name="customizing-performance-tools-report-views"></a>Rapor görünümlerini özelleştirme performans araçları
+# <a name="customize-performance-tools-report-views"></a>Performans araçları rapor görünümlerini özelleştirme
 Bu bölümde ile oluşturulan raporları özelleştirme alınmaktadır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları.  
   
-## <a name="common-tasks"></a>Ortak Görevler  
+## <a name="common-tasks"></a>Ortak görevler
   
 |Görev|İlgili içerik|  
 |----------|---------------------|  
@@ -30,9 +31,9 @@ Bu bölümde ile oluşturulan raporları özelleştirme alınmaktadır [!INCLUDE
 |**Raporun küçük işlevlerden ortadan:** raporlardan belirtilen eşikten daha küçük olan işlevler ortadan kaldırabilirsiniz.|-   [Nasıl yapılır: rapor görünümlerinde gürültü azaltmayı yapılandırma](../profiling/how-to-configure-noise-reduction-in-report-views.md)|  
 |**Rapor görünümünde tarih filtre**: bir rapor çalıştırmak profil oluşturma zaman diliminin görünür verileri sınırlayabilirsiniz. Özet görünümü zaman çizelgesi grafiğinde bir zaman diliminin belirtebilirsiniz veya içinde Rapor Görünümü Filtresi tanımlayan sorgu zaman diliminin belirtebilirsiniz. Ayrıca, kod dosyalarınızın tanımlanan işlevler göstermek için raporları filtre uygulayabilirsiniz.|-   [Rapor görünümlerini filtreleme](../profiling/filtering-report-views.md)<br />-   [Nasıl yapılır: Özet zaman çizelgesinden rapor görünümlerini filtreleme](../profiling/how-to-filter-report-views-from-the-summary-timeline.md)<br />-   [Nasıl yapılır: Profil Oluşturucu Araçlar raporu görünümlerini yalnızca benim kodumu görüntülemek için](../profiling/how-to-filter-profiling-tools-report-views-to-display-just-my-code.md)<br />-   [Performans Rapor Görünümü Filtresi](../profiling/performance-report-view-filter.md)|  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Performans Raporu Görünümleri](../profiling/performance-report-views.md)  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Performans rapor görünümleri](../profiling/performance-report-views.md)  
  Profil oluşturma verileri çözümlemek için kullanabileceğiniz görünümler açıklanmaktadır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Araçları verilerini performansını analiz etme](../profiling/analyzing-performance-tools-data.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Performans araçları verilerini analiz etme](../profiling/analyzing-performance-tools-data.md)

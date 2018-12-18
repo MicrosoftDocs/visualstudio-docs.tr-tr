@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: aba425823de9f6c9e935e987e2f574ac0733d262
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c5cbae58aeaa1164aab6c254f62e0959da02d31c
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257679"
 ---
 # <a name="modules-view---net-memory-sampling-data"></a>Modüller görünümü - .NET bellek örnekleme verileri
 .NET bellek ayırma verilerinin örnekleme yöntemini kullanarak toplanan modülleri görünümü bellek verileri profil Çalıştır yürütüldü modülleri göre gruplandırır. Her modül hiyerarşik bir köküdür. Modül işlevleri modülü düğümünün altında listelenir.  
@@ -41,7 +42,7 @@ ms.lasthandoff: 04/19/2018
 |**Özel bayt sayısı**|-Bir işlev için toplam işlev tarafından ayrılan bayt sayısı. Sayı ayrılan bayt bu işlev tarafından adı veriliyordu işlevleri içermez.<br />-Bir modül için modülündeki işlevler tarafından ayrılan özel bayt toplamını.<br />-Bir satır veya yönerge, bu satırı veya yönerge tarafından ayrılan nesneleri toplam sayısı için.|  
 |**Özel bayt %**|Profil çalışmasını ayrılan tüm bayt yüzdesi modülü, işlev, satır veya yönerge özel bayt yoktu.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Modüller görünümü - izleme](../profiling/modules-view-dotnet-memory-instrumentation-data.md)   
  [Modüller görünümü](../profiling/modules-view-sampling-data.md)   

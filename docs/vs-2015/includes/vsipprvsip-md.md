@@ -1,0 +1,1 @@
+Visual Studio Endüstri Ortağı (VSIP) programı

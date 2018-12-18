@@ -1,11 +1,11 @@
 ---
 title: IDebugDocumentTextEvents::onDestroy | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IDebugDocumentTextEvents.onDestroy
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IDebugDocumentTextEvents::onDestroy
 ms.assetid: 1b7eb341-6bad-403f-9821-19112f8732f3
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24794177"
 ---
 # <a name="idebugdocumenttexteventsondestroy"></a>IDebugDocumentTextEvents::onDestroy
 Temel alınan belge yok edildi ve artık geçerli değil gösterir.  

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d74f39ce8e9e350c791371f20b7401d685fb1d18
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 78ea2148290402f2a8e5c08474de125fc52bca47
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49936517"
 ---
 # <a name="fieldinfofields"></a>FIELD_INFO_FIELDS
-Hakkında almak için hangi bilgilerin belirten bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesnesi.  
+Hangi bilgilerin hakkında alınacağını belirtir bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesne.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -51,33 +52,33 @@ public enum enum_FIELD_INFO_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  FIF_FULLNAME  
- Başlatma/kullanım `bstrFullName` alanındaki [FIELD_INFO](../../../extensibility/debugger/reference/field-info.md) yapısı.  
+ Başlat/kullanım `bstrFullName` alanındaki [FIELD_INFO](../../../extensibility/debugger/reference/field-info.md) yapısı.  
   
  FIF_NAME  
- Başlatma/kullanım `bstrName` alanındaki `FIELD_INFO` yapısı.  
+ Başlat/kullanım `bstrName` alanındaki `FIELD_INFO` yapısı.  
   
  FIF_TYPE  
- Başlatma/kullanım `bstrType` alanındaki `FIELD_INFO` yapısı.  
+ Başlat/kullanım `bstrType` alanındaki `FIELD_INFO` yapısı.  
   
  FIF_MODIFIERS  
- Başlatma/kullanım `bstrModifiers` alanındaki `FIELD_INFO` yapısı.  
+ Başlat/kullanım `bstrModifiers` alanındaki `FIELD_INFO` yapısı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerleri de bağımsız değişken olarak geçirilen [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) hangi alanlarının belirtmek için yöntemi [FIELD_INFO](../../../extensibility/debugger/reference/field-info.md) yapısı başlatılması üzeresiniz.  
+ Bu değerleri de bağımsız değişken olarak geçirilen [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) hangi alanları belirlemek için yöntemi [FIELD_INFO](../../../extensibility/debugger/reference/field-info.md) yapısı olan başlatılacak.  
   
- Bu değerleri de içinde kullanılan `dwFields` üyesi `FIELD_INFO` hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ Bu değerleri de kullanılan `dwFields` üyesi `FIELD_INFO` yapısı hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [FIELD_INFO](../../../extensibility/debugger/reference/field-info.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   
  [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md)

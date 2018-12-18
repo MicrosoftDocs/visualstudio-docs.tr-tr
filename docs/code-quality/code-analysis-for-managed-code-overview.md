@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da yönetilen kod için Kod Analizi
+title: Yönetilen kod için statik kod analizi
 ms.date: 03/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 f1_keywords:
@@ -13,67 +14,71 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 727a63d122871ff452365eea66e9a6e63a7c67b0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 96f00e6080cb10778a92aaa860422da8366be54d
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52389318"
 ---
-# <a name="overview-of-code-analysis-for-managed-code"></a>Yönetilen kod için Kod Analizine genel bakış
+# <a name="overview-of-static-code-analysis-for-managed-code-in-visual-studio"></a>Visual Studio'da yönetilen kod için statik kod analizi genel bakış
 
-Visual Studio 2017 iki yolla yönetilen kodu analiz eder: eski ile *FxCop* statik çözümleme Yönetilen derlemeler ve .NET derleyici platformuyla *çözümleyiciler*. Bu konu FxCop statik kod analizi kapsar. .NET derleme platformu Çözümleyicileri kullanarak kod çözümleme hakkında daha fazla bilgi için bkz: [genel bakış, Roslyn çözümleyiciler](../code-quality/roslyn-analyzers-overview.md).
+Visual Studio 2017 Kod Analizi yönetilen kod iki yolla gerçekleştirebilirsiniz: ile *FxCop* statik analiz Yönetilen derlemeler ve daha fazla modern *Roslyn Çözümleyicileri*. Bu konu, FxCop statik kod analizi içerir. Kod Çözümleyicileri kullanarak kodunu analiz etme hakkında daha fazla bilgi için bkz: [genel bakış, Roslyn Çözümleyicileri](../code-quality/roslyn-analyzers-overview.md).
 
-Yönetilen kod için Kod Analizi Yönetilen derlemeler analiz eder ve İleri Microsoft .NET Framework tasarım yönergeleri Tasarım Kuralları ve programlama ihlalleri gibi derlemeler hakkında bilgi raporlar.
+Yönetilen kod için kod analizi, yönetilen derlemeleri çözümler ve derlemeler, programlama ve Microsoft .NET Framework tasarım yönergeleri ile ortaya konan Tasarım Kuralları ihlalleri gibi bilgileri raporlar.
 
-Çözümleme aracı bir Çözümleme sırasında uyarı iletileri olarak gerçekleştirdiği denetimleri temsil eder. Uyarı iletilerini programlama ve tasarım ilgili sorunları belirlemek ve sorunun nasıl çözüleceğini olası, sağlar bilgilerini olduğunda.
+Analiz aracı uyarı iletileri bir Çözümleme sırasında gerçekleştirdiği denetimleri temsil eder. Uyarı iletileri ilgili programlama ve tasarım sorunlarını belirleyin ve mümkünse sorunu gidermek nasıl bilgi olduğunda.
 
-## <a name="ide-integrated-development-environment-integration"></a>IDE (tümleşik geliştirme ortamı) tümleştirme
+> [!NOTE]
+> Statik kod analizi, Visual Studio'da .NET Core ve .NET Standard projeleri için desteklenmiyor. Kod Analizi bir .NET Core veya .NET Standard projesi msbuild bir parçası olarak çalıştırırsanız, benzer bir hata göreceğiniz **hata: CA0055: platform tanımlanamadı \<your.dll >**. .NET Core veya .NET Standard projelerine kodda çözümlemek için kullanın [Roslyn Çözümleyicileri](../code-quality/roslyn-analyzers-overview.md) yerine.
 
-Kod çözümleme projenizde el ile veya otomatik olarak çalıştırabilirsiniz.
+## <a name="ide-integrated-development-environment-integration"></a>IDE (tümleşik geliştirme ortamı) Tümleştirmesi
 
-Kod çözümleme bir projeyi derleme her zaman çalıştırmak için seçin **etkinleştirmek Kod Analizi derlemede** projenin özellik sayfasındaki. Daha fazla bilgi için bkz: [nasıl yapılır: devre dışı otomatik kod analizini etkinleştirme ve](../code-quality/how-to-enable-and-disable-automatic-code-analysis-for-managed-code.md).
+El ile veya otomatik olarak projenizde kod analizi çalıştırabilirsiniz.
 
-Kod çözümleme el ile bir proje üzerinde çalıştırmak için menü çubuğundan seçin **Çözümle** > **Kod Analizi çalıştırmak** > **çalıştırmak kod çözümleme \<proje >**.
+Bir projeyi derleme yaptığınızda Kod Analizi çalıştırmak için seçin **derlemede kod analizini etkinleştir** projenin özellik sayfasında. Daha fazla bilgi için [nasıl yapılır: etkinleştirme ve devre dışı otomatik kod analizini](../code-quality/how-to-enable-and-disable-automatic-code-analysis-for-managed-code.md).
+
+Kod Analizi proje üzerinde el ile çalıştırmak için menü çubuğundan seçin **Çözümle** > **kod çözümlemeyi Çalıştır** > **kod çözümlemeyi Çalıştır \<proje >**.
 
 ## <a name="rule-sets"></a>Kural kümeleri
 
-Yönetilen kod için Kod Analizi kurallarını halinde gruplandırılır [kural kümeleri](../code-quality/using-rule-sets-to-group-code-analysis-rules.md). Microsoft Standart kural kümeleri birini kullanabilir ya da yapabilecekleriniz [bir özel kural kümesi oluşturma](../code-quality/how-to-create-a-custom-rule-set.md) belirli bir gereksinimi karşılamak için.
+Yönetilen kod için Kod Analizi kuralları halinde gruplanır [kural kümeleri](../code-quality/using-rule-sets-to-group-code-analysis-rules.md). Microsoft Standart kural kümelerinden birini kullanabilir veya [bir özel kural kümesi oluşturma](../code-quality/how-to-create-a-custom-rule-set.md) belirli bir gereksinimi karşılamak için.
 
-## <a name="suppress-warnings"></a>Uyarıları bastırma
+## <a name="suppress-warnings"></a>Uyarıları gizleme
 
-Genellikle, bir uyarı uygulanabilir olmayan olduğunu belirtmek kullanışlıdır. Bu Geliştirici ve daha sonra kodu gözden geçirebilirsiniz diğer kişilerin bir uyarı araştırılan ve sonra da gizlenen veya yoksayıldı olduğunu bildirir.
+Genellikle, geçerli olmayan bir uyarı olduğunu belirtmek kullanışlıdır. Bu geliştiriciye ve kodu daha sonra gözden geçirecek diğer kişilere bir uyarı araştırılması ve sonra da gizlenen veya yoksayıldı olduğunu bildirir.
 
-Kaynak gizleme uyarılar özel özniteliklere uygulanır. Bir uyarıyı gizlemek için öznitelik Ekle `SuppressMessage` aşağıdaki örnekte gösterildiği gibi kaynak koduna:
+Uyarıların kaynak sıkıştırması özel öznitelikler ile gerçekleştirilir. Bir uyarıyı bastırmak için öznitelik Ekle `SuppressMessage` aşağıdaki örnekte gösterildiği gibi kaynak koda:
 
 ```csharp
-[System.Diagnosis.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1039:ListsAreStrongTyped")]
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1039:ListsAreStrongTyped")]
 Public class MyClass
 {
    // code
 }
 ```
 
-Daha fazla bilgi için bkz: [uyarıları bastırma](../code-quality/in-source-suppression-overview.md).
+Daha fazla bilgi için [uyarıları bastırma](../code-quality/in-source-suppression-overview.md).
 
 > [!NOTE]
-> Bir proje için Visual Studio 2017 geçirirseniz, aniden çok sayıda kod analizi uyarıları karşılaştığı. Uyarıları gidermek ve hemen üretken olmak hazır değilseniz yapabilecekleriniz *temel* projenizin çözümleme durumu. Gelen **Çözümle** menüsünde, select **Kod Analizi çalıştırmak ve bastırmak etkin sorunlar**.
+> Bir projeyi Visual Studio 2017'ye geçirirseniz, birden çok sayıda kod çözümleme uyarıları karşılaştığı. Uyarıları gidermek ve hemen üretken olmak hazır değilseniz yapabilecekleriniz *temel* projenizin çözümleme durumu. Gelen **Çözümle** menüsünde **kod analizini Çalıştır ve etkin sorunlar bastır**.
 
-## <a name="run-code-analysis-as-part-of-check-in-policy"></a>Kod çözümleme iade ilkesi bir parçası olarak çalıştır
+## <a name="run-code-analysis-as-part-of-check-in-policy"></a>İade ilkesinin parçası olarak kod analizini Çalıştır
 
-Kuruluş olarak, tüm iadeler belirli ilkeleri karşılamak gerektiren isteyebilirsiniz. Özellikle, bu ilkeler takip ettiğinizden emin olmak istiyoruz:
+Bir kuruluş olarak tüm iade etmelerin bazı ilkeleri karşılamasını zorunlu isteyebilirsiniz. Özellikle, aşağıdaki ilkeleri uyguladığınızdan emin olmanız gerekir:
 
-- İade edildi kod derleme hatalar yoktur.
+- Teslim edilen kodda derleme hataları vardır.
 
-- Kod çözümleme en son yapı bir parçası olarak çalıştırılır.
+- Kod Analizi en son derlemenin bir parçası çalıştırılır.
 
-Bu iade ilkelerini belirterek gerçekleştirebilirsiniz. Daha fazla bilgi için bkz: [takım projesi iade ilkeleriyle kod kalitesini arttırma](../code-quality/enhancing-code-quality-with-team-project-check-in-policies.md).
+Bu iade etme ilkeleri belirterek gerçekleştirebilirsiniz. Daha fazla bilgi için [projesi iade ilkeleriyle kod kalitesini geliştirme](../code-quality/enhancing-code-quality-with-team-project-check-in-policies.md).
 
-## <a name="team-build-integration"></a>Team derleme tümleştirmesi
+## <a name="team-build-integration"></a>Ekip Oluşturma entegrasyonu
 
-Çözümleme aracı yapılandırma işleminin bir parçası olarak çalıştırmak için tümleşik yapı sistem özelliklerini kullanabilirsiniz. Daha fazla bilgi için bkz: [oluşturmak ve (VSTS) sürüm](/vsts/build-release/index).
+Analiz aracı yapı işleminin bir parçası olarak çalıştırmak için derleme sisteminin tümleşik özelliklerini kullanabilirsiniz. Daha fazla bilgi için [Azure işlem hatları](/azure/devops/pipelines/index?view=vsts).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Roslyn çözümleyiciler genel bakış](../code-quality/roslyn-analyzers-overview.md)
+- [Roslyn çözümleyicilerini genel bakış](../code-quality/roslyn-analyzers-overview.md)
 - [Kod Analizi Kurallarını Gruplandırmak için Kural Kümeleri Kullanma](../code-quality/using-rule-sets-to-group-code-analysis-rules.md)
-- [Nasıl yapılır: etkinleştirme ve devre dışı otomatik kod çözümleme](../code-quality/how-to-enable-and-disable-automatic-code-analysis-for-managed-code.md)
+- [Nasıl Yapılır: Otomatik Kod Çözümlemesini Etkinleştirme ve Devre Dışı Bırakma](../code-quality/how-to-enable-and-disable-automatic-code-analysis-for-managed-code.md)

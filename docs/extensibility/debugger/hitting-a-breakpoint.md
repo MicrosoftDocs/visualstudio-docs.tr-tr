@@ -1,5 +1,5 @@
 ---
-title: Bir kesme noktası basarsa | Microsoft Docs
+title: Kesme noktasına ulaşma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,20 +14,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9f4788f8a038a274d6d94b4edf368e30ef495665
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8a9b110abdaf0ebfaed720dd5d09c0e215a6b2e7
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231561"
 ---
-# <a name="hitting-a-breakpoint"></a>Bir kesme noktası çıkma
-Hata ayıklama altyapısı (DE) çalıştıran veya atlama bir kesme noktası geldiğinde aşağıdaki işlemini açıklar:  
+# <a name="hit-a-breakpoint"></a>Bir kesme noktası isabet
+Aşağıdaki bölümde, çalışıyor veya atlama hata ayıklama altyapısı (DE) bir kesme noktasına ulaştığında işlemi açıklanmaktadır:  
   
-## <a name="troubleshooting-a-hit-breakpoint"></a>İsabet bir kesme noktası sorunlarını giderme  
+## <a name="troubleshoot-a-hit-breakpoint"></a>Kesme noktası isabet sorunlarını giderme  
   
-1.  DE gönderir bir [IDebugBreakpointEvent2](../../extensibility/debugger/reference/idebugbreakpointevent2.md) olarak arabirim bir **EVENT_SYNC_STOP**.  
+1.  DE gönderen bir [IDebugBreakpointEvent2](../../extensibility/debugger/reference/idebugbreakpointevent2.md) olarak arabirim bir **EVENT_SYNC_STOP**.  
   
-2.  Oturum hata ayıklama Yöneticisi'ni (SDM) çağırır [IDebugBreakpointEvent2:::EnumBreakpoints](../../extensibility/debugger/reference/idebugbreakpointevent2-enumbreakpoints.md) ulaşıldı kesme noktası almak için.  
+2.  Oturum hata ayıklama Yöneticisi (SDM) çağıran [IDebugBreakpointEvent2:::EnumBreakpoints](../../extensibility/debugger/reference/idebugbreakpointevent2-enumbreakpoints.md) kesme noktası isabet aldığından alınamıyor.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata Ayıklayıcısı Olaylarını Çağırma](../../extensibility/debugger/calling-debugger-events.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata ayıklayıcı olayları çağırma](../../extensibility/debugger/calling-debugger-events.md)

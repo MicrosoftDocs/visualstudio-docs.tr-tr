@@ -1,5 +1,5 @@
 ---
-title: '&lt;Dizeleri&gt; öğe (Önyükleyici) | Microsoft Docs'
+title: '&lt;Dizeleri&gt; öğesi (Önyükleyici) | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -20,18 +20,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: df186776e9f1fe431343c8643e5186ff522dfff6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fc1cab2fdb0a175fc9365b2a8b4b17dca46a30a2
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077678"
 ---
-# <a name="ltstringsgt-element-bootstrapper"></a>&lt;Dizeleri&gt; öğe (Önyükleyici)
-Ürün adları, paket adı ve yükleme hata iletileri için yerelleştirilmiş dizeleri tanımlar.  
+# <a name="ltstringsgt-element-bootstrapper"></a>&lt;Dizeleri&gt; öğesi (Önyükleyici)
+Ürün adları, paket adları ve yükleme hata iletileri için yerelleştirilmiş dizeleri tanımlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Strings>  
     <String  
         Name  
@@ -40,11 +41,11 @@ ms.lasthandoff: 04/19/2018
 </Strings>  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `Strings` Bir alt öğedir `Package` öğesi. Özniteliklere sahiptir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `Strings` Öğesi alt öğesi olan `Package` öğesi. Bu öznitelikleri yok.  
   
 ## <a name="string"></a>Dize  
- `String` Bir alt öğedir `Strings` öğesi. A `Strings` öğesi bir veya daha fazla olabilir `String` öğeleri.  
+ `String` Öğesi alt öğesi olan `Strings` öğesi. A `Strings` öğesi bir veya daha fazla olabilir `String` öğeleri.  
   
  `String` Aşağıdaki özniteliklere sahiptir.  
   
@@ -53,9 +54,9 @@ ms.lasthandoff: 04/19/2018
 |`Name`|Gerekli. Dize adı.|  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneği için İngilizce dizeleri belirtir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] yükleyici.  
+ Aşağıdaki kod örneği için İngilizce dizelerini belirtir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] yükleyici.  
   
-```  
+```xml  
 <Strings>  
     <String Name="DisplayName">.NET Framework 2.0</String>  
     <String Name="Culture">en</String>  
@@ -74,5 +75,5 @@ ms.lasthandoff: 04/19/2018
 </Strings>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [\<Paket > öğesi](../deployment/package-element-bootstrapper.md)

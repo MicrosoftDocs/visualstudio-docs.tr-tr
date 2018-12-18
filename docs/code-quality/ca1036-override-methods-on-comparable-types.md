@@ -1,6 +1,7 @@
 ---
 title: 'CA1036: Karşılaştırılabilir türlerde geçersiz kılma yöntemleri'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 12254202e2bae5a0846d2772006514eb470b5bdf
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ed69ba759d63ba27114bc097ac1fd9ccbe424edd
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547744"
 ---
 # <a name="ca1036-override-methods-on-comparable-types"></a>CA1036: Karşılaştırılabilir türlerde geçersiz kılma yöntemleri
+
 |||
 |-|-|
 |TypeName|OverrideMethodsOnComparableTypes|
@@ -30,29 +33,38 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir genel ya da korumalı türü uygulayan <xref:System.IComparable?displayProperty=fullName> arabirim ve geçersiz <xref:System.Object.Equals%2A?displayProperty=fullName> veya eşitliği, eşitsizlik, daha küçük veya büyük dile özgü işleci aşırı değil. Kural türü yalnızca arabirimi uygulaması devralıyorsa ihlalinin raporlamaz.
+ Ortak veya korumalı tür uygulayan <xref:System.IComparable?displayProperty=fullName> arabirim ve geçersiz <xref:System.Object.Equals%2A?displayProperty=fullName> veya dile özgü işleci eşitlik, eşitsizlik durumu olabilir, daha az aşırı değil-daha küçük veya büyük-daha. Türü arabiriminin bir uygulamasını devralırsa kuralı ihlal raporlamaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Özel bir sıralama düzeni tanımlamak türleri uygulayan <xref:System.IComparable> arabirimi. <xref:System.IComparable.CompareTo%2A> Yöntemi türü iki örneği için doğru sıralama düzenini belirten bir tamsayı değeri döndürür. Bu kural bir sıralama düzeni ayarlamak türlerini tanımlar; Bu eşitlik, eşitsizlik, olağan anlamını daha az daha küçük ve büyük geçerli olduğunu gösterir. Uygulaması sağladığınız zaman <xref:System.IComparable>, genellikle gerekir ayrıca geçersiz <xref:System.Object.Equals%2A> böylece tutarlı olan değerler döndürür <xref:System.IComparable.CompareTo%2A>. Geçersiz kılarsanız <xref:System.Object.Equals%2A> ve kodlama olan işlecin destekleyen bir dilde tutarlı olan işleçleri de sağlamalıdır <xref:System.Object.Equals%2A>.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için geçersiz kılma <xref:System.Object.Equals%2A>. İşleç aşırı yüklemesi programlama diliniz destekliyorsa, aşağıdaki işleçleri sağlayın:
+Özel sıralama düzenini tanımlamak türleri uygulayan <xref:System.IComparable> arabirimi. <xref:System.IComparable.CompareTo%2A> Yöntem türü iki örneği için doğru sıralama düzenini belirten bir tamsayı değeri döndürür. Bu kural, bir sıralama düzeni kümesi türlerini tanımlar. Gelir bir sıralama düzeni ayarı olağan anlamını eşitlik, eşitsizlik durumu olabilir, daha az-daha küçük ve büyük-daha geçerli değildir. Bir uygulamasını sağlaması zaman <xref:System.IComparable>, genellikle gerekir ayrıca geçersiz <xref:System.Object.Equals%2A> ile tutarlı olan değerler döndürür, böylece <xref:System.IComparable.CompareTo%2A>. Kılarsanız <xref:System.Object.Equals%2A> ve Kodladığınız İşleç aşırı yüklemeleri destekler bir dilde tutarlı işleçleri de sağlamalıdır <xref:System.Object.Equals%2A>.
 
--   op_Equality
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
--   op_Inequality
+Bu kural ihlalini düzeltmek için geçersiz kılın <xref:System.Object.Equals%2A>. İşleç aşırı yüklemesi programlama dilini destekler, aşağıdaki işleçleri sağlayın:
 
--   op_LessThan
+- op_Equality
 
--   op_GreaterThan
+- op_Inequality
 
- C# ' ta bu işleçlere temsil etmek için kullanılan belirteç şu şekildedir: ==,! =, \<, ve >.
+- op_LessThan
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Visual Basic ile olduğu gibi programlama diliniz İşleç aşırı yüklemesi, desteklemez ve eksik işleçleri tarafından ihlaline neden olduğunda bir uyarı bu kuraldan bastırmak güvenlidir. İşleçler uygulayan karar verirseniz op_Equality uygulama bağlamında anlamsız dışında eşitlik işleçleri başlatıldığında bu kural için bir uyarı gizlemek güvenlidir. Her zaman ancak op_Equality gerekir ve Object.Equals geçersiz kılarsanız == işleci.
+- op_GreaterThan
+
+C# içinde bu işleçler temsil etmek için kullanılan belirteçleri aşağıda belirtilmiştir:
+
+```csharp
+==
+!=
+<
+>
+```
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Visual Basic ile olduğu gibi İşleç aşırı yüklemesi, işleçler ve programlama dilini eksik ihlali neden olduğu CA1036 desteklemiyor kuraldan bir uyarıyı bastırmak güvenlidir. Op_Equality işleçleri uygulamaya karar verirseniz, uygulama bağlamında mantıklı dışında eşitlik işleçlerde tetiklendiğinde için bu kuraldan bir uyarıyı bastırmak güvenlidir. Her zaman ancak op_Equality gerekir ve Object.equals'ı geçersiz kılarsanız == işleci.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, doğru uygulayan bir tür içerir <xref:System.IComparable>. Kod açıklamaları tanımlamak için ilgili çeşitli kurallarını karşılayan yöntemleri <xref:System.Object.Equals%2A> ve <xref:System.IComparable> arabirimi.
+ Aşağıdaki örnek, doğru uygulayan bir tür içerir <xref:System.IComparable>. Kod açıklamaları için ilgili çeşitli kuralları karşılayan yöntemleri tanımlamak <xref:System.Object.Equals%2A> ve <xref:System.IComparable> arabirimi.
 
  [!code-csharp[FxCop.Design.IComparable#1](../code-quality/codesnippet/CSharp/ca1036-override-methods-on-comparable-types_1.cs)]
 
@@ -61,5 +73,8 @@ ms.lasthandoff: 04/19/2018
 
  [!code-csharp[FxCop.Design.TestIComparable#1](../code-quality/codesnippet/CSharp/ca1036-override-methods-on-comparable-types_2.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.IComparable?displayProperty=fullName> <xref:System.Object.Equals%2A?displayProperty=fullName> [Eşitlik işleçleri](/dotnet/standard/design-guidelines/equality-operators)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.IComparable?displayProperty=fullName>
+- <xref:System.Object.Equals%2A?displayProperty=fullName>
+- [Eşitlik İşleçleri](/dotnet/standard/design-guidelines/equality-operators)

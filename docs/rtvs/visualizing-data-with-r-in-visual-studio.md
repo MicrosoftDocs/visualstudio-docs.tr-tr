@@ -10,13 +10,14 @@ ms.author: kraigb
 manager: douge
 ms.workload:
 - data-science
-ms.openlocfilehash: 0a11ef12a4ca38c2973c01575b59ef35826bc4a8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f44ba213defef153acd2f5d1ef247bb093448263
+ms.sourcegitcommit: f685fa5e2df9dc307bf1230dd9dc3288aaa408b5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36238390"
 ---
-# <a name="creating-visual-data-plots-with-r"></a>R ile çizer görsel veri oluşturma
+# <a name="create-visual-data-plots-with-r"></a>Görsel veri çizimleri R ile oluşturma
 
 Çizim, bir veri Bilimcisi'nın iş akışı anahtar bir parçasıdır. R araçları için Visual Studio (RTVS)'da, tüm çizim etkinlik bu anahtar etkinlik verimliliğinizi artırmak için tasarlanmış bir veya daha fazla çizim windows çevresinde toplanır.
 
@@ -44,7 +45,7 @@ Bir çizim penceresi her zaman yeniden boyutlandırma en iyi kalite görüntü s
 
 ## <a name="plot-window-commands"></a>Çizim penceresi komutları
 
-Çizim pencerenin araç çoğunu aracılığıyla da uygulanabilir komutların tutan **R Araçlar > çizimleri** menüsü.
+Çizim pencerenin araç çoğunu aracılığıyla da uygulanabilir komutların tutan **R Araçları** > **çizimleri** menüsü.
 
 | Düğme | Komut | Açıklama | 
 | --- | --- | --- |
@@ -63,17 +64,17 @@ Bir çizim penceresi her zaman yeniden boyutlandırma en iyi kalite görüntü s
 
 Veri bilimcilerine genellikle birçok farklı veri kümelerindeki birçok çizimleri çalışmak için RTVS sayıda bağımsız çizim windows oluşturmanıza olanak sağlar. Visual Studio çerçevesi içinde veya dışında çerçeve tamamen gibi ancak bu windows sonra düzenleyebilirsiniz. (Bkz [Visual Studio'da pencere düzenlerini özelleştirme](../ide/customizing-window-layouts-in-visual-studio.md) yerleştirme ve windows yeniden boyutlandırma hakkında genel bilgi için.)
 
-Araç çubuğu düğmesini kullanarak yeni bir çizim penceresi oluşturun veya **R Araçlar > çizimleri > Yeni bir çizim pencere**. Yeni bir çizim penceresi hale *etkin* , burada yeni çizimleri işlendiğini olan penceresinin. Etkin pencereyi değiştirmek için geçiş için ve çizim penceresi etkinleştirme araç çubuğu düğmesini seçin veya **R Araçlar > çizer > çizim penceresi etkinleştirme**.
+Araç çubuğu düğmesini kullanarak yeni bir çizim penceresi oluşturun veya **R Araçları** > **çizimleri** > **yeni çizim pencere**. Yeni bir çizim penceresi hale *etkin* , burada yeni çizimleri işlendiğini olan penceresinin. Etkin pencereyi değiştirmek için kendisine geçiş yapın ve seçin **çizim penceresi etkinleştirme** araç çubuğu düğmesini veya **R Araçları** > **çizer**  >  **Çizim penceresini etkinleştirmek**.
 
 Çizimler, çok, kopyalama veya bunları çizim windows ya da sürükle ve bırak fareyle veya kullanarak kullanarak arasında taşıma anlamına gelir nesneleri bağımsız olan **kopya**, **Kes**, ve **Yapıştır** sağ bağlam komutlarını ve **Düzenle** menüleri.
 
-Sürükle ve bırak için varsayılan davranış kopyasıdır; taşımak için sürükle-Shift tuşunu basılı tutarken bırak.
+Sürükle ve bırak için varsayılan davranış kopyasıdır; taşımak için sürükle ve tutarken bırak **Shift** anahtarı.
 
 ## <a name="plot-history"></a>Çizim geçmişi
 
-Çizim komutları tüm, bir oturumda Çizdirmek korunur sağlayarak her pencere için çizim geçmişi korunur. Geçmiş gezinmek için ok düğmelerini çizim penceresi araç veya Ctrl + Alt + F11 ve Ctrl + Alt + F12 kullanın. Ayrıca tek çizimleri kaldırın veya araç çubuğu düğmelerini kullanarak yeniden penceresinden tüm çizimleri temizleyin veya **R Araçlar > çizer** menü komutları.
+Çizim komutları tüm, bir oturumda Çizdirmek korunur sağlayarak her pencere için çizim geçmişi korunur. Geçmiş gidin, çizim penceresi araç çubuğunda, ok düğmelerini kullanın veya **Ctrl**+**Alt**+**F11** ve **Ctrl** + **Alt**+**F12**. Ayrıca tek çizimleri kaldırın veya araç çubuğu düğmelerini kullanarak yeniden penceresinden tüm çizimleri temizleyin veya **R Araçları** > **çizer** menü komutları.
 
-Çizimler koleksiyonunun tamamını görmek için araç çubuğu düğmesini kullanarak çizim Geçmişi penceresini açın veya **R Araçlar > çizer > çizim Geçmişi penceresini**.
+Çizimler koleksiyonunun tamamını görmek için araç çubuğu düğmesini kullanarak çizim Geçmişi penceresini açın veya **R Araçları** > **çizer** > **çizim Geçmişi penceresini**.
 Geçmiş farklı çizim windows (veya aygıt) göre gruplandırılan bu penceresinde görüntülenen çizimleri için küçük bir listesi verilmektedir. Araç çubuğundaki Yakınlaştır düğmeleri kullanarak küçük resimlerin boyutunu değiştirir.
 
 ![Çizim Geçmiş penceresi](media/plotting-plot-history-window.png)
@@ -82,7 +83,7 @@ Bir çizim ilişkili penceresinde açmak için bu çizim çift tıklayın, seçi
 
 Çizim geçmişinizi tüm pencereleri arasında ömrü etkileşimli R oturumunuz için kullanım ömrü bağlıdır. R oturumunuz sıfırlama veya çıkmak ve Visual Studio'yu yeniden başlatın, çizim geçmişinizi sıfırlanır.
 
-## <a name="programmatically-manipulating-plot-windows"></a>Program aracılığıyla çizim windows düzenleme
+## <a name="programmatically-manipulate-plot-windows"></a>Çizim windows programsal
 
 Çizim windows R kodundan belirli çizim windows belirlemek için cihazın sayılar kullanılarak programlı olarak yönetebilirsiniz. 
 

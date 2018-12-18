@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 64c3ac876f0d7be8582ca8162fd93c83cb6d343e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8ff46d6cae842d258aab8fb03409ff263670c410
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49939780"
 ---
 # <a name="bpcondstyle"></a>BP_COND_STYLE
-Kesme noktası koşul stili bekleyen belirtir ve bağlı kesme noktaları.  
+Bekleyen kesme noktası koşulu stili için belirtir ve bağlı kesme noktaları.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,24 +46,24 @@ public enum enum_BP_COND_STYLE {
   
 ## <a name="members"></a>Üyeler  
  BP_COND_NONE  
- Kesme noktası'nın konumunu ulaşıldığında kesme ateşlenir. Kesme noktası koşul belirtildi.  
+ Kesme noktasına, Kesme noktasının konuma ulaşıldığında tetikler. Belirtilen hiçbir kesme noktası koşulu.  
   
  BP_COND_WHEN_TRUE  
- Kesme noktası değerlendiren zaman koşullu ifade kesme noktası ile ilişkili yalnızca ateşlenir `true`.  
+ Veren, koşullu ifade kesme noktasıyla ilişkili yalnızca bir kesme noktası harekete `true`.  
   
  BP_COND_WHEN_CHANGED  
- Yalnızca koşullu ifade değerini kesme noktası ile ilişkili kırılma, önceki değerlendirme sürümünden değişti ateşlenir.  
+ Yalnızca koşullu ifadenin değerini kesme noktası ile ilişkili olduğunda kesme noktası, önceki değerlendirmesinden gelen değişti ateşlenir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  İçin kullanılan `styleCondition` üyesi [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md) yapısı.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md)

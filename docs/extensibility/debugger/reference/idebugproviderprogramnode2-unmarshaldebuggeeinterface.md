@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b9ebadbc35ee8752e9f3b985a99155444caff5f8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 464c840c9f3009c1ed763bdc8dbbf66b8491bfe8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917056"
 ---
 # <a name="idebugproviderprogramnode2unmarshaldebuggeeinterface"></a>IDebugProviderProgramNode2::UnmarshalDebuggeeInterface
-Belirtilen bir arabirim işlem sınırlarında alır.  
+Belirtilen bir arabirim işlem sınırları alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int UnmarshalDebuggeeInterface(
   
 #### <a name="parameters"></a>Parametreler  
  `riid`  
- [in] Almak için GUID arabirimi.  
+ [in] Elde etmek için GUID arabirimi.  
   
  `ppvObject`  
- [out] İstenen arabirimini uygulayan nesne döndürür. [C++] Bu doğrudan istenen arabirim türü çevirebilirsiniz. [C#] kullanım <xref:System.Runtime.InteropServices.Marshal.GetObjectForIUnknown%2A> istenen arabirimi alma yöntemi.  
+ [out] İstenen arabirimini uygulayan bir nesne döndürür. [C++] Bu doğrudan istenen arabirim türüne çevirebilirsiniz. [C#] kullanımı <xref:System.Runtime.InteropServices.Marshal.GetObjectForIUnknown%2A> istendiği arayüz almak için yöntemi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Hata ayıklama altyapısı çalışırken bu yöntem kullanılır [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] işlem alanı ve ayıklanacak program kendi işlem alanında çalışıyor.  
+ Bu yöntem, hata ayıklama altyapısı çalışırken kullanılır [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] işlem alanına ve hata ayıklanan programa kendi işlem alanında çalışıyor.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProviderProgramNode2](../../../extensibility/debugger/reference/idebugproviderprogramnode2.md)

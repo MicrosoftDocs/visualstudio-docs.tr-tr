@@ -14,40 +14,41 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 368d10f2285c94f053e536da77966e9b2fb26da9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f9c00eea2034651298ff62bc50741971fc0369a8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49844919"
 ---
 # <a name="how-to-search-for-a-message-in-messages-view"></a>Nasıl Yapılır: İletiler Görünümünde İleti Arama
-Arama ölçütü olarak tanıtıcısı, tür veya ileti kimliği'ni kullanarak belirli bir ileti iletiler görünümünde arayabilirsiniz. Bunlardan herhangi birini — veya bir bileşimiyle — geçerli arama ölçütleriyle olacaktır. Arama ilk yönünü de belirtilebilir. İletişim kutusundaki alanları şu anda seçili ileti özniteliklerle önceden yüklenir.  
+Arama ölçütü olarak kendi tanıtıcı, tür veya ileti kimliği'ni kullanarak iletiler görünümünde belirli bir ileti için arama yapabilirsiniz. Bunlardan herhangi birini — veya bir birleşimini — geçerli arama ölçütleri olacaktır. İlk arama yönünü de belirtilebilir. Alanları iletişim kutusunda, seçili ileti özniteliklerle önceden yüklenir.  
   
 ### <a name="to-search-for-a-message-in-messages-view"></a>İletiler görünümünde ileti aramak için  
   
-1.  Bu nedenle pencereleri o Spy ++ ve etkin bir [iletiler görünümünü](../debugger/messages-view.md) penceresi görünür.  
+1. Bu nedenle pencereleri bu Spy ++ ve etkin bir [iletiler görünümünü](../debugger/messages-view.md) penceresi görünür.  
   
-2.  Gelen **arama** menüsünde seçin **Find iletisini**.  
+2. Gelen **arama** menüsünde seçin **ileti Bul**.  
   
-     [İleti arama iletişim kutusu](../debugger/message-search-dialog-box.md) açar.  
+    [İleti arama iletişim kutusu](../debugger/message-search-dialog-box.md) açılır.  
   
-3.  Sürükleme **Bulucu Aracı** istenen penceresi üzerinde. Aracı sürüklediğinizde **ileti arama** iletişim kutusu, seçili penceresinde ayrıntıları görüntüler.  
+3. Sürükleme **Bulucu Aracı** istenen aralığında. Aracı sürüklerken **ileti arama** iletişim kutusunda seçili penceresinde ayrıntılarını görüntüler.  
   
-     - veya -  
+   - veya -  
   
      İletileri incelemek istediğiniz pencere tanıtıcısı varsa, içine yazın **işlemek** metin kutusu.  
   
-     - veya -  
+   - veya -  
   
-     İleti türü ve/veya ileti kimliği istediğiniz biliyorsanız, bunları seçin **türü** ve **ileti** aşağı açılan menüler ve temizleyin **işlemek** metin kutusu.  
+     İleti türü ve/veya ileti kimliği, istediğiniz biliyorsanız, bunları seçin **türü** ve **ileti** açılan menüler ve Temizle **işlemek** metin kutusu.  
   
-4.  Değerleri belirtmek istediğiniz olmayan herhangi bir alan temizleyin.  
+4. Değerleri belirtmek istediğiniz değil herhangi bir alanı temizleyin.  
   
-    > [!TIP]
-    >  Ekran görünmesine için seçin **Gizle Spy** seçeneği. Bu seçenek yalnızca bırakarak ana Spy ++ penceresinde gizlendiğinden **Bul penceresi** iletişim kutusu diğer uygulamalarınızı en üstünde görünür. Spy ++ ana penceresi tıkladığınızda geri **Tamam** veya **iptal**, veya kaldırdığınızda **Gizle Spy ++** seçeneği.  
+   > [!TIP]
+   >  Ekranda kapladığı alanı azaltmak için seçin **Gizle Spy** seçeneği. Bu seçenek yalnızca bırakarak ana Spy ++ penceresini gizler **Bul penceresi** iletişim kutusu, diğer uygulamalar üzerinde görünür. Spy ++ ana pencereyi geri tıkladığınızda **Tamam** veya **iptal**, veya kaldırdığınızda **Gizle Spy ++** seçeneği.  
   
-5.  Seçin **yukarı** veya **aşağı** arama ilk yönlerinin.  
+5. Seçin **yukarı** veya **aşağı** için ilk arama yönünü.  
   
-6.  **Tamam**'ı tıklatın.  
+6. **Tamam**'ı tıklatın.  
   
- Eşleşen bir ileti bulunursa, iletileri view penceresinde vurgulanır. Bkz: [iletiler görünümünü](../debugger/messages-view.md).
+   Eşleşen bir ileti bulunursa iletileri Görünüm penceresinde vurgulanır. Bkz: [iletiler görünümünü](../debugger/messages-view.md).

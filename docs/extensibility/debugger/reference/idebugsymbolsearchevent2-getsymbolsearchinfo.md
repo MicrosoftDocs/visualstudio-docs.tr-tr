@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 518429149ad1d997b860e486f3db4e519ef42cae
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7c38d1f834e9eb7deae62701a17c0d24ea21937c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915340"
 ---
 # <a name="idebugsymbolsearchevent2getsymbolsearchinfo"></a>IDebugSymbolSearchEvent2::GetSymbolSearchInfo
-Simge yükleme işlemiyle ilgili sonuçları almak için bir olay işleyicisi tarafından çağrılır.  
+Sembol yükleme işlemiyle ilgili sonuçları almak için bir olay işleyicisi olarak çağrılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,22 +46,22 @@ int GetSymbolSearchInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `pModule`  
- [out] Kendisi için simgeler yüklenen modülü temsil eden bir IDebugModule3 nesnesi.  
+ [out] Bir IDebugModule3 simgeleri en iyi duruma yüklenen modül temsil eden nesne.  
   
  `pbstrDebugMessage`  
- [içinde out] Modülden herhangi bir hata iletisi içeren bir dize döndürür. Herhangi bir hata varsa, bu dize modülün adı yalnızca içerir ancak hiçbir zaman boştur.  
+ [out içinde] Modülünden herhangi bir hata iletisi içeren bir dize döndürür. Hata yoksa bu dize yalnızca modülün adı içerir ancak hiçbir zaman boş değildir.  
   
 > [!NOTE]
->  [C++] `pbstrDebugMessage` olamaz `NULL` ve ile boşaltılması `SysFreeString`.  
+>  [C++] `pbstrDebugMessage` olamaz `NULL` ve ile serbest bırakılmalıdır `SysFreeString`.  
   
  `pdwModuleInfoFlags`  
- [out] Bayraklarını bileşimini [MODULE_INFO_FLAGS](../../../extensibility/debugger/reference/module-info-flags.md) semboller yüklenmiş olup olmadığını belirten numaralandırma.  
+ [out] Bayraklarının bir birleşimi [MODULE_INFO_FLAGS](../../../extensibility/debugger/reference/module-info-flags.md) simgeleri yüklenmiş olup olmadığını belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Ne zaman bir işleyici alır [IDebugSymbolSearchEvent2](../../../extensibility/debugger/reference/idebugsymbolsearchevent2.md) modülü için hata ayıklama simgeleri yüklemek için bir girişimde sonra olay işleyicisi, yükleme sonuçlarını belirlemek için bu yöntem çağırabilirsiniz.  
+ Bir işleyici aldığında [IDebugSymbolSearchEvent2](../../../extensibility/debugger/reference/idebugsymbolsearchevent2.md) bir modül için hata ayıklama sembolleri için bir girişimde sonra olay işleyicisi Bu yük sonuçları belirlemek için bu yöntem çağırabilirsiniz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModule3](../../../extensibility/debugger/reference/idebugmodule3.md)   

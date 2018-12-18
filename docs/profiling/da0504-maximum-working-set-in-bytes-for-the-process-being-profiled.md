@@ -14,31 +14,33 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6bb6c62a785815db0c678d0a1f0ff38ebea14d70
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 47b0c4494a4689983ed4fee62312d5085a31aa97
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864705"
 ---
 # <a name="da0504-maximum-working-set-in-bytes-for-the-process-being-profiled"></a>DA0504: İşlem için izin verilen Bayt Cinsinden En Büyük Çalışma Kümesinin profili oluşturuluyor
+
 |||  
 |-|-|  
 |Kural Kimliği|DA0504|  
 |Kategori|Kaynak Yönetimi|  
 |Profil oluşturma yöntemi|Tümü|  
-|İleti|Bu bilgiler yalnızca bilgi toplandı. İşlem çalışma kümesi sayaç profil işlem tarafından fiziksel bellek kullanımını ölçer. Değer, en fazla tüm ölçüm aralıklarında gözlenir bildirdi.|  
+|İleti|Bu bilgiler yalnızca bilgi toplanmıştır. İşlem çalışma kümesi sayacı profil bir işlem tarafından fiziksel bellek kullanımını ölçer. Bildirilen değer tüm ölçüm aralıklarında gözlemlenen en yüksek.|  
 |Kural türü|Bilgiler|  
-  
- Örnekleme, .NET bellek veya kaynak çakışması yöntemlerini kullanarak profil, bu kural tetiklemek için en az 10 örnekleri toplamanız gerekir.  
-  
-## <a name="rule-description"></a>Kural Tanımı  
- Bu ileti en fazla işlem şu anda kullandığı bayt cinsinden fiziksel bellek miktarını raporlar. İşlem çalışma kümesi şu anda fiziksel bellekte bulunan işlem adres alanından sayfaları temsil eder. Profil oluşturma etkinken bu kural işlemin çalışma kümesi için maksimum değeri bildirir.  
-  
- Bildirilen değeri işlem başvurmuş paylaşılan bellek kesimleri yerleşik sayfalarından içerir. İşlem başvuruları sayılan paylaşılan bellek segmentlerinde bulunan paylaşılan dll dosyaları. Değer işlemin çalışma kümesi paylaşılan bellek kesimler nedeniyle işlemin ayırdığı sanal bellek miktarından daha yüksek olabilir.  
-  
- İşlemin çalışma kümesi boyutu işlem etkin olarak kullanan ne kadar sanal bellek yansıtır. Fiziksel bellek (veya RAM) miktarı etkilenir uygulama ve fiziksel belleğin için Çekişme diğer çalışan işlemlerini çalıştırmak kullanılabilir. İşlem çalışma kümeleri hakkında daha fazla bilgi için bkz: [çalışma kümesi](http://go.microsoft.com/fwlink/?LinkId=177830) MSDN Windows bellek yönetimi belgelerinde.  
-  
+
+ Örnekleme, .NET bellek ve kaynak çekişmesi yöntemleri kullanılarak profili, bu kural tetiklemek için en az 10 örnekleri toplamanız gerekir.  
+
+## <a name="rule-description"></a>Kural açıklaması  
+ Bu ileti, en fazla işlem şu anda kullandığı bayt cinsinden fiziksel bellek miktarını bildirir. İşlem çalışma kümesi, işlemin adres alanından şu anda fiziksel bellekte bulunan sayfaları temsil eder. Bu kural, profil oluşturma etkinken işlem çalışma kümesi için maksimum değeri bildirir.  
+
+ Bildirilen değeri yerleşik sayfalarından işlem başvurmuş paylaşılan bellek segmentler içerir. Paylaşılan dll işlem başvuruları sayılan paylaşılan bellek segmentler dahildir. Değer işlemin çalışma kümesi paylaşılan bellek kesimler nedeniyle işlemin ayırdığı sanal bellek miktarından daha yüksek olabilir.  
+
+ İşlem çalışma kümesi boyutu işlemi etkin bir şekilde kullanarak ne kadar sanal bellek yansıtır. Fiziksel bellek (veya RAM) miktarı tarafından etkilenir uygulama ve fiziksel belleğin için Çekişme diğer çalışan işlemlerini çalıştırmak kullanılabilir. İşlem çalışma kümeleri hakkında daha fazla bilgi için bkz. [çalışma kümesi](http://go.microsoft.com/fwlink/?LinkId=177830) msdn'in Windows bellek yönetimi belgelerinde.  
+
 ## <a name="how-to-use-rule-data"></a>Kural verileri kullanma  
- Kural Windows Performans tesis izleme Bu ölçüm verilerini toplar ve yalnızca bilgi raporlar. Farklı sürümlerini performansını veya programın derlemeleri karşılaştırmak için veya farklı bir test senaryoları altında uygulamanın performansını anlamak için kullanın.  
-  
- Gitmek için hata listesi penceresini iletisinde çift [işaretleri Görünüm](../profiling/marks-view.md) profil oluşturma veri. Bul **Process\Working ayarlamak** ve **Bellek\Sayfa/sn** sayaç sütun. En büyük değerini bulmak **Process\Working ayarlamak** ve kendisine karşılaştırma **Bellek\Sayfa/sn** değeri. Özellikle makine bellek kısıtlı sık maksimum küme çalışma azalmasına sayfalama g/ç etkinliğini olduğu zaman aralığı ile ilişkili ise.
+ Kural Windows performansı izleme olanağı Bu ölçüm verilerini toplar ve yalnızca bilgi bildirir. Bunu, farklı sürümlerin performans veya programın yapıları karşılaştırmak veya farklı test senaryoları altında uygulama performansını anlamak için kullanın.  
+
+ Hata Listesi penceresindeki iletiyi gitmek için çift tıklatın [işaret görünümü](../profiling/marks-view.md) profil oluşturma verilerinin. Bulma **Process\Working ayarlamak** ve **Bellek\Sayfa/sn** sayaç sütun. Ardından en büyük değerini bulmak **Process\Working ayarlamak** ve karşılaştırmak için **Bellek\Sayfa/sn** değeri. Genellikle, özellikle makine bellek kısıtlı olduğunda maksimum küme çalışma azalan sayfalama g/ç etkinliğini olduğu zaman aralığı ile ilişkilidir.

@@ -1,6 +1,6 @@
 ---
-title: UWP uygulamaları - Visual Studio hata ayıklama | Microsoft Docs
-ms.custom: ''
+title: UWP uygulamalarında hata ayıklama | Microsoft Docs
+ms.custom: seodec18
 ms.date: 01/17/2017
 ms.technology: vs-ide-debug
 ms.topic: conceptual
@@ -14,23 +14,24 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - uwp
-ms.openlocfilehash: 522837b2e5475ea5cb25b638d67aaa4d01438271
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 14761da614ddcd36e8ca9bcec2a686f125ab53bd
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53064027"
 ---
 # <a name="debug-universal-windows-apps-uwp-in-visual-studio"></a>Evrensel Windows uygulamaları (UWP) Visual Studio'da hata ayıklama
 
-Visual Studio hata ayıklayıcısı hata ayıklama UWP uygulamaları için tam destek sağlar. 
-  
-Windows 8.1 uygulamaları hata ayıklamak için bkz: [Visual Studio'da hata ayıklama mağazası uygulamaları](https://msdn.microsoft.com/en-us/library/hh441472.aspx). Windows Phone 8 uygulamalarını hata ayıklamak için bkz: [Windows Phone 8 için hata ayıklama uygulamaları](https://msdn.microsoft.com/library/windows/apps/ff402572(v=vs.105).aspx).  
-  
-|||  
+Visual Studio hata ayıklayıcı, hata ayıklama UWP uygulamaları için tam destek sağlar. UWP hata ayıklama görevleri için aşağıdaki makalelere bakın.
+
+|Hata ayıklama görevi|Makale|
 |-|-|  
-|[UWP uygulaması için hata ayıklama oturumu başlatma](../debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml.md)|UWP uygulamaları bağlı bir aygıt, bir uygulama simulator veya öykünücü veya uzak cihazda yerel bir makinede çalıştırın.|  
-|[Yüklü uygulama paketinin hatalarını ayıklama](../debugger/debug-installed-app-package.md)|Dağıtılan uygulamalar, hem yerel hem uzaktan hata ayıklama.|
-|[İçerik UWP uygulamaları için hazırlık](../debugger/prefetch-content-for-windows-store-apps.md)|UWP uygulamaları ContentPrefetcher sınıfı etkisi analiz edin.|  
+|Windows 8.1 uygulamalarında hata ayıklama|[Visual Studio’da Store uygulamalarının hatalarını ayıklama](debug-store-apps-in-visual-studio.md)|
+|UWP uygulamaları, yerel makine, uzak ya da bağlı cihaz veya uygulama simülatörünü çalıştırın.|[UWP uygulaması için hata ayıklama oturumu başlatma](../debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml.md)|
+|Dağıtılan uygulamaları, yerel ve uzak hata ayıklama.|[Yüklü uygulama paketinin hatalarını ayıklama](../debugger/debug-installed-app-package.md)|
+|UWP uygulamaları ContentPrefetcher sınıfı etkisini analiz edin.|[UWP uygulamaları için içeriği önceden getirme](../debugger/prefetch-content-for-windows-store-apps.md)|
+
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Statik kod analizi kullanarak kod kalitesini çözümleme](../test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis.md)
+ [Statik kod analizi kullanarak kod kalitesini analiz etme](../test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 54d7f713eb070a578993d79bf80dc3a7b74833f0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 475bfaae3e55af761eb1d19841d9b0aadad7a9e7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49877081"
 ---
 # <a name="idebugerrorbreakpointresolution2getresolutioninfo"></a>IDebugErrorBreakpointResolution2::GetResolutionInfo
-Kesme noktası hata çözümleme bilgilerini alır.  
+Kesme noktası hatası çözümleme bilgilerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,13 +43,13 @@ int GetResolutionInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [BPERESI_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) hangi alanlarının belirlemek numaralandırma `pErrorResolutionInfo` doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [BPERESI_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) hangi alanları belirlemek numaralandırma `pErrorResolutionInfo` doldurulması için.  
   
  `pErrorResolutionInfo`  
- [içinde out] [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) kesme noktası çözümleme açıklaması oturum girilir yapısı.  
+ [out içinde] [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) kesme noktası çözünürlüğü açıklamasını oturum girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
  Aşağıdaki örnekte bu yöntem için basit bir uygulayan `CDebugErrorBreakpointResolution` gösteren nesne [IDebugErrorBreakpointResolution2](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2.md) arabirimi.  

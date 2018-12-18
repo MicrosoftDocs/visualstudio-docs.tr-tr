@@ -14,6 +14,7 @@ ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30863566"
 ---
 # <a name="signing-in-to-your-visual-studio-subscription"></a>Visual Studio aboneliğiniz için oturum açma
 
@@ -45,8 +46,7 @@ Visual Studio geliştirme Essentials aboneliğinizi ilk kez eriştiğinde, bir H
    > [!NOTE]
    > Bu adres, aldığınız abone Hoş Geldiniz e-postayla da tanımlanır. Hoş Geldiniz e-posta bulma konusunda sorun yaşıyorsanız Lütfen gereksiz posta klasörlerinizi denetleyin. 
 
-3. 
-              **Devam**'a tıklayın.
+3. **Devam**'a tıklayın.
 4. Kurumsal oturum açma sayfasına yönlendirilir.
 5. Parolanızı girin.
 6. Tıklatın **oturum açın** 
@@ -64,8 +64,7 @@ Kullanmakta olduğunuz abonelik portal üstte mavi çubuğunda görüntülenen t
    > [!NOTE]
    > Bu adres de Hoş Geldiniz harf abone olarak tanımlanır. Hoş Geldiniz harf olmayan aldıysanız, gereksiz posta klasörlerinizi gözden geçirin
 
-3. 
-              **Devam**'a tıklayın.
+3. **Devam**'a tıklayın.
 4. Bir karar sayfasına yeniden yönlendirilmeniz.
     - Seçin **iş veya Okul hesabı** abonelik Azure Active Directory (AAD) Kiracı ile ilişkilendirilen bir "İş veya Okul" hesabı ile ilişkili ise.
     - Seçin **kişisel** abonelik "Şirket" e-posta adresi ile ilişkilidir, ancak bir "Kişisel" Microsoft hesabı (MSA) için de dönüştürüldü.

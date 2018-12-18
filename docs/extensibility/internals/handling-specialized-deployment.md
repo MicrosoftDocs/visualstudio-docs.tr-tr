@@ -1,5 +1,5 @@
 ---
-title: Özel dağıtım işleme | Microsoft Docs
+title: Özelleştirilmiş dağıtım işleme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,40 +14,40 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d777c66657d69d24e1cbc3d6d4b3ea5a5d143a27
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e3c73b118f7e137847c1342fb9949c3d7dd6dd0b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49863251"
 ---
-# <a name="handling-specialized-deployment"></a>Dağıtım işleme özelleştirilmiş
-Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, örneğin, bir Web sunucusu güncelleştirme proje izin vermek için bir dağıtımı destekler. Benzer şekilde, bir **akıllı aygıt** proje hedef cihaz için oluşturulmuş bir uygulamayı kopyalamak için bir dağıtımı destekler. Proje alt türleri tedarik özel dağıtım davranışı uygulayarak <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> arabirimi. Bu arabirim, dağıtım işlemlerini eksiksiz bir kümesini tanımlar:  
+# <a name="handle-specialized-deployment"></a>Özelleştirilmiş dağıtım işleme
+Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, örneğin, bir Web sunucusunu güncelleştirmek için bir proje izin vermek için bir dağıtımı destekler. Benzer şekilde, bir **akıllı cihaz** proje hedef cihaza oluşturulan bir uygulamayı kopyalamak için bir dağıtım destekler. Proje alt türleri uygulayarak özel dağıtım davranışı sağlayabilirler <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> arabirimi. Bu arabirim, dağıtım işlemlerini eksiksiz bir kümesini tanımlar:  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.AdviseDeployStatusCallback%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.AdviseDeployStatusCallback%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Commit%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Commit%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStartDeploy%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStartDeploy%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStatusDeploy%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStatusDeploy%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Rollback%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Rollback%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StartDeploy%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StartDeploy%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StopDeploy%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StopDeploy%2A>  
   
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.UnadviseDeployStatusCallback%2A>  
+- <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.UnadviseDeployStatusCallback%2A>  
   
- Gerçek dağıtım işlemi yapmak için ayrı bir iş parçacığı içinde gerçekleştirilmelidir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kullanıcı etkileşimi için bile daha iyi yanıt. Tarafından sağlanan yöntemleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> göre zaman uyumsuz olarak adlandırılır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ve gerekirse ortam herhangi bir zamanda dağıtım işlemin durumunu sorgulamak için veya işlemi durdurmak için izin verme arka planda çalışır. <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> Kullanıcı Dağıt komutunu seçtiğinde arabirimi dağıtım işlemlerini ortamı tarafından çağrılır.  
+  Gerçek dağıtım işlemi yapmak için ayrı iş parçacığında gerçekleştirilmesi gereken [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kullanıcı etkileşimine daha hızlı. Tarafından sağlanan yöntemleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> zaman uyumsuz olarak göre adlandırılır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ve gerekirse ortam işlemi durdurmak için ya da herhangi bir zamanda bir dağıtım işleminin durumunu sorgulamak için izin vermek için arka planda çalışır. <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg> Arabirimi dağıtım işlemlerini kullanıcı dağıtma komutunu seçtiğinde ortamı tarafından çağrılır.  
   
- Dağıtım işlemi başladı veya sona erdi ortamda bildirmek için proje alt çağırmayı gerektiren <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployStatusCallback.OnStartDeploy%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployStatusCallback.OnEndDeploy%2A> yöntemleri.  
+  Dağıtım işlemi başladı veya sonlandırıldı ortamı bildirmek için proje alt çağırmayı gerektiren <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployStatusCallback.OnStartDeploy%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployStatusCallback.OnEndDeploy%2A> yöntemleri.  
   
-## <a name="handling-specialized-deployment"></a>Dağıtım işleme özelleştirilmiş  
   
-#### <a name="to-handle-a-specialized-deployment-by-a-subtype-project"></a>Bir alt projeye göre özelleştirilmiş bir dağıtım işlemek için  
+## <a name="to-handle-a-specialized-deployment-by-a-subtype-project"></a>Bir alt proje tarafından bir özel dağıtım işlemek için  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.AdviseDeployStatusCallback%2A> dağıtım durumu olayları bildirimlerini almak için ortamı kaydetmek için yöntem.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.AdviseDeployStatusCallback%2A> dağıtım durumu olay bildirimleri almak için ortamı kaydetmek için yöntemi.  
   
     ```vb  
     Private adviseSink As Microsoft.VisualStudio.Shell.EventSinkCollection = New Microsoft.VisualStudio.Shell.EventSinkCollection()  
@@ -78,7 +78,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.UnadviseDeployStatusCallback%2A> dağıtım durumu olayları bildirimlerini almak için ortam kaydını iptal etmek için yöntem.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.UnadviseDeployStatusCallback%2A> dağıtım durumu olay bildirimleri almak için ortamın kaydını iptal etmek için yöntemi.  
   
     ```vb  
     Public Function UnadviseDeployStatusCallback(ByVal dwCookie As UInteger) As Integer  
@@ -96,7 +96,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Commit%2A> uygulamanıza özel kaydetme işlemi gerçekleştirmek için yöntem.  Bu yöntem, çoğunlukla veritabanı dağıtımı için kullanılır.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Commit%2A> uygulamanıza özgü yürütme işlemini gerçekleştirmek için yöntemi.  Bu yöntem, esas olarak veritabanı dağıtımı için kullanılır.  
   
     ```vb  
     Public Function Commit(ByVal dwReserved As UInteger) As Integer  
@@ -114,7 +114,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Rollback%2A> geri alma işlemi gerçekleştirmek için yöntem. Bu yöntem çağrıldığında, dağıtım projesi yapılan değişiklikleri geri almak uygun ne olursa olsun yapın ve proje durumunu geri yükle. Bu yöntem, çoğunlukla veritabanı dağıtımı için kullanılır.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.Rollback%2A> geri alma işlemi gerçekleştirmek için yöntemi. Bu yöntem çağrıldığında, ne olursa olsun değişiklikleri geri alma ve proje durumunu geri yüklemek uygun olan dağıtım projesi yapmanız gerekir. Bu yöntem, esas olarak veritabanı dağıtımı için kullanılır.  
   
     ```vb  
     Public Function Commit(ByVal dwReserved As UInteger) As Integer  
@@ -132,7 +132,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStartDeploy%2A> proje dağıtım işlemini başlatmak mümkün olup olmadığını belirlemek amacıyla yöntemi.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStartDeploy%2A> proje dağıtım işlemini başlatmak mümkün olup olmadığını belirlemek için yöntemi.  
   
     ```vb  
     Public Function QueryStartDeploy(ByVal dwOptions As UInteger, ByVal pfSupported As Integer(), ByVal pfReady As Integer()) As Integer  
@@ -165,7 +165,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStatusDeploy%2A> dağıtım işlemi başarıyla tamamlandı olup olmadığını belirlemek amacıyla yöntemi.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.QueryStatusDeploy%2A> dağıtım işlemi başarıyla tamamlandı olup olmadığını belirlemek için yöntemi.  
   
     ```vb  
     Public Function QueryStatusDeploy(ByRef pfDeployDone As Integer) As Integer  
@@ -188,7 +188,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StartDeploy%2A> ayrı bir iş parçacığı dağıtım işlemine başlamak için yöntem. Kod içinde uygulamanızın dağıtım için belirli yerleştirin `Deploy` yöntemi.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StartDeploy%2A> ayrı bir iş parçacığı bir dağıtım işlemine başlamak için yöntemi. Kod içinde uygulamanızın dağıtım için belirli yerleştirin `Deploy` yöntemi.  
   
     ```vb  
     Public Function StartDeploy(ByVal pIVsOutputWindowPane As IVsOutputWindowPane, ByVal dwOptions As UInteger) As Integer  
@@ -245,7 +245,7 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
   
     ```  
   
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StopDeploy%2A> dağıtım işlemi durdurmak için yöntem. Bir kullanıcı bastığında bu yöntem çağrılır **iptal** dağıtım işlemi sırasında düğmesi.  
+-   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsDeployableProjectCfg.StopDeploy%2A> dağıtım işlemini durdurmak için yöntemi. Bu yöntem, kullanıcının bastığında çağrılır **iptal** dağıtım işlemi sırasında düğmesi.  
   
     ```vb  
     Public Function StopDeploy(ByVal fSync As Integer) As Integer  
@@ -293,5 +293,5 @@ Bir dağıtım projeleri için isteğe bağlı bir işlemdir. Bir Web projesi, �
 > [!NOTE]
 >  Bu konuda sağlanan tüm kod örnekleri daha büyük bir örneğin bölümlerdir [VSSDK örnekleri](http://aka.ms/vs2015sdksamples).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Proje Alt Türleri](../../extensibility/internals/project-subtypes.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Proje alt türleri](../../extensibility/internals/project-subtypes.md)

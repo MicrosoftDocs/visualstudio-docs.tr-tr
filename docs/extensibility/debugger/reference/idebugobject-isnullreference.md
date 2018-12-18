@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1a886bf56cfafc615099aa489f9d329229ea8727
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d6b5108d9fd830c047c020d4b3adab2526854e6c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49939702"
 ---
 # <a name="idebugobjectisnullreference"></a>IDebugObject::IsNullReference
 Bu nesne bir null başvuru olup olmadığını sınar.  
@@ -40,13 +41,13 @@ int IsNullReference(
   
 #### <a name="parameters"></a>Parametreler  
  `pfIsNull`  
- [out] Sıfır olmayan döndürür (`TRUE`) varsa bu nesne bir null başvuru; Aksi halde, sıfır döndürür (`FALSE`).  
+ [out] Sıfır olmayan döndürür (`TRUE`) varsa bu nesne bir null başvuru; Aksi takdirde, sıfır döndürür (`FALSE`).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir null başvuru boş bir nesne veya atandı değil bir nesne anlamına gelir.  
+ Bir null başvuru boş bir nesneye veya nesnenin için atanmadı anlamına gelir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)

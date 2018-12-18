@@ -1,6 +1,7 @@
 ---
 title: 'CA2117: APTCA türleri yalnızca APTCA taban türlerini genişletmelidir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,11 +16,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5d8b313f0e1c33eb5c17a291995956e62d8c597e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8dac5acc0b7c7fff02862853bfd996362f80d1cc
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547506"
 ---
 # <a name="ca2117-aptca-types-should-only-extend-aptca-base-types"></a>CA2117: APTCA türleri yalnızca APTCA taban türlerini genişletmelidir
 
@@ -32,43 +34,43 @@ ms.lasthandoff: 04/19/2018
 
 ## <a name="cause"></a>Sebep
 
-Bir derleme bir ortak veya korumalı türünde <xref:System.Security.AllowPartiallyTrustedCallersAttribute?displayProperty=fullName> özniteliğine sahip bir derlemede bildirilen bir türü özniteliği devralır.
+Bir ortak veya korumalı tür ile bir derlemede <xref:System.Security.AllowPartiallyTrustedCallersAttribute?displayProperty=fullName> özniteliğine sahip bir derlemede bildirilmiş bir tür özniteliğini devralır.
 
-## <a name="rule-description"></a>Kural Tanımı
+## <a name="rule-description"></a>Kural açıklaması
 
-Varsayılan olarak, güçlü adlara sahip derlemelerde ortak veya korumalı türü örtük olarak tarafından korunan bir [InheritanceDemand](xref:System.Security.Permissions.SecurityAction#System_Security_Permissions_SecurityAction_InheritanceDemand) için tam güven. Tanımlayıcı adlı derlemeler ile işaretlenen <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) özniteliği bu koruma sahip değil. Öznitelik devralma isteğe bağlı devre dışı bırakır. Tam güven yok türleri tarafından sunulan türleri devralma isteğe bağlı olmayan bir derleme bildirilen devralınabilir.
+Varsayılan olarak, ortak veya korumalı tür tanımlayıcı ada sahip derlemelerde örtük olarak tarafından korunan bir [Inheritancedemand](xref:System.Security.Permissions.SecurityAction#System_Security_Permissions_SecurityAction_InheritanceDemand) tam güven için. Tanımlayıcı adlandırılmış derlemeler ile işaretlenen <xref:System.Security.AllowPartiallyTrustedCallersAttribute> özniteliği (APTCA) Bu koruma sahip değil. Öznitelik devralma talebi devre dışı bırakır. Tam güven olmayan türleri tarafından sunulan türleri derlemedeki bir devralma talebi olmadan bildirilen devralınabilir.
 
-APTCA özniteliği üzerinde tam olarak güvenilir bir derleme var ve derlemesinde türünü kısmen güvenilen arayanlara izin vermeyen bir türünden devralan bir güvenlik açığından yararlanma mümkün olur. İki yazarsa `T1` ve `T2` aşağıdaki koşullara uyan, zararlı çağıranlar türü kullanabileceğiniz `T1` korur örtük tam güven devralma talep atlamak için `T2`:
+APTCA özniteliği tam olarak güvenilen bir derlemede yapılandırıldığında ve derlemedeki tür, kısmen güvenilmeyen çağrıcılara izin vermeyen tür tarafından devralındığında güvenlik yararlanması mümkündür. İki yazdığında `T1` ve `T2` zararlı çağıranlar türü kullanabilir, aşağıdaki koşullara uyması `T1` korur örtük tam güven devralma talebi atlamak için `T2`:
 
-- `T1` Ortak tür APTCA özniteliği tam güvenilen bir derlemede bildirildi.
+- `T1` bir genel türü APTCA özniteliği tam olarak güvenilen bir derlemede bildirilmiş.
 
-- `T1` bir türünden devralan `T2` kendi derleme dışında.
+- `T1` bir tür tarafından devralındığında `T2` kendi derlemesi dışında.
 
-- `T2`kişinin derleme APTCA özniteliği yok ve bu nedenle, kısmen güvenilen derlemelerindeki tarafından devralınabilir olmamalıdır.
+- `T2`kişinin derleme APTCA özniteliği yok ve bu nedenle, kısmen güvenilen derlemelerde türlerine göre devralınabilir olmamalıdır.
 
-Kısmen güvenilen türü `X` gelen devralabilirsiniz `T1`, sağlayan, erişim bildirilen devralınan üyeleri için `T2`. Çünkü `T2` APTCA özniteliği, hemen türetilmiş türü yok (`T1`) için tam güven; bir devralma talebi karşılamak gerekir `T1` tam güvene sahip ve bu nedenle bu onay karşılar. Güvenlik riski çünkü `X` korur devralma talep çağıran katılmayan `T2` güvenilmeyen sınıflara gelen. Bu nedenle, APTCA özniteliği türleriyle özniteliğine sahip olmayan türlerini genişletmelidir değil.
+Kısmen güvenilen bir tür `X` öğesinden devralabilir `T1`, sağlayan, erişim için bildirilen devralınan üyeleri `T2`. Çünkü `T2` APTCA özniteliği, hemen türetilmiş türü yok (`T1`) için tam güven; bir devralma talebi karşılayamaz hale gerekir `T1` tam güvene sahip ve bu nedenle bu denetimi karşılar. Güvenlik riski çünkü `X` koruyan bir devralma talebi karşılamadığınızı içinde yer almaz `T2` güvenilmeyen sınıflara öğesinden. Bu nedenle, APTCA özniteliği türleriyle özniteliğine sahip olmayan türleri geçmemelidir.
 
-Başka bir güvenlik sorunu ve daha sık karşılaşılan bir belki de türetilmiş bir tür olan (`T1`) Programcı hata tam güven gerektiren türünden korumalı üyeleri hale getirebilir (`T2`). Bu etkilenme ortaya çıktığında, güvenilmeyen arayanlar yalnızca tam olarak güvenilmeyen türleri için kullanılabilir olması gerektiğini bilgilere erişin.
+Başka bir güvenlik sorunu ve belki de daha yaygın bir tane, türetilmiş bir tür olan (`T1`) Programcı hata, tam güven gerektiren türünden korumalı üyeler açığa çıkarabilir (`T2`). Bu arabirim ortaya çıktığında, güvenilmeyen çağıranlar yalnızca tam olarak güvenilen türleri için kullanması gereken bilgilere erişin.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
-İhlali tarafından bildirilen türü APTCA özniteliği gerektirmeyen bir derlemede ise kaldırın.
+Bir derlemede APTCA özniteliği gerektirmez ihlali tarafından bildirilen türü ise kaldırın.
 
-APTCA özniteliği gerekiyorsa, tam güven için bir devralma talep türüne ekleyin. Devralma isteğe bağlı güvenilmeyen türlerine göre devralma korur.
+APTCA özniteliği gerekiyorsa, bir devralma talebi için tam güven türüne ekleyin. Devralma talebi tarafından güvenilmeyen türü devralma karşı korur.
 
-Derlemelere ihlali tarafından bildirilen temel türleri APTCA özniteliği ekleyerek bir ihlali düzeltmek mümkündür. Bunu, ilk derlemelerde tüm kod ve derlemelerini bağlıdır tüm kod bir yoğun güvenlik incelemesi gerçekleştirme olmadan yapmayın.
+APTCA özniteliği ihlali tarafından bildirilen temel türler derlemeleri ekleyerek bir ihlali gidermek mümkündür. Bunu, ilk derlemelerdeki tüm kod ve derlemeler bağlı olan tüm kod bir yoğun güvenlik incelemesi gerçekleştirme olmadan yapmayın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
 
-Bu kural bir uyarıdan güvenle gizlemek için türü tarafından kullanıma sunulan korumalı üyeleri doğrudan veya dolaylı olarak hassas bilgileri, işlemler veya zararlı bir şekilde kullanılabilir kaynaklara erişmek güvenilmeyen arayanlara izin vermediğinden emin olmalısınız.
+Güvenli bir şekilde bu kuraldan bir uyarıyı bastırmak için korumalı üyeleri türünüz tarafından kullanıma sunulan doğrudan veya dolaylı olarak hassas bilgileri, işlem ya da yıkıcı bir şekilde kullanılabilir kaynaklara erişimi güvenilmeyen çağrı yapanların izin vermediğinden emin olmanız gerekir.
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek, bu kural tarafından algılanan güvenlik açığı göstermek için iki derleme ve test uygulaması kullanır. İlk derleme APTCA özniteliği yok ve kısmen güvenilen türlerine göre devralınabilir olmamalıdır (tarafından temsil edilen `T2` önceki tartışma içinde).
+Aşağıdaki örnek, bu kural tarafından algılanan güvenlik açığı göstermek için iki derleme ve test uygulamasını kullanır. İlk derleme APTCA özniteliği yok ve kısmen güvenilen türlerine göre devralınabilir olmamalıdır (tarafından temsil edilen `T2` önceki tartışmada).
 
 [!code-csharp[FxCop.Security.NoAptcaInherit#1](../code-quality/codesnippet/CSharp/ca2117-aptca-types-should-only-extend-aptca-base-types_1.cs)]
 
-Tarafından temsil edilen ikinci derleme `T1` önceki tartışmada tam olarak güvenilir ve kısmen güvenilen arayanlara izin verir.
+Tarafından temsil edilen ikinci derleme `T1` önceki tartışmada tam olarak güvenilirdir ve kısmen güvenilen arayanlara izin verir.
 
 [!code-csharp[FxCop.Security.YesAptcaInherit#1](../code-quality/codesnippet/CSharp/ca2117-aptca-types-should-only-extend-aptca-base-types_2.cs)]
 
@@ -76,13 +78,13 @@ Tarafından temsil edilen test türü `X` önceki tartışmada kısmen güvenile
 
 [!code-csharp[FxCop.Security.TestAptcaInherit#1](../code-quality/codesnippet/CSharp/ca2117-aptca-types-should-only-extend-aptca-base-types_3.cs)]
 
-Bu örnek şu çıkışı üretir:
+Bu örnek aşağıdaki çıktıyı üretir:
 
-**Shady glen adresindeki karşılayan 22/2/2003 12:00:00 AM!**
-
-**Test: Güneşli çayırı**
-
-**Güneşli çayırı adresindeki karşılayan 22/2/2003 12:00:00 AM!**
+```txt
+Meet at the shady glen 2/22/2003 12:00:00 AM!
+From Test: sunny meadow
+Meet at the sunny meadow 2/22/2003 12:00:00 AM!
+```
 
 ## <a name="related-rules"></a>İlgili kuralları
 

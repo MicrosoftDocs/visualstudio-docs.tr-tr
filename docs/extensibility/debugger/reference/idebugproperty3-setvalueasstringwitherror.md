@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9379d474f135c5d6bbe82fd3391e7e4d8241f1b9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5f747185dd696f6d70cc4c514f54eaddef5bfa7a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864446"
 ---
 # <a name="idebugproperty3setvalueasstringwitherror"></a>IDebugProperty3::SetValueAsStringWithError
-Bu özelliğin değerini ayarlar ve gerekirse bir hata iletisi döndürür.  
+Bu özelliğin değerini ayarlar ve gerekirse, bir hata iletisi döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,22 +50,22 @@ int SetValueAsStringWithError(
  [in] Ayarlanacak değer.  
   
  `dwRadix`  
- [in] Ayarlanan değer taban.  
+ [in] Ayarlanan değer sayı tabanı.  
   
  `dwTimeout`  
- [in] Ayarlanacak değer için beklenecek süre (`INFINITE` bekleyin sonsuza kadar anlamına gelir).  
+ [in] Değeri ayarlamak beklenecek süre (`INFINITE` süresiz bekleme anlamına gelir).  
   
  `errorString`  
- [out] Değerin bir hata varsa, bu başarısızlığın nedenini tutar.  
+ [out] Değeri ayarlanırken bir hata varsa, bu başarısızlığın nedenini tutar.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Gelen değer, değerlendirilecek bir ifade olabilir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CProperty** gösteren nesne [IDebugProperty3](../../../extensibility/debugger/reference/idebugproperty3.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CProperty** gösteren nesne [IDebugProperty3](../../../extensibility/debugger/reference/idebugproperty3.md) arabirimi.  
   
 ```cpp  
 HRESULT CProperty::SetValueAsStringWithError(   

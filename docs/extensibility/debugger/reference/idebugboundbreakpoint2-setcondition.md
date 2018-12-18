@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 94b131820fdd6bd2b83a9e54fd450cbb19c8064a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 07512dbec66d3abd3c380629a32bd8468b253eb1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882638"
 ---
 # <a name="idebugboundbreakpoint2setcondition"></a>IDebugBoundBreakpoint2::SetCondition
-Bu bağlama kesme noktası ile ilişkilendirilen koşulu değiştirir veya ayarlar.  
+Bu bağlı Kesme noktasının ile ilişkilendirilmiş olan koşul değiştirir veya ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,10 +42,10 @@ int SetCondition(
   
 #### <a name="parameters"></a>Parametreler  
  `bpCondition`  
- [in] Arasında bir değer [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md) koşulu açıklar numaralandırması.  
+ [in] Bir değer [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md) koşul açıklayan sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` ilişkili kesme noktası nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) numaralandırması).  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` bağlı Kesme noktasının nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) sabit listesi).  
   
 ## <a name="remarks"></a>Açıklamalar  
  Daha önce bu kesme noktası ile ilişkili herhangi bir koşul kaybolur.  

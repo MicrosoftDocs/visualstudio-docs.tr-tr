@@ -1,21 +1,22 @@
 ---
-title: Visual Studio'da soyut bir sınıf uygulama | Microsoft Docs
-ms.custom: ''
+title: Bir soyut sınıf uygulama
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: f91c0a056cb17d1eaf2788c3c7111e2ddbbace2e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dfa2c6692ddcef9e41454bf902580f354c32f861
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53047609"
 ---
-# <a name="implement-an-abstract-class-in-visual-studio"></a>Visual Studio'da soyut bir sınıf uygulama
+# <a name="implement-an-abstract-class-in-visual-studio"></a>Visual Studio'da bir soyut sınıf uygulama
 
 Bu kod oluşturma için geçerlidir:
 
@@ -23,50 +24,50 @@ Bu kod oluşturma için geçerlidir:
 
 - Visual Basic
 
-**Ne:** hemen bir Özet sınıf uygulamak için gereken kodu oluşturmanıza olanak sağlar.
+**Ne:** hemen soyut bir sınıf uygulamak için gereken kodu oluşturmanıza olanak tanır.
 
-**Ne zaman:** bir özet sınıftan istiyor.
+**Ne zaman:** soyut bir sınıftan istiyorsunuz.
 
-**Neden:** bu özellik tüm yöntemi imzaları otomatik olarak oluşturur ancak tüm soyut üyelerini birer birer kendiniz uygulamak.
+**Neden:** bu özellik otomatik olarak tüm yöntem imzaları oluşturur ancak tüm soyut üyelerini birer birer el ile uygulayabilirsiniz.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. İmlecinizi satıra yerleştirin bir özet sınıftan devralınan, ancak gerekli tüm üyeleri uygulanmadı gösterir kırmızı bir dalgalı olduğu.
+1. İmlecinizi satıra Yerleştir soyut bir sınıftan devralınan, ancak gerekli tüm üyeleri uygulanmadı belirten bir kırmızı dalgalı olduğu.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu C#](media/abstract-highlight-cs.png)
+       ![Vurgulanmış kodu C#](media/abstract-highlight-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu VB](media/abstract-highlight-vb.png)
+       ![Vurgulanmış kodu VB](media/abstract-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
    - **Fare**
-     - Sağ tıklatıp **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
-     - Kırmızı dalgalı getirin ve'ı tıklatın ![Ampul](media/bulb-cs.png) görüntülenen simge.
-     - &nbsp; ![Ampul](media/bulb-cs.png) metin imleci kırmızı dalgalı satırıyla açıksa sol kenar boşluğunda görüntülenen simgesine.
+      - Sağ tıklayıp **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
+      - Kırmızı dalgalı çizgi gelin ve tıklayın ![Ampul](media/bulb-cs.png) Bu simge görünür.
+      - &nbsp; ![Ampul](media/bulb-cs.png) kırmızı dalgalı çizgi içeren satırda metin imleci ise sol kenar boşluğunda görünür simge.
 
    ![Uygulama sınıfı Önizleme](media/abstract-preview-cs.png)
 
-1. Seçin **uygulama soyut sınıf** açılır menüsünden.
+3. Seçin **soyut sınıf Uygula** aşağı açılan menüden.
 
    > [!TIP]
-   > - Kullanım **Önizleme değişiklikleri** önizleme penceresinin altındaki bağlantıyı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak seçiminizi yaptıktan önce.
-   > - Kullanım **belge**, **proje**, ve **çözüm** bağlantılar pencerenin altındaki devralınan uygun yöntem imzaları arasında birden çok sınıf oluşturmak için Önizleme soyut sınıf.
+   > - Kullanım **değişiklik önizlemesi** Önizleme pencerenin alt kısmındaki bağlantı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak, seçim yapmadan önce.
+   > - Kullanım **belge**, **proje**, ve **çözüm** devralacak doğru yöntem imzaları arasında birden çok sınıf oluşturmak için önizleme penceresi altındaki bağlantıları soyut sınıf.
 
-   Özet yöntem imzaları oluşturulur ve uygulanması hazırsınız.
+   Soyut yöntem imzaları oluşturulur ve uygulanması hazırsınız.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-      ![Uygulama sınıfı sonuç C#](media/abstract-result-cs.png)
+       ![Uygulama sınıfı sonucuC#](media/abstract-result-cs.png)
 
    - Visual Basic:
 
-      ![Uygulama sınıfı sonuç VB](media/abstract-result-vb.png)
+       ![VB sınıf sonucu uygulayın](media/abstract-result-vb.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

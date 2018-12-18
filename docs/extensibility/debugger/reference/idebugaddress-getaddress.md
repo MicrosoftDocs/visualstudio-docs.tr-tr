@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e7f93b57d3cdbea71d3cf9cbe3d51645251c9628
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 869094fabca44eca352a9610ac59a6627df74dd7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873363"
 ---
 # <a name="idebugaddressgetaddress"></a>IDebugAddress::GetAddress
-Bir nesne ve kendi kapsamı veya kapsayıcı içinde konumuna açıklayan bir yapı döndürür.  
+Bir nesne ve onun kapsamındaki veya kapsayıcı konumunu tanımlayan bir yapıyı döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetAddress(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [içinde out] A [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) bu yöntem tarafından doldurulur yapısı.  
+ [out içinde] A [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) bu yöntem tarafından girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) yapısı oturum uygun bilgileri doldurur bu yönteme geçirilir. Bu bilgilerin nasıl yorumlanacağını döndürülen bilgi ve sembol işleyici türüne bağlıdır. Bkz: [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) daha fazla ayrıntı için.  
+ [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) yapısı, ilgili bilgileri ile oturum kaplayacak şekilde bu yönteme geçirilir. Bu bilgileri nasıl yorumlanacağını döndürülen bilgileri ve sembol işleyici türüne bağlıdır. Bkz: [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) daha fazla ayrıntı için.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md)

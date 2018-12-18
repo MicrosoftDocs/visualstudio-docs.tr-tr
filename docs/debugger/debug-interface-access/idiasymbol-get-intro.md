@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c9f43aeb33ce7727133a7ed2a4e4eba0cac53cda
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 2b025ebf2a3d800743c625fab97dc271f8320e75
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49813381"
 ---
 # <a name="idiasymbolgetintro"></a>IDiaSymbol::get_intro
-İşlevi ile tanışın sanal işlev olup olmadığını belirten bir bayrak alır.  
+İşlev Giriş bir sanal işlev olup olmadığını belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_intro (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` işlevi giriş sanal; Aksi halde döndürür `FALSE`.  
+ [out] Döndürür `TRUE` işlev giriş sanal; ise döndürür, aksi takdirde, `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="example"></a>Örnek  
   
@@ -52,13 +53,13 @@ class B : public A {
 }  
 ```  
   
- Her ikisi de `A::f1` ve `B::f1` sanal işlevleri, ancak `A::f1` giriş sanal olduğunu.  
+ Her ikisi de `A::f1` ve `B::f1` sanal işlevler, ancak `A::f1` giriş sanaldır.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

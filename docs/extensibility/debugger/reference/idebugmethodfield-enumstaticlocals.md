@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 761e696cd774e0414b58c9d2a9f1482d298489f6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 35474156ec43fb9e1e44117e44430b27a6e1b383
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905096"
 ---
 # <a name="idebugmethodfieldenumstaticlocals"></a>IDebugMethodField::EnumStaticLocals
 Yöntem statik yerel değişkenler için bir numaralandırıcı oluşturur.  
@@ -40,13 +41,13 @@ int EnumStaticLocals(
   
 #### <a name="parameters"></a>Parametreler  
  `ppLocals`  
- [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) statik Yereller listesini temsil eden nesne. Hiçbir statik Yereller yoksa null değeri döndürür.  
+ [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) statik yerel öğeleri listesini temsil eden nesne. Hiçbir statik yerel öğeler varsa, bir null değer döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK döndürür veya hiçbir statik Yereller varsa S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür veya hiçbir statik yerel öğeler varsa S_FALSE döndürür. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Her öğe bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) farklı türlerde statik Yereller temsil eden nesne. Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) tam olarak ne tür bir statik yerel nesneyi temsil ediyor belirlemek için her bir nesne üzerinde yöntemi.  
+ Her öğe bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) statik yerel öğeler farklı türleri temsil eden nesne. Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) tam olarak hangi tür statik yerel bir nesneyi temsil belirlemek için her bir nesne üzerindeki yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md)   

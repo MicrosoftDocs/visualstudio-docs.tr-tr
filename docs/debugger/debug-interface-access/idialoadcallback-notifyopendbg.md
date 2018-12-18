@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 717c9395805b3fe12640164261d3ec916bd8067c
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 2a51692b7ff554e656690898993d9dfb4a0eda57
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49883256"
 ---
 # <a name="idialoadcallbacknotifyopendbg"></a>IDiaLoadCallback::NotifyOpenDBG
-Aday .dbg Dosya açıldığında çağrılır.  
+Bir aday .dbg Dosya açıldığında çağrılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ HRESULT NotifyOpenDBG (
  [in] .Dbg dosyasının tam yolu.  
   
  `resultCode`  
- [in] Başarı gösteren kod (`S_OK`) veya bu dosyaya uygulanan olarak yükleme başarısız.  
+ [in] Başarıyı gösteren kod (`S_OK`) veya bu dosyaya uygulanan yük hatası.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Dönüş kodu genellikle göz ardı edilir.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Dönüş kodu genellikle göz ardı edilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaLoadCallback2](../../debugger/debug-interface-access/idialoadcallback2.md)

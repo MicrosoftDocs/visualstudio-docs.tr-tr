@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 93f04d4ffee712a87dc784b5b83496b86d70ae25
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 46b468144e0d8275b121d9fe29e59d4789f06042
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840447"
 ---
 # <a name="idiasymbolgetsymbolsfilename"></a>IDiaSymbol::get_symbolsFileName
-Simgeler yüklü dosyanın adını alır.  
+İçinden simgeleri yüklenen dosyanın adını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,17 +34,17 @@ HRESULT get_symbolsFileName (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Simgeler yüklenen dosya adını döndürür.  
+ [out] İçinden simgeleri yüklenen dosya adını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu özellik yalnızca sembolleriyle için geçerli bir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) değerini `SymTagExe` genel kapsam de vardır.  
+ Bu özellik yalnızca olan semboller için geçerli bir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) değerini `SymTagExe` genel kapsam da vardır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

@@ -15,26 +15,28 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9f7ef867fc40a93948e4de4f5410609ef03aff19
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4f6137c07ac6b920234a9772764b5ad758efdb1e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49818854"
 ---
 # <a name="da0011-expensive-compareto"></a>DA0011: Pahalı CompareTo
+
 |||  
 |-|-|  
 |Kural Kimliği|DA0011|  
 |Kategori|.NET framework kullanımı|  
 |Profil oluşturma yöntemleri|Örnekleme<br /><br /> .NET bellek|  
-|İleti|CompareTo işlevleri, ucuz ve tüm belleği ayırmaya değil. CompareTo işlevi karmaşıklığını mümkünse azaltın.|  
+|İleti|CompareTo fonksiyonları ucuz ve diğer bellek ayrılamadı. gerekir. Mümkünse CompareTo fonksiyonunun karmaşıklığını azaltın.|  
 |Kural türü|Uyarı|  
-  
+
 ## <a name="cause"></a>Sebep  
- CompareTo Yöntemi türü pahalıdır veya bellek ayırır.  
-  
-## <a name="rule-description"></a>Kural Tanımı  
- CompareTo yöntemleri verimli olması gerekir ve bellek tahsis değil.  
-  
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?  
+ CompareTo Yöntemi türü, pahalıdır veya bellek ayırır.  
+
+## <a name="rule-description"></a>Kural açıklaması  
+ CompareTo Yöntemi verimli olmalıdır ve bellek ayrılamadı.  
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?  
  CompareTo Yöntemi karmaşıklığını azaltın.

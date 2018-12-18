@@ -1,5 +1,5 @@
 ---
-title: .Mdf dosyalarını yükseltme
+title: .mdf dosyalarını yükseltme
 ms.date: 11/04/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -12,18 +12,20 @@ helpviewer_keywords:
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 5c1807614d08d7e3256067fdca2dd0a7fc96277d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 875208d068c791c0238c110ea0e83b04e18348fc
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37117946"
 ---
-# <a name="upgrade-mdf-files"></a>.Mdf dosyalarını yükseltme
+# <a name="upgrade-mdf-files"></a>.mdf dosyalarını yükseltme
 
-Bu konuda, Visual Studio'nun daha yeni bir sürümünü yükledikten sonra bir veritabanı dosyası (.mdf) yükseltme seçenekleri açıklanmaktadır. Yönergeler için aşağıdaki görevleri içerir:
+Bu konuda bir veritabanı dosyası yükseltmek için seçenekler açıklanmaktadır (*.mdf*) Visual Studio'nun daha yeni bir sürümünü yükledikten sonra. Yönergeler için aşağıdaki görevleri içerir:
 
 - SQL Server Express LocalDB, yeni bir sürümünü kullanmak için bir veritabanı dosyası yükseltme
 
@@ -33,7 +35,7 @@ Bu konuda, Visual Studio'nun daha yeni bir sürümünü yükledikten sonra bir v
 
 - SQL Server Express varsayılan veritabanı altyapısı olun
 
-SQL Server Express LocalDB veya daha eski bir sürümü kullanılarak oluşturulmuş bir veritabanı dosyası (.mdf) içeren bir proje açmak için Visual Studio'yu kullanabilirsiniz. Ancak, projenizi Visual Studio'da geliştirmeye devam etmek için bu sürüm veya SQL Server Express LocalDB Visual Studio ile aynı makinede yüklü olmalıdır veya veritabanı dosyası yükseltmeniz gerekir. Veritabanı dosyasını yükseltirseniz, SQL Server Express veya yerel veritabanı eski sürümlerini kullanarak erişimi olmayacaktır.
+Veritabanı dosyasını içeren bir projeyi açmak için Visual Studio'yu kullanabilirsiniz (*.mdf*) SQL Server Express LocalDB veya daha eski bir sürümü kullanılarak oluşturuldu. Ancak, projenizi Visual Studio'da geliştirmeye devam etmek için bu sürüm veya SQL Server Express LocalDB Visual Studio ile aynı makinede yüklü olmalıdır veya veritabanı dosyası yükseltmeniz gerekir. Veritabanı dosyasını yükseltirseniz, SQL Server Express veya yerel veritabanı eski sürümlerini kullanarak erişimi olmayacaktır.
 
 Ayrıca dosya sürümü SQL Server Express veya şu an yüklü olan yerel veritabanı örneği ile uyumlu değilse, önceki bir SQL Server Express veya yerel veritabanı sürümü ile oluşturulmuş bir veritabanı dosyası yükseltme istenebilir. Sorunu çözmek için Visual Studio dosya yükseltme isteyip istemediğinizi sorar.
 
@@ -41,7 +43,7 @@ Ayrıca dosya sürümü SQL Server Express veya şu an yüklü olan yerel verita
 > Yükseltmeden önce veritabanı dosyasını yedeklemenizi öneririz.
 
 > [!WARNING]
-> Yerel veritabanı 2014 (V12) LocalDB 2016 (V13) için 32 bit veya sonraki bir sürümde oluşturulmuş bir .mdf dosyasını yükseltirseniz, dosyayı yeniden LocalDB 32-bit sürümünü açıp olmaz.
+> Yükseltirseniz, bir *.mdf* LocalDB 2014'te (V12) 32 bit LocalDB 2016 (V13) ya da daha sonra oluşturulan dosya, edemeyecek dosya LocalDB 32-bit sürümünü yeniden açmak.
 
 Bir veritabanını yükseltmeden önce aşağıdaki ölçütleri göz önünde bulundurun:
 
@@ -69,7 +71,7 @@ Bir veritabanını yükseltmeden önce aşağıdaki ölçütleri göz önünde b
 
         -   Belirli bir sürümü kullanmak için: `(localdb)\ProjectsV12` veya `(localdb)\ProjectsV13`, burada V12 LocalDB 2014 ve V13 LocalDB 2016.
 
-    -   **Bir veritabanı dosyası ekleme**: birincil .mdf dosyasının fiziksel yolu.
+    -   **Bir veritabanı dosyası ekleme**: birincil fiziksel yolunu *.mdf* dosya.
 
     -   **Mantıksal ad**: dosya ile kullanmak istediğiniz adı.
 
@@ -97,11 +99,11 @@ SQL Server Express bir bağlantıyı bağlantı için kısayol menüsünü açar
 
     -   Projeyi çalıştırmak için seçin **F5** anahtarı.
 
-    -   Veritabanını düzenlemek için .mdf dosyasını açın **Çözüm Gezgini**ve düğümünü genişletin **Sunucu Gezgini** veritabanı ile çalışmak için.
+    -   Veritabanı düzenlemek için açın *.mdf* dosyasını **Çözüm Gezgini**ve düğümünü genişletin **Sunucu Gezgini** veritabanı ile çalışmak için.
 
 ### <a name="to-make-sql-server-express-the-default-database-engine"></a>SQL Server Express varsayılan veritabanı altyapısı yapma
 
-1.  Menü çubuğunda seçin **Araçları**, **seçenekleri**.
+1.  Menü çubuğunda seçin **Araçları** > **seçenekleri**.
 
 2.  İçinde **seçenekleri** iletişim kutusunda, genişletin **veritabanı araçları** seçenekleri ve ardından **veri bağlantıları**.
 

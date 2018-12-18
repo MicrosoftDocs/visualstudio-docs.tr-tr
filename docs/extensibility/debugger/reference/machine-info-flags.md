@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7f81f1b11488e7ee4de88ec97586d17440098f0e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4a3b9e8877ff77048f2b7dd697fc57971ddaf6e7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915420"
 ---
 # <a name="machineinfoflags"></a>MACHINE_INFO_FLAGS
-Bir makine tanımlamak için kullanılır.  
+Bir makineyi tanımlamak için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,12 +48,12 @@ public enum enum_MACHINE_INFO_FLAGS {
  Olarak kullanılan `Flags` üyesi [MACHINE_INFO](../../../extensibility/debugger/reference/machine-info.md) yapısı.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [MACHINE_INFO_FIELDS](../../../extensibility/debugger/reference/machine-info-fields.md)

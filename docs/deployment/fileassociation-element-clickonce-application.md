@@ -17,18 +17,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1f59ef1d00951d4c49c1bcb19c6c9122e281c3ca
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 62e099f949af3cc3ea336663224c1dd92726ac53
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39080031"
 ---
 # <a name="ltfileassociationgt-element-clickonce-application"></a>&lt;fileAssociation&gt; öğesi (ClickOnce uygulaması)
 Uygulamayla ilişkilendirilecek bir dosya uzantısı tanımlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <fileAssociation  
     xmlns="urn:schemas-microsoft-com:clickonce.v1"  
     extension  
@@ -38,25 +39,25 @@ Uygulamayla ilişkilendirilecek bir dosya uzantısı tanımlar.
 />  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `fileAssociation` Öğesidir isteğe bağlıdır. Öğesi aşağıdaki özniteliklere sahiptir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `fileAssociation` Öğesi, isteğe bağlıdır. Öğe, aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
 |`extension`|Gerekli. Uygulamayla ilişkilendirilecek dosya uzantısı.|  
-|`description`|Gerekli. Kabuk tarafından kullanım için dosya türü açıklaması.|  
-|`progid`|Gerekli. Dosya türü benzersiz olarak tanımlayan bir ad.|  
-|`defaultIcon`|Gerekli. Bu uzantılı dosyalar için kullanılacak simgeyi belirtir. Simge dosyası kullanarak belirtilmelidir [ \<Dosya > öğesi](../deployment/file-element-clickonce-application.md) içinde [ \<derleme > öğesi](../deployment/assembly-element-clickonce-application.md) bu öğe içeriyor.|  
+|`description`|Gerekli. Kabuk tarafından kullanım için dosya türünün açıklaması.|  
+|`progid`|Gerekli. Dosya türü benzersiz olarak tanımlayan ad.|  
+|`defaultIcon`|Gerekli. Bu uzantılı dosyalar için kullanılacak simgeyi belirtir. Simge dosyası kullanılarak belirtilmelidir [ \<Dosya > öğesi](../deployment/file-element-clickonce-application.md) içinde [ \<derleme > öğesi](../deployment/assembly-element-clickonce-application.md) bu öğeyi içeren.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu öğe bir XML ad alanı referansı içermelidir "urn: şemaları-microsoft-com:clickonce.v1". Varsa `<fileAssociation>` öğesi kullanılırsa, sonra gelmelidir `<application>` , üst öğedeki [ \<derleme > öğesi](../deployment/assembly-element-clickonce-application.md).  
+ Bu öğe için bir XML ad alanı başvurusu içermelidir "urn: schemas-microsoft-com:clickonce.v1". Varsa `<fileAssociation>` öğesi kullanılırsa, sonra gelmelidir `<application>` üst öğesinde [ \<derleme > öğesi](../deployment/assembly-element-clickonce-application.md).  
   
- [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dosya ilişkilendirmeleri üzerine yazmaz. Ancak, bir ClickOnce uygulamasını yalnızca geçerli kullanıcı için dosya uzantısı geçersiz kılabilirsiniz. Bu ClickOnce Uygulama kaldırıldıktan sonra dosya ilişkilendirme kullanıcı için ClickOnce siler ve makine başına ilişkilendirme yeniden etkindir.  
+ [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dosya ilişkilendirmeleri üzerine yazmaz. Bununla birlikte, ClickOnce uygulaması dosya uzantısı yalnızca geçerli kullanıcı için geçersiz kılabilirsiniz. Bu ClickOnce Uygulama kaldırıldıktan sonra kullanıcı için dosya ilişkilendirmesi ClickOnce siler ve makine başına ilişkisini yeniden etkindir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneği gösterilmektedir `fileAssociation` bildiriminde bir uygulamada kullanılarak dağıtılan bir metin düzenleyici uygulaması için [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)]. Bu kod örneği de içeren [ \<Dosya > öğesi](../deployment/file-element-clickonce-application.md) gerektirdiği `defaultIcon` özniteliği.  
+ Aşağıdaki kod örneğinde gösterilmiştir `fileAssociation` bildiriminde bir uygulamada kullanılarak dağıtılan bir metin düzenleyicisi uygulaması için [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)]. Ayrıca bu kod örneği içerir [ \<Dosya > öğesi](../deployment/file-element-clickonce-application.md) gerektirdiği `defaultIcon` özniteliği.  
   
-```  
+```xml  
 <file name="text.ico" size="4286">  
   <hash>  
     <dsig:Transforms>  
@@ -79,5 +80,5 @@ Uygulamayla ilişkilendirilecek bir dosya uzantısı tanımlar.
 <fileAssociation xmlns="urn:schemas-microsoft-com:clickonce.v1" extension=".writing" description="Writings (ClickOnce)" progid="Writing.Document" defaultIcon="writing.ico" />  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [ClickOnce Uygulama Bildirimi](../deployment/clickonce-application-manifest.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md)

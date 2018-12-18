@@ -1,0 +1,1 @@
+[Visual Studio Community’yi indirin](http://go.microsoft.com/fwlink/?LinkId=524433) veya [Visual Studio sürümlerini karşılaştırın](https://www.visualstudio.com/vs-2015-product-editions)

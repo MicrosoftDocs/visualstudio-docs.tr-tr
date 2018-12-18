@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130691"
 ---
 # <a name="important-commands-for-language-service-filters"></a>Dil hizmeti filtreleri için önemli komutları
 Tam özellikli dil hizmet filtresi oluşturmak istiyorsanız, aşağıdaki komutları işleme göz önünde bulundurun. Komut tanımlayıcıları tam listesini tanımlanan <xref:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID> numaralandırması için yönetilen kodu ve Stdidcmd.h üstbilgi dosyası yönetilmeyen [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] kodu. Stdidcmd.h dosyasında bulabilirsiniz *Visual Studio SDK yükleme yolu*\VisualStudioIntegration\Common\Inc.  

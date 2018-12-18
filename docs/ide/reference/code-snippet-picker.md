@@ -1,9 +1,9 @@
 ---
-title: Kod parçacığı Seçici | Microsoft Docs
-ms.custom: ''
+title: Kod Parçacığı Seçici
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 f1_keywords:
 - vs.expansionpicker
 helpviewer_keywords:
@@ -15,11 +15,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fb01cfc51591264b258518f4c90276a7ece11250
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 774ee47f02fe146caade0540be5ee2fb7f59904e
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31944186"
 ---
 # <a name="code-snippet-picker"></a>Kod Parçacığı Seçici
 
@@ -47,15 +48,17 @@ Görüntülenecek yordamı **kod parçacığı Seçici** kullanmakta olduğunuz 
 
 ## <a name="uielement-list"></a>UIElement Listesi
 
-Öğe adı  
+Öğe adı
+
 Seçili öğenin adını görüntüleyen düzenlenebilir bir metin alanı **öğe listesi**. İstediğiniz öğeyi için artımlı bir arama yapmak için bu alanda adını yazmaya başlayın. İstenen öğe içinde seçilene kadar harf eklemeye devam **öğe listesi**.
 
-Öğe listesi  
+Öğe listesi
+
 Kod parçacıkları ekleme ya da kod parçacıkları içeren klasörlerin listesini için kullanılabilir bir listesi. Bir parçacığını eklemek veya bir klasörü genişletmek için istediğiniz ve Enter tuşuna basın öğeyi seçin.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Kod Parçacıkları İçin En İyi Uygulamalar](../../ide/best-practices-for-using-code-snippets.md)  
-[Visual Basic IntelliSense kodu parçacıkları](/dotnet/visual-basic/developing-apps/using-ide/intellisense-code-snippets)  
-[Kodda Yer İşaretleri Ayarlama](../../ide/setting-bookmarks-in-code.md)  
-[Nasıl Yapılır: Şununla Çevrele Kod Parçacıklarını Kullanma](../../ide/how-to-use-surround-with-code-snippets.md)
+- [Kod Parçacıkları İçin En İyi Uygulamalar](../../ide/best-practices-for-using-code-snippets.md)
+- [Visual Basic IntelliSense kodu parçacıkları](/dotnet/visual-basic/developing-apps/using-ide/intellisense-code-snippets)
+- [Kodda Yer İşaretleri Ayarlama](../../ide/setting-bookmarks-in-code.md)
+- [Nasıl Yapılır: Şununla Çevrele Kod Parçacıklarını Kullanma](../../ide/how-to-use-surround-with-code-snippets.md)

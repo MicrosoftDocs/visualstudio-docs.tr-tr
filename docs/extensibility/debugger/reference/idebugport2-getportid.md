@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7adf52af99285add9334b30ff7b2a9f74ecd3041
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3fc7509450b7b433253c98be46e82d31952b7ead
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864666"
 ---
 # <a name="idebugport2getportid"></a>IDebugPort2::GetPortId
 Bağlantı noktası tanımlayıcısını alır.  
@@ -40,10 +41,10 @@ int GetPortId(
   
 #### <a name="parameters"></a>Parametreler  
  `pguidPort`  
- [out] Bağlantı noktasını tanımlar GUID döndürür.  
+ [out] Bağlantı noktasını tanımlayan GUID döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md)

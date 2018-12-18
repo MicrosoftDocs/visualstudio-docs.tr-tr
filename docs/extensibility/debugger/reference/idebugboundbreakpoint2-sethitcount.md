@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: afeaa33e8cb9ffa8f4d7d12c433eff0d3298ec91
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2c1e760e8e3553e858ed707b03f31761f7aa97a0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49921034"
 ---
 # <a name="idebugboundbreakpoint2sethitcount"></a>IDebugBoundBreakpoint2::SetHitCount
-İlişkili kesme noktası isabet sayısı ayarlar.  
+Bağlı kesme noktası isabet sayısını ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,12 +45,12 @@ int SetHitCount(
  [in] Ayarlanacak isabet sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` ilişkili kesme noktası nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) numaralandırması).  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` bağlı Kesme noktasının nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) sabit listesi).  
   
 ## <a name="remarks"></a>Açıklamalar  
- İsabet sayısı bu kesme oturumun geçerli çalışması sırasında harekete sayısıdır.  
+ İsabet sayısı bu Kesme noktasının harekete geçirilen oturumun geçerli çalıştırma sırasında sayısıdır.  
   
- Bu yöntem, genellikle bu kesme geçerli isabet sayısına güncelleştirmek için hata ayıklama altyapısı tarafından çağrılır.  
+ Bu yöntem, genellikle geçerli isabet sayısı bu kesme noktasında güncelleştirmek için hata ayıklama altyapısı tarafından çağrılır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBoundBreakpoint2](../../../extensibility/debugger/reference/idebugboundbreakpoint2.md)   

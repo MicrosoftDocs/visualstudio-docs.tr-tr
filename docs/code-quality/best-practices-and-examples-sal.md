@@ -1,6 +1,7 @@
 ---
 title: En İyi Yöntemler ve Örnekler (SAL)
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 author: mikeblome
@@ -8,18 +9,19 @@ ms.author: mblome
 manager: wpickett
 ms.workload:
 - multiple
-ms.openlocfilehash: d26f5329f530af2d6547f44b73ded82c5db53f4f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7922d381d61d40c20fa69859dd091849684723b2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49899974"
 ---
 # <a name="best-practices-and-examples-sal"></a>En İyi Yöntemler ve Örnekler (SAL)
-Kaynak kodu ek açıklama dili (SAL) dışında en ve bazı yaygın sorunlar önlemek için bazı yollar şunlardır.
+Kaynak kod ek açıklama dili (SAL) dışında en iyi şekilde yararlanmak ve bazı yaygın sorunları önlemek için bazı yollar şunlardır.
 
 ## <a name="in"></a>\_İçinde\_
 
-Öğesine yazılacak işlev beklenen kullanırsanız `_Inout_` yerine `_In_`. Bu, özellikle eski makroları otomatik bir dönüştürme SAL için durumlarda ilgilidir. SAL önce birçok Programcı makroları yorum olarak kullanılan — adlandırılması makroları `IN`, `OUT`, `IN_OUT`, ya da bu adları çeşitlemelerini. SAL için bu makroları dönüştürmek öneririz, ancak biz de kodu özgün prototip yazılmıştır ve eski makrosu, artık kod yaptığı gösterebilir bu yana değişmiş olabilir çünkü dönüştürdüğünüz zaman dikkatli olmanız bağlantısını okumanızı tavsiye. Hakkında özellikle dikkat `OPTIONAL` , sık sık yanlış yerleştirildiğinden makrosu açıklama — Örneğin, tarafındaki yanlış virgül.
+Öğesine yazılacak işlev beklenen kullanırsanız `_Inout_` yerine `_In_`. Bu, özellikle eski makroları otomatik dönüştürme SAL'ın durumlarda geçerlidir. SAL'ın önce birçok Programcı makroları yorum olarak kullanılan — adlandırılmıştı makroları `IN`, `OUT`, `IN_OUT`, veya türevleri bu adları. Bu makrolar için SAL dönüştürmenizi öneririz ancak biz de, kod özgün prototip yazılmıştır ve eski makrosu, artık ne yaptığını gösterebilir beri değiştirilmiş olabileceğinden dönüştürme yaparken dikkatli olun bağlantısını okumanızı tavsiye. Hakkında özellikle dikkat `OPTIONAL` sık yanlış yerleştirilir çünkü makrosu açıklama — Örneğin, tarafındaki yanlış virgül.
 
 ```cpp
 
@@ -42,9 +44,9 @@ void Func2(_Inout_ PCHAR p1)
 }
 ```
 
-## <a name="opt"></a>\_İptal Et\_
+## <a name="opt"></a>\_iyileştirilmiş\_
 
-Çağıran bir null işaretçi geçmesine izin verilmiyor kullanırsanız `_In_` veya `_Out_` yerine `_In_opt_` veya `_Out_opt_`. Bu parametrelerini denetler ve olmamalıdır zaman NULL ise, bir hata döndürür bile bir işlev için geçerlidir. Bir işlev parametresi için beklenmeyen NULL denetleyin ve düzgün bir şekilde dönmek olması iyi bir savunma kodlama uygulama olsa da, bu parametre ek açıklama isteğe bağlı bir türde olabilir gelmez (`_*Xxx*_opt_`).
+Arayan bir null işaretçi geçmesine izin verilmiyor kullanırsanız `_In_` veya `_Out_` yerine `_In_opt_` veya `_Out_opt_`. Bu parametreleri denetler ve olmamalıdır, NULL ise, bir hata döndürür bile bir işlev için geçerlidir. Bir işlev için beklenmeyen NULL parametresi denetleyin ve düzgün bir şekilde dönmek zorunda savunma kodlama iyi olsa da, bu ek açıklama parametresi isteğe bağlı bir türde olabilir gelmez (`_*Xxx*_opt_`).
 
 ```cpp
 
@@ -59,14 +61,13 @@ void Func2(_Out_ int *p1)
 {
     *p = 1;
 }
-
 ```
 
 ## <a name="predefensive-and-postdefensive"></a>\_Öncesi\_savunma\_ ve \_Post\_savunma\_
 
-Bir işlev bir güven sınırı varsa, kullanmanız önerilir `_Pre_defensive_` ek açıklama.  "Savunma" değiştiricisi, noktasında çağrı göstermek için bazı ek açıklamaları değiştirir, arabirimi tamamen denetlenmesi, ancak uygulama gövdesinde, yanlış parametreler geçebilir varsayın. Bu durumda, `_In_ _Pre_defensive_` NULL geçirmeye çalışırsa çağıran bir hata iletisiyle karşılaşırsınız rağmen sanki parametresi NULL ve işaretçiyi ilk olmadan XML'deki başvuru girişimleri olabilir işlev gövdesi analiz olduğunu belirtmek için bir güven sınırının adresindeki tercih edilir NULL denetimi işaretlenir.  A `_Post_defensive_` ek açıklama burada güvenilen taraf çağıran olduğu varsayılır ve güvenilmeyen kod çağrılan kod geri aramalar için kullanılabilir de.
+Bir işlev bir güven sınırı varsa, kullanmanızı öneririz `_Pre_defensive_` ek açıklama.  "Savunma" değiştiricisi, çağrısı noktasında belirtmek için bazı ek açıklamaları değiştirir, arabirimi tamamen denetlenmesi, ancak uygulama gövdesinde hatalı parametreler geçebilir, varsaymanız gerekir. Bu durumda, `_In_ _Pre_defensive_` çağıran NULL geçirmeye çalışırsa bir hata alırsınız olsa da, sanki parametresi NULL ve işaretçi olmayan XML'deki başvuru girişimleri olabilir işlev gövdesi analiz edilir olduğunu belirtmek için bir güven sınırında tercih edilir NULL denetimi işaretlenir.  A `_Post_defensive_` ek açıklama kullanılabilir Ayrıca, burada güvenilen taraf çağıran olduğu varsayılır ve güvenilmeyen kod çağrılan kodu geri çağırmaları kullanmak için.
 
-## <a name="outwrites"></a>\_Out\_Yazar\_
+## <a name="outwrites"></a>\_Çıkış\_Yazar\_
 
 Aşağıdaki örnek, bir ortak kötüye kullanımı gösterir `_Out_writes_`.
 
@@ -76,12 +77,11 @@ Aşağıdaki örnek, bir ortak kötüye kullanımı gösterir `_Out_writes_`.
 void Func1(_Out_writes_(size) CHAR *pb,
     DWORD size
 );
-
 ```
 
-Ek açıklamanın `_Out_writes_` arabellek sahip olduğunu belirtir. Bunun `cb` Çıkışta başlatılan ilk bayta kalan ayrılan bayt sayısı. Bu ek açıklama kesinlikle yanlış değil ve ayrılmış boyutu express yararlıdır. Ancak, kaç tane öğeleri işlevi tarafından başlatılmış söylemez.
+Ek açıklama `_Out_writes_` arabellek olduğunu gösterir. Sahip `cb` Çıkışta başlatılan ilk bayt ile ayrılan bayt sayısı. Bu ek açıklama kesinlikle yanlış değil ve ayrılmış boyutu ifade etmek yararlı olabilir. Bununla birlikte, işlev tarafından kaç öğeleri başlatılır söylemez.
 
-Sonraki örnek tamamen başlatılmış bölümü arabellek tam boyutunu belirtmek için üç doğru şekilde gösterir.
+Sonraki örnek, tam olarak başlatılmış bölümü arabellek tam boyutunu belirtmek için üç doğru şekilde gösterir.
 
 ```cpp
 
@@ -98,12 +98,11 @@ void Func2(_Out_writes_all_(size) CHAR *pb,
 void Func3(_Out_writes_(size) PSTR pb,
     DWORD size
 );
-
 ```
 
-## <a name="out-pstr"></a>\_Out\_ PSTR
+## <a name="out-pstr"></a>\_Çıkış\_ PSTR
 
-Kullanımını `_Out_ PSTR` neredeyse her zaman yanlış. Bu bir karakteri arabelleğe işaret eden bir output parametresi sahip olarak yorumlanır ve onu NULL ile sonlandırılmış.
+Kullanımını `_Out_ PSTR` neredeyse her zaman yanlış. Bu sahip için bir karakter arabelleği işaret eden bir output parametresi olarak yorumlanır ve NULL ile sonlandırılmış.
 
 ```cpp
 
@@ -112,14 +111,13 @@ void Func1(_Out_ PSTR pFileName, size_t n);
 
 // Correct
 void Func2(_Out_writes_(n) PSTR wszFileName, size_t n);
-
 ```
 
-Ek açıklamanın ister `_In_ PCSTR` ortak ve kullanışlıdır. NULL sonlandırma sahip olduğundan bir giriş dizesi işaret önkoşulu `_In_` NULL sonlandırılmış bir dize tanınmasını sağlar.
+Ek açıklamanın ister `_In_ PCSTR` ortak ve kullanışlıdır. NULL sonlandırma sahip bir Giriş dizesinin işaret önkoşulu `_In_` NULL ile sonlandırılmış bir dize tanınmasını sağlar.
 
 ## <a name="in-wchar-p"></a>\_İçinde\_ WCHAR * p
 
-`_In_ WCHAR* p` bir giriş işaretçisi olduğunu söylüyor `p` işaret eden bir karakter. Bununla birlikte, çoğu durumda bu kullanılmaya belirtimi değil büyük olasılıkla. Bunun yerine, büyük olasılıkla kullanılmaya NULL ile sonlandırılmış bir dizi belirtimidir; Bunu yapmak için kullanmak `_In_ PWSTR`.
+`_In_ WCHAR* p` Giriş bir işaretçi olduğunu söylüyor `p` işaret eden bir karakter. Ancak, çoğu durumda, kullanılmaya belirtimi budur olmayabilir. Bunun yerine, amaçlanan büyük olasılıkla NULL ile sonlandırılmış bir dizinin özelliğidir; Bunu yapmak için kullanın `_In_ PWSTR`.
 
 ```cpp
 
@@ -128,10 +126,9 @@ void Func1(_In_ WCHAR* wszFileName);
 
 // Correct
 void Func2(_In_ PWSTR wszFileName);
-
 ```
 
-NULL sonlandırma uygun belirtimi eksik yaygındır. Uygun kullanın `STR` sürüm türü, aşağıdaki örnekte gösterildiği gibi değiştirin.
+NULL sonlandırma uygun belirtimi eksik yaygındır. Uygun kullanın `STR` sürüme türü, aşağıdaki örnekte gösterildiği gibi değiştirin.
 
 ```cpp
 
@@ -146,12 +143,11 @@ BOOL StrEquals2(_In_ PSTR p1, _In_ PSTR p2)
 {
     return strcmp(p1, p2) == 0;
 }
-
 ```
 
-## <a name="outrange"></a>\_Out_range\_
+## <a name="outrange"></a>\_Çıkış\_aralığı\_
 
-Parametre gösteren bir işaretçidir ve işaretçiyi tarafından kullanılacak işaret öğenin değerini aralığını express istiyorsanız `_Deref_out_range_` yerine `_Out_range_`. Aşağıdaki örnekte, aralığı * pcbFilled ifade edilir, pcbFilled değil.
+Parametre bir işaretçi ise ve aralığı işaretçi tarafından kullanılacak işaret ettiği öğenin değerini ifade etmek istiyorsanız `_Deref_out_range_` yerine `_Out_range_`. Aşağıdaki örnekte, dizi * pcbFilled ifade edilir, pcbFilled değil.
 
 ```cpp
 
@@ -168,14 +164,13 @@ void Func2(
     DWORD cbSize,
     _Deref_out_range_(0, cbSize) _Out_ DWORD *pcbFilled
 );
-
 ```
 
- `_Deref_out_range_(0, cbSize)` gelen çıkarsanabileceği için bazı araçlar kesinlikle gerekli olmadığından `_Out_writes_to_(cbSize,*pcbFilled)`, ancak bütünlük açısından buraya gösterilir.
+ `_Deref_out_range_(0, cbSize)` içinden gösterilen çünkü bazı araçları için kesinlikle gerekli değil `_Out_writes_to_(cbSize,*pcbFilled)`, ancak bütünlük açısından buraya gösterilir.
 
-## <a name="wrong-context-in-when"></a>Yanlış bağlamda \_zaman\_
+## <a name="wrong-context-in-when"></a>Yanlış bağlamda \_olduğunda\_
 
-Başka bir ortak hata sonrası durum değerlendirme önkoşulları kullanmaktır. Aşağıdaki örnekte, `_Requires_lock_held_` önkoşuluna değil.
+Başka bir yaygın hata sonrası durum değerlendirmesi için önkoşulları kullanmaktır. Aşağıdaki örnekte, `_Requires_lock_held_` koşuludur.
 
 ```cpp
 
@@ -186,14 +181,13 @@ int Func1(_In_ MyData *p, int flag);
 // Correct
 _When_(flag == 0, _Requires_lock_held_(p->cs))
 int Func2(_In_ MyData *p, int flag);
-
 ```
 
- İfade `result` öncesi kullanılabilir durumda olmayan bir sonrası durum değeri ifade eder.
+ İfade `result` öncesi durumda kullanılabilir değil bir son durum değeri belirtir.
 
 ## <a name="true-in-success"></a>TRUE olarak \_başarılı\_
 
-Dönüş değeri sıfır olduğunda işlevi başarılı olursa kullanmak `return != 0` yerine başarı koşulu olarak `return == TRUE`. NonZero derleyici sağlayan gerçek değer eşdeğerliğine mutlaka gelmez `TRUE`. Parametre `_Success_` ifade olan ve aşağıdaki ifadeler eşdeğer olarak değerlendirilir: `return != 0`, `return != false`, `return != FALSE`, ve `return` parametreleri veya karşılaştırmaları.
+İşlev dönüş değeri, sıfır dışında olduğunda başarılı kullanırsanız `return != 0` yerine başarı koşulu olarak `return == TRUE`. NonZero derleyici sağlayan gerçek değerine denklik mutlaka gelmez `TRUE`. Parametre `_Success_` ifade olan ve aşağıdaki ifadeler eşdeğer olarak değerlendirilir: `return != 0`, `return != false`, `return != FALSE`, ve `return` parametreleri veya karşılaştırmalar.
 
 ```cpp
 
@@ -208,12 +202,11 @@ _Success_(return != 0, _Acquires_lock_(*lpCriticalSection))
 BOOL WINAPI TryEnterCriticalSection(
   _Inout_ LPCRITICAL_SECTION lpCriticalSection
 );
-
 ```
 
-## <a name="reference-variable"></a>Başvuru değişkeni
+## <a name="reference-variable"></a>Başvuru değişkenini
 
-Bir başvuru değişkenin SAL'ın önceki sürümünü zımni işaretçi ek açıklama hedef olarak kullanılan ve eklenmesi gereken bir `__deref` başvuru değişkenine bağlı ek açıklamalara. Bu sürüm nesnenin kendisini kullanır ve ek gerektirmez `_Deref_`.
+Bir başvuru değişkenini SAL'ın önceki sürümünü örtük işaretçi ek açıklama hedefi olarak kullanılan ve eklenmesi gereken bir `__deref` başvuru değişkenine bağlı ek açıklamalara. Bu sürüm nesnenin kendisini kullanır ve ek gerektirmez `_Deref_`.
 
 ```cpp
 
@@ -228,12 +221,11 @@ void Func2(
     _Out_writes_bytes_all_(cbSize) BYTE *pb,
     _Out_range_(0, 2) _Out_ DWORD &cbSize
 );
-
 ```
 
-## <a name="annotations-on-return-values"></a>Dönüş değerleri hakkında ek açıklamalar
+## <a name="annotations-on-return-values"></a>Ek açıklamalar dönüş değerleri
 
-Aşağıdaki örnek, dönüş değeri ek açıklamalar ortak bir sorunu gösterir.
+Aşağıdaki örnek, dönüş değeri ek açıklamalarda ortak bir sorunu gösterir.
 
 ```cpp
 
@@ -242,10 +234,9 @@ _Out_opt_ void *MightReturnNullPtr1();
 
 // Correct
 _Ret_maybenull_ void *MightReturnNullPtr2();
-
 ```
 
-Bu örnekte, `_Out_opt_` işaretçinin önkoşulu bir parçası olarak NULL olabilir söyler. Ancak, önkoşulları dönüş değerini uygulanamaz. Bu durumda, doğru ek açıklama olup `_Ret_maybenull_`.
+Bu örnekte, `_Out_opt_` diyor işaretçi önkoşuluna bir parçası olarak NULL olabilir. Ancak, dönüş değeri için önkoşulları uygulanamaz. Bu durumda, doğru ek açıklama olup `_Ret_maybenull_`.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
@@ -256,4 +247,4 @@ Bu örnekte, `_Out_opt_` işaretçinin önkoşulu bir parçası olarak NULL olab
 [yapıları ve sınıfları yorumlama](../code-quality/annotating-structs-and-classes.md)
 [kilitlenme davranışını yorumlama](../code-quality/annotating-locking-behavior.md) 
  [Açıklamanın ne zaman ve nereye uygulanacağını belirtme](../code-quality/specifying-when-and-where-an-annotation-applies.md)
-[iç işlevler](../code-quality/intrinsic-functions.md)
+[iç işlevleri](../code-quality/intrinsic-functions.md)

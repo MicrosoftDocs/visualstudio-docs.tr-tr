@@ -23,783 +23,784 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 396253865e01ddfe5566e6cd97424af644bd9246
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1c239dc78d152e9060d176ebe1d4abd3b981a57d
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220371"
 ---
-# <a name="cl-task"></a>CL Görevi
-Visual C++ Derleyici aracı sarmalar cl.exe. Derleyici yürütülebilir dosyanın (.exe) dosyaları, dinamik bağlantı kitaplığı (.dll) dosyaları ya da kod Modülü (.netmodule) dosyaları oluşturur. Daha fazla bilgi için bkz: [derleyici seçenekleri](/cpp/build/reference/compiler-options).  
+# <a name="cl-task"></a>CL görevi
+Visual C++ Derleyici aracı sarmalar *cl.exe*. Derleyici çalıştırılabilir dosyası oluşturur (*.exe*) dosyaları, dinamik bağlantı kitaplığı (*.dll*) dosyaları ya da kod modülünü (*.netmodule*) dosyaları. Daha fazla bilgi için [derleyici seçenekleri](/cpp/build/reference/compiler-options).  
   
 ## <a name="parameters"></a>Parametreler  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır **CL** görev. Çoğu görevi parametreleri ve parametreleri, birkaç kümelerini bir komut satırı seçeneğine karşılık gelir.  
+ Aşağıdaki listede parametrelerini açıklar **CL** görev. Çoğu görev parametreleri ve parametrelerin birkaç kümeleri bir komut satırı seçeneğine karşılık gelir.  
   
--   **AdditionalIncludeDirectories**  
+- **AdditionalIncludeDirectories**  
   
-     İsteğe bağlı dize [] parametresi.  
+   İsteğe bağlı dize [] parametresi.  
   
-     Bir dizin için dosyaları Ekle aranır dizinlerin listesi ekler.  
+   Bir dizin dahil etme dosyaları için Aranan dizinleri listesine ekler.  
   
-     Daha fazla bilgi için bkz: [/ı (ek içeren dizinler)](/cpp/build/reference/i-additional-include-directories).  
+   Daha fazla bilgi için [/ı (ek içeren dizinler)](/cpp/build/reference/i-additional-include-directories).  
   
--   **AdditionalOptions**  
+- **AdditionalOptions**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Komut satırı seçeneklerinin listesi. Örneğin, "/*seçenek 1* /*Seçenek2* /*seçeneği #*". Başka bir görev parametre tarafından temsil edilmeyen komut satırı seçeneklerini belirtmek için bu parametreyi kullanın.  
+   Komut satırı seçeneklerinin listesi. Örneğin, "/\<Seçenek1 > /\<Seçenek2 > /\<seçeneği #>". Herhangi bir görev parametresi tarafından temsil edilmez komut satırı seçeneklerini belirtmek için bu parametreyi kullanın.  
   
-     Daha fazla bilgi için bkz: [derleyici seçenekleri](/cpp/build/reference/compiler-options).  
+   Daha fazla bilgi için [derleyici seçenekleri](/cpp/build/reference/compiler-options).  
   
--   **AdditionalUsingDirectories**isteğe bağlı dize [] parametresi.  
+- **AdditionalUsingDirectories**
+
+   İsteğe bağlı dize [] parametresi.  
   
-     Derleyici dosya referansları geçirilen çözümlemek için arayacağı bir dizini belirtir **#using** yönergesi.  
+   Geçirilen dosya başvurularını çözümlemek için derleyicinin arama yapacağı dizini belirtir **#using** yönergesi.  
   
-     Daha fazla bilgi için bkz: [/AI (meta veri dizinlerini belirtin)](/cpp/build/reference/ai-specify-metadata-directories).  
+   Daha fazla bilgi için [/AI (meta veri dizinlerini belirt)](/cpp/build/reference/ai-specify-metadata-directories).  
   
--   **AlwaysAppend**  
+- **AlwaysAppend**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Bir dize her zaman komut satırında yayılan. Varsayılan değer "**/c**".  
+   Bir dize, komut satırında yayılan her zaman. Varsayılan değeri "**/c**".  
   
--   **AssemblerListingLocation**  
+- **AssemblerListingLocation**  
   
-     Bütünleştirilmiş kodu içeren bir listeyi dosyası oluşturur.  
+   Derleme kodu içeren bir listeleme dosyası oluşturur.  
   
-     Daha fazla bilgi için bkz: **/Fa** seçeneğini [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
+   Daha fazla bilgi için **/Fa** seçeneğini [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
   
--   **AssemblerOutput**  
+- **AssemblerOutput**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Bütünleştirilmiş kodu içeren bir listeyi dosyası oluşturur.  
+   Derleme kodu içeren bir listeleme dosyası oluşturur.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **NoListing** - *\<yok >*  
+  - **NoListing** - *\<yok >*  
   
-    -   **AssemblyCode** - **/FA**  
+  - **AssemblyCode** - **/FA**  
   
-    -   **AssemblyAndMachineCode** - **/FAc**  
+  - **AssemblyAndMachineCode** - **/FAc**  
   
-    -   **AssemblyAndSourceCode** - **/FAs**  
+  - **AssemblyAndSourceCode** - **/FAs**  
   
-    -   **Tüm** - **/FAcs**  
+  - **Tüm** -   **/facs**  
   
-     Daha fazla bilgi için bkz: **/FA**, **/FAc**, **/FAs**, ve **/FAcs** içinde seçenekleri [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
+    Daha fazla bilgi için **/FA**, **/Fac**, **/Fas**, ve **/facs** seçeneklerini [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
   
--   **BasicRuntimeChecks**  
+- **BasicRuntimeChecks**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Birlikte çalışma zamanı hata denetimleri özelliğini devre dışı bırakır ve sağlar [runtime_checks](/cpp/preprocessor/runtime-checks) pragması.  
+   Sağlar ve birlikte çalışma zamanı hata denetimleri özelliğini devre dışı bırakır [runtime_checks](/cpp/preprocessor/runtime-checks) pragması.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Varsayılan** -                          *\<yok >*  
+  - **Varsayılan** -                          *\<yok >*  
   
-    -   **StackFrameRuntimeCheck** - **/RTCs**  
+  - **StackFrameRuntimeCheck** - **/RTCs**  
   
-    -   **UninitializedLocalUsageCheck** - **/RTCu**  
+  - **UninitializedLocalUsageCheck** - **/RTCu**  
   
-    -   **EnableFastChecks** -                          **/RTC1**  
+  - **EnableFastChecks** -                          **/RTC1**  
   
-     Daha fazla bilgi için bkz: [eş yordamlarla/RTC (çalışma zamanı hata denetler)](/cpp/build/reference/rtc-run-time-error-checks).  
+    Daha fazla bilgi için [/RTC (çalışma zamanı hata denetimleri)](/cpp/build/reference/rtc-run-time-error-checks).  
   
--   **BrowseInformation**  
+- **BrowseInformation**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, gözatma bilgileri dosyası oluşturur.  
+   Varsa `true`, gözatma bilgisi dosyası oluşturur.  
   
-     Daha fazla bilgi için bkz: **/FR** seçeneğini [/FR, /Fr (oluşturun. SBR dosyası)](/cpp/build/reference/fr-fr-create-dot-sbr-file).  
+   Daha fazla bilgi için **/FR** seçeneğini [/FR, /Fr (.sbr dosyası oluştur)](/cpp/build/reference/fr-fr-create-dot-sbr-file).  
   
--   **BrowseInformationFile**  
+- **BrowseInformationFile**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Gözatma bilgileri dosyası için bir dosya adı belirtir.  
+   Gözatma bilgisi dosyası için bir dosya adı belirtir.  
   
-     Daha fazla bilgi için bkz: **BrowseInformation** Bu tablo ve ayrıca bkz: parametresinde [/FR, /Fr (oluşturun. SBR dosyası)](/cpp/build/reference/fr-fr-create-dot-sbr-file).  
+   Daha fazla bilgi için **BrowseInformation** Bu tablo, ayrıca bkz: parametresinde [/FR, /Fr (.sbr dosyası oluştur)](/cpp/build/reference/fr-fr-create-dot-sbr-file).  
   
--   **BufferSecurityCheck**  
+- **BufferSecurityCheck**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, arabellek boyutu kısıtlamaları zorlamaz kod yararlanmasını için ortak bir teknik dönüş adresi üzerine bazı arabellek taşmaları algılar.  
+   Varsa `true`, dönüş adresi, arabellek boyutu kısıtlamaları zorunlu kılmaz kod kötüye için genel bir tekniktir üzerine bazı arabellek taşmalarına algılar.  
   
-     Daha fazla bilgi için bkz: [/GS (arabellek güvenlik denetimi)](/cpp/build/reference/gs-buffer-security-check).  
+   Daha fazla bilgi için [/GS (arabellek güvenlik denetimi)](/cpp/build/reference/gs-buffer-security-check).  
   
--   **BuildingInIDE**  
+- **BuildingInIDE**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, belirten **MSBuild** IDE tarafından çağrılır. Aksi takdirde, **MSBuild** komut satırında çağrılır.  
+   Varsa `true`, belirten **MSBuild** IDE tarafından çağrılır. Aksi takdirde, **MSBuild** komut satırında çağrılır.  
   
--   **CallingConvention**  
+- **CallingConvention**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Çağıran işlev veya çağrılan işlev çağrısı sonunu yığında bağımsız değişkenleri kaldırır olup olmadığını belirleyen hangi işlev bağımsız değişkenleri gönderilen yığına sırası, çağırma kuralı ve ad dekorasyon kuralı belirtir, Derleyici tekil işlevler tanımlamak için kullanır.  
+   Çağıran işlevin veya çağrılan işlevin çağrının sonunda yığından bağımsız değişkenler kaldırır olup olmadığını, işlev bağımsız değişkenleri yığın itilir sırasını belirler, çağırma kuralı ve bir ad dekorasyon kuralı belirtir, Derleyici, tek tek işlevleri tanımlamak için kullanır.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Cdecl** - **/Gd**  
+  - **Cdecl** - **/Gd**  
   
-    -   **FastCall** -                          **/Gr**  
+  - **FastCall** -                          **Gr**  
   
-    -   **StdCall** -                          **/Gz**  
+  - **StdCall** -                          **/Gz**  
   
-     Daha fazla bilgi için bkz: [/Gd, / GV, /Gz (çağırma kuralı)](/cpp/build/reference/gd-gr-gv-gz-calling-convention).  
+    Daha fazla bilgi için [/Gd, / Gr, GV, /Gz (çağırma kuralı)](/cpp/build/reference/gd-gr-gv-gz-calling-convention).  
   
--   **CompileAs**  
+- **CompileAs**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     C veya C++ kaynak dosyası olarak giriş dosyası derlenip derlenmeyeceğini belirler.  
+   Giriş dosyası olarak bir C veya C++ kaynak dosyasını derlemek belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Varsayılan** - *\<yok >*  
+  - **Varsayılan** - *\<yok >*  
   
-    -   **CompileAsC** - **/TC**  
+  - **CompileAsC** - **/TC**  
   
-    -   **CompileAsCpp** - **/TP**  
+  - **CompileAsCpp** - **/TP**  
   
-     Daha fazla bilgi için bkz: [TP, /Tp, TP, /TP (kaynak dosya türünü belirtin)](/cpp/build/reference/tc-tp-tc-tp-specify-source-file-type).  
+    Daha fazla bilgi için [/Tc, /Tp, /TC, /TP (kaynak dosya türünü belirtin)](/cpp/build/reference/tc-tp-tc-tp-specify-source-file-type).  
   
--   **CompileAsManaged**  
+- **CompileAsManaged**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Ortak dil çalışma zamanı (CLR) özellikleri kullanmak için uygulamaları ve bileşenleri sağlar.  
+   Ortak dil çalışma zamanı (CLR) özellikleri kullanmak, uygulamaları ve bileşenleri sağlar.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **yanlış** - *\<yok >*  
+  - **false** - *\<yok >*  
   
-    -   **doğru** -   **/CLR**  
+  - **doğru** -   **/CLR**  
   
-    -   **Saf** -   **/CLR: pure**  
+  - **Saf** -   **/CLR: pure**  
   
-    -   **Safe** - **/clr:safe**  
+  - **Safe** - **/clr:safe**  
   
-    -   **OldSyntax** - **/clr:oldSyntax**  
+  - **OldSyntax** - **/clr:oldSyntax**  
   
-     Daha fazla bilgi için bkz: [/CLR (ortak dil çalışma zamanı derlemesi)](/cpp/build/reference/clr-common-language-runtime-compilation).  
+    Daha fazla bilgi için [/CLR (ortak dil çalışma zamanı derlemesi)](/cpp/build/reference/clr-common-language-runtime-compilation).  
   
--   **CreateHotpatchableImage**  
+- **CreateHotpatchableImage**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, görüntü için hazırlamak üzere derleyici söyler *anında düzeltme*. Bu parametre her işlevinin ilk yönerge iki bayt anında düzeltme için gerekli olduğu olmasını sağlar.  
+   Varsa `true`, derleyiciye bir görüntü için hazırlama *Yeniden başlatmasız düzeltme*. Bu parametre, Yeniden başlatmasız düzeltme için gerekli olan her işlevin ilk yönergesinin iki bayt olmasını sağlar.  
   
-     Daha fazla bilgi için bkz: [/hotpatch (düzeltme eki eklenebilen görüntü oluşturma)](/cpp/build/reference/hotpatch-create-hotpatchable-image).  
+   Daha fazla bilgi için [/hotpatch (düzeltme eki eklenebilen görüntü oluşturma)](/cpp/build/reference/hotpatch-create-hotpatchable-image).  
   
--   **DebugInformationFormat**  
+- **DebugInformationFormat**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Hata ayıklama bilgisi için oluşturulan programınızı ve bu bilgiler nesne (.obj) dosyalarında veya program veritabanı (PDB) tutulur türünü seçer.  
+   Programınız ve bu bilgileri nesnesinde olup tutulur için oluşturulan hata ayıklama bilgisini türünü seçer (*.obj*) dosyaları veya içinde bir program veritabanı (PDB).  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **OldStyle** - **/Z7**  
+  - **OldStyle** - **/Z7**  
   
-    -   **ProgramDatabase** -   **/zi**  
+  - **ProgramDatabase** -   **/zi**  
   
-    -   **EditAndContinue** - **/ZI**  
+  - **EditAndContinue** - **/ZI**  
   
-     Daha fazla bilgi için bkz: [/Z7, / zi, /zı (hata ayıklama bilgileri biçimi)](/cpp/build/reference/z7-zi-zi-debug-information-format).  
+    Daha fazla bilgi için [/z7, / zi, /zı (hata ayıklama bilgileri biçimi)](/cpp/build/reference/z7-zi-zi-debug-information-format).  
   
--   **DisableLanguageExtensions**  
+- **DisableLanguageExtensions**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa **doğru**, ANSI C veya C++ ANSI ile uyumlu olmayan dil yapıları için bir hata yayma bildirir.  
+   Varsa **true**, ANSI C veya C++ ANSI ile uyumlu olmayan dil yapıları için hata yayma derleyiciye.  
   
-     Daha fazla bilgi için bkz: **/Za** seçeneğini [/Za, /Ze (dil uzantılarını devre dışı bırak)](/cpp/build/reference/za-ze-disable-language-extensions).  
+   Daha fazla bilgi için **/Za** seçeneğini [/Za, /Ze (dil uzantılarını devre dışı bırak)](/cpp/build/reference/za-ze-disable-language-extensions).  
   
--   **DisableSpecificWarnings**  
+- **DisableSpecificWarnings**  
   
-     İsteğe bağlı dize [] parametresi.  
+   İsteğe bağlı dize [] parametresi.  
   
-     Noktalı virgülle ayrılmış bir listede belirtilen uyarı numaralarını devre dışı bırakır.  
+   Noktalı virgülle ayrılmış bir listede belirtilen uyarı numaralarını devre dışı bırakır.  
   
-     Daha fazla bilgi için bkz: `/wd` seçeneğini [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, wln, /wd, / biz, /wo, /Wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
+   Daha fazla bilgi için `/wd` seçeneğini [/w, /W0, / W1, / w2, / W3, / W4, / W1, / w2, / W3, / W4, /Wall, WD, / we Wo, wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
   
--   **EnableEnhancedInstructionSet**  
+- **EnableEnhancedInstructionSet**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Streaming SIMD Extensions 2 (SSE2) yönergeleri ve Streaming SIMD Uzantıları (SSE) kullanan kod oluşturma için Mimari belirtir.  
+   Streaming SIMD Extensions 2 (SSE2) yönergeleri ve Akış SIMD Uzantıları'nı (SSE) kullanan kod oluşturma mimarisini belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **StreamingSIMDExtensions** - **/arch:SSE**  
+  - **StreamingSIMDExtensions** - **/arch:SSE**  
   
-    -   **StreamingSIMDExtensions2** - **/arch:SSE2**  
+  - **StreamingSIMDExtensions2** -   **/arch: SSE2**  
   
-     Daha fazla bilgi için bkz: [/(x86) arch](/cpp/build/reference/arch-x86).  
+    Daha fazla bilgi için [/arch (x86)](/cpp/build/reference/arch-x86).  
   
--   **EnableFiberSafeOptimizations**  
+- **EnableFiberSafeOptimizations**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, fiber güvenliği statik iş parçacığı yerel depolama, diğer bir deyişle, kullanarak ayrılan veri kullanarak ayrılan veri Destek `__declspec(thread)`.  
+   Varsa `true`, statik iş parçacığı yerel depolama, diğer bir deyişle, veriler kullanılarak kullanılarak yer ayrılan veri için fiber güvenliğini destekler `__declspec(thread)`.  
   
-     Daha fazla bilgi için bkz: [/GT (Fiber-güvenli iş parçacığı-yerel depolamayı destekle)](/cpp/build/reference/gt-support-fiber-safe-thread-local-storage).  
+   Daha fazla bilgi için [/GT (fiber-güvenli iş parçacığı-yerel depolamayı destekle)](/cpp/build/reference/gt-support-fiber-safe-thread-local-storage).  
   
--   **EnablePREfast**  
+- **EnablePREfast**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, kod çözümlemesini etkinleştirin.  
+   Varsa `true`, kod analizini etkinleştirir.  
   
-     Daha fazla bilgi için bkz: [/ analyze (kod çözümleme)](/cpp/build/reference/analyze-code-analysis).  
+   Daha fazla bilgi için [/ analyze (kod çözümleme)](/cpp/build/reference/analyze-code-analysis).  
   
--   **ErrorReporting**  
+- **ErrorReporting**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Doğrudan Microsoft'a iç derleyici hatası (çok) bilgileri sağlamanıza olanak tanır. Varsayılan olarak, IDE derlemeleri ayardır **komut istemi** ve komut satırı derlemeleri ayarında **sıra**.  
+   Derleyici iç hatası (ICE) bilgilerini doğrudan Microsoft'a sağlamanıza olanak tanır. Varsayılan olarak, IDE yapılarında ayardır **istemi** ve komut satırı derlemeleri ayarda **kuyruk**.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **None** - **/errorReport:none**  
+  - **None** - **/errorReport:none**  
   
-    -   **Prompt** - **/errorReport:prompt**  
+  - **Prompt** - **/errorReport:prompt**  
   
-    -   **Queue** - **/errorReport:queue**  
+  - **Queue** - **/errorReport:queue**  
   
-    -   **Send** - **/errorReport:send**  
+  - **Send** - **/errorReport:send**  
   
-     Daha fazla bilgi için bkz: [/errorreport (dahili derleme hatalarını raporla)](/cpp/build/reference/errorreport-report-internal-compiler-errors).  
+    Daha fazla bilgi için [/errorreport (dahili derleme hatalarını raporla)](/cpp/build/reference/errorreport-report-internal-compiler-errors).  
   
--   **ExceptionHandling**  
+- **ExceptionHandling**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Özel durum derleyici tarafından kullanılacak işleme modelini belirtir.  
+   Derleyici tarafından kullanılması için özel durum işleme modelini belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **yanlış** - *\<yok >*  
+  - **false** - *\<yok >*  
   
-    -   **Async** - **/EHa**  
+  - **Async** - **/EHa**  
   
-    -   **Sync** - **/EHsc**  
+  - **Sync** - **/EHsc**  
   
-    -   **SyncCThrow** - **/EHs**  
+  - **SyncCThrow** - **/EHs**  
   
-     Daha fazla bilgi için bkz: [/EH (özel durum işleme modeli)](/cpp/build/reference/eh-exception-handling-model).  
+    Daha fazla bilgi için [/EH (özel durum işleme modeli)](/cpp/build/reference/eh-exception-handling-model).  
   
--   **ExpandAttributedSource**  
+- **ExpandAttributedSource**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, kaynak dosyasına eklenen öznitelikler genişletilmiştir bir listeyi dosyası oluşturur.  
+   Varsa `true`, genişletilmiş öznitelikleri kaynak dosyasına eklenen bir listeleme dosyası oluşturur.  
   
-     Daha fazla bilgi için bkz: [/Fx (eklenen kodu Birleştir)](/cpp/build/reference/fx-merge-injected-code).  
+   Daha fazla bilgi için [/Fx (eklenen birleştirme kodu)](/cpp/build/reference/fx-merge-injected-code).  
   
--   **FavorSizeOrSpeed**  
+- **FavorSizeOrSpeed**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Kod boyutu ya da kod hızı favor belirtir.  
+   Kod boyutu veya kod hızına ayrıcalık tanı belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Ne** - *\<yok >*  
+  - **Ne** - *\<yok >*  
   
-    -   **Boyutu** - **/Os**  
+  - **Boyutu** - **/Os**  
   
-    -   **Hızı** - **/Ot**  
+  - **Hızı** - **/Ot**  
   
-     Daha fazla bilgi için bkz: [/Os, /Ot (küçük koda, ayrıcalık hızlı koda ayrıcalık tanı)](/cpp/build/reference/os-ot-favor-small-code-favor-fast-code).  
+    Daha fazla bilgi için [/Os, /Ot (küçük koda, hızlı koda ayrıcalık)](/cpp/build/reference/os-ot-favor-small-code-favor-fast-code).  
   
--   **FloatingPointExceptions**  
+- **FloatingPointExceptions**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, güvenilir kayan nokta özel durumu modeli sağlar. Özel durumlar tetiklenen hemen sonra gerçekleştirilecektir.  
+   Varsa `true`, güvenilir kayan nokta özel durum modeli sağlar. Özel durumlar, tetiklendikten hemen sonra gerçekleştirilecektir.  
   
-     Daha fazla bilgi için /**fp: dışında** seçeneğini [/fp (Floating-Point davranış belirtin)](/cpp/build/reference/fp-specify-floating-point-behavior).  
+   Daha fazla bilgi için /**fp: except** seçeneğini [/fp (kayan nokta davranışını belirt)](/cpp/build/reference/fp-specify-floating-point-behavior).  
   
--   **FloatingPointModel**  
+- **FloatingPointModel**  
   
-     İsteğe bağlı dizesi parametresi.  
+   İsteğe bağlı dize parametresi.  
   
-     Kayan ayarlar noktası modeli.  
+   Ayarlar kayan nokta modeli.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Precise** - **/fp:precise**  
+  - **Precise** - **/fp:precise**  
   
-    -   **Katı** - **/fp: katı**  
+  - **Katı** -   **/FP: strict**  
   
-    -   **Fast** - **/fp:fast**  
+  - **Fast** - **/fp:fast**  
   
-     Daha fazla bilgi için bkz: [/fp (Floating-Point davranış belirtin)](/cpp/build/reference/fp-specify-floating-point-behavior).  
+    Daha fazla bilgi için [/fp (kayan nokta davranışını belirt)](/cpp/build/reference/fp-specify-floating-point-behavior).  
   
--   **ForceConformanceInForLoopScope**  
+- **ForceConformanceInForLoopScope**  
   
-     Boole parametresi isteğe bağlıdır.  
+   İsteğe bağlı Boole parametresi.  
   
-     Varsa `true`, standart C++ davranışını uygulayan [için](/cpp/cpp/for-statement-cpp) Microsoft uzantıları kullanmak döngüleri ([/Ze](/cpp/build/reference/za-ze-disable-language-extensions)).  
+   Varsa `true`, standart C++ davranışını uygulayan [için](/cpp/cpp/for-statement-cpp) Microsoft uzantıları kullanma döngüler ([/Ze](/cpp/build/reference/za-ze-disable-language-extensions)).  
   
-     Daha fazla bilgi için bkz: [/ZC: forscope (zorla döngü kapsamında uyumluluğu)](/cpp/build/reference/zc-forscope-force-conformance-in-for-loop-scope).  
+   Daha fazla bilgi için [/ZC: forscope (zorla döngü kapsamında uyumluluğu)](/cpp/build/reference/zc-forscope-force-conformance-in-for-loop-scope).  
   
--   **ForcedIncludeFiles**  
+- **ForcedIncludeFiles**  
   
-     İsteğe bağlı `String[]` parametresi.  
+   İsteğe bağlı `String[]` parametresi.  
   
-     Bir veya daha fazla belirtilen üstbilgi dosyalarını işlemek önişlemci neden olur.  
+   Bir veya daha fazla belirtilen üstbilgi dosyalarını işlemek önişlemci neden olur.  
   
-     Daha fazla bilgi için bkz: [/FI (zorla dahil dosyasını Adlandır)](/cpp/build/reference/fi-name-forced-include-file).  
+   Daha fazla bilgi için [/FI (zorla dahil dosya)](/cpp/build/reference/fi-name-forced-include-file).  
   
--   **ForcedUsingFiles**  
+- **ForcedUsingFiles**  
   
-     İsteğe bağlı **String []** parametresi.  
+   İsteğe bağlı **String []** parametresi.  
   
-     Önişlemci işleme bir veya daha fazla belirtilen neden **#using** dosyaları.  
+   Önişlemci işlemine bir veya daha fazla belirtilen neden **#using** dosyaları.  
   
-     Daha fazla bilgi için bkz: [/FU (zorlanan adı #using)](/cpp/build/reference/fu-name-forced-hash-using-file).  
+   Daha fazla bilgi için [/FU (zorlanan adı #using)](/cpp/build/reference/fu-name-forced-hash-using-file).  
   
--   **FunctionLevelLinking**  
+- **FunctionLevelLinking**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, paketlenmiş işlevler (COMDATs) biçiminde paket tekil işlevler için derleyicisi tanır.  
+   Varsa `true`, bireysel işlevleri paketlenmiş işlevler (Comdat'lar) biçiminde derleyiciyi etkinleştirir.  
   
-     Daha fazla bilgi için bkz: [/Gy (işlev düzeyi bağlamayı etkinleştir)](/cpp/build/reference/gy-enable-function-level-linking).  
+   Daha fazla bilgi için [/Gy (işlev düzeyi bağlamayı etkinleştir)](/cpp/build/reference/gy-enable-function-level-linking).  
   
--   **GenerateXMLDocumentationFiles**  
+- **GenerateXMLDocumentationFiles**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, belgeleri işlemek için derleyici yorumları, kaynak kodu dosyaları ve her kaynak için bir .xdc dosyası oluşturmak için kod dosyası nedeni belge açıklamaları vardır.  
+   Varsa `true`, kaynak kodu dosyalarında belge açıklamalarını işle ve oluşturmak için derleyicinin bir *.xdc* belge açıklamaları olan her kaynak kodu dosyası için dosya.  
   
-     Daha fazla bilgi için bkz: [/doc (işlem belgesi açıklamaları) (C/C++)](/cpp/build/reference/doc-process-documentation-comments-c-cpp). Ayrıca bkz. **XMLDocumentationFileName** bu tabloda parametresi.  
+   Daha fazla bilgi için [/doc (işlem belgeleri açıklamaları) (C/C++)](/cpp/build/reference/doc-process-documentation-comments-c-cpp). Ayrıca bkz: **XMLDocumentationFileName** bu tablodaki parametresi.  
   
--   **IgnoreStandardIncludePath**  
+- **IgnoreStandardIncludePath**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, yol ve INCLUDE ortam değişkenleri belirtilen dizinlerdeki içerme dosyaları için arama derleyici engeller.  
+   Varsa `true`, derleyici PATH ve INCLUDE Ortam değişkenlerinde belirtilen dizinlerde ekleme dosyalarını aramasını önler.  
   
-     Daha fazla bilgi için bkz: [/X (Yoksay standart yol eklemeyi)](/cpp/build/reference/x-ignore-standard-include-paths).  
+   Daha fazla bilgi için [/X (Ignore standard yolları dahil)](/cpp/build/reference/x-ignore-standard-include-paths).  
   
--   **InlineFunctionExpansion**  
+- **InlineFunctionExpansion**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Satır içi işlev genişletmesi derleme için düzeyini belirtir.  
+   Derleme için satır içi işlev genişletmesi düzeyini belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Varsayılan** - *\<yok >*  
+  - **Varsayılan** - *\<yok >*  
   
-    -   **Devre dışı** - **/Ob0**  
+  - **Devre dışı bırakılmış** - **/Ob0**  
   
-    -   **OnlyExplicitInline** - **/Ob1**  
+  - **OnlyExplicitInline** - **/Ob1**  
   
-    -   **AnySuitable** - **/Ob2**  
+  - **AnySuitable** -   **/ob2**  
   
-     Daha fazla bilgi için bkz: [/Ob (satır içi işlev genişletmesi)](/cpp/build/reference/ob-inline-function-expansion).  
+    Daha fazla bilgi için [/Ob (satır içi işlev genişletmesi)](/cpp/build/reference/ob-inline-function-expansion).  
   
--   **IntrinsicFunctions**  
+- **IntrinsicFunctions**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, değiştirir bazı işlevi çağırır ile iç veya aksi halde, uygulamanızın Yardım özel forms işlevinin daha hızlı çalışır.  
+   Varsa `true`, değiştirir bazı işlev çağrıları ile iç veya aksi halde uygulamanızı yardımcı işlevinin özel formlar daha hızlı çalışır.  
   
-     Daha fazla bilgi için bkz: [/Oi (iç işlevler Oluştur)](/cpp/build/reference/oi-generate-intrinsic-functions).  
+   Daha fazla bilgi için [/Oi (iç işlevler üret)](/cpp/build/reference/oi-generate-intrinsic-functions).  
   
--   **MinimalRebuild**  
+- **MinimalRebuild**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, değiştirilen C++ dahil C++ kaynak dosyaları (Üstbilgi (.h) dosyalarında depolanır) tanımları sınıfı olup olmadığını belirleyen en az yeniden derleme gerekir yeniden derlenmesi etkinleştirir.  
+   Varsa `true`, değiştirilmiş C++ içeren C++ kaynak dosyaları (Üstbilgi (.h) dosyalarında depolanan) tanımları sınıf olup olmadığını belirler. en az yeniden derlemeyi yeniden sağlar.  
   
-     Daha fazla bilgi için bkz: [/GM derlemeyi (etkinleştirmek en az yeniden derleme)](/cpp/build/reference/gm-enable-minimal-rebuild).  
+   Daha fazla bilgi için [(en az /GM yeniden derlemeyi etkinleştir)](/cpp/build/reference/gm-enable-minimal-rebuild).  
   
--   **MultiProcessorCompilation**  
+- **MultiProcessorCompilation**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, derlemek için birden çok işlemci kullanacak. Bu parametre bir işlem etkin her işlemci için bilgisayarınızda oluşturur.  
+   Varsa `true`, birden çok işlemci derlemek için kullanın. Bu parametre, bilgisayarınızda etkili her işlemci için bir işlem oluşturur.  
   
-     Daha fazla bilgi için bkz: [/MP (birden çok süreçle derleme)](/cpp/build/reference/mp-build-with-multiple-processes). Ayrıca bkz **ProcessorNumber** bu tabloda parametresi.  
+   Daha fazla bilgi için [/MP (birden çok süreçle derleme)](/cpp/build/reference/mp-build-with-multiple-processes). Ayrıca bkz **ProcessorNumber** bu tablodaki parametresi.  
   
--   **ObjectFileName**  
+- **ObjectFileName**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Bir nesne (.obj) dosya adı veya varsayılan yerine kullanılacak dizini belirtir.  
+   Bir nesne (.obj) dosya adı veya varsayılan yerine kullanılacak dizini belirtir.  
   
-     Daha fazla bilgi için bkz: [/Fo (nesne dosya adı)](/cpp/build/reference/fo-object-file-name).  
+   Daha fazla bilgi için [/Fo (nesne dosya adı)](/cpp/build/reference/fo-object-file-name).  
   
--   **ObjectFiles**  
+- **ObjectFiles**  
   
-     İsteğe bağlı **String []** parametresi.  
+   İsteğe bağlı **String []** parametresi.  
   
-     Nesne dosyaların listesi.  
+   Nesne dosyaların listesi.  
   
--   **OmitDefaultLibName**  
+- **OmitDefaultLibName**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, nesne (.obj) dosyası varsayılan C çalışma zamanı kitaplığı adından atlar. Varsayılan olarak, derleyici kitaplığının adı doğru kitaplık bağlayıcıya yönlendirmek için .obj dosyasına yerleştirir.  
+   Varsa `true`, varsayılan C çalışma zamanı kitaplığı adı nesnesinden atlar (*.obj*) dosyası. Varsayılan olarak, derleyici kitaplığa adını geçirir *.obj* doğru kitaplık bağlayıcıya yönlendirmek için dosya.  
   
-     Daha fazla bilgi için bkz: [/Zl (varsayılan kitaplık adını atla)](/cpp/build/reference/zl-omit-default-library-name).  
+   Daha fazla bilgi için [/Zl (varsayılan kitaplık adını çıkarın)](/cpp/build/reference/zl-omit-default-library-name).  
   
--   **OmitFramePointers**  
+- **OmitFramePointers**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, çerçeve işaretçisi çağrı yığınında oluşturulmasını önler.  
+   Varsa `true`, çağrı yığınında çerçeve işaretçilerinin oluşturulmasını engeller.  
   
-     Daha fazla bilgi için bkz: [/Oy (Çerçeve işaretçisini atlama)](/cpp/build/reference/oy-frame-pointer-omission).  
+   Daha fazla bilgi için [/Oy (Çerçeve işaretçisini atlama)](/cpp/build/reference/oy-frame-pointer-omission).  
   
--   **OpenMPSupport**  
+- **OpenMPSupport**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, OpenMP yan tümceleri ve yönergeleri işlemek derleyici neden olur.  
+   Varsa `true`, derleyicinin OpenMP yan tümceleri ve yönergeleri işlemek.  
   
-     Daha fazla bilgi için bkz: [/OpenMP (OpenMP 2.0 desteğini etkinleştir)](/cpp/build/reference/openmp-enable-openmp-2-0-support).  
+   Daha fazla bilgi için [/OpenMP (OpenMP 2.0 etkinleştirme desteği)](/cpp/build/reference/openmp-enable-openmp-2-0-support).  
   
--   **En iyi duruma getirme**  
+- **En iyi duruma getirme**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Çeşitli kod iyileştirmelerini hızı ve boyutunu belirtir.  
+   Çeşitli kod iyileştirmeleri hız ve boyutunu belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Devre dışı** - **/Od**  
+  - **Devre dışı bırakılmış** - **/Od**  
   
-    -   **MinSpace** - **/O1**  
+  - **MinSpace** -   **/O1**  
   
-    -   **MaxSpeed** - **O2**  
+  - **MaxSpeed** -   **/O2**  
   
-    -   **Tam** - **/Ox**  
+  - **Tam** - **/Ox**  
   
-     Daha fazla bilgi için bkz: [/O seçenekler (kodu İyileştir)](/cpp/build/reference/o-options-optimize-code).  
+    Daha fazla bilgi için [/O seçenekler (kodu İyileştir)](/cpp/build/reference/o-options-optimize-code).  
   
--   **PrecompiledHeader**  
+- **PrecompiledHeader**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Oluşturabilir veya derleme sırasında önceden derlenmiş üst bilgi (.pch) dosyasını kullanabilirsiniz.  
+   Oluşturabilir veya önceden derlenmiş üstbilgi kullanabilirsiniz (*.pch*) derleme sırasında dosya.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **NotUsing** - *\<yok >*  
+  - **NotUsing** - *\<yok >*  
   
-    -   **Oluşturma** - **/Yc**  
+  - **Oluşturma** - **/Yc**  
   
-    -   **Kullanım** - **/Yu**  
+  - **Kullanım** - **/Yu**  
   
-     Daha fazla bilgi için bkz: [/Yc (önceden derlenmiş üst bilgi dosyası oluştur)](/cpp/build/reference/yc-create-precompiled-header-file) ve [/Yu (önceden derlenmiş üst bilgi dosyasını kullanma)](/cpp/build/reference/yu-use-precompiled-header-file). Ayrıca bkz **PrecompiledHeaderFile** ve **PrecompiledHeaderOutputFile** bu tabloda parametreler.  
+    Daha fazla bilgi için [/Yc (önceden derlenmiş üst bilgi dosyası oluştur)](/cpp/build/reference/yc-create-precompiled-header-file) ve [/Yu (önceden derlenmiş üst bilgi dosyasını kullanma)](/cpp/build/reference/yu-use-precompiled-header-file). Ayrıca bkz **PrecompiledHeaderFile** ve **PrecompiledHeaderOutputFile** bu tabloda parametreler.  
   
--   **PrecompiledHeaderFile**  
+- **PrecompiledHeaderFile**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Oluşturmak veya kullanmak için önceden derlenmiş üstbilgi dosyası adı belirtir.  
+   Oluşturmayı veya kullanmayı önceden derlenmiş üst bilgi dosyası adını belirtir.  
   
-     Daha fazla bilgi için bkz: [/Yc (önceden derlenmiş üst bilgi dosyası oluştur)](/cpp/build/reference/yc-create-precompiled-header-file) ve [/Yu (önceden derlenmiş üst bilgi dosyasını kullanma)](/cpp/build/reference/yu-use-precompiled-header-file).  
+   Daha fazla bilgi için [/Yc (önceden derlenmiş üst bilgi dosyası oluştur)](/cpp/build/reference/yc-create-precompiled-header-file) ve [/Yu (önceden derlenmiş üst bilgi dosyasını kullanma)](/cpp/build/reference/yu-use-precompiled-header-file).  
   
--   **PrecompiledHeaderOutputFile**  
+- **PrecompiledHeaderOutputFile**  
   
-     İsteğe bağlı **dize** parametresi.  
+   İsteğe bağlı **dize** parametresi.  
   
-     Varsayılan yol adı yerine bir önceden derlenmiş üst bilgisi için bir yol adı belirtir.  
+   Varsayılan yol adı yerine önceden derlenmiş üst bilgi için bir yol adı belirtir.  
   
-     Daha fazla bilgi için bkz: [/Fp (adı. PCH dosyası)](/cpp/build/reference/fp-name-dot-pch-file).  
+   Daha fazla bilgi için [/Fp (.pch dosyası Adlandır)](/cpp/build/reference/fp-name-dot-pch-file).  
   
--   **PreprocessKeepComments**  
+- **PreprocessKeepComments**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, ön işleme sırasında açıklamaları korur.  
+   Varsa `true`, ön işleme sırasında yorumları korur.  
   
-     Daha fazla bilgi için bkz: [/C (korumak açıklamaları sırasındaki)](/cpp/build/reference/c-preserve-comments-during-preprocessing).  
+   Daha fazla bilgi için [/C (önişleme sırasında açıklamaları Koru)](/cpp/build/reference/c-preserve-comments-during-preprocessing).  
   
--   **PreprocessorDefinitions**  
+- **PreprocessorDefinitions**  
   
-     İsteğe bağlı `String[]` parametresi.  
+   İsteğe bağlı `String[]` parametresi.  
   
-     Kaynak dosyanızı önişlem simgesi tanımlar.  
+   Kaynak dosyanız için önceden işleme simgesini tanımlar.  
   
-     Daha fazla bilgi için bkz: [/D (önişlemci tanımları)](/cpp/build/reference/d-preprocessor-definitions).  
+   Daha fazla bilgi için [/D (önişlemci tanımları)](/cpp/build/reference/d-preprocessor-definitions).  
   
--   **PreprocessOutput**  
+- **PreprocessOutput**  
   
-     İsteğe bağlı `ITaskItem[]` parametresi.  
+   İsteğe bağlı `ITaskItem[]` parametresi.  
   
-     Tüketilen ve görevler tarafından gösterilen önişlemci çıktısı öğeleri dizisi tanımlar.  
+   Tüketilen ve görevler tarafından yayılan önişlemci çıktısını öğeleri bir dizisi tanımlanmaktadır.  
   
--   **PreprocessOutputPath**  
+- **PreprocessOutputPath**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Çıktı dosyasına adını belirtir **PreprocessToFile** parametresi önceden işlenmiş çıktısı yazar.  
+   Hangi çıkış dosyasının adını belirtir **PreprocessToFile** parametresi önceden işlenmiş çıktı yazar.  
   
-     Daha fazla bilgi için bkz: [/Fi (çıktı dosyası adını Önişle)](/cpp/build/reference/fi-preprocess-output-file-name).  
+   Daha fazla bilgi için [/Fi (çıktı dosyası adı ön işleme)](/cpp/build/reference/fi-preprocess-output-file-name).  
   
--   **PreprocessSuppressLineNumbers**  
+- **PreprocessSuppressLineNumbers**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, C ve C++ kaynak dosyalarını preprocesses ve standart çıktı aygıtına önceden işlenmiş dosyalarını kopyalar.  
+   Varsa `true`, C ve C++ kaynak dosyalarını önceden işler ve standart çıktı cihazına önceden işlenmiş dosya kopyalar.  
   
-     Daha fazla bilgi için bkz: [/EP (#line yönergeleri olmadan stdout'ta Önişle)](/cpp/build/reference/ep-preprocess-to-stdout-without-hash-line-directives).  
+   Daha fazla bilgi için [/EP (#line yönergeleri olmadan stdout'ta önişle ön işleme)](/cpp/build/reference/ep-preprocess-to-stdout-without-hash-line-directives).  
   
--   **PreprocessToFile**  
+- **PreprocessToFile**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, C ve C++ kaynak dosyalarını preprocesses ve önceden işlenmiş çıktıyı bir dosyaya yazar.  
+   Varsa `true`, C ve C++ kaynak dosyalarını önceden işler ve önceden işlenen çıkışı bir dosyaya yazar.  
   
-     Daha fazla bilgi için bkz: [/P (dosyaya Önişle)](/cpp/build/reference/p-preprocess-to-a-file).  
+   Daha fazla bilgi için [/P (dosyaya ön işleme)](/cpp/build/reference/p-preprocess-to-a-file).  
   
--   **ProcessorNumber**  
+- **ProcessorNumber**  
   
-     İsteğe bağlı `Integer` parametresi.  
+   İsteğe bağlı `Integer` parametresi.  
   
-     En fazla çok işlemcili bir derlemede kullanmak için işlemci sayısını belirtir. Bu parametre ile birlikte kullanmak **MultiProcessorCompilation** parametresi.  
+   Çok işlemcili bir derleme içinde kullanılacak işlemcileri maksimum sayısını belirtir. Bu parametre ile birlikte kullanma **MultiProcessorCompilation** parametresi.  
   
--   **ProgramDataBaseFileName**  
+- **ProgramDataBaseFileName**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Program veritabanı (PDB) dosyası için bir dosya adı belirtir.  
+   Program veritabanı (PDB) dosyası için bir dosya adı belirtir.  
   
-     Daha fazla bilgi için bkz: [/Fd (Program veritabanı dosya adı)](/cpp/build/reference/fd-program-database-file-name).  
+   Daha fazla bilgi için [/Fd (Program veritabanı dosya adı)](/cpp/build/reference/fd-program-database-file-name).  
   
--   **RuntimeLibrary**  
+- **RuntimeLibrary**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Birden çok iş parçacıklı bir modül DLL ve çalışma zamanı kitaplığı tekil veya hata ayıklama sürümleri seçer olup olmadığını gösterir.  
+   Çok iş parçacıklı bir modülün bir DLL ve çalışma zamanı kitaplığının perakende veya hata ayıklama sürümlerini seçer olup olmadığını gösterir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Birden çok iş parçacıklı** -   **/MT**  
+  - **Çok iş parçacıklı** -   **/MT**  
   
-    -   **MultiThreadedDebug** - **/MTd**  
+  - **MultiThreadedDebug** -   **/mtd**  
   
-    -   **MultiThreadedDLL** - **/MD**  
+  - **MultiThreadedDLL** -   **/MD**  
   
-    -   **MultiThreadedDebugDLL** - **/MDd**  
+  - **MultiThreadedDebugDLL** - **/MDd**  
   
-     Daha fazla bilgi için bkz: [/MD, / MT, /LD (çalışma zamanı kitaplığını kullan)](/cpp/build/reference/md-mt-ld-use-run-time-library).  
+    Daha fazla bilgi için [/MD, / MT, /LD (çalışma zamanı kitaplığını kullan)](/cpp/build/reference/md-mt-ld-use-run-time-library).  
   
--   **RuntimeTypeInfo**  
+- **RuntimeTypeInfo**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, çalışma zamanında (çalışma zamanı türü bilgileri) C++ nesne türlerini denetlemek için kod ekler.  
+   Varsa `true`, çalışma zamanında (çalışma zamanı tür bilgisi) C++ nesne türlerini denetlemek için kod ekler.  
   
-     Daha fazla bilgi için bkz: [/GR (çalışma zamanı türü bilgileri etkinleştir)](/cpp/build/reference/gr-enable-run-time-type-information).  
+   Daha fazla bilgi için [/GR (çalışma zamanı türü bilgileri etkinleştir)](/cpp/build/reference/gr-enable-run-time-type-information).  
   
--   **Showıncludes**  
+- **Showıncludes**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, dosyaları Ekle listesini çıkarmak derleyici neden olur.  
+   Varsa `true`, ekleme kodu dosyalarının bir listesini çıkarmak derleyicinin neden olur.  
   
-     Daha fazla bilgi için bkz: [/showıncludes (liste dosyaları içerir)](/cpp/build/reference/showincludes-list-include-files).  
+   Daha fazla bilgi için [/showıncludes (liste dosyaları içerir)](/cpp/build/reference/showincludes-list-include-files).  
   
--   **SmallerTypeCheck**  
+- **SmallerTypeCheck**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, bir değer küçük bir veri türü için atanan ve veri kaybına neden olan bir çalışma zamanı hata bildirir.  
+   Varsa `true`, bir değer daha küçük bir veri türüne atandı ve veri kaybına neden olan bir çalışma zamanı hatası bildirir.  
   
-     Daha fazla bilgi için bkz: **/RTCc** seçeneğini [eş yordamlarla/RTC (çalışma zamanı hata denetler)](/cpp/build/reference/rtc-run-time-error-checks).  
+   Daha fazla bilgi için **/RTCc** seçeneğini [/RTC (çalışma zamanı hata denetimleri)](/cpp/build/reference/rtc-run-time-error-checks).  
   
--   **Kaynakları**  
+- **Kaynakları**  
   
-     Gerekli `ITaskItem[]` parametresi.  
+   Gerekli `ITaskItem[]` parametresi.  
   
-     Kaynak dosyaları boşluklarla ayrılmış listesini belirtir.  
+   Kaynak dosyaları boşluklarla ayrılmış bir listesini belirtir.  
   
--   **StringPooling**  
+- **StringPooling**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, program görüntüde aynı dize bir kopyasını oluşturmak derleyici sağlar.  
+   Varsa `true`, program görüntüde aynı dizelerin bir kopyasını oluşturmak derleyiciyi etkinleştirir.  
   
-     Daha fazla bilgi için bkz: [/GF (yinelenen dizeleri ortadan)](/cpp/build/reference/gf-eliminate-duplicate-strings).  
+   Daha fazla bilgi için [/GF (yinelenen dizeleri ortadan kaldırın)](/cpp/build/reference/gf-eliminate-duplicate-strings).  
   
--   **StructMemberAlignment**  
+- **StructMemberAlignment**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Tüm üyeler için bayt hizalama bir yapısında belirtir.  
+   Tüm üyeleri için bayt hizalama bir yapıda belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **Varsayılan** - **/Zp1**  
+  - **Varsayılan** - **/Zp1**  
   
-    -   **1Byte** - **/Zp1**  
+  - **1Byte** - **/Zp1**  
   
-    -   **2Bytes** - **/Zp2**  
+  - **2Bytes** - **/Zp2**  
   
-    -   **4Bytes** - **/Zp4**  
+  - **4Bytes** - **/Zp4**  
   
-    -   **8Bytes** - **/Zp8**  
+  - **8Bytes** - **/Zp8**  
   
-    -   **16Bytes** - **/Zp16**  
+  - **16Bytes** - **/Zp16**  
   
-     Daha fazla bilgi için bkz: [/Zp (yapı üyesi hizalama)](/cpp/build/reference/zp-struct-member-alignment).  
+    Daha fazla bilgi için [/Zp (yapı üyesi hizalama)](/cpp/build/reference/zp-struct-member-alignment).  
   
--   **SuppressStartupBanner**  
+- **SuppressStartupBanner**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, görev başladığında telif hakkı ve sürüm numarası iletisini görüntülenmesini engeller.  
+   Varsa `true`, görev başladığında telif hakkı ve sürüm numarası iletisinin görüntülenmesini engeller.  
   
-     Daha fazla bilgi için bkz: [/nologo (Başlangıç başlığını gösterme) (C/C++)](/cpp/build/reference/nologo-suppress-startup-banner-c-cpp).  
+   Daha fazla bilgi için [/nologo (Başlangıç başlığını gösterme) (C/C++)](/cpp/build/reference/nologo-suppress-startup-banner-c-cpp).  
   
--   **TrackerLogDirectory**  
+- **TrackerLogDirectory**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Bu görev için izleme günlüklerinin depolandığı Ara dizini belirtir.  
+   Bu görev için izleme günlüklerinin depolandığı Ara dizini belirtir.  
   
-     Daha fazla bilgi için bkz: **TLogReadFiles** ve **TLogWriteFiles** bu tabloda parametreler.  
+   Daha fazla bilgi için **TLogReadFiles** ve **TLogWriteFiles** bu tabloda parametreler.  
   
--   **TreatSpecificWarningsAsErrors**  
+- **TreatSpecificWarningsAsErrors**  
   
-     İsteğe bağlı **String []** parametresi.  
+   İsteğe bağlı **String []** parametresi.  
   
-     Belirtilen listesi derleyici uyarıları hata olarak değerlendirir.  
+   Belirtilen Derleyici uyarılarını hata olarak değerlendirir.  
   
-     Daha fazla bilgi için bkz: **/we** `n` seçeneğini [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, wln, /wd, / biz, /wo, /Wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
+   Daha fazla bilgi için **/we** `n` seçeneğini [/w, /W0, / W1, / w2, / W3, / W4, / W1, / w2, / W3, / W4, /Wall, WD, / we Wo, wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
   
--   **TreatWarningAsError**  
+- **TreatWarningAsError**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, tüm derleyici uyarıları hata olarak ele alın.  
+   Varsa `true`, tüm Derleyici uyarılarını hata olarak değerlendir.  
   
-     Daha fazla bilgi için bkz: **/WX** seçeneğini [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, wln, /wd, / biz, /wo, /Wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
+   Daha fazla bilgi için **wx** seçeneğini [/w, /W0, / W1, / w2, / W3, / W4, / W1, / w2, / W3, / W4, /Wall, WD, / we Wo, wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
   
--   **TreatWChar_tAsBuiltInType**  
+- **TreatWChar_tAsBuiltInType**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, işle `wchar_t` yerel tür türü.  
+   Varsa `true`, işle `wchar_t` türü olarak yerel bir tür.  
   
-     Daha fazla bilgi için bkz: [/ZC: wchar_t (wchar_t yerel tür olan)](/cpp/build/reference/zc-wchar-t-wchar-t-is-native-type).  
+   Daha fazla bilgi için [/ZC: wchar_t (wchar_t yerel türü olduğu)](/cpp/build/reference/zc-wchar-t-wchar-t-is-native-type).  
   
--   **UndefineAllPreprocessorDefinitions**  
+- **UndefineAllPreprocessorDefinitions**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, derleyici tanımlar Microsoft özgü simgeleri undefines.  
+   Varsa `true`, derleyici tanımlayan Microsoft'a özgü simgeleri tanımsızı.  
   
-     Daha fazla bilgi için bkz: **/u** seçeneğini [/U, /u (simge tanımlarını Kaldır)](/cpp/build/reference/u-u-undefine-symbols).  
+   Daha fazla bilgi için **/u** seçeneğini [/U, /u (tanımlanmamış sembol)](/cpp/build/reference/u-u-undefine-symbols).  
   
--   **UndefinePreprocessorDefinitions**  
+- **UndefinePreprocessorDefinitions**  
   
-     İsteğe bağlı `String[]` parametresi.  
+   İsteğe bağlı `String[]` parametresi.  
   
-     Tanımsız için bir veya daha fazla önişlemci sembolleri listesini belirtir.  
+   Tanımsız için bir veya daha çok önişlemci sembolleri listesini belirtir.  
   
-     Daha fazla bilgi için bkz: **/U** seçeneğini [/U, /u (simge tanımlarını Kaldır)](/cpp/build/reference/u-u-undefine-symbols).  
+   Daha fazla bilgi için **/U** seçeneğini [/U, /u (tanımlanmamış sembol)](/cpp/build/reference/u-u-undefine-symbols).  
   
--   **UseFullPaths**  
+- **UseFullPaths**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, kaynak kodu dosyaları tam yolunu geçirilen tanılama derleyici görüntüler.  
+   Varsa `true`, derleyici tanılama geçirilen kaynak kodu dosyalarının tam yolunu görüntüler.  
   
-     Daha fazla bilgi için bkz: [/FC (tam yolu, kaynak kodu dosyasının tanılamadaki)](/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics).  
+   Daha fazla bilgi için [/FC (kaynak kodu dosyasının tanılamadaki tam yolu)](/cpp/build/reference/fc-full-path-of-source-code-file-in-diagnostics).  
   
--   **UseUnicodeForAssemblerListing**  
+- **UseUnicodeForAssemblerListing**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, çıkış dosyasının UTF-8 biçiminde oluşturulmasına neden olur.  
+   Varsa `true`, çıkış dosyasının UTF-8 biçiminde oluşturulmasını sağlar.  
   
-     Daha fazla bilgi için bkz: **/FAu** seçeneğini [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
+   Daha fazla bilgi için **/fau** seçeneğini [/FA, /Fa (listeleme dosyası)](/cpp/build/reference/fa-fa-listing-file).  
   
--   **WarningLevel**  
+- **WarningLevel**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Derleyici tarafından üretilen bir uyarı düzeyini belirtir.  
+   En yüksek derleyici tarafından oluşturulup uyarı düzeyini belirtir.  
   
-     Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
+   Her biri bir komut satırı seçeneğine karşılık gelir aşağıdaki değerlerden birini belirtin.  
   
-    -   **TurnOffAllWarnings** - **/W0**  
+  - **TurnOffAllWarnings** - **/W0**  
   
-    -   **Level1** - **/W1**  
+  - **Level1** -   **/W1**  
   
-    -   **Level2** - **/W2**  
+  - **Level2** -   **/w2**  
   
-    -   **Level3** - **/W3**  
+  - **Level3** -   **/w3**  
   
-    -   **Level4** - **/W4**  
+  - **Level4** -   **/W4**  
   
-    -   **EnableAllWarnings** -   **/duvar**  
+  - **EnableAllWarnings** -   **/Wall**  
   
-     Daha fazla bilgi için bkz: **/W***n* seçeneğini [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, wln, /wd, / biz, /wo, /Wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
+    Daha fazla bilgi için **/W**_n_ seçeneğini [/w, /W0, / W1, / w2, / W3, / W4, / W1, / w2, / W3, / W4, /Wall, WD, / we Wo, wv, /WX (uyarı düzeyi)](/cpp/build/reference/compiler-option-warning-level).  
   
--   **WholeProgramOptimization**  
+- **WholeProgramOptimization**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, bütün program iyileştirmesi sağlar.  
+   Varsa `true`, tüm programın iyileştirilmesini etkinleştirir.  
   
-     Daha fazla bilgi için bkz: [/GL (bütün Program iyileştirmesi)](/cpp/build/reference/gl-whole-program-optimization).  
+   Daha fazla bilgi için [/GL (bütün program iyileştirmesi)](/cpp/build/reference/gl-whole-program-optimization).  
   
--   **XMLDocumentationFileName**  
+- **XMLDocumentationFileName**  
   
-     İsteğe bağlı `String` parametresi.  
+   İsteğe bağlı `String` parametresi.  
   
-     Oluşturulan XML belge dosyalarını adını belirtir. Bu parametre bir dosya veya dizin adı olabilir.  
+   Oluşturulmuş XML belgesi dosyalarının adını belirtir. Bu parametre bir dosya veya dizin adı olabilir.  
   
-     Daha fazla bilgi için bkz: `name` değişkeninde [/doc (işlem belgesi açıklamaları) (C/C++)](/cpp/build/reference/doc-process-documentation-comments-c-cpp). Ayrıca bkz. **GenerateXMLDocumentationFiles** bu tabloda parametresi.  
+   Daha fazla bilgi için `name` değişkeninde [/doc (işlem belgeleri açıklamaları) (C/C++)](/cpp/build/reference/doc-process-documentation-comments-c-cpp). Ayrıca bkz: **GenerateXMLDocumentationFiles** bu tablodaki parametresi.  
   
--   **MinimalRebuildFromTracking**  
+- **MinimalRebuildFromTracking**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, izlenen bir artımlı derleme; yapılır `false`, yeniden gerçekleştirilir.  
+   Varsa `true`, izlenen bir artımlı derleme; yapılmaz `false`, yeniden gerçekleştirilir.  
   
--   **TLogReadFiles**  
+- **TLogReadFiles**  
   
-     İsteğe bağlı `ITaskItem[]` parametresi.  
+   İsteğe bağlı `ITaskItem[]` parametresi.  
   
-     Temsil eden öğelerinin bir dizisini belirtir *günlükleri izleme dosyasını okumak*.  
+   Temsil eden öğelerin bir dizisi belirtir *günlükleri izleme dosyası okuma*.  
   
-     Dosyayı oku izleme günlüğü (.tlog), bir görev tarafından okunur ve artımlı derlemeler desteklemek için proje oluşturma sistemi tarafından kullanılan giriş dosyaların adlarını içerir. Daha fazla bilgi için bkz: **TrackerLogDirectory** ve **TrackFileAccess** bu tabloda parametreler.  
+   Bir dosyayı oku izleme günlüğü (*.tlog*), bir görev tarafından okunur ve artımlı derlemeleri desteklemek için proje sistemi tarafından kullanılan giriş dosyalarının adlarını içerir. Daha fazla bilgi için **TrackerLogDirectory** ve **trackfileaccess değeri** bu tabloda parametreler.  
   
--   **TLogWriteFiles**  
+- **TLogWriteFiles**  
   
-     İsteğe bağlı `ITaskItem[]` parametresi.  
+   İsteğe bağlı `ITaskItem[]` parametresi.  
   
-     Temsil eden öğelerinin bir dizisini belirtir *günlükleri izleme dosyasına yazma*.  
+   Temsil eden öğelerin bir dizisi belirtir *günlükleri izleme dosyası yazma*.  
   
-     Bir yazma dosya izleme günlüğü (.tlog), bir görev tarafından yazılır ve Proje yapı sistem tarafından artımlı derlemeler desteklemek için kullanılır ve çıkış dosyalarının adını içerir. Daha fazla bilgi için bkz: **TrackerLogDirectory** ve **TrackFileAccess** bu tabloda parametreler.  
+   Yazma dosya izleme günlük (*.tlog*), bir görev tarafından yazılmış ve artımlı derlemeleri desteklemek için proje sistemi tarafından kullanılır ve çıkış dosyalarının adlarını içerir. Daha fazla bilgi için **TrackerLogDirectory** ve **trackfileaccess değeri** bu tabloda parametreler.  
   
--   **TrackFileAccess**  
+- **TrackFileAccess**  
   
-     İsteğe bağlı `Boolean` parametresi.  
+   İsteğe bağlı `Boolean` parametresi.  
   
-     Varsa `true`, dosya erişimi desenleri izler.  
+   Varsa `true`, dosya erişim düzenlerini izler.  
   
-     Daha fazla bilgi için bkz: **TLogReadFiles** ve **TLogWriteFiles** bu tabloda parametreler.  
+   Daha fazla bilgi için **TLogReadFiles** ve **TLogWriteFiles** bu tabloda parametreler.  
   
-## <a name="remarks"></a>Açıklamalar  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)

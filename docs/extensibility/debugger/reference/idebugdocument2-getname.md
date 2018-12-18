@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e20d70b86050ae4b2ef4d983bb0efa8305947dff
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e1c819c63a40a1d7f08b46b67a8cfd2c1949c074
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905220"
 ---
 # <a name="idebugdocument2getname"></a>IDebugDocument2::GetName
-Belgenin adını birkaç forms birini alır.  
+Belge adını çeşitli biçimlerden birinde alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int GetName(
   
 #### <a name="parameters"></a>Parametreler  
  `gnType`  
- [in] Arasında bir değer [GETNAME_TYPE](../../../extensibility/debugger/reference/getname-type.md) numaralandırma döndürmek için ad türünü belirler.  
+ [in] Bir değer [GETNAME_TYPE](../../../extensibility/debugger/reference/getname-type.md) adı döndürülecek türünü belirleyen sabit listesi.  
   
  `pbstrFileName`  
  [out] Belge adını içeren bir dize döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem Örneğin, belgenin adını bir başlık veya bir dosya adı veya bir dosya adı bile parçası olarak döndürebilir.  
+ Bu yöntem, bir başlık veya bir dosya adı veya hatta bir dosya adının parçası olarak belge adını geri dönebilirsiniz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md)   

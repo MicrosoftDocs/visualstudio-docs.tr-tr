@@ -21,14 +21,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: dc467b859e3a02282c6d6165dc263931900c5bc2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7847f8b1dbea5ac5dbd2f9c1ed492c9172e539b7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49895476"
 ---
 # <a name="choose-element-msbuild"></a>Öğe Seç (MSBuild)
-Bir grubu seçmek için alt öğeler değerlendirir `ItemGroup` öğeleri ve/veya `PropertyGroup` değerlendirmek için öğeleri.  
+Bir grubu seçmek için alt öğeleri değerlendirir `ItemGroup` öğelerin ve/veya `PropertyGroup` değerlendirmek için öğeleri.  
 
  \<Proje >  
  \<Seçin >  
@@ -41,39 +42,39 @@ Bir grubu seçmek için alt öğeler değerlendirir `ItemGroup` öğeleri ve/vey
 
 ## <a name="syntax"></a>Sözdizimi  
 
-```  
+```xml  
 <Choose>  
     <When Condition="'StringA'=='StringB'">... </When>  
     <Otherwise>... </Otherwise>  
 </Choose>  
 ```  
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
 
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
 
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
 
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Aksi takdirde](../msbuild/otherwise-element-msbuild.md)|İsteğe bağlı öğe.<br /><br /> Kod bloğunu belirtir `PropertyGroup` ve `ItemGroup` olmadığını değerlendirmek için öğeleri tüm koşulları `When` öğeleri değerlendirmek için `false`. Sıfır veya bir olabilir `Otherwise` öğelerinde bir `Choose` öğesi ve onu son öğesi olması gerekir.|  
-|[ne zaman](../msbuild/when-element-msbuild.md)|Gerekli öğe.<br /><br /> Kod için olası bir bloğunda belirtir `Choose` öğesini seçin. Bir veya daha fazla olabilir `When` öğelerinde bir `Choose` öğesi.|  
+|[Aksi takdirde](../msbuild/otherwise-element-msbuild.md)|İsteğe bağlı öğe.<br /><br /> Kod bloğunun belirtir `PropertyGroup` ve `ItemGroup` değerlendirme öğeleri tüm koşullar `When` öğeleri değerlendirmek için `false`. Sıfır veya bir olabilir `Otherwise` öğelerinde bir `Choose` öğesi ve son öğesi olmalı.|  
+|[Ne zaman](../msbuild/when-element-msbuild.md)|Gerekli öğe.<br /><br /> Olası bir blok için kod belirtir `Choose` seçmek için öğesi. Bir veya daha fazla olabilir `When` öğelerinde bir `Choose` öğesi.|  
 
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
 
-|Öğe|Açıklama|  
-|-------------|-----------------|  
-|[Aksi takdirde](../msbuild/otherwise-element-msbuild.md)|Yürütülecek kod bloğunu belirtir tüm koşulları `When` öğeleri değerlendirmek için `false`.|  
-|[Project](../msbuild/project-element-msbuild.md)|Gerekli kök öğesinin bir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] proje dosyası.|  
-|[ne zaman](../msbuild/when-element-msbuild.md)|Kod için olası bir bloğunda belirtir `Choose` öğesini seçin.|  
+| Öğe | Açıklama |
+| - | - |
+| [Aksi takdirde](../msbuild/otherwise-element-msbuild.md) | Belirtir, yürütülecek kod bloğu tüm koşullar `When` öğeleri değerlendirmek için `false`. |
+| [Project](../msbuild/project-element-msbuild.md) | Gerekli kök öğesi bir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] proje dosyası. |
+| [Ne zaman](../msbuild/when-element-msbuild.md) | Olası bir blok için kod belirtir `Choose` seçmek için öğesi. |
 
 ## <a name="remarks"></a>Açıklamalar  
- `Choose`, `When`, Ve `Otherwise` öğelerini birlikte bir dizi olası alternatifler dışında yürütülecek kod bir bölüm seçmek için bir yol sağlamak için kullanılır. Daha fazla bilgi için bkz: [koşullu yapıları](../msbuild/msbuild-conditional-constructs.md).  
+ `Choose`, `When`, Ve `Otherwise` öğeleri birlikte bir dizi olası alternatifler dışında yürütülecek kodun bir bölümünü seçmek için bir yol sağlamak amacıyla kullanılır. Daha fazla bilgi için [koşullu yapılar](../msbuild/msbuild-conditional-constructs.md).  
 
 ## <a name="example"></a>Örnek  
- Aşağıdaki proje kullanır `Choose` özellik değerlerinde hangi kümesini seçmek için öğe `When` öğeleri ayarlayın. Varsa `Condition` her ikisi de özniteliklerini `When` öğeleri değerlendirmek için `false`, özellik değerleri `Otherwise` öğesi ayarlanır.  
+ Aşağıdaki proje kullandığı `Choose` hangi özellik değerlerinde kümesini seçmek için öğe `When` ayarlamak için öğeleri. Varsa `Condition` her iki öznitelikleri `When` öğeleri değerlendirmek için `false`, özellik değerleri `Otherwise` öğesi ayarlanır.  
 
 ```xml  
 <Project  
@@ -120,6 +121,6 @@ Bir grubu seçmek için alt öğeler değerlendirir `ItemGroup` öğeleri ve/vey
 </Project>  
 ```  
 
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Koşullu yapılar](../msbuild/msbuild-conditional-constructs.md)   
  [Proje dosyası şema başvurusu](../msbuild/msbuild-project-file-schema-reference.md)

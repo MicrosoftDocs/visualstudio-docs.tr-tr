@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130696"
 ---
 # <a name="supporting-source-control"></a>Kaynak denetimi destekleme
 [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] Dosya kullanıma, iadeler ve diğer kaynak denetimi işlemleri proje veya Düzenleyicisi'ni destekler. Kaynak Denetim istemcisi olarak [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] bir kaynak denetimi paketiyle gibi etkileşim kuracak şekilde tasarlanmıştır [!INCLUDE[vsvss](../../extensibility/includes/vsvss_md.md)], arşivleme, sürüm ve dosyaları dinamik olarak tanımlanan bir dizi denetim tesislerinde sağlar.  

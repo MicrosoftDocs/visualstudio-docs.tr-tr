@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 53d84b9ef6cdabc12c88e30fc65d506cad673a26
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2e121434f5db1edc1e4c13df3e832cba5be7d471
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876132"
 ---
 # <a name="idebugmodule3getsymbolinfo"></a>IDebugModule3::GetSymbolInfo
-Her yol arama sonuçlarını yanı sıra simgeleri aranır yolların listesini alır.  
+Her yol arama sonuçlarını yanı sıra semboller için Aranan yol listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,26 +45,26 @@ int GetSymbolInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [SYMBOL_SEARCH_INFO_FIELDS](../../../extensibility/debugger/reference/symbol-search-info-fields.md) hangi alanlarının belirten numaralandırma `pInfo` doldurulması üzeresiniz.  
+ [in] Bayraklarının bir birleşimi [SYMBOL_SEARCH_INFO_FIELDS](../../../extensibility/debugger/reference/symbol-search-info-fields.md) hangi alanları belirten sabit listesi `pInfo` doldurulacak olan.  
   
  `pInfo`  
- [out] A [MODULE_SYMBOL_SEARCH_INFO](../../../extensibility/debugger/reference/module-symbol-search-info.md) üyeleri olan oturum belirtilen bilgileri doldurulacak yapısı. Bu bir null değeri ise, bu yöntem `E_INVALIDARG`.  
+ [out] A [MODULE_SYMBOL_SEARCH_INFO](../../../extensibility/debugger/reference/module-symbol-search-info.md) Yapı üyeleri olan belirtilen bilgileriyle doldurulacak. Bu bir null değeri ise, bu yöntemi döndürür `E_INVALIDARG`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Yöntem başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
->  Döndürülen dize (içinde `MODULE_SYMBOL_SEARCH_INFO` yapısı) boş olabilir olsa bile `S_OK` döndürülür. Bu durumda, geri dönmek için hiçbir Ara bilgi yoktu.  
+>  Döndürülen dize (içinde `MODULE_SYMBOL_SEARCH_INFO` yapısı) boş olabilir bile `S_OK` döndürülür. Bu durumda, geri dönmek için hiçbir arama bilgisi vardı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Varsa `bstrVerboseSearchInfo` alanını `MODULE_SYMBOL_SEARCH_INFO` yapısı boş değil ve ardından arama yolları ve arama sonuçlarını listesini içerir. Listenin sonucu tarafından izlenen bir üç nokta ("..."), ve ardından bir yolu biçimlendirilir. Birden fazla yol sonuç çifti varsa, her bir çifti "\r\n" (satır-return/satır besleme) çifti tarafından ayrılır. Desen şöyle görünür:  
+ Varsa `bstrVerboseSearchInfo` alanını `MODULE_SYMBOL_SEARCH_INFO` yapısı boş değil ve ardından arama yolları ve bu arama sonuçlarının bir listesini içerir. Listenin sonuca göre ve ardından üç nokta ("..."), ardından bir yol ile biçimlendirilir. Birden fazla yol sonuç çifti varsa, her bir çifti "\r\n" (satır başı-başı/satır besleme) çifti tarafından ayrılmış. Desen şöyle görünür:  
   
- \<yolu >... \<sonuç > \r\n\<yolu >... \<sonuç > \r\n\<yolu >... \<sonuç >  
+ \<yolu >... \<sonucu > \r\n\<yolu >... \<sonucu > \r\n\<yolu >... \<sonucu >  
   
- Son girişi \r\n sırası yok unutmayın.  
+ En son giriş \r\n dizisi yok unutmayın.  
   
 ## <a name="example"></a>Örnek  
- Bu örnekte, üç farklı Arama sonuçlarıyla üç yolu bu yöntemi döndürür. Her satır bir satır başı-return/satır besleme çifti ile sonlandırıldı. Örnek çıktı yalnızca tek bir dize arama sonuçlarını yazdırır.  
+ Bu örnekte, üç farklı arama sonuçları ile üç yolları Bu yöntemi döndürür. Her satır, satır başı-başı/satır besleme çifti ile sonlandırılır. Örnek Çıktı, yalnızca tek bir dize olarak arama sonuçlarını yazdırır.  
   
 > [!NOTE]
 >  Bir durum hemen ardından "..." satırın sonuna kadar her şeyi sonucudur.  
@@ -84,9 +85,9 @@ void ShowSymbolSearchResults(IDebugModule3 *pIDebugModule3)
 }  
 ```  
   
- **c:\symbols\user32.pdb... Dosyası bulunamadı.**  
+ **c:\symbols\user32.pdb... Soubor nebyl nalezen.**  
 **c:\winnt\symbols\user32.pdb... Sürüm eşleşmiyor.**  
-**\\\symbols\symbols\user32.dll\0a8sd0ad8ad\user32.pdb... Yüklenen simgeler.**   
+**\\\symbols\symbols\user32.dll\0a8sd0ad8ad\user32.pdb... Sembol yüklenmedi.**   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [SYMBOL_SEARCH_INFO_FIELDS](../../../extensibility/debugger/reference/symbol-search-info-fields.md)   
  [MODULE_SYMBOL_SEARCH_INFO](../../../extensibility/debugger/reference/module-symbol-search-info.md)   

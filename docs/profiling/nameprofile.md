@@ -13,20 +13,21 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f0b717882e943a37857bbdadf3d318f94b4900dc
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: df6fce197a184167b66025191f43b07ebd08ffa7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49819595"
 ---
 # <a name="nameprofile"></a>NameProfile
 `NameProfile` İşlevi belirtilen işlem veya iş parçacığı bir dize atar.  
   
- NameProfile API yalnızca profil oluşturma araçları kullanılabilir. NameProfile API örnekleme profili oluşturma için desteklenmiyor.  
+ NameProfile API, yalnızca izleme profil oluşturmak için kullanılabilir. NameProfile API örnekleme profil için desteklenmiyor.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 PROFILE_COMMAND_STATUS PROFILERAPI NameProfile(  
                                    LPCTSTR pszName,   
                                    PROFILE_CONTROL_LEVEL Level,  
@@ -36,69 +37,69 @@ PROFILE_COMMAND_STATUS PROFILERAPI NameProfile(
 #### <a name="parameters"></a>Parametreler  
  `pszName`  
   
- Profil oluşturma öğesinin adı. Bir ad (NameProfileA dönüş NAME_ERROR_INVALID_NAME içinde kaynaklanan) geçersiz ise:  
+ Profil oluşturma öğesinin adı. Bir ad (NameProfileA dönüş NAME_ERROR_INVALID_NAME içinde elde edilen) geçersiz ise:  
   
--   NameProfileA geçirilen işaretçi NULL bir değerdir  
+- NameProfileA geçirilen işaretçi NULL bir değerdir  
   
--   Bir sayı ile pszName dize verilerini başlatır  
+- PszName dize verilerini bir sayı ile başlatılır.  
   
--   Bir alanı pszName dize verilerini içerir  
+- Bir alanı pszName dize verilerini içeriyor  
   
--   PszName dize verilerini şu karakterlerden birini içeriyor:,. ' ~! @# $% ^ & * () = [] {}&#124;\\? / <>  
+- Dize verilerini pszName aşağıdaki karakterlerden herhangi birini içeren:,. ' ~! @# $% ^ & * () = []{}&#124;\\? / <>  
   
- `Level`  
+  `Level`  
   
- Hangi performans veri toplama uygulanabilir profili düzeyini gösterir. Aşağıdaki **PROFILE_CONTROL_LEVEL** değerleri, hangi performans veri toplama uygulanabilir üç düzeylerinden birini belirtmek için kullanılabilir:  
+  Hangi performans veri toplama uygulanabilir profili düzeyini gösterir. Aşağıdaki **PROFILE_CONTROL_LEVEL** değerleri için hangi performans veri toplama uygulanabilir üç düzeylerinden birini belirtmek için kullanılabilir:  
   
 |Numaralandırıcı|Açıklama|  
 |----------------|-----------------|  
-|PROFILE_GLOBALLEVEL|Genel düzeyi ayarı, tüm işlemler ve Çalıştır profil oluşturma iş parçacıkları etkiler.|  
-|PROFILE_PROCESSLEVEL|İşlem düzeyi ayarı belirtilen işleminin bir parçası olan tüm iş parçacıklarının etkiler.|  
-|PROFILE_THREADLEVEL|İş parçacığı düzeyi ayarı profil belirtilen iş parçacığı etkiler.|  
+|PROFILE_GLOBALLEVEL|Genel düzeyi ayarı tüm işlemleri ve profil oluşturma, iş parçacıklarını etkiler.|  
+|PROFILE_PROCESSLEVEL|İşlem düzeyi ayarı belirtilen işlemin bir parçası olan tüm iş parçacıklarını etkiler.|  
+|PROFILE_THREADLEVEL|İş parçacığı düzeyi ayarı profil oluşturma, belirtilen iş parçacığı etkiler.|  
   
  `dwId`  
   
- Profil oluşturma düzeyi tanımlayıcısı. Sistem tarafından oluşturulan tanımlayıcısı iş parçacığı veya işlemi kullanın.  
+ Profil oluşturma düzeyi tanımlayıcısı. İşlemi kullanın veya iş parçacığı sistem tarafından oluşturulan tanımlayıcısı.  
   
-## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri  
- Kullanarak işlevi başarısını veya başarısızlığını gösterir **PROFILE_COMMAND_STATUS** numaralandırması. Dönüş değeri aşağıdakilerden biri olabilir:  
+## <a name="property-valuereturn-value"></a>Özellik değeri/dönüş değeri  
+ İşlevi kullanarak başarısı veya başarısızlığı gösterir **PROFILE_COMMAND_STATUS** sabit listesi. Dönüş değeri aşağıdakilerden biri olabilir:  
   
 |Numaralandırıcı|Açıklama|  
 |----------------|-----------------|  
-|NAME_ERROR_ID_NOEXIST|Belirtilen profil öğesi yok.|  
-|NAME_ERROR_INVALID_NAME|Adı geçersiz.|  
-|NAME_ERROR_LEVEL_NOEXIST|Düzey belirtilen profili yok.|  
+|NAME_ERROR_ID_NOEXIST|Belirtilen profil oluşturma öğesi yok.|  
+|NAME_ERROR_INVALID_NAME|Ad geçersiz.|  
+|NAME_ERROR_LEVEL_NOEXIST|Belirtilen düzeyi profili yok.|  
 |NAME_ERROR_NO_SUPPORT|Belirtilen işlem desteklenmiyor.|  
-|NAME_ERROR_OUTOFMEMORY|Olay kaydetmek bellek yoktu.|  
-|NAME_ERROR_REDEFINITION|Bir ad zaten profili öğesine atandı. Bu işlevde ad yok sayılır.|  
-|NAME_ERROR_TEXTTRUNCATED|Adı metin null karakteri de dahil olmak üzere 32 karakter sayısını aştı ve bu nedenle kesildi.|  
-|NAME_OK|Ad başarıyla kaydedildi.|  
+|NAME_ERROR_OUTOFMEMORY|Bellek olayı kaydetmek kullanılabilir değildi.|  
+|NAME_ERROR_REDEFINITION|Bir ad zaten profil öğesine atandı. Bu işlev adı göz ardı edilir.|  
+|NAME_ERROR_TEXTTRUNCATED|Ad metin null karakteri de dahil olmak üzere 32 karakter aştı ve bu nedenle kesildi.|  
+|NAME_OK|Adı başarıyla kaydedildi.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yalnızca bir ad, her işlem veya iş parçacığı atanabilir. Profil oluşturma öğesi adlı sonra NameProfile yapılan sonraki çağrılar o öğeye ilişkin göz ardı edilir.  
+ Yalnızca bir ad, her bir işlem veya iş parçacığı atanabilir. Profil oluşturma bir öğesinin adlı sonra yapılan sonraki çağrılar NameProfile o öğe için göz ardı edilir.  
   
- Farklı iş parçacıkları veya işlemler için aynı adı belirtilmezse, rapora tüm öğeleri aynı ada sahip düzeyde verilerden dahil edilir.  
+ Farklı iş parçacıkları veya işlemlerdeki için aynı adı belirtilmezse, rapor verilerini bu ada sahip o düzeydeki tüm öğeleri içerir.  
   
- Bir işlem veya iş parçacığı geçerli dışında belirtirseniz, bu başlatıldı ve buna adını önce çalışmaya başladığı emin emin olmanız gerekir. Aksi takdirde NameProfile yöntemi başarısız olur.  
+ Bir işlem veya iş parçacığı geçerli dışında belirtirseniz, başlatılır ve bunu önce çalışmaya başladığı emin emin olmanız gerekir. Aksi takdirde NameProfile yöntemi başarısız olur.  
   
 > [!IMPORTANT]
->  İş parçacığı önce CreateProcess() ve CreateThread() API işlevleri döndürebilir veya işlemi başlatıldı.  
+>  İş parçacığı önce CreateProcess() ve CreateThread() API işlevleri döndürebilir veya işlem başlatılır.  
   
-## <a name="net-framework-equivalent"></a>.NET Framework Eşdeğeri  
- Microsoft.VisualStudio.Profiler.dll  
+## <a name="net-framework-equivalent"></a>.NET framework eşdeğeri  
+ *Microsoft.VisualStudio.Profiler.dll*  
   
 ## <a name="function-information"></a>İşlev bilgisi  
   
 |||  
 |-|-|  
-|**Üstbilgi**|VSPerf.h içerir|  
-|**Kitaplığı**|VSPerf.lib kullanın|  
+|**Üst bilgi**|Dahil *VSPerf.h*|  
+|**Kitaplık**|Kullanım *VSPerf.lib*|  
 |**Unicode**|Olarak uygulanan `NameProfileW` (Unicode) ve `NameProfileA` (ANSI).|  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod NameProfile işlev çağrısı gösterir. Örnek Win32 dize makroların kullanılması ve kod çağrıları ANSI işlevi etkin olup olmadığını belirlemek ANSI derleyici ayarları varsayar.  
+ Aşağıdaki kod NameProfile işlev çağrısı göstermektedir. Örneğin, Win32 dize makroların kullanılması ve ANSI kod çağrıları işlevi etkin olup olmadığını belirlemek ANSI derleyici ayarlarını varsayar.  
   
-```  
+```cpp  
 void ExerciseNameProfile()  
 {  
     // Variables used to print output.  
@@ -133,5 +134,5 @@ void ExerciseNameProfile()
 }  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio profil oluşturucu API Başvurusu (yerel)](../profiling/visual-studio-profiler-api-reference-native.md)

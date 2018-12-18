@@ -1,9 +1,9 @@
 ---
-title: Office çözümlerindeki hatalar için ek destek | Microsoft Docs
+title: Office çözümlerindeki hatalar için ek destek
 ms.custom: ''
 ms.date: 02/02/2017
-ms.technology:
-- office-development
+ms.technology: office-development
+ms.prod: visual-studio-dev15
 ms.topic: conceptual
 f1_keywords:
 - VST.MSBuild.errAppInfoTaskInsertCtlFailed
@@ -54,46 +54,44 @@ helpviewer_keywords:
 - Office development in Visual Studio, troubleshooting
 - troubleshooting [Office development in Visual Studio]
 - Office development in Visual Studio, errors
-author: TerryGLee
-ms.author: tglee
+author: John-Hart
+ms.author: johnhart
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 9a9a4c0d4df2e97d151b6a6a310848812b02d77d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4706360581749fbc6e84f3250324bad3663e7a9a
+ms.sourcegitcommit: 81e9d90843ead658bc73b30c869f25921d99e116
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52304460"
 ---
-# <a name="additional-support-for-errors-in-office-solutions"></a>Office Çözümlerindeki Hatalar İçin Ek Destek
-  Visual Studio'da Office çözümleri oluştururken karşılaştığınız sorunları yanıtlarını bulmanıza yardımcı olmak için aşağıdaki kaynakları kullanın.  
+# <a name="additional-support-for-errors-in-office-solutions"></a>Office çözümlerindeki hatalar için ek destek
+  Visual Studio'da Office çözümleri oluşturma gibi karşılaştığınız sorunların yanıtlarını bulmanıza yardımcı olması için aşağıdaki kaynakları kullanabilirsiniz.  
   
-## <a name="troubleshooting-specific-errors"></a>Belirli hataları giderme  
- Office çözümlerinde bazı genel hatalarla ilgili daha fazla yardım için aşağıdaki konulara bakın:  
+## <a name="troubleshoot-specific-errors"></a>İlgili belirli hataları giderme  
+ Office çözümlerinde bazı yaygın hatalar ile ilgili Yardım için aşağıdaki konulara bakın:  
   
--   [Office Çözümleri Hatalarında Sorun Giderme](../vsto/troubleshooting-errors-in-office-solutions.md)  
+-   [Office çözümleri hatalarında sorun giderme](../vsto/troubleshooting-errors-in-office-solutions.md)  
   
--   [Office Çözüm Güvenliğinde Sorunu Giderme](../vsto/troubleshooting-office-solution-security.md)  
+-   [Office çözüm güvenliğinde sorunlarını giderme](../vsto/troubleshooting-office-solution-security.md)  
   
--   [Office Çözümü Dağıtımında Sorunu Giderme](../vsto/troubleshooting-office-solution-deployment.md)  
+-   [Office çözümü dağıtımında sorunlarını giderme](../vsto/troubleshooting-office-solution-deployment.md)  
   
-## <a name="other-resources"></a>Diğer Kaynaklar  
- [Office Forumu için Visual Studio Araçları](http://go.microsoft.com/fwlink/?LinkId=149744)  
- Visual Studio'da Office geliştirici araçları hakkında sorular için bir forum sağlar.  
-  
- [Office tartışma grupları](http://go.microsoft.com/fwlink/?LinkId=63585)  
- Office uygulamaları hakkında sorular için bir haber deneyimi sağlar. Office uygulamaları nesne modelleri için ilgili belirli görevler hakkında sorular için burada programlama haber kullanın.  
+## <a name="other-resources"></a>Diğer kaynaklar  
+ [Forum Office için Visual Studio Araçları](http://go.microsoft.com/fwlink/?LinkId=149744)  
+ Visual Studio Office geliştirici araçları hakkında sorularınız için bir forum sağlar.  
   
  [Microsoft Yardım ve Destek](http://go.microsoft.com/fwlink/?LinkID=108287)  
  Bilgi Bankası (BB) makalelerine, indirmeler ve güncelleştirmelere, destek Web yayınlarına ve diğer hizmetlere erişimi sağlar.  
   
- [Office Çözümleri Geliştirmek için Ek Kaynaklar](../vsto/additional-resources-for-developing-office-solutions.md)  
- Office çözümleri ve Visual Studio'da Office geliştirme geliştirme hakkında daha fazla bilgi edinmek için ek kaynaklara bağlantılar sağlanmaktadır.  
+ [Office çözümleri geliştirmek için ek kaynaklar](../vsto/additional-resources-for-developing-office-solutions.md)  
+ Office çözümleri ve Office geliştirme Visual Studio ile geliştirme hakkında daha fazla bilgi edinmek için ek kaynaklara bağlantılar sağlanmaktadır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Office çözümlerinde sorun giderme](../vsto/troubleshooting-errors-in-office-solutions.md)   
- [Office çözüm güvenliğinde sorunu giderme](../vsto/troubleshooting-office-solution-security.md)   
- [Office çözümü dağıtımında sorunu giderme](../vsto/troubleshooting-office-solution-deployment.md)   
- [Office Çözümleri Geliştirmek için Ek Kaynaklar](../vsto/additional-resources-for-developing-office-solutions.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Office çözümleri hatalarında sorun giderme](../vsto/troubleshooting-errors-in-office-solutions.md)   
+ [Office çözüm güvenliğinde sorunlarını giderme](../vsto/troubleshooting-office-solution-security.md)   
+ [Office çözümü dağıtımında sorunlarını giderme](../vsto/troubleshooting-office-solution-deployment.md)   
+ [Office çözümleri geliştirmek için ek kaynaklar](../vsto/additional-resources-for-developing-office-solutions.md)  
   
   

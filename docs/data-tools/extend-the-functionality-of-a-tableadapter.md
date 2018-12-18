@@ -1,5 +1,5 @@
 ---
-title: Bir TableAdapter işlevini genişletme
+title: Bir TableAdapter’ın işlevselliğini genişletme
 ms.date: 11/04/2016
 ms.topic: conceptual
 dev_langs:
@@ -13,40 +13,44 @@ ms.assetid: 418249c8-c7f3-47ef-a94c-744cb6fe6aaf
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 85fdd2f6df58f1d0293da8118d0562302c261881
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a5b34bcb9c1532190f730e26c691289d489a2f3c
+ms.sourcegitcommit: 1df0ae74af03bcf0244129a29fd6bd605efc9f61
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50751082"
 ---
-# <a name="extend-the-functionality-of-a-tableadapter"></a>Bir TableAdapter işlevini genişletme
-Kod TableAdapter'ın parçalı sınıf dosyasına ekleyerek bir TableAdapter işlevini genişletebilirsiniz.
+# <a name="extend-the-functionality-of-a-tableadapter"></a>Bir TableAdapter’ın işlevselliğini genişletme
 
- TableAdapter içinde yapılan herhangi bir değişiklik olduğunda bir TableAdapter tanımlar kod yeniden **veri kümesi Tasarımcısı**, veya ne zaman bir sihirbaz değiştiren bir TableAdapter yapılandırma. Kodunuzu bir TableAdapter yeniden oluşturma işlemi sırasında silinmesini engellemek için kodu TableAdapter'ın parçalı sınıf dosyasına ekleyin.
+TableAdapter bağdaştırıcısının kısmi sınıf dosyası için kod ekleyerek bir TableAdapter işlevselliğini genişletebilirsiniz.
 
- Kısmi sınıflar arasında birden çok fiziksel dosya bölünür için belirli bir sınıf için kod sağlar. Daha fazla bilgi için bkz: [kısmi](/dotnet/visual-basic/language-reference/modifiers/partial) veya [partial (tür)](/dotnet/csharp/language-reference/keywords/partial-type).
+Düzenleyici içindeki TableAdapter herhangi bir değişiklik yapıldığında bir TableAdapter tanımlayan kod yeniden oluşturulursa **veri kümesi Tasarımcısı**, veya ne zaman bir sihirbaz bir TableAdapter yapılandırmasını değiştirir. Kodunuzu bir TableAdapter oluşturma işlemi sırasında silinmesini önlemek için TableAdapter bağdaştırıcısının kısmi sınıf dosyası için kodu ekleyin.
 
-## <a name="locate-tableadapters-in-code"></a>Kod içinde TableAdapters bulun
- TableAdapters ile tasarlanmıştır sırada **veri kümesi Tasarımcısı**, oluşturulan TableAdapter sınıfları, iç içe geçmiş sınıflar olmayan <xref:System.Data.DataSet>. TableAdapters TableAdapter'ın ilişkili veri kümesi adını temel alarak bir ad alanı bulunur. Örneğin, uygulamanız adlı bir veri içeriyorsa `HRDataSet`, TableAdapters içinde bulunması `HRDataSetTableAdapters` ad alanı. (Bu deseni adlandırma kuralını izler: *DatasetName* + `TableAdapters`).
+Kısmi sınıflar arasında birden çok fiziksel dosyaları Bölünecek belirli bir sınıf için kod sağlar. Daha fazla bilgi için [kısmi](/dotnet/visual-basic/language-reference/modifiers/partial) veya [partial (tür)](/dotnet/csharp/language-reference/keywords/partial-type).
 
- Aşağıdaki örnek adlı bir TableAdapter varsayar `CustomersTableAdapter`sahip bir proje olarak `NorthwindDataSet`.
+## <a name="locate-tableadapters-in-code"></a>TableAdapters kod içinde bulun
 
-#### <a name="to-create-a-partial-class-for-a-tableadapter"></a>TableAdapter için bir parçalı sınıf oluşturmak için
+TableAdapter'ları ile tasarlandığında **veri kümesi Tasarımcısı**, oluşturulan TableAdapter sınıfları, iç içe sınıfları olmayan <xref:System.Data.DataSet>. TableAdapter'ları, TableAdapter bağdaştırıcısının ilişkili veri kümesinin adına dayalı bir ad alanında bulunur. Örneğin, uygulamanız adlı bir veri içeriyorsa `HRDataSet`, TableAdapter'ları bulunması `HRDataSetTableAdapters` ad alanı. (Bu deseni adlandırma kuralını izler: *DatasetName* + `TableAdapters`).
 
-1.  Giderek projeniz için yeni bir sınıf ekleyin **proje** menü ve seçerek **sınıfı Ekle**.
+Aşağıdaki örnekte adlı bir TableAdapter varsayılır `CustomersTableAdapter`içeren bir proje içinde `NorthwindDataSet`.
+
+### <a name="to-create-a-partial-class-for-a-tableadapter"></a>Kısmi bir sınıf için bir TableAdapter oluşturmak için
+
+1.  Yeni bir sınıf giderek projenize ekleyin. **proje** menü ve seçerek **sınıfı Ekle**.
 
 2.  Sınıf adını `CustomersTableAdapterExtended`.
 
-3.  Seçin **eklemek**.
+3.  Seçin **ekleme**.
 
-4.  Kod şu şekilde doğru ad alanını ve projeniz için kısmi sınıf adı ile değiştirin:
+4.  Kod aşağıdaki gibi doğru ad alanını ve projeniz için kısmi sınıf adı ile değiştirin:
 
      [!code-csharp[VbRaddataTableAdapters#2](../data-tools/codesnippet/CSharp/extend-the-functionality-of-a-tableadapter_1.cs)]
      [!code-vb[VbRaddataTableAdapters#2](../data-tools/codesnippet/VisualBasic/extend-the-functionality-of-a-tableadapter_1.vb)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [TableAdapters kullanarak veri kümelerini doldurma](../data-tools/fill-datasets-by-using-tableadapters.md)
+- [TableAdapter'ları kullanarak veri kümelerini doldurma](../data-tools/fill-datasets-by-using-tableadapters.md)

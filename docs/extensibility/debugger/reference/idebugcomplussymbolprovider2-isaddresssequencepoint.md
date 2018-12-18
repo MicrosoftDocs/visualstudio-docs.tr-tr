@@ -14,11 +14,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8a49723bb585f65ce544c0508bf886d9daba5c6b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ec0aefd8f59793fdd555ff0cc14f767c10e8972a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49829917"
 ---
 # <a name="idebugcomplussymbolprovider2isaddresssequencepoint"></a>IDebugComPlusSymbolProvider2::IsAddressSequencePoint
 Belirtilen hata ayıklama adresi bir dizi noktası olup olmadığını belirler.  
@@ -39,13 +40,13 @@ int IsAddressSequencePoint(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [in] Tarafından temsil edilen adres hata ayıklama [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
+ [in] Tarafından temsil edilen adresi hata ayıklama [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Hata ayıklama adresi bir dizi noktası ise, döndürür `S_OK`; Aksi halde döndürür `S_FALSE`.  
+ Hata ayıklama adresi bir dizi noktası ise döndürür `S_OK`; Aksi halde döndürür `S_FALSE`.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider2](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider2](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::IsAddressSequencePoint(  

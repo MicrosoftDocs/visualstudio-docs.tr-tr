@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1b6ecfd729762944bcf26814e735c4c73841e2d0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b25c979870b21b802cd3c32f02bc649347159857
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908619"
 ---
 # <a name="bpresifields"></a>BPRESI_FIELDS
-Başarılı bir kesme noktası çözümleme hakkında alınması için bilgileri belirtir.  
+Başarılı bir kesme noktası çözünürlüğü hakkında alınacak bilgileri belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,32 +48,32 @@ public enum enum_BPRESI_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  BPRESI_BPRESLOCATION  
- Başlatma/kullanım `bpResLocation` (kesme noktası çözümleme konum) alanı [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı.  
+ Başlat/kullanım `bpResLocation` (kesme noktası çözünürlüğü konumu) alanının [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı.  
   
  BPRESI_PROGRAM  
- Başlatma/kullanım `pProgram` alanını `BP_RESOLUTION_INFO` yapısı.  
+ Başlat/kullanım `pProgram` alanını `BP_RESOLUTION_INFO` yapısı.  
   
  BPRESI_THREAD  
- Başlatma/kullanım `pThread` alanını `BP_RESOLUTION_INFO` yapısı.  
+ Başlat/kullanım `pThread` alanını `BP_RESOLUTION_INFO` yapısı.  
   
  BPRESI_ALLFIELDS  
- Tüm alanlar belirtir.  
+ Tüm alanları belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Geçirilen [GetResolutionInfo](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getresolutioninfo.md) hangi alanlarının belirtmek için yöntemi [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı başlatılması üzeresiniz.  
+ Geçirilen [GetResolutionInfo](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getresolutioninfo.md) hangi alanları göstermek için yöntemi [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapısı olan başlatılacak.  
   
- Bu bayrakların Ayrıca hangi alanlarının belirtmek için kullanılan `BP_RESOLUTION_INFO` yapısı, kullanılan ve geçerli yapıyı döndürülür.  
+ Bu bayraklar Ayrıca hangi alanları göstermek için kullanılan `BP_RESOLUTION_INFO` yapısı, kullanılan ve geçerli, yapı döndürülür.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md)   
  [GetResolutionInfo](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getresolutioninfo.md)

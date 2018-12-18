@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 21e39c54249add3b5d57cd6db907256122aab56b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c83a2498de2e939a41c07196a67c0844b7311668
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49846375"
 ---
 # <a name="idebugpendingbreakpoint2setpasscount"></a>IDebugPendingBreakpoint2::SetPassCount
-Ayarlar veya bekleyen kesme noktası ile ilişkili geçişi sayısı değiştirir.  
+Bekleyen kesme noktasıyla ilişkili parola sayısı değiştirir veya ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,13 +42,13 @@ int SetPassCount(
   
 #### <a name="parameters"></a>Parametreler  
  `bpPassCount`  
- [in] A [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) geçişi sayı içeren yapısı.  
+ [in] A [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) geçişi sayısı içeren yapısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme sildiyseniz.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme noktası silinmiş olması durumunda.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Daha önceden bekleyen kesme noktası ile ilişkilendirilmiş tüm geçiş sayısı kaybolur. Bunların geçişi sayısını ayarlamak için bu kesme noktası bağlı tüm kesme noktaları adlı `bpPassCount` parametresi.  
+ Daha önce bekleyen kesme noktasıyla ilişkili tüm geçiş sayısı kaybolur. Bu Kesme noktasının bağlı tüm kesme noktalarını bunların pass sayısını ayarlamak için çağrılır `bpPassCount` parametresi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md)   

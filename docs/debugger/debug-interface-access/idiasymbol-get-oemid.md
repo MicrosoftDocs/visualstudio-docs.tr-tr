@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6911e617a8cac136eb7b51913db48fbb031803d4
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 8208d146284926ce7ec3375e8416210eeb5d214c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875261"
 ---
 # <a name="idiasymbolgetoemid"></a>IDiaSymbol::get_oemId
-Simgenin özgün donanım üreticisi (OEM) kimliği değeri alır.  
+Sembolün orijinal ekipman üreticisi (OEM) kimliği değerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,14 +37,14 @@ HRESULT get_oemId (
  [out] OEM tanımlayan benzersiz bir değer döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu özellik yalnızca sembolleriyle uygulandığı bir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) türü `SymTagCustomType`.  
+ Bu özellik yalnızca sembolleriyle uygulanır bir [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) tür `SymTagCustomType`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

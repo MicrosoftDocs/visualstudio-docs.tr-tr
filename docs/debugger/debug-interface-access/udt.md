@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31471814"
 ---
 # <a name="udt"></a>UDT
 Her sınıf, yapı ve birleşim tarafından tanımlanan bir `SymTagUDT` simgesi. Her üye, işlevi, verileri veya iç içe geçmiş tür ve her bir temel sınıfı, kullanıcı tanımlı tür (UDT) bir sınıf alt görüntülenir.  

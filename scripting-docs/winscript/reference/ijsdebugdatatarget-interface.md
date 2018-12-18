@@ -1,14 +1,14 @@
 ---
 title: Ijsdebugdatatarget arabirimi | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 ms.assetid: a9b784d6-958f-4d55-b3f6-c2d6b260a16b
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -17,6 +17,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24794939"
 ---
 # <a name="ijsdebugdatatarget-interface"></a>IJsDebugDataTarget Arabirimi
 Erişim ve hedef hata ayıklayıcı işlem durumunu değiştirmek için işlevselliği sağlamak için hata ayıklayıcı tarafından uygulanır.  

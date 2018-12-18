@@ -1,5 +1,5 @@
 ---
-title: Araç çubukları komut ekleme | Microsoft Docs
+title: Araç çubuklarına komut ekleme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -11,29 +11,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a3a2f4080491a32e90c447366260991c5a90d58e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9f6bf8e8dffde406b3c11ebf043246f5b277446d
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154290"
 ---
-# <a name="adding-commands-to-toolbars"></a>Araç çubukları komut ekleme
-Bir araç çubuğu düğmeleri komutları bağlı içeren yatay veya dikey bir Şerit bulunur. Visual Studio'da birçok farklı windows çubuklarında kendi komutları ekleyebilirsiniz: ana Visual Studio penceresi, Çözüm Gezgini ve kendi özel araç pencereleri.  
+# <a name="add-commands-to-toolbars"></a>Araç çubuklarına komut ekleme
+Bir araç çubuğu düğmeleri bağlı komutları içeren bir yatay veya Dikey Şerit bulunur. Visual Studio'da birçok farklı windows çubuklarında kendi komutları ekleyebilirsiniz: ana Visual Studio penceresinde, Çözüm Gezgini ve kendi özel araç pencereleri.  
   
- Bu bölümde çubuklarında komutlarla yapabileceğiniz işlem sayısını gösterir.  
+ Bu bölüm, araç çubukları üzerindeki komutları ile yapabileceğiniz çok şey sayısını gösterir.  
   
 ## <a name="in-this-section"></a>Bu Bölümdekiler  
- [Araç Çubuğu Ekleme](../extensibility/adding-a-toolbar.md)  
- Araç çubuğu araç çubukları ana Visual Studio penceresinde kümesi eklemek açıklanmaktadır.  
+ [Araç çubuğu ekleme](../extensibility/adding-a-toolbar.md)  
+ Araç çubuğu araç çubukları ana Visual Studio penceresinde kümesine ekleme işlemi açıklanmaktadır.  
   
- [Araç Penceresine Araç Çubuğu Ekleme](../extensibility/adding-a-toolbar-to-a-tool-window.md)  
- Araç penceresi için bir araç eklemek açıklanmaktadır.  
+ [Araç penceresine araç çubuğu ekleme](../extensibility/adding-a-toolbar-to-a-tool-window.md)  
+ Araç penceresine araç çubuğu ekleme işlemi açıklanmaktadır.  
   
- [Çözüm Gezgini Araç Çubuğuna Komut Ekleme](../extensibility/adding-a-command-to-the-solution-explorer-toolbar.md)  
- Bir komut eklemek için araç çubuğunda Çözüm Gezgini açıklanmaktadır.  
+ [Çözüm Gezgini araç çubuğuna komut ekleme](../extensibility/adding-a-command-to-the-solution-explorer-toolbar.md)  
+ Çözüm Gezgini araç için komut ekleme açıklanmaktadır.  
   
- [Araç Çubuğuna Menü Denetleyicisi Ekleme](../extensibility/adding-a-menu-controller-to-a-toolbar.md)  
- Menü denetleyicisi araç çubuğuna ekleme açıklanmaktadır.  
+ [Araç çubuğuna menü denetleyicisi ekleme](../extensibility/adding-a-menu-controller-to-a-toolbar.md)  
+ Araç çubuğuna menü denetleyicisi ekleme açıklanmaktadır.  
   
- [Dinamik Olarak Menü Öğeleri Ekleme](../extensibility/dynamically-adding-menu-items.md)  
- Menü öğeleri farklı bağlamlarda dinamik olarak eklemeyi açıklar.
+ [Dinamik olarak menü öğeleri ekleme](../extensibility/dynamically-adding-menu-items.md)  
+ Farklı bağlamda dinamik olarak menü öğeleri ekleme açıklanmaktadır.

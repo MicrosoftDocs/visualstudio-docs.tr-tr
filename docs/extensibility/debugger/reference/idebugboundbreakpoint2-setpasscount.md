@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 589792a9309565496b4d1ab73e1867055bcdf3bc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: abdb437abfe2ed9980ce94c7df20a840aeec5dda
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49831088"
 ---
 # <a name="idebugboundbreakpoint2setpasscount"></a>IDebugBoundBreakpoint2::SetPassCount
-Bu bağlama kesme noktası ile ilişkili geçişi sayısı değiştirir veya ayarlar.  
+Bu bağlı Kesme noktasının ile ilişkili parola sayısı değiştirir veya ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,13 +42,13 @@ int SetPassCount(
   
 #### <a name="parameters"></a>Parametreler  
  `bpPassCount`  
- [in] [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) yapısı geçişi sayısını belirtir.  
+ [in] [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) yapısını parola sayısını belirtir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` ilişkili kesme noktası nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) numaralandırması).  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` bağlı Kesme noktasının nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) sabit listesi).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kesme zaman tetiklenir geçişi sayısını belirler. Geçerli geçişi veya isabet sayısı çağırarak elde edilebilir [GetHitCount](../../../extensibility/debugger/reference/idebugboundbreakpoint2-gethitcount.md) yöntemi.  
+ Kesme noktasının ne zaman tetiklenir parola sayısını belirler. İsabet sayısı ve geçerli geçişi çağrılarak alınabilir [GetHitCount](../../../extensibility/debugger/reference/idebugboundbreakpoint2-gethitcount.md) yöntemi.  
   
  Daha önce bu kesme noktası ile ilişkili tüm geçiş sayısı kaybolur.  
   

@@ -19,40 +19,38 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 37b2c34971750d8e6db0173f6034342b9efbfd97
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0219418b754c93b8e5e50997ede73e0611ed496a
+ms.sourcegitcommit: a7de99f36e9ead7ea9e9bac23c88d05ddfc38b00
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52257062"
 ---
-# <a name="about-the-registers-window-in-visual-studio"></a>Visual Studio'da yazmaçlar penceresi hakkında
-**Kaydeder** penceredir yalnızca adres düzeyi hata ayıklama içinde etkinse kullanılabilir **seçenekleri** iletişim kutusu, **hata ayıklama** düğümü.  
+# <a name="about-the-registers-window-in-visual-studio-c-c-visual-basic-f"></a>Visual Studio'da yazmaçlar penceresi hakkında (C#, C++, Visual Basic F#)
+
+**Kaydeder** pencere, yalnızca adres seviyesinde hata ayıklamayı etkin değilse kullanılabilir **seçenekleri** iletişim kutusu, **hata ayıklama** düğümü.  
   
- Yazmaçları işlemci etkin olarak üzerinde çalıştığı veri küçük parçalarını depolamak için kullanılan özel bir işlemci (CPU) içinde yerlerdir. Derleme veya kaynak kodu yorumlama verileri bellekten kaydeder ve geri halinde yeniden taşımak yönergeleri gerektiğinde oluşturur. Yazmaçları verilere sürekli yükleyip yazmaçlar kaldırabileceğini için işlemci gerektirir kodu daha hızlı yürütmek için bir kayıttaki verileri korumak ve sürekli olarak erişmek işlemci veren kod eğilimlidir şekilde bellek, veri erişimi için karşılaştırıldığında çok hızlıdır. Yazmaçları verileri korumak ve diğer en iyi duruma getirme gerçekleştirmek derleyici kolaylaştırmak için genel değişkenler kullanmaktan kaçının ve yerel değişkenlerini mümkün olduğunca gerekir. Bu şekilde yazılan kod başvuru iyi yere göre barındırıyor olarak sınıflandırılır. C/C++ gibi bazı dillerde Programcı değişkeni bir kayıttaki her zaman korumak için en iyi denemek için derleyici bildiren bir kayıt değişkeni bildirebilir. Daha fazla bilgi için bkz: [kaydetmek anahtar sözcüğü](http://msdn.microsoft.com/en-us/5b66905a-2f7f-4918-bb55-5e66d4bc50f9).  
+ Yazmaçları küçük parçaları işlemci etkin olarak üzerinde çalıştığı veri depolamak için kullanılan özel bir işlemci (CPU) konumlardır. Derleme veya kaynak kodu yorumlama gerektiğinde verileri bellekten kayıtları ve yeniden yeniden taşıma yönergeleri oluşturur. Yazmaçları veri erişimi sağlayan bir kayıttaki verileri korumak ve sürekli olarak erişmek için işlemci kodu daha hızlı işlemci sürekli olarak yüklemek ve kayıtları kaldırmak için gerektiren kod yürütmesine eğilimi gösterir. Bu nedenle, bellek, veri erişimi için karşılaştırıldığında çok hızlıdır. Kayıtlara verileri korumak ve diğer iyileştirmeler gerçekleştirmek derleyicinin kolaylaştırmak için genel değişkenleri kullanmaktan kaçının ve yerel değişkenlerini mümkün olduğunca gerekir. Bu şekilde yazılmış kod iyi yerleşim yeri başvurunun olması bildirilir. C/C++ gibi bazı dillerde Programcı değişkeni her zaman bir kayıttaki tutmak için en iyi şekilde denemek için varsaymasını söyleyen bir kayıt değişken bildirebilirsiniz. Daha fazla bilgi için [kaydetme anahtar sözcüğü](https://msdn.microsoft.com/library/5b66905a-2f7f-4918-bb55-5e66d4bc50f9).  
   
- Yazmaçları iki türlerine bölünmüş: genel amaçlı ve özel amaçlı. Genel amaçlı kayıtları iki sayının birlikte ekleme veya bir dizi bir öğe başvurma gibi genel işlemleri verilerini tutun. Özel amaçlı yazmaçlar belirli amaçlar ve özel bir anlamı vardır. Programın çağrı yığını izlemek için işlemci kullanır yığın işaretçisi kayıt buna iyi bir örnektir. Programcı olarak, yığın işaretçisi doğrudan düzenlersiniz olmayabilir. Ancak, yığın işaretçisi işlev çağrısı sonunda geri dönmek nereye işlemci bilmez çünkü uygun programınızı işlevselliği için önemlidir.  
+ İki tür olarak kayıtları ayrılabilir: genel amaçlı ve özel amaçlı. Genel amaçlı kayıtları iki sayıyı toplayan veya başvuran bir dizideki bir öğe gibi genel işlemler için veri tutun. Özel amaçlı kayıtları belirli amaçlar ve özel bir anlamı vardır. Programın çağrı yığını izlemek için işlemci kullanır, yığın işaretçisi Kaydet, iyi bir örnektir. Bir programcısı, yığın işaretçisi doğrudan düzenlemezsiniz olmayabilir. Ancak, yığın işaretçisi bir işlev çağrısı sonunda geri dönmek nereye işlemci bilmez olduğundan düzgün programınızın çalışması için gereklidir.  
   
- Çoğu genel amaçlı kayıtları yalnızca tek bir veri öğesi tutun. Örneğin, bir tek tamsayı, kayan noktalı sayı veya bir dizi öğesidir. Bazı yeni işlemci küçük bir veri dizisi tutabileceği vektör yazmaçlar adlı büyük kayıtları yok. Çok fazla veri tutmak için vektör yazmaçlar çok hızlı bir şekilde gerçekleştirilecek diziler ilgili işlemler izin verir. Vektör yazmaçlar ilk maliyetli, yüksek performanslı Süper bilgisayarlar üzerinde kullanılan ancak şimdi yoğun grafik işlemlerinde harika avantajı için burada kullanılan mikro kullanılabilir hale gelmektedir.  
+ Çoğu genel amaçlı kayıtları yalnızca bir tek veri öğesi tutun. Örneğin, bir tek bir tamsayı, kayan noktalı sayı veya bir dizideki öğe. Bazı yeni işlemci, daha büyük kayıtlar, küçük bir dizi veri tutabilen vektör kayıt adı yok. Çok fazla veri tuttukları olduğundan, vektör kayıt işlemleri çok hızlı bir şekilde gerçekleştirilmesi gereken dizileri içeren izin verir. Vektör kayıt pahalı, yüksek performanslı Süper bilgisayarlar üzerinde ilk kez kullanıldı, ancak artık yoğun grafik işlemlerde avantajı için burada kullanılan mikro kullanılabilir hale gelmektedir.  
   
- Bir işlemci, genellikle bir kayan nokta işlemleri ve diğer tamsayı işlemleri için en iyi duruma getirilmiş genel amaçlı kayıtları iki kümesi vardır. Edilebileceği, bunlar kayan nokta adlandırılır ve tamsayı kaydeder.  
+ Bir işlemci, genellikle iki kayan nokta işlemleri diğeri tamsayı işlemleri için en iyi duruma getirilmiş bir genel amaçlı kayıtları sahiptir. Edilebileceği bu kayan nokta adı verilir ve tamsayı kaydeder.  
   
- Yönetilen kod çalışma zamanında fiziksel yazmaçlar mikro erişen yerel koda derlenmiş. **Kaydeder** penceresinde ortak dil çalışma zamanı veya yerel koda için fiziksel bu kaydeder. **Kaydeder** penceresi komut dosyası ve SQL yazmaçlar kavramı desteklemeyen dilleri olduğundan komut dosyası veya SQL uygulaması için kayıt bilgileri görüntülemez.  
+ Çalışma zamanında fiziksel kasalar mikro erişen yerel kod için yönetilen kod derlenir. **Kaydeder** penceresi, ortak dil çalışma zamanı veya yerel kod için fiziksel bu kayıtları görüntüler. **Kaydeder** penceresi yazmaçların kavramı desteklemeyen diller olduğundan komut dosyası ve SQL komut dosyası veya SQL uygulama için kayıt bilgileri görüntülemez.  
   
- Görüntüleme hakkında daha fazla bilgi için **kaydeder** penceresinde bkz [kayıtları penceresini kullanarak](../debugger/how-to-use-the-registers-window.md).  
+ Görüntüleme hakkında daha fazla bilgi için **kaydeder** penceresinde görmek [kayıtları penceresini kullanarak](../debugger/how-to-use-the-registers-window.md).  
   
- Baktığınızda **kaydeder** penceresinde, bu örnek gibi girişleri görürsünüz:  
+ Baktığınızda **kaydeder** penceresinde gibi girişler görürsünüz `EAX = 003110D8`.  
   
-```  
-EAX = 003110D8  
-```  
+ Sol tarafındaki simge `=` işaretidir, kayıt adı `EAX`, bu durumda. Sayı sağındaki `=` oturum kayıt içeriğini temsil eder.  
   
- Simgenin = oturum solundaki kayıt EAX, bu durumda adıdır. = Oturum sağındaki sayıya yazmaç içerikleri temsil eder.  
-  
- **Kaydeder** penceresi daha fazlasını görünümü bir kaydın içeriğini yapmanıza olanak sağlar. Yerel kodda kesme modunda olduğunda, bir kayıt içeriğine tıklatın ve değeri düzenleyin. Bu şeyin rastgele yapmalısınız değildir. Düzenlemekte olduğunuz kayıt ve raporda bulunan verilere anlamadan dikkatsiz düzenleme sonucunu programın kilitlendiğini veya başka bir istenmeyen sonuç olması olasıdır. Ne yazık ki, çeşitli Intel ve Intel dönük olarak uyumlu işlemci kayıt kümeleri hakkında ayrıntılı bir açıklama kadar bu kısa giriş kapsamı dışındadır gider.  
+ **Kaydeder** penceresi bir kaydın içeriğini görünümü daha fazlasını yapmanıza olanak sağlar. Yerel kodda kesme modunda olduğunda, bir kayıt içeriğine tıklayın ve değerini düzenleyin. Bu, rastgele yapmanız gereken bir şey değildir. Düzenlemekte olduğunuz kayıt ve içerdiği verilere anlamadan dikkatsiz düzenleme sonucunu programın kilitlendiğini ya da diğer bir istenmeyen sonuç olması olasıdır. Ne yazık ki, ayrıntılı bir açıklama çeşitli Intel ve Intel uyumlu işlemci kayıt kümelerinin kadar bu kısa giriş kapsamı dışındadır gider.  
   
 ## <a name="register-groups"></a>YAZMAÇ grupları  
- Görünmesine için **kaydeder** penceresi yazmaçlar gruplar halinde düzenler. Üzerinde sağ tıklattığınızda, **kaydeder** penceresini görüntüleme veya gizleme uygun gördüğünüz şekilde gruplarının bir listesini içeren bir kısayol menüsü görürsünüz.  
+ Dağınıklığı, azaltmak için **kaydeder** penceresi kayıtları gruplar halinde düzenler. Üzerinde sağ tıkladığınızda **kaydeder** penceresinde görüntülemek veya gördüğünüz şekilde Gizle gruplarının bir listesini içeren bir kısayol menüsü göreceksiniz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Nasıl yapılır: yazmaçlar penceresini kullanma](../debugger/how-to-use-the-registers-window.md)   
- [Hata ayıklayıcı temel bilgileri](../debugger/debugger-basics.md)
+ [Hata Ayıklayıcısı Temel Bilgileri](../debugger/getting-started-with-the-debugger.md)

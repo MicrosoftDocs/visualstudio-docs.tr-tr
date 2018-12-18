@@ -14,31 +14,32 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 93a6d699845d8cce3eb1a410720d4e5fbbfd69d0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fa0800bcf6a4fedfbcd8c787b3cca89638e9bcb9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49935295"
 ---
 # <a name="execution-profile-report"></a>Yürütme Profil Raporu
-Yürütme Profil raporu geleneksel örnekleme profilidir. Örnekler, ne zaman bir iş parçacığı bir mantıksal çekirdeği üzerinde çalıştığından ve örnek yığınları birikmiş kümesini harmanlama tarafından tipik çağrı ağacı eşzamanlılık görselleştiricisi oluşturur dönemlerde yaklaşık her milisaniyelik alınır. Bu tablodaki verileri uygulanabilir bu filtreler ve geçerli zaman aralığı ve gizli iş parçacıkları tarafından etkilenebilir:  
+Yürütme Profil raporu geleneksel örnekleme profilidir. Örnekleri yaklaşık her milisaniyelik zaman bir iş parçacığı bir mantıksal çekirdek üzerinde çalışıyor ve örnek yığınları birikmiş kümesini harmanlama tarafından eşzamanlılık görselleştiricisi tipik çağrı ağacını oluşturur dönemlerde alınır. Bu tablodaki verileri geçerli zaman aralığını ve gizli dizileri ve uygulanabilir bu filtreler tarafından etkilenebilir:  
   
--   Sadece kendi kodumu seçili ise, kullanıcı kodu yanı sıra, bir düzey altındaki kullanıcı kodu sahip yığın çerçeveleri gösterilir.  
+- Yalnızca kendi kodum seçili ise, yalnızca kullanıcı kodunu ve kullanıcı kodu aşağıda bir düzey olan yığın çerçevelerini gösterilmektedir.  
   
--   Gürültü azaltma değeri ayarlarsanız, raporun dışında belirtilen sıklığı filtrelenir daha az sahip yığınları Harmanlanmış  
+- Gürültü azaltma değeri ayarlarsanız, rapordan çıktıklarında belirtilen sıklıkta filtrelenir daha az olan yığınları Harmanlanmış  
   
- Aşağıdaki tablo sütunları raporda gösterir.  
+  Aşağıdaki tabloda, raporda sütunları gösterir.  
   
 |Sütun|Açıklama|  
 |------------|-----------------|  
-|Ad|İşlev adı her düzeyi için çağrı yığını.|  
-|Kapsayıcı örnekleri|Bu çağrı yığını ağacı düzeyi biriken tüm yığınları için toplanan örnek toplam sayısı. Bu işlev için özel kullanım örnekleri ve tüm alt düğümleri dahil sayaçları toplamını (bunlar dahil) sayıdır.|  
-|Özel örnekleri|Bu işlev çağrı yığını en düşük düzeyde olduğu toplanan örnek toplam sayısı.|  
-|% (Bunlar dahil)|Kapsayıcı örnekleri sütununda gösterilen toplam örnekleri yüzdesi. Yüzde iki ondalık basamağa yuvarlanır.|  
-|% Özel|Özel örnekleri sütununda gösterilen toplam örnekleri yüzdesi. Yüzde iki ondalık basamağa yuvarlanır.|  
+|Ad|İşlev adı çağrı yığınının her düzeyi.|  
+|Kapsamlı örnekler|Çağrı yığını ağacı bu düzeye toplanan tüm yığınları için toplanan örneklerin toplam sayısı. Bu işlev için dışlamalı örnekler ve kapsamlı sayaçları tüm alt düğümlerin toplamını kapsamlı sayıdır.|  
+|Dışlamalı örnekler|Bu işlev çağrı yığınının en alt düzeyin olduğu toplanan örneklerin toplam sayısı.|  
+|% Dahil|Kapsamlı örnekler sütununda gösterilen toplam örneklerin yüzdesi. Yüzde iki ondalık basamağa yuvarlanır.|  
+|% Özel|Dışlamalı örnekler sütununda gösterilen toplam örneklerin yüzdesi. Yüzde iki ondalık basamağa yuvarlanır.|  
 |Ayrıntılar|İşlev tam adı. Kullanılabilir olduğunda bu satır sayısını içerir.|  
   
  Bu raporu tablosu görülebilir [yürütme zamanı (iş parçacıkları görünümü)](../profiling/execution-time-threads-view.md) görünümü.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3ef09516237ad30a18f9790ddae40260d834af21
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 464f6498ccf06f5087c0fa6b12a456082a36c2bd
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39639145"
 ---
-# <a name="project-element-visual-studio-templates"></a>Project Öğesi (Visual Studio Şablonları)
-Dosya veya dizinlerin projeye eklemek için belirtir.  
+# <a name="project-element-visual-studio-templates"></a>Proje öğesi (Visual Studio şablonları)
+Projeye eklemek için dizinleri ve dosyaları belirtir.  
   
  \<VSTemplate >  
  \<TemplateContent >  
@@ -41,42 +42,42 @@ Dosya veya dizinlerin projeye eklemek için belirtir.
 </Project>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Aşağıdaki bölümlerde öznitelik, alt öğeler ve üst öğeler açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`File`|Gerekli öznitelik.<br /><br /> Proje dosyası adını şablon .zip dosyası belirtir.|  
-|`ReplaceParameters`|İsteğe bağlı öznitelik.<br /><br /> Proje dosyası bir proje şablonu oluşturduğunuzda, değiştirilmesi gereken parametre değerleri içerip içermediğini belirten bir Boole değeri. Varsayılan değer `false`.|  
-|`TargetFileName`|İsteğe bağlı öznitelik.<br /><br /> Bir proje şablonu oluşturulduğunda, proje dosyası adını belirtir.|  
-|`IgnoreProjectParameter`|İsteğe bağlı öznitelik.<br /><br /> Geçerli çözüme proje eklenmesi gerekip gerekmediğini belirtir. Varsa özel parametresinin değeri "$*myCustomParameter*$" var. parametre değiştirme dosyası projeye oluşturulur, ancak şu anda açık çözümün bir parçası eklenmedi.|  
+|`File`|Gerekli öznitelik.<br /><br /> Şablon proje dosyasının adını belirtir *.zip* dosya.|  
+|`ReplaceParameters`|İsteğe bağlı öznitelik.<br /><br /> Proje dosyası bir proje şablondan oluşturulduğunda değiştirilmelidir parametre değerleri içerip içermediğini belirten bir Boole değeri. Varsayılan değer `false`.|  
+|`TargetFileName`|İsteğe bağlı öznitelik.<br /><br /> Bir proje şablondan oluşturulduğunda, proje dosyasının adını belirtir.|  
+|`IgnoreProjectParameter`|İsteğe bağlı öznitelik.<br /><br /> Geçerli çözüme projeyi eklenmesi gerekip gerekmediğini belirtir. Varsa özel parametresinin değeri "$*myCustomParameter*$" var. parametre değiştirme dosyasında proje oluşturulur, ancak şu anda açık çözümün bir parçası eklenmedi.|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Klasör](../extensibility/folder-element-visual-studio-project-templates.md)|İsteğe bağlı öğe.<br /><br /> Projeye eklemek için bir klasör belirtir.|  
+|[Klasör](../extensibility/folder-element-visual-studio-project-templates.md)|İsteğe bağlı öğe.<br /><br /> Projeye eklemek için bir klasörü belirtir.|  
 |[ProjectItem](../extensibility/projectitem-element-visual-studio-project-templates.md)|İsteğe bağlı öğe.<br /><br /> Bir projeye eklemek için dosyayı belirtir.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
 |[TemplateContent](../extensibility/templatecontent-element-visual-studio-templates.md)|Gerekli öğe.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- `Project` bir isteğe bağlı bir alt öğenin `TemplateContent`.  
+ `Project` bir isteğe bağlı bir alt öğesidir `TemplateContent`.  
   
- `Project` Öğesi için kısa bir proje kullanılır ve bu nedenle, yalnızca proje şablonlarını geçerli değil.  
+ `Project` Öğesi için belirtin bir proje kullanılan ve bu nedenle, yalnızca geçerli proje şablonları.  
   
- `Project` öğeleri olabilir [klasörü](../extensibility/folder-element-visual-studio-project-templates.md) alt öğeleri veya [ProjectItem](../extensibility/projectitem-element-visual-studio-project-templates.md) alt öğeleri ancak değil her ikisinin bir karışımıyla `Folder` ve `ProjectItem` alt öğeleri.  
+ `Project` öğeleri olabilir [klasör](../extensibility/folder-element-visual-studio-project-templates.md) alt öğeleri veya [ProjectItem](../extensibility/projectitem-element-visual-studio-project-templates.md) alt öğeleri, ancak değil her ikisinin bir karışımıyla `Folder` ve `ProjectItem` alt öğeleri.  
   
- [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kullanıcı tarafından girilen adına dayalı proje dosyası adı otomatik olarak yeniden adlandırır **yeni proje** iletişim kutusu. Kullanım `TargetFileName` şablonla oluşturulan proje dosyalarını için bir alternatif dosya adı sağlamak istiyorsanız özniteliği.  
+ [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kullanıcı tarafından girilen adına dayalı proje dosya adına otomatik olarak yeniden adlandırır **yeni proje** iletişim kutusu. Kullanım `TargetFileName` şablonla oluşturulan proje dosyaları için bir alternatif dosya adı sağlamak istiyorsanız özniteliği.  
   
 ## <a name="example"></a>Örnek  
- Meta veriler için bir proje şablonu için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
+ Aşağıdaki örnek, bir proje şablonu için meta verileri gösterir. bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -102,8 +103,8 @@ Dosya veya dizinlerin projeye eklemek için belirtir.
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
  [ProjectItem öğesi (Visual Studio Proje şablonları)](../extensibility/projectitem-element-visual-studio-project-templates.md)   
- [Folder Öğesi (Visual Studio Proje Şablonları)](../extensibility/folder-element-visual-studio-project-templates.md)
+ [Folder öğesi (Visual Studio Proje şablonları)](../extensibility/folder-element-visual-studio-project-templates.md)

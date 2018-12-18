@@ -13,53 +13,54 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c9fc47a0b73d07e4b24ef55c736ad80197f282cb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 42a95e01a44236d4f98f55f50a56cf28473ad575
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927547"
 ---
 # <a name="control-of-execution"></a>Yürütme denetimi
-Hata ayıklama altyapısı (DE) genellikle aşağıdaki olaylardan biri son başlatma olayı olarak gönderir:  
+Hata ayıklama altyapısı (DE) genellikle aşağıdaki olaylardan biri son başlatma olayı gönderir:  
   
--   Yeni başlatılan program için ekleme, giriş noktası olay  
+- Yeni başlatılan programa ekleme, giriş noktası olayı  
   
--   Zaten çalışan bir program ekleme, yük complete olayı  
+- Zaten çalışan bir programa ekleme, yük complete olayı  
   
- Her iki bu olayları DE kullanıcıdan yanıt yoluyla IDE bekleyeceği anlamına gelen olayları duruyor. Daha fazla bilgi için bkz: [işlem modları](../../extensibility/debugger/operational-modes.md).  
+  Hem bu olayları DE kullanıcıdan yanıt IDE yoluyla bekler, yani olan Durma olaylarıdır. Daha fazla bilgi için [çalışma modları](../../extensibility/debugger/operational-modes.md).  
   
-## <a name="stopping-event"></a>Olay durdurma  
- Hata ayıklama oturumu durdurma olay gönderildiğinde:  
+## <a name="stopping-event"></a>Olay durduruluyor  
+ Durdurma olay hata ayıklama oturumu için gönderildiğinde:  
   
-1.  Program ve geçerli yönerge işaretçisi içeren iş parçacığı olay arabiriminden elde edilebilir.  
+1. Dosyadaki geçerli yönerge işaretçisini içeren iş parçacığı ve program olay arabiriminden elde edilebilir.  
   
-2.  IDE geçerli kaynak kodu dosyasının ve görüntülediği Düzenleyicisi'nde vurgulanmış konumunu belirler.  
+2. IDE vurgulanan Düzenleyicisi'nde görüntüleyen konumu ve geçerli kaynak kodu dosyası belirler.  
   
-3.  Tipik olarak hata ayıklama oturumu programın çağırarak bu ilk durdurma olaya yanıt **devam** yöntemi.  
+3. Genellikle hata ayıklama oturumu programın çağırarak bu ilk durdurma olaya yanıt **devam** yöntemi.  
   
-4.  Program, daha sonra içinde ve durum DE bir kesme noktası olay hata ayıklama oturumu gönderir, bir kesme noktası çıkma gibi bir durdurma koşulu bulduğu kadar çalıştırır. Kesme noktası olay durdurma bir olaydır ve DE bir kullanıcı yanıtı yeniden bekler.  
+4. Kesme noktasına ulaşma gibi bir durdurma koşul karşılaşana kadar program sonra çalışır. Bu durumda, DE, hata ayıklama oturumu için bir kesme noktası olayı gönderir. Kesme noktası olayı durdurma bir olaydır ve DE yeniden kullanıcı yanıt bekler.  
   
-5.  Kullanıcı, üzerinde adımla ödememeyi ya da bir işlev dışında IDE programın çağırmak için hata ayıklama oturumu ister `Step` adım (yönerge, deyimi veya satırı) ve adım türü birimi geçirme yöntemi — diğer bir deyişle, üzerinde adımla verilip , veya işlev dışında. Adım tamamlandığında DE durdurma olayı hata ayıklama oturumu için adım complete olayını gönderir.  
+5. Kullanıcı, üzerinde Adımlama seçer veya bir işlevden, IDE program çağırmak için hata ayıklama oturumu ister `Step` yöntemi. IDE sonra birim (yönergesi, deyim veya satır) bir adım adım (mi oturum üzerinden veya işlev dışında adımlamak) türünü ve geçirir. Bu adım tamamlandıktan sonra DE durdurma olay hata ayıklama oturumu için adım tam bir olay gönderir.  
   
-     -veya-  
+    veya  
   
-     Kullanıcının geçerli yönerge işaretçi çalıştırmaya devam etmeyi seçerse, IDE programın çağırmak için hata ayıklama oturumu ister **yürütme** yöntemi. Sonraki durdurma koşulu bulduğu kadar program yürütme devam ettirir.  
+    Kullanıcı, dosyadaki geçerli yönerge işaretçisini çalıştırmaya devam etmeyi seçerse, IDE program çağırmak için hata ayıklama oturumunun ister **yürütme** yöntemi. Sonraki durdurma koşul karşılaşana kadar program yürütme devam eder.  
   
-     -veya-  
+    veya  
   
-     Hata ayıklama oturumu belirli durdurma olayı yoksayabilir olursa hata ayıklama oturumu programın çağırır **devam** yöntemi. Ardından durdurma koşulu karşılaştığında programın içine, üzerinden veya bir işlev dışında atlama, adım devam eder.  
+    Hata ayıklama oturumunun belirli durdurma olay yok saymak için ise, programın hata ayıklama oturumu çağırır **devam** yöntemi. Ardından durdurma koşul karşılaştığında program içine, üzerine veya bir işlev dışına Adımlama, adımı devam eder.  
   
- Programlı olarak DE durdurma koşulu karşılaştığında gibi durdurma olaylar gönderir [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) veya [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) yoluyla oturum hata ayıklama yöneticisine (SDM) bir [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) arabirimi. DE geçişleri [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) ve [IDebugThread2](../../extensibility/debugger/reference/idebugthread2.md) program ve geçerli yönerge işaretçisi içeren iş parçacığı temsil eden arabirimler. SDM çağrıları [IDebugThread2::EnumFrameInfo](../../extensibility/debugger/reference/idebugthread2-enumframeinfo.md) üst yığın çerçevesi ve çağrılarını almak için [IDebugStackFrame2::GetDocumentContext](../../extensibility/debugger/reference/idebugstackframe2-getdocumentcontext.md) geçerli yönerge ile ilişkili belge içerik almak için İşaretçi. Bu belge bağlam genellikle bir kaynak kodu dosya adı, satır ve sütun sayıdır. IDE bunlar geçerli yönerge işaretçisi içeren kaynak kodu vurgulamak için kullanır.  
+   Programlı olarak bunu gönderir gibi durdurma olaylar DE durdurma koşul karşılaştığında [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) veya [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) yoluyla oturum hata ayıklama Yöneticisi (SDM) için bir [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) arabirimi. DE geçişleri [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) ve [IDebugThread2](../../extensibility/debugger/reference/idebugthread2.md) program ve dosyadaki geçerli yönerge işaretçisini içeren iş parçacığını temsil eden arabirim. SDM çağrıları [IDebugThread2::EnumFrameInfo](../../extensibility/debugger/reference/idebugthread2-enumframeinfo.md) üst yığın çerçevesi ve çağrılarını almak için [IDebugStackFrame2::GetDocumentContext](../../extensibility/debugger/reference/idebugstackframe2-getdocumentcontext.md) geçerli yönergenin ile ilişkili belge bağlamı almak için İşaretçi. Bu belge genellikle bir kaynak kod dosya adı, satır ve sütun numarası bağlamıdır. IDE bu dosyadaki geçerli yönerge işaretçisini içeren kaynak kodu vurgulamak için kullanır.  
   
- Genellikle SDM çağırarak bu ilk durdurma olaya yanıt [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). İçinde durum DE gönderir, bir kesme noktası basarsa gibi bir durdurma koşulu bulduğu kadar program sonra çalışır bir [IDebugBreakpointEvent2 arabirimi](../../extensibility/debugger/reference/idebugbreakpointevent2.md) SDM için. Kesme noktası olay durdurma bir olaydır ve DE bir kullanıcı yanıtı yeniden bekler.  
+   Genellikle SDM çağırarak bu ilk durdurma olaya yanıt [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). İçinde DE çalışması gönderir, bir kesme noktasına ulaşma gibi bir durdurma koşul karşılaşana kadar program sonra çalışan bir [IDebugBreakpointEvent2 arabirimi](../../extensibility/debugger/reference/idebugbreakpointevent2.md) SDM için. Kesme noktası olayı durdurma bir olaydır ve DE yeniden kullanıcı yanıt bekler.  
   
- Kullanıcı, üzerinde adımla ödememeyi ya da bir işlev dışında IDE çağırmak için SDM ister [IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md), onu [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) (yönerge, deyimi veya satırı) ve [ STEPKIND](../../extensibility/debugger/reference/stepkind.md), diğer bir deyişle, içine, üzerinden veya işlev dışında adım verilip. Adım tamamlandığında DE gönderir bir [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) durdurma olayı SDM arabirimi.  
+   Kullanıcı, üzerinde Adımlama seçer veya bir işlevden, IDE çağrılacak SDM ister [IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md). Daha sonra IDE geçirir [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) (yönergesi, deyim veya çizgi) ve [STEPKIND](../../extensibility/debugger/reference/stepkind.md), diğer bir deyişle, içine, üzerine veya işlev dışında adım verilip verilmeyeceğini. Bu adım tamamlandıktan sonra DE gönderir. bir [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) durdurma olayı SDM arabirimi.  
   
- Kullanıcının geçerli yönerge işaretçi çalıştırmaya devam etmeyi seçerse, IDE çağırmak için SDM ister [IDebugProgram2::Execute](../../extensibility/debugger/reference/idebugprogram2-execute.md). Sonraki durdurma koşulu bulduğu kadar program yürütme devam ettirir.  
+   Kullanıcı, dosyadaki geçerli yönerge işaretçisini çalıştırmaya devam etmeyi seçerse, IDE çağrılacak SDM ister [IDebugProgram2::Execute](../../extensibility/debugger/reference/idebugprogram2-execute.md). Sonraki durdurma koşul karşılaşana kadar program yürütme devam eder.  
   
- Hata ayıklama paketi belirli durdurma olayı yoksayabilir olursa hata ayıklama paket çağırır SDM çağırır [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). Ardından durdurma koşulu karşılaştığında programın içine, üzerinden veya bir işlev dışında atlama, adım devam eder. Nasıl devam edileceği bilir böylece bu program bir sürüm durumu tutar anlamına gelir.  
+   Hata ayıklama paketi belirli durdurma olay yok saymak için ise, hata ayıklama paketi çağırır SDM çağırır [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). Durdurma koşul karşılaştığında program içine, üzerine veya bir işlev dışına Adımlama, adımı devam eder. Devam etmek nasıl bilir, böylece programın bir atlama durumu korur gelir.  
   
- SDM yapar için çağrıları `Step`, **yürütme**, ve **devam** SDM hızlı geri dönmek için çağrı beklediğini anlamı olan zaman uyumsuz. DE SDM durdurma olay önce aynı iş parçacığı üzerinde gönderirse `Step`, **yürütme**, veya **devam** döndürür, SDM askıda kalır.  
+   SDM yapar için çağrıları `Step`, **yürütme**, ve **devam** SDM hızlı bir şekilde geri dönmek için çağrı bekliyor yani olan zaman uyumsuz. DE SDM durdurma olay önce aynı iş parçacığında gönderirse `Step`, **yürütme**, veya **devam** döndürür SDM yanıt vermemeye başlıyor.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata Ayıklama Görevleri](../../extensibility/debugger/debugging-tasks.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata ayıklama görevleri](../../extensibility/debugger/debugging-tasks.md)

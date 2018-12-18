@@ -1,0 +1,1 @@
+Windows Mağazası uygulaması JavaScript kullanan Windows için oluşturulmuştur

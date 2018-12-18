@@ -1,5 +1,5 @@
 ---
-title: Bir dil hizmetindeki desteğin sağlamak | Microsoft Docs
+title: Destek dil hizmetinde ana hat oluşturmayı sağlayan | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,44 +15,45 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6467a1e3386daedc4a67aa420c06cf01187b8d22
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 31ae8a6aeba28fbe90e68305f2b48021b4327c26
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39511395"
 ---
-# <a name="how-to-provide-expanded-outlining-support-in-a-legacy-language-service"></a>Nasıl yapılır: eski dil hizmetindeki genişletilmiş anahat desteği sağlar
-Destekleyen ötesinde dilinizi anahat desteğini genişletmek için iki seçenek vardır **daraltmak için tanımları** komutu. Anahat Düzenleyicisi denetimli bölgeler ekleyin ve istemci tarafından denetlenen anahat bölgeler ekleyin.  
+# <a name="how-to-provide-expanded-outlining-support-in-a-legacy-language-service"></a>Nasıl yapılır: eski dil hizmetinde genişletilmiş ana hat oluşturma desteği sağlar
+Ana hat oluşturma desteği destekleyen ötesinde dil genişletmek için iki seçenek **tanımlara Daralt** komutu. Düzenleyici tarafından denetlenen anahat bölge ekleme ve istemci tarafından denetlenen anahat bölge ekleme.  
   
-## <a name="adding-editor-controlled-outline-regions"></a>Anahat Düzenleyicisi denetimli bölgeler ekleme  
- Daraltılmış, anahat bölge oluşturmak ve bölge genişletilmiş olup olmadığını işlemek için Düzenleyicisi izin vermek için bu yaklaşımı kullanın ve benzeri. Anahat desteği sağlamak için bu iki seçenekten birini bu az sağlam bir seçenektir. Bu seçenek için metni kullanarak, belirtilen bir aralığı yeni anahat bölgesi oluşturmak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession.AddOutlineRegions%2A>. Bu bölge oluşturulduktan sonra davranışını Düzenleyicisi tarafından denetlenir. Anahat Düzenleyicisi denetimli bölgeler uygulamak için aşağıdaki yordamı kullanın.  
+## <a name="adding-editor-controlled-outline-regions"></a>Düzenleyici tarafından denetlenen anahat bölge ekleme  
+ Daraltılmış, bir anahat bölgesi oluşturmak ve ardından bölge genişletilmiş olmadığını işlemek için Düzenleyici'izin vermek için bu yaklaşımı kullanın ve VS. Ana hat oluşturma desteği sağlamak için bu iki seçenekten birini bu az güçlü seçenektir. İçin bu seçeneği kullanarak metni belirtilen aralığı yeni bir ana hat bölge oluşturma <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession.AddOutlineRegions%2A>. Bu bölge oluşturulduktan sonra davranışını düzenleyici tarafından denetlenir. Düzenleyici tarafından denetlenen anahat bölgeleri uygulamak için aşağıdaki yordamı kullanın.  
   
-#### <a name="to-implement-an-editor-controlled-outline-region"></a>Bir düzenleyici denetimli anahat bölge uygulamak için  
+### <a name="to-implement-an-editor-controlled-outline-region"></a>Bir düzenleyici tarafından denetlenen anahat bölgesi uygulamak için  
   
 1.  Çağrı `QueryService` için <xref:Microsoft.VisualStudio.TextManager.Interop.SVsTextManager>  
   
      Bu bir işaretçi döndürür <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager>.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin belgesi için bir işaretçi geçen. Bu bir işaretçi döndürür <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> arabellek nesne.  
+2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin arabelleği için bir işaretçi olarak geçen. Bu bir işaretçi döndürür <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> arabellek için nesne.  
   
-3.  Çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> üzerinde <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> gösteren bir işaretçi için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession>.  
+3.  Çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> üzerinde <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> işaretçisi için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession>.  
   
-4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession.AddOutlineRegions%2A> ekleyin veya daha yeni bir kerede bölgeleri ana hatlarını vermektedir.  
+4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsOutliningSession.AddOutlineRegions%2A> ekleyin ya da daha yeni bir kerede bölgeleri genel çizgileriyle belirtin.  
   
-     Bu yöntem, Anahat, varolan anahat bölgeler olup kaldırılan veya korunur ve anahat bölge veya genişletilmiş varsayılan olarak daraltılmış metin aralığını belirtmenizi sağlar.  
+     Bu yöntem anahat, mevcut anahat bölgeleri olup kaldırıldı veya korunur ve olup anahat bölge genişletilmiş veya varsayılan olarak daraltılmış metin aralığı belirtmenize olanak tanır.  
   
-## <a name="adding-client-controlled-outline-regions"></a>İstemci tarafından denetlenen anahat bölgeler ekleme  
- Uygulama istemci denetimli (veya akıllı) anahat oluşturma bu yaklaşım tarafından kullanılan gibi kullanım [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] dil Hizmetleri. Kendi anahat oluşturma yöneten bir dil hizmeti, bunlar geçersiz olduğunda eski anahat bölgeleri yok etmek için ve gerektiğinde yeni anahat bölgeler oluşturmak için metin arabelleği içeriği izler.  
+## <a name="add-client-controlled-outline-regions"></a>İstemci tarafından denetlenen anahat bölge ekleme  
+ Kullandığı gibi istemci tarafından denetlenen (veya akıllı) uygulama anahat oluşturma için bu yaklaşımı kullanın [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] dil Hizmetleri. Kendi ana hattı yöneten bir dil hizmeti geçersiz olduğunda eski anahat bölgeleri yok etmek için ve gerektiğinde yeni anahat bölgesi oluşturmak için metin arabelleği içeriği izler.  
   
-#### <a name="to-implement-a-client-controlled-outline-region"></a>Bir istemci tarafından denetlenen anahat bölge uygulamak için  
+### <a name="to-implement-a-client-controlled-outline-region"></a>Bir istemci tarafından denetlenen anahat bölgeye uygulamak için  
   
 1.  Çağrı `QueryService` için <xref:Microsoft.VisualStudio.TextManager.Interop.SVsTextManager>. Bu bir işaretçi döndürür <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager>.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin belgesi için bir işaretçi geçen. Bu, gizli metin oturumu zaten için arabellek var olup olmadığını belirler.  
+2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin arabelleği için bir işaretçi olarak geçen. Bu, gizli metin oturumu zaten için arabellek var olup olmadığını belirler.  
   
-3.  Bir metin oturumu zaten var sonra biri ve var olan bir işaretçi oluşturun gerekmez <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür. Bu işaretçinin numaralandırır ve anahat bölgeler oluşturmak için kullanın. Aksi halde çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A> arabellek için gizli metni oturum oluşturmak için. Bir işaretçi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür.  
+3.  Metin oturum zaten var ve ardından, biri ve var olan bir işaretçi oluşturmak ihtiyacınız yoktur, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür. Bu işaretçinin, listeleme ve ana hat bölgeler oluşturmak için kullanın. Aksi takdirde, çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A> arabellek için gizli metin oturum oluşturmak için. Bir işaretçi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür.  
   
     > [!NOTE]
-    >  Çağırdığınızda <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A>, gizli metin istemci belirtebilirsiniz (diğer bir deyişle, bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextClient> nesnesi). Bu istemci gizli metni olduğunda uyarır veya anahat bölge genişletilmiş veya kullanıcı tarafından daraltılmış.  
+    >  Çağırdığınızda <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A>, gizli metin istemci belirtebilirsiniz (diğer bir deyişle, bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextClient> nesne). Bu istemci gizli metin olduğunda sizi bilgilendirir veya ana bölge genişletilmiş veya daraltılmış kullanıcı tarafından.  
   
-4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession.AddHiddenRegions%2A> yapısı) parametre: değerini belirtin <xref:Microsoft.VisualStudio.TextManager.Interop.HIDDEN_REGION_TYPE> içinde `iType` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> gizli bir bölge yerine bir anahat bölge oluşturmakta olduğunuz belirtmek için yapısı. Bölge içinde düzenleyicisi olarak kontrol ya da istemci denetlenen olup olmadığını belirtin `dwBehavior` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Akıllı anahat uygulamanızı anahat bölgeler Düzenleyicisi ve istemci denetlenen bir karışımını içerebilir. Anahat bölgenize, "... gibi", buna daraltıldığında görüntülenen Başlık metni belirtin `pszBanner` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Düzenleyicinin varsayılan başlık metni gizli bir bölge için "...".
+4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession.AddHiddenRegions%2A> yapısı) parametresi: değerini belirtirseniz <xref:Microsoft.VisualStudio.TextManager.Interop.HIDDEN_REGION_TYPE> içinde `iType` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı gizli bölge yerine bir anahat bölgesi oluşturmakta olduğunuz belirtmek için. Bölge istemci tarafından denetlenen veya Düzenleyicisi tarafından denetlenen içinde olup olmadığını belirtin `dwBehavior` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Akıllı ana hat oluşturma uygulamanız anahat bölgeleri Düzenleyicisi ve istemci denetlenen bir karışımını içerebilir. Anahat bölgeniz, "... gibi", buna daraltıldığında görüntülenen başlık metnini belirtin `pszBanner` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Editör'ün varsayılan başlık metni gizli bölge için "...".

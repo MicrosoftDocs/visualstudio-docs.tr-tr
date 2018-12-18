@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 71ef91425338c4aaed2393c89ad03be602228ad2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c001e47b7393daa07b799ff78f31019d21ec5ee2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951489"
 ---
 # <a name="idebugerrorbreakpointresolution2getbreakpointtype"></a>IDebugErrorBreakpointResolution2::GetBreakpointType
 Kesme noktası türünü alır.  
@@ -40,16 +41,16 @@ int GetBreakpointType(
   
 #### <a name="parameters"></a>Parametreler  
  `pBPType`  
- [out] Arasında bir değer döndürür [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) kesme noktası türünü tanımlayan numaralandırması.  
+ [out] Bir değer döndürür [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) kesme noktası türünü açıklayan sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, böylece bir hata kesme olayı gerektiren bağlamak için başarısız kesme noktası türünü döndürür.  
+ Bu yöntem, böylece bir hata kesme noktası olayı gerektiren bağlamak için başarısız bir kesme noktası türünü döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CDebugErrorBreakpointResolution` gösteren nesne [IDebugErrorBreakpointResolution2](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CDebugErrorBreakpointResolution` gösteren nesne [IDebugErrorBreakpointResolution2](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2.md) arabirimi.  
   
 ```  
 HRESULT CDebugErrorBreakpointResolution::GetBreakpointType(BP_TYPE* pBPType)    

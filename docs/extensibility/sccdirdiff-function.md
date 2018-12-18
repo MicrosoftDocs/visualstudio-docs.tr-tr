@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7d2bea7816375da1131f557ebcbe206056f347f2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2eea561b82b06d44dfbc787172e7ae063b421e2f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49929796"
 ---
 # <a name="sccdirdiff-function"></a>SccDirDiff işlevi
-Bu işlev istemci diskteki geçerli yerel dizin ve kaynak denetimi altında karşılık gelen proje arasındaki farkları görüntüler.  
+Bu işlev, geçerli yerel dizin istemci diskte ve ilgili proje kaynak denetimi altında arasındaki farkları görüntüler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,51 +37,51 @@ SCCRTN SccDirDiff(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  lpDirName  
- [in] Görsel fark gösterileceği yerel dizinin tam yolu.  
+ [in] Bir görsel farkı göstermek yerel dizini tam yolu.  
   
- dwFlags  
- [in] Komut bayrakları (açıklamalar bkz bölümü).  
+ CertOpenStore  
+ [in] Komut bayrakları (bkz. Açıklamalar bölümü).  
   
  pvOptions  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|SCC_OK|Disk üzerinde dizin kaynak kodu denetimi projesinde ile aynıdır.|  
-|SCC_I_FILESDIFFER|Disk üzerinde dizin, kaynak kodu denetimi projesinde farklıdır.|  
-|SCC_I_RELOADFILE|Bir dosya veya projeyi yeniden yüklenmesi gerekiyor.|  
-|SCC_E_FILENOTCONTROLLED|Dizin kaynak kodu denetimi altında değil.|  
+|SCC_OK|Diskteki kaynak kod denetimi projede aynı dizindir.|  
+|SCC_I_FILESDIFFER|Kaynak kodu denetiminde projeden farklı diskte dizindir.|  
+|SCC_I_RELOADFILE|Bir dosya veya projenin yeniden yüklenmesi gerekiyor.|  
+|SCC_E_FILENOTCONTROLLED|Dizin, kaynak kod denetimi altında değil.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için izin verilmiyor.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
 |SCC_E_NONSPECIFICERROR<br /><br /> SCC_E_UNKNOWNERROR|Belirli olmayan hata oluştu.|  
 |SCC_E_FILENOTEXIST|Yerel dizin bulunamadı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlev eklentisinin kullanıcıya belirli bir dizine değişikliklerin listesini görüntülemek için kaynak denetimi istemek için kullanılır. Eklenti, kullanıcının dizini disk üzerinde ve sürüm denetimi altındaki karşılık gelen proje arasındaki farklar görüntülemek için kendi seçtikleri biçimde kendi penceresi açılır.  
+ Bu işlev, kaynak denetimi eklentisi kullanıcı için belirtilen dizine değişikliklerin bir listesini görüntülemek için istemek için kullanılır. Eklenti, kullanıcının dizini disk üzerinde sürüm denetimi altında karşılık gelen proje arasındaki farkları görüntülemek için seçtiğiniz bir biçimde kendi penceresi açılır.  
   
- "Hızlı-fark" seçenekleri desteklenmiyor olsa bile dizinleri hiç eklenti destekler karşılaştırması varsa, onu bir dosya adı temelinde dizinleri karşılaştırması desteklemesi gerekir.  
+ Dizinleri hiç eklenti destekler karşılaştırması, "hızlı fark" seçenekleri desteklenmiyor olsa bile, karşılaştırma dizinlerin bir dosya adı temelinde desteklemesi gerekir.  
   
 |`dwFlags`|Yorumu|  
 |---------------|--------------------|  
-|SCC_DIFF_IGNORECASE|Büyük küçük harf duyarsız karşılaştırma (hızlı fark veya visual için kullanılabilir).|  
-|SCC_DIFF_IGNORESPACE|(Hızlı fark veya visual için kullanılabilir) boşluk yok sayar.|  
+|SCC_DIFF_IGNORECASE|Büyük küçük harf duyarsız karşılaştırma (hızlı fark veya görsel için kullanılabilir).|  
+|SCC_DIFF_IGNORESPACE|(Hızlı fark veya görsel için kullanılabilir) boşluk yok sayar.|  
 |SCC_DIFF_QD_CONTENTS|Kaynak Denetimi Eklentisi tarafından destekleniyorsa, sessizce bayt dizin karşılaştırır.|  
-|SCC_DIFF_QD_CHECKSUM|Eklenti tarafından desteklenen, sessizce directory bir sağlama toplamı ile karşılaştırır veya desteklenmiyor, SCC_DIFF_QD_CONTENTS için geri döner.|  
-|SCC_DIFF_QD_TIME|Eklenti tarafından desteklenen, sessizce directory kendi zaman damgası ile karşılaştırır veya desteklenmiyor, SCC_DIFF_QD_CHECKSUM veya SCC_DIFF_QD_CONTENTS geri döner.|  
+|SCC_DIFF_QD_CHECKSUM|Eklenti tarafından desteklenen, sessiz bir sağlama toplamı aracılığıyla bir dizine karşılaştırır veya SCC_DIFF_QD_CONTENTS için desteklenmiyor, geri döner.|  
+|SCC_DIFF_QD_TIME|Eklenti tarafından desteklenen, sessiz bir şekilde karşılaştırır, zaman damgası aracılığıyla bir dizine veya SCC_DIFF_QD_CHECKSUM veya SCC_DIFF_QD_CONTENTS desteklenmiyor, geri döner.|  
   
 > [!NOTE]
->  Bu işlev olarak aynı komutu bayrakları kullanır [SccDiff](../extensibility/sccdiff-function.md). Ancak, kaynak denetim eklentisi dizinler için "hızlı-fark" işlemi desteklemeyen tercih edebilirsiniz.  
+>  Bu işlev, aynı komut bayrakları olarak kullanır [SccDiff](../extensibility/sccdiff-function.md). Ancak, bir kaynak denetimi eklentisi "hızlı fark" işlemi için dizinleri desteklemeyen tercih edebilirsiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)

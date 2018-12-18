@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: metin arabelleği olayları eski API ile kaydetme | Microsoft Docs'
+title: "Nasıl yapılır: metin arabelleği olayları eski API'si ile kaydolma | Microsoft Docs"
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,28 +13,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b708507096e7035039e54af7505c8f5f939b5724
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9ffe8362f26a55fdb6a9fe236782965a2062ed69
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39639939"
 ---
-# <a name="how-to-register-for-text-buffer-events-with-the-legacy-api"></a>Nasıl yapılır: metin arabelleği olayları eski API ile kaydetme
-Eski API kullanarak metin arabelleği erişiyorsanız, aşağıdaki yordamda gösterildiği gibi metin arabelleği olayları için kaydetmelisiniz.  
+# <a name="how-to-register-for-text-buffer-events-with-the-legacy-api"></a>Nasıl yapılır: metin arabelleği olayları eski API'si ile kaydolma
+Metin arabelleği eski API'si aracılığıyla erişiyorsanız aşağıdaki yordamda gösterildiği gibi metin arabelleği olayları kaydolmalıdır.  
   
-### <a name="to-advise-text-buffer-events"></a>Metin arabelleği olaylarını bildirmek için  
+## <a name="to-advise-text-buffer-events"></a>Metin arabelleği olayları bildirmek için  
   
-1.  Arabirimlerde biri için bir işaretçi gelen <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>, çağrı `QueryInterface` gösteren bir işaretçi için <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer>.  
+1.  Arabirimlerde birine bir işaretçiden <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>, çağrı `QueryInterface` işaretçisi için <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer>.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer.FindConnectionPoint%2A> yöntemi ve kaydetmek istediğiniz olayların arabirimi Kimliğini geçirin.  
+2.  Çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer.FindConnectionPoint%2A> yöntemi ve kaydetmek istediğiniz olayların arabirimi kimliği geçirin.  
   
-     Kaydetmek istiyorsanız, örneğin, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents>, daha sonra bir arabirim kimliği, IID_IVsTextLinesEvents geçirin.  
+     Örneğin, kaydolmak istiyorsanız <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents>, ardından bir arabirim kimliği, IID_IVsTextLinesEvents geçirin.  
   
-     Bir işaretçi metin arabelleğini döndürür <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint> uygun bir bağlantı noktası nesnesi için arabirim.  
+     Metin arabelleği için bir işaretçi döndürür <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint> uygun bir bağlantı noktası nesne için arabirim.  
   
-3.  Bu işaretçinin kullanarak, çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint.Advise%2A> istediğiniz kaydetmek, örneğin, olayları arabirimi uygulamanız için bir işaretçi geçirerek yöntemini `IVsTextLinesEvents` arabirimi.  
+3.  Bu işaretçinin kullanarak, çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint.Advise%2A> yöntemi, bir işaretçiyi istediğiniz kaydetmek örneğin olaylar arabirimi uygulamanıza geçirmeden `IVsTextLinesEvents` arabirimi.  
   
-     Ortam çağırarak olaylarını dinleyecek şekilde sonra kullanabileceğiniz bir tanımlama bilgisi döndürür <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint.Unadvise%2A> yöntemi.  
+     Ardından çağırarak olayları dinleyecek şekilde kullanabileceğiniz bir tanımlama bilgisi ortam döndürür <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPoint.Unadvise%2A> yöntemi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eski API metin arabelleği olayları](../extensibility/text-buffer-events-in-the-legacy-api.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Metin arabelleği olayları eski API](../extensibility/text-buffer-events-in-the-legacy-api.md)

@@ -11,78 +11,80 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 0461ff028925081285dafdc4f782b7c58c28a32c
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: a4b3df4661b23268fed811799c80cfc31b624a50
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849157"
 ---
 # <a name="customizing-deletion-behavior"></a>Silme Davranışını Özelleştirme
-Bir öğe genellikle silinmesi, ilgili öğeler de silinecek neden olur. Tüm ilişkiler ona bağlı ve herhangi bir alt öğe silindi. Bu davranış adlı *yayma silme*. Örneğin ek ilgili öğeler silinir düzenlemek silme yayma özelleştirebilirsiniz. Program kodunda yazarak delete yayma model durumuna bağlıdır yapabilirsiniz. Bir silme işlemi için yanıt gerçekleşmesi diğer değişiklikler de neden olabilir.
+Genellikle bir öğeyi silme ilgili öğeleri de silinmesine neden olur. Tüm ilişkiler bağlı ve herhangi bir alt öğe silindi. Bu davranış adlı *yayma Sil*. Örneğin ek ilgili öğeler silinir düzenlemek delete yayma özelleştirebilirsiniz. Program kodunu yazarak silme yayma model durumuna bağlı yapabilirsiniz. Ayrıca, yanıt bir silme işlemi için başka değişiklik neden olabilir.
 
  Bu konu aşağıdaki bölümleri içermektedir:
 
 -   [Varsayılan silme davranışı](#default)
 
--   [Bir rolün yayılması Sil seçeneğini ayarlama](#property)
+-   [Bir rolün yaymak Sil seçeneği ayarlama](#property)
 
--   [Silme Kapatılmak üzere geçersiz kılma](#closure) -silme öğeleri komşu silme işlemini burada açabilecek bu tekniği kullanın.
+-   [Geçersiz kılma Sil kapanış](#closure) -silme komşu öğeleri silme işlemini burada neden olabilir, bu tekniği kullanın.
 
--   [OnDeleting ve OnDeleted kullanarak](#ondeleting) -yanıtı veya mağaza dışındaki bir değer güncelleştirme gibi diğer eylemler burada içerebilir bu yöntemleri kullanın.
+-   [OnDeleting ve OnDeleted kullanarak](#ondeleting) -yanıt burada bir değer içinde veya dışında depolama güncelleştirme gibi eylemler dahil olabilir, bu yöntemleri kullanın.
 
--   [Silme kuralları](#rules) -güncelleştirmeleri nerede bir değişiklik sağlama başkalarına deposundaki herhangi bir türde yayılması için kuralları kullanın.
+-   [Silme kuralları](#rules) -burada bir değişiklik neden olabilir başkalarına depo içindeki herhangi bir türdeki güncelleştirmeleri yaymak için kuralları kullanın.
 
--   [Silme olaylarını](#rules) -güncelleştirmelerini mağazaya, örneğin diğer dışında yaymak için kullanım deposu olayları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] belgeleri.
+-   [Silme işlemi olayları](#rules) -örneğin diğer Visual Studio belgeleri için depo dışında güncelleştirmeleri yayılması deposu olayları kullanın.
 
--   [Birleştirme](#unmerge) -bir alt öğesi kendi üst bağlı birleştirme işlemi geri almak için birleştirme işlemi kullanın.
+-   [Birleştirme](#unmerge) -birleştirme işlemi bir alt öğesi üst göreve bağlı birleştirme işlemi geri alın.
 
-##  <a name="default"></a> Varsayılan silme davranışı
- Varsayılan olarak, aşağıdaki kurallar delete yayma kapsar:
+## <a name="default"></a> Varsayılan silme davranışı
+ Varsayılan olarak, aşağıdaki kurallar silme yayma yöneten:
 
--   Bir öğenin silinirse, tüm katıştırılmış öğeleri de silinir. Katıştırılmış bu öğe kaynağı olduğu ilişkileri katıştırma hedefleri olan öğelerdir. Örneğin, bir katıştırma ilişkiden ise **albüm** için **şarkı**, belirli bir albümü silindiğinde, tüm şarkıya de silinir.
+-   Bir öğe silinirse, tüm katıştırılmış öğeleri de silinir. Katıştırılmış öğeleri bu öğe kaynağı olduğu ilişkileri ekleme hedefleri olanla aynıdır. Örneğin, bir gömme ilişkisi ise **albüm** için **şarkı**, belirli bir albümü silindiğinde, tüm şarkıları da silinir.
 
-     Bunun aksine, bir şarkıyı silme albümü silmez.
+     Aksine, bir şarkı sildiğinizde albümü silinmez.
 
--   Varsayılan olarak, silme işlemi başvuru ilişkileri dağıtılmaz. Başvuru ilişkisi ise **ArtistPlaysOnAlbum** gelen **albüm** için **sanatçı**, albüm silinmesi tüm ilgili sanatçı silmez ve sanatçı silme yok Tüm albüm silin.
+-   Varsayılan olarak, silme işlemi başvuru ilişkileri dağıtılmaz. Başvuru ilişkisi varsa **ArtistPlaysOnAlbum** gelen **albüm** için **sanatçının**albüm silinmesi tüm ilgili sanatçının silinmez ve bir sanatçıdan silme yok Tüm albüm silin.
 
-     Ancak, silme bazı yerleşik ilişkiler yayılır. Örneğin, bir model öğesi silindiğinde, diyagramda şeklini de silinir. Öğe ve şekli ile ilişkilendirilen `PresentationViewsSubject` başvuru ilişkisi.
+     Ancak, silme işlemi yerleşik bazı ilişkiler yayar. Örneğin, bir model öğesi silindiğinde, diyagram üzerinde şeklini de silinir. Öğesi ve şekli ile ilgili `PresentationViewsSubject` başvuru ilişkisi.
 
--   Öğesine da kaynak veya hedef rolü bağlı her ilişki silinir. Ters rol öğede rol özelliği artık silinen öğe içeriyor.
+-   Öğesi, kaynak veya hedef rol ya da bağlı her ilişki silinir. Karşı rol öğe rolü özelliği, artık silinen öğe içerir.
 
-##  <a name="property"></a> Bir rolün yayılması Sil seçeneğini ayarlama
- Başvuru ilişkisi boyunca veya katıştırılmış bir alt öğe üst yaymak silme işlemi neden olabilir.
+## <a name="property"></a> Bir rolün yaymak Sil seçeneği ayarlama
+ Silme katıştırılmış bir alt, üst veya başvuru ilişkisi boyunca yayılmasına neden olabilir.
 
 #### <a name="to-set-delete-propagation"></a>Delete yayma ayarlamak için
 
-1.  DSL tanımı diyagramda seçin *rol* yayma silmek istediğiniz. Rol satırı sol veya bir etki alanı ilişki kutusunun sağ tarafından temsil edilir.
+1. DSL tanım diyagramı üzerinde seçin *rol* yayma silmek istediğiniz. Rol satırı soldaki veya bir etki alanı ilişkisi kutusunun sağ tarafından temsil edilir.
 
-     Örneğin, albüm silindiğinde belirtmek istiyorsanız, ilgili Sanatçılar da silinir, sonra etki alanı sınıfı sanatçı bağlı rol seçin.
+    Örneğin, albüm silindiğinde belirtmek istiyorsanız, ilgili sanatçıların da silinir ve ardından etki alanı sınıfı sanatçının bağlı rolü seçin.
 
-2.  Özellikler penceresinde ayarlayın **yayar silme** özelliği.
+2. Özellikler penceresinde ayarlayın **yayar Sil** özelliği.
 
-3.  F5 tuşuna basın ve doğrulayın:
+3. F5 tuşuna basın ve doğrulayın:
 
-    -   Bu ilişki örneği silindiğinde, seçili rol öğesi de silinir.
+   -   Bu ilişkinin örneğini silindiğinde, seçili rolü öğe de silinecek.
 
-    -   Bir öğede karşıt rolü silindiğinde, bu ilişki örnekleri silinir ve ilgili öğeleri Bu roldeki silinir.
+   -   Karşı rol bir öğe silindiğinde, bu ilişki örneklerini silinecek ve ilgili öğeleri Bu roldeki silinecek.
 
- Ayrıca bkz **yayar silme** seçeneğini **DSL ayrıntıları** penceresi. Bir etki alanı sınıfı seçin ve DSL Ayrıntılar penceresi açın **silme davranışı** penceresi tarafındaki düğmesini tıklatarak sayfa. **Propagate** seçeneği her ilişki için ters rolü gösterilir. **Stili Sil'i** sütununda olup olmadığını **Propagate** seçeneği, varsayılan ayarı, ancak ayrı hiçbir etkisi yoktur.
+   Ayrıca bkz **yayar Sil** seçeneğini **DSL ayrıntıları** penceresi. Bir etki alanı sınıfı seçin ve açın DSL Ayrıntıları penceresinde **silme davranışı** penceresinin tarafındaki düğmeye tıklayarak sayfası. **Yay** seçeneği her ilişkinin end'in role gösterilir. **Silme Style** sütununda olmadığını **yay** varsayılan ayarında seçenektir ancak ayrı hiçbir etkisi yok.
 
-## <a name="delete-propagation-by-using-program-code"></a>Program kodunu kullanarak yayma silme
- DSL tanım dosyasındaki seçenekleri, yalnızca silme işlemi için hemen bir komşu yayar olup olmadığını seçmenize izin verir. Daha karmaşık bir delete yayma düzenini uygulamak için program kodu yazabilirsiniz.
+## <a name="delete-propagation-by-using-program-code"></a>Program kodu kullanarak yayma Sil
+ DSL tanımı dosyasında seçenekleri yalnızca için hemen bir komşu silme işlemi yayar olmadığını seçmenize olanak tanır. Daha karmaşık bir delete yayma düzenini uygulamak için program kodu yazabilirsiniz.
 
 > [!NOTE]
->  Program kodunu DSL tanımınızı eklemek için ayrı kod dosyasında oluşturma **Dsl** proje ve oluşturulan kod klasörü sınıflarda büyütmek için kısmi tanımları yazma. Daha fazla bilgi için bkz: [bir etki alanına özgü dil kişiselleştirmek için kod yazma](../modeling/writing-code-to-customise-a-domain-specific-language.md).
+>  Program kodu için DSL tanımını eklemek için ayrı bir kod dosyasında oluşturma **Dsl** proje ve oluşturulan kod klasörü sınıfları genişletmek için kısmi tanımları yazma. Daha fazla bilgi için [bir etki alanına özgü dili özelleştirmek için kod yazma](../modeling/writing-code-to-customise-a-domain-specific-language.md).
 
-##  <a name="closure"></a> Bir silme kapanışı tanımlama
- Silme işlemi sınıfını kullanır *YourModel***DeleteClosure** , bir başlangıç seçimi silmek için hangi öğelerin belirlemek için. Çağırır `ShouldVisitRelationship()` ve `ShouldVisitRolePlayer()` tekrar tekrar ilişkileri grafik taramasını. Bu yöntemleri geçersiz kılabilirsiniz. ShouldVisitRolePlayer bir bağlantı ve bağlantının rollerinden birini konumundaki öğe kimliği ile birlikte sağlanır. Aşağıdaki değerlerden birini döndürmesi gerekir:
+## <a name="closure"></a> Bir silme kapanış tanımlama
+ Silme işlemi sınıfın kullandığı _YourModel_**DeleteClosure** , bir başlangıç seçimi silmek için hangi öğelerin belirlemek için. Çağrı `ShouldVisitRelationship()` ve `ShouldVisitRolePlayer()` tekrar tekrar ilişkilerin grafik yürüyen. Bu yöntemleri geçersiz kılabilirsiniz. ShouldVisitRolePlayer bağlantı ve bağlantının rollerden biri öğe kimliği ile sağlanır. Aşağıdaki değerlerden birini döndürmesi gerekir:
 
--   **VisitorFilterResult.Yes**- öğenin silinip silinmeyeceği ve walker denemeye devam etmemelisiniz öğesi diğer bağlantılar kullanıcının.
+-   **VisitorFilterResult.Yes**- öğe silindi ve walker denemeye devam öğe kullanıcının diğer bağlantılar.
 
 -   **VisitorFilterResult.DoNotCare** -başka bir sorgu, silinmesi gerektiğini yanıtlar sürece öğe silinmemelidir.
 
--   **VisitorFilterResult.Never** -başka bir sorgu yanıtlar olsa bile öğesi, silinmemelidir **Evet**, ve walker değil denemelisiniz öğesi diğer bağlantılar kullanıcının.
+-   **VisitorFilterResult.Never** -başka bir sorgu yanıtları bile öğesi, silinmemelidir **Evet**, ve walker değil denemelisiniz öğe kullanıcının diğer bağlantılar.
 
 ```
 // When a musician is deleted, delete their albums with a low rating.
@@ -121,27 +123,26 @@ partial class MusicLibDeleteClosure
     }
   }
 }
-
 ```
 
- Silme işlemi başlamadan önce öğeleri ve silinecek bağlantılar kümesini belirlenir kapatma teknik sağlar. Walker ayrıca sonuçları, kapatma, bu model diğer kısımlarından birleştirir.
+ Öğeleri ve bağlantılarına silinecek kümesini silme işlemi başlamadan önce belirlenir kapanış teknik sağlar. Walker, kapanış sonuçlarını modelinin diğer kısımlarından olanla aynı zamanda birleştirir.
 
- Ancak, silme, komşularına yalnızca grafikte ilişkilerin etkiler tekniği varsayar: başka bir modelin parçası olarak bir öğeyi silmek için bu yöntemi kullanamazsınız. Öğeler ekleme veya silme işlemi için yanıt başka değişiklikler yapmak istiyorsanız, bunu kullanamazsınız.
+ Ancak, teknik silme yalnızca Komşuları ilişkilerinin graftaki etkiler varsayar: başka bir modelin parçası içindeki bir öğeyi silmek için bu yöntemi kullanamazsınız. Öğeleri ekleme veya silme işlemi için yanıt başka değişiklikler yapmak istiyorsanız kullanamazsınız.
 
-##  <a name="ondeleting"></a> OnDeleting ve OnDeleted kullanma
- Geçersiz kılabilirsiniz `OnDeleting()` veya `OnDeleted()` bir etki alanı sınıf veya bir etki alanı ilişkisi.
+## <a name="ondeleting"></a> OnDeleting ve OnDeleted kullanma
+ Geçersiz kılabilirsiniz `OnDeleting()` veya `OnDeleted()` bir etki alanı sınıfı veya bir etki alanı ilişkisi.
 
-1.  <xref:Microsoft.VisualStudio.Modeling.ModelElement.OnDeleting%2A> bir öğenin silinmek üzere olduğunda, ancak ilişkileri kesilmeden adı verilir. İçin ve diğer öğeleri hala gezinebilir ve hala `store.ElementDirectory`.
+1. <xref:Microsoft.VisualStudio.Modeling.ModelElement.OnDeleting%2A> silinmek üzere bir öğe olduğunda, ancak ilişkilerini kesilmeden çağrılır. Diğer öğeleri gelen ve giden hala gezinebilir ve hala `store.ElementDirectory`.
 
-     Aynı anda birden fazla öğeleri sildiyseniz OnDeleting bunların tümünün için silme işlemleri gerçekleştirmeden önce çağrılır.
+    Aynı anda birkaç öğe silindiğinde, OnDeleting hepsi için silme gerçekleştirmeden önce çağrılır.
 
-     `IsDeleting` geçerlidir.
+    `IsDeleting` geçerlidir.
 
-2.  <xref:Microsoft.VisualStudio.Modeling.ModelElement.OnDeleted%2A> öğe silindiğinde adı verilir. Böylece bir geri alma gerekirse gerçekleştirilebilir, ancak diğer öğeleri bağlantısız ve kaldırılmasını CLR yığınında kalır `store.ElementDirectory`. İlişkileri için rolleri hala eski rol oyuncuları başvuru.`IsDeleted` geçerlidir.
+2. <xref:Microsoft.VisualStudio.Modeling.ModelElement.OnDeleted%2A> öğe silindiğinde çağırılır. Böylece gerekirse geri alma gerçekleştirilebilir, ancak diğer öğelerden bağlantısı kesilmişse ve kaldırılmasını CLR yığınında kalır `store.ElementDirectory`. İlişki için roller hala eski rol oyuncuları başvuru.`IsDeleted` geçerlidir.
 
-3.  Kullanıcı bir öğeyi oluşturduktan sonra geri çalıştırdığında ve bir önceki silme Yinele için tekrarlanırsa OnDeleting ve OnDeleted adı verilir. Kullanım `this.Store.InUndoRedoOrRollback` deposu öğeleri bu gibi durumlarda güncelleştirme önlemek için. Daha fazla bilgi için bkz: [nasıl yapılır: kullanım modeli güncelleştirmek için işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
+3. Kullanıcının bir öğenin oluşturduktan sonra geri çağırır ve önceki bir silme işlemi Yinele için tekrarlandığında OnDeleting ve OnDeleted adı verilir. Kullanım `this.Store.InUndoRedoOrRollback` bu gibi durumlarda mağazası öğeleri güncelleştirme önlemek için. Daha fazla bilgi için [nasıl yapılır: modeli güncelleştirmek için kullanım işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
 
- Örneğin, son alt şarkı silindiğinde, aşağıdaki kod bir albümü siler:
+   Örneğin, son alt şarkı silindiğinde aşağıdaki kod, albüm siler:
 
 ```
 
@@ -162,10 +163,9 @@ partial class AlbumHasSongs
       {
         this.Album.Delete();
 } } } }
-
 ```
 
- Genellikle daha yararlıdır yararlı tetikleyici rol öğeden ilişkinin silinmeye karşı öğesi silindiğinde bu her ikisi de çalıştığından ve ilişki silindiğinde. Ancak, bir başvuru ilişkisi için ilgili bir öğe silindiğinde, ancak ilişki silinmez silme yaymak isteyebilirsiniz. Bu örnek, kendi son katkıda bulunan sanatçı silinir, ancak silinen ilişkiler varsa yanıtlamıyor albüm siler:
+ Daha fazla genellikle olduğu yararlı tetikleyici ilişkisinin rolünü öğeden silinmeye karşı öğe silindiğinde bu hem de çalıştığından ve ilişki silindiğinde. Ancak, bir başvuru ilişkisi için ilgili bir öğe silindiğinde ancak ilişki silinmez silme işlemi yayar isteyebilirsiniz. Bu örnekte, son katkıda bulunan sanatçının silinmiş, ancak silinen ilişkiler, yanıtlamıyor albüm siler:
 
 ```
 using System.Linq; ...
@@ -190,26 +190,25 @@ partial class Artist
     {
       album.Delete();
 } } }
-
 ```
 
- Gerçekleştirdiğinizde <xref:Microsoft.VisualStudio.Modeling.ModelElement.Delete%2A> bir öğede OnDeleting ve OnDeleted çağrılır. Bu yöntemlerin her zaman gerçekleştirilen satır içi - diğer bir deyişle, hemen önce ve sonra gerçek silme olursunuz. Kodunuzu iki veya daha fazla öğe silerse, OnDeleting ve OnDeleted bunların tümünde değişim içinde sırayla çağrılır.
+ Gerçekleştirirken <xref:Microsoft.VisualStudio.Modeling.ModelElement.Delete%2A> OnDeleting ve OnDeleted bir öğe üzerinde çağrılır. Bu yöntemlerin her zaman gerçekleştirilen satır içi - diğer bir deyişle, hemen önce ve sonra gerçek silme işlemi var. Kodunuzu iki veya daha fazla öğe silerse, OnDeleting ve OnDeleted tümünde değişim içinde sırayla çağrılır.
 
-##  <a name="rules"></a> Silme kuralları ve olaylar
- OnDelete işleyicileri için alternatif olarak, silme kuralları ve silme olaylarını tanımlayabilirsiniz.
+## <a name="rules"></a> Silme kuralları ve olaylar
+ OnDelete işleyiciler alternatif, silme kuralları ve silme olaylarını tanımlayabilirsiniz.
 
-1.  **Silme** ve **silmek** kuralları yalnızca bir işlem ve bir geri alma veya Yinele tetiklenir. Bunları silme gerçekleştirildiği işlem sonunda yürütmek için sıraya ayarlayabilirsiniz. Silme kurallar sırada olan tüm silinen kuralları önce her zaman yürütülür.
+1.  **Silme** ve **Sil** kuralları yalnızca bir işlemde ve bir geri alma veya yineleme içinde değil tetiklenir. Bunları silme gerçekleştirildiği işlem sonunda yürütmek için kuyruğa alınacak ayarlayabilirsiniz. Silme kuralları sırada olan tüm silinen kuralları önce her zaman yürütülür.
 
-     Yalnızca ilişkileri, diyagram öğeleri ve özellikleri dahil olmak üzere deposundaki öğeleri etkileyen değişiklikleri yaymak için kuralları kullanın. Genellikle, bir silme kural silme yaymak için kullanılır ve silme kuralı değiştirme öğe ve ilişki oluşturmak için kullanılır.
+     Yalnızca öğeleri ilişkileri, diyagram öğeleri ve özellikleri de dahil olmak üzere deposundaki etkileyen değişiklikleri yaymak için kuralları kullanın. Genellikle, silme kural silme yaymak için kullanılır ve bir Delete kural değiştirme öğeleri ve ilişkileri oluşturmak için kullanılır.
 
-     Daha fazla bilgi için bkz: [kuralları yayılması değişiklikleri içindeki Model](../modeling/rules-propagate-changes-within-the-model.md).
+     Daha fazla bilgi için [kuralları yaymak değişiklikleri içinde modeli](../modeling/rules-propagate-changes-within-the-model.md).
 
-2.  **Silinen** deposu olay bir işlem sonunda çağrılır ve bir geri alma veya yineleme sonra çağrılır. Bu nedenle silme dosyaları, veritabanı girişlerini veya diğer nesneleri gibi depo dışındaki nesnelere yaymak için kullanılabilmesi için [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].
+2.  **Silinen** deposu olay, bir işlem sonunda çağrılır ve bir geri alma veya yineleme sonra çağrılır. Bu nedenle, silme işlemleri deponun dosyaları, veritabanı girdileri veya diğer nesneleri Visual Studio'da gibi dışındaki nesneler yaymak için de kullanılabilir.
 
-     Daha fazla bilgi için bkz: [olay işleyicileri yayılması değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
+     Daha fazla bilgi için [olay işleyicileri yaymak değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
 
     > [!WARNING]
-    >  Bir öğenin silindiğinde, etki alanı özellik değerlerinin erişebilirsiniz, ancak ilişki bağlantılar gidemezsiniz. Ancak, bir ilişkiye silinmiş bir olay ayarlarsanız, kendi rol oyuncuları olan iki öğe de erişebilirsiniz. Bu nedenle, bir model öğesi silme işlemini yanıt ancak bağlı bir öğeyi erişmek istediğiniz istiyorsanız, delete olayı model öğenin etki alanı sınıfı yerine ilişki ayarlayın.
+    >  Bir öğe silindiğinde, etki alanı özellik değerlerine erişebilirsiniz, ancak ilişki bağlantılarını gidilemiyor. Ancak, silinen bir olay bir ilişkiye ayarlarsanız, kendi rol oyuncuları olan iki öğe de erişebilirsiniz. Bu nedenle, bir model öğesini silme işlemi için yanıt, ancak bağlı bir öğeye erişmeyi istediğiniz istiyorsanız, model öğesinin etki alanı sınıfı yerine ilişkiyi silme olayı ayarlayın.
 
 ### <a name="example-deletion-rules"></a>Örnek silme kuralları
 
@@ -245,10 +244,9 @@ public partial class MusicLibDomainModel
     return types.ToArray();
   }
 }
-
 ```
 
-### <a name="example-deleted-event"></a>Örnek olayı silindi
+### <a name="example-deleted-event"></a>Örnek olay silindi
 
 ```
 partial class NestedShapesSampleDocData
@@ -282,15 +280,14 @@ partial class NestedShapesSampleDocData
     }
   }
 }
-
 ```
 
-##  <a name="unmerge"></a> Bölme
- Bir alt öğesi kendi üst iliştirir işlemi çağrıldı *birleştirme*. Yeni bir öğe olduğunda oluşur veya öğeleri grubunu araç kutusu'ndan oluşturulan veya başka bir modelin parçası taşınmış veya Pano'dan kopyalanır. Üst ve yeni alt arasında katıştırma bir ilişki oluşturma yanı sıra, birleştirme işlemi ayrıca ek ilişkileri ayarlamanız, yardımcı öğeleri oluşturun ve öğeleri özellik değerlerini ayarlar. Birleştirme işlemi, bir öğenin birleştirme yönergesi (EMD) kapsüllenir.
+## <a name="unmerge"></a> Çöz
+ Bir alt öğesi kendi üst öğesine iliştirir işlem çağrılır *birleştirme*. Yeni bir öğe olduğunda oluşur veya öğeler grubu araç kutusundan oluşturulan veya başka bir modelin parçası olarak taşınır veya panodan kopyalanır. Üst ve yeni alt öğe arasındaki gömme ilişkisi oluşturmanın yanı sıra, birleştirme işlemi de ek ilişkileri ayarlamanız yardımcı öğeleri oluşturmak ve öğesinde ayarlanan özellik değerleri. Birleştirme işlemi, bir öğe birleştirme yönergesi (EMD) içinde kapsüllenir.
 
- Bir EMD de tamamlayıcı yalıtır *Çöz* veya `MergeDisconnect` işlemi. Bir birleştirme kullanılarak oluşturulan bir küme öğe varsa, ilişkili kullanmak için önerilir bu sınıftan bir öğeyi kaldırmak için kalan öğeleri tutarlı bir durumda bırakır istiyorsanız Çöz. Birleştirme işlemi genellikle önceki bölümlerde açıklanan teknikleri kullanır.
+ Ayrıca bir EMD tamamlayıcı kapsülleyen *Çöz* veya `MergeDisconnect` işlemi. Bir birleştirme kullanarak oluşturulan bir küme öğe varsa, ilişkili kullanmak için önerilir tutarlı bir durumda kalan öğeleri bırakmak istiyorsanız, bu sınıftan bir öğe kaldırmak için bölme. Birleştirme işlemi genellikle önceki bölümlerde açıklanan teknikleri kullanır.
 
- Daha fazla bilgi için bkz: [özelleştirme öğesi oluşturma ve taşıma](../modeling/customizing-element-creation-and-movement.md).
+ Daha fazla bilgi için [özelleştirme öğe oluşturma ve hareketini](../modeling/customizing-element-creation-and-movement.md).
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 

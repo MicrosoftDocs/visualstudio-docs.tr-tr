@@ -13,34 +13,37 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: cfb41cf6274238fef2de9b74496a33fba110e04f
-ms.sourcegitcommit: fb73b56d45ebc0386cd4de1a706ba9e20c59daf1
+ms.openlocfilehash: d89dbc0b752c2b8c538ec53769c166b6edbd802f
+ms.sourcegitcommit: 1df0ae74af03bcf0244129a29fd6bd605efc9f61
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50915279"
 ---
-Uzak bilgisayarda yönetici izinlerine sahip olması.  
+1. Uzak bilgisayarda bulmak ve başlatmak **uzaktan hata ayıklayıcı** gelen **Başlat** menüsü. 
+   
+   Uzak bilgisayarda yönetici izinlerine sahip değilseniz, sağ **uzaktan hata ayıklayıcı** seçin **yönetici olarak çalıştır**. Aksi takdirde, yalnızca başlatın normalde.
+
+   Farklı sürümlerini olabilir *msvsmon.exe* içinde *x64*, *x32*, veya başka klasörler. Uygulamanızda hata ayıklama gereken sürümü başlatmak istediğinizden emin olun. 
+   
+1. İlk kez uzaktan hata ayıklayıcıyı başlattığınızda (veya önce yapılandırdığınızdan,), **uzaktan hata ayıklama Yapılandırması** iletişim kutusu görüntülenir.  
   
-1.  Uzaktan hata ayıklayıcı uygulama bulun. (Msvsmon.exe onu yüklendiği konumda bulunamadı veya arayın ve Başlat menüsünden açmak **uzaktan hata ayıklayıcı**.)
+    ![Uzaktan hata ayıklayıcı yapılandırma](../media/remotedebuggerconfwizardpage.png "uzaktan hata ayıklayıcı yapılandırma")  
   
-     Uzaktan hata ayıklayıcı uzak bir sunucuda çalışıyorsa, uzaktan hata ayıklayıcı uygulama sağ tıklatın ve seçin **yönetici olarak çalıştır**. Uzak bir sunucuda bu çalıştırmıyorsanız yalnızca başlatın normalde.
+1. Windows Web Servisleri API, yalnızca Windows Server 2008 R2 üzerinde gerçekleşen yüklü değilse, seçin **yükleme** düğmesi.  
   
-3.  Başlattığınızda uzak araçları ilk kez (veya, yapılandırdığınız önce), **uzaktan hata ayıklama yapılandırmasını** iletişim kutusu görüntülenir.  
+1. Uzak Araçlar üzerinde kullanmak istediğiniz en az bir ağ türünü seçin. Bilgisayarları bir etki alanına bağlıysanız, ilk öğe seçmeniz gerekir. Bilgisayar bir çalışma grubunda veya ev grubu bağlıysa, uygun şekilde ikinci veya üçüncü öğeyi seçin.  
   
-     ![RemoteDebuggerConfWizardPage](../media/remotedebuggerconfwizardpage.png "RemoteDebuggerConfWizardPage")  
+1. Seçin **uzaktan hata ayıklamayı Yapılandır** güvenlik duvarını yapılandırmak ve uzaktan hata ayıklayıcıyı başlatın.  
   
-4.  Windows hizmeti API'si (yalnızca Windows Server 2008 R2 üzerinde gerçekleşen) yüklü değilse seçin **yükleme** düğmesi.  
+1. Yapılandırma tamamlandığında, **uzaktan hata ayıklayıcı** penceresi görüntülenir.
   
-5.  Üzerindeki uzak araçları kullanmak istediğiniz ağ türlerini seçin. En az bir ağ türü seçilmelidir. Bilgisayarlar üzerinden bir etki alanına bağlıysanız, ilk öğe seçmeniz gerekir. Bilgisayar bir çalışma grubu veya ev grubu aracılığıyla bağlıysanız, uygun şekilde ikinci ya da üçüncü öğesini seçmeniz gerekir.  
+    ![Uzaktan hata ayıklayıcı penceresini](../media/remotedebuggerwindow.png "uzaktan hata ayıklayıcı penceresi")
   
-6.  Seçin **uzaktan hata ayıklama yapılandırma** güvenlik duvarını yapılandırın ve Aracı'nı başlatın.  
+    Uzaktan hata ayıklayıcı şimdi bir bağlantı için bekliyor. Sunucu adı ve bağlantı noktası numarasına uzaktan bağlantı yapılandırmasını Visual Studio'da ayarlayın.  
   
-7.  Yapılandırma tamamlandıktan sonra uzaktan hata ayıklayıcı penceresi görüntülenir.
+Uzaktan hata ayıklayıcıyı durdurmak için seçin **dosya** > **çıkış**. Buradan yeniden **Başlat** menüsünden veya komut satırından:  
   
-     ![RemoteDebuggerWindow](../media/remotedebuggerwindow.png "RemoteDebuggerWindow")
-  
-     Uzaktan hata ayıklayıcı şimdi bir bağlantı için bekliyor. Sunucu adını not edin ve bu Visual Studio'da daha sonra kullanmak yapılandırma ile eşleşmesi gerekir çünkü görüntülenir, numarası bağlantı noktası.  
-  
- Hata ayıklama ve uzak hata ayıklayıcıyı gerek bittiğinde tıklatın **Dosya > çıkış** penceresinde. Buradan yeniden **Başlat** menü veya komut satırından:  
-  
- **\<Visual Studio yükleme dizini > \Common7\IDE\Remote hata ayıklayıcı\\< x86, x64 veya Appx > \msvsmon.exe**.  
+```cmd
+<Remote debugger installation directory>\msvsmon.exe
+```

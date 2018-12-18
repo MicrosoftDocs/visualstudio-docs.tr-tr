@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31476611"
 ---
 # <a name="spy-help"></a>Spy++ Yardımı
 Spy ++ yardımcı programı belgeleri iki grup genel konular üzerinde kullanarak Spy ++ ve Spy ++ görünümleri içerir. Bunlar, Spy ++ her kullanılabilen menü komutu ve iletişim kutusunu daha ayrıntılı bilgi sağlayan başvuruya göre izlenir.  

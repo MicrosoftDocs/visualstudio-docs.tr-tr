@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 39695d37012f90d7e61c04f64ee1c05f11482373
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 150380d77b6e59cf6db822bca7f674759fb8a56f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873785"
 ---
 # <a name="idebugfunctionobjectcreatearrayobject"></a>IDebugFunctionObject::CreateArrayObject
-Bir dizi nesnesi oluşturur. Bu dizi ya da ilkel içeren veya örnek değerleri nesne.  
+Bir dizi nesnesi oluşturur. Bu dizi ya da temel içeren ya da örnek değerleri nesne.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,28 +51,28 @@ int CreateArrayObject(
   
 #### <a name="parameters"></a>Parametreler  
  `ot`  
- [in] Arasında bir değer belirtir [Nesne_türü](../../../extensibility/debugger/reference/object-type.md) yeni dizi nesnesi türünü gösteren numaralandırma.  
+ [in] Bir değer belirtir [Nesne_türü](../../../extensibility/debugger/reference/object-type.md) yeni bir dizi nesne türünü gösteren sabit listesi.  
   
  `pClassField`  
- [in] Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) bir dizi nesnesinin örneği değerleri oluşturuyorsanız bir nesnenin sınıfını temsil eden nesne. İlkel nesnelerinin bir dizisi oluşturuyorsanız, bu parametre null bir değerdir.  
+ [in] Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) nesnenin bir dizi örnek değerleri oluşturuyorsanız bir nesnenin sınıfını temsil eden nesne. Temel nesneler dizisi oluşturuyorsanız, bu parametre null bir değerdir.  
   
  `dwRank`  
- [in] Derece veya dizinin boyut sayısını.  
+ [in] Boyut veya dizinin boyut sayısı.  
   
  `dwDims`  
- [in] Dizinin her boyut boyutları.  
+ [in] Dizinin her boyutunun boyutları.  
   
  `dwLowBounds`  
- [in] Her boyut kökeni (genellikle 0 veya 1).  
+ [in] Her boyutun kaynağını (genellikle 0 veya 1).  
   
  `ppObject`  
- [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) yeni oluşturulan dizi temsil eden nesne. Bu gerçekten olan bir [IDebugArrayObject](../../../extensibility/debugger/reference/idebugarrayobject.md) nesnesi.  
+ [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) yeni oluşturulan diziyi temsil eden nesne. Bu, aslında bir [IDebugArrayObject](../../../extensibility/debugger/reference/idebugarrayobject.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir dizi parametresi tarafından temsil edilen işlevi temsil eden bir nesne oluşturmak için bu yöntemi çağırın [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
+ Tarafından temsil edilen işlevi için bir dizi parametre temsil eden bir nesne oluşturmak için bu yöntemi çağırın [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md)

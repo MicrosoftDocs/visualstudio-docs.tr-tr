@@ -1,10 +1,9 @@
 ---
-title: Önkoşullar iletişim kutusu | Microsoft Docs
-ms.custom: ''
-ms.date: 01/18/2018
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+title: Önkoşullar İletişim Kutusu
+ms.date: 06/29/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - Microsoft.VisualStudio.Publish.BaseProvider.Dialog.Bootstrapper
 helpviewer_keywords:
@@ -14,44 +13,46 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e19ed464586346d8a40f26ab2e8b4d172effb40d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5faf8e34a9aca77cd6762b5409919fac0978caf7
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39176934"
 ---
-# <a name="prerequisites-dialog-box"></a>Önkoşullar İletişim Kutusu
+# <a name="prerequisites-dialog-box"></a>Önkoşullar iletişim kutusu
 
-Bu iletişim kutusu, hangi önkoşul bileşenlerinin yüklü olduğu, nasıl yükleneceğini ve paketleri yüklü olan sıra belirtir.
+**Önkoşulları** iletişim kutusu, hangi önkoşul bileşenlerinin yüklendiğini, nasıl yüklendiğini ve yüklü paketleri sıra belirtir.
 
-Bu iletişim kutusunu erişmek için bir proje düğümünde seçin **Çözüm Gezgini**ve ardından **proje** menüsünde tıklatın **özellikleri**. Zaman **Proje Tasarımcısı** görünen tıklatın **Yayımla** sekmesi. Üzerinde **Yayımla** sayfasında, **Önkoşullar**. Kurulum projeleri için üzerinde **proje** menüsünde tıklatın **özellikleri**. Zaman **özellik sayfaları** iletişim kutusu görüntülenirse, tıklatın **Önkoşullar**.
+![Visual Studio'da, Önkoşullar iletişim kutusu](media/prerequisites-dialog-box.png)
 
-## <a name="uielement-list"></a>UIElement Listesi
+İletişim kutusuna erişmek için bir proje düğümü seçin **Çözüm Gezgini**ve ardından **proje** > **özellikleri**. Zaman **Proje Tasarımcısı** görüntülenirse, seçin **Yayımla** sekmesine tıklayın ve ardından **önkoşulları**. Projeler kurmak üzerinde **proje** menüsünde tıklatın **özellikleri**. Zaman **özellik sayfaları** iletişim kutusu görüntülendikten sonra **önkoşulları**.
 
-|Öğe|Açıklama|
-|-------------|-----------------|
-|**Önkoşul bileşenlerini yüklemek için Kurulum programını oluşturun**|Böylece, uygulamanızda bağımlılık sırasını önce yüklenecek önkoşul bileşenleri uygulamanızın Kurulum programını (Setup.exe) içerir. Varsayılan olarak, bu seçenek seçilidir. Seçilmezse, hiçbir Setup.exe oluşturulur.|
-|**Yüklemek için hangi Önkoşullar seçin**|Bileşenleri gibi yüklenip yüklenmeyeceğini belirtir [!INCLUDE[dnprdnshort](../../code-quality/includes/dnprdnshort_md.md)], Crystal Reports ve benzeri.<br /><br /> Örneğin, onay kutusunu seçerek yanına **SQL Server 2005 Express Edition SP2**, Kurulum programı bu bileşen hedef bilgisayar üzerinde yüklü olduğundan ve zaten yüklü değilse yükleyin olup olmadığını doğrulayın belirtin.<br /><br /> Önkoşul her paket hakkında ayrıntılı bilgi için bu konunun ilerleyen bölümlerinde önkoşul bilgilerini tabloya bakın.|
-|**Microsoft Update için daha yeniden dağıtılabilir bileşenleri seçin**|Bu bağlantıya tıkladıklarında, alan için [bileşenleri yeniden dağıtmak için önyükleyici paketleri](http://go.microsoft.com/fwlink/?LinkId=208835) güncelleştirmeleri denetlemek için Web sitesi.|
-|**Bileşen satıcısının web sitesinden önkoşulları**|Önkoşul bileşenlerinin satıcısının Web sitesinden yüklenmesini belirtir. Varsayılan seçenek budur.|
-|**Önkoşulları Uygulamamla aynı konumdan indir**|Önkoşul bileşenlerinin uygulamayla aynı konumda yüklenmesini belirtir. Bu, tüm önkoşul yayımlama konumuna kopyalar. Bu seçeneğin çalışması için önkoşul paketleri geliştirme bilgisayarında olmalıdır.|
-|**Önkoşulları aşağıdaki konumdan indir**|Ön koşul bileşenleri seçtiğiniz konumdan yüklenmesi belirtir. Kullanabileceğiniz **Gözat** düğmesine tıklayarak bir konum seçin.|
-
-## <a name="prerequisites-information"></a>Önkoşul bilgileri
-
-Görünür önkoşul bileşenleri **Önkoşullar** iletişim kutusu aşağıdaki listede arasından farklı. Listelenen önkoşul **Önkoşullar iletişim kutusu** ilk kez iletişim kutusunu açtığınızda otomatik olarak ayarlanır. Projenin hedef çerçevesi daha sonra değiştirirseniz, yeni hedef Framework'ü el ile eşleşecek şekilde önkoşulları gerekecektir.
+## <a name="uielement-list"></a>UIElement listesi
 
 |Öğe|Açıklama|
 |-------------|-----------------|
-|**.NET framework 3.5 SP1**|Bu paket aşağıdaki yükler:<br /><br /> -.NET framework sürüm 2.0, 3.0 ve 3.5.<br />-(X86) ve 64-bit (x64) 32-bit işletim sistemlerinde tüm .NET Framework sürümleri için destek.<br />-Dil paketleri paket ile yüklenen her bir .NET Framework sürümü için.<br />-Hizmet paketleri .NET Framework 2.0 ve 3.0 için.<br /><br /> .NET framework 3.0, Windows Vista ile eklenir ve .NET Framework 3.5 ile birlikte [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. 32-bit işletim sistemleri ve hedef Framework'ü kümesi için derlenmiş tüm Visual Basic ve C# projeleri için .NET framework 3.5 gereklidir **.NET Framework 3.5**ve 64 bit için derlenmiş Visual Basic ve C# projeleri işletim sistemleri. (IA64 desteklenmiyor.) Varsayılan olarak tüm CPU mimarisi için Visual Basic ve Visual C# projeleri derlenmiş unutmayın. Daha fazla bilgi için bkz: [Visual Studio çoklu sürüm desteğine genel bakış](../../ide/visual-studio-multi-targeting-overview.md) ve [64-bit uygulamalar için önkoşulları dağıtma](../../deployment/deploying-prerequisites-for-64-bit-applications.md).<br /><br /> Varsayılan olarak, bu öğe seçilir.|
-|**Microsoft .NET Framework 4.x**|Bu paketi yükler .NET Framework 4.x x86 hem x64 platformlar için.|
-|**SQL Server 2014 (x64 ve x86) için Microsoft System CLR Types**|Bu paket, x64 veya x86 için SQL Server 2014 için Microsoft System CLR Types yükler.|
-|**SQL Server 2008 R2 Express**|Bu paket, Microsoft SQL Server 2008 R2 Express, Microsoft SQL Server 2008 R2, küçük bir web, sunucu veya Masaüstü uygulamaları için ideal bir veritabanı boş bir sürümünü yükler. Ücretsiz geliştirme ve üretim için kullanılabilir.|
+|**Önkoşul bileşenlerini yüklemek için Kurulum programı oluşturma**|Uygulamanızın Kurulum programına Önkoşul bileşenlerini içerir (*Setup.exe*) ve böylece bunlar uygulamanızdan önce bağımlılık sırasına göre yüklenmesi. Varsayılan olarak, bu seçenek seçilidir. Seçilmezse, hiçbir *Setup.exe* oluşturulur.|
+|**Hangi önkoşulların yükleneceğini seçin**|.NET Framework ve C++ çalışma zamanı kitaplıkları gibi bileşenlerin yüklenip yüklenmeyeceğini belirtir.<br /><br />Örneğin, onay kutusunu seçerek yanındaki **SQL Server 2012 Express**, belirttiğiniz Kurulum programının bu bileşenin hedef bilgisayarda yüklü ve yüklü değilse yükleyin olup olmadığını doğrulamanız gerekir.<br /><br />Her ön koşu paketi hakkında ayrıntılı bilgi için bkz: [Önkoşullar bilgi](#prerequisites-information).|
+|**Bileşen satıcısının web sitesinden önkoşulları karşıdan yükleyin**|Önkoşul bileşenlerinin satıcının Web sitesinden yüklenmesi gerektiğini belirtir. Varsayılan seçenek budur.|
+|**Uygulamamla aynı konumdan önkoşulları karşıdan yükleyin**|Önkoşul bileşenlerin uygulama ile aynı konumdan yüklenmesi gerektiğini belirtir. Bu, tüm önkoşul paketleri yayımlama konumuna kopyalar. Bu seçeneğin çalışması için önkoşul paketleri geliştirme bilgisayarında olmalıdır.|
+|**Aşağıdaki konumdan önkoşulları karşıdan yükleyin**|Önkoşul bileşenlerinin girdiğiniz konumdan yüklenmesi gerektiğini belirtir. Kullanabileceğiniz **Gözat** düğmesine bir konum seçin.|
+
+## <a name="prerequisites-information"></a>Önkoşullar bilgisi
+
+Görünen önkoşul bileşenleri **önkoşulları** farklı aşağıdaki listede bu iletişim kutusu. Listelenen önkoşul paketleri **Önkoşullar iletişim kutusu** iletişim kutusunu ilk açışınızda otomatik olarak ayarlanır. Projenin hedef çerçevesi daha sonra değiştirirseniz, yeni hedef Framework'ü el ile eşleştirmek için önkoşulları seçmeniz gerekir.
+
+|Öğe|Açıklama|
+|-------------|-----------------|
+|**.NET framework 3.5 SP1**|Bu paket aşağıdakileri yükler:<br /><br /> -.NET framework sürümleri 2.0, 3.0 ve 3.5.<br />-(X86) ve 64-bit (x64) 32-bit işletim sistemlerinde tüm .NET Framework sürümleri için destek.<br />-Paketle yüklenen her .NET Framework sürümü için dil paketleri.<br />-.NET Framework 2.0 ve 3.0 için hizmet paketleri.<br /><br /> .NET framework 3.0, Windows Vista ile bulunur ve .NET Framework 3.5 Visual Studio'ya dahildir. Hedef çerçeve kümesi ve 32-bit işletim sistemleri için derlenen tüm Visual Basic ve C# projeleri için .NET framework 3.5 gereklidir **.NET Framework 3.5**ve 64 bit için derlenen Visual Basic ve C# projeleri işletim sistemleri. (IA64 desteklenmiyor.) Visual Basic ve C# projeleri varsayılan olarak herhangi bir CPU mimarisi için derlendiğine dikkat edin. Daha fazla bilgi için [Visual Studio çoklu sürüm desteğine genel bakış](../../ide/visual-studio-multi-targeting-overview.md) ve [64-bit uygulamalar için önkoşulları dağıtma](../../deployment/deploying-prerequisites-for-64-bit-applications.md).|
+|**Microsoft .NET Framework 4.x**|Bu paket, .NET Framework'ü yükler 4.x x86 ve x64 platformlar için.|
+|**SQL Server 2014 (x64 ve x86) için Microsoft System CLR Types**|Bu paket, x64 ya da x86 için SQL Server 2014 için Microsoft System CLR Types yükler.|
+|**SQL Server 2008 R2 Express**|Bu paket, Microsoft SQL Server 2008 R2 Express, ücretsiz bir Microsoft SQL Server 2008 R2, küçük web, sunucu veya Masaüstü uygulamaları için ideal bir veritabanı sürümünü yükler. Ücretsiz geliştirme ve üretim için kullanılabilir.|
 |**SQL Server 2012 Express**|Bu paket, Microsoft SQL Server 2012 Express'i yükler.|
-|**SQL Server 2012 Express LocalDB**|Bu paket Microsoft SQL Server 2012 Express LocalDB yükler.|
-|**Visual C++ "14" çalışma zamanı kitaplıkları (ARM)**|Microsoft Windows işletim sistemi için programlama için yordamlar sağlayan Visual C++ çalışma zamanı kitaplıkları Itanium mimarisi için bu paketi yükler. Bu yordamlar C ve C++ dilleri tarafından sağlanmayan birçok genel programlama görevleri otomatik hale getirme.<br /><br /> Daha fazla bilgi için bkz: [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
-|**Visual C++ "14" çalışma zamanı kitaplıkları (x64)**|Bu paket Microsoft Windows işletim sistemi için programlama için yordamlar sağlar sistemleri işletim x64 için Visual C++ çalışma zamanı kitaplıkları yükler. Bu yordamlar C ve C++ dilleri tarafından sağlanmayan birçok genel programlama görevleri otomatik hale getirme.<br /><br /> Daha fazla bilgi için bkz: [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
-|**Visual C++ "14" çalışma zamanı kitaplıkları (x86)**|Bu paket Microsoft Windows işletim sistemi için programlama için yordamlar sağlar sistemleri işletim x86 için Visual C++ çalışma zamanı kitaplıkları yükler. Bu yordamlar C ve C++ dilleri tarafından sağlanmayan birçok genel programlama görevleri otomatik hale getirme.<br /><br /> Daha fazla bilgi için bkz: [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
+|**SQL Server 2012 Express LocalDB**|Bu paket, Microsoft SQL Server 2012 Express LocalDB yükler.|
+|**Visual C++ "14" çalışma zamanı kitaplıkları (ARM)**|Bu paket, Microsoft Windows işletim sistemi için programlama rutinlerini sağlayan Visual C++ çalışma zamanı kitaplıklarını Itanium mimarisi için yükler. Bu yordamlar C ve C++ dillerinin sağlanmayan birçok ortak programlama görevlerini otomatikleştirin.<br /><br /> Daha fazla bilgi için [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
+|**Visual C++ "14" çalışma zamanı kitaplıklarının (x64)**|Bu paket, işletim sistemleri, Microsoft Windows işletim sistemi için programlama rutinlerini sağlayan x64 için Visual C++ çalışma zamanı kitaplıklarını yükler. Bu yordamlar C ve C++ dillerinin sağlanmayan birçok ortak programlama görevlerini otomatikleştirin.<br /><br /> Daha fazla bilgi için [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
+|**Visual C++ "14" çalışma zamanı kitaplıklarının (x86)**|Bu paket, işletim sistemleri, Microsoft Windows işletim sistemi için programlama rutinlerini sağlayan x86 için Visual C++ çalışma zamanı kitaplıklarını yükler. Bu yordamlar C ve C++ dillerinin sağlanmayan birçok ortak programlama görevlerini otomatikleştirin.<br /><br /> Daha fazla bilgi için [C çalışma zamanı kitaplığı başvurusu](/cpp/c-runtime-library/c-run-time-library-reference).|
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

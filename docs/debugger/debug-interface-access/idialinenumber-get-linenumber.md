@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e192f3e0d2aa5b65ea97804080081170d51cab54
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: c745896a4f574514b57f47cff984d2271eaf25bd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49942523"
 ---
 # <a name="idialinenumbergetlinenumber"></a>IDiaLineNumber::get_lineNumber
-Kaynak dosya satır numarasını alır.  
+Kaynak dosyadaki satır numarasını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT get_lineNumber (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Kaynak dosyasında satır numarasını döndürür.  
+ [out] Satır numarası kaynak dosyada döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
   

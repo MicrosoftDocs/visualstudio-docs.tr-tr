@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31138931"
 ---
 # <a name="the-experimental-instance"></a>Deneysel örneği
 Visual Studio geliştirme ortamınızı değişiklik yapmış olabilir sınanmamış uygulamalardan korumak için VSSDK denemek için kullanabileceğiniz Deneysel bir alan sağlar. Visual Studio her zamanki gibi kullanarak yeni uygulamaları geliştirmek, ancak bunları bu deneysel örneği kullanarak çalıştırın.  
@@ -28,7 +29,7 @@ Visual Studio geliştirme ortamınızı değişiklik yapmış olabilir sınanmam
   
  Visual Studio Deneysel örnek bir çözüm dışında başlatmak istiyorsanız, komut penceresinde aşağıdaki komutu çalıştırın:  
   
- "*\<Visual studio yükleme yolu >*\Common7\IDE\devenv.exe" RootSuffix Exp  
+ "*\<Visual studio yükleme yolu >* \Common7\IDE\devenv.exe" RootSuffix Exp  
   
 > [!NOTE]
 >  Deneysel örneği altında kayıt defterine yazılır `<version number>Exp` ve `<version number>Exp_Config` düğümleri. Örneğin Visual Studio 2015 Deneysel kayıt defteri alanıdır  

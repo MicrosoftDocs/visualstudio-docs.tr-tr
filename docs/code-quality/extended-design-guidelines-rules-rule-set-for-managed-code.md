@@ -1,6 +1,7 @@
 ---
 title: Yönetilen kod için Genişletilmiş Tasarım Yönerge Kuralları kural kümesi
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 ms.assetid: a338caf2-b75d-4f23-a0f9-3024fa0bceac
@@ -9,11 +10,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: d03dfd0dce846bd18d35e05e30e32502f38d030b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2842db460d0a8e3a31921d80cf4a0c3ea0bbc847
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31927106"
 ---
 # <a name="extended-design-guidelines-rules-rule-set-for-managed-code"></a>Yönetilen kod için Genişletilmiş Tasarım Yönerge Kuralları kural kümesi
 Microsoft genişletilmiş tasarım yönerge kuralları kural kümesi bildirilen kullanılabilirliğini ve bakım sorunları en üst düzeye çıkarmak için temel tasarım yönerge kuralları genişletir. Adlandırma yönergeleri fazladan Vurgu yerleştirilir. Bu kural, projenizin kitaplık kodu içeriyorsa veya korumak kolaydır kod yazmak için en yüksek standartları zorunlu kılmak istiyorsanız kümesi de dahil olmak üzere göz önünde bulundurmalısınız.

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a1c934dc998818973b5de4106c3df952ad24f22f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 1d097ccbe5c893c603aaa2a018f8fcd422f15ac2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49834539"
 ---
 # <a name="idiaaddressmapsetaddressmap"></a>IDiaAddressMap::set_addressMap
-Görüntü düzeni çevirileri desteklemek için bir adres eşlemesi sağlar.  
+Görüntü düzen çevirileri desteklemek için bir adres Haritası sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,19 +36,19 @@ HRESULT set_addressMap (
   
 #### <a name="parameters"></a>Parametreler  
  `cbData`  
- [in] Öğe sayısı `data` parametresi.  
+ [in] İçindeki öğelerin sayısını `data` parametresi.  
   
  `data[]`  
- [in] Bir dizi [DiaAddressMapEntry yapısı](../../debugger/debug-interface-access/diaaddressmapentry.md) çevirisi eşlemesini tanımla yapıları.  
+ [in] Bir dizi [DiaAddressMapEntry yapısı](../../debugger/debug-interface-access/diaaddressmapentry.md) çevirisi eşlemesini tanımlayan yapılar.  
   
  `imagetoSymbols`  
- [in] `TRUE` varsa `data` parametre (hata ayıklama simgeleri tarafından açıklandığı gibi) yeni resmi düzeni eşlemesinden özgün Düzen tanımlar. `FALSE` varsa `data` özgün düzeninden geçen yeni görüntü düzen eşlemesi.  
+ [in] `TRUE` varsa `data` parametre (hata ayıklama sembolleri tarafından açıklandığı gibi) yeni görüntü düzen bir eşlemden özgün düzene tanımlar. `FALSE` varsa `data` özgün düzenden yapılan yeni görüntü düzen haritasıdır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Genellikle, DIA adres çevirisi eşlemeleri program veritabanı (.pdb) dosyasından alır. Bu değerleri eksikse [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemi iki kez çağrıldığında kez `imagetoSymbols` parametre kümesine `TRUE` ve bir kez ile `imagetoSymbols` parametre kümesine `FALSE`. Adres eşlemesi çevirileri kullanılarak etkinleştirilemiyor [Idiaaddressmap::put_addressmapenabled](../../debugger/debug-interface-access/idiaaddressmap-put-addressmapenabled.md) yöntemi her iki çeviri eşlemeleri belirtilmediği sürece.  
+ Genellikle, DIA adres çevirisi haritalar program veritabanı (.pdb) dosyasından alır. Bu değerleri eksikse [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemi iki kez çağrılır kez `imagetoSymbols` parametresini `TRUE` ve bir kez `imagetoSymbols` parametresini `FALSE`. Adres eşlemesi çevirileri kullanarak etkinleştirilemez [Idiaaddressmap::put_addressmapenabled](../../debugger/debug-interface-access/idiaaddressmap-put-addressmapenabled.md) yöntemi sürece her iki çeviri haritalar sağlanır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [DiaAddressMapEntry yapısı](../../debugger/debug-interface-access/diaaddressmapentry.md)   

@@ -14,63 +14,64 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b9b7d16a9e473028d85540f4447d9981382be0fd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a2e65a1ef3db913223d9248797d1cf4bd9c9ded6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876004"
 ---
-# <a name="registering-single-file-generators"></a>Tek dosya oluşturucuları kaydetme
-Özel bir araç olarak kullanılabilir hale getirmek [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], bu nedenle kaydettirmelisiniz [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] örneğini oluşturabilir ve belirli proje türü ile ilişkilendirir.  
+# <a name="registering-single-file-generators"></a>Tek Dosya Oluşturucuları Kaydetme
+Özel bir araç olarak kullanılabilir hale getirmek için [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], bu nedenle kaydetmelisiniz [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] örneği oluşturabilir ve belirli proje türüyle ilişkilendirir.  
   
 ### <a name="to-register-a-custom-tool"></a>Özel bir aracı kaydetmek için  
   
-1.  Özel araç DLL ya da kayıt içinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] yerel kayıt defteri veya sistem defterinde HKEY_CLASSES_ROOT altında.  
+1. Özel araç DLL ya da kayıt içinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] yerel kayıt defteri veya sistem kayıt defterinde HKEY_CLASSES_ROOT altında.  
   
-     Örneğin, kayıt bilgileri ile birlikte gelen yönetilen MSDataSetGenerator özel aracı, işte [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]:  
+    Örneğin, ile sunulan yönetilen MSDataSetGenerator özel aracı için kayıt bilgileri işte [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]:  
   
-    ```  
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\CLSID\{E76D53CC-3D4F-40A2-BD4D-4F3419755476}]  
-    @="COM+ class: Microsoft.VSDesigner.CodeGenerator.TypedDataSourceGenerator.DataSourceGeneratorWrapper"  
-    "InprocServer32"="C:\\WINDOWS\\system32\\mscoree.dll"  
-    "ThreadingModel"="Both"  
-    "Class"="Microsoft.VSDesigner.CodeGenerator.TypedDataSourceGenerator.DataSourceGeneratorWrapper"  
-    "Assembly"="Microsoft.VSDesigner, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a"  
-    ```  
+   ```  
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\CLSID\{E76D53CC-3D4F-40A2-BD4D-4F3419755476}]  
+   @="COM+ class: Microsoft.VSDesigner.CodeGenerator.TypedDataSourceGenerator.DataSourceGeneratorWrapper"  
+   "InprocServer32"="C:\\WINDOWS\\system32\\mscoree.dll"  
+   "ThreadingModel"="Both"  
+   "Class"="Microsoft.VSDesigner.CodeGenerator.TypedDataSourceGenerator.DataSourceGeneratorWrapper"  
+   "Assembly"="Microsoft.VSDesigner, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a"  
+   ```  
   
-2.  Bir kayıt defteri anahtarı oluşturmak istediğiniz [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hive oluşturucuları altında\\*GUID* nerede *GUID* GUID belirli dilin proje sistemi veya hizmet tarafından tanımlanır. Anahtar adı, özel araç programlı adı haline gelir. Özel araç anahtar aşağıdaki değerlere sahiptir:  
+2. İstenen bir kayıt defteri anahtarı oluşturma [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] oluşturucuları altında hive\\*GUID* burada *GUID* GUID belirli dil proje sistemi veya hizmet tarafından tanımlanır. Anahtar adı özel aracınızı programlı adı haline gelir. Özel araç anahtar aşağıdaki değerlere sahip:  
   
-    -   (Varsayılan)  
+   -   (Varsayılan)  
   
-         İsteğe bağlı. Özel araç kullanıcı dostu bir açıklaması verilmiştir. Bu parametre isteğe bağlıdır ancak önerilir.  
+        İsteğe bağlı. Özel aracın kullanıcı dostu bir açıklama sağlar. Bu parametre isteğe bağlıdır ancak önerilir.  
   
-    -   CLSID  
+   -   CLSID  
   
-         Gerekli. Sınıf kitaplığı uygulayan COM bileşeninin tanımlayıcısını belirtir <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>.  
+        Gerekli. Sınıf kitaplığı uygulayan COM bileşeninin tanımlayıcısını belirtir <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>.  
   
-    -   GeneratesDesignTimeSource  
+   -   GeneratesDesignTimeSource  
   
-         Gerekli. Bu özel aracı tarafından üretilen dosyalar türlerinden görsel tasarımcılar kullanılabilir olup olmadığını gösterir. Bu parametrenin değeri türleri için görsel tasarımcılar kullanılabilir değil (sıfır) 0 veya (bir) 1 türleri için görsel tasarımcılar kullanılabilir olması gerekir.  
+        Gerekli. Bu özel araç tarafından üretilen dosyaları türlerinden görsel tasarımcılar için kullanılabilir olup olmadığını gösterir. Bu parametrenin değeri türleri görsel tasarımcılar için kullanılabilir değil (sıfır) 0 veya (bir adet) 1 türleri için görsel tasarımcılar kullanılabilir olması gerekir.  
   
-    > [!NOTE]
-    >  Ayrı olarak özel bir araç kullanılabilir olmasını istediğiniz her dil için özel bir araç kaydetmeniz gerekir.  
+   > [!NOTE]
+   >  Ayrı ayrı, özel aracın kullanılabilir olmasını istediğiniz her dil için özel aracı kaydetmeniz gerekir.  
   
-     Örneğin, MSDataSetGenerator kendisini kez her dil için kaydeder:  
+    Örneğin, MSDataSetGenerator kendini kez her dil için kaydeder:  
   
-    ```  
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\Generators\{164b10b9-b200-11d0-8c61-00a0c91e29d5}\MSDataSetGenerator]  
-    @="Microsoft VB Code Generator for XSD"  
-    "CLSID"="{E76D53CC-3D4F-40a2-BD4D-4F3419755476}"  
-    "GeneratesDesignTimeSource"=dword:00000001  
+   ```  
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\Generators\{164b10b9-b200-11d0-8c61-00a0c91e29d5}\MSDataSetGenerator]  
+   @="Microsoft VB Code Generator for XSD"  
+   "CLSID"="{E76D53CC-3D4F-40a2-BD4D-4F3419755476}"  
+   "GeneratesDesignTimeSource"=dword:00000001  
   
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\Generators\{fae04ec1-301f-11d3-bf4b-00c04f79efbc}\MSDataSetGenerator]  
-    @="Microsoft C# Code Generator for XSD"  
-    "CLSID"="{E76D53CC-3D4F-40a2-BD4D-4F3419755476}"  
-    "GeneratesDesignTimeSource"=dword:00000001  
-    ```  
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\14.0\Generators\{fae04ec1-301f-11d3-bf4b-00c04f79efbc}\MSDataSetGenerator]  
+   @="Microsoft C# Code Generator for XSD"  
+   "CLSID"="{E76D53CC-3D4F-40a2-BD4D-4F3419755476}"  
+   "GeneratesDesignTimeSource"=dword:00000001  
+   ```  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>   
- [Tek dosya oluşturucuları uygulama](../../extensibility/internals/implementing-single-file-generators.md)   
- [Görsel tasarımcılar türlerine gösterme](../../extensibility/internals/exposing-types-to-visual-designers.md)   
- [BuildManager nesnesine giriş](http://msdn.microsoft.com/en-us/50080ec2-c1c9-412c-98ef-18d7f895e7fa)
+ [Tek dosya oluşturucular ekleme](../../extensibility/internals/implementing-single-file-generators.md)   
+ [Türleri görsel tasarımcıların gösterme](../../extensibility/internals/exposing-types-to-visual-designers.md)   
+ [BuildManager nesnesine giriş](https://msdn.microsoft.com/library/50080ec2-c1c9-412c-98ef-18d7f895e7fa)

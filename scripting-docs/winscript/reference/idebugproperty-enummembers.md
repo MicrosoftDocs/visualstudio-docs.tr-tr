@@ -1,11 +1,11 @@
 ---
 title: IDebugProperty::EnumMembers | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IDebugProperty.EnumMembers
@@ -14,18 +14,19 @@ apilocation:
 helpviewer_keywords:
 - IDebugProperty::EnumMembers
 ms.assetid: 8ce398a5-6452-4804-ae8f-5c54cd11c661
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: 9cb57f2609fcd9a80e2a9e0dfd63637e6f700047
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 07ad47ee8d0232df5f528db659def421475e7b33
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49924251"
 ---
 # <a name="idebugpropertyenummembers"></a>IDebugProperty::EnumMembers
-Bir özellik üyeleri numaralandırır.  
+Bir özellik üyesi numaralandırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,16 +41,16 @@ HRESULT EnumMembers (
   
 #### <a name="parameters"></a>Parametreler  
  `dwFieldSpec`  
- [in] Belirtir `DBGPROP_INFO_FLAGS` doldurulacak hangi alanların numaralandırılmış hata ayıklama özelliği yapılarında belirlemek sabitleri.  
+ [in] Belirtir `DBGPROP_INFO_FLAGS` numaralandırılmış hata ayıklama özelliği yapılardaki hangi alanların doldurulması belirlemek sabitler.  
   
  `nRadix`  
- [in] Herhangi bir sayısal bilgi yorumlanırken kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine yorumlama içinde kullanılacak sayı tabanı.  
   
  `refiid`  
- [in] Bu IID Numaralandırıcı filtreleme için geçirilir. IID biri `IDebugPropertyEnumType` devralınmalıdır arabirimleri `IDebugPropertyEnumType_All`.  
+ [in] Bu IID, numaralandırıcı filtreleme için geçirilir. IID biridir `IDebugPropertyEnumType` devralacak arabirimleri `IDebugPropertyEnumType_All`.  
   
  `ppEnum`  
- [out] Döndürür `IEnumDebugPropertyInfo` üye özellikleri numaralandırır arabirimi.  
+ [out] Döndürür `IEnumDebugPropertyInfo` arabirim üyesi özellikleri listeler.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Geçerli bir döndürür `HRESULT`, genellikle `S_OK`.  
@@ -58,4 +59,4 @@ HRESULT EnumMembers (
  [Idebugproperty arabirimi](../../winscript/reference/idebugproperty-interface.md)   
  [DBGPROP_INFO_FLAGS](../../winscript/reference/dbgprop-info-flags.md)   
  [Idebugpropertyenumtype_all arabirimi](../../winscript/reference/idebugpropertyenumtype-all-interface.md)   
- [Ienumdebugpropertyınfo arabirimi](../../winscript/reference/ienumdebugpropertyinfo-interface.md)
+ [IEnumDebugPropertyInfo Arabirimi](../../winscript/reference/ienumdebugpropertyinfo-interface.md)

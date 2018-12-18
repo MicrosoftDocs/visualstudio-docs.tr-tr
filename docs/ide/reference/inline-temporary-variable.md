@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da değeriyle geçici bir değişken Değiştir | Microsoft Docs
-ms.custom: ''
+title: Geçici bir değişken değeriyle değiştirin.
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
 author: gewarren
@@ -12,11 +12,12 @@ dev_langs:
 - VB
 ms.workload:
 - dotnet
-ms.openlocfilehash: 12cce111e3c66018cd10e7e50e9018dc9dbfc4d1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a6fea50f3cceb907cb014d29bb46988ab07dad6c
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53066869"
 ---
 # <a name="inline-a-temporary-variable-refactoring"></a>Satır içi bir geçici değişken yeniden düzenleme
 
@@ -26,43 +27,43 @@ Bu yeniden düzenleme için geçerlidir:
 
 - Visual Basic
 
-**Ne:** geçici bir değişken kaldırın ve bunun yerine, değeriyle değiştirmenizi sağlar.
+**Ne:** geçici değişken kaldırın ve bunun yerine değeriyle değiştirme olanak tanır.
 
-**Ne zaman:** geçici değişken kullanımını kodunu anlamanın zorlaştırır.
+**Ne zaman:** geçici değişken kullanımı kodu anlamak zorlaştırır.
 
-**Neden:** geçici bir değişken kaldırılması hale kodu kolay okunur.
+**Neden:** geçici değişken kaldırılması duruma kodu daha kolay okunabilir.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. Vurgula veya metin imleci geçici değişkenin içermesinden olmasını içinde:
+1. Vurgulama veya satır içine alınmayacak kadar geçici değişken metin imleci yerleştirin:
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu - C#](media/inline-highlight-cs.png)
+       ![Vurgulanan kodu:C#](media/inline-highlight-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu - Visual Basic](media/inline-highlight-vb.png)
+       ![Vurgulanan kod - Visual Basic](media/inline-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
    - **Fare**
-     - Kod sağ tıklatıp **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
+      - Kod sağ tıklayıp **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
 
-1. Seçin **satır içi geçici değişken** gelen önizleme penceresi açılır.
+3. Seçin **satır içi geçici değişken** gelen önizleme penceresi açılır.
 
-   Değişkeni kaldırılır ve kendi kullanımları değişkenin değeriyle değiştirilir.
+   Değişken kaldırılır ve kendi kullanımları değişkenin değeriyle değiştirilir.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Satır içi sonucu - C#](media/inline-result-cs.png)
+      ![Satır içi sonucu-C#](media/inline-result-cs.png)
 
    - Visual Basic:
 
-    ![Satır içi sonucu - Visual Basic](media/inline-result-vb.png)
+      ![Satır içi sonucu - Visual Basic](media/inline-result-vb.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Yeniden Düzenleme](../refactoring-in-visual-studio.md)
+- [Yeniden Düzenleme](../refactoring-in-visual-studio.md)

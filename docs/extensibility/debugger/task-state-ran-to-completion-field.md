@@ -1,5 +1,5 @@
 ---
-title: TASK_STATE_RAN_TO_COMPLETION alan | Microsoft Docs
+title: Task_state_ran_to_completıon alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,29 +13,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: becc2087e9b956eb7305793fd41ff0ef4c5fdbcc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0ec080c5fd1fcb206daaab909b5e742245f9fe41
+ms.sourcegitcommit: 8d38d5d2f2b75fc1563952c0d6de0fe43af12766
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276393"
 ---
-# <a name="taskstaterantocompletion-field"></a>TASK_STATE_RAN_TO_COMPLETION alan
+# <a name="taskstaterantocompletion-field"></a>Task_state_ran_to_completıon alanı
 Görev Yürütme başarıyla tamamlandı.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .field static assembly literal int32 TASK_STATE_RAN_TO_COMPLETION = int32(0x02000000)  
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
- Varsa [m_stateFlags](../../extensibility/debugger/m-stateflags-field.md) alan içerir bu değer <xref:System.Threading.Tasks.Task.Status%2A> özelliği döndürür <xref:System.Threading.Tasks.TaskStatus?displayProperty=fullName>.  
+ Varsa [m_stateFlags](../../extensibility/debugger/m-stateflags-field.md) alan içerir, bu değer <xref:System.Threading.Tasks.Task.Status%2A> özelliği döndürür <xref:System.Threading.Tasks.TaskStatus?displayProperty=fullName>.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Task sınıfı](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görev sınıfı](../../extensibility/debugger/task-class-internal-members.md)

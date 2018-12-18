@@ -1,6 +1,7 @@
 ---
 title: "CA2115: Yerel kaynaklar kullanırken GC.KeepAlive'ı çağırın"
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,47 +16,59 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 3eea5a288dc907881b7eb444b26d7018e8008ad2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 21777b19e488e60e68c11ccceaad779dcf4e94a3
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45546999"
 ---
 # <a name="ca2115-call-gckeepalive-when-using-native-resources"></a>CA2115: Yerel kaynaklar kullanırken GC.KeepAlive'ı çağırın
+
 |||
 |-|-|
 |TypeName|CallGCKeepAliveWhenUsingNativeResources|
 |CheckId|CA2115|
 |Kategori|Microsoft.Security|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir yöntem bir sonlandırıcı türüyle içinde bildirilen başvuruda bulunan bir <xref:System.IntPtr?displayProperty=fullName> veya <xref:System.UIntPtr?displayProperty=fullName> alan, ancak çağrılmayan <xref:System.GC.KeepAlive%2A?displayProperty=fullName>.
 
-## <a name="rule-description"></a>Kural Tanımı
- Yönetilen kodda, daha fazla başvuru varsa çöp toplama bir nesne sonlandırır. Nesnelere yönetilmeyen başvurular çöp toplama engellemez. Bu kural, yönetimsiz kod içinde kullanıldığı sırada yönetilmeyen kaynağın sonlandırılması nedeniyle oluşabilecek hataları algılar.
+Bir yöntem bir sonlandırıcı bir türle bildirilen başvuran bir <xref:System.IntPtr?displayProperty=fullName> veya <xref:System.UIntPtr?displayProperty=fullName> alan, ancak arama <xref:System.GC.KeepAlive%2A?displayProperty=fullName>.
 
- Bu kural varsayar <xref:System.IntPtr> ve <xref:System.UIntPtr> alanları yönetilmeyen kaynakları işaretçiler depolar. Bir sonlandırıcı amacı yönetilmeyen kaynakları serbest olduğundan, kuralın sonlandırıcıyı işaretçi alanları tarafından işaret yönetilmeyen kaynak boşaltır varsayar. Bu kural, ayrıca yöntemi yönetilmeyen kaynak yönetilmeyen koda geçirmek için imleç alanı başvurulduğu varsayar.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için bir çağrı ekleyin <xref:System.GC.KeepAlive%2A> yöntemi için geçerli örneğini geçirme (`this` C# ve C++) için bağımsız değişken olarak. Çağrı nereye nesne çöp koleksiyonundan korumalı olması gereken kodu son satırından sonra yerleştirin. Çağrısından sonra hemen <xref:System.GC.KeepAlive%2A>, yönetilen hiçbir başvuruları var olduğu varsayımıyla nesne yeniden atık toplama için hazır olarak kabul edilir.
+Yönetilen kodda daha fazla hiçbir başvurusu, atık toplama bir nesne sonlandırır. Yönetilmeyen nesnelere başvurular atık toplama engellemez. Bu kural, yönetimsiz kod içinde kullanıldığı sırada yönetilmeyen kaynağın sonlandırılması nedeniyle oluşabilecek hataları algılar.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural için hatalı pozitif sonuç yol açabilecek bazı varsayımlarda bulunur. Bu kural bir uyarıdan, güvenli bir şekilde gizleyebilirsiniz:
+Bu kural, varsayar <xref:System.IntPtr> ve <xref:System.UIntPtr> alanları yönetilmeyen kaynakları işaretçileri depolayın. Bir sonlandırıcı amacı yönetilmeyen kaynakları serbest bırakacak olduğundan kural Sonlandırıcı işaretçi alanlara göre işaret yönetilmeyen kaynağı boşaltır varsayar. Bu kural, ayrıca yöntemi yönetilmeyen koda yönetilmeyen kaynağı geçirmek işaretçi alan başvurulduğu varsayar.
 
--   Sonlandırıcıyı içeriğini boş değil <xref:System.IntPtr> veya <xref:System.UIntPtr> yöntemi tarafından başvurulan alan.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
--   Yöntem geçemezse <xref:System.IntPtr> veya <xref:System.UIntPtr> yönetilmeyen kod alanı.
+Bu kural ihlalini düzeltmek için bir çağrı ekleyin <xref:System.GC.KeepAlive%2A> geçerli örnek yöntemine geçirerek (`this` C# ve C++'ta) bağımsız değişken olarak. Çağrı nesnenin çöp koleksiyonundan burada korunması gereken son kod satırının sonra konumlandırın. Çağırdıktan hemen sonra <xref:System.GC.KeepAlive%2A>, yönetilen hiçbir başvurusu yok varsayarak nesne yeniden çöp toplama işlemi için hazır olarak kabul edilir.
 
- Hariç önce diğer iletileri dikkatle gözden geçirin. Bu kural yeniden oluşturun ve hata ayıklama zor olan hataları algılar.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kural, hatalı pozitif sonuçları için yol açabilecek bazı varsayımlarda bulunur. Ayrıca, güvenli bir şekilde bu kuraldan bir uyarıyı gizleyebilirsiniz:
+
+- Sonlandırıcı içeriğini boş olmayan <xref:System.IntPtr> veya <xref:System.UIntPtr> yöntemi tarafından başvurulan alan.
+
+- Yöntem geçemezse <xref:System.IntPtr> veya <xref:System.UIntPtr> yönetilmeyen kod alanı.
+
+Diğer iletiler hariç önce dikkatle inceleyin. Bu kural, yeniden oluşturmak ve hatalarını ayıklamak zor olan hataları algılar.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte, `BadMethod` yapılan bir çağrı içermez `GC.KeepAlive` ve bu nedenle kural ihlal ediyor. `GoodMethod` Düzeltilmiş kodunu içerir.
+
+Aşağıdaki örnekte, `BadMethod` çağrısı içermez `GC.KeepAlive` ve bu nedenle kuralı ihlal ediyor. `GoodMethod` Düzeltilen kod içerir.
 
 > [!NOTE]
->  Kod derlenir ve çalışır ancak bu örnek sahte kodu, bir yönetilmeyen kaynak oluşturulan veya serbest olmadığından uyarı tetiklenir değil.
+> Bu örnekte, sözde kodudur. Kodu derler ve çalıştırır olsa da, yönetilmeyen bir kaynağı oluşturan veya serbest yüklenmediğinden uyarı tetiklendiğinde değil.
 
- [!code-csharp[FxCop.Security.IntptrAndFinalize#1](../code-quality/codesnippet/CSharp/ca2115-call-gc-keepalive-when-using-native-resources_1.cs)]
+[!code-csharp[FxCop.Security.IntptrAndFinalize#1](../code-quality/codesnippet/CSharp/ca2115-call-gc-keepalive-when-using-native-resources_1.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.GC.KeepAlive%2A?displayProperty=fullName> <xref:System.IntPtr?displayProperty=fullName> <xref:System.Object.Finalize%2A?displayProperty=fullName> <xref:System.UIntPtr?displayProperty=fullName> [Desen dispose](/dotnet/standard/design-guidelines/dispose-pattern)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.GC.KeepAlive%2A?displayProperty=fullName>
+- <xref:System.IntPtr?displayProperty=fullName>
+- <xref:System.Object.Finalize%2A?displayProperty=fullName>
+- <xref:System.UIntPtr?displayProperty=fullName>
+- [Dispose Deseni](/dotnet/standard/design-guidelines/dispose-pattern)

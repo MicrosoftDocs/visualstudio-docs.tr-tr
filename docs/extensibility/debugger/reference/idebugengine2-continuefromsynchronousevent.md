@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 305179184df1241b6d944ea78e164c09af37923f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 43589e4fd5a75c5c1cd7681dde4a3957f3fe4243
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49837522"
 ---
 # <a name="idebugengine2continuefromsynchronousevent"></a>IDebugEngine2::ContinueFromSynchronousEvent
-Daha önce SDM için hata ayıklama altyapısı (DE) tarafından gönderilen bir zaman uyumlu hata ayıklama olayı alındı ve işlenen olduğunu belirtmek için (SDM) oturum hata ayıklama Yöneticisi tarafından çağrılır.  
+Oturum hata ayıklama Yöneticisi (SDM) daha önce SDM için hata ayıklama altyapısı (DE) tarafından gönderilen bir zaman uyumlu hata ayıklama olayı alınıp işlendiğini olduğunu belirtmek için çağrılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,13 +44,13 @@ HRESULT ContinueFromSynchronousEvent(
  [in] Bir [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) , hata ayıklayıcı şimdi devam etmelidir daha önce gönderilen zaman uyumlu olay temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  DE tarafından temsil edilen olay kaynağı olduğunu doğrulamanız gerekir `pEvent` parametresi.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CEngine` uygulayan nesne [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CEngine` uygulayan nesne [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) arabirimi.  
   
 ```cpp  
 HRESULT CEngine::ContinueFromSynchronousEvent(IDebugEvent2* pEvent)  

@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131130"
 ---
 # <a name="project-persistence"></a>Proje kalıcılığı
 Kalıcılık projeniz için bir temel tasarım konusudur. Çoğu projeleri dosyaları temsil edecek proje öğeleri kullanın; [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] verisini dosya tabanlı olmayan projeleri de destekler. Proje ve proje dosyası tarafından sahip olunan her iki dosya kalıcı gerekir. IDE kendisini veya bir proje öğesi kaydetmek için projeyi bildirir.  

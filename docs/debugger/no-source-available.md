@@ -24,6 +24,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31479751"
 ---
 # <a name="no-source-available"></a>Kullanılabilir Kaynak Yok
 Projeniz için görüntülemeye çalıştığınız kaynak kodu içermiyor. Kaynak kodu sahip olmayan bir modül normal neden çift **çağrı yığını penceresinde** veya **iş parçacıkları penceresi**. Hata ayıklama devam edebilirsiniz, ancak kaynak penceresini kesme noktalarını ayarlayın ve bu konumda başka eylemler gerçekleştirmek için kullanamazsınız. Bir kesme noktası belirleyerek gerekiyorsa kullanın **ayrıştırma penceresi** yerine.  

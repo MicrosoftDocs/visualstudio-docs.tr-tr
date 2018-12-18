@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f0fe51224a4b4a5abc73a3edb7a2caf239d32efb
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 2ff182c2600a41a0e7c13ed460418e93f88baaed
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49871647"
 ---
 # <a name="idiapropertystorageenum"></a>IDiaPropertyStorage::Enum
-Bu kümesi içinde özellikleri için bir numaralandırıcı alır.  
+İçinde bu özellikleri için bir numaralandırıcı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT Enum (
   
 #### <a name="parameters"></a>Parametreler  
  `ppenum`  
- [out] Döndürür bir `IEnumSTATPROPSTG` (Microsoft.VisualStudio.OLE.Interop ad alanında) özellikleri numaralandırması temsil eden nesne.  
+ [out] Döndürür bir `IEnumSTATPROPSTG` (Microsoft.VisualStudio.OLE.Interop uzayında) özelliklerini numaralandırması temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaPropertyStorage](../../debugger/debug-interface-access/idiapropertystorage.md)

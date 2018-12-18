@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 14a8e435dddaf0d6fb3908a1ccb6233f08ccd28b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 76b054d004e6c62f9d36ca5fcebe1a7f0476fbfc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825863"
 ---
 # <a name="idiastackwalkhelperreadmemory"></a>IDiaStackWalkHelper::readMemory
-Bir veri bloğunun bellekte çalıştırılabilir programın görüntüden okur.  
+Bir veri bloğu bellek yürütülebilir dosyası görüntüden okur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,23 +38,23 @@ HRESULT readMemory(
   
 #### <a name="parameters"></a>Parametreler  
  `type`  
- [in] Arasında bir değer [MemoryTypeEnum numaralandırması](../../debugger/debug-interface-access/memorytypeenum.md) okumak için bellek türünü belirleyen numaralandırması.  
+ [in] Bir değer [MemoryTypeEnum numaralandırması](../../debugger/debug-interface-access/memorytypeenum.md) okumak için bellek türünü belirten sabit listesi.  
   
  Va  
- [in] Sanal adres okuma başlayacağı görüntüsündeki.  
+ [in] Sanal adres okumaya başlayacağı görüntüde.  
   
  `cbData`  
- [in] Veri arabelleğinin bayt cinsinden boyutu.  
+ [in] Veri arabelleğin bayt cinsinden boyutu.  
   
  `pcbData`  
- [out] Gerçekte okunan bayt sayısını döndürür. Varsa `pbData` olan `NULL`, sonra bu verilerin kullanılabilir bayt sayısı.  
+ [out] Aslında okunan bayt sayısını döndürür. Varsa `pbData` olduğu `NULL`, sonra bu verilerin kullanılabilir bayt sayısı.  
   
  `pbData`  
- [içinde out] Okuma bellek bilgileriyle doldurulan bir arabellek.  
+ [out içinde] Okuma bellek ile doldurulmuş bir arabellek.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)   
- [MemoryTypeEnum numaralandırması](../../debugger/debug-interface-access/memorytypeenum.md)
+ [MemoryTypeEnum Numaralandırması](../../debugger/debug-interface-access/memorytypeenum.md)

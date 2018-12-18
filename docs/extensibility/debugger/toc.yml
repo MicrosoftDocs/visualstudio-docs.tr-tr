@@ -1,0 +1,284 @@
+- name: Visual Studio Hata Ayıklayıcı Genişletilebilirliği
+  href: visual-studio-debugger-extensibility.md
+- name: Hata Ayıklama Altyapısı Uygulama Stratejisi Seçme
+  href: choosing-a-debug-engine-implementation-strategy.md
+- name: Visual Studio Hata Ayıklama Örnekleri
+  href: visual-studio-debugging-samples.md
+- name: Özel Hata Ayıklama Altyapısı Oluşturma
+  href: creating-a-custom-debug-engine.md
+  items:
+    - name: Özel Bir Hata Ayıklama Altyapısını Kaydetme
+      href: registering-a-custom-debug-engine.md
+    - name: Bir Programı Hataları Ayıklanacak Şekilde Etkinleştirme
+      href: enabling-a-program-to-be-debugged.md
+      items:
+        - name: Bağlantı Noktası Alma
+          href: getting-a-port.md
+        - name: Program Kaydetme
+          href: registering-the-program.md
+        - name: Programa Ekleme
+          href: attaching-to-the-program.md
+        - name: Başlatma Tabanlı Ek
+          href: launch-based-attachment.md
+        - name: Gerekli Olayları Gönderme
+          href: sending-the-required-events.md
+    - name: Yürütme Denetimi ve Durum Değerlendirmesi
+      href: execution-control-and-state-evaluation.md
+      items:
+        - name: Program Denetimi
+          href: program-control.md
+        - name: Kesme Noktasıyla İlgili Metotlar
+          href: breakpoint-related-methods.md
+        - name: Çağrı Yığını Değerlendirme
+          href: call-stack-evaluation.md
+        - name: İfade Değerlendirme (Visual Studio Hata Ayıklama SDK’sı)
+          href: expression-evaluation-visual-studio-debugging-sdk.md
+        - name: Denetim Olayları
+          href: control-events.md
+    - name: Olayları Gönderme
+      href: sending-events.md
+      items:
+        - name: Olay Kaynakları (Visual Studio SDK)
+          href: event-sources-visual-studio-sdk.md
+        - name: Desteklenen Olay Türleri
+          href: supported-event-types.md
+        - name: Olay Açıklamaları
+          href: event-descriptions.md
+    - name: Sonlandırma ve Ayırma
+      href: termination-and-detaching.md
+    - name: Hata Ayıklayıcısı Olaylarını Çağırma
+      href: calling-debugger-events.md
+      items:
+        - name: Programa Ekleme ve Programdan Ayırma
+          href: attaching-and-detaching-to-a-program.md
+        - name: Hata Ayıklayıcıyı Başlatma
+          href: launching-the-debugger.md
+        - name: Program Sonlandırma
+          href: terminating-a-program.md
+        - name: Kesme Noktası Oluşturma
+          href: creating-a-breakpoint.md
+        - name: Kesme Noktasının Bağlandığı veya Bağlanmamış Hale Geldiği Durumlar
+          href: when-a-breakpoint-binds-or-becomes-unbound.md
+        - name: Kesme Noktası Hataları
+          href: breakpoint-errors.md
+        - name: Kesme Noktasına Ulaşma
+          href: hitting-a-breakpoint.md
+        - name: Kesme Noktasını Silme
+          href: deleting-a-breakpoint.md
+        - name: Kesme Moduna Girme
+          href: entering-break-mode.md
+        - name: Kesme Modunda Adımlama
+          href: stepping-in-break-mode.md
+        - name: Kesme Modunda İfade Değerlendirme
+          href: expression-evaluation-in-break-mode.md
+        - name: Özel Durum İşleme (Visual Studio SDK)
+          href: exception-handling-visual-studio-sdk.md
+    - name: 'Nasıl Yapılır: Özel Hata Ayıklama Altyapısında Hata Ayıklama'
+      href: how-to-debug-a-custom-debug-engine.md
+- name: Hata Ayıklayıcı Genişletilebilirliği ile Çalışmaya Başlama
+  href: getting-started-with-debugger-extensibility.md
+  items:
+    - name: Hata Ayıklayıcıyı Genişletmek için Yol Haritası
+      href: roadmap-for-extending-the-debugger.md
+    - name: Hata Ayıklayıcı Bileşenleri
+      href: debugger-components.md
+      items:
+        - name: Paket Hatalarını Ayıklama
+          href: debug-package.md
+        - name: İşlem Hata Ayıklama Yöneticisi
+          href: process-debug-manager.md
+        - name: Oturum Hata Ayıklama Yöneticisi
+          href: session-debug-manager.md
+        - name: Hata Ayıklama Altyapısı
+          href: debug-engine.md
+        - name: Çalışma Modları
+          href: operational-modes.md
+        - name: İfade Değerlendirici
+          href: expression-evaluator.md
+        - name: Sembol Sağlayıcısı
+          href: symbol-provider.md
+        - name: Tür Görselleştiricisi ve Özel Görüntüleyici
+          href: type-visualizer-and-custom-viewer.md
+    - name: Hata Ayıklayıcı Kavramları
+      href: debugger-concepts.md
+      items:
+        - name: Oturum Hatalarını Ayıklama
+          href: debug-session.md
+        - name: Sunucular (Visual Studio SDK)
+          href: servers-visual-studio-sdk.md
+        - name: Bağlantı Noktası Sağlayıcıları
+          href: port-suppliers.md
+        - name: Bağlantı Noktaları
+          href: ports.md
+        - name: İşlemler
+          href: processes.md
+        - name: Program Düğümleri
+          href: program-nodes.md
+        - name: Programlar
+          href: programs.md
+        - name: İş Parçacıkları
+          href: threads.md
+        - name: Yığın Çerçeveleri
+          href: stack-frames.md
+        - name: Modüller
+          href: modules.md
+        - name: Kesme Noktaları (Visual Studio SDK)
+          href: breakpoints-visual-studio-sdk.md
+    - name: Hata Ayıklayıcı Bağlamları
+      href: debugger-contexts.md
+      items:
+        - name: Kod Bağlamı
+          href: code-context.md
+        - name: Belge Konumu
+          href: document-position.md
+        - name: Belge Bağlamı
+          href: document-context.md
+        - name: İfade Değerlendirme Bağlamı
+          href: expression-evaluation-context.md
+    - name: Hata Ayıklama Görevleri
+      href: debugging-tasks.md
+      items:
+        - name: Güvenlik Sorunları
+          href: security-issues.md
+        - name: Program Başlatma
+          href: launching-a-program.md
+          items:
+            - name: Bağlantı Noktasına Bildirme
+              href: notifying-the-port.md
+            - name: Başlatmadan Sonra Ekleme
+              href: attaching-after-a-launch.md
+        - name: Doğrudan Programa Ekleme
+          href: attaching-directly-to-a-program.md
+        - name: Başlatmadan Sonra Başlangıç Olaylarını Gönderme
+          href: sending-startup-events-after-a-launch.md
+        - name: Yürütme Denetimi
+          href: control-of-execution.md
+        - name: Kesme Noktaları Bağlama
+          href: binding-breakpoints.md
+        - name: İfadeleri Değerlendirme
+          href: evaluating-expressions.md
+        - name: Verileri Görselleştirme ve Görüntüleme
+          href: visualizing-and-viewing-data.md
+- name: Ortak Dil Çalışma Zamanı İfade Değerlendiricisi Yazma
+  href: writing-a-common-language-runtime-expression-evaluator.md
+  items:
+    - name: Ortak Dil Çalışma Zamanı ve İfade Değerlendirme
+      href: common-language-runtime-and-expression-evaluation.md
+    - name: İfade Değerlendirici Mimarisi
+      href: expression-evaluator-architecture.md
+      items:
+        - name: Değerlendirme Bağlamı
+          href: evaluation-context.md
+        - name: Anahtar İfade Değerlendiricisi Arabirimleri
+          href: key-expression-evaluator-interfaces.md
+    - name: İfade Değerlendiricisi Kaydetme
+      href: registering-an-expression-evaluator.md
+    - name: ifade Değerlendiricisi Uygulama
+      href: implementing-an-expression-evaluator.md
+      items:
+        - name: İfade Değerlendiricisi Uygulama Stratejisi
+          href: expression-evaluator-implementation-strategy.md
+    - name: Yerel Öğeleri Görüntüleme
+      href: displaying-locals.md
+      items:
+        - name: Örnek Yerel Öğeler Uygulaması
+          href: sample-implementation-of-locals.md
+          items:
+            - name: GetMethodProperty Uygulama
+              href: implementing-getmethodproperty.md
+            - name: Yerel Öğeleri Numaralandırma
+              href: enumerating-locals.md
+            - name: Yerel Özellikleri Alma
+              href: getting-local-properties.md
+            - name: Yerel Değerleri Alma
+              href: getting-local-values.md
+            - name: Yerel Öğeleri Değerlendirme
+              href: evaluating-locals.md
+    - name: Gözcü Penceresi İfadesini Değerlendirme
+      href: evaluating-a-watch-window-expression.md
+      items:
+        - name: Örnek İfade Değerlendirme Uygulaması
+          href: sample-implementation-of-expression-evaluation.md
+        - name: Bir Gözcü İfadesini Değerlendirme
+          href: evaluating-a-watch-expression.md
+    - name: Yerel Bir Öğenin Değerini Değiştirme
+      href: changing-the-value-of-a-local.md
+      items:
+        - name: Örnek Değer Değiştirme Uygulaması
+          href: sample-implementation-of-changing-values.md
+    - name: Tür Görselleştiricileri ve Özel Görüntüleyiciler Uygulama
+      href: implementing-type-visualizers-and-custom-viewers.md
+- name: Bağlantı Noktası Sağlayıcısı Uygulama
+  href: implementing-a-port-supplier.md
+  items:
+    - name: Bağlantı Noktası Sağlayıcısı Uygulama ve Kaydetme
+      href: implementing-and-registering-a-port-supplier.md
+    - name: Gerekli Bağlantı Noktası Sağlayıcısı Arabirimleri
+      href: required-port-supplier-interfaces.md
+- name: .NET Framework için Paralel Uzantı Dahili Bileşenleri
+  href: parallel-extension-internals-for-the-dotnet-framework.md
+  items:
+    - name: Görev Sınıfı - Dahili Üyeler
+      href: task-class-internal-members.md
+      items:
+        - name: m_action Alanı
+          href: m-action-field.md
+        - name: m_contingentProperties Alanı
+          href: m-contingentproperties-field.md
+        - name: m_parent Alanı
+          href: m-parent-field.md
+        - name: m_stateFlags Alanı
+          href: m-stateflags-field.md
+        - name: m_stateObject Alanı
+          href: m-stateobject-field.md
+        - name: m_taskId Alanı
+          href: m-taskid-field.md
+        - name: s_taskIdCounter Alanı
+          href: s-taskidcounter-field.md
+        - name: TASK_STATE_CANCELED Alanı
+          href: task-state-canceled-field.md
+        - name: TASK_STATE_EXECUTED Alanı
+          href: task-state-executed-field.md
+        - name: TASK_STATE_FAULTED Alanı
+          href: task-state-faulted-field.md
+        - name: TASK_STATE_RAN_TO_COMPLETION Alanı
+          href: task-state-ran-to-completion-field.md
+        - name: TASK_STATE_WAITING_ON_CHILDREN Alanı
+          href: task-state-waiting-on-children-field.md
+        - name: SetNotificationForWaitCompletion Metodu
+          href: setnotificationforwaitcompletion-method.md
+        - name: NotifyDebuggerOfWaitCompletion Metodu
+          href: notifydebuggerofwaitcompletion-method.md
+    - name: TaskScheduler Sınıfı - Dahili Üyeler
+      href: taskscheduler-class-internal-members.md
+      items:
+        - name: GetScheduledTasksForDebugger Metodu
+          href: getscheduledtasksfordebugger-method.md
+        - name: GetTaskSchedulersForDebugger Metodu
+          href: gettaskschedulersfordebugger-method.md
+    - name: ContingentProperties Sınıfı - Dahili Üyeler
+      href: contingentproperties-class-internal-members.md
+      items:
+        - name: m_children Alanı
+          href: m-children-field.md
+    - name: AsyncTaskMethodBuilder Yapısı - Dahili Üyeler
+      href: asynctaskmethodbuilder-structure-internal-members.md
+      items:
+        - name: AsyncTaskMethodBuilder.ObjectIdForDebugger Özelliği
+          href: asynctaskmethodbuilder-objectidfordebugger-property.md
+        - name: AsyncTaskMethodBuilder.m_builder Alanı
+          href: asynctaskmethodbuilder-m-builder-field.md
+    - name: AsyncTaskMethodBuilder<TResult>Yapısı - Dahili Üyeler
+      href: asynctaskmethodbuilder-tresult-structure-internal-members.md
+      items:
+        - name: AsyncTaskMethodBuilder<TResult>.ObjectIdForDebugger Özelliği
+          href: asynctaskmethodbuilder-tresult-objectidfordebugger-property.md
+        - name: AsyncTaskMethodBuilder<TResult>.m_task Alanı
+          href: asynctaskmethodbuilder-tresult-m-task-field.md
+    - name: AsyncVoidMethodBuilder Yapısı - Dahili Üyeler
+      href: asyncvoidmethodbuilder-structure-internal-members.md
+      items:
+        - name: AsyncVoidMethodBuilder.ObjectIdForDebugger Özelliği
+          href: asyncvoidmethodbuilder-objectidfordebugger-property.md
+        - name: AsyncVoidMethodBuilder.m_objectIdForDebugger Alanı
+          href: asyncvoidmethodbuilder-m-objectidfordebugger-field.md

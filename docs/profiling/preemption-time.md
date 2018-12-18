@@ -14,22 +14,23 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ecc117d84fb6d2b7076e4084c81f197ba3a464ab
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0d0959f5e2725401424d0231ccd286b7835a7315
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49894397"
 ---
-# <a name="preemption-time"></a>Önalım Zamanı
-Bu kesimler çizelgesinde Önalım kategorilere engelleme zamanı ile ilişkilendirilmiş. Bu kategori, bir iş parçacığı çıkış nedeni aşağıdakilerden biri nedeniyle anahtarlanır olduğunu anlamına gelir:  
+# <a name="preemption-time"></a>Önalım zamanı
+Bu segmentlerde faaliyet zaman çizelgesi ön alım kategorilere engelleme zamanı ile ilişkilidir. Bu kategori, bir iş parçacığı çıkış aşağıdaki nedenlerden biri nedeniyle geçiş, gelir:  
   
--   Zamanlayıcı daha yüksek bir öncelik iş parçacığı kullanarak değiştirildi.  
+- Zamanlayıcı daha yüksek öncelikli iş parçacığı kullanarak değiştirildi.  
   
--   İş parçacığının yürütme Zamanlayıcının süresi ve diğer iş parçacıkları yürütmek hazır.  
+- İş parçacığının yürütme kuantum süresi doldu ve diğer iş parçacıklarını yürütmek hazır.  
   
- Bu süre boyunca, bir iş parçacığı eşzamanlılık görselleştiricisi Önalım sayım çekirdek bekleme nedeni tarafından engellendi. Önalım kesimleri mantıksal çekirdek dışında bir iş parçacığı gönderildiğinde başlamalı ve o iş parçacığı yürütme devam ettiğinde bitmelidir.  
+  Bu süre boyunca, bir iş parçacığı eşzamanlılık görselleştiricisi ön alım sayılıyor bir çekirdek bekleme nedeni tarafından engellendi. Ön alım segmentler mantıksal çekirdek dışında bir iş parçacığı gönderildiğinde ve yürütme iş parçacığı devam ettiğinde bitmelidir.  
   
- Preempted bir kesim için araç ipucu önalım neden iş parçacığı ve işlem adını görüntüler. Ancak, bu işlem veya sürdü üzerinden iş parçacığı gerçekten preempted dönem çalıştığını göstermez.  
+  Araç İpucu biterse bir kesim için ön alım neden iş parçacığı ve işlem adını görüntüler. Ancak, bu üstlenmesinden iş parçacığı ve işlem gerçekten preempted dönem çalıştığını göstermez.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

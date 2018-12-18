@@ -16,13 +16,14 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0336859833762d80cc702e844600ded84dbc5d8b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c91c470a9478c7015972be66afe5f41174073047
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39637006"
 ---
-# <a name="projectcollection-element-visual-studio-templates"></a>ProjectCollection Öğesi (Visual Studio Şablonları)
+# <a name="projectcollection-element-visual-studio-templates"></a>ProjectCollection öğesi (Visual Studio şablonları)
 Birden fazla projeli şablonların içeriğini ve düzenini belirtir.  
   
  \<VSTemplate >  
@@ -31,37 +32,37 @@ Birden fazla projeli şablonların içeriğini ve düzenini belirtir.
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <ProjectCollection>  
     <ProjectTemplateLink> ... </ProjectTemplateLink>  
     <SolutionFolder> ... </SolutionFolder>  
 </ProjectCollection>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Aşağıdaki bölümlerde öznitelik, alt öğeler ve üst öğeler açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[ProjectTemplateLink](../extensibility/projecttemplatelink-element-visual-studio-templates.md)|İsteğe bağlı öğe.<br /><br /> Proje içinde birden çok proje şablonu belirtir.|  
+|[ProjectTemplateLink](../extensibility/projecttemplatelink-element-visual-studio-templates.md)|İsteğe bağlı öğe.<br /><br /> Bir projenin birden fazla projeli bir şablonda belirtir.|  
 |[SolutionFolder](../extensibility/solutionfolder-element-visual-studio-templates.md)|İsteğe bağlı öğe.<br /><br /> Birden fazla projeli şablonlardaki projeleri gruplandırır.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateContent](../extensibility/templatecontent-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon içeriğini belirtir.|  
+|[TemplateContent](../extensibility/templatecontent-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu içeriğini belirtir.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Birden fazla projeli şablonlar, iki veya daha fazla proje için kapsayıcı olarak davranır. `ProjectCollection` Öğe şablonda içerecek şekilde projeleri belirtmek için kullanılır. Birden çok proje şablonları hakkında daha fazla bilgi için bkz: [nasıl yapılır: birden çok proje şablonları oluşturma](../ide/how-to-create-multi-project-templates.md).  
+ Birden fazla projeli şablonlar, iki veya daha fazla proje için kapsayıcı olarak davranır. `ProjectCollection` Öğe, şablonu içeren projeleri belirtmek için kullanılır. Birden fazla projeli Şablonlar hakkında daha fazla bilgi için bkz. [nasıl yapılır: birden çok proje şablonu oluşturma](../ide/how-to-create-multi-project-templates.md).  
   
 ## <a name="example"></a>Örnek  
- Bu örnekte, basit bir çoklu proje kök .vstemplate dosyası gösterilmektedir. Bu örnekte, iki proje şablonu içeren `My Windows Application` ve `My Class Library`. `ProjectName` Özniteliği `ProjectTemplateLink` öğesi adını ayarlar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bu proje atamak için. Varsa `ProjectName` özniteliği yok, .vstemplate dosyasının adı proje adı olarak kullanılır.  
+ Bu örnek, basit bir çoklu proje kök gösterir *.vstemplate* dosya. Bu örnekte, şablon iki proje içermektedir `My Windows Application` ve `My Class Library`. `ProjectName` Özniteliği `ProjectTemplateLink` öğesi adını ayarlar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bu projeye atanacak. Varsa `ProjectName` öznitelik yok, adını *.vstemplate* dosyası, proje adı olarak kullanılır.  
   
 ```  
 <VSTemplate Version="3.0.0" Type="ProjectGroup"  
@@ -85,7 +86,7 @@ Birden fazla projeli şablonların içeriğini ve düzenini belirtir.
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
- [Nasıl Yapılır: Birden Çok Proje Şablonu Oluşturma](../ide/how-to-create-multi-project-templates.md)
+ [Nasıl yapılır: birden çok proje şablonu oluşturma](../ide/how-to-create-multi-project-templates.md)

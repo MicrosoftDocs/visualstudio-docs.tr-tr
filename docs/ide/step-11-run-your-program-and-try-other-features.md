@@ -1,9 +1,9 @@
 ---
-title: '11. adım: Programınızı çalıştırma ve diğer özellikleri deneme | Microsoft Docs'
+title: '11. adım: programınızı çalıştırma ve diğer özellikleri deneme'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.technology:
-- vs-acquisition
+ms.prod: visual-studio-dev15
+ms.technology: vs-acquisition
 ms.topic: conceptual
 ms.assetid: 656614d0-4fe7-4a67-8edc-c10919377d09
 author: TerryGLee
@@ -11,53 +11,54 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b089ca2c295f8128dadc9f0650540e5fef5f239a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 87992bb8ab2557dbca4c8e7e3a94dd99e5de7682
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50671930"
 ---
-# <a name="step-11-run-your-program-and-try-other-features"></a>11. adım: Programınızı çalıştırma ve diğer özellikleri deneme
-Programınızı tamamlandı ve çalıştırılmaya hazır. Programınızı çalıştırma ve PictureBox arka plan rengini ayarlayın. Daha fazla bilgi için program formun rengini değiştirmek, düğmeler ve onay kutusu özelleştirme ve form özelliklerini değiştirme artırmak için deneyin.  
-  
- Tamamlanmış bir örnek sürümünü indirmek için bkz: [tam resim görüntüleyici öğretici örnek](http://code.msdn.microsoft.com/Complete-Picture-Viewer-7d91d3a8).  
-  
- ![video bağlantı](../data-tools/media/playvideo.gif "PlayVideo")bu konuda video sürümü için bkz: [Eğitmen 1: Visual Basic'te - Video 5 resim görüntüleyici oluşturma](http://go.microsoft.com/fwlink/?LinkId=205216) veya [Öğreticisi 1: Resim Görüntüleyici C# ' - oluşturma Video 5](http://go.microsoft.com/fwlink/?LinkId=205206). Bazı menü komutları ve diğer kullanıcı arabirimi öğeleri küçük farklar olduklarından bu videolar Visual Studio'nun önceki bir sürümünü kullanın. Ancak, kavramlar ve yordamlar benzer şekilde geçerli sürümünde Visual Studio çalışır.  
-  
-### <a name="to-run-your-program-and-set-the-background-color"></a>Programınızı çalıştırma ve arka plan rengini ayarlamak için  
-  
-1.  F5 seçin veya menü çubuğunda seçin **hata ayıklama**, **hata ayıklamayı Başlat**.  
-  
-2.  Bir resim açmadan önce seçin **arka plan rengini ayarlama** düğmesi. **Renk** iletişim kutusu açılır.  
-  
-     ![Renk iletişim kutusu](../ide/media/express_colordialog.png "Express_ColorDialog")  
-Renk iletişim kutusu  
-  
-3.  PictureBox arka plan rengini ayarlamak için renk seçin. Yakından bakmak `backgroundButton_Click()` nasıl çalıştığını anlamak için yöntem.  
-  
+# <a name="step-11-run-your-program-and-try-other-features"></a>11. adım: programınızı çalıştırma ve diğer özellikleri deneme
+Programınız bitti ve çalıştırılmaya hazır. Programınızı çalıştırmak ve arka plan rengini ayarlama <xref:System.Windows.Forms.PictureBox>. Daha fazla bilgi için formun rengini değiştirerek, düğmeleri ve onay kutusunu özelleştirerek ve formun özelliklerini değiştirerek programı iyileştirmeyi deneyin.
+
+ Örnek tamamlanmış bir sürümünü indirmek için bkz [eksiksiz resim görüntüleyici Öğreticisi örneği](https://code.msdn.microsoft.com/Complete-Picture-Viewer-7d91d3a8).
+
+ ![video bağlantısı](../data-tools/media/playvideo.gif)bu konunun video sürümü için bkz: [öğretici 1: Visual Basic'te - Video 5 resim görüntüleyici oluşturma](http://go.microsoft.com/fwlink/?LinkId=205216) veya [öğretici 1: içinde resim görüntüleyici oluşturma C# -Video 5](http://go.microsoft.com/fwlink/?LinkId=205206). Bazı menü komutlarında ve diğer kullanıcı arabirimi öğelerinde küçük farklılıklar olduğundan bu videolarda Visual Studio'nun önceki bir sürümü kullanın. Ancak, kavramlar ve yordamlar benzer şekilde Visual Studio'nun geçerli sürümünde çalışır.
+
+## <a name="to-run-your-program-and-set-the-background-color"></a>Programınızı çalıştırmak ve arka plan rengini ayarlamak için
+
+1.  Seçin **F5**, veya menü çubuğunda, **hata ayıklama** > **hata ayıklamayı Başlat**.
+
+2.  Bir resmi açmadan önce seçin **arka plan rengini ayarlamak** düğmesi. **Renk** iletişim kutusu açılır.
+
+     ![Renk iletişim kutusu](../ide/media/express_colordialog.png)
+**renk** iletişim kutusu
+
+3.  PictureBox arka plan rengini ayarlamak için bir renk seçin. Yakından bakın `backgroundButton_Click()` nasıl çalıştığını anlamanız için yöntemi.
+
     > [!NOTE]
-    >  Kendi URL'ye yapıştırılarak Internet'ten resim yükleyebilir **Dosya Aç** iletişim kutusu. Arka plan rengini gösterecek şekilde saydam arka plan görüntüyle bulmaya çalışın.  
-  
-4.  Seçin **resmi temizleyin** düğmesi temizlenmeden emin olun. Ardından, seçerek programdan çıkmak **Kapat** düğmesi.  
-  
-### <a name="to-try-other-features"></a>Diğer özellikleri denemek için  
-  
--   Form ve düğmeleri kullanarak rengini **BackColor** özelliği.  
-  
--   Düğmeler ve onay kutusunu kullanarak özelleştirme **yazı tipi** ve **ForeColor** özellikleri.  
-  
--   Formun değiştirme **FormBorderStyle** ve **ControlBox** özellikleri.  
-  
--   Formun kullanmak **AcceptButton** ve **CancelButton** bu düğmeleri otomatik olarak seçilen şekilde olduğunda kullanıcı ENTER veya ESC tuşuna seçer özellikleri. Program açık olun **Dosya Aç** kullanıcı girin ve kullanıcının ESC seçtiğinde kutusunu kapatmak seçtiğinde iletişim kutusu.  
-  
-### <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için  
-  
--   Visual Studio'da programlama hakkında daha fazla bilgi için bkz: [programlama kavramları](http://msdn.microsoft.com/Library/65c12cca-af4f-4017-886e-2dbc00a189d6).  
-  
--   Visual Basic hakkında daha fazla bilgi için bkz: [Visual Basic ile uygulama geliştirme](/dotnet/visual-basic/developing-apps/index).  
-  
--   Visual C# hakkında bilgi edinmek için bkz: [C# dili ve .NET Framework Giriş](/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework).  
-  
--   Sonraki öğretici gitmek için bkz: [Eğitmen 2: bir zaman aşımına matematik test oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).  
-  
--   Eğitmen önceki adıma dönmek için bkz: [adım 10: ek düğmeler ve onay kutusu için kod yazma](../ide/step-10-write-code-for-additional-buttons-and-a-check-box.md).
+    >  Resim URL'sini yapıştırarak Internet'ten yükünü **açık dosya** iletişim kutusu. Arka plan renkleriniz görünsün saydam bir arka plan görüntüsüne bulmaya çalışın.
+
+4.  Seçin **resmi Temizle** temizlendiğinden emin olmak için düğme. Sonra programdan çıkmak **Kapat** düğmesi.
+
+## <a name="to-try-other-features"></a>Diğer özellikleri denemek için
+
+-   Kullanarak form ve düğmelerin rengini değiştirmek **BackColor** özelliği.
+
+-   Düğmeleri ve onay kutusunu kullanarak özelleştirme **yazı tipi** ve **ForeColor** özellikleri.
+
+-   Formunuzun **FormBorderStyle** ve **ControlBox** özellikleri.
+
+-   Formunuzun kullanın **AcceptButton** ve **CancelButton** düğmeler otomatik olarak seçilir, bu nedenle, kullanıcının seçtiği özellikleri **Enter** veya **Esc** anahtarı. Programa **Dosya Aç** kullanıcı seçtiğinde bir iletişim kutusu **Enter** ve kullanıcı seçtiğinde kutuyu kapatın **Esc**.
+
+## <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için
+
+-   Visual Studio'da programlama hakkında daha fazla bilgi için bkz. [programlama kavramları](https://msdn.microsoft.com/Library/65c12cca-af4f-4017-886e-2dbc00a189d6).
+
+-   Visual Basic hakkında daha fazla bilgi için bkz: [Visual Basic ile uygulama geliştirme](/dotnet/visual-basic/developing-apps/index).
+
+-   Görsel hakkında daha fazla bilgi edinmek için C#, bkz: [giriş C# dili ve .NET Framework](/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework).
+
+-   Sonraki eğitime gitmek için bkz: [öğretici 2: zamanlı matematik testi oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).
+
+-   Önceki öğretici adımına dönmek için bkz: [adım 10: ek düğmeler ve onay kutusu için kod yazma](../ide/step-10-write-code-for-additional-buttons-and-a-check-box.md).

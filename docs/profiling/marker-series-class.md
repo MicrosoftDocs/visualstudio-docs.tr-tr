@@ -14,46 +14,47 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: dc78c49aae49704e2dd56abfee7b0e43b285845d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e638d9316b46a8600fe2e88ca5e4a6611fa1ec4d
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34843841"
 ---
-# <a name="markerseries-class"></a>marker_series Sınıfı
+# <a name="markerseries-class"></a>marker_series sınıfı
 Tek bir sağlayıcı tarafından oluşturulan olayların seri kanal temsil eder.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 class marker_series;  
 ```  
   
 ## <a name="members"></a>Üyeler  
   
-### <a name="public-constructors"></a>Ortak Oluşturucular  
+### <a name="public-constructors"></a>Genel oluşturucular  
   
 |Ad|Açıklama|  
 |----------|-----------------|  
 |[marker_series::marker_series Oluşturucusu](../profiling/marker-series-marker-series-constructor.md)|Yeni bir örneğini başlatır `marker_series` sınıfı.|  
-|[marker_series::~marker_series Yok Edicisi](../profiling/marker-series-tilde-marker-series-destructor.md)|Marker_series nesnesini yok eder ve ayrılan tüm kaynakları serbest bırakır.|  
+|[marker_series:: ~ marker_series yok Edicisi](../profiling/marker-series-tilde-marker-series-destructor.md)|Marker_series nesnesini yok eder ve ayrılan tüm kaynakları serbest bırakır.|  
   
-### <a name="public-methods"></a>Ortak Yöntemler  
+### <a name="public-methods"></a>Genel yöntemler  
   
 |Ad|Açıklama|  
 |----------|-----------------|  
-|[marker_series::is_enabled Metodu](../profiling/marker-series-is-enabled-method.md)|Herhangi bir oturumunda sağlayıcısı etkin olmadığını belirler.|  
-|[marker_series::write_alert Metodu](../profiling/marker-series-write-alert-method.md)|Bir uyarı eşzamanlılık görselleştiricisi izleme dosyasına yazar.|  
-|[marker_series::write_flag Metodu](../profiling/marker-series-write-flag-method.md)|Bir bayrak eşzamanlılık görselleştiricisi izleme dosyasına yazar.|  
-|[marker_series::write_message Metodu](../profiling/marker-series-write-message-method.md)|Eşzamanlılık görselleştiricisi izleme dosyası için bir ileti yazar.|  
+|[marker_series::is_enabled yöntemi](../profiling/marker-series-is-enabled-method.md)|Herhangi bir oturumunda sağlayıcısı etkin olmadığını belirler.|  
+|[marker_series::write_alert yöntemi](../profiling/marker-series-write-alert-method.md)|Bir uyarı eşzamanlılık görselleştiricisi izleme dosyasına yazar.|  
+|[marker_series::write_flag yöntemi](../profiling/marker-series-write-flag-method.md)|Bir bayrak eşzamanlılık görselleştiricisi izleme dosyasına yazar.|  
+|[marker_series::write_message yöntemi](../profiling/marker-series-write-message-method.md)|Eşzamanlılık görselleştiricisi izleme dosyası için bir ileti yazar.|  
   
 ## <a name="inheritance-hierarchy"></a>Devralma Hiyerarşisi  
  `marker_series`  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkersobj.h  
+ **Başlık:** *cvmarkersobj.h*  
   
  **Namespace:** Concurrency::diagnostic  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Tanılama Ad Alanı](../profiling/diagnostic-namespace.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Tanılama ad alanı](../profiling/diagnostic-namespace.md)

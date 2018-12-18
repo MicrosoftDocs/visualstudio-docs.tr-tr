@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4276009244f1d49b89311d5d158a34bebf3fcf23
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: a7ab7b278c03d092e1e559f1eb74f5d6bdc86d85
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49816865"
 ---
 # <a name="disassemblydata"></a>DisassemblyData
-Görüntülenecek bir ayrıştırılmış yönerge tümleşik geliştirme ortamı (IDE) açıklar.  
+Görüntülenecek bir ayrıştırma yönerge tümleşik geliştirme ortamı (IDE) için açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -64,56 +65,56 @@ public struct DisassemblyData {
   
 ## <a name="members"></a>Üyeler  
  `dwFields`  
- [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md) hangi alanların doldurulmuş belirtir sabiti.  
+ [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md) hangi alanların doldurulmuş belirten sabiti.  
   
  `bstrAddress`  
- Uzaklık bazı başlangıç noktası (genellikle ilişkili işlevi başlangıcı) olarak adresi.  
+ Bazı başlangıç noktası (genellikle ilişkilendirilmiş işlev başına) uzaklık olarak adresi.  
   
  `bstrCodeBytes`  
  Bu yönerge kodu bayt sayısı.  
   
  `bstrOpcode`  
- Bu yönerge için işlem kodu.  
+ Bu yönerge için yönerge kodu.  
   
  `bstrOperands`  
  Bu yönerge için işlenen.  
   
  `bstrSymbol`  
- Sembol adını varsa (ortak simgesi, etiket ve benzeri) adresiyle ilişkili.  
+ Sembol adı varsa (ortak sembol, etiket ve benzeri) adresi ile ilişkili.  
   
  `uCodeLocationId`  
- Bu kod konum tanımlayıcısı satır dağıtılamaz. Bir satır kod bağlam adresini başka bir kod bağlam adresinden daha büyükse, ardından ilk kodunda artık hata ayıklayabildiğinize konumu tanıtıcısı de ikinci kodu konumu tanımlayıcısını büyük.  
+ Ayrıştırılmış bu satırı kod konum tanımlayıcısı. Bir satır kod bağlamı adresini başka bir kod bağlamı adresinizden büyükse, ardından ilk ayrıştırılmış kodu konum tanımlayıcısı aynı zamanda ikinci kod konum tanımlayıcısı büyük olacaktır.  
   
  `posBeg`  
- [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) bir belge ayrıştırılmış veri başladığı konumu karşılık gelir.  
+ [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) belge ayrıştırma veri başladığı konumu karşılık gelir.  
   
  `posEnd`  
- [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) belgede ayrıştırılmış veri bittiği konumuna karşılık gelir.  
+ [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) belgede sona ereceği Ayrıştırılmış kod veri konumuna karşılık gelir.  
   
  `bstrDocumentUrl`  
- Dosya adları olarak temsil edilebilir metin belgeleri `bstrDocumentUrl` alan burada kaynak bulunabilir, dosya adı ile oturum doldurulmuş biçimini kullanarak `file://file name`.  
+ Dosya adı olarak gösterilen metin belgeleri `bstrDocumentUrl` alan burada kaynağı bulunabilir, dosya adı ile oturum doldurulmuş biçimini kullanarak `file://file name`.  
   
- Dosya adları olarak temsil edilemez metin belgeleri `bstrDocumentUrl` belge için benzersiz bir tanımlayıcıdır ve hata ayıklama altyapısı uygulamalıdır [GetDocument](../../../extensibility/debugger/reference/idebugdisassemblystream2-getdocument.md) yöntemi.  
+ Dosya adları ' gösterilemez metin belgeleri `bstrDocumentUrl` belge için benzersiz bir tanımlayıcıdır ve hata ayıklama altyapısı uygulamalıdır [GetDocument](../../../extensibility/debugger/reference/idebugdisassemblystream2-getdocument.md) yöntemi.  
   
- Bu alan, ayrıca sağlama hakkında daha fazla bilgi içerebilir. Açıklamalar için bkz.  
+ Bu alan ayrıca sağlama hakkında ek bilgiler içerebilir. Açıklamalar, Ayrıntılar için bkz.  
   
  `dwByteOffset`  
- Kod satırı baştan yönerge olması bayt sayısı.  
+ Yönergedir kod satırını başından itibaren bayt sayısı.  
   
  `dwFlags`  
- [DISASSEMBLY_FLAGS](../../../extensibility/debugger/reference/disassembly-flags.md) hangi bayrakların etkin belirtir sabiti.  
+ [DISASSEMBLY_FLAGS](../../../extensibility/debugger/reference/disassembly-flags.md) hangi bayrakları etkin olan belirten sabiti.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Her `DisassemblyData` yapısını ayrıştırılmış tek bir yönerge açıklar. Bu yapıları dizisi sunucudan döndürülen [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) yöntemi.  
+ Her `DisassemblyData` ayrıştırması bir yönerge yapısını açıklar. Bu yapılar bir dizi öğesinden döndürülen [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) yöntemi.  
   
- [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) yapısı, yalnızca metin tabanlı belgeler için kullanılır. Bu yönerge kaynak kodu aralığının bir deyim veya satır, örneğin oluşturulan yalnızca ilk yönergesi doldurulur, ne zaman `dwByteOffset == 0`.  
+ [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) yapısı yalnızca metin tabanlı belgeler için kullanılır. Bu yönerge için kaynak kodu aralığı bir deyim ya da satır, örneğin oluşturulmuş yalnızca ilk yönerge için doldurulur, `dwByteOffset == 0`.  
   
- Metinsel olmayan belgeler için belge bağlam koddan alınabilir ve `bstrDocumentUrl` alan boş bir değer olmalıdır. Varsa `bstrDocumentUrl` alandır aynı `bstrDocumentUrl` önceki alan `DisassemblyData` dizi öğesi, ardından ayarlayabilirsiniz `bstrDocumentUrl` null bir değere.  
+ Metinsel olmayan belgeler için bir belge bağlamına koddan elde edilebilir ve `bstrDocumentUrl` alan, bir null değer olmalıdır. Varsa `bstrDocumentUrl` alan aynıdır `bstrDocumentUrl` alanındaki önceki `DisassemblyData` dizi öğesi, ardından ayarlayın `bstrDocumentUrl` bir null değer.  
   
- Varsa `dwFlags` alan sahip `DF_DOCUMENT_CHECKSUM` bayrağı ayarlanmışsa, ek sağlama toplamı bilgisi gösterdiği dize izleyen sonra `bstrDocumentUrl` alan. Özellikle, boş bir dize Sonlandırıcı sonra vardır, sırayla sağlama toplamı bayt sayısını gösteren bir 4 bayt değeri tarafından izlenir ve sağlama toplamı bayt tarafından sırayla izlenir sağlama toplamı algoritmasını tanımlayan bir GUID izler. Bu konudaki örnek kodlamak ve bu alanda kod çözme konusunda bkz [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)].  
+ Varsa `dwFlags` alan `DF_DOCUMENT_CHECKSUM` bayrağı ayarlanmış, ek bir sağlama toplamı bilgisi işaret ettiği dizeyi izleyen sonra `bstrDocumentUrl` alan. Özellikle, boş bir dize Sonlandırıcı sonra vardır, sırayla sağlama toplamı bayt sayısını belirten bir 4 baytlık değer takip eder ve sırayla sağlama toplamı bayt tarafından izlenir sağlama algoritması tanımlayan bir GUID izler. Bu konudaki örnek kodlama ve kodunu çözme Bu alanda konusunda bkz [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)].  
   
 ## <a name="example"></a>Örnek  
- `bstrDocumentUrl` Alan, bir dize dışında ek bilgiler içerebilir, varsa `DF_DOCUMENT_CHECKSUM` bayrağı ayarlanır. Oluşturma ve bu kodlu bir dize okuma işlemi basittir [!INCLUDE[vcprvc](../../../code-quality/includes/vcprvc_md.md)]. Bununla birlikte, [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)], başka bir konudur. Kişiler için merak, aşağıdaki örnek, kodlanmış dizesi oluşturmak için bir yol gösterir [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)] ve tek yönlü kodlu bir dize olarak çözecek [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)].  
+ `bstrDocumentUrl` Alan, bir dize dışında ek bilgiler içerebilir, varsa `DF_DOCUMENT_CHECKSUM` bayrağı ayarlanır. Oluşturma ve bu kodlu bir dize okuma işlemini basittir [!INCLUDE[vcprvc](../../../code-quality/includes/vcprvc_md.md)]. Bununla birlikte, [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)], başka bir konudur. Olanlar merak, aşağıdaki örnekte kodlanmış bir dizeden oluşturmanın yollarından biri gösterilmektedir [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)] ve kodlanmış dize olarak kodunu çözmek için tek yönlü [!INCLUDE[csprcs](../../../data-tools/includes/csprcs_md.md)].  
   
 ```csharp  
 using System;  
@@ -226,7 +227,7 @@ namespace MyNamespace
 ```  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [Okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md)   
  [DISASSEMBLY_STREAM_FIELDS](../../../extensibility/debugger/reference/disassembly-stream-fields.md)   
  [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md)   

@@ -18,33 +18,33 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9be6bd056473a6cdf7d4bf3bef2aedafe5ae2143
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1b2155cb36a2538bd93c48ccda1f2c93b0876b95
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077733"
 ---
-# <a name="how-to-set-a-security-zone-for-a-clickonce-application"></a>Nasıl yapılır: ClickOnce Uygulaması için Bir Güvenlik Bölgesi Ayarlama
-Kod erişimi güvenliği izinleri ClickOnce uygulaması için ayarladığınızda, temel bir izin kümesi ile başlatmak gereken **güvenlik** sayfasında **Proje Tasarımcısı**.  
+# <a name="how-to-set-a-security-zone-for-a-clickonce-application"></a>Nasıl yapılır: ClickOnce uygulaması için bir güvenlik bölgesi ayarlama
+Temel bir izin kümesi ile başlatmak gereken kod erişim güvenlik izinlerini ClickOnce uygulaması için ayarladığınızda, **güvenlik** sayfasının **Proje Tasarımcısı**.  
   
- Çoğu durumda, aynı zamanda seçebilirsiniz **Internet** izinleri, sınırlı sayıda içeren bölge veya **yerel Intranet** daha geniş bir izin kümesi içeren bölge. Uygulamanız özel izinleri gerektiriyorsa, seçerek bunu yapabilirsiniz **özel** güvenlik bölgesi. Özel izinleri ayarlama hakkında daha fazla bilgi için bkz: [nasıl yapılır: ClickOnce uygulaması için özel izinleri ayarlama](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md).  
+ Çoğu durumda, ayrıca seçebilirsiniz **Internet** sınırlı bir izin kümesi içeren bir bölge veya **yerel Intranet** büyük bir izin kümesi içeren bir bölge. Uygulamanız özel izinleri gerektiriyorsa, bunu seçerek yapabilirsiniz **özel** güvenlik bölgesi. Özel izinleri ayarlama hakkında daha fazla bilgi için bkz: [nasıl yapılır: ClickOnce uygulaması için özel izinleri ayarlama](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md).  
   
-### <a name="to-set-a-security-zone"></a>Bir güvenlik bölgesini ayarlamak için  
+### <a name="to-set-a-security-zone"></a>Bir güvenlik bölgesi ayarlama  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünü tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünü tıklatın **özellikleri**.  
   
-2.  Tıklatın **güvenlik** sekmesi.  
+2.  Tıklayın **güvenlik** sekmesi.  
   
-3.  Seçin **ClickOnce güvenlik ayarlarını etkinleştir** onay kutusu.  
+3.  Seçin **ClickOnce güvenlik ayarlarını etkinleştirme** onay kutusu.  
   
-4.  Seçin **kısmi güven uygulamasıdır** seçenek düğmesi.  
+4.  Seçin **kısmi güven uygulamasıdır** seçenek düğmesini.  
   
-     Denetimleri **ClickOnce güvenlik izinleri** bölüm etkinleştirilir.  
+     Denetimlerde **ClickOnce güvenlik izinleri** bölüm etkinleştirilir.  
   
-5.  İçinde **uygulamanız, gelen yüklenecek bölge** aşağı açılan listesinde, bir güvenlik bölgesi seçin.  
+5.  İçinde **uygulamanızı yükleneceği kaynak bölge** aşağı açılan listesinde, bir güvenlik bölgesi seçin.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: ClickOnce uygulaması için özel izinleri ayarlama](../deployment/how-to-set-custom-permissions-for-a-clickonce-application.md)   
  [ClickOnce uygulamalarının güvenliğini sağlama](../deployment/securing-clickonce-applications.md)   
  [ClickOnce uygulamaları için kod erişimi güvenliği](../deployment/code-access-security-for-clickonce-applications.md)   
- [ClickOnce Uygulamalarının Güvenliğini Sağlama](../deployment/securing-clickonce-applications.md)

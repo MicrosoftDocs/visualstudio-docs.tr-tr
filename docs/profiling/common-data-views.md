@@ -13,48 +13,49 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 32039843f3aef60f6e7087b0d26f8b5e1efd1df8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 21ccf237bec0b3ab7bf3ad96f6f4d24df240db0e
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263935"
 ---
-# <a name="common-data-views"></a>Ortak Veri Görünümleri
+# <a name="common-data-views"></a>Ortak veri görünümleri
 Bu bölüm, görünümler ve raporlar tüm profil oluşturma yöntemleri için ortak olan profil oluşturucu veri dosyalarının hakkında başvuru bilgileri içerir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Özet Görünümü](../profiling/summary-view.md)  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Özet görünümü](../profiling/summary-view.md)  
  Özet görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
  [Arayan/Aranan görünümü](../profiling/caller-callee-view.md)  
  Çağrı ağacı görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [Çağrı Ağacı Görünümü](../profiling/call-tree-view.md)  
+ [Çağrı ağacı görünümü](../profiling/call-tree-view.md)  
  Çağrı ağacı görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [Modüller Görünümü](../profiling/modules-view.md)  
+ [Modüller görünümü](../profiling/modules-view.md)  
  Modüller görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [İşlevler Görünümü](../profiling/functions-view.md)  
+ [İşlevler görünümü](../profiling/functions-view.md)  
  İşlevler görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [Satırlar Görünümü](../profiling/lines-view.md)  
+ [Satırlar görünümü](../profiling/lines-view.md)  
  Satırlar görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [Yönerge İşaretçileri (IP) Görünümü](../profiling/instruction-pointers-ips-view.md)  
+ [Yönerge işaretçileri (IP) görünümü](../profiling/instruction-pointers-ips-view.md)  
  Yönerge işaretçisi (IP) görünümü ve rapor açıklar. Veri sütunları profil yöntemine bağlıdır.  
   
- [İşlem Görünümü](../profiling/process-view.md)  
+ [İşlem görünümü](../profiling/process-view.md)  
  Listeleri işlemi ve iş parçacığı başlangıç ve bitiş saatleri.  
   
- [İşaretler Görünümü](../profiling/marks-view.md)  
+ [İşaretler görünümü](../profiling/marks-view.md)  
  ETW ve profil oluşturma veri dosyasına eklenen olayları örnekleme listeler.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="related-sections"></a>İlgili bölümler  
  [Örnekleme yöntemi veri görünümleri](../profiling/profiler-sampling-method-data-views.md)  
  Görünümler ve raporlar örnekleme yöntemini kullanarak oluşturulan profil oluşturucu veri dosyalarının hakkında başvuru bilgileri.  
   
- [İzleme Metodu Veri Görünümleri](../profiling/instrumentation-method-data-views.md)  
+ [İzleme yöntemi veri görünümleri](../profiling/instrumentation-method-data-views.md)  
  Görünümler ve raporlar izleme metodunu kullanarak oluşturulan profil oluşturucu veri dosyalarının hakkında başvuru bilgileri.  
   
  [.NET bellek verisi görünümleri](../profiling/dotnet-memory-data-views.md)  

@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2f35f88f735e16590549a3787a2a829e896ba943
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b0aa4cd077a047345efe91cc0214d7761faf63f0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49931733"
 ---
 # <a name="idebugprocess2getphysicalprocessid"></a>IDebugProcess2::GetPhysicalProcessId
 Sistem işlemi tanımlayıcısını alır.  
@@ -40,10 +41,10 @@ int GetPhysicalProcessId(
   
 #### <a name="parameters"></a>Parametreler  
  `pdwProcessId`  
- [out] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) sistem işlem tanımlayıcı bilgileri ile doldurulur yapısı.  
+ [out] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) sistem işlemi tanımlayıcı bilgileri girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   

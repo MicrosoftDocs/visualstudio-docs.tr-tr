@@ -17,11 +17,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 731e8091a91c49c8e17dbcd00c3aea32001115a0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1ffbebd651087d9aa877d0e257947352a0d0275e
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154830"
 ---
 # <a name="stoptrackingandcleanup"></a>StopTrackingAndCleanup
 Tüm izleme durdurur ve izleme oturumu tarafından kullanılan belleği serbest bırakır.  
@@ -32,11 +33,11 @@ Tüm izleme durdurur ve izleme oturumu tarafından kullanılan belleği serbest 
 HRESULT WINAPI StopTrackingAndCleanup(void);  
 ```  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Döndürür bir **HRESULT** ile **başarılı** izleme durdurduysanız biti ayarlanmamış.  
+## <a name="return-value"></a>Dönüş değeri  
+ Döndürür bir **HRESULT** ile **başarılı** izleme durduruldu durumunda biti ayarlanmamış.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** FileTracker.h  
+ **Başlık:** *FileTracker.h*  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [StartTrackingContext](../msbuild/starttrackingcontext.md)

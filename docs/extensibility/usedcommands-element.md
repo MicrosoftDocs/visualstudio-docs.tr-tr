@@ -16,16 +16,17 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: aa2dd8bbcfaaa84905f60e2f4ae984f3269c7095
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e707a8336fb5e324c667ae16eceac2c2e9f55654
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934775"
 ---
-# <a name="usedcommands-element"></a>UsedCommands öğesi
-UsedCommands öğesi grupları UsedCommand öğeleri ve diğer UsedCommands gruplandırmaları.  
+# <a name="usedcommands-element"></a>UsedCommands Öğesi
+UsedCommands öğesi UsedCommand öğeleri ve diğer UsedCommands gruplandırmaları gruplandırır.  
   
- UsedCommands öğesi isteğe bağlıdır. Paketin dışında tanımlanan komutları çağırmayın, bu bölümde .vsct dosyanıza dahil gerekmez.  
+ UsedCommands öğesi isteğe bağlıdır. Paketiniz dışında tanımlanan komutları çağırmayın, bu bölümde .vsct dosyanıza dahil gerekmez.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,13 +49,13 @@ UsedCommands öğesi grupları UsedCommand öğeleri ve diğer UsedCommands grup
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[UsedCommand Öğesi](../extensibility/usedcommand-element.md)|Başka bir kod tarafından uygulanan komutu.|  
+|[UsedCommand Öğesi](../extensibility/usedcommand-element.md)|Başka kod tarafından uygulanan komutu.|  
   
 ### <a name="parent-elements"></a>Üst Öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[CommandTable Öğesi](../extensibility/commandtable-element.md)|Tümleşik geliştirme ortamı (IDE) bir VSPackage sağlayan komutlar (örneğin, menü öğeleri, menüler, araç çubukları ve birleşik giriş kutuları) temsil eden tüm öğeleri tanımlar.|  
+|[CommandTable Öğesi](../extensibility/commandtable-element.md)|VSPackage sağlayan komutlar (örneğin, menü öğeleri, menüler, araç çubukları ve birleşik giriş kutuları) tümleşik geliştirme ortamı (IDE) temsil eden tüm öğeleri tanımlar.|  
   
 ## <a name="example"></a>Örnek  
   

@@ -14,17 +14,18 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 88f5b75defc1bceff4aacd580474b145df32bf68
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 04eefdca7459f95da3ddef0430a59f9af52e581e
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203907"
 ---
-# <a name="creating-a-breakpoint"></a>Bir kesme noktası oluşturma
-Bir kesme noktası oluşturma işlemi açıklanır.  
+# <a name="create-a-breakpoint"></a>Kesme noktası oluştur
+Bir kesme noktası oluşturma işlemi açıklanmaktadır.  
   
 ## <a name="methods-in-breakpoint-creation"></a>Kesme noktası oluşturma yöntemleri  
- Bir kesme noktası bağlanması gereken modülü yüklendiğinde oturum hata ayıklama Yöneticisi'ni (SDM) aşağıdaki yöntemleri çağırır:  
+ Bir kesme noktası bağlanması gereken bir modül yüklendiğinde oturum hata ayıklama Yöneticisi (SDM) aşağıdaki yöntemleri çağırır:  
   
 1.  [IDebugPendingBreakpoint2::Enable](../../extensibility/debugger/reference/idebugpendingbreakpoint2-enable.md)  
   
@@ -33,11 +34,11 @@ Bir kesme noktası oluşturma işlemi açıklanır.
 3.  [IDebugPendingBreakpoint2::CanBind](../../extensibility/debugger/reference/idebugpendingbreakpoint2-canbind.md)  
   
     > [!NOTE]
-    >  **CanBind** yalnızca bir kullanıcı kesme noktaları penceresinden bir kesme noktası bulunduğunda çağrılır.  
+    >  **CanBind** yalnızca bir kullanıcı bir kesme noktasından yaptığında çağrılır **kesme noktaları** penceresi.  
   
 4.  [IDebugPendingBreakpoint2::Bind](../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md)  
   
 5.  [IDebugPendingBreakpoint2::EnumBoundBreakpoints](../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumboundbreakpoints.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata Ayıklayıcısı Olaylarını Çağırma](../../extensibility/debugger/calling-debugger-events.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata ayıklayıcı olayları çağırma](../../extensibility/debugger/calling-debugger-events.md)

@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 35337b26053876c9009be124bba9791743f53009
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7d58c58dbbaad6d57518c8f13620029034ae4b76
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920397"
 ---
 # <a name="idebugboundbreakpoint2getbreakpointresolution"></a>IDebugBoundBreakpoint2::GetBreakpointResolution
-Bu kesme açıklar kesme noktası çözümleme alır.  
+Bu Kesme noktasının açıklayan bir kesme noktası çözünürlüğü alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,18 +44,18 @@ int GetBreakpointResolution(
  `ppBPResolution`  
  [out] Döndürür [IDebugBreakpointResolution2](../../../extensibility/debugger/reference/idebugbreakpointresolution2.md) aşağıdakilerden birini temsil eden arabirim:  
   
--   Kod kesme noktası bir yere bağlı konumu kodda açıklar kesme noktası çözümleme nesne.  
+-   Bir kod kesme noktası bir yere bağlı kodun konumu açıklayan kesme noktası çözünürlüğü nesnesi.  
   
--   Burada bir veri kesme noktası bağlı veri konumu.  
+-   Veri konumu veri kesme noktası yere bağlıdır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` ilişkili kesme noktası nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) numaralandırması).  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` bağlı Kesme noktasının nesnenin durumu ayarlanırsa `BPS_DELETED` (parçası [BP_STATE](../../../extensibility/debugger/reference/bp-state.md) sabit listesi).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Çağrı [GetBreakpointType](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getbreakpointtype.md) kesme noktası çözüm kod veya veriler için olup olmadığını belirlemek için yöntem.  
+ Çağrı [GetBreakpointType](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getbreakpointtype.md) kesme noktası çözünürlüğü için kod veya veri olup olmadığını belirlemek için yöntemi.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CBoundBreakpoint` gösteren nesne [IDebugBoundBreakpoint2](../../../extensibility/debugger/reference/idebugboundbreakpoint2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CBoundBreakpoint` gösteren nesne [IDebugBoundBreakpoint2](../../../extensibility/debugger/reference/idebugboundbreakpoint2.md) arabirimi.  
   
 ```  
 HRESULT CBoundBreakpoint::GetBreakpointResolution(  

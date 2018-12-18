@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d3c2eb6009eacd40081be28cc5945310d7a00fc1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c95457fdc91e4c625cb56aaba58593acf2a64e16
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49821948"
 ---
 # <a name="idebugarrayfieldgetelementtype"></a>IDebugArrayField::GetElementType
-Dizideki öğenin türünü alır.  
+Dizideki öğe türünü alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,7 +44,7 @@ int GetElementType(
  [out] Döndürür bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) öğesi türünü tanımlayan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  [IDebugArrayField](../../../extensibility/debugger/reference/idebugarrayfield.md) nesne dizinin tüm öğeleri aynı türde olduğunu varsayar.  

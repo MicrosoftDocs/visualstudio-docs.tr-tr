@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31132087"
 ---
 # <a name="persisting-data-in-the-msbuild-project-file"></a>MSBuild proje dosyası içinde kalıcı veri
 Proje alt alt özgü veriler daha sonra kullanmak için proje dosyasına kalıcı olması gerekebilir. Proje alt proje dosyası Kalıcılık aşağıdaki gereksinimleri karşılaması için kullanır:  

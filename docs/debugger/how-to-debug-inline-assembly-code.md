@@ -21,26 +21,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d52f0d27c0ef63eff8c4cc2b36a9a35b2cbfcf8a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 88865df3dcf507cc9a6f6be13e7ab1ff55877c25
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52388318"
 ---
 # <a name="how-to-debug-inline-assembly-code"></a>Nasıl Yapılır: Satır İçi Derleme Kodunda Hata Ayıklama
+
 > [!NOTE]
->  İletişim kutuları ve menü komutlarını gördüğünüz açıklanana Yardım'da etkin ayarlarınıza veya sürümünüze bağlı olarak farklı olabilir. Ayarlarınızı değiştirmek için Araçlar menüsünden içeri ve dışarı aktarma ayarları seçin. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md).  
-  
- Satır içi derleme kodunda hata ayıklama için iki windows hata ayıklayıcı sağlar **ayrıştırılmış** penceresi ve **kaydeder** penceresi.  
-  
-## <a name="procedure"></a>Yordam  
-  
-#### <a name="to-debug-inline-assembly-code"></a>Satır içi derleme kodunda hata ayıklama  
-  
-1.  Kullanım **ayrıştırılmış** derleme yönergeleri görüntülemek için pencere.  
-  
-2.  Kullanım **kaydeder** kayıt içeriğini görüntülemek için penceresi.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata ayıklama güvenliği](../debugger/debugger-security.md)   
- [Yerel kodda hata ayıklama](../debugger/debugging-native-code.md)
+> İletişim kutuları ve menü komutları gördüğünüz açıklanana Yardım'da, etkin ayarlarınıza ve sürüm bağlı olarak farklı olabilir. Ayarlarınızı değiştirmek için Araçlar menüsünden içeri ve dışarı aktarma ayarları seçin. Daha fazla bilgi için [ayarlarına](../ide/environment-settings.md#reset-settings).
+
+Satır içi derleme kodunda hata ayıklamak için hata ayıklayıcı iki windows sağlar **ayrıştırılmış kodu** penceresi ve **kaydeder** penceresi.
+
+## <a name="debug-inline-assembly-code"></a>Satır içi derleme kodunda hata ayıklama
+
+1.  Kullanım **ayrıştırılmış kodu** derleme yönergeleri görüntülemek için pencere.
+
+2.  Kullanım **kaydeder** kayıt içeriğini görüntülemek için pencere.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Hata Ayıklayıcısı Güvenliği](../debugger/debugger-security.md)
+- [Yerel Kodda Hata Ayıklama](../debugger/debugging-native-code.md)

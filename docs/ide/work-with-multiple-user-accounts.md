@@ -1,81 +1,121 @@
 ---
-title: Birden çok kullanıcı hesabı ile çalışma | Microsoft Docs
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology: vs-acquisition
+title: Birden çok kullanıcı hesabıyla çalışma
+ms.date: 12/10/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
-author: TerryGLee
-ms.author: tglee
+author: gewarren
+ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b93a57592ae87daa8d60d5a4d5e7166d26cfe61f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e623734cbe2aedee962e9f1b139ac1d50d473072
+ms.sourcegitcommit: 75e02ed88a1ace6e8265fd4e3a82a1bc78f3adca
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53348238"
 ---
 # <a name="work-with-multiple-user-accounts"></a>Birden çok kullanıcı hesabıyla çalışma
 
-Birden çok Microsoft hesabına ve/veya iş veya Okul hesapları varsa, böylece için ayrı olarak oturum açmak zorunda kalmadan herhangi bir hesabı kaynaklara erişebilir, bunları tüm Visual Studio ekleyebilirsiniz. Şu anda Azure, Application Insights, Team Foundation Server ve Office 365 Hizmetleri kolaylaştırılmış oturum açma deneyimini destekler. Ek Hizmetleri zaman devam ettiği kullanılabilir duruma gelebilir.
+Birden çok Microsoft hesabına ve/veya iş veya Okul hesapları varsa, böylece herhangi bir hesabı kaynakları için ayrı ayrı oturum açmanız gerek kalmadan erişebilir bunları tüm Visual Studio için ekleyebilirsiniz. Azure, Application Insights, Azure DevOps ve Office 365 Hizmetleri tüm kolaylaştırılmış oturum açma deneyimini destekler.
 
-Bir makine üzerinde birden fazla hesap ekledikten sonra Visual Studio için başka bir makinede oturum hesapları kümesini sizinle dolaşıma. Hesap adlarını dolaşan rağmen kimlik bilgilerini desteklemez, dikkate almak önemlidir. Bu nedenle, yeni makineye kaynaklarını kullanma girişimi ilk kez diğer bu hesaplar için kimlik bilgilerini girmeniz istenir.
+Bir makine üzerinde birden çok hesap ekledikten sonra başka bir makinede Visual Studio'ya oturum açarsanız, sizinle hesapları Dolaşımda kümesi.
 
-Bu anlatımda Visual Studio'ya birden fazla hesap ekleme gösterilir ve bu hesaplarından erişilebilir kaynakları yansıtılır görmek nasıl yerleştirir gibi **bağlı hizmet Ekle** iletişim kutusunda, **Sunucu Gezgini** , ve **Takım Gezgini**.
+> [!NOTE]
+> Hesap adlarını Dolaşımda olsa da, kimlik bilgileri yoktur. Kimlik bilgileri diğer hesaplar için yeni bir makineye kaynaklarını kullanma girişimi ilk kez girmeniz istenir.
 
-## <a name="sign-in-to-visual-studio"></a>Visual Studio'da oturum açın
+Bu makalede, Visual Studio için birden çok hesap ekleyin işlemini göstermektedir. Ayrıca, bu hesapları yerde erişilebilir kaynakları gibi görmek nasıl gösterir **bağlı hizmet Ekle** iletişim kutusunda **Sunucu Gezgini**, ve **Takım Gezgini**.
 
-- Visual Studio uygulamasına bir Microsoft hesabı veya kurumsal bir hesap ile oturum açın. Kullanıcı adınızın, aşağıdakine benzer şekilde penceresinin üst köşesindeki görünmesi görmeniz gerekir:
+## <a name="sign-in-to-visual-studio"></a>Visual Studio’da oturum açma
 
-     ![Currentlly oturum açmış kullanıcı](../ide/media/vs2015_username.png "VS2015_UserName")
+Visual Studio'ya bir Microsoft hesabı veya kuruluş hesabı ile oturum açın. Kullanıcı adınızı, şuna benzer şekilde penceresinin üst köşesinde görünür görmeniz gerekir:
 
-### <a name="access-your-azure-account-in-server-explorer"></a>Sunucu Gezgininde Azure hesabınıza erişin
+![Oturum açmış kullanıcı](../ide/media/vs2015_username.png)
 
-Tuşuna **Ctrl + Alt + S** açmak için **Sunucu Gezgini**. Azure simgesini ve ne zaman, genişletir, Visual Studio'ya oturum açmak için kullanılan kimliği ile ilişkili Azure hesabında kaynaklardır görmelisiniz seçin. Ancak bu (kendi kaynakları görürsünüz) aşağıdakine benzer görünmelidir.
+### <a name="access-your-azure-account-in-server-explorer"></a>Sunucu Gezgini'nde Azure hesabınıza erişin
 
-![Sunucu Gezgini gösteren Azure Araçları düğümünün genişletilmiş](../ide/media/vs2015_serverexplorer.png "VS2015_ServerExplorer")
+Tuşuna **Ctrl**+**Alt**+**S** açmak için **Sunucu Gezgini**. Genişletin **Azure** düğüm ve Visual Studio'ya oturum açmak için kullandığınız hesapla ilişkili Azure hesabındaki kullanılabilir kaynakları içerdiğine dikkat edin. Aşağıdaki görüntüye benzer:
 
-Visual Studio belirli bir cihazda ilk kullanışınızda iletişim yalnızca IDE'ye ile imzalanmış kimliği kayıtlı abonelikleri gösterir. Herhangi diğer hesaplarınızı doğrudan kaynaklara erişebilir **Sunucu Gezgini** Azure düğümde sağ tıklayarak ve seçme **yönetin ve filtre abonelikleri** ve, hesapları ekleme Hesap Seçicisi. Başka bir hesap ardından, isterseniz aşağı oka tıklayarak ve hesapları listesinden seçim tarafından da seçebilirsiniz. Hesap seçtikten sonra sunucu Gezgini'nde görüntülemek istediğiniz bu hesap altında hangi abonelikleri seçebilirsiniz.
+![Sunucu Gezgini ile genişletilmiş Azure düğümü](../ide/media/work-with-multiple-user-accounts/server-explorer.png)
 
-![Azure abonelikleri iletişim yönetmek](../ide/media/vs2015_manage_subs.png "vs2015_manage_subs")
+İlk kez belirli bir cihazda Visual Studio kullandığınızda iletişim kutusu yalnızca, oturum açtığınız hesabı altında kayıtlı abonelikleri de gösterir. Herhangi diğer hesaplarınız doğrudan kaynaklara erişebilir **Sunucu Gezgini** sağ tıklayarak **Azure** düğümünü seçme **yönetin ve filtre abonelikleri**ve ardından hesap Seçici denetim hesaplarınızı ekleme. Ardından, isterseniz aşağı oka tıklayıp hesapları listesinden seçim başka bir hesap seçebilirsiniz. Bir hesap seçtikten sonra abonelikleri görüntülemek için söz konusu hesap altında özelleştirebilirsiniz **Sunucu Gezgini**.
 
-Sunucu Gezgini, bir sonraki açışınızda bu aboneliği için kaynakları görüntülenir.
+![Azure abonelikleri iletişim yönetme](../ide/media/vs2015_manage_subs.png)
 
-### <a name="access-your-azure-account-via-add-connected-service-dialog"></a>Bağlı hizmet Ekle iletişim kutusu üzerinden Azure hesabınıza erişin
+Bir sonraki açışınızda **Sunucu Gezgini**, kaynaklar söz konusu abonelik için görüntülenir.
 
-1. C# dilinde bir UWP uygulaması projesi oluşturun.
+### <a name="access-your-azure-account-via-add-connected-service-dialog"></a>Bağlı hizmet Ekle iletişim kutusu aracılığıyla Azure hesabınıza erişin
 
-1. Çözüm Gezgini'nde proje düğümünü seçin ve ardından **Ekle, bağlı hizmet**. **Bağlı hizmet Ekle** Sihirbazı görünür ve Visual Studio oturum açma kimliğiyle ilişkili Azure hesabında hizmetlerin listesini gösterir Azure için ayrı olarak oturum açmak zorunda değilsiniz unutmayın. Ancak, diğer hesapları için belirli bir bilgisayardan kaynaklarına erişme girişimi ilk kez oturum açmak gerekir.
+1. Varolan bir projeyi açın veya yeni bir proje oluşturun.
 
-    > [!WARNING]
-    > Bu ilk kez ise Visual Studio'da belirli bir bilgisayarda bir UWP uygulaması oluşturuyorsanız, giderek cihazınız için geliştirme modunu etkinleştirmek için istenir **ayarları &#124; güncelleştirmeleri ve güvenlik &#124; geliştiriciler için** üzerinde Bilgisayarınızı. Daha fazla bilgi için bkz: [aygıtı etkinleştir geliştirme](/windows/uwp/get-started/enable-your-device-for-development).
+1. İçinde proje düğümünü seçin **Çözüm Gezgini**, sağ tıklayın ve ardından seçin **Ekle** > **bağlı hizmet**.
 
-### <a name="access_azure"></a> Erişim Azure Active Directory'de bir Web projesi
+   **Bağlı hizmet Ekle** Sihirbazı görünür ve Visual Studio kişiselleştirme hesabınızla ilişkili Azure hesabındaki hizmetlerin listesini gösterir. Azure için ayrı ayrı oturum açmanız gerekmez. Ancak, diğer hesapları için farklı bir makineden kullanıcıların kaynaklara erişmeye ilk kez oturum açmanız gerekir.
 
-Azure AD son kullanıcı çoklu oturum açma ASP.NET MVC web uygulamaları veya Web API Hizmetleri AD kimlik doğrulaması için destek sağlar. Etki alanı kimlik doğrulaması, tek tek kullanıcı hesabı kimlik doğrulamasını farklıdır; Active Directory etki alanınıza erişimi olan kullanıcılar, web uygulamalarınızı bağlanmak için var olan Azure AD hesaplarına kullanabilirsiniz. Office 365 uygulamaları, etki alanı kimlik doğrulamasını da kullanabilirsiniz. Bu eylem görmek için bir web uygulaması oluşturma (**dosya, yeni proje C#, bulut, ASP.NET Web uygulaması**). Yeni ASP.NET projesi iletişim kutusunda seçin **kimlik doğrulamayı Değiştir**. Kimlik Doğrulama Sihirbazı'nı görünür ve uygulamanızda kullanılacak kimlik doğrulama türlerini seçmenize olanak tanır.
+### <a name="access-azure-active-directory-in-a-web-project"></a>Web projesinde erişimi Azure Active Directory
 
-![ASP.NET kimlik doğrulaması iletişim kutusu değişimi](../ide/media/vs2015_change_authentication.png "VS2015_change_authentication")
+Azure Active Directory (AAD) son kullanıcı çoklu oturum açma web apps'te ASP.NET MVC veya web API hizmetlerindeki AD kimlik doğrulaması için destek sağlar. Etki alanı kimlik doğrulaması, kullanıcı hesabı kimlik doğrulamasını farklıdır. Active Directory etki alanınıza erişimi olan kullanıcılar, web uygulamalarınıza bağlanmak için mevcut bir AAD hesaplarını kullanabilirsiniz. Office 365 uygulamaları, etki alanı kimlik doğrulaması olarak da kullanabilirsiniz.
 
-ASP.NET kimlik doğrulaması farklı türleri hakkında daha fazla bilgi için bkz: [Visual Studio 2013'da ASP.NET Web projeleri oluşturma](http://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauth) (kimlik doğrulaması hakkında bilgi hala geçerli Visual Studio sürümleri için geçerlidir).
+Bu uygulamada görmek için bir web uygulaması oluşturma (**dosya** > **yeni proje** > **C#** > **bulut**  >  **ASP.NET Web uygulaması**). İçinde **yeni ASP.NET projesi** iletişim kutusunda seçin **kimlik doğrulamayı Değiştir**. Kimlik doğrulaması Sihirbazı görünür ve uygulamanızda kullanılacak kimlik doğrulaması türünü seçmenize olanak tanır.
 
-### <a name="access-your-visual-studio-team-services-account"></a>Visual Studio Team Services hesabınıza erişemiyor
+![ASP.NET kimlik doğrulaması iletişim kutusu değişimi](../ide/media/vs2015_change_authentication.png)
 
-Ana menüden **takım, Team Foundation Server'a Bağlan** ortaya çıkarmak için **Takım Gezgini** penceresi. Tıklayın **takım projelerini seçin**ve ardından altında liste kutusunda **Team Foundation Server Seç**, Visual Studio Team Services hesabınız için URL görmeniz gerekir. URL seçtiğinizde, kimlik bilgilerinizi yeniden girmek zorunda kalmadan oturum açmanız.
+ASP.NET kimlik doğrulaması farklı türleri hakkında daha fazla bilgi için bkz. [oluşturma ASP.NET web projeleri Visual Studio'da](/aspnet/visual-studio/overview/2013/creating-web-projects-in-visual-studio#authentication-methods).
 
-## <a name="add-a-second-user-account-to-visual-studio"></a>Visual Studio için ikinci bir kullanıcı hesabı Ekle
+### <a name="access-your-azure-devops-organization"></a>Azure DevOps kuruluşunuza erişmesini
 
-Visual Studio üst köşedeki kullanıcı adınıza yanındaki aşağı oka tıklayın. Ardından **hesap ayarlarını** menü öğesi. **Hesap Yöneticisi** iletişim kutusu görüntülenir ve oturum ile hesabı görüntüler. Seçin **Hesap Ekle** yeni bir Microsoft hesabı veya yeni bir iş veya Okul hesabı eklemek için iletişim kutusunun alt köşedeki bağlantı.
+Ana menüden **takım** > **bağlantıları Yönet** açmak için **Takım Gezgini - Bağlan** penceresi. Seçin **bağlantıları yönetme** > **projeye bağlanmanız**. İçinde **projeye bağlan** iletişim kutusunda, bir proje listeden seçin (veya **TFS Sunucusu Ekle** sunucunuza URL'sini girin). Bir URL seçin, kimlik bilgilerinizi girmek zorunda kalmadan oturum açtınız.
 
-![Visual Studio hesap Seçici](../ide/media/vs2015_acct_picker.png "VS2015_acct_picker")
+Daha fazla bilgi için [projelerine Takım Gezgini bağlanma](connect-team-project.md).
 
-Yeni hesap kimlik bilgilerini girmek için istemleri izleyin. Bir kullanıcı kendi Contoso.com iş hesabı ekledikten sonra Hesap Yöneticisi'ni aşağıda gösterilmektedir.
+## <a name="add-an-additional-account-to-visual-studio"></a>Visual Studio'ya ek bir hesap ekleyin
 
-![Hesap Yöneticisi](../ide/media/vs2015_accountmanager.gif "VS2015_AccountManager")
+Visual Studio için ek bir hesap eklemek için:
 
-## <a name="revisit-the-add-connected-services-wizard-and-server-explorer"></a>Sunucu Gezgini ve ekleme bağlı hizmetler Sihirbazı'nı tekrar ziyaret
+1. Seçin **dosya** > **hesap ayarları**.
 
-Şimdi gidin **Sunucu Gezgini** yeniden Azure düğümüne sağ tıklayın ve seçin **yönetin ve filtre abonelikleri**. Geçerli hesap yanında aşağı açılan tıklatarak yeni hesabı seçin ve ardından sunucu Gezgini'nde görüntülemek istediğiniz abonelikleri seçin. Belirtilen abonelikle ilişkili tüm hizmetlerin görmeniz gerekir. Şu an için Visual Studio IDE ikinci hesabı ile oturum olsa bile, bu hesabın hizmet ve kaynakların oturum açtınız. Aynı için doğrudur **proje, bağlı hizmet Ekle** ve **takım, Team Foundation Server'a Bağlan**.
+1. Altında **tüm hesapları**, seçin **Hesap Ekle**.
+
+1. Üzerinde **hesabınızda oturum** sayfasında, kullanılacak hesabı seçin ya da seçin **başka bir hesap kullan**. Yeni hesap kimlik bilgilerini girmek için istemleri izleyin.
+
+(İsteğe bağlı) Şimdi giderek **Sunucu Gezgini** ve yeni eklediğiniz hesapla ilişkili Azure Hizmetleri görebilirsiniz. İçinde **Sunucu Gezgini**, sağ **Azure** düğüm ve **yönetin ve filtre abonelikleri**. Geçerli hesap yanındaki açılır oka tıklayarak yeni bir hesap seçin ve ardından görüntülemek istediğiniz abonelikleri **Sunucu Gezgini**. Belirtilen aboneliği ile ilişkili tüm hizmetlerini görmelisiniz. Şu anda ikinci hesabıyla Visual Studio'ya oturum açmadıysanız olsa bile, bu hesabın hizmetlerine ve kaynaklarına oturum açtınız. Aynı true **proje** > **bağlı hizmet Ekle** ve **takım** > **Team Foundation ServerBağlan**.
+
+### <a name="add-an-account-using-device-code-flow"></a>Cihaz kod akışını kullanarak Hesap Ekle
+
+Bazı durumlarda, oturum açın veya normal bir şekilde bir hesap ekleyin. Bu, Internet Explorer için herhangi bir nedenle engellenirse veya ağınıza bir güvenlik duvarının arkasında olduğunda ortaya çıkabilir. Bu sorunu çözmek için etkinleştirebilirsiniz *cihaz kod akışını* bir hesap ekleyin veya hesabınız yeniden kimlik doğrulamaya zorlayabilir. Cihaz kod akışını sağlar, farklı bir tarayıcı kullanarak veya farklı bir makinede oturum&mdash;fiziksel veya sanal (VM).
+
+Cihaz kod akışını kullanarak oturum açmanız:
+
+1. Açık [ **hesapları** ](reference/accounts-environment-options-dialog-box.md) altındaki **Araçları** > **seçenekleri** > **ortamı**ve ardından **eklerken veya bir hesap yeniden kimlik doğrulaması cihaz kod akışı etkinleştir**. Seçin **Tamam** seçenekler sayfaları kapatın.
+
+1. Seçin **dosya** > **hesap ayarları** hesabı Yönetim sayfasını açın.
+
+1. Seçin **Hesap Ekle** altında **tüm hesapları**.
+
+   Bir iletişim kutusu, bir URL ve kodu bir web tarayıcısına yapıştırın gösterir.
+
+   ![Cihaz kod akış URL'si ve kod](media/work-with-multiple-user-accounts/device-login-code.png)
+
+1. Tuşuna **Ctrl**+**C** iletişim kutusundaki metni kopyalayın ve ardından **Tamam** iletişim kutusunu kapatmak için. Not Defteri gibi bir metin düzenleyicisine kopyalanan metni yapıştırın. Bu, sonraki adımda kodu kopyalamak kolaylaştırır.
+
+1. Visual Studio'da oturum açın ve ardından yapıştırın veya ifadesini içeren kutuya kopyaladığınız kodunu girmeniz için kullanmak istediğiniz makine veya web tarayıcısında cihaz oturum açma URL'sine gidin **kod**.
+
+   **Visual Studio** uygulama adı sayfanın daha aşağı görünür.
+
+1. Altında **Visual Studio**, seçin **devam**.
+
+   ![cihaz oturum açma page.png](media/work-with-multiple-user-accounts/device-login-page.png)
+
+1. Hesap kimlik bilgilerinizi girmek için istemleri izleyin.
+
+   Cihazınızda Visual Studio'da oturum açıldıktan ve tarayıcı penceresini kapatabilirsiniz belirten bir sayfa görüntülenir.
+
+   ![Visual Studio'da oturum açın tarayıcıdan tamamlandı](media/work-with-multiple-user-accounts/sign-in-browser-complete.png)
+
+1. Visual Studio hesabı Yönetim sayfasına geri dönün ve yeni eklenen hesabın altında listelenen göreceğiniz **tüm hesapları**. Seçin **Kapat**.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Visual Studio’da oturum açma](signing-in-to-visual-studio.md)
+- [Visual Studio’da oturum açma](signing-in-to-visual-studio.md)
+- [Oturum açmak için Visual Studio Mac için](/visualstudio/mac/signing-in)

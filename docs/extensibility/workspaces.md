@@ -1,5 +1,5 @@
 ---
-title: Visual Studio çalışma alanları | Microsoft Docs
+title: Visual Studio'da çalışma alanları | Microsoft Docs
 ms.custom: ''
 ms.date: 02/21/2018
 ms.technology:
@@ -12,57 +12,58 @@ manager: viveis
 ms.workload:
 - vssdk
 ms.openlocfilehash: 0230201677fd2422817ca1fbeab6679a424e5c05
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49865836"
 ---
 # <a name="workspaces"></a>Çalışma Alanları
 
-Nasıl Visual Studio dosyaların herhangi bir koleksiyonu temsil eden bir çalışma alanı olan [Klasör Aç](../ide/develop-code-in-visual-studio-without-projects-or-solutions.md), ve tarafından temsil edilen <xref:Microsoft.VisualStudio.Workspace.IWorkspace> türü. Klasördeki dosyalar ile ilgili özellikler ve içeriği tek başına çalışma anlamıyor. Bunun yerine, oluşturabilir ve diğerleri bağlı davranamaz verileri kullanmak için API'ler özellikler ve uzantılar genel bir dizi sağlar. Üreticileri aracılığıyla oluşurlar [Genişletilebilirlik Çerçevesi ile yönetilen](https://github.com/Microsoft/vs-mef/blob/master/doc/index.md) (MEF) kullanarak çeşitli verme öznitelikleri.
+Nasıl Visual Studio tüm dosyaları koleksiyonunu temsil eder bir çalışma alanıdır [Klasör Aç](../ide/develop-code-in-visual-studio-without-projects-or-solutions.md), ve tarafından temsil edilen <xref:Microsoft.VisualStudio.Workspace.IWorkspace> türü. Klasördeki dosyaları için ilgili özellikler ve içeriği tek başına çalışma anlamıyor. Bunun yerine, genel üretmek ve diğer işlem yapabileceğimiz veri kullanmak için özellikler ve uzantılar için API kümesi sağlar. Üreticiler arasında oluşan [Managed Extensibility Framework](https://github.com/Microsoft/vs-mef/blob/master/doc/index.md) (MEF) kullanarak çeşitli öznitelikler verme.
 
 ## <a name="workspace-providers-and-services"></a>Çalışma alanı sağlayıcıları ve Hizmetleri
 
-Çalışma sağlayıcı ve Hizmetleri veri ve bir çalışma alanı içeriğini tepki vermek için işlevsellik sağlar. Bağlamsal dosya bilgilerini, kaynak dosyalarında simgeleri veya yapı işlevselliği.
+Çalışma alanı sağlayıcıları ve Hizmetleri veri ve bir çalışma alanının içeriğini tepki vermek için işlevsellik sağlar. Bağlamsal dosya bilgilerini, kaynak dosyaları, simgeler veya yapı işlevselliği.
 
-Her iki kavramları kullanın bir [Fabrika düzeni](https://en.wikipedia.org/wiki/Factory_method_pattern) ve MEF çalışma tarafından üzerinden aktarılır. Tüm verme öznitelikleri uygulamak `IProviderMetadataBase` veya `IWorkspaceServiceFactoryMetadata`, ancak uzantıları verilen türleri için kullanması gereken somut türleri.
+Her iki kavramları kullanarak bir [Fabrika deseni](https://en.wikipedia.org/wiki/Factory_method_pattern) ve çalışma alanı tarafından MEF üzerinden aktarılır. Tüm verme öznitelikleri uygulamak `IProviderMetadataBase` veya `IWorkspaceServiceFactoryMetadata`, vardır, ancak uzantıları, dışarı aktarılan türler için kullanması gereken somut türler.
 
-Sağlayıcı ve Hizmetleri arasındaki tek fark ilişkilerini çalışma alanı ' dir. Bir çalışma alanı belirli bir türdeki birçok sağlayıcısı olabilir, ancak yalnızca bir hizmeti belirli bir türdeki çalışma alanında oluşturulur. Örneğin, bir çalışma alanı çok sayıda dosya tarayıcısı sağlayıcıları ancak çalışma çalışma yalnızca bir dizin oluşturma hizmeti içeriyor.
+Sağlayıcıları ile hizmetler arasında bir fark ilişkilerini çalışma alanına olmasıdır. Bir çalışma alanı belirli bir türün birçok sağlayıcı olabilir ancak yalnızca bir hizmeti belirli bir türün çalışma alanı oluşturulur. Örneğin, bir çalışma alanı birçok dosya tarayıcı sağlayıcıları ancak çalışma çalışma alanı yalnızca bir dizin oluşturma hizmeti içeriyor.
 
-Başka bir anahtar verilerini sağlayıcıları ve Hizmetleri tüketimini farktır. Çalışma alanı, birkaç nedenlerle sağlayıcılardan veri almak için giriş noktasıdır. İlk olarak, sağlayıcılar genellikle oluşturdukları veri dar bazı kümesine sahiptir. Verileri bir C# kaynak dosyası simgelerini olabilir veya dosya bağlamları için yapı bir _CMakeLists.txt_ dosya. Çalışma alanı, meta verileri hizalama istekle sağlayıcıları için bir tüketicinin isteği ile eşleşir. İkinci olarak, bazı senaryolar için birçok izin diğerlerinin isteğine senaryoları katkıda bulunmak için sağlayıcıları ile en yüksek öncelikli sağlayıcı kullanın.
+Başka bir anahtar sağlayıcıları ve hizmetlerden veri tüketimini farktır. Çalışma alanını birkaç nedenlerle sağlayıcılardan veri almak için giriş noktasıdır. İlk olarak, sağlayıcılar genellikle bazı dar oluşturdukları veri kümesine sahip olursunuz. Veriler için Sembol olabilir bir C# kaynak dosyası veya dosya bağlamları yapı bir _CMakeLists.txt_ dosya. Çalışma alanı olan meta verileri hizalama istekle sağlayıcıları için bir tüketicinin isteği eşleşir. İkinci olarak, bazı senaryolar için birçok izin diğerlerinin isteğine senaryoları katkıda bulunmak için sağlayıcıları kullanan sağlayıcı en yüksek öncelik.
 
-Buna karşılık, uzantıları örnekleri alın ve doğrudan çalışma alanı Hizmetleri ile etkileşim. Genişletme yöntemleri `IWorkspace` gibi Visual Studio tarafından sağlanan hizmetlerin kullanılabilir <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper.GetFileWatcherService%2A>. Uzantınızı çalışma hizmet bileşenlerinin uzantınızı içinde veya diğer uzantıları kullanmak için sunabilir. Tüketiciler kullanması gereken <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper.GetServiceAsync%2A> veya sağladığınız üzerinde bir genişletme yöntemi `IWorkspace` türü.
+Buna karşılık, uzantılar örneklerini alma ve çalışma alanı hizmetleriyle doğrudan etkileşim. Uzantı yöntemleri `IWorkspace` gibi Visual Studio tarafından sağlanan hizmetleri için kullanılabilir <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper.GetFileWatcherService%2A>. Uzantınızı bileşenleri uzantınız içinde veya diğer uzantıları kullanmak için bir çalışma hizmet sunabilir. Tüketiciler kullanması gereken <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper.GetServiceAsync%2A> veya sağladığınız üzerinde bir genişletme yöntemi `IWorkspace` türü.
 
 >[!WARNING]
-> Visual Studio ile çakışan Hizmetleri Yazar değil. Beklenmeyen sorunlarına yol açabilir.
+> Visual Studio ile çakışan hizmetlerin Yazar değil. Bu beklenmeyen sorunlarına yol açabilir.
 
-## <a name="disposal-on-workspace-closure"></a>Çalışma alanı kapatma çıkışında
+## <a name="disposal-on-workspace-closure"></a>Çalışma alanını kapatma çıkışında
 
-Bir çalışma alanı kapatması üzerinde Extender'larının dispose ancak zaman uyumsuz çağrı gerekebilir kodu. <xref:Microsoft.VisualStudio.Threading.IAsyncDisposable> Arabirimi, bu kod kolay yazma yapmak için kullanılabilir.
+Üzerinde kapanış bir çalışma alanının Genişleticileri dispose ancak zaman uyumsuz çağrı gerekebilir kod. <xref:Microsoft.VisualStudio.Threading.IAsyncDisposable> Arabirimidir bu kodları yazmak kullanılabilir.
 
 ## <a name="related-types"></a>İlgili türleri
 
-- <xref:Microsoft.VisualStudio.Workspace.IWorkspace> açılan bir klasörü gibi açılmış bir çalışma alanı için merkezi varlıktır.
+- <xref:Microsoft.VisualStudio.Workspace.IWorkspace> açılan bir klasörü gibi açık bir çalışma alanı için merkezi varlıktır.
 - <xref:Microsoft.VisualStudio.Workspace.IWorkspaceProviderFactory`1> Çalışma alanı örneği başına bir sağlayıcı oluşturur.
 - <xref:Microsoft.VisualStudio.Workspace.IWorkspaceServiceFactory> Çalışma alanı örneği başına bir hizmet oluşturur.
-- <xref:Microsoft.VisualStudio.Threading.IAsyncDisposable> sağlayıcıları ve çıkarma sırasında zaman uyumsuz kodu çalıştırmak için gereken hizmetleri uygulanmalıdır.
-- <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper> iyi bilinen hizmetleri veya rasgele Hizmetleri erişmek için yardımcı yöntemleri sağlar.
+- <xref:Microsoft.VisualStudio.Threading.IAsyncDisposable> sağlayıcılar ve çıkarma sırasında zaman uyumsuz kodu çalıştırmak için gereken hizmetleriniz uygulanmalıdır.
+- <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper> iyi bilinen hizmetleri veya rastgele Hizmetleri erişmek için yardımcı yöntemleri sağlar.
 
-## <a name="workspace-settings"></a>Çalışma ayarları
+## <a name="workspace-settings"></a>Çalışma alanı ayarları
 
-Çalışma alanları sahip bir <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager> bir çalışma alanı üzerinden basit ancak güçlü denetimi ile hizmet. Ayarları temel bir genel bakış için bkz: [yapı özelleştirebilir ve hata ayıklama görevleri](../ide/customize-build-and-debug-tasks-in-visual-studio.md).
+Çalışma alanına sahip bir <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager> basit ama güçlü bir çalışma alanı denetime sahip hizmet. Ayarları temel bir genel bakış için bkz [yapı özelleştirme ve hata ayıklama görevleri](../ide/customize-build-and-debug-tasks-in-visual-studio.md).
 
-Çoğu ayarlarını `SettingsType` türleri _.json_ dosyaları, gibi _VSWorkspaceSettings.json_ ve _tasks.vs.json_.
+Çoğu ayarları `SettingsType` türleridir _.json_ dosyaları, gibi _VSWorkspaceSettings.json_ ve _tasks.vs.json_.
 
-Basit yollar çalışma alanı içindeki "kapsamlar" Geçici çalışma alanı ayarları güç merkezi. Bir tüketici çağırdığında <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager.GetAggregatedSettings%2A>, ayar türü ve istenen yolunu dahil tüm kapsamlar toplanır. Kapsam toplama öncelik aşağıdaki gibidir:
+Çalışma alanı ayarlarını gücünü yalnızca çalışma alanı içinde yolları "kapsamların" etrafında ortalar. Bir tüketici çağırdığında <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager.GetAggregatedSettings%2A>, istenen yol ve ayar türünü içeren tüm kapsamlar toplanır. Kapsam toplama öncelik aşağıdaki gibidir:
 
 1. "Çalışma alanı kökün genellikle olan yerel ayarları", `.vs` dizin.
-1. İstenen yol kendisi.
+1. İstenen yolun kendisindeki.
 1. İstenen yol üst dizini.
-1. Tüm dizinleri kadar ve çalışma alanı kök dahil olmak üzere daha fazla üst.
-1. "Kullanıcı dizinindedir genel ayarları",.
+1. Tüm dizinler için ayarlama ve çalışma alanı kök dahil olmak üzere daha fazla üst.
+1. "Bir kullanıcı dizinde genel ayarları".
 
-Sonuç örneği olan <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings>. Bu nesne belirli bir tür için ayarları tutar ve anahtar adları ayarı olarak depolanan için sorgulanabilir `string`. <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings.GetProperty%2A> Yöntemleri ve <xref:Microsoft.VisualStudio.Workspace.Settings.WorkspaceSettingsExtensions> genişletme yöntemleri beklediğiniz istenen ayarı değerin türünü bilmeniz çağıran. Çoğu ayarları dosyaları olarak kalıcı olarak _.json_ dosyaları, birçok çağrılarını kullanacağınız `string`, `bool`, `int`ve bu türlerin dizileri. Nesne türleri de desteklenir. Bu durumda, kullandığınız `IWorkspaceSettings` tür bağımsız değişkeni olarak kendisini. Örneğin:
+Sonuç örneğidir <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings>. Bu nesne, belirli bir tür için ayarları içerir ve olarak depolanan anahtar adlarını ayarlamak için sorgulanabilir `string`. <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings.GetProperty%2A> Yöntemleri ve <xref:Microsoft.VisualStudio.Workspace.Settings.WorkspaceSettingsExtensions> genişletme yöntemleri, istenen ayar değeri türünü bilmeniz çağıran beklediğiniz. Çoğu ayarları dosyası olarak kalıcı olarak _.json_ dosyaları, birçok çağrılarını kullanacağı `string`, `bool`, `int`ve bu türlerin dizileri. Nesne türleri de desteklenir. Bu gibi durumlarda, kullandığınız `IWorkspaceSettings` tür bağımsız değişkeni olarak kendisini. Örneğin:
 
 ```json
 {
@@ -79,7 +80,7 @@ Sonuç örneği olan <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceS
 }
 ```
 
-Bu ayarları varsayılarak olan bir kullanıcının _VSWorkspaceSettings.json_, verileri olarak erişilebilir:
+Bu ayarların olduğunu düşünerek olan bir kullanıcının _VSWorkspaceSettings.json_, veri olarak erişilebilir:
 
 ```csharp
 using System.Collections.Generic;
@@ -114,13 +115,13 @@ private static void ReadSettings(IWorkspace workspace)
 ```
 
 >[!NOTE]
->Bu ayarları API'leri kullanılabilen API'leri için ilgisiz `Microsoft.VisualStudio.Settings` ad alanı. Çalışma alanı ayarları ana belirsiz ve çalışma özgü ayarları dosyaları veya dinamik ayarları sağlayıcılarını kullanabilirsiniz.
+>Kullanılabilir API'ler için bu ayarları API'leri ilişkisizdir `Microsoft.VisualStudio.Settings` ad alanı. Çalışma alanı ayarlarını ana bilgisayarının dilden bağımsız ve özel çalışma ayarları dosya veya dinamik ayarları sağlayıcıları kullanır.
 
 ### <a name="providing-dynamic-settings"></a>Dinamik ayarlarını sağlama
 
-Uzantıları sağlayabilir <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsProvider>s. Bu bellek içi sağlayıcıları uzantılarının ayarlarını ekleyin veya başkalarının geçersiz kılma olanak sağlar.
+Uzantıları sağlayabilir <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsProvider>s. Bu bellek içi sağlayıcıları ayarlar eklemek veya başkalarının geçersiz kılmak uzantılar sağlar.
 
-Dışarı aktarma bir `IWorkspaceSettingsProvider` diğer çalışma sağlayıcıları farklı. Fabrika değil `IWorkspaceProviderFactory` ve özel öznitelik türü yok. Bunun yerine, uygulama <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsProviderFactory> ve `[Export(typeof(IWorkspaceSettingsProviderFactory))]`.
+Dışarı aktarma bir `IWorkspaceSettingsProvider` diğer çalışma alanı sağlayıcıları farklı. Fabrika değil `IWorkspaceProviderFactory` ve özel öznitelik türü yoktur. Bunun yerine, uygulama <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsProviderFactory> ve `[Export(typeof(IWorkspaceSettingsProviderFactory))]`.
 
 ```csharp
 // Common workspace provider factory pattern
@@ -142,19 +143,19 @@ internal class MySettingsProviderFactory : IWorkspaceSettingsProviderFactory
 ```
 
 >[!TIP]
->Döndüren yöntemler uygularken `IWorkspaceSettingsSource` (gibi `IWorkspaceSettingsProvider.GetSingleSettings`), bir örneğini döndürmek `IWorkspaceSettings` yerine `IWorkspaceSettingsSource`. `IWorkspaceSettings` Bazı ayarlar toplamalar sırasında yararlı olabilecek daha fazla bilgi sağlar.
+>Döndüren yöntemler uygularken `IWorkspaceSettingsSource` (gibi `IWorkspaceSettingsProvider.GetSingleSettings`), bir örneğini döndürür `IWorkspaceSettings` yerine `IWorkspaceSettingsSource`. `IWorkspaceSettings` bazı ayarları toplamalar sırasında yararlı olabilir. daha fazla bilgi sağlar.
 
 ### <a name="settings-related-apis"></a>Ayarları ilgili API'ler
 
-- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager> okur ve çalışma alanı için ayarları toplar.
+- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager> okur ve çalışma alanı ayarlarını toplar.
 - <xref:Microsoft.VisualStudio.Workspace.WorkspaceServiceHelper.GetSettingsManager%2A> alır `IWorkspaceSettingsManager` bir çalışma alanı için.
-- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager.GetAggregatedSettings%2A> Tüm çakışan kapsamlara toplanan belirli bir kapsam için ayarları alır.
-- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings> belirli bir kapsam için ayarları içerir.
+- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettingsManager.GetAggregatedSettings%2A> Çakışan tüm kapsamlarda toplanan belirli bir kapsam için ayarları alır.
+- <xref:Microsoft.VisualStudio.Workspace.Settings.IWorkspaceSettings> belirli bir kapsam için ayarlar içerir.
 
-## <a name="workspace-suggested-practices"></a>Uygulamalar çalışma alanı önerilen
+## <a name="workspace-suggested-practices"></a>Çalışma alanı önerilen uygulamalar
 
-- Nesnelerden dönmek `IWorkspaceProviderFactory.CreateProvider` veya unutmayın benzer API'leri kendi `Workspace` oluşturduğunuzda bağlamı. Bu nesne üzerinde oluşturmayı tutulur bekleniyor sağlayıcıları arabirimleri yazılır.
-- Çalışma alanı özgü önbellekleri veya "Yerel ayarları" yolun çalışma alanının içindeki ayarları kaydedin. Dosyayı kullanmak için bir yol oluşturmak `Microsoft.VisualStudio.Workspace.WorkspaceHelper.MakeRootedUnderWorkingFolder` Visual Studio 2017 15.6 veya sonraki bir sürümü de. 15,6. sürümden önceki sürümler için aşağıdaki kod parçacığında kullanın:
+- Nesnelerden dönüş `IWorkspaceProviderFactory.CreateProvider` veya unutmayın benzer API'leri kendi `Workspace` oluştururken bağlamı. Bu nesne oluşturma tutulur bekleniyor sağlayıcıları arabirimleri yazılır.
+- Çalışma alanı özgü önbellekler veya "Yerel ayarları" yol çalışma alanının içinde ayarları kaydedin. Kullanarak dosya için bir yol oluşturmak `Microsoft.VisualStudio.Workspace.WorkspaceHelper.MakeRootedUnderWorkingFolder` Visual Studio 2017 sürüm 15.6 veya üzeri. 15.6. sürümden önceki sürümler için aşağıdaki kod parçacığını kullanın:
 
 ```csharp
 using System.IO;
@@ -168,19 +169,19 @@ private static string MakeRootedUnderWorkingFolder(IWorkspace workspace, string 
 }
 ```
 
-## <a name="solution-events-and-package-auto-load"></a>Çözüm olayları ve paket otomatik yük
+## <a name="solution-events-and-package-auto-load"></a>Çözüm olayları ve paket otomatik yükle
 
-Yüklü paketler uygulayabilirsiniz `IVsSolutionEvents7` ve çağırma `IVsSolution.AdviseSolutionEvents`. Açma ve Visual Studio klasöründe kapatma olay içerir.
+Yüklü paketleri uygulayabilirsiniz `IVsSolutionEvents7` ve çağırma `IVsSolution.AdviseSolutionEvents`. Bu olay, açma ve kapatma Visual Studio'da bir klasör içerir.
 
-Bir kullanıcı Arabirimi bağlamı otomatik yük paketiniz için kullanılabilir. Değer `4646B819-1AE0-4E79-97F4-8A8176FDD664`.
+UI bağlamı otomatik yükle paketiniz için kullanılabilir. Değer `4646B819-1AE0-4E79-97F4-8A8176FDD664`.
 
 ## <a name="troubleshooting"></a>Sorun giderme
 
-### <a name="the-sourceexplorerpackage-package-did-not-load-correctly"></a>SourceExplorerPackage paketi düzgün yüklenemedi
+### <a name="the-sourceexplorerpackage-package-did-not-load-correctly"></a>SourceExplorerPackage paketi düzgün şekilde yüklenmedi
 
-Çalışma alanı genişletilebilirlik yoğun MEF tabanlıdır ve birleşim hataları yüklenemedi için açık klasörü barındıran paket neden olur. Örneğin, bir uzantı türü ile aktarır `ExportFileContextProviderAttribute`, ancak türü yalnızca uygulayan `IWorkspaceProviderFactory<IFileContextActionProvider>`, Visual Studio'da bir klasör açmaya çalışırken bir hata oluşur. Hata ayrıntılarını bulunabilir _%LOCALAPPDATA%\Microsoft\VisualStudio\15.0_id\ComponentModelCache\Microsoft.VisualStudio.Default.err_. Uzantısı tarafından uygulanan türleri için hataları çözümleyin.
+Çalışma alanı genişletilebilirlik yoğun MEF tabanlı ve yüklenmesi başarısız açık klasörü barındıran paket oluşturma hatalara neden olur. Örneğin, bir uzantı türü ile dışarı aktarır `ExportFileContextProviderAttribute`, ancak yalnızca türün uyguladığı `IWorkspaceProviderFactory<IFileContextActionProvider>`, Visual Studio'da bir klasör açılmaya çalışılırken bir hata meydana gelir. Hata ayrıntıları bulunabilir _%LOCALAPPDATA%\Microsoft\VisualStudio\15.0_id\ComponentModelCache\Microsoft.VisualStudio.Default.err_. Uzantınız tarafından uygulanan türleri için hataları giderin.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-* [Dosya içerikleri](workspace-file-contexts.md) -dosya bağlam sağlayıcıları Klasör Aç çalışma alanları için kod Intelligence getirin. 
-* [Dizin oluşturma](workspace-indexing.md) -çalışma dizinini toplar ve çalışma alanı hakkında bilgi devam ettirir.
+* [Dosya bağlamları](workspace-file-contexts.md) -dosya bağlam sağlayıcıları Klasör Aç çalışma alanları için kod zeka getirin. 
+* [Dizin oluşturma](workspace-indexing.md) -çalışma dizinini toplar ve çalışma alanı hakkında bilgileri kalıcıdır.

@@ -16,11 +16,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 433bcbc46814c49a30836d8a7f0d9ec10e571ea6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5c298f6801b5c66a978ac39953eb2edc92838c30
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844163"
 ---
 # <a name="lines-view"></a>Satırlar Görünümü
 Satırlar görünümü örnekleme yöntemini kullanarak toplanan profil oluşturucu verileri için kullanılabilir. Görünüm araçları kullanılarak toplanan veriler için kullanılabilir değil.  
@@ -43,7 +44,7 @@ Satırlar görünümü örnekleme yöntemini kullanarak toplanan profil oluştur
   
 -   Deyim erdiği kaynak satırdaki karakter.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Satırlar görünümü](../profiling/lines-view-sampling-data.md)   
  [Satırlar görünümü - örnekleme](../profiling/lines-view-dotnet-memory-sampling-data.md)   
  [Satırlar Görünümü](../profiling/lines-view-contention-data.md)

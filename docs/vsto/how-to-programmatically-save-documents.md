@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla belgeleri kaydetme | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla belgeleri kaydetme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,81 +16,82 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 89e2a236d8755b764971b7823056edda3e944e65
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e794a995d1e978cf5aae8d1b6ec9c1711436af73
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49883483"
 ---
-# <a name="how-to-programmatically-save-documents"></a>Nasıl yapılır: Program Aracılığıyla Belgeleri Kaydetme
-  Microsoft Office Word belgeleri kaydetmek için birkaç yolu vardır. Belgenin adını değiştirmeden bir belgeyi kaydedebilir veya yeni bir adla bir belge kaydedebilirsiniz.  
+# <a name="how-to-programmatically-save-documents"></a>Nasıl yapılır: program aracılığıyla belgeleri kaydetme
+  Microsoft Office Word belgeleri kaydetmek için çeşitli yollar vardır. Belge adını değiştirmeden bir belgeyi kaydedebilirsiniz veya yeni bir adla bir belgeyi kaydedebilirsiniz.  
   
  [!INCLUDE[appliesto_wdalldocapp](../vsto/includes/appliesto-wdalldocapp-md.md)]  
   
-## <a name="saving-a-document-without-changing-the-name"></a>Bir belge adı değiştirmeden kaydetme  
+## <a name="save-a-document-without-changing-the-name"></a>Bir belge, adını değiştirmeden kaydedin  
   
-#### <a name="to-save-the-document-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş belgeyi kaydetmek için  
+### <a name="to-save-the-document-associated-with-a-document-level-customization"></a>Belge düzeyi özelleştirme ile ilişkilendirilmiş belgeyi kaydetme  
   
 1.  Çağrı <xref:Microsoft.Office.Tools.Word.Document.Save%2A> yöntemi <xref:Microsoft.Office.Tools.Word.Document> sınıfı. Bu kod örneği kullanmak için çalıştırın `ThisDocument` projenizdeki sınıfı.  
   
      [!code-vb[Trin_VstcoreWordAutomation#7](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#7)]
      [!code-csharp[Trin_VstcoreWordAutomation#7](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#7)]  
   
-#### <a name="to-save-the-active-document"></a>Etkin belgeyi kaydetmek için  
+### <a name="to-save-the-active-document"></a>Etkin belgeyi kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Word._Document.Save%2A> etkin belge için yöntem. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
+1. Çağrı <xref:Microsoft.Office.Interop.Word._Document.Save%2A> etkin belge için yöntemi. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
   
-     [!code-vb[Trin_VstcoreWordAutomation#8](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#8)]
-     [!code-csharp[Trin_VstcoreWordAutomation#8](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#8)]  
+    [!code-vb[Trin_VstcoreWordAutomation#8](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#8)]
+    [!code-csharp[Trin_VstcoreWordAutomation#8](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#8)]  
   
- Kaydetmek istediğiniz belge etkin belgeyi olup emin değilseniz, sunucu adına göre başvurabilir.  
+   Etkin belgeyi kaydetmek istediğiniz belge olup emin değilseniz adıyla başvurabilir.  
   
-#### <a name="to-save-a-document-specified-by-name"></a>Adıyla belirtilen belgeyi kaydetmek için  
+### <a name="to-save-a-document-specified-by-name"></a>Belirtilen ada göre bir belgeyi kaydetmek için  
   
-1.  Bağımsız değişken olarak belge adı kullanmak <xref:Microsoft.Office.Interop.Word.Documents> koleksiyonu. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
+1.  Belge adı bağımsız değişkeni olarak kullanma <xref:Microsoft.Office.Interop.Word.Documents> koleksiyonu. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
   
      [!code-vb[Trin_VstcoreWordAutomation#9](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#9)]
      [!code-csharp[Trin_VstcoreWordAutomation#9](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#9)]  
   
-## <a name="saving-a-document-with-a-new-name"></a>Belgeye yeni bir adla kaydetme  
- Belgeye yeni bir adla kaydetmek için Farklı Kaydet yöntemini kullanın. Bu yöntemi kullanabilirsiniz <xref:Microsoft.Office.Tools.Word.Document> konak öğesi belge düzeyi Word projesindeki ya da yerel <xref:Microsoft.Office.Interop.Word.Document> herhangi bir Word projesinin nesne. Bu yöntem, yeni dosya adı belirtin, ancak başka bir bağımsız değişken isteğe bağlı gerektirir.  
+## <a name="save-a-document-with-a-new-name"></a>Belgeye yeni bir adla kaydet  
+ Belgeye yeni bir adla kaydetmek için Farklı Kaydet yöntemi kullanın. Bu yöntemi kullanabilirsiniz <xref:Microsoft.Office.Tools.Word.Document> Word belge düzeyi projesi veya yerel konak öğesi <xref:Microsoft.Office.Interop.Word.Document> herhangi bir sözcük projede nesne. Bu yöntem, yeni dosya adı belirtin, ancak diğer bağımsız değişken isteğe bağlı gerektirir.  
   
 > [!NOTE]  
->  Gösteriyorsa, **Farklı Kaydet** iletişim kutusu içinde <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.DocumentBeforeSave> olay işleyicisi `ThisDocument` ve *iptal* parametresi **yanlış**, uygulama olabilir beklenmedik bir şekilde çıkın. Ayarlarsanız *iptal* parametresi **doğru**, otomatik kaydetme devre dışı olduğunu belirten bir hata iletisi görünür.  
+>  Gösteriyorsa, **Farklı Kaydet** iletişim kutusu içine <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.DocumentBeforeSave> olay işleyicisine `ThisDocument` ve *iptal* parametresi **false**, uygulamadan beklenmedik bir şekilde çıkın. Ayarlarsanız *iptal* parametresi **true**, otomatik kaydetme devre dışı olduğunu belirten bir hata iletisi görüntülenir.  
   
-#### <a name="to-save-the-document-associated-with-a-document-level-customization-with-a-new-name"></a>Belge düzeyi özelleştirme yeni bir adla ilişkili belgeyi kaydetmek için  
+### <a name="to-save-the-document-associated-with-a-document-level-customization-with-a-new-name"></a>Belge düzeyi özelleştirmesinde yeni bir adla ilişkilendirilmiş belgeyi kaydetme  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> yöntemi `ThisDocument` bir tam yol ve dosya adını kullanarak projenizdeki sınıfı. Bu klasörde aynı adı taşıyan bir dosya zaten varsa, sessiz bir şekilde üzerine yazılır. Bu kod örneği kullanmak için çalıştırın `ThisDocument` sınıfı.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> yöntemi `ThisDocument` tam yol ve dosya adı kullanarak, projenizdeki sınıfı. Bu klasörde zaten o adda bir dosya varsa dosyanın sessizce üzerine yazılır. Bu kod örneği kullanmak için çalıştırın `ThisDocument` sınıfı.  
   
     > [!NOTE]  
-    >  <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> Yöntemi, bir hedef dizin yok veya dosya kaydetme diğer sorunlar varsa bir özel durum oluşturur. Kullanmak için iyi bir uygulamadır bir **try... catch** geçici engelleme <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> yöntemi veya çağrılan yöntemin içinde.  
+    >  <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> Yöntemi, bir hedef dizin mevcut değil veya dosya kaydetme diğer sorunları varsa bir özel durum oluşturur. Kullanmak için iyi bir uygulamadır bir **try... catch** geçici olarak engellemek <xref:Microsoft.Office.Tools.Word.Document.SaveAs%2A> yöntemi veya içinde bir çağırma yöntemi.  
   
      [!code-vb[Trin_VstcoreWordAutomation#10](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#10)]
      [!code-csharp[Trin_VstcoreWordAutomation#10](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#10)]  
   
-#### <a name="to-save-a-native-document-with-a-new-name"></a>Yerel belgeyi yeni adla kaydetmek için  
+### <a name="to-save-a-native-document-with-a-new-name"></a>Yerel belgeyi yeni bir adla kaydetmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> yöntemi <xref:Microsoft.Office.Interop.Word.Document> kaydetmek bir tam yol ve dosya adını kullanarak istediğiniz. Bu klasörde aynı adı taşıyan bir dosya zaten varsa, sessiz bir şekilde üzerine yazılır.  
+1.  Çağrı <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> yöntemi <xref:Microsoft.Office.Interop.Word.Document> kaydetmek bir tam yol ve dosya adını kullanarak istediğiniz. Bu klasörde zaten o adda bir dosya varsa dosyanın sessizce üzerine yazılır.  
   
-     Aşağıdaki kod örneğinde etkin belgeyi yeni adla kaydeder. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
+     Aşağıdaki kod örneği, etkin belgeyi yeni bir adla kaydeder. Bu kod örneği kullanmak için çalıştırın `ThisDocument` veya `ThisAddIn` projenizdeki sınıfı.  
   
     > [!NOTE]  
-    >  <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> Yöntemi, bir hedef dizin yok veya dosya kaydetme diğer sorunlar varsa bir özel durum oluşturur. Kullanmak için iyi bir uygulamadır bir **try... catch** geçici engelleme <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> yöntemi veya çağrılan yöntemin içinde.  
+    >  <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> Yöntemi, bir hedef dizin mevcut değil veya dosya kaydetme diğer sorunları varsa bir özel durum oluşturur. Kullanmak için iyi bir uygulamadır bir **try... catch** geçici olarak engellemek <xref:Microsoft.Office.Interop.Word._Document.SaveAs%2A> yöntemi veya içinde bir çağırma yöntemi.  
   
      [!code-vb[Trin_VstcoreWordAutomationAddIn#10](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationAddIn/ThisAddIn.vb#10)]
      [!code-csharp[Trin_VstcoreWordAutomationAddIn#10](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationAddIn/ThisAddIn.cs#10)]  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
- Bu kod örneği için şunlar gerekir:  
+## <a name="compile-the-code"></a>Kod derleme  
+ Bu kod örneği için aşağıdakiler gereklidir:  
   
--   Ada göre bir belgeyi kaydetmek için NewDocument.doc isimli bir belge c sürücüsünde Test adlı bir dizinde olması gerekir  
+-   Ada göre bir belgeyi kaydetmek için bir belge adlı *NewDocument.doc* adlı bir dizinde bulunmalıdır *Test* c sürücüsünün  
   
--   Belgeye yeni bir adla kaydetmek için Test adlı bir dizin c sürücüsünde gerekir  
+-   Belgeye yeni bir adla kaydetmek için adında bir dizin *Test* c sürücüsünde bulunan mevcut olması gerekir  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: program aracılığıyla belgeleri kapatma](../vsto/how-to-programmatically-close-documents.md)   
  [Nasıl yapılır: varolan belgeleri program aracılığıyla açma](../vsto/how-to-programmatically-open-existing-documents.md)   
  [Belge konak öğesi](../vsto/document-host-item.md)   
- [Office Çözümlerinde İsteğe Bağlı Parametreler](../vsto/optional-parameters-in-office-solutions.md)  
+ [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)  
   
   

@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d3bb6c47a95ff77d19ea8f6cb8803e416c35148c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c6ce0c0448a72d2511736ca221bafebfc3ecefe6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875378"
 ---
 # <a name="idebugprocess2terminate"></a>IDebugProcess2::Terminate
 İşlemi sonlandırır.  
@@ -37,10 +38,10 @@ int Terminate();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir işlemin sonlandırıldığından, bu işlem içindeki tüm programlar sonlandırılır; Hiçbiri daha fazla kod çalıştırılmasına izin verilir.  
+ Bir işlem kesildiğinde tüm programlar işlem içinde sonlandırılır; yok, daha fazla kod çalışmasına izin verilmez.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)

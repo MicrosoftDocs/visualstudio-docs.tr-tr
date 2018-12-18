@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e4079c688358f3e7deedd28b5eb05e556192bfe6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 14db7869717a2edf1ac64be744ab1f6058455c1a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49845322"
 ---
 # <a name="threadproperties"></a>THREADPROPERTIES
 Bir iş parçacığı özelliklerini açıklar.  
@@ -52,38 +53,38 @@ public struct THREADPROPERTIES {
   
 ## <a name="members"></a>Üyeler  
  dwFields  
- Bayraklarını bileşimini [THREADPROPERTY_FIELDS](../../../extensibility/debugger/reference/threadproperty-fields.md) bu yapı hangi alanların geçerli açıklayan numaralandırması.  
+ Bayraklarının bir birleşimi [THREADPROPERTY_FIELDS](../../../extensibility/debugger/reference/threadproperty-fields.md) bu yapının hangi alanlarda geçerli olduğunu açıklayan sabit listesi,.  
   
  dwThreadId  
- İş parçacığı kimliği  
+ İş parçacığı kimliği.  
   
  dwSuspendCount  
- İş parçacığı sayısı askıya alın.  
+ İş parçacığını askıya alma sayısı.  
   
  dwThreadState  
- Arasında bir değer [THREADSTATE](../../../extensibility/debugger/reference/threadstate.md) işletim iş parçacığı durumunu gösteren sabit listesi.  
+ Bir değer [THREADSTATE](../../../extensibility/debugger/reference/threadstate.md) çalışma iş parçacığı durumunu belirten sabit listesi.  
   
  bstrPriority  
- İş parçacığı önceliği belirten bir dize; Örneğin, "yukarıdaki Normal", "Normal" veya "Zaman kritik".  
+ İş parçacığı önceliği belirten bir dize; Örneğin, "yukarıda Normal", "Normal" veya "Zaman kritik".  
   
  bstName  
  İş parçacığı adı.  
   
  bstrLocation  
- İş parçacığı konumu (genellikle en üstteki yığın çerçevesi), genellikle burada yürütme şu anda durdu yöntemi ad olarak ifade.  
+ Genellikle burada yürütme şu anda durdu yöntemin adı ifade edilen iş parçacığı konumu (en üstteki yığın çerçevesi genellikle).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı için bir çağrı tarafından doldurulur [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md) yöntemi. Böylece dönen bilgiyi yerleşiminde de genellikle kullanılan **iş parçacığı** penceresi.  
+ Bu yapı için bir çağrı tarafından doldurulur [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md) yöntemi. Bu nedenle döndürülen bilgileri, genellikle doldurma içinde kullanılır **iş parçacıkları** penceresi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetThreadProperties](../../../extensibility/debugger/reference/idebugthread2-getthreadproperties.md)   
  [THREADPROPERTY_FIELDS](../../../extensibility/debugger/reference/threadproperty-fields.md)   
  [THREADSTATE](../../../extensibility/debugger/reference/threadstate.md)

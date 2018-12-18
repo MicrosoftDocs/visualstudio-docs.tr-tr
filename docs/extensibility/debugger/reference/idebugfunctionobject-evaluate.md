@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4f717a61e79e9f91f9f79a32d1da5020b0084516
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5d8d9c479c1dac638a63ce45d114c4a66e0a213d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908430"
 ---
 # <a name="idebugfunctionobjectevaluate"></a>IDebugFunctionObject::Evaluate
-İşlev çağrılarını ve sonuçta elde edilen değer bir nesne olarak döndürür.  
+İşlevini çağırır ve bir nesne olarak elde edilen değeri döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int Evaluate(
   
 #### <a name="parameters"></a>Parametreler  
  `ppParams`  
- [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) giriş parametreleri temsil eden nesne. Bu parametrelerin her biri ile oluşturulmuş `Create` yöntemleri [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
+ [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) giriş parametrelerini temsil eden nesneleri. Bu parametre her biri ile oluşturulmuş `Create` yöntemleri [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
   
  `dwParams`  
- [in] Parametre sayısı `ppParams` dizi.  
+ [in] Parametre sayısı `ppParams` dizisi.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süreyi belirtir. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süreyi belirtir. Kullanım `INFINITE` süresiz bekleme.  
   
  `ppResult`  
- [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) temsil eden bir nesne olarak işlevin değeri.  
+ [out] Döndürür bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) değeri işlevin bir nesne olarak temsil eden.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem kurar ve tarafından temsil edilen işlevi çağrısı yürütür [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) nesnesi.  
+ Bu yöntem, ayarlar ve bir çağrı tarafından temsil edilen işlevi çalıştırır [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) nesne.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md)

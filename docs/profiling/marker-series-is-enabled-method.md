@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0d7889fc8b02bcaa09ca1fb33efbd84e524695c0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c4095381fffea29e4613d42d8ecbf2d189b4cb1b
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845125"
 ---
-# <a name="markerseriesisenabled-method"></a>marker_series::is_enabled Yöntemi
+# <a name="markerseriesisenabled-method"></a>marker_series::is_enabled yöntemi
 Herhangi bir oturumunda sağlayıcısı etkin olmadığını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 bool is_enabled();  
 bool is_enabled(  
    marker_importance _Importance,  
@@ -40,12 +41,12 @@ bool is_enabled(
  `_Category`  
  Kategori.  
   
-## <a name="return-value"></a>Dönüş Değeri  
+## <a name="return-value"></a>Dönüş değeri  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkersobj.h  
+ **Başlık:** *cvmarkersobj.h*  
   
  **Namespace:** Concurrency::diagnostic  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [marker_series Sınıfı](../profiling/marker-series-class.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [marker_series sınıfı](../profiling/marker-series-class.md)

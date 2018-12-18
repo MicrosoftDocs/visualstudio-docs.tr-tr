@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 664111f28ef23e6bf78fc96f26808d1b7ccb7a85
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4880bfc80f27c362deb056b176492eb62ec6f975
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49941562"
 ---
 # <a name="idebugengine2removesetexception"></a>IDebugEngine2::RemoveSetException
-Artık hata ayıklama altyapısı tarafından işlenir için belirtilen özel durum kaldırır.  
+Belirtilen özel durum artık hata ayıklama altyapısı tarafından işlenecek şekilde kaldırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,12 +44,12 @@ int RemoveSetException(
  [in] Bir [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) kaldırılacak özel durumu açıklayan yapısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kaldırılmakta olan özel durum daha önce daha önceki bir çağrı tarafından ayarlanmış olmalıdır [SetException](../../../extensibility/debugger/reference/idebugengine2-setexception.md) yöntemi.  
+ Kaldırılmakta olan özel durum daha önce daha önceki bir çağrı tarafından ayarlanmış olması gerekir [SetException](../../../extensibility/debugger/reference/idebugengine2-setexception.md) yöntemi.  
   
- Aynı anda tüm kümesi özel durumları kaldırmak için arama [RemoveAllSetExceptions](../../../extensibility/debugger/reference/idebugengine2-removeallsetexceptions.md) yöntemi.  
+ Tüm küme özel durumları tek seferde kaldırmak için çağrı [RemoveAllSetExceptions](../../../extensibility/debugger/reference/idebugengine2-removeallsetexceptions.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)   

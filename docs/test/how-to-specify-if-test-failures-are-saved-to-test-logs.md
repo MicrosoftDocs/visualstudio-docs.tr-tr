@@ -1,5 +1,5 @@
 ---
-title: Visual Studio'da test başarısızlıklarının için yük testi günlüğünü kaydet | Microsoft Docs
+title: Test hataları için yük testi Kaydet
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -9,42 +9,43 @@ ms.assetid: 08a7fe98-a7f7-4b8d-94a3-ec82b65a2aaf
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 17b8792a98473658ae6ac47cd418028ce2cfcf6f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c583418fa34a44d4bc0bf78996df4cb35908b4f0
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53064410"
 ---
-# <a name="how-to-specify-if-test-failures-are-saved-to-test-logs-using-the-load-test-editor"></a>Nasıl yapılır: Yük Testi Düzenleyicisini Kullanarak Test Başarısızlıklarının Test Günlüklerine Kaydedilip Kaydedilmediği Belirleme
+# <a name="how-to-specify-if-test-failures-are-saved-to-test-logs-using-the-load-test-editor"></a>Nasıl yapılır: Yük Testi Düzenleyicisini kullanarak günlükleri test etmek için test hatalarını kaydedilip kaydedilmediği belirleme
 
-Yük testi ile oluşturduktan sonra **Yeni Yük Testi Sihirbazı**, kullanabileceğiniz **Yük Testi Düzenleyicisi** test gereksinimlerini ve hedeflerinizi karşılamak için yük testi özelliklerini değiştirmek için. Bkz: [izlenecek yol: oluşturma ve bir yük testi çalıştırma](../test/walkthrough-create-and-run-a-load-test.md). Değiştirerek bir yük testinde test başarısız olursa kaydedilen test günlüklerine isteyip istemediğinizi belirtebilirsiniz **Test Başarısızlığı Oturumunu Kaydet** özelliği.
+İle yükleme testinizi oluşturduktan sonra **Yeni Yük Testi Sihirbazı**, kullanabileceğiniz **Yük Testi Düzenleyicisi** test ihtiyaçlarınızı ve hedeflerinizi karşılamak için yük testi özelliklerini değiştirmek için. Bkz: [izlenecek yol: bir yük testi oluşturma ve çalıştırma](../test/walkthrough-create-and-run-a-load-test.md). Test günlüğü değiştirerek bir yük testi içinde bir test başarısız olursa kayıtlı olmasını isteyip istemediğinizi belirtebilirsiniz **Test hatasında günlüğünü Kaydet** özelliği.
 
 > [!NOTE]
->  Çalışma ayarları özelliklerini ve açıklamalarının tam listesi için bkz: [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
+> Çalıştırma ayarları özellikleri ve açıklamalarının tam listesi için bkz: [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
 
-## <a name="to-specify-if-the-test-log-is-saved-when-a-test-fails-in-a-scenario"></a>Bir senaryoda bir test başarısız olduğunda sınama günlük kaydedilirse belirtmek için
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
+
+## <a name="to-specify-if-the-test-log-is-saved-when-a-test-fails-in-a-scenario"></a>Test günlüğü, bir senaryoda, bir test başarısız olduğunda kaydedilirse belirtmek için
 
 1.  Bir yük testi açın.
 
-     Yük Testi Düzenleyicisi görüntülenir. Yük testi ağacı görüntülenir.
+     **Yük Testi Düzenleyicisi** görünür. Yük testi ağacında görüntülenir.
 
-2.  Ağaçları yük testi **çalıştırma ayarları** klasörü için test yineleme sayısını belirtmek istediğiniz çalışma ayarları düğümünü seçin.
+2.  Yük testi **çalıştırma ayarları** klasörü, en fazla test yinelemesi sayısını belirtmek istediğiniz çalışma ayarları düğümünü seçin.
 
-3.  Üzerinde **Görünüm** menüsünde, select **Özellikler penceresini**.
+3.  Üzerinde **görünümü** menüsünde **Özellikler penceresi**.
 
-     Çalıştırma ayarlarını kategoriler ve Özellikler Özellikler penceresinde görüntülenir.
+     Çalıştırma ayarları kategoriler ve özellikler görüntülenir **özellikleri** penceresi.
 
-4.  İçinde **Test Başarısızlığı Oturumunu Kaydet** özelliği, seçin ya da True veya False testini kaydetmek isteyip istemediğinizi belirtmek için oturum senaryosunda bir sınama hatası olayı içinde.
+4.  İçinde **Test hatasında günlüğünü Kaydet** özelliği seçin **True** veya **False** senaryoda test hatası durumunda test günlüğü kaydetmek isteyip istemediğinizi belirtmek için.
 
-     Özelliği değiştirmeyi bitirdikten sonra seçin **kaydetmek** üzerinde **dosya** menüsü.
+     Özelliği değiştirmeyi bitirdikten sonra seçin **Kaydet** üzerinde **dosya** menüsü.
 
-     Günlüğe kaydedilen veri Yük Testi Çözümleyicisinin Tablo görünümü kullanılarak görüntülenebilir. Daha fazla bilgi için bkz: [yük testi sonuçlarını çözümleme ve hataları Tablo görünümünde](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
+     Yük Testi Çözümleyicisinin Tablo görünümü kullanarak günlüğe kaydedilen verileri görüntülenebilir. Daha fazla bilgi için [yük testi sonuçlarını ve hatalarını Tablo görünümünde çözümlemek](../test/analyze-load-test-results-and-errors-in-the-tables-view.md).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Yük testi senaryolarını düzenleme](../test/edit-load-test-scenarios.md)
 - [İzlenecek yol: Yük testi oluşturma ve çalıştırma](../test/walkthrough-create-and-run-a-load-test.md)
-- [Yük testi senaryolarını düzenleme](../test/edit-load-test-scenarios.md)
-- [Nasıl yapılır: sanal kullanıcı etkinlik grafiğini etkinleştirmek için tüm ayrıntıların toplanmasını yapılandırma](../test/how-to-configure-load-tests-to-collect-full-details.md)
-- [Nasıl yapılır: Test günlüklerinin hangi sıklıkla kaydedileceğini belirtin](../test/how-to-specify-how-frequently-test-logs-are-saved.md)

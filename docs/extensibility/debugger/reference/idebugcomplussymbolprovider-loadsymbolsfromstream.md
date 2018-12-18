@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a01c5c14262beb36aed5d093b2bb34d4c14ef4ca
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 264112b3de5d8bcaabe555602bbc93f96c98fe9a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49937921"
 ---
 # <a name="idebugcomplussymbolproviderloadsymbolsfromstream"></a>IDebugComPlusSymbolProvider::LoadSymbolsFromStream
-Yükleri veri akışı verilen simgeleri ayıklama.  
+Yükleri hata ayıklama simgeleri veri akışını verilir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,22 +51,22 @@ int LoadSymbolsFromStream(
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `baseAddress`  
- [in] Temel bellek adresi.  
+ [in] Temel bir bellek adresi.  
   
  `pUnkMetadataImport`  
- [in] Sembol meta verileri içeren nesne.  
+ [in] Sembol meta veriler içeren nesne.  
   
  `pStream`  
  [in] Sembolleri içeren veri akışı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi. Yöntem çağrıları [LoadSymbolsFromStreamWithCorModule](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2-loadsymbolsfromstreamwithcormodule.md) yöntemi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi. Yöntem çağrıları [LoadSymbolsFromStreamWithCorModule](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2-loadsymbolsfromstreamwithcormodule.md) yöntemi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::LoadSymbolsFromStream(  

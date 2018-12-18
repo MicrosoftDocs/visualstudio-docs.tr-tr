@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ae632ab67a21d795a0594d37301c162c1c4ba753
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 30e70c956afc6aef5025d35425fbc2ee42605b90
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49921079"
 ---
 # <a name="pendingbpstate"></a>PENDING_BP_STATE
-Bekleyen bir kesme noktası (henüz bağlı bir kesme noktası) durumunu belirtir.  
+Bekleyen kesme noktasının (henüz bağlı bir kesme noktası) durumunu belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,27 +48,27 @@ public enum enum_PENDING_BP_STATE {
   
 ## <a name="members"></a>Üyeler  
  PBPS_NONE  
- Sıfır için yer tutucu. Bu değer hiçbir zaman döndürülür.  
+ Sıfır için yer tutucu. Bu değeri hiçbir zaman döndürülür.  
   
  PBPS_DELETED  
- Bekleyen kesme noktası silinip silinmediğini gösterir.  
+ Bekleyen kesme noktasının silindiğini gösterir.  
   
  PBPS_DISABLED  
- Bekleyen kesme noktası devre dışı olduğunu belirtir.  
+ Bekleyen kesme noktasını devre dışı olduğunu gösterir.  
   
  PBPS_ENABLED  
- Bekleyen kesme noktası etkinleştirildiğini gösterir.  
+ Bekleyen kesme noktasının etkin olduğunu gösterir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Olarak kullanmak `state` üyesi [PENDING_BP_STATE_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md) yapısı.  
+ Olarak `state` üyesi [PENDING_BP_STATE_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md) yapısı.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [PENDING_BP_STATE_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md)

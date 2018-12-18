@@ -1,5 +1,5 @@
 ---
-title: m_contingentProperties alan | Microsoft Docs
+title: m_contingentProperties alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,28 +13,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1c7635bab0e627a0f1b51000d37f60f861440934
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 50676f799367c8a2aece7daacb270d8bb31738e9
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39232821"
 ---
-# <a name="mcontingentproperties-field"></a>m_contingentProperties alan
-Ek özelliklerini depolayan <xref:System.Threading.Tasks.Task> nesnesi.  
+# <a name="mcontingentproperties-field"></a>m_contingentProperties alanı
+Ek özellikleri depolar <xref:System.Threading.Tasks.Task> nesne.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .field assembly class System.Threading.Tasks.Task/ContingentProperties modreq(System.Runtime.CompilerServices.IsVolatile) m_contingentProperties  
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Task sınıfı](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görev sınıfı](../../extensibility/debugger/task-class-internal-members.md)

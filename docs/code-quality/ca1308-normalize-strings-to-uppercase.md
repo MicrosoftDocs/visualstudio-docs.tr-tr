@@ -1,6 +1,7 @@
 ---
 title: 'CA1308: Dizeleri büyük harfe normalleştirin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ffdc7e52b056ac9ab4d06e29d29b8cd5a7b06358
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5ebb31029dcc3ef88df776470afdeeb17cea601d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949805"
 ---
 # <a name="ca1308-normalize-strings-to-uppercase"></a>CA1308: Dizeleri büyük harfe normalleştirin
+
 |||
 |-|-|
 |TypeName|NormalizeStringsToUppercase|
@@ -30,16 +33,16 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir işlem, bir dizeyi küçük harfli normalleştirir.
+ Bir işlem, bir dizeyi küçük harfe normalleştirir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Dizeler büyük harfe normalleştirilmeli. Küçük harfe, gidiş dönüş yapamazsınız karakterleri, küçük bir grubudur. Gidiş dönüş yapmaya karakterlerini bir yerel ayarını karakter verileri farklı temsil eden başka bir yerel ayar ve ardından için doğru şekilde dönüştürmek için anlamına gelir özgün karakterlerin dönüştürülen karakterlerinden alın.
+## <a name="rule-description"></a>Kural açıklaması
+ Dizeler büyük harfe normalleştirilmeli. Küçük bir grup karakterlerin küçük harfe dönüştürülür, gidiş dönüş yapamaz. Gidiş dönüş yapmak dönüştürülmüş karakterlerinden özgün karakterler karakterleri bir yerel ayardan farklı karakter verileri temsil eden başka bir yerel ayar ve ardından için doğru bir şekilde dönüştürmek için yol alın.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Değiştirme dizelerini küçük harfe dönüştürmek ve böylece bu dizeler dönüştürülür işlemleri bunun yerine büyük harfe. Örneğin, değiştirme `String.ToLower(CultureInfo.InvariantCulture)` için `String.ToUpper(CultureInfo.InvariantCulture)`.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Değiştirme dizelerini küçük harfe dönüştürmek ve böylece dizeleri dönüştürülür işlemleri yerine büyük. Örneğin, değiştirme `String.ToLower(CultureInfo.InvariantCulture)` için `String.ToUpper(CultureInfo.InvariantCulture)`.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Sonuç (örneğin, kullanıcı Arabiriminde görüntülenirken) bağlı güvenlik kararı vermeden değil olduğunda bir uyarı iletisi bastırmak güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ (Örneğin, kullanıcı Arabiriminde görüntülemekte olduğunuz) sonucuna dayalı güvenlik kararı yaparken değil, bir uyarı iletisi bastırmak güvenlidir.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
  [Genelleştirme Uyarıları](../code-quality/globalization-warnings.md)

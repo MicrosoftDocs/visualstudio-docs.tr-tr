@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 32d4174c5b190278367f0147806fe007beaa72c0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9634d16a89670b92e616e4bd6b878f41166aea2b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833882"
 ---
 # <a name="adprocessid"></a>AD_PROCESS_ID
-Bir sistem kimliği ya da bir GUID olabilir işlem Kimliğini belirtir.  
+Sistem kimliği veya bir GUID olabilir işlem Kimliğini belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,43 +49,43 @@ public struct AD_PROCESS_ID {
   
 ## <a name="members"></a>Üyeler  
  `ProcessIdType`  
- Arasında bir değer [AD_PROCESS_ID_TYPE](../../../extensibility/debugger/reference/ad-process-id-type.md) yorumlama belirten numaralandırma `ProcessId` birleşim (veya yönetilen kodun erişmek için hangi üye yapısı).  
+ Bir değer [AD_PROCESS_ID_TYPE](../../../extensibility/debugger/reference/ad-process-id-type.md) yorumlama belirten sabit listesi `ProcessId` birleşim (ya da yönetilen kod için erişmek için üye yapısı).  
   
  dwProcessId  
  Sistem arasında bir değer olarak işlem kimliği.  
   
  guidProcessId  
- İşlem kimliği bir GUID.  
+ İşlem kimliği bir GUID olarak.  
   
  dwUnused  
  Doldurma.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı, aşağıdaki yöntemlerden geçirilir:  
+ Bu yapı için aşağıdaki yöntemlerden geçirilir:  
   
--   [GetProviderProgramNode](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprogramnode.md)  
+- [GetProviderProgramNode](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprogramnode.md)  
   
--   [WatchForProviderEvents](../../../extensibility/debugger/reference/idebugprogramprovider2-watchforproviderevents.md)  
+- [WatchForProviderEvents](../../../extensibility/debugger/reference/idebugprogramprovider2-watchforproviderevents.md)  
   
--   [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)  
+- [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)  
   
--   [GetProcess](../../../extensibility/debugger/reference/idebugport2-getprocess.md)  
+- [GetProcess](../../../extensibility/debugger/reference/idebugport2-getprocess.md)  
   
- Aşağıdaki yöntemler arasından döndürülen:  
+  Ve aşağıdaki yöntemlerden döndürülen:  
   
--   [GetPhysicalProcessId](../../../extensibility/debugger/reference/idebugprocess2-getphysicalprocessid.md)  
+- [GetPhysicalProcessId](../../../extensibility/debugger/reference/idebugprocess2-getphysicalprocessid.md)  
   
--   [GetHostId](../../../extensibility/debugger/reference/idebugprogramhost2-gethostid.md)  
+- [GetHostId](../../../extensibility/debugger/reference/idebugprogramhost2-gethostid.md)  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetProcess](../../../extensibility/debugger/reference/idebugport2-getprocess.md)   
  [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md)   
  [AD_PROCESS_ID_TYPE](../../../extensibility/debugger/reference/ad-process-id-type.md)   

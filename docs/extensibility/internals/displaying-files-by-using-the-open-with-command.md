@@ -1,5 +1,5 @@
 ---
-title: Aç komutunu kullanarak dosyaları görüntüleme | Microsoft Docs
+title: Komutu ile Aç'ı kullanarak dosyaları görüntüleme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,25 +15,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9c708bb5a510748b08cac5b46b6829b908e74e0a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6983e9ee7b7cc88efb4870ab0836b856621aeeee
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39497534"
 ---
-# <a name="displaying-files-by-using-the-open-with-command"></a>Aç komutunu kullanarak dosyaları görüntüleme
-Bir proje görüntülenecek IDE sorabilirsiniz **birlikte Aç** iletişim kutusu. Bu istek standart düzenleyicileri seçimine sahip bir dosyayı açmak için kullanıcıya sorar. Aşağıdaki adımlar, bu işlem açıklamaktadır.  
+# <a name="display-files-by-using-the-open-with-command"></a>Birlikte Aç komutunu kullanarak dosyaları görüntüleme
+Bir proje görüntülemek için IDE sorabilir **birlikte Aç** iletişim kutusu. Bu istek standart düzenleyicileri seçimi sahip bir dosyayı açmak için kullanıcıya sorar. Aşağıdaki adımlar, bu işlemi açıklanmaktadır:  
   
-1.  Proje çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A>, OSE_UseOpenWithDialog için değerini belirten `OSEOpenDocEditor` parametresi.  
+1.  Proje çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A>, değerini belirterek `OSE_UseOpenWithDialog` için `OSEOpenDocEditor` parametresi.  
   
-2.  Belgenin dosya adı uzantısına göre IDE kayıt defteri can listelenen hangi düzenleyicileri belirtilen belgeyi açın belirler ve bu bilgiyi görüntüler **birlikte Aç** iletişim kutusu.  
+2.  Belgenin dosya adı uzantısına bağlı olarak, IDE kayıt defteri can listelenen hangi düzenleyicileri belirtilen belgeyi açmayı belirler ve bu bilgiyi görüntüler **birlikte Aç** iletişim kutusu.  
   
     > [!NOTE]
-    >  Bulunması gereken bir iç Düzenleyicisi projeleri **birlikte Aç** iletişim kutusu için bu tür bir düzenleyici her bir düzenleyici üreteci kaydetmeniz gerekir. İç düzenleyicileri yalnızca işlev belirli bir uygulamasında zorlanan proje türü ile birlikte <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A> yöntemi. IDE çekirdek metin Düzenleyicisi'ni ve İkili Düzenleyicisi için bir yerleşik Düzenleyici üreteci vardır. IDE ayrıca her kayıtlı bir Windows Dosya ilişkilendirme adına bir düzenleyici üreteci örneği oluşturur. Microsoft Word gibi bir dosya örnektir.  
+    >  İçinde içermesi gereken bir iç Düzenleyicisi olan projelerin **birlikte Aç** iletişim kutusu için böyle bir düzenleyici her bir düzenleyici fabrikası kaydetmeniz gerekir. İç düzenleyiciler yalnızca işlev uygulamasında zorlanan proje, belirli bir türü ile birlikte <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A> yöntemi. IDE, temel metin düzenleyicisi ve ikili düzenleyicide yerleşik Düzenleyici fabrikası sahiptir. IDE da bir düzenleyici fabrikası adına her kayıtlı Windows dosya ilişkilendirmesi örneği oluşturur. Microsoft Word gibi bir dosya örneğidir.  
   
-3.  Kullanıcının seçtiği bir öğeden hemen sonra **birlikte Aç** iletişim kutusu, IDE sonra çağırarak belge açılır <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A> yöntemi. Daha fazla bilgi için bkz: [nasıl yapılır: açık standart düzenleyicileri](../../extensibility/how-to-open-standard-editors.md).  
+3.  Kullanıcının seçtiği bir öğeden hemen sonra **birlikte Aç** çağırarak belge açılır iletişim kutusu, IDE'yi ardından <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A> yöntemi. Daha fazla bilgi için [nasıl yapılır: standart düzenleyicileri açma](../../extensibility/how-to-open-standard-editors.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Açıp kaydederek proje öğeleri](../../extensibility/internals/opening-and-saving-project-items.md)   
- [Dosya Aç komutu kullanarak dosyaları görüntüleme](../../extensibility/internals/displaying-files-by-using-the-open-file-command.md)   
- [Nasıl Yapılır: Standart Düzenleyicileri Açma](../../extensibility/how-to-open-standard-editors.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Açın ve proje öğeleri Kaydet](../../extensibility/internals/opening-and-saving-project-items.md)   
+ [Dosya Aç komutunu kullanarak dosyaları görüntüleme](../../extensibility/internals/displaying-files-by-using-the-open-file-command.md)   
+ [Nasıl yapılır: standart düzenleyicileri açma](../../extensibility/how-to-open-standard-editors.md)

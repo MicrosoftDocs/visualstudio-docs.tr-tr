@@ -1,6 +1,7 @@
 ---
 title: 'CA1717: Yalnızca FlagsAttribute numaralandırmalarında çoğul adlar olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: eddcdd47a79b925bf6601c25cf1343eacfa60aa0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1f923949b628d1ad5a3884acd17601daddd83460
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49889735"
 ---
 # <a name="ca1717-only-flagsattribute-enums-should-have-plural-names"></a>CA1717: Yalnızca FlagsAttribute numaralandırmalarında çoğul adlar olmalıdır
+
 |||
 |-|-|
 |TypeName|OnlyFlagsEnumsShouldHavePluralNames|
@@ -30,20 +33,20 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Dışarıdan görünür numaralandırma adını çoğul Word'de sona erer ve numaralandırma ile işaretli olmayan <xref:System.FlagsAttribute?displayProperty=fullName> özniteliği.
+ Dışarıdan görünen bir sabit listesi adı çoğul Word'de sona erer ve numaralandırma ile işaretlenmemiş <xref:System.FlagsAttribute?displayProperty=fullName> özniteliği.
 
-## <a name="rule-description"></a>Kural Tanımı
- Adlandırma kuralları numaralandırması için çoğul ad numaralandırma birden fazla değer aynı anda belirtilebilir gösterir dikte. <xref:System.FlagsAttribute> Derleyicileri numaralandırma numaralandırma üzerinde bit düzeyinde işlemler sağlar bir bit alan olarak değerlendirilmesi gerektiğini bildirir.
+## <a name="rule-description"></a>Kural açıklaması
+ Adlandırma kuralları numaralandırma için adlandırma aynı anda birden fazla numaralandırma değeri belirtilebilir gösterir. <xref:System.FlagsAttribute> Derleyiciler sabit numaralandırma üzerinde bit düzeyinde işlemler sağlayan bir bit alanı olarak değerlendirilmesi gerektiğini söyler.
 
- Yalnızca aynı anda tek bir numaralandırma değeri belirtilebilir, numaralandırma adını tekil bir sözcük olmalıdır. Örneğin, haftanın günleri tanımlayan numaralandırma bir uygulamada kullanmak için birden fazla gün belirtebileceğiniz ayarlanmış olabilir. Bu numaralandırma olmalıdır <xref:System.FlagsAttribute> ve 'Gün' çağrılabilir. Belirtilmesi yalnızca tek bir günde imkan tanıyan benzer bir numaralandırma öznitelik sahip değil ve olabilir 'Day' çağrılır.
+ Bir kerede tek bir numaralandırma değeri belirtilebilir yalnızca, sabit listesi adı tekil bir sözcük olmalıdır. Örneğin, Haftanın günlerinin ingilizceleridir tanımlayan bir numaralandırma kullanılmak üzere bir uygulama birden çok gün belirleyebileceğiniz ayarlanmış olabilir. Bu numaralandırma olmalıdır <xref:System.FlagsAttribute> ve 'Gün' çağrılabilir. Belirtilecek yalnızca tek bir günde izin veren benzer bir sabit listesi özniteliğine sahip değil ve olabilir 'Day' denir.
 
- Adlandırma kuralları hedefleyen ortak dil çalışma zamanı kitaplıkları için genel bir bakış sağlar. Bu yeni bir yazılım kitaplığı öğrenmek için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığa sahip olan kişi tarafından geliştirilmiştir müşteri güvenini artırır süreyi azaltır.
+ Adlandırma kuralları, ortak dil çalışma zamanını hedefleyen kitaplıkları için genel bir bakış sağlar. Bu, yeni bir yazılım kitaplığı öğrenmek için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığına sahip olan kişi tarafından geliştirilmiştir müşterilerinizin size olan güvenini artırır süreyi azaltır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Ekleyin veya numaralandırma adını tekil bir sözcük olun <xref:System.FlagsAttribute>.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Sabit listesi adı tekil bir sözcük yapın veya ekleme <xref:System.FlagsAttribute>.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Adı bir tekil Word'de biterse bir kuraldan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Tekil bir sözcük adı sona ererse kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [CA1714: Bayrak numaralandırmalarında çoğul adlar olmalıdır](../code-quality/ca1714-flags-enums-should-have-plural-names.md)
@@ -52,5 +55,7 @@ ms.lasthandoff: 04/19/2018
 
  [CA2217: Numaralandırmaları FlagsAttribute ile işaretlemeyin](../code-quality/ca2217-do-not-mark-enums-with-flagsattribute.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.FlagsAttribute?displayProperty=fullName> [Enum tasarım](/dotnet/standard/design-guidelines/enum)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.FlagsAttribute?displayProperty=fullName>
+- [Sabit Listesi Tasarımı](/dotnet/standard/design-guidelines/enum)

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31129370"
 ---
 # <a name="implementing-single-file-generators"></a>Tek dosya oluşturucuları uygulama
 Özel bir araç — bazen tek dosya oluşturucu da adlandırılır — genişletmek için kullanılan [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] ve [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] proje sistemlerinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Arabirimini uygulayan bir COM bileşeni özel bir araç olan <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator> arabirimi. Bu arabirimi kullanarak, özel bir araç tek bir giriş dosyası tek bir çıktı dosyasına dönüştürür. Diğer kullanışlı olan çıktı veya dönüşümün sonucunu kaynak kodu olabilir. Görsel Tasarımcı ve Web Hizmetleri Açıklama Dili (WSDL) kullanılarak oluşturulan dosyaları değişikliklere yanıt olarak üretilen kod özel aracı tarafından oluşturulan kod dosyalarının iki örnek verilmiştir.  

@@ -1,5 +1,5 @@
 ---
-title: Eski dil Service2 uygulama | Microsoft Docs
+title: Bir eski dil hizmeti Uygulama2 | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,34 +13,35 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d54572bc3b105af01ed42b01a27f363da80d58de
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dccbac140aefb952eed97006cbcae6a61f94ac92
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855423"
 ---
-# <a name="implementing-a-legacy-language-service"></a>Eski dil hizmeti uygulama
-Yönetilen paket framework (MPF) kullanarak bir dil hizmet uygulamak için öğesinden bir sınıf türetin <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve aşağıdaki soyut yöntemler ve özellikler uygular:  
+# <a name="implementing-a-legacy-language-service"></a>Eski dil hizmetinde uygulama
+Yönetilen paket çerçevesini (MPF) kullanarak bir dil hizmeti uygulamak için öğesinden bir sınıf türetin <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve aşağıdaki soyut yöntemler ve özellikler uygular:  
   
--   <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> Yöntemi  
+- <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> Yöntemi  
   
--   <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> Yöntemi  
+- <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> Yöntemi  
   
--   <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> Yöntemi  
+- <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> Yöntemi  
   
--   <xref:Microsoft.VisualStudio.Package.LanguageService.Name%2A> Özelliği  
+- <xref:Microsoft.VisualStudio.Package.LanguageService.Name%2A> Özelliği  
   
- Bu yöntemlere ve özelliklere uygulanmasına aşağıda uygun bölümleri Ayrıntılar için bkz.  
+  Uygulamaya bu yöntemleri ve özellikleri için aşağıdaki uygun bölümlere bakın.  
   
- Ek özellikleri destekleyecek şekilde dili hizmetinizi MPF dil hizmeti sınıflarının birinden bir sınıf türetin gerekebilir; Örneğin, ek menü komutlarını desteklemek için bir sınıftan türetilmelidir <xref:Microsoft.VisualStudio.Package.ViewFilter> sınıfı ve birkaç yöntemleri işleme komutunun geçersiz kılma (bkz <xref:Microsoft.VisualStudio.Package.ViewFilter> Ayrıntılar için). <xref:Microsoft.VisualStudio.Package.LanguageService> Sınıfı, bir dizi yeni örneklerini çeşitli sınıfları oluşturmak için çağrılan yöntem sağlar ve sizin sınıfının bir örneği sağlamak için uygun oluşturma yöntemini geçersiz kılın. Örneğin, geçersiz kılmak gereken <xref:Microsoft.VisualStudio.Package.LanguageService.CreateViewFilter%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> kendinize ait bir örnek döndürmeyi sınıfı <xref:Microsoft.VisualStudio.Package.ViewFilter> sınıfı. Daha fazla ayrıntı için "Özel sınıflar örnek oluşturma" bölümüne bakın.  
+  Ek özellikleri destekleyecek şekilde dili hizmetinizi MPF dil hizmeti sınıflarının birinden bir sınıf türetin gerekebilir; Örneğin, ek menü komutları desteklemek için bir sınıftan türetilmelidir <xref:Microsoft.VisualStudio.Package.ViewFilter> sınıfı ve birkaç komut işleme yöntemi geçersiz kılın (bkz <xref:Microsoft.VisualStudio.Package.ViewFilter> Ayrıntılar için). <xref:Microsoft.VisualStudio.Package.LanguageService> , Sınıfının bir örneğini sağlamak üzere uygun oluşturma yöntemini geçersiz kılma ve sınıfı bir dizi yeni çeşitli sınıfların örneklerini oluşturmak için çağrılan yöntem sağlar. Örneğin, geçersiz kılmak ihtiyacınız <xref:Microsoft.VisualStudio.Package.LanguageService.CreateViewFilter%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfının örneğini, kendi dönüş <xref:Microsoft.VisualStudio.Package.ViewFilter> sınıfı. Daha fazla ayrıntı için "Özel sınıflar örnekleme" bölümüne bakın.  
   
- Dil hizmetinizi aynı zamanda birçok yerde kullanılan kendi simgeler sağlayabilir. Örneğin, bir IntelliSense tamamlanma listesi gösterildiğinde, listedeki her bir öğe, öğe bir yöntemi, sınıf, ad alanı, özelliği işaretleme ilişkili bir simge olabilir veya her dil için gereklidir. Bu simgeleri kullanılan tüm IntelliSense listelerindeki **gezinti çubuğu**hem de **hata listesi** görev penceresi. Ayrıntılar için aşağıdaki "Dil hizmeti görüntüleri" bölümüne bakın.  
+  Dil hizmetiniz aynı zamanda pek çok yerde kullanılan kendi simgeleri sağlayabilir. Örneğin, bir IntelliSense tamamlanma listesi gösterildiğinde, listedeki her öğeye simge öğesi, bir yöntem, sınıf, ad alanı, özelliği işaretleme ilişkili olabilir veya dilinizi ne olursa olsun gereklidir. Bu simgeler kullanılan tüm IntelliSense listelerinde **gezinti çubuğu**hem de **hata listesi** görev penceresi. Ayrıntılar için aşağıdaki "Dil hizmeti görüntüleri" bölümüne bakın.  
   
 ## <a name="getlanguagepreferences-method"></a>GetLanguagePreferences yöntemi  
- <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> Yöntemi her zaman aynı örneğini döndüren bir <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı. Temel kullanabileceğiniz <xref:Microsoft.VisualStudio.Package.LanguagePreferences> dil hizmetiniz için ek olduğunuz tercihlere gerekmiyorsa sınıfı. MPF dil hizmet sınıfları varlığını en az varsayın temel <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı.  
+ <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> Yöntemi her zaman aynı örneğini döndüren bir <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı. Temel kullanabileceğiniz <xref:Microsoft.VisualStudio.Package.LanguagePreferences> dil hizmetiniz için ek tercihlere gerekmiyorsa sınıfı. Varlığı en az MPF dil hizmeti sınıfları varsayar temel <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı.  
   
 ### <a name="example"></a>Örnek  
- Bu örnek, tipik bir uyarlamasını gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> yöntemi. Bu örnek temel kullanır <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı.  
+ Bu örnek, tipik bir uygulaması gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A> yöntemi. Bu örnekte temel <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı.  
   
 ```csharp  
 using Microsoft.VisualStudio.Package;  
@@ -68,10 +69,10 @@ namespace TestLanguagePackage
 ```  
   
 ## <a name="getscanner-method"></a>GetScanner yöntemi  
- Bu yöntem bir örneğini döndüren bir <xref:Microsoft.VisualStudio.Package.IScanner> satır yönelimli ayrıştırıcı veya belirteçleri ve türleri ve Tetikleyicileri almak için kullanılan tarayıcı uygulayan nesne. Bu tarayıcı kullanılan <xref:Microsoft.VisualStudio.Package.Colorizer> tarayıcı olarak prelude daha karmaşık bir ayrıştırma işlemi için belirteç türleri ve Tetikleyicileri almak için de kullanılabilir olsa da renklendirme için sınıf. Uygulayan sınıfa sağlamalısınız <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi ve uygulanmalı tüm yöntemleri üzerinde <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi.  
+ Bu yöntem bir örneğini döndürür. bir <xref:Microsoft.VisualStudio.Package.IScanner> satır yönelimli ayrıştırıcı veya belirteçleri ve türleri ve Tetikleyicileri almak için kullanılan tarayıcı uygulayan nesne. Bu tarayıcı kullanılan <xref:Microsoft.VisualStudio.Package.Colorizer> tarayıcı bir tanıtımlar daha karmaşık bir ayrıştırma işlemi olarak belirteç türleri ve Tetikleyicileri almak için de kullanılabilir olsa da renklendirme için sınıf. Uygulayan sınıfa sağlamalısınız <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi ve uygulanmalı tüm yöntemleri üzerinde <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi.  
   
 ### <a name="example"></a>Örnek  
- Bu örnek, tipik bir uyarlamasını gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> yöntemi. `TestScanner` Uygulayan sınıf <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi (gösterilmez).  
+ Bu örnek, tipik bir uygulaması gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> yöntemi. `TestScanner` Sınıfının Implements <xref:Microsoft.VisualStudio.Package.IScanner> arabirimi (gösterilmemiştir).  
   
 ```csharp  
 using Microsoft.VisualStudio.Package;  
@@ -119,10 +120,10 @@ namespace TestLanguagePackage
 ```  
   
 ## <a name="parsesource-method"></a>ParseSource yöntemi  
- Farklı nedenlerle sayısına göre kaynak dosyasını ayrıştırır. Bu yöntem verilen bir <xref:Microsoft.VisualStudio.Package.ParseRequest> belirli bir ayrıştırma işlemi beklenen tanımlayan nesne. <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> Belirteci işlevselliğini ve kapsamı belirler daha karmaşık bir ayrıştırıcı yöntemini çağırır. <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> IntelliSense işlemlerinin yanı sıra eşleşen ayraç yöntemi desteği kullanılır. Gelişmiş gibi işlemleri desteklemeyen olsa bile, yine geçerli bir döndürmelidir <xref:Microsoft.VisualStudio.Package.AuthoringScope> nesne ve, uygulayan bir sınıf oluşturmak gerektirir <xref:Microsoft.VisualStudio.Package.AuthoringScope> arabirim ve bu arabirimdeki tüm yöntemleri uygulamak. Tüm yöntemleri null değerleri döndürebilir ancak <xref:Microsoft.VisualStudio.Package.AuthoringScope> nesnenin kendisini bir null değer olmamalıdır.  
+ Farklı nedenlerden sayısına göre kaynak dosyasını ayrıştırır. Bu yöntem verilen bir <xref:Microsoft.VisualStudio.Package.ParseRequest> açıklayan belirli bir ayrıştırma işlemi beklenen değer nesnesi. <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> Belirteci işlevselliğini ve kapsamını belirleyen daha karmaşık bir ayrıştırıcı yöntemini çağırır. <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> IntelliSense işlemlerini yanı sıra Ayraç eşleştirme yöntemi desteği kullanılır. Gibi gelişmiş işlemler desteklemiyor olsa bile, hala geçerli bir döndürmelidir <xref:Microsoft.VisualStudio.Package.AuthoringScope> nesne ve, uygulayan bir sınıf oluşturmak gerektirir <xref:Microsoft.VisualStudio.Package.AuthoringScope> arabirimi ve tüm yöntemler, bu arabirimdeki uygulayın. Tüm yöntemlerden null değerleri döndürebilir ancak <xref:Microsoft.VisualStudio.Package.AuthoringScope> nesnesinin kendisi bir null değer olmamalıdır.  
   
 ### <a name="example"></a>Örnek  
- Bu örnek, en az bir uyarlamasını gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> yöntemi ve <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı, derlemek ve gerçekte daha gelişmiş özelliklerden herhangi birini destekleyen olmadan işlev dil hizmeti izin vermek için yeterli.  
+ Bu örnekte en az bir uygulamasını gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> yöntemi ve <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı, derlemek ve gerçekten daha gelişmiş özelliklerinden herhangi birini destekleyen olmadan işlev dil hizmeti izin vermek için yeterli.  
   
 ```csharp  
 using Microsoft.VisualStudio.Package;  
@@ -169,10 +170,10 @@ namespace TestLanguagePackage
 ```  
   
 ## <a name="name-property"></a>Name özelliği  
- Bu özellik dil hizmetin adını döndürür. Bu dil hizmeti kaydolurken verilen aynı adı olmalıdır. Bu ad en belirgin olan bir dizi bir yerde içinde kullanılan <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı burada adı kayıt defterine erişim için kullanılır. Kayıt defteri girdisini ve anahtar adları için kayıt defterinde kullanılan bu özellik tarafından döndürülen adı yerelleştirilmiş olmalıdır değil.  
+ Bu özellik, dil hizmeti adını döndürür. Bu dil hizmeti kaydettiğinizde verilen aynı adı olmalıdır. Bu ad, en yaygın olan bir dizi yerde içinde kullanılır <xref:Microsoft.VisualStudio.Package.LanguagePreferences> sınıfı burada adı kayıt defterine erişim için kullanılır. Kayıt defteri girişini ve anahtar adları için kayıt defterinde kullanılan bu özellik tarafından döndürülen adı yerelleştirilmiş olmalıdır değil.  
   
 ### <a name="example"></a>Örnek  
- Bu örnek, bir olası uyarlamasını gösterir <xref:Microsoft.VisualStudio.Package.LanguageService.Name%2A> özelliği. Buradaki ad sabit kodlanmış olduğuna dikkat edin: dil hizmeti kaydetme olarak kullanılabilmesi için bir kaynak dosyasından gerçek ad alınan (bkz [eski dil hizmeti kaydetme](../../extensibility/internals/registering-a-legacy-language-service1.md)).  
+ Bu örnekte, olası bir uygulaması gösterilmektedir <xref:Microsoft.VisualStudio.Package.LanguageService.Name%2A> özelliği. Burada adı, sabit kodlanmış olduğunu unutmayın: bir dil hizmeti kaydedilirken kullanılabilmesi için bir kaynak dosyasından gerçek adı elde edilmelidir (bkz [eski dil hizmetinde kaydetme](../../extensibility/internals/registering-a-legacy-language-service1.md)).  
   
 ```csharp  
 using Microsoft.VisualStudio.Package;  
@@ -190,54 +191,54 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## <a name="instantiating-custom-classes"></a>Özel sınıflar örnek oluşturma  
- Belirtilen sınıflar aşağıdaki yöntemleri her sınıf kendi sürümlerini örneklerini sağlamak üzere geçersiz kılınabilir.  
+## <a name="instantiating-custom-classes"></a>Özel bir sınıf oluşturma  
+ Belirtilen sınıfları aşağıdaki yöntemlere kendi sürümleri her sınıfın bir örneğini sağlamak için geçersiz kılınabilir.  
   
-### <a name="in-the-languageservice-class"></a>LanguageService sınıfında  
+### <a name="in-the-languageservice-class"></a>LanguageService sınıfı  
   
 |Yöntem|Döndürülen sınıfı|Açıklama|  
 |------------|--------------------|-----------------|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateCodeWindowManager%2A>|<xref:Microsoft.VisualStudio.Package.CodeWindowManager>|Metin görünümü özel eklemeler desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateDocumentProperties%2A>|<xref:Microsoft.VisualStudio.Package.DocumentProperties>|Özel belge özelliklerini desteklemek için.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateCodeWindowManager%2A>|<xref:Microsoft.VisualStudio.Package.CodeWindowManager>|Özel metin görünümünü eklemeler desteklemek için.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateDocumentProperties%2A>|<xref:Microsoft.VisualStudio.Package.DocumentProperties>|Özel belge özellikleri desteklemek için.|  
 |<xref:Microsoft.VisualStudio.Package.LanguageService.CreateDropDownHelper%2A>|<xref:Microsoft.VisualStudio.Package.TypeAndMemberDropdownBars>|Desteklemek için **gezinti çubuğu**.|  
 |<xref:Microsoft.VisualStudio.Package.LanguageService.CreateExpansionFunction%2A>|<xref:Microsoft.VisualStudio.Package.ExpansionFunction>|Kod parçacığı şablonlarında işlevleri desteklemek için.|  
 |<xref:Microsoft.VisualStudio.Package.LanguageService.CreateExpansionProvider%2A>|<xref:Microsoft.VisualStudio.Package.ExpansionProvider>|Kod parçacıkları (Bu yöntem genellikle değil geçersiz kılınır) desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateParseRequest%2A>|<xref:Microsoft.VisualStudio.Package.ParseRequest>|Özelleştirmesini desteklemek için <xref:Microsoft.VisualStudio.Package.ParseRequest> yapısı (Bu yöntemi geçersiz genellikle değil kılınmıştır).|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateParseRequest%2A>|<xref:Microsoft.VisualStudio.Package.ParseRequest>|Özelleştirmeyi desteklemek için <xref:Microsoft.VisualStudio.Package.ParseRequest> yapısı (Bu yöntemi geçersiz genellikle değil kılınmıştır).|  
 |<xref:Microsoft.VisualStudio.Package.LanguageService.CreateSource%2A>|<xref:Microsoft.VisualStudio.Package.Source>|Açıklama karakterleri belirtme ve yöntem imzaları özelleştirme biçimlendirme kaynak kodu desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateViewFilter%2A>|<xref:Microsoft.VisualStudio.Package.ViewFilter>|Ek menü komutlarını desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.Source.GetColorizer%2A>|<xref:Microsoft.VisualStudio.Package.Colorizer>|(Bu yöntem genellikle değil geçersiz kılınır) sözdizimi vurgulama desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A>|<xref:Microsoft.VisualStudio.Package.LanguagePreferences>|Dil Tercihleri erişimi desteklemek için. Bu yöntemin uygulanması gerekiyor ancak temel sınıfının bir örneğini döndürebilirsiniz.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A>|<xref:Microsoft.VisualStudio.Package.IScanner>|Satırındaki belirteçleri türlerini tanımlamak için kullanılan bir ayrıştırıcı sağlamak için. Bu yöntemin uygulanması gerekir ve <xref:Microsoft.VisualStudio.Package.IScanner> türetilmiş olmalıdır.|  
-|<xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A>|<xref:Microsoft.VisualStudio.Package.AuthoringScope>|İşlevselliği ve tüm kaynak dosyasına boyunca kapsamını tanımlamak için kullanılan bir ayrıştırıcı sağlamak için. Bu yöntem uygulanması gerekiyor ve sürümünüz örneği döndürmelidir <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı. Tüm desteklemek istiyorsanız olan söz dizimi vurgulama (gerektiren <xref:Microsoft.VisualStudio.Package.IScanner> döndürülen ayrıştırıcı <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> yöntemi), bir sürümü bu yönteminin dönüş dışında bir şey yapabilirsiniz <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı olan yöntemleri tüm null değerleri döndürür.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.CreateViewFilter%2A>|<xref:Microsoft.VisualStudio.Package.ViewFilter>|Ek menü komutları desteklemek için.|  
+|<xref:Microsoft.VisualStudio.Package.Source.GetColorizer%2A>|<xref:Microsoft.VisualStudio.Package.Colorizer>|(Bu yöntem genellikle değil geçersiz kılınır) söz dizimi vurgulama desteklemek için.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.GetLanguagePreferences%2A>|<xref:Microsoft.VisualStudio.Package.LanguagePreferences>|Dil Tercihleri erişimi desteklemek için. Bu yöntemin uygulanması gereken ancak temel sınıfının bir örneğini döndürebilirsiniz.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A>|<xref:Microsoft.VisualStudio.Package.IScanner>|Bir satırda belirteç türleri tanımlamak için kullanılan bir ayrıştırıcı sağlamak için. Bu yöntemin uygulanması gerekir ve <xref:Microsoft.VisualStudio.Package.IScanner> nesnesinden türetilmesi gerekir.|  
+|<xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A>|<xref:Microsoft.VisualStudio.Package.AuthoringScope>|İşlevsellik ve tüm kaynak dosyasına kapsamdadır tanımlamak için kullanılan bir ayrıştırıcı sağlamak için. Bu yöntemin uygulanması gereken ve sürümünüzü örneği döndürmelidir <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı. Tüm desteklemek isterseniz olan söz dizimi vurgulama (gerektiren <xref:Microsoft.VisualStudio.Package.IScanner> döndürüldüğü ayrıştırıcı <xref:Microsoft.VisualStudio.Package.LanguageService.GetScanner%2A> yöntemi), bir sürümü Bu yöntemde return dışında bir şey yapabilirsiniz <xref:Microsoft.VisualStudio.Package.AuthoringScope> sınıfı yöntemleri tüm null değerler döndürür.|  
   
 ### <a name="in-the-source-class"></a>Kaynak sınıfı  
   
 |Yöntem|Döndürülen sınıfı|Açıklama|  
 |------------|--------------------|-----------------|  
-|<xref:Microsoft.VisualStudio.Package.Source.CreateCompletionSet%2A>|<xref:Microsoft.VisualStudio.Package.CompletionSet>|IntelliSense tamamlanma listeleri (Bu yöntem genellikle değil geçersiz kılınır) görüntüsünü özelleştirmek için.|  
-|<xref:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem%2A>|<xref:Microsoft.VisualStudio.Package.DocumentTask>|Hata listesi görev listesinde işaretçileri desteklemek için; Özellikle, dosyayı açmayı ve hataya neden olan satır atlama ötesinde özellikler için destek.|  
-|<xref:Microsoft.VisualStudio.Package.Source.CreateMethodData%2A>|<xref:Microsoft.VisualStudio.Package.MethodData>|IntelliSense parametre bilgileri araç ipuçları görüntüsünü özelleştirmek için.|  
-|<xref:Microsoft.VisualStudio.Package.Source.GetCommentFormat%2A>|<xref:Microsoft.VisualStudio.Package.CommentInfo>|Yorum kodu desteklemek için.|  
-|<xref:Microsoft.VisualStudio.Package.Source.CreateAuthoringSink%2A>|<xref:Microsoft.VisualStudio.Package.AuthoringSink>|Ayrıştırma işlemi sırasında bilgileri toplamak için.|  
+|<xref:Microsoft.VisualStudio.Package.Source.CreateCompletionSet%2A>|<xref:Microsoft.VisualStudio.Package.CompletionSet>|(Bu yöntem genellikle değil geçersiz kılınır) IntelliSense tamamlanma listelerinde görüntüsünü özelleştirmek için.|  
+|<xref:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem%2A>|<xref:Microsoft.VisualStudio.Package.DocumentTask>|İşaretçileri hata listesinde desteklemek için görev listesi; Özellikle, dosyayı açmayı ve hataya neden olan satır atlama ötesinde özellikleri için destek.|  
+|<xref:Microsoft.VisualStudio.Package.Source.CreateMethodData%2A>|<xref:Microsoft.VisualStudio.Package.MethodData>|IntelliSense parametresi bilgi araç ipuçlarını görüntüsünü özelleştirmek için.|  
+|<xref:Microsoft.VisualStudio.Package.Source.GetCommentFormat%2A>|<xref:Microsoft.VisualStudio.Package.CommentInfo>|Koda açıklama desteklemek için.|  
+|<xref:Microsoft.VisualStudio.Package.Source.CreateAuthoringSink%2A>|<xref:Microsoft.VisualStudio.Package.AuthoringSink>|Ayrıştırma işlemi sırasında bilgi toplamak için.|  
   
-### <a name="in-the-authoringscope-class"></a>AuthoringScope sınıfında  
+### <a name="in-the-authoringscope-class"></a>AuthoringScope sınıfı  
   
 |Yöntem|Döndürülen sınıfı|Açıklama|  
 |------------|--------------------|-----------------|  
-|<xref:Microsoft.VisualStudio.Package.AuthoringScope.GetDeclarations%2A>|<xref:Microsoft.VisualStudio.Package.Declarations>|Bildirimleri üyeleri veya türleri gibi bir listesini sağlar. Bu yöntem uygulanması gerekiyor ancak bir null değer döndürür. Bu yöntem, geçerli bir nesne döndürürse, nesne sürümünüz örneği olmalıdır <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı.|  
-|<xref:Microsoft.VisualStudio.Package.AuthoringScope.GetMethods%2A>|<xref:Microsoft.VisualStudio.Package.Methods>|Yöntem imzaları listesi için belirli bir bağlam sağlar. Bu yöntem uygulanması gerekiyor ancak bir null değer döndürür. Bu yöntem, geçerli bir nesne döndürürse, nesne sürümünüz örneği olmalıdır <xref:Microsoft.VisualStudio.Package.Methods> sınıfı.|  
+|<xref:Microsoft.VisualStudio.Package.AuthoringScope.GetDeclarations%2A>|<xref:Microsoft.VisualStudio.Package.Declarations>|Üyeleri veya türleri gibi bildirimlerin listesini sağlar. Bu yöntemin uygulanması gereken ancak bir null değer döndürebilir. Bu yöntem, geçerli bir nesne döndürürse, nesne örneği sürümünüz olmalıdır <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı.|  
+|<xref:Microsoft.VisualStudio.Package.AuthoringScope.GetMethods%2A>|<xref:Microsoft.VisualStudio.Package.Methods>|Yöntem imzaları listesi için belirli bir bağlam sağlar. Bu yöntemin uygulanması gereken ancak bir null değer döndürebilir. Bu yöntem, geçerli bir nesne döndürürse, nesne örneği sürümünüz olmalıdır <xref:Microsoft.VisualStudio.Package.Methods> sınıfı.|  
   
 ## <a name="language-service-images"></a>Dil hizmeti görüntüleri  
- Dil hizmeti genelinde kullanılacak simge listesi sağlamak için geçersiz kılma <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve dönüş bir <xref:System.Windows.Forms.ImageList> simgeleri içeren. Temel <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı varsayılan bir simge yükler. Simgeler gereken bu yerlerin tam resim dizinini belirtin olduğundan, kendi resim listesi düzenleme nasıl tamamen size bağlıdır.  
+ Dil hizmeti genelinde kullanılan simge listesi sağlamak için geçersiz kılma <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve dönüş bir <xref:System.Windows.Forms.ImageList> simgeleri içeren. Temel <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfın varsayılan bir simge kümesi yükler. Tam görüntü dizini simgeler gereken bu yerde belirtin, nasıl, kendi görüntü listesi düzenleme tamamen size bağlıdır olduğu.  
   
-### <a name="images-used-in-intellisense-completion-lists"></a>IntelliSense tamamlanma listeleri kullanılan görüntüleri  
- IntelliSense tamamlanma listeleri için her öğe için resim dizinini belirtilen <xref:Microsoft.VisualStudio.Package.Declarations.GetGlyph%2A> yöntemi <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı bir görüntü dizini sağlamak istiyorsanız, geçersiz kılmanız gerekir. Döndürülen değer <xref:Microsoft.VisualStudio.Package.Declarations.GetGlyph%2A> yöntemdir için sağlanan resim listesi bir dizine <xref:Microsoft.VisualStudio.Package.CompletionSet> sınıfı oluşturucusu ve bu, aynı resim listesi döndürülen <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> (değiştirebileceğiniz hangi resim listesi sınıfı kullanılmaya <xref:Microsoft.VisualStudio.Package.CompletionSet> , geçersiz kılarsanız <xref:Microsoft.VisualStudio.Package.Source.CreateCompletionSet%2A> yönteminde <xref:Microsoft.VisualStudio.Package.Source> farklı resim listesi temin etmek için sınıf).  
+### <a name="images-used-in-intellisense-completion-lists"></a>IntelliSense tamamlanma listelerinde kullanılan görüntüler  
+ IntelliSense tamamlanma listeleri için resim dizinini her öğe için belirtilen <xref:Microsoft.VisualStudio.Package.Declarations.GetGlyph%2A> yöntemi <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı bir görüntü dizini sağlamak istiyorsanız, geçersiz kılmanız gerekir. Döndürülen değer <xref:Microsoft.VisualStudio.Package.Declarations.GetGlyph%2A> yöntemdir sağlanan görüntü listesi bir dizine <xref:Microsoft.VisualStudio.Package.CompletionSet> sağlayıcıdan döndürülen sınıf oluşturucusu ve diğer bir deyişle aynı görüntü listesi <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> (değiştirebilirsiniz hangi resim listesi için sınıf kullanılmaya <xref:Microsoft.VisualStudio.Package.CompletionSet> kılarsanız <xref:Microsoft.VisualStudio.Package.Source.CreateCompletionSet%2A> yönteminde <xref:Microsoft.VisualStudio.Package.Source> farklı görüntü listesini sağlamak üzere sınıfı).  
   
-### <a name="images-used-in-the-navigation-bar"></a>Gezinme çubuğunda kullanılan görüntüleri  
- **Gezinti çubuğu** türleri ve üyeleri listesini görüntüler ve kullanılan Hızlı gezinme simgeleri gösterebilir için. Bu simgeleri elde edilen <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve özel olarak geçersiz kılınamaz **gezinti çubuğu**. Birleşik giriş kutuları temsil eden listeleri doldurulduğunda birleşik giriş kutularında her bir öğe için kullanılan dizinlerini belirtilen <xref:Microsoft.VisualStudio.Package.TypeAndMemberDropdownBars.OnSynchronizeDropdowns%2A> yönteminde <xref:Microsoft.VisualStudio.Package.TypeAndMemberDropdownBars> sınıfı (bkz [eski dil hizmetiGezintiçubuğundadesteği](../../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)). Bu görüntü dizinler şekilde genellikle sürümünüz aracılığıyla ayrıştırıcı alanından elde edilen <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı. Dizinler nasıl elde tamamen size bağlıdır.  
+### <a name="images-used-in-the-navigation-bar"></a>Gezinti çubuğunda kullanılan görüntüler  
+ **Gezinti çubuğu** kullanılır ve türlerin ve üyelerin listelerini görüntüler için hızlı bir gezinti simgeler gösterebilirsiniz. Bu simgeler elde edilen <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı ve özel olarak geçersiz kılınamaz **gezinti çubuğu**. Birleşik giriş kutuları her öğe için kullanılan dizinleri temsil eden birleşik giriş kutuları listelerini dolu olduğunda belirtilen <xref:Microsoft.VisualStudio.Package.TypeAndMemberDropdownBars.OnSynchronizeDropdowns%2A> yönteminde <xref:Microsoft.VisualStudio.Package.TypeAndMemberDropdownBars> sınıfı (bkz [eski dil hizmetindeGezintiçubuğudesteği](../../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)). Bu görüntü dizinler şekilde genellikle sürümünüz aracılığıyla ayrıştırıcının öğesinden elde edilir <xref:Microsoft.VisualStudio.Package.Declarations> sınıfı. Dizinleri nasıl elde edilen tamamen size bağlıdır.  
   
-### <a name="images-used-in-the-error-list-task-window"></a>Hata listesi görev penceresinde kullanılan görüntüleri  
- Her <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> yöntemi ayrıştırıcı (bkz [eski dil hizmeti Ayrıştırıcı ve tarayıcı](../../extensibility/internals/legacy-language-service-parser-and-scanner.md)) hatayla karşılaşırsa ve bu hata geçirir <xref:Microsoft.VisualStudio.Package.AuthoringSink.AddError%2A> yönteminde <xref:Microsoft.VisualStudio.Package.AuthoringSink> sınıfı, bildirilenhata **Hata listesi** görev penceresi. Simge görev penceresinde görünür her bir öğe ile ilişkili olabilir ve bu simge, döndürülen aynı resim listesi geldiği <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı. Varsayılan davranışı MPF sınıflarını, hata iletisiyle bir görüntü değil göstermektir. Ancak, bir sınıftan türetilen bu davranışı geçersiz kılabilirsiniz <xref:Microsoft.VisualStudio.Package.Source> sınıfı ve geçersiz kılma <xref:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem%2A> yöntemi. Bu yöntem, yeni oluşturduğunuz <xref:Microsoft.VisualStudio.Package.DocumentTask> nesnesi. Bu nesne döndürmeden önce kullanabilirsiniz <xref:Microsoft.VisualStudio.Shell.Task.ImageIndex%2A> özellikte <xref:Microsoft.VisualStudio.Package.DocumentTask> resim dizinini ayarlamak için nesne. Bu aşağıdaki örneğe benzer bir şey görünür. Unutmayın `TestIconImageIndex` tüm simgeleri listeler ve bu örnek için belirli bir sabit listesi. Dil hizmetinizi simgeleri tanımlamanın farklı bir şekilde olabilir.  
+### <a name="images-used-in-the-error-list-task-window"></a>Hata listesi görev penceresinde kullanılan görüntüler  
+ Her <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> yöntemi ayrıştırıcı (bkz [eski dil hizmeti ayrıştırıcısı ve tarayıcısı](../../extensibility/internals/legacy-language-service-parser-and-scanner.md)) bir hatayla karşılaşırsa ve bu hata durumuna geçirir <xref:Microsoft.VisualStudio.Package.AuthoringSink.AddError%2A> yönteminde <xref:Microsoft.VisualStudio.Package.AuthoringSink> sınıfı içindebildirilenhata **Hata listesi** görev penceresi. Bir simge görev penceresinde görüntülenen her bir öğesi ile ilişkili olabilir ve bu simge, döndürülen aynı görüntü listesi geldiği <xref:Microsoft.VisualStudio.Package.LanguageService.GetImageList%2A> yönteminde <xref:Microsoft.VisualStudio.Package.LanguageService> sınıfı. Varsayılan davranışı MPF sınıfların hata iletisiyle bir görüntü gösterme sağlamaktır. Ancak, bir sınıftan türetme tarafından bu davranışı geçersiz kılabilirsiniz <xref:Microsoft.VisualStudio.Package.Source> sınıf ve geçersiz kılma <xref:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem%2A> yöntemi. Bu yöntemde, yeni oluşturduğunuz <xref:Microsoft.VisualStudio.Package.DocumentTask> nesne. Bu nesne döndürmeden önce kullanabilirsiniz <xref:Microsoft.VisualStudio.Shell.Task.ImageIndex%2A> özelliği <xref:Microsoft.VisualStudio.Package.DocumentTask> nesne resim dizinini ayarlayın. Bu sorun aşağıdaki örnekte olduğu gibi görünür. Unutmayın `TestIconImageIndex` tüm simgeleri listeler ve bu örnek için belirli bir sabit listesidir. Dil hizmetinizdeki simgeleri tanımlamak için farklı bir yol olabilir.  
   
 ```csharp  
 using Microsoft.VisualStudio.Package;  
@@ -252,7 +253,7 @@ namespace TestLanguagePackage
             TextSpan          span,  
             string            filename,  
             string            message,  
-            TastPriority      priority,  
+            TaskPriority      priority,  
             TaskCategory      category,  
             MARKERTYPE        markerType,  
             TaskErrorCategory errorCategory)  
@@ -275,10 +276,10 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## <a name="the-default-image-list-for-a-language-service"></a>Bir dil hizmeti için varsayılan resim listesi  
- Temel MPF dil hizmeti sınıflar ile sağlanan varsayılan görüntü liste daha yaygın dil öğeleri ile ilişkilendirilmiş simgeleri sayısını içerir. Bu simgeleri toplu genel, iç, arkadaş, korumalı, özel ve kısayol erişim kavramlarını karşılık gelen altı çeşitleri kümeler halinde düzenlenir. Örneğin, public, korumalı ya da özel olmasına bağlı olarak bir yöntem için farklı simgeleri olabilir.  
+## <a name="the-default-image-list-for-a-language-service"></a>Varsayılan görüntü listesi için bir dil hizmeti  
+ Temel MPF dil hizmeti sınıfları ile sağlanan varsayılan görüntü listesi daha yaygın dil öğelerle ilişkili simgeler içerir. Bu simgeler, toplu, genel, iç ve korumalı, özel, arkadaş kısayol erişim kavramlarını için karşılık gelen altı çeşitleri kümeleri düzenlenir. Örneğin, genel, korumalı veya özel olmasına bağlı olarak bir yöntem için farklı simgeler olabilir.  
   
- Aşağıdaki numaralandırma her simge kümesi için tipik adları ve ilişkili dizini belirtir. Örneğin, sabit bağlı olarak, korumalı bir yöntem olarak için resim dizini belirleyebileceğiniz `(int)IconImageIndex.Method + (int)IconImageIndex.AccessProtected`. Bu numaralandırma istendiği adlarında değiştirebilirsiniz.  
+ Aşağıdaki sabit her simge kümesi için tipik adları ve ilişkili dizini belirtir. Örneğin, sabit listesi üzerinde bağlı olarak, korumalı bir yöntem için resim dizini belirtebilirsiniz `(int)IconImageIndex.Method + (int)IconImageIndex.AccessProtected`. Bu sabit listesi istediğiniz şekilde adları değiştirebilirsiniz.  
   
 ```csharp  
 public enum IconImageIndex  
@@ -361,7 +362,7 @@ public enum IconImageIndex
 ```  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Eski dil hizmeti uygulama](../../extensibility/internals/implementing-a-legacy-language-service1.md)   
+ [Eski dil hizmetinde uygulama](../../extensibility/internals/implementing-a-legacy-language-service1.md)   
  [Eski dil hizmetine genel bakış](../../extensibility/internals/legacy-language-service-overview.md)   
- [Eski dil hizmeti kaydetme](../../extensibility/internals/registering-a-legacy-language-service1.md)   
+ [Eski dil hizmeti kaydediliyor](../../extensibility/internals/registering-a-legacy-language-service1.md)   
  [Eski Dil Hizmeti Ayrıştırıcısı ve Tarayıcısı](../../extensibility/internals/legacy-language-service-parser-and-scanner.md)

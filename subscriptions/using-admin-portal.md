@@ -1,77 +1,78 @@
 ---
-title: Yönetici portalı'nı kullanarak | Visual Studio Market
+title: Yönetici portalını kullanma | Visual Studio Market
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 10/03/2017
 ms.topic: Get-Started-Article
-mescription: Learn how to manage your organization's Visual Studio subscriptions with the Administrator Portal.
+description: Kuruluşunuzun Visual Studio abonelikleri Yönetici portalı ile yönetmeyi öğrenin.
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 22351b94923777d5eb1fe40cd2e43e9dc20f2449
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 63f3cbc3b4eb108a17c85eaa46992989a6dac742
+ms.sourcegitcommit: db94ca7a621879f98d4c6aeefd5e27da1091a742
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42624220"
 ---
-#  <a name="using-the-visual-studio-subscriptions-administrator-portal"></a>Visual Studio abonelikleri Yönetici portalı'nı kullanarak
+#  <a name="using-the-visual-studio-subscriptions-administrator-portal"></a>Visual Studio abonelikleri Yönetici portalını kullanma
 
 Visual Studio abonelikleri Yönetim Portalı'nı kullandığınızda, bunu göz önünde bulundurun:
  
-- **Visual Studio abonelikleri kullanıcı başına lisanslanır.** Her abone yazılım geliştirme ve test için gerektiği şekilde sayıda bilgisayarlarda kullanabilirsiniz. 
-- **Her abone için yalnızca bir abonelik düzeyi atayın**, kuruluşunuzun satın aldığı Visual Studio abonelik için ilgili. Kendisine atanmış birden fazla abonelik düzeyinde aboneleri varsa, bunların yalnızca birini böylece ayarlarını düzenleyin. 
-- **Bir abonenin abonelik düzeyinde güncelleştirilmesi gereken** zaman abonelik (satın alınmış bir "geçmeksizin" Lisans sonra) yükseltti veya daha düşük düzeyde yenilendi. 
-- **Abonelikleri aboneleri arasında paylaşmayın.** Abonelik avantajları (yazılım geliştirme ve test, Microsoft Azure e-öğrenme, vs.) bölümünü veya tümünü kullanan herkes için bir abonelik atamanız gerekir. 
+- **Visual Studio abonelikleri kullanıcı başına lisanslanır.** Her abone geliştirme ve test için gerektiği şekilde çok bilgisayarlarda yazılım kullanabilirsiniz. 
+- **Her abone için yalnızca bir abonelik düzeyi atamak**, kuruluşunuzun satın aldığı Visual Studio aboneliği ilişkili. Birden fazla abonelik düzeyinde atanmış aboneleri varsa, bunların yalnızca birini sahip ayarlarını düzenleyin. 
+- **Bir abonenin aboneliği düzeyine güncelleştirilmesi gereken** ne zaman abonelik (satın alma "görevleridir" lisansının sonra) yükseltme veya daha düşük bir düzeyde yenilendi. 
+- **Abonelikler arasında aboneleri paylaşmayın.** Abonelik avantajları (yazılım geliştirme ve test amacıyla, Microsoft Azure e-ÖĞRENİM, vs.) bir kısmını veya tamamını kullanan herkes için bir abonelik atamanız gerekir. 
 
-## <a name="adminstrator-roles"></a>Yönetici rolleri
+## <a name="administrator-roles"></a>Yönetici rolleri
 
-Yeni Visual Studio abonelikleri Yönetim Portalı'nda mevcut toplu lisans müşterileri için iki farklı roller vardır. Bu rolleri birincil/bildirimler kişi rolü ve VLSC abonelikleri Yöneticisi rolünde bugün gibidir. 
+Yeni Visual Studio abonelikleri Yönetim Portalı'nda mevcut Toplu Lisanslama müşterileri için iki farklı roller bulunur. Bu rolleri birincil/bildirimler konular ilgili kişisi rolü ve vlsc'de abonelikleri yöneticisi rolü bugün gibidir. 
 
-**Süper yönetici:** bir kuruluş ilk ayarlama bağlı birincil ya da bildirimler kişi Süper yönetici varsayılan olarak olur. Birincil ya da bildirimler kişi ek Süper admins ya da yöneticiler atamak seçebilirsiniz. Süper yönetici ekleyebilir ve abonelerin yanı sıra diğer yöneticiler kaldırabilirsiniz. Sistemde ikiden fazla Süper admins varsa, süper Yönetici güvenlik için son iki dışında tümünü silebilirsiniz. 
+**Süper Yöneticiler:** bir kuruluş ilk ayarlama bağlı birincil veya bildirimler ilgili Kişim Süper yönetici varsayılan olarak olur. Birincil veya bildirimler ilgili kişinizi başka Süper Yöneticiler veya Yöneticiler atamak seçebilirsiniz. Süper yönetici ekleyebilir ve abonelerin yanı sıra diğer yöneticiler kaldırabilirsiniz. Sistemde ikiden fazla Süper Yöneticiler varsa, bir süper Yönetici güvenlik için son iki dışındaki tüm silebilirsiniz. 
 
-**Yöneticiler:** yönetici Süper Yöneticisi tarafından yalnızca ayarlanabilir Bir yönetici aboneleri Süper yönetici bunlara atar anlaşmaları yönetebilirsiniz. 
+**Yöneticiler:** yönetici bir süper yönetici tarafından yalnızca ayarlanabilir Bir yöneticinin Süper yönetici onlara atadığı anlaşmaları aboneleri yönetebilirsiniz. 
 
 ## <a name="getting-started"></a>Başlarken
 
-Kuruluşunuzun Aboneliklerini yönetmek için Yönetici portalı'nı kullanabilmeniz için kuruluşunuzun portalına ilk yerleşik gerekir.  Onboarding tamamladıktan sonra bunlar burada, araçları ve abonelik yönetimi görevlerini gerçekleştirmek için gereken bilgileri bulabilirsiniz olarak aboneleri ve ayrıntıları sayfalarıyla aşina istersiniz.  
+Kuruluşunuzun abonelikleri yönetmek için Yönetici portalını kullanabilmek için ilk yerleşik kuruluşunuz portalına gerekir.  Onboarding tamamladıktan sonra bu araçları ve abonelik yönetimi görevlerinizi gerçekleştirmek için gereken bilgileri burada bulabilirsiniz olarak aboneler ve ayrıntıları sayfaları ile aşina olmak isteyebilirsiniz.  
 
 ### <a name="onboarding"></a>Ekleme
 
-Kuruluşunuz Visual Studio abonelikleri yönetim portalına edildi olması hazır olduğunda bir e-posta birincil ve bunları davet kişiler bildirimler ekleme işlemini tamamlamak için gönderilir. Aşağıdaki ayrıntıları yeni portalına onboarding için yapılması gereken adımlar yer almaktadır. Gözden geçirme işleminin isterseniz, bu denetleyin [yönetici ekleme video](https://channel9.msdn.com/Series/Visual-Studio-Subscriptions-Administration/Onboarding-your-organization-to-the-new-Visual-Studio-Subscription-Administration-Portal-and-setting) ya da bu [destek makalesine](https://support.microsoft.com/help/4013931/visual-studio-subscriptions-administrator-migration-process "Visual Studio abonelikleri yönetici geçiş işlemi").   
-1.  **PCN bulma ve oturum açma:**
-    - E-posta ile birincil ve bildirimler kişiler benzersiz bir bağlantı ve bunların genel müşteri numarası (PCN), son üç basamak ile sağlanır. * 
-    - Tüm PCN elde etmek için birincil ilgili kişinin VLSC'ye oturum açmak gerekir (PCN bulmak için yönergeler vardır bulunabilir). 
-    - PCN aldıktan sonra bunları oturum açmak için ister kendi benzersiz bağlantı seçmeniz gerekir. Bunlar, kuruluşunuzun AAD üzerinde değilse, bir iş/Okul hesabı (Kuruluşunuz AAD üzerinde ise) ya da bir Microsoft hesabı (MSA) kullanarak oturum mümkün olacaktır. 
-    - Ardından, bunlar PCN girmeniz gerekir. 
-2.  **Yöneticilerinizi ayarlayın.** PCN girdikten sonra yeni sisteminde Süper Yöneticisi olarak kaydedilir ve diğer Süper yöneticileri ve administrators (daha önce Abonelik Yöneticisi olarak da bilinir) eklemeniz mümkün olacaktır. Bu erişim kaybını önlemek için kuruluşunuzun geçiş tarihinden önce tamamlanmalıdır. 
-3.  **Yeni Abonelik Yönetim portalına erişim.**  Kuruluşunuz geçirildikten sonra e-postalar yeni eklenen Süper yöneticileri ve yeni portalına erişmek ve abonelik yönetimi başlamak için Yöneticiler bunları davet gönderilir.  
+Kuruluşunuzun Visual Studio abonelikleri Yönetim Portalı'na eklediğinizden çalıştırılmaya hazır olduğunda bir e-posta birincil ve bildirimler ilgili kişileri davet eden ekleme işlemini tamamlamak için gönderilir. Aşağıdaki ayrıntıları yeni portala eklemek için alınması gereken adımlardır. Bir gözden geçirme işleminin isterseniz, bunu kontrol [yönetici ekleme video](https://channel9.msdn.com/Series/Visual-Studio-Subscriptions-Administration/Onboarding-your-organization-to-the-new-Visual-Studio-Subscription-Administration-Portal-and-setting) veya bu [destek makalesi](https://support.microsoft.com/help/4013931/visual-studio-subscriptions-administrator-migration-process "Visual Studio abonelikleri yönetici geçiş işlemi").   
+1.  **PCN'nizi edinme ve oturum açma:**
+    - E-postada, birincil ve bildirimler ilgili kişileri benzersiz bir bağlantı ve bunların genel müşteri numarasını (PCN), son üç basamak ile sağlanır. * 
+    - Tüm PCN elde etmek için birincil ilgili kişi VLSC için oturum açmanız gerekir (PCN bulmak için yönergeler burada bulunabilir). 
+    - PCN aldıktan sonra kullanıcıdan oturum açmasını ister kendi benzersiz bağlantı seçmeniz gerekir. Bunlar, kuruluşunuz AAD üzerinde değilse, bir iş/Okul hesabı (Kuruluşunuz AAD'de ise) ya da bir Microsoft hesabı (MSA) kullanarak oturum açmanız mümkün olacaktır. 
+    - Ardından, bunlar PCN'yi girmeniz gerekir. 
+2.  **Yöneticilerinize ayarlayın.** PCN girdikten sonra bir süper yönetici yeni sistemde kayıtlı olması ve başka Süper Yöneticiler ve yöneticiler (daha önce abonelik yöneticileri olarak da bilinir) eklemeniz mümkün olacaktır. Bu erişim kaybını önlemek için kuruluşunuzun geçiş tarihinden önce tamamlanmalıdır. 
+3.  **Yeni abonelik yönetimi portalına erişme.**  Kuruluşunuz geçirildikten sonra yeni eklenen Süper Yöneticiler ve yeni portala erişmek ve abonelikleri yönetmeye başlamak için yöneticiler onları davet e-postalar gönderilir.  
 
 > [!NOTE]
-> Birincil ya da bildirimler kişiler birden fazla e-posta almaya devam ederseniz, bu, birden fazla PCN sahip oldukları anlamına gelir. Her email.* başvurulan PCN için benzersiz bağlantıyı kullanarak işlemini tamamlamak gerekir
+> Birincil veya bildirimler ilgili kişileri birden fazla e-posta almanız durumunda, bu, birden çok PCN'ye sahip oldukları anlamına gelir. Her email.* içinde başvurulan PCN için benzersiz bağlantıyı kullanarak işlemi tamamlamak gerekir
 
-Yeni Visual Studio abonelikleri yönetim portalına eklenmesi gerekir ve, birincil/bildirimler kişiniz olan emin değilseniz, oturum açtıktan sonra bu bilgileri bulabilirsiniz [VLSC](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Göz atın [Bul bilgisayarınızı birincil ilgili kişinin](/find-primary-contact/) birincil/bildirimler kişiniz VLSC bulmak için adımları için konu.
-Zaten bir yönetici olarak ayarlanmış olan sonra doğrudan gidebilirsiniz [Visual Studio abonelikleri Yönetim Portalı](https://manage.visualstudio.com).
+Yeni Visual Studio abonelikleri yönetim portalına eklenmesi gerekir ve sizin birincil/bildirimler ilgili kişiniz olan emin değilseniz, açtıktan sonra bu bilgiyi bulabilirsiniz [VLSC](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Bir göz atın [bulma Sihirbazı birincil ilgili kişi](find-primary-contact.md) VLSC'de birincil/bildirimler ilgili kişinizi bulmak için adımları için konu.
+Siz zaten yönetici olarak belirlenen sonra doğrudan gidebilirsiniz [Visual Studio abonelikleri Yönetim Portalı](https://manage.visualstudio.com).
 
-### <a name="understanding-the-subscribers-page"></a>Aboneler sayfa anlama
-Abonelikleri atadığınız sonra aboneler sekmesi dahil olmak üzere abonelerinizin hakkında ayrıntılı bilgi sağlar:
+### <a name="understanding-the-subscribers-page"></a>Aboneleri sayfanın anlama
+Abonelikleri atadıktan sonra abonelerin sekmesini dahil olmak üzere abonelerinize hakkında ayrıntılı bilgi sağlar:
 - Her abone ilk ve son adı.
 - Bu kullanıcı için e-posta adresi.
-- Kendisine atanmış abonelik düzeyi.
+- Kendisine atanmış bir abonelik düzeyi.
 - Aboneliğini atanmış tarih. 
-- Aboneliğini sona erme tarihi.
-- Bir isteğe bağlı metin açıklaması.
-- Abone olup indirir, ilişkin bir gösterge etkin veya devre dışı. 
+- Aboneliklerine ilişkin sona erme tarihi.
+- Bir isteğe bağlı bir metin açıklaması.
+- Bir gösterge olup abone indirmeleri etkin veya devre dışı. 
 - Bunlar bulunduğu ülke.
 - Yönetim Portalı'ndan kendi dil tercihi atama iletişim e-posta için.
-- Oturum açma daha iletişimleri için kullanılan farklı bir e-posta adresi için isteğe bağlı bir alan. 
+- İsteğe bağlı bir alan iletişimleri oturum açma amaçlarıyla kullanılan farklı bir e-posta adresi. 
 
-Bu sayfanın sol tarafında, abonelik lisanslarını satın alınan, atanan ve kuruluşunuzdaki her anlaşması için hala kullanılabilir sayısı hakkında ek bilgi görebilirsiniz.
-
-   ![Visual Studio abonelikler Yönetici portalı Subscibers sayfası](_img/using-admin-portal/subscribers-page.png)
+Bu sayfanın sol tarafındaki abonelik lisansları satın alınan, atanan ve kuruluşunuzdaki her anlaşma için hala kullanılabilir sayısı hakkında daha fazla bilgi görebilirsiniz.
+> [!div class="mx-imgBorder"]
+> ![Visual Studio abonelikleri Yönetim Portalı aboneleri sayfası](_img/using-admin-portal/subscribers-page.png)
 
 ### <a name="understanding-the-details-page"></a>Ayrıntılar sayfası anlama
-Görüntülemekte olduğunuz Sözleşmesi hakkında daha fazla bilgi için Ayrıntılar sekmesini seçin. Sözleşmesi durumu gösterir, hesap, kuruluş ayrıntıları, birincil kişiler (VLSC), süper yöneticileri (varsa) ve diğer ilgili bilgileri satın alın.
-
-   ![Visual Studio abonelikleri Yönetici portalı Ayrıntıları sayfası](_img/using-admin-portal/details-page.png)
+Görüntülemekte olduğunuz Sözleşmesi hakkında daha fazla bilgi için Ayrıntılar sekmesini seçin. Sözleşme durumu gösteren, hesap, kuruluş ayrıntıları, birincil ilgili kişi (VLSC), süper yöneticilerin (varsa) ve diğer ilgili bilgileri satın alma.
+> [!div class="mx-imgBorder"]
+> ![Visual Studio abonelikleri Yönetim Portalı Ayrıntıları sayfası](_img/using-admin-portal/details-page.png)
 

@@ -1,9 +1,8 @@
 ---
-title: Visual Studio düzenleyicisinde özelleştirme | Microsoft Docs
-ms.custom: ''
+title: Düzenleyiciyi özelleştirme
 ms.date: 11/20/2017
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - editor, customizing
@@ -14,23 +13,26 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1c31a9584fc2964704908b6da09b053046739b7e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e7643da4819d88282b5588bc97020f769301c483
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53065092"
 ---
-# <a name="customizing-the-editor"></a>Düzenleyiciyi özelleştirme
+# <a name="customize-the-editor"></a>Düzenleyiciyi özelleştirme
 
-Biçimlendirme, sekmeler, yazı tipleri ve renkler, IntelliSense ve diğer birçok özellik Metin Düzenleyicisi'nin genel veya özel bir programlama dili için özelleştirebilirsiniz. Bu bölümdeki konular, bu özelleştirmeler bazılarını gerçekleştirmek nasıl gösterir.
+Biçimlendirme, sekmeler, yazı tipleri ve renkler, IntelliSense ve metin düzenleyici tüm diller için veya belirli bir programlama dili için birçok özelliği özelleştirebilirsiniz. Bu bölümdeki konularda, bu özelleştirmeler bazılarını gerçekleştirmek gösterilmektedir.
+
+## <a name="options-dialog-box"></a>Seçenekler iletişim kutusu
 
 Metin Düzenleyici seçenekleri hakkında daha fazla bilgi için bkz: [metin düzenleyici Seçenekleri iletişim kutusu](../ide/reference/text-editor-options-dialog-box.md).
 
-### <a name="see-also"></a>Ayrıca bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-[Hızlı Başlangıç: Düzenleyicisi ve Visual Studio IDE'yi kişiselleştirme](../ide/quickstart-personalize-the-ide.md)  
-[Kod yazma](../ide/writing-code-in-the-code-and-text-editor.md)  
-[Kodda yer işaretleri ayarlama](../ide/setting-bookmarks-in-code.md)  
-[Genel, ortam, Seçenekler iletişim kutusu](../ide/reference/general-environment-options-dialog-box.md)  
-[Belgeler, ortam, Seçenekler iletişim kutusu](../ide/reference/documents-environment-options-dialog-box.md)  
-[Yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../ide/reference/fonts-and-colors-environment-options-dialog-box.md)
+- [Hızlı Başlangıç: düzenleyici ve Visual Studio IDE'yi kişiselleştirme](../ide/quickstart-personalize-the-ide.md)
+- [Kod Düzenleyicisi özellikleri](../ide/writing-code-in-the-code-and-text-editor.md)
+- [Kodda yer işaretleri ayarlama](../ide/setting-bookmarks-in-code.md)
+- [Genel, ortam, Seçenekler iletişim kutusu](../ide/reference/general-environment-options-dialog-box.md)
+- [Belgeler, ortam, Seçenekler iletişim kutusu](../ide/reference/documents-environment-options-dialog-box.md)
+- [Yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../ide/reference/fonts-and-colors-environment-options-dialog-box.md)

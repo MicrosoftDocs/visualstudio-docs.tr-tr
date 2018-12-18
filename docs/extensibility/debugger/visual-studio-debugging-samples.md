@@ -15,15 +15,16 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: bbc561f393b9d5f596f2def3898b447d561e74f8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c422dc47ab7bf74c4a16e81efb4ed85d6b87b520
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950920"
 ---
 # <a name="visual-studio-debugging-samples"></a>Visual Studio hata ayıklama örnekleri
-İki örnek Göster kullanarak Visual Studio hata ayıklayıcısı genişletmek nasıl [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)].  
-  
--   Hata ayıklayıcı ifade değerlendiricisi örnek yönetilen dilleri için yer aldığı [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)]. İçinde [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] penceresinde tıklatın **örnekleri** sekmesini tıklatın, **tüm** veya **C#** diller ve ardından listesinde **hata ayıklayıcı**.  
-  
--   Visual Studio hata ayıklama altyapısı örneği, yerel diller için MSDN kod Galerisi'nden üzerinde kullanılabilir. Daha fazla bilgi için Microsoft Web sitesinde bu sayfaya bakın: [Visual Studio hata ayıklama altyapısı örneği](http://go.microsoft.com/fwlink/?LinkId=150236).
+İki örnek, Visual Studio hata ayıklayıcısını kullanarak genişletme Göster [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)].  
+
+- Yönetilen diller için hata ayıklayıcı ifade değerlendirici örnek yer aldığı [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)]. İçinde [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] penceresinde tıklayın **örnekleri** sekmesinde **tüm** veya **C#** diller ve ardından listesinde **hata ayıklayıcı**.  
+
+- Visual Studio hata ayıklama altyapısı örneği, yerel diller için MSDN Kod Galerisi üzerinde kullanılabilir. Daha fazla bilgi için [Visual Studio hata ayıklama altyapısı örneği](http://go.microsoft.com/fwlink/?LinkId=150236) Microsoft Web sitesinde.

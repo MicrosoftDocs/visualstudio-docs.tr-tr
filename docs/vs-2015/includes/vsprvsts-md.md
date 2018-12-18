@@ -1,0 +1,1 @@
+Visual Studio Uygulama Yaşam Döngüsü Yönetimi

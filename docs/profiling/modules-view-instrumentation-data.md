@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4c7db34fb4913e3576f286aa7c34fe3cf80296ed
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c849971da7681322b15365bc0d59ce8b3529f508
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35256116"
 ---
 # <a name="modules-view---instrumentation-data"></a>Modüller görünümü - izleme verileri
 Modüller görünümü profil oluşturma verileri olan modülleri göre gruplandırılmış performans verilerini görüntüler. Modül işlevleri modülü düğüme listelenmiştir.  
@@ -81,7 +82,7 @@ Modüller görünümü profil oluşturma verileri olan modülleri göre grupland
 |**En fazla uygulama özel süresi**|-Bir işlev için bu işlevi çağrısı, en fazla uygulama özel süresi.<br />-Bir modül için işlevleri modülünde yapılan tüm çağrıların en fazla uygulama özel süresi.|  
 |**Min uygulama özel süresi**|-Bir işlev için bu modülü veya işlev çağrısının minimum uygulama özel süresi.<br />-Bir modül için işlevleri modülünde yapılan tüm çağrıların en az uygulama özel süresi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Modüller görünümü](../profiling/modules-view-sampling-data.md)   
  [Modüller görünümü - izleme](../profiling/modules-view-dotnet-memory-instrumentation-data.md)   
  [Modüller görünümü - örnekleme](../profiling/modules-view-dotnet-memory-sampling-data.md)

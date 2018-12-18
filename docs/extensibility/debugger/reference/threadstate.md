@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a5a2153b6f97727cbf436c66686160cece15c287
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8fafceac4da4b80bea73a8ab969f0ecfb52b394d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825835"
 ---
 # <a name="threadstate"></a>THREADSTATE
 İş parçacığı durumunu belirtir.  
@@ -49,30 +50,30 @@ public enum enum_THREADSTATE {
   
 ## <a name="members"></a>Üyeler  
  THREADSTATE_RUNNING  
- İş parçacığı çalışmadığını gösterir.  
+ İş parçacığı çalıştığını gösterir.  
   
  THREADSTATE_STOPPED  
  İş parçacığı bir kesme noktası nedeniyle durdurulduğunu gösterir.  
   
  THREADSTATE_FRESH  
- İş parçacığı oluşturuldu, ancak henüz kod çalışıp çalışmadığını gösterir.  
+ İş parçacığı oluşturuldu, ancak henüz kod çalışmıyor gösterir.  
   
  THREADSTATE_DEAD  
- İş parçacığı ölü olduğunu gösterir.  
+ İş parçacığı geçersiz olduğunu gösterir.  
   
  THREADSTATE_FROZEN  
- İş parçacığı donuk olduğunu gösterir (hiçbir yürütme gerçekleştirilebilir).  
+ İş parçacığı'nın dondurulmuş olup olmadığını gösterir (hiçbir yürütme gerçekleştirilebilir).  
   
 ## <a name="remarks"></a>Açıklamalar  
  İçin kullanılan `dwThreadState` alanını [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md) yapısı.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [THREADPROPERTIES](../../../extensibility/debugger/reference/threadproperties.md)

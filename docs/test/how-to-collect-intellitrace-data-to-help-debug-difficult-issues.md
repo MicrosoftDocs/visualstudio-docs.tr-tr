@@ -1,5 +1,5 @@
 ---
-title: Visual Studio IntelliTrace verilerini | Microsoft Docs
+title: IntelliTrace verisi
 ms.date: 10/13/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -11,104 +11,108 @@ ms.assetid: 02b6716f-569e-4961-938a-e790a0c74b5c
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: e1f36aefaad2e43d8875c9c0164ac938b004999d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cad52f39fc45e5561e2a87f12c804cb0d445d96a
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53064763"
 ---
-# <a name="how-to-collect-intellitrace-data-to-help-debug-difficult-issues"></a>Nasıl yapılır: Hata Ayıklama Zorluklarını Çözmeye Yardımcı Olması için IntelliTrace Verilerini Toplama
+# <a name="how-to-collect-intellitrace-data-to-help-debug-difficult-issues"></a>Nasıl yapılır: hata ayıklama zorluklarını çözmeye yardımcı olmak için IntelliTrace verilerini toplama
 
-Görsel Stdio belirli Tanılama izleme bilgileri toplamak IntelliTrace için tanılama veri bağdaştırıcısı yapılandırabilirsiniz. Testler bu bağdaştırıcıyı kullanabilir, test, uygulama için büyük miktarda tanılama olayları toplayabilir ve sonrasında bir geliştirici bu olayları, kodu izleyip bir hatanın nedenini bulmak üzere kullanabilir. IntelliTrace için tanılama veri bağdaştırıcısı el ile ya da otomatikleştirilmiş testler için kullanılabilir.
+Tanılama veri bağdaştırıcısı için görsel Stdio, belirli tanı izleme bilgilerini toplamak için IntelliTrace'i yapılandırabilirsiniz. Testler bu bağdaştırıcıyı kullanabilir, test, uygulama için büyük miktarda tanılama olayları toplayabilir ve sonrasında bir geliştirici bu olayları, kodu izleyip bir hatanın nedenini bulmak üzere kullanabilir. IntelliTrace için tanılama veri bağdaştırıcısı el ile veya otomatik testler için kullanılabilir.
 
-> [!NOTE]
-> Yönetilen kod kullanılarak yazılan bir uygulama üzerinde IntelliTrace çalışır. Bir tarayıcı istemci olarak kullanan bir Web uygulamasını test ediyorsanız, yönetilen kod yok izleme için kullanılabilir olmadığından, IntelliTrace istemci için test ayarlarınızda etkinleştirmemeniz gerekir. Bu durumda, bir ortamı ayarlama ve Web sunucunuz üzerinde uzaktan IntelliTrace veri toplamak isteyebilirsiniz.
-
-IntelliTrace verilerini .iTrace uzantısına sahip bir dosyada depolanır. Başarısız test ve bir test adımı çalıştırdığınızda, bir hata oluşturabilirsiniz. Tanılama bilgilerini içeren IntelliTrace dosyası otomatik olarak bu hataya eklenir.
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
 > [!NOTE]
-> Bir test geçişi başarılı olduğunda IntelliTrace için tanılama veri bağdaştırıcısı bir IntelliTrace dosyası oluşturmaz. Yalnızca başarısız bir test çalışması veya bir hata gönderdiğinizde dosya kaydeder.
+> IntelliTrace yalnızca yönetilen kod kullanarak yazılmış bir uygulama üzerinde çalışır. Bir tarayıcı istemci olarak kullanan bir web uygulamasını test ediyorsanız, yönetilen kod yok izleme için kullanılabilir olmadığından, IntelliTrace istemci için test ayarlarınızda etkinleştirmemeniz gerekir. Bu durumda, bir ortam kurmak ve web sunucunuz üzerinde uzaktan IntelliTrace veri toplamak isteyebilirsiniz.
 
- IntelliTrace dosyasında toplanan verileri yeniden oluşturun ve bir hata, kodunuzda tanımak için gerekli olan zamanı azaltarak hata ayıklama verimliliğini artırır. Ayrıca, kendi bilgisayarında yerel oturumunuza çoğaltabilirsiniz başka bir kişi ile IntelliTrace dosya paylaşımı için bir hatanın yeniden üretilebilir olmayan olacağını olasılığını azaltır.
+IntelliTrace verisi uzantısına sahip bir dosyada depolanır *.iTrace*. Test ve bir test adımı başarısız çalıştırdığınızda, bir hata oluşturabilirsiniz. Tanılama bilgilerini içeren bir IntelliTrace dosyası otomatik olarak bu hataya eklenir.
 
 > [!NOTE]
-> Test ayarlarınızda IntelliTrace etkinleştirirseniz, kod kapsamı verilerini toplama çalışmaz.
+> Test geçiş başarılı olduğunda, IntelliTrace için tanılama veri bağdaştırıcısını IntelliTrace dosyası oluşturmaz. Yalnızca başarısız bir test çalışması veya bir hatayı bildirme, bir dosya kaydeder.
+
+IntelliTrace dosyasında toplanan veri, kodunuzda hata yeniden oluşturmak için gerekli olan zamanı azaltarak hata ayıklama verimliliğini artırır. Ayrıca, yerel oturumunuza bilgisayarlarında çoğaltabilirsiniz başka bir kişi ile IntelliTrace dosyası paylaşabildiğinden hata tekrarlanabilir olmayan olacağını olasılığını azaltır.
+
+> [!NOTE]
+> Test ayarlarınızda IntelliTrace etkinleştirirseniz, kod kapsam verisi toplama çalışmaz.
 
 > [!WARNING]
-> IntelliTrace için tanılama veri bağdaştırıcısı test çalışması için testleri yüklendikten sonra gerçekleştirilmelidir yönetilen bir işlem kullanılarak çalışır. İzlemek istediğiniz işlem zaten başlatılmış olup olmadığını işlem zaten çalıştığından hiç IntelliTrace dosyaları toplanacak. Bunu aşmak için testler yüklenmeden önce işlemin durdurulduğundan emin olun. Ardından testleri yüklü olmadığından veya ilk test başladıktan sonra işlemi başlatın.
+> IntelliTrace için tanılama veri bağdaştırıcısı, test çalışması için testleri yüklendikten sonra gerçekleştirilmesi gereken yönetilen bir işlem kullanılarak çalışır. İzlemek istediğiniz işlem zaten başladıysanız, işlem zaten çalıştığından hiç IntelliTrace dosyaları toplanacak. Bu aşmak için testler yüklenmeden önce işlem durdurulduğundan emin olun. Ardından test yüklenemedi veya ilk testi başlatıldıktan sonra işlemi başlatın.
 
- Aşağıdaki yordam, toplamak istediğiniz IntelliTrace verilerini yapılandırmak açıklar. Visual Studio'da Microsoft Test Yöneticisi'ni ve Test Ayarları iletişim kutusunda her iki yapılandırma Düzenleyicisi için aşağıdaki adımları uygulayın.
+Aşağıdaki yordam, toplamak istediğiniz IntelliTrace verilerini yapılandırmak açıklar. Bu adımlar, Microsoft Test Yöneticisi ve Test Ayarları iletişim kutusunda Visual Studio'da her iki yapılandırma düzenleyicisine uygulanır.
 
 > [!NOTE]
-> Kullanıcı hesabı için IntelliTrace verilerini toplamak için kullanılan test aracısı Yöneticiler grubunun bir üyesi olması gerekir. Daha fazla bilgi için bkz: [yüklemek ve test aracılarını yapılandırma](../test/lab-management/install-configure-test-agents.md).
+> IntelliTrace verilerini toplamak için kullanılan test aracısı için kullanıcı hesabı Yöneticileri grubunun bir üyesi olması gerekir. Daha fazla bilgi için [yüklemek ve test denetleyicisilerinin](../test/lab-management/install-configure-test-agents.md).
 
-## <a name="configure-the-data-to-collect-with-the-intellitrace-diagnostic-data-adapter"></a>IntelliTrace Tanılama veri bağdaştırıcısı ile toplanacak verileri yapılandırma
+## <a name="configure-the-data-to-collect-with-the-intellitrace-diagnostic-data-adapter"></a>IntelliTrace Tanılama veri bağdaştırıcısıyla toplanacak verileri yapılandırma
 
-Bu yordamdaki adımları gerçekleştirmeden önce Microsoft Test Yöneticisi'ni veya Visual Studio test ayarlarınızı açın ve seçmeniz gerekir **veri ve tanılama** sayfası.
+Bu yordamdaki adımları gerçekleştirmeden önce Microsoft Test Yöneticisi veya Visual Studio'dan test ayarlarınızı açmalı ve seçmeniz gerekir **veri ve tanılama** sayfası.
 
-### <a name="to-configure-the-data-to-collect-with-the-intellitrace-diagnostic-data-adapter"></a>IntelliTrace Tanılama veri bağdaştırıcısı ile toplanacak verileri yapılandırmak için
+### <a name="to-configure-the-data-to-collect-with-the-intellitrace-diagnostic-data-adapter"></a>IntelliTrace Tanılama veri bağdaştırıcısıyla toplanacak verileri yapılandırmak için
 
-1.  IntelliTrace verilerini toplamak üzere kullanmak için rolü seçin.
+1.  IntelliTrace verilerini toplamak için kullanılacak rolü seçin.
 
 2.  Seçin **IntelliTrace**.
 
-3.  Bir ASP.NET Web uygulaması veya Web istemci rolü için IntelliTrace ekliyorsanız, da seçmelisiniz **IntelliTrace ve Test etkisi için ASP.NET İstemci Proxy**.
+3.  Bir ASP.NET web uygulaması veya web istemci rolü için IntelliTrace ekliyorsanız, da seçmelisiniz **IntelliTrace ve Test etkisi için ASP.NET İstemci Proxy'i**.
 
-     Bu proxy, IntelliTrace ve Test etkisi tanılama veri bağdaştırıcıları için bir Web sunucusu istemciden gelen http çağrıları hakkında bilgi toplamanıza olanak sağlar.
+     Bu proxy, IntelliTrace ve Test etkisi tanılama veri bağdaştırıcısı için bir web sunucusu istemciden gelen http çağrıları ile ilgili bilgi toplamanıza olanak sağlar.
 
     > [!WARNING]
-    > IntelliTrace verilerini toplamak istediğiniz yere Internet Information Server (IIS) üzerinde uygulama havuzu için kullanılan kimliği için özel bir hesap kullanmaya karar verirseniz, yerel kullanıcı profili özel hesap için IIS makinede, oluşturmanız gerekir kullanılıyor. Yerel olarak IIS makine için bir kez oturum açarak veya özel hesap kimlik bilgilerini kullanarak aşağıdaki komutu çalıştırarak özel hesap için yerel bir profil oluşturabilirsiniz:
+    > Burada IntelliTrace verilerini toplamak için istediğinize Internet Information Server (IIS) üzerinde uygulama havuzu için kullanılan kimliği için özel bir hesabı kullanmaya karar verirseniz, yerel kullanıcı profili özel hesap için IIS makinesi üzerinde oluşturmanız gerekir kullanılıyor. Yerel IIS makinesi için bir kez oturum açarak veya özel hesap kimlik bilgilerini kullanarak aşağıdaki komutu çalıştırarak yerel profil için özel bir hesap oluşturabilirsiniz:
     >
     > **runas /user:domain\name /profile cmd.exe**
 
 4.  Seçin **yapılandırma** için **IntelliTrace** varsayılan IntelliTrace ayarlarını değiştirmek için.
 
-     Toplanacak veri yapılandırmak için iletişim kutusu görüntülenir.
+     Toplanacak verileri yapılandırmak için iletişim kutusu görüntülenir.
 
     > [!WARNING]
-    > IntelliTrace veri toplama etkinleştirirseniz, kod kapsamı verilerini toplama çalışmaz.
+    > IntelliTrace verisi toplamayı etkinleştirirseniz, kod kapsam verisi toplama çalışmaz.
 
-5.  Seçin **genel** sekmesi. Seçin **yalnızca IntelliTrace olayları** test ettiğinizde performansı üzerinde en az etkisi olan önemli tanılama olaylarını kaydetmek için.
+5.  Seçin **genel** sekmesi. Seçin **yalnızca IntelliTrace olaylarını** test ettiğinizde performansı üzerinde çok az etkisi olan önemli tanılama olaylarını kaydetmek için.
 
-     **-**veya -
+     veya
 
-     Seçin **IntelliTrace olayları ve arama bilgileri** tanılama olayları ve yöntemi kaydetmek için izleme düzeyini çağrı bilgileri gösterir. Testlerinizi çalıştırdığınızda bu düzeyde bir izlemenin performans üzerinde etkisi olabilir.
+     Seçin **IntelliTrace olayları ve çağrı bilgileri** tanılama olayları ve yöntemi kaydetmek için çağrı bilgileri, izleme düzeyini gösterir. Testlerinizi çalıştırdığınızda, bu izleme düzeyini performans etkisi olabilir.
 
-6.  Internet Information Services üzerinde çalışan ASP.NET uygulamanızın veri toplamak için seçin **Internet Information Services üzerinde çalışan ASP.NET uygulamalardan veri toplamak**. Web sunucusu rolünde test aracınızı ayarlayın ve yapılandırın. Bkz: [yüklemek ve test aracılarını yapılandırma](../test/lab-management/install-configure-test-agents.md).
+6.  Internet Information Services üzerinde çalışan ASP.NET uygulamanızın veri toplamak için seçin **Internet Information Services üzerinde çalışan ASP.NET uygulamalarından veri topla**. Ayarlama ve web sunucusu rolünde test aracınızı yapılandırmak. Bkz: [yüklemek ve test denetleyicisilerinin](../test/lab-management/install-configure-test-agents.md).
 
-7.  Seçin **modülleri** sekmesi. Şunlardan birini seçin **aşağıdakiler dışında tüm modüllerdeki verileri toplama** ve **Ekle** modülleri listesine eklemek için ve **kaldırmak** modülü kaldırmak için. Bu seçenek, belirttiğiniz modüller dışında sistemde çalışan tüm modülleri dahil etmenizi sağlar.
+7.  Seçin **modülleri** sekmesi. Şunlardan birini seçin **şunlar hariç tüm modüllerden veri toplamak** ve **Ekle** modül listesine eklemek ve **Kaldır** modülü kaldırmak için. Bu seçenek, belirttiğiniz modüller hariç sistemde çalışan tüm modülleri dahil edildi sağlar.
 
-     -veya-
+     veya
 
-     Seçin **yalnızca aşağıdaki modüllerden verileri toplama** ve **Ekle** modülleri listesine eklemek için ve **kaldırmak** modülü kaldırmak için. Bu seçenek tam olarak hangi modüllerin istediğinizi belirtmenize olanak sağlar.
+     Seçin **yalnızca şu modüllerden veri toplamak** ve **Ekle** modül listesine eklemek ve **Kaldır** modülü kaldırmak için. Bu seçenek tam olarak hangi modüllerin istediğinizi belirtmenize olanak tanır.
 
     > [!NOTE]
     > Mümkünse, izlemek istediğiniz belirli işlemleri seçin. Bu en iyi performans için önerilir.
 
-8.  Seçin **işlemleri** sekmesi. Seçin **aşağıdakiler dışında tüm işlemlerden verileri toplama** ve **Ekle** işlemler listesine eklemek için ve **kaldırmak** işlemi kaldırmak için. Bu seçenek, belirttiğiniz işlemler dışında sistemde çalışan tüm işlemleri dahil etmenizi sağlar.
+8.  Seçin **işlemleri** sekmesi. Seçin **şunlar hariç tüm işlemlerden veri topla** ve **Ekle** işlemler listesine eklemek ve **Kaldır** işlemi kaldırmak için. Bu seçenek, belirttiğiniz işlemleri dışında sistemde çalışan tüm işlemler dahil sağlar.
 
-     -veya-
+     veya
 
-     Seçin **verileri yalnızca belirtilen işlemlerini toplama** ve **Ekle** işlemler listesine eklemek için ve **kaldırmak** işlemi kaldırmak için. Bu seçenek tam olarak hangi işlemlerin istediğinizi belirtmenize olanak sağlar.
+     Seçin **yalnızca belirtilen işlemlerden veri topla** ve **Ekle** işlemler listesine eklemek ve **Kaldır** işlemi kaldırmak için. Bu seçenek tam olarak hangi işlemlerin istediğinizi belirtmenize olanak tanır.
 
-9. (İsteğe bağlı) Seçin **IntelliTrace olayları** sekmesi. Seçin veya eklemek veya tanılama olaylarını toplarken dışlamak istediğiniz her bir IntelliTrace olay kategorisi temizleyin.
+9. (İsteğe bağlı) Seçin **IntelliTrace olayları** sekmesi. Seçin veya eklemek veya tanılama olaylarını toplarken hariç tutmak istediğiniz her bir IntelliTrace olay kategorisi temizleyin.
 
-10. (İsteğe bağlı) IntelliTrace olay kategorisini genişletin ve seçin veya eklemek veya IntelliTrace olayları dışlamak istediğiniz her belirli olay temizleyin.
+10. (İsteğe bağlı) IntelliTrace olay kategorisini genişletin ve seçin veya eklemek veya IntelliTrace olayları hariç tutmak istediğiniz her özel olay temizleyin.
 
-11. (İsteğe bağlı) Seçin **Gelişmiş** sekmesi. Ardından, oku seçin **en fazla kayıt için disk alanı miktarı** ve IntelliTrace dosyası kullanmak etkinleştirmek istediğiniz maksimum boyutu seçin.
-
-    > [!NOTE]
-    > Kayıt boyutunu artırmak için bu kaydı ile birlikte test sonuçlarını kaydettiğinizde, zaman aşımı sorun oluşabilir. Tanılama veri bağdaştırıcıları için zaman aşımı değerlerini artırma hakkında daha fazla bilgi için bkz: [nasıl yapılır: tanılama veri bağdaştırıcıları zaman aşımlarını engellemek](../test/how-to-prevent-time-outs-for-diagnostic-data-adapters.md).
-
-12. Microsoft Test Yöneticisi'ni kullanıyorsanız, seçin **kaydetmek**. Visual Studio kullanıyorsanız seçin **Tamam**. IntelliTrace ayarları şimdi yapılandırılmış ve test ayarlarınız için kaydedilir.
+11. (İsteğe bağlı) Seçin **Gelişmiş** sekmesi. Ardından, yanındaki oku seçin **en fazla kayıt için disk alanı miktarını** ve IntelliTrace dosyası kullanmak etkinleştirmek istediğiniz en büyük boyutu seçin.
 
     > [!NOTE]
-    > Bu tanılama veri bağdaştırıcısı için yapılandırmayı sıfırlamayı tercih **varsayılan yapılandırmaya sıfırlanır** Visual Studio için veya **Varsayılana Sıfırla** Microsoft Test Yöneticisi için.
+    > Kayıt boyutunu artırmak için bu kayıt, test sonuçları ile birlikte kaydettiğinizde, bir zaman aşımı sorun ortaya çıkabilir.
+
+12. Microsoft Test Yöneticisi kullanıyorsanız seçin **Kaydet**. Visual Studio kullanıyorsanız, seçin **Tamam**. IntelliTrace ayarları artık yapılandırılır ve test ayarlarınız için kaydedildi.
+
+    > [!NOTE]
+    > Bu tanılama veri bağdaştırıcısı için yapılandırmayı sıfırlamak için seçin **varsayılan yapılandırmaya Sıfırla** Visual Studio için veya **Varsayılana Sıfırla** Microsoft Test Yöneticisi için.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [(VSTS) test ederken tanılama verisi toplama](/vsts/manual-test/collect-diagnostic-data)
-- [El ile testlerde (VSTS) tanılama verisi toplama](/vsts/manual-test/mtm/collect-more-diagnostic-data-in-manual-tests)
+- [(Azure Test planları) test sırasında tanılama verilerini toplayın](/azure/devops/test/collect-diagnostic-data?view=vsts)
+- [El ile testlerde (Azure Test planları) tanılama verilerini toplayın](/azure/devops/test/mtm/collect-more-diagnostic-data-in-manual-tests?view=vsts)
 - [Test ayarlarını kullanarak tanılama bilgileri Topla](../test/collect-diagnostic-information-using-test-settings.md)
 - [IntelliTrace verilerini toplama](../test/how-to-collect-intellitrace-data-to-help-debug-difficult-issues.md)

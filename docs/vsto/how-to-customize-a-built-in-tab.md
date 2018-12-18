@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: yerleşik bir sekmeyi özelleştirme | Microsoft Docs'
+title: 'Nasıl yapılır: yerleşik bir sekmeyi özelleştirme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,13 +16,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 1343ee966d63b0ddc74bf1e18cbbe8bd6d476a0b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 30b4af116df218f3f778b9efa1e295fbadbad86a
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257273"
 ---
-# <a name="how-to-customize-a-built-in-tab"></a>Nasıl Yapılır: Yerleşik Bir Sekmeyi Özelleştirme
+# <a name="how-to-customize-a-built-in-tab"></a>Nasıl yapılır: yerleşik bir sekmeyi özelleştirme
   Gruplar ve denetimler için yerleşik bir sekmeyi ekleyebilirsiniz. Yerleşik bir sekmeyi zaten bir Microsoft Office uygulamasından Şerit'te olan sekme olarak kullanılır. Örneğin, **veri** sekme, yerleşik bir sekmeyi Excel'de kullanılabilir. Özel bir grup oluşturduğunuzda, sekmesinde son görünür, ancak grubunuz sekmesinde herhangi bir yere taşıyabilirsiniz.  
   
  [!INCLUDE[appliesto_ribbon](../vsto/includes/appliesto-ribbon-md.md)]  
@@ -45,7 +46,7 @@ ms.lasthandoff: 04/16/2018
   
      Denetim Kimliği sekmeler, gruplar ve Microsoft Office uygulamalarında yerleşik denetimler benzersiz olarak tanımlayan bir addır.  
   
-     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office Fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
+     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
   
 5.  Gelen **Office Şerit denetimleri** sekmesinde **araç**, grupları sekmesinde sürükleyin.  
   
@@ -66,9 +67,9 @@ ms.lasthandoff: 04/16/2018
   
 4.  Ayarlama **OfficeId** yerleşik bir gruptan denetim kimliği özelliği.  
   
-     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office Fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
+     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Şerite Genel Bakış](../vsto/ribbon-overview.md)   
  [Şerit Tasarımcısı](../vsto/ribbon-designer.md)   
  [Şerit XML](../vsto/ribbon-xml.md)   
@@ -77,6 +78,6 @@ ms.lasthandoff: 04/16/2018
  [Nasıl yapılır: Şerit özelleştirmeye başlama](../vsto/how-to-get-started-customizing-the-ribbon.md)   
  [Nasıl yapılır: Şeritteki sekmenin konumunu değiştirme](../vsto/how-to-change-the-position-of-a-tab-on-the-ribbon.md)   
  [Nasıl yapılır: Backstage görünümüne denetimler ekleme](../vsto/how-to-add-controls-to-the-backstage-view.md)   
- [Nasıl Yapılır: Eklenti Kullanıcı Arayüzü Hatalarını Gösterme](../vsto/how-to-show-add-in-user-interface-errors.md)  
+ [Nasıl yapılır: kullanıcı arayüzü hatalarını gösterme eklentisi](../vsto/how-to-show-add-in-user-interface-errors.md)  
   
   

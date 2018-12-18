@@ -1,16 +1,16 @@
 ---
 title: Iactivescriptsitedebugex arabirimi | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - IActiveScriptSiteDebugEx Interface
 ms.assetid: 76869378-1a7b-47bd-8cd0-acc31f91d58d
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -19,6 +19,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24793628"
 ---
 # <a name="iactivescriptsitedebugex-interface"></a>IActiveScriptSiteDebugEx Arabirimi
 İle birlikte bu arabirimi uygulayan `IActiveScriptSiteDebug` bir uygulamada bir çalıştırma hatası gösteren bir bildirim almak ve hata ayıklama için uygulamayı isteğe bağlı olarak eklemek için gereken bir ana bilgisayar yazıyorsanız arabirim. Hata ayıklama işlemi Yöneticisi üzerinden bildirim sağlar `IActiveScriptDebug` Just-ın-Time hata ayıklayıcı komut dosyası, bilgisayarda bulunamadı. Hiçbir sadece zamanında hata ayıklayıcı komut dosyası ise, bulunan PDM sağlar üzerinden bildirim `IActiveScriptDebugEx` yerine.  

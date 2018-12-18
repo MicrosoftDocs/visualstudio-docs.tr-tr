@@ -1,8 +1,0 @@
-# [JavaScript’te Windows Çalışma Zamanını Kullanma](using-the-windows-runtime-in-javascript.md)
-# [Windows Çalışma Zamanı API’si kullanılırken dikkat edilmesi gerekenler](considerations-when-using-the-windows-runtime-api.md)
-# [Windows Çalışma Zamanı Zaman Uyumsuz Metotlarını Kullanma](using-windows-runtime-asynchronous-methods.md)
-## [Zaman Uyumsuz Windows Çalışma Zamanı Metotlarından Özel Hata Özellikleri](special-error-properties-from-asynchronous-windows-runtime-methods.md)
-# [JavaScript'te Windows Çalışma Zamanı Olaylarını İşleme](handling-windows-runtime-events-in-javascript.md)
-# [Windows Çalışma Zamanı Türlerinin JavaScript Gösterimi](javascript-representation-of-windows-runtime-types.md)
-# [Windows Çalışma Zamanı DateTime ve TimeSpan Gösterimleri](windows-runtime-datetime-and-timespan-representations.md)
-# [JavaScript kullanan Windows Çalışma Zamanı Uygulamaları için Hata Kodları](error-codes-for-windows-runtime-apps-using-javascript.md)

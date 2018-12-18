@@ -1,5 +1,5 @@
 ---
-title: Özel kategoriler ve öğeleri görüntüleme uygulama | Microsoft Docs
+title: Uygulama özel kategoriler ve öğeleri görüntüleme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,117 +14,118 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9593a7addcd9a3f100f45f69e7e692c396e33bfe
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 850e4396c11cbd83f578304eed78a25042185a25
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49894644"
 ---
-# <a name="implementing-custom-categories-and-display-items"></a>Uygulama özel kategoriler ve öğeleri görüntüleme
-Bir VSPackage denetim yazı tiplerini ve renkleri, metin sağlayabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] özel kategoriler ve öğeleri görüntüleme aracılığıyla tümleşik geliştirme ortamı (IDE).
+# <a name="implement-custom-categories-and-display-items"></a>Özel kategoriler uygulamak ve öğeleri görüntüleme
+VSPackage denetim yazı tipleri ve renkler için kendi metin sağlayabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] özel kategoriler ve görüntü öğeleri aracılığıyla tümleşik geliştirme ortamı (IDE).
 
- Özel alanlar ve görüntü öğeler olan **yazı tiplerini ve renkleri** özellik sayfası. Açmak için **yazı tiplerini ve renkleri** özellik sayfasında **Araçları** menüsünde tıklatın **seçenekleri**. Genişletme **ortam** ve ardından **yazı tiplerini ve renkleri**.
+ Özel kategorileri ve görüntü öğeleri olan **yazı tipleri ve renkler** özellik sayfası. Açmak için **yazı tipleri ve renkler** özellik sayfasında **Araçları** menüsünde tıklatın **seçenekleri**. Genişletin **ortam** ve ardından **yazı tipleri ve renkler**.
 
- Bu mekanizma kullanırken, VSPackages uygulamalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider> ve onun ilişkili arabirim.
+ Bu mekanizma kullanırken VSPackage'ları uygulamalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider> ve onun ilişkili arabirim.
 
- Var olan tüm değiştirmek için bu düzenek kullanılabilir temelde **görüntülemek öğeleri** ve **kategorileri** bunları içeren. Ancak, bunu değiştirmek için kullanılmamalıdır **metin EditorCategory** veya kendi **görüntülemek öğeleri**. Daha fazla bilgi için bkz: [yazı tipi ve renk genel bakış](../extensibility/font-and-color-overview.md).
+ Bu mekanizma İlkesi, tüm mevcut değiştirmek için kullanılabilir **görüntü öğeleri** ve **kategorileri** bunları içeren. Ancak onu değiştirmek için kullanılmamalıdır **metin EditorCategory** veya kendi **görüntü öğeleri**. Daha fazla bilgi için [yazı tipi ve renk genel bakış](../extensibility/font-and-color-overview.md).
 
- Özel uygulamak için **kategorileri** veya **görüntülemek öğeleri**, bir VSPackage gerekir:
+ Özel uygulamak için **kategorileri** veya **görüntü öğeleri**, VSPackage gerekir:
 
--   Oluşturun veya kayıt defterinde kategorileri belirleyin.
+- Oluşturma veya kayıt defterinde kategorileri tanımlama.
 
-     IDE'nin uyarlamasını **yazı tiplerini ve renkleri** özellik sayfasında belirtilen kategori destekleyen hizmeti için doğru bir şekilde sorgulamak için bu bilgileri kullanır.
+   IDE'nin uygulaması **yazı tipleri ve renkler** özellik sayfası, belirli bir kategori destekleyen hizmeti için doğru bir şekilde sorgulamak için bu bilgileri kullanır.
 
--   Oluşturma veya kayıt defterinde grupları (isteğe bağlı) tanımlama.
+- Oluşturma veya kayıt defterinde grupları (isteğe bağlı) tanımlama.
 
-     İki veya daha fazla kategoriye birleşimi temsil eden bir grup tanımlamak yararlı olabilir. Bir grup tanımlanırsa, IDE otomatik olarak alt kategorileri birleştirir ve grup içindeki öğeleri görüntüleme dağıtır.
+   İki veya daha fazla kategori birleşimini gösteren bir grup tanımlamak yararlı olabilir. Bir grubu tanımlanmazsa, IDE, otomatik olarak alt kategorileri birleştirir ve grup içindeki öğeleri görüntüle dağıtır.
 
--   IDE desteği uygulayın.
+- IDE desteği uygulayın.
 
--   Yazı tipi ve renk değişiklikleri işleyin.
+- Yazı tipi ve renk değişiklikleri işleyin.
 
- Bilgi için bkz: [erişme depolanan yazı tipi ve renk ayarlarını](../extensibility/accessing-stored-font-and-color-settings.md).
+  Bilgi için [erişim depolanan yazı tipi ve renk ayarlarını](../extensibility/accessing-stored-font-and-color-settings.md).
 
-## <a name="to-create-or-identify-categories"></a>Oluşturma veya kategorileri tanımlamak için
+## <a name="to-create-or-identify-categories"></a>Oluşturma veya kategori tanımlamak için
 
--   Özel türde bir kategori kayıt defteri girişi altında oluşturmak [HKLM\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\`<Category>`]
+- Özel bir kategori altında kayıt defteri girdisi türü oluşturmak *[HKLM\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\ `<Category>`]*
 
-     *\<Kategori >* kategorisi yerelleştirilmemiş adıdır.
+   *\<Kategori >* kategorisi yerelleştirilmemiş adıdır.
 
--   Kayıt defteri iki değerlerle doldurun:
+- Kayıt defteri iki değerlerle doldurun:
 
-    |Ad|Tür|Veri|Açıklama|
-    |----------|----------|----------|-----------------|
-    |Kategori|REG_SZ|GUID|Kategori tanımlamak için oluşturulmuş bir GUID.|
-    |Paket|REG_SZ|GUID|Kategori destekleyen VSPackage hizmet GUID.|
+  |Ad|Tür|Veri|Açıklama|
+  |----------|----------|----------|-----------------|
+  |Kategori|REG_SZ|GUID|Kategori tanımlamak için bir GUID oluşturulur.|
+  |Paket|REG_SZ|GUID|Kategori destekleyen VSPackage hizmeti GUİD'si.|
 
- Kayıt defterinde belirtilen hizmet uygulaması sağlamalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> karşılık gelen bir kategorisi için.
+  Kayıt defterinde belirtilen hizmet uygulaması sağlamalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> karşılık gelen bir kategorisi için.
 
-## <a name="to-create-or-identify-groups"></a>Gruplar oluşturma veya tanımlamak için
+## <a name="to-create-or-identify-groups"></a>Oluşturma veya grupları tanımlamak için
 
--   Özel türde bir kategori kayıt defteri girişi altında oluşturmak [HKLM\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\  *\<grup >*]
+- Özel bir kategori altında kayıt defteri girdisi türü oluşturmak *[HKLM\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\*  \<grubu >*]*
 
-     *\<Grup >* yerelleştirilmemiş grubunun adıdır.
+   *\<Grup >* yerelleştirilmemiş grubunun adıdır.
 
--   Kayıt defteri iki değerlerle doldurun:
+- Kayıt defteri iki değerlerle doldurun:
 
-    |Ad|Tür|Veri|Açıklama|
-    |----------|----------|----------|-----------------|
-    |Kategori|REG_SZ|GUID|Grubu tanımlamak için oluşturulmuş bir GUID.|
-    |Paket|REG_SZ|GUID|Kategori destekleyen hizmet GUID.|
+  |Ad|Tür|Veri|Açıklama|
+  |----------|----------|----------|-----------------|
+  |Kategori|REG_SZ|GUID|Grubu tanımlamak için bir GUID oluşturulur.|
+  |Paket|REG_SZ|GUID|Kategori destekleyen hizmeti GUİD'si.|
 
- Kayıt defterinde belirtilen hizmet uygulaması sağlamalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> ilgili grup.
+  Kayıt defterinde belirtilen hizmet uygulaması sağlamalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> ilgili grup.
 
 ## <a name="to-implement-ide-support"></a>IDE desteği uygulamak için
 
--   Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider.GetObject%2A>, ya da döndüren bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi veya bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> IDE her arabirime **kategori** veya GUID sağlanmış grup.
+- Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider.GetObject%2A>, ya da döndüren bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> IDE her arabirimi **kategori** veya sağlanan GUID grubu.
 
--   İçin her **kategori** destekliyorsa, ayrı bir örneğini bir VSPackage uygulayan <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi.
+- İçin her **kategori** destekliyorsa, ayrı bir örneğini bir VSPackage'ı uygulayan <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi.
 
--   Yöntemleri aracılığıyla uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> IDE ile sağlamanız gerekir:
+- Yöntemleri aracılığıyla uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> IDE ile sağlamanız gerekir:
 
-    -   Listesini **görüntülemek öğeleri** içinde **kategorisi.**
+  -   Listesini **görüntü öğeleri** içinde **kategorisi.**
 
-    -   Yerelleştirilebilir adlarını **görüntülemek öğeleri**.
+  -   Yerelleştirilebilir adlarını **görüntü öğeleri**.
 
-    -   Her bir üyesi için görüntüleme bilgileri **kategori**.
+  -   Her üye için bilgi görüntüler **kategori**.
 
-    > [!NOTE]
-    >  Her **kategori** en az birini içermelidir **görüntü öğesi**.
+  > [!NOTE]
+  >  Her **kategori** en az bir içeren **görüntü öğesi**.
 
--   IDE kullanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> birkaç kategorisi birleşimini tanımlamak için arabirim.
+- IDE kullanır <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup> çeşitli kategorileri birleşimini tanımlamak için arabirim.
 
-     Kendi uygulama ile bir IDE sağlar:
+   Uygulaması ile bir IDE sağlar:
 
-    -   Listesini **kategorileri** verilen bir grup oluşturur.
+  -   Listesini **kategorileri** belirli bir grup oluşturur.
 
-    -   Örneklerini erişimi <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> her destekleyen **kategori** grup içinde.
+  -   Erişim örneklerini <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> her Destek **kategori** grup içinde.
 
-    -   Yerelleştirilebilir grup adları.
+  -   Yerelleştirilebilir grubu adları.
 
--   IDE güncelleştiriliyor:
+- IDE güncelleştiriliyor:
 
-     IDE hakkında bilgileri önbelleğe alır **yazı tipi ve renk** ayarlar. Bu nedenle, herhangi bir değişikliği IDE sonra **yazı tipi ve renk** yapılandırması, bu önbelleği güncel olduğundan emin olmak için önerilir.
+   IDE hakkındaki bilgileri saklar **yazı tipi ve renk** ayarları. Bu nedenle, IDE'nin herhangi bir değişiklikten sonra **yazı tipi ve renk** yapılandırması önerilir önbelleği güncel olduğundan emin olmak için.
 
- Önbelleği güncelleştiriliyor aracılığıyla yapılır <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> arabirim ve gerçekleştirilen genel olarak veya yalnızca üzerinde seçili öğeleri olabilir.
+  Önbelleği güncelleştiriliyor aracılığıyla gerçekleştirilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> arabirim ve gerçekleştirilen genel veya açık yalnızca seçilen öğeleri olabilir.
 
-## <a name="to-handle-font-and-color-changes"></a>Yazı tipi ve renk işlemek için değiştirir
- Düzgün bir VSPackage görüntülenen metin renklendirme desteklemek için VSPackage destekleyen renklendirme hizmeti aracılığıyla kullanıcı tarafından başlatılan değişikliklerinin yanıt gerekir **yazı tiplerini ve renkleri** Özellikler sayfası. Bir VSPackage bunu şu şekilde yapar:
+## <a name="to-handle-font-and-color-changes"></a>Yazı tipi ve renk değişiklikleri işlemek için
+ VSPackage görüntülenen metin renklendirmesi doğru desteklemek için VSPackage'ı destekleyen renklendirme hizmeti aracılığıyla yapılan kullanıcı tarafından başlatılan değişiklikleri yanıtlamalıdır **yazı tipleri ve renkler** Özellikler sayfası. VSPackage bunu şu şekilde yapar:
 
 -   Uygulayarak IDE tarafından oluşturulan olayları işleme <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> arabirimi.
 
-     IDE kullanıcı değişiklik aşağıdaki uygun yöntemi çağırır **yazı tiplerini ve renkleri** sayfası. Örneğin, çağıran <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents.OnFontChanged%2A> yeni bir yazı tipi seçtiyseniz yöntemi.
+     IDE kullanıcı değişiklik aşağıdaki uygun yöntemi çağıran **yazı tipleri ve renkler** sayfası. Örneğin, çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents.OnFontChanged%2A> yeni bir yazı tipi seçtiyseniz yöntemi.
 
-     -veya-
+     veya
 
--   IDE değişiklikleri için yoklanıyor.
+-   IDE değişiklikleri için yoklama.
 
-     Bu sistem uygulanan yapılabilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi. Öncelikle desteği için Kalıcılık, ancak <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> yöntemi, yazı tipi ve renk bilgilerini elde etmek için kullanılabilir **görüntülemek öğeleri**. Daha fazla bilgi için bkz: [erişme depolanan yazı tipi ve renk ayarlarını](../extensibility/accessing-stored-font-and-color-settings.md).
+     Bu sistem uygulanan yapılabilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi. Öncelikle desteği için Kalıcılık, ancak <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> yöntemi, yazı tipi ve renk bilgilerini almak için kullanılabilir **görüntü öğeleri**. Daha fazla bilgi için [erişim depolanan yazı tipi ve renk ayarlarını](../extensibility/accessing-stored-font-and-color-settings.md).
 
     > [!NOTE]
-    >  Yoklama tarafından elde edilen sonuçlar doğru, kullanmak yararlı olabilir emin olmak için <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> önbellek temizleme ve güncelleştirme alma yöntemlerini çağırmadan önce gerekli olup olmadığını belirlemek için arabirimi <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
+    >  Emin olmak için yoklama işlemi tarafından elde edilen sonuçları doğru olduğundan, kullanmak yararlı olabilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> önbellek temizleme ve güncelleştirme alma yöntemleri çağrılmadan önce gerekli olup olmadığını belirlemek için arabirimi <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
 - <xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider.QueryService%2A>
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults>
@@ -132,7 +133,7 @@ Bir VSPackage denetim yazı tiplerini ve renkleri, metin sağlayabilir [!INCLUDE
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage>
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup>
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider>
-- [Yazı tipi ve metin renklendirme için renk bilgilerini alma](../extensibility/getting-font-and-color-information-for-text-colorization.md)
-- [Saklı yazı tipi ve renk ayarlarını erişme](../extensibility/accessing-stored-font-and-color-settings.md)
-- [Nasıl yapılır: yerleşik yazı tipleri ve renk düzenini erişim](../extensibility/how-to-access-the-built-in-fonts-and-color-scheme.md)
+- [Metin renklendirmesi yazı tipi ve renk bilgilerini al](../extensibility/getting-font-and-color-information-for-text-colorization.md)
+- [Yazı tipi ve renk ayarlarını erişim depolanan](../extensibility/accessing-stored-font-and-color-settings.md)
+- [Nasıl yapılır: yerleşik yazı tipi ve renk şeması erişim](../extensibility/how-to-access-the-built-in-fonts-and-color-scheme.md)
 - [Yazı tipi ve renk genel bakış](../extensibility/font-and-color-overview.md)

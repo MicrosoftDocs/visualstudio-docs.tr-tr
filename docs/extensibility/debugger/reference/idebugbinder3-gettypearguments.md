@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7f5e06b51cfea731d94cd0eb53d91b4dbdf6b471
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6ed4e1863313dae173d6737970765ca3d5f0b0b3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49879460"
 ---
 # <a name="idebugbinder3gettypearguments"></a>IDebugBinder3::GetTypeArguments
-Bu yöntem bağımsız değişken türleri Bu nesneyle ilişkili bir listesini alır.  
+Bu yöntem, bu nesneyle ilişkili bağımsız değişken türlerinin bir listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int GetTypeArguments(
   
 #### <a name="parameters"></a>Parametreler  
  `skip`  
- [in] Bağımsız değişken türleri almadan önce atlamak için alanları sayısı.  
+ [in] Bağımsız değişken türleri almadan önce atlamak için alanların sayısı.  
   
  `count`  
- [in] Döndürülecek bağımsız değişken alan sayısını (aynı zamanda boyutunu belirtir `ppFields` array).  
+ [in] Döndürülecek bağımsız değişken alan sayısı (Ayrıca boyutunu belirtir `ppFields` dizisi).  
   
  `ppFields`  
- [içinde out] Bu yöntem getirisi doldurulur alanları dizisi.  
+ [out içinde] Bu yöntemin geri doldurulur alanları dizisi.  
   
  `pFetched`  
  [out] \(isteğe bağlı) Bağımsız değişken sayısı gerçekte döndürülen alanları yazın.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken türleri sayısı ile önceden alınabilir [GetTypeArgumentCount](../../../extensibility/debugger/reference/idebugbinder3-gettypeargumentcount.md).  
+ Bağımsız değişken türlerinin sayısı ile önceden alınabilir [GetTypeArgumentCount](../../../extensibility/debugger/reference/idebugbinder3-gettypeargumentcount.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md)   

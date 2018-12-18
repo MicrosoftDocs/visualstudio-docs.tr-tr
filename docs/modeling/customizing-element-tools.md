@@ -7,28 +7,30 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 566558390e29f9198b2328463dfce26327f76565
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 332d7599543efbe5ee6e15ccc89d5fce595e5341
+ms.sourcegitcommit: ef828606e9758c7a42a2f0f777c57b2d39041ac3
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39566885"
 ---
 # <a name="customizing-element-tools"></a>Öğe Araçlarını Özelleştirme
-Bazı DSL tanımları, tek bir kavram öğeleri grubu olarak temsil eder. Örneğin, bir bileşenin sabit bir dizi bağlantı noktası olan bir model oluşturursanız, her zaman kendi üst bileşeni ile aynı zamanda oluşturulması için bağlantı noktalarını istiyorsunuz. Bu nedenle, öğelerin yerine tek bir grup oluşturur, böylece öğesi oluşturma aracı özelleştirmeniz gerekir. Bunu başarmak için öğe oluşturma Aracı nasıl başlatılır özelleştirebilirsiniz.
+Bazı DSL tanımlarında öğeleri bir grup olarak tek bir kavramı gösterir. Örneğin, bir bileşen sabit bir dizi bağlantı noktası olan bir model oluşturursanız, her zaman aynı zamanda kendi ana bileşen oluşturulacak bağlantı noktalarını isteyebilirsiniz. Bu nedenle, bir grubu yerine yalnızca bir öğe oluşturur, böylece öğe oluşturma aracı özelleştirmeniz gerekir. Bunu başarmak için öğe oluşturma Aracı nasıl başlatılır özelleştirebilirsiniz.
 
- Ayrıca, aracı diyagramı veya bir öğenin üzerine sürüklendiğinde olanlar geçersiz kılabilirsiniz.
+ Ayrıca, araç diyagram veya öğenin sürüklediğinizde ne geçersiz kılabilirsiniz.
 
-## <a name="customizing-the-content-of-an-element-tool"></a>Bir öğe aracı içeriğini özelleştirme
- Her öğe aracı örneği depolayan bir <xref:Microsoft.VisualStudio.Modeling.ElementGroupPrototype> (EGP), seri duruma getirilmiş sürüm bir veya daha fazla model öğelerini ve bağlantıları içerir. Varsayılan olarak, bir öğenin aracı EGP için Aracı'nı belirtin sınıfının bir örneğini içerir. Bu geçersiz kılarak değiştirme *YourLanguage*`ToolboxHelper.CreateElementToolPrototype`. DSL paketi yüklendiğinde, bu yöntem çağrılır.
+## <a name="customizing-the-content-of-an-element-tool"></a>Öğe araç içeriğini özelleştirme
+ Her öğe araç bir örneğini depolar bir <xref:Microsoft.VisualStudio.Modeling.ElementGroupPrototype> (EGP) bir veya daha fazla model öğelerini ve bağlantıları seri hale getirilmiş bir sürümünü içerir. Varsayılan olarak, bir öğe aracının EGP araç için belirttiğiniz sınıfının bir örneğini içerir. Geçersiz kılarak bu ayarı değiştirebilirsiniz *YourLanguage*`ToolboxHelper.CreateElementToolPrototype`. DSL paketi yüklendiğinde, bu yöntem çağrılır.
 
- Yönteminin bir parametresi DSL tanımında belirtilen sınıfın kimliğidir. İlgilendiğiniz sınıfı ile yöntemi çağrıldığında, EGP ekstra öğeler ekleyebilirsiniz.
+ Yönteminin parametresi, DSL tanımında belirtilen sınıfın kimliğidir. İlgilendiğiniz sınıfı ile yöntemi çağrıldığında, EGP ekstra öğeler ekleyebilirsiniz.
 
- EGP bağlı öğeleri bir ana öğe bağlantılardan katıştırma eklemeniz gerekir. Referans bağlantıları de içerir.
+ EGP paketinizle öğeleri için bir ana öğe bağlantılarını ekleme içermesi gerekir. Referans bağlantıları da dahil edebilirsiniz.
 
- Aşağıdaki örnek, bir ana öğesi ve iki katıştırılmış öğeleri oluşturur. Ana sınıf Direnci denir ve Terminal adlı öğe için iki katıştırma ilişkileri vardır. Katıştırma rolü özellikleri Terminal1 ve Terminal2 olarak adlandırılır ve hem 1..1 çokluğu sahiptir.
+ Aşağıdaki örnek, bir ana öğesi ve iki katıştırılmış öğeleri oluşturur. Ana sınıfı Direnci çağrılır ve iki gömme ilişkisi için Terminal adlı öğe vardır. Gömme rol özellikleri Terminal1 ve Terminal2 olarak adlandırılır ve her ikisi de 1..1 çokluğu sahip.
 
-```
+```csharp
 using Microsoft.VisualStudio.Modeling; ...
 public partial class CircuitDiagramToolboxHelper
 {

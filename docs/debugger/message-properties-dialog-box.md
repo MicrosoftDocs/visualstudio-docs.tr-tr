@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31481547"
 ---
 # <a name="message-properties-dialog-box"></a>İleti Özellikleri İletişim Kutusu
 Belirli bir ileti hakkında daha fazla bilgi için bu iletişim kutusunu kullanın. Bu iletişim kutusunu görüntülemek için odağı taşımak bir [iletiler görünümünü](../debugger/messages-view.md) penceresi. Ağacında herhangi bir ileti düğümü seçin ve ardından **özellikleri** gelen **Görünüm** menüsü.  

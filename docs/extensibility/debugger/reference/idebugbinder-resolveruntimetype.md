@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6aa911dba9d56996e048326737c1dd99ca89c49c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e2bfca2c360741b92c3a7ce3c4773671d8bf4d6f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928132"
 ---
 # <a name="idebugbinderresolveruntimetype"></a>IDebugBinder::ResolveRuntimeType
-Bu yöntem bir nesne çalışma zamanı türünü belirler.  
+Bu yöntem, bir nesnenin çalışma zamanı türünü belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,13 +46,13 @@ int ResolveRuntimeType(
  [in] [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) çözümlenecek.  
   
  `ppResolved`  
- [out] Nesne türünü döndüren bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md).  
+ [out] Olarak nesne türünü döndüren bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir nesnenin çalışma zamanı türü derleme zamanında her zaman bilinmiyor. Örneğin, çok biçimlilik kullanarak, bağımsız değişken bir işleve, button sınıfı gibi temel sınıfı olarak geçirilebilir. Gerçek bağımsız değişkeni bir radyo düğmesi sınıfı gibi türetilmiş bir sınıf olabilir.  
+ Bir nesnenin çalışma zamanı türü derleme zamanında her zaman bilinmiyor. Örneğin, çok biçimlilik kullanarak, bağımsız değişken bir işleve bir button sınıfı gibi temel sınıf olarak geçirilebilir. Gerçek bağımsız değişken bir radyo düğmesi sınıfı gibi türetilmiş bir sınıf olabilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md)   

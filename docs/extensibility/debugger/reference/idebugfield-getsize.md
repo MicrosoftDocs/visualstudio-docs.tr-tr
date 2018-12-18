@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6e7343f6d496587c3fbf69adf3ec56a9f516a9be
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4bd47ac87eb61876302215f6a1e7e8aeed53c287
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867552"
 ---
 # <a name="idebugfieldgetsize"></a>IDebugField::GetSize
-Bu yöntem, bir alanın bayt cinsinden boyutu alır.  
+Bu yöntem, bir alanın bayt cinsinden boyutunu alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int GetSize(
  [out] Boyutu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Tüm alanlar bir türe sahip ve tüm türleri bir boyuta sahiptir. Örneğin, bayt türüne sahip bir alan 1 bayt boyutuna sahip.  
+ Tüm alanlar bir türüne sahiptir ve tüm türleri bir boyuta sahiptir. Örneğin, 1 bayt boyutunu bayt türünde bir alan vardır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

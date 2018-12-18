@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1bcc6617dea2ff76d94a1cacb173bdd42d0bc8e6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cc16ce17ed9499036d4eaf29a39d1616eed54c7a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49857165"
 ---
 # <a name="idebugsymbolproviderdirectgetcurrentmodulesstate"></a>IDebugSymbolProviderDirect::GetCurrentModulesState
-Sembol sağlayıcısı üyesi olduğu simge grubu hakkındaki bilgileri alır.  
+Sembol sağlayıcısı üyesi olduğu simgesi grubu hakkındaki bilgileri alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,13 +45,13 @@ int GetCurrentModulesState(
  [out] Sembol sağlayıcısı grubunun durumu.  
   
  `count`  
- [out] Grup modülleri sayısı.  
+ [out] Gruptaki modül sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir modül eklenemez veya sembol grubundan, kaldırılamaz her durumu değiştirilir. Bu nedenle, bu yöntem bir simge grubu değiştirilip değiştirilmediğini algılamak için kullanılabilir.  
+ Her bir modül için eklendi veya sembol, gruptan durumu değiştirilir. Bu nedenle, bu yöntem bir sembol grubu değiştirilip değiştirilmediğini algılamak için kullanılabilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProviderDirect](../../../extensibility/debugger/reference/idebugsymbolproviderdirect.md)

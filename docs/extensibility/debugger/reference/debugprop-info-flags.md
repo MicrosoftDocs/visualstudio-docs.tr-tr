@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1d9ecaab348ca69a792c39a8cb74e998d8f3a6aa
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f92138aa9cb3867343ec1d83653d8b30f9b1a8a6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927612"
 ---
 # <a name="debugpropinfoflags"></a>DEBUGPROP_INFO_FLAGS
-Hata ayıklama özelliği nesnesi hakkında almak için hangi bilgilerin belirtir.  
+Hangi bilgilerin hakkında bir hata ayıklama özelliği nesnesi alınacağını belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -71,40 +72,40 @@ public enum enum_DEBUGPROP_INFO_FLAGS {
   
 ## <a name="members"></a>Üyeler  
  DEBUGPROP_INFO_FULLNAME  
- Başlatma/kullanım `bstrFullName` alan.  
+ Başlat/kullanım `bstrFullName` alan.  
   
  DEBUGPROP_INFO_NAME  
- Başlatma/kullanım `bstrName` alan.  
+ Başlat/kullanım `bstrName` alan.  
   
  DEBUGPROP_INFO_TYPE  
- Başlatma/kullanım `bstrType` alan.  
+ Başlat/kullanım `bstrType` alan.  
   
  DEBUGPROP_INFO_VALUE  
- Başlatma/kullanım `bstrValue` alan.  
+ Başlat/kullanım `bstrValue` alan.  
   
  DEBUGPROP_INFO_ATTRIB  
- Başlatma/kullanım `dwAttrib` alan.  
+ Başlat/kullanım `dwAttrib` alan.  
   
  DEBUGPROP_INFO_PROP,  
- Başlatma/kullanım `pProperty` içeren alanın bir [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) arabirimi.  
+ Başlat/kullanım `pProperty` içeren alan bir [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) arabirimi.  
   
  DEBUGPROP_INFO_VALUE_AUTOEXPAND  
- Varsa, bu nesne türü değeri alanı otomatik genişletilmiş değeri içermesi gerektiğini belirtir.  
+ Varsa, bu nesne türü için değer alanını otomatik olarak genişletilmiş değeri içermesi gerektiğini belirtir.  
   
  DEBUGPROP_INFO_VALUE_NOFUNCEVAL  
  Kullanım dışı.  
   
  DEBUGPROP_INFO_VALUE_RAW  
- Herhangi bir beautified değerleri veya üyeleri döndürmeyen (diğer bir deyişle, değerler biçimi değil).  
+ Üyeler veya beautified değerlerden döndürmeyen (diğer bir deyişle, değerleri biçimlendirmeyin).  
   
  DEBUGPROP_INFO_VALUE_NO_TOSTRING  
- Tüm özel birleştirilen değerleri döndürmeyen (örneğin, çağırmayın `ToString()` bir değer üretmek için bir nesne üzerinde).  
+ Herhangi bir özel Sentezlenen değer döndürmeyen (örneğin, çağırmayın `ToString()` bir değer üretmek için bir nesne üzerinde).  
   
  DEBUGPROP_INFO_NONE  
- Hiçbir bayraklarının ayarlandığını belirtir.  
+ Bayrak ayarlandığını belirtir.  
   
  DEBUGPROP_INFO_STANDARD  
- Başlatma/kullanım `dwAttrib`, `bstrName`, `bstrType`, ve `bstrValue` alanları.  
+ Başlat/kullanım `dwAttrib`, `bstrName`, `bstrType`, ve `bstrValue` alanları.  
   
  DEBUGPROP_INFO_All  
  Tüm bayraklar maskesi gösterir.  
@@ -112,19 +113,19 @@ public enum enum_DEBUGPROP_INFO_FLAGS {
 ## <a name="remarks"></a>Açıklamalar  
  Bu değerler geçirilecek [GetPropertyInfo](../../../extensibility/debugger/reference/idebugproperty2-getpropertyinfo.md), [EnumChildren](../../../extensibility/debugger/reference/idebugproperty2-enumchildren.md), ve [EnumProperties](../../../extensibility/debugger/reference/idebugstackframe2-enumproperties.md) başlatılması için hangi alanların olduğunu göstermek için yöntemlerini [ DEBUG_PROPERTY_INFO](../../../extensibility/debugger/reference/debug-property-info.md) yapısı.  
   
- Bu değerler için de kullanılır `dwFields` üyesi `DEBUG_PROPERTY_INFO` yapısı döndürüldüğünde hangi alanların yapısı kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ Bu değerler için de kullanılır `dwFields` üyesi `DEBUG_PROPERTY_INFO` yapısı yapısı iade edildiğinde yapının hangi alanların kullanılan ve geçerli belirtmek için.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)   
  [GetPropertyInfo](../../../extensibility/debugger/reference/idebugproperty2-getpropertyinfo.md)   
  [EnumChildren](../../../extensibility/debugger/reference/idebugproperty2-enumchildren.md)   

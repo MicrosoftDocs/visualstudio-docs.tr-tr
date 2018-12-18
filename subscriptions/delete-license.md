@@ -1,5 +1,5 @@
 ---
-title: Atama silme | Microsoft Docs
+title: Ödev siliniyor | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
@@ -9,17 +9,18 @@ description: Yöneticiler abonelik atamalarını nasıl silebilir öğrenin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 15f657a33c7c852c816d13e3d373a2b40035001d
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 5c590f1dfb97b4276a1259be1648826eec8a780a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920247"
 ---
-# <a name="deleting-assignments-in-visual-studio-subscriptions"></a>Visual Studio abonelikleri atamalarını silme
+# <a name="deleting-assignments-in-visual-studio-subscriptions"></a>Visual Studio Abonelikleri, ödevler siliniyor
 
-Bir abone olduğunda bunlar şirketten ayrıldığında, bir projenin tamamlanması veya yeni bir proje rolüne geçiş gibi ek olarak, Visual Studio abonelik artık gerektirdiğinde aboneliğini kaldırmak ve başka birine atayın. Lütfen bir abonelik yeniden atadığınızda, abone Avantajlarınızı, ürün anahtarlarını dışında sıfırlanacak olduğunu unutmayın.  Yeni kullanıcı herhangi bir sonuçlanması anahtarı talep mümkün olacaktır ve görünüm anahtarları önceden istenen ancak Talep Limitleri **değil** sıfırlayın. 
-1.  Kaldırmak istediğiniz abonenin adını tıklatın. Birden çok aboneye kaldırılmak üzere seçmek için basılı tutun **CTRL** anahtarı ve kaldırın ya da basın istediğiniz her abone tıklatın **CTRL + A** seçin ve tüm aboneleri kaldırmak için. Aşağıdaki görüntü seçili üç aboneleri gösterir.
-2.  Seçili subscriber(s) silmek için tıklatın **silmek**. 
-3.  Silme işlemini onaylamak için tıklatın isteyen bir ileti görüntülendiğinde, **Tamam**. 
-
-![Aboneler Sil](_img\delete-license\delete-subscribers.png)
+Abone olduğunda bunlar şirketten ayrıldığında, bir projeyi tamamlamak veya yeni bir iş rolü, geçiş gibi ek olarak, Visual Studio aboneliği artık gerektirdiğinde aboneliğini kaldırın ve başka bir kişiye atayabilirsiniz. Lütfen bir abonelik yeniden atadığınızda, abone avantajları sıfırlanmaz olduğunu unutmayın.  Yeni kullanıcı sonuçlanması tüm anahtarlar talep mümkün olacaktır ve talep etme sınırları görünümü anahtarlarını önceden istenen ancak **değil** sıfırlayın. 
+1. Kaldırmak istediğiniz abonelik adına tıklayın. Birden çok aboneyi kaldırma seçmek için basılı **CTRL** basıp tıklayın, istediğiniz kaldırın veya her abone **CTRL + A** seçin ve tüm aboneler kaldırmak için. Aşağıdaki görüntüde üç aboneleri seçili gösterilmektedir.
+2. Seçili aboneleri silmek için tıklayın **Sil**. 
+3. Silme işlemini onaylamak için isteyen bir ileti görüntülendiğinde, **Tamam**. 
+   > [!div class="mx-imgBorder"]
+   > ![Aboneleri silme](_img/delete-license/delete-subscribers.png)

@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9bf419ccf3b0935dccf1fa4e56ec156bc4338da6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4c43c3bd314ae9db7025448b2632562e9ae947c4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49942276"
 ---
 # <a name="idebugpendingbreakpoint2enumerrorbreakpoints"></a>IDebugPendingBreakpoint2::EnumErrorBreakpoints
-Bu bekleyen kesme sonuçlandı tüm hata kesme noktaları listesini alır.  
+Bu bekleyen kesme noktasından sonuçlanan tüm hata kesme noktaları listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,16 +44,16 @@ int EnumErrorBreakpoints(
   
 #### <a name="parameters"></a>Parametreler  
  `bpErrorType`  
- [in] Değerleri bir birleşimini [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) Numaralandırılacak hataları türünü seçer numaralandırması.  
+ [in] Değerleri birleşimi [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) numaralandırmak için hata türünü seçer sabit listesi.  
   
  `ppEnum`  
  [out] Döndürür bir [IEnumDebugErrorBreakpoints2](../../../extensibility/debugger/reference/ienumdebugerrorbreakpoints2.md) listesini içeren nesne [IDebugErrorBreakpoint2](../../../extensibility/debugger/reference/idebugerrorbreakpoint2.md) nesneleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme sildiyseniz.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme noktası silinmiş olması durumunda.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CPendingBreakpoint` gösteren nesne [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CPendingBreakpoint` gösteren nesne [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) arabirimi.  
   
 ```cpp  
 HRESULT CPendingBreakpoint::EnumErrorBreakpoints(  

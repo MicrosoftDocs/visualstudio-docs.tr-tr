@@ -1,6 +1,7 @@
 ---
 title: Yönetilen Kod için Kod Çözümleme Uyarıları
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -16,45 +17,46 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 201bc04e2a5d030d40a060feda2a9e3e9ad6d45e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 600b5c7822232581cd01bd9bbf7616f4d1e9bb7c
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47859074"
 ---
 # <a name="code-analysis-for-managed-code-warnings"></a>Yönetilen Kod için Kod Çözümleme Uyarıları
-Yönetilen kod analizi aracı kuralı ihlallerini yönetilen kod kitaplıklarında belirtmek uyarılar sağlar. Uyarılar, tasarım, yerelleştirme, performans ve güvenlik gibi kural alanlar halinde düzenlenir. Her uyarı yönetilen kod analizi kural ihlal belirtir. Bu bölümde ayrıntılı tartışmalara ve örnekler için her yönetilen kod analizi uyarı sağlar.
+Yönetilen kod analizi aracı, yönetilen kod kitaplıkları kuralı ihlallerini göstermek uyarılar sağlar. Uyarılar, tasarım, yerelleştirme, performans ve güvenlik gibi kural alanları halinde düzenlenir. Her uyarı, yönetilen kod analizi kural ihlalini gösterir. Bu bölümde, her yönetilen kod analizi uyarısı için derinlemesine tartışmalar ve örnekler sağlar.
 
- Aşağıdaki tabloda her uyarı için sağlanan bilgi türünü gösterir.
+ Aşağıdaki tabloda, her uyarı için sağlanan bilgi türünü gösterir.
 
 |Öğe|Açıklama|
 |----------|-----------------|
-|Tür|Kural için TypeName.|
-|CheckId|Kuralın benzersiz tanımlayıcısı. Checkıd ve kategoriyi bir uyarı kaynak gizleme için kullanılır.|
+|Tür|Kuralın tür adı.|
+|CheckId|Kuralı için benzersiz tanımlayıcı. Checkıd ve kategori kaynak uyarı gizleme için kullanılır.|
 |Kategori|Uyarı kategorisi.|
-|Yeni Değişiklik|Kural ihlal için düzeltmeyi önemli bir değişiklik olup olmadığı. Bir bağımlılık ihlali neden hedefe sahip bir derleme yeni derlenir değil değişiklik anlamına gelir ayırarak sürüm sabit veya çalışma zamanında değişikliği nedeniyle başarısız olabilir. Birden çok düzeltmeleri kullanılabilir durumda ve en az bir düzeltme önemli bir değişiklik ve bir düzeltme değil, hem 'Çiğnemekten' ve 'Olmayan çiğnemekten' belirtilir.|
-|Sebep|Bir uyarı oluşturmak kural neden belirli yönetilen kod.|
-|Açıklama|Uyarı arkasında sorunlarını ele alınmaktadır.|
-|İhlaller Nasıl Düzeltilir?|Kural karşılamak ve bir uyarı oluşturulmasını önlemek için kaynak kodunu değiştirmek açıklanmaktadır.|
-|Uyarılar Bastırıldığında|Bir kuraldan gizlemek güvenli olduğunda açıklar.|
-|Örnek kod|Kural ihlal ve kural karşılamak örnekler düzeltti örnekleri.|
-|İlgili uyarıları|İlgili uyarılar.|
+|Yeni Değişiklik|Bu kural ihlalini düzeltmesini bir değişiklik olup olmadığı. İhlaline neden hedefte bağımlılığı bir derleme yeni derlemeniz değil değişiklik anlamına gelir bozucu sürüm sabit veya çalışma zamanında değişiklik nedeniyle başarısız olabilir. Birden çok düzeltmesi mevcuttur ve en az bir düzeltme bölünmesi farklıdır ve bir düzeltme değil, hem 'Yeni' ve 'Bozucu olmayan' belirtilir.|
+|Sebep|Kural bir uyarı oluşturmak neden olan belirli yönetilen kod.|
+|Açıklama|Uyarı arkasında sorunları açıklar.|
+|İhlaller Nasıl Düzeltilir?|Kural karşılar ve bir uyarı oluşturmasını önlemek için kaynak kodunu değiştirmek açıklanmaktadır.|
+|Uyarılar Bastırıldığında|Kuraldan bir uyarıyı bastırmak güvenli olduğunda açıklar.|
+|Örnek kod|Kuralı ihlal ediyor ve kural karşılayan örnekler düzeltti örnekler.|
+|İlgili uyarılar|İlgili uyarıları.|
 
 ## <a name="in-this-section"></a>Bu Bölümde
 
 |||
 |-|-|
-|[Checkıd uyarıları](../code-quality/code-analysis-warnings-for-managed-code-by-checkid.md)|Tüm checkıd listeler|
-|[Şifreleme Uyarıları](../code-quality/cryptography-warnings.md)|Güvenli kitaplıklar ve şifreleme doğru kullanımı aracılığıyla uygulamaları destekleyen uyarılar.|
-|[Tasarım Uyarıları](../code-quality/design-warnings.md)|Doğru kitaplık tasarımı belirtildiği gibi destek uyarıları [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] tasarım yönergeleri.|
-|[Genelleştirme Uyarıları](../code-quality/globalization-warnings.md)|Dünya çapında kullanılmaya hazır kitaplıkları ve uygulamaları destekleyen uyarılar.|
-|[Birlikte Çalışabilirlik Uyarıları](../code-quality/interoperability-warnings.md)|COM istemcileri ile etkileşimi desteklemek uyarılar.|
-|[Bakım Uyarıları](../code-quality/maintainability-warnings.md)|Kitaplık ve uygulama bakım destek uyarılar.|
-|[Hareketlilik Uyarıları](../code-quality/mobility-warnings.md)|Destek verimli güç kullanımı uyarılar.|
-|[Adlandırma Uyarıları](../code-quality/naming-warnings.md)|Adlandırma kuralları düzenlendi.%nÇözüm destek uyarıları [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] tasarım yönergeleri.|
-|[Performans Uyarıları](../code-quality/performance-warnings.md)|Yüksek performanslı kitaplıkları ve uygulamaları destekleyen uyarılar.|
-|[Taşınabilirlik Uyarıları](../code-quality/portability-warnings.md)|Farklı platformlarda taşınabilirlik destek uyarılar.|
-|[Güvenilirlik Uyarıları](../code-quality/reliability-warnings.md)|Doğru bellek ve iş parçacığı kullanımı gibi kitaplığı ve uygulamanın güvenilirliğini destekleyen uyarılar.|
-|[Güvenlik Uyarıları](../code-quality/security-warnings.md)|Güvenli kitaplıklar ve uygulamaları destekleyen uyarılar.|
-|[Kullanım Uyarıları](../code-quality/usage-warnings.md)|Uygun kullanımını destekleyen uyarıları [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].|
-|[Kod Çözümleme İlkesi Hataları](../code-quality/code-analysis-policy-errors.md)|Kod çözümleme İlkesi giriş sırasında değil sağlanıyorsa oluşan hatalar.|
+|[CheckId Uyarıları](../code-quality/code-analysis-warnings-for-managed-code-by-checkid.md)|Checkıd tüm uyarıları listeler|
+|[Şifreleme Uyarıları](../code-quality/cryptography-warnings.md)|Daha güvenli kütüphaneleri ve uygulamaları doğru kullanımı aracılığıyla şifreleme desteği uyarılar.|
+|[Tasarım Uyarıları](../code-quality/design-warnings.md)|.NET Framework Tasarım Kılavuzu tarafından belirtilen doğru kitaplık desteği uyarıları tasarlayın.|
+|[Genelleştirme Uyarıları](../code-quality/globalization-warnings.md)|Dünya çapında kullanılmaya hazır kitaplıkları ve uygulamaları desteklemek uyarılar.|
+|[Birlikte Çalışabilirlik Uyarıları](../code-quality/interoperability-warnings.md)|COM istemcileri ile etkileşimi destekleyen uyarılar.|
+|[Bakım Uyarıları](../code-quality/maintainability-warnings.md)|Kitaplık ve Uygulama Bakımı destekleyen uyarılar.|
+|[Hareketlilik Uyarıları](../code-quality/mobility-warnings.md)|Uyarılar verimli güç kullanımını destekler.|
+|[Adlandırma Uyarıları](../code-quality/naming-warnings.md)|Uyarılar bağlılığı .NET Framework tasarım yönergeleri adlandırma kuralları için destek.|
+|[Performans Uyarıları](../code-quality/performance-warnings.md)|Yüksek performanslı kitaplıkları ve uygulamaları desteklemek uyarılar.|
+|[Taşınabilirlik Uyarıları](../code-quality/portability-warnings.md)|Farklı platformlar arasında taşınabilirlik destekleyen uyarılar.|
+|[Güvenilirlik Uyarıları](../code-quality/reliability-warnings.md)|Doğru bellek ve iş parçacığı kullanımı gibi kitaplık ve uygulama güvenilirliğini destekleyen uyarılar.|
+|[Güvenlik Uyarıları](../code-quality/security-warnings.md)|Bu uyarılar daha güvenli kütüphaneleri ve uygulamaları destekler.|
+|[Kullanım Uyarıları](../code-quality/usage-warnings.md)|.NET Framework'ün uygun kullanımını desteklemek uyarılar.|
+|[Kod Çözümleme İlkesi Hataları](../code-quality/code-analysis-policy-errors.md)|Kod Analizi İlkesi iade aşamasında karşılanmıyor, oluşan hataları.|

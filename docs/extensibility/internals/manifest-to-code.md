@@ -14,6 +14,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31132918"
 ---
 # <a name="manifest-to-code"></a>Kod bildirim
 Kod aracı bildirime Visual Studio görüntü Hizmeti'ne ilişkin bir .imagemanifest dosyasının sürer ve sarmalayıcı dosya ya da C++, C#, VB veya Visual Studio uzantıları için .vsct dosyaları görüntü bildirim değerleri başvuran için dosyaları oluşturur bir konsol uygulamasıdır. Bu araç, istekte bulunan görüntüleri için Visual Studio görüntü hizmetinden doğrudan ya da kod kendi kullanıcı Arabirimi ve işleme işlemiyor varsa API'leri aracılığıyla bildirim değerleri geçirme için kullanılan sarmalayıcı dosyaları oluşturur.  

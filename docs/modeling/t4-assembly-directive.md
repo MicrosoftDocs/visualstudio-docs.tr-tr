@@ -7,21 +7,23 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 6591f6c2791275f22d1976a9f72e1474309f1f4d
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: cd7f1f36374f3411b5a76f5df5e3e25bb52df230
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49948648"
 ---
 # <a name="t4-assembly-directive"></a>T4 Derleme Yönergesi
 
-İçinde bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tasarım zamanı metin şablonu `assembly` yönergesi şablon kodunuzu türlerinden kullanabilmesi için bir derleme yükler. Geçerli bir derleme başvurusu ekleme ile benzer bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi.
+Visual Studio tasarım zamanı metin şablonunda, `assembly` yönergesi bir derleme yükler, böylece şablon kodunuz türlerini kullanabilir. Etkin bir Visual Studio projesinde bir derleme başvurusu eklemeye benzerdir.
 
- Metin şablonları yazma genel bir bakış için bkz: [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
+ Metin şablonlarını yazmayla ilgili genel bilgiler için bkz: [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
 
 > [!NOTE]
->  İhtiyacınız olmayan `assembly` bir çalışma zamanı (önceden işlenmiş) metin şablonu yönerge. Bunun yerine, gerekli derlemeler ekleme **başvuruları** biri, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi.
+>  Gereksinim duymadığınız `assembly` çalışma zamanı (önceden işlenmiş) metin şablonunda yönergesi. Bunun yerine gerekli derlemeleri ekleyin **başvuruları** Visual Studio projenizin.
 
 ## <a name="using-the-assembly-directive"></a>Derleme Yönergesini Kullanma
  Yönergenin sözdizimi aşağıdaki gibidir:
@@ -32,41 +34,41 @@ ms.lasthandoff: 04/20/2018
 
  Derleme adı aşağıdakilerden biri olmalıdır:
 
--   GAC içinde bir derleme tanımlayıcı adı gibi `System.Xml.dll`. Uzun formu gibi kullanabilir `name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"`. Daha fazla bilgi için bkz. <xref:System.Reflection.AssemblyName>.
+- Bir derlemenin GAC'deki tanımlayıcı adı gibi `System.Xml.dll`. Uzun biçimi gibi kullanabilir `name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"`. Daha fazla bilgi için bkz. <xref:System.Reflection.AssemblyName>.
 
--   Derlemenin mutlak yolu
+- Derlemenin mutlak yolu
 
- Kullanabileceğiniz `$(variableName)` başvurmak için sözdizimi [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] gibi değişkenleri `$(SolutionDir)`, ve `%VariableName%` başvuru ortam değişkenlerine. Örneğin:
+  Kullanabileceğiniz `$(variableName)` Visual Studio değişkenleri gibi başvurmak için `$(SolutionDir)`, ve `%VariableName%` ortam değişkenlerine başvurmak için. Örneğin:
 
 ```
 <#@ assembly name="$(SolutionDir)\MyProject\bin\Debug\SomeLibrary.Dll" #>
 ```
 
- Derleme yönergesinin önceden işlenmiş metin şablonu üzerinde etkisi yoktur. Bunun yerine, gerekli başvurularında dahil **başvuruları** bölümü, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi. Daha fazla bilgi için bkz: [T4 metin şablonları ile çalışma zamanı metin oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
+ Derleme yönergesinin önceden işlenmiş metin şablonu üzerinde etkisi yoktur. Bunun yerine gerekli dosyaları içeren **başvuruları** Visual Studio projenizin bölümü. Daha fazla bilgi için [T4 metin şablonları ile çalışma süresi metni oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
 
 ## <a name="standard-assemblies"></a>Standart Derlemeler
  Aşağıdaki derlemeler otomatik olarak yüklenir, böylece onlar için derleme yönergelerini yazmanıza gerek yoktur:
 
--   `Microsoft.VisualStudio.TextTemplating.1*.dll`
+- `Microsoft.VisualStudio.TextTemplating.1*.dll`
 
--   `System.dll`
+- `System.dll`
 
--   `WindowsBase.dll`
+- `WindowsBase.dll`
 
- Özel bir yönerge kullanırsanız, yönerge işlemcisi ek derlemeler yükleyebilir. Örneğin, etki alanına özgü dil (DSL) için şablonlar yazarsanız, aşağıdaki derlemeler için derleme yönergeleri yazmak gerekmez:
+  Özel bir yönerge kullanırsanız, yönerge işlemcisi ek derlemeler yükleyebilir. Örneğin, etki alanına özgü dil (DSL) için şablonlar yazarsanız, aşağıdaki derlemeler için derleme yönergeleri yazmak gerekmez:
 
--   `Microsoft.VisualStudio.Modeling.Sdk.1*.dll`
+- `Microsoft.VisualStudio.Modeling.Sdk.1*.dll`
 
--   `Microsoft.VisualStudio.Modeling.Sdk.Diagrams.1*.dsl`
+- `Microsoft.VisualStudio.Modeling.Sdk.Diagrams.1*.dsl`
 
--   `Microsoft.VisualStudio.TextTemplating.Modeling.1*.dll`
+- `Microsoft.VisualStudio.TextTemplating.Modeling.1*.dll`
 
--   DSL'nizi içeren derleme.
+- DSL'nizi içeren derleme.
 
-##  <a name="msbuild"></a> MSBuild ve Visual Studio Proje özelliklerini kullanma
- Visual Studio makrosu $(SolutionDir) gibi Msbuild'de çalışmıyor. Şablonları yapı makinenizde dönüştürmek isterseniz, bunun yerine proje özelliklerini kullanmanız gerekir.
+## <a name="msbuild"></a> Hem MSBuild hem Visual Studio'da proje özelliklerini kullanma
+ $(SolutionDir) gibi Visual Studio Makroları MSBuild içinde çalışmaz. Şablonları yapı makinenizde dönüştürmek isterseniz, bunun yerine proje özelliklerini kullanmanız gerekir.
 
- Proje özelliği tanımlamak için .csproj veya .vbproj dosyanızı düzenleyin. Bu örnek adlı bir özelliğini tanımlar `myLibFolder`:
+ Proje özelliği tanımlamak için .csproj veya .vbproj dosyanızı düzenleyin. Bu örnek adlı bir özellik tanımlar `myLibFolder`:
 
 ```xml
 <!-- Define a project property, myLibFolder: -->
@@ -80,7 +82,6 @@ ms.lasthandoff: 04/20/2018
       <Value>$(myLibFolder)</Value>
     </T4ParameterValues>
   </ItemGroup>
-
 ```
 
  Artık proje özelliğinizi metin şablonlarında kullanabilirsiniz, böylece hem Visual Studio hem de MSBuild içinde doğru dönüştürme yapılır:

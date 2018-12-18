@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 479206b75325c1b7e6bba0e4cc4e9b53944d73d3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7fa10fb5ebe2f9a78d44997c29ae51bc02e2c842
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934944"
 ---
 # <a name="idebugprocessex2"></a>IDebugProcessEx2
-Bu arabirim, hata ayıklama Yöneticisi (SDM) bildirmek için ekleme veya işleminden ayırma işlemi oturum sağlar.  
+Bu arabirim, hata ayıklama Yöneticisi (SDM) bildirmek için ekleme veya işlemden ayırmak Process işlem oturum sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -31,37 +32,37 @@ IDebugProcessEx2 : IUnknown
 ```  
   
 ## <a name="notes-for-implementers"></a>Uygulayanlar için Notlar  
- Özel bir bağlantı noktası sağlayıcı aynı nesne üzerinde bu arabirimi uygulayan [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) için arabirim:  
+ Özel bağlantı noktası sağlayıcısı aynı nesne üzerinde bu arabirimi uygulayan [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) için arabirim:  
   
--   Bir işleme bağlı oturumlar destek izleme  
+- Oturumlarının bir işleme bağlı destek izleme  
   
--   Hata ayıklama altyapıları destek otomatik-ekleme  
+- Destek otomatik iliştirme arasında birden çok hata ayıklama altyapısı  
   
- Bunu seçerse, özel bir bağlantı noktası tedarikçi bu arabirimi uygulayabilirsiniz.  
+  Seçerse bu özel bağlantı noktası sağlayıcısı bu arabirim uygulayabilir.  
   
 ## <a name="notes-for-callers"></a>Arayanlar İçin Notlar  
   
--   SDM çağrıları [QueryInterface](/cpp/atl/queryinterface) üzerinde bir `IDebugProcess2` bu arabirimi sağlamak için arabirim.  
+-   SDM çağrıları [QueryInterface](/cpp/atl/queryinterface) üzerinde bir `IDebugProcess2` arabirimi bu arabirim elde edilir.  
   
 ## <a name="methods-in-vtable-order"></a>Vtable sırayla yöntemleri  
  Aşağıdaki tabloda yöntemlerini gösterilmektedir `IDebugProcessEx2`.  
   
 |Yöntem|Açıklama|  
 |------------|-----------------|  
-|[Attach](../../../extensibility/debugger/reference/idebugprocessex2-attach.md)|İşlem, bir oturum işlemi artık hata ayıklama bildirir.|  
-|[Detach](../../../extensibility/debugger/reference/idebugprocessex2-detach.md)|İşlem, bir oturum işlemi artık hata ayıklamayı bildirir.|  
-|[AddImplicitProgramNodes](../../../extensibility/debugger/reference/idebugprocessex2-addimplicitprogramnodes.md)|Hata ayıklama motorları listesi için program düğümleri ekler.|  
+|[Attach](../../../extensibility/debugger/reference/idebugprocessex2-attach.md)|İşlem, bir oturum işlemi artık hata ayıklıyor bildirir.|  
+|[Detach](../../../extensibility/debugger/reference/idebugprocessex2-detach.md)|İşlem, bir oturum işlemi artık hata ayıklıyor bildirir.|  
+|[AddImplicitProgramNodes](../../../extensibility/debugger/reference/idebugprocessex2-addimplicitprogramnodes.md)|Program düğümleri için hata ayıklama altyapısının bir listesini ekler.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlem SDM arasında özel bir arabirimdir.  
+ Bu arabirim, işlem SDM arasında özeldir.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Portpriv.h  
+ Üstbilgi: Portpriv.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Çekirdek arabirimleri](../../../extensibility/debugger/reference/core-interfaces.md)   
+ [Temel arabirimler](../../../extensibility/debugger/reference/core-interfaces.md)   
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0ce62358df758b7f4cf3ef0883cf0ac457aaf1f5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 96245b7089ddef7d465d01203ca8b540c618b05f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49820258"
 ---
 # <a name="idebugreference2setvalueasreference"></a>IDebugReference2::SetValueAsReference
-Başka bir başvuru başvurusundan değerini ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
+Başka bir başvuru başvuru değerini ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,16 +47,16 @@ int SetValueAsReference (
   
 #### <a name="parameters"></a>Parametreler  
  `rgpArgs`  
- [in] Bir dizi [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) başvuru değeri ayarlamak nasıl belirlemek için kullanılan nesne.  
+ [in] Bir dizi [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nasıl başvuru değeri ayarlanacağını belirlemek için kullanılan nesne.  
   
  `dwArgCount`  
- [in] Dizideki başvuru sayısı.  
+ [in] Dizi içindeki başvuru sayısı.  
   
  `pValue`  
- [in] Bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) özellik değerini ayarlamak nesnesi.  
+ [in] Bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) özellik değeri ayarlanacağı nesne.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` süresiz bekleme.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Her zaman döndürür `E_NOTIMPL`.  

@@ -1,6 +1,7 @@
 ---
 title: 'CA2225: İşleç aşırı yüklemeleri adlandırılmış alternatiflere sahiptir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,33 +16,35 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1b6e95f73fbb037041aadcc95eb7336a5744ee2d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a12060752317a2b4c23ec2eba7e96e945be00db0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49914586"
 ---
 # <a name="ca2225-operator-overloads-have-named-alternates"></a>CA2225: İşleç aşırı yüklemeleri adlandırılmış alternatiflere sahiptir
+
 |||
 |-|-|
 |TypeName|OperatorOverloadsHaveNamedAlternates|
 |CheckId|CA2225|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
  Operatör aşırı yüklemesi bulundu ve beklenen adlandırılmış alternatif yöntem bulunamadı.
 
-## <a name="rule-description"></a>Kural Tanımı
- İşleç aşırı yüklemesi hesaplamaları için bir türü temsil etmek için simgeler kullanılmasına izin verir. Örneğin, artı (+) simgesi eklenmesi için overloads türü genellikle 'Ekle' adında bir alternatif üye gerekir. Adlandırılmış alternatif üye işleci aynı işlevselliğe erişim sağlar ve aşırı yüklenmiş işleçler desteklemeyen dillerde program geliştiriciler için sağlanır.
+## <a name="rule-description"></a>Kural açıklaması
+ İşleç aşırı yüklemesi hesaplamaları için bir türü temsil etmek için semboller kullanımına izin verir. Örneğin, eklenmesi için (+) artı simgesini aşırı bir türü genellikle 'Ekle' adlı alternatif bir üye yoktur. Adlandırılmış alternatif üye işleci ile aynı işlevlere erişim sağlar ve aşırı yüklenmiş operatörlere destek olmayan dilleri içinde program geliştiriciler için sağlanır.
 
- Bu kural aşağıdaki tabloda listelenen işleçleri inceler.
+ Bu kural aşağıdaki tabloda listelenen işleçlerden inceler.
 
 |C#|Visual Basic|C++|Diğer adı|
 |---------|------------------|-----------|--------------------|
 |+ (ikili)|+|+ (ikili)|Ekle|
 |+=|+=|+=|Ekle|
-|&|Ve|&|BitwiseAnd|
+|&|ve|&|BitwiseAnd|
 |&=|Ve =|&=|BitwiseAnd|
 |&#124;|Veya|&#124;|BitwiseOr|
 |&#124;=|Veya =|&#124;=|BitwiseOr|
@@ -72,24 +75,24 @@ ms.lasthandoff: 04/19/2018
 |-(ikili)|-(ikili)|-(ikili)|Çıkarma|
 |-=|Yok|-=|Çıkarma|
 |true|IsTrue|Yok|IsTrue (özellik)|
-|-(tekli)|Yok|-|Negate|
+|-(tekli)|Yok|-|negate|
 |+ (tekli)|Yok|+|artı|
 |false|IsFalse|False|IsTrue (özellik)|
 
  Yok == seçtiğiniz dilde aşırı yüklenemez.
 
- Kural ayrıca bir türdeki örtük ve açık atama işleçleri denetler (`SomeType`) adlı yöntemlerini denetleyerek `ToSomeType` ve `FromSomeType`.
+ Kural türü örtük ve açık dönüştürme işleçleri de denetler (`SomeType`) adlı yöntemleri için işaretleyerek `ToSomeType` ve `FromSomeType`.
 
- İkili İşleç aşırı, C# ' ta karşılık gelen atama işleci varsa, aynı zamanda örtük olarak aşırı yüklü değildir.
+ İkili İşleç aşırı C# ' ta karşılık gelen bir atama işleci varsa, aynı zamanda örtük olarak aşırı yüklenmiş olur.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için işleci için alternatif yöntemini uygulayın; Önerilen diğer adı kullanarak adlandırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için alternatif yöntem için işleç uygulayın; önerilen alternatif adını kullanarak adlandırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Paylaşılan bir kitaplık uyguluyorsanız, bu kural bir uyarıdan bastırmak değil. Uygulamalar bu kuraldan bir uyarıyı yok sayabilirsiniz.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Paylaşılan bir kitaplık uyguluyorsanız, bu kuraldan bir uyarıyı bastırmayın. Uygulamalar bu kuraldan bir uyarıyı yok sayabilirsiniz.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bu kural ihlal eden bir yapısını tanımlar. Örnek düzeltmek için ortak bir ekleme `Add(int x, int y)` yapısına yönelik işaretçinin yöntemi.
+ Aşağıdaki örnek bu kuralı ihlal eden bir yapı tanımlar. Örnek düzeltmek için bir genel ekleme `Add(int x, int y)` yapısına yöntemi.
 
  [!code-csharp[FxCop.Usage.OperatorOverloadsHaveNamedAlternates#1](../code-quality/codesnippet/CSharp/ca2225-operator-overloads-have-named-alternates_1.cs)]
 

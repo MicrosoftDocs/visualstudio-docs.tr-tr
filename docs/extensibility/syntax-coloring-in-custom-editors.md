@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31139467"
 ---
 # <a name="syntax-coloring-in-custom-editors"></a>Sözdizimi özel düzenleyicilerde renklendirme
 Çekirdek Düzenleyicisi'ni de dahil olmak üzere visual Studio ortamı SDK düzenleyicileri dil Hizmetleri belirli söz dizimi öğeleri tanımlamak ve bunları belirli belge görünümü için belirtilen renklerle görüntülemek için kullanın.

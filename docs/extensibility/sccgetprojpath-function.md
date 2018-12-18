@@ -15,20 +15,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7ef5041b483e85e0806827f7d1188d432b476c5b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dfeb65cd23b14949857faf4253dfec3ec85f5b20
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49889392"
 ---
 # <a name="sccgetprojpath-function"></a>SccGetProjPath işlevi
-Bu işlev yalnızca kaynak denetimi için eklenti anlamlı bir dize bir proje yolu kullanıcıya sorar. Kullanıcı olduğunda çağrılır:  
+Bu işlev, yalnızca kaynak denetimi eklentisi anlamlı bir dize olan bir proje yolu kullanıcıya sorar. Kullanıcı olduğunda çağrılır:  
   
 -   Yeni proje oluşturma  
   
--   Varolan projeyi sürüm denetimine ekleme  
+-   Mevcut bir projeyi sürüm denetimine ekleme  
   
--   Mevcut bir sürüm denetim projesini bulmaya çalışırken  
+-   Var olan sürüm denetimi projesinde bulunmaya çalışılıyor  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,30 +46,30 @@ SCCRTN SccGetProjPath (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  lpUser  
- [içinde out] Kullanıcı adı (not NULL Sonlandırıcı dahil olmak üzere SCC_USER_SIZE aşmayı)  
+ [out içinde] Kullanıcı adı (NULL Sonlandırıcı dahil olmak üzere, SCC_USER_SIZE aşmayı değil)  
   
  lpProjName  
- [içinde out] IDE proje, project çalışma alanı veya derleme görevleri dosyası (not NULL Sonlandırıcı dahil olmak üzere SCC_PRJPATH_SIZE aşmayı) adı.  
+ [out içinde] IDE projeye, proje çalışma alanı veya derleme görevleri dosyası (SCC_PRJPATH_SIZE, NULL sonlandırıcıyı da dahil olmak üzere aşmayı değil) adı.  
   
  lpLocalPath  
- [içinde out] Projenin çalışma yolu. Varsa `bAllowChangePath` olan `TRUE`, kaynak denetim eklentisi bu dizenin (null Sonlandırıcı dahil olmak üzere _MAX_PATH aşan değil) değiştirebilirsiniz.  
+ [out içinde] Projenin çalışma yolu. Varsa `bAllowChangePath` olduğu `TRUE`, kaynak denetimi eklentisi şu dizeyi (Sonlandırıcı null dahil olmak üzere, _MAX_PATH aşmayı değil) değiştirebilirsiniz.  
   
  lpAuxProjPath  
- [içinde out] Döndürülen proje yolu (NULL Sonlandırıcı dahil olmak üzere SCC_PRJPATH_SIZE aşmayı değil) için bir arabellek.  
+ [out içinde] Döndürülen proje yolu (SCC_PRJPATH_SIZE, NULL sonlandırıcıyı da dahil olmak üzere aşmayı değil) için bir arabellek.  
   
  bAllowChangePath  
- [in] Bu ise `TRUE`, kaynak denetim eklentisi sor ve değiştirme `lpLocalPath` dize.  
+ [in] Bu ise `TRUE`, kaynak denetimi eklentisi iste ve değiştirme `lpLocalPath` dize.  
   
  pbNew  
- [içinde out] Gelen değer yeni bir proje oluşturulup oluşturulmayacağını belirtir. Döndürülen projesi oluşturma başarıyı gösterir:  
+ [out içinde] Yeni bir proje oluşturulup oluşturulmayacağını gelen bir değer belirtir. Döndürülen değer, bir proje oluşturma başarılı olduğunu gösterir:  
   
 |gelen|Yorumu|  
 |--------------|--------------------|  
@@ -78,35 +79,35 @@ SCCRTN SccGetProjPath (
 |Giden|Yorumu|  
 |--------------|--------------------|  
 |TRUE|Yeni bir proje oluşturuldu.|  
-|FALSE|Varolan projeyi seçilmedi.|  
+|FALSE|Mevcut bir projeyi seçildi.|  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Proje başarıyla oluşturuldu veya alınır.|  
 |SCC_I_OPERATIONCANCELED|İşlem iptal edildi.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu.|  
-|SCC_E_CONNECTIONFAILURE|Kaynak denetim sistemi bağlanmaya çalışırken bir hata oluştu.|  
-|SCC_E_NONSPECIFICERROR|Belirlenemeyen bir hata oluştu.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu.|  
+|SCC_E_CONNECTIONFAILURE|Kaynak Denetim sistemine bağlanmaya çalışılırken bir hata oluştu.|  
+|SCC_E_NONSPECIFICERROR|Belirtilmeyen bir hata oluştu.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlev amacı IDE parametreleri edinmeye `lpProjName` ve `lpAuxProjPath`. Kaynak Denetim eklentisi bu bilgiyi kullanıcıya sorar sonra bu iki dizeler IDE geçirir. IDE bu dizeler, çözüm dosyasındaki devam ederse ve bunları geçirmeden [SccOpenProject](../extensibility/sccopenproject-function.md) her kullanıcı bu proje açar. Bu dizeler eklenti bir projeyle ilişkili bilgileri izlemek etkinleştirin.  
+ Bu işlevin amacı parametreleri almak için ıde'dir `lpProjName` ve `lpAuxProjPath`. Kaynak Denetimi Eklentisi bu bilgiyi kullanıcıya sorar. sonra bu iki dizeyi IDE'ye geçirir. IDE Çözüm dosyasındaki bu dizeler devam ediyorsa ve bunları geçirmeden [SccOpenProject](../extensibility/sccopenproject-function.md) her kullanıcıya bu proje açılır. Bu dizeler, eklentinin bir projeyle ilişkili bilgileri izlemek etkinleştirin.  
   
- İşlev ilk kez çağrıldığında `lpAuxProjPath` boş bir dize olarak ayarlayın. `lProjName` boş olabilir veya eklenti kaynak denetimi kullanın veya yoksay IDE proje adı içeriyor olabilir. İşlev başarıyla geri döndüğünde, eklenti iki karşılık gelen dizeyi döndürür. IDE bu dizeler hakkında hiçbir varsayımlar yapar, bunları kullanmaz ve bunları değiştirmek kullanıcı izin vermez. Kullanıcı ayarlarını değiştirmek isterse, IDE çağıracak `SccGetProjPath` aynı değerleri, geçirme önceki zaman yeniden almış. Bu, bu iki dizeler üzerinde eklenti tam denetim verir.  
+ İşlev ilk kez çağrıldığında, `lpAuxProjPath` boş bir dizeye ayarlayın. `lProjName` boş olabilir veya kaynak denetimi eklentisi kullanın veya yoksay IDE proje adı içeriyor olabilir. İşlev başarıyla geri döndüğünde, eklenti, karşılık gelen iki dizeyi döndürür. IDE bu dizeler hakkında hiçbir varsayım yapmaz, bunları kullanmaz ve bunları değiştirmek kullanıcı izin vermez. Kullanıcı ayarlarını değiştirmek isterse, IDE çağıracak `SccGetProjPath` iletmeden aynı değerleri önceki bir zamana yeniden almış. Bu, bu iki dizeler üzerinde eklenti tam denetim verir.  
   
- İçin `lpUser`IDE bir kullanıcı adı iletebilir veya yalnızca boş bir dize için bir işaretçi iletebilir. Kaynak Denetim eklentisi bir kullanıcı adı varsa, varsayılan olarak kullanmalısınız. Ancak, bir ad geçirilmedi veya verilen ada sahip bir oturum açma başarısız olursa, eklenti için bir oturum açma ve geçişi adı yeniden kullanıcıdan `lpUser` aldığı geçerli bir oturum açma zaman. Bu dize eklenti değişebilir olduğundan IDE her zaman bir arabellek boyutunu tahsis (`SCC_USER_LEN`+ 1).  
+ İçin `lpUser`, IDE bir kullanıcı adı olarak oldfashionedgoat ya da yalnızca boş bir dizeye bir işaretçi iletebilir. Bir kullanıcı adı varsa, kaynak denetimi eklentisi, varsayılan olarak kullanmanız gerekir. Ancak, adsız aktarılırsa veya verilen ada sahip bir oturum açma başarısız olursa, eklentinin bir oturum açma adı yeniden geçişi için kullanıcı isteyecektir `lpUser` aldığında geçerli bir oturum açma. Bu dize eklenti değişebilir olduğundan, IDE her zaman bir arabellek boyutunu tahsis (`SCC_USER_LEN`+ 1).  
   
 > [!NOTE]
->  IDE gerçekleştirir ilk eylem ya da bir çağrı olabilir `SccOpenProject` işlevi veya `SccGetProjPath` işlevi. Bu nedenle, bunların her ikisi de aynı olması `lpUser` parametresi ya da aynı anda kullanıcı oturum eklenti kaynak denetimi sağlar. İşlev dönüş hata gösterir olsa bile eklenti bu dize bir geçerli oturum açma adı ile doldurmanız gerekir.  
+>  IDE yaptığı ilk eylemi ya da bir çağrı olabilir `SccOpenProject` işlevi veya `SccGetProjPath` işlevi. Bu nedenle, her ikisi de aynı sahip `lpUser` parametresini ya da zaman kullanıcının oturumunu açmak için eklenti kaynak denetimi sağlar. İşlev dönüş bir hata gösteriyor olsa bile, eklentinin bir geçerli oturum açma adı Bu dizeyle doldurmanız gerekir.  
   
- `lpLocalPath` Burada kullanıcının proje tutar dizindir. Boş bir dize olabilir. (Durumunda, kaynak denetimi sisteminden bir proje yüklemeyi deneyen bir kullanıcı gibi) şu anda tanımlanmış hiçbir dizin açıksa ve durumdaysa `bAllowChangePath` olan `TRUE`, kaynak denetim eklentisi giriş kullanıcıdan veya yerleştirmek için başka bir yöntem kullanın, kendi dizeye `lpLocalPath`. Varsa `bAllowChangePath` olan `FALSE`, kullanıcının belirtilen dizinde zaten çalıştığından eklenti dize değiştirilmemesi gerekir.  
+ `lpLocalPath` Burada kullanıcının proje tutar dizindir. Boş bir dize olabilir. (Durumunda, kaynak denetim sisteminden proje yüklemeyi deneyen bir kullanıcı gibi) şu anda tanımlanmış hiçbir dizin varsa ve `bAllowChangePath` olduğu `TRUE`, kaynak denetimi eklentisi giriş kullanıcıdan veya yerleştirmek için başka bir yöntem kullanın, kendi dizeye `lpLocalPath`. Varsa `bAllowChangePath` olduğu `FALSE`, kullanıcı belirtilen dizinde zaten çalıştığından eklentinin dize değiştirmemesi gerekir.  
   
- Kullanıcı kaynak denetimi altında yerleştirilecek yeni bir proje oluşturursa, kaynak denetim eklentisi gerçekte, kaynak denetim sistemi aynı anda oluşturmayabilir `SccGetProjPath` olarak adlandırılır. Bunun yerine, için sıfır olmayan bir değer dizesiyle boyunca geri geçirir `pbNew`, projenin kaynak denetim sistemi oluşturulacak belirten.  
+ Kullanıcının kaynak denetimi altında koymak üzere yeni bir proje oluşturur, kaynak denetimi eklentisi gerçekten, kaynak denetim sistemi zaman oluşturmayabilir `SccGetProjPath` çağrılır. Bunun yerine, sıfır dışında bir değer dizesiyle boyunca geri geçirir `pbNew`, kaynak denetim sistemi proje oluşturulacak belirten.  
   
- Örneğin, bir kullanıcı **yeni proje** Visual Studio sihirbazında kaynak denetimine bilgilendirilmesine proje ekler, Visual Studio bu işlevi çağırır ve eklenti için kaynak denetimi sistemindeki yeni bir proje oluşturmak uygun olup olmadığını belirler Visual Studio projesi içerir. Kullanıcı tıklarsa **iptal** Sihirbazı tamamlamadan önce projenin hiçbir zaman oluşturulur. Kullanıcı tıklarsa **Tamam**, Visual Studio çağırır `SccOpenProject`, içinde geçen `SCC_OPT_CREATEIFNEW`, ve o anda denetlenen kaynak projesi oluşturulur.  
+ Örneğin, bir kullanıcı, **yeni proje** Sihirbazı'nda Visual Studio, kendi proje kaynak denetimine ekler, Visual Studio bu işlevi çağırır ve eklentinin yeni bir proje için kaynak denetim sistemi oluşturmak uygun olup olmadığını belirler Visual Studio projesini içerir. Kullanıcı tıklarsa **iptal** Sihirbazı tamamlamadan önce projeyi hiçbir zaman oluşturulur. Kullanıcı tıklarsa **Tamam**, Visual Studio çağırır `SccOpenProject`, içinde geçen `SCC_OPT_CREATEIFNEW`, ve o anda kaynak denetimli Proje oluşturulur.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
  [SccOpenProject](../extensibility/sccopenproject-function.md)

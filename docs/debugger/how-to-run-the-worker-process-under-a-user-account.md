@@ -1,6 +1,6 @@
 ---
-title: 'Nasıl yapılır: bir kullanıcı hesabı altında çalışan işlem çalıştırma | Microsoft Docs'
-ms.custom: ''
+title: Bir çalışan işlemi bir kullanıcı hesabı altında Çalıştır | Microsoft Docs
+ms.custom: seodec18
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
 ms.topic: conceptual
@@ -21,69 +21,70 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ad6407e4768acbeaf32cf4bebaf7064f04f21fba
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 47aefcb73fd20dcc82b19ed6200fec5fd57dd486
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53067822"
 ---
 # <a name="how-to-run-the-worker-process-under-a-user-account"></a>Nasıl Yapılır: Çalışan İşlemi Kullanıcı Hesabı Altında Çalıştırma
-Bilgisayarınızı çalıştırabilirsiniz şekilde ayarlamak için [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] bir kullanıcı hesabı altında çalışan işlemi (aspnet_wp.exe veya w3wp.exe) aşağıdaki adımları izleyin.  
+Bilgisayarınızı çalıştırabileceğiniz şekilde ayarlamak için [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] bir kullanıcı hesabı altında çalışan işlemi (aspnet_wp.exe veya w3wp.exe) aşağıdaki adımları izleyin.  
 
  > [!IMPORTANT]
- > Windows Server 2008 R2 ile başlayarak, kullanılmasını öneririz [ApplicationPoolIdentity](/iis/manage/configuring-security/application-pool-identities) her bir uygulama havuzu kimliği olarak.
+ > Windows Server 2008 R2 ile başlayarak, kullanılmasını öneririz [ApplicationPoolIdentity](/iis/manage/configuring-security/application-pool-identities) her uygulama havuzunun kimliği olarak.
   
 ## <a name="procedure"></a>Yordam  
   
 #### <a name="to-run-aspnetwpexe-under-a-user-account"></a>Bir kullanıcı hesabı altında Aspnet_wp.exe çalıştırmak için  
   
-1.  Çalışma zamanı yüklendiği yapılandırma klasörü yolunda bilgisayarınızda bulunan machine.config dosyasını açın.  
+1. Çalışma zamanı yüklü olduğu yolu altında CONFIG klasöründeki bilgisayarınızda bulunan machine.config dosyasını açın.  
   
-2.  Bul &lt;processModel&gt; bölümünde ve kullanıcı ve parola öznitelikleri adına ve altında çalışacak şekilde aspnet_wp.exe istediğiniz kullanıcı hesabının parolasını değiştirin.  
+2. Bulma &lt;processModel&gt; bölümünde ve adına ve parola kullanıcı hesabının altında çalıştırılacak aspnet_wp.exe istediğiniz kullanıcı adı ve parola özniteliklerini değiştirebilirsiniz.  
   
-3.  Machine.config dosyasının kaydedin.  
+3. Machine.config dosyasına kaydedin.  
   
-4.  Üzerinde [!INCLUDE[winxpsvr](../debugger/includes/winxpsvr_md.md)], IIS 6.0 varsayılan olarak yüklenir. İlgili çalışan işlemi w3wp.exe.To çalışan işlem olarak aspnet_wp.exe ile IIS 6.0 modunda çalıştırmak, şu adımları izlemelisiniz:  
+4. Üzerinde [!INCLUDE[winxpsvr](../debugger/includes/winxpsvr_md.md)], IIS 6.0, varsayılan olarak yüklenir. Çalışan işlemi olarak aspnet_wp.exe ile IIS 6.0 modunda çalıştırılması w3wp.exe.To ilgili çalışan işlemi, şu adımları uygulamanız gerekir:  
   
-    1.  Tıklatın **Başlat**, tıklatın **Yönetimsel Araçlar** ve ardından **Internet Information Services**.  
+   1.  Tıklayın **Başlat**, tıklayın **Yönetimsel Araçlar** seçip **Internet Information Services**.  
   
-    2.  İçinde **Internet Information Services** iletişim kutusu, sağ **Web siteleri** klasörü ve seçin **özellikleri**.  
+   2.  İçinde **Internet Information Services** iletişim kutusu, sağ **Web siteleri** klasörü seçin **özellikleri**.  
   
-    3.  İçinde **Web siteleri özellikleri** iletişim kutusunda, seçin **hizmet**.  
+   3.  İçinde **Web siteleri özellikleri** iletişim kutusunda **hizmet**.  
   
-    4.  Seçin **IIS6.0 yalıtım modunda çalıştır WWW hizmeti**.  
+   4.  Seçin **IIS6.0 yalıtım modunda çalıştır WWW hizmetini**.  
   
-    5.  Kapat **özellikleri** iletişim kutusu ve **Internet Services Manager**.  
+   5.  Kapat **özellikleri** iletişim kutusu ve **Internet Hizmetleri Yöneticisi'ni**.  
   
-5.  Bir Windows komut istemi açın ve sunucu çalıştırarak sıfırlayın:  
+5. Bir Windows komut istemi açın ve sunucu çalıştırarak sıfırlayın:  
   
-    ```  
-    iisreset  
-    ```  
-    — veya —  
+   ```cmd
+   iisreset  
+   ```  
+   — veya —  
   
-    ```  
-    net stop iisadmin /y  
-    net start w3svc  
-    ```  
+   ```cmd
+   net stop iisadmin /y  
+   net start w3svc  
+   ```  
   
-6.  Geçici bulun [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] yapılandırma klasörü aynı yol bulunmalıdır dosyaları klasörü. Geçici sağ [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] seçin ve dosyaları klasörü **özellikleri** kısayol menüsünde.  
+6. Geçici bulun [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] CONFIG klasörü aynı yol olması gereken dosyalar klasörü. Geçici sağ [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] seçin ve dosyalar klasörü **özellikleri** kısayol menüsünde.  
   
-7.  İçinde **geçici ASP.NET dosyaları özellikleri** iletişim kutusu, tıklatın **güvenlik** sekmesi.  
+7. İçinde **geçici ASP.NET dosyaları özellikleri** iletişim kutusu, tıklayın **güvenlik** sekmesi.  
   
-8.  **Gelişmiş**'e tıklayın.  
+8. **Gelişmiş**'e tıklayın.  
   
-9. İçinde **ASP.Net dosyaları için Gelişmiş güvenlik ayarları** iletişim kutusu, tıklatın **Ekle**.  
+9. İçinde **ASP.Net dosyaları için Gelişmiş güvenlik ayarları** iletişim kutusu, tıklayın **Ekle**.  
   
-    **Kullanıcı seç, bilgisayar veya Grup iletişim kutusunda** görüntülenir.  
+    **Kullanıcı seç, bilgisayar veya Grup iletişim kutusunda** görünür.  
   
-10. Kullanıcı adı yazın **Seçilecek nesne adını girin** kutusuna ve ardından **Tamam**. Kullanıcı adı şu biçimde olmalıdır: Etkialanıadı\kullanıcıadı.  
+10. Kullanıcı adını yazın **Seçilecek nesne adını girin** kutusuna ve ardından **Tamam**. Kullanıcı adı şu biçimde olmalıdır: Etkialanıadı\kullanıcıadı.  
   
 11. İçinde **ASP.NET dosyaları için izin girdisi** iletişim kutusunda, kullanıcıya vermek **tam denetim**ve ardından **Tamam** kapatmak için **geçici ASP için giriş .NET dosyaları** iletişim kutusu.  
   
 12. A **güvenlik** iletişim kutusu görünür ve sizin gerçekten bir sistem klasörü izinleri değiştirmek isteyip istemediğinizi sorar. **Evet**'i tıklayın.  
   
-13. Tıklatın **Tamam** kapatmak için **geçici ASP.NET dosyaları özellikleri** iletişim kutusu.  
+13. Tıklayın **Tamam** kapatmak için **geçici ASP.NET dosyaları özellikleri** iletişim kutusu.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
 [ASP.NET uygulamalarında hata ayıklama](../debugger/how-to-enable-debugging-for-aspnet-applications.md)   

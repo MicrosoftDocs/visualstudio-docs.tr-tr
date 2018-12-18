@@ -1,8 +1,10 @@
 ---
-title: Algılama ve Visual Studio Örnekleri yönetmek için Araçlar
-description: Algılamak ve Visual Studio yüklemelerinde istemci makineleri yönetmek için kullanabileceğiniz araçlar hakkında bilgi edinin.
+title: Visual Studio örneklerini algılamaya ve yönetmeye yönelik araçlar
+titleSuffix: ''
+description: Algılama ve Visual Studio yüklemeleri istemci makinelerinde yönetmek için kullanabileceğiniz araçları hakkında bilgi edinin.
 ms.date: 08/14/2017
 ms.technology: vs-acquisition
+ms.custom: seodec18
 ms.prod: visual-studio-dev15
 ms.topic: conceptual
 helpviewer_keywords:
@@ -14,70 +16,61 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1701ff4d17815bc70444fe360ebf1acf61ea2af4
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 909ea85a68652467e3288e1e3f8f8e2d4e0df5b7
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53158573"
 ---
-# <a name="tools-for-detecting-and-managing-visual-studio-instances"></a>Algılama ve Visual Studio Örnekleri yönetmek için Araçlar
+# <a name="tools-for-detecting-and-managing-visual-studio-instances"></a>Visual Studio örneklerini algılamaya ve yönetmeye yönelik araçlar
 
-İstemci makineler Visual Studio yüklemelerinde algılamak ve yüklemeleri çok yönetmek için kullanabileceğiniz çeşitli araçlar vardır.
+Visual Studio yüklemeleri istemci makinelerinde algılamaya ve yüklemelerini çok yönetmek için kullanabileceğiniz birçok araç vardır.
 
-## <a name="detecting-existing-visual-studio-instances"></a>Mevcut Visual Studio Örnekleri algılama
+## <a name="detecting-existing-visual-studio-instances"></a>Var olan algılama Visual Studio Örnekleri
 
-Biz kullanılabilir algılamak ve istemci makinelerde yüklü Visual Studio Örnekleri yönetmenize yardımcı olacak birkaç araç yapmış olduğunuz:
+Kullanılabilir algılamak ve istemci makinelerde yüklü Visual Studio örneklerini yönetmenize yardımcı olacak birkaç araç yaptık:
 
-* [VSWhere](https://github.com/microsoft/vswhere): Visual Studio yerleşik veya yardımcı olan ayrı dağıtım için kullanılabilir bir yürütülebilir dosya belirli bir makine üzerindeki tüm Visual Studio Örnekleri konumunu bulun.
-* [VSSetup.PowerShell](https://github.com/microsoft/vssetup.powershell): yüklü Visual Studio Örnekleri belirlemek için kurulum yapılandırma API'si kullanan bir PowerShell Betiği.
-* [VS Kurulum örnekleri](https://github.com/microsoft/vs-setup-samples): Kurulum yapılandırma API'si var olan bir yüklemesini sorgulamak için nasıl kullanılacağını gösteren C# ve C++ örnekleri.
+* [VSWhere](https://github.com/microsoft/vswhere): Visual Studio yerleşik veya yardımcı olan ayrı bir dağıtım için kullanılabilir bir yürütülebilir dosya belirli bir makinedeki tüm Visual Studio Örnekleri konumunu bulun.
+* [VSSetup.PowerShell](https://github.com/microsoft/vssetup.powershell): PowerShell betikleri Visual Studio'nun yüklü örnekleri belirlemek için Kurulum yapılandırması API'yi kullanın.
+* [VS ayarlama örnekleri](https://github.com/microsoft/vs-setup-samples): C#ve C++ örnekleri, var olan bir yüklemesini sorgulamak için kurulum yapılandırma API'si kullanımını göstermektedir.
 
-Ayrıca, [kurulum yapılandırma API'si](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.setup.configuration.aspx) Visual Studio Örnekleri interrogating için kendi yardımcı programları derleme isteyen geliştiriciler için arabirim sağlar.
+Ayrıca, [kurulum yapılandırma API'si](<xref:Microsoft.VisualStudio.Setup.Configuration>) interrogating Visual Studio örnekleri için kendi yardımcı programlar oluşturmak isteyen geliştiriciler için arabirim sağlar.
 
 ## <a name="using-vswhereexe"></a>Vswhere.exe kullanma
 
-`vswhere.exe` otomatik olarak Visual Studio 2017 15.2 veya daha yüksek bir sürümü dahil ya da buradan indirebilirsiniz [sürümleri sayfa](https://github.com/Microsoft/vswhere/releases). Kullanım `vswhere -?` aracı hakkında Yardım bilgilerine ulaşmak için. Örnek olarak, bu komut ürün ve önsürümlerin, eski sürümleri dahil olmak üzere Visual Studio tüm sürümleri gösterir ve sonuçları JSON biçiminde çıkarır:
+`vswhere.exe` otomatik olarak dahil Visual Studio 2017 sürüm 15.2 veya üzeri ya da buradan indirebilirsiniz [sürümler sayfasından](https://github.com/Microsoft/vswhere/releases). Kullanım `vswhere -?` aracı hakkında Yardım bilgilerini almak için. Örneğin, bu komut tüm ürünlerinizin ve prereleases, eski sürümleri dahil olmak üzere Visual Studio sürümlerini gösterir ve sonuçları JSON biçiminde çıkarır:
 
 ```cmd
 C:\Program Files (x86)\Microsoft Visual Studio\Installer> vswhere.exe -legacy -prerelease -format json
 ```
 
 >[!TIP]
->Visual Studio 2017 yükleme hakkında daha fazla bilgi için bkz: [sistem durumu Ilgaz'ın blogu makaleleri](https://blogs.msdn.microsoft.com/heaths/tag/vs2017/).
-
+>Visual Studio 2017'yi yükleme hakkında daha fazla bilgi için bkz: [sistem durumu Ilgaz'ın blog makaleleri](https://blogs.msdn.microsoft.com/heaths/tag/vs2017/).
 
 ## <a name="editing-the-registry-for-a-visual-studio-instance"></a>Visual Studio örneği için kayıt defterini düzenleme
 
-Visual Studio 2017 ' kayıt defteri ayarları, Visual Studio'nun aynı sürümü aynı bilgisayarda birden çok yan yana örneğini sağlayan özel bir konumda depolanır.
+Visual Studio 2017'de kayıt defteri ayarları, Visual Studio'nun aynı sürümü aynı bilgisayarda yan yana örneklerini sağlayan özel bir konumda depolanır.
 
-Bu girişler genel kayıt defterinde depolanmaz gibi kayıt defteri ayarları değişiklik yapmak için Kayıt Defteri Düzenleyicisi'ni kullanarak yönelik özel yönergeler vardır:
+Bu girişler genel kayıt defterinde depolanmaz gibi kayıt defteri ayarlarında değişiklik yapmak için Kayıt Defteri Düzenleyicisi'ni kullanarak yönelik özel yönergeler vardır:
 
 1. Visual Studio 2017 açık örneği varsa, kapatın.
-2. Başlat `regedit.exe`.
+2. Başlangıç `regedit.exe`.
 3. Seçin `HKEY_LOCAL_MACHINE` düğümü.
-4. Regedit ana menüden seçin **Dosya -> yığını...**  ve depolanan özel kayıt defteri dosyasını seçip **AppData\Local** klasör. Örneğin:
+4. Regedit ana menüden **Dosya -> Yığını Yükle...**  ve depolanan özel kayıt defteri dosyasını seçip **AppData\Local** klasör. Örneğin:
    ```
    %localappdata%\Microsoft\VisualStudio\<config>\privateregistry.bin
    ```
 
-  > [!NOTE]
-  > `<config>` Dosyaya Gözat ister Visual Studio örneğine karşılık gelir.
+   > [!NOTE]
+   > `<config>` gözatmak istediğiniz Visual Studio örneğine karşılık gelir.
 
-Yalıtılmış hive adı haline gelen bir hive adı sağlamanız istenir. Bunu yaptıktan sonra oluşturduğunuz yalıtılmış hive altında kayıt defterine Gözat yapabiliyor olmanız gerekir.
+Yalıtılmış, hive adı haline gelir bir hive adı sağlamanız istenir. Bunu yaptıktan sonra oluşturduğunuz yalıtılmış hive altındaki kayıt defterine Gözat olmalıdır.
 
 > [!IMPORTANT]
-> Visual Studio yeniden başlatmadan önce oluşturduğunuz yalıtılmış kovanını gerekir. Bunu yapmak için dosyayı seçin yığın Regedit ana menüden ->. (Bunu durumunda dosya kilitli durumda kalır ve Visual Studio başlatmanız mümkün olmayacaktır.)
+> Visual Studio yeniden başlamadan önce sizin oluşturduğunuz yalıtılmış kovanını gerekir. Bunu yapmak için dosyayı seçin yığın Regedit ana menüden ->. (Bunu yapmazsanız, dosyanın kilitli kalır ve Visual Studio başlatmanız mümkün olmayacaktır.)
 
-## <a name="get-support"></a>Destek alma
-
-Bazı durumlarda, şeyler yanlış gidebilirsiniz. Visual Studio yüklemenizin başarısız olursa bkz [sorun giderme Visual Studio 2017 yükleme ve yükseltme sorunlarını](troubleshooting-installation-issues.md) sayfası. Sorun giderme adımlarını hiçbiri yardımcı, bize yükleme Yardımı (yalnızca İngilizce) için canlı sohbet tarafından başvurabilirsiniz. Ayrıntılar için bkz [Visual Studio destek sayfası](https://www.visualstudio.com/vs/support/#talktous).
-
-Birkaç diğer destek seçenekleri şunlardır:
-
-* Ürün sorunları bize bildirebilirsiniz [bir sorun bildirmek](../ide/how-to-report-a-problem-with-visual-studio-2017.md) hem Visual Studio Yükleyicisi ve Visual Studio IDE görünür aracı.
-* Üzerinde bir ürün önerisi bizimle paylaşın [UserVoice](https://visualstudio.uservoice.com/forums/121579).
-* Ürün sorunlarını izlemek ve yanıtlar bulmak [Visual Studio Geliştirici topluluğu](https://developercommunity.visualstudio.com/).
-* ABD ve diğer Visual Studio geliştiriciler aracılığıyla devreye [Gitter topluluk Visual Studio konuşmada](https://gitter.im/Microsoft/VisualStudio). (Bu seçenek gerektiren bir [GitHub](https://github.com/) hesabı.)
+[!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

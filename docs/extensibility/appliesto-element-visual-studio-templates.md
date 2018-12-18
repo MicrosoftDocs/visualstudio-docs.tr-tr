@@ -11,18 +11,19 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2e27ee1ab0ba42a82d61e2adbe9fb4c6c81cbb48
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6f399e0b054b5f9b112733399d644e1357837049
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44280740"
 ---
-# <a name="appliesto-element-visual-studio-templates"></a>AppliesTo Öğesi (Visual Studio Şablonları)
-Bir veya daha fazla yeteneği karşılamak için isteğe bağlı bir ifade belirtir. (bkz: <xref:Microsoft.VisualStudio.Shell.Interop.VsProjectCapabilityExpressionMatcher>). Özellikleri, hiyerarşinin özelliği olarak aracılığıyla proje türleri tarafından sunulur <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID5>. Bu sayede, şablon ortak uygulanabilir yeteneklere sahip birden fazla proje türü tarafından paylaşılabilir.  
+# <a name="appliesto-element-visual-studio-templates"></a>AppliesTo öğesi (Visual Studio şablonları)
+Bir veya daha fazla yeteneği karşılamak için isteğe bağlı bir ifade belirtir. (bkz <xref:Microsoft.VisualStudio.Shell.Interop.VsProjectCapabilityExpressionMatcher>). Özellikleri bir özellik olarak hiyerarşi aracılığıyla proje türlerine göre sunulur <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID5>. Bu sayede, şablon ortak uygulanabilir yeteneklere sahip birden fazla proje türü tarafından paylaşılabilir.  
   
- Bu öğe isteğe bağlıdır. Bir şablon dosyasında en fazla bir örnek olabilir. Bu öğe yalnızca, o anda seçili etkin projenin yeteneklerine göre bir öğe şablonunun uygulanabilir olarak tercih edilmesini sağlar. Bir öğe şablonunu uygulanamaz yapmak için kullanılamaz. Varsa `AppliesTo` yok ya da ifade başarıyla, ardından kabul değil `TemplateID` veya `TemplateGroupID` şablonun uygulanabilir, olarak önceki ürün sürümleriyle sağlamak için kullanılır.  
+ Bu öğe isteğe bağlıdır. Bir şablon dosyasında en fazla bir örnek olabilir. Bu öğe yalnızca, o anda seçili etkin projenin yeteneklerine göre bir öğe şablonunun uygulanabilir olarak tercih edilmesini sağlar. Bir öğe şablonunu uygulanamaz yapmak için kullanılamaz. Varsa `AppliesTo` yok veya ifade başarılı bir şekilde, ardından iyileştirilmiş değil `TemplateID` veya `TemplateGroupID` şablonu varsa, ürünün önceki sürümlerinde yapmak için kullanılır.  
   
- Visual Studio 2013 güncelleştirme 2 kullanıma sunuldu. Doğru sürümü başvuru için bkz: [Visual Studio 2013 güncelleştirme 2 SDK teslim başvuran derlemeler](http://msdn.microsoft.com/en-us/42b65c3e-e42b-4c39-98c8-bea285f25ffb).  
+ Visual Studio 2013 güncelleştirme 2 kullanıma sunmuştur. Doğru sürümü başvuru için bkz: [başvurulan derlemeler, Visual Studio 2013 SDK'sı güncelleştirme 2'de sunulan](https://msdn.microsoft.com/library/42b65c3e-e42b-4c39-98c8-bea285f25ffb).  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -34,31 +35,31 @@ Bir veya daha fazla yeteneği karşılamak için isteğe bağlı bir ifade belir
 <AppliesTo>Capability1</AppliesTo>   
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
 |[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablon kategorilere ayırır.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir. Bu metin projenin yeteneklerini belirtir.  
   
  Geçerli ifade sözdizimi şu şekilde tanımlanır:  
   
--   Yetenek ifadesi gibi "(VisualC &#124; CSharp) + (mstest'i &#124; NUnit)".  
+-   Yetenek ifadesi gibi "(VisualC &#124; CSharp) + (MSTest &#124; NUnit)".  
   
--   "&#124;" OR işleci.  
+-   "&#124;" OR işlecidir.  
   
--   "&" Ve "+" karakterlerdir hem ve işleçler.  
+-   "&" Ve "+" karakterlerinin ikisi de AND işleçleridir.  
   
 -   "!" karakteri NOT işlecidir.  
   
@@ -66,10 +67,10 @@ Bir veya daha fazla yeteneği karşılamak için isteğe bağlı bir ifade belir
   
 -   Null veya boş ifade bir eşleşme olarak değerlendirilir.  
   
--   Proje özellikleri bu ayrılmış karakterleri dışında herhangi bir karakter olabilir: "'' :;,+-*/\\! ~&#124;& %$@^()={} [] <>? \t\b\n\r  
+-   Proje özellikleri, bu ayrılmış karakterler dışında herhangi bir karakter olabilir: "'' :;,+-*/\\! ~&#124;& %$@^() ={}[] <>? \t\b\n\r  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek, üç farklı şablonu göstermektedir. `Template1` tüm C# proje türleri veya destekleyen herhangi bir proje türü geçerli `WindowsAppContainer` yeteneği. `Template2` tüm C# projelerine herhangi bir türde yöneliktir. `Template3` olmayan C# projelerine yöneliktir `WindowsAppContainer` projeleri.  
+ Aşağıdaki örnek, üç farklı şablonu göstermektedir. `Template1` tüm C# projesi türleri veya destekleyen herhangi bir proje türü geçerli `WindowsAppContainer` yeteneği. `Template2` tüm C# projeleri için geçerlidir. `Template3` olmayan C# projeleri için geçerlidir `WindowsAppContainer` projeleri.  
   
 ```xml  
 <!--  Template 1 -->  
@@ -98,6 +99,6 @@ Bir veya daha fazla yeteneği karşılamak için isteğe bağlı bir ifade belir
   
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

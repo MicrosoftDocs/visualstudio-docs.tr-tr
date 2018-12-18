@@ -12,14 +12,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6fd0167eaea86b13c8d197d39c6042f5ad183fcd
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f004b189a22c510599ae9a5f1c719a151ed7d39f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49914911"
 ---
 # <a name="idiasymbolfindinlineelinesbyva"></a>IDiaSymbol::findInlineeLinesByVA
-Satır numarası bilgilerini doğrudan veya dolaylı olarak, belirtilen sanal adres (VA) içinde bu simgeyi içermesinden, bulunan tüm işlevlerin yinelemek bir istemci izin veren bir numaralandırmasını alır.  
+Bir istemci doğrudan veya dolaylı olarak bu sembol belirtilen sanal adres (VA) içinde satır içine alınmış, bulunan tüm işlevlerin satır numarası bilgisi yinelemek sağlayan bir sabit listesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,16 +34,16 @@ HRESULT findInlineeLinesByVA (
   
 #### <a name="parameters"></a>Parametreler  
  `va`  
- [in] VA. adresini belirtir  
+ [in] Bir VA. adresini belirtir  
   
  `length`  
- [in] Adres aralığı ile bu sorguyu kapsayacak şekilde bayt sayısını belirtir.  
+ [in] Adres aralığı, bu sorguyu kapsayacak şekilde bayt sayısını belirtir.  
   
  `ppResult`  
- [out] Tutan bir `IDiaEnumLineNumbers` alınır satır numaralarının listesini içeren nesne.  
+ [out] Tutan bir `IDiaEnumLineNumbers` alınan satır numaraları listesi içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   

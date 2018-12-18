@@ -19,26 +19,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b1bf6b73c0df37d232c1ebd12ae00bbb4803ac13
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f3694c23f52a1c34cd99d8391b14cc92ac939813
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903679"
 ---
 # <a name="how-to-stop-code-changes"></a>Nasıl Yapılır: Kod Değişikliklerini Durdurma
-Düzenle ve devam ederken kod değişiklikleri uygulama sürecinde, işlemi durdurabilirsiniz.  
+Düzenle ve devam ederken kod değişikliklerini uygulama sürecinde, işlemi durdurabilirsiniz.  
   
 > [!CAUTION]
->  Yönetilen kod kod değişikliklerini durdurma beklenmeyen sonuçlara neden olabilir. Bu yüzden nadiren yönetilen kod kod değişikliklerini durdurma gerek yönetilen kod değişiklikleri uygulama normal olarak bir hızlı, işlemidir.  
+>  Yönetilen kodda kod değişikliklerini durdurma beklenmeyen sonuçlara neden olabilir. Yönetilen kodda kod değişikliklerini durdurma gerek seyrek olduğundan yönetilen kod için değişiklikler uygulanırken normal olarak bir hızlı işlemdir.  
   
-### <a name="to-stop-applying-code-changes"></a>Kod değişiklikleri uygulama durdurmak için  
+### <a name="to-stop-applying-code-changes"></a>Kod değişiklikleri uygulanırken durdurmak için  
   
--   Seçin **kod değişikliklerini uygulamayı Durdur** gelen **hata ayıklama** menüsü.  
+- Seçin **kod değişikliklerini uygulamayı Durdur'u** gelen **hata ayıklama** menüsü.  
   
- Kod değişiklikleri yalnızca uygulanmakta olduğunda bu menü öğesi görünür olur.  
+  Bu menü öğesi, yalnızca kod değişiklikleri uygulanıyor bile görülebilir.  
   
- Bu seçeneği seçerseniz, kod değişiklikleri hiçbiri kabul edilir.  
+  Bu seçeneği seçerseniz, hiçbir kod değişikliği kabul edilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Düzenle ve devam et](../debugger/edit-and-continue.md)   
- [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](http://msdn.microsoft.com/Library/009d225f-ef65-463f-a146-e4c518f86103)
+ [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](https://msdn.microsoft.com/library/bcew296c.aspx)

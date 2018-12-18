@@ -13,41 +13,42 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 542277c5d8ab1b9b130f31bbb06215d8da7bc2ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a155927bb69c55c15a06cb058692038c8b309a30
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39230875"
 ---
 # <a name="command-handling"></a>Komut işleme
-Düzenleyicinizi yeni komutlar tanımlayabilirsiniz. Komutlar, genellikle bir araç çubuğundaki ya da bir bağlam menüsündeki menüsünde görüntülenir.  
+Düzenleyici yeni komutları tanımlayabilirsiniz. Komutları genellikle bir araç çubuğunda veya bağlam menüsündeki bir menü görüntülenir.  
   
- Komutlar ve menüleri tanımlama hakkında daha fazla bilgi için bkz: [komutları, menüleri ve araç çubuklarını](../extensibility/internals/commands-menus-and-toolbars.md).  
+ Komutlar ve menüler tanımlama hakkında daha fazla bilgi için bkz. [komutlar, menüler ve araç çubukları](../extensibility/internals/commands-menus-and-toolbars.md).  
   
- Bir dil hizmeti uğratarak Düzenleyicisi'nde gösterilen hangi bağlam menülerini denetleyebilirsiniz <xref:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID> numaralandırması. Alternatif olarak, bağlam menüsü işaret başına temelinde kontrol edebilirsiniz. Daha fazla bilgi için bkz: [dil hizmeti filtreleri için önemli komutları](../extensibility/internals/important-commands-for-language-service-filters.md).  
+ Dil hizmeti uğratarak Düzenleyici'de gösterilen hangi bağlam menüleri denetleyebilirsiniz <xref:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID> sabit listesi. Alternatif olarak, bağlam menüsünü işaret başına temelinde denetleyebilirsiniz. Daha fazla bilgi için [dil hizmeti filtreleri için önemli komutlar](../extensibility/internals/important-commands-for-language-service-filters.md).  
   
-## <a name="adding-commands-to-the-editor-context-menu"></a>Düzenleyici bağlam menüsüne komut ekleme  
- Bağlam menüsüne bir komut eklemek için önce bir dizi menü komutları belirli bir gruba ait tanımlamanız gerekir. Aşağıdaki örnek, izlenecek bir parçası olarak oluşturulan .vsct dosyanın alındığı [izlenecek yol: ekleme özellikleri için bir özel düzenleyici](../extensibility/walkthrough-adding-features-to-a-custom-editor.md):  
+## <a name="add-commands-to-the-editor-context-menu"></a>Düzenleyici bağlam menüsüne komut ekleme  
+ Bağlam menüsüne komut ekleme, menü komutları belirli bir gruba ait olan bir dizi tanımlamanız gerekir. Aşağıdaki örnek runbook'undan *.vsct* adım adım kılavuzun bir parçası olarak oluşturulan dosya [izlenecek yol: özel bir düzenleyici Özellikleri Ekle](../extensibility/walkthrough-adding-features-to-a-custom-editor.md):  
   
- \<Menü GUID = "guidCustomEditorCmdSet" id = "IDMX_RTF" öncelik = "0x0000" type = "Context" >  
+ \<Menü GUID "guidCustomEditorCmdSet" id = "IDMX_RTF" priority = "0x0000" type = "Context" >  
   
- \<Üst GUID = "guidCustomEditorCmdSet" id = "0" / >  
+ \<Üst GUID "guidCustomEditorCmdSet" id = "0" / >  
   
- \<Dize >  
+ \<Dizeleri >  
   
- \<■ ButtonText > CustomEditor bağlam menüsü\</ButtonText >  
+ \<ButtonText > CustomEditor bağlam menüsü\</ButtonText >  
   
  \<CommandName > CustomEditorContextMenu\</CommandName >  
   
  \</ Dizeleri >  
   
- \</ Menü >  
+ \</ Menüsü >  
   
  \</ Menülerine >  
   
- Yukarıdaki metni metin bağlam menüsü komutuyla ekler **CustomEditor bağlam menüsü**. Menü komut kümesini bu Düzenleyicisi ile oluşturulur ve "Context" türüdür GUID'dir.  
+ Bir bağlam menüsü komutu metinle yukarıdaki metin ekler **CustomEditor bağlam menüsü**. Menü GUID, bu Düzenleyicisi ile oluşturulmuş komut kümesi bir parçasıdır. "Bağlam" türüdür.  
   
- Ayrıca .vsct dosyasında tanımlanmış gerekmez önceden tanımlanmış komutlarını da kullanabilirsiniz. Visual Studio Paketi şablonu tarafından oluşturulan EditorPane.cs dosyanın incelerseniz, örneğin, bir dizi önceden tanımlanmış komut gibi bulduğunuz <xref:Microsoft.VisualStudio.VSConstants.VSStd97CmdID> tarafından tanımlanan <xref:Microsoft.VisualStudio.VSConstants.GUID_VSStandardCommandSet97>, komut işleyicileri onSelectAll yöntemi gibi işlenir.  
+ Ayrıca tanımlanması gerekmez önceden tanımlanmış komutları kullanabilirsiniz *.vsct* dosya. Örneğin, inceleyin *EditorPane.cs* Visual Studio Paket şablon tarafından oluşturulan dosya. Bir dizi önceden tanımlanmış komutları gibi bulabilirsiniz <xref:Microsoft.VisualStudio.VSConstants.VSStd97CmdID> tarafından tanımlanan <xref:Microsoft.VisualStudio.VSConstants.GUID_VSStandardCommandSet97>, komut işleyicileri gibi işlenir `onSelectAll` yöntemi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Komutlar, Menüler ve Araç Çubukları](../extensibility/internals/commands-menus-and-toolbars.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Komutlar, menüler ve araç çubukları](../extensibility/internals/commands-menus-and-toolbars.md)

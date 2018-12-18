@@ -1,6 +1,6 @@
 ---
-title: Hata ayıklayıcı kaynak kodu veya ayrıştırılmış kodu görüntüleyemez | Microsoft Docs
-ms.custom: ''
+title: Hata ayıklayıcı kaynak kodu veya ayrıştırılmış kodu görüntüleyemez
+ms.custom: seodec18
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
 ms.topic: conceptual
@@ -17,25 +17,26 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 313a0e9e5727d776eaeb13f1c4cef8cf3d8d3bb9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: ea95a2bb4c29f8a23fd597173a10a838baca051c
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53063972"
 ---
 # <a name="debugger-cannot-display-source-code-or-disassembly"></a>Hata Ayıklayıcı Kaynak Kodu veya Ayrıştırılmış Kodu Görüntüleyemez
 Bu hata görünür:  
   
- Hata ayıklayıcı kaynak kodu veya burada yürütme durduruldu geçerli konum için ayrıştırılmış kodu görüntüleyemez.  
+ Hata ayıklayıcı kaynak kodu veya Ayrıştırılmış kod burada yürütme durduruldu şu anki konum için görüntülenemiyor.  
   
- Bu hata iletisi, birçok nedenden dolayı ortaya çıkabilir:  
+ Bu hata iletisi, bir dizi nedenden ötürü ortaya çıkabilir:  
   
--   Kendisi için kaynak kodu yok, ayrıştırılmış desteklemeyen bir dil hata ayıklama sırasında bir konumda bir kesme noktası isabet. Açık **kesme noktaları** penceresinde kesme bulun ve silin.  
+-   Bir konum için kaynak kodu yok, ayrıştırılmış kodu desteklemiyor bir dil hata ayıklarken bir kesme noktasına ulaşırsınız. Açık **kesme noktaları** penceresinde kesme noktasını bulun ve silin.  
   
--   Komut dosyasında hata ayıklama, programınıza hiçbir iş parçacığı sırada bir kesme noktası isabet. Seçin **adım** veya **devam** gelen **hata ayıklama** hata ayıklama sürdürmek için menüsü.  
+-   Betik hata ayıklaması yapıyorsanız programınızdaki iş parçacığı kopyalanırken bir kesme noktası isabet. Seçin **adım** veya **devam** gelen **hata ayıklama** hata ayıklama devam etmek için menü.  
   
--   Güvenlik konuları yığını, iş parçacığı, kaydetme ve diğer bilgileri ayıkladığınız programdan okunurken hata ayıklayıcı engellemiş olabilir. Bir Web uygulamasında hata ayıklama ve sanal dizine erişmek için doğru iznin yoksa durum büyük olasılıkla budur. Sanal dizin için güvenlik anonim ayarlayın ve tekrar deneyin.  
+-   Güvenlik konuları yığın, iş parçacığı, kaydı ve diğer bağlam bilgileriyle hata ayıklaması yaptığınız programı okunurken hata ayıklayıcı engellemiş olabilir. Bir Web uygulaması hata ayıklaması yapıyorsanız ve doğru sanal dizine erişim izni yoksa durum büyük olasılıkla budur. Sanal dizin için güvenlik anonim olarak ayarlayın ve yeniden deneyin.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio'da hata ayıklamayı](../debugger/index.md) [özelliği turu hata ayıklayıcı](../debugger/debugger-feature-tour.md)   
- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)
+ [Visual Studio'da hata ayıklama](../debugger/index.md) [hata ayıklayıcısı özellik turu](../debugger/debugger-feature-tour.md)   
+ [Hata Ayıklayıcıda Verileri Görüntüleme](../debugger/viewing-data-in-the-debugger.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cb640a46825d720c5305a408fa716c6e3bed66c4
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f139e6d034fc3b738e345f385fbb8e8ad2150da4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915392"
 ---
 # <a name="idiaaddressmapputaddressmapenabled"></a>IDiaAddressMap::put_addressMapEnabled
-Adres eşlemesi simgesi adresleri çevirmek için kullanılması gerekip gerekmediğini belirtir.  
+Adres Haritası sembol adreslerine çevirmek için kullanılıp kullanılmayacağını belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,14 +37,14 @@ HRESULT put_addressMapEnabled (
  [in] Kümesine `TRUE` sembolleri çevirisini etkinleştirmek için veya `FALSE` devre dışı bırakmak için.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yürütülebilir sonrası işlemciler bazen yürütülebilir güncelleştirin. DIA yeni düzen simgelerin çeviri desteklemek için bir mekanizma içerir.  
+ Yürütülebilir sonrası işlemci bazen yürütülebilir güncelleştirin. DIA mekanizması semboller yeni düzene çevirisi desteği içerir.  
   
- PDB dosyası yüklendiğinde dosyasında depolanan adres eşleme etkindir. Bir istemci uygulaması gerektiğinde çağırarak kendi adres eşlemesi sağlamak için zamanlar [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi. Varsa `set_addressMap` yöntemi başarılı olduğunda, istemci uygulaması çağırmalısınız `put_addressMapEnabled` yöntemi ile bir `NewVal` parametresinin `TRUE` adresi eşlenen kullanımını etkinleştirmek için.  
+ Bir PDB dosyası yüklendiğinde dosyasında depolanan adres Haritası etkinleştirilir. Ne zaman bir istemci uygulaması gerekebilir çağırarak kendi adres Haritası sağlamanız zamanlar [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi. Varsa `set_addressMap` yöntemi başarılı olduğu için istemci uygulamasını çağırmanız gerekir `put_addressMapEnabled` yöntemi ile bir `NewVal` parametresinin `TRUE` adresi eşlenen kullanımını etkinleştirmek için.  
   
- Etkinleştirilecek adres eşlemesi geçerli durumunu çağrısıyla alınabilir [Idiaaddressmap::get_addressmapenabled](../../debugger/debug-interface-access/idiaaddressmap-get-addressmapenabled.md) yöntemi.  
+ Etkinleştirilen adres Haritası geçerli durumunu çağrısıyla alınabilir [Idiaaddressmap::get_addressmapenabled](../../debugger/debug-interface-access/idiaaddressmap-get-addressmapenabled.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaaddressmap](../../debugger/debug-interface-access/idiaaddressmap.md)   

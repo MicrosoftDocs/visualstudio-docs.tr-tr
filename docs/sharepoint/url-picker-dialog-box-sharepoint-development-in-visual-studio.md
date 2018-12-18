@@ -18,48 +18,48 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: c890d1cd1acfa0acc5a28c6418dbd961f795107e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 517058c99a6ec5a297b95324decbb2cfcbe04271
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950764"
 ---
-# <a name="url-picker-dialog-box-sharepoint-development-in-visual-studio"></a>URL Seçici İletişim Kutusu (Visual Studio'da SharePoint geliştirme)
-  URL Seçici iletişim kutusu, SharePoint çalıştıran yerel sunucu ana sayfa dosyası veya projenizdeki veya bulunan görüntü dosyaları gibi dosyalar seçebilirsiniz.  
+# <a name="url-picker-dialog-box-sharepoint-development-in-visual-studio"></a>URL Seçici iletişim kutusu (Visual Studio'da SharePoint Geliştirme)
+  URL Seçici iletişim kutusu içinde SharePoint çalıştıran yerel sunucu ana sayfa dosyası veya projenizdeki veya bulunan görüntü dosyaları gibi dosyaları seçebilirsiniz.  
   
- Bir özelliği ayarlamak için bir dosya seçmek üzere seçeneği varsa, bu iletişim kutusu görüntülenir. Üç nokta düğmesini seçerek bu iletişim kutusunu açabilir (![ASP.NET Mobil Tasarımcı elips](../sharepoint/media/mwellipsis.gif "ASP.NET Mobil Tasarımcı elips")) çeşitli özelliklerinde yanındaki **özellikleri** penceresi. Belirli öznitelikler için değerleri atadığınızda üç nokta düğmesini ayrıca bir IntelliSense komut istemi görünür **kaynak** Designer görünüm.  
+ Özellik ayarlamak için bir dosya seçmek için seçeneği varsa, bu iletişim kutusu görüntülenir. Üç nokta düğmesini seçerek bu iletişim kutusunu açabilirsiniz (![ASP.NET Mobil Tasarımcısı elips](../sharepoint/media/mwellipsis.gif "ASP.NET Mobil Tasarımcısı elips")) çeşitli özelliklerinde yanındaki **özellikleri** penceresi. Belirli öznitelikler için değerleri atadığınızda üç nokta düğmesini de bir IntelliSense komut istemi görünür **kaynak** Tasarımcı görünümü.  
   
-## <a name="uielement-list"></a>UIElement Listesi  
+## <a name="uielement-list"></a>UIElement listesi
  **Proje klasörleri**  
- Projedeki veya SharePoint çalıştıran yerel sunucu üzerinde tanımlanan klasörlerin listesini görüntüler. Alt klasörleri görüntülemek için genişletme düğmesini seçin.  
+ Proje veya SharePoint çalıştıran yerel sunucu üzerinde tanımlanan klasörlerin listesini görüntüler. Alt klasörleri görüntülemek için genişletme düğmesini seçin.  
   
- Genişletme **proje** düğümü projenizde dosyaları seçin. İletişim kutusunda olarak seçilebilir görünmesi için projenizdeki dosyalar aşağıdaki ölçütleri karşılamalıdır:  
+ Genişletin **proje** düğümünü, projenizdeki dosyaları seçin. İletişim kutusundaki olarak seçilebilir görünmesi için projenizdeki dosyaları aşağıdaki ölçütleri karşılaması gerekir:  
   
--   Dosya eşlenmiş bir klasörde bulunmalıdır.  
+- Dosya eşlenmiş bir klasörde bulunmalıdır.  
   
--   Dosya çözüm pakete eklenmesi gerekir.  
+- Dosya çözüm paketine eklenmesi gerekir.  
   
--   Dosya başka bir projede yer alamaz.  
+- Dosya başka bir projede yer almamalıdır.  
   
- Bu ölçütleri karşılamayan dosyalar başvurmak istiyorsanız, dosya yolunu el ile girmeniz gerekir.  
+  Bu ölçütleri karşılamayan dosyalara başvurmak istiyorsanız, dosyanın yolu el ile girmek zorunda.  
   
- Genişletme **Server** düğümü SharePoint çalıştıran yerel sunucu üzerinde bulunan dosyaları seçin. İletişim kutusunda olarak seçilebilir görünmesi için bu dosyalar aşağıdaki ölçütleri karşılamalıdır:  
+  Genişletin **sunucu** düğümünü SharePoint çalıştıran yerel sunucu üzerinde bulunan dosyaları seçin. Bu dosyalar olarak seçilebilir iletişim kutusunda görünmesi için aşağıdaki ölçütleri karşılaması gerekir:  
   
--   Dosya aşağıdaki eşlenen klasörlerden birinde bulunmalıdır: **görüntüleri**, **düzenleri**, veya **ControlTemplates**.  
+- Dosya aşağıdaki eşlenen klasörler birinde bulunmalıdır: **görüntüleri**, **düzenleri**, veya **ControlTemplates**.  
   
--   Dosya SharePoint içerik veritabanı bulunamıyor.  
+- Dosyanın SharePoint içerik veritabanı bulunamıyor.  
   
- Bu ölçütleri karşılamayan dosyalar başvurmak istiyorsanız, dosya yolunu el ile girmeniz gerekir.  
+  Bu ölçütleri karşılamayan dosyalara başvurmak istiyorsanız, dosyanın yolu el ile girmek zorunda.  
   
- **Klasörün içeriği**  
- Seçilen klasördeki dosyaların bir listesini görüntüler. Bir dosya seçin ve ardından **Tamam** iletişim kutusunu kapatmak ve seçiminizi adlı işleme göndermek için düğmesi.  
+  **Klasör içeriği**  
+  Seçilen klasördeki dosyaların bir listesini görüntüler. Bir dosya seçin ve ardından **Tamam** düğmesine iletişim kutusunu kapatmak ve onu çağıran işleme seçiminizi göndermek.  
   
- **Dosya türü**  
- Gerçekleştirmekte olduğunuz görev için uygun olan dosyalar listesinden seçmenize olanak sağlar.  
+  **Dosya türü**  
+  Gerçekleştirdiğiniz görev için uygun olan dosyalar listesinden seçmenize olanak sağlar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [SharePoint için uygulama sayfaları oluşturma](../sharepoint/creating-application-pages-for-sharepoint.md)   
  [SharePoint için Web bölümleri oluşturma](../sharepoint/creating-web-parts-for-sharepoint.md)   
- [Web Bölümleri veya Uygulama Sayfaları için Yeniden Kullanılabilir Denetimler Oluşturma](../sharepoint/creating-reusable-controls-for-web-parts-or-application-pages.md)   
-  
+ [Web bölümleri veya uygulama sayfaları için yeniden kullanılabilir denetimler oluşturma](../sharepoint/creating-reusable-controls-for-web-parts-or-application-pages.md)   
   

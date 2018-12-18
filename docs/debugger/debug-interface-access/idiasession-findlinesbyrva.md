@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e14b41fe3e7595ef56364fa92b0153f4f457fdd6
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 2e2f3713407ad17f468e125a1592ee8d684d27d3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49869749"
 ---
 # <a name="idiasessionfindlinesbyrva"></a>IDiaSession::findLinesByRVA
-Belirtilen göreli sanal adresi (RAV) içeren bir belirtilen derlenecek satırları alır.  
+Belirtilen göreli sanal adresi (RVA) içeren belirtilen derlenecek satırları alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,19 +36,19 @@ HRESULT findLinesByRVA (
   
 #### <a name="parameters"></a>Parametreler  
  `rva`  
- [in] Adresini bir RVA belirtir.  
+ [in] Bir RVA adresini belirtir.  
   
  `length`  
- [in] Bu sorguyla kapsayacak şekilde adres aralığının bayt sayısını belirtir.  
+ [in] Bu sorguyu kapsayacak şekilde adres aralığını bayt sayısını belirtir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) tüm satır listesini içeren nesne belirtilen adres aralığı, kapak numaralandırır.  
+ [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) tüm satır listesini içeren nesne belirtilen adres aralığını kapsayan numaralandırır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Bu örnek, tüm satır numaralarını işlevin göreli sanal adres uzunluğu ile belirtilen işlevinde yer alacağı bir işlev gösterir.  
+ Bu örnek, tüm satır numaralarını işlevin göreli sanal adres uzunluğu ile belirtilen işlev içinde yer alan bir işlev gösterir.  
   
 ```C++  
 IDiaEnumLineNumbers* GetLineNumbersByRVA(IDiaSymbol *pFunc, IDiaSession *pSession)  

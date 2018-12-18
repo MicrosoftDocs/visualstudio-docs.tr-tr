@@ -1,44 +1,45 @@
 ---
-title: "Windows komut dosyası konakları | Microsoft Docs"
-ms.custom: 
+title: Windows betik konakları | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Windows Script Host, implementing hosts
 ms.assetid: 9d5f6471-b318-40f3-be01-d9cd0b1cdd47
-caps.latest.revision: 
+caps.latest.revision: 7
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: 41fa898c7f0d62cd35cc1cb1c7b35eb2651c8bb6
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 486c41c54e7935bcda27ad6bea18b3180aa0371e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882375"
 ---
 # <a name="windows-script-hosts"></a>Windows Komut Dosyası Konakları
-Microsoft Windows Script host uygularken, güvenli bir şekilde bir komut dosyası motoru Yalnız çağrıları kabul edilebilir [Iactivescriptsite](../winscript/reference/iactivescriptsite.md) konak aşağıdakileri yapar sürece temel iş parçacığının bağlamında arabirim:  
+Microsoft Windows betik sistemi uygularken, güvenli bir şekilde bir komut dosyası altyapısı yalnızca çağrıları kabul edilebilir [Iactivescriptsite](../winscript/reference/iactivescriptsite.md) konak aşağıdakileri yapar sürece temel iş parçacığının bağlamında arabirim:  
   
--   Temel bir iş parçacığı (ileti döngüsü içeren genellikle iş parçacığı) seçer.  
+- Bir ana iş parçacığı (ileti döngüsü içeren genellikle iş parçacığı) seçer.  
   
--   Komut dosyası altyapısı temel iş parçacığında başlatır.  
+- Ana iş parçacığında komut dosyası altyapısı örneği oluşturur.  
   
--   Özellikle, örneklerini olduğu gibi izin verilen altyapısı yöntemleri yalnızca temel, iş parçacığı scripting çağrıları [IActiveScript::InterruptScriptThread](../winscript/reference/iactivescript-interruptscriptthread.md) ve [IActiveScript::Clone](../winscript/reference/iactivescript-clone.md).  
+- Özellikle, örneklerini olduğu gibi izin verilen altyapısı yöntemlerden yalnızca temel iş parçacığı komut çağrıları [IActiveScript::InterruptScriptThread](../winscript/reference/iactivescript-interruptscriptthread.md) ve [IActiveScript::Clone](../winscript/reference/iactivescript-clone.md).  
   
--   Komut dosyası altyapısı dağıtım nesnesi yalnızca temel iş parçacığından çağırır.  
+- Komut dosyası altyapısının dağıtım nesnesi yalnızca ana iş parçacığından çağırır.  
   
--   Bir pencere tanıtıcının sağladıysanız ileti döngüsü temel iş parçacığında çalıştırmasını sağlar.  
+- Bir pencere tutucu sağlanırsa, ileti döngüsü ana iş parçacığında çalıştırmasını sağlar.  
   
--   Yalnızca kaynak olayları temel bir iş parçacığı model nesneleri ana bilgisayarın nesnesindeki sağlar.  
+- Ana bilgisayarın nesnesindeki nesneleri yalnızca kaynak olayları temel bir iş parçacığı modeli sağlar.  
   
- Bu kurallar, tüm tek iş parçacıklı ana bilgisayar tarafından otomatik olarak izlenir. Yukarıda açıklanan kısıtlı modeli çağırarak takılmış bir komut dosyası iptal etmek bir konak izin vermek için kasıtlı olarak gevşek yeterince [IActiveScript::InterruptScriptThread](../winscript/reference/iactivescript-interruptscriptthread.md) (CTRL + BREAK işleyici veya benzeri tarafından başlatılan) başka bir iş parçacığından veya çok bir komut dosyası kullanarak yeni bir iş parçacığı içinde yinelenen [IActiveScript::Clone](../winscript/reference/iactivescript-clone.md).  
+  Bu kurallar, tek iş parçacıklı tüm konaklar tarafından otomatik olarak izlenir. Yukarıda açıklanan kısıtlı modeli çağırarak takılan betik iptal etmek bir konak izin vermek için kasıtlı olarak gevşek yeterince [IActiveScript::InterruptScriptThread](../winscript/reference/iactivescript-interruptscriptthread.md) (CTRL + BREAK işleyicisi veya benzeri tarafından başlatılan) başka bir iş parçacığından yenilemek için bir betik kullanarak yeni bir iş parçacığı yinelenen [IActiveScript::Clone](../winscript/reference/iactivescript-clone.md).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu kısıtlamalar hiçbiri geçerli bir boş iş parçacıklı uygulamak için seçtiği bir ana bilgisayara [Iactivescriptsite](../winscript/reference/iactivescriptsite.md) arabirimi ve ücretsiz iş parçacıklı nesne modeli. Böyle bir ana bilgisayar kullanabilirsiniz [IActiveScript](../winscript/reference/iactivescript.md) kısıtlama olmadan tüm iş parçacığı arabiriminden.  
+ Bu kısıtlamaların hiçbirini bir ücretsiz iş parçacıklı uygulamak için seçtiği bir konağa uygulamayı [Iactivescriptsite](../winscript/reference/iactivescriptsite.md) arabirimi ve ücretsiz iş parçacıklı nesne modeli. Böyle bir konak kullanabilirsiniz [IActiveScript](../winscript/reference/iactivescript.md) kısıtlama olmadan tüm iş parçacığı, arabirimi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Windows komut dosyası arabirimleri](../winscript/windows-script-interfaces.md)
+ [Windows Komut Dosyası Arabirimleri](../winscript/windows-script-interfaces.md)

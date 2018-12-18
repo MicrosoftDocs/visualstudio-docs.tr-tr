@@ -18,46 +18,47 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: bc3f87e590c6b915d5b3d9db5d2517d80965dd6c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f21b58a0ec9e8fe26cb02f72912fd23424cdfc7a
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39150943"
 ---
-# <a name="how-to-enable-clickonce-security-settings"></a>Nasıl yapılır: ClickOnce Güvenlik Ayarlarını Etkinleştirme
-ClickOnce uygulamaları için kod erişimi güvenliği, uygulama yayımlamak için etkinleştirilmelidir. Yayımlama Sihirbazı'nı kullanarak bir uygulama yayımladığınızda, bu otomatik olarak gerçekleştirilir.  
+# <a name="how-to-enable-clickonce-security-settings"></a>Nasıl yapılır: ClickOnce güvenlik ayarlarını etkinleştirme
+ClickOnce uygulamaları için kod erişimi güvenliği, uygulama yayımlamak için etkinleştirilmesi gerekir. Yayımlama Sihirbazı'nı kullanarak bir uygulama yayımladığınızda, bu otomatik olarak gerçekleştirilir.  
   
- Bazı durumlarda, kod erişim güvenliği etkinleştirme oluşturma veya uygulamanızın hatalarını ayıklama performansı etkileyebilir; Bu durumlarda, güvenlik ayarlarını geçici olarak devre dışı bırakmak isteyebilir.  
+ Bazı durumlarda, kod erişim güvenliği etkinleştirme oluşturma veya uygulamanızı hata ayıklama performansı etkileyebilir; Bu durumlarda, güvenlik ayarlarını geçici olarak devre dışı bırakmak isteyebilir.  
   
- ClickOnce güvenlik ayarlarını etkin veya devre dışı **güvenlik** sayfasında **Proje Tasarımcısı**.  
+ ClickOnce güvenlik ayarlarını etkinleştirilebilir veya devre dışı **güvenlik** sayfasının **Proje Tasarımcısı**.  
   
-### <a name="to-enable-clickonce-security-settings"></a>ClickOnce güvenlik ayarlarını etkinleştirmek için  
+### <a name="to-enable-clickonce-security-settings"></a>ClickOnce güvenlik ayarlarını etkinleştirme  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **güvenlik** sekmesi.  
+2.  Tıklayın **güvenlik** sekmesi.  
   
-3.  Seçin **ClickOnce güvenlik ayarlarını etkinleştir** onay kutusu.  
+3.  Seçin **ClickOnce güvenlik ayarlarını etkinleştirme** onay kutusu.  
   
-     Şimdi, güvenlik sayfasında uygulamanız için güvenlik ayarlarını özelleştirebilirsiniz.  
+     Ayrıca, uygulamanızın Güvenlik sayfasında artık güvenlik ayarlarını özelleştirebilirsiniz.  
   
     > [!NOTE]
-    >  Bu onay kutusunu uygulama ile yayımlanır her zaman otomatik olarak seçilir **Yayımla** Sihirbazı.  
+    >  Bu onay kutusu ile uygulamanın yayımlandığı her zaman otomatik olarak seçilen **Yayımla** Sihirbazı.  
   
 ### <a name="to-disable-clickonce-security-settings"></a>ClickOnce güvenlik ayarlarını devre dışı bırakmak için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **güvenlik** sekmesi.  
+2.  Tıklayın **güvenlik** sekmesi.  
   
-3.  Clear **ClickOnce güvenlik ayarlarını etkinleştir** onay kutusu.  
+3.  NET **ClickOnce güvenlik ayarlarını etkinleştirme** onay kutusu.  
   
-     Uygulamanızın tam güven güvenlik ayarlarıyla çalışacağı; herhangi bir ayarı **güvenlik** sayfa yok sayılacak.  
+     Uygulama tam güven güvenlik ayarlarıyla çalışır; herhangi bir ayarı **güvenlik** sayfa yok sayılacak.  
   
     > [!NOTE]
-    >  Uygulama Yayımla Sihirbazı ile her yayımlandığında, bu onay kutusu seçili; Bunu yeniden her başarılı yayımlamanın ardından temizlemeniz gerekir.  
+    >  Uygulama Yayımlama Sihirbazı kullanarak, her yayımlandığında, bu onay kutusu işaretli; yeniden başarılı her yayımlamadan sonra temizlemelisiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ClickOnce uygulamalarının güvenliğini sağlama](../deployment/securing-clickonce-applications.md)   
- [ClickOnce Uygulamaları İçin Kod Erişimi Güvenliği](../deployment/code-access-security-for-clickonce-applications.md)   
+ [ClickOnce uygulamaları için kod erişimi güvenliği](../deployment/code-access-security-for-clickonce-applications.md)   
  

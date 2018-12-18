@@ -15,13 +15,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c030d001932d5b1cdeaa4c9b4a2ed82b321ee56f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d6f06b360348ad06df6433c67a4cae7f543ea5ce
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34815859"
 ---
-# <a name="how-to-customize-report-view-columns"></a>Nasıl yapılır: Rapor Görünümü Sütunlarını Özelleştirme
+# <a name="how-to-customize-report-view-columns"></a>Nasıl yapılır: rapor görünümü sütunlarını özelleştirme
 Performans araçları Visual Studio Team System geliştirme sürümü tümleşik geliştirme ortamına (IDE) sorunsuz bir kullanıcı deneyimi sağlamak için tam olarak tümleşiktir. Aşağıdaki liste, ekleme, kaldırma ve sütunları yeniden düzenleme özelleştirilmiş görünüm temsilcisidir:  
   
 -   [Modüller Görünümü](../profiling/modules-view.md)  

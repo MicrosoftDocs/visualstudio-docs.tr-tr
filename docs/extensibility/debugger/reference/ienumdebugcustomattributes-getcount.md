@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 223f453f427fe90764262bac55f2591d4fdf5646
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c90eb242485ecdb3d4939ac227d344402799280b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49899857"
 ---
 # <a name="ienumdebugcustomattributesgetcount"></a>IEnumDebugCustomAttributes::GetCount
 Özel öznitelik sayısı bir numaralandırıcı alır.  
@@ -40,13 +41,13 @@ int GetCount(
   
 #### <a name="parameters"></a>Parametreler  
  `pcelt`  
- [out] Sabit listede öğe sayısını döndürür.  
+ [out] Numaralandırmada öğelerin sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem yalnızca belirten her zamanki COM numaralandırması arabirimi parçası olmayan `Next`, `Clone`, `Skip`, ve `Reset` uygulanması gerekir.  
+ Bu yöntem yalnızca belirten geleneksel COM numaralandırma arabiriminin bir parçası değil `Next`, `Clone`, `Skip`, ve `Reset` uygulanması gerekir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugCustomAttributes](../../../extensibility/debugger/reference/ienumdebugcustomattributes.md)

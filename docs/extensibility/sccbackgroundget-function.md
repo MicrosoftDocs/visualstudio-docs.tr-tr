@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 77e70720c9a26710c6d659ebac5b842bef3757eb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 39550665c804aa971ba88ee76707bdd150f74ab0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49811795"
 ---
 # <a name="sccbackgroundget-function"></a>SccBackgroundGet işlevi
-Kaynak denetiminden her belirtilen dosyaların kullanıcı etkileşimi olmadan bu işlevi alır.  
+Bu işlev, kaynak denetiminden her belirtilen dosyalar, kullanıcı etkileşimi olmadan alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,39 +37,39 @@ SCCRTN SccBackgroundGet(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pContext  
- [in] Kaynak Denetim eklentisi bağlam işaretçi.  
+ [in] Kaynak Denetimi Eklentisi bağlam işaretçisi.  
   
  nFiles  
- [in] Belirtilen dosya sayısı `lpFileNames` dizi.  
+ [in] Belirtilen dosya sayısı `lpFileNames` dizisi.  
   
  lpFileNames  
- [içinde out] Alınacak dosya adlarını dizisi.  
+ [out içinde] Alınacak dosya adları dizisi.  
   
 > [!NOTE]
->  Adları tam yerel dosya adları olmalıdır.  
+>  Adlarının tam yerel dosya adları olması gerekir.  
   
- dwFlags  
+ CertOpenStore  
  [in] Komut bayrakları (`SCC_GET_ALL`, `SCC_GET_RECURSIVE`).  
   
  dwBackgroundOperationID  
  [in] Bu işlemle ilişkili benzersiz bir değerdir.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|İşlem başarıyla tamamlandı.|  
-|SCC_E_BACKGROUNDGETINPROGRESS|Arka plan alma (yalnızca eşzamanlı toplu işlemleri desteklemiyorsa, eklenti kaynak denetimi bu döndürmelidir) sürüyor.|  
+|SCC_E_BACKGROUNDGETINPROGRESS|Arka planda alma (yalnızca aynı anda toplu işlemleri desteklemiyorsa, kaynak denetimi eklentisi bu döndürmelidir) sürüyor.|  
 |SCC_I_OPERATIONCANCELED|İşlem tamamlandı önce iptal edildi.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlev, kaynak denetim eklentisi yüklü olandan farklı bir iş parçacığı üzerinde her zaman çağrılır. Bu işlev tamamlanıncaya kadar döndürmek için beklenmiyor; Ancak, birden çok kez dosyalarının, tümü aynı anda birden çok listeleriyle çağrılabilir.  
+ Bu işlev, her zaman kaynak denetimi eklentisi yüklenmiş olandan farklı bir iş parçacığı üzerinde çağrılır. Bu işlev, tamamlanana kadar geri dönmek için beklenmiyor; Ancak, birden çok kez dosyaları, tümü aynı anda birden çok listesi ile çağrılabilir.  
   
- Kullanımını `dwFlags` bağımsız değişkeni aynı olup [SccGet](../extensibility/sccget-function.md).  
+ Kullanımını `dwFlags` bağımsız değişkeni ile aynı olduğu [SccGet](../extensibility/sccget-function.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
  [SccGet](../extensibility/sccget-function.md)

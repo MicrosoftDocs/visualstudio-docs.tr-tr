@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131861"
 ---
 # <a name="implementing-syntax-coloring"></a>Sözdizimi renklendirmesi uygulama
 Dil hizmeti söz dizimi renklendirme sağladığında, ayrıştırıcı metin satırının colorable öğelerini bir diziye dönüştürür ve belirteç türleri colorable bu öğeler karşılık gelen döndürür. Ayrıştırıcının colorable öğeler listesine ait belirteç türleri döndürmelidir. [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] colorable her öğe için uygun belirteç türü Renklendirici nesne tarafından atanan öznitelikleri göre kod penceresi görüntüler.  

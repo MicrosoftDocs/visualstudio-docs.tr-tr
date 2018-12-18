@@ -21,6 +21,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31135954"
 ---
 # <a name="syntax-colorizing-in-a-legacy-language-service"></a>Eski dil hizmetinde söz dizimi renklendirme
 Söz dizimi renklendirme farklı renkler ve stiller kaynak dosyasında görüntülenecek bir programlama dili farklı öğeleri neden olan bir özelliktir. Bu özelliği desteklemek için bir ayrıştırıcı veya sözcük öğeleri veya dosya belirteçleri türlerini tanımlamak tarayıcı sağlamanız gerekir. Anahtar sözcükler, (örneğin, parantez veya küme ayraçları) sınırlayıcıları ve açıklamaları farklı şekillerde renklendirme tarafından birçok dilde ayırt etmek.  

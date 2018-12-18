@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fb46eb1c7477f93ed63dfc4424d881886c8d0c8f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e816ac9dca3c70e88ae023b4fda4edf0b99f9c96
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872102"
 ---
 # <a name="locationtype"></a>LocationType
-Sembol içerdiği konumu bilgi türünü belirtir.  
+Konum bilgilerini bir sembol içinde yer alan türünü gösterir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,10 +51,10 @@ enum LocationType {
  Statik konumdur.  
   
  `LocIsTLS`  
- İş parçacığı yerel depolama konumdur.  
+ İş parçacığı yerel depolama alanında konumdur.  
   
  `LocIsRegRel`  
- Kayıt göreli konumdur.  
+ Kayıt göreli konumu.  
   
  `LocIsThisRel`  
  Konum `this`-göreli.  
@@ -62,10 +63,10 @@ enum LocationType {
  Bir kayıttaki konumdur.  
   
  `LocIsBitField`  
- Bir bit alanında konumdur.  
+ Bir bit alanına konumdur.  
   
  `LocIsSlot`  
- Bir Microsoft Ara dili (MSIL) yuva konumdur.  
+ Bir Microsoft Ara dil (MSIL) yuvası konumdur.  
   
  `LocIsIlRel`  
  MSIL göreli konumdur.  
@@ -74,21 +75,21 @@ enum LocationType {
  Meta verilerde konumdur.  
   
  `LocIsConstant`  
- Sabit bir değer konumdur.  
+ Bir sabit değer konumdur.  
   
  `LocTypeMax`  
- Bu numaralandırma konumu türlerinde sayısı.  
+ Bu numaralandırma, konum türleri sayısı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kullanılabilir özellikler [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) simgenin konumu görüntü dosyasının içinde arabirimi bağlıdır. Daha fazla bilgi için bkz: [simge konumları](../../debugger/debug-interface-access/symbol-locations.md).  
+ Kullanılabilir özellikler [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) sembolün konumu resim dosyası içinde arabirimi bağlıdır. Daha fazla bilgi için [simge konumları](../../debugger/debug-interface-access/symbol-locations.md).  
   
  Bu numaralandırma değerleri için yapılan bir çağrı tarafından döndürülen [Idiasymbol::get_locationtype](../../debugger/debug-interface-access/idiasymbol-get-locationtype.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: cvconst.h  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
  [Idiasymbol::get_locationtype](../../debugger/debug-interface-access/idiasymbol-get-locationtype.md)   
  [Simge Konumları](../../debugger/debug-interface-access/symbol-locations.md)

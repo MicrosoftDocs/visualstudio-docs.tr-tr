@@ -1,8 +1,9 @@
 ---
-title: Visual Studio'yu yüklemek için komut satırı parametreleri kullanma
-description: Komut satırı parametreleri denetlemek veya Visual Studio yüklemenizi özelleştirmek için nasıl kullanılacağını öğrenin.
-ms.custom: ''
-ms.date: 01/17/2018
+title: Komut satırı parametrelerini kullanarak Visual Studio'yu yükleme
+titleSuffix: ''
+description: Komut satırı parametreleri denetlemek veya Visual Studio yüklemenizi özelleştirmek için kullanmayı öğrenin.
+ms.custom: seodec18
+ms.date: 11/14/2018
 ms.technology: vs-acquisition
 ms.prod: visual-studio-dev15
 ms.topic: conceptual
@@ -16,27 +17,28 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 566e662c55589424f04e93d0dd182faed8a4b757
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: ba270b4d7240d30db5b20388d6c75782dba6a256
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53159730"
 ---
-# <a name="use-command-line-parameters-to-install-visual-studio-2017"></a>Visual Studio 2017 yüklemek için komut satırı parametreleri kullanın
+# <a name="use-command-line-parameters-to-install-visual-studio-2017"></a>Visual Studio 2017'yi yüklemek için komut satırı parametrelerini kullanma
 
-Visual Studio 2017 bir komut isteminden yüklediğinizde, denetim veya yüklemeyi özelleştirmek için çeşitli komut satırı parametreleri kullanabilirsiniz. Komut satırından aşağıdaki eylemleri gerçekleştirebilirsiniz:
+Visual Studio 2017'yi bir komut isteminden yüklediğinizde, denetim ya da yüklemeyi özelleştirmek için çeşitli komut satırı parametreleri kullanabilirsiniz. Komut satırından aşağıdaki eylemleri gerçekleştirebilirsiniz:
 
-- Yükleme önceden belirli seçenekler ile başlatır.
-- Yükleme işlemini otomatikleştirir.
-- Daha sonra kullanmak için yükleme dosyaları önbelleği (Düzen) oluşturun.
+- Yükleme önceden belirli seçenekleri ile başlayın.
+- Yükleme işlemini otomatik hale getirin.
+- Daha sonra kullanmak için yükleme dosyalarından oluşan bir önbellek (Düzen) oluşturun.
 
-Komut satırı seçeneklerini indirme işlemi başlatan bir küçük (yaklaşık 1 MB) dosyadır Kurulum önyükleyici ile birlikte kullanılır. Önyükleyici Visual Studio sitesinden yüklediğinizde başlatılır ilk çalıştırılabilir ' dir. Doğrudan bağlantı için en son sürüm önyükleyici yüklemekte olduğunuz ürün sürümü almak için aşağıdaki bağlantıları kullanın:
+Komut satırı seçenekleri, indirme işlemini başlatan küçük (yaklaşık 1 MB) dosya kurulum önyükleyici ile birlikte kullanılır. Önyükleyici Visual Studio sitesinden indirdiğinizde başlatıldığında ilk yürütülebilir ' dir. Doğrudan bir bağlantı için en son sürüm önyükleyici için yüklemekte olduğunuz ürün sürümünü almak için aşağıdaki bağlantıları kullanın:
 
-* [Visual Studio 2017 Enterprise](https://aka.ms/vs/15/release/vs_enterprise.exe)
-* [Visual Studio 2017 Professional](https://aka.ms/vs/15/release/vs_professional.exe)
-* [Visual Studio 2017 topluluk](https://aka.ms/vs/15/release/vs_community.exe)
+- [Visual Studio 2017 Enterprise](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=enterprise&rel=15?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=link+cta&utm_content=download+commandline+parameters+vs2017)
+- [Visual Studio 2017 Professional](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=professional&rel=15?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=link+cta&utm_content=download+commandline+parameters+vs2017)
+- [Visual Studio 2017 Community](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=15?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=link+cta&utm_content=download+commandline+parameters+vs2017)
 
-## <a name="list-of-command-line-parameters"></a>Komut satırı parametreleri listesi
+## <a name="list-of-command-line-parameters"></a>Komut satırı parametrelerinin listesi
 
  Visual Studio komut satırı parametreleri büyük/küçük harfe duyarsızdır.
 
@@ -45,114 +47,112 @@ Komut satırı seçeneklerini indirme işlemi başlatan bir küçük (yaklaşık
 (Değiştir `vs_enterprise.exe` ürün sürümü için uygun şekilde yüklemekte.)
 
 >[!TIP]
-> Visual Studio 2017 yüklemek için komut satırını kullanmak nasıl daha fazla örnekleri için bkz: [komut satırı parametresi örnekler](command-line-parameter-examples.md) sayfası.)
+> Visual Studio 2017'yi yüklemek için komut satırını kullanmayı daha fazla örnek için bkz. [komut satırı parametresi örnekleri](command-line-parameter-examples.md) sayfası.)
 
-| **komutu** | **Açıklama** |
+| **Komutu** | **Açıklama** |
 | ----------------------- | --------------- |
-| (boş) | Ürünü yükler. |
-| `modify` | Yüklü ürün değiştirir. |
-| `update` | Yüklü ürün güncelleştirir. |
-| `repair` | Yüklü ürün onarır. |
-| `uninstall` | Yüklü ürün kaldırır. |
+| (boş) | Ürün yükler. |
+| `modify` | Yüklü bir ürün değiştirir. |
+| `update` | Yüklü bir ürün güncelleştirir. |
+| `repair` | Yüklü bir ürün onarır. |
+| `uninstall` | Yüklü bir ürün kaldırır. |
+| `export` | **Yeni 15.9**: Yükleme seçimi bir yükleme yapılandırma dosyasına dışarı aktarır. |
 
-| **Seçeneği yükleyin** | **Açıklama** |
+| **Yükleme seçeneği** | **Açıklama** |
 | ----------------------- | --------------- |
-| `--installPath <dir>` | Yükleme dizini için görev örneği. Yükleme için bu komuttur **isteğe bağlı** ve örnek yükleneceği. Diğer komutlar için budur **gerekli** ve önceden yüklenmiş örneği yüklendiği. |
-| `--addProductLang <language-locale>` | **İsteğe bağlı**: bir yükleme sırasında veya değiştirme işlemi, bu ürünü yüklü UI dil paketlerini belirler. Birden çok dil paketlerini eklemek için komut satırında birden çok kez yer alabilir. Yoksa, yükleme makine yerel ayar kullanır. Daha fazla bilgi için bkz: [dil yerel ayarları listesi](#list-of-language-locales) bu sayfadaki bölümü.|
-| `--removeProductLang <language-locale>` | **İsteğe bağlı**: bir yükleme sırasında veya değiştirme işlemi, bu ürün kaldırılacak UI dil paketlerini belirler. Birden çok dil paketlerini eklemek için komut satırında birden çok kez yer alabilir. Daha fazla bilgi için bkz: [dil yerel ayarları listesi](#list-of-language-locales) bu sayfadaki bölümü.|
-| `--add <one or more workload or component IDs>` | **İsteğe bağlı**: bir veya daha fazla iş yükü ya da bileşen kimlikleri ekleyin. Yapı gerekli bileşenlerini, önerilen veya isteğe bağlı bileşenlerini değil yüklenir. Genel olarak kullanarak ek bileşenleri denetleyebilirsiniz `--includeRecommended` ve/veya `--includeOptional`. Geçirmiş denetimi için ekleyebilirsiniz `;includeRecommended` veya `;includeOptional` kimliği (örneğin, `--add Workload1;includeRecommended` veya `--add Workload2;includeRecommended;includeOptional`). Daha fazla bilgi için bizim [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. Bu seçenek gerektiği gibi yineleyebilirsiniz.|
-| `--remove <one or more workload or component IDs>` | **İsteğe bağlı**: bir veya daha fazla iş yükü veya kaldırmak için Bileşen kimlikleri. Daha fazla bilgi için bizim [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. Bu seçenek gerektiği gibi yineleyebilirsiniz.|
+| `--installPath <dir>` | Yükleme dizini örneği üzerinde işlem yapmak için. Yükleme komutu için budur **isteğe bağlı** ve örneğin yüklü olduğu. Diğer komutlar için budur **gerekli** ve önceden yüklenmiş örnek yüklendiği. |
+| `--addProductLang <language-locale>` | **İsteğe bağlı**: Bir yükleme sırasında veya değiştirme işlemi, bu ürünü yüklü UI dil paketlerini belirler. Bu, birden çok dil paketlerini eklemek için komut satırında birden çok kez görünebilir. Yoksa, yükleme makine yerel ayarı kullanır. Daha fazla bilgi için [dil yerel ayarlar listesini](#list-of-language-locales) bu sayfadaki bölümü.|
+| `--removeProductLang <language-locale>` | **İsteğe bağlı**: Bir yükleme sırasında veya değiştirme işlemi, bu ürün kaldırılacak kullanıcı Arabirimi dil paketlerini belirler. Bu, birden çok dil paketlerini eklemek için komut satırında birden çok kez görünebilir. Daha fazla bilgi için [dil yerel ayarlar listesini](#list-of-language-locales) bu sayfadaki bölümü.|
+| `--add <one or more workload or component IDs>` | **İsteğe bağlı**: Bir veya daha fazla iş yükü veya Bileşen kimlikleri eklemek için. Yapıtın gerekli bileşenleri, değil önerilen veya isteğe bağlı bileşenler yüklenir. Genel olarak aracılığıyla ek bileşenler denetleyebilirsiniz `--includeRecommended` ve/veya `--includeOptional`. Birden çok iş yükleri veya bileşenleri eklemek için yineleyin `--add` komutu (örneğin, `--add Workload1 --add Workload2`). Daha ayrıntılı denetim için eklediğiniz `;includeRecommended` veya `;includeOptional` kimliği (örneğin, `--add Workload1;includeRecommended` veya `--add Workload2;includeRecommended;includeOptional`). Daha fazla bilgi için [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. Bu seçenek gerekli olarak yineleyebilir.|
+| `--remove <one or more workload or component IDs>` | **İsteğe bağlı**: Bir veya daha fazla iş yükü veya Bileşen kimlikleri kaldırmak için. Daha fazla bilgi için müşterilerimize [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. Bu seçenek gerekli olarak yineleyebilir.|
 | `--in <path>` | **İsteğe bağlı**: URI veya bir yanıt dosyasının yolu.  |
-| `--all` | **İsteğe bağlı**: tüm iş yükleri ve bir ürün için bileşenleri yüklemeyi. |
-| `--allWorkloads` | **İsteğe bağlı**: tüm iş yükleri ve bileşenleri, hiçbir önerilen veya isteğe bağlı bileşenleri yükler. |
-| `--includeRecommended` | **İsteğe bağlı**: yüklü olan tüm iş yükleri için önerilen bileşenleri, ancak isteğe bağlı bileşenlerini içerir. İş yükleri belirtilen biriyle `--allWorkloads` veya `--add`. |
-| `--includeOptional` | **İsteğe bağlı**: isteğe bağlı bileşenler yüklü olan tüm iş yükleri için ancak önerilen bileşenlerini içerir. İş yükleri belirtilen biriyle `--allWorkloads` veya `--add`.  |
-| `--quiet, -q` | **İsteğe bağlı**: yüklemesi yapılırken herhangi bir kullanıcı arabirimi gösterme. |
-| `--passive, -p` | **İsteğe bağlı**: kullanıcı arabirimini görüntüler, ancak herhangi bir etkileşim kullanıcıdan isteme. |
-| `--norestart` | **İsteğe bağlı**: ile varsa, komutları `--passive` veya `--quiet` otomatik olarak makine (gerekiyorsa) yeniden başlatılmaz.  Bu durumların yoksayılır `--passive` ya da `--quiet` belirtilir.  |
-| `--nickname <name>` | **İsteğe bağlı**: Bu yüklü bir ürüne atamak için takma ad tanımlar. Takma ad 10 karakterden uzun olamaz.  |
-| `--productKey` | **İsteğe bağlı**: Bu yüklü olan bir ürün için kullanılacak ürün anahtarını tanımlar. Oluşur 25 alfasayısal karakter biçimde `xxxxx-xxxxx-xxxxx-xxxxx-xxxxx` veya `xxxxxxxxxxxxxxxxxxxxxxxxx`. |
-| `--help, --?, -h, -?` | Bu sayfayı çevrimdışı bir sürümünü görüntüler. |
+| `--all` | **İsteğe bağlı**: Tüm iş yüklerinin ve bileşenlerin bir ürün için yüklenip yüklenmeyeceğini belirtir. |
+| `--allWorkloads` | **İsteğe bağlı**: Tüm iş yüklerinin ve bileşenlerin, hiçbir önerilen veya isteğe bağlı bileşenleri yükler. |
+| `--includeRecommended` | **İsteğe bağlı**: İsteğe bağlı bileşenler yüklü olan tüm iş yükleri için önerilen bileşenleri içerir. Belirtilen iş yükleri ile birlikte `--allWorkloads` veya `--add`. |
+| `--includeOptional` | **İsteğe bağlı**: İsteğe bağlı bileşenler yüklü olan tüm iş yükleri için ancak önerilen bileşenleri içerir. Belirtilen iş yükleri ile birlikte `--allWorkloads` veya `--add`.  |
+| `--quiet, -q` | **İsteğe bağlı**: Herhangi bir kullanıcı arabirimi, yükleme gerçekleştirirken görüntülemez. |
+| `--passive, -p` | **İsteğe bağlı**: Kullanıcı arabirimini görüntüler, ancak kullanıcı etkileşimi isteme. |
+| `--norestart` | **İsteğe bağlı**: Varsa, ile komutları `--passive` veya `--quiet` otomatik olarak makine (gerekirse) yeniden başlatmaz.  Bu ne sayılır `--passive` ya da `--quiet` belirtilir.  |
+| `--nickname <name>` | **İsteğe bağlı**: Bu takma ad atamak için yüklü bir ürün için tanımlar. Takma ad 10 karakterden uzun olamaz.  |
+| `--productKey` | **İsteğe bağlı**: Bu ürün anahtarı yüklü bir ürün için tanımlar. Şunlardan oluşur 25 alfasayısal karakter ya da biçimi `xxxxx-xxxxx-xxxxx-xxxxx-xxxxx` veya `xxxxxxxxxxxxxxxxxxxxxxxxx`. |
+| `--help, --?, -h, -?` | Bu sayfanın çevrimdışı bir sürümünü görüntüler. |
+| `--config <path>` | **İsteğe bağlı** ve **15.9 yeni**: Bir yükleme sırasında veya değiştirme işlemi, bu iş yükleri belirler ve bileşenleri eklemek için temel bir önceden kaydedilmiş yükleme yapılandırma dosyası. . Bu işlem eklenebilir ve bunlar dosyasında mevcut değilse herhangi bir iş yükü veya bileşen kaldırmaz. Ayrıca, ürün için geçerli olmayan öğeler eklenmeyecek. Dışa aktarma işlemi sırasında bu yükleme yapılandırma dosyasını kaydetmek istediğiniz konumu belirler. |
 
-> Not: birden çok iş yükleri ve bileşenleri belirtirken, yinelemelisiniz `--add` veya `--remove` her öğe için komut satırı anahtarı.
+> Not: Birden çok iş yüklerinin ve bileşenlerin belirtirken tekrarlamalısınız `--add` veya `--remove` her öğe için komut satırı anahtarı.
 
 | **Düzen Seçenekleri** | **Açıklama** |
 | ----------------------- | --------------- |
-| `--layout <dir>` | Önbellek yükleme çevrimdışı oluşturmak için bir dizini belirtir. Daha fazla bilgi için bkz: [Visual Studio ağ tabanlı yüklemesini oluşturma](create-a-network-installation-of-visual-studio.md).|
-| `--lang <one or more language-locales>` | **İsteğe bağlı**: ile kullanılan `--layout` hazırlamak için bir çevrimdışı yükleme önbellek belirtilen güncelleştirmelerin ile kaynak paketleriyle. Daha fazla bilgi için bkz: [dil yerel ayarları listesi](#list-of-language-locales) bu sayfadaki bölümü.|
-| `--add <one or more workload or component IDs>` | **İsteğe bağlı**: bir veya daha fazla iş yükü ya da bileşen kimlikleri ekleyin. Yapı gerekli bileşenlerini, önerilen veya isteğe bağlı bileşenlerini değil yüklenir. Genel olarak kullanarak ek bileşenleri denetleyebilirsiniz `--includeRecommended` ve/veya `--includeOptional`. Geçirmiş denetimi için ekleyebilirsiniz `;includeRecommended` veya `;includeOptional` kimliği (örneğin, `--add Workload1;includeRecommended` veya `--add Workload2;includeOptional`). Daha fazla bilgi için bizim [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. <br/>**Not**: varsa `--add` olan kullanıldığında, yalnızca belirtilen iş yükleri ve bileşenleri ve bunların bağımlılıklarını karşıdan yüklenir. Varsa `--add` belirtilmezse, tüm iş yükleri ve bileşenleri düzene indirilir.|
-| `--includeRecommended` | **İsteğe bağlı**: yüklü olan tüm iş yükleri için önerilen bileşenleri, ancak isteğe bağlı bileşenlerini içerir. İş yükleri belirtilen biriyle `--allWorkloads` veya `--add`. |
-| `--includeOptional` | **İsteğe bağlı**: önerilen içeren *ve* düzende tüm iş yükleri için isteğe bağlı bileşenler. İş yükleri ile belirtilen `--add`.  |
-| `--keepLayoutVersion` | **15.3, isteğe bağlı olarak yeni**: düzeni sürümünü güncelleştirmeden düzene değişiklikleri uygulayın. |
-| `--verify` | **15.3, isteğe bağlı olarak yeni**: bir düzen içeriğini doğrulayın.  Eksik veya bozuk dosyalar listelenir. |
-| `--fix` | **15.3, isteğe bağlı olarak yeni**: bir düzen içeriğini doğrulayın.  Herhangi bir dosya bozuk veya eksik olması bulunursa, yeniden yüklenen.  Bir düzen düzeltmek için Internet erişimi gerekir. |
-| `--clean <one or more paths to catalogs>` | **15.3, isteğe bağlı olarak yeni**: yeni bir sürüme güncelleştirilip güncelleştirilmediğini düzeninden bileşenleri eski sürümlerini kaldırır. |
+| `--layout <dir>` | Yükleme önbelleği çevrimdışı oluşturmak için bir dizini belirtir. Daha fazla bilgi için [Visual Studio'nun ağ tabanlı yüklemesini oluşturma](create-a-network-installation-of-visual-studio.md).|
+| `--lang <one or more language-locales>` | **İsteğe bağlı**: İle kullanılan `--layout` hazırlamak için çevrimdışı önbellek ile yükleme kaynak paketleri ile belirtilen diller. Daha fazla bilgi için [dil yerel ayarlar listesini](#list-of-language-locales) bu sayfadaki bölümü.|
+| `--add <one or more workload or component IDs>` | **İsteğe bağlı**: Bir veya daha fazla iş yükü veya Bileşen kimlikleri eklemek için. Yapıtın gerekli bileşenleri, değil önerilen veya isteğe bağlı bileşenler yüklenir. Genel olarak aracılığıyla ek bileşenler denetleyebilirsiniz `--includeRecommended` ve/veya `--includeOptional`. Daha ayrıntılı denetim için eklediğiniz `;includeRecommended` veya `;includeOptional` kimliği (örneğin, `--add Workload1;includeRecommended` veya `--add Workload2;includeOptional`). Daha fazla bilgi için [iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası. <br/>**Not**: Varsa `--add` olan kullanıldığında, yalnızca belirtilen iş yükleri ve bileşenleri ve bunların bağımlılıklarını karşıdan yüklenir. Varsa `--add` belirtilmezse, tüm iş yüklerinin ve bileşenlerin düzene indirilir.|
+| `--includeRecommended` | **İsteğe bağlı**: İsteğe bağlı bileşenler yüklü olan tüm iş yükleri için önerilen bileşenleri içerir. Belirtilen iş yükleri ile birlikte `--allWorkloads` veya `--add`. |
+| `--includeOptional` | **İsteğe bağlı**: Önerilen içerir *ve* düzende tüm iş yükleri için isteğe bağlı bileşenler. İş yükleri ile belirtilen `--add`.  |
+| `--keepLayoutVersion` | **15.3, isteğe bağlı olarak yeni**: Değişiklikler, Düzen sürümüne güncelleştirmeden düzeninde de yararlanılabilir. |
+| `--verify` | **15.3, isteğe bağlı olarak yeni**: Bir düzen içeriğini doğrulayın. Herhangi bir bozuk veya eksik dosyalar listelenir. |
+| `--fix` | **15.3, isteğe bağlı olarak yeni**: Bir düzen içeriğini doğrulayın.  Bozuk veya eksik olması için herhangi bir dosya bulunamazsa, bunlar yeniden indirilecek. Bir düzen düzeltmek için Internet erişimi gerekir. |
+| `--clean <one or more paths to catalogs>` | **15.3, isteğe bağlı olarak yeni**: Yeni bir sürüme güncelleştiren bir düzen eski sürümlerini bileşenleri kaldırır. |
 
 | **Gelişmiş yükleme seçenekleri** | **Açıklama** |
 | ----------------------- | --------------- |
-| `--channelId <id>` | **İsteğe bağlı**: yüklenecek kimliği örneği kanalı. Diğer komutlar için gözardı yükleme komut için bu gereklidir `--installPath` belirtilir. |
-| `--channelUri <uri>` | **İsteğe bağlı**: kanal bildiriminin URI. Güncelleştirmeleri değil isteniyorsa, `--channelUri` mevcut olmayan bir dosyaya işaret edebilir. (örneğin,--channelUri C:\doesntExist.chman) Bu yükleme komutu için kullanılabilir; diğer komutlar için yoksayılır. |
-| `--installChannelUri <uri>` | **İsteğe bağlı**: kanal bildiriminin yükleme için kullanılacak URI. URI tarafından belirtilen `--channelUri` (olması gerekir belirtilen `--installChannelUri` belirtilir) güncelleştirmeleri algılamak için kullanılır. Bu yükleme komutu için kullanılabilir; diğer komutlar için yoksayılır. |
-| `--installCatalogUri <uri>` | **İsteğe bağlı**: Katalog bildiriminin yükleme için kullanılacak URI. Belirtilmişse, kanal Yöneticisi'ni yükleme kanal bildiriminde URI kullanmadan önce bu URI'den katalog bildirimi yüklemeye çalışır. Bu parametre, önceden indirilen ürün kataloğu ile düzeni önbellek oluşturulacağı çevrimdışı yükleme desteklemek için kullanılır. Bu yükleme komutu için kullanılabilir; diğer komutlar için yoksayılır. |
-| `--productId <id>` | **İsteğe bağlı** yüklenecek örnek için ürün kimliği. Normal yükleme koşullarında bu önceden doldurulmaz. |
-| `--wait` | **İsteğe bağlı**: İşlem çıkış kodu döndürmeden önce yükleme tamamlanana kadar bekler. Bu, burada bir gruptan dönüş kodu işlemek için tamamlamak bir yükleme için beklemesi gerekir otomatik otomatikleştirme yüklemelerine durumunda faydalı olur. |
-| `--locale <language-locale>` | **İsteğe bağlı**: yükleyici için kullanıcı arabirimi görüntüleme dilini değiştirmek. Ayar kalıcı. Daha fazla bilgi için bkz: [dil yerel ayarları listesi](#list-of-language-locales) bu sayfadaki bölümü.|
-| `--cache` | **15.2, isteğe bağlı olarak yeni**: varsa, paketler için sonraki onarım yüklendikten sonra tutulacak. Bu, sonraki yükler, onarır veya değişiklikler için kullanılacak genel ilkesini geçersiz kılar. Varsayılan İlke önbellek paketler içindir. Bu kaldırma komutu için göz ardı edilir. Nasıl okumak için [devre dışı bırakmak veya paket önbellek taşıma](disable-or-move-the-package-cache.md) daha fazla bilgi için. |
-| `--nocache` | **15.2, isteğe bağlı olarak yeni**: varsa, paketleri kaldıktan sonra yüklü ya da onarılması silinir. Bunlar, yalnızca gerekli ve yeniden kullandıktan sonra silinen yeniden yüklenir. Bu, sonraki yükler, onarır veya değişiklikler için kullanılacak genel ilkesini geçersiz kılar. Varsayılan İlke önbellek paketler içindir. Bu kaldırma komutu için göz ardı edilir. Nasıl okumak için [devre dışı bırakmak veya paket önbellek taşıma](disable-or-move-the-package-cache.md) daha fazla bilgi için. |
-| `--noUpdateInstaller` | **15.2, isteğe bağlı olarak yeni**: varsa, yükleyici sessiz belirtildiğinde kendini güncelleştirmesini engeller. Yükleyici komut başarısız ve yükleyici güncelleştirme gerekli olduğunda noUpdateInstaller ile sessiz belirtilmişse sıfır olmayan çıkış kodu döndürür. |
-| `--noWeb` | **15.3, isteğe bağlı olarak yeni**: Kurulum şimdi Internet'ten yükleme herhangi bir içerik indirir.  Yüklenmekte olan tüm içeriği çevrimdışı bir düzende kullanılabilir olması gerekir.  Düzen içeriği eksik kurulum başarısız olur.  Daha fazla bilgi için bkz: [bir ağ yüklemesinden dağıtma](create-a-network-installation-of-visual-studio.md). |
+| `--channelId <id>` | **İsteğe bağlı**: Yüklenecek örneği için kanal kimliği. Diğer komutlar için gözardı yükleme komutu için gerekli olana `--installPath` belirtilir. |
+| `--channelUri <uri>` | **İsteğe bağlı**: Kanal bildirimi URI'si. Güncelleştirme gerekli değil, `--channelUri` varolmayan bir dosyaya işaret edebilir. (örneğin,--channelUri C:\doesntExist.chman) Bu yükleme komutu için kullanılabilir; diğer komutlar için göz ardı edilir. |
+| `--installChannelUri <uri>` | **İsteğe bağlı**: Yükleme için kullanılacak kanal bildirimi URI'si. URI tarafından belirtilen `--channelUri` (olması gereken belirtilen `--installChannelUri` belirtilir) güncelleştirmeleri algılamak için kullanılır. Bu yükleme komutu için kullanılabilir; diğer komutlar için göz ardı edilir. |
+| `--installCatalogUri <uri>` | **İsteğe bağlı**: Yükleme için kullanılacak Kataloğu bildirimi URI'si. Belirtilmişse, kanal Yöneticisi, yükleme kanal bildiriminde URI'yi kullanmadan önce bu URI'den Kataloğu bildirimi indirmeyi dener. Bu parametre, daha önce indirilip ürün kataloğu ile Düzen önbelleği oluşturulacağı çevrimdışı yükleme desteği için kullanılır. Bu yükleme komutu için kullanılabilir; diğer komutlar için göz ardı edilir. |
+| `--productId <id>` | **İsteğe bağlı** yüklenecek örneği için ürün kimliği. Bu, normal yükleme koşullarında doldurulur. |
+| `--wait` | **İsteğe bağlı**: İşlem çıkış kodu döndürmeden önce yükleme tamamlanana kadar bekler. Bir yükleme dönüş kodu, işlemek için tamamlanması için beklemesi gereken yere otomatikleştirerek yüklemelerine istediğinizde yararlıdır. |
+| `--locale <language-locale>` | **İsteğe bağlı**: Yükleyici için kullanıcı arabirimi görüntüleme dilini değiştirin. Ayarı kalıcıdır. Daha fazla bilgi için [dil yerel ayarlar listesini](#list-of-language-locales) bu sayfadaki bölümü.|
+| `--cache` | **15.2, isteğe bağlı olarak yeni**: Varsa, paketler için sonraki onarım yüklendikten sonra tutulacak. Bu, sonraki yükler, onarır veya değişiklikler için kullanılacak için genel ilke ayarını geçersiz kılar. Önbellek paketleri olan varsayılan ilkedir. Bu kaldırma komutu için göz ardı edilir. Nasıl olduğunu okuyun için [devre dışı bırakın veya paket önbelleğini taşıma](disable-or-move-the-package-cache.md) daha fazla bilgi için. |
+| `--nocache` | **15.2, isteğe bağlı olarak yeni**: Varsa, paketler kaldıktan sonra ya da onarılması işlemlerinin hangisinin yapılacağını silinir. Bunlar, yalnızca gerekli ve yeniden kullanımdan sonra silinmesi yeniden indirilir. Bu, sonraki yükler, onarır veya değişiklikler için kullanılacak için genel ilke ayarını geçersiz kılar. Önbellek paketleri olan varsayılan ilkedir. Bu kaldırma komutu için göz ardı edilir. Nasıl olduğunu okuyun için [devre dışı bırakın veya paket önbelleğini taşıma](disable-or-move-the-package-cache.md) daha fazla bilgi için. |
+| `--noUpdateInstaller` | **15.2, isteğe bağlı olarak yeni**: Varsa, sessiz belirtildiğinde kendini güncelleştirmesini yükleyici engeller. Yükleyici komutu başarısız ve yükleyici güncelleştirme gerekli olduğunda noUpdateInstaller sessiz ile belirtilmişse sıfır olmayan çıkış kodu döndürür. |
+| `--noWeb` | **15.3, isteğe bağlı olarak yeni**: Kurulum, artık Internet'ten yüklüyor herhangi bir içeriği indirir.  Yüklenmekte olan tüm içeriği çevrimdışı bir düzen içinde kullanılabilir olmalıdır.  Düzen içeriği eksik kurulum başarısız olur.  Daha fazla bilgi için [ağ yüklemesinden dağıtma](create-a-network-installation-of-visual-studio.md). |
+| `--path <name>=<path>` | **15.7, isteğe bağlı olarak yeni**: Yükleme için özel yükleme yollarını belirtmek için kullanılır. Adları paylaşılan desteklenen bir yolu, önbellek ve yükleyin. |
+| `--path cache=<path>` | **15.7, isteğe bağlı olarak yeni**: Yükleme dosyalarının indirileceği konumu kullanır. Bu konum yalnızca Visual Studio'nun yüklü olduğu ilk kez ayarlanabilir. Örnek: `--path cache="C:\VS\cache"` |
+| `--path shared=<path>` | **15.7, isteğe bağlı olarak yeni**: Yan yana Visual Studio yüklemeleri için paylaşılan dosyaları içerir. Bazıları bu ayarı geçersiz ve başka bir sürücüye yükleme sırasında bazı araçları ve SDK'lar bu sürücüdeki bir konuma yükleyin. Örnek: `--path shared="C:\VS\shared"` <br><br>Önemli: Bu, Visual Studio'nun yüklü olduğu ilk kez ve yalnızca bir kez ayarlanabilir. |
+| `--path install=<path>` | **15.7, isteğe bağlı olarak yeni**: Eşdeğer `–-installPath`. Özellikle, `--installPath "C:\VS"` ve `--path install="C:\VS"` eşdeğerdir. Aynı anda bunlardan yalnızca biri kullanılabilir. |
 
 ## <a name="list-of-workload-ids-and-component-ids"></a>İş yükü kimlikleri ve bileşen listesi
 
-İş yükü ve Visual Studio ürün tarafından sıralanan Bileşen kimlikleri listesi için bkz: [Visual Studio 2017 iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası.
+İş yükü ve Bileşen kimlikleri Visual Studio ürüne göre sıralı bir listesi için bkz. [Visual Studio 2017 iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md) sayfası.
 
-## <a name="list-of-language-locales"></a>Dil yerel ayarları listesi
+## <a name="list-of-language-locales"></a>Dil yerel ayarlar listesi
 
 | **Dil yerel ayar** | **Dil** |
 | ----------------------- | --------------- |
-| cs-CZ | Çekçe |
-| de-DE | Almanca |
-| en-US | İngilizce |
-| es-ES | İspanyolca |
-| fr-FR | Fransızca |
-| it-IT | İtalyanca |
-| ja-JP | Japonca |
-| ko-KR | Kore Dili |
-| pl-PL | Lehçe |
-| pt-BR | Portekizce - Brezilya |
-| ru-RU | Rusça |
-| tr-TR | Türkçe |
-| zh-CN | Çince - Basitleştirilmiş |
-| zh-TW | Geleneksel Çince- |
+| Cs-cz | Çekçe |
+| De-de | Almanca |
+| En-us | İngilizce |
+| ES-es | İspanyolca |
+| FR-fr | Fransızca |
+| İt-IT | İtalyanca |
+| Ja-jp | Japonca |
+| Ko-kr | Korece |
+| PL-pl | Lehçe |
+| PT-br | Portekizce - Brezilya |
+| RU-ru | Rusça |
+| Tr-tr | Türkçe |
+| Zh-cn | Çince - Basitleştirilmiş |
+| Zh-tw | Çince - Geleneksel |
 
 ## <a name="error-codes"></a>Hata kodları
 
-İşlemin sonucunu bağlı olarak `%ERRORLEVEL%` ortam değişkeni aşağıdaki değerlerden birine ayarlanır:
+İşlemin sonucu bağlı olarak `%ERRORLEVEL%` ortam değişkeni aşağıdaki değerlerden birine ayarlanır:
 
 | **Değer** | **Sonuç** |
 | --------- | ---------- |
 | 0 | İşlem başarıyla tamamlandı |
 | 1602 | İşlem iptal edildi |
-| 3010 | İşlem başarıyla tamamlandı ancak kullanmadan önce yükleme yeniden başlatma gerekiyor |
+| 3010 | İşlem başarıyla tamamlandı ancak kullanmadan önce yükleme, yeniden başlatma gerekiyor. |
 | 5004 | İşlem iptal edildi |
 | 5007 | İşlem engellendi - bilgisayar gereksinimleri karşılamıyor |
-| Diğer | Hata koşulu oluştu - daha fazla bilgi için günlükleri denetleyin |
+| Diğer | Hata durumu oluştu - daha fazla bilgi için günlüklere bakın |
 
-Her bir işlemin birkaç günlük dosyalarında oluşturur `%TEMP%` yüklemenin ilerleme durumunu gösteren dizin. Klasör tarihe göre sıralayın ve ile başlayan dosyalarını aramaya `dd_bootstrapper`, `dd_client`, ve `dd_setup` önyükleyici için yükleyici uygulama ve Kurulum altyapısı, sırasıyla.
+Her işlemin birkaç günlük dosyalarında oluşturur `%TEMP%` yüklemenin ilerleme durumunu belirten bir dizin. Klasör tarihe göre sıralayın ve ile başlayan dosyaları arayın `dd_bootstrapper`, `dd_client`, ve `dd_setup` önyükleyici için yükleyici uygulama ve Kurulum altyapısı, sırasıyla.
 
-## <a name="get-support"></a>Destek alma
-
-Bazı durumlarda, şeyler yanlış gidebilirsiniz. Visual Studio yüklemenizin başarısız olursa bkz [sorun giderme Visual Studio 2017 yükleme ve yükseltme sorunlarını](troubleshooting-installation-issues.md) sayfası. Sorun giderme adımlarını hiçbiri yardımcı, bize yükleme Yardımı (yalnızca İngilizce) için canlı sohbet tarafından başvurabilirsiniz. Ayrıntılar için bkz [Visual Studio destek sayfası](https://www.visualstudio.com/vs/support/#talktous).
-
-Birkaç diğer destek seçenekleri şunlardır:
-
-* Ürün sorunları bize bildirebilirsiniz [bir sorun bildirmek](../ide/how-to-report-a-problem-with-visual-studio-2017.md) hem Visual Studio Yükleyicisi ve Visual Studio IDE görünür aracı.
-* Üzerinde bir ürün önerisi bizimle paylaşın [UserVoice](https://visualstudio.uservoice.com/forums/121579).
-* Ürün sorunlarını izlemek ve yanıtlar bulmak [Visual Studio Geliştirici topluluğu](https://developercommunity.visualstudio.com/).
-* ABD ve diğer Visual Studio geliştiriciler aracılığıyla devreye [Gitter topluluk Visual Studio konuşmada](https://gitter.im/Microsoft/VisualStudio). (Bu seçenek gerektiren bir [GitHub](https://github.com/) hesabı.)
+[!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-* [Visual Studio 2017 yükleme için komut satırı parametresi örnekleri](command-line-parameter-examples.md)
-* [Visual Studio 2017 çevrimdışı yüklemesini oluşturma](create-an-offline-installation-of-visual-studio.md)
-* [Yanıt dosyası ile Visual Studio yüklemesini otomatikleştirme](automated-installation-with-response-file.md)
+- [Visual Studio 2017 yüklemesi için komut satırı parametresi örnekleri](command-line-parameter-examples.md)
+- [Visual Studio 2017'in çevrimdışı yüklemesini oluşturma](create-an-offline-installation-of-visual-studio.md)
+- [Yanıt dosyası ile Visual Studio yüklemesini otomatikleştirme](automated-installation-with-response-file.md)
+- [Visual Studio 2017 iş yükü ve Bileşen kimlikleri](workload-and-component-ids.md)

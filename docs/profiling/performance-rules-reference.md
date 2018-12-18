@@ -15,6 +15,7 @@ ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31579855"
 ---
 # <a name="performance-rules-reference"></a>Performans Kuralları Başvurusu
 Profil Araçları performans kuralları, ek uyarılar ve uygulamanızın performansı hakkında bilgi sağlar. Performans kuralları, Windows ve işlemci performans sayaçları gibi kaynaklardan toplanan profil çalıştırmada verileri analiz edin. Kural iletileri hata çıktı penceresinde görünür [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] tümleşik geliştirme ortamı. İleti aşağıdaki kural düzeylerinden birini listelenmiştir:  

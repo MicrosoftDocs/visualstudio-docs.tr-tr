@@ -1,6 +1,7 @@
 ---
 title: 'CA2126: Tür bağlantı talepleri devralma taleplerini gerektirir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,21 @@ ms.assetid: 07b604e5-5579-4df9-a578-dadd0d8370a7
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CPP
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: a9ee3817d445144c3c83756cda07da2ed41adee6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 82fe9045173e65b24204a3b04e12b6a7f655c651
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548406"
 ---
 # <a name="ca2126-type-link-demands-require-inheritance-demands"></a>CA2126: Tür bağlantı talepleri devralma taleplerini gerektirir
+
 |||
 |-|-|
 |TypeName|TypeLinkDemandsRequireInheritanceDemands|
@@ -30,15 +37,15 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Ortak korumasız tür korumalı bir bağlantı isteği ile geçersiz kılınabilir bir yöntemi vardır ve türünün veya yöntemi ile bir devralma isteğe korunur.
+ Bir genel tür korumalı bir bağlantı isteği ile geçersiz kılınabilir bir yöntemi vardır ve ne tür ne de yöntem miras talebiyle korunmaktadır.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bir bağlantı isteği bir yöntem veya bildiri türü üzerinde belirtilen izninin anında arayanlar yönteminin gerektirir. Bir devralma isteğe bağlı bir yöntem olarak belirtilen izninizin olması için bir geçersiz kılma yöntemi gerektirir. Bir devralma isteğe bağlı bir türü olarak belirtilen izne sahip bir türetilen sınıf gerektirir.
+## <a name="rule-description"></a>Kural açıklaması
+ Bağlantı talebi üzerinde bir yöntemi veya metodu bildirim türünün belirtilen izni olması şu anki çağırıcı yönteminin gerektirir. Bir devralma talebi yöntemi belirtilen iznine sahip bir geçersiz kılma yöntemi gerektirir. Türe göre bir devralma talebi belirtilen iznine sahip bir türetilen sınıf gerektirir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için türü veya yöntemi bir devralma isteğe bağlı bağlantı isteğe bağlı olarak aynı izni ile güvenli hale getirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için tür veya yöntemin bağlantı talebi aynı izin için devralma talebi ile güvenli hale getirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
@@ -57,5 +64,7 @@ ms.lasthandoff: 04/19/2018
 
  [CA2123: Geçersiz kılan bağlantı talepleri taban ile özdeş olmalıdır](../code-quality/ca2123-override-link-demands-should-be-identical-to-base.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Güvenli kodlama yönergeleri](/dotnet/standard/security/secure-coding-guidelines) [bağlantı talepleri](/dotnet/framework/misc/link-demands)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Güvenli Kodlama Yönergeleri](/dotnet/standard/security/secure-coding-guidelines)
+- [Bağlantı talepleri](/dotnet/framework/misc/link-demands)

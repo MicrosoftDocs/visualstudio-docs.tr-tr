@@ -19,22 +19,23 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1f189e9f3f85fd53941aa51cf2a2d969b9c9ed19
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f56cca9fa637efaa66b6dcab4716d4a1900aa61d
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44278651"
 ---
 # <a name="error-debugging-failed-because-integrated-windows-authentication-is-not-enabled"></a>Hata: Tümleşik Windows Kimlik Doğrulaması Etkinleştirilmediğinden Hata Ayıklama Başarısız
-Hata ayıklama isteyen kullanıcı kimlik doğrulaması, kimlik doğrulama hatası tarafından engellendi. Bir Web uygulaması veya XML Web Hizmetleri içinde adım çalıştığınızda oluşabilir. Bu hatanın bir nedeni, tümleşik Windows kimlik doğrulamasının etkinleştirilmemiş oluşturur. Etkinleştirmek için "Tümleşik Windows kimlik doğrulamasını etkinleştirmek için." adımları izleyin.  
+Hata ayıklama isteyen kullanıcının kimlik doğrulaması, kimlik doğrulama hatası tarafından engellendi. Bir Web uygulaması veya bir XML Web hizmeti adımlamak çalıştığınızda ortaya çıkabilir. Bu hatanın bir nedeni, tümleşik Windows kimlik doğrulamasının etkin olduğunu. Bunu etkinleştirmek için "Tümleşik Windows kimlik doğrulamasını etkinleştirmek için." bulunan adımları izleyin.  
   
- Tümleşik Windows kimlik doğrulaması etkinleştirildi ve bu hata görünmeye devam eder, bu hata nedeniyle kaynaklanır mümkündür **Windows etki alanı sunucuları için Özet kimlik doğrulaması** etkinleştirilir. Bu durumda, ağ yöneticinize başvurmanız gerekir.  
+ Tümleşik Windows kimlik doğrulaması etkin ve bu hatayı görünmeye devam eder, çünkü bu hataya neden olduğunu mümkün **Windows etki alanı sunucuları için Özet kimlik doğrulaması** etkinleştirilir. Bu durumda, ağ yöneticinize başvurmanız gerekir.  
   
 ### <a name="to-enable-integrated-windows-authentication"></a>Tümleşik Windows kimlik doğrulamasını etkinleştirmek için  
   
-1.  Web sunucusuna bir yönetici hesabı kullanarak oturum açın.  
+1.  Web sunucusunda bir yönetici hesabını kullanarak oturum açın.  
   
-2.  Tıklatın **Başlat** ve ardından **Denetim Masası**.  
+2.  Tıklayın **Başlat** ve ardından **Denetim Masası**.  
   
 3.  İçinde **Denetim Masası**, çift **Yönetimsel Araçlar**.  
   
@@ -42,37 +43,37 @@ Hata ayıklama isteyen kullanıcı kimlik doğrulaması, kimlik doğrulama hatas
   
 5.  Web sunucusu düğümüne tıklayın.  
   
-     A **Web siteleri** klasörü altında sunucu adı açılır.  
+     A **Web siteleri** klasörü altında sunucu adına açar.  
   
-6.  Kimlik doğrulama veya tek tek Web sitelerinin tüm Web siteleri için yapılandırabilirsiniz. Tüm Web siteleri için kimlik doğrulamasını yapılandırmak için sağ **Web siteleri** klasörünü ve ardından **özellikleri**. Tek bir Web sitesi kimlik doğrulamasını yapılandırmak için açık **Web siteleri** klasörü, tek tek Web sitesini sağ tıklatın ve ardından **özellikleri**.  
+6.  Kimlik doğrulaması için tüm Web sitelerinin veya tek tek Web siteleri için yapılandırabilirsiniz. Tüm Web siteleri için kimlik doğrulaması yapılandırmak için sağ **Web siteleri** klasörünü ve ardından **özellikleri**. Tek bir Web sitesi kimlik doğrulamasını yapılandırmaya yönelik açık **Web siteleri** klasörü, tek tek Web sitesini sağ tıklatın ve ardından **özellikleri**.  
   
      **Özellikleri** iletişim kutusu görüntülenir.  
   
-7.  Tıklatın **dizin güvenliği** sekmesi.  
+7.  Tıklayın **dizin güvenliği** sekmesi.  
   
-8.  İçinde **anonim erişim ve kimlik doğrulama denetimi** 'yi tıklatın **Düzenle**.  
+8.  İçinde **anonim erişim ve kimlik doğrulama denetimi** bölümünde **Düzenle**.  
   
      **Kimlik doğrulama yöntemleri** iletişim kutusu görüntülenir.  
   
 9. Altında **kimlik doğrulamalı erişim**seçin **tümleşik Windows kimlik doğrulaması**.  
   
-10. Tıklatın **Tamam** kapatmak için **kimlik doğrulama yöntemleri** iletişim kutusu.  
+10. Tıklayın **Tamam** kapatmak için **kimlik doğrulama yöntemleri** iletişim kutusu.  
   
-11. Tıklatın **Tamam** kapatmak için **özellikleri** iletişim kutusu.  
+11. Tıklayın **Tamam** kapatmak için **özellikleri** iletişim kutusu.  
   
 12. Kapat **Internet Information Services** penceresi.  
   
 ### <a name="to-enable-integrated-windows-authentication-in-windows-vistaiis-7"></a>Windows Vista/IIS 7'de tümleşik Windows kimlik doğrulamasını etkinleştirmek için  
   
-1.  Web sunucusuna bir yönetici hesabı kullanarak oturum açın.  
+1.  Web sunucusunda bir yönetici hesabını kullanarak oturum açın.  
   
-2.  Windows kimlik doğrulaması ve II6 Yönetim uyumluluğu, daha önce bu, aşağıdaki adımları izleyerek yapmadıysanız Aç:  
+2.  Daha önce aşağıdaki adımları izleyerek yapmadıysanız, Windows kimlik doğrulaması ve II6 Yönetim uyumluluğu açın:  
   
-    1.  Tıklatın **Başlat**, tıklatın **Denetim Masası** ve ardından **programlar**.  
+    1.  Tıklayın **Başlat**, tıklayın **Denetim Masası** ve ardından **programlar**.  
   
-    2.  Altında **programlar ve Özellikler**, tıklatın **kapatma Windows özelliklerini aç veya Kapat**.  
+    2.  Altında **programlar ve Özellikler**, tıklayın **kapatma Windows özelliklerini aç veya Kapat**.  
   
-         Kullanıcı erişim denetimi iletişim kutusu belirir ve devam etmek izin ister.  
+         Kullanıcı erişim denetimi iletişim kutusu görünür ve devam etmek izin ister.  
   
     3.  
               **Devam**'a tıklayın.  
@@ -81,41 +82,41 @@ Hata ayıklama isteyen kullanıcı kimlik doğrulaması, kimlik doğrulama hatas
   
     4.  Özellik listesinde genişletin **Internet Information Services** düğümü.  
   
-    5.  Altında **Internet Information Services**, genişletin **World Wide Web Hizmetleri** düğümü.  
+    5.  Altında **Internet Information Services**, genişletme **World Wide Web Hizmetleri** düğümü.  
   
-    6.  Altında **World Wide Web Hizmetleri**, tıklatın **güvenlik**.  
+    6.  Altında **World Wide Web Hizmetleri**, tıklayın **güvenlik**.  
   
-    7.  Tıklatın **Windows kimlik doğrulaması**.  
+    7.  Tıklayın **Windows kimlik doğrulaması**.  
   
-    8.  Altında **Internet Information Services**, genişletin **Web yönetimi araçları** düğümü.  
+    8.  Altında **Internet Information Services**, genişletme **Web yönetimi araçları** düğümü.  
   
-    9. Altında **Web yönetimi araçları**, genişletin **IIS 6 Yönetim uyumluluğu** düğümü ve select **IIS 6 metatabanı ve IIS 6 yapılandırma uyumluluğu** onay kutusu.  
+    9. Altında **Web yönetimi araçları**, genişletin **IIS 6 Yönetim uyumluluğu** düğüm ve select **IIS 6 metatabanı ve IIS 6 yapılandırma uyumluluğu** onay kutusu.  
   
     10. Altında **Web yönetimi araçları**seçin **IIS Yönetim Konsolu** tıklatıp **Tamam.**  
   
     11. Bu değişikliklerin devreye girmesi bilgisayarı yeniden başlatın.  
   
-3.  Tıklatın **Başlat** ve ardından **Denetim Masası**.  
+3.  Tıklayın **Başlat** 'a tıklayarak **Denetim Masası**.  
   
-4.  Tıklatın **Klasik Görünüm**, çift tıklayın ve ardından **Yönetimsel Araçlar**.  
+4.  Tıklayın **Klasik Görünüm**ve çift tıklatarak **Yönetimsel Araçlar**.  
   
 5.  İçinde **adı** sütun ve çift **Internet Information Services (IIS) Yöneticisi'ni**.  
   
-6.  İçinde **bağlantıları** sütunu, sunucu düğümünü genişletin.  
+6.  İçinde **bağlantıları** sütun, sunucu düğümünü genişletin.  
   
-     A **Web siteleri** klasörü altında sunucu adı açılır.  
+     A **Web siteleri** klasörü altında sunucu adına açar.  
   
-7.  Genişletme **Web siteleri** düğümü ve tümleşik Windows kimlik doğrulamasını etkinleştirmek istediğiniz Web sitesini tıklatın.  
+7.  Genişletin **Web siteleri** düğüm ve tümleşik Windows kimlik doğrulamasını etkinleştirmek istediğiniz Web sitesini tıklayın.  
   
-8.  Orta bölmede başlığı seçtiğiniz Web sitesi adını değiştirir. Bu bölmede altında **IIS** başlığı çift **kimlik doğrulama**.  
+8.  Orta bölme başlığının seçtiğiniz Web sitesi adını değiştirir. Bu bölmede altında **IIS** başlığı çift **kimlik doğrulaması**.  
   
-     Bölmenin başlık değişiklikler **kimlik doğrulama**.  
+     Bölmenin başlığı değişiklikleri **kimlik doğrulaması**.  
   
-9. İçinde **kimlik doğrulaması** bölmesi, **adı** sütun, sağ **Windows kimlik doğrulaması** ve ardından **etkinleştirmek**.  
+9. İçinde **kimlik doğrulaması** bölmesinde, **adı** sütun sağ **Windows kimlik doğrulaması** ve ardından **etkinleştirmek**.  
   
-10. Kapat **Internet Information Services (IIS) Yöneticisi** penceresi.  
+10. Kapat **Internet Information Services (IIS) Yöneticisi'ni** penceresi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Web uygulamalarında hata ayıklama: Hatalar ve sorun giderme](../debugger/debugging-web-applications-errors-and-troubleshooting.md)   
  [Microsoft Özet kimlik doğrulaması](http://go.microsoft.com/fwlink/?LinkId=77938)   
- [Windows Vista ile IIS 7.0 Web uygulamalarını ve Visual Studio çalıştırma](http://msdn.microsoft.com/Library/262a82ac-dd0e-4096-86c6-fb463e88be66)
+ [Windows Vista ile IIS 7.0 Web uygulamaları ve Visual Studio çalıştıran](https://msdn.microsoft.com/Library/262a82ac-dd0e-4096-86c6-fb463e88be66)

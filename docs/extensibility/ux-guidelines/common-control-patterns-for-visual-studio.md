@@ -1,5 +1,5 @@
 ---
-title: Visual Studio için ortak denetim düzenleri | Microsoft Docs
+title: Visual Studio için yaygın denetim desenleri | Microsoft Docs
 ms.custom: ''
 ms.date: 04/26/2017
 ms.technology:
@@ -11,23 +11,24 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8383537a7e9d49f79e98da4dd95a3474803315d8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e10fdcea9819c34735f285c78a0e2ebb0650f64a
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39512323"
 ---
-# <a name="common-control-patterns-for-visual-studio"></a>Visual Studio için ortak denetim desenleri
+# <a name="common-control-patterns-for-visual-studio"></a>Visual Studio için yaygın denetim desenleri
 ##  <a name="BKMK_CommonControls"></a> Ortak Denetimler  
   
 ### <a name="overview"></a>Genel Bakış  
-Ortak Denetimler Visual Studio kullanıcı arabiriminde çoğunluğu oluşturur. Visual Studio arabiriminde kullanılan en yaygın denetimleri izlemelidir [Windows Masaüstü etkileşim kuralları](https://msdn.microsoft.com/library/windows/desktop/dn742399.aspx). Bu konu için Visual Studio özeldir ve özel durumlar veya bu Windows yönergeleri büyütmek ayrıntıları ele alınmaktadır.  
+Visual Studio kullanıcı arabiriminde çoğunu ortak denetimleri oluşturur. Visual Studio arabiriminde kullanılan en yaygın denetimleri izlemelidir [Windows Masaüstü etkileşim kuralları](/windows/desktop/uxguide/controls). Bu konuda, Visual Studio için özeldir ve özel durumlar veya bu Windows yönergeleri büyütmek ayrıntıları kapsar.  
   
-#### <a name="common-controls-in-this-topic"></a>Bu konudaki ortak denetimler  
+#### <a name="common-controls-in-this-topic"></a>Bu konuda ortak denetimleri  
   
 -   [Kaydırma çubukları](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_Scrollbars)  
   
--   [Giriş alanları](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_InputFields)  
+-   [Giriş alanlarını](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_InputFields)  
   
 -   [Birleşik giriş kutusu ve aşağı açılır listeler](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_ComboBoxesAndDropDowns)  
   
@@ -37,356 +38,356 @@ Ortak Denetimler Visual Studio kullanıcı arabiriminde çoğunluğu oluşturur.
   
 -   [Grup çerçeveler](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_GroupFrames)  
   
--   [Metin denetimleri](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_TextControls)  
+-   [Metin denetimi](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_TextControls)  
   
--   [Düğmeleri ve bağlar](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_ButtonsAndHyperlinks)  
+-   [Düğmeler ve köprüleri](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_ButtonsAndHyperlinks)  
   
 -   [Ağaç görünümleri](../../extensibility/ux-guidelines/common-control-patterns-for-visual-studio.md#BKMK_TreeViews)  
   
 #### <a name="visual-style"></a>Görsel stili  
-Denetimlere stil ekleme yaparken dikkate alınması gereken ilk denetimleri konulu kullanıcı Arabiriminde kullanılacak olan şeydir. Standart kullanıcı arabiriminde denetimler konulu dışı kullanıcı Arabirimi ve izlemeniz gereken [normal Windows Masaüstü stili](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742399\(v=vs.85\).aspx), yeniden şablonlu değildir ve varsayılan denetim görünümlerini görüntülenip anlamına gelir.  
+Denetimleri stillendirme yaparken dikkate alınması gereken ilk şey, denetimleri temalı kullanıcı Arabiriminde kullanılacak olan ' dir. Standart kullanıcı arabiriminde denetimlerinin konulu olmayan kullanıcı Arabirimi ve izlemelidir [normal Windows Masaüstü stili](/windows/desktop/uxguide/controls), yeniden şablonlu değildir ve varsayılan denetim görünümlerini görünmelidir anlamına gelir.  
   
--   **Standart (yardımcı programı) iletişim kutuları:** değil tema uygulanabilir. RE şablonu yok. Temel denetim stili varsayılanları kullanın.  
+-   **Standart (yardımcı programı) iletişim kutuları:** temalı değil. Şablonu yeniden kullanmayın. Temel denetim stili varsayılan ayarları kullanın.  
   
--   **Aracı windows, belge düzenleyicileri, tasarım yüzeyleriyle ve tema uygulanabilir iletişim kutuları:** renk hizmetini kullanarak özel konulu görünümünü kullanın.  
+-   **Aracı, windows, belge düzenleyicileri, tasarım yüzeyleriyle ve temalı iletişim kutuları:** renk hizmetini kullanan özel temalı görünümünü kullanın.  
   
 ###  <a name="BKMK_Scrollbars"></a> Kaydırma çubukları  
- Kaydırma çubukları izlemelidir [Windows için ortak etkileşim desenler kaydırma çubukları](https://msdn.microsoft.com/en-us/library/windows/desktop/bb787527\(v=vs.85\).aspx) içerik bilgilerle engagement'ta sürece, Kod düzenleyicisinde ister.  
+ Kaydırma çubukları izlemelidir [Windows için ortak etkileşim desenleri kaydırma çubukları](/windows/desktop/Controls/about-scroll-bars) ile içerik bilgilerini genişletilmiş sürece, Kod Düzenleyicisi'nde ister.  
   
-###  <a name="BKMK_InputFields"></a> Giriş alanları  
- Tipik etkileşim davranışını izleyin [metin kutuları için Windows Masaüstü yönergeleri](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742442\(v=vs.85\).aspx).  
+###  <a name="BKMK_InputFields"></a> Giriş alanlarını  
+ Tipik etkileşim davranışını izleyin [metin kutuları için Windows Masaüstü yönergeleri](/windows/desktop/uxguide/ctrl-text-boxes).  
   
 #### <a name="visual-style"></a>Görsel stili  
   
--   Giriş alanlarının yardımcı programı iletişim kutularında stilde döndürmemelidir. Denetime iç temel stil kullanın.  
+-   Giriş alanlarını yardımcı programı iletişim kutularında stillere sahip olmamalıdır. Denetimin iç temel stili kullanın.  
   
--   Konulu giriş alanları, yalnızca konulu iletişim kutuları ve aracı windows kullanılmalıdır.  
+-   Temalı giriş alanlarını yalnızca temalı iletişim kutuları ve araç pencerelerinde de kullanılmalıdır.  
   
-#### <a name="specialized-interactions"></a>Özel etkileşimler  
+#### <a name="specialized-interactions"></a>Özelleştirilmiş etkileşimleri  
   
--   Salt okunur alanları gri (devre dışı) arka plan varsayılan (etkin) ön plan ancak sahip olur.  
+-   Salt okunur alanların varsayılan (etkin) ön plan ancak gri (devre dışı) arkaplanla görüntülenir.  
   
--   Alanların gerekli  **\<gerekli >** olarak Filigran belgeler bunların içinde. Nadir durumlarda dışında bir arka plan rengini değiştirmemeniz gerekir.  
+-   Alanların gerekli  **\<gerekli >** olarak Filigran belgeler bunları içinde. Nadir durumlarda dışında bir arka plan rengini değiştirmemesi gerekir.  
   
--   Hata doğrulama: bkz [bildirimleri ve Visual Studio için ilerleme durumu](../../extensibility/ux-guidelines/notifications-and-progress-for-visual-studio.md)  
+-   Doğrulama hatası: bkz [bildirimler ve Visual Studio için ilerleme durumu](../../extensibility/ux-guidelines/notifications-and-progress-for-visual-studio.md)  
   
--   Bunlar gösterilir penceresinin genişliğini uygun değildir veya rasgele bir yolu gibi uzun bir alanın uzunluğu eşleşecek şekilde içeriğin sığması için girdi alanlarının boyutlandırılmalıdır. Uzunluk alanında kaç karakterlere izin ilişkin sınırlamalar, kullanıcıya bir göstergesi olabilir.  
+-   Giriş alanlarını, bunlar gösterilir penceresinin genişliğini uygun değil ya da bir yol gibi uzun bir alan uzunluğunu rasgele eşleştirilecek içeriği sığdıracak şekilde boyutlandırılmalıdır. Uzunluğu bir göstergesi kullanıcıya karakterlerinin kaçının tutulacağını alana izin için sınırlamalar olabilir.  
   
-     ![Yanlış giriş alanı uzunluğu: ad bu uzun olacağını düşüktür. ] (../../extensibility/ux-guidelines/media/0707-01_incorrectinputfieldcontrol.png "0707 01_IncorrectInputFieldControl")<br />Yanlış giriş alanı uzunluğu: ad bu uzun olacağını düşüktür.
+     ![Hatalı giriş alan uzunluğu: adı bu kadar uzun olacağını düşüktür. ](../../extensibility/ux-guidelines/media/0707-01_incorrectinputfieldcontrol.png "0707 01_IncorrectInputFieldControl")<br />Hatalı giriş alan uzunluğu: adı bu kadar uzun olacağını düşüktür.
   
-     ![Giriş alanı uzunluğu düzeltin: beklenen içerik için makul bir genişliği giriş alanıdır. ] (../../extensibility/ux-guidelines/media/0707-02_correctinputfieldcontrol.png "0707 02_CorrectInputFieldControl")<br />Giriş alanı uzunluğu düzeltin: beklenen içerik için makul bir genişliği giriş alanıdır.
+     ![Giriş alan uzunluğu düzeltin: beklenen içeriğe için makul bir genişlik giriş alandır. ](../../extensibility/ux-guidelines/media/0707-02_correctinputfieldcontrol.png "0707 02_CorrectInputFieldControl")<br />Giriş alan uzunluğu düzeltin: beklenen içeriğe için makul bir genişlik giriş alandır.
   
 ###  <a name="BKMK_ComboBoxesAndDropDowns"></a> Birleşik giriş kutusu ve aşağı açılır listeler  
-Tipik etkileşim davranışını izleyin [aşağı açılır listeler ve birleşik giriş kutuları için Windows Masaüstü yönergeleri](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742404\(v=vs.85\).aspx).  
+Tipik etkileşim davranışını izleyin [açılan listeler ve birleşik giriş kutuları için Windows Masaüstü yönergeleri](/windows/desktop/uxguide/ctrl-drop).  
   
 #### <a name="visual-style"></a>Görsel stili  
   
--   Yardımcı programı iletişim kutularında, denetimi yeniden şablonu yok. Denetime iç temel stil kullanın.  
+-   Yardımcı program iletişim kutularında, denetim şablonu yeniden kullanmayın. Denetimin iç temel stili kullanın.  
   
--   UI konulu birleşik giriş kutusu ve aşağı açılan listeler denetimler için standart tema izleyin.  
+-   Kullanıcı Arabirimi teması Kombo kutularını ve açılan listeler, denetimler için standart tema izleyin.  
   
 #### <a name="layout"></a>Düzen  
-Birleşik giriş kutusu ve aşağı açılan listeler, bunlar gösterilir penceresinin genişliğini uygun değildir veya rasgele bir yolu gibi uzun bir alanın uzunluğu eşleşecek şekilde içeriğin sığması için boyutlandırılmalıdır.  
+Birleşik giriş kutularını ve açılan listeler, bunlar gösterilir penceresinin genişliğini uygun değil ya da bir yol gibi uzun bir alan uzunluğunu rasgele eşleştirilecek içeriği sığdıracak şekilde boyutlandırılmalıdır.  
   
-![Yanlış: açılan genişliği görüntülenecek içerik için çok uzun. ] (../../extensibility/ux-guidelines/media/0707-03_incorrectdropdownlayout.png "0707 03_IncorrectDropDownLayout")<br />Yanlış: açılan genişliği görüntülenecek içerik için çok uzun.
+![Yanlış: açılan genişliğini görüntülenecek içeriği için çok uzun. ](../../extensibility/ux-guidelines/media/0707-03_incorrectdropdownlayout.png "0707 03_IncorrectDropDownLayout")<br />Yanlış: açılan genişliğini görüntülenecek içeriği için çok uzun.
   
-![Doğru: açılan çeviri artışa izin verme, ancak değil gereksiz yere uzun boyutlandırılır. ] (../../extensibility/ux-guidelines/media/0707-04_correctdropdownlayout.png "0707 04_CorrectDropDownLayout")<br />Doğru: açılan çeviri artışa izin verme, ancak değil gereksiz yere uzun boyutlandırılır. 
+![Doğru: açılan çeviri büyüme için izin ver, ancak gereksiz yere değil uzun boyutlandırılır. ](../../extensibility/ux-guidelines/media/0707-04_correctdropdownlayout.png "0707 04_CorrectDropDownLayout")<br />Doğru: açılan çeviri büyüme için izin ver, ancak gereksiz yere değil uzun boyutlandırılır. 
   
 ###  <a name="BKMK_CheckBoxes"></a> Onay kutuları  
-Tipik etkileşim davranışını izleyin [onay kutuları için Windows Masaüstü yönergeleri](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742401\(v=vs.85\).aspx).  
+Tipik etkileşim davranışını izleyin [Windows Masaüstü yönergeleri için onay kutularını](/windows/desktop/uxguide/ctrl-check-boxes).  
   
 #### <a name="visual-style"></a>Görsel stili  
   
--   Yardımcı programı iletişim kutularında, denetimi yeniden şablonu yok. Denetime iç temel stil kullanın.  
+-   Yardımcı program iletişim kutularında, denetim şablonu yeniden kullanmayın. Denetimin iç temel stili kullanın.  
   
--   Konulu kullanıcı Arabiriminde, standart tema denetimler için onay kutularını izleyin.  
+-   Temalı kullanıcı Arabiriminde standart tema denetimler için onay kutularını izleyin.  
   
-#### <a name="specialized-interactions"></a>Özel etkileşimler  
+#### <a name="specialized-interactions"></a>Özelleştirilmiş etkileşimleri  
   
 -   Bir onay kutusu ile etkileşimi hiçbir zaman bir iletişim kutusu açılır veya başka bir bölümüne gitmek gerekir.  
   
--   Onay kutuları metnin ilk satırını taban çizgisi ile hizalar.  
+-   Onay kutularını metnin ilk satırı taban çizgisi ile hizalar.  
   
-     ![Yanlış: onay kutusu metni ortalanır. ] (../../extensibility/ux-guidelines/media/0707-05_incorrectcheckboxalign.png "0707 05_IncorrectCheckBoxAlign")<br />Yanlış: onay kutusu metni ortalanır.
+     ![Yanlış: onay kutusu metni ortalanır. ](../../extensibility/ux-guidelines/media/0707-05_incorrectcheckboxalign.png "0707 05_IncorrectCheckBoxAlign")<br />Yanlış: onay kutusu metni ortalanır.
   
-     ![Doğru: onay kutusunu metninin ilk satırı ile hizalanır. ] (../../extensibility/ux-guidelines/media/0707-06_correctcheckboxalign.png "0707 06_CorrectCheckBoxAlign")<br />Doğru: onay kutusunu metninin ilk satırı ile hizalanır.
+     ![Doğru: onay kutusunun metnin ilk satırı ile hizalanır. ](../../extensibility/ux-guidelines/media/0707-06_correctcheckboxalign.png "0707 06_CorrectCheckBoxAlign")<br />Doğru: onay kutusunun metnin ilk satırı ile hizalanır.
   
 ###  <a name="BKMK_RadioButtons"></a> Radyo düğmeleri  
-Tipik etkileşim davranışını izleyin [radyo düğmeleri için Windows Masaüstü yönergeleri](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742436\(v=vs.85\).aspx).  
+Tipik etkileşim davranışını izleyin [radyo düğmeleri için Windows Masaüstü yönergelerini](/windows/desktop/uxguide/ctrl-radio-buttons).  
   
 #### <a name="visual-style"></a>Görsel stili  
-Yardımcı programı iletişim kutularında, stil radyo düğmeleri yapın. Denetime iç temel stil kullanın.  
+Yardımcı program iletişim kutularında, stil radyo düğmeleri yapın. Denetimin iç temel stili kullanın.  
   
-#### <a name="specialized-interactions"></a>Özel etkileşimler  
-Grup ayrım sıkı bir düzende korumak gerekli olmadıkça radyo seçimler kapsamak için bir grup çerçevesini kullanmak gerekli değildir.  
+#### <a name="specialized-interactions"></a>Özelleştirilmiş etkileşimleri  
+Grup ayrım sıkı bir düzende korumak gerekli olmadıkça, radyo seçenekleri kapsamak için grubu çerçeve kullanmak gerekli değildir.  
   
 ###  <a name="BKMK_GroupFrames"></a> Grup çerçeveler  
-Tipik etkileşim davranışını izleyin [Grup çerçeveler için Windows Masaüstü yönergeleri](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742405\(v=vs.85\).aspx).  
+Tipik etkileşim davranışını izleyin [grubu çerçeveler için Windows Masaüstü yönergeleri](/windows/desktop/uxguide/ctrl-group-boxes).  
   
 #### <a name="visual-style"></a>Görsel stili  
-Yardımcı programı iletişim kutularında, grubu çerçeve stili yok. Denetime iç temel stil kullanın.  
+Yardımcı program iletişim kutularında, grubu çerçeve stili yok. Denetimin iç temel stili kullanın.  
   
 #### <a name="layout"></a>Düzen  
   
--   Grup ayrım sıkı bir düzende korumak gerekli olmadıkça radyo seçimler kapsamak için bir grup çerçevesini kullanmak gerekli değildir.  
+-   Grup ayrım sıkı bir düzende korumak gerekli olmadıkça, radyo seçenekleri kapsamak için grubu çerçeve kullanmak gerekli değildir.  
   
--   Hiçbir zaman tek bir denetim için bir grup çerçevesi kullanın.  
+-   Hiçbir zaman tek bir denetim için bir grup çerçevesini kullanın.  
   
--   Bazen, bir grup çerçeve kapsayıcısını yerine yatay bir kural kullanmanız için kabul edilebilir.  
+-   Bazen, yatay bir kural grubu çerçeve kapsayıcısını yerine kullanmak için kabul edilebilir.  
   
-##  <a name="BKMK_TextControls"></a> Metin denetimleri
+##  <a name="BKMK_TextControls"></a> Metin denetimi
 
 ### <a name="static-text-fields"></a>Statik metin alanları
 
-Bir statik metin alanı salt okunur bilgileri gösterir ve kullanıcı tarafından seçilemez. Panoya kopyalamak için kullanıcının isteyebileceği herhangi bir metin için kullanmaktan kaçının. Ancak, salt okunur statik metin durumundaki bir değişikliği yansıtacak şekilde değiştirebilirsiniz. Aşağıda, kök Namespace metin kutusunun üstüne yapılan değişiklikleri yansıtacak şekilde bilgi Grup değişikliklerini altındaki çıkış adı statik metin örnekte.
+Bir statik metin alanı salt okunur bilgiler sunar ve kullanıcı tarafından seçilemez. Panoya kopyalamak için kullanıcının, isteyebileceği herhangi bir metin için kullanmaktan kaçının. Ancak, salt okunur, statik metin durumundaki bir değişikliği yansıtacak şekilde değiştirebilirsiniz. Örnekte aşağıdaki kök Namespace metin kutusunun üstüne yapılan değişiklikleri yansıtacak şekilde bilgi grubu değişiklikleri altındaki çıkış adı statik metin.
 
 Statik metin bilgileri görüntülemek için iki yolu vardır.
 
-Statik metin kendi herhangi kapsama olmadan bir iletişim kutusu açtığında hiçbir gruplandırma çakışması olduğunu olabilir. Ek satırları kutusunun gerçekten gerekli olup olmadığına karar. Bir örnek aşağıda gösterildiği gibi bir dizin yolu bir Grup satırı tarafından oluşturulan bir bölümünün altında görüntülenir:  
+Statik metin herhangi bir kapsama olmadan bir iletişim kutusu kendi açtığında gruplandırma çakışma yok olabilir. Ek satırların kutusunun gerçekten gerekli olup olmadığına karar. Bir örnek aşağıda gösterildiği gibi bir dizin yolu altında bir Grup satırı tarafından oluşturulan bir bölüm görüntülenir:  
 
-![Statik metin bilgisi metin denetimlerinde](../../extensibility/ux-guidelines/media/DisplayingStaticText.png "DisplayingStaticText.png")<br />Statik metin bilgisi metin denetimlerinde
+![Statik metin bilgi metin denetimlerinde](../../extensibility/ux-guidelines/media/DisplayingStaticText.png "DisplayingStaticText.png")<br />Statik metin bilgi metin denetimlerinde
 
-Bir iletişim burada diğer gruplandırılmış alanlar var ve bilgilerin kapsama okunabilirliği yardımcı ve ne zaman bir bölüm bulunabilir gizli veya gösterilen (olarak **Özellikler penceresini** açıklama bölmesinde) veya benzer kullanıcı Arabirimi ile tutarlı olmasını istediğiniz statik metin kutusunun içine koyun. Bu grup kutusu tek bir kural olmalıdır ve ile renkli `ButtonShadow`:
+Bir iletişim kutusu burada gruplandırılmış diğer alanlar var ve bilgilerin kapsama okunabilirliği yardımcı ve ne zaman bir bölümü gizli veya gösterilen (olarak **Özellikler penceresi** açıklama bölmesi) veya benzer kullanıcı Arabirimi ile tutarlı olmasını istediğiniz statik metin kutusunun içine yerleştirin. Bu grup kutusu tek bir kural olmalıdır ve ile renkli `ButtonShadow`:
 
-![Statik metin özellikleri penceresinde](../../extensibility/ux-guidelines/media/PropertiesWindow.png "PropertiesWindow.png")<br />Özellikleri penceresinde statik metin
+![Özellikler penceresinde statik metin](../../extensibility/ux-guidelines/media/PropertiesWindow.png "PropertiesWindow.png")<br />Özellikler penceresinde statik metin
 
 ### <a name="read-only-text-box"></a>Salt okunur metin kutusu
 
-Bu alanın içindeki metni seçin, ancak düzenlemek değil izin verir. Bu metin kutuları ile normal 3-b düz uç tarafından katýna bir `ButtonShadow` dolgu.
+Bu, kullanıcının alanı içindeki metni seçin, ancak düzenleme olmadan izin verir. Bu metin kutuları ile normal 3-b düz uç tarafından katýna bir `ButtonShadow` dolgu.
 
-Bir metin kutusu etkin hale gelebilir (düzenlenebilir) bir kullanıcı denetimi/onay kutusunun işaretini kaldırdığınızda veya seçme/seçimini radyo düğmesi gibi ilişkili bir denetim olarak değiştiren olduğunda. Örneğin, **Araçları &gt; seçenekleri** aşağıda gösterilen sayfa **giriş sayfası** metin kutusu etkin hale geldiği zaman **Varsayılanı kullan** onay kutusunun işaretli olduğundan.
+Bir metin kutusu etkin hale gelebilir (düzenlenemez), bir kullanıcı denetimi/işaretini onay kutusu veya radyo düğmesini seçerek/seçimini gibi ilişkili bir denetim değiştirir. Örneğin, **Araçları &gt; seçenekleri** sayfası aşağıda gösterilen **giriş sayfası** metin kutusu etkin hale gelir ne zaman **Varsayılanı kullan** onay kutusunun işaretli olduğundan.
 
-![Salt okunur metin kutusu, etkin ve etkin durumları gösteren](../../extensibility/ux-guidelines/media/ReadOnlyTextBox.png "ReadOnlyTextBox.png")<br />Etkin ve etkin durumları gösteren salt okunur metin kutusu
+![Salt okunur metin kutusu, etkin ve etkin durum gösteriliyor](../../extensibility/ux-guidelines/media/ReadOnlyTextBox.png "ReadOnlyTextBox.png")<br />Salt okunur metin kutusu, etkin ve etkin durum gösteriliyor
 
-### <a name="using-text-in-dialogs"></a>İletişim kutularında metin kullanma
+### <a name="using-text-in-dialogs"></a>Metin kutularında kullanma
 
-Anahtar yönergeleri iletişim kutuları metin:
+Metin kutularındaki için anahtar yönergeleri:
 
--   Metin kutuları, liste kutuları ve çerçeveleri unthemed iletişim kutuları için etiketleri bir fiil ile başlatmak, yalnızca ilk sözcüğün ilk büyük olması ve noktayla bitmelidir.
+-   Metin kutuları ve liste kutuları unthemed kutularındaki çerçeveler için etiketleri ile fiili başlatma, yalnızca ilk sözcük bir ilk büyük olması ve iki nokta ile bitemez.
 
-    > Metin denetimlerinde konulu iletişim kutularını izleyin [Windows Masaüstü UX yönergeleri](https://msdn.microsoft.com/library/windows/desktop/dn742479.aspx) ve Yardım bağlantıları soru işaretleri dışında bitiş noktalama kazanmaz.
+    > Metin denetimlerinde temalı iletişim kutularını izleyin [Windows Masaüstü UX kılavuzlarına uyum](/windows/desktop/uxguide/top-violations) ve Yardım bağlantıları soru işaretleri dışında bitiş noktalama kazanmaz.
 
--   Onay kutuları ve seçenek düğmeleri için etiketleri yalnızca ilk sözcüğü bir ilk büyük bir fiil başlatmak ve bitiş noktalama işareti.
+-   Onay kutuları ve seçenek düğmeleri için etiketleri bir fiil, yalnızca ilk sözcük üzerinde bir ilk büyük başlatın ve hiçbir bitiş noktalama işareti vardır.
 
--   Düğmeler, menüler, menü öğeleri ve sekmeler için etiketleri ilk harfler büyük harf her sözcüğün (başlık harf) sahip.
+-   Düğmeler, menüler, menü öğeleri ve sekmeleri için etiketleri ilk harfleri büyük her sözcüğün (harfler büyük) sahip.
 
 -   Etiket terminolojisi diğer iletişim kutuları benzer etiketler ile tutarlı olmalıdır.
 
--   Mümkünse, bir yazıcı/yazma ya da uygulama geliştiriciye geçmeden önce metin düzenleyicisi vardır.
+-   Mümkünse, bir yazıcı/yazma veya uygulama geliştiriciye geçmeden önce metin onaylaması Düzenleyici vardır.
 
--   Tüm denetimler etiketleri dışında özel durumlarda olmalıdır hangi sekme yeterlidir.
-Yardımcı metin uygun olduğunda kullanın.
+-   Tüm denetimleri, özel durumlarda etiketleri dışında olmalıdır hangi sekme yeterlidir.
+Uygun olduğunda Yardımcısı metin kullanın.
 
-### <a name="helper-text"></a>Yardımcı metin
+### <a name="helper-text"></a>Yardımcı metni
 
-İletişim kutusu amacını anlamasına yardımcı olmak için veya hangi eylemin yapılacağını göstermek için iletişim kutularında dahil. Yardımcı metin basit iletişim kutuları alanınızda karışıklık önlemek için yalnızca gerekli olduğunda kullanılmalıdır. İki çeşit Yardımcısı metnin iletişim ve filigran ' dir.
+İletişim kutusunun amacını kullanıcının yardımcı olmak için ya da eylem için göstermek için iletişim kutularında dahil. Yardımcısı metin basit iletişim kutuları Karışıklığı önlemek için yalnızca gerekli olduğunda kullanılmalıdır. İki çeşidi Yardımcısı metin iletişim ve eşik ' dir.
 
-Yardımcı metin için ortak konumlarını izleyin ve yeni alanlara tanışın Seçici. Yardımcı metin için genel senaryolar şunlardır:
+Bulunabileceği Yardımcısı metin izleyin ve yeni alanlar giriş olarak seçici olun. Yardımcı metni için yaygın senaryolar şunlardır:
 
--   Karmaşık bir iletişim kutusu ile etkileşim konusunda ek yönü vermek için iletişim kutuları, metin Yardımcısı.
+-   Yardımcısı metin kutularındaki karmaşık bir iletişim kutusu ile etkileşim kurma konusunda ek yön vermek için.
 
--   Filigran metni boş aracı windows ya da içerik neden görünür olduğunu açıklamak için iletişim kutuları.
+-   Boş araç pencerelerini veya içerik görünür neden olduğunu açıklamak için iletişim kutularını, filigran metni.
 
--   Açıklama bölmesinde en altında ister **Özellikler penceresini**.
+-   Bir açıklama bölmesi, alt kısmında ister **Özellikler penceresi**.
 
--   Metin kullanıcı başlamak için yapması gereken eylemi açıklamak için boş bir düzenleyicide Filigran.
+-   Başlamak için kullanıcının gerçekleştirmesi gereken eylemi açıklamak için boş bir düzenleyicide metin Filigran.
   
-### <a name="dialog-helper-text"></a>İletişim yardımcı metin
+### <a name="dialog-helper-text"></a>İletişim yardımcı metni
 
-Bir kullanıcı deneyimi Tasarımcısı yardımcı metin uygun olduğunda belirlemenize yardımcı. Tasarımcı yardımcı metin yanı sıra genel içeriği göründüğü tanımlayabilirsiniz. Kullanıcı Yardımı yazma/gerçek metnini düzenle.
+Bir kullanıcı deneyimi Tasarımcısı Yardımcısı metin ne zaman uygun olduğunu belirlemek yardımcı olabilir. Tasarımcı Yardımcısı metin yanı sıra genel içeriği nerede görüneceğini tanımlayabilirsiniz. Kullanıcı Yardımı metinde yazma/düzenleyebilir.
 
 ### <a name="watermarks"></a>Filigranlar
 
-İletişim kutuları hazırladığı biraz farklı Filigran kılavuzları yararlanır. Bir iletişim kutusu özellikle çok sayıda kullanıcı Arabirimi öğeleri ile (etiketleri, ipucu metnini, düğmeler ve diğer kapsayıcı denetimleri metinle), meşgul görünebilir çünkü bunlar siyah ekranda göründüğünde, filigranları göze koyu gri daha iyi (VSColor: `ButtonShadow`). Genellikle bir denetimi beyaz bir arka plan içeren bir liste kutusu gibi içinde Filigran görüntülenir (VSColor: `Window`).
+İletişim kutuları biraz farklı Filigran yönergelerden yararlanır. Bir iletişim kutusu özellikle çok sayıda kullanıcı Arabirimi öğeleri ile (etiketler, ipucu metni, düğmeleri ve diğer kapsayıcı denetimleri metin içeren), meşgul görünebilir, çünkü bu siyah görüntülendiğinde, filigranlar göze daha iyi koyu gri (VSColor: `ButtonShadow`). Genellikle beyaz arka plan ile bir liste kutusu gibi bir denetimi içinde bir filigran görünür (VSColor: `Window`).
 
--   Metin koyu gri görünür (VSColor: `ButtonShadow`). Ancak, bir orta gri veya renkli diğer Filigran görünüyorsa, (VSColor: `ButtonFace`) arka plan ve ilgilendiren okunabilirlik hakkında siyah metinle Git yoktur (VSColor: `WindowText`).
+-   Koyu gri renkte göründüğünü (VSColor: `ButtonShadow`). Ancak, filigran orta gri ya da diğer renkli görünürse (VSColor: `ButtonFace`) arka plan ve ilgili okunabilirlik hakkında siyah metinle Git yoktur (VSColor: `WindowText`).
 
--   Filigranlar ortalanmış veya sola. Standart tasarım kurallar hizalama kararları verirken uygulanır. Filigran arka planda seçilemez.
+-   Filigran, Orta veya sola. Hizalama kararları verirken standart Tasarım Kuralları geçerlidir. Filigran arka planda seçilemez.
 
 ![Filigran metni örneği](../../extensibility/ux-guidelines/media/WatermarkTextExample.gif)<br />Filigran metni örneği
 
 ### <a name="context-specific-dynamic-text"></a>Bağlama özgü (dinamik) metin
 
-Dinamik metin iletişim veya kalıcı olmayan UI iki yolla kullanılan biri olabilir: dinamik içerik olarak veya dinamik bir etiket.
+Dinamik metin kullanılan bir iletişim kutusu veya geçici kullanıcı Arabirimi iki yöntemden biri olabilir: dinamik bir etiket olarak veya dinamik içerik olarak.
 
--   Dinamik etiketi: bir ortak dinamik metin öğeleri ve sağa kılavuzda görüntülenen bu öğeler için özellikler listesini içeren bir iletişim kutusu gibi daha fazla bilgi için seçili öğeyi teklif açıklayıcı panelinde kullanılır. Böylece sol tarafta bir öğe seçildiğinde, sağ kılavuza belirli o öğeye ilişkin bilgileri gösterir ve özellik ızgarasının etiketi dinamik olabilir.
+-   Dinamik etiketi: bir ortak dinamik metin öğeleri ve özellikleri kılavuz sağında gösterilen bu öğelerin listesini içeren bir iletişim kutusu gibi daha fazla bilgi için seçili öğeyi teklif açıklayıcı panellerinde kullanılır. Sol taraftan bir öğe seçildiğinde, sağ kılavuza bilgi için belirli bir öğeyi gösterir. böylece, özellik kılavuzunda etiketini dinamik olabilir.
 
--   Dinamik metin: Burada bu şekilde belirli bilgileri ve genel bilgileri görüntülemek gerekir, ancak bakım değil aşırı için alınması gereken durumlarda yararlı olabilir.
+-   Dinamik metin: Burada bu şekilde belirli bilgileri ve genel bilgileri görüntülemek gerekir, ancak bakım değil aşırı için gerçekleştirilmesi gereken durumlarda yararlı olabilir.
 
-Kullanıcıların bilgi kopyalama becerisini sahip olmasını istiyorsanız, salt okunur metin alanındaki dinamik metin olmalıdır.
+Bilgileri kopyalamak olanağına sahip kullanıcıların istiyorsanız, dinamik metin salt okunur metin alanında olmalıdır.
   
-##  <a name="BKMK_ButtonsAndHyperlinks"></a> Düğmeleri ve bağlar  
+##  <a name="BKMK_ButtonsAndHyperlinks"></a> Düğmeler ve köprüleri  
   
 ### <a name="overview"></a>Genel Bakış  
-Düğme ve bağlantı denetimleri (köprü) izlemelidir [köprüleri temel Windows Masaüstü yönergeler](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742406\(v=vs.85\).aspx) ifadesi, boyutlandırma ve aralık kullanım için.  
+Düğme ve bağlantı denetimleri (köprü) izlemelidir [köprüler temel Windows Masaüstü yönergeler](/windows/desktop/uxguide/ctrl-links) ifadesi, boyutlandırma hem de aralık kullanımı.  
   
 ### <a name="choosing-between-buttons-and-links"></a>Düğmeler ve bağlantıları arasında seçim yapma  
-Geleneksel olarak, düğmeleri eylemler için kullanılmış ve köprüleri gezinti için ayrılmış. Düğmeleri tüm durumlarda kullanılabilir, ancak rolü bağlantılar, düğmeler ve bağlantıları bazı koşullarda daha değiştirilebilir; böylece Visual Studio'da genişletilmiştir.  
+Geleneksel olarak, düğmeler, Eylemler için kullanılmış olan ve köprüler gezinme için ayrılmış. Her durumda düğmeler kullanılabilir, ancak düğmeler ve bağlantıları bazı koşullarda daha birbirinin yerine kullanılabilir. böylece, Visual Studio'da bağlantıları rolünü genişletildi.  
   
 Ne zaman komut düğmeleri kullanın:  
   
 -   Birincil komutları  
   
--   Giriş toplamak için kullanılan windows görüntüleme veya ikincil komutları olsa bile seçimleri, yapmak  
+-   Giriş toplamak için kullanılan windows görüntüleme veya ikincil komutları olsalar bile, seçenekleri yapma  
   
--   Yıkıcı veya geri alınamaz Eylemler  
+-   Yıkıcı veya geri alınamaz eylemleri  
   
--   Sihirbazlar ve sayfa akışları içinde taahhüt düğmeleri  
+-   Sihirbazlar ve sayfa içinde taahhüt düğme akışları  
   
-Aracı Windows komut düğmesi engellemek veya ikiden fazla sözcükler etiketi gerekiyorsa. Bağlantılar uzun etiket olabilir.  
+Komut düğmeleri araç pencerelerindeki önlemek veya ikiden fazla sözcük etiketi gerekiyorsa. Bağlantılar, uzun bir etiket olabilir.  
   
- Ne zaman kullanılacağı bağlantılarını içerir:  
+ Ne zaman bağlantıları kullanın:  
   
--   Başka bir pencere, belge veya web sayfasına gezinme  
+-   Başka bir pencere, belge veya web sayfasına gitme  
   
--   Bir uzun etiket ya da eylemi amacı açıklamak için kısa cümle gerektiren durumlar  
+-   Bir uzun etiket ya da eylem amacı açıklamak için kısa bir cümle gerektiren durumlar  
   
--   Burada bir düğme UI doldurmaya sıkı alanları sağlanan eylem yıkıcı veya geri alınamaz değil  
+-   Kullanıcı Arabirimi, bir düğme burada doldurmaya sıkı alanları sağlanan eylemi yıkıcı veya geri alınamaz değil  
   
 -   İkincil komutları durumlarda devre dışı bırakma emphasizing komutların çoğu olduğu  
   
 #### <a name="examples"></a>Örnekler  
-![Komut bir durum iletisi aşağıdaki Bilgi Çubuğu'nda kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-01_commandlinkinfobar.png "070703 01_CommandLinkInfobar")<br />Bir durum iletisi aşağıdaki Bilgi Çubuğu'nda kullanılan komutu bağlantıları
+![Komut, bir durum iletisi aşağıdaki Bilgi Çubuğu'nda kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-01_commandlinkinfobar.png "070703 01_CommandLinkInfobar")<br />Bir durum iletisi aşağıdaki Bilgi Çubuğu'nda kullanılan komutunu bağlantıları
   
-![CodeLens açılan penceresinde kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-02_linksincodelens.png "070703 02_LinksInCodeLens")<br />CodeLens açılan penceresinde kullanılan bağlantıları
+![CodeLens açılan pencerede kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-02_linksincodelens.png "070703 02_LinksInCodeLens")<br />CodeLens açılan pencerede kullanılan bağlantılar
   
-![Burada düğmeleri çok fazla dikkat çekmek ikincil komutları için kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-03_linksassecondarycommands.png "070703 03_LinksAsSecondaryCommands")<br />Burada düğmeleri çok fazla dikkat çekmek ikincil komutları için kullanılan bağlantıları
+![Burada düğmeleri çok fazla dikkat çekebilir ikincil komutlarında kullanılan bağlantıları](../../extensibility/ux-guidelines/media/070703-03_linksassecondarycommands.png "070703 03_LinksAsSecondaryCommands")<br />Burada düğmeleri çok fazla dikkat çekebilir ikincil komutlarında kullanılan bağlantılar
   
 ### <a name="common-buttons"></a>Ortak düğmeleri  
   
 #### <a name="text"></a>Metin  
-Yazma yönergeleri izleyin [UI metin ve terminolojiyi](../../extensibility/ux-guidelines/ui-text-and-help-for-visual-studio.md#BKMK_UITextAndTerminology).  
+Yazma faydalandığından [UI metni ve terminoloji](../../extensibility/ux-guidelines/ui-text-and-help-for-visual-studio.md#BKMK_UITextAndTerminology).  
   
 #### <a name="visual-style"></a>Görsel stili  
   
 ##### <a name="standard-unthemed"></a>Standart (unthemed)  
-Visual Studio'da çoğu düğmeleri yardımcı programı iletişim kutularında görünür ve değil stilde. Bunlar işletim sistemi tarafından gerektiği şekilde düğmelerin standart görünümünü yansıtmalıdır.  
+Visual Studio'da çoğu düğmeler yardımcı programı iletişim kutularında görüntülenir ve değil biçimlendirilmiş. Bunlar işletim sistemi tarafından belirlenen düğmelerin standart görünümünü yansıtmalıdır.  
   
-##### <a name="themed"></a>Teması  
-Bazı durumlarda, düğmeleri stilde UI içinde kullanılabilir ve bu düğmeleri uygun şekilde biçimlendirilmiş gerekir. Bkz: [iletişim kutularını](../../extensibility/ux-guidelines/application-patterns-for-visual-studio.md#BKMK_Dialogs) konulu denetimleri hakkında bilgi için.  
+##### <a name="themed"></a>Tema  
+Bazı durumlarda, düğmeler, stil uygulanmış kullanıcı Arabirimi içinde kullanılabilir ve bu düğmeler uygun şekilde biçimlendirilmiş olmalıdır. Bkz: [iletişim kutuları](../../extensibility/ux-guidelines/application-patterns-for-visual-studio.md#BKMK_Dialogs) temalı denetimleri hakkında bilgi için.  
   
 ### <a name="special-buttons"></a>Özel düğmeler  
   
-#### <a name="browse-buttons"></a>Düğmeleri Gözat...  
-**[Gözat...]**  düğmeleri kılavuzları, iletişim kutuları ve aracı windows ve diğer kalıcı olmayan bir kullanıcı Arabirimi öğeleri kullanılır. Bunlar, kullanıcı değeri denetime doldurma yardımcı olur. bir seçici görüntüler. Bu düğme, uzun ve kısa iki çeşidi vardır.  
+#### <a name="browse-buttons"></a>Düğmeler Gözat...  
+**[Gözat...]**  düğmeler, kılavuzlar, iletişim kutuları ve araç pencerelerini ve kalıcı olmayan diğer UI öğeleri kullanılır. Bunlar, kullanıcı denetime bir değer doldurma yönetmenize yardımcı olan bir seçici görüntülenir. Bu düğme, uzun ve kısa iki çeşidi vardır.  
   
-![Uzun [Gözat...] düğmesi](../../extensibility/ux-guidelines/media/070703-04_browselong.gif "070703 04_BrowseLong")<br />Uzun [Gözat...] düğmesi
+![Uzun [Gözat...] düğmesine](../../extensibility/ux-guidelines/media/070703-04_browselong.gif "070703 04_BrowseLong")<br />Uzun [Gözat...] düğmesine
   
-![Yalnızca üç nokta kısa [...] düğmesi](../../extensibility/ux-guidelines/media/070703-05_browseshort.gif "070703 05_BrowseShort")<br />Yalnızca üç nokta kısa [...] düğmesi
+![Yalnızca nokta kısa [...] düğmesine](../../extensibility/ux-guidelines/media/070703-05_browseshort.gif "070703 05_BrowseShort")<br />Yalnızca nokta kısa [...] düğmesine
   
 Ne zaman yalnızca üç nokta kısa düğmesini kullanın:  
   
--   Varsa birden fazla uzun **[Gözat...]**  zaman göz atmak için birkaç alanlar izin gibi bir iletişim kutusu düğmesini. Kısa kullanmak **[...]**  bu durum tarafından oluşturulan kafa karıştırıcı erişim tuşları önlemek her düğmesi (**& Gözat** ve **B & özatın** aynı iletişim).  
+-   Varsa birden fazla uzun **[Gözat...]**  göz atmak için çeşitli alanları ne zaman izin gibi bir iletişim kutusu düğmesi. Kısa kullanın **[...]**  düğmesini her bu durum tarafından oluşturulan kafa karıştırıcı erişim anahtarlarını önlemek için (**& Gözat** ve **B & özat** aynı iletişim kutusunda).  
   
--   Sıkı bir iletişim kutusu veya uzun düğmesini koyma makul bir yer olduğunda.  
+-   Sıkı bir iletişim kutusu veya uzun düğmesi koymak için makul bir yerde olduğunda.  
   
--   Düğme bir kılavuz denetiminde görüneceğini.  
+-   Bir grid denetiminin düğmesi görünür değilse.  
   
-Düğme kullanma için yönergeler:  
+Düğmeyi kullanarak yönergeleri:  
   
--   Erişim tuşu kullanmayın. Klavyeyi kullanarak erişmek için kullanıcının bitişik denetiminden sekme gerekir. Herhangi bir Gözat düğmesini hemen doldurur alan sonra kalan şekilde sekme sırası olduğundan emin olun. İlk dönemden altındaki bir alt çizgi hiçbir zaman kullanmayın.  
+-   Bir erişim anahtarı kullanmayın. Klavyeyi kullanarak erişmek için kullanıcı bitişik denetiminden sekme gerekir. Herhangi bir Gözat düğmesi hemen doldurur alan sonra kalan, sekme sırasını olduğundan emin olun. İlk dönemden altında bir alt çizgi hiçbir zaman kullanmayın.  
   
--   Microsoft Active Accessibility (MSAA) ayarlamak **adı** özelliğine **Gözat...**  , ekran şekilde (üç nokta dahil olmak üzere) okuyucular, "Gözat" ve "nokta nokta nokta" veya değil "Dönem-Dönem-Dönem." okur Yönetilen denetimler için bu ayarı anlamına gelir **AccessibleName** özelliği.  
+-   Microsoft etkin erişilebilirliği (MSAA) kümesi **adı** özelliğini **Gözat...**  ekranında, bu nedenle (üç nokta dahil olmak üzere) okuyucular bunu "Gözatma türü" ve değil "dot nokta nokta" veya "Dönem Dönem-süresi." olarak okur Yönetilen denetimleri için bu ayarı anlamına gelir **AccessibleName** özelliği.  
   
--   Hiçbir zaman bir üç nokta kullanmayın **[...]**  Gözat eylem dışında her şey için düğmesi. Örneğin, gerekirse bir **[yeni...]**  düğmesi, ancak iletişim kutusunun tasarlanması gerekir metin için yeterli alan yok.  
+-   Üç nokta kullanmamanız **[...]**  Gözat eylemi dışındaki düğmesi. Örneğin, gerekirse bir **[yeni...]**  düğmesini ancak iletişim kutusunun tasarlanması gerekir sonra metin için yeterli alan yok.  
   
-##### <a name="sizing-and-spacing"></a>Boyutlandırma ve aralığı  
-![Düğmeler [Gözat...] boyutlandırma: standart sürümünü 75 x 23 piksel, kısa sürüm 26 x 23 piksel](../../extensibility/ux-guidelines/media/070703-06_browsesizing.png "070703 06_BrowseSizing")<br />Düğmeler [Gözat...] boyutlandırma
+##### <a name="sizing-and-spacing"></a>Boyutlandırma ve aralık  
+![Düğmeler [Gözat...] boyutlandırma: standart sürüm 75 x 23 piksel, kısa sürüm 26 x 23 piksel](../../extensibility/ux-guidelines/media/070703-06_browsesizing.png "070703 06_BrowseSizing")<br />Düğmeler [Gözat...] boyutlandırma
   
-![Aralık [Gözat...] düğmeleri: ilgili denetim ve standart Gözat düğmesi 7 piksel aralığı, arasındaki boşluğu ilgili denetim ve kısa Gözat düğmesini 5 piksel](../../extensibility/ux-guidelines/media/070703-07_browsespacing.png "070703 07_BrowseSpacing")<br />Aralık [Gözat...] düğmeleri
+![Aralığı [Gözat...] düğmeleri: standart Gözat düğmesi 7 piksel ve ilgili denetim arasındaki aralık arasındaki boşluğu ilgili denetim ve kısa Gözat düğmesini 5 piksel](../../extensibility/ux-guidelines/media/070703-07_browsespacing.png "070703 07_BrowseSpacing")<br />Aralığı [Gözat...] düğmeleri
   
 #### <a name="graphical-buttons"></a>Grafik düğmeleri  
-Bazı düğmeleri her zaman bir grafik görüntüsünü kullanabilir ve hiçbir zaman alanından tasarruf etmek ve Yerelleştirme sorunları önlemek için metni içeren gerekir. Bunlar genellikle alan seçiciler ve diğer sıralanabilir listelerinde kullanılır.  
+Bazı düğmeleri, her zaman bir grafik görüntüsünü kullanın ve hiçbir zaman alanından tasarruf etmek ve Yerelleştirme sorunları önlemek için metni ekleyin. Bunlar, alan seçicileri ve diğer sıralanabilir listelerinde sıklıkla kullanılır.  
   
-> **Not:** kullanıcınız (hiçbir erişim tuşları vardır) bu düğmeleri sekmesinde, bu nedenle bunları duyarlı bir sırada yerleştirin. Harita `name` sürer ve böylece ekran okuyucular doğru düğmesi eylemi yorumlama eyleme düğmesinin özelliği.  
+> **Not:** kullanıcınız (hiçbir erişim anahtarları vardır) Bu düğme için sekmesinde, bu nedenle bunları mantıklı bir sırada yerleştirin. Harita `name` sürer ve böylece ekran okuyucular düzgün düğmesi eylemi yorumlama eylem düğmenin özelliği.  
   
 | İşlev | Düğme |  
 | --- | --- |  
-| Ekle | ![Grafik "Ekle" düğmesi](../../extensibility/ux-guidelines/media/070703-08_buttonadd.png "070703 08_ButtonAdd") |
-| Kaldır | ![Grafik "Kaldır" düğmesine](../../extensibility/ux-guidelines/media/070703-09_buttonremove.png "070703 09_ButtonRemove") |
+| Ekle | ![Grafik "Ekle" düğmesini](../../extensibility/ux-guidelines/media/070703-08_buttonadd.png "070703 08_ButtonAdd") |
+| Kaldır | ![Grafik "Kaldır" düğmesi](../../extensibility/ux-guidelines/media/070703-09_buttonremove.png "070703 09_ButtonRemove") |
 | Tümünü Ekle | ![Grafik "Tümünü Ekle" düğmesi](../../extensibility/ux-guidelines/media/070703-10_buttonaddall.png "070703 10_ButtonAddAll") |
-| Tümünü Kaldır | ![Grafik "Tümünü Kaldır" düğmesini](../../extensibility/ux-guidelines/media/070703-11_buttonremoveall.png "070703 11_ButtonRemoveAll") |
-| Yukarı Taşı | ![Grafik "Yukarı Taşı" düğmesini](../../extensibility/ux-guidelines/media/070703-12_buttonmoveup.png "070703 12_ButtonMoveUp") |
-| Aşağı Taşı | ![Grafik "Aşağı Taşı" düğmesini](../../extensibility/ux-guidelines/media/070703-13_buttonmovedown.png "070703 13_ButtonMoveDown") |
+| Tümünü Kaldır | ![Grafik "Tümünü Kaldır" düğmesi](../../extensibility/ux-guidelines/media/070703-11_buttonremoveall.png "070703 11_ButtonRemoveAll") |
+| Yukarı Taşı | ![Grafik "Yukarı Taşı" düğmesi](../../extensibility/ux-guidelines/media/070703-12_buttonmoveup.png "070703 12_ButtonMoveUp") |
+| Aşağı Taşı | ![Grafik "Aşağı Taşı" düğmesi](../../extensibility/ux-guidelines/media/070703-13_buttonmovedown.png "070703 13_ButtonMoveDown") |
 | Sil | ![Grafik "Sil" düğmesini](../../extensibility/ux-guidelines/media/070703-14_buttondelete.png "070703 14_ButtonDelete") |
   
-##### <a name="sizing-and-spacing"></a>Boyutlandırma ve aralığı  
-Grafik düğmeleri kısa aynıdır için boyutlandırma **[Gözat...]**  düğmesi (26 x 23 piksel cinsinden):  
+##### <a name="sizing-and-spacing"></a>Boyutlandırma ve aralık  
+Grafik bir düğme kısa aynıdır için boyutlandırma **[Gözat...]**  düğmesine (26 x 23 piksel cinsinden):  
   
-![Grafik görüntüsünün düğmesine, ile ve saydam rengi gösteren olmadan görünümünü](../../extensibility/ux-guidelines/media/070703-15_graphicalbuttonspacing.png "070703 15_GraphicalButtonSpacing")<br />Grafik görüntüsünün düğmesine, olan ve olmayan saydam rengi gösteren görünüm
+![Grafik Resmi saydam rengi gösteren olmadan ve düğmesine görünümünü](../../extensibility/ux-guidelines/media/070703-15_graphicalbuttonspacing.png "070703 15_GraphicalButtonSpacing")<br />Grafik Resmi saydam rengi gösteren olmadan ve düğmesine görünümünü
   
-### <a name="hyperlinks"></a>Köprüler  
-Köprüler Yardım konusu, kalıcı iletişim veya Sihirbazı'nı açma gibi Gezinti tabanlı eylemler için uygundur. Köprü komutu için kullanılırsa, her zaman için kullanıcı Arabirimi görünür ve belirgin bir değişiklik görüntülemelidir. Genel olarak, (kaydetme, iptal ve Sil gibi) bir eylem yürütme Eylemler daha iyi bir düğmesini kullanarak bildirilir.  
+### <a name="hyperlinks"></a>Köprüleri  
+Köprüler bir Yardım konusu, kalıcı iletişim kutusu veya Sihirbazı açma gibi Gezinti tabanlı eylemler için uygundur. Köprü komutu için kullanılıyorsa, her zaman görünür ve belirgin bir değişiklik için kullanıcı Arabirimi görüntülemelisiniz. Genel olarak, (, iptal, kaydetme ve silme gibi) bir eylem yürütme eylemleri daha iyi bir düğmeyi kullanarak bildirilir.  
   
-#### <a name="writing-style"></a>Yazı stili  
-İzleyin [kullanıcı arabirimi metni için Windows Masaüstü Kılavuzu](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742478\(v=vs.85\).aspx). "Bilgi daha fazla hakkında" kullanmayın "Söyleyin bana daha fazla hakkında" veya "Bu Get help" ifade. Bunun yerine, Yardım içerik tarafından yanıtlanan birincil soru bakımından Yardım bağlantı metni ifade. Örneğin, "**için Sunucu Gezgini bir sunucuya nasıl ekleyebilirim?**"  
+#### <a name="writing-style"></a>Yazma stili  
+İzleyin [Windows masaüstü kılavuzu için kullanıcı arabirimi metinlerini](/windows/desktop/uxguide/text-ui). "Bilgi daha fazla hakkında" kullanmayın "Söyleyin bana daha fazla hakkında" veya "Bu Get help" yapılar. Bunun yerine, Yardım içerik tarafından birincil sorunuzun açısından Yardım bağlantı metni tümce. Örneğin, "**Sunucu Gezgini için bir sunucu nasıl eklerim?**"  
   
 #### <a name="visual-style"></a>Görsel stili  
   
--   Köprüler her zaman kullanılması gereken [VSColor hizmet](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_TheVSColorService). Köprü doğru biçimlendirilmiş değil, kırmızı etkin olduğunda yanıp sönen veya ziyaret sonra farklı bir renk gösterir.  
+-   Köprüler her zaman kullanması gereken [VSColor hizmet](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_TheVSColorService). Köprü doğru biçimlendirilmiş değil ise kırmızı etkinken yanıp veya ziyaret sonra farklı bir renkle gösterilir.  
   
--   Bağlantı bir cümle parçası içinde tam bir cümle gibi Filigran olmadıkça durumu üzerine notlarını denetim en alt çizgiler dahil etmeyin.  
+-   Bağlantı bir cümle parça içinde tam bir cümle gibi Filigran olmadıkça durumu üzerine notlarını denetim, alt çizgiler dahil değildir.  
   
--   Alt çizgiler gidildiğinde görünür döndürmemelidir. Bunun yerine, geri bildirim bağlantısı etkin olduğunu kullanıcıya hafif renk değişikliği ve uygun bağlantıyı imleci ' dir.  
+-   Alt çizgi, üzerine gelindiğinde görünür olmaması gerekir. Bunun yerine, bağlantı etkin olduğunu kullanıcıya geri bildirim hafif rengi değiştirme ve uygun bağlantıyı imleci ' dir.  
   
 ##  <a name="BKMK_TreeViews"></a> Ağaç görünümleri  
   
-Üst-alt gruplar halinde karmaşık düzenlemek için bir yöntem listeler ağaç görünümleri sağlar. Bir kullanıcı genişletin veya ortaya veya temel alınan alt öğeleri gizlemek için üst gruplar daraltın. Ağaç görünümü içinde her öğe, daha fazla eylem sağlamak için seçilebilir.  
+Ağaç görünümleri, karmaşık düzenlemek için bir yol üst-alt gruplar halinde listeler sağlar. Bir kullanıcı genişletebilir veya üst grupları Göster ya da temel alınan alt öğeleri gizle daraltabilirsiniz. Daha fazla eylem sağlamak için her öğe ağacı görünümü içinde seçilebilir.  
   
 ###  <a name="BKMK_TreeViewVisualStyle"></a> Ağaç görünümü görsel stili  
   
-#### <a name="expanders"></a>Genişleticileri  
-Ağaç görünümü denetimleri, Windows ve Visual Studio tarafından kullanılan genişletici tasarımı için uygun olmalıdır. Her düğüm genişletici denetimi ortaya temel alınan öğeleri veya gizlemek için kullanır. Genişletici denetimi kullanarak, Windows ve Visual Studio içinde farklı ağaç görünümleri karşılaşabileceğiniz kullanıcılar için tutarlılık sağlar.  
+#### <a name="expanders"></a>Genişleticisi  
+Ağaç görünümü denetimleri, genişletici tasarım Windows ve Visual Studio tarafından kullanılan uymalıdır. Her düğüm göster veya gizle temel alınan öğeleri için bir genişletici denetimi kullanır. Genişletici denetimi kullanarak, Windows ve Visual Studio içinde farklı ağaç görünümlerini karşılaşabileceğiniz kullanıcılar için tutarlılık sağlar.  
   
-![Doğru: ağaç görünümü düğümünün genişletici denetimi kullanarak uygun stili](../../extensibility/ux-guidelines/media/070705-1_treeviewcorrect.png "070705 1_TreeViewCorrect")<br />Doğru: ağaç görünümü düğümünün genişletici denetimi kullanarak uygun stili
+![Doğru: genişletici denetimi kullanarak ağaç görünümü düğümü uygun stilini](../../extensibility/ux-guidelines/media/070705-1_treeviewcorrect.png "070705 1_TreeViewCorrect")<br />Doğru: bir expander denetimi kullanarak ağaç görünümü düğümünün uygun stili
   
 ![Yanlış: ağaç görünümü düğümünün hatalı stili](../../extensibility/ux-guidelines/media/070705-2_treeviewincorrect1.png "070705 2_TreeViewIncorrect1")<br />Yanlış: ağaç görünümü düğümünün hatalı stili
   
 #### <a name="selection"></a>Seçim  
-Bir düğüm ağaç görünümü seçildiğinde Vurgu ağaç görünümü denetiminin tam genişlik için genişletmeniz gerekir. Bu, kullanıcıların seçmiş olduğunuz hangi öğesinin NET bir şekilde belirlemesine yardımcı olur. Seçim renkleri geçerli Visual Studio temasını yansıtmalıdır.  
+Bir düğüm ağacı görünümü içinde seçili olduğunda, vurgulama ağaç görünümü denetiminde tam genişliğine genişletmeniz gerekir. Bu, kullanıcıların seçmiş olduğunuz hangi öğe NET bir şekilde belirlemesine yardımcı olur. Renk seçimi, geçerli Visual Studio temasını yansıtmalıdır.  
   
-![Doğru: Seçili düğümün Vurgu ağaç görünümü denetiminin tüm genişliği sığar. ] (../../extensibility/ux-guidelines/media/070705-1_treeviewcorrect.png "070705 1_TreeViewCorrect")<br />Doğru: Seçili düğümün Vurgu ağaç görünümü denetiminin tüm genişliği sığar.
+![Doğru: Seçili düğümün vurgulama ağaç görünümü denetiminin tüm genişliği uyar. ](../../extensibility/ux-guidelines/media/070705-1_treeviewcorrect.png "070705 1_TreeViewCorrect")<br />Doğru: Seçili düğümün vurgulama ağaç görünümü denetiminin tüm genişliği uyar.
   
-![Yanlış: Vurgu Seçili düğümün ağaç görünümü denetiminin tüm genişliği uygun değil. ] (../../extensibility/ux-guidelines/media/070705-3_treeviewincorrect2.png "070705 3_TreeViewIncorrect2")<br />Yanlış: Vurgu Seçili düğümün ağaç görünümü denetiminin tüm genişliği uygun değil.
+![Yanlış: ağaç görünümü denetiminin tüm genişliği vurgulama Seçili düğümün sığmıyor. ](../../extensibility/ux-guidelines/media/070705-3_treeviewincorrect2.png "070705 3_TreeViewIncorrect2")<br />Yanlış: ağaç görünümü denetiminin tüm genişliği vurgulama Seçili düğümün sığmıyor.
   
 #### <a name="icons"></a>Simgeler  
-Bunlar görsel öğeleri arasındaki farklar belirlemenize yardımcı simgeleri yalnızca ağaç görünümü denetimleri kullanılmalıdır. Genel olarak, simgeler yalnızca simgeler öğeleri türlerini ayırt etmek için bilgi taşımak heterojen listelerinde kullanılmalıdır. Türdeş listesinde simgelerle parazit olarak sık görülebilir ve kaçınılmalıdır. Bu durumda grubu simgesi (üst) içindeki öğe türü iletmek. Bu kural için özel simge dinamiktir ve durumu göstermek için kullanılan olacaktır.  
+Görsel öğeler arasındaki farklar tanımlanmasına yardımcı simgeleri yalnızca ağaç görünümü denetimleri kullanılmalıdır. Genel olarak, simgeleri yalnızca hangi öğelerin türlerini ayırt etmek için bilgi simgeleri taşıyan heterojen listelerinde kullanılmalıdır. Homojen bir listedeki simgeleri kullanarak gürültü sık görülebilir ve kaçınılmalıdır. Bu durumda grubu simgesi (üst) içindeki öğe türü ifade edebilir. Bu kuralın istisnası olarak, simge dinamiktir ve durumunu göstermek için kullanılan olacaktır.  
   
 #### <a name="scroll-bars"></a>Kaydırma çubukları  
-İçerik ağaç görünümü denetiminin içinde uyuyorsa kaydırma çubukları her zaman gizli. Bunu kaydırılabilir penceresinde gizli veya yarı saydam ve ağaç görünümü içeren pencere odağa sahip olduğunda görüntülenir veya ağaç vurgulu kendisini görüntülemek için kaydırma çubuklarını için kabul edilebilir.  
+Kaydırma çubukları, her zaman içerik ağaç görünümü denetiminin içinde sığıyorsa gizlenmelidir. Gizli veya yarı saydam kaydırılabilir bir pencerede ve ağaç görünümünde içeren pencere odaklandığında görünür veya kendisi üzerinde vurgulu ağacı görüntülemek için kaydırma çubuklarını kabul edilebilir olduğu.  
   
-![Ağaç görünümü denetiminin sınırları içeriği aştığınızdan iki dikey ve yatay kaydırma çubukları görüntülenir. ] (../../extensibility/ux-guidelines/media/070705-4_scrollbars.png "070705 4_Scrollbars")<br />Ağaç görünümü denetiminin sınırları içeriği aştığınızdan iki dikey ve yatay kaydırma çubukları görüntülenir.
+![Ağaç görünümü denetiminin sınırları içeriği aştığınız için her iki yatay ve dikey kaydırma çubukları görüntülenir. ](../../extensibility/ux-guidelines/media/070705-4_scrollbars.png "070705 4_Scrollbars")<br />Ağaç görünümü denetiminin sınırları içeriği aştığınız için her iki yatay ve dikey kaydırma çubukları görüntülenir.
   
 ###  <a name="BKMK_TreeViewInteractions"></a> Ağaç görünümü etkileşimleri  
   
 #### <a name="context-menus"></a>Bağlam menüleri  
-Alt menü seçenekleri bir bağlam menüsündeki bir ağaç görünümü düğümü ortaya çıkarabilir. Bir kullanıcı bir öğeyi sağ veya menü öğesi seçili ile Windows klavyede tuşa genellikle, bu oluşur. Düğüm odağı kazanır ve seçili önemlidir. Bu alt ait hangi öğesinin tanımlamak kullanıcı yardımcı olur.  
+Bir ağaç görünümü düğümü alt menü seçenekleri bağlam menüsü ortaya çıkarabilir. Bu genellikle, bir kullanıcı bir öğeyi sağ veya seçili öğeye sahip bir Windows klavyede menü tuşuna basıldığında gerçekleşir. Düğüm odağı ve seçili önemlidir. Bu, kullanıcının alt ait hangi öğesini tanımlamaya yardımcı olur.  
   
-![Kullanıcıya bildirmek için bağlam menüsünde kazançlar odak hangi öğesi oluşturmak sahip öğe seçilmedi. ] (../../extensibility/ux-guidelines/media/070705-5_contextmenu.png "070705 5_ContextMenu")<br />Kullanıcıya bildirmek için bağlam menüsünde kazançlar odak hangi öğesi oluşturmak sahip öğe seçilmedi.
+![Kullanıcıya bildirmek için bağlam menüsünü kazançlar odağı hangi öğesi oluştur sahip öğe seçilmedi. ](../../extensibility/ux-guidelines/media/070705-5_contextmenu.png "070705 5_ContextMenu")<br />Kullanıcıya bildirmek için bağlam menüsünü kazançlar odağı hangi öğesi oluştur sahip öğe seçilmedi.
   
 #### <a name="keyboard"></a>Klavye  
-Ağaç görünümü, öğeleri seçin ve klavyeyi kullanarak düğümleri Genişlet/Daralt özelliği sağlaması gerekir. Bu gezinti bizim erişilebilirlik gereksinimleri karşıladığını sağlar.  
+Ağaç görünümünde öğeleri seçin ve klavye kullanarak düğümlerin içerik modelini genişletme/daraltma imkanı sağlamanız gerekir. Bu gezinti bizim erişilebilirlik gereksinimlerini karşıladığını sağlar.  
   
 ##### <a name="tree-view-control"></a>Ağaç görünümü denetimi  
-Visual Studio ağaç denetimleri ortak klavye gezinti izlemelisiniz:  
+Visual Studio ağaç denetimleri ortak klavye gezintisi izlemelidir:  
   
--   **Yukarı Ok:** ağacı taşıyarak öğeleri seçin  
+-   **Yukarı Ok:** ağacın taşıyarak öğeleri seçin  
   
--   **Aşağı ok:** ağaç taşıyarak öğeleri seçin  
+-   **Aşağı ok:** ağacının taşıyarak öğeleri seçin  
   
 -   **Sağ ok:** ağacında bir düğümü genişletin  
   
 -   **Sol Ok:** ağacında bir düğümü Daralt  
   
--   **Anahtarı girin:** başlatmak, yük, seçili öğe yürütme  
+-   **Anahtarı girin:** başlatmak, yükleme, yürütme seçili öğe  
   
 ##### <a name="trid-tree-view-and-grid-view"></a>Trid (ağaç görünümü ve ızgara görünümü)  
-Kılavuz içinde bir ağaç görünümü içeren karmaşık bir denetimi trid denetimdir. Ağaç gezinme genişletme ve daraltma aynı klavye komutlarını aşağıdaki eklemelerle bir ağaç görünümü olarak dikkate:  
+Bir grid'in içindeki ağaç görünümünde içeren karmaşık bir denetim trid denetimidir. Ağaç görünümünde, aşağıdaki eklemelerle olarak aynı klavye komutlarını ağacında doğru genişletme ve daraltma saygı:  
   
--   **Sağ ok:** bir düğümünü genişletin. Düğüm genişletildikten sonra sağdaki yakın sütuna gezinme devam etmelidir. Gezinti satırın sonunda durdurmanız gerekir.  
+-   **Sağ ok:** bir düğümünü genişletin. Düğüm genişletildikten sonra en yakın sütuna sağ taraftaki gezinme devam etmelidir. Gezinti satırının sonundaki durdurmanız gerekir.  
   
--   **Sekmesi:** yakın hücrenin sağdaki gitmenizi sağlar.  Satırın sonunda Gezinti sonraki satıra devam eder.  
+-   **Sekmesi:** yakın hücrenin sağ taraftaki gitmenizi sağlar.  Satırın sonunda, gezinti ve bir sonraki satıra devam eder.  
   
--   **Üst karakter + sekme:** yakın hücrenin sol gitmenizi sağlar.  Satırın başındaki Gezinti önceki satırdaki en sağdaki hücreye devam eder.  
+-   **SHIFT + Tab:** yakın hücrenin soldaki gitmenizi sağlar.  Satırın başlangıcında, gezinti önceki satırdaki en sağındaki hücreyi devam eder.  
   
-![Visual Studio trid denetiminde](../../extensibility/ux-guidelines/media/070705-6_trid.png "070705 6_Trid")<br />Visual Studio'da trid denetimi
+![Visual Studio trid denetiminde](../../extensibility/ux-guidelines/media/070705-6_trid.png "070705 6_Trid")<br />Visual Studio'da bir trid denetimi

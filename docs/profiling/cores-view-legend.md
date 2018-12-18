@@ -14,13 +14,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c10695eacdf680d247be8ef95ae14c3208ae92af
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ee31b1547f9607f54cc5db9d056b997f071633ff
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34691593"
 ---
-# <a name="cores-view-legend"></a>Çekirdekler Görünümü Göstergesi
+# <a name="cores-view-legend"></a>Çekirdekler görünümü göstergesi
 Çekirdekler görünümü göstergesi her iş parçacığı tarafından renk ve adını tanımlar. Çapraz çekirdek bağlamı anahtarlar, toplam bağlam anahtarları ve çekirdek arası İçerik Geçişi yüzdesi sayılarını gösteren sütunları içerir. Gösterge satırlarda azalan sırada listeleyin arası çekirdek bağlamı anahtarları sayısı göre sıralanır.  
   
  Zaman Çizelgesi'nde görüntülenen iş parçacığı filtrelemek için göstergede satırları seçin. Yalnızca seçili iş parçacığı zaman çizelgesinde gösterilir. Hiçbir satır seçtiyseniz, tüm satırları zaman çizelgesinde gösterilir.  
@@ -36,5 +37,5 @@ ms.lasthandoff: 04/19/2018
 |Toplam İçerik Geçişi|Bağlam toplam sayısı için belirli bir iş parçacığı örnekleme süresi boyunca geçer. Bir iş parçacığı bağlamdan (örneğin, yürütme eşitleme) bir içerik anahtarı her değiştiğinde sayılır.|  
 |Çekirdek arası İçerik Geçişi yüzdesi|Yüzde olarak arası çekirdek bağlamı anahtarları toplam bağlam geçişi sayısını tarafından sayısının bölünmesiyle hesaplanır. Daha yüksek bu yüzde, büyük arası çekirdek bağlamı yükü genel etkisini bu belirli iş parçacığı performansına geçer.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çekirdekler Görünümü](../profiling/cores-view.md)

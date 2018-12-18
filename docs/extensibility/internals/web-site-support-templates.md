@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31147134"
 ---
 # <a name="web-site-support-templates"></a>Web sitesi şablonları destekler
 [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] Web sitesi proje ve öğe şablonları, yeni Web sitesi projeler ve öğeler sıfırdan oluşturma gereksinimini ortadan kaldırarak geliştirme işlemi hızlandırmak yeniden kullanılabilir ve özelleştirilebilir Web sitesi proje ve öğe saplamalar sağlar. Daha fazla bilgi için [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] şablonları için bkz: [oluşturma proje ve öğe şablonlarını](../../ide/creating-project-and-item-templates.md).

@@ -20,61 +20,63 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 022e7f47f17292c62b851868b85773e8295a6991
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0a9c2a362a27c24daf1802482ed7a52d9f1d0f2b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49824394"
 ---
-# <a name="al-assembly-linker-task"></a>AL (Derleme Bağlayıcı) Görevi
-AL görevi AL.exe, ile dağıtılmış bir aracı sarmalar [!INCLUDE[winsdklong](../deployment/includes/winsdklong_md.md)]. Bu derleme bağlayıcı aracı, bir derlemeyi ya da modüller bir veya daha fazla dosya veya kaynak dosyaları bildirimden oluşturmak için kullanılır. Bu görevi doğrudan kullanmak gerekli olan genelde şekilde derleyicileri ve geliştirme ortamlarını zaten bu yetenekleri sağlayabilir. Derleme Bağlayıcı tek bir derleme karışık dil geliştirme üretilen olanlar gibi birden çok bileşen dosyaları oluşturmak ihtiyaç duyan geliştiriciler için kullanışlıdır. Bu görev, bir tek derleme dosyasına modülleri birleştirmek değil; tek tek modülleri hala dağıtılmış ve doğru bir şekilde yüklemek sonuçta elde edilen derleme sırada kullanılabilir olması gerekir. AL.exe hakkında daha fazla bilgi için bkz: [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).  
-  
+# <a name="al-assembly-linker-task"></a>AL (derleme bağlayıcı) görevi
+AL görevi sarmalar *AL.exe*, ile dağıtılmış bir aracı [!INCLUDE[winsdklong](../deployment/includes/winsdklong_md.md)]. Bu derleme bağlayıcı aracı, bir modül olan bir veya daha fazla veya kaynak dosyalar bildiriminden bir derleme oluşturmak için kullanılır. Bu görevi doğrudan kullanmak için gerekli değildir, dolayısıyla derleyicileri ve geliştirme ortamlarını zaten bu özellikleri sağlayabilir. Assembly Linker, karma dil geliştirme üretilen gibi birden çok bileşen dosyalarından tek bir derleme oluşturmak gereken geliştiriciler için yararlıdır. Bu görev, bir tek derleme dosyasına modülleri birleştirmek değil; tek tek modüllerinin hala dağıtılmış ve doğru bir şekilde yüklemek oluşturulan derleme için kullanılabilir olmalıdır. Daha fazla bilgi için *AL.exe*, bkz: [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker).  
+
 ## <a name="parameters"></a>Parametreler  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır `AL` görev.  
-  
-|Parametre|Açıklama|  
-|---------------|-----------------|  
-|`AlgorithmID`|İsteğe bağlı `String` parametresi.<br /><br /> Derleme bildirimini içeren dosya hariç, çok dosyalı bir derlemede tüm dosyaları karma yapmak için bir algoritma belirtir. Daha fazla bilgi için belgelerine bakın `/algid` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`BaseAddress`|İsteğe bağlı `String` parametresi.<br /><br /> Çalışma zamanında kullanıcının bilgisayarına DLL yüklenecek adresi belirtir. İşlem alanı DLL'lerde taşımanızı işletim sistemi izin vererek yerine DLL'leri taban adresi belirtirseniz, uygulamaları daha hızlı yük. Bu parametre için /base karşılık gelen[adresi](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`CompanyName`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Company` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/comp[any]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Configuration`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Configuration` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/config[uration]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Copyright`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Copyright` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/copy[right]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Culture`|İsteğe bağlı `String` parametresi.<br /><br /> Derleme ile ilişkilendirilecek için kültür dizeyini belirtir. Daha fazla bilgi için belgelerine bakın `/c[ulture]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`DelaySign`|İsteğe bağlı `Boolean` parametresi.<br /><br /> `true` yalnızca ortak anahtar derlemede yerleştirmek için; `false` tam olarak derlemeyi imzalamak için. Daha fazla bilgi için belgelerine bakın `/delay[sign]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Description`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Description` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/descr[iption]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`EmbedResources`|İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Belirtilen kaynakları içeren derleme bildirimi görüntüyü katıştırır. Bu görev görüntüsüne kaynak dosyasının içeriği kopyalar. Bu parametreye geçirilen öğeleri iliştirilmiş adlı isteğe bağlı meta veriler olabilir `LogicalName` ve `Access`. `LogicalName` Meta veri kaynağı için iç tanımlayıcı belirtmek için kullanılır.  `Access` Meta verileri ayarlanabilir `private` kaynak diğer derlemelerden görünür yapmak için. Daha fazla bilgi için belgelerine bakın `/embed[resource]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`EvidenceFile`|İsteğe bağlı `String` parametresi.<br /><br /> Derleme kaynak adı ile belirtilen dosya katıştırır `Security.Evidence`.<br /><br /> Kullanamazsınız `Security.Evidence` normal kaynaklar için. Bu parametre karşılık gelen `/e[vidence]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`ExitCode`|İsteğe bağlı `Int32` çıkış parametresi salt okunur.<br /><br /> Yürütülen komutun tarafından sağlanan çıkış kodu belirtir.|  
-|`FileVersion`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `File Version` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/fileversion` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Flags`|İsteğe bağlı `String` parametresi.<br /><br /> İçin bir değer belirtir `Flags` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/flags` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`GenerateFullPaths`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Bir hata iletisi bildirilen herhangi bir dosya için mutlak yolu kullanmak üzere görev neden olur. Bu parametre karşılık gelen `/fullpaths` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`KeyContainer`|İsteğe bağlı `String` parametresi.<br /><br /> Anahtar çifti içeren bir kapsayıcıyı belirtir. Bu, derleme bildirimine ortak anahtar ekleyerek derlemeyi imzalar (ona tanımlayıcı ad verir). Görev, sonra son derlemeyi özel anahtarla imzalar. Daha fazla bilgi için belgelerine bakın `/keyn[ame]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`KeyFile`|İsteğe bağlı `String` parametresi.<br /><br /> Derlemeyi imzalamak için bir anahtar çifti ya da yeni bir ortak anahtar içeren dosyayı belirtir. Derleyici ortak anahtarı derleme bildirimine ekler ve ardından son derlemeyi özel anahtarla imzalar. Daha fazla bilgi için belgelerine bakın `/keyf[ile]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`LinkResources`|İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Belirtilen kaynak dosyaları derleme bağlar. Kaynak assembly parçası haline gelir, ancak dosya kopyalanmaz. Bu parametreye geçirilen öğeleri iliştirilmiş adlı isteğe bağlı meta veriler olabilir `LogicalName`, `Target`, ve `Access`. `LogicalName` Meta veri kaynağı için iç tanımlayıcı belirtmek için kullanılır. `Target` Meta verileri görev kopyalar geçmesi derlendiğinden bu yeni dosya derlemeye dosyanın dosya adı ve yolu belirtebilirsiniz. `Access` Meta verileri ayarlanabilir `private` kaynak diğer derlemelerden görünür yapmak için. Daha fazla bilgi için belgelerine bakın `/link[resource]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`MainEntryPoint`|İsteğe bağlı `String` parametresi.<br /><br /> Tam adı belirtir (*class.method*) yönteminin bir modül için yürütülebilir bir dosyanın dönüştürülürken bir giriş noktası olarak kullanmak için. Bu parametre karşılık gelen `/main` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`OutputAssembly`|Gerekli <xref:Microsoft.Build.Framework.ITaskItem> çıkış parametresi.<br /><br /> Bu görevi tarafından oluşturulan dosya adını belirtir. Bu parametre karşılık gelen `/out` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Platform`|İsteğe bağlı `String` parametresi.<br /><br /> Bu kodu çalıştırmak hangi platform sınırlar; biri olmalıdır `x86`, `Itanium`, `x64`, veya `anycpu`. Varsayılan, `anycpu` değeridir. Bu parametre karşılık gelen `/platform` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`ProductName`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Product` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/prod[uct]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`ProductVersion`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `ProductVersion` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/productv[ersion]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`ResponseFiles`|İsteğe bağlı `String[]` parametresi.<br /><br /> Derleme Bağlayıcı geçişi için ek seçenekler içeren yanıt dosyaları belirtir.|  
-|`SdkToolsPath`|İsteğe bağlı `String` parametresi.<br /><br /> Resgen.exe gibi SDK Araçları yolunu belirtir.|  
-|`SourceModules`|İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Bir derlemeye derlenmesi için bir veya daha fazla modül. Modülleri elde edilen derlemeyi bildiriminde listelenen ve yine dağıtılmış ve yüklemek derleme sırada kullanılabilir gerekir. Bu parametre geçirilen öğe adlı ek meta veri olabilir `Target`, görev kopyalar geçmesi derlendiğinden bu yeni dosya derlemeye dosya, dosya adını ve yolunu belirtir. Daha fazla bilgi için belgelerine bakın [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker). Bu parametre, belirli bir anahtar Al.exe geçirilen modüllerin listesini karşılık gelir.|  
-|`TargetType`|İsteğe bağlı `String` parametresi.<br /><br /> Çıkış dosyasının dosya biçimini belirtir: `library` (kod kitaplığı) `exe` (konsol uygulaması), veya `win` (Windows tabanlı bir uygulama). Varsayılan, `library` değeridir. Bu parametre karşılık gelen `/t[arget]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`TemplateFile`|İsteğe bağlı `String` parametresi.<br /><br /> Tüm derleme meta verilerini, kültür alanı dışında devralmak derleme belirtir. Belirtilen derleme güçlü bir adı olması gerekir.<br /><br /> İle oluşturduğunuz bir derlemeyi `TemplateFile` parametresi bir uydu derleme olacaktır. Bu parametre karşılık gelen `/template` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Timeout`|İsteğe bağlı `Int32` parametresi.<br /><br /> Süresini, daha sonra çalıştırılabilir görev sonlandırıldığından milisaniye cinsinden belirtir. Varsayılan değer `Int.MaxValue`, hiçbir zaman aşımı süresi olduğunu gösterir.|  
-|`Title`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Title` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/title` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`ToolPath`|İsteğe bağlı `String` parametresi.<br /><br /> Görev temel yürütülebilir dosya (Al.exe) burada yükler konumdaki belirtir. Bu parametre belirtilmezse, görevin çalıştığı framework sürümüne karşılık gelen SDK yükleme yolunu kullanır [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].|  
-|`Trademark`|İsteğe bağlı `String` parametresi.<br /><br /> Bir dize belirtir `Trademark` derlemesindeki alan. Daha fazla bilgi için belgelerine bakın `/trade[mark]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Version`|İsteğe bağlı `String` parametresi.<br /><br /> Bu derleme sürüm bilgilerini belirtir. Dize biçimi *major.minor.build.revision*. Varsayılan değer 0’dır. Daha fazla bilgi için belgelerine bakın `/v[ersion]` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Win32Icon`|İsteğe bağlı `String` parametresi.<br /><br /> Derlemeye bir .ico simge dosyası ekler. .ico dosyası, çıktı dosyasına Dosya Gezgini'nde istenen görünümü verir. Bu parametre karşılık gelen `/win32icon` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-|`Win32Resource`|İsteğe bağlı `String` parametresi.<br /><br /> Çıktı dosyasına bir Win32 kaynağı (.res dosyası) ekler. Daha fazla bilgi için belgelerine bakın `/win32res` seçeneğini [Al.exe (derleme bağlayıcı)](/dotnet/framework/tools/al-exe-assembly-linker).|  
-  
+ Parametreleri aşağıdaki tabloda açıklanmıştır `AL` görev.  
+
+
+| Parametre | Açıklama |
+|---------------------| - |
+| `AlgorithmID` | İsteğe bağlı `String` parametresi.<br /><br /> Derleme bildirimini içeren dosya hariç, çok dosyalı bir derlemede tüm dosyaları karma yapmak için bir algoritma belirtir. Daha fazla bilgi için belgelerine bakın `/algid` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `BaseAddress` | İsteğe bağlı `String` parametresi.<br /><br /> Çalışma zamanında kullanıcının bilgisayarına DLL yüklenecek adresi belirtir. İşlem alanında DLL'lerin yerini işletim sistemi izin vermek yerine DLL'lerin temel adresini belirtirseniz, uygulamaları daha hızlı yüklenir. Bu parametre için / Base karşılık gelen[adresi](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `CompanyName` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Company` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/comp[any]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Configuration` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Configuration` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/config[uration]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Copyright` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Copyright` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/copy[right]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Culture` | İsteğe bağlı `String` parametresi.<br /><br /> Derleme ile ilişkilendirilecek için kültür dizeyini belirtir. Daha fazla bilgi için belgelerine bakın `/c[ulture]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `DelaySign` | İsteğe bağlı `Boolean` parametresi.<br /><br /> `true` derlemeye yalnızca ortak anahtar yerleştirmek için; `false` derlemeyi tam imzalamak için. Daha fazla bilgi için belgelerine bakın `/delay[sign]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Description` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Description` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/descr[iption]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `EmbedResources` | İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Belirtilen kaynaklar derleme bildirimini içeren görüntüde katıştırır. Bu görevi, görüntüye kaynak dosyasının içeriğini kopyalar. Bu parametreye geçirilen öğe bağlı adlı isteğe bağlı meta verilerine de sahip `LogicalName` ve `Access`. `LogicalName` Meta veri kaynağı için iç tanımlayıcı belirtmek için kullanılır.  `Access` Meta verileri ayarlanabilir `private` kaynağın diğer derlemeler tarafından görülmemesini sağlamak için. Daha fazla bilgi için belgelerine bakın `/embed[resource]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `EvidenceFile` | İsteğe bağlı `String` parametresi.<br /><br /> Belirtilen dosya, kaynak adını taşıyan derlemesine katıştırır `Security.Evidence`.<br /><br /> Kullanamazsınız `Security.Evidence` normal kaynaklar için. Bu parametre için karşılık gelen `/e[vidence]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `ExitCode` | İsteğe bağlı `Int32` çıkış parametresi salt okunur.<br /><br /> Yürütülen komutun tarafından sağlanan çıkış kodu belirtir. |
+| `FileVersion` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `File Version` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/fileversion` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Flags` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir değer belirtir `Flags` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/flags` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `GenerateFullPaths` | İsteğe bağlı `Boolean` parametresi.<br /><br /> Görev bir hata iletisinde bildirilen dosyalar için mutlak yolu kullanmak neden olur. Bu parametre için karşılık gelen `/fullpaths` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `KeyContainer` | İsteğe bağlı `String` parametresi.<br /><br /> Anahtar çifti içeren bir kapsayıcıyı belirtir. Bu, derleme bildirimine ortak anahtar ekleyerek derlemeyi imzalar (ona tanımlayıcı ad verir). Görev, ardından son derlemeyi özel anahtarla imzalar. Daha fazla bilgi için belgelerine bakın `/keyn[ame]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `KeyFile` | İsteğe bağlı `String` parametresi.<br /><br /> Bir derlemeyi imzalamak için bir anahtar çifti veya yalnızca ortak anahtar içeren bir dosyayı belirtir. Derleyici ortak anahtarı derleme bildirimine ekler ve ardından son derlemeyi özel anahtarla imzalar. Daha fazla bilgi için belgelerine bakın `/keyf[ile]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `LinkResources` | İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Belirtilen kaynak dosyalarını bir derlemeye bağlar. Kaynak derlemenin parçası haline gelir, ancak dosya kopyalanmaz. Bu parametreye geçirilen öğe bağlı adlı isteğe bağlı meta verilerine de sahip `LogicalName`, `Target`, ve `Access`. `LogicalName` Meta veri kaynağı için iç tanımlayıcı belirtmek için kullanılır. `Target` Meta verileri, görev kopyalar sonra derlendiğinden bu yeni dosyayı bir derlemeye dosyanın dosya adı ve yolunu belirtebilirsiniz. `Access` Meta verileri ayarlanabilir `private` kaynağın diğer derlemeler tarafından görülmemesini sağlamak için. Daha fazla bilgi için belgelerine bakın `/link[resource]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `MainEntryPoint` | İsteğe bağlı `String` parametresi.<br /><br /> Tam nitelikli adını belirtir (*sınıf.yöntem biçimindeki*) yönteminin bir modülü çalıştırılabilir bir dosyaya dönüştürürken giriş noktası olarak kullanın. Bu parametre için karşılık gelen `/main` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `OutputAssembly` | Gerekli <xref:Microsoft.Build.Framework.ITaskItem> çıkış parametresi.<br /><br /> Bu görev tarafından oluşturulan dosya adını belirtir. Bu parametre için karşılık gelen `/out` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Platform` | İsteğe bağlı `String` parametresi.<br /><br /> Bu kodu çalıştırmak hangi platformu sınırlar; biri olmalıdır `x86`, `Itanium`, `x64`, veya `anycpu`. Varsayılan, `anycpu` değeridir. Bu parametre için karşılık gelen `/platform` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `ProductName` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Product` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/prod[uct]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `ProductVersion` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `ProductVersion` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/productv[ersion]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `ResponseFiles` | İsteğe bağlı `String[]` parametresi.<br /><br /> Assembly Linker için geçişine yönelik ek seçenekler içeren yanıt dosyaları belirtir. |
+| `SdkToolsPath` | İsteğe bağlı `String` parametresi.<br /><br /> Resgen.exe gibi SDK Araçları yolunu belirtir. |
+| `SourceModules` | İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` parametresi.<br /><br /> Bir bütünleştirilmiş kod içine derlenmiş için bir veya daha fazla modül. Modüller, elde edilen derlemeyi bildiriminde listelenen ve dağıtılmış ve kullanılabilir durumda derlemeyi yüklenmeye gerekir. Bu parametrede aktarılan öğeleri olarak adlandırılan ek meta verilerine de sahip `Target`, görev kopyalar sonra derlendiğinden bu yeni dosyayı bir derlemeye dosyanın dosya adı ve yolunu belirtir. Daha fazla bilgi için belgelerine bakın [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). Bu parametre yöntemlere geçirilen modüller listesinde karşılık gelen *Al.exe* belirli bir anahtar olmadan. |
+| `TargetType` | İsteğe bağlı `String` parametresi.<br /><br /> Çıkış dosyasının dosya biçimini belirtir: `library` (kod kitaplığı) `exe` (konsol uygulaması), veya `win` (Windows tabanlı uygulama). Varsayılan, `library` değeridir. Bu parametre için karşılık gelen `/t[arget]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `TemplateFile` | İsteğe bağlı `String` parametresi.<br /><br /> Kültür alanı dışında tüm derleme meta devralmak derleme belirtir. Belirtilen derleme tanımlayıcı bir ada sahip olmalıdır.<br /><br /> İle oluşturduğunuz derleme `TemplateFile` parametresi, bir uydu derleme olacaktır. Bu parametre için karşılık gelen `/template` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Timeout` | İsteğe bağlı `Int32` parametresi.<br /><br /> Sonra yürütülebilir görev sonlandırıldığından, milisaniye cinsinden süre miktarını belirtir. Varsayılan değer `Int.MaxValue`, hiçbir zaman aşımı süresi olduğunu gösterir. |
+| `Title` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Title` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/title` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `ToolPath` | İsteğe bağlı `String` parametresi.<br /><br /> Görev temel yürütülebilir dosya (Al.exe) burada yükleyecek konumu belirtir. Bu parametre belirtilmezse görev çalışıyor framework sürümüne karşılık gelen SDK yükleme yolunu kullanır. [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. |
+| `Trademark` | İsteğe bağlı `String` parametresi.<br /><br /> İçin bir dize belirtir `Trademark` derlemesi içindeki alan. Daha fazla bilgi için belgelerine bakın `/trade[mark]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Version` | İsteğe bağlı `String` parametresi.<br /><br /> Bu derlemenin sürüm bilgilerini belirtir. Dize biçimi *major.minor.build.revision*. Varsayılan değer 0’dır. Daha fazla bilgi için belgelerine bakın `/v[ersion]` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Win32Icon` | İsteğe bağlı `String` parametresi.<br /><br /> Ekler bir *.ico* derlemesindeki dosya. *.İco* dosya çıktı dosyasına dosya Gezgini'nde istenen görünümü verir. Bu parametre için karşılık gelen `/win32icon` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+| `Win32Resource` | İsteğe bağlı `String` parametresi.<br /><br /> Bir Win32 kaynağı ekler (*.res* dosya) çıkış dosyasına. Daha fazla bilgi için belgelerine bakın `/win32res` seçeneğini [Al.exe (Assembly Linker)](/dotnet/framework/tools/al-exe-assembly-linker). |
+
 ## <a name="remarks"></a>Açıklamalar  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Tasks.ToolTaskExtension> sınıfı, kendisi <xref:Microsoft.Build.Utilities.ToolTask> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [ToolTaskExtension taban sınıfı](../msbuild/tooltaskextension-base-class.md).  
-  
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Tasks.ToolTaskExtension> kendisi sınıfının devraldığı <xref:Microsoft.Build.Utilities.ToolTask> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [ToolTaskExtension taban sınıfı](../msbuild/tooltaskextension-base-class.md).  
+
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek, belirtilen seçeneklerle bir bütünleştirilmiş kod oluşturur.  
-  
+ Aşağıdaki örnek, belirtilen seçeneklerle bir derleme oluşturur.  
+
 ```xml  
 <AL  
     EmbedResources="@(EmbeddedResource)"  
@@ -83,15 +85,15 @@ AL görevi AL.exe, ile dağıtılmış bir aracı sarmalar [!INCLUDE[winsdklong]
     KeyContainer="$(KeyContainerName)"  
     KeyFile="$(KeyOriginatorFile)"  
     DelaySign="$(DelaySign)"  
-  
+
     OutputAssembly=  
        "%(EmbeddedResource.Culture)\$(TargetName).resources.dll">  
-  
+
     <Output TaskParameter="OutputAssembly"  
         ItemName="SatelliteAssemblies"/>  
 </AL>  
 ```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+
+## <a name="see-also"></a>Ayrıca bkz.  
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)   
  [Görevler](../msbuild/msbuild-tasks.md)

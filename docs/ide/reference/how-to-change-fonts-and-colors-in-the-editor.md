@@ -1,9 +1,8 @@
 ---
-title: "Nasıl yapılır: yazı tiplerini ve renkleri Düzenleyicisi'nde değiştirme | Microsoft Docs"
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+title: Düzenleyici yazı tiplerini ve renkleri değiştirme
+ms.date: 11/26/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - editors, fonts
@@ -17,43 +16,43 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0510cbc9d6f98f9c36347c6be93d768e483aa24a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2894039fc963ef089d0a1551d8b8afc7713edd4f
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52894553"
 ---
-# <a name="how-to-change-fonts-and-colors-in-the-editor"></a>Nasıl Yapılır: Düzenleyicideki Yazı Tiplerini ve Renkleri Değiştirme
-Varsayılan yazı tipi değiştirmek, yazı tipi boyutunu ayarlamak ve çeşitli metin ön ve arka plan renklerini değiştirme **görüntülemek öğeleri** Kod Düzenleyicisi'nde. Ne zaman yazı tipi ayarlarını değiştirmeyi aşağıdaki bilgileri unutmayın:  
-  
--   Ayarlarını **yazı tipi** ve **boyutu** tüm tüm metin öğeler için geneldir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] düzenleyicileri.  
-  
--   Sabit genişlikte yazı tiplerini adları kalın olarak listelenir.  
-  
--   **Öğe ön plan**, **öğesi arka plan**, ve **kalın** seçenekler, metin öğesi her tür için ayarlanabilir. Renkleri değiştirmek ve seçin, örneğin, **kalın** için **açıklama** ve **yer işaretleri**, metin öğelerinin diğer türleri etkilenmeyecek.  
-  
-> [!NOTE]
->  İletişim kutuları ve menü komutlarını gördüğünüz içinde açıklanana değişebilir **yardımcı** etkin ayarlarınıza veya edition bağlı olarak. Ayarlarınızı değiştirmek için tercih **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md).  
-  
-### <a name="to-change-the-default-font-face-size-and-colors"></a>Varsayılan yazı tipi, boyut ve renk değiştirmek için  
-  
-1.  Seçin **seçenekleri** gelen **Araçları** menüsünde ve **ortam** klasöründe seçin **yazı tiplerini ve renkleri**.  
-  
-     [Yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../../ide/reference/fonts-and-colors-environment-options-dialog-box.md) açar.  
-  
-2.  İçinde **ayarlarını göster**seçin **metin düzenleyici**.  
-  
-3.  Değiştirme **yazı tipi** ve **boyutu** yazı tipi ve tüm düzenleyicileri tüm metin öğeler için boyutunu değiştirmek için Seçenekler.  
-  
-4.  ' De uygun öğeyi seçin **öğeleri görüntülemek**ve ardından değiştirmek **öğesi ön plan** ve **öğesi arka plan** seçenekleri.  
-  
+# <a name="how-to-change-fonts-and-colors-for-the-editor-in-visual-studio-2017"></a>Nasıl yapılır: yazı tiplerini ve renkleri değiştirme Düzenleyicisi Visual Studio 2017 için
+
+Varsayılan yazı tipini değiştirmek, yazı tipi boyutunu ayarlayın ve çeşitli metin ön ve arka plan renklerini değiştirme **görüntü öğeleri** Kod düzenleyicisinde. Yazı tipi ayarlarını değiştirdiğinizde, aşağıdaki bilgileri göz önünde bulundurun:
+
+- Ayarlarını **yazı tipi** ve **boyutu** tüm Visual Studio Düzenleyicisi tüm metin öğeler için geneldir.
+
+- Sabit genişlikli yazı tipi adları kalın olarak listelenir.
+
+- **Öğe ön plan**, **öğesi arka plan**, ve **kalın** seçenekler, metin öğesinin her türü için ayarlanabilir. Renkleri değiştirmek ve seçin, örneğin, **kalın** için **yorum** ve **yer işaretleri**, diğer metin öğelerini türleri etkilenmez.
+
+## <a name="change-the-default-font-face-size-and-colors"></a>Varsayılan yazı tipini, boyutunu ve renkleri değiştirme
+
+1.  Seçin **seçenekleri** gelen **Araçları** menüsünde ve **ortam** klasörüne **yazı tipleri ve renkler**.
+
+     [Yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../../ide/reference/fonts-and-colors-environment-options-dialog-box.md) açılır.
+
+2.  İçinde **ayarlarını göster**seçin **metin düzenleyici**.
+
+3.  Değiştirme **yazı tipi** ve **boyutu** yazı tipini ve metin öğeleriyle tüm düzenleyicilerde boyutunu değiştirmek için Seçenekler.
+
+4.  Uygun öğeyi seçin **görüntü öğeleri**ve ardından **öğe ön plan** ve **öğesi arka plan** seçenekleri.
+
     > [!TIP]
-    >  Tıklatın **Varsayılanlar kullan** varsayılan ayarlarına sıfırlanır.  
-  
-5.  **Tamam**'ı tıklatın.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Düzenleyiciyi özelleştirme](../../ide/customizing-the-editor.md)   
- [Metin Düzenleyici Seçenekleri iletişim kutusu](../../ide/reference/text-editor-options-dialog-box.md)   
- [Kod yazma](../../ide/writing-code-in-the-code-and-text-editor.md)   
- [Nasıl yapılır: yazı tiplerini ve renkleri değiştirme](../../ide/how-to-change-fonts-and-colors-in-visual-studio.md)
+    > Tıklayın **Varsayılanlar kullan** varsayılan ayarlarına sıfırlanır.
+
+5.  **Tamam**'ı tıklatın.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Düzenleyiciyi özelleştirme](../../ide/customizing-the-editor.md)
+- [Metin Düzenleyici Seçenekleri iletişim kutusu](../../ide/reference/text-editor-options-dialog-box.md)
+- [Kod Düzenleyicisi özellikleri](../../ide/writing-code-in-the-code-and-text-editor.md)
+- [Nasıl yapılır: yazı tiplerini ve renkleri Visual Studio'da değiştirme](../../ide/how-to-change-fonts-and-colors-in-visual-studio.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a56d1eac34c5076be8dbcd7b4e38363a12fe392f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 46ad24a6bf8e4efbcb0c1a0009bb8210247ccb5e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49941366"
 ---
 # <a name="idiainjectedsourcegetsourcecompression"></a>IDiaInjectedSource::get_sourceCompression
-Kullanılan kaynak sıkıştırma gösterge alır.  
+Kullanılan kaynak sıkıştırma göstergesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_sourceCompression (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Kullanılan kaynak sıkıştırma göstergesinin döndürür. Sıfır değeri hiçbir kaynak sıkıştırma kullanıldığını belirtir.  
+ [out] Kullanılan kaynak sıkıştırma göstergesini döndürür. Sıfır değeri hiçbir kaynak sıkıştırma kullanıldığını gösterir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem tarafından döndürülen değer kullanılan derleyici özeldir. Örneğin, bir derleyici Çalıştır uzunlukta kodlama veya Huffman stili sıkıştırma kullanabilirsiniz.  
+ Bu yöntem tarafından döndürülen değer, kullanılan derleyici özeldir. Örneğin, bir derleyici Huffman stili çalışma uzunlukta kodlama veya sıkıştırma kullanabilirsiniz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaInjectedSource](../../debugger/debug-interface-access/idiainjectedsource.md)

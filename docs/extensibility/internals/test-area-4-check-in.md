@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31133157"
 ---
 # <a name="test-area-4-check-in"></a>Test alanı 4: İade etme
 Bu kaynak denetimi eklenti test alanını kapsayan sürüm deposuna güncelleştirilmiş öğeleri gönderme **iade** komutu.  

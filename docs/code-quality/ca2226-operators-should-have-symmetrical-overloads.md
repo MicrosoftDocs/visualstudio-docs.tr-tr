@@ -1,6 +1,7 @@
 ---
 title: 'CA2226: İşleçler simetrik aşırı yüklemelere sahip olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,33 +16,35 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 98f5653d326c257e46becd2d7f8ad1091dfcf0c7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8c872df976379a9bd20f28ceb9f4bf3eb376c8e8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49900468"
 ---
 # <a name="ca2226-operators-should-have-symmetrical-overloads"></a>CA2226: İşleçler simetrik aşırı yüklemelere sahip olmalıdır
+
 |||
 |-|-|
 |TypeName|OperatorsShouldHaveSymmetricalOverloads|
 |CheckId|CA2226|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
  Bir tür, eşitlik ya da eşitsizlik operatörünü uygular ve ters işleci uygulamaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Burada eşitlik veya eşitsizlik bir türün örneklerinin için geçerlidir ve ters işleci tanımsızdır hiçbir koşullar vardır. Türleri eksi değeri kadar çevrilerek eşitlik işleci döndürerek eşitsizlik işleci genellikle uygulayın.
+## <a name="rule-description"></a>Kural açıklaması
+ Burada da eşitlik ve eşitsizlik tür örnekleri için geçerlidir ve ters işleci tanımsızdır hiçbir koşullar vardır. Türleri eşitlik işlecini çevrilerek değeri döndürerek eşitsizlik işleci genellikle uygulayın.
 
- C# Derleyici bu kural ihlalleri için bir hata verir.
+ C# Derleyici, bu kural ihlalleri için bir hata verir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için eşitlik ve eşitsizlik işleçleri uygulamak veya mevcut bir kaldırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için eşitlik ve eşitsizlik işleçleri uygulayın veya var olanı kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın. Türünüz ile tutarlı bir şekilde çalışmaz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Bu kuraldan uyarıyı bastırmayın. Türünüz, .NET Framework ile tutarlı bir şekilde çalışmaz.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [CA1046: Başvuru türlerinde eşittir işleçlerini aşırı yüklemeyin](../code-quality/ca1046-do-not-overload-operator-equals-on-reference-types.md)

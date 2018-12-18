@@ -1,6 +1,7 @@
 ---
 title: 'CA1707: Tanımlayıcılar alt çizgi içermemelidir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,35 +16,41 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4eed69f8c08d6106bf30e9c1884512e384a7a269
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 74746897f8ce27a79f666ae1d691b235035b4626
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548604"
 ---
 # <a name="ca1707-identifiers-should-not-contain-underscores"></a>CA1707: Tanımlayıcılar alt çizgi içermemelidir
+
 |||
 |-|-|
 |TypeName|IdentifiersShouldNotContainUnderscores|
 |CheckId|CA1707|
 |Kategori|Microsoft.Naming|
-|Yeni Değişiklik|-Derlemelerini oluştuğunda kesme<br /><br /> Tür parametreleri oluştuğunda bölünemez-|
+|Yeni Değişiklik|-Derlemelerini oluştuğunda kesme<br /><br /> Tür parametrelerinde oluştuğunda bölünemez-|
 
 ## <a name="cause"></a>Sebep
- Tanımlayıcı adı alt çizgi (_) karakterini içeriyor.
 
-## <a name="rule-description"></a>Kural Tanımı
- Kural gereği, tanımlayıcı adlar alt çizgi (_) karakterini içermez. Kural ad alanlarını, türleri, üyeleri ve parametreleri denetler.
+Tanımlayıcı adı alt çizgi içeriyor (\_) karakter.
 
- Adlandırma kuralları hedefleyen ortak dil çalışma zamanı kitaplıkları için genel bir bakış sağlar. Bu, yeni yazılım kitaplıkları için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığa sahip olan kişi tarafından geliştirilmiştir müşteri güvenini artırır öğrenme eğrisini azaltır.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Tüm alt çizgi karakterleri adından kaldırın.
+Kural gereği, tanımlayıcı adları alt çizgi içermez (\_) karakter. Kural ad alanlarını, türleri, üyeleri ve parametreleri denetler.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın.
+Adlandırma kuralları, ortak dil çalışma zamanını hedefleyen kitaplıkları için genel bir bakış sağlar. Bu, yeni yazılım kitaplıkları için gereklidir ve kitaplık geliştirme yönetilen kodda uzmanlığına sahip olan kişi tarafından geliştirilmiştir müşterilerinizin size olan güvenini artırır öğrenme eğrisini azaltır.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Tüm alt çizgi karakterleri adından kaldırın.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1709: Tanımlayıcıların büyük/küçük harfleri doğru yazılmalıdır](../code-quality/ca1709-identifiers-should-be-cased-correctly.md)
 
- [CA1708: Tanımlayıcılar örnekten daha fazla farklı olmalıdır](../code-quality/ca1708-identifiers-should-differ-by-more-than-case.md)
+- [CA1709: Tanımlayıcıların büyük/küçük harfleri doğru yazılmalıdır](../code-quality/ca1709-identifiers-should-be-cased-correctly.md)
+- [CA1708: Tanımlayıcılar örnekten daha fazla farklı olmalıdır](../code-quality/ca1708-identifiers-should-differ-by-more-than-case.md)

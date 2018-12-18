@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0521405cfd9991ca0de72690e7b50ca22baaa67e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3a73000e7c4ff4514005c47555cc4860c60e7466
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49932695"
 ---
 # <a name="idebuggenericfieldinstancegettypearguments"></a>IDebugGenericFieldInstance::GetTypeArguments
-Bu örnek için tür parametre bağımsız değişkenleri alır.  
+Bu örneğin tür parametresi bağımsız değişkenlerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,13 +47,13 @@ int GetTypeArguments(
  [in] Tür parametreleri sayısı.  
   
  `ppArgs`  
- [out] Tür parametreleri bir dizi döndürür.  
+ [out] Tür parametreleri dizisi döndürür.  
   
  `pcArgs`  
- [içinde out] Üye sayısı `ppArgs` dizi.  
+ [out içinde] Üye sayısı `ppArgs` dizisi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugGenericFieldInstance](../../../extensibility/debugger/reference/idebuggenericfieldinstance.md)

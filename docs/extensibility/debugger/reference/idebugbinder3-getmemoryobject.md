@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 580e9c801dec9d66a8cd5a403c338bac1385f3c8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f73af4ee866ad41b93162090660ea34701f36710
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896146"
 ---
 # <a name="idebugbinder3getmemoryobject"></a>IDebugBinder3::GetMemoryObject
-Bu yöntem, bu nesneye bağlı bellek temsil eden bir bellek nesnesi alır.  
+Bu yöntem, bu nesne bağlı bellek temsil eden bir bellek nesnesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,16 +45,16 @@ int GetMemoryObject(
   
 #### <a name="parameters"></a>Parametreler  
  `pField`  
- [in] İçin bellek nesnesini almak için hangi alanını belirtir.  
+ [in] İçin bellek nesnesini almak için hangi alanın belirtir.  
   
  `uConstant`  
- [in] Bellek adresi veya sabit bir değer değerini temsil eder.  
+ [in] Bir bellek adresi veya bir sabit değer değerini temsil eder.  
   
  `ppObject`  
  [out] Bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) bu nesneye bağlı bellek temsil eden.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md)   

@@ -15,42 +15,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5f215cfbd5113377e7a98439976a7f44215eee02
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 306173876d0fd7c4d1da76d1b5432ecd5358c425
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500245"
 ---
 # <a name="custom-tools"></a>Özel Araçlar
-*Özel Araçlar* bir aracı projesinde bir öğesiyle ilişkilendirme ve dosya kaydedilmiş olduğunda bu aracı olanak tanır. Belirli özel araçlar bazen olarak bilinir *tek dosya oluşturucuları*, sık verilerden ve kod oluşturma çevirmenler uygulamak için kullanılır. Örneğin, tek dosya oluşturucuları oluşturma [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] kaynak kodu .settings ve .resx dosyaları dışında. Oluşturulan kaynak kodu .settings ve .resx dosyaları verilerde kesin türü belirtilmiş erişmenizi sağlar. [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] Ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] proje türleri destek özel araçları; [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] proje türleri desteklemez. Kendi proje türleri özel araçlar da destekler.  
+*Özel Araçlar* bir aracı bir projede bir öğe ile ilişkilendirmek ve dosyanın kaydedildiği zaman bu aracı sağlar. Bazı özel araçları, bazen olarak adlandırılan *tek dosya oluşturucular*, verilerden ve kod oluşturma çevirmenler uygulamak için sıkça kullanılır. Örneğin, tek dosya oluşturucular oluşturma [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] kaynak kodunun dışında *.settings* ve *.resx* dosyaları. Oluşturulan kaynak kod verilere erişim türü kesin belirlenmiş sağlar *.settings* ve *.resx* dosyaları. [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] Ve [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] özel araçlar; proje türleri desteği [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] proje türleri yapın. Özel Araçlar kendi proje türleri de destekler.  
   
- Özel araçlardır uygulamak kayıtlı bileşenler `IVsSingleFileGenerator` arabirimi.  
+ Özel Araçlar, uygulama kayıtlı bileşenleridir `IVsSingleFileGenerator` arabirimi.  
   
- Özel araçlar ile ilişkili bir `ProjectItem` arabirim nesne ve tasarımcıları ve editörler gibi. Özel bir araç tarafından temsil edilen dosyayı alır bir `ProjectItem` olarak giriş ve dosya adı tarafından sağlanan yeni bir dosya Yazar `DefaultExtension` yöntemi.  
+ Özel araçlar ile ilişkili bir `ProjectItem` arabirimi nesnesi ve tasarımcılar ve düzenleyiciler gibi. Özel bir araç tarafından temsil edilen dosya alan bir `ProjectItem` olarak giriş ve dosya adı tarafından sağlanır, yeni bir dosya Yazar `DefaultExtension` yöntemi.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Tek Dosya Oluşturucular Ekleme](../../extensibility/internals/implementing-single-file-generators.md)  
- Nasıl kullanılacağını açıklar <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator> özel bir araç uygulamak için arabirim.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Tek dosya oluşturucuları uygulayın](../../extensibility/internals/implementing-single-file-generators.md)  
+ Nasıl kullanılacağını açıklar <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator> özel araç uygulamak için arabirim.  
   
- [Tek Dosya Oluşturucuları Kaydetme](../../extensibility/internals/registering-single-file-generators.md)  
- Tüm kayıt defteri girişleri için açıklamalar için özel bir araç sağlar.  
+ [Tek dosya oluşturucuları kaydetme](../../extensibility/internals/registering-single-file-generators.md)  
+ Tüm kayıt defteri girdilerini açıklamaları için özel bir araç sağlar.  
   
- [Türleri Görsel Tasarımcıların Kullanımına Sunma](../../extensibility/internals/exposing-types-to-visual-designers.md)  
- Nasıl proje sistemleri için destek oluşturulan erişim sınıfları ve türleri olan görsel tasarımcılar geçici taşınabilir yürütülebilir (PE) dosyalar ile sağlayabilirsiniz açıklanmaktadır.  
+ [Türleri görsel tasarımcıların kullanıma sunma](../../extensibility/internals/exposing-types-to-visual-designers.md)  
+ Nasıl proje sistemleri görsel tasarımcılar erişim üretilen sınıfları ve türleri için geçici taşınabilir yürütülebilir (PE) dosyaları desteği açıklanmaktadır.  
   
- [Proje Öğesinin Özelliğini Kalıcı Yapma](../../extensibility/persisting-the-property-of-a-project-item.md)  
- Proje dosyasında bir kaynak dosyanın yazarı gibi bir proje öğesi özelliği kalıcı gösterilmektedir.  
+ [Proje öğesinin özelliğini kalıcı](../../extensibility/persisting-the-property-of-a-project-item.md)  
+ Proje dosyasındaki bir kaynak dosyasının yazar gibi bir proje öğesi özelliği kalıcı hale getirmek gösterilmektedir.  
   
 ## <a name="reference"></a>Başvuru  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>  
- Hakkında ayrıntılar sağlar <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>, hangi dönüştüren tek bir giriş dosyası tek bir çıktı dosyasına derlenmiş veya bir projeye eklendi.  
+ Hakkında ayrıntılar sağlar <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator>, hangi dönüştüren tek bir giriş dosyası derlenmiş veya bir projeye eklenen bir tek çıkış dosyasına.  
   
  <xref:EnvDTE.ProjectItem>  
- Açıklar `ProjectItem` proje bir öğeyi temsil eden arabirim.  
+ Açıklar `ProjectItem` bir projedeki bir öğeyi temsil eden arabirim.  
   
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSingleFileGenerator.DefaultExtension%2A>  
- Hakkında ayrıntılar sağlar `DefaultExtension` çıkış dosyasının adı verilen dosya adı uzantısını alır yöntemi.  
+ Hakkında ayrıntılar sağlar `DefaultExtension` yöntemi için çıkış dosyası adı verilen dosya adı uzantısını alır.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Projeleri Genişletme](../../extensibility/extending-projects.md)  
- Nasıl kullanılacağını açıklar [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] projeler ve çözümler kod dosyaları ve kaynak dosyaları ve kaynak denetimi nasıl düzenlemek için.
+## <a name="related-sections"></a>İlgili bölümler  
+ [Projeleri genişletme](../../extensibility/extending-projects.md)  
+ Nasıl kullanılacağını açıklar [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] projeler ve çözümler, kod dosyaları ve kaynak dosyalarını ve kaynak denetimi uygulamak nasıl düzenlemek için.

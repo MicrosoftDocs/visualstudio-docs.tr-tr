@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31115599"
 ---
 # <a name="idebugmodule2"></a>IDebugModule2
 Bu arabirim bir modülü temsil eder — diğer bir deyişle, yürütülebilir bir birimi bir programın — DLL gibi.  

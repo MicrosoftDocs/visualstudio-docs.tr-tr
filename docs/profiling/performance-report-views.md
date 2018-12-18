@@ -1,5 +1,5 @@
 ---
-title: Performans rapor görünümlerini | Microsoft Docs
+title: Performans raporu görünümleri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -14,36 +14,37 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 553a2a53543f25d3794cf07ef760e42a010197f1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 16082a3d04a27355033fd96f3387652063f00cce
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677754"
 ---
-# <a name="performance-report-views"></a>Performans rapor görünümleri
-Bu bölümde, görünümler ve raporlar için başvuru bilgileri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları. Profil oluşturma veri dosyalarıyla, görünümler görüntülenir [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] tümleşik geliştirme environmentIDE. Tarafından oluşturulmuş raporları [VSPerfReport](../profiling/vsperfreport.md) komut satırı aracı.  
+# <a name="performance-report-views"></a>Performans raporu görünümleri
+Bu bölümde, görünümleri ve raporlar için başvuru bilgileri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları. Profil oluşturma veri dosyaları görünümleri görüntülenir [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] tümleşik geliştirme environmentIDE. Tarafından oluşturulan raporları [VSPerfReport](../profiling/vsperfreport.md) komut satırı aracı.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Ortak Veri Görünümleri](../profiling/common-data-views.md)  
- Tüm profil oluşturma yöntemleri için ortak olan veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Ortak veri görünümleri](../profiling/common-data-views.md)  
+ Görünümleri ve tüm profil oluşturma yöntemleri için ortak olan veri dosyalarını profil oluşturma raporları için başvuru bilgileri.  
   
  [Örnekleme yöntemi veri görünümleri](../profiling/profiler-sampling-method-data-views.md)  
- Örnekleme yöntemini kullanarak, oluşturulan veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.  
+ Görünümleri ve raporları örnekleme metodu kullanılarak oluşturulmuş veri dosyalarını profil oluşturma için başvuru bilgileri.  
   
- [İzleme Metodu Veri Görünümleri](../profiling/instrumentation-method-data-views.md)  
- Görünümleri ve izleme metodunu kullanarak, oluşturulan veri dosyalarını profil oluşturma raporları için başvuru bilgileri.  
+ [İzleme metodu veri görünümleri](../profiling/instrumentation-method-data-views.md)  
+ Görünümleri ve raporları profil oluşturma Araçlar yöntemini kullanarak oluşturulan veri dosyaları için başvuru bilgileri.  
   
  [.NET bellek verisi görünümleri](../profiling/dotnet-memory-data-views.md)  
- .NET bellek verileri içeren veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.  
+ Görünümleri ve raporları, .NET bellek verileri içeren veri dosyalarını profil oluşturma için başvuru bilgileri.  
   
- [Kaynak Çakışması Veri Görünümleri](../profiling/resource-contention-data-views.md)  
- Eşzamanlılık yöntemi kullanarak, oluşturulan veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.  
+ [Kaynak çakışması veri görünümleri](../profiling/resource-contention-data-views.md)  
+ Görünümleri ve raporları eşzamanlılık metodu kullanarak oluşturulan veri dosyalarını profil oluşturma için başvuru bilgileri.  
   
  [Eşzamanlılık görselleştiricisi](../profiling/concurrency-visualizer.md)  
- Eşzamanlılık yöntemi kullanılarak oluşturulur ve iş parçacığı yürütme verileri içeren veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.  
+ Görünümleri ve raporları, eşzamanlılık yöntemi kullanılarak oluşturulur ve iş parçacığı yürütme verileri içeren veri dosyalarını profil oluşturma için başvuru bilgileri.  
   
  [Katman Etkileşimleri Görünümü](../profiling/tier-interactions-view.md)  
- Etkileşim görüntüleyin ve katman etkileşim verileri içeren veri dosyalarını profil oluşturma rapor için başvuru bilgileri.  
+ Katman etkileşim verileri içeren veri dosyalarını profil oluşturma, rapor ve etkileşim görünümü için başvuru bilgileri.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Araçları verilerini performansını analiz etme](../profiling/analyzing-performance-tools-data.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Performans araçları verilerini analiz etme](../profiling/analyzing-performance-tools-data.md)

@@ -1,186 +1,187 @@
 ---
-title: "Etkin komut dosyası hata ayıklayıcı arabirimleri | Microsoft Docs"
-ms.custom: 
+title: Etkin betik hata ayıklayıcı arabirimleri | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - Active Script Debugger interfaces
 - activdbg.h
 ms.assetid: bf4750b1-4e58-442b-ab56-254e640de61d
-caps.latest.revision: "15"
+caps.latest.revision: 15
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: d4a3d17a8ff43bb3bd18641c2298f5436f40d925
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: f260df5a23ef6b5ef6ef7253726b1fea7bc00269
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855436"
 ---
 # <a name="active-script-debugger-interfaces"></a>Etkin Komut Dosyası Hata Ayıklayıcı Arabirimleri
-Activdbg.h ve activdbg100.h üstbilgi dosyaları arabirimleri, numaralandırmaları ve yapıları Bu bölümde listelenen sağlar. Komut dosyası hata ayıklama için oldukları.  
+Activdbg.h ve activdbg100.h üst bilgi dosyaları, arabirimler, numaralandırmaları ve yapıları Bu bölümde listelenen sağlar. Betik hata ayıklama için değildirler.  
   
 > [!NOTE]
->  `IJSDebug*` Arabirimleri ve `IEnumJsStackFrames` arabirimi ilk çıkarılan Internet Explorer 11 betik ile yerel kodda hata ayıklama için. Bu arabirimleri için üstbilgi jscript9diag.h dosyasıdır.  
+>  `IJSDebug*` Arabirimleri ve `IEnumJsStackFrames` arabirimi ilk kez kullanıma sunulan Internet Explorer 11'de betik ile yerel kod hata ayıklama için. Bu arabirimler için üst bilgi jscript9diag.h dosyasıdır.  
   
 ## <a name="in-this-section"></a>Bu Bölümde  
- Aşağıdaki arabirimleri dilden, ana bilgisayar Tarafsız hata ayıklama izin ver:  
+ Aşağıdaki arabirimlerinden dilden, konak nötr hata ayıklama izin ver:  
   
--   [Etkin komut dosyası hata ayıklayıcı sabitleri, numaralandırmaları ve yapıları](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
+- [Etkin Betik Hata Ayıklayıcı Sabitleri, Sabit Listeleri ve Yapıları](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
   
--   [Iactivescriptdebug arabirimi](../../winscript/reference/iactivescriptdebug-interface.md)  
+- [IActiveScriptDebug Arabirimi](../../winscript/reference/iactivescriptdebug-interface.md)  
   
--   [Iactivescripterrordebug arabirimi](../../winscript/reference/iactivescripterrordebug-interface.md)  
+- [IActiveScriptErrorDebug Arabirimi](../../winscript/reference/iactivescripterrordebug-interface.md)  
   
--   [Iactivescripterrordebug110 arabirimi](../../winscript/reference/iactivescripterrordebug110-interface.md)  
+- [IActiveScriptErrorDebug110 Arabirimi](../../winscript/reference/iactivescripterrordebug110-interface.md)  
   
--   [Iactivescriptsitedebug arabirimi](../../winscript/reference/iactivescriptsitedebug-interface.md)  
+- [IActiveScriptSiteDebug Arabirimi](../../winscript/reference/iactivescriptsitedebug-interface.md)  
   
--   [IActiveScriptSiteDebug32 arabirimi](../../winscript/reference/iactivescriptsitedebug32-interface.md)  
+- [IActiveScriptSiteDebug32 Arabirimi](../../winscript/reference/iactivescriptsitedebug32-interface.md)  
   
--   [Iactivescriptsitedebugex arabirimi](../../winscript/reference/iactivescriptsitedebugex-interface.md)  
+- [IActiveScriptSiteDebugEx Arabirimi](../../winscript/reference/iactivescriptsitedebugex-interface.md)  
   
--   [Iactivescriptwinrterrordebug arabirimi](../../winscript/reference/iactivescriptwinrterrordebug-interface.md)  
+- [IActiveScriptWinRTErrorDebug Arabirimi](../../winscript/reference/iactivescriptwinrterrordebug-interface.md)  
   
--   [Iapplicationdebugger arabirimi](../../winscript/reference/iapplicationdebugger-interface.md)  
+- [IApplicationDebugger Arabirimi](../../winscript/reference/iapplicationdebugger-interface.md)  
   
--   [Iapplicationdebuggeruı arabirimi](../../winscript/reference/iapplicationdebuggerui-interface.md)  
+- [IApplicationDebuggerUI Arabirimi](../../winscript/reference/iapplicationdebuggerui-interface.md)  
   
--   [Idebugapplication arabirimi](../../winscript/reference/idebugapplication-interface.md)  
+- [IDebugApplication Arabirimi](../../winscript/reference/idebugapplication-interface.md)  
   
--   [Idebugapplication110 arabirimi](../../winscript/reference/idebugapplication110-interface.md)  
+- [IDebugApplication110 Arabirimi](../../winscript/reference/idebugapplication110-interface.md)  
   
--   [Idebugapplicationnode arabirimi](../../winscript/reference/idebugapplicationnode-interface.md)  
+- [IDebugApplicationNode Arabirimi](../../winscript/reference/idebugapplicationnode-interface.md)  
   
--   [Idebugapplicationnode100 arabirimi](../../winscript/reference/idebugapplicationnode100-interface.md)  
+- [IDebugApplicationNode100 Arabirimi](../../winscript/reference/idebugapplicationnode100-interface.md)  
   
--   [Idebugapplicationnodeevents arabirimi](../../winscript/reference/idebugapplicationnodeevents-interface.md)  
+- [IDebugApplicationNodeEvents Arabirimi](../../winscript/reference/idebugapplicationnodeevents-interface.md)  
   
--   [Idebugapplicationthread arabirimi](../../winscript/reference/idebugapplicationthread-interface.md)  
+- [IDebugApplicationThread Arabirimi](../../winscript/reference/idebugapplicationthread-interface.md)  
   
--   [Idebugapplicationthread110 arabirimi](../../winscript/reference/idebugapplicationthread110-interface.md)  
+- [IDebugApplicationThread110 Arabirimi](../../winscript/reference/idebugapplicationthread110-interface.md)  
   
--   [Idebugapplicationthreadevents110 arabirimi](../../winscript/reference/idebugapplicationthreadevents110-interface.md)  
+- [IDebugApplicationThreadEvents110 Arabirimi](../../winscript/reference/idebugapplicationthreadevents110-interface.md)  
   
--   [Idebugasyncoperation arabirimi](../../winscript/reference/idebugasyncoperation-interface.md)  
+- [IDebugAsyncOperation Arabirimi](../../winscript/reference/idebugasyncoperation-interface.md)  
   
--   [Idebugasyncoperationcallback arabirimi](../../winscript/reference/idebugasyncoperationcallback-interface.md)  
+- [IDebugAsyncOperationCallBack Arabirimi](../../winscript/reference/idebugasyncoperationcallback-interface.md)  
   
--   [Idebugcodecontext arabirimi](../../winscript/reference/idebugcodecontext-interface.md)  
+- [IDebugCodeContext Arabirimi](../../winscript/reference/idebugcodecontext-interface.md)  
   
--   [Idebugcookie arabirimi](../../winscript/reference/idebugcookie-interface.md)  
+- [IDebugCookie Arabirimi](../../winscript/reference/idebugcookie-interface.md)  
   
--   [Idebugdocument arabirimi](../../winscript/reference/idebugdocument-interface.md)  
+- [IDebugDocument Arabirimi](../../winscript/reference/idebugdocument-interface.md)  
   
--   [Idebugdocumentcontext arabirimi](../../winscript/reference/idebugdocumentcontext-interface.md)  
+- [IDebugDocumentContext Arabirimi](../../winscript/reference/idebugdocumentcontext-interface.md)  
   
--   [Idebugdocumenthelper arabirimi](../../winscript/reference/idebugdocumenthelper-interface.md)  
+- [IDebugDocumentHelper Arabirimi](../../winscript/reference/idebugdocumenthelper-interface.md)  
   
--   [Idebugdocumenthost arabirimi](../../winscript/reference/idebugdocumenthost-interface.md)  
+- [IDebugDocumentHost Arabirimi](../../winscript/reference/idebugdocumenthost-interface.md)  
   
--   [Idebugdocumentınfo arabirimi](../../winscript/reference/idebugdocumentinfo-interface.md)  
+- [IDebugDocumentInfo Arabirimi](../../winscript/reference/idebugdocumentinfo-interface.md)  
   
--   [Idebugdocumentprovider arabirimi](../../winscript/reference/idebugdocumentprovider-interface.md)  
+- [IDebugDocumentProvider Arabirimi](../../winscript/reference/idebugdocumentprovider-interface.md)  
   
--   [Idebugdocumenttext arabirimi](../../winscript/reference/idebugdocumenttext-interface.md)  
+- [IDebugDocumentText Arabirimi](../../winscript/reference/idebugdocumenttext-interface.md)  
   
--   [Idebugdocumenttextauthor arabirimi](../../winscript/reference/idebugdocumenttextauthor-interface.md)  
+- [IDebugDocumentTextAuthor Arabirimi](../../winscript/reference/idebugdocumenttextauthor-interface.md)  
   
--   [Idebugdocumenttextevents arabirimi](../../winscript/reference/idebugdocumenttextevents-interface.md)  
+- [IDebugDocumentTextEvents Arabirimi](../../winscript/reference/idebugdocumenttextevents-interface.md)  
   
--   [Idebugdocumenttextexternalauthor arabirimi](../../winscript/reference/idebugdocumenttextexternalauthor-interface.md)  
+- [IDebugDocumentTextExternalAuthor Arabirimi](../../winscript/reference/idebugdocumenttextexternalauthor-interface.md)  
   
--   [Idebugexpression arabirimi](../../winscript/reference/idebugexpression-interface.md)  
+- [IDebugExpression Arabirimi](../../winscript/reference/idebugexpression-interface.md)  
   
--   [Idebugexpressioncallback arabirimi](../../winscript/reference/idebugexpressioncallback-interface.md)  
+- [IDebugExpressionCallBack Arabirimi](../../winscript/reference/idebugexpressioncallback-interface.md)  
   
--   [Idebugexpressioncontext arabirimi](../../winscript/reference/idebugexpressioncontext-interface.md)  
+- [IDebugExpressionContext Arabirimi](../../winscript/reference/idebugexpressioncontext-interface.md)  
   
--   [Idebugformatter arabirimi](../../winscript/reference/idebugformatter-interface.md)  
+- [IDebugFormatter Arabirimi](../../winscript/reference/idebugformatter-interface.md)  
   
--   [Idebughelper arabirimi](../../winscript/reference/idebughelper-interface.md)  
+- [IDebugHelper Arabirimi](../../winscript/reference/idebughelper-interface.md)  
   
--   [Idebugsessionprovider arabirimi](../../winscript/reference/idebugsessionprovider-interface.md)  
+- [IDebugSessionProvider Arabirimi](../../winscript/reference/idebugsessionprovider-interface.md)  
   
--   [Idebugsessionproviderex arabirimi](../../winscript/reference/idebugsessionproviderex-interface.md)  
+- [IDebugSessionProviderEx Arabirimi](../../winscript/reference/idebugsessionproviderex-interface.md)  
   
--   [Idebugstackframe arabirimi](../../winscript/reference/idebugstackframe-interface.md)  
+- [IDebugStackFrame Arabirimi](../../winscript/reference/idebugstackframe-interface.md)  
   
--   [Idebugstackframesniffer arabirimi](../../winscript/reference/idebugstackframesniffer-interface.md)  
+- [IDebugStackFrameSniffer Arabirimi](../../winscript/reference/idebugstackframesniffer-interface.md)  
   
--   [Idebugstackframesnifferex arabirimi](../../winscript/reference/idebugstackframesnifferex-interface.md)  
+- [IDebugStackFrameSnifferEx Arabirimi](../../winscript/reference/idebugstackframesnifferex-interface.md)  
   
--   [Idebugsyncoperation arabirimi](../../winscript/reference/idebugsyncoperation-interface.md)  
+- [IDebugSyncOperation Arabirimi](../../winscript/reference/idebugsyncoperation-interface.md)  
   
--   [Idebugthreadcall arabirimi](../../winscript/reference/idebugthreadcall-interface.md)  
+- [IDebugThreadCall Arabirimi](../../winscript/reference/idebugthreadcall-interface.md)  
   
--   [Ienumdebugapplicationnodes arabirimi](../../winscript/reference/ienumdebugapplicationnodes-interface.md)  
+- [IEnumDebugApplicationNodes Arabirimi](../../winscript/reference/ienumdebugapplicationnodes-interface.md)  
   
--   [Ienumdebugcodecontexts arabirimi](../../winscript/reference/ienumdebugcodecontexts-interface.md)  
+- [IEnumDebugCodeContexts Arabirimi](../../winscript/reference/ienumdebugcodecontexts-interface.md)  
   
--   [Ienumdebugexpressioncontexts arabirimi](../../winscript/reference/ienumdebugexpressioncontexts-interface.md)  
+- [IEnumDebugExpressionContexts Arabirimi](../../winscript/reference/ienumdebugexpressioncontexts-interface.md)  
   
--   [Ienumdebugstackframes arabirimi](../../winscript/reference/ienumdebugstackframes-interface.md)  
+- [IEnumDebugStackFrames Arabirimi](../../winscript/reference/ienumdebugstackframes-interface.md)  
   
--   [Ienumjsstackframes arabirimi](../../winscript/reference/ienumjsstackframes-interface.md)  
+- [IEnumJsStackFrames Arabirimi](../../winscript/reference/ienumjsstackframes-interface.md)  
   
--   [Ienumremotedebugapplications arabirimi](../../winscript/reference/ienumremotedebugapplications-interface.md)  
+- [IEnumRemoteDebugApplications Arabirimi](../../winscript/reference/ienumremotedebugapplications-interface.md)  
   
--   [Ienumremotedebugapplicationthreads arabirimi](../../winscript/reference/ienumremotedebugapplicationthreads-interface.md)  
+- [IEnumRemoteDebugApplicationThreads Arabirimi](../../winscript/reference/ienumremotedebugapplicationthreads-interface.md)  
   
--   [Ijsdebug arabirimi](../../winscript/reference/ijsdebug-interface.md)  
+- [IJsDebug Arabirimi](../../winscript/reference/ijsdebug-interface.md)  
   
--   [Ijsdebugbreakpoint arabirimi](../../winscript/reference/ijsdebugbreakpoint-interface.md)  
+- [IJsDebugBreakPoint Arabirimi](../../winscript/reference/ijsdebugbreakpoint-interface.md)  
   
--   [Ijsdebugdatatarget arabirimi](../../winscript/reference/ijsdebugdatatarget-interface.md)  
+- [IJsDebugDataTarget Arabirimi](../../winscript/reference/ijsdebugdatatarget-interface.md)  
   
--   [Ijsdebugframe arabirimi](../../winscript/reference/ijsdebugframe-interface.md)  
+- [IJsDebugFrame Arabirimi](../../winscript/reference/ijsdebugframe-interface.md)  
   
--   [Ijsdebugprocess arabirimi](../../winscript/reference/ijsdebugprocess-interface.md)  
+- [IJsDebugProcess Arabirimi](../../winscript/reference/ijsdebugprocess-interface.md)  
   
--   [Ijsdebugproperty arabirimi](../../winscript/reference/ijsdebugproperty-interface.md)  
+- [IJsDebugProperty Arabirimi](../../winscript/reference/ijsdebugproperty-interface.md)  
   
--   [Ijsdebugstackwalker arabirimi](../../winscript/reference/ijsdebugstackwalker-interface.md)  
+- [IJsDebugStackWalker Arabirimi](../../winscript/reference/ijsdebugstackwalker-interface.md)  
   
--   [Ijsenumdebugproperty arabirimi](../../winscript/reference/ijsenumdebugproperty-interface.md)  
+- [IJsEnumDebugProperty Arabirimi](../../winscript/reference/ijsenumdebugproperty-interface.md)  
   
--   [Imachinedebugmanager arabirimi](../../winscript/reference/imachinedebugmanager-interface.md)  
+- [IMachineDebugManager Arabirimi](../../winscript/reference/imachinedebugmanager-interface.md)  
   
--   [Imachinedebugmanagercookie arabirimi](../../winscript/reference/imachinedebugmanagercookie-interface.md)  
+- [IMachineDebugManagerCookie Arabirimi](../../winscript/reference/imachinedebugmanagercookie-interface.md)  
   
--   [Imachinedebugmanagerevents arabirimi](../../winscript/reference/imachinedebugmanagerevents-interface.md)  
+- [IMachineDebugManagerEvents Arabirimi](../../winscript/reference/imachinedebugmanagerevents-interface.md)  
   
--   [Iprocessdebugmanager arabirimi](../../winscript/reference/iprocessdebugmanager-interface.md)  
+- [IProcessDebugManager Arabirimi](../../winscript/reference/iprocessdebugmanager-interface.md)  
   
--   [Iprovideexpressioncontexts arabirimi](../../winscript/reference/iprovideexpressioncontexts-interface.md)  
+- [IProvideExpressionContexts Arabirimi](../../winscript/reference/iprovideexpressioncontexts-interface.md)  
   
--   [Iremotedebugapplication arabirimi](../../winscript/reference/iremotedebugapplication-interface.md)  
+- [IRemoteDebugApplication Arabirimi](../../winscript/reference/iremotedebugapplication-interface.md)  
   
--   [Iremotedebugapplication110 arabirimi](../../winscript/reference/iremotedebugapplication110-interface.md)  
+- [IRemoteDebugApplication110 Arabirimi](../../winscript/reference/iremotedebugapplication110-interface.md)  
   
--   [Iremotedebugapplicationex arabirimi](../../winscript/reference/iremotedebugapplicationex-interface.md)  
+- [IRemoteDebugApplicationEx Arabirimi](../../winscript/reference/iremotedebugapplicationex-interface.md)  
   
--   [Iremotedebugapplicationevents arabirimi](../../winscript/reference/iremotedebugapplicationevents-interface.md)  
+- [IRemoteDebugApplicationEvents Arabirimi](../../winscript/reference/iremotedebugapplicationevents-interface.md)  
   
--   [Iremotedebugapplicationthread arabirimi](../../winscript/reference/iremotedebugapplicationthread-interface.md)  
+- [IRemoteDebugApplicationThread Arabirimi](../../winscript/reference/iremotedebugapplicationthread-interface.md)  
   
--   [Iremotedebugapplicationthreadex arabirimi](../../winscript/reference/iremotedebugapplicationthreadex-interface.md)  
+- [IRemoteDebugApplicationThreadEx Arabirimi](../../winscript/reference/iremotedebugapplicationthreadex-interface.md)  
   
--   [Isetnextstatement arabirimi](../../winscript/reference/isetnextstatement-interface.md)  
+- [ISetNextStatement Arabirimi](../../winscript/reference/isetnextstatement-interface.md)  
   
--   [Isimpleconnectionpoint arabirimi](../../winscript/reference/isimpleconnectionpoint-interface.md)  
+- [ISimpleConnectionPoint Arabirimi](../../winscript/reference/isimpleconnectionpoint-interface.md)  
   
--   [Iwebappdiagnosticssetup arabirimi](../../winscript/reference/iwebappdiagnosticssetup-interface.md)  
+- [IWebAppDiagnosticsSetup Arabirimi](../../winscript/reference/iwebappdiagnosticssetup-interface.md)  
   
--   [Iwebappdiagnosticsobjectınitialization arabirimi](../../winscript/reference/iwebappdiagnosticsobjectinitialization-interface.md)  
+- [IWebAppDiagnosticsObjectInitialization Arabirimi](../../winscript/reference/iwebappdiagnosticsobjectinitialization-interface.md)  
   
- Aşağıdaki bölümde sabitleri, numaralandırmaları ve hata ayıklama için kullanılan yapıları listelenmektedir:  
+  Aşağıdaki bölümde, sabitleri, numaralandırmaları ve hata ayıklama için kullanılan yapıları listelenmektedir:  
   
--   [Etkin komut dosyası hata ayıklayıcı sabitleri, numaralandırmaları ve yapıları](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
+- [Etkin Betik Hata Ayıklayıcı Sabitleri, Sabit Listeleri ve Yapıları](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Etkin komut dosyası hata ayıklamaya genel bakış](../../winscript/active-script-debugging-overview.md)
+ [Etkin Betik Hata Ayıklamaya Genel Bakış](../../winscript/active-script-debugging-overview.md)

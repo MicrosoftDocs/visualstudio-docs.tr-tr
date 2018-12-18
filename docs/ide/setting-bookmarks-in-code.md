@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da kod yer işaretleri ayarlama | Microsoft Docs
-ms.custom: ''
+title: Kod yer işaretlerini Ayarla
 ms.date: 02/23/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -12,35 +12,36 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b2c51b360a8df39abfd38e3da175de65c38d59bf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 37dff534307f7773858ccb43b076ed309504b6ef
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53047648"
 ---
-# <a name="set-bookmarks-in-code"></a>Kodda yer işaretlerini Ayarla
+# <a name="set-bookmarks-in-code"></a>Kodda yer işaretleri ayarlama
 
-Yer işaretleri, böylece hızlı bir şekilde, belirli bir konuma dönmek veya geri ve İleri konumlar arasında atlama satırlarını kodunuzda işaretlemek için kullanabilirsiniz. Yer işareti komutları ve simgeleri iki yerde bulunur: **yer işareti penceresi** (**Görünüm** > **yer işareti penceresi**) ve Metin Düzenleyicisi araç.
+Hızlı bir şekilde, belirli bir konuma döndürür veya konumlar arasında ileri ve Geri atlama satırları, kodunuzda işaretlemek için yer işaretlerini kullanabilirsiniz. Yerimi komutları ve simgeler iki yerde kullanılabilir: **yer işareti penceresi** (**görünümü** > **yer işareti penceresi**) ve Metin Düzenleyicisi araç çubuğu.
 
-![Yer işareti araç çubuğu](media/bookmark-toolbar.png)
+![Araç çubuğunda yer işareti](media/bookmark-toolbar.png)
 
 ![Yer işareti penceresi](media/bookmark-window.png)
 
-## <a name="manage-bookmarks"></a>Yer işaretleri yönetme
+## <a name="manage-bookmarks"></a>Yer işaretlerini yönetme
 
-Yer işareti eklemek için imleci yer işareti koymak istediğiniz satıra getirin. Seçin **yer işareti geçiş** düğmesini veya tuşuna **Ctrl**+**K**, **Ctrl**+**K** . Bu yer işaretinin ekler. Seçerseniz **yer işareti geçiş** düğmesi (veya basın **Ctrl**+**K**, **Ctrl** +  **K**) yeniden yer işareti kaldırılır.
+Bir yer işareti eklemek için imleci yer işareti koymak istediğiniz satıra yerleştirin. Seçin **bir yer işareti Değiştir** düğmesini veya tuşuna **Ctrl**+**K**, **Ctrl**+**K** . Bu yer işaretini ekler. Seçerseniz **bir yer işareti Değiştir** düğme (veya basın **Ctrl**+**K**, **Ctrl** +  **K**) yeniden, Yerimi kaldırılır.
 
-Bir bakışta bilmesi içinde yeniden adlandırmak için belirli bir yer işareti olan **yer işareti penceresi** sağ tıklatın veya bağlam menüsünde. Yer işaretleri seçerek silebilirsiniz **silmek** yer işareti penceresinde düğmesini.
+Bir bakışta bilmesi içinde yeniden adlandırmak için belirli bir yer işaretidir **yer işareti penceresi** sağ tıklayın veya bağlam menüsünde. Yer işaretlerini seçerek silebilirsiniz **Sil** yer işareti penceresindeki düğmesi.
 
 > [!IMPORTANT]
-> Yer işareti satır numarası, kod için ayarlanır. Kod değiştirirseniz, yer işareti satır numarası korunur ve koduyla taşımaz.
+> Yer işareti, kodun satır numarası ayarlanır. Kodu değiştirirseniz, yer işareti satır numarasında korunur ve kod ile taşınmaz.
 
-Yer işaretleri kullanarak arasında gezinebilirsiniz **sonraki yer işareti** ve **önceki yer işareti** yer işareti penceresinde düğmeler.
+Kullanarak yer işaretleri arasında gezinebilirsiniz **sonraki yer işareti** ve **önceki yer işareti** yer işareti penceresindeki düğmeleri.
 
-Yer işaretleri seçerek sanal klasörler halinde düzenlemek **yeni klasör** yer işareti penceresinde ve sonra seçilen yer işaretleri yeni bir klasöre sürükleyerek.
+Yer işaretlerini seçerek sanal klasörler halinde düzenleyebilirsiniz **yeni klasör** Yerimi penceresi ve ardından işaretlerini yeni klasöre sürükleyerek.
 
-Yer işaretleri devre dışı (kaldırmadan) seçerek açabilirsiniz **devre dışı bırakmak tüm yer işaretleri** yer işareti penceresinde düğmesini. Bunları aynı düğmesini seçerek yeniden etkinleştirebilirsiniz (şimdi adlandırılan **etkinleştirmek tüm yer işaretleri**).
+Yer işaretlerini (kaldırmadan) seçerek etkinleştirebilirsiniz **tüm yer işaretlerini devre dışı** yer işareti penceresindeki düğmesi. Bunları aynı düğmeyi yeniden etkinleştirebilirsiniz (artık adlandırılan **tüm yer imlerini etkinleştir**).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Kod Düzenleyicisi'nde yazma](../ide/writing-code-in-the-code-and-text-editor.md)
+- [Kod Düzenleyicisi özellikleri](../ide/writing-code-in-the-code-and-text-editor.md)

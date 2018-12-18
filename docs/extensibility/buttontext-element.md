@@ -1,5 +1,5 @@
 ---
-title: ■ ButtonText öğesi | Microsoft Docs
+title: ButtonText öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,38 +14,39 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2fca0fbb22bf51353eeaa64f519face53bfb23c8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f8ba4667a34594c764a57788ee468d32733ded8e
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39232019"
 ---
-# <a name="buttontext-element"></a>■ ButtonText öğesi
-Bu alan çeşitli menülerde görüntülenen metni belirtmenize olanak sağlar. Varsayılan olarak, `ButtonText` öğe menü denetleyicileri görüntülenir. `ButtonText` Öğesi bir metin alanları boş ise varsayılan de olur. `ButtonText` Diğer metin alanları belirtilmese bile öğesi boş olamaz.  
+# <a name="buttontext-element"></a>ButtonText öğesi
+Bu alan çeşitli menülerde görüntülenen metin belirtmenize olanak sağlar. Varsayılan olarak, `ButtonText` öğesi menüsü denetleyicileri görünür. `ButtonText` Öğesi diğer metin alanları boş ise varsayılan ayrıca olur. `ButtonText` Bile diğer metin alanları öğesi boş olamaz.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <ButtonText>My Command</ButtonText>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
 |[Strings Öğesi](../extensibility/strings-element.md)|Metin öğeleri gibi gruplar `ButtonText` ve `CommandName`.|  
   
-## <a name="text-value"></a>Metin Değeri  
- Metin değerini `ButtonText` öğesi menü öğeleri, birleşik ve görünür metne sahip diğer kullanıcı arabirimi (UI) öğeleri için görüntülenen metin sağlar.  
+## <a name="text-value"></a>Metin değeri  
+ Metin değeri `ButtonText` öğesi menü öğeleri, combos ve görünen metin sahip diğer kullanıcı arabirimi (UI) öğeleri için görüntülenen metni sağlar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Komut Tablosu (.Vsct) Dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio komut tablosu (.vsct) dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

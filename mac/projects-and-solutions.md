@@ -1,28 +1,29 @@
 ---
-title: Projeler ve çözümler Mac için Visual Studio'da
+title: Projeler ve Çözümler
 description: Bu belge, Mac için projeler ve çözümler Visual Studio'da genel bir bakış sağlar
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+author: conceptdev
+ms.author: crdun
+ms.date: 05/06/2018
 ms.assetid: 8254505D-D96E-48BD-8A5E-CF6A917897EA
-ms.openlocfilehash: a2936427ffa1f6c225d8a84754084287e2ab72c2
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 6ae37b7256b1cefe2bfbd2174135b013b1aa37cd
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51296404"
 ---
 # <a name="projects-and-solutions"></a>Projeler ve Çözümler
 
-Mac için Visual Studio sağlayan bir _çözüm paneli_ tüm açık çözümü ağaç görünümünü görüntülemek için kaynak kodu, kaynaklar, kullanıcı arabirimleri kolay erişim izin veren ve derlemeye başvuran içinde tek tek projeler. Çözüm paneli, varsayılan olarak, aynı anda bir çözüm açılır. Her bir çözüm için çok sayıda proje dahil olabilir ve her proje çok sayıda öğe içerebilir.
+Mac için Visual Studio sağlar bir _çözüm bölmesi_ tüm açık çözüme ağaç görünümünü görüntülemek için. **Çözüm** paneli, kaynak kodu, kaynakları, kullanıcı arabirimleri kolay erişim sağlar ve derleme içinde tek tek projeler başvurur. Çözüm bölmesi, varsayılan olarak, bir kerede bir çözümü açar. Her çözüm, çok sayıda proje içerebilir ve her proje, çok sayıda öğe içerebilir.
 
 ## <a name="using-projects-and-solutions"></a>Projeler ve çözümler kullanma
 
-Yeni bir proje veya çözüm oluşturmak için bkz [yeni projeler ve çözümler oluşturma](~/create-new-projects.md) makalesi.
+Yeni bir proje veya çözüm oluşturmak için başvurmak [yeni projeler ve çözümler oluşturma](create-new-projects.md) makalesi.
 
 ## <a name="project-and-solution-options"></a>Proje ve çözüm seçenekleri
 
-Projeler ve çözümler özelliklerini proje/çözüm adına çift tıklatarak ya da sağ tıklayarak ve göz yönetebilirsiniz **seçenekleri**. Bu seçenekler hakkında daha fazla bilgi sağlanan [çözümleri yönetmek ve proje özelliklerini](~/managing-solutions-and-project-properties.md) makalesi.
+Proje veya çözüm adına çift tıklayarak veya sağ tıklayıp göz hem proje ve çözüm özelliklerini yönetme **seçenekleri**. Bu seçenekler hakkında daha fazla bilgi sağlanır [yönetme çözüm ve proje özelliklerini](managing-solutions-and-project-properties.md) makalesi.
 
+## <a name="see-also"></a>Ayrıca bkz.
 
-
-
+- [(Windows üzerinde) Visual Studio'da projeler ve çözümler](/visualstudio/ide/solutions-and-projects-in-visual-studio)

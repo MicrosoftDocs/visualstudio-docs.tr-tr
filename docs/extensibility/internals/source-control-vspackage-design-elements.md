@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130236"
 ---
 # <a name="source-control-vspackage-design-elements"></a>Kaynak denetimi VSPackage tasarım öğeleri
 Bu bölümdeki konular, VSPackage için derin tümleştirme uygulamalıdır kaynak denetimi yapısı ana hatlarını vermektedir. Ayrıca arabirimleri listeler ve kaynak VSPackage Denetim Hizmetleri uygulayabilirsiniz ve arabirimleri ve Hizmetleri kaynak denetimi VSPackage diğer kullanabilirsiniz [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kaynağı destekleyen bileşenler denetim modeli ve işlevselliği.  

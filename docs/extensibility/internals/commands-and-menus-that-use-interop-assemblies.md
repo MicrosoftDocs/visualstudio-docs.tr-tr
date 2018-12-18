@@ -1,5 +1,5 @@
 ---
-title: Komutlar ve birlikte çalışma derlemeleri kullanma menüleri | Microsoft Docs
+title: Komutlar ve menüler birlikte çalışma bütünleştirilmiş kodlarını kullanan | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,42 +16,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c48ee7eb25fa95789076454c849485f4ac1dc384
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2212d9eb38487bf824fd8df3c497d9f256379c10
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49907813"
 ---
-# <a name="commands-and-menus-that-use-interop-assemblies"></a>Komutlar ve birlikte çalışma derlemeleri kullanma menüleri
-Birlikte çalışma derlemeleri kullanarak menü ve araç çubuğu komutlarını uygulayan bir VSPackage gerekir:  
+# <a name="commands-and-menus-that-use-interop-assemblies"></a>Komutlar ve menüler birlikte çalışma bütünleştirilmiş kodları kullanın
+Birlikte çalışma derlemelerini kullanarak menü ve araç çubuğu komutlarını uygulayan bir VSPackage'ı gerekir:  
   
--   Bildirmek [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamını (IDE) desteklediği komutlar ve bunlar şu anda etkinleştirilip etkinleştirilmediği.  
+- Bildirmek [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE), desteklediği komutlar ve bunlar şu anda etkinleştirilip etkinleştirilmediği.  
   
--   Komutları işleme için (sözleşme) kurallarına uyması.  
+- Komutları işlemek için kuralları (sözleşme) izliyor.  
   
--   Komut işleme kullanarak açıkça uygulama <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy> arabirimi.  
+- Açıkça komut işleme kullanarak uygulama <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy> arabirimi.  
   
- Bu görevlerin nasıl yapılacağını açıklar.  
+  Aşağıdaki bölümde bu görevlerin nasıl yapılacağını açıklar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Birlikte Çalışma Bütünleştirilmiş Kodları Kullanarak Komut Durumunu Belirleme](../../extensibility/internals/determining-command-status-by-using-interop-assemblies.md)  
- Nasıl bir VSPackage IDE bildirir açıklar hangi komutları hakkında destekliyorsa ve bunlar şu anda etkinleştirilip etkinleştirilmediği.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Birlikte çalışma bütünleştirilmiş kodları kullanarak komut durumunu belirleme](../../extensibility/internals/determining-command-status-by-using-interop-assemblies.md)  
+ VSPackage IDE nasıl bildirir açıklar, hangi komutları destekler ve bunlar şu anda etkinleştirilip etkinleştirilmediği.  
   
- [Birlikte Çalışma Bütünleştirilmiş Kodlarında Komut Sözleşmeleri](../../extensibility/internals/command-contracts-in-interop-assemblies.md)  
- Birlikte çalışma derlemeleri kullanarak komutları uygulama tüm VSPackages tarafından kullanılan temel komutu sözleşmesi tanımını sağlar  
+ [Birlikte çalışma bütünleştirilmiş kodlarında komut sözleşmeleri](../../extensibility/internals/command-contracts-in-interop-assemblies.md)  
+ Tüm VSPackages birlikte çalışma bütünleştirilmiş kodları kullanan komutlar uygulama tarafından kullanılan temel komut sözleşmesi tanımını sağlar.
   
- [Uygulama](../../extensibility/internals/command-implementation.md)  
- Bir komut bir VSPackage nasıl uyguladığını genel bir bakış sağlar.  
+ [Komut uygulama](../../extensibility/internals/command-implementation.md)  
+ VSPackage bir komutu nasıl uyguladığını genel bir bakış sağlar.  
   
- [Birlikte Çalışma Bütünleştirilmiş Kodu Komut İşleyicilerini Kaydetme](../../extensibility/internals/registering-interop-assembly-command-handlers.md)  
- Bir VSPackage bir komut işleyici sağlar IDE bildirmek için gerekli kayıt defteri girdileri açıklar.  
+ [Birlikte çalışma bütünleştirilmiş kodu komut işleyicilerini kaydetme](../../extensibility/internals/registering-interop-assembly-command-handlers.md)  
+ VSPackage'nın bir komut işleyici sunar IDE'nin bildirmek için gerekli kayıt defteri girdilerini açıklar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Kullanılabilirlik](../../extensibility/internals/command-availability.md)  
- IDE tarafından hangi VSPackage komutlar kullanılabilir ve hangi nesne bunları işler belirlemek için kullanılan ölçüt açıklar.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Komut kullanılabilirliği](../../extensibility/internals/command-availability.md)  
+ IDE tarafından hangi VSPackage komutları kullanılabilir ve bunların hangi nesne işleme belirlemek için kullanılan ölçütleri açıklanmaktadır.  
   
- [VSPackage’ların Kullanıcı Arabirimi Öğeleri Eklemesi](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)  
+ [VSPackage kullanıcı arabirimi öğelerini nasıl eklenir](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)  
  Kullanan kullanıcı Arabirimi oluşturma hakkında ayrıntılar sağlar [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] komut desteği.  
   
- [VSPackage’larda Komut Yönlendirme](../../extensibility/internals/command-routing-in-vspackages.md)  
- Bir nesne doğru komutu istek ile ilişkilendirmek için kullanılan işlemine genel bakış.
+ [Vspackage'larda komut yönlendirme](../../extensibility/internals/command-routing-in-vspackages.md)  
+ Bir nesne doğru komutu istekle ilişkilendirmek için kullanılan işlemine bir genel bakış.

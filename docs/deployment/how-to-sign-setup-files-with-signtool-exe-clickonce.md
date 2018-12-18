@@ -20,62 +20,63 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: dc4dc7b2f96b1d36e91e8114458a7a8e9f3231f3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b66d9440ebcf62c59049b45769a2244fc773480e
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081507"
 ---
-# <a name="how-to-sign-setup-files-with-signtoolexe-clickonce"></a>Nasıl yapılır: Kurulum Dosyalarını SignTool.exe ile İmzalama (ClickOnce)
-Kurulum programını (setup.exe) imzalamak için SignTool.exe kullanabilirsiniz. Bu işlem, son kullanıcı bilgisayarlarında değiştirilen dosyaların yüklü değil sağlamaya yardımcı olur.  
+# <a name="how-to-sign-setup-files-with-signtoolexe-clickonce"></a>Nasıl yapılır: Kurulum dosyalarını SignTool.exe (ClickOnce) ile
+Kullanabileceğiniz *SignTool.exe* Kurulum programını imzalamak için (*setup.exe*). Bu işlem, değiştirilen dosyaların son kullanıcı bilgisayarlarında yüklü olmadığını garanti eder.  
   
- Varsayılan olarak, bildirimler ve imzalı bir Kurulum programı ClickOnce imzaladığı. Ancak, daha sonra Kurulum programının parametrelerini değiştirmek istiyorsanız, Kurulum programı daha sonra oturum açmalısınız. Kurulum programını imzaladıktan sonra parametreleri değiştirirseniz, imza bozulur.  
+ Varsayılan olarak, ClickOnce bildirimlerini ve imzalı bir Kurulum programı oturum açtı. Ancak, daha sonra Kurulum programının parametreleri değiştirmek istiyorsanız, Kurulum programı daha sonra oturum açmalısınız. Kurulum programı açtıktan sonra parametreleri değiştirin, imza bozulur.  
   
- Aşağıdaki yordam imzalanmamış bildirimler ve imzalanmamış bir Kurulum programı oluşturur. Ardından, ClickOnce imzalama Visual Studio'da imzalı bildirimleri üretmek için etkinleştirilir. Müşteri, kendi sertifika ile yürütülebilir imzalamak program sol Kurulum imzalanmamış.  
+ Aşağıdaki yordam, imzalanmamış bildirimler ve imzalanmamış bir Kurulum programı oluşturur. Ardından, ClickOnce imzalama Visual Studio'da imzalı bildirimler oluşturmak için etkinleştirilir. Müşteri yürütülebilir dosya, kendi sertifika ile oturum açabilirsiniz, böylece Kurulum programı sol imzalanmamış.  
   
-### <a name="to-generate-an-unsigned-setup-program-and-sign-later"></a>İmzalanmamış bir Kurulum programı oluşturmak ve daha sonra imzalamak için  
+### <a name="to-generate-an-unsigned-setup-program-and-sign-later"></a>İmzalanmamış bir Kurulum programı oluşturun ve daha sonra oturum için  
   
-1.  Geliştirme bilgisayarınızda oturum bildirimleri istediğiniz sertifikayı yükleme ile.  
+1.  Geliştirme bilgisayarında oturum bildirimleri istediğiniz sertifikayı yükleme ile.  
   
 2.  Projede seçin **Çözüm Gezgini**.  
   
 3.  Üzerinde **proje** menüsünde tıklatın *ProjectName* **özellikleri**.  
   
-4.  İçinde **imzalama** sayfasında, Temizle **ClickOnce bildirimlerini imzalayacak**.  
+4.  İçinde **imzalama** sayfasında, NET **ClickOnce bildirimlerini imzala**.  
   
-5.  İçinde **Yayımla** sayfasında, **Önkoşullar**.  
+5.  İçinde **Yayımla** sayfasında **önkoşulları**.  
   
 6.  Tüm Önkoşullar seçilir ve ardından doğrulamak **Tamam**.  
   
-7.  İçinde **Yayımla** sayfasında, yayımlama ayarlarını doğrulayın ve ardından **Şimdi Yayımla**.  
+7.  İçinde **Yayımla** sayfasında yayınlama ayarları doğrulayın ve ardından **Şimdi Yayımla**.  
   
-     Çözüm imzalanmamış uygulama bildirimini, imzalanmamış dağıtım bildirimi, sürüme özgü dosyaları ve imzalanmamış bir Kurulum programı yayımlama klasör konumuna yayımlar.  
+     İmzasız uygulama bildirimi, işaretsiz bir dağıtım bildirimi, sürümüne özel dosyalar ve imzalanmamış bir Kurulum programı, çözümü yayımlama klasörü konumu için yayımlar.  
   
-8.  İçinde **Yayımla** sayfasında, **Önkoşullar**.  
+8.  İçinde **Yayımla** sayfasında **önkoşulları**.  
   
-9. İçinde **Önkoşullar** iletişim kutusu, Temizle **Önkoşul bileşenlerini yüklemek için Kurulum programını oluşturun**.  
+9. İçinde **önkoşulları** iletişim kutusu, NET **Önkoşul bileşenlerini yüklemek için Kurulum programını Oluştur**.  
   
-10. İçinde **Yayımla** sayfasında, yayımlama ayarlarını doğrulayın ve ardından **Şimdi Yayımla**.  
+10. İçinde **Yayımla** sayfasında yayınlama ayarları doğrulayın ve ardından **Şimdi Yayımla**.  
   
-     Çözüm imzalı uygulama bildirimini, imzalı dağıtım bildirimini ve sürüme özgü dosyaları yayımlama klasörü konumu yayımlar. İmzalanmamış bir Kurulum programı yayımlama işlemi tarafından geçersiz kılınmaz.  
+     Çözüm yayımlama klasörü konumu için imzalı bir uygulama bildirimi, imzalı dağıtım bildirimini ve sürümüne özel dosyalar yayımlar. İmzalanmamış bir Kurulum programı yayımlama işlemi tarafından üzerine yazılır.  
   
-11. Müşteri sitesinde bir komut istemi açın.  
+11. Müşteri sitede, bir komut istemi açın.  
   
-12. .Exe dosyasının bulunduğu dizine geçin.  
+12. Değişiklik içeren dizine *.exe* dosya.  
   
-13. Aşağıdaki komutla .exe dosyasını imzalayın:  
+13. Oturum *.exe* dosyasını aşağıdaki komutla:  
   
-    ```  
+    ```cmd  
     signtool sign /sha1 CertificateHash Setup.exe  
     signtool sign /f CertFileName Setup.exe  
     ```  
   
      Örneğin, Kurulum programını imzalamak için aşağıdaki komutlardan birini kullanın:  
   
-    ```  
+    ```cmd  
     signtool sign /sha1 CCB... Setup.exe  
     signtool sign /f CertFileName Setup.exe  
     ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: Uygulama ve Dağıtım Bildirimlerini Yeniden İmzalama](../deployment/how-to-re-sign-application-and-deployment-manifests.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Nasıl yapılır: yeniden, uygulama ve dağıtım bildirimlerini imzalama](../deployment/how-to-re-sign-application-and-deployment-manifests.md)

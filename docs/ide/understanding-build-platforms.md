@@ -1,9 +1,8 @@
 ---
-title: Yapı platformlarını anlama | Microsoft Docs
-ms.custom: ''
+title: Derleme platformlarını anlama
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-compile
 ms.topic: conceptual
 f1_keywords:
 - vs.build.newsolutionplatform
@@ -19,23 +18,25 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 47d4efb409c2779327c4914422b7e37becd6e3c7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2f813f9181d54ab3363c5643710b5434457d1959
+ms.sourcegitcommit: a8e01952be5a539104e2c599e9b8945322118055
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "32425367"
 ---
-# <a name="understanding-build-platforms"></a>Derleme Platformlarını Anlama
-Farklı sürümlerini farklı bir hedef platformlar için uygulanan çözüm ve proje özellikleri depolayabilirsiniz. Örneğin, bir x86 hedefleyen bir hata ayıklama yapılandırmasını oluşturabilirsiniz platform ve bir x64 hedefleyen bir hata ayıklama yapılandırmasını platform. Böylece kolayca derleme birden çok yapılandırmaları etkin platform hızlı bir şekilde değiştirebilirsiniz.  
-  
-## <a name="in-this-section"></a>Bu Bölümde  
- [Nasıl Yapılır: Projeleri Hedef Platformlar İçin Yapılandırma](../ide/how-to-configure-projects-to-target-platforms.md)  
- Belirli bir platformun hedeflemek için bir proje yapılandırma açıklanmaktadır.  
-  
- [Nasıl Yapılır: Projeleri Hedef Birden Çok Platform İçin Yapılandırma](../ide/how-to-configure-projects-to-target-multiple-platforms.md)  
- Hedef birden çok platform için bir proje yapılandırma açıklanmaktadır.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [İzlenecek yol: uygulama oluşturma](../ide/walkthrough-building-an-application.md)   
- [Projeler ve çözümler Visual Studio'da oluşturma ve temizleme](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md)   
- [Derleme ve Oluşturma](../ide/compiling-and-building-in-visual-studio.md)
+# <a name="understand-build-platforms"></a>Derleme platformlarını anlama
+
+Farklı sürümlerini farklı bir hedef platformlar için uygulanan çözüm ve proje özellikleri depolayabilirsiniz. Örneğin, bir x86 hedefleyen bir hata ayıklama yapılandırmasını oluşturabilirsiniz platform ve bir x64 hedefleyen bir hata ayıklama yapılandırmasını platform. Böylece kolayca derleme birden çok yapılandırmaları etkin platform hızlı bir şekilde değiştirebilirsiniz.
+
+## <a name="in-this-section"></a>Bu bölümde
+
+ [Nasıl yapılır: projeleri hedef platformlar yapılandırma](../ide/how-to-configure-projects-to-target-platforms.md) belirli bir platformun hedeflemek için bir proje yapılandırma açıklanmaktadır.
+
+ [Nasıl yapılır: projeleri hedef birden çok platform için yapılandırma](../ide/how-to-configure-projects-to-target-multiple-platforms.md) hedef birden çok platform için bir proje yapılandırma açıklanmaktadır.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [İzlenecek yol: bir uygulama oluşturma](../ide/walkthrough-building-an-application.md)
+- [Derleme ve projeler ve çözümler Visual Studio'da Temizle](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md)
+- [Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)

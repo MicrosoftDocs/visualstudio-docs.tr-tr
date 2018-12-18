@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8d24665526f4487f6d2f514f41eb2afbc291847c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 07c04aff053b8ce304290fefa7f56f08b448f244
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49836644"
 ---
 # <a name="idebugalias2getappdomainid"></a>IDebugAlias2::GetAppDomainId
-Uygulama etki alanı için tanımlayıcı alır.  
+Uygulama etki alanı için tanımlayıcıyı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,7 +43,7 @@ int GetAppDomainId (
  [out] Uygulama etki alanı tanımlayıcısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Uygulama yeniden başlatıldığında uygulama etki alanı tanımlayıcısı değişiklikleri ve yeni bir uygulama etki alanı oluşturulur.  

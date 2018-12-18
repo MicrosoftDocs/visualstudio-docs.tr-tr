@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d30eb28398569aa3d14b4a7dd363abac785f352c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8f5977e7dbac34e247838efe1e8d0036e60f0416
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49887678"
 ---
 # <a name="idebugprogramengines2enumpossibleengines"></a>IDebugProgramEngines2::EnumPossibleEngines
-Bu program ayıklayabilirsiniz tüm olası hata ayıklama altyapısı (DE) GUID'lerini döndürür.  
+Bu programda hata ayıklamak tüm olası hata ayıklama altyapısı (DE) GUID'lerini döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,19 +45,19 @@ int EnumPossibleEngines(
   
 #### <a name="parameters"></a>Parametreler  
  `celtBuffer`  
- [in] Döndürülecek DE GUID'ler sayısı. Bu da en büyük boyutunu belirtir `rgguidEngines` dizi.  
+ [in] Döndürülecek DE GUID'leri sayısı. Bu ayrıca en büyük boyutunu belirtir `rgguidEngines` dizisi.  
   
  `rgguidEngines`  
- [içinde out] Doldurulacak DE GUID'ler dizisi.  
+ [out içinde] Doldurulacak DE GUID'leri dizisi.  
   
  `pceltEngines`  
- [out] Döndürülen DE GUID'ler gerçek sayısını döndürür.  
+ [out] Döndürülen DE GUID'leri gerçek sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür [C++] `HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)` veya [C#] arabellek büyüklükte değilse 0x8007007A.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür [C++] `HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)` veya [C#] 0x8007007A arabelleğin yeteri kadar büyük değil ise.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kaç tane motorları var olduğunu belirlemek için bu yöntemle kez çağrısı `celtBuffer` parametresi 0 olarak ayarlanmış ve `rgguidEngines` parametresi null bir değere ayarlayın. Bu döndürür `HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)` (0x8007007A için C#) ve `pceltEngines` parametresi gerekli arabellek boyutu döndürür.  
+ Kaç altyapıları var olduğunu belirlemek için bu yöntemi bir kez çağırın `celtBuffer` parametresi 0 olarak ayarlayın ve `rgguidEngines` parametresi null bir değere ayarlayın. Bu döndürür `HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)` (0x8007007A için C#) ve `pceltEngines` parametresi gerekli arabellek boyutunu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramEngines2](../../../extensibility/debugger/reference/idebugprogramengines2.md)

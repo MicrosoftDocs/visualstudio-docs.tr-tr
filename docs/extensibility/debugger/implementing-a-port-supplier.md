@@ -1,5 +1,5 @@
 ---
-title: Bir bağlantı noktası tedarikçi uygulama | Microsoft Docs
+title: Bir bağlantı noktası sağlayıcısı uygulama | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,27 +14,28 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b0743f307dc579f6197880b0b89acaf2db0dda08
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cdde98a85175692ed4717c8a9af0b26799c35214
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39233041"
 ---
-# <a name="implementing-a-port-supplier"></a>Bir bağlantı noktası sağlayıcı uygulama
-Bir bağlantı noktası tedarikçi oturum hata ayıklama Yöneticisi'ni (SDM) istek bağlantı noktaları sağlar. Bir bağlantı noktası tedarikçi DCOM olmayan makineye hata ayıklama sırasında veya yeni bir cihaz desteklenecek gerektiğinde uygulanması gerekir. Örneğin, bir cep telefonu hata ayıklama sağlamak için cep telefonunuza (belki de IR veya hücre bağlantı yoluyla) bağlanan ve işlemleri ve telefonda çalışan programlar numaralandırır bağlantı noktaları sağlayan bir bağlantı noktası tedarikçi uygulayabilir.  
+# <a name="implement-a-port-supplier"></a>Bağlantı noktası sağlayıcısı uygulama
+Bağlantı noktası sağlayıcısı oturum hata ayıklama Yöneticisi (SDM) istek bağlantı noktaları sağlar. Bağlantı noktası sağlayıcısı, DCOM olmayan bir makine ya da yeni bir cihaz desteği gerektirdiğinde için hata ayıklama sırasında uygulanmalıdır. Örneğin, bir cep telefonu için hata ayıklama sağlamak için cep telefonu (belki de yoluyla veya bir hücre bağlantı IR) bağlanma ve bir telefonda çalışan programlar ve işlemleri numaralandırır bağlantı noktaları sağlayan bir bağlantı noktası sağlayıcısı ayarlayabilirsiniz.  
   
- Bu durumda, kendi bağlantı noktası tedarikçi uygulamak için gerekli olmasını (uzaktan hata ayıklama dahil) Windows tabanlı makinelere hata ayıklama programları için Visual Studio yerel ve ortak dil çalışma zamanı (CLR) işlemleri, bağlantı noktası tedarikçileri sağlar.  
+ Kendi bağlantı noktası sağlayıcısı bu durumlarda ayarlama gerekmez. Bu nedenle Windows tabanlı makineler (uzaktan hata ayıklama dahil) üzerinde hata ayıklama programları için bağlantı noktası sağlayıcıları için yerel ve ortak dil çalışma zamanı (CLR) işlemleri, Visual Studio sağlar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Bağlantı Noktası Sağlayıcısı Uygulama ve Kaydetme](../../extensibility/debugger/implementing-and-registering-a-port-supplier.md)  
- SDM bağlantı noktalarını ve bağlantı noktası sağlayıcı ile nasıl etkileşim kurduğu açıklanır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Uygulama ve bağlantı noktası sağlayıcısı kaydetme](../../extensibility/debugger/implementing-and-registering-a-port-supplier.md)  
+ SDM bağlantı noktalarını ve bağlantı noktası sağlayıcısı ile nasıl etkileşim kurduğu açıklanır.  
   
- [Gerekli Bağlantı Noktası Sağlayıcısı Arabirimleri](../../extensibility/debugger/required-port-supplier-interfaces.md)  
- Bir bağlantı noktası tedarikçi almak için uygulanmalı arabirimleri belgeler.  
+ [Gerekli bağlantı noktası sağlayıcısı arabirimleri](../../extensibility/debugger/required-port-supplier-interfaces.md)  
+ Bağlantı noktası sağlayıcısı almak için uygulamanız gereken arabirimleri belgeler.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Hata Ayıklayıcı Kavramları](../../extensibility/debugger/debugger-concepts.md)  
- Ana hata ayıklama mimari kavramlarını açıklar.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)  
+ Hata ayıklama ana mimari kavramlarını açıklar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Hata Ayıklayıcı Genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio hata ayıklayıcı genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)

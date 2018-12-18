@@ -18,20 +18,21 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 108474e725c95f495bf6eec0f9a2224ca971b3d2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fbd21016d00bdfecfcb606e9fe2b720ab97bf3d0
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120438"
 ---
-# <a name="how-to-deploy-publish-and-upgrade-sharepoint-solutions-on-a-remote-server"></a>Nasıl yapılır: Uzak bir Sunucudaki SharePoint Çözümlerini Dağıtma, Yayımlama ve Yükseltme
-  SharePoint çözümleri için yerel sistem dağıtımına ek olarak, korumalı SharePoint çözümlerini uzak siteleri veya yerel SharePoint siteleri için yayımlayabilirsiniz. Uzak yayımlama işlemi .wsp dosyasını SharePoint sunucusuna kopyalar, çözüm yükler ve ardından çözüm etkinleştirmek sağlar. Kendisine değişiklikler yapıldıktan sonra uzak bir SharePoint çözüm yüklemesi yükseltme yapabilirsiniz.  
+# <a name="how-to-deploy-publish-and-upgrade-sharepoint-solutions-on-a-remote-server"></a>Nasıl yapılır: dağıtma, yayımlama ve uzak bir sunucudaki SharePoint çözümlerini yükseltme
+  SharePoint çözümleri için yerel sistem dağıtımına ek olarak, korumalı SharePoint çözümlerini uzak siteleri veya yerel SharePoint siteleri için yayımlayabilirsiniz. Uzak yayımlama işlemi kopyaları *.wsp* dosyasını SharePoint sunucusuna çözümü yükler ve ardından çözümü etkinleştirin olanak tanır. Kendisine değişiklikler yapıldıktan sonra uzak bir SharePoint çözüm yüklemesi yükseltme yapabilirsiniz.  
   
 ## <a name="to-publish-a-sandboxed-sharepoint-solution-to-a-remote-sharepoint-server"></a>Korumalı bir SharePoint çözüm uzak SharePoint sunucusuna yayımlamak için  
   
 1.  İçinde **Çözüm Gezgini**, yayımlama ve ardından istediğiniz korumalı SharePoint proje için kısayol menüsünü açın **Yayımla**.  
   
-2.  İçinde **Yayımla** iletişim kutusunda, seçin **SharePoint sitesi için Yayımlama** seçenek düğmesi ve aşağıdaki örnek gibi bir çevrimiçi yayımlama site için bir URL girin: **https://mytestsite.sharepoint.microsoftonline.com** .  
+2.  İçinde **Yayımla** iletişim kutusunda, seçin **SharePoint sitesi için Yayımlama** seçenek düğmesi ve bir URL çevrimiçi yayımlama bir site için gibi girin: `https://mytestsite.sharepoint.microsoftonline.com`.  
   
 3.  Seçin **Çözüm Galerisi'ne yayımladıktan sonra tarayıcıda açın** çözümlerinde listesini görüntülemek için seçenek düğmesi **çözüm Galerisi** yayımlama sonra sayfa.  
   
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/16/2018
   
 5.  Kullanıcı kimlik doğrulaması gerekli olduğunda uzak sunucuya oturum açın.  
   
-     Visual Studio'da yayımlama ilerleme görünür **çıkış** penceresi. İşlem tamamlandığında, çözüm (.wsp) dosyası uzak SharePoint sunucusuna yüklenir. SharePoint'te kullanılabilmesi için önce ancak bunu hala etkinleştirilmesi gerekir.  
+     Visual Studio'da yayımlama ilerleme görünür **çıkış** penceresi. İşlem tamamlandığında, çözüm (*.wsp*) dosyası uzak SharePoint sunucusuna yüklenir. SharePoint'te kullanılabilmesi için önce ancak bunu hala etkinleştirilmesi gerekir.  
   
 6.  Üzerinde **çözüm Galerisi** sayfasında, SharePoint uygulama seçin ve ardından Şeritteki belirtin **etkinleştirme** düğmesi.  
   
@@ -76,10 +77,9 @@ ms.lasthandoff: 04/16/2018
   
      Çözümü eski sürümü devre dışı bırakıldı, çözümü yeni sürümü, eski çözümden tutulan verilerle yükseltilir ve yeni bir çözüm SharePoint'te etkinleştirilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [Nasıl yapılır: dağıtma ve bir SharePoint çözümünü yerel bir SharePoint sitesine yayımlama](../sharepoint/how-to-deploy-and-publish-a-sharepoint-solution-to-a-local-sharepoint-site.md)   
  [SharePoint çözüm paketleri oluşturma](../sharepoint/creating-sharepoint-solution-packages.md)   
  [Nasıl yapılır: bir SharePoint çözüm paketini özelleştirme](../sharepoint/how-to-customize-a-sharepoint-solution-package.md)   
- [Nasıl yapılır: Paket Tasarımcısını Kullanarak Bir Pakete Özellikler ve Öğeler Ekleme ve Kaldırma](../sharepoint/how-to-add-and-remove-features-and-items-to-a-package-by-using-the-package-designer.md)  
-  
+ [Nasıl yapılır: ekleme ve özellikler ve öğeler bir paket için paket Tasarımcısını kullanarak kaldırma](../sharepoint/how-to-add-and-remove-features-and-items-to-a-package-by-using-the-package-designer.md)  
   

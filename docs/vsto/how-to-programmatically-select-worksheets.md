@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla çalışma sayfaları seçme | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla çalışma sayfaları seçme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,40 +16,41 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 5d0862f83d77365e07df1e61b7063a9e5ecd4f37
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 09e477d802b9d92ca4f9e1cd3a532145ad0e68a0
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677917"
 ---
-# <a name="how-to-programmatically-select-worksheets"></a>Nasıl yapılır: Program Aracılığıyla Çalışma Sayfaları Seçme
-  <xref:Microsoft.Office.Tools.Excel.Worksheet.Select%2A> Yöntemi, kullanıcının seçimini yeni nesneye taşıyan belirtilen nesneyi seçer. Kullanım <xref:Microsoft.Office.Tools.Excel.Worksheet.Activate%2A> , kullanıcının seçimini değiştirmeden nesneye odaklanmak istiyorsanız yöntemi.  
+# <a name="how-to-programmatically-select-worksheets"></a>Nasıl yapılır: program aracılığıyla çalışma sayfaları seçme
+  <xref:Microsoft.Office.Tools.Excel.Worksheet.Select%2A> Yöntemi yeni nesneye kullanıcının seçimi taşır belirtilen nesneyi seçer. Kullanım <xref:Microsoft.Office.Tools.Excel.Worksheet.Activate%2A> yöntemi, kullanıcının seçimini değiştirmeden nesnesine odaklanmak istiyorsanız.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- Bir VSTO eklenti varolan bir çalışma sayfasına seçin veya çalışma zamanında belge düzeyi özelleştirmelerinde oluşturulmuşsa, onu Excel kullanarak erişmeniz gerekir istiyorsanız <xref:Microsoft.Office.Interop.Excel.Sheets> Excel çalışma kitabı; koleksiyonunu Aksihalde,erişim<xref:Microsoft.Office.Tools.Excel.Worksheet>doğrudan konak öğesi.  
+ VSTO eklentisi içinde varolan bir çalışma sayfası seçin veya çalışma zamanında belge düzeyi özelleştirmesinde oluşturulduysa, Excel kullanarak erişebilmesi gerekir istiyorsanız <xref:Microsoft.Office.Interop.Excel.Sheets> Excel çalışma kitabı; koleksiyonunu Aksitakdirde,erişebileceğiniz<xref:Microsoft.Office.Tools.Excel.Worksheet>doğrudan konak öğesi.  
   
-## <a name="using-the-worksheet-host-item"></a>Çalışma sayfası konak öğesi kullanma  
- Belge düzeyi özelleştirmelerinde aşağıdaki kodu ekleyin **Sheet1.vb** veya **Sheet1.cs**.  
+## <a name="use-the-worksheet-host-item"></a>Çalışma sayfası konak öğesi kullanın  
+ Belge düzeyi özelleştirmesinde, aşağıdaki kodu ekleyin *Sheet1.vb* veya *Sheet1.cs*.  
   
-#### <a name="to-select-the-first-worksheet-in-a-workbook-using-a-host-item"></a>İlk çalışma sayfası konak öğesi kullanarak çalışma kitabındaki seçmek için  
+### <a name="to-select-the-first-worksheet-in-a-workbook-using-a-host-item"></a>İlk çalışma sayfası konak öğesi kullanarak bir çalışma kitabında seçmek için  
   
 1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Worksheet.Select%2A> yöntemi `Sheet1`.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#19](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#19)]
      [!code-vb[Trin_VstcoreExcelAutomation#19](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#19)]  
   
-## <a name="using-the-sheets-collection-of-the-excel-workbook"></a>Excel çalışma kitabı sayfaları koleksiyonunu kullanarak  
+## <a name="use-the-sheets-collection-of-the-excel-workbook"></a>Excel çalışma kitabını sayfaları koleksiyonunu kullanın  
  Excel kullanarak çalışma sayfasına erişin <xref:Microsoft.Office.Interop.Excel.Sheets> koleksiyonu.  
   
-#### <a name="to-select-the-first-worksheet-in-a-workbook-using-the-sheets-collection-of-the-excel-workbook"></a>Excel çalışma kitabı sayfaları koleksiyonunu kullanarak çalışma kitabındaki ilk çalışma seçmek için  
+### <a name="to-select-the-first-worksheet-in-a-workbook-using-the-sheets-collection-of-the-excel-workbook"></a>Excel çalışma kitabı ve sayfalar koleksiyonunu kullanarak bir çalışma kitabında ilk çalışma sayfası seçin  
   
-1.  Çağrı <xref:Microsoft.Office.Interop.Excel.Sheets.Select%2A> yöntemi <xref:Microsoft.Office.Interop.Excel.Sheets> koleksiyonu etkin çalışma kitabının ilk çalışma sayfasını seçin.  
+1.  Çağrı <xref:Microsoft.Office.Interop.Excel.Sheets.Select%2A> yöntemi <xref:Microsoft.Office.Interop.Excel.Sheets> ilk çalışma etkin çalışma kitabının seçmek için koleksiyon.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#20](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#20)]
      [!code-vb[Trin_VstcoreExcelAutomation#20](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#20)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çalışma sayfaları ile çalışma](../vsto/working-with-worksheets.md)   
  [Nasıl yapılır: çalışma sayfalarını program aracılığıyla yazdırma](../vsto/how-to-programmatically-print-worksheets.md)   
  [Nasıl yapılır: program aracılığıyla çalışma kitaplarından çalışma sayfaları silme](../vsto/how-to-programmatically-delete-worksheets-from-workbooks.md)   
@@ -59,6 +60,6 @@ ms.lasthandoff: 04/16/2018
  [Office projelerindeki nesnelere genel erişim](../vsto/global-access-to-objects-in-office-projects.md)   
  [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)   
  [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)   
- [Konak Öğelerine ve Denetimlerine Genel Bakış](../vsto/host-items-and-host-controls-overview.md)  
+ [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)  
   
   

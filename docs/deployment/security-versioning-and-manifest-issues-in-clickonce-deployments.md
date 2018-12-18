@@ -1,5 +1,5 @@
 ---
-title: Güvenlik, sürüm ve bildirim sorunları ClickOnce dağıtımlarında | Microsoft Docs
+title: Güvenlik, sürüm ve bildirim sorunları ClickOnce Dağıtımları içinde | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -24,79 +24,80 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8b1f6005b290d1567ae922da8ec46b3db05b9b22
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a7ae835b53960ca6952b71c10a2348f707785e16
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081751"
 ---
-# <a name="security-versioning-and-manifest-issues-in-clickonce-deployments"></a>ClickOnce Dağıtımlarında Güvenlik, Sürüm ve Bildirim Sorunları
+# <a name="security-versioning-and-manifest-issues-in-clickonce-deployments"></a>Güvenlik, sürüm ve bildirim sorunları ClickOnce Dağıtımları
 
-Çok çeşitli sorunlar ile vardır [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] güvenlik, uygulama sürümü ve bildirim sözdizimi ve neden olabilir semantiği bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dağıtımının.
+İle ilgili sorunları birçok [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] güvenlik, uygulama sürümü ve bildirim sözdizimi ve semantiği neden olabilecek bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dağıtımının.
 
 ## <a name="clickonce-and-windows-vista-user-account-control"></a>ClickOnce ve Windows Vista kullanıcı hesabı denetimi
 
-İçinde [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)], uygulamalar varsayılan olarak, geçerli kullanıcının yönetici izinlerine sahip bir hesapla oturum oturum açmamış olsa bile standart bir kullanıcı olarak çalıştırın. Bir uygulama yönetici izinleri gerektiren bir eylem gerçekleştirmeniz gerekirse, yönetici kimlik bilgilerini girmesini ister işletim sistemi söyler. Kullanıcı Hesabı Denetimi (UAC) olarak adlandırılır, bu özellik bir kullanıcının açık onayını olmadan işletim sisteminin tamamını etkileyebilecek değişiklikler uygulamaların engeller. Windows uygulamaları bildirme belirterek bu izni ayrıcalık gerektiren `requestedExecutionLevel` özniteliğini `trustInfo` uygulama bildiriminde bölümü.
+İçinde [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)], uygulamalar varsayılan olarak, geçerli kullanıcının yönetici izinlerine sahip bir hesapla oturum açarsa bile standart bir kullanıcı olarak çalıştırın. Bir uygulama yönetici izinleri gerektiren bir eylem gerçekleştirmeniz gerekirse, ardından yönetici kimlik bilgilerini girmesini ister. işletim sistemi söyler. Kullanıcı Hesabı Denetimi (UAC) olarak adlandırılır, bu özellik, uygulamalar, bir kullanıcının açık onayını olmadan işletim sisteminin tamamını etkileyebilecek değişiklikler yapmasını engeller. Windows uygulamaları bildirmek belirterek bu izni ayrıcalık gerektiren `requestedExecutionLevel` özniteliğini `trustInfo` kendi uygulama bildiriminin.
 
-Uygulamaları ve güvenlik ayrıcalık saldırılara açığa çıkma riskini nedeniyle [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] UAC istemci için etkinse, uygulamaları izin yükseltme isteği olamaz. Tüm [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] ayarlamaya çalışır uygulama kendi `requestedExecutionLevel` özniteliğini `requireAdministrator` veya `highestAvailable` üzerinde yüklenmez [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)].
+Güvenlik yükseltme saldırıları, uygulamaları gösterme riskini nedeniyle [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] UAC istemci için etkinse, uygulamaları izin yükseltme isteği olamaz. Tüm [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] ayarlama girişiminde uygulama kendi `requestedExecutionLevel` özniteliğini `requireAdministrator` veya `highestAvailable` üzerinde yüklenmez [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)].
 
-Bazı durumlarda, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama yönetici izinlerine sahip yükleyici algılama mantığı nedeniyle çalıştırmayı deneyebilirsiniz [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)]. Bu durumda, ayarlayabileceğiniz `requestedExecutionLevel` uygulama bildirimine özniteliğinde `asInvoker`. Bu yükseltme olmadan çalıştırmak uygulamanın kendisinin neden olur. [!INCLUDE[vs_orcas_long](../debugger/includes/vs_orcas_long_md.md)] otomatik olarak bu öznitelik tüm uygulama bildirimlerine ekler.
+Bazı durumlarda, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama nedeniyle yükleyici algılama mantığı üzerinde yönetici izinleriyle çalıştırmak çalışabilir [!INCLUDE[windowsver](../deployment/includes/windowsver_md.md)]. Bu durumda, ayarlayabileceğiniz `requestedExecutionLevel` uygulama bildirimine özniteliğinde `asInvoker`. Bu yükseltme olmadan çalıştırmak uygulamanın kendisinin neden olur. [!INCLUDE[vs_orcas_long](../debugger/includes/vs_orcas_long_md.md)] otomatik olarak bu öznitelik için tüm uygulama bildirimleri ekler.
 
-Uygulamasının tüm kullanım süresi için yönetici izinleri gerektiren bir uygulama geliştiriyorsanız, uygulamanın Windows Installer (MSI) teknolojisi kullanarak dağıtmayı düşünmelisiniz. Daha fazla bilgi için bkz: [Windows Installer Temelleri](../extensibility/internals/windows-installer-basics.md).
+Tüm uygulama ömrü boyunca yönetici izinleri gerektiren bir uygulama geliştiriyorsanız Windows Installer (MSI) teknolojisini kullanarak uygulamayı dağıtma düşünmelisiniz. Daha fazla bilgi için [Windows Installer Temelleri](../extensibility/internals/windows-installer-basics.md).
 
 ## <a name="online-application-quotas-and-partial-trust-applications"></a>Çevrimiçi uygulama kotaları ve kısmi güven uygulamaları
 
-Varsa, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama bir yükleme çevrimiçi yerine çalışır, çevrimiçi uygulamalar için ayrılan kota içine sığması gerekir. Ayrıca, kısmi güvende gibi kısıtlı bir güvenlik izinleri kümesi ile çalışan bir ağ uygulaması kota boyutu yarısı büyük olamaz.
+Varsa, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama yerine çevrimiçi bir yükleme çalıştırır, çevrimiçi uygulamalar için ayrılan kota içine sığması gerekir. Ayrıca, kısmi güvende olduğu gibi kısıtlı güvenlik izinleri kümesi ile çalışan bir ağ uygulaması yarısı kota boyutu büyük olamaz.
 
-Daha fazla bilgi için ve nasıl çevrimiçi uygulama kotasını değiştirmek için bkz: [ClickOnce önbelleğine genel bir bakış](../deployment/clickonce-cache-overview.md).
+Daha fazla bilgi için ve çevrimiçi uygulama kotasını değiştirme için bkz. [ClickOnce önbelleğine genel bakış](../deployment/clickonce-cache-overview.md).
 
 ## <a name="versioning-issues"></a>Sürüm oluşturma sorunları
 
-Tanımlayıcı adlar, derlemenizi atamak ve bir uygulama güncelleştirmesini yansıtacak şekilde derleme sürüm numarasını Artır sorunlarla karşılaşabilirsiniz. Tanımlayıcı adlı bir derleme başvurusu ile derlenmiş bir derlemeyi kendisini derlenmelidir veya derleme eski sürümü başvuru dener. Derleme kendisine ait bağlanma isteği eski sürüm değeri kullandığından bu derleme çalışacaktır.
+Bir derlemeye güçlü adlar atamak ve bir uygulama güncelleştirmesi yansıtmak için derleme sürüm numarasını Artır sorunlarla karşılaşabilirsiniz. Tanımlayıcı adlı bir derlemeye başvuru ile derlenmiş herhangi bir derleme kendisini derlenmesi gerekir veya derleme başvurusu eski sürümü çalışacaktır. Derleme için eski bir sürüm değeri kendi bağlanma isteği kullandığından bu derlemeyi çalışacaktır.
 
-Örneğin, 1.0.0.0 sürümü ile kendi projesinde tanımlayıcı adlı bir derleme olduğunu varsayalım. Derlemeyi derledikten sonra ana uygulamanızı içeren projesine bir başvuru olarak ekleyin. Derleme güncelleştirmek, 1.0.0.1 sürüme artırmak ve ayrıca uygulama derlemeden dağıtmak çalışırsanız, uygulamanın çalışma zamanında derlemesini yüklemek mümkün olmaz.
+Örneğin, kendi projesi 1.0.0.0 sürümüne sahip bir tanımlayıcı adlı bütünleştirilmiş kod olduğunu varsayalım. Derlemeyi derledikten sonra ana uygulamanızı içeren projeye başvuru olarak ekleyin. Derlemeyi güncelleştirmek, 1.0.0.1 sürümüne artırmak ve ayrıca uygulama yeniden derlemeye gerek kalmadan dağıtmayı deneyin, uygulamanın çalışma zamanında derleme yüklemek mümkün olmayacaktır.
 
-Yalnızca düzenliyorsanız, bu hata oluşabilir, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] el ile; bildirimleri Visual Studio kullanarak dağıtımınızı oluşturursanız, bu hata karşılaşmamanız gerekir.
+Yalnızca düzenlemekte olduğunuz bu hata oluşabilir, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] el ile; bildirimleri Visual Studio kullanarak dağıtımınızı oluşturursanız, bu hata yaşamaması gerekiyor.
 
-## <a name="specifying-individual-net-framework-assemblies-in-the-manifest"></a>Bildirimde bağımsız .NET Framework derlemelerini belirtme
+## <a name="specify-individual-net-framework-assemblies-in-the-manifest"></a>.NET Framework derlemeleri ayrı ayrı bildiriminde belirtin
 
-Uygulamanızı el ile düzenlediyseniz yüklenemeyecek bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] daha eski bir sürümü başvurmak için dağıtım bir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] derleme. Örneğin, bir sürümü için System.Net derlemesine başvuru eklediyseniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] bildiriminde belirtilen sürümden önce ardından bir hata ortaya çıkabilecek. Genel olarak, size tek başvurular belirtmek çalışmamalısınız [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] sürümü olarak derlemeleri [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] uygulama bildiriminde bir bağımlılık olarak uygulamanızın çalıştığı karşı belirtilir.
+Uygulamanızı el ile düzenlediyseniz yüklenemeyecek bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] daha eski bir sürümünü başvurmak deployment bir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] derleme. Örneğin, bir sürümü için System.Net derlemesine bir başvuru eklediyseniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] bildiriminde belirtilen sürümden önce ardından bir hata oluşacak. Genel olarak, size tek başvuruları belirtmek çalışmamalısınız [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] derlemeler, sürümü olarak [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] uygulama bildiriminde bağımlılık olarak, uygulamanızın çalıştığı karşı belirtilir.
 
 ## <a name="manifest-parsing-issues"></a>Bildirim Ayrıştırma sorunları
 
-Tarafından kullanılan bildirim dosyaları [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] XML dosyalarıdır ve doğru biçimlendirilmiş ve geçerli olması gerekir: XML sözdizimi kurallarına uymalı ve yalnızca öğeleri ve özniteliklerinin ilgili XML Şeması'nda tanımlanan kullanın.
+Tarafından kullanılan bildirim dosyaları [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] XML dosyalarıdır ve hem iyi biçimlendirilmiş hem de geçerli olmalıdır: XML sözdizimi kurallarına uyan ve yalnızca öğeler ve öznitelikler ilgili XML Şeması'nda tanımlanan kullanın.
 
-Bildirim dosyasında sorunlara neden olabilecek bir şey tek veya çift tırnak işareti gibi özel bir karakter içeriyorsa, uygulamanız için bir ad seçmektir. Uygulamanın adını parçası olan kendi [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] kimliği. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] şu anda özel karakterler içeren kimlikleri ayrıştırma değil. Etkinleştirmek, uygulamanızın başarısız olursa, adı yalnızca alfabetik ve sayısal karakter kullanıyorsanız ve tekrar dağıtmayı denemeden emin olun.
+Bildirim dosyasında sorunlara neden olabilecek bir şey, tek veya çift tırnak işareti gibi bir özel karakter içeren uygulamanız için bir ad seçmektir. Uygulamanın adı bir parçasıdır, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] kimlik. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] şu anda özel karakterler içeren kimlikleri ayrıştırmaz. Uygulamanızı etkinleştirmek başarısız olursa, adı yalnızca alfabetik ve sayısal karakter kullanıyor ve tekrar dağıtmayı denemeden emin olun.
 
-Dağıtımı veya uygulama bildirimlerinizi el ile düzenlediyseniz, kasıtsız olarak bunları bozulmuş olabilir. Bozulmuş bir bildirim doğru engeller [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yükleme. Tıklayarak çalışma zamanında tür hatalarını ayıklayabilirsiniz **ayrıntıları** üzerinde **ClickOnce hata** iletişim kutusu ve günlük hata iletisinde okuma. Günlük şu iletilerden birini listeler:
+El ile dağıtım veya uygulama bildirimlerinizi düzenlediyseniz, yanlışlıkla bunları bozulmuş olabilir. Bozulmuş bir bildirim doğru engeller [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yükleme. Tıklayarak, çalışma zamanında bu tür hataları ayıklayabilirsiniz **ayrıntıları** üzerinde **ClickOnce hata** iletişim kutusu ve günlüğünde hata iletisi okunuyor. Günlük şu iletilerden biri listelenir:
 
-- Sözdizimi hatası ve satır numarası ve karakter açıklaması hatanın oluştuğu konum.
+- Bir açıklama söz dizimi hatası, satır numarası ve karakter hatanın oluştuğu konum.
 
-- Öğe veya öznitelik bildirim şemasını ihlal kullanılan adı. XML el ile bildirimlerinize eklediyseniz, bildirim şemalarıyla eklemeyi karşılaştırmak gerekecektir. Daha fazla bilgi için bkz: [ClickOnce dağıtım bildirimi](../deployment/clickonce-deployment-manifest.md) ve [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).
+- Bir öğe veya öznitelik bildiriminin şemasını ihlal kullanılan adı. XML el ile bildirimlerinize eklediyseniz, eklemelerinizi bildirim şemalarını karşılaştırma gerekecektir. Daha fazla bilgi için [ClickOnce dağıtım bildirimi](../deployment/clickonce-deployment-manifest.md) ve [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).
 
-- Bir kimlik çakışması. Dağıtım ve uygulama bildirimlerinde bağımlılık başvuruları her ikisinde de benzersiz olmalıdır, `name` ve `publicKeyToken` öznitelikleri. Herhangi bir bildirim içinde iki öğe arasında her iki öznitelik eşleşirse, Bildirim ayrıştırma başarısız olur.
+- ID çakışması. Dağıtım ve uygulama bildirimleri bağımlılık başvuruları ikisinde benzersiz olmalıdır, `name` ve `publicKeyToken` öznitelikleri. Her iki öznitelik, bir bildirim içinde herhangi iki öğe arasındaki eşleşirse, Bildirim Ayrıştırma başarılı olmaz.
 
-## <a name="precautions-when-manually-changing-manifests-or-applications"></a>Bildirimler veya uygulamalar el ile değiştirirken önlemler
+## <a name="precautions-when-manually-changing-manifests-or-applications"></a>Bildirimler ve uygulamaları el ile değiştirildiğinde önlemler
 
-Bir uygulama bildirimi güncelleştirdiğinizde, uygulama bildirimi ve dağıtım bildirimini yeniden imzalamalısınız. Dağıtım bildirimi o dosyanın karması ve dijital imzasını içeren uygulama bildirimi başvuru içeriyor.
+Bir uygulama bildirimi güncelleştirdiğinizde, hem uygulama bildirimi hem de dağıtım bildirimini yeniden imzalamanız gerekir. Dağıtım bildirimi o dosyanın karması ve dijital imzası içerir bir uygulama bildirimi bir başvuru içeriyor.
 
-### <a name="precautions-with-deployment-provider-usage"></a>Dağıtım sağlayıcısı kullanımı ile önlemler
+### <a name="precautions-with-deployment-provider-usage"></a>İle dağıtım sağlayıcı kullanım uyarıları
 
-[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] Dağıtım bildirimi sahip bir `deploymentProvider` uygulamanın yüklü ve hizmet gelen konumunun tam yolunu gösteren özelliği:
+[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] Dağıtım bildirimi sahip bir `deploymentProvider` uygulamanın yüklü ve hizmet gelen konumun tam yolunu işaret eden özelliği:
 
 ```xml
 <deploymentProvider codebase="http://myserver/myapp.application" />
 ```
 
-Bu yol ayarlanır [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulaması oluşturur ve yüklü uygulamalar için zorunlu. Yolun standart konumuna işaret eden nerede [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yükleyici uygulamasından ve güncelleştirmeleri yükler. Kullanırsanız **xcopy** kopyalamak için komut bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama farklı bir konuma ancak değiştirmeyin `deploymentProvider` özelliği [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yüklemeye çalıştığında hala geri özgün konuma başvuru yapar uygulama.
+Bu yol ayarlanır [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulaması oluşturur ve yüklü uygulamalar için zorunlu. Yolun standart konumuna işaret burada [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yükleyici güncelleştirmeleri için arama ve uygulamayı yükler. Kullanırsanız **xcopy** kopyalamak için komut bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama farklı bir konuma ancak değiştiremez `deploymentProvider` özelliği [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yüklemeye çalıştığında hala geri özgün konuma başvuru yapar uygulama.
 
-Taşımak veya uygulamanın kopyalamak istiyorsanız, aynı zamanda güncelleştirmelisiniz `deploymentProvider` yolu, böylece istemci gerçekten yeni konumdan yükler. Uygulamaları yüklediyseniz, bu yolu güncelleştirme çoğunlukla bir konudur. Her zaman ayarı özgün URL aracılığıyla başlatılan çevrimiçi uygulamalar için `deploymentProvider` isteğe bağlıdır. Varsa `deploymentProvider` bu kullanılacaktır; Aksi takdirde, uygulamayı başlatmak için kullanılan URL temel URL olarak uygulama dosyalarını indirmek için kullanılacak, ayarlanmadı.
+Uygulamanın taşınacak veya kopyalanacak isterseniz de güncelleştirmelisiniz `deploymentProvider` yolu, böylece istemci yeni konumundan gerçekten yükler. Bir uygulama yüklediyseniz bu yolu güncelleştiriliyor çoğunlukla bir konudur. Her zaman ayarı asıl URL aracılığıyla başlatılan çevrimiçi uygulamalar için `deploymentProvider` isteğe bağlıdır. Varsa `deploymentProvider` kabul edilir; Aksi takdirde, uygulamayı başlatmak için kullanılan URL temel URL olarak uygulama dosyalarını indirmek için kullanılacak ayarlanmış.
 
 > [!NOTE]
-> Bildirim her güncelleştirdiğinizde de onu tekrar oturum açmanız gerekir.
+> Bildirim her güncelleştirdiğinizde de yeniden imzalamanız gerekir.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-[ClickOnce Dağıtım Sorunlarını Giderme](../deployment/troubleshooting-clickonce-deployments.md)  
-[ClickOnce Uygulamalarının Güvenliğini Sağlama](../deployment/securing-clickonce-applications.md)  
-[ClickOnce Dağıtım Stratejisini Seçme](../deployment/choosing-a-clickonce-deployment-strategy.md)
+[ClickOnce dağıtım sorunlarını giderme](../deployment/troubleshooting-clickonce-deployments.md)  
+[Securw ClickOnce uygulamaları](../deployment/securing-clickonce-applications.md)  
+[ClickOnce dağıtım stratejisini seçin](../deployment/choosing-a-clickonce-deployment-strategy.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c363da795e588963c234af05a856f3352a7b2815
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 79afce90f462f97d7a33a64875c4784a030f845e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905928"
 ---
-# <a name="sccuncheckout-function"></a>SccUncheckout işlevi
-Bu işlev seçilen dosya veya dosyaları içeriğini checkout önce durumuna böylece geri yükleme önceki bir kullanıma alma işlemini geri alır. Bu yana checkout dosyada yapılan tüm değişiklikler kaybolur.  
+# <a name="sccuncheckout-function"></a>SccUncheckout İşlevi
+Bu işlev, böylece içeriğini seçilen dosyayı veya dosyaları kullanıma alma önce durumu geri önceki bir kullanıma alma işlemi iptal eder. Kullanıma alma beri dosyada yapılan tüm değişiklikler kaybolur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,39 +40,39 @@ SCCRTN SccUncheckout (
   
 #### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  nFiles  
- [in] Belirtilen dosya sayısı `lpFileNames` dizi.  
+ [in] Belirtilen dosya sayısı `lpFileNames` dizisi.  
   
  lpFileNames  
- [in] Dosyaların, bir kullanıma almayı geri almak tam nitelenmiş bir yerel yol adlarının dizisini.  
+ [in] Bir kullanıma almayı geri almak istediğiniz dosyaların tam yerel yol adları dizisi.  
   
  fOptions  
- [in] Komutunu bayrakları (kullanılmaz).  
+ [in] Komut bayrakları (kullanılmaz).  
   
  pvOptions  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Kullanıma almayı geri al başarılı oldu.|  
-|SCC_E_FILENOTCONTROLLED|Seçilen dosya kaynak kodu denetimi altında değil.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
-|SCC_E_NONSPECIFICERROR|Belirli olmayan hata oluştu. Geri ödeme etkinleştirilemedi.|  
-|SCC_E_NOTCHECKEDOUT|Kullanıcı dosya kullanıma sahip değil.|  
+|SCC_E_FILENOTCONTROLLED|Seçili dosya kaynak kodu denetimi altında değil.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
+|SCC_E_NONSPECIFICERROR|Belirli olmayan hata oluştu. Geri alma kullanıma alma başarısız oldu.|  
+|SCC_E_NOTCHECKEDOUT|Kullanıcının kullanıma alınmış dosyası yok.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için izin verilmiyor.|  
-|SCC_E_PROJNOTOPEN|Proje kaynak denetiminden açılmadı.|  
+|SCC_E_PROJNOTOPEN|Projeyi kaynak denetiminden açılmadı.|  
 |SCC_I_OPERATIONCANCELED|İşlem tamamlanmadan önce iptal edildi.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlem sonrasında `SCC_STATUS_CHECKEDOUT` ve `SCC_STATUS_MODIFIED` bayraklarının hem temizlenmiş kullanıma almayı geri al gerçekleştirildiği dosyaları.  
+ Bu işlem sonrasında `SCC_STATUS_CHECKEDOUT` ve `SCC_STATUS_MODIFIED` bayrakları hem de işaretinin kaldırılması dosyaları kullanıma almayı geri al gerçekleştirildi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)

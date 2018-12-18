@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f04624f7a2b42fa50360841b91db4cb70b5e15ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e1182158852e978cb78096eec6e60783317f1cc0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49930472"
 ---
 # <a name="idebugprogrampublisher2publishprogramnode"></a>IDebugProgramPublisher2::PublishProgramNode
-Bir program düğümü hata ayıklama Yöneticisi (SDM) hata ayıklama motorları (DEs) kullanarak ve oturum için kullanılabilir hale getirir.  
+Bir program düğüm hata ayıklama Yöneticisi (SDM) hata ayıklama altyapısı (DEs) kullanımına ve oturumu için kullanılabilir hale getirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,15 +41,15 @@ int PublishProgramNode(
   
 #### <a name="parameters"></a>Parametreler  
  `pProgramNode`  
- [in] Bir [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) kullanılabilir yapmak için program düğümünü temsil eden nesne.  
+ [in] Bir [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) kullanılabilir hale getirmek için programı düğümünü temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem seçme ve hata ayıklama için başlatmadan önce bilgi Sorgulanacak programları sağlar.  
+ Bu yöntem seçme ve hata ayıklama için başlatmadan önce bilgi sorgulanmasını olanak verir.  
   
- Kullanılabilirlik bir program düğümünü kaldırmak için çağrı [UnpublishProgramNode](../../../extensibility/debugger/reference/idebugprogrampublisher2-unpublishprogramnode.md) yöntemi.  
+ Kullanılabilirlik bir program düğüm kaldırmak için çağrı [UnpublishProgramNode](../../../extensibility/debugger/reference/idebugprogrampublisher2-unpublishprogramnode.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md)   

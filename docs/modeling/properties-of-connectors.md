@@ -9,45 +9,47 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: c42c1ded5bb7460cfdfee13e29f8b944872311c9
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: e26401247c2b6cefc3d86dbd5b6e80adfe473937
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50967317"
 ---
 # <a name="properties-of-connectors"></a>Bağlayıcıların Özellikleri
-Bağlayıcılar oluşturulan Tasarımcısı'nda etki alanı ilişkileri temsil eder.
+Bağlayıcılar, etki alanı ilişkileri oluşturulan tasarımcıda temsil eder.
 
- Daha fazla bilgi için bkz: [bir etki alanına özgü dil tanımlamak nasıl](../modeling/how-to-define-a-domain-specific-language.md). Bu özellikleri kullanma hakkında daha fazla bilgi için bkz: [özelleştirme ve bir etki alanına özgü dil genişletme](../modeling/customizing-and-extending-a-domain-specific-language.md).
+ Daha fazla bilgi için [etki alanına özgü bir dili tanımlama nasıl](../modeling/how-to-define-a-domain-specific-language.md). Bu özellikler kullanma hakkında daha fazla bilgi için bkz. [bir etki alanına özgü dili özelleştirme ve genişletme](../modeling/customizing-and-extending-a-domain-specific-language.md).
 
  Bağlayıcılar aşağıdaki tabloda listelenen özellikleri vardır.
 
 |Özellik|Açıklama|Varsayılan|
-|--------------|-----------------|-------------|
-|Renk|Bu bağlayıcı rengi.|Siyah|
-|Çizgi stili|Bu bağlayıcı (düz, çizgi, nokta, çizgi nokta, çizgi nokta nokta veya özel) satırı için çizgi stili.|Düz|
-|Kaynak uç stili|Bu bağlayıcı (HollowArrow, EmptyArrow, FilledArrow, EmptyDiamond, FilledDiamond veya hiçbiri) kaynak bitiş stili.|Yok.|
-|Hedef uç stili|Bu bağlayıcı (HollowArrow, EmptyArrow, FilledArrow, EmptyDiamond, FilledDiamond veya hiçbiri) hedef uç stili.|Yok.|
-|Metin rengi|Bu bağlayıcı ile ilişkilendirilen metin dekoratörler için kullanılan rengi.|Siyah|
-|Kalınlığı|Bu bağlayıcı çizgi kalınlığı inç cinsinden ölçülür.|0.03125|
-|Erişim değiştiricisi|Sınıfının erişim düzeyini (`public` veya `internal`).|Ortak|
-|Özel Öznitelikler|Bu bağlayıcı oluşturulan kaynak kodu sınıfı öznitelikler eklemek için kullanılır.|\<yok >|
-|Çift oluşturur türetilmiş|Varsa `True`, bir taban sınıf ve bir parçalı sınıf (geçersiz kılmaları özelleştirmeyi desteklemek için) oluşturulur. Daha fazla bilgi için bkz: [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
-|Özel bir oluşturucuya sahip|Varsa `True`, özel bir oluşturucu kaynak kodunda sağlanacaktır. Daha fazla bilgi için bkz: [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
-|Devralma değiştiricisi|Bir bağlayıcı oluşturulan kaynak kodu sınıf devralma türünü açıklar (`none`, `abstract` veya `sealed`).|yok|
-|Temel Bağlayıcısı|Bu bağlayıcı temel sınıf.|(hiçbiri)|
-|Ad|Bu bağlayıcı adı.|Geçerli adı|
+|-|-|-|
+|Renk|Bu bağlayıcının rengi.|Siyah|
+|Kesik çizgi stili|Bu bağlayıcının (düz, kesik çizgi, nokta, çizgi nokta, çizgi nokta nokta veya özel) satırı için çizgi stili.|Düz|
+|Kaynak uç stili|(HollowArrow, EmptyArrow, FilledArrow, EmptyDiamond, FilledDiamond veya hiçbiri) bu bağlayıcının kaynak uç stili.|Yok.|
+|Hedef uç stili|(HollowArrow, EmptyArrow, FilledArrow, EmptyDiamond, FilledDiamond veya hiçbiri) bu bağlayıcının hedef uç stili.|Yok.|
+|Metin rengi|Bu bağlayıcıyla ilişkili metin dekoratörleri için kullanılan renk.|Siyah|
+|Kalınlığı|Bu bağlayıcının inç cinsinden ölçülen çizgi kalınlığı.|0.03125|
+|Erişim değiştiricisi|Sınıf erişim düzeyini (`public` veya `internal`).|Ortak|
+|Özel Öznitelikler|Bu bağlayıcı oluşturulan kaynak kod sınıfı öznitelikler eklemek için kullanılır.|\<yok >|
+|Çift oluşturur türetilmiş|Varsa `True`, hem temel sınıf hem de (geçersiz kılmalar aracılığıyla özelleştirmeyi desteklemek için) bir kısmi sınıf oluşturulur. Daha fazla bilgi için [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
+|Özel oluşturucu vardır.|Varsa `True`, kaynak kodunda özel bir oluşturucu sağlanacaktır. Daha fazla bilgi için [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
+|Devralma değiştiricisi|Devralma bağlayıcısından oluşturulan kaynak kodu sınıf türünü açıklar (`none`, `abstract` veya `sealed`).|yok|
+|Temel bağlayıcı|Bu bağlayıcının temel sınıf.|(hiçbiri)|
+|Ad|Bu bağlayıcı adı.|Geçerli ad|
 |Ad Alanı|Bu bağlayıcı ile bağlantılı olan ad alanı.|Geçerli ad alanı|
-|Araç İpucu türü|Nasıl araç ipucu (sabit, değişken veya hiçbiri) tanımlanır. Sabit, ardından değeri `Fixed Tooltip Text` özelliği araç ipucu olarak kullanılır; ardından değişken durumunda, araç ipucu özel kod içinde tanımlanır.|\<yok >|
-|Notlar|Bu bağlayıcı ile ilişkilendirilen resmi olmayan notları.|\<yok >|
-|Yönlendirme Stili|Bağlayıcı yönlendirme için kullanılan stili. A `Rectilinear` bağlayıcı yapar gerektiği; dik açılı kapatır bir `Straight` bağlayıcı desteklemez.|Dikdörtgen Çizgili|
-|Özellik olarak sunulan rengi<br /><br /> Özellik olarak sunulan çizgi stili<br /><br /> Özellik olarak sunulan kalınlığı<br /><br /> Metin rengi gösterir|Varsa `True`, kullanıcı bir şekli belirtilen özelliğini ayarlayabilirsiniz. Bunu ayarlamak için Şekil tanımı sağ tıklatıp **eklemek açığa**.|False|
-|Açıklama|Oluşturulan Tasarımcısı belgelemek için kullanılır.|\<yok >|
-|Görünen ad|Bu bağlayıcı için oluşturulan Tasarımcısı'nda görüntülenen ad.|\<yok >|
+|Araç İpucu türü|Nasıl bir araç ipucu (sabit, değişken veya hiçbiri) tanımlanır. Fixed ise ardından değerini `Fixed Tooltip Text` özelliği, araç ipucu olarak kullanılır; ardından değişken durumunda, araç ipucu özel kodda tanımlanır.|\<yok >|
+|Notlar|Bu bağlayıcı ile ilişkilendirilen resmi olmayan notlar.|\<yok >|
+|Yönlendirme stilini|Bağlayıcıyı yönlendirmek için kullanılan stil. A `Rectilinear` bağlayıcı yapar dik açılı kapatır gerekli; bir `Straight` Bağlayıcısı yok.|Dönüşler|
+|Özellik olarak kullanıma sunulan rengi<br /><br /> Özellik olarak kullanıma sunulan kesik çizgi stili<br /><br /> Özellik olarak kullanıma sunulan kalınlığı<br /><br /> Kullanıma sunan metin rengi|Varsa `True`, kullanıcının belirtilen özelliği bir şeklin ayarlayabilirsiniz. Bunu ayarlamak için Şekil tanımı sağ tıklatıp **ekleme kullanıma sunulan**.|False|
+|Açıklama|Oluşturulan tasarımcının belge için kullanılır.|\<yok >|
+|Görünen ad|Bu bağlayıcı için oluşturulan tasarımcıda görüntülenecek ad.|\<yok >|
 |Sabit araç ipucu metni|Sabit bir araç ipucu için kullanılan metin.|\<yok >|
-|Yardım anahtar sözcüğü|Bu öğe için F1 Yardımı dizin oluşturmak için kullanılan anahtar sözcük.|\<yok >|
+|Yardım anahtar sözcüğü|Bu öğe için F1 Yardımı dizini oluşturmak için kullanılan anahtar sözcüğü.|\<yok >|
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
-- [Etki alanına özgü dil araçları sözlüğü](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)
+- [Etki alanına özgü dil araçları sözlüğü](https://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

@@ -10,27 +10,28 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a75dfc04bd5ce3b1e61cc2c8e8fe293c13560cf9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0a622fcb91ad40e7d0777f37ce87e9a2cb950695
+ms.sourcegitcommit: a749c287ec7d54148505978e8ca55ccd406b71ee
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46542409"
 ---
 # <a name="historical-debugging"></a>Geçmiş hata ayıklama
-Geçmiş hata ayıklama IntelliTrace tarafından toplanan bilgiler bağımlı hata ayıklama bir moddur. Geriye doğru taşıyın ve uygulamanızı yürütme iletmek ve durumunu incelemek sağlar.  
+Geçmiş hata ayıklama IntelliTrace tarafından toplanan bilgiler bağımlı hata ayıklama bir moddur. Geriye doğru gitme ve uygulamanızın yürütmesini iletmek ve durumunu incelemek sağlar.  
   
- Visual Studio Enterprise edition (ancak değil Professional veya topluluk sürümleri), IntelliTrace kullanabilirsiniz.  
+ IntelliTrace, Visual Studio Enterprise edition (ancak Professional veya Community sürümlerini değil) kullanabilirsiniz.  
   
-## <a name="why-use-historical-debugging"></a>Geçmiş hata ayıklama neden kullanılır?  
- Hataları bulmak için kesme noktalarını ayarlama yerine hit-or-miss affair olabilir. Kodunuzda yakın bir yerde olması için hata şüpheleniyorsanız burada bir kesme noktası belirleyerek, sonra hata ayıklayıcı ve, kesme noktası isabet ve burada yürütme keser yer hatanın kaynağını ortaya çıkarabilir alır soluk uygulamayı çalıştırın. Aksi durumda, kodda başka bir yere kesme noktası ayarlama deneyin ve sorun bulana kadar test adımları tekrar tekrar yürütme hata ayıklayıcı yeniden zorunda kalırsınız.  
+## <a name="why-use-historical-debugging"></a>Geçmiş hata ayıklama neden kullanmalısınız?  
+ Hataları bulmak için kesme noktaları ayarlamak yerine hit-or-miss affair olabilir. Kodunuzda yakın bir yerde olması için hata nerede şüphelendiğiniz bir kesme noktası ayarlayın ve ardından hata ayıklayıcı ve kesme noktasına isabet ve burada yürütmeyi keser yerde hatanın kaynağını ortaya koyabilir alır soluk uygulamayı çalıştırın. Aksi durumda, kod içinde başka bir yerde bir kesme noktası ayarlamayı deneyin ve sorun bulana kadar test adımlarınızı tekrar tekrar yürütme hata ayıklayıcıyı yeniden çalıştırmak sahip olacaksınız.  
   
- ![kesme noktası ayarlama](../debugger/media/breakpointprocesa.png "BreakpointProcesa")  
+ ![bir kesme noktası ayarlamak](../debugger/media/breakpointprocesa.png "BreakpointProcesa")  
   
- IntelliTrace ve geçmiş hata ayıklama kullanın geçici uygulamanızda dolaşıma girer ve kesme noktalarını ayarlayın, hata ayıklama yeniden başlatmak zorunda kalmadan durumuna (çağrı yığını ve yerel değişkenler) inceleyin ve test adımları yineleyin. Bu, çok kaydetmeniz süresini, özellikle zaman hatayı bulunan yürütmek için uzun süren derin bir test senaryosunda.  
+ Geçici uygulamanızdaki dolaşan ve kesme noktaları ayarlayın, hata ayıklamayı yeniden başlatmak zorunda kalmadan (çağrı yığını ve yerel değişkenler) durumunu incelemek için IntelliTrace ve geçmiş hata ayıklama kullanın ve test adımları yineleyin. Bu, çok fazla kaydedebilirsiniz süresini, özellikle zaman hata bulunan yürütmek için uzun zaman alan derin bir testi senaryosunda.  
   
-## <a name="how-do-i-start-using-historical-debugging"></a>Geçmiş hata ayıklama kullanarak nasıl başlamanız gerekir?  
- IntelliTrace varsayılan olarak açıktır. Yapmanız gereken tek şey hangi olayları ve işlev çağrıları ilginizi çeken ve anlık görüntüler, tam uygulama durumunun görüntülemek isteyip istemediğinizi karar verin. Aramak istediğiniz tanımlama hakkında daha fazla bilgi için bkz: [IntelliTrace özellikleri](../debugger/intellitrace-features.md).  
+## <a name="how-do-i-start-using-historical-debugging"></a>Geçmiş hata ayıklama kullanmaya nasıl başlarım?  
+ IntelliTrace varsayılan olarak açıktır. Yapmanız gereken şey, tam uygulama durumunun anlık görüntülerini görüntülemek istediğiniz ve hangi olayların ve işlev çağrılarının ilginizi çeken karar verin. Aramak istediğiniz tanımlama hakkında daha fazla bilgi için bkz. [IntelliTrace özellikleri](../debugger/intellitrace-features.md).  
 
- - Geçmiş hata ayıklama ile anlık görüntüleri görüntülemek için bkz: [IntelliTrace adım geri kullanarak anlık görüntüleri görüntüleme](../debugger/how-to-use-intellitrace-step-back.md)
- - Değişkenleri inceleyin ve kod gidin öğrenmek için bkz: [geçmiş hata ayıklama ile uygulamanızı inceleyin.](../debugger/historical-debugging-inspect-app.md)
- - IntelliTrace olayları ile hata ayıklama hakkında daha fazla bilgi için bkz: [izlenecek yol: IntelliTrace'i kullanarak](../debugger/walkthrough-using-intellitrace.md).
+ - Geçmiş hata ayıklama anlık görüntülerini görüntülemek için bkz: [IntelliTrace kullanarak önceki uygulama durumlarını İnceleme](../debugger/view-historical-application-state.md)
+ - Değişkenleri incelemek ve koda gitmek öğrenmek için bkz: [geçmiş hata ayıklama ile uygulamanızı denetleyin](../debugger/historical-debugging-inspect-app.md)
+ - IntelliTrace olayları ile hata ayıklama hakkında daha fazla bilgi için bkz. [izlenecek yol: IntelliTrace'i kullanarak](../debugger/walkthrough-using-intellitrace.md).

@@ -22,6 +22,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131019"
 ---
 # <a name="projects"></a>Projeler
 Visual Studio'da projeler geliştiricilerin kaynak kodu dosyaları ve görünen diğer kaynakları düzenlemek için kullandığınız kapsayıcılardır **Çözüm Gezgini**. Genellikle, projeler kaynak kodu dosyaları ve bit eşlem dosyaları gibi kaynaklara başvurular depolayan (örneğin, C# projesi için .csproj dosyasını) dosyalarıdır. Düzenleme, yapı, hata ayıklama ve kaynak kodu dağıtmanıza olanak sağlayan projeleri, Web Hizmetleri ve veritabanları ve diğer kaynaklara başvuruyor. VSPackages Visual Studio Proje sistemi üç temel şekilde genişletebilir: *proje türleri*, *proje subtypes*, ve *özel Araçlar*.  

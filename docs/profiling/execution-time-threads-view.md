@@ -14,13 +14,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: bce4b4e5c0d4a9d4f66fade6b01044ac149968a0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1b06532771aaa432deccb8040c7dd7e5962dd15f
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34764436"
 ---
-# <a name="execution-time-threads-view"></a>Yürütme Zamanı (İş Parçacıkları Görünümü)
+# <a name="execution-time-threads-view"></a>Yürütme zamanı (iş parçacıkları görünümü)
 İş parçacığının etkin bir sistemde mantıksal çekirdek çalışma yaparken bu kesimler iş parçacıkları görünümü zaman çizelgesi yürütme zamanı temsil eder.  
   
  İş parçacığı durumu değişiklikleri çekirdek içerik anahtarı olayları algılanır. Olay izleme için Windows (ETW) örnek yığınları her milisaniyelik yakalar. Çok kısa yeşil kesimdeki hiçbir örnek alınır mümkündür. Bu nedenle, bazı kısa yürütme kesimleri hiçbir çağrı yığını gösterebilir.  
@@ -29,6 +30,6 @@ ms.lasthandoff: 04/19/2018
   
  Geçerli görünümdeki tüm yürütme süresini geleneksel örnekleme profili görmek için tıklatın **yürütme** görünür zaman çizelgesi profilinde.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Yürütme Profil raporu](../profiling/execution-profile-report.md)   
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31140329"
 ---
 # <a name="sortorder-element-visual-studio-templates"></a>SortOrder Öğesi (Visual Studio Şablonları)
 Ya da göründüğü gibi diğer şablonları aynı kategoride arasında şablonu düzenlemek için kullanılan bir değeri belirtir **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.  

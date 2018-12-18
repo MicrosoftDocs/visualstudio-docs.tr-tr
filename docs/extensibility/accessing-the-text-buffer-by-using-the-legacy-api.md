@@ -1,5 +1,5 @@
 ---
-title: Eski API kullanarak metin arabelleği erişim | Microsoft Docs
+title: Eski API'yi kullanarak metin arabelleğini erişme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,31 +13,32 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 84bf79ea19fc0867643ce3e8ee6db0a645d9a0dd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3347fc2fd03a2eb6b466145672d3aebb77ad71a6
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39078021"
 ---
-# <a name="accessing-the-text-buffer-by-using-the-legacy-api"></a>Eski API kullanarak metin arabelleği erişme
-Metni metin akışları ve dosya Kalıcılık yönetilmesinden sorumludur. Arabellek okuma veya diğer biçimlere yazma rağmen arabellek ile tüm sıradan iletişim Unicode kullanılarak gerçekleştirilir. Eski API'leri metin arabelleği bir - ya da iki boyutlu bir koordinat sistemi arabelleği karakter konumları tanımlamak için kullanabilirsiniz.  
+# <a name="access-the-text-buffer-by-using-the-legacy-api"></a>Erişim eski API'yi kullanarak metin arabelleği
+Metin, metin akışları ve dosya kalıcılığına yönetmekten sorumludur. Arabellek okuma veya yazma diğer biçimlere rağmen arabellek ile tüm sıradan iletişim Unicode kullanılarak gerçekleştirilir. Eski API'leri, metin arabelleğini bir - veya iki boyutlu bir koordinat sistemini arabellekteki karakterin konumlarını belirlemek için kullanabilirsiniz.  
   
-## <a name="one--and-two-dimension-coordinate-systems"></a>Bir ve iki boyutu sistemleri koordine  
- Tek boyutlu bir koordinat konumu ilk karakteri bir karakterin konumu arabellekteki 147 gibi temel alır. Kullandığınız <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream> arabelleği tek boyutlu bir konuma erişmek için arabirim. İki boyutlu bir koordinat sistemi üzerinde satır ve dizin çiftleri temel alır. Örneğin, bir karakter 43 arabellekte 5 satırında 43, o satırdaki ilk karakter sağındaki beş karakter olabilir. Arabellek kullanarak iki boyutlu bir konuma erişim <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines> arabirimi. Hem <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines> ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream> arabirimleri metin arabelleği nesne tarafından uygulanan (<xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>) ve birbirlerinden kullanarak erişilebilir `QueryInterface`. Aşağıdaki diyagramda bu ve diğer anahtar arabirimler gösterilir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>.  
+## <a name="one--and-two-dimension-coordinate-systems"></a>Tek ve iki boyutu koordinat sistemleri  
+ Tek boyutlu bir koordinat konumu ilk karakter bir karakterin konumu arabellekteki 147 gibi temel alır. Kullandığınız <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream> tek boyutlu bir arabellek konuma erişmek için arabirim. İki boyutlu bir koordinat sistemini satır ve dizin çiftlerine dayanarak temel alır. Örneğin, bir karakter 43 arabellekte 5 satırında 43, o satırdaki ilk karakterin sağındaki beş karakter olabilir. Arabellek kullanarak iki boyutlu bir konuma erişim <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines> arabirimi. Hem <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines> ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream> arabirimleri metin arabelleği nesne tarafından uygulanan (<xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>) ve birbirinden kullanarak erişilebilir `QueryInterface`. Aşağıdaki diyagramda bu ve diğer temel arabirimleri gösteren <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer>.  
   
- ![Metin arabellek nesnesi](../extensibility/media/vstextbuffer.gif "vsTextBuffer")  
-Metin arabellek nesnesi  
+ ![Metin arabelleği nesnesi](../extensibility/media/vstextbuffer.gif "vsTextBuffer")  
+Metin arabelleği nesnesi  
   
- Her iki koordinat sistemi metin ara kullanılabilse de, iki boyutlu koordinatları kullanmak için optimize edilmiştir. Tek boyutlu bir koordinat sistemi performansa oluşturabilirsiniz. Bu nedenle, mümkün olduğunda iki boyutlu koordinat sistemi kullanır.  
+ Metin arabelleğinde ya da koordinat sistemini çalışır, ancak iki boyutlu koordinatlarını kullanmak için optimize edilmiştir. Tek boyutlu bir koordinat sistemi performans yükü oluşturabilirsiniz. Bu nedenle, mümkün olduğunda iki boyutlu koordinat sistemini kullanın.  
   
- Arabellek ikinci sorumluluk dosya Kalıcılık metindir. Bunu yapmak için metin arabellek nesnesi uygulayan <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2> ve proje öğeleri için belge veri nesnesi bileşeni ve kalıcı ilgili diğer ortam bileşenleri gibi davranır. Daha fazla bilgi için bkz: [açma ve kaydetme proje öğeleri](../extensibility/internals/opening-and-saving-project-items.md).  
+ Arabellek ikinci sorumluluk dosya kalıcılığına metindir. Bunu yapmak için metin arabelleği nesnesi uygulayan <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2> ve proje öğeleri için belge veri nesnesi bileşeni ve kalıcı ilgili diğer ortam bileşenleri olarak görev yapar. Daha fazla bilgi için [açma ve kaydetme proje öğeleri](../extensibility/internals/opening-and-saving-project-items.md).  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Eski API kullanarak görünüm ayarlarını değiştirme](../extensibility/changing-view-settings-by-using-the-legacy-api.md)  
- Eski API kullanarak Görünüm ayarlarının nasıl değiştirileceğini açıklar.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Eski API'yi kullanarak görünüm ayarlarını değiştirme](../extensibility/changing-view-settings-by-using-the-legacy-api.md)  
+ Eski API'yi kullanarak görünüm ayarlarını değiştirme açıklanmaktadır.  
   
- [Genel ayarları izlemek için metin Yöneticisi'ni kullanma](../extensibility/using-the-text-manager-to-monitor-global-settings.md)  
- Genel ayarları izlemek için metin Yöneticisi kullanımı açıklanmaktadır...  
+ [Genel ayarlar izlemek için metin Yöneticisi'ni kullanın](../extensibility/using-the-text-manager-to-monitor-global-settings.md)  
+ Genel ayarlar izlemek için metin Yöneticisi'ni kullanmayı açıklar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [İçinde çekirdek Düzenleyicisi](../extensibility/inside-the-core-editor.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Çekirdek Düzenleyicisi içinde](../extensibility/inside-the-core-editor.md)

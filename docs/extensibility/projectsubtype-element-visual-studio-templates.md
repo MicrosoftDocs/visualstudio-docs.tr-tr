@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e4414d5f444613996312978e9033145c6b8d3d82
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6d1ca080ea61fbaaba7992fd8f4f1f4fbeac843d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49824342"
 ---
-# <a name="projectsubtype-element-visual-studio-templates"></a>ProjectSubType Öğesi (Visual Studio Şablonları)
-Belirtilen değer kategorisidir içine şablon sınıflandırır `ProjectType` öğesi.  
+# <a name="projectsubtype-element-visual-studio-templates"></a>ProjectSubType öğesi (Visual Studio şablonları)
+Şablon içinde belirtilen değerle bir alt kategorisi olarak sınıflandırır `ProjectType` öğesi.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -31,47 +32,47 @@ Belirtilen değer kategorisidir içine şablon sınıflandırır `ProjectType` �
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <ProjectSubType> SubType </ProjectSubType>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Aşağıdaki bölümlerde öznitelik, alt öğeler ve üst öğeler açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
  Bu değer, şablon kategorisidir belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `ProjectSubType` bir isteğe bağlı bir alt öğenin `TemplateData`.  
+ `ProjectSubType` bir isteğe bağlı bir alt öğesidir `TemplateData`.  
   
- `ProjectSubType` Öğesi bir alt kategori sağlar [ProjectType](../extensibility/projecttype-element-visual-studio-templates.md) öğesi. Bu değer içerebilir:  
+ `ProjectSubType` Öğesi bir alt kategoriye sağlar [ProjectType](../extensibility/projecttype-element-visual-studio-templates.md) öğesi. Bu değer içerebilir:  
   
--   `SmartDevice-NETCFv1`: Belirtir, şablon hedefleri [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 1.0.  
+- `SmartDevice-NETCFv1`: Belirtir, şablon hedefleri [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 1.0.  
   
--   `SmartDevice-NETCFv2`: Belirleyen tempalate hedefleri [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 2.0.  
+- `SmartDevice-NETCFv2`: Belirtir, şablon hedefleri [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 2.0.  
   
- Bir şablon içeriyorsa bir `ProjectType` değerini bir öğesiyle `Web`, `ProjectSubType` öğesi şablonunun programlama dilini belirtir. Bu öğe aşağıdaki değerlere sahip olabilir:  
+  Bir şablon içeriyorsa, bir `ProjectType` öğe değerini `Web`, `ProjectSubType` öğe şablonunun programlama dilini belirtir. Bu öğe, aşağıdaki değerlere sahip olabilir:  
   
--   `CSharp`: Belirtir şablon oluşturduğu bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] Web projesi veya öğesi.  
+- `CSharp`: Belirtir şablon oluşturur, bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] Web proje veya öğe.  
   
--   `VisualBasic`: Belirtir şablon oluşturduğu bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Web projesi veya öğesi.  
+- `VisualBasic`: Belirtir şablon oluşturur, bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Web proje veya öğe.  
   
 ## <a name="example"></a>Örnek  
- Meta veriler için bir proje şablonu için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] aygıt uygulama hedefleme [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 2.0.  
+ Aşağıdaki örnek, bir proje şablonu için meta verileri gösterir. bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] cihazı hedefleyen uygulama [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] sürüm 2.0.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -98,7 +99,7 @@ Belirtilen değer kategorisidir içine şablon sınıflandırır `ProjectType` �
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
- [ProjectType Öğesi (Visual Studio Şablonları)](../extensibility/projecttype-element-visual-studio-templates.md)
+ [ProjectType öğesi (Visual Studio şablonları)](../extensibility/projecttype-element-visual-studio-templates.md)

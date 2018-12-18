@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3376db379e4e911bcaa8e865a16c63d1251229f6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 40a8bd1719ec69f78a5697f089062d86211542c0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49858322"
 ---
 # <a name="processinfofields"></a>PROCESS_INFO_FIELDS
-Ne tür bilgileri almak için bir işlem için belirtilen.  
+Hangi tür bilgiler almak için bir işlem için belirtilen.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -57,46 +58,46 @@ public enum enum_PROCESS_INFO_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  PIF_FILE_NAME  
- Başlatma/kullanım `bstrFileName` alanını [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md) yapısı.  
+ Başlat/kullanım `bstrFileName` alanını [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md) yapısı.  
   
  PIF_BASE_NAME  
- Başlatma/kullanım `bstrBaseName` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `bstrBaseName` alanını `PROCESS_INFO` yapısı.  
   
  PIF_TITLE  
- Başlatma/kullanım `bstrTitle` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `bstrTitle` alanını `PROCESS_INFO` yapısı.  
   
  PIF_PROCESS_ID  
- Başlatma/kullanım `ProcessId` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `ProcessId` alanını `PROCESS_INFO` yapısı.  
   
  PIF_SESSION_ID  
- Başlatma/kullanım `dwSessionId` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `dwSessionId` alanını `PROCESS_INFO` yapısı.  
   
  PIF_ATTACHED_SESSION_NAME  
- Başlatma/kullanım `bstrAttachedSessionName` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `bstrAttachedSessionName` alanını `PROCESS_INFO` yapısı.  
   
  PIF_CREATION_TIME  
- Başlatma/kullanım `CreationTime` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `CreationTime` alanını `PROCESS_INFO` yapısı.  
   
  PIF_FLAGS  
- Başlatma/kullanım `Flags` alanını `PROCESS_INFO` yapısı.  
+ Başlat/kullanım `Flags` alanını `PROCESS_INFO` yapısı.  
   
  PIF_ALL  
  Tüm alanları doldurur.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Geçirilen [GetInfo](../../../extensibility/debugger/reference/idebugprocess2-getinfo.md) hangi alanlarının belirtmek için yöntemi [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md) yapısı başlatılması üzeresiniz.  
+ Geçirilen [GetInfo](../../../extensibility/debugger/reference/idebugprocess2-getinfo.md) hangi alanları göstermek için yöntemi [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md) yapısı olan başlatılacak.  
   
- Ayrıca kullanılan `Fields` alanını `PROCESS_INFO` hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ Ayrıca kullanılan `Fields` alanını `PROCESS_INFO` yapısı hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md)

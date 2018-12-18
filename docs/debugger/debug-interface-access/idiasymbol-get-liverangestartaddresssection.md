@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8e598a6c6414194da487fe90d39a7f7bb2f0e7a7
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f41415954439d299c0c69585141ffc678d332dcf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864250"
 ---
 # <a name="idiasymbolgetliverangestartaddresssection"></a>IDiaSymbol::get_liveRangeStartAddressSection
-Yerel simgenin geçerli aralığın başlangıç adresi bölüm bölümünü döndürür.  
+Yerel sembol geçerli aralığın başlangıç adresi bölüm bölümünü döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,20 +37,20 @@ HRESULT get_liveRangeStartAddressSection (
  [out] Başlangıç adresi aralığı bölüm bölümünü döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
->  Döndürülen hata kodu simgenin dinamik aralık bilgileri yok anlamına gelir.  
+>  Döndürülen hata kodu sembol Canlı aralığı bilgisi yok anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Uzaklık ve bölüm biçimlendirilmiş simgenin geçerli olduğu aralığının başlangıcını adresidir.  
+ Uzaklık ve bölümü doğru biçimlendirilmiş bir adres simgenin geçerli aralığın başlangıcıdır.  
   
- Adresin uzaklık bölümünü almak için [IDiaSymbol::get_liveRangeStartAddressOffset](../../debugger/debug-interface-access/idiasymbol-get-liverangestartaddressoffset.md).  
+ Adresin uzaklık bölümünü almak için kullanın [IDiaSymbol::get_liveRangeStartAddressOffset](../../debugger/debug-interface-access/idiasymbol-get-liverangestartaddressoffset.md).  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Dia2.h  
+ Üstbilgi: Dia2.h  
   
- Kitaplığı: diaguids.lib  
+ Kitaplık: diaguids.lib  
   
  DLL: msdia100.dll  
   

@@ -20,57 +20,58 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: f823c8c67750dec31c6c2b534ecc7500e20defaf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 68940d6e48f1f3a3e51017e1cc838976735de104
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49930212"
 ---
-# <a name="creating-a-business-data-connectivity-model"></a>İş Verileri Bağlantı Modeli Oluşturma
-  İş verileri bağlantı (BDC) modeli oluşturma veya Visual Studio kullanarak mevcut bir BDC modeli özelleştirebilirsiniz. Her SharePoint Proje yalnızca bir model içerebilir. Daha fazla bilgi için bkz: [iş verilerini SharePoint tümleştirme](../sharepoint/integrating-business-data-into-sharepoint.md).  
+# <a name="create-a-business-data-connectivity-model"></a>İş verileri bağlantı modeli oluşturma
+  Bir iş verileri bağlantısı (BDC) modeli oluşturabilir veya Visual Studio kullanarak mevcut bir BDC modelini özelleştirin. Her SharePoint projesi, yalnızca bir modeli içerebilir. Daha fazla bilgi için [iş verilerini SharePoint ile tümleştirmeyi](../sharepoint/integrating-business-data-into-sharepoint.md).  
   
-## <a name="creating-a-new-model"></a>Yeni bir Model oluşturma  
- Yeni bir model oluşturmak için Oluştur bir **iş verileri bağlantı modeli** proje veya ekleme bir **iş verileri bağlantı modeli** öğesinin bir **boş SharePoint proje**.  
+## <a name="create-a-new-model"></a>Yeni model oluştur
+ Yeni bir modeli oluşturmak için bir **iş verileri bağlantı modeli** ekleyin veya proje bir **iş verileri bağlantı modeli** öğesinin bir **boş SharePoint projesi**.  
   
 > [!NOTE]  
->  Bilmeniz gereken [!INCLUDE[moss_14_long](../sharepoint/includes/moss-14-long-md.md)] bilgisayarınızda yüklü.  
+>  Olmalıdır [!INCLUDE[moss_14_long](../sharepoint/includes/moss-14-long-md.md)] bilgisayarınızda yüklü.  
   
- Visual Studio Proje için bir klasör ekler. Bu klasör için belirttiğiniz ada sahip **iş verileri bağlantı modeli** öğesi **Yeni Öğe Ekle** iletişim kutusu. Yeni bir oluşturursanız **iş verileri bağlantı modeli** proje, Visual Studio klasör adları **BdcModel1**.  
+ Visual Studio, projeye bir klasör ekler. Bu klasör için belirttiğiniz ada sahip **iş verileri bağlantı modeli** öğesi **Yeni Öğe Ekle** iletişim kutusu. Yeni bir oluşturursanız **iş verileri bağlantı modeli** proje, Visual Studio klasör adları **BdcModel1**.  
   
  Visual Studio aşağıdaki dosyalarını yeni klasöre ekler:  
   
 |Dosya|Açıklama|  
 |----------|-----------------|  
-|Model tanım dosyası|Varlıklar, yöntemleri, iş kolu (LOB) sistem nesneleri ve modeli açıklayan diğer meta verileri tanımlayan XML içeriyor.<br /><br /> BDC Tasarımcısı'nı kullanarak bu dosyadaki meta verilerini değiştirmek **BDC Gezgini**, **BDC yöntem ayrıntıları** penceresinde ve **özellikleri** penceresi.|  
-|Varlık hizmeti kod dosyasını|Alma, güncelleştirme ve varsayılan varlık örneklerini silme yöntemlerini içerir.|  
+|Model tanımı dosyası|Varlıklar, yöntemleri, çizgi, iş kolu (LOB) sistem nesneleri ve modeli açıklayan diğer meta verileri tanımlayan XML içeriyor.<br /><br /> İVB Tasarımcısı kullanarak bu dosya meta verilerde değişiklik **BDC Gezgini**, **BDC yöntem ayrıntıları** penceresinde ve **özellikleri** penceresi.|  
+|Varlık hizmeti kodu dosyası|Alma, güncelleştirme ve varsayılan varlık örneklerini silme yöntemlerini içerir.|  
   
- Bir varlık özelliklerini tanımlamak için varlık kod dosyasını düzenleyin. Daha fazla bilgi için bkz: [nasıl yapılır: bir modele bir varlık ekleme](../sharepoint/how-to-add-an-entity-to-a-model.md).  
+ Bir varlığın özelliklerini tanımlamak için varlık kod dosyasını düzenleyin. Daha fazla bilgi için [nasıl yapılır: modele bir varlık ekleme](../sharepoint/how-to-add-an-entity-to-a-model.md).  
   
- Varlık örneklerini silme almak ve güncelleştirmek için varlık hizmeti kod dosyasını kodu ekleyin. Daha fazla bilgi için bkz: [iş verileri bağlantı modeli tasarlama](../sharepoint/designing-a-business-data-connectivity-model.md).  
+ Varlık örneklerini silme almak ve güncelleştirmek için varlık hizmet kodu dosyası için kodu ekleyin. Daha fazla bilgi için [iş verileri bağlantı modeli tasarlama](../sharepoint/designing-a-business-data-connectivity-model.md).  
   
- Projeyi derlerken Visual Studio derleme oluşturur. Proje derleme kodu ekleyin proje için diğer öğeleri eklemeyin emin olun (örneğin: bir **sıralı iş akışı** öğesi veya **Web Bölümü** öğesi). Çözüm paketi derleme genel derleme önbelleğine kopyalamaz çünkü çözümü dağıttığınızda bu öğe için kod çalışmaz.  Çözüm paketi BDC veritabanına SharePoint yalnızca derleme dağıtır.  
+ Visual Studio, Projeyi derlediğinizde, bir derleme oluşturur. Proje bütünleştirilmiş kodu için kod ekleme proje diğer öğeleri eklemediğinizden emin olun (örneğin: bir **sıralı iş akışı** öğesi veya bir **Web Bölümü** öğesi). Çözüm paketi derlemeyi genel bütünleştirilmiş kod önbelleğine kopyalamaz çünkü çözümünü dağıttığınızda, bu öğe için kod çalışmaz.  Çözüm paketi İVB veritabanına SharePoint yalnızca derleme dağıtır.  
   
 > [!NOTE]  
->  Projenin hata ayıklamasını yaparken visual Studio derleme konumlarının her ikisinde de, yerel bilgisayarınızda kopyalar.  
+>  Projede hata ayıklaması yaparken visual Studio derleme konumlarının her ikisinde de yerel bilgisayarınıza kopyalar.  
   
-## <a name="adding-an-existing-model"></a>Varolan modeli ekleme  
- SharePoint Designer gibi diğer araçlar kullanılarak oluşturulmuş bir model içeri aktarabilirsiniz. Projeniz aşağıdaki durumlarda var olan bir model almayı da tercih edebilirsiniz:  
+## <a name="add-an-existing-model"></a>Mevcut bir model ekleme
+ SharePoint Designer gibi diğer araçları kullanılarak oluşturulmuş bir modeli içeri aktarabilirsiniz. Projenize aşağıdaki durumlarda var olan bir model almayı da tercih edebilirsiniz:  
   
--   Bir SharePoint sunucu grubuna zaten dağıtılmış bir model özelleştirmek için.  
+- Zaten bir SharePoint sunucu grubu için Dağıtılmış bir modelinin özelleştirmek için.  
   
--   Paketi ve var olan bir model için birden çok SharePoint server grupları dağıtmak için.  
+- Paketleme ve birden çok SharePoint sunucu grupları için mevcut bir model dağıtma için.  
   
- Her iki durumda da aldığınız modelde tanımlanmış LOB sistemlerini etkilenmez ve beklendiği şekilde çalışmaya devam eder. Bir SharePoint projesine mevcut bir model eklemek için Visual Studio'yu kullanma **varolan öğeyi Ekle** iletişim kutusu. Daha fazla bilgi için bkz: [nasıl yapılır: bir SharePoint projesine mevcut bir BDC modeli dosyası ekleme](../sharepoint/how-to-add-an-existing-bdc-model-file-to-a-sharepoint-project.md).  
+  Her iki durumda da, içeri aktardığınız modelde tanımlı LOB sistemlerini etkilenmez ve beklendiği gibi çalışmayı sürdürecektir. Bir SharePoint projesine mevcut bir model eklemek için Visual Studio kullanan **varolan öğeyi Ekle** iletişim kutusu. Daha fazla bilgi için [nasıl yapılır: bir SharePoint projesine mevcut bir BDC modeli dosyası ekleme](../sharepoint/how-to-add-an-existing-bdc-model-file-to-a-sharepoint-project.md).  
   
- Bir seçenek olarak seçerek alınan modele bir LOB Sistem türü .NET Framework derlemesinin ekleyebilirsiniz **eklemek .NET derlemesi LobSystem**. Bu, özel kod yazmanıza ve içe aktarılan model için meta verileri tanımlamak için bir tasarımcı kullanmanıza olanak sağlar.  
+  Bir seçenek belirleyerek, içeri aktarılan modele türü .NET Framework derlemesinin bir LOB sistemine ekleyebilirsiniz **LobSystem ekleme .NET bütünleştirilmiş kodu**. Bu, özel kod yazmanıza ve alınan model meta verilerini tanımlamak için bir tasarımcı kullanmanıza olanak sağlar.  
   
-## <a name="related-topics"></a>İlgili Konular  
+## <a name="related-topics"></a>İlgili konular
   
 |Başlık|Açıklama|  
 |-----------|-----------------|  
-|[Nasıl yapılır: BDC Modeli Oluşturma](../sharepoint/how-to-create-a-bdc-model.md)|Yeni bir BDC modeli oluşturma gösterir.|  
-|[Nasıl yapılır: Bir SharePoint Projesine Mevcut bir BDC Modeli Dosyası Ekleme](../sharepoint/how-to-add-an-existing-bdc-model-file-to-a-sharepoint-project.md)|Bir SharePoint projesine mevcut bir model içeri aktarma gösterir.|  
-|[Nasıl yapılır: Yerelleştirilmiş Adlar. Özellikler ve İzinleri Belirtmek için Kaynak Dosyası Kullanma](../sharepoint/how-to-use-a-resource-file-to-specify-localized-names-properties-and-permissions.md)|Model bir Web Bölümü veya Web sayfası tarafından tüketilen model meta verileri ile birleştirilen dizeleri sunmak açıklar.|  
-|[Nasıl yapılır: Bir BDC Özelliğine Özel bir Derlemeyi Dahil Etme](../sharepoint/how-to-include-a-custom-assembly-in-a-bdc-feature.md)|Özelliğine özel bir derlemeyi dahil etme kullanmayı gösterir.|  
+|[Nasıl yapılır: BDC modeli oluşturma](../sharepoint/how-to-create-a-bdc-model.md)|Yeni bir BDC modeli oluşturma işlemi gösterilmektedir.|  
+|[Nasıl yapılır: bir SharePoint projesine mevcut bir BDC modeli dosyası ekleme](../sharepoint/how-to-add-an-existing-bdc-model-file-to-a-sharepoint-project.md)|Bir SharePoint projesine mevcut bir model alma işlemi gösterilmektedir.|  
+|[Nasıl yapılır: yerelleştirilmiş adlar, özellikler ve izinleri belirtmek için bir kaynak dosyası kullanma](../sharepoint/how-to-use-a-resource-file-to-specify-localized-names-properties-and-permissions.md)|Modeli bir Web Bölümü veya Web sayfası tarafından kullanıldığında birleştirilir dizeleri ile model meta verilerini sağlamak açıklar.|  
+|[Nasıl yapılır: özel bir derlemeyi bir BDC özelliğine dahil etme](../sharepoint/how-to-include-a-custom-assembly-in-a-bdc-feature.md)|Özel bir derlemeyi özelliği etme işlemi gösterilmektedir.|  
   
-  
+ 

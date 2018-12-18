@@ -1,5 +1,5 @@
 ---
-title: WPF uygulamalarındaki ilgili verileri görüntüleme
+title: WPF uygulamalarında ilgili verileri görüntüleme
 ms.date: 11/04/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -14,45 +14,48 @@ ms.assetid: 3aa80194-0191-474d-9d28-5ec05654b426
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: b293656a0eeffeba304ef4692f9c021ae9639d22
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f37fdeb7ddd305c7c258958d92c08cf1d8f2a4a8
+ms.sourcegitcommit: 81e9d90843ead658bc73b30c869f25921d99e116
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52304603"
 ---
-# <a name="display-related-data-in-wpf-applications"></a>WPF uygulamalarındaki ilgili verileri görüntüleme
-Bazı uygulamalarda, birden çok tablo veya bir üst-alt ilişkisinde birbiriyle ilişkili olan varlıkların gelen verilerle çalışmak isteyebilirsiniz. Örneğin, müşterilerden görüntüleyen bir kılavuz görüntülemek isteyebilirsiniz bir `Customers` tablo. Kullanıcı belirli bir müşteri seçtiğinde, başka bir kılavuz o müşteriden ilgili siparişleri görüntüler `Orders` tablo.
+# <a name="display-related-data-in-wpf-applications"></a>WPF uygulamalarında ilgili verileri görüntüleme
 
-Konumundan öğeleri sürükleyerek ilgili verileri görüntüleme verilere bağlı denetimler oluşturabilirsiniz **veri kaynakları** WPF Tasarımcısı penceresine.
+Bazı uygulamalarda, birden fazla tablodan ya da birbirlerine bir üst-alt ilişkisinde ilgili varlıkları gelen verilerle çalışmak isteyebilirsiniz. Örneğin, müşterileri gösteren bir kılavuz görüntülemek isteyebilirsiniz bir `Customers` tablo. Kullanıcı belirli bir müşteri seçtiğinde, o müşterinin ilgili siparişlerini başka bir kılavuz görüntüler `Orders` tablo.
 
-## <a name="to-create-controls-that-display-related-records"></a>İlişkili kayıtları görüntülemek denetimleri oluşturmak için
+Öğeleri sürükleyerek ilgili verileri görüntüleyen verilere bağlı denetimler oluşturabilirsiniz **veri kaynakları** penceresinden WPF tasarımcısına.
+
+## <a name="to-create-controls-that-display-related-records"></a>İlişkili kayıtları görüntüleyecek denetimler oluşturmak için
 
 1. Üzerinde **veri** menüsünde tıklatın **veri kaynaklarını Göster** açmak için **veri kaynakları** penceresi.
 
-2. Tıklatın **yeni veri kaynağı Ekle**ve tamamlamak **veri kaynağı yapılandırması** Sihirbazı.
+2. Tıklayın **yeni veri kaynağı Ekle**ve tamamlayın **veri kaynağı yapılandırması** Sihirbazı.
 
-3. WPF Tasarımcısı'nı açın ve tasarımcı geçerli bırakma hedefi listesindeki öğeler için bir kapsayıcı içerdiğinden emin olun **veri kaynakları** penceresi.
+3. WPF Tasarımcısı'nı açın ve tasarımcı geçerli bırakma hedefi öğeleri için bir kapsayıcı içerdiğinden emin olun **veri kaynakları** penceresi.
 
-     Geçerli bırakma hedefleri hakkında daha fazla bilgi için bkz: [Visual Studio'da verilere WPF bağlama denetimleri](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).
+     Geçerli bırakma hedefleri hakkında daha fazla bilgi için bkz. [Visual Studio'da veri bağlama WPF denetimleri](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).
 
-4. İçinde **veri kaynakları** penceresi, üst tablo gösteren düğümü genişletin veya nesne ilişkisinde. Üst tablo veya nesne bir-çok ilişkisi "bir" tarafında değil.
+4. İçinde **veri kaynakları** penceresi, üst tablo temsil eden düğümü genişletin veya ilişkide nesne. Üst tablo veya nesne "bir" bir-çok ilişkisi tarafında ' dir.
 
-5. Üst düğümü (veya üst düğümü bireysel öğeleri) sürükleyin **veri kaynakları** geçerli bırakma hedefi Tasarımcısı'nda oturum penceresi.
+5. Üst düğümün (veya üst düğümündeki tek tek öğeleri) sürükleyin **veri kaynakları** penceresinden Tasarımcısı'nda bir geçerli bırakma hedefi.
 
-     Visual Studio sürüklediğiniz her bir öğe için yeni verilere bağlı denetimler oluşturur XAML oluşturur. XAML ayrıca yeni bir ekler <xref:System.Windows.Data.CollectionViewSource> üst tablo veya bırakma hedefi kaynaklarına nesnesi. Bazı veri kaynakları için Visual Studio ayrıca verileri üst tablo veya nesne yüklemek için kod oluşturur. Daha fazla bilgi için bkz: [Visual Studio'da verilere WPF bağlama denetimleri](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).
+     Visual Studio sürüklediğiniz her öğe için yeni verilere bağlı denetimler oluşturan XAML oluşturur. XAML ayrıca yeni bir ekler <xref:System.Windows.Data.CollectionViewSource> üst tablo veya bırakma hedefi kaynaklarına nesnesi. Bazı veri kaynakları için Visual Studio ayrıca üst tablo veya nesne verileri yüklemek için kod oluşturur. Daha fazla bilgi için [Visual Studio'da veri bağlama WPF denetimleri](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).
 
-6. İçinde **veri kaynakları** penceresinde, ilgili alt tablo veya nesne bulun. İlgili alt tablolar ve nesneleri veri üst düğümün listesinin altındaki Genişletilebilir düğüm olarak görünür.
+6. İçinde **veri kaynakları** penceresinde ilgili alt tablo veya nesne bulun. İlgili alt tablolar ve nesneler verileri üst düğümün listesinin altındaki Genişletilebilir düğümleri olarak görünür.
 
-7. Alt düğüm (ya da alt düğüm içindeki tüm öğeleri) sürükleyin **veri kaynakları** geçerli bırakma hedefi Tasarımcısı'nda oturum penceresi.
+7. Alt düğüm (ya da alt düğümünde tek tek öğeleri) sürükleyin **veri kaynakları** penceresinden Tasarımcısı'nda bir geçerli bırakma hedefi.
 
-     Visual Studio her sürüklediğiniz öğeleri için yeni verilere bağlı denetimler oluşturur XAML oluşturur. XAML ayrıca yeni bir ekler <xref:System.Windows.Data.CollectionViewSource> alt tablo veya bırakma hedefi kaynaklarına nesnesi. Bu yeni <xref:System.Windows.Data.CollectionViewSource> üst tablo ya da yalnızca Designer'a sürüklediğiniz nesne özelliğine bağlıdır. Bazı veri kaynakları için Visual Studio ayrıca verileri alt tablo veya nesne yüklemek için kod oluşturur.
+     Visual Studio her sürüklediğiniz öğeleri için yeni verilere bağlı denetimler oluşturan XAML oluşturur. XAML ayrıca yeni bir ekler <xref:System.Windows.Data.CollectionViewSource> alt tablo veya bırakma hedefi kaynaklarına nesnesi. Bu yeni <xref:System.Windows.Data.CollectionViewSource> üst tablo ya da yalnızca tasarımcıya sürüklediğiniz nesnesinin bir özelliğine bağlıdır. Bazı veri kaynakları için Visual Studio ayrıca alt tablo veya nesne verileri yüklemek için kod oluşturur.
 
-     Aşağıdaki şekilde ilgili gösterilmektedir **siparişleri** tablosu **müşteriler** bir veri kümesinde tabloda **veri kaynakları** penceresi.
+     Aşağıdaki şekilde ilgili gösterir **siparişler** tablosu **müşteriler** bir veri tablosunda **veri kaynakları** penceresi.
 
-     ![Veri kaynakları penceresi ilişkisini gösteren](../data-tools/media/datasources2.gif "DataSources2")
+     ![Veri kaynakları penceresi gösteren ilişki](../data-tools/media/datasources2.gif)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

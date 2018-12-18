@@ -1,11 +1,11 @@
 ---
-title: Dotfuscator Community Edition (CE) yükseltme | Microsoft Docs
-ms.date: 2017-02-08
+title: Dotfuscator Community Edition (CE) yükseltme
+ms.date: 02/08/2017
 ms.devlang: dotnet
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
-keywords: Dotfuscator Dotfuscator CE, PreEmptive, PreEmptive tarafından çözümleri PreEmptive tarafından koruma, koruma, community edition, gizleme, .NET, ücretsiz, Visual Studio 2017, yükseltme, komut satırı
+keywords: Dotfuscator, Dotfuscator CE, PreEmptive, PreEmptive Solutions, PreEmptive koruma, koruma, community edition, gizleme, .NET, ücretsiz, Visual Studio 2017, yükseltme, komut satırı
 helpviewer_keywords:
 - PreEmptive Protection Dotfuscator
 - Dotfuscator Community Edition
@@ -20,84 +20,75 @@ helpviewer_keywords:
 - registering Dotfuscator
 - Dotfuscator command line
 - Dotfuscator Professional
-description: Ücretsiz Dotfuscator Community Edition Visual Studio 2017 dahil yükseltmeyi öğrenin.
+description: Visual Studio 2017'de dahil edilen ücretsiz Dotfuscator Community Edition yükseltmeyi öğrenin.
 ms.assetid: c7c60904-27f9-4f1f-b79b-ddf65041b810
 author: Joe-Sewell-PreEmptive
+ms.author: gewarren
 manager: douge
-ms.openlocfilehash: 03fdaae7a152db2af4ca042d14748e6508185b78
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f1158b0e5f438e49acafad79af1b33ec43690e9a
+ms.sourcegitcommit: 0cf1e63b6e0e6a0130668278489b21a6e5038084
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39468549"
 ---
-# <a name="upgrade-dotfuscator-community-edition-ce"></a>Yükseltme Dotfuscator Community Edition (CE)
+# <a name="upgrade-dotfuscator-community-edition-ce"></a>Dotfuscator Community Edition (CE) yükseltme
 
-Dotfuscator Community Edition (Dotfuscator CE) çok sayıda uygulama koruması ve sağlamlaştırma özelliklerini hemen tüm geliştiriciler Microsoft Visual Studio kullanarak sunar.
-Ancak, daha fazla özellikler vardır Dotfuscator kendi sürümüne yükseltme kullanıcılar için kullanılabilir.
+Dotfuscator Community Edition (Dotfuscator CE) birçok uygulama koruması ve sağlamlaştırma özelliklerini hemen Microsoft Visual Studio kullanarak tüm geliştiricilere sunar.
+Ancak, daha fazla özellikler mevcuttur, Dotfuscator sürümüne yükseltme kullanıcılar için kullanılabilir.
 
-## <a name="registering-dotfuscator-ce"></a>Dotfuscator CE kaydetme
+## <a name="registering-dotfuscator-ce"></a>Dotfuscator CE'yi kaydediliyor
 
-Dotfuscator CE kayıtlı kullanıcıları almak ek özelliklerine erişimi gibi [komut satırı desteğini][cli], hangi Dotfuscator CE otomatik derleme işlemine tümleştirmek yapmayı kolaylaştırır.
-Ayrıca, kaydetme erişimine Lucidator için yerleşik bir aracı için kullanılan [karıştırılmış Yığın izlemeleri kod çözme][decode-obfuscated].
+Dotfuscator CE kayıtlı kullanıcıları almak için ek özelliklere erişimi gibi [komut satırı desteğiyle][cli], hangi kolaylaştırır Dotfuscator CE, otomatik derleme sürecinizle tümleştirin. Kaydetme ayrıca erişim verir Lucidator için yerleşik bir aracı için kullanılan [karıştırılmış yığın izlemelerini kod çözme][decode-obfuscated].
 
-Kayıt hızlı, basit ve ücretsiz olarak değil.
+Hızlı, basit ve ücretsiz olarak kayıttır.
 Dotfuscator CE kaydetmek için bkz: [tam Dotfuscator CE Kullanıcı Kılavuzu'na Başlarken sayfasında kaydetme Dotfuscator CE bölümünü][register-ce].
 
 ## <a name="dotfuscator-professional"></a>Dotfuscator Professional
 
-Dotfuscator Community Edition temel düzeyde bir koruma sağlarken  **_PreEmptive tarafından koruması - Dotfuscator_ Professional Edition** Gelişmiş gizleme dönüşümler ve koruma içerir yetenekleri.
-Bu güncelleştirmeler şunlardır:
+Dotfuscator Community Edition temel bir düzeyde koruma sağlarken  **_PreEmptive koruma - Dotfuscator_ Professional Edition** Gelişmiş karartma dönüşümler ve koruma içeren özellikleri. Gelişmiş dönüştürmeler ve özellikleri içerir:
 
-* *Fikri mülkiyet koruma*
-  * Ek seçenekler Enhanced Overload Induction™ ve rastgele tanımlayıcı seçimi de dahil olmak üzere, yeniden adlandırma.
-  * Kod çözme için araç Yığın izlemeleri gizlenmiş.
-  * Dahil, kurumsal düzeyde gizleme Dönüşümlerin erişimi [iptal ediyor adresindeki hedeflenen dönüşümler otomatik kod kaynak koda dönüştürme][control-flow].
-  * Yeteneği [hassas dizeleri soyutlamaması][string-encryption], basit bir arama decompiled kod imkansız yapma.
-  * Yeteneği [belirtmeyecek derlemeleriniz sahipliği ve dağıtım dizelerini katıştırma] [ watermarking] (yazılım filigran), yetkisiz yazılım sızıntıları kaynağını belirlemek olanak sağlar.
-  * Yeteneği [tek birden çok derleme birleştirmek][linking], ayrımı kaygıları ortadan gibi daha da zor kod öğeleri rolleri belirlemek saldırganların yapma.
-  * Yeteneği [otomatik olarak kullanılmayan kod uygulamanızdan Kaldır][pruning], sevk hassas kod miktarını azaltır.
-* *Uygulama bütünlük koruması*
-  * Ek [uygulama savunma davranışları][check-actions].
+* *Fikri mülkiyet koruması*
+  * Ek seçenekler Enhanced Overload Induction™ ve rastgele tanımlayıcısı seçimi gibi yeniden adlandırma.
+  * Kod çözme için Araçlar, yığın izlemelerini gizlenmiş.
+  * Erişim için kurumsal düzeyde karartma dönüştürmeler de dahil olmak üzere, [iptal ediyor hedeflenen dönüşümler otomatik kod ılspy][control-flow].
+  * Yeteneği [hassas dizeleri gizlememeniz][string-encryption], kaynak koda dönüştürülmüş kod basit bir arama imkansızdır.
+  * Yeteneği [belirtmeyecek sahipliği ve dağıtım dizeleri, derlemelere gömmek][watermarking], yetkisiz yazılım sızıntılarını kaynağını belirlemek etmenize imkan sağlar.
+  * Yeteneği [tek birden çok derleme birleştirme][linking], görev ayrımı nettir ortadan gibi kod öğelerinin rollerini belirleme saldırganların daha zor hale.
+  * Yeteneği [kullanılmayan kod uygulamanızdan otomatik olarak kaldırmak][pruning], gönderildiğini hassas kod miktarını azaltır.
+* *Uygulama bütünlüğünü koruma*
+  * Ek [uygulama savunması davranışları][check-actions].
   * Bir uygulamanın yaşam bitiş tarihi önce bir uyarı dönemi sağlama yeteneği.
-  * Uygulama kodu bir ömrü bitiş uyarı dönemi sırasında veya son tarihten sonra bildirim yeteneği.
-  * Telemetri şifreleme.
-* *Uygulama izleme*
-  * Toplanan bilgiler geçici ağ kesintileri sırasında özelliği toplayın ve kaydedin.
-  * Kişisel olarak tanımlanabilir bilgi toplamak için yeteneği.
-  * Sınırsız kullanımını [izleme özelliğinin][features].
-  * Yakalanan ve işlenmeyen özel durumlar için ayrıca kodunuz tarafından oluşturulan özel durum izleme yeteneği.
-  * Özel durumları izleme yeteneği `.dll` derlemeler.
-  * Telemetri şifreleme.
+  * Uygulama kodu bir ömrü sonu uyarı dönemi sırasında veya son tarihten sonra bildirim özelliği.
 
-Dotfuscator Professional endüstri standardı olan [.NET Obfuscator] [ net-obfuscator] ve devam eden desteği, Bakım ve ürün güncelleştirmelerini gerektiren Kurumsal geliştiriciler için uygundur.
-Ayrıca, Dotfuscator Professional Visual Studio ile sıkı tümleştirme sağlar ve Ticari kullanım için lisanslanmıştır.
+Dotfuscator Professional sektör standardı olan [.NET belirsizleştirici] [ net-obfuscator] ve sürekli destek, Bakım ve ürün güncelleştirmeleri gerektiren Kurumsal geliştiriciler için uygundur.
+Ayrıca, Dotfuscator Professional, Visual Studio ile sıkı tümleştirme sağlar ve Ticari kullanım için lisanslanmıştır.
 
-Dotfuscator Professional Gelişmiş uygulama koruma özellikleri hakkında daha fazla bilgi için lütfen PreEmptive tarafından çözümleri ziyaret [Dotfuscator genel bakış sayfasında] [ product-about] ve [için karşılaştırma Community Edition][product-compare].
-[Tam olarak desteklenen denemeler preemptive.com isteğiyle kullanılabilir][eval].
+PreEmptive Solutions Dotfuscator Professional Gelişmiş uygulama koruma özellikleri hakkında daha fazla bilgi için ziyaret [Dotfuscator genel bakış sayfasında] [ product-about] ve [kendisine karşılaştırın Community sürümü][product-compare].
+[Tam destekli deneme sırasında preemptive.com][eval].
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
-[Bu konuda tam Dotfuscator CE Kullanıcı Kılavuzu][full]
+[Bu makalede tam Dotfuscator CE Kullanıcı Kılavuzu][full]
 
 <!-- Copyright © 2017 PreEmptive Solutions, LLC -->
 
-[control-flow]: https://www.preemptive.com/products/dotfuscator/features#controlflow
-[string-encryption]: https://www.preemptive.com/products/dotfuscator/features#string
-[watermarking]: https://www.preemptive.com/products/dotfuscator/features#watermarking
-[linking]: https://www.preemptive.com/products/dotfuscator/features#linking
-[pruning]: https://www.preemptive.com/products/dotfuscator/features#pruning
+[control-flow]:  https://www.preemptive.com/products/dotfuscator/features#controlflow
+[string-encryption]:  https://www.preemptive.com/products/dotfuscator/features#string
+[watermarking]:  https://www.preemptive.com/products/dotfuscator/features#watermarking
+[linking]:  https://www.preemptive.com/products/dotfuscator/features#linking
+[pruning]:  https://www.preemptive.com/products/dotfuscator/features#pruning
 
-[check-actions]: https://www.preemptive.com/dotfuscator/pro/userguide/en/protection_checks_overview.html#actions
-[features]: https://www.preemptive.com/dotfuscator/pro/userguide/en/instrumentation_features.html
+[check-actions]:  https://www.preemptive.com/dotfuscator/pro/userguide/en/protection_checks_overview.html#actions
 
-[net-obfuscator]: https://www.preemptive.com/products/dotfuscator/overview
-[eval]: https://www.preemptive.com/eval-request
+[net-obfuscator]:  https://www.preemptive.com/products/dotfuscator/overview
+[eval]:  https://www.preemptive.com/eval-request
 
-[product-about]: https://www.preemptive.com/products/dotfuscator/overview
-[product-compare]: https://www.preemptive.com/products/dotfuscator/compare-editions
+[product-about]:  https://www.preemptive.com/products/dotfuscator/overview
+[product-compare]:  https://www.preemptive.com/products/dotfuscator/compare-editions
 
-[cli]: https://www.preemptive.com/dotfuscator/ce/docs/help/intro_cli.html
-[register-ce]: https://www.preemptive.com/dotfuscator/ce/docs/help/gui_getstarted.html#register
+[cli]:  https://www.preemptive.com/dotfuscator/ce/docs/help/intro_cli.html
+[register-ce]:  https://www.preemptive.com/dotfuscator/ce/docs/help/gui_getstarted.html#register
 
-[full]: https://www.preemptive.com/dotfuscator/ce/docs/help/intro_upgrades.html
-[decode-obfuscated]: https://www.preemptive.com/dotfuscator/ce/docs/help/gui_decode_stack_trace.html
+[full]:  https://www.preemptive.com/dotfuscator/ce/docs/help/intro_upgrades.html
+[decode-obfuscated]:  https://www.preemptive.com/dotfuscator/ce/docs/help/gui_decode_stack_trace.html

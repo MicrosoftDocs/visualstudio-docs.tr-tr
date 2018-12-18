@@ -13,16 +13,19 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 81b58a2162d7240e32e1fb2d45e462ec551155e7
-ms.sourcegitcommit: 5f5587a1bcf4aae995c80d54a67b4b461f8695f3
+ms.openlocfilehash: c22ba73b464f91bf3036541304cdf94e8660970d
+ms.sourcegitcommit: c57ae28181ffe14a30731736661bf59c3eff1211
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38811927"
 ---
-1. Web dağıtımı Visual Studio ile uygulamalarınızı dağıtmak istiyorsanız, sunucuda Web Dağıtımı'nın en son sürümünü yükleyin.
+1. Visual Studio Web dağıtımı ile uygulamalarınızı dağıtmak istiyorsanız, sunucuda Web Dağıtımı'nın en son sürümünü yükleyin.
 
-    Web dağıtımı yüklemek için kullandığınız [Web Platformu Yükleyicisi (Webpı)](https://www.microsoft.com/web/downloads/platform.aspx). Web Dağıtımı'nın uygulamalar sekmesinde yeniden bulun. Doğrudan bir yükleyici edinebilirsiniz [Microsoft Download Center](https://www.microsoft.com/search/result.aspx?q=webdeploy&form=dlc). 
+    Web Dağıtımı'nı yüklemek için kullanın [Web Platformu Yükleyicisi (Webpı)](https://www.microsoft.com/web/downloads/platform.aspx). (Web Platformu yükleyicisi bağlantı IIS'den bulmak için seçin **IIS** Sunucu Yöneticisi'nin sol bölmesinde. Sunucuya sağ tıklayıp **Internet Information Services (IIS) Yöneticisi'ni**.)
 
-2. Web dağıtımı doğru açarak çalıştığından emin olun **Denetim Masası > Sistem ve Güvenlik > Yönetim Araçları > Hizmetler** emin olun **Web Dağıtım Aracı hizmeti** çalıştıran ( Hizmet adı eski sürümlerinde farklıdır).
+    Web Platformu Yükleyicisi'nde, Web dağıtımı uygulamalar sekmesinde bulabilirsiniz. Doğrudan bir yükleyici de edinebilirsiniz [Microsoft Download Center](https://www.microsoft.com/search/result.aspx?q=webdeploy&form=dlc). 
 
-    Aracı hizmeti çalışmıyorsa başlatın. Hiç yoksa, Git **Denetim Masası > Programlar > program Kaldır**, bulma **Microsoft Web dağıtımı <version>** . Tercih **değişiklik** yükleme ve, seçtiğinizden emin olun **yerel sabit sürücüye yüklenecek** Web dağıtımı bileşenleri için. Değişikliği yükleme adımlarını tamamlayın.
+2. Web dağıtımı doğru açarak çalıştığını doğrulayın **Denetim Masası > Sistem ve Güvenlik > Yönetim Araçları > Hizmetleri** emin olun **Web Dağıtım Aracı hizmeti** çalışıyor ( Hizmet eski sürümlerde farklı adıdır).
+
+    Aracı hizmeti çalışmıyorsa başlatın. Hiç yoksa, Git **Denetim Masası > Programlar > program Kaldır**, bulma **Microsoft Web dağıtımı <version>** . Tercih **değişiklik** yükleme ve seçtiğiniz emin **yerel sabit diskinize yüklenecek** Web dağıtımı bileşenleri için. Değişiklik yükleme adımlarını tamamlayın.

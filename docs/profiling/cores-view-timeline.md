@@ -14,15 +14,16 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ca61a511d5b65233aa0f7e979374ba5dd48d21ae
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 14bf030ce1adb1dede9ad2a377d8fb435d75e0c6
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34690539"
 ---
-# <a name="cores-view-timeline"></a>Çekirdekler Görünümü Zaman Çizelgesi
+# <a name="cores-view-timeline"></a>Çekirdekler görünümü zaman çizelgesi
 Her satırda bir zaman çizelgesi profili sistemde bir mantıksal işlemci çekirdeği temsil eder. Her satır için hangi iş parçacığı zamanında belirli bir noktada mantıksal çekirdek üzerinde çalıştığı yatay eksen gösterir. İş parçacığı tanımlayan araç ipucunu döndürmek için bir zaman çizelgesi ilgi rengini üzerine getirin. İş parçacığı kimliği yardımcı olmak için ne her rengi temsil eden pencerenin altındaki gösterge gösterir. Giriş ve çıkış tıklatarak ve sürükleyerek veya CTRL tuşuna basarak ve fare tekerleğinin taşıma yakınlaştırmak için Yakınlaştırma aracını kullanın. Çekirdekler görünümü ve iş parçacıkları görünümü arasında geçiş yaptığınızda yakınlaştırma tutarlılık korunur.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çekirdekler görünümü](../profiling/cores-view.md)   
- [Yakınlaştırma Denetimi (İş Parçacıkları Görünümü)](../profiling/zoom-control-threads-view.md)
+ [Yakınlaştırma Denetimi (iş parçacıkları görünümü)](../profiling/zoom-control-threads-view.md)

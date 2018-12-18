@@ -1,5 +1,5 @@
 ---
-title: Komut kod Numaralandırıcı | Microsoft Docs
+title: Komut kodu numaralandırıcısı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5ba40c0506bdeecc7d6438f83f2d4342c62cc2e5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bfd35f9fe8c4d924fbcef806ce70f930087b73d1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49898956"
 ---
-# <a name="command-code-enumerator"></a>Komut kod Numaralandırıcı
-Bu Numaralandırıcı seçeneklerinde kullanılan [SccGetCommandOptions](../extensibility/sccgetcommandoptions-function.md) ve [SccPopulateList](../extensibility/sccpopulatelist-function.md)seçenekleri belirtilir komutu belirtmek için.  
+# <a name="command-code-enumerator"></a>Komut kodu numaralandırıcısı
+Bu Numaralandırıcının seçenekleri kullanılır [SccGetCommandOptions](../extensibility/sccgetcommandoptions-function.md) ve [SccPopulateList](../extensibility/sccpopulatelist-function.md)seçenekler belirtilir komutu belirtmek için.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -75,7 +76,7 @@ enum SCCCOMMAND {
  SCC_COMMAND_OPTIONS  
  Karşılık gelen [SccSetOption](../extensibility/sccsetoption-function.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim Eklentileri](../extensibility/source-control-plug-ins.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak denetimi eklentileri](../extensibility/source-control-plug-ins.md)   
  [SccGetCommandOptions](../extensibility/sccgetcommandoptions-function.md)   
  [SccPopulateList](../extensibility/sccpopulatelist-function.md)

@@ -17,59 +17,60 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 1cc202b2e3e303f8f6e92b82bbfbc6f5525966bf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b83d5f92a54d58aae2d4c7860e6648920615d63f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49823638"
 ---
-# <a name="extending-sharepoint-project-items"></a>SharePoint Proje Öğelerini Genişletme
-  Visual Studio'da yüklü SharePoint proje öğesi türü işlevselliği eklemek istediğinizde bir proje öğesi uzantısı oluşturma. Örneğin, bir uzantı yerleşik oluşturabilirsiniz **olay alıcısı** veya **listesi tanımını** proje öğelerini Visual Studio'da ya da bir özel proje öğesi türü için bir uzantı oluşturabilirsiniz. Tüm SharePoint proje öğesi türleri için bir uzantı de oluşturabilirsiniz.  
+# <a name="extend-sharepoint-project-items"></a>SharePoint proje öğelerini genişletme
+  Visual Studio'da yüklü SharePoint proje öğesi türü için işlevsellik eklemek istediğinizde bir proje öğesi uzantısı oluşturma. Örneğin, yerleşik bir uzantı oluşturabilirsiniz **olay alıcısı** veya **liste tanımı** proje öğelerini Visual Studio'da ya da özel proje öğesi türü için bir uzantı oluşturabilirsiniz. Bir uzantı tüm SharePoint proje öğesi türleri için de oluşturabilirsiniz.  
   
-## <a name="tasks-for-extending-sharepoint-project-items"></a>SharePoint proje öğelerini genişletme için görevler  
- Bir proje öğesi genişletmek için uygulayan bir Visual Studio uzantısı derleme <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeExtension> arabirimi. Daha fazla bilgi için bkz: [nasıl yapılır: bir SharePoint proje öğesi uzantısı oluşturma](../sharepoint/how-to-create-a-sharepoint-project-item-extension.md).  
+## <a name="tasks-for-extending-sharepoint-project-items"></a>SharePoint proje öğelerini genişletme ile ilgili görevler
+ Bir proje öğesi genişletmek için uygulayan bir Visual Studio uzantısı derleme <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeExtension> arabirimi. Daha fazla bilgi için [nasıl yapılır: bir SharePoint proje öğesi uzantısı oluşturma](../sharepoint/how-to-create-a-sharepoint-project-item-extension.md).  
   
  Bir proje öğesi genişlettiğinizde, proje öğesi için aşağıdaki işlevler de ekleyebilirsiniz:  
   
--   Bir kısayol menü öğesi için proje öğesi ekleyin. Proje öğesi için kısayol menüsünü açtığınızda menü öğesi görünür **Çözüm Gezgini**. Proje öğesi sağ tıklayarak kısayol menüsünü açın veya bunu seçerek ve ardından SHIFT + F10 tuşlarına. Daha fazla bilgi için bkz: [nasıl yapılır: bir SharePoint Proje öğe uzantısına bir kısayol menü öğesi ekleme](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-sharepoint-project-item-extension.md).  
+- Bir kısayol menü öğesi için proje öğesi ekleyin. Proje öğesi için kısayol menüsünü açtığınızda, menü öğesi görünür **Çözüm Gezgini**. Proje öğesi sağ tıklayarak veya bunu seçerek ve ardından kısayol menüsünü açın **Shift**+**F10** anahtarları. Daha fazla bilgi için [nasıl yapılır: bir SharePoint Proje öğe uzantısına bir kısayol menü öğesi ekleme](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-sharepoint-project-item-extension.md).  
   
--   Bir özel özellik için proje öğesi ekleyin. Özellik görünür **özellikleri** proje öğesi seçtiğinizde penceresi **Çözüm Gezgini**. Daha fazla bilgi için bkz: [nasıl yapılır: bir SharePoint Proje öğe uzantısına özellik ekleme](../sharepoint/how-to-add-a-property-to-a-sharepoint-project-item-extension.md).  
+- Özel bir özellik için proje öğesi ekleyin. Özellik görünür **özellikleri** proje öğesinde seçtiğinizde penceresi **Çözüm Gezgini**. Daha fazla bilgi için [nasıl yapılır: bir SharePoint Proje öğe uzantısına özellik ekleme](../sharepoint/how-to-add-a-property-to-a-sharepoint-project-item-extension.md).  
   
- Oluşturma, dağıtma ve bir proje öğesi uzantısı test izlenecek yol için bkz: [izlenecek yol: bir SharePoint proje öğesi türünü genişletme](../sharepoint/walkthrough-extending-a-sharepoint-project-item-type.md).  
+  Oluşturmanıza, dağıtmanıza ve proje öğesi uzantısını test yapmayı gösteren bir kılavuz için bkz. [izlenecek yol: bir SharePoint proje öğesi türünü genişletme](../sharepoint/walkthrough-extending-a-sharepoint-project-item-type.md).  
   
-## <a name="understanding-the-relationship-between-project-item-extensions-and-project-item-instances"></a>Project öğesi uzantıları ve proje öğesi örnekleri arasındaki ilişkiyi anlama  
- Bir proje öğesi uzantısı oluşturma, bir proje öğesi ilişkili türünde bir SharePoint projesine eklendiğinde, Visual Studio uzantınızı yükler. Örneğin, bir uzantı için oluşturursanız **olay alıcısı** proje öğeleri, Visual Studio yükler uzantınızı kullanıcı eklediğinde bir **olay alıcısı** projeye proje öğesi. Visual Studio için tüm örneklerini ilişkili proje öğesi türü uzantınızı aynı örneğini kullanır. Önceki örnekte kullanıcı saniyenin eklerse **olay alıcısı** projeye proje madde, aynı örnek uzantınızın ikinci proje öğesi özelleştirmek için kullanılır.  
+## <a name="understand-the-relationship-between-project-item-extensions-and-project-item-instances"></a>Proje öğesi uzantıları ve proje öğesi örnekleri arasındaki ilişkiyi anlamak
+ Bir proje öğesi uzantısını oluşturduğunuzda, Visual Studio bir proje öğesi türüyle bir SharePoint projesine eklendiğinde uzantınızı yükler. Örneğin, bir uzantı için oluşturursanız **olay alıcısı** proje öğeleri, Visual Studio yükler uzantınızı bir kullanıcı eklendiğinde bir **olay alıcısı** projesine bir proje. Visual Studio, ilişkili proje öğesi türünün tüm örnekleri için uzantınızı aynı örneğini kullanır. Önceki örnekte kullanıcı ikinci eklerse **olay alıcısı** projeye proje öğesi, uzantınızı'nın aynı örneğine ikinci proje öğesi özelleştirmek için kullanılır.  
   
- Belirli bir örneği genişletme proje öğe türüne erişmek için aşağıdakilerden birini ele <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents> olayları *projectItemType* parametresi uygulamanızda <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeExtension.Initialize%2A> yöntemi. Örneğin, bir proje öğesi genişletme türü bir projeye eklendiğinde belirlemek için tanıtıcı <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents.ProjectItemAdded> olay. Daha fazla bilgi için bkz: [nasıl yapılır: bir SharePoint proje öğesi uzantısı oluşturma](../sharepoint/how-to-create-a-sharepoint-project-item-extension.md).  
+ Genişletme proje öğesi türü belirli bir örneğine erişmek için bir tanıtıcı <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents> olayları *Projectıtemtype* uygulamanızda parametresi <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeExtension.Initialize%2A> yöntemi. Örneğin, bir proje öğesi genişletme türü bir projeye eklendiğinde belirlemek için tanıtıcı <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents.ProjectItemAdded> olay. Daha fazla bilgi için [nasıl yapılır: bir SharePoint proje öğesi uzantısı oluşturma](../sharepoint/how-to-create-a-sharepoint-project-item-extension.md).  
   
-## <a name="identifiers-for-sharepoint-project-items"></a>SharePoint Proje öğeleri için tanımlayıcıları  
- Her bir SharePoint Proje öğe karşılık gelen bir dize tanımlayıcısı vardır. Aşağıdaki görevleri gerçekleştirmek istiyorsanız, bir proje öğesi için tanımlayıcı bilmeniz gerekir:  
+## <a name="identifiers-for-sharepoint-project-items"></a>SharePoint Proje öğeleri için tanımlayıcılar
+ Her SharePoint proje öğesi karşılık gelen bir dize tanımlayıcısı var. Aşağıdaki görevleri gerçekleştirmek istiyorsanız, bir proje öğesi için olan tanımlayıcıyla bilmeniz gerekir:  
   
--   Proje öğesi için bir uzantı oluşturun. Bu durumda, tanımlayıcı oluşturucusuna genişletmek istediğiniz proje öğesi için geçmesi gereken <xref:Microsoft.VisualStudio.SharePoint.SharePointProjectItemTypeAttribute>. Tüm türleri öğesi proje uzantı oluşturmak için geçirmek **\*** dize değeri.  
+- Proje öğesi için bir uzantı oluşturun. Bu durumda, oluşturucuya genişletmek istediğiniz proje öğesi için olan tanımlayıcıyla geçmelidir <xref:Microsoft.VisualStudio.SharePoint.SharePointProjectItemTypeAttribute>. Bir uzantı tüm öğe türlerine proje oluşturmak için geçirmek **\\*** dize değeri.  
   
--   Proje öğesi program aracılığıyla bir projeye ekleyin. Bu durumda, proje öğesi için tanımlayıcı geçmelidir <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemCollection.Add%2A> yöntemi.  
+- Proje öğesi, program aracılığıyla bir projeye ekleyin. Bu durumda, proje öğesine tanımlayıcısı geçmelidir <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemCollection.Add%2A> yöntemi.  
   
- Aşağıdaki tabloda, Visual Studio ile birlikte SharePoint Proje öğeleri için tanımlayıcıları listeler.  
+  Aşağıdaki tablo, Visual Studio'da SharePoint Proje öğeleri için tanımlayıcılar listeler.  
   
 |Proje öğesi adı|Dize tanımlayıcı|  
 |-----------------------|-----------------------|  
-|İş Verileri Kataloğu modeli|Microsoft.VisualStudio.SharePoint.BusinessDataConnectivity|  
+|İş Verileri katalog modeli|Microsoft.VisualStudio.SharePoint.BusinessDataConnectivity|  
 |İçerik türü|Microsoft.VisualStudio.SharePoint.ContentType|  
 |Olay alıcısı|Microsoft.VisualStudio.SharePoint.EventHandler|  
-|Boş öğesi|Microsoft.VisualStudio.SharePoint.GenericElement|  
-|Liste tanımı<br /><br /> Liste tanımından içerik türü|Microsoft.VisualStudio.SharePoint.ListDefinition|  
+|Boş öğe|Microsoft.VisualStudio.SharePoint.GenericElement|  
+|Liste tanımı<br /><br /> İçerik türünden liste tanımı|Microsoft.VisualStudio.SharePoint.ListDefinition|  
 |Liste örneği|Microsoft.VisualStudio.SharePoint.ListInstance|  
 |Modül|Microsoft.VisualStudio.SharePoint.Module|  
 |Sıralı iş akışı<br /><br /> Durum makinesi iş akışı|Microsoft.VisualStudio.SharePoint.Workflow|  
 |Site tanımı|Microsoft.VisualStudio.SharePoint.SiteDefinition|  
-|Visual Web Bölümü|Microsoft.VisualStudio.SharePoint.VisualWebPart|  
+|Görsel Web Bölümü|Microsoft.VisualStudio.SharePoint.VisualWebPart|  
 |Web Kısmı|Microsoft.VisualStudio.SharePoint.WebPart|  
 |İş akışı ilişkilendirme formu|Microsoft.VisualStudio.SharePoint.WorkflowAssociation|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [Nasıl yapılır: bir SharePoint proje öğesi uzantısı oluşturma](../sharepoint/how-to-create-a-sharepoint-project-item-extension.md)   
  [Nasıl yapılır: bir SharePoint Proje öğe uzantısına bir kısayol menü öğesi ekleme](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-sharepoint-project-item-extension.md)   
  [Nasıl yapılır: bir SharePoint Proje öğe uzantısına özellik ekleme](../sharepoint/how-to-add-a-property-to-a-sharepoint-project-item-extension.md)   
  [İzlenecek yol: bir SharePoint proje öğesi türünü genişletme](../sharepoint/walkthrough-extending-a-sharepoint-project-item-type.md)   
- [SharePoint Proje Sistemini Genişletme](../sharepoint/extending-the-sharepoint-project-system.md)  
+ [SharePoint Proje sistemini genişletme](../sharepoint/extending-the-sharepoint-project-system.md)  
   

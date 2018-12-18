@@ -10,32 +10,33 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3009130acbbde431c9751df848eaef252c0bdd04
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1731c47d3de9068affd4c7561e1dae94960b2b44
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49835923"
 ---
 # <a name="globalon-and-globaloff"></a>GlobalOn ve GlobalOff
-VSPerfCmd.exe **GlobalOff** ve **GlobalOn** seçenekleri duraklatıp tüm işlemleri ve iş parçacıklarını için bir komut satırı profil oluşturma oturumu profil oluşturma.  
+*VSPerfCmd.exe* **GlobalOff** ve **GlobalOn** seçenekleri duraklatma ve komut satırı profil oluşturma oturumu içinde tüm işlemler ve iş parçacıkları için profil oluşturmayı sürdürün.  
   
- Belirleyebileceğiniz **GlobalOn** ve **GlobalOff** VSPerfCmd.exe komut satırı veya tek seçenekler de içeren komut satırları içerebilir gibi **Başlat**, **Başlatma**, veya **Attach** seçenekleri.  
+ Belirtebileceğiniz **GlobalOn** ve **GlobalOff** tek seçenek olarak bir *VSPerfCmd.exe* komut satırı veya içerebilir bunları deiçerenkomutsatırları **Başlangıç**, **başlatma**, veya **iliştirme** seçenekleri.  
   
  **GlobalOn** ve **GlobalOff** ile birleştirilebilir **ProcessOn**, **ProcessOff**, **ThreadOn**ve  **ThreadOff** seçenekleri.  
   
- **GlobalOn** ve **GlobalOff** seçenekleri etkileşimde **ProcessOn** ve **ProcessOff** denetlemek için veri toplama seçeneklerini bir işlemi, belirtilen ile **ThreadOn** ve **ThreadOff** , belirtilen bir iş parçacığı için veri toplama denetleyen seçenekler.  
+ **GlobalOn** ve **GlobalOff** seçenekleri etkileşimde **ProcessOn** ve **ProcessOff** için veri toplamayı kontrol seçenekleri bir işlemi belirtilen ile **ThreadOn** ve **ThreadOff** belirtilen iş parçacığı için veri toplama denetleyen seçenekler.  
   
- **GlobalOff** ve **GlobalOn** seçenekleri de Profil Oluşturucu'nın API işlevleri tarafından yönetilebilir genel Başlat/Durdur sayısı etkiler.  
+ **GlobalOff** ve **GlobalOn** seçenekleri, profil oluşturucu API işlevleri tarafından yönetilen Global Başlat/Durdur sayısını da etkiler.  
   
--   **GlobalOff** hemen genel Başlat/Durdur sayısı 0 olarak ayarlar ve bu nedenle profil duraklatır.  
+- **GlobalOff** hemen genel Başlat/Durdur sayısını 0 olarak ayarlar ve bu nedenle profil oluşturma duraklatır.  
   
--   **GlobalOn** hemen genel Başlat/Durdur sayısı 1'e ayarlar ve bu nedenle sürdürür profil oluşturma.  
+- **GlobalOn** hemen genel Başlat/Durdur sayısını 1 olarak ayarlar ve bu nedenle sürdürür profil oluşturma.  
   
- Daha fazla bilgi için bkz: [profil oluşturma araçları API'leri](../profiling/profiling-tools-apis.md).  
+  Daha fazla bilgi için [Profil Araçları API'leri](../profiling/profiling-tools-apis.md).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cmd  
 VSPerfCmd.exe /{GlobalOff|GlobalOn}  
   
 VSPerfCmd.exe /Start:Method /{GlobalOff|GlobalOn} [Options]  
@@ -46,28 +47,28 @@ VSPerfCmd.exe {Launch:AppName|Attach:PID} /{GlobalOff|GlobalOn}[Options]
 #### <a name="parameters"></a>Parametreler  
  Yok.  
   
-## <a name="valid-options"></a>Geçerli seçenekleri  
- **GlobalOn** ve **GlobalOff** aşağıdaki seçenekleri de içeren komut satırları belirtilebilir.  
+## <a name="valid-options"></a>Geçerli seçenekler şunlardır:  
+ **GlobalOn** ve **GlobalOff** aşağıdaki seçenekleri de içeren komut satırlarında belirtilebilir.  
   
  **Başlat:** `Method`  
  Komut satırı Profil Oluşturucu oturumu başlatır ve belirtilen profil oluşturma yöntemini ayarlar.  
   
  **Başlat:** `AppName`  
- Belirtilen uygulamayı başlatır ve profil oluşturma örnekleme yöntemi ile başlar.  
+ Belirtilen uygulamayı başlatır ve örnekleme yöntemiyle profili oluşturma başlar.  
   
- **Ekle:** `PID`  
- Belirtilen işlem profil başlar.  
+ **Ekleme:** `PID`  
+ Belirtilen işlem profil oluşturma başlar.  
   
  {**ProcessOff**&#124;**ProcessOn**}**:**`PID`  
- Durdurur veya belirtilen işlem için profil oluşturma başlatır.  
+ Durdurur veya belirtilen işlem için profil oluşturmaya başlar.  
   
  {**ThreadOff**&#124;**ThreadOn**}**:**`TID`  
- Durdurur veya (yalnızca izleme metodunu) belirtilen işlem için profil oluşturma başlatır.  
+ Durdurur veya (yalnızca izleme metodunu) belirtilen işlem için profil oluşturmaya başlar.  
   
 ## <a name="example"></a>Örnek  
- Bu örnekte, **GlobalOff** ve **GlobalOn** seçenekleri, uygulama başlatma ve kapatma profil oluşturma verilerini toplayan önlemek için kullanılır.  
+ Bu örnekte, **GlobalOff** ve **GlobalOn** seçenekleri uygulama başlatma ve kapatma için profil oluşturma verileri toplama önlemek üzere kullanılır.  
   
-```  
+```cmd  
 ; Initialize the profiler with profiling stopped.  
 VSPerfCmd.exe /Start:Trace /Output:Instrument.vsp /GlobalOff  
 ; Start an instrumented application and wait for it to warm up.  
@@ -82,8 +83,8 @@ VSPerfCmd /Shutdown
   
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
- [Bağımsız uygulamaların profilini oluşturma](../profiling/command-line-profiling-of-stand-alone-applications.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
- [Profil oluşturma hizmetleri](../profiling/command-line-profiling-of-services.md)
+ [Bağımsız uygulamalar profili](../profiling/command-line-profiling-of-stand-alone-applications.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
+ [Profil hizmetler](../profiling/command-line-profiling-of-services.md)

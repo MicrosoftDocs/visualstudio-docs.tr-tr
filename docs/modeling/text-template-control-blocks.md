@@ -9,24 +9,26 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 221985f8bfbac82e294422c57d684322b9036d5f
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 90668c751005e697c4b78d0f3caf58f8a85db925
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49812030"
 ---
 # <a name="text-template-control-blocks"></a>Metin Şablonu Denetim Blokları
-Denetim blokları çıktıyı değiştirmek için metin şablonunuzda kod yazmanıza olanak tanır. Kendi açılan parantezler göre ayırt edilen denetim blokları üç tür vardır:
+Denetim blokları çıktıyı değiştirmek için metin şablonunuza kod yazmanıza olanak sağlar. Denetim blokları, bunların açma köşeli parantez ayırt üç tür vardır:
 
--   `<# Standard control blocks #>` ifadeleri içerebilir.
+-   `<# Standard control blocks #>` deyim içerebilir.
 
 -   `<#= Expression control blocks #>` ifadeleri içerebilir.
 
--   `<#+ Class feature control blocks #>` yöntemleri, alanlar ve özellikler içerebilir.
+-   `<#+ Class feature control blocks #>` yöntemler, alanlar ve özellikler içerebilir.
 
 ## <a name="standard-control-block"></a>Standart denetim bloğu
- Standart denetim blokları deyimleri içerir. Örneğin, aşağıdaki standart bloğu XML belgesinde tüm öznitelikleri adlarını alır:
+ Standart denetim blokları ifadeleri içerir. Örneğin, aşağıdaki standart bloğu tüm özniteliklerin adlarıyla XML belgesinde alır:
 
 ```
 <#@ assembly name="System.Xml.dll" #>
@@ -47,7 +49,7 @@ Denetim blokları çıktıyı değiştirmek için metin şablonunuzda kod yazman
 #>
 ```
 
- Bileşik deyim içindeki düz metin gibi katıştırmak `if` veya `for`. Örneğin, bu parçasını her döngü tekrarında bir çıktı satırı oluşturur:
+ Bileşik deyim içinde düz metin gibi ekleme `if` veya `for`. Örneğin, bu parça her döngü yinelemesinin bir çıkış satırı oluşturur:
 
 ```
 <#
@@ -62,11 +64,11 @@ Found another one!
 ```
 
 > [!WARNING]
->  Her zaman, {...} kullanın Katıştırılmış düz metin içeren iç içe geçmiş deyimler sınırlandırmak için. Aşağıdaki örnek düzgün çalışmayabilir:
+>  Her zaman {...}'ni kullanın Katıştırılmış düz metin içeren iç içe geçmiş deyimler sınırlandırmak için. Aşağıdaki örnek düzgün şekilde çalışmayabilir:
 >
 >  `<# if (ShouldPrint) #> Some text. -- WRONG`
 >
->  Bunun yerine, {kaşlı} gibi içermelidir:
+>  Bunun yerine {küme ayraçları}, şu şekilde içermelidir:
 
 ```
 
@@ -78,11 +80,10 @@ Some text.
 <#
  }
 #>
-
 ```
 
 ## <a name="expression-control-block"></a>İfade denetim bloğu
- İfade denetim blokları çıktı dosyasına yazılması için dizeleri sağlar kodu için kullanılır. Örneğin, yukarıdaki örnek ile kod bloğunu şu şekilde değiştirerek çıkış dosyasının özniteliklerin adlarıyla yazdırabilirsiniz:
+ İfade denetim blokları, çıktı dosyasına yazılması dizeleri sağlayan kod için kullanılır. Örneğin, yukarıdaki örnek ile kod bloğunu aşağıdaki şekilde değiştirerek öznitelikleri çıkış dosyasının adını yazdırabilir:
 
 ```
 <#
@@ -100,7 +101,7 @@ Some text.
 ```
 
 ## <a name="class-feature-control-block"></a>Sınıf özelliği denetim bloğu
- Sınıf özelliği denetim blokları yöntemler, özellikler, alanlar veya bile iç içe geçmiş sınıflar, metin şablonuna eklemek için kullanabilirsiniz. Sınıf özelliği blokları en yaygın kullanımı metin şablonu diğer bölümlerinde kodu için yardımcı işlevleri sağlamaktır. Örneğin, aşağıdaki sınıf özelliği bloğu öznitelik adı ilk harfini büyük yapar (veya adı boşluk içeriyorsa, her sözcüğün ilk harfini büyük yapar):
+ Sınıf özelliği denetim blokları, yöntemler, özellikler, alanlar veya bile iç içe geçmiş sınıflar, metin şablonunuza eklemek için kullanabilirsiniz. Sınıf özelliği bloklarını en yaygın kullanımı, diğer bölümlerinde metin şablonunun kod için yardımcı işlevleri sağlamaktır. Örneğin, aşağıdaki sınıf özelliği bloğu özniteliği adının ilk harfi büyük harfe dönüştürür (veya adı boşluk içeriyorsa, her sözcüğün ilk harfini büyük harfe):
 
 ```
 <#@ import namespace="System.Globalization" #>
@@ -116,9 +117,9 @@ Some text.
 ```
 
 > [!NOTE]
->  Bir sınıf özelliği denetim bloğu standart denetim blokları aynı şablon dosyasında gelmelidir değil. Ancak, bu kısıtlama kullanmanın sonucu için geçerli değildir `<#@include#>` yönergeleri. Eklenen her dosya sınıf özelliği bloklarla ardından standart blokları olabilir.
+>  Bir sınıf özelliği denetim bloğu, standart denetim blokları aynı şablon dosyasında tarafından izlenmemelidir. Ancak, bu kısıtlama kullanarak sonucu için geçerli değildir `<#@include#>` yönergeleri. Eklenen her dosya, sınıf özelliği bloklarını tarafından izlenen standart blokları olabilir.
 
- Bir sınıf özelliği denetim bloğu metin ve ifade bloklarında gömerek çıktı oluşturan bir işlev oluşturabilirsiniz. Örneğin:
+ Bir sınıf özelliği denetim bloğu metin ve ifade bloklarında ekleyerek çıkış oluşturan bir işlev oluşturabilirsiniz. Örneğin:
 
 ```
 <#+
@@ -142,21 +143,21 @@ Some text.
 ```
 
 ## <a name="how-to-use-control-blocks"></a>Denetim blokları kullanma
- Tüm standart ve ifade denetim blokları (kod dahil şablonlarında dahil) tek bir şablonda forma birleştirilmiş tüm kod `TransformText()` yöntemi oluşturulan kod. (Diğer metin şablonları hakkında daha fazla bilgi için `include` yönerge, bkz: [T4 metin şablonu yönergeleri](../modeling/t4-text-template-directives.md).)
+ Tüm standart ve ifade denetim blokları (kod dahil şablonlarında dahil) tek bir şablonda forma birlikte tüm kodu `TransformText()` yöntemi oluşturulan kod. (Diğer metin şablonları ile ekleme hakkında daha fazla bilgi için `include` yönergesine bakın [T4 metin şablonu yönergeleri](../modeling/t4-text-template-directives.md).)
 
- Denetim blokları kullanırken aşağıdaki noktaları göz önünde bulundurmalıdır:
+ Denetim blokları kullandığınızda aşağıdaki maddeler akılda tutulması:
 
--   **Dili.** Bir metin şablonuna C# veya Visual Basic kodu kullanabilirsiniz. Varsayılan dil C# olmakla birlikte, Visual Basic ile belirtebilirsiniz `language` parametresinin `template` yönergesi. (Hakkında daha fazla bilgi için `template` yönerge, bkz: [T4 metin şablonu yönergeleri](../modeling/t4-text-template-directives.md).)
+-   **Dili.** C# veya Visual Basic kodu bir metin şablonunda kullanabilirsiniz. Varsayılan dil C# olmakla birlikte, Visual Basic ile belirttiğiniz `language` parametresinin `template` yönergesi. (Hakkında daha fazla bilgi için `template` yönergesine bakın [T4 metin şablonu yönergeleri](../modeling/t4-text-template-directives.md).)
 
-     Denetim bloklarında kullandığınız dilin dil veya bir metin şablonu oluştur metin biçimi ile ilgisi vardır. C# Visual Basic kodu veya bunun tersini de kullanarak oluşturabilirsiniz.
+     Denetim blokları kullandığınız dil dil veya bir metin şablonunda oluşturmak metin biçimi ile yapmak için hiçbir şey vardır. C# Visual Basic kod veya bunun tersini de kullanarak oluşturabilirsiniz.
 
-     Verilen metni şablonunda dahil olan tüm metin şablonları dahil olmak üzere, yalnızca bir dil kullanmak `include` yönergesi.
+     Dahil olan tüm metin şablonları dahil olmak üzere belirli bir metin şablonunda, yalnızca bir dil kullanabilirsiniz `include` yönergesi.
 
--   **Yerel değişkenler.** Standart ve ifade denetimindeki tüm kod blokları bu yana bir metin şablonuna tek bir yöntem olarak oluşturulur ve yerel değişken adlarıyla çakışmalar olduğundan emin olmanız gerekir. Diğer metin şablonları ekliyorsanız, değişken adları dahil tüm şablonları arasında benzersiz olduğundan emin olmanız gerekir. Bunu sağlamanın bir yolu, bir dize içinde bildirilen metin şablonu tanımlayan her yerel değişken adına eklemektir.
+-   **Yerel değişkenler.** Standart ve ifade denetimindeki tüm kod engeller bu yana bir metin şablonu tek bir yöntem oluşturulur ve olduğundan yerel değişkenlerin adlarını ile çakışma olmadığından emin olmanız gerekir. Diğer metin şablonları dahil olmak üzere, tüm dahil şablonlarıyla değişken adlarının benzersiz olduğundan emin olmanız gerekir. Bu emin olmanın bir yolu, bir dize içinde bildirilen metin şablonunu tanımlayan her yerel değişkenin adı eklemektir.
 
-     Özellikle birden çok metin şablonları eklerken, bunları bildirirken duyarlı değerleri için yerel değişkenleri başlatmak için de iyi bir fikirdir.
+     Özellikle birden çok metin şablonları eklerken, bunları bildirdiğinizde, yerel değişkenleri mantıklı değerlere başlatmak için de iyi bir fikirdir.
 
--   **İç içe geçmiş denetim blokları.** Denetim blokları diğer içinde bulunmayabilir. Başka bir açmadan önce her zaman belirli denetim bloğu Sonlandır gerekir. Örneğin, aşağıdaki standart denetim bloğu bir parçası olarak bir ifade bloğundaki bazı metinleri yazdırmak nasıl gösterir.
+-   **Denetim blokları iç içe geçmiş.** Denetim blokları diğer içinde bulunmayabilir. Başka bir açmadan önce her zaman belirli bir denetim bloğu sonlandırmanız gerekir. Örneğin, aşağıdaki standart denetim bloğu bir parçası olarak bir ifade bloğu metne nasıl gösterir.
 
     ```
     <#
@@ -168,4 +169,4 @@ Some text.
     <# } #>
     ```
 
--   **Yeniden düzenleme.** Metin şablonlarınızı kısa ve kolay anlaşılır tutmak için sınıf özelliği bloklarındaki yardımcı işlevleri içine yeniden kullanılabilir kod Finansman veya devralır kendi metin şablonu sınıfı oluşturarak yinelenen kodlardan kaçının önerilir Microsoft.VisualStudio.TextTemplating.TextTransformation sınıfından.
+-   **Yeniden düzenleme.** Metin şablonlarınızı kısa ve kolay anlaşılır tutulabilmesi için sınıf özelliği bloklarını yardımcı işlevler halinde yeniden kullanılabilir kod hesaba katarak veya devralınan kendi metin Şablon sınıfı oluşturarak yinelenen kodlardan kaçının önerilir Microsoft.VisualStudio.texttemplating.texttransformation ile sınıftan.

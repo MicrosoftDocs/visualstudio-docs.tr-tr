@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7466051b7dd541e4361feb654c4ae5dfcd3c21bd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d061f6a059fba9f43a57efe2c7f22b75b77cbef8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49925481"
 ---
 # <a name="ienumcodepaths2clone"></a>IEnumCodePaths2::Clone
-Bir kopyasını ayrı bir nesne olarak geçerli numaralandırması döndürür.  
+Bir kopyasını ayrı bir nesne olarak geçerli bir sabit listesi döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int Clone(
  [out] Bu numaralandırma ayrı bir nesne gibi bir kopyasını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Numaralandırma kopyasını bu yöntem çağrılır aynı anda özgün ile aynı duruma sahiptir. Ancak, kopyanın ve özgün 's durumları ayrıdır ve tek tek değiştirilebilir.  
+ Numaralandırma kopyasını bu yöntemin çağrıldığı zaman orijinal ile aynı duruma sahiptir. Ancak, kopyanın ve orijinalin durumları ayrıdır ve ayrı ayrı değiştirilebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumCodePaths2](../../../extensibility/debugger/reference/ienumcodepaths2.md)

@@ -1,5 +1,5 @@
 ---
-title: Kaynak Denetim Eklentileri | Microsoft Docs
+title: Kaynak denetimi eklentileri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,61 +13,62 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a3395275938d78178f6f39ccd0f67dca01194bcc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4be7a1d0739b6a0c8431d588b05de58a296b809c
+ms.sourcegitcommit: 9765b3fcf89375ca499afd9fc42cf4645b66a8a2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46495706"
 ---
-# <a name="source-control-plug-ins"></a>Kaynak Denetim Eklentileri
-Kaynak Denetim eklentisi SDK başvurusu bölümü kaynak denetim sistemleri ile tümleştirilmesini sağlar tam arabirim belirtimi içeriyor [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Kaynak Denetim eklentisi arabirimi uygulamalıdır çeşitli işlevleri ve veri türlerini semantiği ve sözdizimi belirtir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE).  
+# <a name="source-control-plug-ins"></a>Kaynak Denetimi Eklentileri
+Kaynak Denetimi Eklentisi SDK başvuru bölümüne ile tümleşik kaynak denetimi sistemlerini sağlayan eksiksiz arabirim belirtimi içeren [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Sözdizimi ve semantiği ile arabirim oluşturmak için kaynak denetimi eklentisi uygulamalıdır çeşitli işlevleri ve veri türlerini belirtir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE).  
   
 ## <a name="in-this-section"></a>Bu Bölümde  
  [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)  
- Kaynak Denetimi Eklentisi tarafından kaynak denetim eklentisi API'si ile uymak için uygulanması gereken işlevleri listeler.  
+ Kaynak Denetimi Eklentisi API ile uyum sağlamak için kaynak denetimi eklentisi tarafından uygulanması gereken işlevleri listeler.  
   
  [IDE Tarafından Uygulanan Geri Çağırma İşlevleri](../extensibility/callback-functions-implemented-by-the-ide.md)  
- Bazı komutlar yürütülürken IDE bilgi geçirmek için kaynak denetim eklentisi kullanır işlevleri açıklanmaktadır.  
+ Bazı komut yürütülürken IDE bilgi geçirmek için kaynak denetimi eklentisi kullanan işlevler açıklanmaktadır.  
   
  [Numaralandırıcılar](../extensibility/enumerators.md)  
- Kaynak Denetim eklentisi hakkında bilmeniz gereken kaynak denetim eklentisi API'sindeki Numaralandırıcı veri türlerini listeler.  
+ Kaynak Denetimi Eklentisi hakkında bilmeniz gereken kaynak denetimi eklentisi API Numaralandırıcı veri türlerini listeler.  
   
  [Özellik Bayrakları](../extensibility/capability-flags.md)  
- Açıklar `SCC_CAP_xxx` bir sağlayıcının özellikleri gösteren bayrak.  
+ Açıklar `SCC_CAP_xxx` bir sağlayıcının özelliklerini gösteren bayrak.  
   
  [Özel Komutlar Tarafından Kullanılan Bit Bayrakları](../extensibility/bitflags-used-by-specific-commands.md)  
- Belirli komutların bağlamda yararlı bayrakları listeler.  
+ Belirli komutları bağlamında yararlıdır bayrakları listeler.  
   
  [Hata Kodları](../extensibility/error-codes.md)  
- Listeleri olarak işlev tarafından döndürülen genel hata değerlerini `SCCTRN`.  
+ İşlevleri tarafından döndürülen genel hata değerlerini listeler `SCCTRN`.  
   
  [Kaynak Denetimi Eklentisi Bulmak için Anahtar Olarak Kullanılan Dizeler](../extensibility/strings-used-as-keys-for-finding-a-source-control-plug-in.md)  
- Kaynak denetimi eklenti bulmak için kayıt defteri erişim tuşları açıklanmaktadır.  
+ Kaynak denetimi eklentisi bulmak için kayıt defteri erişim tuşları açıklanmaktadır.  
   
  [MSSCCPRJ.SCC Dosyası](../extensibility/mssccprj-scc-file.md)  
- Bilgi IDE donuk içeriyor, ancak, kaynak denetimi eklentisi tarafından sürüm denetimindeki proje ve çözüm bulmak için kullanılan bir istemci-tarafı dosya tanımlar.  
+ IDE için donuk bilgileri içeren, ancak sürüm denetimi içinde çözüm veya projeyi bulmak için kaynak denetimi eklentisi tarafından kullanılan bir istemci-tarafı dosya açıklar.  
   
  [Kaynak Denetimi Eklentisi Uygulamak için En İyi Yöntemler](../extensibility/best-practices-for-implementing-a-source-control-plug-in.md)  
- Kaynak Denetim eklentisi API uygulama sırada anımsaması önemli teknik anımsatıcıları koleksiyonu sağlar.  
+ Kaynak Denetimi Eklentisi API uyguladığınız sırada hatırlamak önemli teknik anımsatıcılar sağlar.  
   
  [Dize Uzunluğu Kısıtlamaları](../extensibility/restrictions-on-string-lengths.md)  
- Kaynak Denetim eklentisi API sınırlamaları çeşitli işlevlerde kullanılan dizeleri uzunlukları açıklar.  
+ Kaynak Denetimi Eklentisi API sınırlamaları çeşitli işlevler için kullanılan dizelerin uzunluklarının açıklar.  
   
  [Sözlük](../extensibility/source-control-plug-in-glossary.md)  
  Yararlı hüküm ve kaynak denetimi eklentisi SDK belgeleri okumak için tanımlarını sağlar.  
   
  [Nasıl Yapılır: Kaynak Denetimi Eklentileri için Uyumluluk Uyarılarını Kapatma](../extensibility/how-to-turn-off-compatibility-warnings-for-source-control-plug-ins.md)  
- Uyarıları devre dışı bırakmak açıklar.  
+ Uyarıları devre dışı bırakma açıklar.  
   
 ## <a name="related-sections"></a>İlgili Bölümler  
- [Kaynak Denetim eklenti örneği](http://msdn.microsoft.com/en-us/61de7d2b-71db-451e-8e3e-d41b11c7a4ca)  
- Kaynak denetimi eklenti işlevlerinin bir örnek sağlar.  
+ [Kaynak Denetimi Eklentisi örneği](https://www.microsoft.com/download/details.aspx?id=55984)  
+ Kaynak Denetimi Eklentisi işlevlerini bir örnek sağlar.  
   
  [Kaynak Denetimi Eklentileri için Test Kılavuzu](../extensibility/internals/test-guide-for-source-control-plug-ins.md)  
  Kaynak denetimi eklentisi ile ilgili sınama yordamları açıklar.  
   
  [Kaynak Denetimi Eklentisi Oluşturma](../extensibility/internals/creating-a-source-control-plug-in.md)  
- Kaynak denetimi işlevlerinin kullanırken sağlayan bir kaynak denetimi eklenti oluşturmak nasıl ele [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kaynak denetimi kullanıcı arabirimini (UI).  
+ Kaynak denetimi işlevlerini kullanırken sağlayan bir kaynak denetimi eklentisi oluşturma anlatılmaktadır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kaynak denetimi kullanıcı arabirimini (UI).  
   
  [Visual Studio SDK Başvurusu](../extensibility/visual-studio-sdk-reference.md)  
- Başvuru konuları listesini gösterir.
+ Başvuru konuları bir listesini sunar.

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9a682342410b32422bc87f180b00f017520322d8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 927069dd3a62ffc56534f68179db2921ccc227f5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849209"
 ---
 # <a name="idebugsymbolprovidergetnextaddress"></a>IDebugSymbolProvider::GetNextAddress
-Belirli hata ayıklama adresi yöntemine aşağıdaki hata ayıklama adresini alır.  
+Bir yöntemde belirli hata ayıklama adresi aşağıdaki hata ayıklama adresi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,13 +45,13 @@ int GetNextAddress(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [in] Belirli hata ayıklama adresi.  
+ [in] Hata ayıklama adresi verilir.  
   
  `fStatementOnly`  
- [in] TRUE ise, tek bir deyimde hata ayıklama adreslere sınırlar.  
+ [in] TRUE ise tek bir deyimde hata ayıklama adresler sınırlar.  
   
  `ppAddress`  
- [out] Sonraki hata ayıklama adresini döndürür.  
+ [out] Sonraki hata ayıklama adresi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Geçerli bir döndürür `HRESULT`, genellikle S_OK.  

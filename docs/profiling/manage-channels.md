@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 045059c1ab0c33026369b065649c4d4b82a480df
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 89c5727b8bc294ae28f48a6e1fc3194b258b9555
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844441"
 ---
 # <a name="manage-channels"></a>Kanalları Yönet
 İçinde **iş parçacıkları görünümü** belirli modelleri incelemek için Eş zamanlılık Görselleştirici kanallar işleminiz için düzenleyebilirsiniz. Kanallar sıralama, yukarı ve Aşağı Taşı ve gizlemek veya göstermek.  
@@ -53,13 +54,13 @@ ms.lasthandoff: 04/19/2018
 ## <a name="show-all-channels"></a>Tüm kanalları Göster  
  Bu denetim etkin olduğunda bir veya daha fazla kanallar gizlidir. Seçerseniz, tüm gizli öğeleri gösterilir ve saat hesaplamaları için döndürülür.  
   
-## <a name="move-markers-to-top"></a>İşaretçileri üstüne taşıyın  
+## <a name="move-markers-to-top"></a>Üst taşıma işaretleyicileri  
  Bir izleme işaret olayları içeriyorsa, zaman çizelgesi başına işaret kanalları taşımak için bu komutu kullanabilirsiniz. Göreli sıralarına korunur.  
   
 ## <a name="group-markers-by-thread"></a>İş parçacığı tarafından Grup işaretçileri  
  Bir izleme işaret olayları içeriyorsa, Grup işaret kanalları işaret olayları üretilen iş parçacığı altında bu komutu kullanabilirsiniz.  Disk kanalları kanal listenin üst kısmına taşınır ve GPU kanalları altına taşınır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Yakınlaştırma Denetimi (iş parçacıkları görünümü)](../profiling/zoom-control-threads-view.md)   
  [Ölçüm modu açık/kapalı](../profiling/measure-mode-on-off.md)   
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

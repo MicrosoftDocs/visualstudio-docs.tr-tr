@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a8f90ec641ca3039a03ad27e4c012ea7580febe9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 595623b93bbca7d5818d242f1c1818d24ff48e77
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49938896"
 ---
 # <a name="idiaenumsegmentsskip"></a>IDiaEnumSegments::Skip
-Bir numaralandırma sırası segmentlerinde belirtilen sayıda atlar.  
+Bir numaralandırma sıralı segmentleri belirtilen sayıda atlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT Skip (
   
 #### <a name="parameters"></a>Parametreler  
  celt  
- [in] Atlamak için numaralandırma sırası segmentlerinde sayısı.  
+ [in] Atlamak için sabit listesi sırası segmentler sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` atlamak için kesim varsa.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` atlamak için daha fazla segment varsa.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaEnumSegments](../../debugger/debug-interface-access/idiaenumsegments.md)

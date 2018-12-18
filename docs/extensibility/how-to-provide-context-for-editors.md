@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: içerik düzenleyicileri açısından sağlamak | Microsoft Docs'
+title: 'Nasıl yapılır: bağlam sağlamak için düzenleyicileri | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,77 +13,78 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ac6880d50f7e56b63f54c627726c3339028d519e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 848778506bdea1b7bf61b6a94a1fb14908a7b930
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908964"
 ---
-# <a name="how-to-provide-context-for-editors"></a>Nasıl yapılır: içerik düzenleyicileri açısından sağlayın
-Bir düzenleyici için bağlam Düzenleyicisi odağa sahip veya odağı bir araç penceresi hemen taşınmadan önce odağa sahip olduğunda etkindir. Aşağıdakileri yaparak içerik için bir düzenleyici sağlayabilirsiniz:  
+# <a name="how-to-provide-context-for-editors"></a>Nasıl yapılır: bağlam sağlamak için düzenleyicileri açma
+Yalnızca Düzenleyici odaklı veya araç penceresine odak hemen taşınmadan önce odağa sahip için bir düzenleyici, bağlamı etkin değil. Aşağıdaki görevleri gerçekleştirerek, içerik için bir düzenleyici sağlayabilirsiniz:  
   
-1.  Bir içerik paketi oluşturun.  
+1. Bir içerik paketi oluşturun.  
   
-2.  İçerik Paketi seçimi öğe tanımlayıcı (SEID) yayımlayın.  
+2. İçerik Paketi seçimi öğe tanımlayıcısı (SEID) yayımlayın.  
   
-3.  Paketi bağlamda korur.  
+3. Paket bağlamı korur.  
   
- Bu görevleri aşağıdaki yordamları tarafından ele alınmıştır. İçerik sağlama hakkında daha fazla bilgi için bkz: **güçlü programlama** bu konuda daha sonra.  
+   Bu görevleri, aşağıdaki yordamları tarafından ele alınmaktadır. Bağlam sağlama hakkında daha fazla bilgi için bkz. **güçlü programlama** bu makalenin ilerleyen bölümlerinde.  
   
-### <a name="to-create-a-context-bag-for-an-editor-or-a-designer"></a>Bir düzenleyici veya bir tasarımcı için bir içerik paketi oluşturmak için  
+## <a name="to-create-a-context-bag-for-an-editor-or-a-designer"></a>Bir düzenleyici veya tasarımcı için bir içerik paketi oluşturmak için  
   
-1.  Çağrı `QueryService` üzerinde <xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider> için arabirim <xref:Microsoft.VisualStudio.Shell.Interop.SVsMonitorUserContext> hizmet.  
+1.  Çağrı `QueryService` üzerinde <xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider> için arabirim <xref:Microsoft.VisualStudio.Shell.Interop.SVsMonitorUserContext> hizmeti.  
   
      Bir işaretçi <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorUserContext> arabirimi döndürülür.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorUserContext.CreateEmptyContext%2A> yeni bir içerik veya üzere paketi oluşturmak için yöntemi.  
+2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorUserContext.CreateEmptyContext%2A> yeni bir bağlam veya alt bağlam paketi oluşturmak için yöntemi.  
   
      Bir işaretçi <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext> arabirimi döndürülür.  
   
-3.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddAttribute%2A> öznitelikler, arama anahtar sözcükleri veya F1 anahtar sözcükleri bağlamı veya üzere paketi eklemek için yöntem.  
+3.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddAttribute%2A> öznitelikler, arama anahtar sözcükleri, yöntemi veya **F1** bağlamı veya üzere paket anahtar sözcükleri.  
   
-4.  Bir üzere paketi oluşturuyorsanız, çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddSubcontext%2A> üzere paketi için üst içerik paketi bağlamak için yöntem.  
+4.  Üzere paket oluşturuyorsanız, çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddSubcontext%2A> üzere paket için ana içerik paketi bağlamak için yöntemi.  
   
-5.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AdviseUpdate%2A> bildirim almak için zaman **dinamik yardımcı** penceredir güncelleştirmek üzere.  
+5.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AdviseUpdate%2A> bildirim almak için zaman **dinamik Yardım** güncelleştirmek üzere penceredir.  
   
-     Sahip **dinamik yardımcı** çağrı düzenleyicinizi penceresi güncelleştirmek hazır olduğunda gecikme güncelleştirme gerçekleşene kadar bağlam değiştirme olanağı sağlar. Sistem boşta kalma süresi kullanılabilir hale gelene kadar uzun süren algoritmaları çalıştıran gecikme izin verdiği için Bunun yapılması performansı geliştirebilir.  
+     Sahip **dinamik Yardım** çağrı düzenleyici penceresi güncelleştirmek hazır olduğunda gecikme güncelleştirme gerçekleşene kadar bağlamını değiştirme olanağı sağlar. Sistem boşta kalma süresi kullanılabilir hale gelene kadar zaman algoritmaları çalıştıran gecikme izin verdiğinden, bunun yapılması performansı geliştirebilir.  
   
-### <a name="to-publish-the-context-bag-to-the-seid"></a>İçerik Paketi SEID yayımlamak için  
+## <a name="to-publish-the-context-bag-to-the-seid"></a>İçerik Paketi için SEID yayımlamak için  
   
-1.  Çağrı `QueryService` üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.SVsTrackSelectionEx> bir işaretçi döndürmek için hizmet <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> arabirimi.  
+1.  Çağrı `QueryService` üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.SVsTrackSelectionEx> işaretçisi döndürecek şekilde <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> arabirimi.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx.OnElementValueChange%2A>, bir öğe tanımlayıcı belirtme (`elementid` parametresi) için genel düzeyden bağlamı geçirme belirtmek için SEID_UserContext değeri.  
+2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx.OnElementValueChange%2A>, bir öğe tanımlayıcı belirtme (`elementid` parametresi) için genel düzeyde bağlamı geçirme belirtmek için SEID_UserContext değeri.  
   
-3.  Düzenleyici veya Tasarımcısı etkin olduğunda, değerleri kendi <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> nesne genel seçimi yayılır. Her oturum için bir kez bu işlemi tamamlayın ve ardından işaretçinin çağırdığınızda oluşturulan genel bağlam için depolamak yeterlidir <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx.OnElementValueChange%2A>.  
+3.  Düzenleyici veya tasarımcı etkin olduğunda, değerleri kendi <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> nesne genel seçimi yayılır. Yalnızca her oturumda bu işlemi tamamlamak ve sonra çağrıldığında oluşturulan genel bağlamda işaretçisi depolamak gereken <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx.OnElementValueChange%2A>.  
   
-### <a name="to-maintain-the-context-bag"></a>İçerik Paketi korumak için  
+## <a name="to-maintain-the-context-bag"></a>İçerik Paketi korumak için  
   
-1.  Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext> emin olmak için **dinamik yardımcı** penceresi, Düzenleyicisi veya Tasarımcısı güncelleştirdiği önce çağırır.  
+1.  Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext> emin olmak için **dinamik Yardım** penceresi, düzenleyici veya tasarımcı güncelleştirdiği önce çağırır.  
   
-     Çağırdı her içerik paketi <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AdviseUpdate%2A> içerik paketi oluşturulur ve uyguladı sonra <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate>, IDE çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> içerik paketi güncelleştirilir bağlam sağlayıcısına bildirmek için. Bu çağrı öznitelikleri ve anahtar sözcükleri İçerik Paketi ve tüm alt bağlam paketler önce değiştirmek için kullanabileceğiniz **dinamik yardımcı** penceresi güncelleştirme gerçekleşir.  
+     Çağırdı her içerik paketi için <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AdviseUpdate%2A> içerik paketi oluşturulur ve gerçekleştirdiğini sonra <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate>, IDE çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> içerik paketi güncelleştirilir bağlam sağlayıcısına bildirir. Bu çağrı öznitelikleri ve anahtar sözcükleri İçerik Paketi ve tüm alt bağlam paketleri önce değiştirmek için kullanabileceğiniz **dinamik Yardım** penceresi güncelleştirme gerçekleşir.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.SetDirty%2A> Düzenleyicisi veya Tasarımcısı yeni bağlam olduğunu belirtmek için içerik paketi üzerinde.  
+2.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.SetDirty%2A> Düzenleyici veya tasarımcı yeni bağlam olduğunu belirtmek için içerik paketi üzerinde.  
   
-     Zaman **dinamik yardımcı** penceresi çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> Bu güncelleştirme, Düzenleyicisi veya Tasarımcısı uygun şekilde üst içerik paketi hem de herhangi üzere paketler için içerik o anda güncelleştirebilirsiniz belirtmek için.  
+     Zaman **dinamik Yardım** penceresi çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> , güncelleştirme, düzenleyici veya tasarımcı bağlamı uygun şekilde üst içerik paketi hem de tüm üzere paketleri için o anda güncelleştirebilirsiniz belirtmek için.  
   
     > [!NOTE]
-    >  `SetDirty` Bayrağı ayarlanmış otomatik olarak `true` her bağlamı eklenemez veya içerik paketi kaldırılamaz. **Dinamik yardımcı** penceresi yalnızca çağırır <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> içerik paketi üzerinde varsa `SetDirty` bayrağı ayarlanmış `true`. İçin Sıfırla `false` güncelleştirmeden sonra.  
+    >  `SetDirty` Bayrağı otomatik olarak ayarlandığında `true` her içerik eklendiğinde veya içerik paketinden kaldırıldı. **Dinamik Yardım** penceresi yalnızca çağıran <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContextUpdate.UpdateUserContext%2A> üzerinde içerik paketi, `SetDirty` bayrağı ayarlandığında `true`. İçin sıfırlama `false` güncelleştirme sonrası.  
   
-3.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddAttribute%2A> bağlamı etkin içeriği koleksiyona eklemek için veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.RemoveAttribute%2A> bağlamı kaldırmak için.  
+3.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddAttribute%2A> bağlam etkin bağlam koleksiyona eklenecek veya <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.RemoveAttribute%2A> bağlamı kaldırmak için.  
   
-## <a name="robust-programming"></a>Güçlü Programlama  
- Kendi Düzenleyicisi yazıyorsanız üçünü Düzenleyicisi bağlamı sağlamak için bu konudaki yordamları tamamlamanız gerekir.  
+## <a name="robust-programming"></a>Güçlü programlama  
+ Kendi düzenleyicinizi yazıyorsanız üçü için düzenleyici bağlam sağlamak için bu makaleyi yordamları tamamlamanız gerekir.  
   
 > [!NOTE]
->  Düzgün bir düzenleyici veya Tasarımcısı penceresinde etkinleştirmek ve komut yönlendirme düzgün güncelleştirildiğinden emin olmak için çağırmalısınız <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> odak penceresi oluşturmak için bileşende.  
+>  Düzgün bir düzenleyici veya tasarımcı penceresini etkinleştir ve komut yönlendirme düzgün bir şekilde güncelleştirildiğinden emin olmak için çağırmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> bileşende odaklama penceresine olun.  
   
- SEID özelliklerin seçimine göre değiştiren bir koleksiyondur. SEID bilgi genel seçimi yoluyla kullanılabilir. Genel seçim tarafından tetiklenen olayları içine kablolu <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> arabirimi, ve bir liste her şeyin (geçerli Düzenleyicisi, geçerli araç penceresi, geçerli hiyerarşi ve benzeri) seçmiştir.  
+ SEID seçim temel alınarak değiştiren özellikler koleksiyonudur. SEID bilgi genel seçimi kullanılabilir. Genel seçimi tarafından tetiklenen olayları kablolu <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx> arabirimi ve bir liste her şeyin (geçerli Düzenleyici, geçerli araç penceresi, geçerli hiyerarşi vb.) seçti.  
   
- Düzenleyiciler ve tasarımcıları için hangi içerik her değiştiğinde değiştirebilir miyim imleci taşır bir sözcük içinde sürekli olarak içerik paketi güncelleştirmek için yetersiz olduğunu. Düzenleyicisi veya designer penceresi içinde taşınması imleci algılamak istediğiniz zaman daha verimli güncelleştirme yapmak için çağırabilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.SetDirty%2A>. Bunun yapılması bağlam değişikliklerinizi boşta kalma süresi ve IDE'nin bağlam hizmeti bildirim Düzenleyicisi veya Tasarımcısı, gönderir kadar tutun olanak tanır **dinamik yardımcı** penceresi güncelleştiriyor. Bu yaklaşım, bu konudaki "İçerik Paketi korumak için" yordamında kullanılır.  
+ Düzenleyiciler ve tasarımcılar için hangi bağlamda herhangi bir zamanda değiştirebilir miyim işaretçiyi taşır bir sözcük içinde sürekli olarak içerik paketi güncelleştirmeye verimsizdir. Düzenleyici veya tasarımcı penceresini içinde taşıma imleç algılamak istediğiniz zaman daha verimli güncelleştirme yapmanız gereken, çağırabilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.SetDirty%2A>. Bunun yapılması, sağlar, boşta kalma süresi yoktur ve IDE'nin bağlam hizmet bildirimi Düzenleyici veya tasarımcı gönderen kadar bağlam değişikliklerinizi tutmak **dinamik Yardım** penceresi güncelleştiriyor. Bu yaklaşım kullanılır **içerik paketi korumak için** bu makaledeki yordamı.  
   
- Düzenleyici veya Tasarımcısı'nda etkinlikler için bağlam sağladıktan sonra Düzenleyicisi veya Tasarımcısı kendisi için Yardım almak kullanıcıların belirli bir F1 anahtar sağlamalıdır.  
+ Düzenleyici veya tasarımcı içindeki etkinlikler için bağlam girdikten sonra belirli bir sağlamalıdır **F1** Düzenleyici veya tasarımcı kendisini Yardım almak kullanıcılara izin vermek için anahtar sözcüğü.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsTrackSelectionEx.OnElementValueChange%2A>   
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AddAttribute%2A>   
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsUserContext.AdviseUpdate%2A>   

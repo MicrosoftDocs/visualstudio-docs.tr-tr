@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 68a9dbba4226e0fa4f591bfc48b03add62ad75b3
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: dc95fe0f57eabbd933f8de842d842914948f3e4c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49819961"
 ---
 # <a name="idiaenumtablesitem"></a>IDiaEnumTables::Item
-Bir dizin veya ad yoluyla bir tablo alır.  
+Bir dizin veya ad ile bir tabloyu alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -34,16 +35,16 @@ HRESULT Item (
   
 #### <a name="parameters"></a>Parametreler  
  `index`  
- [in] Adı veya dizin [Idiatable](../../debugger/debug-interface-access/idiatable.md) alınacak. Bir tamsayı değişken kullanılırsa, bu aralıktaki 0 olmalıdır `count`-1, burada `count` tarafından döndürülen gibi [Idiaenumtables::get_Count](../../debugger/debug-interface-access/idiaenumtables-get-count.md) yöntemi.  
+ [in] Dizin veya adını [Idiatable](../../debugger/debug-interface-access/idiatable.md) alınacak. Bir tamsayı değişken kullandıysanız, aralığı 0 olmalıdır `count`-1, burada `count` tarafından döndürülen [Idiaenumtables::get_Count](../../debugger/debug-interface-access/idiaenumtables-get-count.md) yöntemi.  
   
  `table`  
- [out] Döndürür bir [Idiatable](../../debugger/debug-interface-access/idiatable.md) istenen tabloyu temsil eden nesne.  
+ [out] Döndürür bir [Idiatable](../../debugger/debug-interface-access/idiatable.md) istediğiniz tabloyu temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir dize değişken belirtilmezse, dizenin belirli bir tablo adları. Adı bir tablo adlarının tanımlandığı gibi olmalıdır [Sabitleri (hata ayıklama arabirimi Erişim SDK)](../../debugger/debug-interface-access/constants-debug-interface-access-sdk.md).  
+ Bir dize değişken belirtilirse, dize belirli bir tablo adları. Adı bir tablo adlarının sınıfında tanımlandığı gibi olmalıdır [sabitler (arabirim erişimi SDK'ı hata ayıklama)](../../debugger/debug-interface-access/constants-debug-interface-access-sdk.md).  
   
 ## <a name="example"></a>Örnek  
   

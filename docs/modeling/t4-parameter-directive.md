@@ -7,28 +7,30 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: a44204fa12c3ef549ce31f2e02f9f79247a4580f
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 2db812268b991d6160e515da5a3922ef47bb7a13
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49886532"
 ---
 # <a name="t4-parameter-directive"></a>T4 Parametre Yönergesi
 
-İçinde bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] metin şablonu `parameter` yönergesi dış bağlamdan geçirilen değerlerinden başlatılmış şablon kodunuzu özelliklerinde bildirir. Metin dönüştürmeyi çağıran kodu yazarsanız, bu değerleri ayarlayabilirsiniz.
+Visual Studio metin şablonunda, `parameter` yönergesine geçirilen dış bağlamdan değerlerden başlatılır, şablon kodunun özelliklerinde bildirir. Metin dönüştürme çağıran bir kod yazarsanız, bu değerleri ayarlayabilirsiniz.
 
-## <a name="using-the-parameter-directive"></a>Using parametre yönergesi
+## <a name="using-the-parameter-directive"></a>Parametre yönergesini kullanma
 
 ```
 <#@ parameter type="Full.TypeName" name="ParameterName" #>
 ```
 
- `parameter` Yönergesi dış bağlamdan geçirilen değerlerinden başlatılmış şablon kodunuzu özelliklerinde bildirir. Metin dönüştürmeyi çağıran kodu yazarsanız, bu değerleri ayarlayabilirsiniz. Değerleri ya da geçirilebilir `Session` sözlüğü veya <xref:System.Runtime.Remoting.Messaging.CallContext>.
+ `parameter` Yönergesine geçirilen dış bağlamdan değerlerden başlatılır, şablon kodunun özelliklerinde bildirir. Metin dönüştürme çağıran bir kod yazarsanız, bu değerleri ayarlayabilirsiniz. Değerleri de geçirilebilir `Session` sözlük veya <xref:System.Runtime.Remoting.Messaging.CallContext>.
 
- Herhangi bir Uzaktan erişilebilir tür parametreleri bildirebilirsiniz. Diğer bir deyişle, türü ile bildirilmelidir <xref:System.SerializableAttribute>, veya öğesinden türetilmelidir <xref:System.MarshalByRefObject>. Bu şablon işlenen AppDomain içinde iletilecek parametre değerlerini sağlar.
+ Herhangi bir Uzaktan erişilebilir türde parametreler bildirebilirsiniz. Diğer bir deyişle, türü ile bildirilmelidir <xref:System.SerializableAttribute>, veya öğesinden türetilmelidir <xref:System.MarshalByRefObject>. Bu şablon işlenme AppDomain'e geçirilecek parametre değerlerini sağlar.
 
- Örneğin, aşağıdaki içeriğe sahip bir metin şablonuna yazabilirsiniz:
+ Örneğin, aşağıdaki içeriğe sahip bir metin şablonu yazabilirsiniz:
 
 ```
 <#@ template language="C#" #>
@@ -38,11 +40,10 @@ ms.lasthandoff: 04/20/2018
 <# for (int i = 0; i < TimesToRepeat; i++) { #>
 Line <#= i #>
 <# } #>
-
 ```
 
 ## <a name="passing-parameter-values-to-a-template"></a>Bir şablon parametre değerlerini geçirme
- Yazıyorsanız bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] uzantısı menü komutu veya bir olay işleyicisi gibi metin şablonu oluşturma hizmeti kullanarak bir şablon işleyebilir:
+ Bir menü komutu veya bir olay işleyicisi gibi Visual Studio uzantısı yazıyorsanız metin şablonu oluşturma hizmetini kullanarak bir şablonu işleyebilir:
 
 ```csharp
 // Get a service provider - how you do this depends on the context:
@@ -57,13 +58,12 @@ session["TimesToRepeat"] = 5;
 // Process a text template:
 string result = t4.ProcessTemplate("MyTemplateFile.t4",
   System.IO.File.ReadAllText("MyTemplateFile.t4"));
-
 ```
 
-## <a name="passing-values-in-the-call-context"></a>Çağrı bağlamda değerleri geçirme
- Alternatif olarak mantıksal veri değerlerinin geçmesini sağlayabilirsiniz <xref:System.Runtime.Remoting.Messaging.CallContext>.
+## <a name="passing-values-in-the-call-context"></a>Değerleri çağrı bağlamında geçirme
+ Alternatif olarak, mantıksal olarak veri değerlerinin geçmesini sağlayabilirsiniz <xref:System.Runtime.Remoting.Messaging.CallContext>.
 
- Aşağıdaki örnekte, her iki yöntemi kullanarak değerleri geçirir:
+ Aşağıdaki örnek, her iki yöntemi kullanarak değerleri geçirir:
 
 ```csharp
 ITextTemplating t4 = this.Store.GetService(typeof(STextTemplating)) as ITextTemplating;
@@ -82,13 +82,12 @@ string result = t4.ProcessTemplate("",
 
 // Result value is:
 //     Test 32 test
-
 ```
 
-## <a name="passing-values-to-a-run-time-preprocessed-text-template"></a>Bir çalışma zamanı (Preprocessed) metin şablonu değerleri geçirme
- Kullanmak için genellikle gerekli değil `<#@parameter#>` çalışma zamanı (önceden işlenmiş) metin şablonları ile yönergesi. Bunun yerine, ek bir oluşturucu ya da ayarlanabilir bir özellik parametre değerlerinin geçmesini üretilen kod için tanımlayabilirsiniz. Daha fazla bilgi için bkz: [T4 metin şablonları ile çalışma zamanı metin oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
+## <a name="passing-values-to-a-run-time-preprocessed-text-template"></a>Değerlerin bir çalışma zamanı (önceden işlenmiş) metin şablonu
+ Kullanılacak genellikle gerekli değildir `<#@parameter#>` çalışma zamanı (önceden işlenmiş) metin şablonları ile yönergesi. Bunun yerine, ek bir oluşturucuda veya bir ayarlanabilir özelliği parametre değerlerini geçirmek oluşturulan kodun tanımlayabilirsiniz. Daha fazla bilgi için [T4 metin şablonları ile çalışma süresi metni oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
 
- Ancak, kullanmak istiyorsanız, `<#@parameter>` bir çalışma zamanı şablonunda değerleri için oturum sözlüğünü kullanarak geçirebilirsiniz. Örnek olarak, oluşturduğunuz dosya adlı önceden işlenmiş şablon olarak varsayalım `PreTextTemplate1`. Aşağıdaki kodu kullanarak programınıza şablon çağırabilirsiniz.
+ Ancak, kullanmak istiyorsanız `<#@parameter>` bir çalışma zamanı şablonunda değerleri için oturumu sözlüğünü kullanarak geçirebilirsiniz. Örnek olarak, dosya adlı önceden işlenmiş şablon olarak oluşturduğunuz düşünün `PreTextTemplate1`. Aşağıdaki kodu kullanarak şablon programınızda çağırabilirsiniz.
 
 ```csharp
 PreTextTemplate1 t = new PreTextTemplate1();
@@ -97,10 +96,9 @@ t.Session["TimesToRepeat"] = 5;
 // Add other parameter values to t.Session here.
 t.Initialize(); // Must call this to transfer values.
 string resultText = t.TransformText();
-
 ```
 
-## <a name="obtaining-arguments-from-texttemplateexe"></a>Bağımsız değişkenler TextTemplate.exe alma
+## <a name="obtaining-arguments-from-texttemplateexe"></a>Bağımsız değişkenler TextTemplate.exe edinme
 
 > [!IMPORTANT]
->  `parameter` Yönergesi kümesinde değerlerini alır değil `-a` parametresinin `TextTransform.exe` yardımcı programı. Bu değerleri almak üzere `hostSpecific="true"` içinde `template` yönergesi ve kullanım `this.Host.ResolveParameterValue("","","argName")`.
+>  `parameter` Yönergesi alamadı kümesinde değerleri `-a` parametresinin `TextTransform.exe` yardımcı programı. Bu değerleri almak üzere `hostSpecific="true"` içinde `template` yönergesi ve kullanım `this.Host.ResolveParameterValue("","","argName")`.

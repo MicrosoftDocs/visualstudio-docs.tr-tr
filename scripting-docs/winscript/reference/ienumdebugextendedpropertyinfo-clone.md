@@ -1,11 +1,11 @@
 ---
 title: IEnumDebugExtendedPropertyInfo::Clone | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IEnumDebugExtendedPropertyInfo.Clone
@@ -14,15 +14,16 @@ apilocation:
 helpviewer_keywords:
 - IEnumDebugExtendedPropertyInfo::Clone
 ms.assetid: dd645cf6-bfb3-486c-829e-bb91a6639665
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: d873ba29ea2dc327cd6499613abb66d2a728008c
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 03e4dcd79d90806eab0d664b2a0cba428c03207c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49935334"
 ---
 # <a name="ienumdebugextendedpropertyinfoclone"></a>IEnumDebugExtendedPropertyInfo::Clone
 Geçerli Numaralandırıcı aynı numaralandırma duruma içeren bir numaralandırıcı oluşturur.  
@@ -43,4 +44,4 @@ HRESULT Clone (
  Geçerli bir döndürür `HRESULT`, genellikle `S_OK`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Ienumdebugextendedpropertyınfo arabirimi](../../winscript/reference/ienumdebugextendedpropertyinfo-interface.md)
+ [IEnumDebugExtendedPropertyInfo Arabirimi](../../winscript/reference/ienumdebugextendedpropertyinfo-interface.md)

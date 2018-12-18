@@ -1,7 +1,8 @@
 ---
-title: 'Nasıl yapılır: Visual Studio çözümünün parçası olmayan bir yürütülebilir dosyada hata ayıklama | Microsoft Docs'
-ms.custom: ''
-ms.date: 11/04/2016
+title: Visual Studio çözümünün parçası olmayan bir uygulamanın hatalarını ayıklamak
+titleSuffix: ''
+ms.custom: seodec18
+ms.date: 11/19/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 dev_langs:
@@ -20,52 +21,55 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e16a938eda683a607dbf7d9418b2a7bd4455a0da
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 8c408ca42f82c0419c6570068e2a83e97f2371e9
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53066619"
 ---
-# <a name="how-to-debug-an-executable-that-is-not-part-of-a-visual-studio-solution"></a>Nasıl yapılır: Visual Studio çözümünün parçası olmayan bir yürütülebilir dosyada hata ayıklama
-Bazı durumlarda, olmayan bir yürütülebilir dosya (.exe dosyası) hata ayıklama isteyebilirsiniz parçası bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] projesi. Dışında oluşturulan bir yürütülebilir dosya olabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] veya başka bir kişiden aldığınız yürütülebilir.  
-  
-Bu sorun için her zamanki yanıt yürütülebilir Visual Studio dışında başlatmak ve ile ekleme kullanmaktır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] hata ayıklayıcı. Daha fazla bilgi için bkz: [eklemek için çalışan işlemler](../debugger/attach-to-running-processes-with-the-visual-studio-debugger.md).  
-  
-Bir uygulamaya eklemek için birkaç saniye sürer için bazı adımları el ile gerekir. Bu gecikme, başlatma sırasında ortaya çıkan bir sorun hata ayıklamak çalışıyorsanız ekleme yardımcı olmayacaktır olduğunu anlamına gelir. Ayrıca, kullanıcı girişi beklemez ve hızlı bir şekilde tamamlandıktan bir program hata ayıklama, kendisine eklemek için zaman olmayabilir. Varsa [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] ve [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] yüklü, böyle bir program için bir EXE proje oluşturabilirsiniz.
+# <a name="debug-an-app-that-isnt-part-of-a-visual-studio-solution-c-c-visual-basic-f"></a>Visual Studio çözümünün parçası olmayan bir uygulamanın hatalarını ayıklamak (C++, C#, Visual Basic F#)
 
-> [!NOTE]
->  EXE projeleri tüm programlama dillerini destekler.
+Uygulama hata ayıklaması yapmak isteyebilirniz (*.exe* dosyası), Visual Studio çözümünün parçası değildir. Visual Studio dışında bir uygulama veya bir başkasının oluşturmuş olabilir veya uygulamayı başka bir yerde öğesinden alındı. 
 
-Visual Studio çözümünün parçası olmayan bir yürütülebilir dosya ayıklarken yürütülebilir çalışması için bir ekleme ya da yürütülebilir dosyaya ekleyin kullanılabilir hata ayıklama özellikleri sınırlı olabilir bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çözümü.
+Visual Studio dışında uygulamayı başlatın ve sonra onu kullanarak eklemek için Visual Studio'da mevcut olmayan bir uygulamanın hatalarını ayıklamak için alıştığınız olduğu **iliştirme** Visual Studio hata ayıklayıcısı. Daha fazla bilgi için [çalışan işlemlere ekleme](../debugger/attach-to-running-processes-with-the-visual-studio-debugger.md).  
+  
+Bir uygulamaya ekleme, birkaç saniye sürebilir el ile yapılacak adımlar gerektirir. Bu gecikme nedeniyle ekleme bir başlatma sorunu hataları ayıklamanıza yardımcı olmaz veya kullanıcı için beklemez bir uygulama girin ve hızlı şekilde biten. 
 
-- Kaynak kodu varsa kaynak kodu içine aktarmak için en iyi yaklaşımı olan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ve yürütülebilir dosya, hata ayıklama derlemesi oluşturma [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].
-- Kaynak kodu yoksa ve yürütülebilir olmadan oluşturuldu [hata ayıklama bilgilerini](../debugger/how-to-set-debug-and-release-configurations.md) uyumlu bir biçimde kullanılabilir hata ayıklama özellikleri çok sınırlıdır. 
-  
-### <a name="to-create-an-exe-project-for-an-existing-executable"></a>Varolan bir yürütülebilir dosya için bir EXE projesi oluşturmak için  
-  
-1.  Üzerinde **dosya** menüsünde tıklatın **açık** seçip **proje**.  
-  
-2.  İçinde **Proje Aç** iletişim kutusunda, aşağı açılan listeden sonraki tıklatın **dosya adı** kutusunda ve seçin **tüm proje dosyalarını**.  
-  
-3.  Yürütülebilir dosya bulun ve tıklatın **Tamam**.  
+Bu durumda, uygulama için bir Visual Studio EXE projesi oluşturabilir, veya varolan içine alma C#, Visual Basic veya C++ çözüm. Programlama dillerinin tümü EXE projelerini desteklemez. 
 
-    Bu yürütülebilir dosya içeren geçici bir çözüm oluşturur.
+>[!IMPORTANT]
+>Uygulamaya ekleme ya da Visual Studio çözüme ekleme Visual Studio'da tasarlanmadı bir uygulama için hata ayıklama özellikleri sınırlıdır. 
+>
+>Kaynak kodu varsa, en iyi yaklaşım bir Visual Studio projesine kod aktarmaktır. Ardından, uygulamayı hata ayıklama yapısını çalıştırın.
+>
+>Kaynak kodu yoksa ve uygulama yok [hata ayıklama bilgileri](../debugger/how-to-set-debug-and-release-configurations.md) kullanılabilir hata ayıklama özellikleri uyumlu bir biçimde çok az. 
 
-5.  Yürütülebilir dosya gibi bir yürütme komutu seçerek Başlat **Başlat**, gelen **hata ayıklama** menüsü.    
+### <a name="to-create-a-new-exe-project-for-an-existing-app"></a>Var olan bir uygulama için yeni bir EXE projesi oluşturmak için  
+   
+1. Visual Studio'da **dosya** > **açık** > **proje**.  
+   
+1. İçinde **Proje Aç** iletişim kutusunda **tüm proje dosyaları**, açılır menüde yanındaki seçili değilse **dosya adı**.  
+   
+1. Gidin *.exe* dosya, onu seçip **açık**.  
+   
+   Dosya, yeni, geçici bir Visual Studio çözümü içinde görünür.
+
+1. Uygulamayı hata ayıklama gibi bir yürütme komutu seçerek Başlat **hata ayıklamayı Başlat**, gelen **hata ayıklama** menüsü.    
   
-### <a name="to-import-an-executable-into-a-visual-studio-solution"></a>Visual Studio çözümü yürütülebilir bir dosya aktarmak için  
+### <a name="to-import-an-app-into-an-existing-visual-studio-solution"></a>Bir uygulama var olan bir Visual Studio çözümüne aktarmak için  
   
-1.  Üzerinde **dosya** menüsündeki **Proje Ekle**ve ardından **mevcut proje**.  
+1.  Bir C++ ile C#, veya Visual Basic çözümünü Visual Studio'da Aç seçin **dosya** > **Ekle** > **mevcut proje**.  
   
-2.  İçinde **Varolan Proje Ekle** iletişim kutusunda, aşağı açılan listeden sonraki tıklatın **dosya adı** kutusunda ve seçin **tüm proje dosyalarını**.  
+1. İçinde **Proje Aç** iletişim kutusunda **tüm proje dosyaları**, açılır menüde yanındaki seçili değilse **dosya adı**.  
+   
+1. Gidin *.exe* dosya, onu seçip **açık**.  
+   
+   Dosya, geçerli çözüm altında yeni bir proje olarak görüntülenir.  
+   
+1. Yeni dosya seçildi uygulama hata ayıklama gibi bir yürütme komutu seçerek Başlat **hata ayıklamayı Başlat**, gelen **hata ayıklama** menüsü.    
   
-3.  Bulun ve yürütülebilir dosya seçin.  
-  
-4.  **Tamam**'ı tıklatın.  
-  
-5.  Yürütülebilir dosya gibi bir yürütme komutu seçerek Başlat **Başlat**, gelen **hata ayıklama** menüsü.    
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+### <a name="see-also"></a>Ayrıca bkz.  
  [Hata ayıklayıcı ayarları ve hazırlığı](../debugger/debugger-settings-and-preparation.md)   
- [Hata ayıklama güvenliği](../debugger/debugger-security.md)   
- [DBG dosyaları](http://msdn.microsoft.com/en-us/91e449e9-8b65-4123-960f-2107cd1f1cfd)
+ [Hata ayıklayıcısı güvenliği](../debugger/debugger-security.md)   
+ [DBG dosyaları](/previous-versions/visualstudio/visual-studio-2010/da528y14(v=vs.100))

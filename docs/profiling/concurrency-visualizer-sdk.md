@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7268e786c7d68d642778f0c0dca31de170b424b4
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c02959f30f89b8f7c79527026404099a4452a827
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34691192"
 ---
 # <a name="concurrency-visualizer-sdk"></a>Eşzamanlılık Görselleştiricisi SDK
 Eşzamanlılık görselleştiricisi ek bilgileri görüntülemek için eşzamanlılık görselleştiricisi SDK'sını kullanarak kaynak kodunuzu işaretleyebilir. Ek verileri kodunuzda aşamaları ve olaylarla ilişkilendirebilirsiniz. Bu ek görsel olarak da bilinir *işaretçileri*.  Bir giriş için bkz [eşzamanlılık görselleştiricisi SDK'sı giriş](http://go.microsoft.com/fwlink/?LinkId=235405).  
@@ -59,7 +60,7 @@ Eşzamanlılık görselleştiricisi ek bilgileri görüntülemek için eşzamanl
   
 4.  Kullanarak bir ekleme deyimi, kodunuzun.  
   
-    ```  
+    ```cpp  
     using namespace Concurrency::diagnostic;  
     ```  
   
@@ -120,11 +121,11 @@ Eşzamanlılık görselleştiricisi ek bilgileri görüntülemek için eşzamanl
     CvWriteFlag(series, _T("Writing a flag"));  
     ```  
   
-## <a name="related-topics"></a>İlgili Konular  
+## <a name="see-also"></a>Ayrıca bkz.  
   
 |Başlık|Açıklama|  
 |-----------|-----------------|  
 |[C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)|Eşzamanlılık görselleştiricisi API için C++ açıklar.|  
-|[C Kitaplığı Başvurusu](../profiling/c-library-reference.md)|Eşzamanlılık görselleştiricisi API C. açıklar|  
+|[C Kitaplık Başvurusu](../profiling/c-library-reference.md)|Eşzamanlılık görselleştiricisi API C. açıklar|  
 |<xref:Microsoft.ConcurrencyVisualizer.Instrumentation>|Yönetilen kod için eşzamanlılık görselleştiricisi API açıklar.|  
 |[Eşzamanlılık görselleştiricisi](../profiling/concurrency-visualizer.md)|Eşzamanlılık yöntemi kullanılarak oluşturulur ve iş parçacığı yürütme verileri içeren veri dosyalarını profil oluşturma raporları ve görünümleri için başvuru bilgileri.|

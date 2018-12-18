@@ -18,6 +18,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31476042"
 ---
 # <a name="menu-commands"></a>Menü Komutları
 Bu bölümdeki Yardım konuları Spy ++ menülerde kullanılabilir komutları listeler.  

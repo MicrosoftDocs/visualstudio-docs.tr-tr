@@ -12,14 +12,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e06f5d4a215db9fa57172ca0cc7646be697a20d7
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: dfaabfe48e3eba7207d38c89096ab8a9fbb9cf59
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49925597"
 ---
 # <a name="idiasymbolfindinlineframesbyva"></a>IDiaSymbol::findInlineFramesByVA
-Tüm satır içi çerçeveler belirtilen sanal adresine (VA) yinelemek bir istemci izin veren bir numaralandırmasını alır.  
+Belirtilen sanal adres (VA) satır içi karelerden tümünün üzerinden yinelemek bir istemci sağlayan bir sabit listesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -32,13 +33,13 @@ HRESULT findInlineFramesByVA (
   
 #### <a name="parameters"></a>Parametreler  
  `va`  
- [in] VA. adresini belirtir  
+ [in] Bir VA. adresini belirtir  
   
  `ppResult`  
- [out] Tutan bir `IDiaEnumSymbols` alınır çerçeveler listesini içeren nesne.  
+ [out] Tutan bir `IDiaEnumSymbols` alınır çerçeveler içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   

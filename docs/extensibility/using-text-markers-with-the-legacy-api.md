@@ -1,5 +1,5 @@
 ---
-title: Metin işaretçileri eski API ile kullanma | Microsoft Docs
+title: Metin işaretçileri eski API'si ile kullanma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,61 +13,62 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0ebef6593a019b09e7ee00cced56777d8488323f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 62b77180858b40bf2620eaed284fa35b9a48288a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49835936"
 ---
-# <a name="using-text-markers-with-the-legacy-api"></a>Metin işaretçileri eski API ile kullanma
-Bir metin işaretçisi metin, görüntü etkileyebilecek arabelleği kayan bir dizi ve metin bir bölgenin davranışını ' dir. Kesme noktaları, yer işaretleri, dalgalı alt çizgiler ve salt okunur bölgeler işaretçileri içerir. Metin işaretçileri sözdizimi renklendirmesi gelen temelde farklıdır. Sözdizimi renklendirmesi metin bölgesiyle ilişkilendirilen dili sözdizimi iletişim kurmak için hızlı bir yoludur. Sözdizimi renklendirmesi hızı önemli olduğu durumlarda Windows ekran şekilde yeniden boyar olduğunda genellikle istendi. Sözdizimi renklendirmesi yalnızca metin rengini değiştirir. Metin işaretçileri diğer birçok metin özelliklerini değiştirebilirsiniz. Metin işaretçileri "float" ve özel davranışı uygulamak ve renklendirme.  
+# <a name="using-text-markers-with-the-legacy-api"></a>Metin işaretçileri eski API'si ile kullanma
+Bir metin işaretçisi görüntülenmesini etkileyebilecek arabellekteki metni kayan bir dizi ve bir bölgeye metin davranışını ' dir. Kesme noktaları, yer işaretleri, dalgalı alt çizgiler ve salt okunur bölgelere işaretçileri içerir. Metin işaretçileri temel söz dizimi renklendirmesi öğesinden farklıdır. Söz dizimi renklendirme, metnin bir bölgeyle ilişkili dil söz dizimi iletişim kurmak için hızlı bir yoludur. Hız önemlidir, Windows ekran halinde yeniden boyar olduğunda söz dizimi renklendirmesi genellikle istenir. Söz dizimi renklendirmesi yalnızca metin rengini değiştirir. Metin işaretçileri birçok diğer metin özellikleri değiştirebilirsiniz. Metin işaretçileri "kaydırabilirsiniz" ve özel davranışı uygulamak ve renklendirme.  
   
- Metin işaretçileri ile ilişkili performans yükü nedeniyle, metin arabellekleri için birçok işaretçileri oluşturmayın. Her işaret kullanıcı arabelleği içeriği düzenler her zaman güncelleştirilir.  
+ Metin işaretçileri ile ilişkili performans yükü nedeniyle, metin arabelleği için çok sayıda işaretçileri oluşturmayın. Kullanıcı arabelleği içeriği düzenler her zaman her işaret güncelleştirilir.  
   
 > [!NOTE]
->  Kullanıcılara görünür işaret türü ancak değil, Şekil ve stil rengini değiştirebilirsiniz. Daha fazla bilgi için bkz: [yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../ide/reference/fonts-and-colors-environment-options-dialog-box.md).  
+>  Kullanıcılara görünür işaret türü ancak kendi şekil ve stil rengini değiştirebilirsiniz. Daha fazla bilgi için [yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu](../ide/reference/fonts-and-colors-environment-options-dialog-box.md).  
   
 ## <a name="related-topics"></a>İlgili Konular  
   
-|Başlık|Açıklama|  
-|-----------|-----------------|  
-|[Nasıl yapılır: standart metin işaretleyicileri ekleyin](../extensibility/how-to-add-standard-text-markers.md)|Tarafından sağlanan standart metin işaret türü eklemeyi açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çekirdek düzenleyici metin görünümü.|  
-|[Nasıl yapılır: uygulama hata işaretçileri](../extensibility/how-to-implement-error-markers.md)|Örneği uygulamak açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kırmızı dalgalı alt çizgiler kullanarak hataları göstermek için kullanılan işaretçisi.|  
-|[Nasıl yapılır: özel metin işaretçileri oluşturma](../extensibility/how-to-create-custom-text-markers.md)|Oluşturma ve metin görünümüne özel metin işaret türü ekleme açıklar.|  
-|[Nasıl yapılır: metin işaretçileri kullanın](../extensibility/how-to-use-text-markers.md)|Metin işaretçileri ına nasıl ekleneceğini açıklar.|  
-|[İçinde çekirdek Düzenleyicisi](../extensibility/inside-the-core-editor.md)|Çekirdek Düzenleyici özelliklerini açıklar ve çekirdek Düzenleyicisi'ni özelleştirme hakkında ayrıntılar sağlar.|  
-|[Düzenleyicisi özellikleri](http://msdn.microsoft.com/en-us/bdac940d-1f14-4019-a01f-fd0bb3dc7198)|Uygulamasında kullanılabilen özellikleri açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çekirdek Düzenleyici.|  
+| Başlık | Açıklama |
+| - | - |
+| [Nasıl Yapılır: Standart Metin İşaretçileri Ekleme](../extensibility/how-to-add-standard-text-markers.md) | Bir standart metin işaretçisi türü tarafından sağlanan eklemeyi açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] metni görünümü çekirdek Düzenleyici. |
+| [Nasıl Yapılır: Hata İşaretçilerini Uygulama](../extensibility/how-to-implement-error-markers.md) | Uygulama örneğini açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kırmızı dalgalı alt çizgiler kullanarak hataları göstermek için kullanılan işaretçisi. |
+| [Nasıl yapılır: Özel Metin İşaretçileri Oluşturma](../extensibility/how-to-create-custom-text-markers.md) | Oluşturma ve bir özel metin işaretçisi türü metin görünümü ekleme işlemini açıklamaktadır. |
+| [Nasıl Yapılır: Metin İşaretçileri Kullanma](../extensibility/how-to-use-text-markers.md) | Metin işaretçileri ekleme işlemi açıklanmaktadır. |
+| [Temel Düzenleyicinin İçinde](../extensibility/inside-the-core-editor.md) | Çekirdek Düzenleyici özelliklerini açıklar ve çekirdek Düzenleyici özelleştirme hakkında ayrıntılar sağlar. |
+| [Düzenleyici Özellikleri](https://msdn.microsoft.com/library/bdac940d-1f14-4019-a01f-fd0bb3dc7198) | Uygulamasında kullanılabilen özellikleri açıklar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çekirdek Düzenleyici. |
   
 ## <a name="reference"></a>Başvuru  
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsPackageDefinedTextMarkerType>  
- Düzenleyicisi tarafından önceden tanımlanmış veya VSPackage tarafından kayıtlı olup olmadığını belirli bir metni işaret türü hakkında bilgi almak için Tekdüzen bir mekanizma sağlar.  
+ Düzenleyici tarafından önceden tanımlanmış veya kayıtlı bir VSPackage tarafından belirli bir metne işaret türü hakkında bilgi almak için Tekdüzen bir mekanizma sağlar.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLineMarker>  
- Erişim sağlar ve iki boyutlu koordinatları kullanarak metin arabelleğini bir metin işaretçisi konumunu ayarlar.  
+ Erişim sağlar ve iki boyutlu koordinatlarını kullanarak bir metin arabelleği bir metin işaretçisi konumunu ayarlar.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarker>  
- Metin işaretçileri yönetme için yöntemleri sağlar.  
+ Metin işaretçileri yönetmek için yöntemler sağlar.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClient>  
- Geri aramalar için sağlar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] IDE ve bir metin işaretçisi ayarlamak için kullanılan diğer işlemler.  
+ Geri çağırmalar için sağlar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] IDE ve bir metin işaretçisi ayarlamak için kullanılan diğer işlemler.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClientAdvanced>  
- Aracılığıyla kullanılabilir işlevselliği genişletir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClient> ek geri aramalar sağlayarak arabirimi.  
+ Aracılığıyla kullanılabilir olan işlevselliği genişletir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClient> ek geri çağırmaları sağlayarak arabirimi.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClientEx>  
- Aracılığıyla kullanılabilir işlevselliği genişletir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClient> ek geri aramalar sağlayarak arabirimi.  
+ Aracılığıyla kullanılabilir olan işlevselliği genişletir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerClient> ek geri çağırmaları sağlayarak arabirimi.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerColorSet>  
- Diğer işaret türleri renkleri aynı kümesini paylaşır olup olmadığını belirlemek işaretçi türü etkinleştirir.  
+ Diğer işaretçi türleri aynı renkleri sahip olup olmadığını belirlemek bir işaretçi türü sağlar.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerContextProvider>  
- Metin işaretçileri çekirdek düzenleyicisinde için bağlam sağlar. Çekirdek Düzenleyicisi'nde olduğu her metin işaretçisi türü için ayrı bir IDE oluşturur <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerContextProvider> nesnesi.  
+ Çekirdek Düzenleyici içindeki metin işaretçileri için bağlam sağlar. Çekirdek Düzenleyicisi'nde olduğu her metin işaretçisi türü için ayrı bir IDE oluşturur <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerContextProvider> nesne.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerGlyphDropHandler>  
- İşaretçileri olan karakterlerin sürükle ve bırak düzenlemeyi desteklemek için sağlanan bir işleyici. Bir karakterin bir işaret konumunu belirten bir simgedir.  
+ Sürükle ve bırak düzenleme, karakter desteği işaretçileri için sağlanan bir işleyici. Bir karakter, bir işaretçisi konumunu gösteren bir simge bulunur.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextMarkerTypeProvider>  
- Döndürür bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsPackageDefinedTextMarkerType> bir metin diğer VSPackages işaretleyicileri sağlayan bir hizmet arabirimden.  
+ Döndürür bir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsPackageDefinedTextMarkerType> arabiriminden bir metin işaretçileri diğer Vspackage'lar için sağlayan bir hizmet.  
   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStreamMarker>  
- Erişim sağlar ve tek boyutlu koordinatları kullanarak metin arabelleğini bir metin işaretçisi konumunu ayarlar. Mümkünse, bu arabirim kullanmayın.
+ Erişim sağlar ve tek boyutlu koordinatlarını kullanarak bir metin arabelleği bir metin işaretçisi konumunu ayarlar. Mümkünse, bu arayüzü kullanmayın.

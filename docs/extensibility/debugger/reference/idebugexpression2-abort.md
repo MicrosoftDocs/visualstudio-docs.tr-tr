@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5f4809fcf8e6947309182ff595ad2784b873f529
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2001992e1b5a120fd3dea588b785478e4d8ec418
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876860"
 ---
 # <a name="idebugexpression2abort"></a>IDebugExpression2::Abort
-Bu yöntem için yapılan bir çağrı tarafından başlatılmış olarak zaman uyumsuz ifade değerlendirme iptal [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) yöntemi.  
+Bu yöntem için yapılan bir çağrı tarafından başlatılmış olarak zaman uyumsuz bir ifade değerlendirme iptal [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) yöntemi.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ int Abort();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Zaman uyumsuz ifade değerlendirme iptal edildiğinde gönderilmez bir [IDebugExpressionEvaluationCompleteEvent2](../../../extensibility/debugger/reference/idebugexpressionevaluationcompleteevent2.md) olay için olay geri geçirilen [Attach](../../../extensibility/debugger/reference/idebugprogram2-attach.md) veya [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) yöntemleri.  
+ Zaman uyumsuz bir ifade değerlendirme iptal edildiğinde gönderilmez bir [IDebugExpressionEvaluationCompleteEvent2](../../../extensibility/debugger/reference/idebugexpressionevaluationcompleteevent2.md) olayı için olay geri geçirilen [iliştirme](../../../extensibility/debugger/reference/idebugprogram2-attach.md) veya [Ekle](../../../extensibility/debugger/reference/idebugengine2-attach.md) yöntemleri.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md)   

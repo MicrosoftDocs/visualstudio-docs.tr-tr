@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: dbbe2c2299a26834ac40c787aea5504ae7d0ed8a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: d0b9e908e03dced75bf8fa3dfce3f31e6bbe148b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49827381"
 ---
 # <a name="idiaaddressmapputrelativevirtualaddressenabled"></a>IDiaAddressMap::put_relativeVirtualAddressEnabled
-Etkinleştirmek veya hesaplama ve göreli sanal adresleri (RAV) kullanımını devre dışı bırakmak istemcinin verir.  
+Etkinleştirmek veya hesaplama ve göreli sanal adreslerine (RVA) kullanımını devre dışı bırakmak istemcinin sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,14 +37,14 @@ HRESULT put_relativeVirtualAddressEnabled (
  [in] Kümesine `TRUE` etkinleştirmek için veya `FALSE` devre dışı bırakmak için.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Adresleri DIA arabirimleri tarafından ve çalıştırılabilir programın görüntü temel, göreli açıklanan hata ayıklama nesneleri için göreli sanal adresler olarak alınabilir.  
+ DIA arabirimleri ve temel, yürütülebilir dosyası görüntü göre açıklanan hata ayıklama nesneler için adresleri göreli sanal adreslerine alınabilir.  
   
- Segment başlangıçta PDB dosyadan yüklendiğinde RVAs kullanımını etkinleştirilir. RVAs kullanımını geçerli durumunu almak için çağrı [Idiaaddressmap::get_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-get-relativevirtualaddressenabled.md) yöntemi.  
+ Parçaları bir PDB dosyasındaki ilk yüklendiğinde RVA kullanımını etkinleştirilir. RVA kullanımını geçerli durumunu almak için arama [Idiaaddressmap::get_relativevirtualaddressenabled](../../debugger/debug-interface-access/idiaaddressmap-get-relativevirtualaddressenabled.md) yöntemi.  
   
- `put_relativeVirtualAddress` Yöntemi çağrılır, başarılı bir çağrı sonra RVAs etkinleştirmek için [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemi yeni görüntü üstbilgileri kurulan.  
+ `put_relativeVirtualAddress` Yöntemi çağrıldığında, başarılı bir çağrı sonra RVA etkinleştirmek için [Idiaaddressmap::set_imageheaders](../../debugger/debug-interface-access/idiaaddressmap-set-imageheaders.md) yöntemi yeni bir görüntü üstbilgileri kurulan.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaaddressmap](../../debugger/debug-interface-access/idiaaddressmap.md)   

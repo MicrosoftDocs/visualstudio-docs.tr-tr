@@ -1,5 +1,5 @@
 ---
-title: EnsureVSTOComponent işlevi | Microsoft Docs
+title: EnsureVSTOComponent işlevi
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -13,18 +13,19 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 5561d3c046c083c1495b858d36f6c867050ed842
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 08b22ed86851a35f23306fc765f62f265da4701e
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35676943"
 ---
-# <a name="ensurevstocomponent-function"></a>EnsureVSTOComponent İşlevi
+# <a name="ensurevstocomponent-function"></a>EnsureVSTOComponent işlevi
   Bu API Office altyapısını destekler ve doğrudan kodunuzdan kullanılmaya yönelik değildir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 HRESULT EnsureVSTOComponent(  
     IVSTProject *pProject  
 );  
@@ -36,7 +37,7 @@ HRESULT EnsureVSTOComponent(
 |---------------|-----------------|  
 |*pProject*|Kullanmayın.|  
   
-## <a name="return-value"></a>Dönüş Değeri  
- İşlev başarılı olursa, döndürür **S_OK**. İşlev başarısız olursa bir hata kodu döndürür.  
+## <a name="return-value"></a>Dönüş değeri  
+ İşlev başarılı olursa, döndürür **S_OK**. İşlev başarısız olursa hata kodu döndürür.  
   
   

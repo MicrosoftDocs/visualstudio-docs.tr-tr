@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da yönetilen kod için özel kod çözümleme iade ilkelerini uygulama
+title: Yönetilen Kod için Özel Kod Çözümleme İade İlkelerini Uygulama
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 f1_keywords:
@@ -13,107 +14,108 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: c50daf82a5dc5774cae75ecab54f1455c1a1c251
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4c39ef2c70108eabb3c3d87dc7ab5af17dccd9f8
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53049872"
 ---
-# <a name="implement-custom-code-analysis-check-in-policies-for-managed-code"></a>Yönetilen kod için özel kod çözümleme iade ilkelerini uygulama
+# <a name="implement-custom-code-analysis-check-in-policies-for-managed-code"></a>Yönetilen Kod için Özel Kod Analizi İade İlkelerini Uygulama
 
-Bir kod çözümleme iade ilkesi sürüm denetimine iade önce üyeleri takım projesinin kaynak kodu çalıştırmalıdır kuralları kümesi belirtir. Microsoft, standart bir dizi sağlar *kural kümeleri* bu Grup kod çözümleme kurallarını işlevsel alanlara. *Özel İade İlkesi kural kümeleri* bir takım projesi için özel kod çözümleme kurallarını kümesi belirtin. Bir kural kümesi .ruleset dosyasında depolanır.
+Kod Analizi İlkesi iade sürüm denetimine iade edilmeden önce Azure DevOps projesinin üyeleri kaynak kodunu çalıştırmanız gereken kurallar kümesi belirtir. Microsoft, standart bir dizi sağlar *kural kümeleri* bu grubu Kod Analizi kuralları işlevsel alanlara. *Özel iade ilke kural kümelerinin* projeye özgü kod analizi kuralları kümesi belirtin. Bir kural kümesi bir .ruleset dosyası depolanır.
 
-İade ilkeleri takım projesi düzeyinde ayarlayın ve sürüm denetimi ağacında .ruleset dosyasının konumu tarafından belirtilen. Sürüm denetimi konumunda takım ilke özel bir kural kümesinin bir kısıtlama yoktur.
+İade ilkeleri Azure DevOps projesi düzeyinde belirlenir ve sürüm denetimi ağacındaki bir .ruleset dosyası konumunu tarafından belirtilen. Takım ilke özel kural kümesi sürüm denetimi konumunu ilgili bir kısıtlama yoktur.
 
-Kod çözümleme özellikleri penceresinde her proje için kod projeleri için yapılandırılır. Özel bir kural için bir kod projesini kümesini, yerel bilgisayarda .ruleset dosyasının fiziksel konuma göre belirtilir. .Ruleset dosya kodunu projeyi aynı sürücüde bulunan belirtildiğinde, Visual Studio Proje yapılandırma dosyasında için göreli bir yol kullanır.
+Kod Analizi her proje için Özellikler penceresindeki bireysel kod projeleri için yapılandırılır. Bir kod projesi için özel bir kural .ruleset dosyası yerel bilgisayardaki fiziksel konumunu belirtilir. Kod projesini aynı sürücüde bulunan bir .ruleset dosyası belirtildiğinde, Visual Studio Proje yapılandırma dosyasına göreli bir yol kullanır.
 
-Bir takım projesi özel kural kümesi oluşturmak için bir önerilen herhangi bir kod projesinin bir parçası olmayan özel bir klasöre iade ilkesi .ruleset dosyasının depolanacağı bir yöntemdir. Dosya adanmış bir klasörde saklayın, kural dosya düzenleyebilen kısıtlayan izinleri uygulayabilirsiniz ve dizin yapısını kolayca taşıyabilirsiniz, başka bir dizin veya bilgisayar projeye içerir.
+İade İlkesi .ruleset dosyası herhangi bir kod projesinin bir parçası değil özel bir klasörde depolamak için proje özel kural kümesi olan bir Azure DevOps oluşturmak için önerilen bir uygulamadır. Adanmış bir klasörde dosya depolama, kural dosyası düzenleyebilen kısıtlayan izinler uygulayabilirsiniz ve dizin yapısı kolayca taşıyabilirsiniz, proje başka bir dizin ya da bilgisayar içeriyor.
 
-## <a name="create-the-team-project-custom-check-in-rule-set"></a>Takım projesi iade özel kural kümesi oluşturma
+## <a name="create-the-project-custom-check-in-rule-set"></a>Projeyi iade özel kural kümesi oluşturma
 
-Takım projesi için ayarlanmış özel bir kural oluşturmak için önce kümesinde iade ilkesi kuralı için özel bir klasör oluşturun **Kaynak Denetim Gezgini**. Ardından kural kümesi dosyası oluşturun ve sürüm denetimine dosya ekleme. Son olarak, kural kod çözümleme iade ilkesi takım projesi için olarak kümesi belirtin.
+Bir Azure DevOps projesi için özel bir kural oluşturmak için önce kümesinde iade ilkesi kuralı için özel bir klasör oluşturun **Kaynak Denetim Gezgini**. Ardından, kural kümesi dosyası oluşturun ve dosyayı sürüm denetimine ekleyin. Son olarak, kural olarak kod çözümleme iade ilkesi proje için kümesi belirtin.
 
 > [!NOTE]
-> Bir takım projesinde bir klasör oluşturmak için önce takım projesine kök yerel bilgisayardaki bir konuma eşlemeniz gerekir.
+> Azure DevOps projesinde bir klasör oluşturmak için önce proje kök dizinini yerel bilgisayardaki bir konuma eşlemeniz gerekir.
 
-### <a name="to-create-the-version-control-folder-for-the-check-in-policy-rule-set"></a>İade İlkesi kural kümesi için sürüm denetim klasörü oluşturmak için
+### <a name="to-create-the-version-control-folder-for-the-check-in-policy-rule-set"></a>Sürüm denetimi klasörü İade İlkesi kural kümesi oluşturmak için
 
-1. Takım Gezgini, takım projesi düğümünü genişletin ve ardından **kaynak denetimi**.
+1. Ekip Gezgini'nde proje düğümünü genişletin ve ardından **kaynak denetimi**.
 
-2. İçinde **klasörleri** bölmesinde, takım projesine sağ tıklayın ve ardından **yeni klasör**.
+2. İçinde **klasörleri** bölmesinde, projeye sağ tıklayın ve ardından **yeni klasör**.
 
-3. Ana kaynak denetimi bölmesinde, **yeni klasör**, tıklatın **yeniden adlandırma**ve klasör kural kümesi için bir ad yazın.
+3. Ana Kaynak Denetim Masası'nda, sağ **yeni klasör**, tıklayın **Yeniden Adlandır**, klasör kural kümesi için bir ad yazın.
 
 ### <a name="to-create-the-check-in-policy-rule-set"></a>İade İlkesi kural kümesi oluşturmak için
 
-1. Üzerinde **dosya** menüsündeki **yeni**ve ardından **dosya**.
+1. Üzerinde **dosya** menüsünde **yeni**ve ardından **dosya**.
 
-2. İçinde **kategorileri** tıklatın **genel**.
+2. İçinde **kategorileri** listesinde **genel**.
 
 3. İçinde **şablonları** listesinde, çift **Kod Analizi kural kümesi**.
 
-4. [Kuralları](../code-quality/how-to-create-a-custom-rule-set.md) dosyası kural kümesinde içerir ve kuralını kaydetmek için oluşturduğunuz kural kümesi klasörü ayarlayın.
+4. [Kuralları](../code-quality/how-to-create-a-custom-rule-set.md) dosyası kural kümesine dahil edin ve ardından kuralını kaydetmek için oluşturduğunuz kural kümesi klasörü ayarlayın.
 
-### <a name="to-add-the-rule-set-file-to-version-control"></a>Kural eklemek için sürüm denetimine dosya ayarlayın
+### <a name="to-add-the-rule-set-file-to-version-control"></a>Kural eklemek için dosya sürüm denetimi için ayarlama
 
-1. İçinde **Kaynak Denetim Gezgini**, yeni klasörü sağ tıklatın ve ardından **klasöre öğe ekleme**.
+1. İçinde **Kaynak Denetim Gezgini**yeni klasörü sağ tıklatın ve ardından **öğeleri klasöre Ekle**.
 
-     Daha fazla bilgi için bkz: [Git ve VSTS](/vsts/git/overview).
+     Daha fazla bilgi için [Git ve Azure depoları](/azure/devops/repos/git/overview?view=vsts).
 
-2. Kural kümesi oluşturduğunuz dosyasını tıklatın ve ardından **son**.
+2. Kural kümesi oluşturduğunuz dosya tıklayın ve ardından **son**.
 
-     Dosya kaynak denetimine eklenir ve sizin için kullanıma.
+     Dosya kaynak denetimine eklediğiniz ve sizin için kullanıma.
 
-3. İçinde **Kaynak Denetim Gezgini** Ayrıntıları penceresinde, dosya adına sağ tıklayın ve ardından **bekleyen değişiklikleri iade**.
+3. İçinde **Kaynak Denetim Gezgini** Ayrıntıları penceresi, dosya adına sağ tıklayın ve ardından **bekleyen değişiklikleri iade et**.
 
 4. İçinde **iade** iletişim kutusu, bir açıklama ekleyin ve ardından seçeneğine sahip **iade**.
 
     > [!NOTE]
-    > Takım projesi için zaten bir kod çözümleme iade ilkesi yapılandırdıysanız ve seçtiğiniz **yalnızca geçerli çözümün bir parçası olan dosyaları içerecek şekilde iade zorla**, bir ilke hatası uyarı tetikler. İlke hata iletişim kutusunda seçin **ilke hatası geçersiz kılabilir ve iade etme devam**. Gerekli bir açıklama ekleyin ve ardından **Tamam**.
+    > Azure DevOps projeniz için bir kod analizi iade ilkesi zaten yapılandırdıysanız ve seçtiğiniz **yalnızca geçerli çözümün bir parçası olan dosyaları içerecek şekilde iade zorunlu**, bir ilke hatası uyarısı tetikler. İlke hatası iletişim kutusunda **ilke hatası geçersiz kıl ve iade etmeye devam et**. Gerekli bir açıklama ekleyin ve ardından **Tamam**.
 
-### <a name="to-specify-the-rule-set-file-as-the-check-in-policy"></a>Dosyası kural belirtmek için ilke olarak ayarlayın
+### <a name="to-specify-the-rule-set-file-as-the-check-in-policy"></a>Dosyası kural belirtmek için iade ilke olarak ayarlayın
 
-1. Üzerinde **takım** menüsündeki **takım projesi ayarları**ve ardından **kaynak denetimi**.
+1. Üzerinde **takım** menüsünde **proje ayarları**ve ardından **kaynak denetimi**.
 
-2. Tıklatın **iade ilkesi**ve ardından **Ekle**.
+2. Tıklayın **iade ilkesi**ve ardından **Ekle**.
 
-3. İçinde **iade ilkesi** listesinde, çift **Kod Analizi**, emin olun **yönetilen kod için Kod Analizine Zorlama** onay kutusu seçilidir.
+3. İçinde **iade ilkesi** listesinde, çift **Kod Analizi**, emin olun **yönetilen kod için kod analizini zorla** onay kutusu seçilidir.
 
-4. İçinde **bu kural kümesini çalıştırmak** tıklatın  **\<kaynak denetiminden kural kümesi seçin >**.
+4. İçinde **bu kural kümesini Çalıştır** listesinde  **\<kaynak denetiminden kural kümesi seçin >**.
 
-5. Sürüm denetimindeki iade ilkesi kuralı kümesi dosyasının yolunu yazın.
+5. Sürüm denetimine iade ilkesi kural kümesi dosyası yolunu yazın.
 
-     Yol için aşağıdaki söz dizimini uygun olmalıdır:
+     Yol aşağıdaki sözdizimine uygun olmalıdır:
 
      **$/** `TeamProjectName` **/** `VersionControlPath`
 
     > [!NOTE]
-    > Aşağıdaki yordamlardan birini kullanarak yolu kopyalayabilirsiniz **Kaynak Denetim Gezgini**:
+    > Yolu aşağıdaki yordamlardan birini kullanarak kopyalayabilirsiniz **Kaynak Denetim Gezgini**:
 
-    - İçinde **klasörleri** bölmesinde, kural kümesi dosyasını içeren klasörü tıklatın. Sürüm denetim yolu görünür klasörünün kopyalama **kaynak** kutusuna ve kural kümesi dosyasının adını elle yazın.
+    - İçinde **klasörleri** bölmesinde, kural kümesi dosyası içeren klasörü tıklatın. Görünen klasörün sürüm denetim yolu Kopyala **kaynak** kutusuna ve kural kümesi dosyası adını elle yazın.
 
-    - Ayrıntıları penceresinde, kural kümesi dosyasını sağ tıklatın ve ardından **özellikleri**. Üzerinde **genel** sekmesinde, değeri Kopyala **sunucu adı**.
+    - Kural kümesi dosyası Ayrıntıları penceresinde sağ tıklayın ve ardından **özellikleri**. Üzerinde **genel** sekmesinde, bu değeri kopyalayın **sunucu adı**.
 
-## <a name="synchronize-code-projects-to-the-check-in-policy-rule-set"></a>Kod projeleri iade ilkesi kuralı kümesine Eşitle
+## <a name="synchronize-code-projects-to-the-check-in-policy-rule-set"></a>Kod projeleri iade ilkesi kuralı kümesine eşitleme
 
-Bir takım projesi iade ilkesi kuralı kod projesi yapılandırma kod projesi Özellikleri iletişim kutusundaki kod çözümleme kural kümesi olarak ayarla belirtin. Kural kümesi kodunu projeyi aynı sürücüde yer alıyorsa, göreli bir yol yolun dosya iletişim kutusundan seçildiğinde kural kümesini belirtmek için kullanılır. Denetim yapıları benzer yerel sürümünü kullanan diğer bilgisayarlara taşınabilir proje özelliklerini ayarlar göreli bir yol sağlar.
+Belirttiğiniz bir projeyi iade ilkesi kuralı Özellikler iletişim kutusunda kod projesinin kod proje yapılandırmasının Kod Analizi kural kümesi olarak ayarlayın. Kural kümesi kod projesini aynı sürücüde yer alıyorsa, göreli bir yol kural kümesi yolu dosya iletişim kutusundan seçildiğinde belirtmek için kullanılır. Denetim yapıları benzer yerel sürüm kullanan diğer bilgisayarlar için taşınabilir proje özellikleri ayarlar göreli bir yol sağlar.
 
-### <a name="to-specify-a-team-project-rule-set-as-the-rule-set-of-a-code-project"></a>Bir takım projesi kural belirtmek için bir kod proje kural kümesi ayarlayın
+### <a name="to-specify-a-project-rule-set-as-the-rule-set-of-a-code-project"></a>Bir proje kural belirtmek için bir kod proje kural kümesi olarak ayarlayın.
 
-1. Gerekirse, iade ilkesi kuralı kümesi klasör ve dosya sürümü denetiminden alın.
+1. Gerekirse, iade ilkesi kuralı kümesi klasör ve dosya sürüm denetiminden alın.
 
-   Bu adımda gerçekleştirebilirsiniz **Kaynak Denetim Gezgini** sağ tıklayarak kural klasörünü ve ardından kümesi **en son sürümü Al**.
+   Bu adımda gerçekleştirdiğiniz **Kaynak Denetim Gezgini** sağ tıklayarak kural klasörünü ve ardından kümesi **en son sürümü Al**.
 
 2. İçinde **Çözüm Gezgini**kod projesine sağ tıklayın ve ardından **özellikleri**.
 
-3. **Kod çözümleme tıklatın**.
+3. **Kod Analizi tıklayın**.
 
-4. Gerekiyorsa, uygun seçenekleri tıklatın **yapılandırma** ve **Platform** listeler.
+4. Gerekirse, uygun seçenekleri tıklayın **yapılandırma** ve **Platform** listeler.
 
-5. Kod çözümleme kodunu projeyi belirtilen yapılandırma kullanılarak oluşturulmuştur her zaman çalıştırmak için seçin **etkinleştirme kodu (tanımlar CODE_ANALYSIS sabiti) çözümleme yapı** onay kutusu.
+5. Kod Analizi proje kodu belirtilen yapılandırma kullanılarak oluşturulan her tamamlanışında çalıştırılacak seçin **etkinleştir (code_analysıs sabitini tanımlar) derlemede kod analizini** onay kutusu.
 
-6. Diğer şirketlerden bileşenleri kodda yoksaymayı seçin **bastırmak oluşturulan kod sonuçlarından** onay kutusu.
+6. Diğer şirketlerin bileşenleri kodda yoksaymak için seçin **üretilen koddan gelen sonuçları Gizle** onay kutusu.
 
-7. İçinde **bu kural kümesini çalıştırmak** tıklatın  **\<Gözat... >**.
+7. İçinde **bu kural kümesini Çalıştır** listesinde  **\<Gözat … >**.
 
-8. İade İlkesi kuralı kümesi dosyasının yerel sürümünü belirtin.
+8. İade İlkesi kural kümesi dosyası yerel sürümünü belirtin.

@@ -1,7 +1,7 @@
 ---
-title: Veri özel Görselleştiriciler oluşturma | Microsoft Docs
+title: Özel veri görselleştiriciler oluştur | Microsoft Docs
 ms.custom: ''
-ms.date: 06/19/2017
+ms.date: 11/07/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 f1_keywords:
@@ -21,77 +21,77 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f2a1602808cb21bd247d2bb1d249ab7ddea81524
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4c5f505bfa8032b0f7d59f348835e1e4969b2648
+ms.sourcegitcommit: 6a955a2d179cd0e137942389f940d9fcbbe125de
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51607828"
 ---
-# <a name="create-custom-visualizers-of-data"></a>Özel Görselleştiriciler veri oluşturma
- Görselleştiriciler olan bileşenleri [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] hata ayıklayıcı kullanıcı arabirimi. A *görselleştiricisi* bir iletişim kutusu veya bir değişken veya nesne veri türü için uygun bir şekilde görüntülemek için başka bir arabirim oluşturur. Örneğin, bir HTML Görselleştirici bir HTML dizesi olarak yorumlar ve sonucu bir tarayıcı penceresinde görüneceği şekilde görüntüler; bit eşlem Görselleştirici bir bit eşlem yapısı yorumlar ve onu gösteren grafiği görüntüler. Bazı görselleştiriciler yanı sıra değiştirme verileri görüntülemek etkinleştirin.
+# <a name="create-custom-data-visualizers"></a>Özel veri görselleştiriciler oluşturma 
+ A *Görselleştirici* parçasıdır [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] bir değişkeni veya nesneyi, veri türüne uygun şekilde görüntüler hata ayıklayıcı kullanıcı arabirimi. Örneğin, bir HTML Görselleştirici bir HTML dizesi olarak yorumlar ve sonucu bir tarayıcı penceresinde görüneceği şekilde görüntüler. Bit eşlem Görselleştirici bir bit eşlem yapısı yorumlar ve onu gösteren grafiği görüntüler. Bazı görselleştiriciler, yanı sıra veri değiştirmenizi sağlar.
 
- [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] Hata ayıklayıcı altı standart görselleştiriciler içerir. Metin, HTML, XML ve JSON görselleştiriciler tümü dize nesneler üzerinde çalışır, bunlar; bir WPF nesne görsel ağaç özelliklerini görüntülemek için WPF ağacı görselleştiricisini, ve veri kümesi, DataView ve DataTable nesneleri için çalışır veri kümesi görselleştiricisi. Ek görselleştiriciler gelecekte Microsoft Corporation'ın İndirilebilecek olabilir ve Üçüncü taraflardan ve topluluk kullanılabilir. Ayrıca, kendi görselleştiriciler yazmak ve bunları yüklemek [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] hata ayıklayıcı.
+ [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] Hata ayıklayıcı altı standart görselleştiriciler içerir. Metin, HTML, XML ve JSON görselleştiriciler dize nesneler üzerinde çalışır. WPF ağacı görselleştiricisini WPF nesne görsel ağacı özelliklerini görüntüler. Veri kümesi görselleştiricisi veri kümesi, DataView ve DataTable nesneleri için çalışır. 
+
+Daha fazla görselleştiriciler, Microsoft, üçüncü taraflar ve topluluktan indirme için kullanılabilir. Ayrıca kendi görselleştiriciler yazabilir ve bunları yüklemek [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] hata ayıklayıcı.
+
+Hata Ayıklayıcı'Görselleştirici Büyüteç simgesi tarafından temsil edilen ![VisualizerIcon](../debugger/media/dbg-tips-visualizer-icon.png "Görselleştirici simgesi"). Simge seçebilirsiniz bir **DataTip**, hata ayıklayıcı **izleme** penceresinde veya **QuickWatch** iletişim kutusu ve karşılık gelen nesne için uygun Görselleştirici seçin.
+
+## <a name="write-custom-visualizers"></a>Özel görselleştiriciler yazma
 
  > [!NOTE]
- > Yerel kod için özel Görselleştirici oluşturmak için bkz: [SQLite yerel hata ayıklayıcı Görselleştirici](https://github.com/Microsoft/VSSDK-Extensibility-Samples/tree/master/SqliteVisualizer) örnek. UWP ve Windows 8.x uygulamalarında özel görselleştiriciler desteklenmez.
+ > Yerel kod için özel Görselleştirici oluşturmak için bkz [SQLite yerel hata ayıklama görselleştiricisi](https://github.com/Microsoft/VSSDK-Extensibility-Samples/tree/master/SqliteVisualizer) örnek. Özel görselleştiriciler, UWP ve Windows 8.x uygulamaları için desteklenmez.
 
- Hata Ayıklayıcısı'ndaki görselleştiriciler Büyüteç simgesini tarafından temsil edilen ![VisualizerIcon](../debugger/media/dbg-tips-visualizer-icon.png "Görselleştirici simgesi"). Büyüteç simgesini gördüğünüzde bir **DataTip**, bir hata ayıklayıcı penceresinde **izleme** penceresinde veya **QuickWatch** iletişim kutusu için Büyüteç tıklatabilirsiniz karşılık gelen nesne veri türü için uygun Görselleştirici seçin.
+Dışında herhangi bir yönetilen sınıfın bir nesnesi için özel Görselleştirici yazabileceğiniz <xref:System.Object> ve <xref:System.Array>.  
+  
+Hata ayıklama görselleştiricisi mimarisini iki bölümden oluşur:  
+  
+- *Hata ayıklayıcı, yan* Visual Studio hata ayıklayıcısı içinde çalıştırır ve oluşturur ve Görselleştirici kullanıcı arabirimini görüntüler.  
+  
+- *Hata ayıklanan yan* Visual Studio hata ayıklama işlemi içinde çalıştırılan ( *hata ayıklanan*). Hata ayıklanan işlemin (örneğin, bir dize nesnesi) görselleştirmek için veri nesnesi yok. Hata ayıklanan tarafı, oluşturduğunuz kullanıcı arabiriminde görüntüler hata ayıklayıcı tarafına nesneyi gönderir.  
 
-## <a name="overview-of-custom-visualizers"></a>Özel görselleştiriciler genel bakış
+Hata ayıklayıcı yan veri nesneden alır bir *nesne sağlayıcı* uygulayan <xref:Microsoft.VisualStudio.DebuggerVisualizers.IVisualizerObjectProvider> arabirimi. Hata ayıklanan tarafı nesnesi üzerinden gönderir *nesne kaynağı*, türetilen <xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>. 
 
-Herhangi bir yönetilen sınıf dışında bir nesne için özel Görselleştirici yazma <xref:System.Object> veya <xref:System.Array>.  
+Nesne sağlayıcısı Ayrıca verileri düzenleyebileceğiniz Görselleştirici yazmanıza olanak veren nesne kaynak için verileri geri gönderebilirsiniz. İfade değerlendirici ve nesne kaynağı konuşmak için nesne sağlayıcı geçersiz kılmanız.  
   
- Hata ayıklayıcı Görselleştirici mimarisi iki bölümden oluşur:  
+Hata ayıklanan yan ve hata ayıklayıcı yan aracılığıyla birbiriyle iletişim <xref:System.IO.Stream> bir verileri seri hale getirme yöntemleri nesnesi içine bir <xref:System.IO.Stream> ve seri durumdan <xref:System.IO.Stream> yeniden içine bir veri nesnesi.  
+
+Tür açık bir tür ise genel bir tür için Görselleştirici yazabilirsiniz. Bu kısıtlama aynı kısıtlama olarak kullanıldığında `DebuggerTypeProxy` özniteliği. Ayrıntılar için bkz [DebuggerTypeProxy özniteliğini kullanma](../debugger/using-debuggertypeproxy-attribute.md).  
   
--   *Hata ayıklayıcı yan* Visual Studio hata ayıklayıcısı içinde çalışır. Hata ayıklayıcı tarafı kod oluşturur ve sizin Görselleştirici için kullanıcı arabirimi görüntüler.  
+Özel görselleştiriciler, güvenlik konuları olabilir. Bkz: [Görselleştirici güvenlik konuları](../debugger/visualizer-security-considerations.md).  
   
--   *Ayıklayıcı yan* Visual Studio hata ayıklama işlemi içinde çalıştırılan ( *ayıklayıcı*).  
-  
- (Bir dize nesnesi, örneğin gibi) görselleştirmek için istediğiniz veri nesnesi ayıklayıcı işleminde bulunmaktadır. Bu nedenle, bu veri nesnesi daha sonra oluşturduğunuz kullanıcı arabirimini kullanarak görüntüleyebilirsiniz hata ayıklayıcı tarafa göndermek ayıklayıcı yan sahiptir.  
-  
- Hata ayıklayıcı yan gelen görselleştirilen için bu veri nesnesi alır bir *nesne sağlayıcısı* uygulayan <xref:Microsoft.VisualStudio.DebuggerVisualizers.IVisualizerObjectProvider> arabirimi. Üzerinden veri nesnesine ayıklayıcı yan gönderir *nesne kaynak*, türetilen <xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>. Nesne sağlayıcı veri sağlayan görüntüler yanı sıra düzenler bir Görselleştirici yazma, nesne kaynak verileri yedekleyin de gönderebilirsiniz. İfade değerlendirici ve, bu nedenle, nesne kaynak konuşmaya nesne sağlayıcısı geçersiz kılınabilir  
-  
- Başka ayıklayıcı yan ve hata ayıklayıcı tarafı iletişim <xref:System.IO.Stream>. Yöntemler, bir veri nesnesine serileştirmek için sağlanan bir <xref:System.IO.Stream> ve seri durumdan <xref:System.IO.Stream> yeniden içine bir veri nesnesi.  
-  
- Ayıklayıcı tarafı kodu DebuggerVisualizer özniteliği kullanılarak belirtilir (<xref:System.Diagnostics.DebuggerVisualizerAttribute>).  
-  
- Hata ayıklayıcı tarafında Görselleştirici kullanıcı arabirimi oluşturmak üzere öğesinden devralınan bir sınıf oluşturun <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer> ve geçersiz kılma <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer.Show%2A?displayProperty=fullName> arabirimi görüntülenecek yöntemi.  
-  
- Kullanabileceğiniz <xref:Microsoft.VisualStudio.DebuggerVisualizers.IDialogVisualizerService> Windows forms iletişim kutuları ve, Görselleştirici denetimlerden görüntülemek için.  
-  
- Genel türler için destek sınırlıdır. Yalnızca genel tür açık bir tür ise genel bir tür bir hedef için Görselleştirici yazabilirsiniz. Bu kısıtlama kısıtlama kullanırken aynıdır `DebuggerTypeProxy` özniteliği. Ayrıntılar için bkz [DebuggerTypeProxy özniteliğini kullanarak](../debugger/using-debuggertypeproxy-attribute.md).  
-  
- Özel görselleştiriciler güvenlik konuları olabilir. Bkz: [Görselleştirici güvenlik konuları](../debugger/visualizer-security-considerations.md).  
-  
- Aşağıdaki yordamlar, Görselleştirici oluşturmak için yapmanız gerekenler üst düzey bir görünümünü verir. Daha ayrıntılı bir açıklaması için bkz: [izlenecek yol: C# ile Görselleştirici yazma](../debugger/walkthrough-writing-a-visualizer-in-csharp.md).  
+Aşağıdaki adımları görselleştiricisi oluşturma üst düzey bir genel bakış sağlar. Ayrıntılı yönergeler için bkz. [izlenecek yol: Görselleştirici yazma C# ](../debugger/walkthrough-writing-a-visualizer-in-csharp.md) veya [izlenecek yol: Visual Basic'te Görselleştirici yazma](../debugger/walkthrough-writing-a-visualizer-in-visual-basic.md).  
   
 ### <a name="to-create-the-debugger-side"></a>Hata ayıklayıcı yan oluşturmak için  
   
-1.  Kullanım <xref:Microsoft.VisualStudio.DebuggerVisualizers.IVisualizerObjectProvider> hata ayıklayıcı tarafında görselleştirilmiş nesnesini almak için yöntemleri.  
+Hata ayıklayıcı tarafında görselleştiricisi kullanıcı arabirimi oluşturmak için devralınan bir sınıf oluşturun. <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>ve geçersiz kılma <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer.Show%2A?displayProperty=fullName> arabirim görüntülemesi için yöntemi. Kullanabileceğiniz <xref:Microsoft.VisualStudio.DebuggerVisualizers.IDialogVisualizerService> Windows forms iletişim kutuları ve denetimleri, görselleştiricisi içinde görüntülenecek.  
   
-2.  Öğesinden devralınan bir sınıf oluşturun <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>.  
+1.  Kullanım <xref:Microsoft.VisualStudio.DebuggerVisualizers.IVisualizerObjectProvider> görselleştirilen nesne hata ayıklayıcı tarafta almak için yöntemleri.  
   
-3.  Geçersiz kılma <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer.Show%2A?displayProperty=fullName> Arabiriminizin görüntülenecek yöntemi. Kullanım <xref:Microsoft.VisualStudio.DebuggerVisualizers.IDialogVisualizerService> Windows forms iletişim kutuları ve denetimleri Arabiriminizin bir parçası olarak görüntülenecek yöntemleri.  
+1.  Devralınan bir sınıf oluşturmanız <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>.  
   
-4.  Uygulama <xref:System.Diagnostics.DebuggerVisualizerAttribute>, Görselleştirici vermiş (<xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>).  
+1.  Geçersiz kılma <xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer.Show%2A?displayProperty=fullName> Arabiriminizin görüntülemek için yöntemi. Kullanım <xref:Microsoft.VisualStudio.DebuggerVisualizers.IDialogVisualizerService> Windows forms iletişim kutuları ve denetimleri, arabirimde görüntülemek için yöntemleri.  
   
-### <a name="to-create-the-debuggee-side"></a>Ayıklayıcı yan oluşturmak için  
+4.  Uygulama <xref:System.Diagnostics.DebuggerVisualizerAttribute>, görüntülenecek görselleştiricisi veren (<xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>).  
   
-1.  Uygulama <xref:System.Diagnostics.DebuggerVisualizerAttribute>, Görselleştirici vermiş (<xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>) ve bir nesne kaynak (<xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>). Bir varsayılan nesne kaynak nesne kaynak atlarsanız, kullanılır.  
+### <a name="to-create-the-debuggee-side"></a>Hata ayıklanan yan oluşturmak için  
   
-2.  Veri nesneleri düzenleyebilir, Görselleştirici istiyorsanız de bunları görüntüleme gibi geçersiz kılmak gerekir `TransferData` veya `CreateReplacementObject` yöntemleri <xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>.   
+Hata ayıklanan tarafın kod kullanarak belirttiğiniz <xref:System.Diagnostics.DebuggerVisualizerAttribute>.  
   
-## <a name="in-this-section"></a>Bu Bölümde
+1.  Uygulama <xref:System.Diagnostics.DebuggerVisualizerAttribute>, Görselleştirici veren (<xref:Microsoft.VisualStudio.DebuggerVisualizers.DialogDebuggerVisualizer>) ve bir nesne kaynağı (<xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>). Nesne kaynağı atlarsanız, varsayılan nesne kaynak görselleştiricisi kullanır.  
   
- [İzlenecek yol: Görselleştirici C# ile yazma](../debugger/walkthrough-writing-a-visualizer-in-csharp.md)  
+1.  Yanı sıra veri nesneleri görüntüleme düzenleme Görselleştirici izin vermek için geçersiz kılma `TransferData` veya `CreateReplacementObject` yöntemlerinden <xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerObjectSource>.   
+  
+## <a name="see-also"></a>Ayrıca bkz.
+  
+ [İzlenecek yol: C# ile görselleştirici yazma](../debugger/walkthrough-writing-a-visualizer-in-csharp.md)  
 
- [İzlenecek yol: Visual Basic'de Görselleştirici yazma](../debugger/walkthrough-writing-a-visualizer-in-visual-basic.md)  
+ [İzlenecek yol: Visual Basic'te görselleştirici yazma](../debugger/walkthrough-writing-a-visualizer-in-visual-basic.md)  
   
- [Nasıl yapılır: Görselleştiriciyi yükleme](../debugger/how-to-install-a-visualizer.md)  
+ [Nasıl yapılır: Görselleştirici yükleme](../debugger/how-to-install-a-visualizer.md)  
   
- [Nasıl yapılır: Test ve hata ayıklama Görselleştirici](../debugger/how-to-test-and-debug-a-visualizer.md)  
+ [Nasıl yapılır: Görselleştiriciyi test etme ve hata ayıklama](../debugger/how-to-test-and-debug-a-visualizer.md)  
   
- [Görselleştirici API Başvurusu](../debugger/visualizer-api-reference.md)  
+ [Görselleştirici API başvurusu](../debugger/visualizer-api-reference.md)  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Görünüm verilerini hata ayıklayıcı](../debugger/viewing-data-in-the-debugger.md)
+ [Hata ayıklayıcı görünümü verileri](../debugger/viewing-data-in-the-debugger.md)

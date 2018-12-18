@@ -1,176 +1,178 @@
 ---
-title: Visual Studio'da bellek kullanımını çözümleme | Microsoft Docs
-ms.custom: H1Hack27Feb2017
+title: Uygulamalarınızda ölçü bellek kullanımı
+description: Hata ayıklayıcıyla tümleştirilmiş Tanılama Aracı ile hata ayıklarken bellek sızıntılarını ve verimsiz bellek bulun.
+ms.custom: seodec18
 ms.date: 04/25/2017
 ms.technology: vs-ide-debug
-ms.topic: conceptual
+ms.topic: tutorial
 author: mikejo5000
 ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: de4cf17e02391db4430bcd41fb8cfa2ea09b98f7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 622f35ccbe29130dea3b35b96373da0c8b39e0b7
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53052083"
 ---
-# <a name="profile-memory-usage-in-visual-studio"></a>Visual Studio profil bellek kullanımı
-Bellek sızıntıları ve verimsiz bellek hata ayıklayıcısı ile tümleşik hatalarını ayıkladığınız sırada Bul **bellek kullanımı** tanı aracı. Uygulamanız bir veya daha fazla bellek kullanımı araç sağlar *anlık görüntüleri* nesne türlerini bellek kullanımı etkisini anlamanıza yardımcı olması için yönetilen ve yerel bellek heap öğesinin. .NET, yerel ya da karma mod (.NET ve yerel) uygulamaları anlık görüntüleri toplayabilirsiniz.  
+# <a name="measure-memory-usage-in-visual-studio"></a>Visual Studio'da ölçü bellek kullanımı
+Hata ayıklayıcıyla tümleştirilmiş ile hata ayıklarken bellek sızıntılarını ve verimsiz bellek Bul **bellek kullanımı** Tanılama aracı. Bir veya daha fazla atmanız bellek kullanımı aracı sağlar *anlık görüntüleri* nesne türlerinin bellek kullanımı etkilerini anlamanıza yardımcı olmak üzere yönetilen ve yerel bellek yığın. .NET, yerel veya karma mod (.NET ve yerel) uygulamaları, anlık toplayabilirsiniz.  
   
- Aşağıdaki grafik gösterir **tanılama araçları** penceresi (Visual Studio 2015 güncelleştirme 1 ve sonraki sürümlerinde kullanılabilir):  
+ Aşağıdaki grafik gösterildiği **tanılama araçları** penceresi (Visual Studio 2015 güncelleştirme 1 ve sonraki sürümlerinde kullanılabilir):  
   
- ![DiagnosticTools&#45;Update1](../profiling/media/diagnostictools-update1.png "DiagnosticTools Update1")  
+ ![DiagnosticTools&#45;güncelleştirme 1](../profiling/media/diagnostictools-update1.png "DiagnosticTools-güncelleştirme 1")  
   
- İçinde herhangi bir zamanda bellek anlık görüntüleri toplamak rağmen **bellek kullanımı** aracı, performans sorunları incelemeye sırasında uygulamanızı nasıl yürütür denetlemek için Visual Studio hata ayıklayıcısı kullanabilirsiniz. Kesme noktalarını ayarlama, Adımlama, kesme tüm ve diğer hata ayıklayıcı eylemleri, performans araştırmalar en uygun olan kodu yazmalar odaklanmanıza yardımcı olabilir. Uygulamanızı çalışırken bu eylemleri gerçekleştirme sizi ilgilendirmeyen ve bir sorunu tanılamak için geçen süreyi önemli ölçüde düşürebilirsiniz kodundan gürültü ortadan kaldırabilirsiniz.  
+ Her zaman bellek anlık görüntüleri toplama rağmen **bellek kullanımı** aracı, performans sorunlarını araştırma sırasında uygulamanızın nasıl yürütür denetlemek için Visual Studio hata ayıklayıcısını kullanabilirsiniz. Kesme noktaları, Adımlama, tümünü Kes ve diğer hata ayıklayıcı eylemlerini performans araştırmalarınıza en uygun olan kod yollarında odaklanmanıza yardımcı olabilir. Uygulamanız çalışırken, bu eylemleri gerçekleştirerek, sorunu tanılamak için gereken süreyi önemli ölçüde azaltabilir ve sizi ilgilendirmeyen kodu paraziti ortadan kaldırabilir.  
   
- Hata ayıklayıcı dışında bellek Aracı'nı da kullanabilirsiniz. Bkz: [bellek kullanımını hata ayıklama olmadan](../profiling/memory-usage-without-debugging2.md).  
+ Hata ayıklayıcının dışında bellek Aracı'nı kullanabilirsiniz. Bkz: [hata ayıklama olmadan bellek kullanımı](../profiling/memory-usage-without-debugging2.md). Windows 7 ve daha sonra bağlı hiçbir hata ayıklayıcısı ile profil oluşturma araçları kullanabilirsiniz. Windows 8 ve üzeri, hata ayıklayıcısı ile profil oluşturma araçları çalıştırmak için gereklidir (**tanılama araçları** pencere).
   
 > [!NOTE]
->  **Özel ayırıcısı Destek** yerel bellek profil oluşturucu çalışır ayırma toplayarak [ETW](/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) göre çalışma zamanı sırasında gösterilen olay verileri.  Böylece ayırma verilerini yakalanabilir allocators CRT ve Windows SDK kaynak düzeyinde açıklama.  Kendi allocators yazma sonra yeni ayrılan yığın bellek için bir işaretçi döndüren tüm işlevler ile donatılmış [__declspec](/cpp/cpp/declspec)(myMalloc için bu örnekte görüldüğü gibi ayırıcısı):  
+>  **Özel ayırıcı desteği** yerel bellek profili Oluşturucu çalışır ayırma toplayarak [ETW](/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) sırasında çalışma zamanı tarafından yayınlanan olay verileri.  Böylece ayırma verilerini yakalanabilir ayırıcılar CRT ve Windows SDK'sı kaynak düzeyinde ek açıklama eklenen.  Kendi ayırıcılar yazıyorsanız sonra yeni ayrılmış yığın bellek için bir işaretçi döndüren herhangi işlevleri ile donatılmış [__declspec](/cpp/cpp/declspec)(Bu örnekte myMalloc görüldüğü ayırıcı):  
 >   
 >  `__declspec(allocator) void* myMalloc(size_t size)` 
 
 Bu öğreticide şunları yapacaksınız:
 
 > [!div class="checklist"]
-> * Bellek anlık görüntülerini alın
+> * Bellek anlık
 > * Bellek kullanım verilerini çözümleme
 
 ## <a name="collect-memory-usage-data"></a>Bellek kullanım verilerini toplama
 
-1.  Visual Studio'da hata ayıklama ve bellek kullanımı inceleniyor başlamasını istediğiniz yere noktada uygulamanızda bir kesme noktası ayarlamak istediğiniz projeyi açın.
+1.  Visual Studio'da hata ayıklama ve bellek kullanımı İnceleme başlamak istediğiniz noktada uygulamanızda bir kesme noktası ayarlamak istediğiniz projeyi açın.
 
-    Burada bir bellek sorununu şüpheleniyorsanız bir alanı varsa, bellek sorun oluşmadan önce ilk kesme noktası ayarlayın.
+    Burada, bir bellek sorunu şüphelendiğiniz bir alan varsa, bellek sorunu gerçekleşmeden önce ilk kesme noktası ayarlayın.
 
     > [!TIP]
-    >  Uygulamanızı sık ayırır ve belleği serbest bırakır olduğunda sizi ilgilendiren bir işlemin bellek profili yakalamak için bu zor olabilir çünkü başlangıç ve bitiş tam noktası bulmak için işlemi (veya adım işlemi aracılığıyla) kesme noktalarını ayarlayın bellek değiştirildi. 
+    >  Uygulamanız sıklıkla ayırır ve belleği serbest bırakır ilginizi çeken bir işlem bellek profilini yakalamak için bu zor olabilir çünkü başlangıç ve bitiş tam noktası bulmak için işlemi (veya adım işlemi aracılığıyla) kesme noktaları ayarlayın bellek değişti. 
 
-2.  İşlev veya bölge analiz etmek istediğiniz kodu sonunda ikinci bir kesme noktası ayarlayın (veya bir şüpheli bellek sorununu gerçekleştikten sonra).
+2.  İşlev veya bölge analiz etmek istediğiniz kodu sonunda ikinci bir kesme noktası ayarlayın (veya bir tespit edildiğinde alınan önlemlerin bir bellek sorunu gerçekleştikten sonra).
   
-3.  **Tanılama araçları** penceresi görünür otomatik olarak, bunu devre dışı bırakmış sürece. Pencereyi yeniden getirmek için tıklatın **hata ayıklama / Windows / Tanılama Araçları Göster**.
+3.  **Tanılama araçları** penceresi görünür otomatik olarak, bunu devre dışı bırakmış sürece. Pencereyi ayarlayıp yeniden getirmek için tıklayın **hata ayıklama** > **Windows** > **tanılama araçlarını Göster**.
 
-4.  Seçin **bellek kullanımı** ile **seçtiğiniz Araçları** araç çubuğunda ayarlama.
+4.  Seçin **bellek kullanımı** ile **seçtiğiniz Araçları** araç ayarlama.
 
      ![Tanılama araçlarını Göster](../profiling/media/DiagToolsSelectTool.png "DiagToolsSelectTool")
 
-5.  Tıklatın **hata ayıklama / hata ayıklamayı Başlat** (veya **Başlat** araç çubuğunda veya **F5**).
+5.  Tıklayın **hata ayıklama / hata ayıklamayı Başlat** (veya **Başlat** araç çubuğunda veya **F5**).
 
      Uygulamanın yüklenmesi tamamlandığında, Tanılama Araçları'nın Özet görünümü görüntülenir.
 
      ![Tanılama araçları Özet sekmesi](../profiling/media/DiagToolsSummaryTab.png "DiagToolsSummaryTab")
 
      > [!NOTE]
-     >  Bellek anlık görüntüleri, verileri, yerel ya da karma modda uygulamalarınızı hata ayıklama performansını etkileyebilir bellek toplama olduğundan, varsayılan olarak devre dışıdır. Yerel veya karışık mod uygulamaları anlık görüntüleri etkinleştirmek için bir hata ayıklama oturumu başlatın (kısayol tuşu: **F5**). Zaman **tanılama araçları** penceresi görüntülenir, bellek kullanımı sekmesini seçin ve ardından **yığın profil**.  
+     >  Bellek anlık görüntüleri, veri, yerel veya karma mod uygulamaları hata ayıklama performansını etkileyebilir bellek toplamak için varsayılan olarak devre dışıdır. Anlık görüntüleri yerel veya karma mod uygulamalarında etkinleştirmek için hata ayıklama oturumu başlatın (kısayol tuşu: **F5**). Zaman **tanılama araçları** penceresi görüntülenirse, seçin **bellek kullanımı** sekmesine ve ardından **yığın profili oluşturmayı**.  
      >   
-     >  ![Anlık görüntüler etkinleştiremezsiniz](../profiling/media/dbgdiag_mem_mixedtoolbar_enablesnapshot.png "DBGDIAG_MEM_MixedToolbar_EnableSnapshot")  
+     >  ![Anlık görüntüleri etkinleştir](../profiling/media/dbgdiag_mem_mixedtoolbar_enablesnapshot.png "DBGDIAG_MEM_MixedToolbar_EnableSnapshot")  
      >   
-     >  Durdur (kısayol tuşu: **Shift + F5**) ve hata ayıklamayı yeniden başlatın.  
+     >  Durdur (kısayol tuşu: **Shift**+**F5**) ve hata ayıklamayı yeniden başlatın.  
 
-6.  Hata ayıklama oturumunun başlangıcında bir anlık görüntüsünü tercih **anlık görüntü Al** üzerinde **bellek kullanımı** Özet araç. (Bu bir kesme noktası burada da ayarlamak için yardımcı olabilir.)
+6.  Hata ayıklama oturumunuzu başlangıcında bir anlık görüntüsünü almak için seçin **anlık görüntü Al** üzerinde **bellek kullanımı** özeti araç çubuğu. (Bu da bir kesme noktası Burada ayarlanan yardımcı olabilir.)
 
     ![Anlık Görüntü Al](../profiling/media/dbgdiag_mem_mixedtoolbar_takesnapshot.png "DBGDIAG_MEM_MixedToolbar_TakeSnapshot") 
      
      > [!TIP]
-     >  Bellek karşılaştırmaları için bir taban çizgisi oluşturmak için hata ayıklama oturumunun başlangıcında anlık göz önünde bulundurun.  
+     >  Bellek karşılaştırmaları için bir temel oluşturmak için bir anlık görüntü hata ayıklama oturumunuzu başlangıcında alma göz önünde bulundurun.  
 
-6.  İlk kesme noktası isabet neden olur senaryosu çalıştırabilirsiniz.
+6.  İlk kesme noktasına ulaşılmasına neden olacak senaryo çalıştırın.
 
-7.  Hata ayıklayıcı ilk kesme noktasında duraklatıldığında seçin **anlık görüntü Al** üzerinde **bellek kullanımı** Özet araç.  
+7.  Hata ayıklayıcıyı ilk kesme noktasında duraklatılmış durumdayken seçin **anlık görüntü Al** üzerinde **bellek kullanımı** özeti araç çubuğu.  
 
-8.  İkinci isabetini uygulamayı çalıştırmak için F5'e basın.
+8.  Tuşuna **F5** , ikinci bir kesme noktasına uygulamayı çalıştırmak için.
 
-9.  Şimdi, başka bir anlık görüntü alın.
+9.  Artık, başka bir anlık görüntüsünü alın.
 
      Bu noktada, verileri çözümlemek başlayabilirsiniz.    
   
 ## <a name="analyze-memory-usage-data"></a>Bellek kullanım verilerini çözümleme
-Bellek kullanımı Özet Tablo hata ayıklama oturumu sırasında yapılan anlık görüntüleri listeler ve daha ayrıntılı görünümler için bağlantılar sağlar.
+Bellek kullanımı Özet tablonun satırlarını, hata ayıklama oturumu sırasında yapılan anlık görüntülerini listeler ve bağlantılar ayrıntılı görünümler sağlar.
 
 ![Bellek Özet Tablo](../profiling/media/dbgdiag_mem_summarytable.png "DBGDIAG_MEM_SummaryTable")
 
- Proje Özellikleri'nde seçtiğiniz hata ayıklama modunu sütun adını bağlıdır: .NET, yerel ya da karma (.NET ve yerel).  
+ Sütun adı, seçtiğiniz proje özelliklerinde hata ayıklama modunu bağlıdır: .NET, yerel veya karma (.NET ve yerel).  
   
--   **Nesneleri (fark)** ve **ayırmaları (fark)** sütunları görüntüleme nesne sayısı .NET ve yerel bellek anlık görüntü alındıktan olduğunda.  
+-   **Nesneler (fark)** ve **ayırmalar (fark)** sütunları görüntülemek nesne sayısını .NET ve yerel bellek anlık görüntü alındığında.  
   
--   **Yığın boyutu (fark)** sütunu .NET ve yerel yığın bayt sayısını gösterir 
+-   **Yığın boyutu (fark)** sütunu, .NET ve yerel yığın bayt sayısını gösterir 
 
-Birden çok anlık görüntüler aldıysanız, Özet Tablo hücrelerinin değişiklik satır anlık görüntü ve önceki bir anlık arasında bir değer ekleyin.  
+Birden çok anlık görüntüleri gerçekleştirdiğinizden, Özet Tablo hücrelerinin değişiklik satır anlık görüntü ve önceki anlık görüntüye arasında bir değer ekleyin.  
 
-Bellek kullanımı çözümlemek için ayrıntılı bir rapor bellek kullanımı açılır bağlantılardan birini tıklatın:  
+Bellek kullanımını analiz etme için bellek kullanımının ayrıntılı bir rapor açılır bağlantılardan birine tıklayın:  
 
--   Geçerli anlık görüntünün ve önceki anlık görüntünün arasındaki farkı ayrıntılarını görüntülemek için sol ok değiştir bağlantısını seçin (![bellek kullanımını artırır](../profiling/media/prof-tour-mem-usage-up-arrow.png "bellek kullanımını artırır")). Kırmızı bir ok bellek kullanımı ve bir düşüşü gösterir için yeşil bir ok artış gösterir.
+- Geçerli anlık görüntü ve önceki anlık görüntü arasındaki fark görüntüsünün detaylarını görmeye değiştir bağlantısını sol tarafındaki oku seçin (![bellek artırmalarını](../profiling/media/prof-tour-mem-usage-up-arrow.png "bellek artırmalarını")). Kırmızı bir ok, bellek kullanımı ve düzenli bir Azalış gösterir için yeşil bir ok artış gösterir.
 
-    > [!TIP]
-    >  Bellek sorunları daha hızlı bir şekilde tanımlamak için fark raporları en genel numarasında artan nesne türlerine göre sıralanır (değişiklik bağlantıya tıklayın **nesneleri (fark)** sütun) veya en genel yığın boyutu (tıklatın artar Değiştir bağlantısını **yığın boyutu (fark)** sütun).
+  > [!TIP]
+  >  Bellek sorunlarını daha hızlı bir şekilde belirlemenize yardımcı olmak için fark raporları en genel numarasını artırılmış nesne türlerine göre sıralanır (değişiklik bağlantıya tıklayın **nesneler (fark)** sütun) veya en genel yığın boyutunu (tıklayın artar değişiklik bağlantıya **yığın boyutu (fark)** sütunu).
 
--   Yalnızca seçilen anlık görüntü ayrıntılarını görüntülemek için değişiklik olmayan bağlantıya tıklayın. 
+- Yalnızca seçilen anlık görüntüsünün detaylarını görmeye olmayan değiştir bağlantısını tıklayın. 
   
- Raporun ayrı bir pencerede görüntülenir.   
+  Rapor, ayrı bir pencerede görüntülenir.   
   
 ### <a name="managed-types-reports"></a>Yönetilen türler raporları  
- Geçerli bağlantıyı seçin bir **nesneleri (fark)** veya **ayırmaları (fark)** bellek kullanımı Özet tablodaki hücre.  
+ Geçerli bağlantıyı seçin bir **nesneler (fark)** veya **ayırmalar (fark)** bellek kullanımı özeti tablodaki hücre.  
   
- ![Yönetilen tür rapor hata ayıklayıcı &#45; kök yollara](../profiling/media/dbgdiag_mem_managedtypesreport_pathstoroot.png "DBGDIAG_MEM_ManagedTypesReport_PathsToRoot")  
+ ![Hata ayıklayıcı, yönetilen türü rapor &#45; kök yolları](../profiling/media/dbgdiag_mem_managedtypesreport_pathstoroot.png "DBGDIAG_MEM_ManagedTypesReport_PathsToRoot")  
   
- Üst bölme sayısı ve türleri boyutu türü tarafından başvurulan tüm nesnelerin boyutunu dahil olmak üzere anlık görüntüyü gösterir (**kapsayıcı boyutu**).  
+ Üst bölme sayısı ve türleri boyutu türü tarafından başvurulan tüm nesnelerin boyutu da dahil olmak üzere anlık görüntünün gösterir (**kapsamlı boyut**).  
   
- **Kök yollara** alt bölme ağacında üst bölmede seçili türü başvuru nesneleri görüntüler. Yalnızca başvurduğu son türü serbest bırakıldığında .NET Framework Atık toplayıcısının bir nesne için bellek temizler.  
+ **Kök yolları** alt bölme ağacında üst bölmede seçtiğiniz türüne başvuran nesneleri görüntüler. Yalnızca son türü başvurduğu yayınlandığında .NET Framework atık toplayıcı nesne için bellek temizler.  
   
- **Başvurulan türleri** ağacı üst bölmede seçilen türe göre tutulan başvuruları görüntüler.  
+ **Başvurulan türleri** üst bölmede seçilen tür tarafından tutulan başvuru ağacı görüntüler.  
   
  ![Yönetilen eferenced türleri rapor görünümü](../profiling/media/dbgdiag_mem_managedtypesreport_referencedtypes.png "DBGDIAG_MEM_ManagedTypesReport_ReferencedTypes")  
   
- Üst bölmede seçili türünün örneklerini görüntülemek için seçin ![örneği simgesi](../profiling/media/dbgdiag_mem_instanceicon.png "DBGDIAG_MEM_InstanceIcon") simgesi.  
+ Seçili bir türün örneklerinin üst bölmede görüntülemek için seçin ![örneği simgesi](../profiling/media/dbgdiag_mem_instanceicon.png "DBGDIAG_MEM_InstanceIcon") simgesi.  
   
- ![Örnekler Görünüm](../profiling/media/dbgdiag_mem_managedtypesreport_instances.png "DBGDIAG_MEM_ManagedTypesReport_Instances")  
+ ![Örnekler görünümü](../profiling/media/dbgdiag_mem_managedtypesreport_instances.png "DBGDIAG_MEM_ManagedTypesReport_Instances")  
   
- **Örnekleri** görünüm anlık görüntüdeki üst bölmede seçili nesne örneklerini görüntüler. Kök ve başvuru türleri bölmesinde yollara seçilen örnek ve seçilen örnek başvuran türleri başvuru nesneleri görüntüler. Hata ayıklayıcı burada anlık görüntü alındıktan noktada durdurulduğunda, bir araç ipucunda nesnenin değerlerini görüntülemek için Değer hücresini üzerinden gelebilirsiniz.  
+ **Örnekleri** görünümü seçili nesnenin örneklerini üst bölmede anlık görüntüler. **Kök yolları** ve **başvurulan nesneleri** bölmesi, seçilen örnek ve seçili örneğin başvuruda türlerine başvuran nesneleri görüntüler. Hata ayıklayıcı burada anlık görüntünün alındığı noktadan durdurulduğunda üzerine gelerek **değer** hücre bir araç ipucunda nesnenin değerlerini görüntülemek için.  
   
 ### <a name="native-type-reports"></a>Yerel tür raporları  
- Geçerli bağlantıyı seçin bir **ayırmaları (fark)** veya **yığın boyutu (fark)** bellek kullanımı özet tablosuna hücre **tanılama araçları** penceresi.  
+ Geçerli bağlantıyı seçin bir **ayırmalar (fark)** veya **yığın boyutu (fark)** bellek kullanımı Özet tablosunu hücresinde **tanılama araçları** penceresi.  
   
- ![Yerel tür Görünüm](../profiling/media/dbgdiag_mem_native_typesview.png "DBGDIAG_MEM_Native_TypesView")  
+ ![Yerel tür görünümü](../profiling/media/dbgdiag_mem_native_typesview.png "DBGDIAG_MEM_Native_TypesView")  
   
- **Türleri Görünüm** sayısını ve boyutunu türleri anlık görüntüler.  
+ **Türler görünümü** sayısı ve boyutu türleri anlık görüntüler.  
   
--   Örnekleri simgesini seçin (![örneği simgesi nesne türü sütununda](../profiling/media/dbg_mma_instancesicon.png "DBG_MMA_InstancesIcon")) anlık seçilen türündeki nesneler hakkındaki bilgileri görüntülemek için seçilen bir tür.  
+-   Örnekleri simgesini (![nesne türü sütununda örneği simgesi](../profiling/media/dbg_mma_instancesicon.png "DBG_MMA_InstancesIcon")) anlık seçilen türe ait nesneleri hakkındaki bilgileri görüntülemek için seçilen bir tür.  
   
-     **Örnekleri** görünümü her örnek seçilen tür görüntüler. Bir örneği seçildiğinde örneğinde oluşturulmasını ile sonuçlandı çağrı yığını görüntülenir **ayırma çağrı yığını** bölmesi.  
+     **Örnekleri** Görünüm Seçili türünün her örneğinin görüntüler. Görüntüler oluşturma örneğinde sonuçlanan çağrı yığınını örneği seçerek **ayırma çağrı yığını** bölmesi.  
   
-     ![Örnekler Görünüm](../profiling/media/dbgdiag_mem_native_instances.png "DBGDIAG_MEM_Native_Instances")  
+     ![Örnekler görünümü](../profiling/media/dbgdiag_mem_native_instances.png "DBGDIAG_MEM_Native_Instances")  
   
--   Seçin **yığınlar görünümü** içinde **görüntüleme modu** seçili türünün ayırma yığını görmek için liste.  
+-   Seçin **yığınlar görünümü** içinde **görünüm modu** seçili türü için ayırma yığını görmek için listenin.  
   
-     ![Yığınlar Görünüm](../profiling/media/dbgdiag_mem_native_stacksview.png "DBGDIAG_MEM_Native_StacksView")  
+     ![Yığınlar görünümü](../profiling/media/dbgdiag_mem_native_stacksview.png "DBGDIAG_MEM_Native_StacksView")  
   
-### <a name="change-diff-reports"></a>(Fark) raporları değiştirme  
+### <a name="change-diff-reports"></a>Değiştir (fark) raporları  
   
--   Özet tablosunu hücrede değiştir bağlantısını seçin **bellek kullanımı** sekmesi **tanılama araçları** penceresi.  
+- Özet tablosunu hücrede değiştir bağlantısını seçin **bellek kullanımı** sekmesinde **tanılama araçları** penceresi.  
   
-     ![Bir değişiklik seçin &#40;DIF&#41;f rapor](../profiling/media/dbgdiag_mem_choosediffreport.png "DBGDIAG_MEM_ChooseDiffReport")  
+   ![Bir değişiklik seçin &#40;DIF&#41;f rapor](../profiling/media/dbgdiag_mem_choosediffreport.png "DBGDIAG_MEM_ChooseDiffReport")  
   
--   İçindeki bir anlık görüntüsünü seçin **karşılaştırmak için** yönetilen veya yerel rapor listesi.  
+- Anlık görüntüde seçin **Karşılaştırılacak** yönetilen veya yerel bir rapor listesi.  
   
-     ![Karşılaştırmak için listeden bir anlık görüntüsünü seçin](../profiling/media/dbgdiag_mem_choosecompareto.png "DBGDIAG_MEM_ChooseCompareTo")  
+   ![Bir anlık görüntüsünü karşılaştırmak için listeden seçin](../profiling/media/dbgdiag_mem_choosecompareto.png "DBGDIAG_MEM_ChooseCompareTo")  
   
- Değişiklik raporu sütunları ekler (ile işaretli **(fark)**) temel anlık görüntü değer karşılaştırma anlık görüntü arasındaki fark Göster temel rapor. Yerel türü görünümü fark raporu nasıl görünebileceği aşağıda verilmiştir:  
+  Değişiklik raporu sütunları ekler (ile işaretlenen **(fark)**) temel anlık görüntü değeri ile karşılaştırma anlık görüntü arasındaki fark gösteren temel bir rapor. Bir yerel tür View fark raporu nasıl görünebileceği aşağıda verilmiştir:  
   
- ![Yerel türler fark Veiw](../profiling/media/dbgdiag_mem_native_typesviewdiff.png "DBGDIAG_MEM_Native_TypesViewDiff")  
+  ![Yerel türler fark Veiw](../profiling/media/dbgdiag_mem_native_typesviewdiff.png "DBGDIAG_MEM_Native_TypesViewDiff")  
   
 ## <a name="blogs-and-videos"></a>Bloglar ve videolar  
 
-|         |         |
+| | |
 |---------|---------|
-|  ![video kamera simgesine film](../install/media/video-icon.png "bir videoyu izleyin")  |    [Bir video izlemek](https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171) bellek kullanımı ve Visual Studio 2017 CPU kullanımı analiz etme gösterir tanılama araçlarını kullanma. |
+| ![video kamera simgesini film](../install/media/video-icon.png "bir video izleyin") | [Bir video izleyin](https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171) bellek kullanımı ve Visual Studio 2017'de CPU kullanımını analiz etme gösteren tanılama araçlarını kullanma. |
 
  [Hata ayıklama sırasında CPU ve bellek çözümleme](https://blogs.msdn.microsoft.com/visualstudio/2016/02/15/analyze-cpu-memory-while-debugging/)  
   
- [Visual C++ Blog: Visual C++ 2015'te bellek profili oluşturma](https://blogs.msdn.microsoft.com/vcblog/2015/10/21/memory-profiling-in-visual-c-2015/)  
+ [Visual C++ blogu: Bellek, Visual C++ 2015'te profil oluşturma](https://blogs.msdn.microsoft.com/vcblog/2015/10/21/memory-profiling-in-visual-c-2015/)  
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-Bu öğreticide, toplamak ve bellek kullanım verilerini analiz etme öğrendiniz. Zaten tamamladıysanız [profil oluşturucu Turu](../profiling/profiling-feature-tour.md), uygulamalarınızdaki CPU kullanımı analiz etme hızlı bir bakış almak isteyebilirsiniz.
+Bu öğreticide, bellek kullanımı verileri toplayıp analiz öğrendiniz. Tamamladıysanız [profil oluşturucu Turu](../profiling/profiling-feature-tour.md), uygulamalarınızda CPU kullanımını analiz etme nasıl hızlı bir bakış almak isteyebilirsiniz.
 
 > [!div class="nextstepaction"]
 > [CPU kullanımını analiz etme](../profiling/beginners-guide-to-performance-profiling.md) 

@@ -1,36 +1,39 @@
 ---
-title: Python için Django web proje şablonu
-description: Visual Studio şablonları Django framework kullanarak Python içinde yazılmış web uygulamaları için genel bakış.
-ms.date: 07/13/2017
+title: Python Django web projesi şablonu
+description: Visual Studio ile Python Django web uygulamalarını hızlı oluşturulması için kapsamlı bir şablon sağlayın.
+ms.date: 11/12/2018
 ms.prod: visual-studio-dev15
 ms.technology: vs-python
 ms.topic: conceptual
+author: kraigb
 ms.author: kraigb
 manager: douge
+ms.custom: seodec18
 ms.workload:
 - python
 - data-science
-ms.openlocfilehash: 5c5b64e6f14ef8a6d8015f27252374e54a6dd764
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c1aba68ad8cde6aebbc881e61937dc53037b58c5
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53066528"
 ---
 # <a name="django-web-project-template"></a>Django web projesi şablonu
 
-[Django](https://www.djangoproject.com/) hızlı, güvenli ve ölçeklenebilir bir web geliştirme için tasarlanmış bir çerçevedir üst düzey Python. Visual Studio'da Python desteği Django tabanlı web uygulamasının yapıyı ayarlamak için bir proje şablonu sağlar. Visual Studio'da şablonu kullanmak için **Dosya > Yeni > Proje**"Django" için arama yapın ve seçin **Django Web projesi** şablonu. Elde edilen proje, Demirbaş kod varsayılan bir SQLite veritabanı içerir. **Boş Django Web projesi** şablonu benzer, ancak veritabanı dahil değildir.
+[Django](https://www.djangoproject.com/) , hızlı, güvenli ve ölçeklenebilir bir web geliştirme için tasarlanan yüksek düzeyli bir Python altyapısıdır. Visual Studio'da Python desteği, yapıyı bir Django tabanlı bir web uygulamasının ayarlamak için birçok proje şablonları sağlar. Visual Studio'da bir şablon kullanmak için **dosya** > **yeni** > **proje**"Django" için arama yapın ve listeden  **Django Web projesi boş**, **Django Web projesi**, ve **yoklamalar Django Web projesi** şablonları. Bkz: [öğrenin Django öğretici](learn-django-in-visual-studio-step-01-project-and-solution.md) tüm şablonları kılavuz.
 
 Visual Studio, Django projeleri için IntelliSense sağlar:
 
-- Bağlam değişkenleri şablonuna geçirildi:
+- Bağlam değişkenleri şablona geçirildi:
 
     ![Bağlam değişkenleri için IntelliSense](media/template-django-intellisense.png)
 
-- Etiketleme ve her iki öğelerin filtreleme ve kullanıcı tanımlı:
+- Etiketleme ve için hem yerleşik olanları filtreleme ve kullanıcı tanımlı:
 
-    ![Etiketleri ve filtreleri için IntelliSense](media/template-django-intellisense-filter.png)
+    ![Etiketleri ve filtreler için IntelliSense](media/template-django-intellisense-filter.png)
 
-- Katıştırılmış CSS ve JavaScript için renklendirme sözdizimi:
+- Sözdizimi: Katıştırılmış CSS ve JavaScript için renklendirme
 
     ![CSS IntelliSense](media/template-django-intellisense-css.png)
 
@@ -40,24 +43,29 @@ Visual Studio ayrıca sağlar tam [hata ayıklama desteği](debugging-python-in-
 
 ![Kesme noktaları](media/template-django-debugging.png)
 
-Üzerinden yönetilecek Django projeleri için tipik kendi `manage.py` Visual Studio izleyen varsayılır dosya. Bu dosya giriş noktası olarak kullanarak durdurursanız, aslında proje dosyası bölün. Bu durumda, gerek [var olan dosyaları projeden yeniden](managing-python-projects-in-visual-studio.md#creating-a-project-from-existing-files) Django projesi olarak işaretleme olmadan.
+Django projelerin aracılığıyla yönetilen tipik kendi *manage.py* dosyasını Visual Studio izlediği varsayılır. Giriş noktası olarak bu dosyayı kullanarak durdurursanız, proje dosyası temelde bölün. Bu durumda için ihtiyacınız [projeden varolan dosyaları yeniden](managing-python-projects-in-visual-studio.md#create-a-project-from-existing-files) olmadan bir Django projesi olarak işaretleniyor.
 
 ## <a name="django-management-console"></a>Django Yönetim Konsolu
 
-Django Yönetim Konsolu aracılığıyla çeşitli komutlar üzerinde erişilen **proje** menüsü veya Çözüm Gezgini'nde projeye sağ tıklanarak.
+Django Yönetim Konsolu çeşitli komutlara üzerinden erişilen **proje** menüsü veya projeye sağ tıklayarak **Çözüm Gezgini**.
 
-- **Django Kabuğu'nu açın...** : uygulama içeriğiniz Modellerinizi yönetmenize olanak sağlayan bir Kabuğu'nu açar "
+- **Django Kabuğu'nu açın**: uygulama Bağlamınızı Modellerinizi yönetmenize olanak sağlayan bir kabuk açılır:
 
-    ![Konsol](media/template-django-console-shell.png)
+    ![Açık Django Kabuk komutu sonuçları](media/template-django-console-shell.png)
 
-- **Django eşitleme DB**: yürütür `manage.py syncdb` etkileşimli bir pencere olarak:
+- **Django eşitleme DB**: yürütür `manage.py syncdb` içinde bir **etkileşimli** penceresi:
 
-    ![Konsol](media/template-django-console-sync-db.png)
+    ![Django eşitleme DB komutunun sonucu](media/template-django-console-sync-db.png)
 
-- **Statik toplamak**: yürütür `manage.py collectstatic --noinput` tarafından belirtilen yol için tüm statik dosyaları kopyalamak için `STATIC_ROOT` içinde `settings.py`. Unutmayın [Microsoft Azure yayımlama](python-web-application-project-templates.md#publishing-to-azure-app-service), statik dosyalar, yayımlama işleminin bir parçası olarak otomatik olarak toplanır.
+- **Statik toplamak**: yürütür `manage.py collectstatic --noinput` tarafından belirtilen yol için tüm statik dosyaları kopyalamak için `STATIC_ROOT` içinde *settings.py*.
 
-    ![Konsol](media/template-django-console-collect-static.png)
+    ![Toplama statik komutunun sonucu](media/template-django-console-collect-static.png)
 
-- **Doğrulama**: yürütür `manage.py validate`, tüm doğrulama hatalarını tarafından belirtilen yüklü modellerde raporları `INSTALLED_APPS` içinde `settings.py`:
+- **Doğrulama**: yürütür `manage.py validate`, hangi raporların tarafından belirtilen yüklü modellerindeki herhangi bir doğrulama hatası `INSTALLED_APPS` içinde *settings.py*:
 
-    ![Konsol](media/template-django-console-validate.png)
+    ![Doğrulama komutunun sonucu](media/template-django-console-validate.png)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Django öğretici öğrenin](learn-django-in-visual-studio-step-01-project-and-solution.md)
+- [Azure App Service’e yayımlama](publishing-python-web-applications-to-azure-from-visual-studio.md)

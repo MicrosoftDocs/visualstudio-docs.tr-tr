@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1a8735992574699ba2b108fc493e9003ca52c9b2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9489b8c4399ae72bf7f6a70011eec347d870ca80
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928340"
 ---
 # <a name="disassemblystreamfields"></a>DISASSEMBLY_STREAM_FIELDS
-Ayrıştırılmış alan hakkında almak için hangi bilgilerin belirtir.  
+Ayrıştırılmış kod alana almak için hangi bilgilerin belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -65,60 +66,60 @@ public enum enum_DISASSEMBLY_STREAM_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  DSF_ADDRESS  
- Başlatma/kullanım `bstrAddress` alan.  
+ Başlat/kullanım `bstrAddress` alan.  
   
  DSF_ADDRESSOFFSET  
- Başlatma/kullanım `bstrAddressOffset` alan.  
+ Başlat/kullanım `bstrAddressOffset` alan.  
   
  DSF_CODEBYTES  
- Başlatma/kullanım `bstrCodeBytes` alan.  
+ Başlat/kullanım `bstrCodeBytes` alan.  
   
  DSF_OPCODE  
- Başlatma/kullanım `bstrOpCode` alan.  
+ Başlat/kullanım `bstrOpCode` alan.  
   
  DSF_OPERANDS  
- Başlatma/kullanım `bstrOperands` alan.  
+ Başlat/kullanım `bstrOperands` alan.  
   
  DSF_SYMBOL  
- Başlatma/kullanım `bstrSymbol` alan.  
+ Başlat/kullanım `bstrSymbol` alan.  
   
  DSF_CODELOCATIONID  
- Başlatma/kullanım `uCodeLocationId` alan.  
+ Başlat/kullanım `uCodeLocationId` alan.  
   
  DSF_POSITION  
- Başlatma/kullanım `posBeg` ve `posEnd` alanları.  
+ Başlat/kullanım `posBeg` ve `posEnd` alanları.  
   
  DSF_DOCUMENTURL  
- Başlatma/kullanım `bstrDocumentUrl` alan.  
+ Başlat/kullanım `bstrDocumentUrl` alan.  
   
  DSF_BYTEOFFSET  
- Başlatma/kullanım `dwByteOffset` alan.  
+ Başlat/kullanım `dwByteOffset` alan.  
   
  DSF_FLAGS  
- Başlatma/kullanım `dwFlags` ([DISASSEMBLY_FLAGS](../../../extensibility/debugger/reference/disassembly-flags.md)) alan.  
+ Başlat/kullanım `dwFlags` ([DISASSEMBLY_FLAGS](../../../extensibility/debugger/reference/disassembly-flags.md)) alan.  
   
  DSF_OPERANDS_SYMBOLS  
- Simge adlarında `bstrOperands` alan.  
+ Sembol adlarında `bstrOperands` alan.  
   
  DSF_ALL  
- Tüm alanlar için ayrıştırılmış akış belirtir.  
+ Tüm alanlar için Ayrıştırılmış kod akışını belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir parametre olarak geçirilen [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) hangi alanlarının belirtmek için yöntemi [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) yapısı başlatılması üzeresiniz.  
+ Bir parametre olarak geçirilen [okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md) hangi alanları göstermek için yöntemi [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) yapısı olan başlatılacak.  
   
- İçin kullanılan `dwFields` üyesi `DisassemblyData` yapısı döndürüldüğünde hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ İçin kullanılan `dwFields` üyesi `DisassemblyData` yapısı yapısı döndürüldüğünde hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md)   
  [Okuma](../../../extensibility/debugger/reference/idebugdisassemblystream2-read.md)   
  [DISASSEMBLY_FLAGS](../../../extensibility/debugger/reference/disassembly-flags.md)

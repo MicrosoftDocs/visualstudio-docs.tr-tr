@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 833ba9131a8c6b1449833bbeca52d0f1d7b53649
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dd0fa6dd8d587ade2ca06c3f39f65fb3a5fd295d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822195"
 ---
 # <a name="idebugcodecontext2getdocumentcontext"></a>IDebugCodeContext2::GetDocumentContext
-Bu kod bağlamına karşılık gelen belge bağlamını alır. Belge bağlamı bu yönergeyi oluşturulan kaynak koduna karşılık gelen kaynak dosyasında bir konumu temsil eder.  
+Bu kod bağlamı için karşılık gelen belge bağlamını alır. Belge bağlamı bir konumda bu yönerge oluşturulan kaynak koduna karşılık gelen kaynak dosyasını temsil eder.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetDocumentContext(
   
 #### <a name="parameters"></a>Parametreler  
  `ppSrcCxt`  
- [out] Döndürür [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) kod bağlamına karşılık gelen nesne.  
+ [out] Döndürür [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) kod bağlamı için karşılık gelen nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kod bağlam konumda bir yürütme akışı kodu yönerge olsa da genellikle, belge bağlamı, bir kaynak dosya konumu olarak değerlendirilebilir.  
+ Kod bağlamı konumda bir yürütme akışı kod yönerge olsa da genel olarak, belge bağlamı, kaynak dosyada bir konum olarak düşünülebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md)   

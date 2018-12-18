@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4109282bea850e7bca6154a56d0023c5ebb1c746
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b1157183bcb7cd13f2683d6d6dac32cfb81d8974
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845083"
 ---
 # <a name="instruction-pointers-ips-view---contention-data"></a>Yönerge işaretçileri (IP) görünümü - çakışma verileri
 Çakışma verileri IP'leri görünümünü Çalıştır profil yürütülmesini engellendi derleme yönergeleri için veri listeler.  
@@ -43,7 +44,7 @@ ms.lasthandoff: 04/19/2018
 |**Kaynak satırı başlangıç**|Bu yönerge başlatan kaynak dosyasında satır numarası.|  
 |**Kaynak satır sonu**|Bu yönerge erdiği kaynak dosyasında satır numarası.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Yönerge işaretçileri (IP) görünümü](../profiling/instruction-pointers-ips-view.md)   
  [Yönerge işaretçileri (IP) görünümü - örnekleme](../profiling/instruction-pointers-ips-view-dotnet-memory-sampling-data.md)   

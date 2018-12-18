@@ -1,6 +1,7 @@
 ---
 title: 'CA2121: Statik oluşturucular özel olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a4955feca4bcdde422001eb22a3117fc7fb524ea
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f20115d694657053e3e687b4e399df463957e9c6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49923933"
 ---
 # <a name="ca2121-static-constructors-should-be-private"></a>CA2121: Statik oluşturucular özel olmalıdır
+
 |||
 |-|-|
 |TypeName|StaticConstructorsShouldBePrivate|
@@ -30,21 +33,25 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Özel olmayan statik Oluşturucu bir türe sahip.
 
-## <a name="rule-description"></a>Kural Tanımı
- Statik Oluşturucu, bir sınıf oluşturucu olarak da bilinen bir tür başlatmak için kullanılır. Sistem, türünün ilk örneğinin oluşturulmasından önce statik oluşturucuyu çağırır veya herhangi bir statik üyeye başvurur. Kullanıcının statik Oluşturucusu ne zaman çağrıldığını üzerinde denetimi yoktur. Statik oluşturucu özel değilse, sistem dışındaki kod tarafından çağrılabilir. Oluşturucu içinde gerçekleştirilen işlemlere bağlı olarak bu, beklenmeyen davranışlara neden olabilir.
+Özel olmayan statik Oluşturucu türü vardır.
 
- Bu kural, C# ve Visual Basic derleyicileri tarafından zorlanır.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- İhlalleri genellikle aşağıdaki eylemlerden birini kullanarak neden olur:
+Statik Oluşturucu, bir sınıf oluşturucu olarak da bilinen, bir tür başlatmak için kullanılır. Sistem, türünün ilk örneğinin oluşturulmasından önce statik oluşturucuyu çağırır veya herhangi bir statik üyeye başvurur. Kullanıcının statik Oluşturucu ne zaman çağrıldığını üzerinde denetimi yoktur. Statik oluşturucu özel değilse, sistem dışındaki kod tarafından çağrılabilir. Oluşturucu içinde gerçekleştirilen işlemlere bağlı olarak bu, beklenmeyen davranışlara neden olabilir.
 
--   Statik Oluşturucu türünüz için tanımlanan ve özel yapmadınız.
+Bu kural, C# ve Visual Basic derleyiciler tarafından uygulanır.
 
--   Programlama dili derleyici türünüz için varsayılan bir statik Oluşturucu eklenir ve özel yapmadınız.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
- İlk tür bir ihlali düzeltmek için statik Oluşturucusu özelleştirin. İkinci türü düzeltmek için türünüz için özel bir statik oluşturucu ekleyin.
+İhlalleri, genellikle aşağıdaki eylemlerden birini kaynaklanır:
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu ihlali bastırma değil. Yazılım tasarımı statik Oluşturucu için açık bir çağrı gerektiriyorsa, tasarım ciddi açıkları içerir ve gözden geçirilmesi gereken olasıdır.
+- Statik Oluşturucu türünüz için tanımlanan ve özel göstermedi.
+
+- Programlama dili derleyici türünüz için varsayılan bir statik Oluşturucu eklendi ve özel göstermedi.
+
+İlk tür ihlalinin düzeltmek için bir statik oluşturucu özel yapın. İkinci tür düzeltmek için türünüz için özel bir statik oluşturucu ekleyin.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+İhlalleri bastırmayın. Yazılım tasarımı açık bir statik Oluşturucu çağrı gerektiriyorsa, tasarım ciddi sorunlar içeriyor ve gözden geçirilmesi gereken olasıdır.

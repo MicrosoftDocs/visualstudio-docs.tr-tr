@@ -1,7 +1,7 @@
 ---
 title: Çevrele kod parçacıklarını kullanma | Microsoft Docs
-ms.custom: ''
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
@@ -12,11 +12,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 044eb79eec4d0ee4ee4684c2e01ea73a94fef7ba
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e2c5211291fbfe3bb7c8ab3fe1eaa371a2dd8e2c
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31943195"
 ---
 # <a name="how-to-use-surround-with-code-snippets"></a>Nasıl yapılır: Çevrele kod parçacıklarını kullanma
 
@@ -58,5 +59,5 @@ Aşağıdaki yordamlar Çevrele kod parçacıklarını kullanmayı açıklar. Ç
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[C# kod parçacıkları](../ide/visual-csharp-code-snippets.md)  
-[Kod parçacığı Seçici](../ide/reference/code-snippet-picker.md)
+- [C# kod parçacıkları](../ide/visual-csharp-code-snippets.md)
+- [Kod parçacığı Seçici](../ide/reference/code-snippet-picker.md)

@@ -1,6 +1,7 @@
 ---
 title: 'CA1726: Tercih edilen terimleri kullanın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -14,58 +15,62 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 41cb61db3916bdb5879931de28d6b87ccdde4853
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c81bd543a6695adcea37db5ab8570ff7749c0160
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551460"
 ---
 # <a name="ca1726-use-preferred-terms"></a>CA1726: Tercih edilen terimleri kullanın
+
 |||
 |-|-|
 |TypeName|UsePreferredTerms|
 |CheckId|CA1726|
 |Kategori|Microsoft.Naming|
-|Yeni Değişiklik|Derlemelerini harekete sonu-<br /><br /> Tür parametreleri harekete zaman bölünemez-|
+|Yeni Değişiklik|-Derlemelerini tetiklendiğinde sonu<br /><br /> Tür parametrelerinde tetiklendiğinde bölünemez-|
 
 ## <a name="cause"></a>Sebep
- Dışarıdan görünen bir tanımlayıcının adı, tercih edilen terim varolduğunda alternatif olarak bir terim içerir. Alternatif olarak, ad bayrağı veya bayrak terimi içerir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bu kural bir tanımlayıcı belirteçlere ayrıştırır. Her tek belirteç ve her bitişik çift belirteci birleşimi kural ve özel sözlükler kullanım dışı bölümünde yerleşik koşulları karşılaştırılır. Aşağıdaki tabloda, kural ve bunların tercih edilen alternatifleri yerleşik terimleri gösterir.
+Dışarıdan görünen bir tanımlayıcının adı, tercih edilen terim varolduğunda alternatif olarak bir terim içerir. Ya da terimi bayrağı veya bayrak adı içerir.
 
-|Artık kullanılmayan terimi|Tercih edilen terim|
+## <a name="rule-description"></a>Kural açıklaması
+
+Bu kural, bir tanımlayıcı belirteçlere ayrıştırır. Her tek belirteç ve her bir bitişik belirteci çift bileşimi, kural ve özel sözlükler kullanım dışı bölümünde yerleşik koşulları karşılaştırılır. Aşağıdaki tabloda, kural ve kendi tercih edilen alternatif yerleşik koşulları gösterir.
+
+|Eski terimi|Tercih edilen terim|
 |-------------------|--------------------|
-|değil|Gereksinim yoktur|
-|İptal Edildi|İptal edildi|
-|Yapılamıyor|Olamaz|
-|ComPlus|EnterpriseServices|
-|Couldnt|CouldNot|
-|Didnt|DidNot|
-|Doesnt|Bilgilerine|
-|Engelle|DoNot|
-|Bayrağı veya bayrakları|Değiştirme koşulu yoktur. Kullanmayın.|
-|yüklediniz|HadNot|
-|Tamamlanmadı|HasNot|
-|henüz|HaveNot|
-|Dizinler|Dizinler|
-|değil|IsNot|
-|Oturum açma|Oturum açma|
-|Oturum kapatma|Oturumu Kapat|
-|Shouldnt|ShouldNot|
-|Oturum açma|Oturum açma|
-|Oturumu Kapat|SignOut|
-|Wasnt|WasNot|
-|doğru|WereNot|
-|Yapmıyor|Olmadı|
-|Wouldnt|Görmeyecektir|
-|Yazılabilir|Yazılabilir|
+|`Arent`|`AreNot`|
+|`Cancelled`|`Canceled`|
+|`Cant`|`Cannot`|
+|`ComPlus`|`EnterpriseServices`|
+|`Couldnt`|`CouldNot`|
+|`Didnt`|`DidNot`|
+|`Doesnt`|`DoesNot`|
+|`Dont`|`DoNot`|
+|`Flag` veya `Flags`|Hiçbir değişiklik terimi yoktur. Kullanmayın.|
+|`Hadnt`|`HadNot`|
+|`Hasnt`|`HasNot`|
+|`Havent`|`HaveNot`|
+|`Indices`|`Indexes`|
+|`Isnt`|`IsNot`|
+|`LogIn`|`LogOn`|
+|`LogOut`|`LogOff`|
+|`Shouldnt`|`ShouldNot`|
+|`SignOn`|`SignIn`|
+|`SignOff`|`SignOut`|
+|`Wasnt`|`WasNot`|
+|`Werent`|`WereNot`|
+|`Wont`|`WillNot`|
+|`Wouldnt`|`WouldNot`|
+|`Writeable`|`Writable`|
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için tercih edilen alternatif terimiyle terimi değiştirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için tercih edilen alternatif terimiyle terimi değiştirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Tanımlayıcı adı yalnızca kasıtlı ise ve tercih edilen terim yerine özgün terim özellikle ilgili bir uyarı bu kuraldan engelleyin.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yalnızca tanımlayıcı adını kasıtlıdır ve özgün terimi yerine tercih edilen terim özellikle ilgili bu kuraldan bir uyarıyı gizler.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [Adlandırma Uyarıları](../code-quality/naming-warnings.md)

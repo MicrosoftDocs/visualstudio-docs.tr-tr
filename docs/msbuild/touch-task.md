@@ -20,31 +20,32 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6c6f96c09755d5bce3b7586c749286bdbde3891c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7d1d4b8093e9cd5e4c41e88573fa80c131fd7caf
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154901"
 ---
-# <a name="touch-task"></a>Dokunma Görevi
-Dosya erişimi ve değişiklik zamanları ayarlar.  
+# <a name="touch-task"></a>Dokunma görevi
+Dosya erişim ve değişiklik saatlerini ayarlar.  
   
 ## <a name="parameters"></a>Parametreler  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır `Touch` görev.  
+ Parametreleri aşağıdaki tabloda açıklanmıştır `Touch` görev.  
   
 |Parametre|Açıklama|  
 |---------------|-----------------|  
-|`AlwaysCreate`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, henüz yoksa herhangi bir dosya oluşturur.|  
-|`Files`|Gerekli <xref:Microsoft.Build.Framework.ITaskItem>`[]` parametresi.<br /><br /> Touch dosya koleksiyonunu belirtir.|  
-|`ForceTouch`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, salt okunur dosyalar olsa bile, dosya dokunma zorlar.|  
-|`Time`|İsteğe bağlı `String` parametresi.<br /><br /> Geçerli saati dışında süreyi belirtir. Biçimi kabul edilebilir biçimde olmalıdır <xref:System.DateTime.Parse%2A> yöntemi.|  
-|`TouchedFiles`|İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` çıkış parametresi.<br /><br /> Başarıyla işlemdeki öğeleri koleksiyonu içerir.|  
+|`AlwaysCreate`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, zaten mevcut olan tüm dosyaları oluşturur.|  
+|`Files`|Gerekli <xref:Microsoft.Build.Framework.ITaskItem>`[]` parametresi.<br /><br /> Dokunmaya dosya koleksiyonunu belirtir.|  
+|`ForceTouch`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, salt okunur dosyalar olsa bile dosya touch zorlar.|  
+|`Time`|İsteğe bağlı `String` parametresi.<br /><br /> Geçerli saat dışında bir süreyi belirtir. Biçim için kabul edilebilir bir biçimde olmalıdır <xref:System.DateTime.Parse%2A> yöntemi.|  
+|`TouchedFiles`|İsteğe bağlı <xref:Microsoft.Build.Framework.ITaskItem> `[]` çıkış parametresi.<br /><br /> Başarıyla dokunulan öğeleri koleksiyonunu içerir.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Tasks.TaskExtension> sınıfı, kendisi <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Tasks.TaskExtension> kendisi sınıfının devraldığı <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek kullanır `Touch` belirtilen dosyaların erişim ve değişiklik saatlerini değiştirmek için görev `Files` öğe koleksiyonu ve başarıyla işlemdeki dosyaların listesini yerleştirir `FilesTouched` öğe koleksiyonu.  
+ Aşağıdaki örnekte `Touch` içinde belirtilen dosya erişim ve değişiklik saatlerini değiştirmek için görev `Files` öğe koleksiyonu ve başarıyla bilgiler dosyaların listesini koyar `FilesTouched` öğe koleksiyonu.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
@@ -64,6 +65,6 @@ Dosya erişimi ve değişiklik zamanları ayarlar.
 </Project>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Görevler](../msbuild/msbuild-tasks.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görevleri](../msbuild/msbuild-tasks.md)   
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)

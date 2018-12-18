@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f003ba3f97f053c4617408bfc9334da057bb98ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6d2fb0128aef16d236db10918eec215c8e198ae4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951125"
 ---
 # <a name="idebugdocumentcontext2getsourcerange"></a>IDebugDocumentContext2::GetSourceRange
-Bu belge içeriğinin kaynak kodu aralığını alır.  
+Bu belge bağlamına kaynak kod aralığını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,18 +43,18 @@ int GetSourceRange(
   
 #### <a name="parameters"></a>Parametreler  
  `pBegPosition`  
- [içinde out] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) oturum başlangıç konumu girilir yapısı. Bu bilgileri gerekmiyorsa bu bağımsız değişken null bir değere ayarlayın.  
+ [out içinde] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) başlangıç konumu ile doldurulmuş yapısı. Bu bilgiler gerekli değildir, bu bağımsız değişken null bir değere ayarlayın.  
   
  `pEndPosition`  
- [içinde out] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) oturum bitiş konumu girilir yapısı. Bu bilgileri gerekmiyorsa bu bağımsız değişken null bir değere ayarlayın.  
+ [out içinde] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) oturum bitiş konumu girilir yapısının. Bu bilgiler gerekli değildir, bu bağımsız değişken null bir değere ayarlayın.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir kaynak aralığı geçerli deyimi arkadan kod katkıda bulunan bir önceki ifadenin ardından tam kaynak kodu Tüm aralığıdır. Kaynak aralığı genellikle Ayrıştırılmış kod penceresini kodu ile yorumlar dahil olmak üzere kaynak deyimlerini karıştırma için kullanılır.  
+ Bir kaynak aralıktaki tüm kaynak koddan kod katkıda önceki deyiminden sonra yalnızca geçerli deyim arka aralığıdır. Kaynak aralığı genellikle Ayrıştırılmış kod penceresinde kodu, Yorumlar dahil olmak üzere kaynak deyimlerini karıştırmak için kullanılır.  
   
- Yalnızca bu belge bağlamı içinde yer alan kod deyimleri için aralığı almak için arama [GetStatementRange](../../../extensibility/debugger/reference/idebugdocumentcontext2-getstatementrange.md) yöntemi.  
+ Yalnızca bu belge bağlamı içinde yer alan kod deyimlerini aralığı almak için arama [GetStatementRange](../../../extensibility/debugger/reference/idebugdocumentcontext2-getstatementrange.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md)   

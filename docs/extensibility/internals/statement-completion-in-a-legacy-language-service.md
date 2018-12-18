@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131333"
 ---
 # <a name="statement-completion-in-a-legacy-language-service"></a>Eski dil hizmetindeki deyim tamamlama
 Deyim tamamlama dil anahtar sözcüğü veya çekirdek Düzenleyicisi'nde yazmaya başladı öğesi son kullanıcılara yardımcı dil hizmeti tarafından işlemidir. Deyim tamamlama nasıl çalıştığını ve nasıl dil hizmetinizi uygulamak bu konuda açıklanmaktadır.  

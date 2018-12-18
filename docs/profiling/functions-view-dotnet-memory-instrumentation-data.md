@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 71ea82ea9588315748a9c79eb9abd7b06eace680
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d48393a2d160e3691069a4b5f86dd814b63d935d
+ms.sourcegitcommit: 269b55b413d2c82e6aa56c6ab8e53da7926fb2e8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35237688"
 ---
 # <a name="functions-view---net-memory-instrumentation-data"></a>İşlevler görünümü - .NET bellek izleme verileri
 İşlevler görünümü izleme metodunu kullanarak toplanan .NET bellek ayırma profil oluşturma verileri, profil oluşturma çalışması sırasında bellek tahsis işlevleri listeler. Bir işlev satır ayırma ve işlev için zamanlama verileri sayısı ve boyutu bildirir.  
@@ -97,7 +98,7 @@ ms.lasthandoff: 04/19/2018
 |**En fazla uygulama özel süresi**|Bu işlev için bir çağrı en fazla uygulama özel saati.|  
 |**Min uygulama özel süresi**|Bu işlev için bir çağrı minimum uygulama özel saati.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [İşlevler görünümü - örnekleme](../profiling/functions-view-dotnet-memory-sampling-data.md)   
  [İşlevler görünümü](../profiling/functions-view-instrumentation-data.md)   

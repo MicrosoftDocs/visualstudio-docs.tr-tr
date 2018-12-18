@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 481dd21287ba3ca68c2abc61412785fc0151788d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0fba22042f5b12cfb9140e93e9e7efbeb0342328
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49904173"
 ---
 # <a name="bpflags"></a>BP_FLAGS
-Bir kesme noktası ayarlarken ek bilgileri belirtmek için kullanılabilir İsteğe bağlı bayraklar sağlar.  
+Bir kesme noktası ayarlanırken ek bilgileri belirtmek için kullanılabilecek isteğe bağlı bayraklar sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,28 +46,28 @@ public enum enum_BP_FLAGS {
   
 ## <a name="members"></a>Üyeler  
  BP_FLAG_NONE  
- Kesme noktası bayrak belirtir.  
+ Hiçbir kesme noktası bayrak belirtir.  
   
  BP_FLAG_MAP_DOCPOSITION  
- Hata ayıklama altyapısı (DE) belge konumunu kullanarak kesme noktası eşlemelisiniz belirtir. Bu, yalnızca Active Server Pages (ASP) gibi komut dosyası odaklı kaynak dosyalarında ayarlamak kesme noktaları için geçerlidir.  
+ Hata ayıklama altyapısı (DE) belge konumu kullanarak kesme noktası eşleme belirtir. Bu, yalnızca Active Server Pages (ASP) gibi betik tabanlı kaynak dosyalarında ayarlanan kesme noktaları için geçerlidir.  
   
  BP_FLAG_DONT_STOP  
- Kesme noktası hata ayıklama motoru tarafından işlenmesi gerektiğini, ancak hata ayıklama altyapısı sonuçta var. durması gerektiğini değil belirtir (diğer bir deyişle, bir [IDebugBreakpointEvent2](../../../extensibility/debugger/reference/idebugbreakpointevent2.md) olay nesnesi değil gönderilmesi gerektiğini). Bu bayrak, öncelikle tracepoints ile kullanılmak üzere tasarlanmıştır.  
+ Kesme noktası hata ayıklama motoru tarafından işlenmesi gerektiğini, ancak hata ayıklama altyapısı sonuçta var. durması gerektiğini değil belirtir (diğer bir deyişle, bir [IDebugBreakpointEvent2](../../../extensibility/debugger/reference/idebugbreakpointevent2.md) olay nesnesi değil gönderilmesi). Bu bayrak öncelikle izleme noktaları ile kullanılmak üzere tasarlanmıştır.  
   
 ## <a name="remarks"></a>Açıklamalar  
  İçin kullanılan `dwFlags` üyesi [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md) ve [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) yapıları.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md)   
  [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md)   
  [IDebugBreakpointEvent2](../../../extensibility/debugger/reference/idebugbreakpointevent2.md)

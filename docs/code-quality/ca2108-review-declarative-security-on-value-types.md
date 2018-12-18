@@ -1,6 +1,7 @@
 ---
 title: 'CA2108: Değer türleri üzerinde bildirimsel güvenliği gözden geçirin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,46 +16,59 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1d07245724d70b5bc6ba69deae4311dcb2a10056
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e2d76a0ecf6a2eeac677475eb25efe495129c213
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548523"
 ---
 # <a name="ca2108-review-declarative-security-on-value-types"></a>CA2108: Değer türleri üzerinde bildirimsel güvenliği gözden geçirin
+
 |||
 |-|-|
 |TypeName|ReviewDeclarativeSecurityOnValueTypes|
 |CheckId|CA2108|
 |Kategori|Microsoft.Security|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir genel veya korumalı değer türü tarafından güvenliği sağlanan bir [veri ve modelleme](/dotnet/framework/data/index) veya [bağlantı talepleri](/dotnet/framework/misc/link-demands).
 
-## <a name="rule-description"></a>Kural Tanımı
- Değer türleri ayrılmış ve diğer oluşturucular yürütmeden önce kendi varsayılan oluşturucular tarafından başlatıldı. Değer türü bir isteğe bağlı veya LinkDemand tarafından korunmaktadır ve arayan güvenlik denetimi, tüm Oluşturucusu dışında uygun izinlere sahip değil, varsayılan başarısız olur ve bir güvenlik özel durum. Değer türü serbest değil; kendi varsayılan oluşturucu tarafından ayarlanmış durumda kalır. Değer türü örneği aktardığı çağıran oluşturun veya örneğine erişmek için izne sahip olduğunu varsayın değil.
+Ortak veya korunan değer türü tarafından güvenliği sağlanan bir [veri ve modelleme](/dotnet/framework/data/index) veya [bağlantı talepleri](/dotnet/framework/misc/link-demands).
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal güvenlik denetimi türünden kaldırın ve onun yerine kullanım yöntemi düzeyi güvenlik denetimlerini sürece düzeltilemiyor. Bu şekilde ihlali düzelttikten değer türü örnekleri alma gelen yetersiz izinlerle arayanlar önlemez unutmayın. Değer türünde varsayılan durumuna örnek hassas bilgileri kullanıma sunmuyor ve zararlı bir biçimde kullanılamaz emin olmalısınız.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Güvenlik için bir tehdit taşıyor olmadan varsayılan durumuna içinde değer türüne örneklerini herhangi bir çağırıcı elde edebilirsiniz, bu kural bir uyarıdan gizleyebilirsiniz.
+Değer türleri ayrılan ve diğer oluşturucular yürütmeden önce kendi varsayılan oluşturucu tarafından başlatılır. Bir değer türü, isteğe bağlı ya da LinkDemand tarafından güvenlik altına alınır ve arayan güvenlik denetimi, herhangi bir oluşturucu dışında uygun izinlere sahip değil'de varsayılan başarısız olur ve bir güvenlik özel durumu oluşturulur. Değer türü serbest değil; kendi varsayılan oluşturucu tarafından ayarlanmış durumda kalır. Değer türü örneğini geçirir bir çağıranın oluşturun veya örnek erişim izni olduğunu varsaymayın.
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnek, bu kural ihlal eden bir değer türü içeren bir kitaplık gösterir. Unutmayın `StructureManager` türü varsayar değer türünün bir örneği aktardığı çağıran oluşturmak veya örneğine erişmek için izne sahip.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
- [!code-csharp[FxCop.Security.DemandOnValueType#1](../code-quality/codesnippet/CSharp/ca2108-review-declarative-security-on-value-types_1.cs)]
+Güvenlik denetimi türünden kaldırın ve onun yerine kullanmak yöntem düzeyi güvenlik denetimleri sürece bu kural ihlalini düzeltmek olamaz. Bu şekilde ihlali düzeltme değer türü örneklerini alma gelen yetersiz izinlerle çağıranlar engellemez. Bir değer türü örneği, varsayılan durumunda, hassas bilgileri kullanıma sunmuyor ve zararlı bir biçimde kullanılamaz emin olmanız gerekir.
 
-## <a name="example"></a>Örnek
- Aşağıdaki uygulama kitaplığın zayıflık gösterir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
 
- [!code-csharp[FxCop.Security.TestDemandOnValueType#1](../code-quality/codesnippet/CSharp/ca2108-review-declarative-security-on-value-types_2.cs)]
+Herhangi bir çağıranın varsayılan durumuna içinde değer türüne örneklerini güvenlik tehdit taşıyor olmadan elde bu kuraldan bir uyarıyı gösterilmemesini sağlayabilirsiniz.
 
- Bu örnek şu çıkışı üretir.
+## <a name="example-1"></a>Örnek 1
 
- **Yapı özel Oluşturucusu: isteği başarısız oldu. ** 
- **Yeni değerleri SecuredTypeStructure 100 100**
-**yeni değerleri SecuredTypeStructure 200 200**
-## <a name="see-also"></a>Ayrıca Bkz.
- [Bağlantı talepleri](/dotnet/framework/misc/link-demands) [veri ve modelleme](/dotnet/framework/data/index)
+Aşağıdaki örnek bu kuralı ihlal eden bir değer türü içeren bir kitaplık gösterir. `StructureManager` Türü, değer türü örneğini geçirir bir çağıranın oluşturun veya örnek erişim izni olduğunu varsayar.
+
+[!code-csharp[FxCop.Security.DemandOnValueType#1](../code-quality/codesnippet/CSharp/ca2108-review-declarative-security-on-value-types_1.cs)]
+
+## <a name="example-2"></a>Örnek 2
+
+Aşağıdaki uygulama kitaplığın zayıflık gösterir.
+
+[!code-csharp[FxCop.Security.TestDemandOnValueType#1](../code-quality/codesnippet/CSharp/ca2108-review-declarative-security-on-value-types_2.cs)]
+
+Bu örnek aşağıdaki çıktıyı üretir:
+
+```txt
+Structure custom constructor: Request failed.
+New values SecuredTypeStructure 100 100
+New values SecuredTypeStructure 200 200
+```
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Bağlantı talepleri](/dotnet/framework/misc/link-demands)
+- [Veri ve Modelleme](/dotnet/framework/data/index)

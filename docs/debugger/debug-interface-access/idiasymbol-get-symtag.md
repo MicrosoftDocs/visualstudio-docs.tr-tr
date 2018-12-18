@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 029dee2188f48d2f41368c965542670e5512f7e5
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 346bfe7b0d096a9658e5063d97337349cc6a1a04
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49887949"
 ---
 # <a name="idiasymbolgetsymtag"></a>IDiaSymbol::get_symTag
-Simge türü sınıflandırıcı alır.  
+Sembol türü sınıflandırıcı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_symTag (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Arasında bir değer döndürür [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) simge türü sınıflandırıcı belirtir numaralandırması.  
+ [out] Bir değer döndürür [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) sembol türü sınıflandırıcı belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="example"></a>Örnek  
   
@@ -51,4 +52,4 @@ pType->get_symTag( &tag );
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

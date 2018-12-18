@@ -16,29 +16,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 50ab93c31a340bf8a2f4e2deb5f202707d7826b8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ecc87a24b35993f200c709ee033fffe6a4ecb120
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903627"
 ---
-# <a name="program-nodes"></a>Program düğümler
-Hata ayıklayıcı mimarisi bakımından bir **program düğümü**:  
+# <a name="program-nodes"></a>Program düğümleri
+Hata ayıklayıcı mimarisinde bir *program düğüm*:  
   
--   Basit bir program açıklamasıdır.  
+- Basit bir program açıklamasıdır.  
   
--   Kendisi ve çalışır durumda ve gelen ayrılmış ve, varsa oluşturulan hata ayıklama altyapısı (DE) açıklamak için bağlı işlemi tanımlayabilirsiniz.  
+- Kendisi ve onu çalışan işlemi tanımlayabilirsiniz. Öğesinden ayrıldı ve varsa, oluşturulan hata ayıklama altyapısı (DE) tanımlamak için bir program düğümü eklenebilir.  
   
--   Tarafından temsil edilen bir [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) arabirimi, genellikle bir DE veya bağlantı noktası tarafından oluşturuldu. Program düğümleri, bir bağlantı noktasına çağrılarak eklenir [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md). Bir program düğüme bir bağlantı noktasına eklendiğinde, bu program düğümün temsil ettiği programı içeren işlem eklenir.  
+- Tarafından temsil edilen bir [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) arabirimi, genellikle DE veya bağlantı noktası tarafından oluşturulur. Program düğümleri çağırarak bir bağlantı noktasına eklenir [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md). Bir program düğüm bir bağlantı eklendiğinde bu programı bu düğümün temsil ettiği program içeren işleme eklenir.  
   
- Süre bir hata ayıklama oturumu, hata ayıklama paket uygulama bağlı olarak başlatıldıktan sonra program düğümleri karşılık gelen programlar oluşturmak için kullanılır. Bir işlem için programları sorgulandığında programları numaralandırılır, her program düğümü için bir tane.  
+  Süre bir hata ayıklama oturumu, hata ayıklama paketi bağlı olarak uygulama başlatıldıktan sonra program düğümleri karşılık gelen programlar oluşturmak için kullanılır. Bir işlem için programları sorgulandığında programları numaralandırılır, program her düğüm için bir tane.  
   
- Bir program iliştirildiği önce IDE basit açıklaması program gerekir. Bu bilgi programı düğümden elde edilebilir. Program için bağlandıktan sonra programda çalışan tüm iş parçacıklarının listesi gibi daha ayrıntılı bilgileri görüntülemek IDE gerekir. Bu bilgiler programından elde edilir.  
+  Bir program iliştirildiği önce IDE program basit bir açıklamasını gerekir. Bu bilgi programı düğümden elde edilebilir. Program için bağlandıktan sonra IDE programdaki tüm iş parçacıkları listesi gibi daha ayrıntılı bilgileri görüntüler. Bu bilgiler programından elde edilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Programlar](../../extensibility/debugger/programs.md)   
  [İşlemler](../../extensibility/debugger/processes.md)   
- [Altyapısı hata ayıklama](../../extensibility/debugger/debug-engine.md)   
+ [Hata ayıklama altyapısı](../../extensibility/debugger/debug-engine.md)   
  [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)   
  [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md)   
  [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md)

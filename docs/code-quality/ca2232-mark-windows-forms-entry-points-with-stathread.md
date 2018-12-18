@@ -1,6 +1,7 @@
 ---
 title: 'CA2232: Windows Forms giriş noktalarını STAThread ile işaretleyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,39 +14,44 @@ ms.assetid: a3c95130-8e7f-4419-9fcd-b67d077e8efb
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 043e1e6de12b3778022d27740793e7426f9eead2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 97c5ad926ecc2a0480a612575eca7e4fe0af31e5
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551447"
 ---
 # <a name="ca2232-mark-windows-forms-entry-points-with-stathread"></a>CA2232: Windows Forms giriş noktalarını STAThread ile işaretleyin
+
 |||
 |-|-|
 |TypeName|MarkWindowsFormsEntryPointsWithStaThread|
 |CheckId|CA2232|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir derlemeye başvurur <xref:System.Windows.Forms> ad alanı ve kendi giriş noktası işaretlenmemiş ile <xref:System.STAThreadAttribute?displayProperty=fullName> özniteliği.
+ Bir derlemeye başvuran <xref:System.Windows.Forms> ad alanı ve kendi giriş noktası olarak işaretlenmemiş ile <xref:System.STAThreadAttribute?displayProperty=fullName> özniteliği.
 
-## <a name="rule-description"></a>Kural Tanımı
- <xref:System.STAThreadAttribute> iş parçacığı modeli uygulama için COM tek iş parçacıklı olduğunu gösterir. Bu öznitelik Windows Forms kullanan herhangi bir uygulamanın girişinde sunulur; atlanırsa, Windows bileşenleri doğru çalışmayabilir. Öznitelik yoksa, uygulama Windows Forms için desteklenmeyen birden çok iş parçacıklı apartman modeli kullanır.
+## <a name="rule-description"></a>Kural açıklaması
+ <xref:System.STAThreadAttribute> iş parçacığı modeli uygulama için COM tek iş parçacıklı grup olduğunu gösterir. Bu öznitelik Windows Forms kullanan herhangi bir uygulamanın girişinde sunulur; atlanırsa, Windows bileşenleri doğru çalışmayabilir. Öznitelik mevcut değilse, uygulamanın Windows Forms için desteklenmiyor çok iş parçacıklı grubun modeli kullanır.
 
 > [!NOTE]
->  [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Uygulama Çerçevesi kullanan projelerin işaretlemek gerekmez **ana** STAThread ile yöntemi. [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Derleyici yapar, otomatik olarak.
+> [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Uygulama Çerçevesi kullanan projeler işaretlemek gerekmez **ana** yöntemi STAThread ile işaretleyin. [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Derleyici her şeyi otomatik olarak.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için add <xref:System.STAThreadAttribute> özniteliği için giriş noktası. Varsa <xref:System.MTAThreadAttribute?displayProperty=fullName> özniteliği varsa, bunu kaldırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için ekleme <xref:System.STAThreadAttribute> özniteliği giriş noktası. Varsa <xref:System.MTAThreadAttribute?displayProperty=fullName> özniteliği varsa, bunu kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- .NET Compact Framework, kendisi için geliştiriyorsanız, bu kural bir uyarıdan gizlemek güvenlidir <xref:System.STAThreadAttribute> özniteliktir gereksiz ve desteklenmiyor.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ .NET Compact Framework için kendisi için geliştiriyorsanız, bu kuraldan bir uyarıyı bastırmak güvenlidir <xref:System.STAThreadAttribute> özniteliktir gereksiz ve desteklenmiyor.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekler doğru kullanımını göstermek <xref:System.STAThreadAttribute>.
+ Aşağıdaki örnekler doğru kullanımını gösterir <xref:System.STAThreadAttribute>:
 
  [!code-csharp[FxCop.Usage.StaThread#1](../code-quality/codesnippet/CSharp/ca2232-mark-windows-forms-entry-points-with-stathread_1.cs)]
  [!code-vb[FxCop.Usage.StaThread#1](../code-quality/codesnippet/VisualBasic/ca2232-mark-windows-forms-entry-points-with-stathread_1.vb)]

@@ -1,0 +1,1 @@
+XAML tarayıcısı uygulaması (XBAP)

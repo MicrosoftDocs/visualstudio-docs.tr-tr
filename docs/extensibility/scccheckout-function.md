@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 671e4ecebb44f0910eba3bb835a6da6f9a7f3903
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1ba80df71dce70ad4a6a0953d37f8f87bd487e12
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908528"
 ---
 # <a name="scccheckout-function"></a>SccCheckout işlevi
-Tam dosya adlarının bir listesini göz önüne alındığında, bu işlev bunları yerel sürücüye kullanıma. Açıklama kullanıma alınmış tüm dosyalara uygulanır. Açıklama bağımsız değişken olabilir bir `null` dize.  
+Tam olarak nitelenmiş dosya adlarının bir listesini göz önünde bulundurulduğunda, bu işlev bunları yerel sürücüye kullanıma. Açıklama kullanıma alınan tüm dosyalar için geçerlidir. Açıklama bağımsız değişken olabilir bir `null` dize.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,43 +39,43 @@ SCCRTN SccCheckout (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  nFiles  
  [in] Kullanıma alınması için seçilen dosya sayısı.  
   
  lpFileNames  
- [in] Dosyaları kullanıma tam nitelenmiş bir yerel yol adlarının dizisini.  
+ [in] Dosya kullanıma alınması tam yerel yol adları dizisi.  
   
  lpComment  
- [in] Kullanıma alınmış seçili dosyaları uygulanması için açıklama.  
+ [in] Seçili dosyaları kullanıma alınmış uygulanması için açıklama.  
   
  fOptions  
- [in] Komut bayrakları (bkz [bit işaretleri belirli komutları tarafından kullanılan](../extensibility/bitflags-used-by-specific-commands.md)).  
+ [in] Komut bayrakları (bkz [özel komutlar tarafından kullanılan bit bayrakları](../extensibility/bitflags-used-by-specific-commands.md)).  
   
  pvOptions  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|SCC_OK|Kullanıma başarılı oldu.|  
-|SCC_E_FILENOTCONTROLLED|Seçilen dosya kaynak kodu denetimi altında değil.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
+|SCC_OK|Kullanıma alma başarılı oldu.|  
+|SCC_E_FILENOTCONTROLLED|Seçili dosya kaynak kodu denetimi altında değil.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için izin verilmiyor.|  
 |SCC_E_NONSPECIFICERROR|Belirli olmayan hata oluştu. Dosya kullanıma alındı değil.|  
-|SCC_E_ALREADYCHECKEDOUT|Kullanıcının kullanıma dosya zaten var.|  
-|SCC_E_FILEISLOCKED|Yeni sürümler oluşturulmasını yasaklanması dosyası kilitli.|  
-|SCC_E_FILEOUTEXCLUSIVE|Başka bir kullanıcı bu dosyayı bir özel checkout yapmıştır.|  
+|SCC_E_ALREADYCHECKEDOUT|Kullanıcının kullanıma alınmış dosyası zaten var.|  
+|SCC_E_FILEISLOCKED|Yeni sürümler oluşturulması yasaklanması dosyası kilitli.|  
+|SCC_E_FILEOUTEXCLUSIVE|Başka bir kullanıcı, bu dosya bir özel kullanıma alma yapmıştır.|  
 |SCC_I_OPERATIONCANCELED|İşlem tamamlanmadan önce iptal edildi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
- [Özel Komutlar Tarafından Kullanılan Bit Bayrakları](../extensibility/bitflags-used-by-specific-commands.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+ [Özel komutlar tarafından kullanılan bit bayrakları](../extensibility/bitflags-used-by-specific-commands.md)

@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da kodlanmış UI testinin anatomisi | Microsoft Docs
+title: Kodlanmış UI Testinin Anatomisi
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
 ms.topic: conceptual
 helpviewer_keywords:
@@ -10,32 +11,35 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 20cd48c087af5d36fad3cf2a21797210ca963e12
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d5c1a8bcc8ee43aa36b8a39cd53f4be4f6882f06
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52896594"
 ---
 # <a name="anatomy-of-a-coded-ui-test"></a>Kodlanmış UI testinin anatomisi
 
-Kodlanmış UI test projesinde Kodlanmış bir UI testi oluşturduğunuzda, birkaç dosyaları çözüme eklenir. Bu makalede dosyaları hakkında bilgi sağlar.
+Çeşitli dosyalar, bir kodlanmış UI testi kodlanmış UI testi projesi oluşturduğunuzda, çözüme eklenir. Bu makalede, dosyaları hakkında bilgi sağlar.
 
-## <a name="contents-of-a-coded-ui-test"></a>Kodlanmış UI testi içeriğini
+[!INCLUDE [coded-ui-test-deprecation](includes/coded-ui-test-deprecation.md)]
 
-Kodlanmış bir UI testi, oluşturduğunuzda **kodlanmış UI Test oluşturucusunu** test ve ayrıca test yöntemleri, parametreleri ve altındaki tüm testler için onayların kullanıcı arabiriminin bir harita oluşturur. Ayrıca, her test için bir sınıf dosyası oluşturur.
+## <a name="contents-of-a-coded-ui-test"></a>Kodlanmış UI testi içeriği
 
-|Dosya|İçindekiler|Düzenlenebilir mi?|
-|----------|--------------|---------------|
+Bir kodlanmış UI testi, oluşturduğunuzda **kodlanmış UI Test Oluşturucusu** test ve ayrıca test yöntemleri, parametreleri ve altındaki tüm testler için onaylar kullanıcı arabiriminin bir harita oluşturur. Ayrıca, her test için bir sınıf dosyası oluşturur.
+
+|Dosya|İçindekiler|Düzenlenebilir?|
+|-|-|-|
 |[UIMap.Designer.cs](#UIMapDesignerFile)|[Bildirimler bölümü](#UIMapDesignerFile)<br /><br /> [UIMap sınıfı](#UIMapClass) (kısmi, otomatik olarak oluşturulan)<br /><br /> [Yöntemler](#UIMapMethods)<br /><br /> [Özellikler](#UIMapProperties)|Hayır|
 |[UIMap.cs](#UIMapCS)|[UIMap sınıfı](#UIMapCS) (kısmi)|Evet|
 |[Codeduıtest1.cs](#CodedUITestCS)|[Codeduıtest1 sınıfı](#CodedUITestCS)<br /><br /> [Yöntemler](#CodedUITestMethods)<br /><br /> [Özellikler](#CodedUITestProperties)|Evet|
-|[UIMap.uitest](#UIMapuitest)|UI testi için XML eşlemesi.|Hayır|
+|[UIMap.uitest](#UIMapuitest)|UI testi için XML eşleme.|Hayır|
 
 ###  <a name="UIMapDesignerFile"></a> UIMap.Designer.cs
- Bu dosya tarafından otomatik olarak oluşturulan kodu içerir **kodlanmış UI Test oluşturucusunu** test oluşturulduğunda. Bu dosya Ekle veya Değiştir kodu bir dosya olmaması test değişiklikler, her zaman yeniden oluşturulur.
+ Bu dosya tarafından otomatik olarak oluşturulan kodu içeren **kodlanmış UI Test Oluşturucusu** bir testi oluşturulduğunda. Bu dosya bir dosya ekleyin veya kod değiştirme olmaması bir test değiştirir, her seferinde yeniden oluşturulur.
 
 #### <a name="declarations-section"></a>Bildirimler bölümü
- Bu bölüm aşağıdaki bildirimler için bir Windows kullanıcı arabirimini içerir.
+ Bu bölüm, bir Windows kullanıcı arabirimi aşağıdaki bildirimleri içerir.
 
 ```csharp
 using System;
@@ -53,19 +57,19 @@ using Mouse = Microsoft.VisualStudio.TestTools.UITesting.Mouse;
 using MouseButtons = System.Windows.Forms.MouseButtons;
 ```
 
- <xref:Microsoft.VisualStudio.TestTools.UITesting.WinControls> Ad alanı, bir Windows kullanıcı arabirimini (UI) eklenir. Bir Web sayfası kullanıcı Arabirimi için ad alanı olacaktır <xref:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls>; bir Windows Presentation Foundation Arabirimi için ad alanı olacaktır <xref:Microsoft.VisualStudio.TestTools.UITesting.WpfControls>.
+ <xref:Microsoft.VisualStudio.TestTools.UITesting.WinControls> Bir Windows kullanıcı arabirimi (UI) ad alanı bulunur. Bir web sayfası kullanıcı Arabirimi için bir ad alanı olacaktır <xref:Microsoft.VisualStudio.TestTools.UITesting.HtmlControls>; bir Windows Presentation Foundation kullanıcı arabirimi, ad alanı olacaktır <xref:Microsoft.VisualStudio.TestTools.UITesting.WpfControls>.
 
 ####  <a name="UIMapClass"></a> UIMap sınıfı
- Sonraki bölüm dosyasının <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı.
+ Sonraki bölüm dosyanın <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı.
 
 ```csharp
 [GeneratedCode("Coded UITest Builder", "10.0.21221.0")]
 public partial class UIMap
 ```
 
-Sınıf kodu ile başlayan bir <xref:System.CodeDom.Compiler.GeneratedCodeAttribute> kısmi bir sınıf olarak bildirilmiş sınıfa uygulanan öznitelik. Bu dosyadaki her sınıfa öznitelik de geçerli dikkat edin. Bu sınıf için daha fazla içerebilecek dosya `UIMap.cs`, hangi ele alınmıştır daha sonra.
+Sınıf kodu ile başlayan bir <xref:System.CodeDom.Compiler.GeneratedCodeAttribute> kısmi bir sınıf olarak bildirilen sınıfına uygulanan bir öznitelik. Bu dosyada bulunan her sınıf için öznitelik de geçerli dikkat edin. Bu sınıf için daha fazla içerebilecek dosya *UIMap.cs*, hangi ele alınmıştır daha sonra.
 
-Oluşturulan `UIMap` sınıfı, her yöntem test zaman kaydedildiği belirtilen için kod içerir.
+Oluşturulan `UIMap` sınıfı, her yöntem zaman test kaydedildiği belirtilen için kod içerir.
 
 ```csharp
 public void LaunchCalculator()
@@ -90,8 +94,8 @@ public UIStartWindow UIStartWindow
 public UIMathApplicationWindow UIMathApplicationWindow
 ```
 
-#####  <a name="UIMapMethods"></a> UIMap yöntemleri
- Her yöntem benzer bir yapıya sahip `AddItems()` yöntemi. Bu kodu daha anlaşılır olması eklemek için satır sonları ile birlikte sunulan altında daha ayrıntılı açıklanmıştır.
+#####  <a name="UIMapMethods"></a> UIMap yöntemi
+ Her yöntem benzer bir yapıya sahip `AddItems()` yöntemi. Bu, netlik eklemek için satır sonları ile birlikte sunulan kodu altında daha ayrıntılı açıklanmıştır.
 
 ```csharp
 /// <summary>
@@ -118,13 +122,13 @@ public void AddItems()
 }
 ```
 
-Her bir yöntemin tanımı için Özet açıklama hangi sınıfın bu yöntem için parametre değerleri için kullanılacağını söyler. Bu durumda olan `AddItemsParams` daha sonra dosyasında tanımlanan sınıfı `UIMap.cs` dosya ve ayrıca tarafından döndürülen değer türü olduğu `AddItemsParams` özelliği.
+Bu yöntem için parametre değerleri için kullanmak için hangi sınıfın her bir yöntemin tanımı için Özet açıklama söyler. Bu durumda `AddItemsParams` daha sonra tanımlanmış sınıf *UIMap.cs* dosya ve aynı zamanda tarafından döndürülen değer türü olan `AddItemsParams` özelliği.
 
- Kodu yöntemi en üstte bir `Variable Declarations` yerel değişkenler için kullanıcı arabirimini tanımlar bölge nesneleri yöntemi tarafından kullanılır.
+ Yöntemin en üstündeki kodu bir `Variable Declarations` yerel değişkenler için kullanıcı arabirimini tanımlar bölge nesneleri yöntemi tarafından kullanılır.
 
- Bu yöntemde her ikisi de `UIItemWindow` ve `UIItemEdit` kullanılarak erişilen özellikleri `UICalculatorWindow` daha sonra dosyasında tanımlanan sınıfı `UIMap.cs` dosya.
+ Bu yöntemde, her ikisi de `UIItemWindow` ve `UIItemEdit` kullanılarak erişilen özellikleri `UICalculatorWindow` daha sonra tanımlanmış sınıf *UIMap.cs* dosya.
 
- Sonraki özelliklerini kullanarak metin klavyeden hesaplayıcı uygulamaya gönder satırları olan `AddItemsParams` nesnesi.
+ Sonraki hesaplayıcı uygulamaya klavyeden özelliklerini kullanarak metin gönderen satırla `AddItemsParams` nesne.
 
  `VerifyTotal()` Yöntemi benzer bir yapıya sahiptir ve aşağıdaki onay kodunu içerir:
 
@@ -135,10 +139,10 @@ Assert.AreEqual(
     uIItemEdit.Text);
 ```
 
- Windows hesap makinesi uygulama geliştiricisi denetimi için genel kullanıma açık bir ad sağlamadığından metin kutusu adı bilinmeyen olarak listelenir. <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual%2A?displayProperty=fullName> Yöntem gerçek değer testin başarısız olmasına neden olacağından beklenen değer ile eşit olmadığında başarısız olur. Ayrıca, beklenen değer boşluk bırakarak bir Ondalık ayırıcının içerdiğine dikkat edin. Bu belirli test işlevlerini değiştirmek amacıyla varsa, ondalık ayırıcıdan ve boşluğa izin vermesi gerekir.
+ Windows hesap makinesi uygulama geliştiricisine genel kullanıma açık bir denetimin adı sağlamadığından, metin kutusu adı bilinmiyor olarak listelenir. <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual%2A?displayProperty=fullName> Gerçek değeri testin başarısız olmasına neden olduğu beklenen değer için eşit olmadığı durumlarda yöntemi başarısız olur. Ayrıca, beklenen değerle ardından bir boşluk bir ondalık noktası içerdiğine dikkat edin. Bu belirli test işlevlerini değiştirmek amacıyla varsa, ondalık ve boşluğa izin vermeniz gerekir.
 
 #####  <a name="UIMapProperties"></a> UIMap özellikleri
- Her bir özellik için de sınıfı standart kodudur. Aşağıdaki kod `AddItemsParams` özelliği kullanılıyor `AddItems()` yöntemi.
+ Her bir özellik için kod da sınıfı standarttır. Aşağıdaki kod için `AddItemsParams` özelliği kullanılan `AddItems()` yöntemi.
 
 ```csharp
 public virtual AddItemsParams AddItemsParams
@@ -154,7 +158,7 @@ public virtual AddItemsParams AddItemsParams
 }
 ```
 
- Özellik adlı özel bir yerel değişken kullanıyor bildirimi `mAddItemsParams` döndürmeden önce değeri tutmak için. Özellik adı ve döndürdüğü nesnesi için sınıf adı aynıdır. Sınıf daha sonra tanımlanan `UIMap.cs` dosya.
+ Özellik adında özel bir yerel değişken kullandığını bildirimi `mAddItemsParams` döndürmeden önce değerini tutacak. Özellik adı ve sınıf adını döndürür nesne için aynıdır. Sınıf daha sonra tanımlanır *UIMap.cs* dosya.
 
  Bir özellik tarafından döndürülen her sınıf benzer şekilde yapılandırılmıştır. Aşağıdaki `AddItemsParams` sınıfı:
 
@@ -179,33 +183,33 @@ public class AddItemsParams
 }
 ```
 
-Tüm sınıflarda olduğu gibi `UIMap.cs` dosyası, bu sınıf ile başlayan <xref:System.CodeDom.Compiler.GeneratedCodeAttribute>. Bu küçük sınıf bir `Fields` parametreleri olarak kullanılmak üzere dize tanımlayan bölge <xref:Microsoft.VisualStudio.TestTools.UITesting.Keyboard.SendKeys%2A?displayProperty=fullName> kullanılır yöntemi `UIMap.AddItems()` daha önce bahsedilen yöntemi. Bu parametreleri kullanılan yöntemi çağrılmadan önce bu dize alanlarındaki değerleri değiştirmek üzere kod yazabilirsiniz.
+İçindeki tüm sınıflar ile *UIMap.cs* dosya, bu sınıf ile başlayan <xref:System.CodeDom.Compiler.GeneratedCodeAttribute>. Bu küçük bir sınıf içinde bir `Fields` parametreleri olarak kullanılmak üzere dize tanımlayan bölge <xref:Microsoft.VisualStudio.TestTools.UITesting.Keyboard.SendKeys%2A?displayProperty=fullName> kullanılır yöntemi `UIMap.AddItems()` daha önce bahsedilen yöntemi. Bu parametreleri kullanılan yöntemi çağrılmadan önce bu dize alanları değiştirmek için kod yazabilirsiniz.
 
 ###  <a name="UIMapCS"></a> UIMap.cs
- Varsayılan olarak, bu dosyayı bir kısmi içeren `UIMap` yöntemleri ya da özellikleri olan sınıfı.
+ Varsayılan olarak, bu dosya bir kısmi içerir `UIMap` yöntemleri veya özellikleri olmayan sınıf.
 
 #### <a name="uimap-class"></a>UIMap sınıfı
- İşlevlerini genişletmek için özel kod oluşturabileceğiniz budur <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı. Bu dosyada oluşturduğunuz kod tarafından geçersiz kılınmaz **kodlanmış UI Test oluşturucusunu** test değiştiren her zaman.
+ İşlevlerini genişletmek için özel kod oluşturabileceğiniz budur <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı. Bu dosyada oluşturduğunuz kod tarafından yazılmaz **kodlanmış UI Test Oluşturucusu** test değiştirilir her zaman.
 
- Tüm parçalarını <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> yöntemleri ve diğer herhangi bir kısmını özelliklerinden kullanabilirsiniz <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı.
+ Tüm parçaları <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> yöntemleri ve özellikleri, herhangi bir bölümünü kullanabilir <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap> sınıfı.
 
 ###  <a name="CodedUITestCS"></a> Codeduıtest1.cs
- Bu dosya tarafından oluşturulan **kodlanmış UI Test oluşturucusunu**, ancak bu dosya kodda değiştirebilmek için test değiştirildiğinde, her zaman yeniden oluşturulmaz. Dosyanın adını oluşturduğunuz zaman, test için belirttiğiniz addan üretilir.
+ Bu dosya tarafından oluşturulan **kodlanmış UI Test Oluşturucusu**, ancak bu dosyadaki kodu değiştirebilmeniz test değiştirilir, her seferinde yeniden oluşturulmaz. Dosyanın adı oluşturduğunuzda test için belirttiğiniz adından oluşturulur.
 
 #### <a name="codeduitest1-class"></a>Codeduıtest1 sınıfı
 
-Varsayılan olarak, bu dosya yalnızca bir sınıf için tanım içeriyor.
+Varsayılan olarak, bu dosya, yalnızca bir sınıf tanımı içerir.
 
 ```csharp
 [CodedUITest]
 public class CodedUITest1
 ```
 
-<xref:Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute> Otomatik olarak bir test uzantısı olarak tanımak test çerçevesi sağlar sınıfı uygulanır. Ayrıca bu bir parçalı sınıf olmadığına dikkat edin. Tüm sınıf kodu bu dosyada yer alır.
+<xref:Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute> Test bir uzantısı olarak tanınması test çerçevesi sağlar sınıfını otomatik olarak uygulanır. Ayrıca bu kısmi bir sınıf olmadığına dikkat edin. Tüm sınıf kodu bu dosyada yer alır.
 
 #####  <a name="CodedUITestProperties"></a> Codeduıtest1 özellikleri
 
-Sınıfı dosyanın sonunda bulunan iki varsayılan özelliklerini içerir. Bunları değiştirmeyin.
+Sınıfı dosyanın sonunda bulunan iki varsayılan özellikleri içerir. Bunları değiştirmeyin.
 
 ```csharp
 /// <summary>
@@ -217,15 +221,15 @@ public UIMap UIMap
 ```
 
 #####  <a name="CodedUITestMethods"></a> Codeduıtest1 yöntemleri
- Varsayılan olarak, sınıfı tek yöntemi içerir.
+ Varsayılan olarak, yalnızca bir yöntem sınıfı içerir.
 
 ```csharp
 public void CodedUITestMethod1()
 ```
 
- Bu yöntem her çağırır `UIMap` üzerinde bölümünde açıklanan testinizi kaydettiğiniz zaman belirtilen yöntemi [UIMap sınıfı](#UIMapClass).
+ Bu yöntem her çağırır `UIMap` bölümünde açıklanır testinizi kaydettiğiniz zaman belirttiğiniz yöntemi [UIMap sınıfı](#UIMapClass).
 
- Adlandırılmış bir bölge `Additional test attributes`, kaldırılmamışsa, isteğe bağlı iki yöntem içerir.
+ Adlandırılmış bir bölge `Additional test attributes`, kaldırılmamışsa, iki isteğe bağlı yöntemler içerir.
 
 ```csharp
 // Use TestInitialize to run code before running each test
@@ -255,14 +259,14 @@ public void MyTestCleanup()
 }
 ```
 
- `MyTestInitialize()` Yöntemi sahip <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute> , herhangi bir test yöntem önce bu yöntemi çağırmak için test çerçevesi söyler uygulanır. Benzer şekilde, `MyTestCleanup()` yöntemi sahip <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute> uygulanan, bu yöntem tüm diğer test yöntemleri çağırmak için test çerçevesi söyleyen çağrılıp çağrılmadığını. Bu yöntemlerin kullanımı isteğe bağlıdır. Bu test için `UIMap.LaunchCalculator()` yöntemi konumundan çağrılabilir `MyTestInitialize()` ve `UIMap.CloseCalculator()` yöntemi konumundan çağrılabilir `MyTestCleanup()` yerine gelen `CodedUITest1Method1()`.
+ `MyTestInitialize()` Yöntemi olan <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute> , uygulanan herhangi bir test yöntemleri önce bu yöntemi çağırmak için test çerçevesi söyler. Benzer şekilde, `MyTestCleanup()` yöntemi olan <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute> uygulanmış, bu yöntem tüm diğer test yöntemlerini çağırmak için test çerçevesi söyleyen çağrıldı. Bu yöntemlerin kullanım isteğe bağlıdır. Bu test için `UIMap.LaunchCalculator()` yöntemi konumundan çağrılabilir `MyTestInitialize()` ve `UIMap.CloseCalculator()` yöntemi konumundan çağrılabilir `MyTestCleanup()` yerine gelen `CodedUITest1Method1()`.
 
- Kullanarak daha fazla yöntem bu sınıfa eklerseniz <xref:Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute>, test çerçevesi testin bir parçası her bir yöntemi çağırır.
+ Kullanarak daha fazla yöntem bu sınıfa eklerseniz <xref:Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute>, test çerçevesi, testin bir parçası her bir yöntemi çağırır.
 
 ###  <a name="UIMapuitest"></a> UIMap.uitest
- Temsil kaydı yapısı kodlanmış UI test XML dosyasını ve tüm bölümleri budur. Bunlar, eylemleri ve sınıfları yöntemleri ve bu sınıfların özelliklerine ek olarak içerir. [UIMap.Designer.cs](#UIMapDesignerFile) dosya kodlanmış UI test yapısı oluşturmaya oluşturucusu tarafından oluşturulur ve test çerçevesi bağlantısı sağlayan kodunu içerir.
+ Bir XML dosyası temsil kaydı yapısı, kodlanmış UI testi ve tüm bölümleri budur. Bunlar, eylemleri ve sınıfları yöntemleri ve söz konusu sınıfın özelliklerine ek olarak içerir. [UIMap.Designer.cs](#UIMapDesignerFile) dosyası kodlanmış UI test yapısı oluşturmaya oluşturucusu tarafından oluşturulur ve test çerçevesi bağlantı sağlayan kodunu içerir.
 
- `UIMap.uitest` Dosyası doğrudan düzenlenebilir değil. Ancak, otomatik olarak değiştirir testi değiştirmek için kodlanmış UI Oluşturucusu kullanabilirsiniz `UIMap.uitest` dosya ve [UIMap.Designer.cs](#UIMapDesignerFile) dosya.
+ *UIMap.uitest* dosyası doğrudan düzenlenebilir değil. Ancak, otomatik olarak değiştirir testi değiştirmek için kodlanmış UI Oluşturucusu kullanabilirsiniz *UIMap.uitest* dosya ve [ *UIMap.Designer.cs* ](#UIMapDesignerFile) dosya.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
@@ -276,8 +280,8 @@ public void MyTestCleanup()
 - <xref:Microsoft.VisualStudio.TestTools.UITesting.CodedUITestAttribute>
 - <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute>
 - <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute>
-- [Kodunuzu Test Etmek için UI Otomasyonunu Kullanma](../test/use-ui-automation-to-test-your-code.md)
+- [UI otomasyonunu kullanarak kodunuzu test etme](../test/use-ui-automation-to-test-your-code.md)
 - [Kodlanmış UI testleri oluşturma](../test/use-ui-automation-to-test-your-code.md)
-- [Kodlanmış UI Testleri için En İyi Yöntemler](../test/best-practices-for-coded-ui-tests.md)
-- [Birden Çok UI Eşlemesi Bulunan Büyük Uygulamaları Sınama](../test/testing-a-large-application-with-multiple-ui-maps.md)
-- [Kodlanmış UI Testleri ve Eylem Kayıtları için Desteklenen Yapılandırmalar ve Platformlar](../test/supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)
+- [Kodlanmış UI testleri için en iyi uygulamalar](../test/best-practices-for-coded-ui-tests.md)
+- [Birden çok UI eşlemesi bulunan büyük uygulamaları sınama](../test/testing-a-large-application-with-multiple-ui-maps.md)
+- [Kodlanmış UI testleri ve eylem kayıtları için desteklenen yapılandırmalar ve platformlar](../test/supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)

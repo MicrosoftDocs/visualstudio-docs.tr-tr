@@ -1,5 +1,5 @@
 ---
-title: Gruplar öğesi | Microsoft Docs
+title: Groups öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,25 +14,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4f10983961f5449d75d63555b593350199921fbd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 816716cb269df331b17c0ef01a26dbae4a389c76
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49895437"
 ---
-# <a name="groups-element"></a>Öğe grupları
-Bir VSPackage komut gruplarını tanımlamak girdiler içeriyor.  
+# <a name="groups-element"></a>Groups öğesi
+VSPackage komut gruplarını tanımlar girişleri içerir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Groups>  
   <Group>... </Group>  
   <Group>... </Group>  
 </Groups>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
@@ -41,22 +42,22 @@ Bir VSPackage komut gruplarını tanımlamak girdiler içeriyor.
 |---------------|-----------------|  
 |Koşul|İsteğe bağlı. Bkz: [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Group Öğesi](../extensibility/group-element.md)|Tek bir komut grubunu temsil eder.|  
-|[Groups Öğesi](../extensibility/groups-element.md)|Bir VSPackage komut gruplarını tanımlamak girdiler içeriyor.|  
+|[Group öğesi](../extensibility/group-element.md)|Tek bir komut grubunu temsil eder.|  
+|[Groups öğesi](../extensibility/groups-element.md)|VSPackage komut gruplarını tanımlar girişleri içerir.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Commands Öğesi](../extensibility/commands-element.md)|VSPackage araç çubuğundaki komutları koleksiyonunu temsil eder.|  
+|[Commands öğesi](../extensibility/commands-element.md)|VSPackage araç çubuğundaki komutları koleksiyonunu temsil eder.|  
   
 ## <a name="example"></a>Örnek  
   
-```  
+```xml  
 <Groups>  
   <Group guid="cmdSetGuidWidgetCommands" id="groupIDFileEdit">  
     <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_MAINMENU"/>  
@@ -64,6 +65,6 @@ Bir VSPackage komut gruplarını tanımlamak girdiler içeriyor.
 </Groups>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kullanıcı arabirimi öğeleri VSPackages nasıl eklenir](../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
- [Komutlar, Menüler ve Araç Çubukları](../extensibility/internals/commands-menus-and-toolbars.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [VSPackage kullanıcı arabirimi öğelerini nasıl eklenir](../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
+ [Komutlar, menüler ve araç çubukları](../extensibility/internals/commands-menus-and-toolbars.md)

@@ -15,16 +15,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - uwp
-ms.openlocfilehash: 05b5b87afda20990f122597520b0e2cf7e9b7ac1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 08723f30957ece57af0f666a5464907a686ad604
+ms.sourcegitcommit: bccb05b5b4e435f3c1f7c36ba342e7d4031eb398
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51220742"
 ---
-# <a name="analyze-energy-use-in-uwp-apps"></a>UWP uygulamalarında enerji kullanımını çözümleme
-Visual Studio **enerji tüketimi** profil oluşturucu UWP uygulamaları kendi pille saat bölümünü veya tümünü Çalıştır düşük güç tablet cihazlarda güç ve enerji tüketimi analiz etmenize yardımcı olur. Enerjisini pilden alan bir aygıtta çok fazla enerji kullanan bir uygulama, çok fazla müşteri memnuniyetsizliğine neden olabilir ve sonunda müşteriler uygulamayı kaldırmaya da karar verebilir. Enerji kullanımını en iyi duruma getirme, uygulamanızın benimseme artırmak ve müşteriler tarafından kullanın.  
+# <a name="analyze-energy-use-in-uwp-apps"></a>UWP uygulamalarında enerji kullanımını analiz etme
+Visual Studio **enerji tüketimi** profil oluşturucu, zaman bir kısmını veya tamamını kendi piliyle çalışan düşük güçlü tablet cihazları UWP uygulamaları güç ve enerji tüketimini çözümlemenize yardımcı olur. Enerjisini pilden alan bir aygıtta çok fazla enerji kullanan bir uygulama, çok fazla müşteri memnuniyetsizliğine neden olabilir ve sonunda müşteriler uygulamayı kaldırmaya da karar verebilir. Enerji kullanımını en iyi duruma getirme, uygulamanızın benimsenme oranını artırabilirsiniz ve müşteriler tarafından kullanın.  
   
-##  <a name="BKMK_What_the_Energy_Consumption_tool_is__how_it_works__and_what_it_measures"></a> Ne ölçer enerji tüketimi profil oluşturucu nedir ve nasıl çalışır?  
+## <a name="what-the-energy-consumption-profiler-is-how-it-works-and-what-it-measures"></a>Enerji Tüketimi profil oluşturucusu nedir, nasıl çalışır ve neleri ölçer?  
  Enerji Tüketimi profil oluşturucusu, profil oluşturma oturumu sırasında bir cihazın ekran, CPU ve ağ bağlantıları etkinliklerini yakalar. Sonra, bu etkinlikler için kullanılan güçle ilgili ve profil oluşturma oturumunun toplam enerji miktarı için tahminler oluşturur.  
   
 > [!NOTE]
@@ -32,42 +33,42 @@ Visual Studio **enerji tüketimi** profil oluşturucu UWP uygulamaları kendi pi
 >   
 >  Bu model düşük güç tüketen çeşitli cihazlar için iyi tahminler sağlasa da, profilini oluşturduğunuz cihazın gerçek değerleri muhtemelen farklı olur. Diğer kaynaklara göre daha maliyetli ve dolayısıyla optimizasyon için iyi aday olabilecek ekran, CPU ve ağ etkinliklerini bulmak için değerleri kullanın.  
   
- Enerji tüketimi profil oluşturucu bu tanımları kullanır *güç* ve *enerji*:  
+ Enerji tüketimi Profil Oluşturucusu bu tanımları kullanır *güç* ve *enerji*:  
   
--   *Güç* ölçüleri zorla oranı bir süre içinde yapılır işlerini yapmak için kullanılır. Standart birimidir güç, elektrik Bilim içinde bir *watt*, hangi iş yapılır ne zaman oranı tanımlanan bir volt bir elektrik olası fark aracılığıyla geçerli akışlarının bir ampere. İçinde **güç kullanımı** grafik, birimleri Miliwatt görüntülenen **mW** bir watt bir 214.748,3648 olduğu.  
+- *Güç* ölçüler zorla oranı bir sürede yapılan işi gerçekleştirmek için kullanılır. Elektrik biliminde standart güç birimi olan bir *watt*, hangi iş yapılır zaman oranı tanımlanan bir ampere aracılığıyla voltluk elektriksel potansiyel farkından bir amper, geçerli akış. İçinde **güç kullanımı** grafiğinde birimler Miliwatt **mW** watt'ın bir 214.748,3648 olduğu.  
   
-     Güç bir miktar olduğundan, bir yönü (bir zaman dilimi içinde artabilir veya azalabilir) ve bir de hızı (işin artış veya azalış miktarı) olduğu unutulmamalıdır.  
+   Güç bir miktar olduğundan, bir yönü (bir zaman dilimi içinde artabilir veya azalabilir) ve bir de hızı (işin artış veya azalış miktarı) olduğu unutulmamalıdır.  
   
--   *Enerji* güç, kapasite ya da bir pil gücü kapasitesini olduğu gibi olası veya olarak toplam toplam miktarı amounted bir süre boyunca tüketim güç ölçümleri. Enerji birimi watt-saat olup, bir saat boyunca sürekli olarak uygulanan bir watt'lık güç miktarıdır. İçinde **enerji Özet**, birimleri Miliwatt-Saat görüntülenen **mW-h**.  
+- *Enerji* toplam kapasite veya potansiyel, bir pilin güç kapasitesi olduğu gibi olarak ya da toplam güç miktarı pilin güç bir süre minimuma ölçümleri. Enerji birimi watt-saat olup, bir saat boyunca sürekli olarak uygulanan bir watt'lık güç miktarıdır. İçinde **enerji özeti**, birim watt-saat görüntülenen **mW-h**.  
   
- ![Enerji kapasite güç kullanıldığında, kullanılan toplam enerji](../profiling/media/energyprof_capcitypowerused.png "ENERGYPROF_CapcityPowerUsed")  
+  ![Enerji kapasite, power kullanıldığında, kullanılan toplam enerji](../profiling/media/energyprof_capcitypowerused.png "ENERGYPROF_CapcityPowerUsed")  
   
- Örneğin, bir tabletteki tam şarjlı bir pilde belli miktarda depolanmış enerji vardır. Bir ağ üzerinden iletişim kurma, değerleri hesaplama veya grafikleri görüntüleme gibi görevleri gerçekleştirmek için enerji kullanıldıkça, pilin gücü farklı oranlarda harcanır. Herhangi bir zaman dilimi için, harcanan güç toplamı da enerji ile ölçülür.  
+  Örneğin, bir tabletteki tam şarjlı bir pilde belli miktarda depolanmış enerji vardır. Bir ağ üzerinden iletişim kurma, değerleri hesaplama veya grafikleri görüntüleme gibi görevleri gerçekleştirmek için enerji kullanıldıkça, pilin gücü farklı oranlarda harcanır. Herhangi bir zaman dilimi için, harcanan güç toplamı da enerji ile ölçülür.  
   
-##  <a name="BKMK_Identify_scenarios_with_user_marks"></a> Kullanıcı işaretleriyle senaryolarını belirle  
- Ekleyebileceğiniz *kullanıcı işaretleri* zaman çizelgesi cetveli alanlarda tanımlamaya yardımcı olmak üzere profil verilerinize.  
+## <a name="identify-scenarios-with-user-marks"></a>Kullanıcı işaretleriyle senaryoları tanımlama  
+ Ekleyebileceğiniz *kullanıcı işaretlerini* profil oluşturma verilerinize zaman çizelgesi cetvelindeki alanları tanımlamanıza yardımcı olacak.  
   
- ![Zaman Çizelgesi kullanıcı işaretleri](../profiling/media/profilers_usermarktimeline.png "PROFILERS_UserMarkTimeline")  
+ ![Kullanıcı işaretleri zaman çizelgesinde](../profiling/media/profilers_usermarktimeline.png "PROFILERS_UserMarkTimeline")  
   
  İşaret, zaman çizelgesinde yöntemin yürütüldüğü zamanda turuncu bir üçgen olarak görünür. İşaret üzerinde beklediğinizde, ileti ve saat araç ipucu olarak görüntülenir. İki veya daha fazla kullanıcı işareti birbirine yakınsa, işaretler birleştirilir ve araç ipucu verileri birleştirilir. İşaretleri ayırmak için zaman çizelgesinde yakınlaştırma yapabilirsiniz.  
   
- **İşaretleri C#, Visual Basic, C++ kod ekleme**  
+ **C#, Visual Basic, C++ kodu işaretler ekleme**  
   
- Bir kullanıcı işareti C# eklemek için Visual Basic, C++ kodu oluşturun bir [Windows.Foundation.Diagnostics LoggingChannel](http://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.loggingchannel.aspx) nesnesi. Çağrı Ekle [LoggingChannel.LogMessage](http://msdn.microsoft.com/library/windows/apps/dn264210.aspx) kodunuzda işaretlemek istediğiniz noktalarda yöntemleri. Kullanım [LoggingLevel.Information](http://msdn.microsoft.com/library/windows/apps/windows.foundation.diagnostics.logginglevel.aspx) çağrılarında.  
+ Bir kullanıcı işareti C# için eklemek için Visual Basic, C++ koduna, oluşturun bir [Windows.Foundation.Diagnostics LoggingChannel](xref:Windows.Foundation.Diagnostics.LoggingChannel) nesne. Ardından çağrıları Ekle [LoggingChannel.LogMessage](xref:Windows.Foundation.Diagnostics.LoggingChannel.LogMessage%2A) kodunuzda işaretlemek istediğiniz noktalarda yöntemleri. Kullanım [LoggingLevel.Information](xref:Windows.Foundation.Diagnostics.LoggingLevel) çağrılarda.  
   
  Yöntem yürütüldüğünde, profil oluşturma verilerine bir iletiyle birlikte bir kullanıcı işareti eklenir.  
   
 > [!NOTE]
->  -   Windows.Foundation.Diagnostics LoggingChannel uygulayan [Windows.Foundation.IClosable](/uwp/api/windows.foundation.iclosable) arabirimi (tahmini olarak [System.IDisposable](/dotnet/api/system.idisposable) C# ve VB). İşletim sistemi kaynaklarını sızmasını önlemek için arama [LoggingChannel.Close](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) ([Windows.Foundation.Diagnostics.LoggingChannel.Dispose](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) C# ve VB) işiniz bittiğinde günlüğe kaydetme ile kanalı.  
-> -   Her açık günlük kanalının benzersiz bir adı olması gerekir. Elde kalan bir kanal ile aynı adda yeni bir günlük kanalı oluşturmaya çalışmak özel duruma neden olur.  
+> - Windows.Foundation.Diagnostics LoggingChannel uygulayan [Windows.Foundation.ıclosable](/uwp/api/windows.foundation.iclosable) arabirimi (tahmini olarak [System.IDisposable](/dotnet/api/system.idisposable) C# ve VB). İşletim sistemi kaynaklarını sızdırılmasını önlemek için çağrı [LoggingChannel.Close](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) ([Windows.Foundation.Diagnostics.LoggingChannel.Dispose](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) C# ve VB) işiniz bittiğinde günlük kaydı ile Kanal.  
+>   -   Her açık günlük kanalının benzersiz bir adı olması gerekir. Elde kalan bir kanal ile aynı adda yeni bir günlük kanalı oluşturmaya çalışmak özel duruma neden olur.  
   
- Windows SDK'sı örneği bkz [LoggingSession örnek](http://code.msdn.microsoft.com/windowsapps/LoggingSession-Sample-ccd52336) örnekleri için.  
+ Bkz. Windows SDK'sı örneği [LoggingSession örneğine](https://code.msdn.microsoft.com/windowsapps/LoggingSession-Sample-ccd52336) örnekler.  
   
- **JavaScript kodu işaretleri ekleyin**  
+ **İşaretleri JavaScript kodunu ekleyin**  
   
  Kullanıcı işaretleri eklemek için, kodunuzda işaretlemek istediğiniz noktalarda aşağıdaki kodu ekleyin:  
   
-```  
+```JavaScript  
 if (performance && performance.mark) {  
     performance.mark(markDescription);  
 }  
@@ -75,83 +76,83 @@ if (performance && performance.mark) {
   
  *markDescription* kullanıcı işareti İpucunda görüntülenecek iletiyi içeren bir dizedir.  
   
-##  <a name="BKMK_Configure_your_environment_for_profiling"></a> Profil oluşturma için ortamınızı yapılandırma  
- İyi tahminleri elde etmek için uygulama tarafından pil gücü düşük destekli bir aygıtta enerji kullanımını profil istersiniz. Visual Studio bu çoğu cihazında çalıştırmadığı aygıtına Visual Studio uzak araçlar kullanarak Visual Studio bilgisayarınızı bağlamanız gerekir. Uzaktaki bir cihaza bağlanmak için, hem Visual Studio projesini hem de uzak cihazı yapılandırmanız gerekir. Bkz: [uzaktaki bir makinede çalıştırın UWP uygulamaları](../debugger/run-windows-store-apps-on-a-remote-machine.md) daha fazla bilgi için.  
+## <a name="configure-your-environment-for-profiling"></a>Profil oluşturma için ortamınızı yapılandırma  
+ İyi tahminler elde etmek için pilden güç alan düşük güç tüketimli bir cihazda uygulamanın enerji kullanımının profilini oluşturmak istersiniz. Visual Studio bu cihazların çoğunda çalışmadığından, Visual Studio bilgisayarınızı cihaza Visual Studio uzak araçlarını kullanarak bağlanmak gerekir. Uzaktaki bir cihaza bağlanmak için, hem Visual Studio projesini hem de uzak cihazı yapılandırmanız gerekir. Bkz: [uzak bir makinede çalıştırmak UWP uygulamaları](../debugger/run-windows-store-apps-on-a-remote-machine.md) daha fazla bilgi için.  
   
 > [!TIP]
->  -   UWP simulator veya Visual Studio bilgisayara enerji profil öneririz yok. Gerçek cihazda profil oluşturmak çok daha gerçekçi veriler sağlar.  
-> -   Hedef cihazda profil oluşturmayı, kendi pilleriyle çalışırken gerçekleştirin.  
-> -   Aynı kaynakları (ağ, CPU veya ekran) kullanabilecek diğer uygulamaları kapatın.  
+> - UWP simülatör'ü veya Visual Studio bilgisayarında enerji profili oluşturma önerilmemektedir. Gerçek cihazda profil oluşturmak çok daha gerçekçi veriler sağlar.  
+>   -   Hedef cihazda profil oluşturmayı, kendi pilleriyle çalışırken gerçekleştirin.  
+>   -   Aynı kaynakları (ağ, CPU veya ekran) kullanabilecek diğer uygulamaları kapatın.  
   
-##  <a name="BKMK_Collect_energy_profile_data_for_your_app"></a> Uygulamanız için enerji profil verilerini topla  
+## <a name="collect-energy-profile-data-for-your-app"></a>Uygulamanız için enerji profili verilerini toplama  
   
-1.  Üzerinde **hata ayıklama** menüsünde seçin **tanılama olmadan hata ayıklamayı Başlat**.  
+1.  Üzerinde **hata ayıklama** menüsünde seçin **tanılama hata ayıklama olmadan Başlat**.  
   
-     ![Enerji tüketimi tanılama hub'ı seçin](../profiling/media/energyprof_diagnosticshub.png "ENERGYPROF_DiagnosticsHub")  
+     ![Enerji tüketimi tanılama hub'ı seçin.](../profiling/media/energyprof_diagnosticshub.png "ENERGYPROF_DiagnosticsHub")  
   
-2.  Seçin **enerji tüketimi** ve ardından **Başlat**.  
+2.  Seçin **enerji tüketimi** seçip **Başlat**.  
   
     > [!NOTE]
-    >  Başlattığınızda **enerji tüketimi** profil oluşturucu, görebileceği bir **kullanıcı hesabı denetimi** VsEtwCollector.exe çalıştırmak için izninizi isteyen penceresi. Seçin **Evet**.  
+    >  Başladığınızda **enerji tüketimi** profil, bir **kullanıcı hesabı denetimi** çalıştırmak için izninizi isteyen bir pencere *Vsetwcollector.exe'yi*. Seçin **Evet**.  
   
 3.  Veri toplamak için uygulamanızda alıştırma yapın.  
   
-4.  Profil oluşturmayı durdurmak için geri Visual Studio'ya (Alt + Sekme) geçip seçin **durdurmak koleksiyonu** tanılama hub'ı sayfasında.  
+4.  Profil oluşturmayı durdurmak için Visual Studio'ya dönün (Alt + Sekme) ve seçin **koleksiyonu Durdur** tanılama hub'ı sayfasında.  
   
      ![Veri toplamayı durdurmak](../profiling/media/xamlprof_stopcollection.png "XAMLProf_StopCollection")  
   
      Visual Studio toplanan verileri analiz eder ve sonuçları görüntüler.  
   
-##  <a name="BKMK_Collect_energy_profile_data_for_an_installed_app"></a> Yüklü bir uygulama için enerji profil verilerini topla  
- Enerji tüketimi aracı yalnızca, bir Visual Studio çözümü başlatıldığında veya Microsoft Store yüklü UWP uygulamaları çalıştırılabilir. Bir çözümü Visual Studio'da açıkken, varsayılan hedef olduğu **başlangıç projesi**. Yüklü bir uygulamayı hedeflemek için:  
+## <a name="collect-energy-profile-data-for-an-installed-app"></a>Yüklü bir uygulama için enerji profili verilerini toplama  
+ Enerji tüketimi aracı yalnızca, Visual Studio çözümünden başlatılan veya Microsoft Store yüklü UWP uygulamalarında çalıştırılabilir. Visual Studio'da bir çözümü açtığınızda, varsayılan hedef olduğunu **başlangıç projesi**. Yüklü bir uygulamayı hedeflemek için:  
   
-1.  Seçin **değişiklik hedef** ve ardından **yüklü App**.  
+1. Seçin **hedefi Değiştir** seçip **uygulamasının yüklü**.  
   
-2.  Gelen **yüklü uygulama paketi seçin** listesinde, bir hedef seçin.  
+2. Gelen **yüklü uygulama paketi seçin** listesinde, bir hedef seçin.  
   
-3.  Seçin **enerji tüketimi** tanılama hub'ı sayfasında.  
+3. Seçin **enerji tüketimi** tanılama hub'ı sayfasında.  
   
-4.  Seçin **Başlat** profil oluşturmayı başlatmak için.  
+4. Seçin **Başlat** profili oluşturmaya başlamak için.  
   
- Profil oluşturmayı durdurmak için geri Visual Studio'ya (Alt + Sekme) geçip seçin **durdurmak koleksiyonu** tanılama hub'ı sayfasında.  
+   Profil oluşturmayı durdurmak için Visual Studio'ya dönün (Alt + Sekme) ve seçin **koleksiyonu Durdur** tanılama hub'ı sayfasında.  
   
-##  <a name="BKMK_Analyze_energy_profile_data"></a> Enerji profil verileri analiz etme  
+## <a name="analyze-energy-profile-data"></a>Enerji profili verilerini analiz etme  
  Enerji profili verileri Visual Studio belge penceresinde görüntülenir:  
   
- ![Enerji Profil Oluşturucusu rapor sayfasının](../profiling/media/energyprof_all.png "ENERGYPROF_All")  
+ ![Enerji Profil Oluşturucusu rapor sayfası](../profiling/media/energyprof_all.png "ENERGYPROF_All")  
   
 |||  
 |-|-|  
-|![1. adım](../profiling/media/procguid_1.png "ProcGuid_1")|Rapor dosyası rapor adlı*YYYYAAGG SSDD*.diagsession. Raporu kaydetmeye karar verirseniz adını değiştirebilirsiniz.|  
+|![1. adım](../profiling/media/procguid_1.png "ProcGuid_1")|Rapor dosyası, rapor adlı*YYYYMMDD-HHMM*.diagsession. Raporu kaydetmeye karar verirseniz adını değiştirebilirsiniz.|  
 |![2. adım](../profiling/media/procguid_2.png "ProcGuid_2")|Zaman çizelgesi profil oluşturma oturumunun uzunluğunu, uygulama yaşam döngüsü etkinleştirme olaylarını ve kullanıcı işaretlerini gösterir.|  
 |![3. adım](../profiling/media/procguid_3.png "ProcGuid_3")|Mavi çubukları sürükleyip zaman çizelgesinde bir bölgeyi seçerek, raporu zaman çizelgesinin bir bölümüyle sınırlandırabilirsiniz.|  
-|![Adım 4](../profiling/media/procguid_4.png "ProcGuid_4")|**Güç kullanımı** grafiktir değişikliği aygıt kaynak tarafından profil oluşturma oturumu sırasında neden güç çıktı görüntüler çok çizgi grafiği. Enerji Tüketimi profil oluşturucusu CPU, ağ etkinliği ve ekran görüntüsü tarafından kullanılan gücü izler.|  
-|![5. adım](../profiling/media/procguid_6.png "ProcGuid_6")|**Kaynakları (açık/kapalı)** grafiği enerji maliyeti ağ ayrıntılarını sağlar. **Ağ** çubuk ağ bağlantısı açık olduğu zamanı temsil eder. **Veri aktarımı** alt çubuğu, uygulama alma veya ağ üzerinden veri gönderme olduğunu süre.|  
-|![Adım 6](../profiling/media/procguid_6a.png "ProcGuid_6a")|**Enerji Kullanım Özeti** seçili zaman çizelgesi CPU, ağ etkinliği ve ekran görüntüsü tarafından kullanılan toplam enerji orantılı miktarını gösterir.|  
+|![4. adım](../profiling/media/procguid_4.png "ProcGuid_4")|**Güç kullanımı** grafiğidir bir profil oluşturma oturumu sırasında bir aygıt kaynağının neden olduğu güç çıkışı değişikliğini gösteren çok satırlı bir grafiktir. Enerji Tüketimi profil oluşturucusu CPU, ağ etkinliği ve ekran görüntüsü tarafından kullanılan gücü izler.|  
+|![5. adım](../profiling/media/procguid_6.png "ProcGuid_6")|**Kaynaklar (açık/kapalı)** grafiği ile ilgili enerji maliyetleri ağ ayrıntılarını sağlar. **Ağ** çubuğu ağ bağlantısının açık olduğu zamanı temsil eder. **Veri aktarımı** alt çubuğudur uygulama alma veya ağ üzerinden veri gönderme zamanı.|  
+|![6. adım](../profiling/media/procguid_6a.png "ProcGuid_6a")|**Enerji Kullanım Özeti** CPU, ağ etkinliği ve ekran görüntüsünü seçili zaman çizelgesinde kullanılan toplam enerjinin orantılı miktarını gösterir.|  
   
- **Enerji profil verileri çözümlemek için**  
+ **Enerji profili verilerini analiz etmek için**  
   
- Kaynağın gücünün tepe noktasına vardığı bir alan bulun. Tepe noktası alanını, uygulamanızın işlevselliğiyle ilişkilendirin. Sonra zaman çizelgesindeki denetim çubuklarını kullanarak, zaman çizelgesinde alanı yakınlaştırın. Ağ kullanımı odaklanmış durumdaysa genişletin **ağ** düğümünde **kaynakları (açık/kapalı)** uygulama alma veya aktarma süreye açık olan ağ bağlantısı zaman karşılaştırmak için grafik veri bağlantısı üzerinden. Ağın gereksiz yere açık kaldığı süreyi azaltmak çok etkili bir optimizasyondur.  
+ Kaynağın gücünün tepe noktasına vardığı bir alan bulun. Tepe noktası alanını, uygulamanızın işlevselliğiyle ilişkilendirin. Sonra zaman çizelgesindeki denetim çubuklarını kullanarak, zaman çizelgesinde alanı yakınlaştırın. Ağ kullanımına odaklanıyorsanız genişletin **ağ** düğümünde **kaynaklar (açık/kapalı)** ağ bağlantısı uygulama alma ya da aktarma zaman açık olduğu zamanı karşılaştırmak için grafiği verileri bağlantı üzerinden. Ağın gereksiz yere açık kaldığı süreyi azaltmak çok etkili bir optimizasyondur.  
   
-##  <a name="BKMK_Optimize_energy_use"></a> Enerji kullanımını en iyi duruma getirme  
- Ağ bağlantılarında veri aktarmaktan başka, bağlantı başlatma, sürdürme ve kapatma ile ilgili enerji maliyetleri de vardır. Bazı ağlar veri gönderildikten veya alındıktan sonra, tek bağlantı üzerinden daha fazla veri iletimine olanak sağlamak için bağlantıyı bir süre daha sürdürür. Kullanabileceğiniz **kaynakları (açık/kapalı)** bölmesinde uygulamanızı bağlantı ile etkileşim şeklini inceleyin.  
+## <a name="optimize-energy-use"></a>Enerji kullanımını en iyi duruma getirme  
+ Ağ bağlantılarında veri aktarmaktan başka, bağlantı başlatma, sürdürme ve kapatma ile ilgili enerji maliyetleri de vardır. Bazı ağlar veri gönderildikten veya alındıktan sonra, tek bağlantı üzerinden daha fazla veri iletimine olanak sağlamak için bağlantıyı bir süre daha sürdürür. Kullanabileceğiniz **kaynaklar (açık/kapalı)** uygulamanızı bağlantıyla etkileşim şeklini incelemek için bölmesi.  
   
  ![Kaynakları &#40;üzerinde&#47;kapalı&#41; bölmesinde](../profiling/media/energyprof_resources.png "ENERGYPROF_Resources")  
   
- Varsa **ağ** ve **veri aktarımı** çubukları bağlantı zaman zaman bir dizi küçük veri paketlerini iletmek uzun süre boyunca açık olduğunda, bir iletim gönderilecek veri toplu ağ açık olan süreyi azaltmak ve bu nedenle enerji maliyeti kaydedin.  
+ Varsa **ağ** ve **veri aktarımı** çubukları bağlantının aralıklı olarak birtakım küçük veri paketleri iletmek üzere uzun süreler boyu açık olduğundan, bir iletim gönderilecek verileri toplu iş ağın açık kaldığı süreyi azaltmak ve böylece enerji tasarrufu.  
   
  ![Enerji tüketimi özeti bölmesinde](../profiling/media/energyprof_summary.png "ENERGYPROF_Summary")  
   
  Ekranın enerji giderleri üzerinde daha az denetiminiz vardır. Çoğu ekranlar açık renkleri görüntülemek için koyu renklere göre daha fazla enerji harcar ve dolayısıyla koyu renk arka plan kullanmak giderleri azaltmanın bir yoludur.  
   
-##  <a name="BKMK_Other_resources"></a> Diğer kaynaklar  
+## <a name="other-resources"></a>Diğer kaynaklar  
   
--   **Bağlantı durumunu ve maliyet Yönetim** için bölümler [C# / VB/C++ ve XAML](http://msdn.microsoft.com/en-us/0ee0b706-8432-4d49-9801-306ed90764e1) ve [JavaScript ve HTML](http://msdn.microsoft.com/en-us/372afa6a-1c7c-4657-967d-03a77cd8e933) Windows geliştirme Merkezi'nde sağlayan Windows API'larını açıklar ağ trafiği maliyetini en aza indirmek için uygulamanızı kullanabilirsiniz ağ bağlantı bilgileri.  
+-   **Bağlantı durumu ve maliyet Yönetimi** bölümlerinde [C# / VB/C++ ve XAML](/previous-versions/windows/apps/hh452985\(v\=win.10\)) ve [JavaScript ve HTML](https://msdn.microsoft.com/372afa6a-1c7c-4657-967d-03a77cd8e933) Windows geliştirme Merkezi'nde sağlayan Windows API'leri açıklama Uygulamanızı ağ trafiği maliyetini en aza indirmek için kullanabileceğiniz ağ bağlantı bilgileri.  
   
-     UWP uygulamalar için Visual Studio simulator ağ bilgilerini API'leri veri bağlantısı özelliklerini benzetimini sağlar. Bkz: [simulator çalıştırmak UWP uygulamaları](../debugger/run-windows-store-apps-in-the-simulator.md)  
+     UWP uygulamaları için Visual Studio simulator, ağ bilgi API'lerinin veri bağlantısı özelliklerinin benzetimini yapmak sağlar. Bkz: [simulator'da çalıştırmak UWP uygulamaları](../debugger/run-windows-store-apps-in-the-simulator.md)  
   
--   **JavaScript işlevi zamanlama** ve **CPU kullanımı** araçları verimsiz işlevleri tarafından nedeni CPU yükünü azaltmanıza yardımcı olabilir. Bkz: [CPU kullanımı analiz](../profiling/analyze-cpu-usage-in-a-windows-universal-app.md).
+-   **JavaScript işlev zamanlaması** ve **CPU kullanımı** araçları, yetersiz işlevlerin neden olduğu CPU yükünü azaltmanıza yardımcı olabilir. Bkz: [analiz CPU kullanımı](../profiling/analyze-cpu-usage-in-a-windows-universal-app.md).
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Visual Studio'da profil oluşturma](../profiling/index.md)  
- [Özellik turu profil oluşturma](../profiling/profiling-feature-tour.md)
+## <a name="see-also"></a>Ayrıca bkz.
+ [Visual Studio profil oluşturma](../profiling/index.md)  
+ [Araçlar profil oluşturmaya ilk bakış](../profiling/profiling-feature-tour.md)

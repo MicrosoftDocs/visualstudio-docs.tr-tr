@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: eb256778f2bf92827ff98c5cafbb77bfdcba6c12
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e2dc5e2509e3edda0c9cd89b84a3e109e0ac2d0e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49828391"
 ---
 # <a name="idiasessionfindlines"></a>IDiaSession::findLines
-Satır numaraları belirtilen derlenecek ve kaynak dosya tanımlayıcıları içinde alır.  
+Belirtilen derlenecek ve kaynak dosya tanımlayıcıları içinde satır numaralarını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,16 +36,16 @@ HRESULT findLines (
   
 #### <a name="parameters"></a>Parametreler  
  `compiland`  
- [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) derlenecek temsil eden nesne. Bu arabirim için satır numaralarını arama yapılacak bir bağlamda olarak kullanın.  
+ [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) derlenecek temsil eden nesne. Bu arabirim için satır numaralarını aranacağı bir bağlamda kullanın.  
   
  `file`  
- [in] Bir [Idiasourcefile](../../debugger/debug-interface-access/idiasourcefile.md) içinde satır numaraları için arama yapmak istediğiniz kaynak dosyasını temsil eden nesne.  
+ [in] Bir [Idiasourcefile](../../debugger/debug-interface-access/idiasourcefile.md) için satır numaralarını aranacağı kaynak dosyasını temsil eden nesne.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) satır numaralarını listesini içeren nesne alındı.  
+ [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) satır numaralarının listesini içeren bir nesne alındı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md)   

@@ -1,5 +1,5 @@
 ---
-title: Context işleci (C++) hata ayıklayıcısında | Microsoft Docs
+title: Bağlam işleci (C++) hata ayıklayıcısı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -24,23 +24,24 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: 4640739f72046e1c223229bfc33ba34dcafb520f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e520b40e5a2f4bf6bb7c3a7b6c2ab50930773578
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49862404"
 ---
-# <a name="context-operator-in-the-visual-studio-debugger-c"></a>Context işleci Visual Studio hata ayıklayıcısında (C++)
-C++'ta context işleci bir kesme noktası konumu, değişken adı veya ifade nitelemek için kullanabilirsiniz. Context işleci, aksi takdirde yerel adıyla gizli bir dış kapsamdan bir ad belirtmek için kullanışlıdır.  
+# <a name="context-operator-in-the-visual-studio-debugger-c"></a>Bağlam işleci Visual Studio hata ayıklayıcısında (C++)
+Bir kesme noktası konumu, değişken adı veya ifade nitelemek için C++'da şu içerik işlecini kullanabilirsiniz. Bağlam işleci, aksi takdirde yerel bir ad tarafından gizlenen bir dış kapsam adı belirtmek için kullanışlıdır.  
   
-##  <a name="BKMK_Using_context_operators_to_specify_a_symbol"></a> Sözdizimi  
+##  <a name="BKMK_Using_context_operators_to_specify_a_symbol"></a> Söz dizimi  
  Bağlam belirtmenin iki yolu vardır:  
   
-1.  {,, [*Modülü*]} *ifade*  
+1.  {, [*Modülü*]} *ifadesi*  
   
      Küme ayraçları iki virgül ve modül içermelidir (yürütülebilir veya DLL) adını veya tam yolu.  
   
-     Örneğin, bir kesme noktasında ayarlamak için `SomeFunction` EXAMPLE.dll işlevinin:  
+     Örneğin, bir kesme noktasında ayarlanacak `SomeFunction` EXAMPLE.dll işlevi:  
   
     ```C++  
     {,,EXAMPLE.dll}SomeFunction  
@@ -52,24 +53,24 @@ C++'ta context işleci bir kesme noktası konumu, değişken adı veya ifade nit
     EXAMPLE.dll!SomeFunction  
     ```  
   
--   *Modül* bir modül adıdır. Aynı ada sahip modülleri arasında belirsizliğini ortadan kaldırmak için tam bir yol kullanabilirsiniz.  
+- *Modül* bir modül adı. Aynı ada sahip modüller arasında ayırt etmek için bir tam yol kullanabilirsiniz.  
   
-     Varsa *Modülü* yolunu içeren bir virgülle, katıştırılmış bir boşluk veya bir küme parantezi, bağlam ayrıştırıcı dize düzgün tanıyabilmesi, yolu tırnak işaretleri kullanmanız gerekir. Çift tırnak işaretleri kullanmalısınız tek tırnak işareti bir Windows dosya adının bir parçası olarak kabul edilir. Örneğin,  
+   Varsa *Modülü* yolu, virgül, katıştırılmış bir boşluk veya bir küme ayracı içerir, bağlam ayrıştırıcının dizesi düzgün tanıyabilmesi, yolu tırnak kullanmanız gerekir. Tek tırnak işaretleri çift tırnak işareti kullanmalısınız bir Windows dosya adının parçası olarak kabul edilir. Örneğin,  
   
-    ```C++  
-    {,,"a long, long, library name.dll"} g_Var  
-    ```  
+  ```C++  
+  {,,"a long, long, library name.dll"} g_Var  
+  ```  
   
--   *ifade* işlev adı, değişken adı veya işaretçi adresi gibi geçerli bir hedef çözümler tüm geçerli C++ ifadesidir *Modülü*.  
+- *ifade* işlev adı, değişken adı veya işaretçi adresi gibi geçerli bir hedef çözümler herhangi geçerli bir C++ ifadesi *Modülü*.  
   
- İfade değerlendirici bir ifadede bir simge karşılaştığında simgenin aşağıdaki sırayla arar:  
+  İfade değerlendirici bir ifadede bir sembol karşılaştığında sembolünün şu sırayla arar:  
   
-1.  Geçerli bir blok, ayraçlar içinde ve dışa kapsayan blok ile devam etmeden deyimleri dizi başlayarak dışa doğru sözcük kapsamı. Geçerli blok yönerge işaretçisi adresi geçerli konumunu içeren kodudur.  
+1.  Sözcük kapsamı geçerli blok küme ayraçları içine alındığına ve dışa doğru kapsayan bir blok ile devam bir deyimler serisini başlayarak dışa doğru. Geçerli blok yönerge işaretçisi adresi geçerli konumu içeren kodudur.  
   
 2.  İşlev kapsamı. Geçerli işlev.  
   
-3.  Sınıf kapsamı, geçerli konumu C++ üye işlevi içinde ise. Sınıf kapsamı tüm temel sınıflar içerir. İfade değerlendirici normal hakimiyeti kurallarını kullanır.  
+3.  C++ üye işlevinin içerisinde geçerli konumu ise sınıf kapsamı. Sınıf kapsamı, tüm temel sınıflar içerir. İfade değerlendirici, normal baskınlık kurallarını kullanır.  
   
-4.  Geçerli modülündeki genel simgeler.  
+4.  Genel semboller geçerli modül içinde.  
   
-5.  Genel simgeler geçerli programı.
+5.  Ortak semboller geçerli programı.

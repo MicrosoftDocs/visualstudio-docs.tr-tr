@@ -1,5 +1,5 @@
 ---
-title: Grafik Çerçeve analizi | Microsoft Docs
+title: Grafik çerçevesi analizi | Microsoft Docs
 ms.custom: ''
 ms.date: 02/09/2017
 ms.technology: vs-ide-debug
@@ -11,183 +11,184 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9fe34c421d06fea1e4eefc064d344727382ca1d8
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e0ae541830adab222b07d1f16ce99e4957e380e5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49838107"
 ---
 # <a name="graphics-frame-analysis"></a>Grafik Çerçeve Çözümlemesi
-Grafik Çerçeve Çözümlemesi Visual Studio grafik Çözümleyicisi çözümlemek ve Direct3D oyun veya uygulama işleme performansını iyileştirmek için kullanın.  
+Grafik çerçevesi analizi, çözümlemek ve Direct3D oyunlarda veya uygulamalarda işleme performansını iyileştirmek için Visual Studio grafik Çözümleyicisi'nde kullanın.  
 
 ## <a name="frame-analysis"></a>Çerçeve analizi  
- Çerçeve analizi tanılama grafik günlük dosyasında yakalanır, ancak işleme performans yerine özetlemek için kullandığı aynı bilgileri kullanır. Performans bilgileri, yakalama sırasında günlüğe kaydedilmez; Çerçeve çalınma gibi yerine performans bilgilerini daha sonra çerçeve çözümlemesi sırasında zamanlama olayları ve toplama istatistikleri tarafından oluşturulur. Bu yaklaşım, yakalama sırasında performans bilgilerini kaydetme birkaç avantajı vardır:  
+ Çerçeve analizi tanılama amacıyla bir grafik günlük dosyasında yakalanır ama bunun yerine işleme performansını özetlemek için kullandığı aynı olan bilgileri kullanır. Performans bilgilerini yakalama sırasında günlüğe kayıtlı değil; Çerçeve kayıttan gibi bunun yerine performans bilgileri daha sonra çerçeve analizi sırasında zamanlama olayları ve toplama istatistiklerini tarafından oluşturulur. Bu yaklaşım, yakalama sırasında performans bilgilerini kaydetme üzerinde çeşitli avantajları vardır:  
   
--   Çerçeve analizi Özet performans istatistiksel olarak ses olduğundan emin olmak için aynı çerçevenin birden çok her oynatma sonuçlarından ortalama.  
+- Çerçeve analizi sonuçları Özet performans istatistiksel olarak ses olduğundan emin olmak için aynı çerçevenin birden çok her oynatma ortalama.  
   
--   Çerçeve analizi, donanım yapılandırmaları ve bilgilerin olduğu yakalandığında farklı aygıtlar için performans bilgilerini oluşturabilir.  
+- Çerçeve analizi, donanım yapılandırmaları ve bilgilerin yakalandığı farklı cihazlar için performans bilgilerini oluşturabilir.  
   
--   Çerçeve analizi, daha önce yakalanan bilgilerinden yeni performans özetleri üretebilir — Örneğin, ne zaman GPU sürücüleri en iyi duruma getirilir veya ek hata ayıklama özellikleri kullanıma sunar.  
+- Çerçeve analizi daha önce yakalanan bilgilerinden yeni performans özetlerini oluşturun — Örneğin, ne zaman GPU sürücüleri iyileştirilmiştir veya ek hata ayıklama özellikleri kullanıma sunar.  
   
- Bu avantajlara ek olarak, çerçeve analizi de bu değişiklikleri bir uygulamayı işleme performansını nasıl etkileyebileceği hakkında bilgi sunabilir böylece çerçeve kayıttan yürütme sırasında işlenme için değişiklik yapabilirsiniz. Bunları tüm uygulama ve ardından yakalayın ve tüm sonuçları karşılaştırma yapmak zorunda kalmadan olası en iyi duruma getirme stratejileri arasında karar vermek için bu bilgileri kullanın.  
+  Bu avantajlara ek olarak, çerçeve analizi aynı zamanda bir uygulamanın işleme performansını bu değişiklikleri nasıl etkileyebileceğini hakkında bilgi sunabilir, çerçeve kayıttan yürütme sırasında işlenme için değişiklik yapabilirsiniz. Tümünü uygulayın ve ardından yakalamak ve tüm sonuçlarını karşılaştırın gerek kalmadan olası en iyi duruma getirme stratejileri arasında karar vermek için bu bilgileri kullanabilirsiniz.  
   
- Çerçeve analizi öncelikle işleme daha hızlı performans elde yardımcı olmak için tasarlanmıştır ancak bunu eşit olarak belirli performans hedefi için daha iyi görsel kalite elde etmek veya GPU güç tüketimini azaltır yardımcı olabilir.  
+  Çerçeve analizi öncelikle işleme daha hızlı performans elde etmenize yardımcı olmak amacıyla hazırlanmıştır olsa da, eşit olarak belirli performans hedefi için daha iyi görsel kaliteyi elde etmek veya GPU güç tüketimini azaltmak yardımcı olur.  
   
- Çerçeve analizi uygulamanız için ne yapabileceğinizi bir örnek görmek için izleyebilir [Visual Studio Grafik Çerçeve Çözümlemesi](http://channel9.msdn.com/Shows/C9-GoingNative/GoingNative-25-Offline-Analysis-Graphics-Tool) Channel 9 video.  
+  Çerçeve analizi uygulamanız için neler yapabileceğinizi bir örnek görmek için izleyebilirsiniz [Visual Studio grafik çerçevesi analizi](https://channel9.msdn.com/Shows/C9-GoingNative/GoingNative-25-Offline-Analysis-Graphics-Tool) Channel 9 video.  
   
 ## <a name="using-frame-analysis"></a>Çerçeve analizi kullanma  
- Çerçeve analizi kullanmadan önce çalışırken, bir grafik Çözümleyicisi araçlardan birini kullanırken yaptığınız gibi uygulamanızdan grafik bilgilerini yakalama sahip. Grafik günlük belgesi (.vsglog) penceresinde seçin **çerçeve analizi** sekmesi.  
+ Çerçeve analizi kullanabilmeniz için önce çalıştığı bir grafik Çözümleyicisi araçlardan birini kullanırken yaptığınız gibi uygulamanızdan grafik bilgilerini yakalama gerekir. Ardından, grafik günlüğü (.vsglog) belge penceresinde **çerçeve analizi** sekmesi.  
   
- ![Çerçeve Çözümlemesi sekmesini](media/pix_frame_analysis_select_tab.png "pix_frame_analysis_select_tab")  
+ ![Çerçeve analizi sekmesini](media/pix_frame_analysis_select_tab.png "pix_frame_analysis_select_tab")  
   
- Analiz tamamlandığında, sonuçları görüntülenir. Zaman Çizelgesi ve Özet Tablosu üst kısmında, çerçeve çözümlemesi sekmesini görüntüler. Alt bölümünde ayrıntıları tabloları görüntüler. Kayıttan yürütme sırasında oluşturulan hatalar veya uyarılar, bunlar zaman çizelgesi özetlenen; Buradan, hataları ve Uyarıları hakkında daha fazla bilgi için bağlantılar izleyebilirsiniz.  
+ Analiz tamamlandıktan sonra sonuçlar görüntülenir. Çerçeve analizi sekmesine üst kısmında Özet Tablo ve zaman çizelgesi görüntüler. Pencerenin en altında ayrıntıları tabloları görüntüler. Kayıttan yürütme sırasında oluşturulan hatalar veya uyarılar, bunlar zaman çizelgesi özetlenmiştir; Buradan, hataları ve Uyarıları hakkında daha fazla bilgi için bağlantıları takip edebilirsiniz.  
   
-### <a name="interpreting-results"></a>Sonuçları yorumlama  
- Her değişken sonuçlarını yorumlama tarafından uygulamanız hakkında yararlı bilgiler performans ve davranış işleme çıkarımını. İşleme türevleri hakkında daha fazla bilgi için bkz: [çeşitleri](#Variants) bu makalenin ilerisinde yer.  
+### <a name="interpreting-results"></a>Sonuçları yorumlayarak destek sağlama  
+ Her değişken sonuçları yorumlayarak destek sağlama uygulamanız hakkında yararlı bilgiler performansı ve davranışıyla işleme çıkarabilir. İşleme türevleri hakkında daha fazla bilgi için bkz. [çeşitleri](#Variants) bu makalenin ilerleyen bölümlerinde.  
   
- Bazı sonuçları doğrudan değişken oluşturma performansını nasıl etkilediğini gösterir:  
+ Bazı sonuçları doğrudan değişken işleme performansını nasıl etkilediğini gösterir:  
   
--   Çift doğrusal doku filtreleme değişken performans artışı gösterdi varsa, uygulamanızda filtreleme çift doğrusal doku kullanarak benzer performans artışları gösterir.  
+- Doku çift doğrusal filtreleme değişken performans kazancı elde edildi ise, uygulamanızda filtreleme çeşitleri doku'ı kullanarak benzer performans artışı gösterilir.  
   
--   1 x 1 görünüm penceresinin değişken performans artışı ise, uygulamanızda işleme hedefleri boyutunu azaltma işleme performansını artırır.  
+- 1 x 1 Görünüm penceresi değişken performans kazancı elde edildi ise, ardından uygulamanıza işleme hedefleri boyutunu küçültmeyi işleme performansını geliştirir.  
   
--   Performans artışı BC doku sıkıştırma değişken gösterdi varsa, sonra uygulamanızda BC doku sıkıştırma kullanılarak benzer performans artışı gösterir.  
+- BC doku sıkıştırma çeşidi performans kazancı elde edildi ise, sonra da uygulamanızda BC doku sıkıştırma kullanarak benzer performans artışı gösterilir.  
   
--   2xMSAA değişken neredeyse aynı performans 0xMSAA değişken varsa, performans maliyeti olmadan işleme kalitesini artırmak için uygulamanızda 2xMSAA etkinleştirebilirsiniz.  
+- 2xMSAA değişken neredeyse aynı performans 0xMSAA değişken varsa, uygulamanızda performans maliyeti olmadan işleme kalitesini artırmak için 2xMSAA etkinleştirebilirsiniz.  
   
- Diğer sonuçları, uygulamanızın performansını daha derin, daha hafif etkilerini önerebilir:  
+  Diğer sonuçlar, uygulamanızın performansına daha derin, daha hafif etkileri önerebilir:  
   
--   1 x 1 görünüm penceresinin değişken çok yüksek performans artışları gösteriyorsa, uygulamanızı büyük olasılıkla bulunandan daha fazla fillrate tüketilmesine neden olabilir. Bu değişken performans artışı gösteriyorsa, uygulama büyük olasılıkla çok fazla köşeleri işliyor.  
+- 1 x 1 Görünüm penceresi değişken çok yüksek performans artışları gösteriyorsa, uygulamanızın büyük olasılıkla bulunandan daha fazla fillrate tüketiyor. Bu değişken bir performans kazancı elde edildi gösteriyorsa, uygulamanın büyük olasılıkla çok fazla köşe işliyor.  
   
--   16bpp işleme hedef biçimi değişken önemli performans artışları gösteriyorsa, uygulamanızı büyük olasılıkla çok fazla bellek bant genişliği tüketilmesine neden olabilir.  
+- 16bpp işleme hedef biçim çeşidi önemli ölçüde performans kazanımı gösteriyorsa, uygulamanızın büyük olasılıkla çok fazla bellek bant genişliği tüketiyor.  
   
--   Half/Quarter doku boyutları değişken önemli performans artışları gösteriyorsa, doku büyük olasılıkla çok fazla bellek kaplar, çok fazla bant genişliği veya doku önbellek kullanamayabilir. Bu değişken performans hiçbir değişiklik gösteriyorsa, büyük olasılıkla bir performans maliyeti ödeme olmadan daha büyük ve daha ayrıntılı dokuları kullanabilirsiniz.  
+- Önemli ölçüde performans kazanımı Half/Quarter doku boyutları çeşidi gösterir, dokular, büyük olasılıkla çok fazla bellek kaplayabilir, çok fazla bant genişliği tüketebilir veya doku önbelleğinin kullanamayabilir. Bu değişken performans içinde değişiklik gösteriyorsa, büyük olasılıkla bir performans maliyeti ödeme yapmadan daha büyük, daha ayrıntılı dokular kullanabilirsiniz.  
   
- Donanım sayaçları kullanılabilir olduğunda, uygulamanızın işleme performans neden sorunu hakkında çok ayrıntılı bilgi toplamak için kullanabilirsiniz. Tüm özellik düzeyinde 9.2 ve üzeri cihazlar derinliği kapanması sorgularını destekler (**occluded piksel** sayaç) ve zaman damgası. Diğer donanım sayaçları GPU üreticisine ve donanım sayaçları uygulanan kendi sürücü kullanıma bağlı olarak mevcut olabilir. Özet tabloda gösterilen sonuçları kesin nedenini onaylamak için bu sayaçları kullanabilirsiniz — örneğin, belirleyebilirsiniz olup overdraw derinliği test tarafından occluded piksel yüzdesi inceleyerek bir faktördür.  
+  Donanım sayaçları kullanılabilir olduğunda, uygulamanızın işleme performansını neden yaşıyorsa hakkında çok ayrıntılı bilgi toplamak için kullanabilirsiniz. Tüm özellik düzeyinde 9.2 ve üzeri cihazlar derinliği kapatma sorgularını destekler (**occluded piksel** sayacı) ve zaman damgası. Diğer donanım sayaçları GPU üreticisi ve donanım sayaçları uygulanan bunları sürücüsünü kullanıma bağlı olarak mevcut olabilir. Bu sayaçlar özet tabloda gösterilen sonuçları kesin nedenini onaylamak için kullanabileceğiniz — Örneğin, belirleyebilirsiniz olup overdraw tarafından derinlik testinde occluded piksel yüzdesi inceleyerek bir faktördür.  
   
 ### <a name="timeline-and-summary-table"></a>Zaman Çizelgesi ve Özet Tablosu  
- Varsayılan olarak, zaman çizelgenizi ve Özet tablosu görüntülenir ve diğer bölümleri daraltılır.  
+ Varsayılan olarak, Özet Tablo ve zaman çizelgesi görüntülenir ve diğer bölümleri daraltılır.  
   
 #### <a name="timeline"></a>Zaman Çizelgesi  
- Zaman Çizelgesi çizim çağrısı zamanlamaları birbirine göre özetini gösterir. Daha büyük çubukları uzun çizim kez karşılık geldiğinden en pahalı çizim çağrıları çerçevede hızla bulmak için kullanabilirsiniz. Yakalanan çerçeve çizim çağrıları çok fazla sayıda içeriyorsa, tek uzunluğunu çubuk bu toplamıdır birden çok çizim çağrıları birleştirilir çağrıları çizin.  
+ Çizim çağrısı zamanlamalara göre başka bir genel bakış zaman çizelgesi gösterir. Daha büyük çubukları için daha uzun çizim süreleri karşılık geldiğinden en pahalı çekme çağrılarını çerçevede hızlıca bulmak için kullanabilirsiniz. Yakalanan çerçeve, çok sayıda çizim çağrıları içerdiğinde, bu toplam uzunluğu çubuğu biridir birden çok çizim çağrıları birleştirilir çağrıları çizin.  
   
- ![Zaman Çizelgesi çizim gösterir&#45;maliyetleri çağırın. ] (media/pix_frame_analysis_timeline.png "pix_frame_analysis_timeline")  
+ ![Çizim zaman çizelgesini gösterir&#45;maliyetleri çağırın. ](media/pix_frame_analysis_timeline.png "pix_frame_analysis_timeline")  
   
- Çubuğu karşılık gelen hangi çizim çağırma olayı görmeye çubuğundaki işaretçiyi tutun. Çubuğu belirlenmesi olayı eşitlemek olay listesi neden olur.  
+ İşaretçi çubuk karşılık gelen çizim çağrısı olayı görmek için çubuğundaki yaslayabilirsiniz. Çubuğu seçerek, o olaya eşitlemek olay listesi neden olur.  
   
 #### <a name="table"></a>Tablo  
- Zaman Çizelgesi altındaki sayılar tablosu her işleme değişken her çizim çağrı uygulamanızın varsayılan işleme göre performanslarını gösterir. Her sütunun farklı işleme değişken görüntüler ve her satırın en sol sütunda tanımlanan bir farklı çizim çağrısını temsil eder; Buradan grafik olay Listesi penceresinde olay için bir bağlantı izleyebilirsiniz.  
+ Zaman Çizelgesi altındaki sayılar tablosunun her işleme değişken için her bir çizim çağrısı, uygulamanızın varsayılan işleme göre performanslarını gösterir. Farklı işleme değişken her sütunda görüntülenir ve her satırın en soldaki sütunda tanımlanan bir farklı çizim çağrısını temsil eder; Buradan, bir bağlantı grafik olay Listesi penceresinde olay takip edebilirsiniz.  
   
- ![Özet tablosunu farklı varients gösterir. ] (media/pix_frame_analysis_summary.png "pix_frame_analysis_summary")  
+ ![Özet tablosunu farklı çeşitleri gösterir. ](media/pix_frame_analysis_summary.png "pix_frame_analysis_summary")  
   
- Özet Tablosu ikinci en sol sütunda, uygulamanızın temel işleme süresini görüntüler — diğer bir deyişle, bu uygulamanızın varsayılan işleme için çizim aramayı tamamlamak geçen süre. Böylece performansı geliştirildi olup olmadığını görmek daha kolay kalan sütunlar her işleme değişken göreli performans taban çizgisi yüzdesi olarak gösterir. % 100'den büyük yüzdeleri taban uzun sürdü — diğer bir deyişle, performans kapandı — ve daha az sürdü yüzde 100'den küçük yüzdeleri — performans oluştu.  
+ Uygulamanızın temel işleme süresi Özet Tablonun ikinci en soldaki sütuna görüntüler — diğer bir deyişle, bu çizim çağrısı tamamlamak, uygulamanızın varsayılan işleme için geçen süre. Böylece performans geliştirildi olup olmadığını görmek daha kolay olur ve kalan sütunların her işleme değişken göreli performans taban çizgisi yüzdesi olarak gösterir. % 100'den daha büyük yüzde temel uzun sürdü — diğer bir deyişle, performansı düştü — ve yüzde 100'e daha az zaman aldı. daha küçük yüzdeleri — performans oluştu.  
   
- Birden çok çalıştırılan gerçekte ortalama ortalamalar değerlerdir taban mutlak zamanlamasını ve işleme çeşitleri göreli zamanlamasını — varsayılan olarak 5. Bu ortalama zamanlama verileri güvenilir ve tutarlı olmasını sağlar. En düşük incelemek için tablodaki her hücre işaretçinin tuttuğunuzda, en fazla, ortalama ve sonuçlar için arama ve işleme değişken çizerken gözlenen Medyan zamanlama değerleri oluşturulan. Taban çizgisi zamanlama de görüntülenir.  
+ Birden fazla çalıştırma, aslında ortalama ortalamalar değerler hem temel mutlak zamanlamasını hem de işleme çeşitler göreli zamanlamasını — varsayılan olarak 5. Bu ortalama zamanlama verileri güvenilir ve tutarlı olduğundan emin olun yardımcı olur. En düşük incelemek için tablodaki her hücre işaretçiyi tuttuğunuzda, maksimum, ortalama ve sonuçlar için arama ve işleme değişken çizdiğinizde, gözlemlenmedi ORTANCA zamanlama değerlerini oluşturulan. Temel zamanlama de görüntülenir.  
   
-#### <a name="hot-draw-calls"></a>"Etkin" çağrıları çizme  
- Büyük bir kısmının kullanabilir aramaları çizmek için dikkat getirmek için genel işleme süresini ya da kaçınılması, nedenlerden dolayı bu içeren satırı olağandışı yavaş olabilir "etkin" Çizim çağrıdır gölgeli kırmızı kendi temel zamanlama birden fazla olduğunda Standart sapma çerçevesindeki tüm çizim çağrılarının ortalama temel zamanlama daha uzun.  
+#### <a name="hot-draw-calls"></a>"Sıcak" Çizim çağrıları  
+ Büyük bir kısmı tüketen çağrıları çizmek için dikkat getirmek için genel işleme süresini veya, önlenmiş, nedenlerden dolayı bu içeren satırı çok yavaş olabilir "Sık erişimli" bir çizim çağrıları olduğunda gölgeli kırmızı kendi temel zamanlama birden fazla Standart sapma ortalama temel zamanlama çerçevesindeki tüm çizim çağrıları daha uzun.  
   
- ![Bu DrawIndexed çağrı sıcak ve soğuk varients sahiptir. ] (media/pix_frame_analysis_hot_calls.png "pix_frame_analysis_hot_calls")  
+ ![Bu DrawIndexed çağrı sıcak ve soğuk çeşitlemesi vardır. ](media/pix_frame_analysis_hot_calls.png "pix_frame_analysis_hot_calls")  
   
-#### <a name="statistical-significance"></a>İstatistiksel önem  
- En yakın olan Çeşitlemeler işleme için dikkat getirmek için çerçeve analizi her işleme değişken istatistiksel önemini belirler ve önemli olanları kalın olarak görüntüler. Yeşil olarak performansı olanları ve kırmızı olarak performansı düşürebilir iletileri görüntüler. Normal türü olarak istatistiksel olarak önemli olmayan sonuçlar görüntüler.  
+#### <a name="statistical-significance"></a>İstatistiksel önemi  
+ Yüksek uygunluğa sahip çeşitlemeleri işleme için dikkat getirmek için çerçeve analizi istatistiksel önemi, her işleme değişken belirler ve önemli olanları kalın olarak görüntüler. Yeşil olarak performansı olanları ve kırmızı olarak performansı düşürebilir olanları gösterir. Bu, normal türü olarak istatistiksel olmayan sonuçlar görüntüler.  
   
- ![Draw çağrısı değişkeni istatistiksel relevence](media/pix_frame_analysis_summary_stats.png "pix_frame_analysis_summary_stats")  
+ ![Çizim çağrısı değişkeni istatistiksel relevence](media/pix_frame_analysis_summary_stats.png "pix_frame_analysis_summary_stats")  
   
  Çerçeve analizi istatistiksel uygunluğu belirlemek için kullandığı [öğrencinin t-test](http://www.wikipedia.org/wiki/Student%27s_t-test).  
   
 ### <a name="details-table"></a>Ayrıntıları tablosu  
- Aşağıdaki tabloda varsayılan olarak daraltılmış Ayrıntıları tablosu özetidir. Ayrıntılar tablo içeriğini kayıttan yürütme makinesini donanım platformuna bağlıdır. Desteklenen donanım platformlar hakkında daha fazla bilgi için bkz: [donanım desteği](#HardwareSupport).  
+ Tablo varsayılan olarak daraltılmış olan ayrıntı tablosunda özetidir. Ayrıntı tablosunda içeriğini kayıttan yürütme makinesi donanım platformunda bağlıdır. Desteklenen donanım platformları hakkında daha fazla bilgi için bkz. [donanım desteği](#HardwareSupport).  
   
 #### <a name="platforms-that-do-not-support-hardware-counters"></a>Donanım sayaçları desteklemeyen platformları  
- Çoğu platformda donanım GPU sayaçları tam olarak desteklemeyen — bunlar şu anda Intel, AMD ve NVIDIA tarafından sunulan tüm GPU içerir. Toplamak için donanım sayaç olduğunda, yalnızca bir Ayrıntıları tablosu görüntülenir ve tüm çeşitleri ortalama mutlak zamanlamasını içerir.  
+ Çoğu platformda donanım GPU sayaçları tam olarak desteklemeyen — bunlar, şu anda Intel, AMD ve NVIDIA tarafından sunulan tüm GPU içerir. Toplamak için donanım sayaç olduğunda, yalnızca bir Ayrıntıları tablosu görüntülenir ve tüm çeşitleri ortalama mutlak zamanlamasını içerir.  
   
- ![Ayrıntıları tablosu ve bazı kayıttan yürütme varients. ] (media/pix_frame_analysis_details.png "pix_frame_analysis_details")  
+ ![Ayrıntı tablosunda ve bazı kayıttan yürütme çeşitleri. ](media/pix_frame_analysis_details.png "pix_frame_analysis_details")  
   
 #### <a name="platforms-that-support-hardware-counters"></a>Donanım sayaçları destekleyen platformlar  
- Donanım GPU sayaçları destekleyen platformlar için — örneğin, NVIDIA T40 SOC ve tüm Qualcomm SOCs — birkaç ayrıntıları tabloları görüntülenir, her değişken için bir tane. Her kullanılabilir donanım sayaç her işleme değişken için toplanır ve kendi ayrıntıları tabloda görüntülenir.  
+ Donanım GPU sayaçları destekleyen platformlar için — örneğin, NVIDIA T40 SOC ve tüm Qualcomm SOC — çeşitli ayrıntıları tabloları görüntülenir, her değişken için bir tane. Her bir kullanılabilir donanım sayaç her işleme değişken için toplanır ve kendi ayrıntıları tabloda görüntülenir.  
   
- ![Donanım sayaçları desteklendiği durumlarda görüntülenir. ] (media/pix_frame.png "pix_frame")  
+ ![Donanım sayaçları desteklendiği durumlarda görüntülenir. ](media/pix_frame.png "pix_frame")  
   
- Donanım sayaç bilgileri çok hassas bir şekilde performans sorunları nedenini belirlemenize yardımcı olabilir her çizim çağrısı için belirli donanım platformu davranışı çok ayrıntılı bir görünümünü sağlar.  
+ Donanım sayaç bilgileri, performans sorunlarına neden çok kesin olarak belirlemenize yardımcı olabilecek her çizim çağrısı için belirli donanım platformlar davranışı çok ayrıntılı bir görünümünü sağlar.  
   
 > [!NOTE]
->  Farklı donanım platformları farklı sayaçları destekler; Standart yoktur. Sayaçları ve neyi temsil ettiği yalnızca her GPU üreticisi tarafından belirlenir.  
+>  Farklı donanım platformları farklı sayaçları desteği: Standart yoktur. Sayaçlar ve neyi gösterdikleri yalnızca her GPU üreticisi tarafından belirlenir.  
   
-### <a name="marker-regions-and-events"></a>İşaretçi bölgeler ve olaylar  
- Çerçeve analizi, kullanıcı tanımlı olay işaretçileri ve olay grupları destekler. Bunlar Özet tablosunu ve ayrıntı tabloları görüntülenir.  
+### <a name="marker-regions-and-events"></a>İşaret bölgeler ve olaylar  
+ Çerçeve analizi, kullanıcı tanımlı olay işaretçileri ve olay gruplarını destekler. Bunlar, Özet tablosunu ve ayrıntı tabloları görüntülenir.  
   
- İşaretçileri ve grupları oluşturmak için ID3DUserDefinedAnnotation API'ları veya eski API D3DPERF_ ailesinin kullanabilirsiniz. D3DPERF_ API ailesi kullandığınızda, her bir işaret ve Grup çerçeve analizi Renkli Bant Olay işaret veya olay Grup başlamak son işaretçileri ve içeriklerini içeren satırı olarak görüntüler bir renk atayabilirsiniz. Bu özellik, önemli işleme olayları veya grupları olayların hızla tanımlamanıza yardımcı olabilir.  
+ ID3DUserDefinedAnnotation API'leri ya da eski API'ler D3DPERF_ ailesi işaretçileri ve grupları oluşturmak için kullanabilirsiniz. Çerçeve analizi olay işaretçisi veya olay grubu başlamak/bitiş işaretleri ve bunların içeriğini içeren satırları renkli bir bant görüntüler bir renk D3DPERF_ API ailesi kullandığınızda, her bir işaret ve grup atayabilirsiniz. Bu özellik, önemli işleme olay veya olay gruplarını hızlıca tanımlamanıza yardımcı olabilir.  
   
-### <a name="warnings-and-errors"></a>Uyarıları ve hataları  
- Çerçeve analizi bazen uyarıları veya zaman çizelgesi özetlenen ve çerçeve çözümlemesi sekmesi altındaki ayrıntılı hataları ile tamamlar.  
+### <a name="warnings-and-errors"></a>Uyarıları ve hatalar  
+ Çerçeve analizi uyarıları veya zaman çizelgesi özetlenen ve çerçeve analizi sekmesine alt kısmında ayrıntılı hatalar, bazen tamamlar.  
   
- Genellikle, uyarıları ve hataları yalnızca bilgilendirme amaçlıdır ve herhangi bir müdahalesi gerektirmez.  
+ Genellikle, uyarılar ve hatalar yalnızca bilgilendirme amaçlıdır ve herhangi bir müdahalesi gerektirmez.  
   
- Uyarıları genellikle belirtmek donanım desteği bulunmaması ancak geçici çalışılan, donanım sayaçları olamaz toplanmasını veya belirli performans verileri güvenilir olmayabilir, — örneğin, ne zaman geçici bir çözüm olumsuz etkiler.  
+ Uyarılar donanım desteği bulunmaması, ancak geçici bir çözüm kullanarak çalışılabilmesi, donanım sayaçları olamaz toplanacak veya bazı performans verileri güvenilir olmayabilir, genellikle belirtin — örneğin, ne zaman geçici bir çözüm olumsuz etkiler.  
   
- Hatalar genellikle çerçeve analiz uygulama hataları olan, bir sürücü hataları vardır, donanım desteği bulunmaması ve geçici çalışılan olamaz veya uygulama kayıttan yürütme tarafından desteklenmeyen bir şey çalışır olduğunu gösterir.  
+ Hataları genellikle çerçeve analizi uygulaması hataya sahip olduğunu, bir sürücü hataya sahip olduğunu, donanım desteği bulunmaması ve geçici olarak çalışan olamaz veya uygulamanın kayıttan yürütme tarafından desteklenmiyor bir şey çalışır olduğunu gösterir.  
   
 ### <a name="retries"></a>Yeniden deneme sayısı  
- GPU güç durumu geçişi çerçeve çözümlemesi sırasında uğradığında, çünkü GPU clockspeed değişti ve böylece göreli zamanlama sonuçları geçersiz kılınan etkilenen analiz geçişi denenmeli.  
+ Çerçeve analizi sırasında güç durumu geçiş GPU uğradığında, GPU clockspeed değiştirilmiş ve dolayısıyla göreli zamanlama sonuçları geçersiz olduğundan etkilenen çözümleme geçişi yeniden denenmelidir.  
   
- Çerçeve analizi 10 deneme sayısını sınırlar. Platformunuz agresif güç yönetimi veya saat geçişi varsa, başarısız ve yeniden deneme sınırını aştığından bir hata raporu çerçeve analizi neden olabilir. Platformunuza ait güç yönetimi sıfırlayarak bu sorunu azaltmak ve platform etkinleştirirse daha az agresif olmasını hızı azaltma saat mümkün olabilir.  
+ Çerçeve analizi 10 yeniden deneme sayısını sınırlar. Platformunuza agresif güç yönetimi veya saat geçişi varsa, başarısız ve yeniden deneme sınırı aştığından bir hata rapor çerçeve analizi neden olabilir. Güç Yönetimi, platformun sıfırlayarak bu sorunu gidermek ve platform etkinleştirirse daha az agresiftir olmasını hızı azaltma saat mümkün olabilir.  
   
 ##  <a name="HardwareSupport"></a> Donanım desteği  
   
-### <a name="timestamps-and-occlusion-queries"></a>Zaman damgaları ve kapanması sorguları  
- Zaman damgaları çerçeve analizi destekleyen tüm platformlarda desteklenir. Derinlik kapanması sorguları — piksel Occluded sayaç için gerekli — 9.2 veya üzeri özellik düzeyinde destek platformlarında desteklenir.  
+### <a name="timestamps-and-occlusion-queries"></a>Zaman damgaları ve kapatma sorguları  
+ Zaman damgaları çerçeve analizi destekleyen tüm platformlarda desteklenir. Derinlik kapatma sorguları — piksel Occluded sayaç gerekli —, özellik düzeyi 9.2 veya üzeri destekleyen platformlarında desteklenir.  
   
 > [!NOTE]
->  Zaman damgaları çerçeve analizi destekleyen tüm platformlarda desteklenir, ancak zaman damgaları tutarlılık ve doğruluğunu platformdan platforma değişir.  
+>  Zaman damgaları çerçeve analizi destekleyen tüm platformlarda desteklenir ancak doğruluğunu ve zaman damgaları tutarlılık platformdan platforma değişir.  
   
 ### <a name="gpu-counters"></a>GPU sayaçları  
- GPU donanım sayaçları desteği donanım bağımlıdır.  
+ GPU donanım sayaçları desteği donanım bağlıdır.  
   
- Hiçbir bilgisayar şu anda Intel, AMD veya NVIDIA tarafından sunulan GPU GPU donanım sayaçları güvenilir bir şekilde desteklediğinden, çerçeve analizi sayaçları onlardan toplamak değil. Ancak, çerçeve analizi donanım sayaçları güvenilir bir şekilde bunları destekleyen aşağıdaki GPU Topla:  
+ Hiçbir bilgisayar şu anda Intel, AMD veya NVIDIA tarafından sunulan GPU GPU donanım sayaçları güvenilir bir şekilde desteklediğinden, çerçeve analizi bunları sayaçlarını toplamaz. Ancak, çerçeve analizi güvenilir bir şekilde destekleyen aşağıdaki GPU donanım sayaçları toplamak:  
   
--   NVIDIA T40 (Tegra4)
+- NVIDIA T40 (Tegra4)
   
- Çerçeve analizi destekleyen herhangi bir platform GPU donanım sayaçlarını toplar.  
+  Çerçeve analizi destekleyen herhangi bir platform GPU donanım sayaçlarını toplar.  
   
 > [!NOTE]
->  GPU donanım sayaçları donanım kaynakları olduğundan, her işleme değişken için donanım sayaçları tamamını toplamak için birden çok geçiş alabilir. Sonuç olarak, hangi GPU sayaçları toplanır belirtilmeyen sırasıdır.  
+>  GPU donanım sayaçları donanım kaynaklar olduğundan, uygulamanın her işleme değişken için donanım sayaçları kümesinin tamamını toplamak için birden çok geçiş sürebilir. Sonuç olarak, hangi GPU'yu sayaçlar toplanır belirtilmeyen sırasıdır.  
   
 ## <a name="unsupported-scenarios"></a>Desteklenmeyen senaryolar  
- Çerçeve analizi kullanarak belirli yöntemler desteklenmeyen veya yalnızca kötü bir fikir değil.  
+ Çerçeve analizi kullanarak belirli yollar desteklenmeyen ya da kötü bir fikir.  
   
-### <a name="playback-of-high-feature-level-captures-on-down-level-devices"></a>Alt düzey cihazlarda yüksek düzeyli özellik çalınmasını yakalar  
- Kayıttan yürütme makinesini desteklediğinden daha yüksek bir özellik düzeyini kullanan bir grafik günlük dosyası kayıttan yürütürken grafik Çözümleyicisi'nde, otomatik olarak geri için TÜNELİ döner. Çerçeve analizi, açıkça TÜNELİ için geri dönüş değil ve bir hata oluşturur — TÜNELİ yararlıdır Direct3D uygulamanızı doğruluğunu inceleyerek, ancak kendi performansını inceleme değil.  
+### <a name="playback-of-high-feature-level-captures-on-down-level-devices"></a>Yüksek düzeyli özellik yürütülmesi alt düzey cihazlarda yakalar.  
+ Kayıttan yürütme makinesi desteklediğinden daha yüksek bir özellik düzeyi kullanan bir grafik günlük dosyasını kayıttan yürütürken grafik Çözümleyicisi'nde, otomatik olarak geri için WARP döner. Çerçeve analizi, açıkça için WARP dönmesi değil ve bir hata oluşturur — WARP, Direct3D uygulamanızı doğruluğunu İnceleme için ancak performansı inceleniyor değil için kullanışlıdır.  
   
 > [!NOTE]
->  Özellik düzeyinde konuları göz önünde bulundurmanız önemli olsa da, yakalama ve grafik günlük dosyalarını farklı donanım yapılandırmaları ve aygıtları kayıttan. Grafik günlük günlük dosyası değil veya API'leri içeren kayıttan yürütme makinede desteklenmeyen özellik düzeylerini kullanın geri sürece çalınabilir.  
+>  Özellik düzeyinde sorunları akılda tutulması gereken önemli olsa da, yakalama ve günlük dosyaları farklı donanım yapılandırmaları ve cihazlarda grafikleri kayıttan yürütme. Grafik günlüğü, günlük dosyası değil veya API'leri içeren kayıttan yürütme makinesinde desteklenmeyen özellik düzeylerini kullanın geri sürece çalınabilir.  
   
 ### <a name="direct3d-10-and-lower"></a>Direct3D 10 ve daha düşük  
- Uygulamanızı Direct3D 10 API çağrıları, çerçeve analizi tanımak veya tanınan ve diğer grafik Çözümleyicisi araçları tarafından kullanılan olsa bile bunları profil olmaz.
+ Uygulamanızı Direct3D 10 API'sini çağırıyorsa, çerçeve analizi tanı veya tanınır ve diğer grafik Çözümleyicisi araçları tarafından kullanılan olsa da bunları profil olmaz.
   
 > [!NOTE]
->  Bu, kullanmakta olduğunuz yalnızca Direct3D API çağrıları olmayan özellik düzeylerini geçerlidir.
+>  Bu, kullanmakta olduğunuz yalnızca Direct3D API çağrıları özellik düzeylerini geçerlidir.
 
-### <a name="warp"></a>TÜNELİ  
- Çerçeve analizi profil ve gerçek donanım üzerinde işleme performansı artırmak için kullanılmak üzere tasarlanmıştır. Çerçeve analizi TÜNELİ cihazlarda çalıştırılan engelledi değil, ancak genellikle faydalı takip TÜNELİ birinci sınıf bir CPU üzerinde çalışan bile en az özellikli modern GPU yavaş olduğundan ve TÜNELİ performans belirli CPU bağlı olarak büyük ölçüde farklılık gösterebileceğinden değil üzerinde çalıştırıldığı.  
+### <a name="warp"></a>EĞRİLTME  
+ Çerçeve analizi, profil ve gerçek donanıma işleme performansını geliştirmek için kullanılmak üzere tasarlanmıştır. Çerçeve analizi WARP cihaz üzerinde çalışan engellenmez, ancak genellikle faydalı takip WARP yüksek kaliteli bir CPU üzerinde çalışan daha az özellikli modern Gpu'lar yavaş olduğundan ve WARP performans belirli CPU bağlı olarak büyük ölçüde farklılık gösterebileceğinden değil üzerinde çalıştığı.  
   
 ##  <a name="Variants"></a> Çeşitleri  
- Bir çerçeve kayıttan yürütme sırasında işlenen şekilde çerçeve analizi yaptığı her değişiklik olarak bilinen bir *değişken*. Çerçeve analizi inceler çeşitleri işleme performansı veya uygulamanızı görsel kalitesini artırmak için yapabilir ortak, görece kolay değişiklikleri için karşılık gelen — örneğin, doku boyutunun azaltılması, doku sıkıştırma kullanılarak veya etkinleştirme yumuşatma farklı türde. Çeşitleri normal işleme bağlamını ve uygulamanızın parametreleri geçersiz. Bir özeti aşağıda verilmiştir:  
+ Çerçeve analizi bir kare, oynatma sırasında işlenir şekilde yaptığı her değişiklik olarak bilinen bir *değişken*. Çerçeve analizi inceler çeşitleri için uygulamanızın görsel kaliteyi ve işleme performansını iyileştirmek için yapabileceğiniz ortak, görece kolay değişiklikler karşılık gelen — örneğin, dokular boyutunu küçültme, doku sıkıştırma kullanmayı veya etkinleştirme Düzgünleştirme farklı türde. Çeşitleri normal işleme bağlamını ve uygulama parametreleri geçersiz. Bir özeti aşağıda verilmiştir:  
   
 |Değişken|Açıklama|  
 |-------------|-----------------|  
-|**1 x 1 Görünüm penceresi boyutu**|Tüm işleme hedefleri görünüm penceresinin boyutlarında 1 x 1 piksel azaltır.<br /><br /> Daha fazla bilgi için bkz: [1 x 1 Görünüm penceresi boyutu değişken](1x1-viewport-size-variant.md)|  
-|**0x MSAA**|Birden çok örnek yumuşatma (MSAA) tüm işleme hedeflerde devre dışı bırakır.<br /><br /> Daha fazla bilgi için bkz: [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
-|**2 x MSAA**|Birden çok örnek yumuşatma (MSAA) tüm işleme hedeflerde x 2 sağlar.<br /><br /> Daha fazla bilgi için bkz: [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
-|**4 x MSAA**|Birden çok örnek yumuşatma (MSAA) tüm işleme hedeflerde x 4 sağlar.<br /><br /> Daha fazla bilgi için bkz: [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
-|**Noktası doku filtreleme**|Filtreleme modunu ayarlar `DXD11_FILTER_MIN_MAG_MIP_POINT` (doku filtreleme noktası) için tüm uygun doku örnekleri.<br /><br /> Daha fazla bilgi için bkz: [noktası, ikili, Trilinear ve Eşyönsüz doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
-|**Çift doğrusal doku filtreleme**|Filtreleme modunu ayarlar `DXD11_FILTER_MIN_MAG_LINEAR_MIP_POINT` (çift doğrusal doku filtreleme) tüm uygun doku örnekleri için.<br /><br /> Daha fazla bilgi için bkz: [noktası, ikili, Trilinear ve Eşyönsüz doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
-|**Trilinear doku filtreleme**|Filtreleme modunu ayarlar `DXD11_FILTER_MIN_MAG_MIP_LINEAR` (trilinear doku filtreleme) tüm uygun doku örnekleri için.<br /><br /> Daha fazla bilgi için bkz: [noktası, ikili, Trilinear ve Eşyönsüz doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
-|**Eşyönsüz doku filtreleme**|Filtreleme modunu ayarlar `DXD11_FILTER_ANISOTROPIC` ve `MaxAnisotropy` için `16` (Eşyönsüz doku filtreleme x 16) tüm uygun doku örnekleri için.<br /><br /> Daha fazla bilgi için bkz: [noktası, ikili, Trilinear ve Eşyönsüz doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
-|**16bpp işleme hedef biçimi**|Piksel biçimini ayarlar `DXGI_FORMAT_B5G6R5_UNORM` (16bpp, 565 biçimi) tüm hedefleri ve backbuffers işlemek için.<br /><br /> Daha fazla bilgi için bkz: [16bpp işleme hedef biçimi değişken](16bpp-render-target-format-variant.md)|  
-|**MIP harita oluşturma**|Hedefleri işlenmeyebilir tüm dokuları MIP-eşlemeleri sağlar.<br /><br /> Daha fazla bilgi için bkz: [MIP eşleme oluşturma değişken](mip-map-generation-variant.md).|  
-|**Yarı doku boyutları**|Orijinal her boyut boyutlarında yarısı işleme hedeflerini olmayan tüm dokuları doku boyutlarında azaltır. Örneğin, 256 x 128 doku 128 x 64 texels azalır.<br /><br /> Daha fazla bilgi için bkz: [Half/Quarter doku boyutları değişken](half-quarter-texture-dimensions-variant.md).|  
-|**Çeyrek doku boyutları**|Orijinal her boyut boyutlarında çeyreği hedeflerini işlenmeyebilir tüm dokuları doku boyutlarında azaltır. Örneğin, 256 x 128 doku 64 x 32 texels azalır.<br /><br /> Daha fazla bilgi için bkz: [Half/Quarter doku boyutları değişken](half-quarter-texture-dimensions-variant.md).|  
-|**BC doku sıkıştırma**|Bir B8G8R8X8, B8G8R8A8 veya R8G8B8A8 piksel biçimi değişken sahip tüm dokuları sıkıştırmayı etkinleştirir engelleyin. B8G8R8X8 biçimi çeşitleri BC1 kullanarak sıkıştırılmış; B8G8R8A8 ve R8G8B8A8 biçimi çeşitleri BC3 kullanarak sıkıştırılır.<br /><br /> Daha fazla bilgi için bkz: [BC doku sıkıştırma değişken](bc-texture-compression-variant.md).|  
+|**1 x 1 Görünüm penceresi boyutu**|Tüm işleme hedeflerde Görünüm penceresi boyutları 1 x 1 piksel azaltır.<br /><br /> Daha fazla bilgi için [1 x 1 Görünüm penceresi boyut çeşidi](1x1-viewport-size-variant.md)|  
+|**0x MSAA**|Birden çok örnek düzgünleştirme (MSAA) tüm işleme hedefler üzerinde devre dışı bırakır.<br /><br /> Daha fazla bilgi için [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
+|**2 x MSAA**|Birden çok örnek düzgünleştirme (MSAA) tüm işleme hedeflerde x 2 sağlar.<br /><br /> Daha fazla bilgi için [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
+|**4 x MSAA**|Birden çok örnek düzgünleştirme (MSAA) tüm işleme hedeflerde x 4 sağlar.<br /><br /> Daha fazla bilgi için [0 x / 2 x / 4 x MSAA çeşitleri](0x-2x-4x-msaa-variants.md)|  
+|**Noktası doku filtreleme**|Filtre modu ayarlar `DXD11_FILTER_MIN_MAG_MIP_POINT` (doku filtreleme noktası) için tüm uygun dokuyu örnekler.<br /><br /> Daha fazla bilgi için [noktası, ikili Trilinear ve Anizotropik doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
+|**Çeşitleri doku filtreleme**|Filtre modu ayarlar `DXD11_FILTER_MIN_MAG_LINEAR_MIP_POINT` (filtreleme çeşitleri doku) için tüm uygun dokuyu örnekler.<br /><br /> Daha fazla bilgi için [noktası, ikili Trilinear ve Anizotropik doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
+|**Üçlü doku filtreleme**|Filtre modu ayarlar `DXD11_FILTER_MIN_MAG_MIP_LINEAR` (üçlü doku filtreleme) için tüm uygun dokuyu örnekler.<br /><br /> Daha fazla bilgi için [noktası, ikili Trilinear ve Anizotropik doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
+|**Doku anizotropik filtreleme**|Filtre modu ayarlar `DXD11_FILTER_ANISOTROPIC` ve `MaxAnisotropy` için `16` (doku anizotropik filtreleme x 16) için tüm uygun dokuyu örnekler.<br /><br /> Daha fazla bilgi için [noktası, ikili Trilinear ve Anizotropik doku filtreleme çeşitleri](point-bilinear-trilinear-and-anisotropic-texture-filtering-variants.md).|  
+|**16bpp işleme hedef biçim**|Piksel biçimini ayarlar `DXGI_FORMAT_B5G6R5_UNORM` (16bpp 565 biçimi) tüm hedefler ve backbuffers işlemek için.<br /><br /> Daha fazla bilgi için [16bpp işleme hedef biçim değişken](16bpp-render-target-format-variant.md)|  
+|**Mip-map oluşturma**|Mip eşlemeleri hedefleri işlenmeyebilir tüm dokular üzerinde sağlar.<br /><br /> Daha fazla bilgi için [Mip-map oluşturma değişken](mip-map-generation-variant.md).|  
+|**Yarı doku boyutları**|Doku boyutları işleme hedeflerini kullanıcıların özgün boyutu her boyutundaki yarısını olmayan tüm dokular üzerinde azaltır. Örneğin, 256 x 128 doku için 128 x 64 texel'in azaltılır.<br /><br /> Daha fazla bilgi için [Half/Quarter doku boyutları değişken](half-quarter-texture-dimensions-variant.md).|  
+|**Çeyrek doku boyutları**|Doku boyutlarını kullanıcıların özgün boyutu her boyutundaki çeyreği hedeflerini işlenmeyebilir tüm dokular üzerinde azaltır. Örneğin, 256 x 128 doku için 64 x 32 texel'in azaltılır.<br /><br /> Daha fazla bilgi için [Half/Quarter doku boyutları değişken](half-quarter-texture-dimensions-variant.md).|  
+|**BC doku sıkıştırma**|Etkinleştirir sıkıştırma B8G8R8X8, B8G8R8A8 veya R8G8B8A8 piksel biçimi değişken tüm dokular hakkında engelleyin. B8G8R8X8 biçimi çeşitleri BC1 kullanarak sıkıştırılır; B8G8R8A8 ve R8G8B8A8 biçimi çeşitleri BC3 kullanarak sıkıştırılır.<br /><br /> Daha fazla bilgi için [BC doku sıkıştırma değişken](bc-texture-compression-variant.md).|  
   
- Çoğu çeşitler için sonuç Düzenleyici olur: "azalan doku boyutuna yarısı göre daha hızlı yüzde 25" veya "2 x etkinleştirme MSAA yalnızca 2 yüzde daha yavaş olduğu". Daha fazla yorumlama diğer çeşitleri gerektirebilir — görünüm penceresinin boyutları değişiklikleri 1 x 1 için değişken bir büyük performans kazancı gösteriyorsa, örneğin, bu işleme düşük dolgu hızı tarafından; nedeniyle düşük performansa sahiptir olduğunu gösterebilir performansı önemli ölçüde değişiklik yoksa, alternatif olarak, bu işleme köşe işlemesi nedeniyle düşük performansa sahiptir olduğunu gösteriyor olabilir.
+ Çoğu çeşitleri için öngörücü sonucudur: "azalan doku boyutuna göre yarı daha hızlı yüzde 25" veya "Etkinleştirme 2 x MSAA yalnızca 2 yüzde daha yavaş". Daha fazla yorumu diğer çeşitleri gerektirebilir; 1 x 1 Görünüm penceresi boyutları değişiklikleri değişken büyük performans kazancı gösterir, örneğin, işleme göre düşük doldurma oranı; performansı düşürdüğünü gösterir olmadığını olduğunu gösterebilir Alternatif olarak, performansı önemli bir değişiklik varsa, işleme göre köşe işleme performansı düşürdüğünü gösterir emin olduğunu gösterebilir.

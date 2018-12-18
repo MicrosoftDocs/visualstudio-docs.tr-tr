@@ -18,24 +18,25 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: bbe09cfe546d947bf07334e9dd6468226884e9e3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a1f5d9b67633ffa2b14f780b9588f526372a4f5d
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39152525"
 ---
-# <a name="how-clickonce-performs-application-updates"></a>ClickOnce Uygulama Güncelleştirmelerini Nasıl Gerçekleştirir
-ClickOnce Uygulama dosyalarını güncelleştirmek karar vermek için bir uygulamanın dağıtım bildiriminde belirtilen dosya sürümü bilgilerini kullanır. Bir güncelleştirme başladıktan sonra ClickOnce adında bir teknik kullanır *dosya düzeltme eki uygulama* gereksiz uygulama dosyalarının yüklenmesini önlemek için.  
+# <a name="how-clickonce-performs-application-updates"></a>ClickOnce uygulama güncelleştirmelerini nasıl gerçekleştirir
+ClickOnce, uygulama dosyalarını güncelleştirmek karar vermek için bir uygulamanın dağıtım bildiriminde belirtilen dosya sürümü bilgilerini kullanır. Bir güncelleştirme başladıktan sonra ClickOnce, adında bir teknik kullanır. *dosya düzeltme eki uygulama* yedekli uygulama dosyalarının yüklenmesini önlemek için.  
   
 ## <a name="file-patching"></a>Dosya düzeltme eki uygulama  
- Dosyaları değiştirmediğiniz sürece bir uygulama güncelleştirilirken ClickOnce tüm dosyaları uygulamanın yeni sürümü için indirmez. Bunun yerine, yeni sürümün bildiriminde imzaları karşı geçerli uygulama için uygulama bildiriminde belirtilen dosyaların karma imzaları karşılaştırır. Bir dosyanın imzası farklıysa, ClickOnce yeni sürümü indirir. İmzalar eşleşirse, dosyanın bir sürümünden sonraki değişmemiştir. Bu durumda, ClickOnce varolan dosyayı kopyalar ve uygulamanın yeni sürümü kullanır. Bu yaklaşım, yalnızca bir veya iki dosyalar değiştirilmiş olsa bile tüm uygulama yeniden indirmek zorunda ClickOnce engeller.  
+ Dosyaları değiştirmediğiniz sürece bir uygulamayı güncelleştirdiğinizde, ClickOnce tüm dosyalar için uygulamanın yeni sürümünü karşıdan yüklemez. Bunun yerine, yeni sürüm için bildirim imzaları geçerli uygulama için uygulama bildiriminde belirtilen dosyalar karma imzalarını karşılaştırır. Bir dosyanın imzaları farklı ise, ClickOnce yeni sürümü yükler. İmzalar eşleşirse, dosyanın bir sürümünden sonraki değiştirilmemiştir. Bu durumda, ClickOnce, var olan dosyayı kopyalar ve uygulamayı yeni sürümünde kullanır. Bu yaklaşım ClickOnce yalnızca bir veya iki dosyalar değiştirilmiş olsa bile tüm uygulamayı yeniden indirmek zorunda kalmasını önler.  
   
- Dosya düzeltme eki uygulama de çalışır yüklenen derlemeler kullanarak isteğe bağlı olarak <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A> ve <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A> yöntemleri.  
+ Düzeltme eki dosyası da çalışır yüklenen derlemeler için kullanarak isteğe bağlı olarak <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroup%2A> ve <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A> yöntemleri.  
   
- Uygulamanızı derlemek için Visual Studio kullanıyorsanız tüm projeyi yeniden her tüm dosyalar için yeni karma imzaları oluşturur. Bu durumda, sadece birkaç derleme değişmesine rağmen tüm derlemeler istemciye indirilir.  
+ Uygulamanızı derlemek için Visual Studio kullanıyorsanız, tüm projeyi yeniden her tüm dosyalar için yeni karma imzaları oluşturur. Bu durumda, yalnızca birkaç derlemeleri değişmiş olabilir ancak tüm derlemeler istemciye indirilir.  
   
- Dosya düzeltme eki uygulama verileri olarak işaretlenmiş ve veri dizininde depolanan dosyalar için geçerli değildir. Bu, dosyanın karması imzasını bağımsız olarak daima yüklenir. Veri dizini hakkında daha fazla bilgi için bkz: [erişme yerel ve uzak veri ClickOnce uygulamalarında](../deployment/accessing-local-and-remote-data-in-clickonce-applications.md).  
+ Dosya düzeltme eki uygulama, verileri olarak işaretlenmiş ve veri dizininde depolanan dosyalar için çalışmaz. Bu, dosyanın karması imzasını bağımsız olarak daima yüklenir. Veri dizini hakkında daha fazla bilgi için bkz. [ClickOnce uygulamalarında yerel ve uzak veri erişim](../deployment/accessing-local-and-remote-data-in-clickonce-applications.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [ClickOnce güncelleştirme stratejisini seçme](../deployment/choosing-a-clickonce-update-strategy.md)   
- [ClickOnce Dağıtım Stratejisini Seçme](../deployment/choosing-a-clickonce-deployment-strategy.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [ClickOnce güncelleştirme stratejisini seçin](../deployment/choosing-a-clickonce-update-strategy.md)   
+ [ClickOnce dağıtım stratejisini seçin](../deployment/choosing-a-clickonce-deployment-strategy.md)

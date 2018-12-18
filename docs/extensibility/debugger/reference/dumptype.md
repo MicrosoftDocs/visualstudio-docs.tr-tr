@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fa44dfa59f4883fa29a1724344124267f28bce9f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5e886649a7eaa5f9f99eb2e2bfcc48985f12a5e4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949558"
 ---
 # <a name="dumptype"></a>DUMPTYPE
-Döküm ne kadar (örneğin, çalışan iş parçacıkları, yığın çerçeveleri ve geçerli yönerge adresi) bir programın durumunu belirler.  
+Döküm için ne kadar bir programın durumu ' (örneğin, çalışan iş parçacıkları, yığın çerçeveleri ve geçerli yönerge adresi) belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,21 +44,21 @@ public enum enum_DUMPTYPE {
   
 ## <a name="members"></a>Üyeler  
  DUMP_MINIDUMP  
- Küçük, compact döküm belirtir.  
+ Küçük, küçük bir döküm belirtir.  
   
  DUMP_FULLDUMP  
- Büyük, tam bir döküm belirtir.  
+ Büyük, eksiksiz bir döküm belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bağımsız değişken olarak geçirilen [WriteDump](../../../extensibility/debugger/reference/idebugprogram2-writedump.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [WriteDump](../../../extensibility/debugger/reference/idebugprogram2-writedump.md)

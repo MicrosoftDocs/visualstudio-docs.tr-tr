@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b291af7f8f50d672655a098e22ef938d99e0daed
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 31c63db74410e6a742b5076a8ddda25b562f86f6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49853902"
 ---
 # <a name="idebugstackframe2getinfo"></a>IDebugStackFrame2::GetInfo
-Yığın çerçevesi açıklamasını alır.  
+Yığın çerçevesinin açıklamasını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,16 +45,16 @@ int GetInfo (
   
 #### <a name="parameters"></a>Parametreler  
  `dwFieldSpec`  
- [in] Bayraklarını bileşimini [FRAMEINFO_FLAGS](../../../extensibility/debugger/reference/frameinfo-flags.md) hangi alanlarının belirten numaralandırma `pFrameInfo` parametresi olan doldurulmalıdır.  
+ [in] Bayraklarının bir birleşimi [FRAMEINFO_FLAGS](../../../extensibility/debugger/reference/frameinfo-flags.md) hangi alanları belirten numaralandırma `pFrameInfo` parametresi olan doldurulmalıdır.  
   
  `nRadix`  
- [in] Herhangi bir sayısal bilgi biçimlendirmede kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine biçimlendirmede kullanılacak sayı tabanı.  
   
  `pFrameInfo`  
- [out] A [FRAMEINFO](../../../extensibility/debugger/reference/frameinfo.md) yığın çerçevesi açıklama oturum girilir yapısı.  
+ [out] A [FRAMEINFO](../../../extensibility/debugger/reference/frameinfo.md) yığın çerçevesini açıklamasını oturum girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugStackFrame2](../../../extensibility/debugger/reference/idebugstackframe2.md)   

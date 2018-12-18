@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2ba10e167246ce2467f2faebf157e46306749bdb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 08544fb80e1006dbed08e51689c1bb3b01212edb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49820518"
 ---
 # <a name="idebugengine2causebreak"></a>IDebugEngine2::CauseBreak
-Tüm programları bu hata ayıklama altyapısı yürütme sonraki durdurmak için (DE) ayıklanacak istekleri kendi iş parçacığı birini çalıştırmayı dener.  
+Tüm programları bu hata ayıklama altyapısı yürütme sonraki durdurmak için (DE) hata ayıklaması yapılan istekleri, iş parçacıkları birini çalıştırmayı dener.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ int CauseBreak();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu zaman uyumsuz bir yöntemdir: bir [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) program sonraki bu yöntemi çağırıldıktan sonra yürütmeyi denediğinde olay gönderilir.  
+ Bu zaman uyumsuz bir yöntemdir: bir [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) program bu yöntem çağrıldıktan sonra yürütülecek sonraki denediğinde olay gönderilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [CauseBreak](../../../extensibility/debugger/reference/idebugprogram2-causebreak.md)   

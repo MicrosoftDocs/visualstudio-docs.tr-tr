@@ -1,33 +1,34 @@
 ---
-title: Visual Studio'da başvuru yakın değişken bildirimi taşıma | Microsoft Docs
-ms.custom: ''
+title: Değişken bildirimi başvurunun yanına taşıma
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
-author: kuhlenh
-ms.author: kaseyu
+author: gewarren
+ms.author: gewarren
 manager: douge
 dev_langs:
-- csharp
+- CSharp
 ms.workload:
 - dotnet
-ms.openlocfilehash: 7c78904123da54fd2259558f29832742d9a103d2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9bc661331ee03af6d34caeae847b717db1f21fc5
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53065348"
 ---
-# <a name="move-declaration-near-reference-refactoring"></a>Başvuru yeniden düzenleme yakın taşıma bildirimi
+# <a name="move-declaration-near-reference-refactoring"></a>Başvuru yeniden düzenleme yakın bildirimi taşıma
 
 Bu yeniden düzenleme için geçerlidir:
 
 - C#
 
-**Ne:** yakın değişken bildirimleri için kullanımı taşımanıza olanak tanır.
+**Ne:** yakın değişken bildirimlerini kullanımları için geçiş yapmanıza izin veren.
 
-**Ne zaman:** daha dar bir kapsamda olabilir değişken bildirimleri sahip.
+**Ne zaman:** daha dar bir kapsamda olan değişken bildirimleri sahip.
 
-**Neden:** olduğu, ancak okunabilirlik sorunları veya bilgi gizleme neden olabilir bırakabilir. Okunabilirliğini artırmak için bir fırsat düzenleme için budur.
+**Neden:** olduğu, ancak okunabilirlik sorunları veya bilgi gizleme neden olabilir bırakabilir. Okunabilirliği artırmak için yeniden düzenleme için bir fırsat budur.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
@@ -36,11 +37,11 @@ Bu yeniden düzenleme için geçerlidir:
 1. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve select **taşıma bildirimi başvuru yakın** gelen önizleme penceresi açılır.
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menü ve select **bildirimi başvurunun yanına taşıma** gelen önizleme penceresi açılır.
    - **Fare**
-     - Kod sağ tıklayın, **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve seçin **taşıma bildirimi başvuru yakın** gelen önizleme penceresi açılır.
+      - Kod sağ tıklayın, **hızlı Eylemler ve yeniden düzenlemeler** menü ve select **bildirimi başvurunun yanına taşıma** gelen önizleme penceresi açılır.
 
-1. Değişiklikle memnun kaldığınızda, basın **Enter** veya düzeltmeyi menüsünde tıklatın ve değişiklikler uygulanır.
+1. Değişiklik ile tamamladığınızda basın **Enter** veya düzeltmeyi menüsünde tıklatın ve değişiklikler uygulanır.
 
 Örnek:
 

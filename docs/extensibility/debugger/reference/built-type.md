@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 14a9010925db5c175b7110fb12261eb135162246
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f0955ca40e136e5b89f105430f3dd887b66f25a2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49853317"
 ---
 # <a name="builttype"></a>BUILT_TYPE
-Bu yapı meta verilerini harcanan alan türü hakkındaki bilgileri belirtir.  
+Bu yapı meta verilerinden harcanan alan türü hakkında bilgileri belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,26 +45,26 @@ public struct BUILT_TYPE {
   
 #### <a name="parameters"></a>Parametreler  
  ulAppDomainID  
- Simgenin geldiği uygulama kimliği. Bu uygulama örneğini benzersiz şekilde tanımlamak için kullanılır.  
+ Simgenin içinden gelen uygulama kimliği. Bu, uygulamanın bir örneğini benzersiz şekilde tanımlamak için kullanılır.  
   
  guidModule  
- Bu alan içeren modülü GUID.  
+ Bu alan içeren modül GUID.  
   
  pUnderlyingField  
- Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) bu yerleşik alanıyla ilişkili temel alan tanımlayan nesne.  
+ Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) yerleşik bu alanla ilişkilendirilmiş temel alan tanımlayan nesne.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı birleşim içinde bir parçası olarak görünür [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) ne zaman yapısı `dwKind` alanını `TYPE_INFO` yapısı ayarlanmış `TYPE_KIND_BUILT` (arasında bir değer [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) numaralandırma).  
+ Bu yapı birleşimde bir parçası olarak görünür [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) ne zaman yapısı `dwKind` alanını `TYPE_INFO` yapısı ayarlandığında `TYPE_KIND_BUILT` (arasında bir değer [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) sabit listesi).  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md)   
  [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

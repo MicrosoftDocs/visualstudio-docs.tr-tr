@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 70b1730fc44deeb7e32433480f02f750c9bec193
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d327528d340bc5472278de13e83077cd2c28171b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840747"
 ---
 # <a name="idebugexpressionevaluatorsetregistryroot"></a>IDebugExpressionEvaluator::SetRegistryRoot
-Bu yöntem, kayıt defteri kök ayarlar. Yan yana hata ayıklama için kullanılır.  
+Bu yöntem, kayıt defteri kökü ayarlar. Yan yana hata ayıklamak için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int SetRegistryRoot(
   
 #### <a name="parameters"></a>Parametreler  
  `ustrRegistryRoot`  
- [in] Yeni kayıt defteri kök dizini.  
+ [in] Yeni kayıt defteri kökü.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- İfade değerlendirici ilk örneği işaret belirtilen kayıt defteri kök genellikle ayarlanır ve Visual Studio belirli bir sürümü için kayıt defteri anahtarına (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\\*X.Y* , burada *X.Y* bir sürüm numarası).  
+ İfade değerlendirici ilk örneği işaret yüklendiğinde belirtilen kayıt defteri kökü genellikle ayarlanır ve Visual Studio'nun belirli bir sürümü için kayıt defteri anahtarı için (hkey_local_machıne\software\microsoft\visualstudio\\*X.Y* burada *X.Y* bir sürüm numarası).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExpressionEvaluator](../../../extensibility/debugger/reference/idebugexpressionevaluator.md)

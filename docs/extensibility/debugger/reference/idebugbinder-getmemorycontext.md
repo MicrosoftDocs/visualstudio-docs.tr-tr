@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 18049e9f0800cc5c2bc0b53e53915a96eebb1718
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a94098a6645ef353ff3e18b17911c05d495fe8ae
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905447"
 ---
 # <a name="idebugbindergetmemorycontext"></a>IDebugBinder::GetMemoryContext
-Bu yöntem, bir nesne konumu veya bellek adresi bellek bağlamına dönüştürür.  
+Bu yöntem, bir nesnenin konumuna ya da bir bellek adresi bellek bağlamına dönüştürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,13 +48,13 @@ int GetMemoryContext(
  [in] Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) açıklayan bulunacak nesne. Varsa `NULL`, ardından `dwConstant` yerine.  
   
  `dwConstant`  
- [in] 0x5000 gibi bir sabit bellek adresi.  
+ [in] 0x5000 gibi bir sabit bir bellek adresi.  
   
  `ppMemCxt`  
- [out] Döndürür [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesnenin adresi ya da bellek adresi temsil eden arabirim.  
+ [out] Döndürür [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesnenin adresini veya bellek adresini temsil eden arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md)   

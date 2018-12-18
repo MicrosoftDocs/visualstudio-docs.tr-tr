@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31132554"
 ---
 # <a name="saving-a-custom-document"></a>Özel belge kaydetme
 Ortam tanıtıcıları **kaydetmek**, **Kaydet**, ve **Tümünü Kaydet** komutları. Bir kullanıcı tıkladığında **kaydetmek**, **Kaydet**, **veya Tümünü Kaydet** üzerinde **dosya** menüsü veya bir Tümünü Kaydet içinde aşağıdaki kaynaklanan çözüm kapatır işlem gerçekleşir.  

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 366c7e368b5ebf72f075026eebde022853017a4c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4515a5834b5ffbad6718a3fec3bd1db48cb45805
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840980"
 ---
 # <a name="idebugreference2enumchildren"></a>IDebugReference2::EnumChildren
-Seçili alt öğeleri bir başvuru listesini alın. Daha sonraki kullanımlar için ayrılmıştır.  
+Seçili çocuğunu başvuru listesini alın. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,19 +51,19 @@ int EnumChildren (
   
 #### <a name="parameters"></a>Parametreler  
  `dwFields`  
- [in] Bayraklarını bileşimini [DEBUGREF_INFO_FLAGS](../../../extensibility/debugger/reference/debugref-info-flags.md) hangi alanların numaralandırılmış belirten numaralandırma [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapıları olan doldurulmalıdır.  
+ [in] Bayraklarının bir birleşimi [DEBUGREF_INFO_FLAGS](../../../extensibility/debugger/reference/debugref-info-flags.md) hangi alanların numaralandırılmış belirten numaralandırma [DEBUG_REFERENCE_INFO](../../../extensibility/debugger/reference/debug-reference-info.md) yapılardır doldurulmalıdır.  
   
  `dwRadix`  
- [in] Herhangi bir sayısal bilgi biçimlendirmede kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine biçimlendirmede kullanılacak sayı tabanı.  
   
  `dwAttribFilter`  
- [in] Bayraklarını bileşimini [DBG_ATTRIB_FLAGS](../../../extensibility/debugger/reference/dbg-attrib-flags.md) ile birlikte bir filtre olarak kullanılan numaralandırma `pszNameFilter` parametresi hangi yapıları sıralanması seçin.  
+ [in] Bayraklarının bir birleşimi [DBG_ATTRIB_FLAGS](../../../extensibility/debugger/reference/dbg-attrib-flags.md) birlikte bir filtre olarak kullanılan sabit listesi `pszNameFilter` sıralanması hangi yapılar seçmek için parametre.  
   
  `pszNameFilter`  
- [in] "İle birlikte kullanılan MyX" gibi bir filtre belirten bir dize `dwAttribFilter` sıralanması yapıları seçmek için parametre.  
+ [in] "Birlikte MyX" gibi bir filtre belirten bir dize `dwAttribFilter` sıralanması yapıları seçmek için parametre.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` süresiz bekleme.  
   
  `ppEnum`  
  [out] Döndürür bir [IEnumDebugReferenceInfo2](../../../extensibility/debugger/reference/ienumdebugreferenceinfo2.md) istenen alt özellikleri listesini içeren nesne.  

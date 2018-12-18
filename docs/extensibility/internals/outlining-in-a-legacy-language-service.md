@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31135659"
 ---
 # <a name="outlining-in-a-legacy-language-service"></a>Eski dil hizmetinde anahat oluşturma
 Anahat oluşturma, karmaşık bir program bir genel bakış veya anahat daraltmak mümkün kılar. Örneğin, C# ' ta tüm yöntemleri yalnızca yöntem imzası gösteren tek bir satır için daraltılabilir. Ayrıca, yapılar ve sınıflar yalnızca yapılar ve sınıflar adlarını göstermek için daraltılabilir. İçinde tek bir yöntemi, yalnızca ilk satır deyimlerinin göstererek genel akış göstermek için karmaşık mantık daraltılabilen `foreach`, `if`, ve `while`.  

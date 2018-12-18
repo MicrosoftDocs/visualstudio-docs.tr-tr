@@ -19,11 +19,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 860d6bd5f89ff85f3abf75f1beceb62b6b860d54
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: b41a65fb92615bf8b8e38cc13260187a6abc946f
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37058418"
 ---
 # <a name="how-to-test-and-debug-a-visualizer"></a>Nasıl Yapılır: Görselleştiriciyi Test Etme ve Hata Ayıklama
 Bir kez hata ayıklama ve test etmeniz, Görselleştirici yazmıştır.  
@@ -36,7 +37,7 @@ Bir kez hata ayıklama ve test etmeniz, Görselleştirici yazmıştır.
   
 1.  Hata ayıklayıcı tarafı sınıfınızda oluşturan bir statik yöntem dahil bir <xref:Microsoft.VisualStudio.DebuggerVisualizers.VisualizerDevelopmentHost> nesne ve onun show yöntemi çağırır:  
   
-    ```  
+    ```csharp
     public static void TestShowVisualizer(object objectToVisualize)  
     {  
        VisualizerDevelopmentHost myHost = new VisualizerDevelopmentHost(objectToVisualize, typeof(DebuggerSide));  
@@ -48,7 +49,7 @@ Bir kez hata ayıklama ve test etmeniz, Görselleştirici yazmıştır.
   
 2.  Çağırmak için aşağıdaki ifadeyi ekleyin `TestShowVisualizer`. Bir sınıf kitaplığı'nda, Görselleştirici oluşturduysanız, sınıf kitaplığı çağırın ve bu deyimi, yürütülebilir dosya yerleştirmek için yürütülebilir bir dosya oluşturmanız gerekir:  
   
-    ```  
+    ```csharp
     DebuggerSide.TestShowVisualizer(myString);  
     ```  
   

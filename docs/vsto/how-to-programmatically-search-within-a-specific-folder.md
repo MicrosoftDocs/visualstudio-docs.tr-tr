@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: belirli klasör içinde program aracılığıyla arama | Microsoft Docs'
+title: 'Nasıl yapılır: belirli klasör içinde program aracılığıyla arama yapma'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -15,23 +15,24 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: aedddb0eab79e66d9d5a41d70a4907a2f22951ab
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 64df4180e533f254927ae134ed005b0626dfdde8
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677299"
 ---
-# <a name="how-to-programmatically-search-within-a-specific-folder"></a>Nasıl yapılır: Belirli Klasör İçinde Program Aracılığıyla Arama Yapma
-  Bu kod örneği kullanır `Find` ve `FindNext` e-posta iletilerinin bulunan konu alanında metin aramak için yöntemleri **gelen**. Bu yöntem başlangıç harfi T harfiyle denetlemek için bir dize filtre kullanır, `Subject` metin.  
+# <a name="how-to-programmatically-search-within-a-specific-folder"></a>Nasıl yapılır: belirli klasör içinde program aracılığıyla arama yapma
+  Bu kod örneği kullanan `Find` ve `FindNext` metin e-posta iletilerinin bulunan konu alanında aranacak yöntemleri **gelen**. Bu yöntem bir dize filtresi T harfiyle başlayan harfini denetlemek için kullanılır. `Subject` metin.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
 ## <a name="example"></a>Örnek  
  [!code-csharp[Trin_OL_SearchFolder#1](../vsto/codesnippet/CSharp/Trin_OL_SearchFolder/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Klasörlerle çalışma](../vsto/working-with-folders.md)   
  [Outlook nesne modeline genel bakış](../vsto/outlook-object-model-overview.md)   
- [Nasıl yapılır: Program Aracılığıyla Klasörü Ada Göre Alma](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)  
+ [Nasıl yapılır: program aracılığıyla klasörü ada göre alma](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)  
   
   

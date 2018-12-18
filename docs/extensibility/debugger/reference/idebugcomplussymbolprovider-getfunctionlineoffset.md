@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7fc5fa77a227e8324956a62380e6a42c76e5a47b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8923550b0aa7947a32296d60eb1badace36c30fa
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825900"
 ---
 # <a name="idebugcomplussymbolprovidergetfunctionlineoffset"></a>IDebugComPlusSymbolProvider::GetFunctionLineOffset
-Belirtilen satır uzaklığı temsil eden bir işlev içinde adresini alır.  
+Belirtilen satır sapması temsil eden bir işlev içinde adresi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,19 +44,19 @@ int GetFunctionLineOffset(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [in] İşlevi temsil adresi.  
+ [in] Adresi işlevi temsil eder.  
   
  `dwLine`  
- [in] Satır işlevi başından uzaklık.  
+ [in] Satırı işlevi başından uzaklığı.  
   
  `ppNewAddress`  
- [out] İşlev başından uzaklık satırı temsil eden yeni adresi.  
+ [out] İşlev başından uzaklığı satırı temsil eden yeni adresi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::GetFunctionLineOffset(  

@@ -11,14 +11,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 689d2510a8513b880f3c2cddca584449c03217b4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3e5cbcc06fcc7a936918de8b1a9d4c44d9938d94
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154164"
 ---
-# <a name="buildprojectonload-element-visual-studio-templates"></a>BuildProjectOnload Öğesi (Visual Studio Şablonları)
-Yalnızca yeni projeler oluşturun ve bunları bir çözüme eklemek oluşturur. Çözümün tamamında yerleşik değil.  
+# <a name="buildprojectonload-element-visual-studio-templates"></a>BuildProjectOnload öğesi (Visual Studio şablonları)
+Yalnızca yeni projeler oluşturmak ve bunları bir çözüme eklemek gibi oluşturur. Tüm çözüm hazırladılar değil.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -30,31 +31,31 @@ Yalnızca yeni projeler oluşturun ve bunları bir çözüme eklemek oluşturur.
 <BuildProjectOnLoad> true/false </BuildOnLoad>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|TemplateData|Şablon kategorilere ayırır ve ikisi de görünme tanımlar **yeni proje** ve **Yeni Öğe Ekle** iletişim kutuları.|  
+|`TemplateData`|Şablonu kategorilere ayırır ve her ikisinde de görüntülenme şeklini tanımlayan **yeni proje** ve **Yeni Öğe Ekle** iletişim kutuları.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Metin ya da olmalıdır `true` veya `false` şablondan oluşturulduğunda, yalnızca yeni proje oluşturma atlanmayacağını belirtmek için.  
+ Metin olmalıdır `true` veya `false` şablondan oluşturulduğunda, yalnızca yeni projeyi derlemek gösteren.  
   
 ## <a name="remarks"></a>Açıklamalar  
  `BuildProjectOnLoad` İsteğe bağlı bir öğedir. Varsayılan değer `false` şeklindedir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek, bir Visual C# şablon için meta verileri gösterilmektedir.  
+ Aşağıdaki örnek, bir Visual C# şablonu meta verileri gösterir.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -81,6 +82,6 @@ Yalnızca yeni projeler oluşturun ve bunları bir çözüme eklemek oluşturur.
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)

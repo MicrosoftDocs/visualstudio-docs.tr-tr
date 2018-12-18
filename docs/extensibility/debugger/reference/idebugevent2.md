@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31111218"
 ---
 # <a name="idebugevent2"></a>IDebugEvent2
 Bu arabirim, bir kesme noktasında durdurma gibi kritik hata ayıklama bilgileri ve hata ayıklama iletisi gibi kritik olmayan bilgileri iletişim kurmak için kullanılır.  

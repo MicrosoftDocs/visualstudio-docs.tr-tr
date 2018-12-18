@@ -19,103 +19,105 @@ ms.assetid: 79500596-1e4d-478e-a991-a636fd73a622
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 71d651d2e2d6c84b5858bb4687bf74aa503d014c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5a0a8846719c6ad57e65e1e308e9884e81e1997d
+ms.sourcegitcommit: f37affbc1b885dfe246d4b2c295a6538b383a0ca
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37174728"
 ---
 # <a name="validate-data-in-datasets"></a>Veri kümelerindeki verileri doğrulama
-Verileri doğrulama kısıtlamaları bir veri kümesi'nin şema içinde veri nesnelerine girilmesini değerleri uygun onaylayan işlemidir. Doğrulama işlemini de bu değerleri, uygulamanız için kurulmuş kuralları takip onaylar. Temel alınan veritabanı güncelleştirme göndermeden önce verileri doğrulamak için iyi bir uygulamadır. Bu, hataları ve bunun yanı sıra olası bir uygulama ve veritabanı arasındaki gidiş dönüş sayısını azaltır.
+Verileri doğrulama içinde bir veri kümesi şema kısıtlamalara uyması veri nesnelerine girilen değerlerin onaylanması işlemidir. Doğrulama işlemi ayrıca, bu değerler uygulamanız için kurulmuş kuralları takip ettiğiniz onaylar. Alttaki veritabanına güncelleştirmeleri göndermeden önce verileri doğrulamak için iyi bir uygulamadır. Bu, hataları ve bunun yanı sıra bir uygulama ve veritabanı arasındaki gidiş gelişlerin potansiyel sayısını azaltır.
 
-Doğrulama denetimlerini kümesine oluşturarak, bir veri kümesine yazılan veri geçerli olduğunu doğrulayabilirsiniz. Veri kümesi güncelleştirmesi nasıl gerçekleştirildiği olsun veri denetleyebilirsiniz — doğrudan bir bileşeni içinde bir form veya başka bir yolla denetimler tarafından mı yoksa. Veri kümesi, uygulamanızın (aksine, veritabanı arka ucu) bir parçası olduğundan, uygulamaya özgü doğrulama oluşturmak için mantıksal bir yerdir.
+Veri kümesine doğrulama denetimlerini oluşturarak, bir veri kümesine yazılan veri geçerli olduğunu doğrulayabilirsiniz. Veri kümesini güncelleştirme nasıl gerçekleştirildiği ne olursa olsun veri denetleyebilirsiniz — kullanılıp bir bileşeni, formda veya başka bir şekilde denetimleri tarafından doğrudan. Veri kümesi (aksine, veritabanı arka ucu), uygulamanızın bir parçası olduğundan, uygulamaya özgü doğrulama oluşturmak için mantıksal bir yerdir.
 
-Veri kümesi'nin kısmi sınıf dosyasında doğrulama uygulamanıza eklemek için en iyi yerdir. İçinde [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] veya [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)], açık **veri kümesi Tasarımcısı** ve doğrulama oluşturmak istediğiniz sütun veya tablo çift tıklatın. Bu eylem otomatik olarak oluşturur bir <xref:System.Data.DataTable.ColumnChanging> veya <xref:System.Data.DataTable.RowChanging> olay işleyicisi.
+Veri kümesinin parçalı sınıf dosyasında doğrulama uygulamanıza eklemek için en iyi yerdir. İçinde [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] veya [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)]açın **veri kümesi Tasarımcısı** ve doğrulama oluşturmak istediğiniz sütunun veya tablonun çift tıklayın. Bu eylem otomatik olarak oluşturur bir <xref:System.Data.DataTable.ColumnChanging> veya <xref:System.Data.DataTable.RowChanging> olay işleyicisi.
 
-## <a name="validate-data"></a>Veri doğrulama
- Dataset içindeki doğrulama aşağıdaki yollarla gerçekleştirilebilir:
+## <a name="validate-data"></a>Verileri doğrulama
+ Bir veri kümesi içinde doğrulama aşağıdaki yollarla sağlanır:
 
--   Kendi uygulamaya özgü doğrulama oluşturarak değişiklikleri sırasında bir tek veri sütundaki değerleri kontrol edebilirsiniz.  Daha fazla bilgi için bkz: [nasıl yapılır: doğrulama veri sırasında sütun değişiklikleri](validate-data-in-datasets.md).
+-   Uygulamaya özgü doğrulama oluşturarak değişiklikleri sırasında bir tek veri sütundaki değerleri kontrol edebilirsiniz. Daha fazla bilgi için [nasıl yapılır: sütun değişiklikleri sırasında veri doğrulama](validate-data-in-datasets.md).
 
--   Tüm veriler değerlerine veri denetleyebilirsiniz kendi uygulamaya özgü doğrulama oluşturarak satır değiştiriyor. Daha fazla bilgi için bkz: [nasıl yapılır: doğrulama veri sırasında satır değişiklikleri](validate-data-in-datasets.md).
+-   Değerleri bir tüm veriler için veri denetleyebilirsiniz kendi uygulamaya özgü doğrulama oluşturarak satır değişiyor. Daha fazla bilgi için [nasıl yapılır: satır değişiklikleri sırasında veri doğrulama](validate-data-in-datasets.md).
 
--   Benzersiz kısıtlamalar, anahtarları ve benzeri gerçek şema tanımı veri kümesinin bir parçası olarak oluşturarak.
+-   Benzersiz kısıtlamalar, anahtarlar vb. gerçek bir şema tanımı veri kümesinin bir parçası olarak oluşturarak.
 
 -   Özelliklerini ayarlayarak <xref:System.Data.DataColumn> nesnenin, gibi <xref:System.Data.DataColumn.MaxLength%2A>, <xref:System.Data.DataColumn.AllowDBNull%2A>, ve <xref:System.Data.DataColumn.Unique%2A>.
 
-Bazı olaylar tarafından gerçekleştirilen <xref:System.Data.DataTable> nesne bir değişiklik bir kayıtta oluştuğu zaman:
+Tarafından tetiklenen çeşitli olayları <xref:System.Data.DataTable> nesnesi bir değişiklik kaydı oluştuğu zaman:
 
--   <xref:System.Data.DataTable.ColumnChanging> Ve <xref:System.Data.DataTable.ColumnChanged> sırasında ve tek bir sütun için her bir değişiklikten sonra olayları ortaya çıkar. <xref:System.Data.DataTable.ColumnChanging> Olayı, belirli sütunlardaki değişiklikleri doğrulamak istediğinizde yararlıdır. Önerilen değişikliği hakkında bilgi içeren olay bağımsız değişken olarak geçirilir.
--   <xref:System.Data.DataTable.RowChanging> Ve <xref:System.Data.DataTable.RowChanged> olayları yükseltilmiş sırasında ve sonrasında herhangi bir satır değişikliği. <xref:System.Data.DataTable.RowChanging> Olaydır daha genel. Bir değişiklik yere satırda oluştuğunu, ancak hangi sütunun değişti tanımadığınız gösterir.
+-   <xref:System.Data.DataTable.ColumnChanging> Ve <xref:System.Data.DataTable.ColumnChanged> olayları oluştuğunda sırasında ve sonrasında her değişiklik için tek bir sütun. <xref:System.Data.DataTable.ColumnChanging> Olay, belirli sütunlardaki değişiklikleri doğrulamak istediğinizde yararlıdır. Önerilen değişikliğin hakkında bilgi içeren olay bağımsız değişkeni olarak geçirilir.
+-   <xref:System.Data.DataTable.RowChanging> Ve <xref:System.Data.DataTable.RowChanged> olayları oluştuğunda sırasında ve sonrasında herhangi bir satır değişikliği. <xref:System.Data.DataTable.RowChanging> Daha genel bir olay işleme çözümüdür. Bu, bir değişiklik yere satırda oluştuğunu, ancak hangi sütunun değişti bilmiyorum gösterir.
 
-Varsayılan olarak, her değişiklik bir sütuna, bu nedenle dört olayları başlatır. İlk <xref:System.Data.DataTable.ColumnChanging> ve <xref:System.Data.DataTable.ColumnChanged> değiştiriliyor belirli sütun için olaylar. Sonraki olan <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> olaylar. Satırda birden fazla değişiklik yaptığınız olayları için her bir değişiklikten gerçekleştirilecektir.
+Varsayılan olarak, her değişiklik bir sütunu için bu nedenle dört olayları başlatır. İlk <xref:System.Data.DataTable.ColumnChanging> ve <xref:System.Data.DataTable.ColumnChanged> değiştirilirken belli sütun için olayları. Sonraki olan <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> olayları. Satırda birden çok değişiklik yaptığınız, her değişiklik için olayları gerçekleştirilecektir.
 
 > [!NOTE]
->  Veri sıranın <xref:System.Data.DataRow.BeginEdit%2A> yöntemi kapanmadan <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> her tek sütun değişiklikten sonra olaylar. Bu durumda, olay kadar oluşmaz <xref:System.Data.DataRow.EndEdit%2A> yönteminin çağrılıp çağrılmadığını, ne zaman <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> olaylar yalnızca bir kez başlatılır. Daha fazla bilgi için bkz: [bir veri kümesini doldururken kısıtlamaları kapatma kapatma](../data-tools/turn-off-constraints-while-filling-a-dataset.md).
+>  Veri sıranın <xref:System.Data.DataRow.BeginEdit%2A> yöntemi kapanmadan <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> her bireysel sütun değişimi sonra olayları. Bu durumda, olayı kadar oluşmaz <xref:System.Data.DataRow.EndEdit%2A> yönteminin çağrılıp çağrılmadığını, ne zaman <xref:System.Data.DataTable.RowChanging> ve <xref:System.Data.DataTable.RowChanged> olayları yalnızca bir kez başlatılır. Daha fazla bilgi için [bir veri kümesini doldururken kısıtlamaları kapatma kapatma](../data-tools/turn-off-constraints-while-filling-a-dataset.md).
 
-Seçtiğiniz olay nasıl ayrıntılı doğrulama olmasını istediğiniz bağlıdır. Bir sütun değiştiğinde hemen bir hata catch önemliyse, doğrulama kullanarak yapı <xref:System.Data.DataTable.ColumnChanging> olay. Aksi takdirde kullanın <xref:System.Data.DataTable.RowChanging> çeşitli hatalar aynı anda yakalama sonuçlanabilir olay. Ayrıca, böylece bir sütunun değerini başka bir sütunun içeriğine göre doğrulanır, verileri yapılandırıldıysa, sonra doğrulama sırasında gerçekleştirin <xref:System.Data.DataTable.RowChanging> olay.
+Seçtiğiniz olayın ne kadar ayrıntılı, doğrulama olması için istediğinize bağlıdır. Bir sütun değiştiğinde hemen bir hata catch önemli ise, doğrulama kullanarak yapı <xref:System.Data.DataTable.ColumnChanging> olay. Aksi takdirde kullanın <xref:System.Data.DataTable.RowChanging> olayı aynı anda yakalama çeşitli hatalar oluşabilir. Ayrıca, bir sütunun değerini başka bir sütunun içeriğine göre doğrulanır. böylece verilerinizi yapılandırılırsa sırasında doğrulama işlemini yapabilir <xref:System.Data.DataTable.RowChanging> olay.
 
-Kayıtları güncelleştirildiğinde, <xref:System.Data.DataTable> nesnesi değişiklikleri gerçekleşen değişiklikler yapıldıktan sonra ve yanıt verebilirsiniz olayları başlatır.
+Kayıt güncelleştirildiğinde, <xref:System.Data.DataTable> nesne değişiklikleri ortaya çıkan ve değişiklikler yapıldıktan sonra yanıt verebilirsiniz olayları başlatır.
 
-Türü belirtilmiş veri kümesi, uygulamanızın kullanıyorsa, kesin türü belirtilmiş olay işleyicileri oluşturabilirsiniz. Bu işleyiciler için oluşturabileceğiniz dört ek yazılan olaylar ekleyecektir: `dataTableNameRowChanging`, `dataTableNameRowChanged`, `dataTableNameRowDeleting`, ve `dataTableNameRowDeleted`. Bu yazılan olay işleyicileri kod yazmak ve okumak daha kolay hale tablosunun sütun adlarını içeren bir bağımsız değişken geçirin.
+Uygulamanızın kullandığı bir türü belirtilmiş veri kümesi, türü kesin belirlenmiş olay işleyicileri oluşturabilirsiniz. Bu işleyiciler için oluşturabileceğiniz dört ek yazılan olaylar ekler: `dataTableNameRowChanging`, `dataTableNameRowChanged`, `dataTableNameRowDeleting`, ve `dataTableNameRowDeleted`. Bu yazılı olay işleyicileri tablonuzun kod yazma ve okuma daha kolay hale getirmek sütun adları içeren bağımsız değişken olarak geçirin.
 
-## <a name="data-update-events"></a>Verileri güncelleştirme olayları
+## <a name="data-update-events"></a>Olay verileri güncelleştirme
 
 |Olay|Açıklama|
 |-----------|-----------------|
-|<xref:System.Data.DataTable.ColumnChanging>|Bir sütundaki değeri olarak değiştiriliyor. Olay satır ve sütun için önerilen yeni değeri ile birlikte geçirir.|
-|<xref:System.Data.DataTable.ColumnChanged>|Bir sütundaki değeri değiştirildi. Olay satır ve sütun için önerilen değeri ile birlikte geçirir.|
-|<xref:System.Data.DataTable.RowChanging>|Yapılan değişiklikler bir <xref:System.Data.DataRow> nesnesi hakkında veri kümesine geri işleminde üzeresiniz. Çağrılmaz durumunda <xref:System.Data.DataRow.BeginEdit%2A> yöntemi, <xref:System.Data.DataTable.RowChanging> olayı her değişiklik bir sütun için hemen sonra <xref:System.Data.DataTable.ColumnChanging> olay tetiklenir. Aradığınız varsa <xref:System.Data.DataRow.BeginEdit%2A> değişiklik yapmadan önce <xref:System.Data.DataTable.RowChanging> olayı yalnızca çağırdığınızda <xref:System.Data.DataRow.EndEdit%2A> yöntemi.<br /><br /> Olay satır sizin için ne tür eylemi (değişiklik, Ekle ve benzeri) gerçekleştirilen belirten bir değer ile birlikte geçirir.|
-|<xref:System.Data.DataTable.RowChanged>|Bir satır değiştirildi. Olay satır sizin için ne tür eylemi (değişiklik, Ekle ve benzeri) gerçekleştirilen belirten bir değer ile birlikte geçirir.|
-|<xref:System.Data.DataTable.RowDeleting>|Bir satır siliniyor. Olay satır sizin için ne tür eylemi (silme) gerçekleştirilen belirten bir değer ile birlikte geçirir.|
-|<xref:System.Data.DataTable.RowDeleted>|Bir satır silindi. Olay satır sizin için ne tür eylemi (silme) gerçekleştirilen belirten bir değer ile birlikte geçirir.|
+|<xref:System.Data.DataTable.ColumnChanging>|Bir sütundaki değer olarak değiştiriliyor. Olay satır ve sütunları için önerilen yeni değerin yanı sıra geçirir.|
+|<xref:System.Data.DataTable.ColumnChanged>|Bir sütundaki değeri değiştirildi. Olay satır ve sütunları için önerilen değeri yanı sıra geçirir.|
+|<xref:System.Data.DataTable.RowChanging>|Yapılan değişiklikler bir <xref:System.Data.DataRow> nesne olan veri kümesine hakkında yürütülmesi. Değil çağrılırsa <xref:System.Data.DataRow.BeginEdit%2A> yöntemi <xref:System.Data.DataTable.RowChanging> olayı yükseltildiğinde her değişiklik bir sütunu için hemen sonra <xref:System.Data.DataTable.ColumnChanging> olay tetiklenir. Aradığınız varsa <xref:System.Data.DataRow.BeginEdit%2A> değişiklikleri yapmadan önce <xref:System.Data.DataTable.RowChanging> yalnızca çağırdığınızda olayı oluşturulur <xref:System.Data.DataRow.EndEdit%2A> yöntemi.<br /><br /> Olay satır için ne tür bir eylem (değiştirme, ekleme ve benzeri) gerçekleşen belirten bir değer ile birlikte geçirir.|
+|<xref:System.Data.DataTable.RowChanged>|Satır değiştirildi. Olay satır için ne tür bir eylem (değiştirme, ekleme ve benzeri) gerçekleşen belirten bir değer ile birlikte geçirir.|
+|<xref:System.Data.DataTable.RowDeleting>|Bir satır siliniyor. Olay satır için ne tür (Sil) eyleminin gerçekleştirildiği belirten bir değer ile birlikte geçirir.|
+|<xref:System.Data.DataTable.RowDeleted>|Bir satır silindi. Olay satır için ne tür (Sil) eyleminin gerçekleştirildiği belirten bir değer ile birlikte geçirir.|
 
-<xref:System.Data.DataTable.ColumnChanging>, <xref:System.Data.DataTable.RowChanging>, Ve <xref:System.Data.DataTable.RowDeleting> olayları güncelleştirme işlemi sırasında oluşur. Veri doğrulama veya diğer tür işlem gerçekleştirmek için bu olayları kullanabilirsiniz. Güncelleştirme sırasında bu olayları sürecinde olduğundan, bir özel durum Update'ten önleyen atma tarafından iptal edebilirsiniz tamamlanıyor.
+<xref:System.Data.DataTable.ColumnChanging>, <xref:System.Data.DataTable.RowChanging>, Ve <xref:System.Data.DataTable.RowDeleting> olayları güncelleştirme işlemi sırasında oluşur. Bu olaylar, verileri doğrulamak veya diğer işleme türlerini gerçekleştirmek için kullanabilirsiniz. Güncelleştirme sırasında bu olayları işlemde olduğundan, bir özel Update'ten önleyen durum tarafından iptal edebilirsiniz sonlandırılıyor.
 
-<xref:System.Data.DataTable.ColumnChanged>, <xref:System.Data.DataTable.RowChanged> Ve <xref:System.Data.DataTable.RowDeleted> güncelleştirmeyi başarıyla tamamlandığında, oluşturulan bildirim olayları olaylardır. Bu olaylar başka bir işlem başarılı bir güncelleştirme dayalı yapmanıza istediğinizde faydalıdır.
+<xref:System.Data.DataTable.ColumnChanged>, <xref:System.Data.DataTable.RowChanged> Ve <xref:System.Data.DataTable.RowDeleted> güncelleştirme başarıyla tamamlandığında, oluşturulan uyarı olayları olaylardır. Bu olaylar, başka bir işlem başarılı bir güncelleştirmeye göre yapmanıza istediğinizde yararlıdır.
 
 ## <a name="validate-data-during-column-changes"></a>Sütun değişiklikleri sırasında veri doğrulama
 
 > [!NOTE]
->  **Veri kümesi Tasarımcısı** hangi doğrulama mantığını bir veri kümesine eklenebilir kısmi bir sınıf oluşturur. Tasarımcı tarafından üretilen veri kümesi silin veya herhangi bir parçalı sınıf kodda değişiklik değil.
+>  **Veri kümesi Tasarımcısı** hangi Doğrulama mantığı bir veri kümesine eklenebilecek kısmi bir sınıf oluşturur. Tasarımcı tarafından oluşturulan veri kümesini silin veya kısmi sınıftaki herhangi bir kod değişikliği değil.
 
-Bir veri sütununun değeri yanıt vererek değiştiğinde verileri doğrulayabilir <xref:System.Data.DataTable.ColumnChanging> olay. Oluştuğunda, bu olay bir olay bağımsız değişkenini geçirir (<xref:System.Data.DataColumnChangeEventArgs.ProposedValue%2A>) geçerli sütun için önerilen değeri içerir. İçeriğini temel alarak `e.ProposedValue`, şunları yapabilirsiniz:
+Bir veri sütununun değeri değiştiğinde yanıtlayarak verileri doğrulayabilirsiniz <xref:System.Data.DataTable.ColumnChanging> olay. Oluştuğunda, bu olay bir olay bağımsız değişkeni geçirir (<xref:System.Data.DataColumnChangeEventArgs.ProposedValue%2A>) geçerli bir sütun için önerilmekte değeri içerir. İçeriklerine dayanan `e.ProposedValue`, şunları yapabilirsiniz:
 
--   Önerilen değer nothing yaparak kabul edin.
+-   Birşey yapmayarak önerilen değeri kabul edin.
 
--   Önerilen değer sütun hata ayarlayarak Reddet (<xref:System.Data.DataRow.SetColumnError%2A>) gelen sütun değiştirme olay işleyicisi içinde.
+-   Sütun hatasını ayarlayarak önerilen değeri Reddet (<xref:System.Data.DataRow.SetColumnError%2A>) gelen sütun değiştirme olay işleyicisinin içerisinde.
 
--   İsteğe bağlı olarak kullanan bir <xref:System.Windows.Forms.ErrorProvider> denetim kullanıcıya bir hata iletisi görüntülenir. Daha fazla bilgi için bkz: [ErrorProvider bileşeni](/dotnet/framework/winforms/controls/errorprovider-component-windows-forms).
+-   İsteğe bağlı olarak bir <xref:System.Windows.Forms.ErrorProvider> denetimi kullanıcıya bir hata iletisi görüntüler. Daha fazla bilgi için [ErrorProvider bileşeni](/dotnet/framework/winforms/controls/errorprovider-component-windows-forms).
 
 Doğrulama de yapılabilir sırasında <xref:System.Data.DataTable.RowChanging> olay.
 
 ## <a name="validate-data-during-row-changes"></a>Satır değişiklikleri sırasında veri doğrulama
-Doğrulamak istediğiniz her bir sütunun uygulamanızı gereksinimlerini karşılayan verileri içerdiğini doğrulamak üzere kod yazabilirsiniz. Önerilen değer kabul edilebilir değilse, bir hata var. göstermek için sütun ayarlayarak bunu yapabilirsiniz. Aşağıdaki örnekler kümesi sütunu hatası olduğunda `Quantity` sütundur 0 veya daha az. Satır değiştirme olay işleyicileri aşağıdaki örneklerde benzemelidir.
+Doğrulamak istediğiniz her bir sütunun, uygulamanızın gereksinimlerini karşılayan verileri içerdiğini doğrulamak için kod yazabilirsiniz. Önerilen değer kabul edilebilir değilse, hata içerdiğini belirtmek için sütunu ayarlayarak bunu yapabilirsiniz. Aşağıdaki örnekler bir sütun hatasını belirtmektedir olduğunda `Quantity` 0 veya daha az sütun. Satır değiştiren olay işleyicileri aşağıdaki örneklere benzemelidir.
 
-#### <a name="to-validate-data-when-a-row-changes-visual-basic"></a>Verileri bir satır doğrulamak için (Visual Basic) değiştirir.
+### <a name="to-validate-data-when-a-row-changes-visual-basic"></a>(Visual Basic) değiştiğinde verileri bir satır doğrulamak için
 
-1.  Bir veri kümesini açma **veri kümesi Tasarımcısı**. Daha fazla bilgi için bkz: [izlenecek yol: veri kümesi tasarımcısında bir veri kümesi oluşturma](walkthrough-creating-a-dataset-with-the-dataset-designer.md).
+1.  Kümenizde açın **veri kümesi Tasarımcısı**. Daha fazla bilgi için [izlenecek yol: veri kümesi Tasarımcısı'nda bir veri kümesi oluşturma](walkthrough-creating-a-dataset-with-the-dataset-designer.md).
 
-2.  Doğrulamak istediğiniz tablonun başlık çubuğu çift tıklatın. Bu eylem otomatik olarak oluşturur <xref:System.Data.DataTable.RowChanging> olay işleyicisi <xref:System.Data.DataTable> veri kümesi'nin parçalı sınıf dosyasında.
+2.  Doğrulamak istediğiniz tablonun başlık çubuğunu çift tıklatın. Bu eylem otomatik olarak oluşturur <xref:System.Data.DataTable.RowChanging> olay işleyicisine <xref:System.Data.DataTable> veri kümesinin parçalı sınıf dosyasında.
 
     > [!TIP]
-    >  Satır değiştirme olay işleyicisi oluşturmak için tablo adının solundaki çift tıklayın. Tablo adı çift tıklarsanız düzenleyebilirsiniz.
+    >  Satır değiştiren olay işleyicisi oluşturmak için tablo adının solunda çift tıklayın. Tablo adını çift tıklatırsanız, düzenleyebilirsiniz.
 
      [!code-vb[VbRaddataValidating#3](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_1.vb)]
 
-#### <a name="to-validate-data-when-a-row-changes-c"></a>Bir satır (C#) değiştiğinde verileri doğrulamak için
+### <a name="to-validate-data-when-a-row-changes-c"></a>Bir satır (C#) değiştiğinde verileri doğrulamak için
 
-1.  Bir veri kümesini açma **veri kümesi Tasarımcısı**. Daha fazla bilgi için bkz: [izlenecek yol: veri kümesi tasarımcısında bir veri kümesi oluşturma](walkthrough-creating-a-dataset-with-the-dataset-designer.md).
+1.  Kümenizde açın **veri kümesi Tasarımcısı**. Daha fazla bilgi için [izlenecek yol: veri kümesi Tasarımcısı'nda bir veri kümesi oluşturma](walkthrough-creating-a-dataset-with-the-dataset-designer.md).
 
-2.  Doğrulamak istediğiniz tablonun başlık çubuğu çift tıklatın. Bu eylem için bir parçalı sınıf dosyası oluşturur <xref:System.Data.DataTable>.
+2.  Doğrulamak istediğiniz tablonun başlık çubuğunu çift tıklatın. Bu eylem için bir parçalı sınıf dosyası oluşturur <xref:System.Data.DataTable>.
 
     > [!NOTE]
-    >  **Veri kümesi Tasarımcısı** bir olay işleyicisi için otomatik olarak oluşturmaz <xref:System.Data.DataTable.RowChanging> olay. İşlemek için bir yöntem oluşturmak zorunda <xref:System.Data.DataTable.RowChanging> tablonun başlatma yöntemini olayda bağlanacağını için olay ve kodu çalıştırın.
+    >  **Veri kümesi Tasarımcısı** otomatik olarak bir olay işleyicisi oluşturmaz <xref:System.Data.DataTable.RowChanging> olay. İşlemek için bir yöntem oluşturmak sahip olduğunuz <xref:System.Data.DataTable.RowChanging> olayı tablonun başlatma yöntemine bağlamak için olay ve kodu çalıştırın.
 
-3.  Kısmi sınıfına aşağıdaki kodu kopyalayın:
+3.  Aşağıdaki kodu kısmi sınıfın içine kopyalayın:
 
     ```csharp
     public override void EndInit()
@@ -137,72 +139,72 @@ Doğrulamak istediğiniz her bir sütunun uygulamanızı gereksinimlerini karş�
     }
     ```
 
-## <a name="to-retrieve-changed-rows"></a>Değiştirilen satırları almak için
-Bir veri tablodaki her satır sahip bir <xref:System.Data.DataRow.RowState%2A> satır geçerli durumunu değerleri kullanarak izler özelliği <xref:System.Data.DataRowState> numaralandırması. Çağırarak dataset ya da veri tablosundan değiştirilen satırları döndürebilir `GetChanges` yöntemi bir <xref:System.Data.DataSet> veya <xref:System.Data.DataTable>. Değişiklikleri arama önce mevcut olduğunu doğrulayın `GetChanges` çağırarak <xref:System.Data.DataSet.HasChanges%2A> yöntemi bir veri kümesi.
+## <a name="to-retrieve-changed-rows"></a>Değiştirilen satırların almak için
+Her satırda bir veri tablosuna sahip bir <xref:System.Data.DataRow.RowState%2A> geçerli durumunu satır değerleri kullanarak izler özelliği <xref:System.Data.DataRowState> sabit listesi. Çağırarak bir dataset ya da veri tablosundan değiştirilen satırları döndürebilirsiniz `GetChanges` yöntemi bir <xref:System.Data.DataSet> veya <xref:System.Data.DataTable>. Değişiklikler çağırmadan önce mevcut doğrulayabilirsiniz `GetChanges` çağırarak <xref:System.Data.DataSet.HasChanges%2A> bir veri kümesinin yöntemi.
 
 > [!NOTE]
->  Bir veri kümesi veya veri tablosuna değişiklikleri sonra (çağırarak <xref:System.Data.DataSet.AcceptChanges%2A> yöntemi), `GetChanges` yöntemi hiçbir veri döndürür. Uygulamanızı değiştirilen satırları işlem gerekiyorsa çağırmadan önce değişiklikleri işlemelidir `AcceptChanges` yöntemi.
+>  Bir veri kümesi veya veri tablosuna değişiklikleri sonra (çağırarak <xref:System.Data.DataSet.AcceptChanges%2A> yöntemi), `GetChanges` yöntemi hiçbir veri döndürür. Değiştirilen satırların işlenecek uygulamanız gerekiyorsa çağırmadan önce değişiklikleri işleme `AcceptChanges` yöntemi.
 
-Çağırma <xref:System.Data.DataSet.GetChanges%2A> yöntemi dataset ya da veri tablosunun değiştirilmiş yalnızca kayıtlarını içeren yeni bir veri kümesi ya da veri tablosu döndürür. Belirli kayıtları almak istiyorsanız — örneğin, yalnızca yeni kayıtları veya yalnızca değiştirilen kayıtları — arasında bir değer geçirebilirsiniz <xref:System.Data.DataRowState> numaralandırması için bir parametre olarak `GetChanges` yöntemi.
+Çağırma <xref:System.Data.DataSet.GetChanges%2A> yöntemi bir dataset ya da veri tablonun değiştirilmiş tek kayıtları içeren yeni bir veri kümesi veya veri tablosu döndürür. Belirli kayıtları almak istiyorsanız — örneğin, yalnızca yeni kayıtları veya yalnızca değiştirilmiş kayıtlar — arasında bir değer geçirebilirsiniz <xref:System.Data.DataRowState> bir parametre olarak numaralandırması `GetChanges` yöntemi.
 
-Kullanım <xref:System.Data.DataRowVersion> bir satır (işlemeyi önce bir satırda olan Örneğin, orijinal değerleri) farklı sürümlerini erişmek için numaralandırması.
+Kullanım <xref:System.Data.DataRowVersion> bir satır (işlemekte önce bir satırda olan gibi orijinal değerleri) farklı sürümlerine erişmek için sabit listesi.
 
-#### <a name="to-get-all-changed-records-from-a-dataset"></a>Bir veri kümesinden tüm kayıtlar almak için
+### <a name="to-get-all-changed-records-from-a-dataset"></a>Bir veri kümesinden değişen tüm kayıtları almak için
 
--   Çağrı <xref:System.Data.DataSet.GetChanges%2A> yöntemi bir veri kümesi.
+-   Çağrı <xref:System.Data.DataSet.GetChanges%2A> bir veri kümesinin yöntemi.
 
-     Aşağıdaki örnek adlı yeni bir veri kümesi oluşturur `changedRecords` ve adlı başka bir veri kümesinden tüm kayıtlar ile doldurur `dataSet1`.
+     Aşağıdaki örnekte adlı yeni bir veri kümesi oluşturur `changedRecords` ve adlı başka bir veri kümesindeki tüm kayıtlar ile doldurur `dataSet1`.
 
      [!code-csharp[VbRaddataEditing#14](../data-tools/codesnippet/CSharp/validate-data-in-datasets_2.cs)]
      [!code-vb[VbRaddataEditing#14](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_2.vb)]
 
-#### <a name="to-get-all-changed-records-from-a-data-table"></a>Bir veri tablodan tüm kayıtlar almak için
+### <a name="to-get-all-changed-records-from-a-data-table"></a>Bir veri tablosundan değişen tüm kayıtları almak için
 
 -   Çağrı <xref:System.Data.DataTable.GetChanges%2A> DataTable yöntemi.
 
-     Aşağıdaki örnek olarak adlandırılan yeni bir veri tablosu oluşturur `changedRecordsTable` ve adlı başka bir veri tablodan tüm kayıtlar ile doldurur `dataTable1`.
+     Aşağıdaki örnekte adlı yeni bir veri tablosu oluşturur `changedRecordsTable` ve adlı başka bir veri tablosundaki tüm kayıtlar ile doldurur `dataTable1`.
 
      [!code-csharp[VbRaddataEditing#15](../data-tools/codesnippet/CSharp/validate-data-in-datasets_3.cs)]
      [!code-vb[VbRaddataEditing#15](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_3.vb)]
 
-#### <a name="to-get-all-records-that-have-a-specific-row-state"></a>Belirli satır durumunda olan tüm kayıtları almak için
+### <a name="to-get-all-records-that-have-a-specific-row-state"></a>Belirli bir satır durumunda olan tüm kayıtları almak için
 
--   Çağrı `GetChanges` yöntemi bir veri kümesi veya veri tablosu ve geçişi bir <xref:System.Data.DataRowState> bağımsız değişken olarak numaralandırma değeri.
+-   Çağrı `GetChanges` yöntemi, bir veri kümesi veya veri tablosu ve geçişi bir <xref:System.Data.DataRowState> bağımsız değişken olarak sabit listesi değeri.
 
-     Aşağıdaki örnek olarak adlandırılan yeni bir veri kümesi oluşturma gösterilmektedir `addedRecords` ve yalnızca için eklenene kayıtlarla doldurmak `dataSet1` veri kümesi.
+     Aşağıdaki örnekte adlı yeni bir veri kümesi oluşturma işlemi gösterilmektedir `addedRecords` ve yalnızca eklenmiş kayıtlarla doldurmak `dataSet1` veri kümesi.
 
      [!code-csharp[VbRaddataEditing#16](../data-tools/codesnippet/CSharp/validate-data-in-datasets_4.cs)]
      [!code-vb[VbRaddataEditing#16](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_4.vb)]
 
-     Aşağıdaki örnekte, en son eklenen tüm kayıtları döndürmek gösterilmiştir `Customers` tablosu:
+     Aşağıdaki örnek, en son eklenen tüm kayıtları döndürmek gösterilmektedir `Customers` tablosu:
 
      [!code-csharp[VbRaddataEditing#17](../data-tools/codesnippet/CSharp/validate-data-in-datasets_5.cs)]
      [!code-vb[VbRaddataEditing#17](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_5.vb)]
 
-## <a name="access-the-original-version-of-a-datarow"></a>Erişim DataRow özgün sürümü
-Veri satırları değişiklik yapıldığında, veri kümesi hem özgün korur (<xref:System.Data.DataRowVersion.Original>) ve yeni (<xref:System.Data.DataRowVersion.Current>) satır sürümleri. Örneğin, önce çağırma `AcceptChanges` yöntemi, uygulamanızın farklı sürümlerini kaydının erişebilirsiniz (tanımlandığı gibi <xref:System.Data.DataRowVersion> numaralandırması) ve uygun şekilde değişiklikleri işleme.
+## <a name="access-the-original-version-of-a-datarow"></a>Bir DataRow özgün sürümüne erişme
+Veri satırlarına değişiklik yapıldığında, hem özgün veri kümesini tutar (<xref:System.Data.DataRowVersion.Original>) ve yeni (<xref:System.Data.DataRowVersion.Current>) satır sürümleri. Örneğin, çağırmadan önce `AcceptChanges` yöntemi, uygulamanız bir kaydın farklı sürümlerine erişebilir (sınıfında tanımlandığı gibi <xref:System.Data.DataRowVersion> numaralandırma) ve değişiklikleri buna göre işleyebilir.
 
 > [!NOTE]
->  Bir satır farklı sürümlerini mevcut yalnızca düzenlendi sonra ve kendisinden önce `AcceptChanges` yöntemi çağrılır. Sonra `AcceptChanges` yöntemi çağrılır, geçerli ve özgün sürümleri aynıdır.
+>  Bir satırın farklı sürümleri yalnızca düzenlenmiş sonra ve kendisinden önce mevcut `AcceptChanges` yöntemi çağrılır. Sonra `AcceptChanges` yönteminin çağrılıp çağrılmadığını, geçerli ve orijinal sürümler aynıdır.
 
-Geçirme <xref:System.Data.DataRowVersion> değeri sütun dizini (veya sütun adı bir dize olarak) ile birlikte bu sütunun belirli bir satır sürümünden değeri döndürür. Değiştirilen sütun sırasında tanımlanan <xref:System.Data.DataTable.ColumnChanging> ve <xref:System.Data.DataTable.ColumnChanged> olaylar. Bu doğrulama amacıyla farklı satır sürümleri incelemek için iyi bir zamandır. Ancak, kısıtlamalar geçici olarak askıya, olayları yükseltilmiş olmaz ve program aracılığıyla gerekir hangi sütunların değiştiğini belirlemek. Bunu üzerinden yineleme tarafından yapmak <xref:System.Data.DataTable.Columns%2A> toplama ve farklı karşılaştırma <xref:System.Data.DataRowVersion> değerleri.
+Geçirme <xref:System.Data.DataRowVersion> değeri sütun diziniyle (veya sütun adı bir dize olarak) yanı sıra söz konusu sütunun belirli bir satır sürümündeki değeri döndürür. Değiştirilen sütun sırasında tanımlanan <xref:System.Data.DataTable.ColumnChanging> ve <xref:System.Data.DataTable.ColumnChanged> olayları. Bu, doğrulama amacıyla farklı satır sürümlerini incelemek için iyi bir zamandır. Ancak, kısıtlamaları geçici olarak askıya, bu olay harekete geçirilen olmaz ve program aracılığıyla yapmanız gerekir hangi sütunların değiştiğini belirleyin. İle Yinelem yaparak bunu yapabilirsiniz <xref:System.Data.DataTable.Columns%2A> toplama ve farklı karşılaştırma <xref:System.Data.DataRowVersion> değerleri.
 
-#### <a name="to-get-the-original-version-of-a-record"></a>Bir kayıt özgün sürümünü almak için
+### <a name="to-get-the-original-version-of-a-record"></a>Bir kaydın orijinal sürümünü almak için
 
--   Bir sütunun değerini geçirerek erişim <xref:System.Data.DataRowVersion> istediğiniz döndürülecek satır.
+-   Geçirerek bir sütun değerine erişin <xref:System.Data.DataRowVersion> döndürmek istediğiniz satırın.
 
-     Aşağıdaki örnekte nasıl kullanılacağını gösteren bir <xref:System.Data.DataRowVersion> özgün değerini almak için değer bir `CompanyName` alanındaki bir <xref:System.Data.DataRow>:
+     Aşağıdaki örnek nasıl kullanılacağını gösteren bir <xref:System.Data.DataRowVersion> orijinal değerini almak için değer bir `CompanyName` alanındaki bir <xref:System.Data.DataRow>:
 
      [!code-csharp[VbRaddataEditing#21](../data-tools/codesnippet/CSharp/validate-data-in-datasets_6.cs)]
      [!code-vb[VbRaddataEditing#21](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_6.vb)]
 
-## <a name="access-the-current-version-of-a-datarow"></a>Erişim DataRow geçerli sürümü
+## <a name="access-the-current-version-of-a-datarow"></a>Geçerli bir DataRow sürümüne erişme
 
-#### <a name="to-get-the-current-version-of-a-record"></a>Bir kayıt geçerli sürümü almak için
+### <a name="to-get-the-current-version-of-a-record"></a>Bir kaydın geçerli sürümünü almak için
 
--   Bir sütunun değerini erişmek ve ardından bir parametre döndürmek istediğiniz bir satır hangi sürümünün gösteren dizine ekleyin.
+-   Bir sütun değerine erişin ve hangi satır sürümünü döndürmek istediğinizi belirten dizine bir parametre ekleyin.
 
-     Aşağıdaki örnekte nasıl kullanılacağını gösteren bir <xref:System.Data.DataRowVersion> geçerli değerini almak için değer bir `CompanyName` alanındaki bir <xref:System.Data.DataRow>:
+     Aşağıdaki örnek nasıl kullanılacağını gösteren bir <xref:System.Data.DataRowVersion> değeri geçerli değerini almak için bir `CompanyName` alanındaki bir <xref:System.Data.DataRow>:
 
      [!code-csharp[VbRaddataEditing#22](../data-tools/codesnippet/CSharp/validate-data-in-datasets_7.cs)]
      [!code-vb[VbRaddataEditing#22](../data-tools/codesnippet/VisualBasic/validate-data-in-datasets_7.vb)]
@@ -210,5 +212,5 @@ Geçirme <xref:System.Data.DataRowVersion> değeri sütun dizini (veya sütun ad
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Visual Studio'da veri kümesi araçları](../data-tools/dataset-tools-in-visual-studio.md)
-- [Nasıl yapılır: Windows Forms DataGridView Denetiminde Verileri Doğrulama](/dotnet/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control)
-- [Nasıl yapılır: Windows Forms ErrorProvider Bileşeni ile Form Doğrulama için Hata Simgeleri Görüntüleme](/dotnet/framework/winforms/controls/display-error-icons-for-form-validation-with-wf-errorprovider)
+- [Nasıl yapılır: Windows Forms DataGridView denetiminde verileri doğrulama](/dotnet/framework/winforms/controls/how-to-validate-data-in-the-windows-forms-datagridview-control)
+- [Nasıl yapılır: Windows Forms ErrorProvider bileşeni ile form doğrulama için hata simgeleri görüntüleme](/dotnet/framework/winforms/controls/display-error-icons-for-form-validation-with-wf-errorprovider)

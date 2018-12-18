@@ -1,6 +1,7 @@
 ---
 title: Microsoft Visual Studio hata ayıklayıcısı (özel durum oluştu) iletişim kutusu | Microsoft Docs
-ms.custom: ''
+titleSuffix: ''
+ms.custom: seodec18
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
 ms.topic: reference
@@ -22,26 +23,27 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 24ccb3de6b22f54b239b5b772490a8d05a990dbd
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 5609f87063d3b2852b6a45f7174cfd3db90a1ccd
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062738"
 ---
 # <a name="microsoft-visual-studio-debugger-exception-thrown-dialog-box"></a>Microsoft Visual Studio Hata Ayıklayıcısı (Özel Durum Oluştu) İletişim Kutusu
-Programın bir özel durum oluştu. Bu iletişim kutusu, özel durum türünü bildirir. Bu özel durumu işlemek kodunuzu gerekir. Özel durum işleme için aşağıdaki seçenekler arasından seçim yapabilirsiniz:  
+Programınızda bir özel durum oluştu. Bu iletişim kutusunu oluşan özel durumun türünü bildirir. Bu özel durumu işlemek kodunuzu gerekir. Özel durum işleme için aşağıdaki seçenekler arasından seçim yapabilirsiniz:  
   
- **Sonu**  
- Hata ayıklayıcısında araya girmektir yürütülmesine izin verir. Özel durum işleyici sonu önce çağrılır. Aradan devam ederseniz, özel durum işleyici çağrılır.  
+ **sonu**  
+ Hata ayıklayıcıyı durdurmak için yürütmeye izin verir. Özel durum işleyicisini break önce çağrılır. Aradan devam ederseniz, özel durum işleyicisi çağrılır.  
   
- **Devam etmek**  
- Devam etmek yürütme, özel durum işleyicisi özel durumu işlemek iletmenize olanak sağlar. Bu seçenek, belirli türde bir özel durumlar için kullanılamaz. **Devam** devam etmek uygulama izin verir. Yerel bir uygulamada, özel durum işlenemezse neden olur. Yönetilen bir uygulamada ya da sona erdirmek için program veya barındırma bir uygulama tarafından işlenmesi için özel durum neden olur.  
+ **Continue**  
+ Özel durum işleyicisi özel durumu işlemek üzere bir fırsat vermek yürütme işleminin devam etmesini sağlar. Bu seçenek, belirli türdeki özel durumlar için kullanılamaz. **Devam** devam etmek uygulama izin verir. Yerel bir uygulamada yeniden oluşturulabilir için özel durum neden olur. Yönetilen bir uygulamada sonlandırmak için program veya bir barındırma uygulaması tarafından işlenmek üzere özel durum ya da neden olur.  
   
 > [!NOTE]
->  Yönetilen kod içinde işlenmeyen bir özel sonra devam edemiyor. Seçme **devam** sonra durdurmak hata ayıklama işlenmeyen bir özel durum yönetilen kodda neden olur.  
+>  Yönetilen kodda işlenmemiş özel durumdan sonra devam edemiyor. Seçme **devam** sonra hata ayıklamayı durdurmaya yönetilen kodda işlenmemiş bir özel durum neden olur.  
   
  **Yoksay**  
- Özel durum işleyici çağırmadan devam etmek yürütme sağlar. Özel durum işleyici çağrılır olduğundan, bu ek özel durumlar ve hatalar da dahil daha fazla sonuçlara yol açabilir. Bu seçenek, belirli türde bir özel durumlar için kullanılamaz.  
+ Özel durum işleyicisini çağırarak olmadan devam etmek için yürütmeye izin verir. Özel durum işleyicisi çağrılmaz çünkü bu ek özel durumlar ve hatalar dahil olmak üzere daha fazla sonuçlara yol açabilir. Bu seçenek, belirli türdeki özel durumlar için kullanılamaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Özel durumları hata ayıklayıcısı ile yönetme](../debugger/managing-exceptions-with-the-debugger.md)   

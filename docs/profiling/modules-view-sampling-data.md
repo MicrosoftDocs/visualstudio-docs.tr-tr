@@ -13,11 +13,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8bc3fcbced64b7bcd460b1a25e0dc442b6970795
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 97b3289119ec77c191d540285b235bab443ab6f3
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35256874"
 ---
 # <a name="modules-view---sampling-data"></a>Modüller görünümü - örnekleme verileri
 Profil oluşturma verileri örneklenen modülleri göre gruplandırılmış veri görüntüler performans verileri örnekleme modülleri görünümü. Her modül hiyerarşik bir köküdür. Örneklenen işlevleri modülün modül düğümünün altında listelenir.  
@@ -41,7 +42,7 @@ Profil oluşturma verileri örneklenen modülleri göre gruplandırılmış veri
 |**Özel örnekleri**|-Bir işlev için çağrı sayısı, bu işlev doğrudan yürütülmekte olan örnekleri yığın; diğer bir deyişle, bu işlev çağrı yığını üstünde olduğu örnek sayısı.<br />-Bir modül için özel örnekleri modülündeki işlevlerin toplamı.<br />-Bir satır veya yönerge, örnek sayısı için bu satırı veya yönerge yürütürken.|  
 |**Özel örnekleri %**|-İşlev veya modül için profil çalıştıran tüm örneklerini yüzdesi bu işlev veya modül özel örnekleri yoktu.<br />-Bir satır veya yönerge için profil oluşturma tüm örneklerini yüzdesi çalıştırın, bu satırı veya yönerge yürütülmekte olan içinde.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Modüller görünümü - örnekleme](../profiling/modules-view-dotnet-memory-sampling-data.md)   
  [Modüller görünümü - izleme](../profiling/modules-view-dotnet-memory-instrumentation-data.md)   
  [Modüller Görünümü](../profiling/modules-view-instrumentation-data.md)

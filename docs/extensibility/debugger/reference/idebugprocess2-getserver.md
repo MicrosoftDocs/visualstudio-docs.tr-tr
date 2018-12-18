@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0d816393aa33c976b881a6e943fb1d27e44e9ff3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: deb394f3f3e07bb9d4a2e7419ac87966aa839c87
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49930469"
 ---
 # <a name="idebugprocess2getserver"></a>IDebugProcess2::GetServer
-Bu işlemin çalıştığı sunucunun alır.  
+Bu işlem çalıştıran sunucunun alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetServer(
   
 #### <a name="parameters"></a>Parametreler  
  `ppServer`  
- [out] Döndürür bir [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md) bu işlemin çalıştığı sunucunun temsil eden nesne.  
+ [out] Döndürür bir [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md) bu işlemin çalıştığı sunucu temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Birden çok sunucu, tek bir makinede çalışıyor olabilir.  
+ Birden fazla sunucu tek bir makinede çalışıyor olabilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   

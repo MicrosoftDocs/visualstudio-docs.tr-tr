@@ -1,10 +1,9 @@
 ---
-title: ShowWebBrowser komutu | Microsoft Docs
-ms.custom: ''
+title: ShowWebBrowser Komutu
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - view.showwebbrowser
 helpviewer_keywords:
@@ -16,44 +15,50 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1f699623d15a400b58b3b546a7eb93300385903a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 87536df138de092948d845cf05d20af8e63ad68a
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50672151"
 ---
 # <a name="showwebbrowser-command"></a>ShowWebBrowser Komutu
-Bir Web tarayıcı penceresinde da tümleşik geliştirme ortamı (IDE) ya da dış IDE içinde belirttiğiniz URL'yi görüntüler.  
-  
-## <a name="syntax"></a>Sözdizimi  
-  
-```  
-View.ShowWebBrowser URL [/new][/ext]  
-```  
-  
-## <a name="arguments"></a>Arguments  
- `URL`  
- Gerekli. Web sitesi için URL (Tekdüzen Kaynak Konum Belirleyicisi).  
-  
-## <a name="switches"></a>Anahtarlar  
- / Yeni  
- İsteğe bağlı. Sayfaya yeni bir Web tarayıcısı örneğini görüntüleneceğini belirtir.  
-  
- /ext  
- İsteğe bağlı. Sayfa IDE dışında varsayılan Web tarayıcısında görüntüleneceğini belirtir.  
-  
-## <a name="remarks"></a>Açıklamalar  
- Diğer **ShowWebBrowser** komutu **gidin** veya **nav**.  
-  
-## <a name="example"></a>Örnek  
- Aşağıdaki örnek, bir Web tarayıcısında IDE dışında MSDN çevrimiçi giriş sayfasını görüntüler. Web tarayıcısı örneği zaten açıksa kullanılır; Aksi halde yeni bir örneğini başlatılır.  
-  
-```  
->View.ShowWebBrowser http://msdn.microsoft.com /ext  
-```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio komutları](../../ide/reference/visual-studio-commands.md)   
- [Komut penceresi](../../ide/reference/command-window.md)   
- [Bul/komut kutusu](../../ide/find-command-box.md)   
- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)
+
+Tümleşik geliştirme ortamı (IDE) veya IDE dışında içindeki bir web tarayıcı penceresinde belirttiğiniz URL'yi görüntüler.
+
+## <a name="syntax"></a>Sözdizimi
+
+```cmd
+View.ShowWebBrowser URL [/new][/ext]
+```
+
+## <a name="arguments"></a>Arguments
+ `URL`
+
+ Gerekli. Web sitesi için URL (Tekdüzen Kaynak Konum Belirleyicisi).
+
+## <a name="switches"></a>Anahtarlar
+ / Yeni
+
+ İsteğe bağlı. Sayfayı yeni bir web tarayıcısı örneğini görüntüleneceğini belirtir.
+
+ /ext
+
+ İsteğe bağlı. Sayfa IDE dışında varsayılan web tarayıcısında görüntüleneceğini belirtir.
+
+## <a name="remarks"></a>Açıklamalar
+ Diğer **ShowWebBrowser** komutu **gidin** veya **nav**.
+
+## <a name="example"></a>Örnek
+ Aşağıdaki örnek, IDE dışında bir web tarayıcısında Microsoft Docs giriş sayfasında gösterilir. Web tarayıcısının bir örneği zaten açıksa kullanılır; Aksi halde yeni bir örneğini başlattınız.
+
+```cmd
+>View.ShowWebBrowser https://docs.microsoft.com /ext
+```
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Visual Studio Komutları](../../ide/reference/visual-studio-commands.md)
+- [Komut Penceresi](../../ide/reference/command-window.md)
+- [Bul/Komut Kutusu](../../ide/find-command-box.md)
+- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)

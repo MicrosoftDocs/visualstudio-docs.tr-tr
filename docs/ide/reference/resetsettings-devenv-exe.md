@@ -1,10 +1,9 @@
 ---
-title: -ResetSettings (devenv.exe) | Microsoft Docs
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+title: -ResetSettings (devenv.exe)
+ms.date: 11/16/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 helpviewer_keywords:
 - Devenv, /ResetSettings switch
 - ResetSettings switch
@@ -15,39 +14,50 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 22dd925755e996a927664e0a9a5846fc10247882
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c8f826db0c619e1dfb5811aaf9d0c5ef40093c97
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52388679"
 ---
 # <a name="resetsettings-devenvexe"></a>/ResetSettings (devenv.exe)
-Geri yükler [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] varsayılan ayarları ve otomatik olarak başlatır [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE. İsteğe bağlı olarak belirtilen .vssettings dosyasına ayarlarını sıfırlar.  
-  
- Varsayılan ayarları olan profili tarafından belirlenir işaretlendiğinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] önce başlatıldı.  
-  
-## <a name="syntax"></a>Sözdizimi  
-  
-```  
-Devenv /ResetSettings SettingsFile  
-```  
-  
-## <a name="arguments"></a>Arguments  
- `SettingsFile`  
- Tam yolunu ve uygulamak için .vssettings dosyasının adı [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
-  
- Genel Geliştirme Ayarları profili geri yüklemek için kullanmak `General`.  
-  
-## <a name="remarks"></a>Açıklamalar  
- Öyle değilse `SettingsFile` belirtilirse, başlatmanız istenecek sonraki başlatışınızda ayarlar varsayılan koleksiyonu seçmek için [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
-  
-## <a name="example"></a>Örnek  
- Aşağıdaki komut satırını dosyasında depolanan ayarları uygular `MySettings.vssettings`.  
-  
-```  
-Devenv.exe /ResetSettings "C:\My Files\MySettings.vssettings"  
-```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md)   
- [Devenv Komut Satırı Anahtarları](../../ide/reference/devenv-command-line-switches.md)
+
+Visual Studio varsayılan ayarlarına geri yükler ve Visual Studio IDE otomatik olarak başlatır. İsteğe bağlı olarak belirtilen bir ayarları sıfırlar *vssettings* dosya.
+
+Varsayılan ayarlar, Visual Studio ilk başlatıldığında seçilen profili tarafından belirlenir.
+
+> [!TIP]
+> Tümleşik geliştirme ortamı (IDE) kullanarak ayarlarını sıfırlama hakkında bilgi edinmek için [ayarlarına](../environment-settings.md#reset-settings).
+
+## <a name="syntax"></a>Sözdizimi
+
+```cmd
+Devenv /ResetSettings SettingsFile
+```
+
+## <a name="arguments"></a>Arguments
+
+`SettingsFile`
+
+Dosyanın tam yolunu ve adını *vssettings* Visual Studio'ya uygulamak için dosya.
+
+Genel Geliştirme Ayarları profilini geri yüklemek için kullanın `General`.
+
+## <a name="remarks"></a>Açıklamalar
+
+Hayır ise `SettingsFile` belirtilirse, ayar varsayılan koleksiyonunu seçmek için istenirse sonraki Visual Studio'yu başlatın.
+
+## <a name="example"></a>Örnek
+
+Aşağıdaki komut satırını dosyasında depolanan ayarları uygular `MySettings.vssettings`.
+
+```cmd
+Devenv.exe /ResetSettings "C:\My Files\MySettings.vssettings"
+```
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Ortam ayarları](../environment-settings.md)
+- [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md)
+- [Devenv komut satırı anahtarları](../../ide/reference/devenv-command-line-switches.md)

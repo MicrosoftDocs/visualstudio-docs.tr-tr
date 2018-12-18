@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 49e83eb882388ca69fac1da1ae43f488345fe141
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: db1553295e3b8827330c78c1f6f35c21f1380cb4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49921008"
 ---
 # <a name="idebugpendingbreakpoint2getbreakpointrequest"></a>IDebugPendingBreakpoint2::GetBreakpointRequest
-Bu bekleyen kesme noktası oluşturmak için kullanılan kesme isteğini alır.  
+Bu bekleyen kesme noktası oluşturmak için kullanılan bir kesme noktası istek alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,10 +42,10 @@ int GetBreakpointRequest(
   
 #### <a name="parameters"></a>Parametreler  
  `ppBPRequest`  
- [out] Döndürür bir [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) kesme noktası oluşturmak için kullanılan kesme isteğini temsil eden nesne.  
+ [out] Döndürür bir [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) bu kesme noktası oluşturmak için kullanılan bir kesme noktası istek temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme sildiyseniz.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_BP_DELETED` kesme noktası silinmiş olması durumunda.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md)   

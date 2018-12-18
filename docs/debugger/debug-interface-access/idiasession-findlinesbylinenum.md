@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5d0cfcda8a48278abd8420e2c23954f5f7a22203
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 44a30929e3d6fbef3fb276fc8b468df4e8e5621c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49878875"
 ---
 # <a name="idiasessionfindlinesbylinenum"></a>IDiaSession::findLinesByLinenum
-İçinde ya da yakın bir kaynak dosyasında belirtilen satır numarası arasındadır derlenecek satır numaralarını belirler.  
+Belirtilen satır numarası kaynak dosyada içinde ya da yakın bulunma derlenecek satır numaralarını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,22 +44,22 @@ HRESULT findLinesByLinenum (
  [in] Bir [Idiasourcefile](../../debugger/debug-interface-access/idiasourcefile.md) içinde arama yapmak istediğiniz kaynak dosyasını temsil eden nesne. Bu parametre olamaz `NULL`.  
   
  `linenum`  
- [in] Tabanlı satır numarasını belirtir.  
+ [in] Bir tane tabanlı satır numarasını belirtir.  
   
 > [!NOTE]
->  Tüm satırları belirtmek için sıfır kullanamazsınız (kullanmak [Idiasession::findlines](../../debugger/debug-interface-access/idiasession-findlines.md) tüm satırları bulmak için yöntem).  
+>  Tüm satırları belirtmek için sıfır kullanamazsınız (kullanın [Idiasession::findlines](../../debugger/debug-interface-access/idiasession-findlines.md) tüm satırları Bul yöntemi).  
   
  `column`  
- [in] Sütun sayısını belirtir. Tüm sütunları belirtmek için sıfır kullanın. Bir satır halinde bayt uzaklığı bir sütundur.  
+ [in] Sütun sayısını belirtir. Sıfır tüm sütunları belirtmek için kullanın. Bir bayt uzaklığı içine satır bir sütundur.  
   
  `ppResult`  
  [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) satır numaralarını listesini içeren objta alınır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte, kaynak dosyasını açın, bu dosyanın katkıda derlenecek dosyalar numaralandırır ve her derlenecek başladığı kaynak dosyasında satır numaralarını bulun gösterilmektedir.  
+ Aşağıdaki örnek, bir kaynak dosyasını açın, bu dosya tarafından katkıda bulunulan derleme listeleme ve her derlenecek başladığı kaynak dosyadaki satır numaralarını bulmak gösterilmektedir.  
   
 ```C++  
 void ShowLinesInCompilands(IDiaSession *pSession, LPCOLESTR filename)  

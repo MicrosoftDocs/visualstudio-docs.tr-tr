@@ -22,6 +22,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31459746"
 ---
 # <a name="exe"></a>Exe
 .Exe veya .dll dosyasının genel kapsamı temsil eden Exe yalnızca ya da bir sözcük simge veya üst sınıf aynıdır. Yalnızca bir simgeyle yoktur `SymTagExe` dosya başına etiketi. [Idiasession::get_globalscope](../../debugger/debug-interface-access/idiasession-get-globalscope.md) yöntemi simgenin döndürür.  

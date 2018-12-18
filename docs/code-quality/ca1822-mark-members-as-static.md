@@ -1,6 +1,7 @@
 ---
 title: 'CA1822: Üyeleri statik olarak işaretleyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,31 +16,33 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 19ca5639b72462f49a818b50a9aaae6e795342b9
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b90b3dedfb76d222a8d9344c81410327de09e153
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49894540"
 ---
 # <a name="ca1822-mark-members-as-static"></a>CA1822: Üyeleri statik olarak işaretleyin
+
 |||
 |-|-|
 |TypeName|MarkMembersAsStatic|
 |CheckId|CA1822|
 |Kategori|Microsoft.Performance|
-|Yeni Değişiklik|Bölünemez - üye derleme dışında görünür değilse bağımsız olarak, değişiklik. Örnek üyesine ile üye yalnızca değiştirirseniz olmayan sonu - `this` anahtar sözcüğü.<br /><br /> -Statik bir üyeye bir örnek üyeden üye değiştirirseniz ve derlemenin dışından görülebilir kesiliyor.|
+|Yeni Değişiklik|Bölünemez - üyesi derlemenin dışında görünür değilse bağımsız olarak, değişiklik. Örnek üyesine ile yalnızca üye değiştirmeniz halinde olmayan en son - `this` anahtar sözcüğü.<br /><br /> -Üye statik bir üyeye bir örnek üyesi değiştirirseniz ve derlemenin dışında görünür kesiliyor.|
 
 ## <a name="cause"></a>Sebep
- Örnek veri erişmez üyesi static olarak işaretlenmemiş (paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]).
+ Örnek veri erişimi olmayan bir üye statik olarak işaretlenmemiş (paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]).
 
-## <a name="rule-description"></a>Kural Tanımı
- Örnek verileri veya çağrı örneği yöntemleri erişmemesi üyeleri işaretlenir olarak statik (paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]). Yöntemleri statik olarak işaretledikten sonra, derleyici sanal olmayan arama sitelerini bu üyelere yayar. Sanal olmayan arama siteleri yayma geçerli nesne işaretçisi null olmayan olmasını sağlayan her çağrı için çalışma zamanında bir onay engeller. Bu performans duyarlı kodu için ölçülebilir performans kazanç elde edebilirsiniz. Bazı durumlarda, geçerli nesne örneği erişimi hatası bir doğruluk sorunu temsil eder.
+## <a name="rule-description"></a>Kural açıklaması
+ Örnek veri veya çağrı örnek yöntemlerinin erişmez üyeleri işaretlenebilir olarak statik (paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]). Yöntemleri statik olarak işaretledikten sonra, derleyici sanal olmayan arama sitelerini bu üyelere yayar. Sanal olmayan arama sitelerini yayma, geçerli nesne işaretçisinin null dışında değer xenapp'i her çağrı çalışma zamanında bir onay engeller. Bu, ölçülebilir kazanç performansını performans duyarlı kodunuz için elde edebilirsiniz. Bazı durumlarda geçerli nesne örneğine erişmek için başarısızlık, bir doğruluk sorununu temsil eder.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Üye statik olarak işaretle (veya paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) ya da 'this' kullanmak / yönteminde ' Me' body, uygun olduğunda.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Üye statik olarak işaretleyin (veya paylaşılan [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) veya 'this' kullanma / yönteminde ' Me' body, uygun olduğunda.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bir düzeltme önemli bir değişiklik olacak önceden sevk edilen kodu için bu kuraldan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Daha önce sevk edilen kod düzeltme bir değişiklik olur için bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [CA1811: Çağrılmayan özel kodlardan kaçının](../code-quality/ca1811-avoid-uncalled-private-code.md)

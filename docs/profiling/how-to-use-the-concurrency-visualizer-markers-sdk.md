@@ -10,13 +10,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 521b522ba6e18951b74d1febaaf8b3364bbd93b6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a608c5539e905ba7836f4dcfb5e785dc9630c28a
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844546"
 ---
-# <a name="how-to-use-the-concurrency-visualizer-markers-sdk"></a>Nasıl Yapılır: Eşzamanlılık Görselleştiricisi İşaretçileri SDK'yı Kullanma
+# <a name="how-to-use-the-concurrency-visualizer-markers-sdk"></a>Nasıl yapılır: eşzamanlılık görselleştiricisi işaretçileri SDK'yı kullanma
 Bu konu eşzamanlılık görselleştiricisi SDK'sı yayılma oluşturun ve bayrakları, iletileri ve uyarılar yazmak için nasıl kullanılacağını gösterir.  
   
 ### <a name="to-use-c"></a>C++ kullanmak için  
@@ -177,5 +178,5 @@ Bu konu eşzamanlılık görselleştiricisi SDK'sı yayılma oluşturun ve bayra
   
      ![3 özel işaret seriler eşzamanlılık görselleştiricisi](../profiling/media/cvmarkerseriesmanaged.png "CvMarkerSeriesManaged")  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eşzamanlılık Görselleştiricisi SDK](../profiling/concurrency-visualizer-sdk.md)

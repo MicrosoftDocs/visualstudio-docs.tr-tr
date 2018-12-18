@@ -13,21 +13,22 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1e06757307a71d34e2d38aa24695915b7e64bc8d
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 64b83107d4dda72aea7db9e9c911305c96de7097
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49836378"
 ---
 # <a name="how-to-control-messages-view"></a>Nasıl yapılır: İletiler Görünümünü Denetleme
-Spy ++ ile içeriğini önemli denetime sahip bir [iletiler görünümünü](../debugger/messages-view.md) penceresi. Yapabilecekleriniz [başlatma ve durdurma](../debugger/how-to-start-and-stop-the-message-log-display.md) dilediğiniz zaman ve, iletilerin görüntüleme belirtebilirsiniz:  
+Spy ++ ile içeriğini önemli ölçüde denetime sahip bir [iletiler görünümünü](../debugger/messages-view.md) penceresi. Yapabilecekleriniz [başlatma ve durdurma](../debugger/how-to-start-and-stop-the-message-log-display.md) dilediğiniz zaman ve, iletileri görüntülemeyi belirtebilirsiniz:  
   
--   Hangi ileti türlerini görmek istediğinizi açıklayın.  
+- Hangi ileti türlerini görmek istiyorsunuz.  
   
--   Hangi windows izlemek istersiniz.  
+- İzlemek istediğiniz windows.  
   
--   İleti satırları görüntü biçimi.  
+- İleti satırları görüntü biçimi.  
   
- Bu ayarları mevcuttur [ileti seçenekleri iletişim kutusu](../debugger/message-options-dialog-box.md), sonra yalnızca etkin olarak geçerli [iletiler görünümünü](../debugger/messages-view.md) penceresi. Bu iletişim kutusunu açmak için seçin **günlük iletilerini** gelen **Spy** menüsü.  
+  Bu ayarlar kullanılabilir [ileti seçenekleri iletişim kutusu](../debugger/message-options-dialog-box.md), ve bunlar yalnızca etkin olarak geçerli [iletiler görünümünü](../debugger/messages-view.md) penceresi. Bu iletişim kutusunu açmak için seçin **günlük iletilerini** gelen **Spy** menüsü.  
   
- İleti seçenekleri üç sekmeli bölmeleri kullanılabilir. Daha fazla bilgi için bkz: [Windows sekmesi, ileti seçenekleri iletişim kutusu](../debugger/windows-tab-message-options-dialog-box.md), [iletiler sekmesi, ileti seçenekleri iletişim kutusu](../debugger/messages-tab-message-options-dialog-box.md), ve [çıktı sekmesi, ileti seçenekleri iletişim kutusu](../debugger/output-tab-message-options-dialog-box.md).
+  Üç sekmeli bölme, ileti seçenekleri kullanılabilir. Daha fazla bilgi için bkz: [Windows sekmesi, ileti seçenekleri iletişim kutusu](../debugger/windows-tab-message-options-dialog-box.md), [iletiler sekmesi, ileti seçenekleri iletişim kutusu](../debugger/messages-tab-message-options-dialog-box.md), ve [çıktı sekmesi, ileti seçenekleri iletişim kutusu](../debugger/output-tab-message-options-dialog-box.md).

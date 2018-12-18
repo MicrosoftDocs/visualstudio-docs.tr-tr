@@ -12,18 +12,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f71b91b606eb10947f6b794d6311efe6627bd12e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1e03abc331d59504b1b08136c8c81fe12c8ba2af
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34264201"
 ---
 # <a name="stopprofile"></a>StopProfile
 `StopProfile` İşlevi için belirtilen profil düzeyi 0 (Kapalı) sayaç ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 PROFILE_COMMAND_STATUS PROFILERAPI StopProfile(  
                        PROFILE_CONTROL_LEVEL Level,   
                        unsigned int dwId);  
@@ -44,7 +45,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI StopProfile(
   
  Sistem tarafından oluşturulan işlem veya iş parçacığı tanımlayıcısı.  
   
-## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri  
+## <a name="property-valuereturn-value"></a>Özellik değeri/dönüş değeri  
  Kullanarak işlevi başarısını veya başarısızlığını gösterir **PROFILE_COMMAND_STATUS** numaralandırması. Dönüş değeri aşağıdakilerden biri olabilir:  
   
 |Numaralandırıcı|Açıklama|  
@@ -62,7 +63,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI StopProfile(
   
  Başlat/Durdur durumu ve askıya alma/sürdürme durumu hem de açık olduğunda, profil düzeyi için açık bir durumda. İş parçacığı olması için genel işlem profili ve iş parçacığı için iş parçacığı düzeyi durumları açık olması gerekir.  
   
-## <a name="net-framework-equivalent"></a>.NET Framework Eşdeğeri  
+## <a name="net-framework-equivalent"></a>.NET framework eşdeğeri  
  Microsoft.VisualStudio.Profiler.dll  
   
 ## <a name="function-information"></a>İşlev bilgisi  
@@ -73,7 +74,7 @@ PROFILE_COMMAND_STATUS PROFILERAPI StopProfile(
 ## <a name="example"></a>Örnek  
  Aşağıdaki örnek StopProfile yöntemi gösterilmektedir. Örnek StartProfile yöntemine bir çağrı aynı iş parçacığı veya tarafından tanımlanan işlemi için yapılan varsayar [PROFILE_CURRENTID](../profiling/profile-currentid.md).  
   
-```  
+```cpp  
 void ExerciseStopProfile()  
 {  
     // StartProfile and StopProfile control the   
@@ -107,5 +108,5 @@ void ExerciseStopProfile()
 }  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio profil oluşturucu API Başvurusu (yerel)](../profiling/visual-studio-profiler-api-reference-native.md)

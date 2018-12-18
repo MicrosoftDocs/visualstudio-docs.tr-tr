@@ -21,11 +21,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5909d8ac37ee77c43b5ddbd2625c3de92de32cad
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 74be447f523713cdef9ee5c52876ee0acf4c25b2
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37056149"
 ---
 # <a name="stop-statements-in-visual-basic"></a>Visual Basic'de Durdur Deyimleri
 Visual Basic Stop deyimi bir kesme noktası ayarlama için programlı bir alternatif sunar. Hata ayıklayıcı Stop deyimi karşılaştığında (kesme moduna girer) programın yürütülmesini keser. C# programcıları System.Diagnostics.Debugger.Break yapılan bir çağrı kullanılarak aynı sonucu elde edebilirsiniz.  
@@ -38,7 +39,7 @@ Visual Basic Stop deyimi bir kesme noktası ayarlama için programlı bir altern
   
  Stop deyimleri kaldırmanın gerekliliğini önlemek için koşullu derleme kullanabilirsiniz:  
   
-```  
+```cpp
 #If DEBUG Then  
    Stop  
 #Else  
@@ -48,13 +49,13 @@ Visual Basic Stop deyimi bir kesme noktası ayarlama için programlı bir altern
   
  Başka bir alternatif bir onay deyimi yerine Stop deyimi kullanmaktır. Debug.Assert deyimi yürütme keser. yalnızca belirli bir koşul karşılanmamıştır ve yayın sürümünü oluşturduğunuzda otomatik olarak kaldırılır. Daha fazla bilgi için bkz: [yönetilen koddaki onaylar](../debugger/assertions-in-managed-code.md). Hata ayıklama sürümü her zaman yürütme keser bir onay deyimi istiyorsanız, bunu yapabilirsiniz:  
   
-```  
+```csharp
 Debug.Assert(false)  
 ```  
   
  Henüz başka bir alternatif Debug.Fail yöntemini kullanmaktır:  
   
-```  
+```csharp
 Debug.Fail("a clever output string goes here")  
 ```  
   

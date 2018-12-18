@@ -1,6 +1,7 @@
 ---
 title: 'CA1804: Kullanılmayan yerel öğeleri kaldırın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: cc332e67-6543-4813-bd8a-6f6fc75bf22a
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 1bdff91761dc9d4c958ee50dcf07d5a592370c5b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b1846c1b8d9173db6d1f4b5acd0544fd601da67a
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45545469"
 ---
 # <a name="ca1804-remove-unused-locals"></a>CA1804: Kullanılmayan yerel öğeleri kaldırın
+
 |||
 |-|-|
 |TypeName|RemoveUnusedLocals|
@@ -30,19 +36,19 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir yöntem yerel bir değişken bildiren ancak dışında değişkeni büyük olasılıkla bir atama deyimi alıcısı olarak kullanmaz. Çözümleme için bu kural tarafından test edilmiş derleme hata ayıklama bilgileri ile oluşturulması ve ilişkili program veritabanı (.pdb) dosyası kullanılabilir olması gerekir.
+ Bir yöntem bir yerel değişkeni bildirir ancak dışında değişkeni büyük olasılıkla Atama ifadesinin alıcı olarak kullanmaz. Bu kural tarafından analiz, test edilen derleme, hata ayıklama bilgileri ile oluşturulmalıdır ve ilişkili bir program veritabanı (.pdb) dosyası kullanılabilir olmalıdır.
 
-## <a name="rule-description"></a>Kural Tanımı
+## <a name="rule-description"></a>Kural açıklaması
  Kullanılmayan yerel değişkenler ve gereksiz atamaların derleme boyutunu artırır ve performansı düşürür.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için kaldırmak veya yerel değişken kullanın. C# Derleyici, birlikte olduğuna dikkat edin [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)] kullanılmayan yerel değişkenler kaldırır zaman `optimize` seçeneği etkinleşir.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için kaldırın veya yerel değişkenini kullanın. C# derleyicisi, birlikte unutmayın [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)] kullanılmayan yerel değişkenler kaldırır, `optimize` seçeneği etkinleştirilir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Değişkeni yayılan derleyici ise bir uyarı bu kuraldan engelleyin. Performans ve kod bakımı birincil sorunları değilse de bu kuraldan bir uyarı bastırma veya kuralı devre dışı bırakmak için güvenli değildir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yayılan derleyici değişkeni ise bu kuraldan bir uyarıyı gizler. Performans ve kod bakımı birincil kaygıları değilse de bu kuraldan bir uyarıyı bastırmak için veya kuralı devre dışı bırakmak için güvenli değildir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, birkaç kullanılmayan yerel değişkenleri gösterir.
+ Aşağıdaki örnek, çeşitli kullanılmayan yerel değişkenler gösterir.
 
  [!code-vb[FxCop.Performance.UnusedLocals#1](../code-quality/codesnippet/VisualBasic/ca1804-remove-unused-locals_1.vb)]
  [!code-csharp[FxCop.Performance.UnusedLocals#1](../code-quality/codesnippet/CSharp/ca1804-remove-unused-locals_1.cs)]

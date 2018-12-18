@@ -1,48 +1,49 @@
 ---
-title: 'Örnek XSD dosyası: Basit şema | Microsoft Docs'
-ms.custom: ''
+title: 'Örnek XSD dosyası: Basit şema'
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-xml-tools
+ms.topic: sample
 ms.assetid: f7e1dde1-b4f6-4371-add4-935b68ec77d7
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ec7a88703439161eeeb99f0d1916d3f8306f4104
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 11a74d5214e434c7d7330bc7ea4e3bcd8a3e5905
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34572705"
 ---
-# <a name="sample-xsd-file-simple-schema"></a>Örnek XSD dosyası: Basit şeması
-Aşağıdaki XSD dosyası XSD şema Tasarımcısı belgelerinde çeşitli örnekler kullanılır. Basit satın alma siparişi şeması dosyasıdır.  
-  
-```xml  
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
-           xmlns:tns="http://tempuri.org/PurchaseOrderSchema.xsd"   
-           targetNamespace="http://tempuri.org/PurchaseOrderSchema.xsd"   
-           elementFormDefault="qualified">  
- <xsd:element name="PurchaseOrder" type="tns:PurchaseOrderType"/>  
- <xsd:complexType name="PurchaseOrderType">  
-  <xsd:sequence>  
-   <xsd:element name="ShipTo" type="tns:USAddress" maxOccurs="2"/>  
-   <xsd:element name="BillTo" type="tns:USAddress"/>  
-  </xsd:sequence>  
-  <xsd:attribute name="OrderDate" type="xsd:date"/>  
- </xsd:complexType>  
-  
- <xsd:complexType name="USAddress">  
-  <xsd:sequence>  
-   <xsd:element name="name"   type="xsd:string"/>  
-   <xsd:element name="street" type="xsd:string"/>  
-   <xsd:element name="city"   type="xsd:string"/>  
-   <xsd:element name="state"  type="xsd:string"/>  
-   <xsd:element name="zip"    type="xsd:integer"/>  
-  </xsd:sequence>  
-  <xsd:attribute name="country" type="xsd:NMTOKEN" fixed="US"/>  
- </xsd:complexType>  
-</xsd:schema>  
+# <a name="sample-xsd-file-simple-schema"></a>Örnek XSD dosyası: Basit şema
+
+XSD şema Tasarımcısı çeşitli örneklerini aşağıdaki XSD dosyası kullanılır. Basit satınalma siparişi şeması dosyasıdır.
+
+```xml
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://tempuri.org/PurchaseOrderSchema.xsd"
+           targetNamespace="http://tempuri.org/PurchaseOrderSchema.xsd"
+           elementFormDefault="qualified">
+ <xsd:element name="PurchaseOrder" type="tns:PurchaseOrderType"/>
+ <xsd:complexType name="PurchaseOrderType">
+  <xsd:sequence>
+   <xsd:element name="ShipTo" type="tns:USAddress" maxOccurs="2"/>
+   <xsd:element name="BillTo" type="tns:USAddress"/>
+  </xsd:sequence>
+  <xsd:attribute name="OrderDate" type="xsd:date"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="USAddress">
+  <xsd:sequence>
+   <xsd:element name="name"   type="xsd:string"/>
+   <xsd:element name="street" type="xsd:string"/>
+   <xsd:element name="city"   type="xsd:string"/>
+   <xsd:element name="state"  type="xsd:string"/>
+   <xsd:element name="zip"    type="xsd:integer"/>
+  </xsd:sequence>
+  <xsd:attribute name="country" type="xsd:NMTOKEN" fixed="US"/>
+ </xsd:complexType>
+</xsd:schema>
 ```

@@ -15,17 +15,18 @@ f1_keywords:
 - VC.Project.VCConfiguration.ConfigurationType
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: cfc1655adbd9377f1aeeec60afc799f342b4498d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5ac5c50a1bf7c6f0d9046f136ad821370b59ad0a
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39252316"
 ---
 # <a name="general-project-properties-android-c-makefile"></a>Genel proje özellikleri (Android C++ derleme görevleri dosyası)
 
-Özellik | Açıklama | Seçenekler
+Özellik | Açıklama | Seçenekleri
 --- | ---| ---
-Çıktı dizini | Çıktı dosyası dizini için göreli bir yol belirtir; ortam değişkenleri içerebilir.
-Ara dizini | Ara dosyası dizine göreli bir yol belirtir; ortam değişkenleri içerebilir.
-Günlük dosyası oluşturma | Günlük ne zaman oluşturulacağını etkin yazmak için yapılandırma günlük dosyasını belirtir.
-Yapılandırma türü | Bu yapılandırma oluşturur çıktı türünü belirtir. | **Dinamik kitaplığı (.so)** -dinamik kitaplığı (.so)<br>**Statik kitaplık (bir)** -statik kitaplık (bir)<br>**Yardımcı programı** - yardımcı programı<br>**Derleme görevleri dosyası** -derleme görevleri dosyası<br>
+Çıkış dizini | Çıkış dosyası dizinine göreli bir yol belirtir; ortam değişkenleri içerebilir.
+Ara dizin | Ara dosya dizinine göreli bir yol belirtir; ortam değişkenleri içerebilir.
+Derleme günlüğü dosyası | Günlük kaydı ne zaman oluşturulacağını yazılacak derleme günlüğü dosyasını belirtir.
+Yapılandırma türü | Bu yapılandırmanın oluşturduğu çıkışın türünü belirtir. | **Dinamik kitaplık (.so)** -dinamik kitaplık (*.so*)<br>**Statik kitaplık (.a)** -statik kitaplık (*.a*)<br>**Yardımcı program** - yardımcı programı<br>**Derleme görevleri dosyası** -derleme görevleri dosyası<br>

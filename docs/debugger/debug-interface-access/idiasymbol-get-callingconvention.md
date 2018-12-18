@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f32f8678eadd23fff8b0bb65d6131d70815c34aa
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 15ecbaf54afe2e8f1a8c69db55be3ca7c25acc7e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49862527"
 ---
 # <a name="idiasymbolgetcallingconvention"></a>IDiaSymbol::get_callingConvention
-Çağırma yöntemlerinin bir gösterge döndürür.  
+Çağırma yöntemlerinin bir göstergesini döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,21 +34,21 @@ HRESULT get_callingConvention (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Arasında bir değer döndürür [CV_call_e numaralandırması](../../debugger/debug-interface-access/cv-call-e.md) bir yöntem belirten numaralandırma çağırma kuralı.  
+ [out] Bir değer döndürür [CV_call_e numaralandırması](../../debugger/debug-interface-access/cv-call-e.md) çağırma kuralı bir yöntem belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [CV_call_e numaralandırması](../../debugger/debug-interface-access/cv-call-e.md)
+ [CV_call_e Numaralandırması](../../debugger/debug-interface-access/cv-call-e.md)

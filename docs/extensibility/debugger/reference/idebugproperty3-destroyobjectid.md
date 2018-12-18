@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0db5ef80a1734aedb819c109aa4c27c40224886e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f776feafe86180c60df7cc69a2c4afb6a3070012
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917953"
 ---
 # <a name="idebugproperty3destroyobjectid"></a>IDebugProperty3::DestroyObjectID
-Arayan artık bu özelliği diğer tüm özellikleri benzersiz olarak tanımlamak cares olduğunu gösteren bu özellik ile ilişkilendirilmiş benzersiz kimliği yok eder.  
+Arayanın artık bu özelliği diğer tüm özellikleri benzersiz olarak tanımlamak önemli olduğunu gösteren bu özellik ile ilişkilendirilmiş benzersiz kimliği yok eder.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,12 +38,12 @@ int DestroyObjectID();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Hata ayıklama altyapısı (Bu zaten bunları benzersiz olarak dahili izlediğinden) bir özellik için benzersiz kimlikler desteklemek gerekiyorsa değil, yalnızca döndürebilir sonra `E_NOTIMPL` bu yöntem için.  
+ (Bunu zaten bunları dahili olarak benzersiz bir şekilde izlediğinden) bir özellik için benzersiz kimliklerini desteklemek hata ayıklama altyapısı gerektirmez, sadece döndürebilir sonra `E_NOTIMPL` bu yöntem için.  
   
- Benzersiz kimlikler çağrısıyla oluşturulur [CreateObjectID](../../../extensibility/debugger/reference/idebugproperty3-createobjectid.md) arayan bu özellik diğer özellikler arasında benzersiz şekilde tanımlanır emin olmak istediğinde yöntemi.  
+ Benzersiz kimliklerinin bir çağrı ile oluşturulur [CreateObjectID](../../../extensibility/debugger/reference/idebugproperty3-createobjectid.md) yöntemi çağıran, bu özellik, diğer özellikler arasında benzersiz olarak tanımlanıyorsa emin olmak ister.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProperty3](../../../extensibility/debugger/reference/idebugproperty3.md)   

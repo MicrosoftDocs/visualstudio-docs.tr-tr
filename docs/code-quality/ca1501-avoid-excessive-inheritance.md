@@ -1,6 +1,7 @@
 ---
 title: 'CA1501: Aşırı devralmadan kaçın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: 9e934746-1a4d-492a-91e4-085201abafa4
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 488ab877764b0b7dcd3c14885387c4a58115d5df
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0627d246fe9f9f72a95cded7daf8d2c94bf20b3a
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45546973"
 ---
 # <a name="ca1501-avoid-excessive-inheritance"></a>CA1501: Aşırı devralmadan kaçın
+
 |||
 |-|-|
 |TypeName|AvoidExcessiveInheritance|
@@ -32,14 +38,14 @@ ms.lasthandoff: 04/19/2018
 ## <a name="cause"></a>Sebep
  Devralma hiyerarşisinde düzeyleri dörtten fazla olan türdür.
 
-## <a name="rule-description"></a>Kural Tanımı
- İç içe yuvalanmış hiyerarşileri izlemek, anlamak ve muhafaza etmek zor olabilir. Bu kural analiz aynı modülde hiyerarşileri için sınırlar.
+## <a name="rule-description"></a>Kural açıklaması
+ İç içe yuvalanmış hiyerarşileri izlemek, anlamak ve muhafaza etmek zor olabilir. Bu kural, aynı modülde hiyerarşileri analiz sınırlar.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için türü devralma hiyerarşisinde daha az ayrıntılı bir taban türü öğesinden türetilmeli veya Ara temel türlerinden bazıları ortadan kaldırmak.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için türü devralma hiyerarşisinde daha az ayrıntılı bir taban türünden türetilir veya Ara temel türlerinin bazılarını ortadan kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural bir uyarıdan gizlemek güvenlidir. Bununla birlikte, kod korumak daha zor olabilir. Taban türleri görünürlüğünü bağlı olarak, bu kuralı ihlallerini çözümleme önemli değişiklikler oluşturabilir, unutmayın. Örneğin, ortak bir taban türleri kaldırma önemli bir değişiklik olur.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Bu kuraldan bir uyarıyı bastırmak güvenlidir. Ancak, kod korumak daha zor olabilir. Temel türleri görünürlüğünü bağlı olarak, bu kuralın ihlallerini çözümleme bozucu değişiklikleri oluşturabilir, unutmayın. Örneğin, ortak temel türleri kaldırma bölünmesi farklıdır.
 
 ## <a name="example"></a>Örnek
  Aşağıdaki örnek kuralını ihlal eden bir tür gösterir.

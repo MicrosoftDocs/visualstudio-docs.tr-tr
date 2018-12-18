@@ -1,11 +1,11 @@
 ---
 title: IActiveScript::InterruptScriptThread | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IActiveScript.InterruptScriptThread
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IActiveScript_InterruptScriptThread
 ms.assetid: 2304d035-6d39-4811-acd3-8a9640fdbef6
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24792083"
 ---
 # <a name="iactivescriptinterruptscriptthread"></a>IActiveScript::InterruptScriptThread
 Bir çalışan betik iş parçacığı (bir olay iç havuz, hemen bir yürütme veya makrosu çağırma) çalışmasını kesintiye uğratır. Bu yöntem (örneğin, sonsuz bir döngüde) takılmış bir komut dosyası sonlandırmak için kullanılır. Temel olmayan iş parçacıklarından onu çağrılabilir temel olmayan belirtme çizgisi içinde ana bilgisayar nesneleri veya çok sonuçlanmadan [Iactivescriptsite](../../winscript/reference/iactivescriptsite.md) yöntemi.  

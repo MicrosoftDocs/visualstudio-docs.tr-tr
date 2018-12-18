@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6ecd6d0ed9c69cad1275a399ffacf402529eebf4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b78c5f44d8f73aa9bb2af5a5b2aa43d5b15bd7db
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910530"
 ---
 # <a name="idebugbreakpointchecksumrequest2getchecksum"></a>IDebugBreakpointChecksumRequest2::GetChecksum
-Belge sağlama toplamı kullanmak sağlama toplamı algoritması benzersiz tanıtıcısı verilen bir kesme noktası isteği alır.  
+Belgenin sağlama toplamı için kullanılacak benzersiz tanımlayıcısını sağlama algoritması, verilen bir kesme noktası istek alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,16 +41,16 @@ public int GetChecksum(
   
 #### <a name="parameters"></a>Parametreler  
  `guidAlgorithm`  
- [in] Sağlama toplamı algoritması benzersiz tanımlayıcısı.  
+ [in] Sağlama algoritması benzersiz tanımlayıcısı.  
   
  `pChecksumData`  
- [out] Kesme noktası isteği belge sağlama toplamı.  
+ [out] Kesme noktası istek için belgenin sağlama toplamı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek hakkında bağlı olduğundan, bir belgenin sağlama toplamı UI birinden eşleşip eşleşmediğini denetler bir işlev gösterir.  
+ Aşağıdaki örnek, sağlama toplamı, ilgili bağlı olan bir belgeyi bir kullanıcı arabiriminden eşleşip eşleşmediğini kontrol eden bir işlev gösterir.  
   
 ```cpp  
 bool CDebugProgram::DoChecksumsMatch(CDebugPendingBreakpoint *pPending, CDebugCodeContext *pContext)  

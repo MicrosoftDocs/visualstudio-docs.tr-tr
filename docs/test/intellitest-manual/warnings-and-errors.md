@@ -1,8 +1,9 @@
 ---
-title: Uyarıları ve hataları | Microsoft Intellitest Geliştirici Test aracı | Microsoft Docs
+title: Uyarıları ve hataları | Microsoft Intellitest Geliştirici Test aracı
 ms.date: 05/02/2017
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - IntelliTest, Warnings and errors
 ms.author: gewarren
@@ -10,17 +11,18 @@ manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: 5c66d208f89cc656eb22d874dc3efafe46c4d53f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: efb82a7419ba58c27ccab864d2360538075a1089
+ms.sourcegitcommit: e481d0055c0724d20003509000fd5f72fe9d1340
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51000620"
 ---
-# <a name="warnings-and-errors"></a>Uyarıları ve hataları
+# <a name="warnings-and-errors"></a>Uyarıları ve hatalar
 
-## <a name="warnings-and-errors-by-category"></a>Uyarıları ve hataları kategoriye göre
+## <a name="warnings-and-errors-by-category"></a>Uyarı ve hata kategorisine göre
 
-* **Sınırları**
+* **Sınırlar
   * [MaxBranches aşıldı](#maxbranches-exceeded)
   * [MaxConstraintSolverTime aşıldı](#maxconstraintsolvertime-exceeded)
   * [MaxConditions aşıldı](#maxconditions-exceeded)
@@ -30,78 +32,78 @@ ms.lasthandoff: 04/16/2018
   * [MaxRunsWithoutNewTests aşıldı](#maxrunswithoutnewtests-exceeded)<p />
 
 * **Kısıtlama çözme**
-  * [Çözüm Concretize olamaz](#cannot-concretize-solution)<p />
+  * [Çözüm Somutlaştırılamıyor](#cannot-concretize-solution)<p />
 
-* **Etki alanları**
+* **etki alanları**
   * [Nesnesi oluşturmak için Yardım gerekiyor](#help-construct)
-  * [Türlerini bulmak için Yardım gerekiyor](#help-types)
-  * [Tahmin edilen kullanılabilir türü](#usable-type-guessed)<p />
+  * [Türleri bulmak için Yardım gerekiyor](#help-types)
+  * [Tahmin kullanılabilir türü](#usable-type-guessed)<p />
 
 * **Yürütme**
-  * [Keşif sırasında beklenmeyen hata](#unexpected-exploration)
+  * [Araştırma sırasında beklenmeyen hata](#unexpected-exploration)
   * [TargetInvocationException](#targetinvocationexception)<p />
 
 * **İzleme**
-  * [Adlı uninstrumented yöntemi](#uninstrumented-method-called)
+  * [İzlemesiz yöntemi çağrılır](#uninstrumented-method-called)
   * [Adlı dış yöntemi](#external-method-called)
-  * [Adlı uninstrumentable yöntemi](#uninstrumentable-method-called)
-  * [Test Edilebilirlik sorunu](#testability-issue)
+  * [Adlı izlenemeyen yöntemi](#uninstrumentable-method-called)
+  * [Test Edilebilirlik sorununu](#testability-issue)
   * [Sınırlama](#limitation)<p />
 
 * **Yorumlayıcı**
-  * [Gözlemlenen çağrısı uyuşmazlığı](#observed-call-mismatch)
+  * [Çağrı uyuşmazlığı gözlemlendi](#observed-call-mismatch)
   * [Statik alanda depolanan değer](#value-static-field)
 
 <a name="maxbranches-exceeded"></a>
 ## <a name="maxbranches-exceeded"></a>MaxBranches aşıldı
 
-Intellitest sınırlar sırasında araştırır herhangi bir yürütme yol uzunluğu [giriş nesil](input-generation.md). Bu özellik Intellitest program sonsuz bir döngüde gittiğinde, yanıt veremez hale gelmesini engeller.
+Intellitest sınırlar sırasında keşfediyor herhangi bir yürütme yolu uzunluğu [giriş oluşturma](input-generation.md). Bu özellik Intellitest program sonsuz bir döngüye giriyor, yanıt vermeyen hale gelmesini engeller.
 
-Her koşullu ve koşulsuz dal yürütülen ve izlenen kod girişler için dayanmayan dalları dahil olmak üzere bu sınır doğru sayılan [parametreli birim testi](test-generation.md#parameterized-unit-testing).
+Yürütülen ve izlenen kodun her koşullu ve koşulsuz dal girişleri üzerinde bağlı olmayan dallar dahil olmak üzere bu sınır doğru sayılır [parametreli birim testine](test-generation.md#parameterized-unit-testing).
 
-Örneğin, aşağıdaki kodu 100 sırasına göre dalları kullanır:
+Örneğin, aşağıdaki kodu 100 sırasına göre dallar kullanır:
 
-```
+```csharp
 for (int i=0; i<100; i++) { }
 ```
 
-Düzenleyebileceğiniz **MaxBranches** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod) . Aşağıdaki örnek, etkili bir şekilde bu bağlı kaldırır:
+Düzenleyebileceğiniz **MaxBranches** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod) . Aşağıdaki örnek bu bağlı etkili bir şekilde kaldırır:
 
-```
+```csharp
 [PexMethod(MaxBranches=int.MaxValue)]
 public void MyTest(...) {
     // ....
 }
 ```
 
-Ayrıca ayarlayabilirsiniz **TestExcludePathBoundsExceeded** Intellitest bu sorunlarının üstesinden gelmek için nasıl genellikle bildirmek için seçeneği.
+Ayrıca **TestExcludePathBoundsExceeded** Intellitest nasıl genellikle bu sorunlarla başa çıkmak için bildirmek için seçeneği.
 
-Test kodda kullandığınız [PexSymbolicValue](static-helper-classes.md#pexsymbolicvalue) döngü koşul tarafından oluşturulan kısıtlamaları yoksaymak için:
+Test kodu içindedir, kullandığınız [PexSymbolicValue](static-helper-classes.md#pexsymbolicvalue) kısıtlamaları döngü koşul tarafından oluşturulan yok saymak için:
 
-```
-for (int i=0; 
+```csharp
+for (int i=0;
     PexSymbolicValue.Ignore(i<100); // IntelliTest will 'forget' about this path condition
-    i++) 
+    i++)
 { }
 ```
 
 <a name="maxconstraintsolvertime-exceeded"></a>
 ## <a name="maxconstraintsolvertime-exceeded"></a>MaxConstraintSolverTime aşıldı
 
-Intellitest kullanan bir [kısıtlaması Çözücü](input-generation.md#constraint-solver) yeni test girişleri hesaplamak için. Kısıtlaması çözme olabilir çok zaman alan bir işlem Intellitest sınırları - özellikle yapılandırmanıza izin verir şekilde **MaxConstraintSolverTime**.
+Intellitest kullanan bir [kısıtlama Çözücü](input-generation.md#constraint-solver) yeni test girdileri hesaplamak için. Kısıtlama çözme olabilir çok zaman alan bir işlem Intellitest sınırları - özellikle yapılandırmanıza olanak tanır şekilde **MaxConstraintSolverTime**.
 
-Birçok uygulama için daha iyi kapsamı önemli ölçüde zaman aşımı süresinin artırılması oluşturmayacaktır. Bunun nedeni, çoğu zaman aşımları çözüm sahip kısıtlaması sistemleri tarafından hatalardır ' dir. Ancak, Intellitest, zaman aşımı neden olacak tüm olası çözümleri çalışmadan tutarsız olup olmadığını belirlemek mümkün olmayabilir.
+Birçok uygulama için daha iyi kapsamı içinde önemli ölçüde zaman aşımını artırmayı oluşturmayacaktır. Bunun nedeni, çoğu zaman aşımları çözüm olan kısıtlaması sistemleri tarafından neden olduğunu ' dir. Ancak, Intellitest, zaman aşımı neden olacak tüm olası çözümleri çalışmadan tutarsız olduğunu belirlemek mümkün olmayabilir.
 
 <a name="maxconditions-exceeded"></a>
 ## <a name="maxconditions-exceeded"></a>MaxConditions aşıldı
 
-Intellitest sınırlar sırasında araştırır herhangi bir yürütme yol uzunluğu [giriş nesil](input-generation.md). Bu özellik Intellitest program sonsuz bir döngüde girdiğinde, yanıt veremez hale gelmesini engeller.
+Intellitest sınırlar sırasında keşfediyor herhangi bir yürütme yolu uzunluğu [giriş oluşturma](input-generation.md). Bu özellik Intellitest program sonsuz bir döngüye girer, yanıt vermeyen hale gelmesini engeller.
 
-Girişler için bağlıdır her koşullu dal [parametreli birim testi](test-generation.md#parameterized-unit-testing) bu sınırında sayılır.
+' In girdilerine bağımlı her koşullu dalda [parametreli birim testine](test-generation.md#parameterized-unit-testing) bu sınırında sayılır.
 
-Örneğin, aşağıdaki kodu her yolunda tüketir **n + 1** koşullar:
+Örneğin, aşağıdaki kod her yolda tüketir **n + 1** koşullar:
 
-```
+```csharp
 [PexMethod]
 void ParameterizedTest(int n) {
     // conditions are "0<n", "1<n", ..., "!(n<n)"
@@ -109,31 +111,31 @@ void ParameterizedTest(int n) {
     { ... }
 
     // irrelevant for MaxConditions, since conditions do not depend on input
-    for (int i=0; i<100; i++) 
+    for (int i=0; i<100; i++)
     { ... }
 }
 ```
 
-Düzenleyebileceğiniz **MaxConditions** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Örneğin:
+Düzenleyebileceğiniz **MaxConditions** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Örneğin:
 
-```
+```csharp
 [PexMethod(MaxConditions=10000)]
 void ParameterizedTest(int n) {
     // ...
 }
 ```
 
-Ayrıca ayarlayabilirsiniz **TestExcludePathBoundsExceeded** genellikle bu sorunlarının üstesinden gelmek nasıl Intellitest bildirmek için seçeneği.
+Ayrıca **TestExcludePathBoundsExceeded** Intellitest genellikle bu sorunlarla başa çıkmak nasıl kaydolacaklarını için seçeneği.
 
-Kullanabileceğiniz [PexSymbolicValue](static-helper-classes.md#pexsymbolicvalue) döngü koşul tarafından oluşturulan kısıtlamaları yoksaymak için:
+Kullanabileceğiniz [PexSymbolicValue](static-helper-classes.md#pexsymbolicvalue) kısıtlamaları döngü koşul tarafından oluşturulan yok saymak için:
 
-```
+```csharp
 [PexMethod]
 void ParameterizedTest(int n) {
     int nshadow = PexSymbolicValue.Ignore(n); // IntelliTest looses track of 'n'
 
     // irrevelant for MaxConditions, since nshadow is not related to input
-    for (int i=0; i<nshadow; i++)  
+    for (int i=0; i<nshadow; i++)
     {...}
 }
 ```
@@ -141,47 +143,47 @@ void ParameterizedTest(int n) {
 <a name="maxcalls-exceeded"></a>
 ## <a name="maxcalls-exceeded"></a>MaxCalls aşıldı
 
-Intellitest sınırlar sırasında araştırır herhangi bir yürütme yol uzunluğu [giriş nesil](input-generation.md). Bu özellik Intellitest program sonsuz bir döngüye girer gittiğinde, yanıt veremez hale gelmesini engeller.
+Intellitest sınırlar sırasında keşfediyor herhangi bir yürütme yolu uzunluğu [giriş oluşturma](input-generation.md). Bu özellik, programın sonsuz bir döngüye girer gittiğinde yanıt vermeyen olmaktan Intellitest önler.
 
-Her çağrı (doğrudan, dolaylı, sanal veya atlama) yürütülen ve izlenen kodu bu sınırında sayılır.
+Her çağrının (doğrudan, dolaylı, sanal veya atlayın) yürütülen ve izlenen kodunu bu sınırında sayılır.
 
-Düzenleyebileceğiniz **MaxCalls** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, etkili bir şekilde bu bağlı kaldırır:
+Düzenleyebileceğiniz **MaxCalls** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek bu bağlı etkili bir şekilde kaldırır:
 
-```
+```csharp
 [PexMethod(MaxCalls=int.MaxValue)]
 public void MyTest(...) {
     // ....
 }
 ```
 
-Ayrıca ayarlayabilirsiniz **TestExcludePathBoundsExceeded** genellikle bu sorunlarının üstesinden gelmek nasıl Intellitest bildirmek için seçeneği.
+Ayrıca **TestExcludePathBoundsExceeded** Intellitest genellikle bu sorunlarla başa çıkmak nasıl kaydolacaklarını için seçeneği.
 
 <a name="maxstack-exceeded"></a>
 ## <a name="maxstack-exceeded"></a>MaxStack aşıldı
 
-Intellitest sınırlar sırasında araştırır herhangi bir yürütme yol çağrı yığınını boyutunu [giriş nesil](input-generation.md). Bu özellik, bir yığın taşması oluştuğunda sonlandırma Intellitest önler.
+Intellitest sırasında keşfediyor herhangi bir yürütme yolu çağrı yığınının boyutunu sınırlar [giriş oluşturma](input-generation.md). Bu özellik, bir yığın taşması oluştuğunda sonlandırma gelen Intellitest engeller.
 
-Düzenleyebileceğiniz **MaxStack** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, etkili bir şekilde (önerilmez) bu bağlı kaldırır:
+Düzenleyebileceğiniz **MaxStack** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, bu sınır (önerilmez) etkili bir şekilde kaldırır:
 
-```
+```csharp
 [PexMethod(MaxStack=int.MaxValue)]
 public void MyTest(...) {
     // ....
 }
 ```
 
-Ayrıca ayarlayabilirsiniz **TestExcludePathBoundsExceeded** genellikle bu sorunlarının üstesinden gelmek nasıl Intellitest bildirmek için seçeneği.
+Ayrıca **TestExcludePathBoundsExceeded** Intellitest genellikle bu sorunlarla başa çıkmak nasıl kaydolacaklarını için seçeneği.
 
 <a name="maxruns-exceeded"></a>
 ## <a name="maxruns-exceeded"></a>MaxRuns aşıldı
 
-Intellitest sırasında araştırır yürütme yolları sayısını sınırlar [giriş nesil](input-generation.md). Bu özellik, döngüler veya özyineleme program sahip olduğunda Intellitest sonlandırır sağlar.
+Intellitest sırasında keşfediyor yürütme yolları sayısını sınırlar [giriş oluşturma](input-generation.md). Bu özellik, program döngüler veya bir özyinelemede olduğunda Intellitest sonlandırır sağlar.
 
-Intellitest parametreli test belirli girişle her çalıştığında, yeni bir test çalışması yayar, durumda olmayabilir. Bkz: [TestEmissionFilter](exploration-bounds.md#testemissionfilter) daha fazla bilgi için.
+Intellitest parametreli bir test ile belirli girişleri her çalıştırıldığında yeni bir test çalışması yayar, durumda olmayabilir. Bkz: [TestEmissionFilter](exploration-bounds.md#testemissionfilter) daha fazla bilgi için.
 
-Düzenleyebileceğiniz **MaxRuns** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, etkili bir şekilde (önerilmez) bu bağlı kaldırır:
+Düzenleyebileceğiniz **MaxRuns** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, bu sınır (önerilmez) etkili bir şekilde kaldırır:
 
-```
+```csharp
 [PexMethod(MaxRuns=2000)]
 public void MyTest(...) {
     // ....
@@ -191,15 +193,15 @@ public void MyTest(...) {
 <a name="maxrunswithoutnewtests-exceeded"></a>
 ## <a name="maxrunswithoutnewtests-exceeded"></a>MaxRunsWithoutNewTests aşıldı
 
-Intellitest sırasında araştırır yürütme yolları sayısını sınırlar [giriş nesil](input-generation.md). Bu özellik, döngüler veya özyineleme program sahip olduğunda Intellitest sonlandırır sağlar.
+Intellitest sırasında keşfediyor yürütme yolları sayısını sınırlar [giriş oluşturma](input-generation.md). Bu özellik, program döngüler veya bir özyinelemede olduğunda Intellitest sonlandırır sağlar.
 
-Intellitest parametreli test belirli girişle her çalıştığında, yeni bir test çalışması yayar, durumda olmayabilir. Bkz: [TestEmissionFilter](exploration-bounds.md#testemissionfilter) daha fazla bilgi için.
+Intellitest parametreli bir test ile belirli girişleri her çalıştırıldığında yeni bir test çalışması yayar, durumda olmayabilir. Bkz: [TestEmissionFilter](exploration-bounds.md#testemissionfilter) daha fazla bilgi için.
 
-Başlangıçta, genellikle bulur birçok ilginç test girişleri Intellitest olsa da, bunu bir süre sonra - daha fazla tüm testleri yayma değil -. Bu seçenek, ne kadar süreyle Intellitest başka bir ilgili test giriş bulmak denemeye devam yönetir.
+Intellitest genellikle birçok ilgi çekici test girdileri başlangıçta bulur, ancak bu bir süre sonra - herhangi bir daha fazla test yayabilir değil -. Bu seçenek, ne kadar süreyle Intellitest başka bir ilgili test girişi bulmak denemeye devam yönetir.
 
-Düzenleyebileceğiniz **MaxRunsWithoutNewTests** seçeneği bir özniteliğin türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, etkili bir şekilde (önerilmez) bu bağlı kaldırır:
+Düzenleyebileceğiniz **MaxRunsWithoutNewTests** seçeneği bir özniteliğin sınıfından türetilen **PexSettingsAttributeBase**, gibi [PexClass](attribute-glossary.md#pexclass) veya [PexMethod](attribute-glossary.md#pexmethod). Aşağıdaki örnek, bu sınır (önerilmez) etkili bir şekilde kaldırır:
 
-```
+```csharp
 [PexMethod(MaxRunsWithoutNewTests=2000)]
 public void MyTest(...) {
     // ....
@@ -207,35 +209,37 @@ public void MyTest(...) {
 ```
 
 <a name="cannot-concretize-solution"></a>
-## <a name="cannot-concretize-solution"></a>Çözüm concretize olamaz
+## <a name="cannot-concretize-solution"></a>Çözüm somutlaştırılamıyor
 
-Bu hata genellikle daha önceki bir hata sonucu olur. Intellitest kullanan bir [kısıtlaması Çözücü](input-generation.md#constraint-solver) yeni test girişleri belirlemek için. Bazı durumlarda, tarafından önerilen girişleri test [kısıtlaması Çözücü](input-generation.md#constraint-solver) geçersizdir. Bu durum ortaya çıkabilir zaman:
+Bu hata genellikle önceki bir hata sonucu var. Intellitest kullanan bir [kısıtlama Çözücü](input-generation.md#constraint-solver) yeni test girdileri belirlemek için. Bazı durumlarda, girişler tarafından önerilen test [kısıtlama Çözücü](input-generation.md#constraint-solver) geçersizdir. Bu durum ortaya çıkabilir olduğunda:
 
 * bazı kısıtlamalar bilinmiyor
-* hatalar kullanıcı kodunda oluşmasına neden olan bir kullanıcı tarafından tanımlanan şekilde değerleri oluşturduysanız
+* Kullanıcı kodunda hata neden olan bir kullanıcı tanımlı yol değerleri oluşturulursa
 * Bazı ilgili türleri (örneğin, COM sınıfları) Intellitest tarafından denetlenmeyen başlatma mantığına sahip
 
 <a name="help-construct"></a>
 ## <a name="need-help-to-construct-object"></a>Nesnesi oluşturmak için Yardım gerekiyor
 
-Intellitest [test girişleri oluşturur](input-generation.md), ve bazı girdi nesneleri alanlara sahip olabilir. Burada, özel bir alana sahip bir sınıfının bir örneğini oluşturmak Intellitest çalışır ve bu özel alan belirli bir değere sahip olduğunda ilginç bir program davranış gerçekleşir varsayar. 
+Intellitest [test girdileri oluşturur](input-generation.md), ve bazı girişleri nesneleri alanlara sahip olabilir.
+Burada, özel bir alan olan bir sınıf örneği oluşturmak Intellitest çalışır ve ilgi çekici bir program davranışı, bu özel alan belirli bir değere sahip olduğunda meydana gelir varsayar.
 
-Ancak, bu yansıma ile mümkün olmakla birlikte, Intellitest nesneleri rasgele alan değerleriyle üretmez. Bunun yerine, bu durumda, genel yöntemler bir sınıfın bir nesnesi oluşturun ve kendi özel alan istenen değere sahip olduğu bir duruma getirmek için nasıl kullanılacağı konusunda ipuçları sağlayan kullanıcıya kullanır.
+Ancak, bu yansıma ile mümkün olmakla birlikte, Intellitest rastgele alan değerlerine sahip nesneleri üretmez.
+Bunun yerine, bu gibi durumlarda kullanıcının bir nesne oluşturur ve kendi özel alan istenen değere sahip olduğu bir duruma getirmek için ortak bir sınıftaki yöntemleri kullanma hakkında ipuçları sağlayın kullanır.
 
-Okuma [varolan sınıflarını örnekleme](input-generation.md#existing-classes) ilginç nesneleri oluşturmak Intellitest nasıl yardımcı olabileceğini öğrenin. 
+Okuma [varolan sınıf oluşturma](input-generation.md#existing-classes) ilginç nesneleri oluşturmak için Intellitest nasıl yardımcı olabileceğini öğrenin.
 
 <a name="help-types"></a>
-## <a name="need-help-to-find-types"></a>Türlerini bulmak için Yardım gerekiyor
+## <a name="need-help-to-find-types"></a>Türleri bulmak için Yardım gerekiyor
 
-Intellitest [test girişleri oluşturur](input-generation.md) için herhangi bir .NET türü. Burada, Intellitest bir soyut sınıftan türeyen ya da bir Özet arabirimini uygulayan bir örneği oluşturmayı dener ve Intellitest kısıtlamaları karşılayan herhangi bir türde bilmez. 
+Intellitest [test girdileri oluşturur](input-generation.md) için herhangi bir .NET türü. Burada, soyut bir sınıftan türetilen veya soyut bir arabirimi uygulayan bir örneğini oluşturmak Intellitest çalışır ve Intellitest kısıtlamalar karşılayan herhangi bir türde bilmez.
 
-Kısıtlamalarla eşleşen bir veya daha fazla türlerine göstererek Intellitest yardımcı olabilir. Genellikle, aşağıdaki öznitelikler birini yardımcı olur:
+Intellitest kısıtlamalarla eşleşen bir veya daha fazla türlerine işaret ederek yardımcı olabilir. Genellikle, aşağıdaki özniteliklerden birini yardımcı olur:
 
-* **PexUseTypeAttribute**, belirli bir türe işaret eder.
+* **PexUseTypeAttribute**, işaret ettiği için belirli bir tür.
 
-  Örneğin, BT Intellitest raporları, "tüm türleri için atanabilir bilmez **System.Collections.IDictionary**", aşağıdaki ekleyerek yardımcı olabilir **PexUseTypeAttribute** test (veya donanımı sınıfı için):
+  Intellitest BT'nin bildirirse, örneğin "öğesine atanamaz türler, bilmez **System.Collections.IDictionary**", aşağıdakileri ekleyerek yardımcı olabilecek **PexUseTypeAttribute** test (veya düzeni sınıfı için):
 
-  ```
+  ```csharp
   [PexMethod]
   [PexUseType(typeof(System.Collections.Hashtable))]
   public void MyTest(IDictionary[] dictionaries) { ... }
@@ -243,101 +247,103 @@ Kısıtlamalarla eşleşen bir veya daha fazla türlerine göstererek Intellites
 
 * **Bir derleme düzeyi özniteliği**
 
-  ```
+  ```csharp
   [assembly: PexUseType(typeof(System.Collections.Hashtable))]
   ```
 
 <a name="usable-type-guessed"></a>
-## <a name="usable-type-guessed"></a>Tahmin edilen kullanılabilir türü
+## <a name="usable-type-guessed"></a>Tahmin kullanılabilir türü
 
-Intellitest [test girişleri oluşturur](input-generation.md) tüm .NET türleri için. Bir tür soyut veya arabirim olduğunda Intellitest türü belirli bir uygulama seçmeniz gerekir. Bu seçim yapmak için hangi tür mevcut bilmesi gerekir. 
+Intellitest [test girdileri oluşturur](input-generation.md) için herhangi bir .NET türü. Bir türü soyut veya arabirim olduğunda, Intellitest türü belirli bir uygulama seçmeniz gerekir. Bu seçim yapmak için hangi türlerin mevcut bilmesi gerekir.
 
-Bu uyarı gösterildiğinde BT Intellitest başvurulan derlemelerin bazıları arama ve bir uygulama türü, ancak bulunan indiicates yazın ya da varsa daha uygun kullanılabilir türleri başka bir yerde kullanması gereken olup olmadığından emin değil. Intellitest yalnızca taahhüdü aranan bir türünü seçin.
+Bu uyarı gösterildiğinde, BT Intellitest başvurulan derlemeleri bazıları baktığı ve bir uygulama türü, ancak bulunan indiicates yazın veya varsa daha uygun kullanılabilir türleri başka bir yerde kullanması gereken olup olmadığından emin değil. Intellitest yalnızca taahhüdü aranan bir türü seçtiniz.
 
-Bu uyarı önlemek için Intellitest'ın türü seçimi kabul veya karşılık gelen ekleyerek diğer türleri kullanarak Intellitest yardımcı [PexUseType](attribute-glossary.md#pexusetype).
+Bu uyarıyı önlemek için Intellitest'ın türü seçimi kabul veya diğer türleri kullanarak karşılık gelen ekleyerek Intellitest yardımcı [PexUseType](attribute-glossary.md#pexusetype).
 
 <a name="unexpected-exploration"></a>
-## <a name="unexpected-failure-during-exploration"></a>Keşif sırasında beklenmeyen hata
+## <a name="unexpected-failure-during-exploration"></a>Araştırma sırasında beklenmeyen hata
 
-Bir test keşfetme çalışırken beklenmeyen bir özel durum yakalandı.
+Bir test araştırma sırasında beklenmeyen bir özel durum yakalandı.
 
-Lütfen [bu bir hata rapor](#report-bug).
+Lütfen [bu hata bildirin](#report-bug).
 
 <a name="targetinvocationexception"></a>
 ## <a name="targetinvocationexception"></a>TargetInvocationException
 
-Kullanıcı kodu özel durum oluştu. Yığın izleme inceleyin ve hatayı kodunuzda kaldırın.
+Kullanıcı kodunda bir özel durum oluştu. Yığın izlemesi inceleyin ve kodunuzda hata kaldırın.
 
 <a name="uninstrumented-method-called"></a>
-## <a name="uninstrumented-method-called"></a>Adlı uninstrumented yöntemi
+## <a name="uninstrumented-method-called"></a>İzlemesiz yöntemi çağrılır
 
-Intellitest [test girişleri oluşturur](input-generation.md) program yürütme izleme tarafından. Böylece Intellitest davranışını izleyebilirsiniz ilgili kodu düzgün izlenmiş olan gereklidir.
+Intellitest [test girdileri oluşturur](input-generation.md) programın yürütülmesini izleyerek. Intellitest davranışını izleyebilmeniz ilgili kodu düzgün şekilde işaretlenmiş gereklidir.
 
-İzleme eklenmiş kodu başka uninstrumented derlemede yöntemlerini çağırdığında bu uyarı görüntülenir. Her ikisi de etkileşimini keşfetmek için Intellitest istiyorsanız, diğer derleme (veya bazı bölümleri) işaretlemesini gerekir.
+İşaretlenmiş kod başka bir, izlemesiz derlemede yöntemleri çağırdığında, bu uyarı görüntülenir.
+Her ikisi de etkileşimi keşfetmek için Intellitest isterseniz diğer derleme (veya bazı bölümleri) işaretlemelidir.
 
 <a name="external-method-called"></a>
 ## <a name="external-method-called"></a>Adlı dış yöntemi
 
-Intellitest [test girişleri oluşturur](input-generation.md) yürütme .NET uygulama izleme tarafından. Intellitest bir .NET dilinde yazılmaz kodu için anlamlı test girişleri oluşturulamıyor.
+Intellitest [test girdileri oluşturur](input-generation.md) .NET uygulamalarını yürütülmesini izleyerek.
+Intellitest, bir .NET dilinde olmayan kod için anlamlı test girdileri oluşturulamıyor.
 
-İzleme eklenmiş kodu Intellitest analiz edilemez bir yönetilmeyen, yerel yöntemi çağırdığında bu uyarı görüntülenir. Her ikisi de etkileşimini keşfetmek için Intellitest istiyorsanız, yönetilmeyen yöntemi mock gerekir.
+İşaretlenmiş kod Intellitest analiz edemiyoruz bir yönetilmeyen, yerel bir yöntemi çağırdığında, bu uyarı görüntülenir. Her ikisi de etkileşimi keşfetmek için Intellitest istiyorsanız, yönetilmeyen yöntemi sahte gerekir.
 
 <a name="uninstrumentable-method-called"></a>
-## <a name="uninstrumentable-method-called"></a>Adlı uninstrumentable yöntemi
+## <a name="uninstrumentable-method-called"></a>Adlı izlenemeyen yöntemi
 
-Intellitest [test girişleri oluşturur](input-generation.md) yürütme .NET uygulama izleme tarafından. Ancak, teknik nedenlerle Intellitest izleyemez, bazı yöntemler vardır. Örneğin, Intellitest statik Oluşturucu izleyemez.
+Intellitest [test girdileri oluşturur](input-generation.md) .NET uygulamalarını yürütülmesini izleyerek. Ancak, teknik nedenlerle Intellitest izleyemez, bazı yöntemler vardır. Örneğin, Intellitest statik Oluşturucu izleyemez.
 
-İzleme eklenmiş kodu Intellitest izleyemez bir yöntem çağırdığında bu uyarı görüntülenir. 
+İşaretlenmiş kod Intellitest izleyemez bir yöntemi çağırdığında, bu uyarı görüntülenir.
 
 <a name="testability-issue"></a>
-## <a name="testability-issue"></a>Test Edilebilirlik sorunu
+## <a name="testability-issue"></a>Test Edilebilirlik sorununu
 
-Intellitest [test girişleri oluşturur](input-generation.md) program yürütme izleme tarafından. Program belirleyici olduğunda ve ilgili davranışı test girişleri tarafından denetlenir ilgili test girişleri yalnızca oluşturabilirsiniz.
+Intellitest [test girdileri oluşturur](input-generation.md) programın yürütülmesi izleyerek. Program belirleyici olduğunda ve ilgili davranışı test girdileri tarafından denetlenir ilgili test girdileri yalnızca oluşturabilirsiniz.
 
-Test çalışması yürütme sırasında bir yöntem çağrıldı olduğundan ya da belirleyici olmayan şekilde davranır veya ortamı ile etkileşim bu uyarı görüntülenir. Örnekler yöntemlerini **System.Random** ve **System.IO.File**. Intellitest anlamlı test girişleri oluşturmak istiyorsanız, sınanabilirlik sorunlar Intellitest bayrakları yöntemleri mock gerekir.
+Test çalışması yürütülmesi sırasında bir yöntem çağrıldığından, ya da belirleyici olmayan şekilde davranan veya ortam ile etkileşime giren bu uyarı görüntülenir. Örnekler yöntemlerinin **System.Random** ve **System.IO.File**. Anlamlı test girdileri oluşturmak için Intellitest istiyorsanız, Intellitest Test Edilebilirlik sorunları işaretler yöntemleri sahte gerekir.
 
 <a name="limitation"></a>
 ## <a name="limitation"></a>Sınırlama
 
-Intellitest [test girişleri oluşturur](input-generation.md) kullanarak bir [kısıtlaması Çözücü](input-generation.md#constraint-solver).
-Ancak, kapsamı dışındaki bazı işlemler vardır [kısıtlaması Çözücü](input-generation.md#constraint-solver).
+Intellitest [test girdileri oluşturur](input-generation.md) kullanarak bir [kısıtlama Çözücü](input-generation.md#constraint-solver).
+Ancak, kapsamı dışındadır bazı işlemler vardır [kısıtlama Çözücü](input-generation.md#constraint-solver).
 Şu anda bu içerir:
 
-* (yalnızca bazı doğrusal aritmetik kayan nokta numarası desteklenir) en kayan nokta işlemleri
-* kayan nokta sayıları ve tamsayılar arasında dönüştürme
+* en kayan nokta işlemleri (doğrusal bazı aritmetik kayan noktalı sayının desteklenir)
+* kayan noktalı sayıları ve tam sayılar arasında dönüştürmeler
 * tüm işlemler **System.Decimal** türü
 
-Yürütülen kod Intellitest yorumlanamıyor bir yöntemi çağırır veya bir işlem gerçekleştirir bu uyarı görüntülenir. 
+Intellitest yorumlanamıyor bir yöntemi çağırır veya bir işlem gerçekleştirir yürütülen kod bu uyarı görüntülenir.
 
 <a name="observed-call-mismatch"></a>
-## <a name="observed-call-mismatch"></a>Gözlemlenen çağrısı uyuşmazlığı
+## <a name="observed-call-mismatch"></a>Çağrı uyuşmazlığı gözlemlendi
 
-Intellitest [test girişleri oluşturur](input-generation.md) program yürütme izleme tarafından. Ancak, Intellitest tüm yönergeleri izlemek mümkün olmayabilir. Örneğin, yerel kod izleyemez ve değil izlenmiş olan kod izleyemez.
+Intellitest [test girdileri oluşturur](input-generation.md) programın yürütülmesini izleyerek. Ancak, Intellitest tüm yönergeleri izlemeniz mümkün olmayabilir. Örneğin, yerel kod izleyemez ve izlenmiyor kod izleyemez.
 
-Intellitest kod izleyemez olduğunda, bu kodu için uygun olan test girişleri oluşturulamıyor.
-Genellikle, Intellitest bu yöntem çağrısı kadar bir yöntem izleyemez olgu uyumlu değil. Ancak, bu uyarı nedeni:
+Intellitest kod izleyemez olduğunda, bu kod için uygun olan test girdileri oluşturulamıyor.
+Genellikle, Intellitest bu yönteme bir çağrı dönene kadar bir yöntem izleyemez duruma dikkat edin değil. Ancak, bu uyarı nedeni:
 
-* Intellitest uninstrumented yöntemine yapılan bir çağrı tarafından başlatılan biraz kod izlenen
-* İzlenmiş olan bir yöntem olarak adlandırılan uninstrumented yöntemi
-* Intellitest çağrıldı belgelenmiş yöntemini izler 
+* Intellitest izlenen bir yönteme bir çağrı başlatılan bazı kod
+* İşaretlenmiş bir yöntemi çağıran yönteme
+* Intellitest çağrıldı Araçlı yöntemi izler
 
-İç içe geçmiş Araçlı çağrısı ilgili test girişleri oluşturmak mümkün olmayabilir şekilde Intellitest uninstrumented Ara yöntemi ne yaptığını, bilmez.
+İç içe geçmiş izleme eklenmiş çağrısını ilgili olan test girdileri oluşturmak mümkün olmayabilir şekilde ne Ara yönteme yaptığını, Intellitest bilmez.
 
 <a name="value-static-field"></a>
 ## <a name="value-stored-in-static-field"></a>Statik alanda depolanan değer
 
-Intellitest sistematik olarak belirleyebilir [ilgili test girişleri](input-generation.md) yalnızca zaman birim testi belirleyici; diğer bir deyişle, her zaman aynı test girişleri için aynı şekilde davranır. Özellikle, bu test test yeniden yürütmek için izin veren bir durumda sistem bırakmalısınız anlamına gelir.
-İdeal olarak, birim testi herhangi bir genel durum değiştirmemeniz gerekir, ancak tüm etkileşim globals mocked.
+Intellitest sistematik olarak belirleyebilir [ilgili test girdileri](input-generation.md) yalnızca belirleyici, birim testi; başka bir deyişle, her zaman aynı test girdileri ile aynı şekilde davranır. Özellikle, bu test sistemi yeniden test çalışmasına izin veren bir durumda bırakmanız gerekir anlamına gelir.
+İdeal olarak, birim testi tüm genel durumunu değiştirmemesi gerekir, ancak genel öğeleri ile tüm etkileşimler örnek.
 
-Bu uyarı, statik bir alana değiştirildiğini gösterir; Bu, belirleyici olmayan biçimde davranır test yapabilir.
+Bu uyarı, bir statik alan değiştirildiğini belirtir; Bu belirleyici olmayan şekilde davranan test çalışmasına neden olabilir.
 
-Bazı durumlarda, statik bir alana değiştirme kabul edilebilir:
+Bazı durumlarda, statik bir alanı değiştirme kabul edilebilir:
 
-* test girişleri değişikliği geri almak Kurulum veya temizleme kod zaman neden olur
-* ne zaman alan yalnızca bir kez başlatılan ve değer daha sonra değişmez
+* Kurulum veya temizleme kod değişikliği geri almak test girdilerine sebep olduğunda
+* zaman alan yalnızca bir kez başlatılır ve değer daha sonra değişmez
 
 <a name="report-bug"></a>
 
 ## <a name="got-feedback"></a>Geri bildirim var mı?
 
-Fikirlerinizi sonrası ve özellik istekleri  **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
+Fikirlerinizi gönderin ve özellik istekleri [Geliştirici topluluğu](https://developercommunity.visualstudio.com/content/idea/post.html?space=8).

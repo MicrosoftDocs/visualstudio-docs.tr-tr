@@ -1,296 +1,296 @@
 ---
-title: "Etkin komut dosyası hata ayıklama genel bakış | Microsoft Docs"
-ms.custom: 
+title: Etkin komut dosyası hata ayıklamaya genel bakış | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: article
 helpviewer_keywords:
 - Active Script Debugging overview
 ms.assetid: ce4ec768-d017-4dfa-a7e3-cced3a29e679
-caps.latest.revision: 
+caps.latest.revision: 11
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: 1d9aebdc3f8fa4df0f4386609e632e1a8611c87f
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: d8624c1405931edefe2e1e53e579ad28a7b238f1
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220228"
 ---
 # <a name="active-script-debugging-overview"></a>Etkin Komut Dosyası Hata Ayıklamaya Genel Bakış
-Etkin komut dosyası hata ayıklama arabirimleri dilden, ana bilgisayar Tarafsız hata ayıklamaya izin verme ve çok çeşitli geliştirme ortamlarını destekler.  
+Etkin betik hata ayıklama arabirimleri, dilden bağımsız, konak nötr hata ayıklamaya izin verecek ve çok çeşitli geliştirme ortamlarında destekler.  
   
  ![Komut dosyası ana bilgisayarı işlemi](../winscript/media/scp56activdbgarchgif.gif "Scp56ActivDbgArchgif")  
 Şekil 1  
   
- Bir dilden hata ayıklama ortamında bir programlama dili veya programlama dillerinin, bu dillerden birine belirli bilgisi olmadan karışımını destekler. Hata ayıklama ortamı diller arası atlama ve kesme noktaları da destekler. (Bu genel bakışta öncelikle VBScript gibi dilleri komut desteği odaklanır ve [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].)  
+ Bir dilden hata ayıklama ortamında herhangi bir programlama dili veya tüm dillere özel bilgisi olmadan programlama dillerinin bir karışımını destekler. Hata ayıklama ortamında, diller arası adımlama ve kesme noktaları da destekler. (Bu genel bakışta, öncelikle VBScript gibi dilleri komut desteği odaklanır ve [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].)  
   
- Bir ana bilgisayar Tarafsız hata ayıklayıcı, Internet Explorer veya özel bir ana bilgisayar gibi tüm etkin komut dosyası ana bilgisayarla otomatik olarak kullanılabilir. Konak ne hata ayıklayıcı kullanıcıya, içeriğine belge ağaç yapısını ve hata ayıklama belge sözdizimi renklendirmesi sunar denetler. Bu, ana belge bağlamında gösterilecek hata ayıklaması kaynak kodu sağlar. Örneğin, Internet Explorer bir HTML sayfasında bir komut dosyası gösterebilir.  
+ Bir konak nötr hata ayıklayıcı, Internet Explorer veya özel bir ana bilgisayar gibi tüm etkin komut dosyası ana bilgisayarla otomatik olarak kullanılabilir. Konak, hangi hata ayıklayıcı kullanıcıya, belge ağacı içeriğine yapısını ve hata ayıklama belgelerin söz dizimi renklendirmesi sunan denetler. Bu, hataları ayıklanan kaynak kodu ana belge kapsamında gösterilmesini sağlar. Örneğin, Internet Explorer, bir HTML sayfasında bir betik gösterebilirsiniz.  
   
- Aşağıdaki alt bölümlerde, her anahtar bileşen etkin hata ayıklama ve ilişkili arabirimlerinden ele alınmıştır. Ancak, devam etmeden önce etkin hata ayıklama birkaç temel kavramları tanımlanmış olması gerekir:  
+ Aşağıdaki alt bölümlerde, her anahtar bileşen etkin hata ayıklama ve ilişkili arabirimlerinden ele alınmıştır. Ancak, devam etmeden önce etkin hata ayıklama birkaç temel kavramları tanımlanmalıdır:  
   
- ana bilgisayar uygulaması  
- Komut dosyasını barındıran uygulama motorları ve nesneler (veya "nesne modeli") kodlanabilir kümesi sağlar.  
+ **Ana bilgisayar uygulaması**  
+ Betik barındıran uygulama altyapıları ve kodlanabilir nesneler (veya "nesne modeli") sunmaktadır.  
   
- Dil altyapısı  
- Ayrıştırma, yürütme ve belirli bir dil için soyutlamalar hata ayıklama sağlayan bir bileşendir.  
+ **Dil altyapısı**  
+ Ayrıştırma, yürütme ve soyutlama belirli bir dil için hata ayıklama sağlayan bir bileşendir.  
   
- hata ayıklayıcı IDE  
- Konak uygulama ve dil altyapısı ile iletişim kurarak kullanıcı Arabirimi hata ayıklama sağlayan uygulama.  
+ **hata ayıklayıcı IDE**  
+ Konak uygulama ve dil altyapıları ile iletişim kurarak UI hata ayıklaması sağlayan uygulama.  
   
- Makine Hata Ayıklama Yöneticisi  
- Bir kayıt defteri debuggable uygulama işlemlerinin tutar bileşeni.  
+ **Makine Hata Ayıklama Yöneticisi** hata ayıklanabilir uygulama işlemlerinin bir kayıt defteri tutar bir bileşen.  
   
- İşlem Hata Ayıklama Yöneticisi  
- Belirli bir uygulama için debuggable belgelerinin ağaç tutan bir bileşen çalışan iş parçacıkları ve benzeri izler.  
+ **İşlem Hata Ayıklama Yöneticisi**  
+ Belirli bir uygulama için hata ayıklanabilir belgelerinin ağaç tutan bir bileşeni, çalışan iş parçacıkları ve benzeri izler.  
   
- Belge bağlamı  
- Bir belge bağlamı, ana belge kaynak kodunu belirli bir aralıkta temsil eden bir soyutlamadır.  
+ **Belge bağlamı**  
+ Bir belge bağlamına ana belgenin bir kaynak kodu belirli bir aralıkta temsil eden bir soyutlamadır.  
   
- kod bağlamı  
- Kod çalıştırırken belirli bir konumda dil altyapısı (bir "sanal yönerge işaretçisi".) bir kod bağlamını temsil eder  
+ **Kod bağlamı**  
+ Kod bağlamı çalışan kodu belirli bir konumda bir dil altyapısı (bir "sanal yönerge işaretçisi".) temsil eder.  
   
- ifade bağlamı  
- İfadeler bir dil altyapısı tarafından değerlendirilmesi belirli bir içeriğe (örneğin, bir yığın çerçevesi).  
+ **deyim bağlamı**  
+ İfadeleri dil altyapısı tarafından değerlendirilebilir belirli bir içeriğe (örneğin, bir yığın çerçevesi).  
   
- Nesne gözatma  
- Bir nesnenin adı, türü, değer ve alt nesneler, "Gözcü penceresi" uygulamak için uygun yapılandırılmış ve dilden bağımsız gösterimini UI.  
+ **Nesne gözatma**  
+ Bir nesnenin adı, türü, değer ve "izleme pencesine" uygulamak için uygun alt nesneleri yapılandırılmış, dilden bağımsız gösterimini kullanıcı Arabirimi.  
   
- Aşağıda bu arabirimleri ayrıntıları tarafından izlenen karşılık gelen, ilişkili arabirim ve anahtar etkin hata ayıklama bileşenleri her bir genel bakıştır.  
+ Her anahtar etkin hata ayıklama bileşenleri ve bu arabirimler ayrıntılarını tarafından izlenen, karşılık gelen, ilişkili arabirim genel bir bakış aşağıdadır.  
   
 ## <a name="language-engine"></a>Dil altyapısı  
  Dil altyapısı sağlar:  
   
--   Dil ayrıştırma ve yürütme.  
+- Dil ayrıştırma ve yürütme.  
   
--   Hata ayıklama desteği (kesme noktaları ve benzeri).  
+- Hata ayıklama desteği (kesme noktaları ve benzeri).  
   
--   İfade değerlendirme.  
+- İfade değerlendirme.  
   
--   Sözdizimi renklendirmesi.  
+- Sözdizimi renklendirme.  
   
--   Gözatma nesne.  
+- Gözatma nesne.  
   
--   Yığın numaralandırması ve ayrıştırma.  
+- Yığın numaralandırma ve ayrıştırma.  
   
- Bir komut dosyası motoru hata ayıklama sağlamak üzere desteklemesi gerekir arabirimleri, ifade değerlendirmesi ve nesne gözatma altındadır. Bu arabirimleri belge bağlamını ve altyapının kod bağlamları arasında eşleme ve ayrıca numaralandırması debugger ifade değerlendirme yapmak için kullanıcı Arabirimi tarafından yığın ve tarama nesne için konak uygulama tarafından kullanılır.  
+  Aşağıda bir komut dosyası altyapısı hata ayıklama sağlamayı desteklemek için gereken arabirimleri, ifade değerlendirme ve nesne gözatma verilmiştir. Bu arabirimler, belge bağlamını ve altyapının kod bağlamları arasında eşleme ve ayrıca numaralandırma hata ayıklayıcı tarafından ifade değerlendirmesi yapmak için kullanıcı Arabirimi, yığın ve gözatma nesne için konak uygulama tarafından kullanılır.  
   
- [Iactivescriptdebug arabirimi](../winscript/reference/iactivescriptdebug-interface.md)  
- Sözdizimi renklendirmesi ve kod bağlam numaralandırması sağlar.  
+  [IActiveScriptDebug Arabirimi](../winscript/reference/iactivescriptdebug-interface.md)  
+  Söz dizimi renklendirme ve kod bağlamı numaralandırma sağlar.  
   
- [Iactivescripterrordebug arabirimi](../winscript/reference/iactivescripterrordebug-interface.md)  
- Belge bağlamları ve hatalar için yığın çerçeveleri döndürür.  
+  [IActiveScriptErrorDebug Arabirimi](../winscript/reference/iactivescripterrordebug-interface.md)  
+  Bağlamları ve hatalar için yığın çerçevelerini verir belge.  
   
- [Iactivescriptsitedebug arabirimi](../winscript/reference/iactivescriptsitedebug-interface.md)  
- Hata ayıklayıcı betiği altyapısından sağlanan bağlantıyı barındırır.  
+  [IActiveScriptSiteDebug Arabirimi](../winscript/reference/iactivescriptsitedebug-interface.md)  
+  Hata ayıklayıcı komut dosyası altyapısı bağlantısı sağlanan ana bilgisayar.  
   
- [Idebugcodecontext arabirimi](../winscript/reference/idebugcodecontext-interface.md)  
- Bir sanal sağlayan bir iş parçacığında "yönerge işaretçisi".  
+  [IDebugCodeContext Arabirimi](../winscript/reference/idebugcodecontext-interface.md)  
+  Bir sanal sağlar "yönerge işaretçisi" bir iş parçacığında.  
   
- [Ienumdebugcodecontexts arabirimi](../winscript/reference/ienumdebugcodecontexts-interface.md)  
- Bir belge bağlamına karşılık gelen kod bağlamları numaralandırır.  
+  [IEnumDebugCodeContexts Arabirimi](../winscript/reference/ienumdebugcodecontexts-interface.md)  
+  Bir belge bağlamına karşılık gelen kod bağlamı numaralandırır.  
   
- [Idebugstackframe arabirimi](../winscript/reference/idebugstackframe-interface.md)  
- İş parçacığı yığında mantıksal yığın çerçevesi temsil eder.  
+  [IDebugStackFrame Arabirimi](../winscript/reference/idebugstackframe-interface.md)  
+  İş parçacığı yığınında bir mantıksal yığın çerçevesini temsil eder.  
   
- [Idebugexpressioncontext arabirimi](../winscript/reference/idebugexpressioncontext-interface.md)  
- İfadeler değerlendirilebilir bağlamı sağlar.  
+  [IDebugExpressionContext Arabirimi](../winscript/reference/idebugexpressioncontext-interface.md)  
+  İfadeleri değerlendirme bağlam sağlar.  
   
- [Idebugstackframesniffer arabirimi](../winscript/reference/idebugstackframesniffer-interface.md)  
- Mantıksal yığın çerçeveleri numaralandırmak için bir yol sağlar.  
+  [IDebugStackFrameSniffer Arabirimi](../winscript/reference/idebugstackframesniffer-interface.md)  
+  Mantıksal yığın çerçevelerini numaralandırmak için bir yol sağlar.  
   
- [Idebugexpression arabirimi](../winscript/reference/idebugexpression-interface.md)  
- Zaman uyumsuz olarak değerlendirilen bir ifade temsil eder.  
+  [IDebugExpression Arabirimi](../winscript/reference/idebugexpression-interface.md)  
+  Zaman uyumsuz olarak değerlendirilen bir ifade temsil eder.  
   
- [Idebugsyncoperation arabirimi](../winscript/reference/idebugsyncoperation-interface.md)  
- Belirli bir engellenmiş iş parçacığı, iç içe geçmiş sırada gerçekleştirilmesi gerekir bir işlem soyut için bir komut dosyası altyapısı sağlar.  
+  [IDebugSyncOperation Arabirimi](../winscript/reference/idebugsyncoperation-interface.md)  
+  Belirli bir engellenmiş iş parçacığı, iç içe geçmiş sırada gerçekleştirilmesi gereken işlem soyutlamak bir komut dosyası altyapısı sağlar.  
   
- [Idebugasyncoperation arabirimi](../winscript/reference/idebugasyncoperation-interface.md)  
- Zaman uyumlu hata ayıklama işlemi zaman uyumsuz erişim sağlar.  
+  [IDebugAsyncOperation Arabirimi](../winscript/reference/idebugasyncoperation-interface.md)  
+  Bir zaman uyumlu hata ayıklama işlemi zaman uyumsuz erişim sağlar.  
   
- [Idebugasyncoperationcallback arabirimi](../winscript/reference/idebugasyncoperationcallback-interface.md)  
- İlerleme durumunu ilgili durum olaylarını sağlayan bir `IDebugAsyncOperation` arabirim değerlendirme.  
+  [IDebugAsyncOperationCallBack Arabirimi](../winscript/reference/idebugasyncoperationcallback-interface.md)  
+  İlerleme durumunu ilgili durum olayları sağlayan bir `IDebugAsyncOperation` arabirim değerlendirme.  
   
- [Ienumdebugexpressioncontexts arabirimi](../winscript/reference/ienumdebugexpressioncontexts-interface.md)  
- Bir koleksiyonu numaralandırır `IDebugExpressionContexts` nesneleri.  
+  [IEnumDebugExpressionContexts Arabirimi](../winscript/reference/ienumdebugexpressioncontexts-interface.md)  
+  Bir koleksiyonu sıralar `IDebugExpressionContexts` nesneleri.  
   
- [Iprovideexpressioncontexts arabirimi](../winscript/reference/iprovideexpressioncontexts-interface.md)  
- Belirli bir bileşen tarafından bilinen ifade bağlamları numaralandırmak için bir yol sağlar.  
+  [IProvideExpressionContexts Arabirimi](../winscript/reference/iprovideexpressioncontexts-interface.md)  
+  Belirli bir bileşen tarafından bilinen ifade bağlamları listelemek için bir yol sağlar.  
   
- [Idebugformatter arabirimi](../winscript/reference/idebugformatter-interface.md)  
- Bir dil veya değişken değerleri veya VARTYPE türler ile dizeler arasındaki dönüştürme özelleştirmek için IDE'yi sağlar.  
+  [IDebugFormatter Arabirimi](../winscript/reference/idebugformatter-interface.md)  
+  Bir dil veya değişken değerleri veya VARTYPE türler ile dizeler arasında dönüştürme özelleştirmek için IDE sağlar.  
   
- [Idebugstackframesnifferex arabirimi](../winscript/reference/idebugstackframesnifferex-interface.md)  
- Mantıksal yığın çerçeveleri için PDM numaralandırır.  
+  [IDebugStackFrameSnifferEx Arabirimi](../winscript/reference/idebugstackframesnifferex-interface.md)  
+  Mantıksal yığın çerçevesi için PDM numaralandırır.  
   
-## <a name="hosts"></a>Ana bilgisayarlar  
+## <a name="hosts"></a>Konaklar  
  Ana bilgisayar:  
   
--   Dil motorları barındırır.  
+- Dil altyapıları barındırır.  
   
--   Bir nesne modeli (betiği yazılabilir nesneleri kümesi) sağlar.  
+- Bir nesne modeli (betik oluşturulabilir nesne kümesi) sağlar.  
   
--   Hata ayıklaması yapılabilir belgeleri ağacının ve içerikleri tanımlar.  
+- Hata ayıklaması yapılabilir belge ağacının ve bunların içeriğini tanımlar.  
   
--   Komut dosyaları, sanal uygulamaları düzenler.  
+- Sanal uygulamalara betiklerini düzenler.  
   
- Konaklar iki tür vardır:  
+  Konaklar iki tür vardır:  
   
--   Dumb bir ana bilgisayar yalnızca temel etkin komut dosyası arabirimleri destekler. Belge yapısı veya kuruluşlar üzerinde denetimi yoktur; Bu, tamamen dil altyapısına sağlanan komut dosyaları tarafından belirlenir.  
+- Yalnızca temel etkin komut dosyası yazma arabirimleri dumb konak destekler. Bu belge yapısı veya kuruluşlar üzerinde denetimi yoktur; Bu tamamen dil altyapıları için sağlanan betikleri tarafından belirlenir.  
   
--   Bir akıllı ana bilgisayar, belge ağacı, belge içeriklerini ve sözdizimi renklendirmesi tanımlamanızı sağlayan daha büyük bir arabirimleri destekler. Bir akıllı ana bilgisayar olacak şekilde bir ana bilgisayar için çok daha kolay yapan sonraki alt bölümde açıklanan yardımcı arabirimleri, bir dizi yoktur.  
+- Bir akıllı ana bilgisayar, belge ağacı, belge içeriklerini ve söz dizimi renklendirmesi tanımlamanızı sağlayan daha büyük bir arabirimin destekler. Akıllı bir konak olacak şekilde bir konak için çok daha kolay hale sonraki alt bölümünde açıklanan yardımcı arabirimleri, bir dizi yoktur.  
   
 ### <a name="smart-host-helper-interfaces"></a>Akıllı konak yardımcı arabirimleri  
- `IDebugDocumentHelper` Yöntemleri sunar arabirimleri oldukça basitleştirilmiş bir dizi ana bilgisayar tam karmaşıklığı (gücü) tam ana bilgisayar arabirimlerin işleme ve olmadan akıllı barındırma avantajları elde için kullanabilirsiniz.  
+ `IDebugDocumentHelper` Yöntemleri bir ana bilgisayar tam karmaşıklığı (gücü) tam konak arabirimlerin işleme ve olmadan akıllı barındırma avantajlarını elde etmek için kullanabileceğiniz arabirimleri önemli ölçüde basitleştirilmiş bir dizi sağlar.  
   
- Bir ana bilgisayar bu arabirimleri Elbette kullanmak için gerekli değildir. Ancak bu arabirimleri kullanarak, uygulama veya çok sayıda daha karmaşık arabirimleri kullanarak önleyebilirsiniz.  
+ Bu arabirimler doğal olarak kullanılacak bir ana bilgisayar gerekli değildir. Ancak bu arabirimleri kullanarak, uygulama veya çok sayıda daha karmaşık arabirimleri kullanarak önleyebilirsiniz.  
   
- [Idebugdocumenthelper arabirimi](../winscript/reference/idebugdocumenthelper-interface.md)  
+ [IDebugDocumentHelper Arabirimi](../winscript/reference/idebugdocumenthelper-interface.md)  
  PDM tarafından uygulanan ve uygulamaları için akıllı barındırmak için gereken birçok arabirimler sağlar.  
   
- [Idebugdocumenthost arabirimi](../winscript/reference/idebugdocumenthost-interface.md)  
- (İsteğe bağlı) sözdizimi, hata ayıklayıcı için renklendirme gibi ana bilgisayara özgü işlevselliği kullanıma sunmak için ana bilgisayar tarafından uygulanır.  
+ [IDebugDocumentHost Arabirimi](../winscript/reference/idebugdocumenthost-interface.md)  
+ (İsteğe bağlı) söz dizimi renklendirme, hata ayıklayıcıya gibi ana bilgisayara özgü işlevleri kullanıma sunmak için ana bilgisayar tarafından uygulanır.  
   
- Daha fazla bilgi için bkz: [akıllı konak yardımcı arabirimleri uygulama](../winscript/implementing-smart-host-helper-interfaces.md).  
+ Daha fazla bilgi için [akıllı konak yardımcı arabirimleri uygulama](../winscript/implementing-smart-host-helper-interfaces.md).  
   
-### <a name="full-smart-host-interfaces"></a>Tam akıllı konak arabirimleri  
- Aşağıda tam bir akıllı ana bilgisayar uygulamak veya yardımcı arabirimleri kullanmıyorsa kullanmak arabirimleri ayarlanır.  
+### <a name="full-smart-host-interfaces"></a>Akıllı konak tam arabirimleri  
+ Aşağıda tam bir akıllı ana bilgisayar uygulamak veya yardımcı arabirimleri kullanmıyorsa kullanan arabirimleri ayarlanır.  
   
  Ana bilgisayar tarafından uygulanan arabirimler:  
   
- [Idebugdocumentınfo arabirimi](../winscript/reference/idebugdocumentinfo-interface.md)  
- Bilgi olabilir veya değil örneği bir belge üzerinde sağlar.  
+ [IDebugDocumentInfo Arabirimi](../winscript/reference/idebugdocumentinfo-interface.md)  
+ Örneği değil veya bir belge hakkında bilgi sağlar.  
   
- [Idebugdocumentprovider arabirimi](../winscript/reference/idebugdocumentprovider-interface.md)  
- İsteğe bağlı bir belge başlatmasını sağlar.  
+ [IDebugDocumentProvider Arabirimi](../winscript/reference/idebugdocumentprovider-interface.md)  
+ İsteğe bağlı bir belge oluşturmak için gereken araçları sağlar.  
   
- [Idebugdocument arabirimi](../winscript/reference/idebugdocument-interface.md)  
+ [IDebugDocument Arabirimi](../winscript/reference/idebugdocument-interface.md)  
  Tüm hata ayıklama belgeler için temel arabirim.  
   
- [Idebugdocumenttext arabirimi](../winscript/reference/idebugdocumenttext-interface.md)  
- Hata ayıklama belge salt metin sürümü erişim sağlar.  
+ [IDebugDocumentText Arabirimi](../winscript/reference/idebugdocumenttext-interface.md)  
+ Hata ayıklama belge salt metin sürümüne erişim sağlar.  
   
- [Idebugdocumenttextauthor arabirimi](../winscript/reference/idebugdocumenttextauthor-interface.md)  
- Hata ayıklama belge salt metin sürümünü düzenlemeyi sağlar.  
+ [IDebugDocumentTextAuthor Arabirimi](../winscript/reference/idebugdocumenttextauthor-interface.md)  
+ Hata ayıklama belgesinin salt metin sürümünü düzenlenmesini sağlar.  
   
- [Idebugdocumentcontext arabirimi](../winscript/reference/idebugdocumentcontext-interface.md)  
- Ayıklanacak belgenin bir bölümünü soyut bir gösterimini sağlar.  
+ [IDebugDocumentContext Arabirimi](../winscript/reference/idebugdocumentcontext-interface.md)  
+ Hatası ayıklanmakta olan belgenin bir bölümünü soyut bir gösterimini sağlar.  
   
- Ana bilgisayar adına göre PDM uygulanan arabirimler:  
+ Ana bilgisayar adına PDM tarafından uygulanan arabirimler:  
   
- [Idebugapplicationnode arabirimi](../winscript/reference/idebugapplicationnode-interface.md)  
- İşlevselliğini genişleten `IDebugDocumentProvider` proje ağacı bağlamında sağlayarak arabirimi.  
+ [IDebugApplicationNode Arabirimi](../winscript/reference/idebugapplicationnode-interface.md)  
+ İşlevselliğini genişletir `IDebugDocumentProvider` proje ağacı içinde bir bağlam sağlayarak arabirimi.  
   
-## <a name="debugger-ide"></a>hata ayıklayıcı IDE  
- IDE bir dilden bağımsız hata ayıklama UI'dır. Şu olanakları sunar:  
+## <a name="debugger-ide"></a>Hata ayıklayıcı IDE  
+ Kullanıcı Arabirimi hata ayıklama dilden bağımsız bir ıde'dir. Şu olanakları sunar:  
   
--   Belge görüntüleyiciler/düzenleyiciler.  
+- Belge görüntüleyiciler/düzenleyiciler.  
   
--   Kesme yönetimi.  
+- Kesme noktası yönetimi.  
   
--   İfade değerlendirme ve Gözcü pencerelerini.  
+- İfade windows değerlendirme ve izleyin.  
   
--   Çerçeve gözatma yığın.  
+- Yığın çerçeve göz atma.  
   
--   Nesne/sınıfı tarama.  
+- Gözatma nesne/sınıfı.  
   
--   Sanal uygulama yapısı tarama.  
+- Sanal uygulama yapısı göz atma.  
   
- Hata ayıklayıcı tarafından uygulanan arabirimler:  
+  Hata ayıklayıcı tarafından uygulanan arabirimler:  
   
- [Iapplicationdebugger arabirimi](../winscript/reference/iapplicationdebugger-interface.md)  
- Hata ayıklayıcı IDE oturumu tarafından kullanıma sunulan birincil arabirimdir.  
+  [IApplicationDebugger Arabirimi](../winscript/reference/iapplicationdebugger-interface.md)  
+  Hata ayıklayıcı IDE oturumu tarafından kullanıma sunulan birincil arabirim.  
   
- [Iapplicationdebuggeruı arabirimi](../winscript/reference/iapplicationdebuggerui-interface.md)  
- Dış bileşen hata ayıklayıcı kullanıcı arabirimini (UI) üzerinde daha fazla denetim sağlar.  
+  [IApplicationDebuggerUI Arabirimi](../winscript/reference/iapplicationdebuggerui-interface.md)  
+  Dış bileşen hata ayıklayıcının kullanıcı arabirimini (UI) üzerinde daha fazla denetim sağlar.  
   
- [Idebugexpressioncallback arabirimi](../winscript/reference/idebugexpressioncallback-interface.md)  
- Durum olayları için sağlar `IDebugExpression` değerlendirme devam ediyor.  
+  [IDebugExpressionCallBack Arabirimi](../winscript/reference/idebugexpressioncallback-interface.md)  
+  Durumu için olayları sağlar `IDebugExpression` değerlendirme ilerleme durumu.  
   
- [Idebugdocumenttextevents arabirimi](../winscript/reference/idebugdocumenttextevents-interface.md)  
- İlişkili metin belgesi değişiklikleri belirten olaylar sağlar.  
+  [IDebugDocumentTextEvents Arabirimi](../winscript/reference/idebugdocumenttextevents-interface.md)  
+  İlişkili metin belgeye yapılan değişiklikler belirten olayları sağlar.  
   
- [Idebugapplicationnodeevents arabirimi](../winscript/reference/idebugapplicationnodeevents-interface.md)  
- Olay arabirimi sağlar `IDebugApplicationNode` arabirimi.  
+  [IDebugApplicationNodeEvents Arabirimi](../winscript/reference/idebugapplicationnodeevents-interface.md)  
+  Olay arabirimi sağlayan `IDebugApplicationNode` arabirimi.  
   
 ### <a name="machine-debug-manager"></a>Makine Hata Ayıklama Yöneticisi  
- Makine Hata Ayıklama Yöneticisi, koruma ve etkin sanal uygulamaların bir listesini numaralandırma sanal uygulamaları ve hata ayıklayıcıları arasında bağlantı noktası sağlar.  
+ Makine Hata Ayıklama Yöneticisi, Bakım ve etkin sanal uygulamaların bir listesi sanal uygulamalar ve hata ayıklayıcılar arasında bağlantı noktası sağlar.  
   
- [Idebugsessionprovider arabirimi](../winscript/reference/idebugsessionprovider-interface.md)  
+ [IDebugSessionProvider Arabirimi](../winscript/reference/idebugsessionprovider-interface.md)  
  Hata ayıklama oturumu için çalışan bir uygulama oluşturur.  
   
- [Imachinedebugmanager arabirimi](../winscript/reference/imachinedebugmanager-interface.md)  
+ [IMachineDebugManager Arabirimi](../winscript/reference/imachinedebugmanager-interface.md)  
  Makine Hata Ayıklama Yöneticisi birincil arabirim.  
   
- [Imachinedebugmanagercookie arabirimi](../winscript/reference/imachinedebugmanagercookie-interface.md)  
- Benzer şekilde `IMachineDebugManager` arabirimi, ancak bu destekler hata ayıklama tanımlama bilgilerini arabirim.  
+ [IMachineDebugManagerCookie Arabirimi](../winscript/reference/imachinedebugmanagercookie-interface.md)  
+ Benzer şekilde `IMachineDebugManager` arabirimi, ancak bu arabirimi destekler hata ayıklama tanımlama bilgileri.  
   
- [Imachinedebugmanagerevents arabirimi](../winscript/reference/imachinedebugmanagerevents-interface.md)  
- Sinyalleri çalışmasını değişiklikleri Makine Hata Ayıklama Yöneticisi tarafından tutulan uygulama listesi.  
+ [IMachineDebugManagerEvents Arabirimi](../winscript/reference/imachinedebugmanagerevents-interface.md)  
+ Sinyalleri çalışmasını değişiklikleri uygulama listesi Makine Hata Ayıklama Yöneticisi tarafından korunur.  
   
- [Ienumremotedebugapplications arabirimi](../winscript/reference/ienumremotedebugapplications-interface.md)  
- Bir makine üzerinde çalışan uygulamaları numaralandırır.  
+ [IEnumRemoteDebugApplications Arabirimi](../winscript/reference/ienumremotedebugapplications-interface.md)  
+ Bir makinede çalışan uygulamaları numaralandırır.  
   
 ### <a name="process-debug-manager"></a>İşlem Hata Ayıklama Yöneticisi  
  PDM şunları yapar:  
   
--   Birden çok dil motorları, hata ayıklama eşitler.  
+- Birden çok dil motorları, hata ayıklama eşitler.  
   
--   Debuggable belgeleri ağacının tutar.  
+- Hata ayıklanabilir belge ağacı tutar.  
   
--   Birleştirmeler çerçeveler yığın.  
+- Birleştirmeleri çerçeveler yığın.  
   
--   Kesme noktaları ve dil motorları arasında adımlama düzenler.  
+- Kesme noktaları ve dil altyapısı yelpazesini Adımlama düzenler.  
   
--   İş parçacığı izler.  
+- İş parçacıkları izler.  
   
--   Zaman uyumsuz işleme için hata ayıklayıcı iş parçacığı tutar.  
+- Zaman uyumsuz işleme için bir hata ayıklayıcı iş parçacığını sürdürür.  
   
--   Makine Hata Ayıklama Yöneticisi ve IDE hata ayıklayıcısı ile iletişim kurar.  
+- Makine Hata Ayıklama Yöneticisi ve IDE hata ayıklayıcı ile iletişim kurar.  
   
- İşlem Hata Ayıklama Yöneticisi tarafından sağlanan arabirimleri aşağıda verilmiştir.  
+  İşlem Hata Ayıklama Yöneticisi tarafından sağlanan arabirimleri aşağıda verilmiştir.  
   
- [Iprocessdebugmanager arabirimi](../winscript/reference/iprocessdebugmanager-interface.md)  
- İşlem Hata Ayıklama Yöneticisi'ni birincil arabirim. Bu arabirim oluşturmak, eklemek veya bir sanal uygulamayı bir işlemden kaldırın.  
+  [IProcessDebugManager Arabirimi](../winscript/reference/iprocessdebugmanager-interface.md)  
+  İşlem Hata Ayıklama Yöneticisi birincil arabirim. Bu arabirim, oluşturma, ekleme veya bir sanal uygulama bir işlemden kaldırma.  
   
- [Iremotedebugapplication arabirimi](../winscript/reference/iremotedebugapplication-interface.md)  
- Çalışan bir uygulama temsil eder.  
+  [IRemoteDebugApplication Arabirimi](../winscript/reference/iremotedebugapplication-interface.md)  
+  Çalışan bir uygulamayı temsil eder.  
   
- [Idebugapplication arabirimi](../winscript/reference/idebugapplication-interface.md)  
- Uzaktan erişilebilir olmayan hata ayıklama yöntemlerini kullanmak için dil motorları ve ana bilgisayar tarafından gösterir.  
+  [IDebugApplication Arabirimi](../winscript/reference/idebugapplication-interface.md)  
+  Erişilemeyen hata ayıklama yöntemleri kullanmak için dil altyapıları ve konakları kullanımına sunar.  
   
- [Iremotedebugapplicationthread arabirimi](../winscript/reference/iremotedebugapplicationthread-interface.md)  
- Belirli bir uygulama içinde yürütme iş parçacığı temsil eder.  
+  [IRemoteDebugApplicationThread Arabirimi](../winscript/reference/iremotedebugapplicationthread-interface.md)  
+  Belirli bir uygulama içinde yürütme iş parçacığı temsil eder.  
   
- [Idebugapplicationthread arabirimi](../winscript/reference/idebugapplicationthread-interface.md)  
- Dil motorları ve ana iş parçacığı eşitleme sağlamak ve iş parçacığına özgü, hata ayıklama durum bilgileri korumak için sağlar.  
+  [IDebugApplicationThread Arabirimi](../winscript/reference/idebugapplicationthread-interface.md)  
+  Dil altyapıları ve ana iş parçacığı eşitleme sağlamak ve iş parçacığına özgü, hata ayıklama durumunu bilgileri korumak için sağlar.  
   
- [Ienumremotedebugapplicationthreads arabirimi](../winscript/reference/ienumremotedebugapplicationthreads-interface.md)  
- Bir uygulama içinde çalışan iş parçacıkları numaralandırır.  
+  [IEnumRemoteDebugApplicationThreads Arabirimi](../winscript/reference/ienumremotedebugapplicationthreads-interface.md)  
+  Bir uygulamada çalışan iş parçacıkları numaralandırır.  
   
- [Idebugthreadcall arabirimi](../winscript/reference/idebugthreadcall-interface.md)  
- Dağıtımları sıralanmış çağırır.  
+  [IDebugThreadCall Arabirimi](../winscript/reference/idebugthreadcall-interface.md)  
+  Dağıtımları sıralanmış çağırır.  
   
- [Idebugapplicationnode arabirimi](../winscript/reference/idebugapplicationnode-interface.md)  
- Hiyerarşideki bir belge için bir konum tutar.  
+  [IDebugApplicationNode Arabirimi](../winscript/reference/idebugapplicationnode-interface.md)  
+  Hiyerarşideki bir belge için bir konum kullanır.  
   
- [Ienumdebugapplicationnodes arabirimi](../winscript/reference/ienumdebugapplicationnodes-interface.md)  
- Bir uygulama ile ilişkili bir düğümün alt öğelerinin numaralandırır.  
+  [IEnumDebugApplicationNodes Arabirimi](../winscript/reference/ienumdebugapplicationnodes-interface.md)  
+  Bir uygulama ile ilişkili bir düğümünün alt düğümleri numaralandırır.  
   
- [Ienumdebugstackframes arabirimi](../winscript/reference/ienumdebugstackframes-interface.md)  
- Yığın çerçeveleri motorlarından birleştirilmiş bir iş parçacığı, karşılık gelen sıralar.  
+  [IEnumDebugStackFrames Arabirimi](../winscript/reference/ienumdebugstackframes-interface.md)  
+  Yığın çerçevelerini motorlardan birleştirilmiş bir iş parçacığı, karşılık gelen sıralar.  
   
- [Idebugcookie arabirimi](../winscript/reference/idebugcookie-interface.md)  
- Komut dosyası hata ayıklayıcıları ayarlanması hata ayıklama tanımlama bilgisi sağlar.  
+  [IDebugCookie Arabirimi](../winscript/reference/idebugcookie-interface.md)  
+  Betik hata ayıklayıcıları içinde ayarlamak hata ayıklama tanımlama bilgisi sağlar.  
   
- [Idebughelper arabirimi](../winscript/reference/idebughelper-interface.md)  
- Nesne tarayıcılar için bir üreteci ve komut dosyası motorları için basit bağlantı noktaları olarak görev yapar.  
+  [IDebugHelper Arabirimi](../winscript/reference/idebughelper-interface.md)  
+  Nesne tarayıcı için bir üreteci ve komut dosyası motorları için basit bir bağlantı noktaları olarak görev yapar.  
   
- [Isimpleconnectionpoint arabirimi](../winscript/reference/isimpleconnectionpoint-interface.md)  
- Açıklayan ve komut dosyası motorları için belirli bağlantı noktasında tetiklenen olayları numaralandırma için basit bir yol sağlar.  
+  [ISimpleConnectionPoint Arabirimi](../winscript/reference/isimpleconnectionpoint-interface.md)  
+  Açıklayan ve kod altyapısı sayısı için bir bağlantı noktasında tetiklenen olayları numaralandırma için basit bir yol sağlar.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Etkin komut dosyası hata ayıklayıcı arabirimleri](../winscript/reference/active-script-debugger-interfaces.md)
+ [Etkin Betik Hata Ayıklayıcı Arabirimleri](../winscript/reference/active-script-debugger-interfaces.md)

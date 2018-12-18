@@ -1,5 +1,5 @@
 ---
-title: Kaynak denetimi tümleştirmesine genel bakış | Microsoft Docs
+title: Kaynak denetimini tümleştirmeye genel bakış | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,70 +13,71 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 19d75936e21729729dfeafaa041d800acbe01caa
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: edd2e04f4e1102d66cc04cd1365dc7abd1488c9c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49931852"
 ---
-# <a name="source-control-integration-overview"></a>Kaynak denetimi tümleştirmesine genel bakış
-Bu bölümde, Visual Studio kaynak denetimine tümleştirmek için iki yol karşılaştırır; Kaynak denetimi eklenti ve yeni kaynak denetimi özellikleri vurgular ve kaynak denetimi çözümü sağlayan bir VSPackage. Visual Studio kaynak denetimi VSPackages ve kaynak denetimi eklentiler arasında elle değiştirme yanı sıra çözüm tabanlı otomatik geçiş yapmanın sağlar.  
+# <a name="source-control-integration-overview"></a>Kaynak Denetimini Tümleştirmeye Genel Bakış
+Bu bölümde, Visual Studio kaynak denetimine tümleştirmek için iki şekilde karşılaştırır; Kaynak denetimi eklentisi ve bir kaynak denetimi çözümü sağlar ve yeni kaynak denetimi özellikleri vurgular VSPackage'ı. Visual Studio el ile kaynak denetimi eklentileri ve kaynak denetimi VSPackage'ları arasında geçiş yapma ek olarak çözüm tabanlı otomatik geçiş sağlar.  
   
 ## <a name="source-control-integration"></a>Kaynak denetimi tümleştirmesi  
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] iki tür kaynak denetimi tümleştirmesi seçeneği destekler. Tüm sürümlerinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], hala bir eklenti kaynak denetim eklentisi (daha önce de MSSCCI API adlandırılır), Visual Studio kaynak denetimi kullanıcı arabirimi (kullanırken temel kaynak denetim işlevselliği sağlayan API göre tümleştirebilirsiniz UI). Kaynak denetimi VSPackage, diğer yandan, bir yeni, derin tümleştirme sağlar [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] yüksek düzeyde açıdan çok yönlülük ve kendi kaynak denetimi modelinde otonomisi talep kaynak denetimi tümleştirmesi için uygun yolu.  
+ [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] iki tür kaynak denetimi tümleştirmesi seçeneği destekler. Tüm sürümlerinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], yine de bir eklenti kaynak denetimi Eklentisi (daha önce de MSSCCI API olarak adlandırılır), Visual Studio kaynak denetimi kullanıcı arabirimi (kullanırken temel kaynak denetimi işlevlerini sağlar. API göre tümleştirebilirsiniz UI). Kaynak denetimi VSPackage'ı, diğer yandan, bir yeni, derin tümleştirme sağlar [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] açıdan çok yönlülük ve özerkliği, kaynak denetimi modelindeki üst düzey talepleri kaynak denetimi tümleştirmesi için uygun yolu.  
   
  ![Kaynak denetimine genel bakış](../../extensibility/internals/media/sourcectnrloverview.gif "SourceCtnrlOverview")  
   
 ## <a name="source-control-plug-in"></a>Kaynak Denetimi Eklentisi  
- Visual Studio tüm sürümleri, kaynak denetim eklentisi API Belirtimi sürüm 1.2 tümleştirme yolu olarak destekler. Kaynak Denetim eklentisi uygulayan açıklandığı gibi kaynak denetimi tümleştirmesi ve kayıt için kaynak denetimi eklentisi API işlevleri uygulayan DLL Yazar [kaynak denetim eklentisi oluşturma](../../extensibility/internals/creating-a-source-control-plug-in.md). Bu yaklaşımda, tümleşik geliştirme ortamı (IDE) kullanan [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] iade, checkout, Araçlar/Seçenekler özellik sayfaları, araç çubukları ve kaynak denetimi karakterlerin gibi iletişim kutuları için kullanıcı Arabirimi. Kaynak Denetim eklentisi API katı bağlılığı Visual Studio ve sorunsuz bir deneyim kullanıcı için bir kolay tümleştirme oluşturmasını sağlar. Bu eklenti kaynak denetimi API'si ayrıntılı geri aramalar ve işlevleri çoğunu uygulamalıdır anlamına gelir.  
+ Visual Studio'nun tüm sürümleri, kaynak denetimi eklentisi API Belirtimi sürüm 1.2 bir tümleştirme yolu olarak destekler. Kaynak Denetimi Eklentisi uygulayan açıklandığı gibi kaynak denetimi tümleştirmesi ve kayıt için kaynak denetimi eklentisi API işlevleri uygulayan bir DLL Yazar [kaynak denetimi eklentisi oluşturma](../../extensibility/internals/creating-a-source-control-plug-in.md). Bu yaklaşımda, tümleşik geliştirme ortamı (IDE) kullanan [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] iade, kullanıma alma, Araçlar/Seçenekler özellik sayfaları, araç çubukları ve kaynak denetim karakterleri gibi iletişim kutuları için kullanıcı Arabirimi. Kaynak Denetimi Eklentisi API katı kıldığı bir kolayca tümleştirme Visual Studio ve kullanıcı için sorunsuz bir deneyim oluşturmasını sağlar. Başka bir deyişle, kaynak denetimi eklentisi işlevler ve API ayrıntılı geri çağırmaları çoğunu uygulamalıdır.  
   
- Kaynak Denetim eklentisi API kullanarak eklenti bir kaynak denetimi için şu adımları izleyin:  
+ Kaynak Denetimi Eklentisi Kaynak Denetimi Eklentisi API kullanarak uygulamak için şu adımları izleyin:  
   
-1.  Belirtilen işlevler uygulayan DLL oluşturma [kaynak denetimi eklentileri](../../extensibility/source-control-plug-ins.md).  
+1. Belirtilen işlevleri uygulayan bir DLL'yi oluşturmak [kaynak denetimi eklentileri](../../extensibility/source-control-plug-ins.md).  
   
-2.  Uygun kayıt defteri girdileri yaparak DLL'yi kaydetme (açıklanan [nasıl yapılır: kaynak denetimi eklentisi yükleme](../../extensibility/internals/how-to-install-a-source-control-plug-in.md)).  
+2. Uygun kayıt defteri girişlerini yaparak DLL'yi kaydetme (açıklanan [nasıl yapılır: kaynak denetimi eklentisi yükleme](../../extensibility/internals/how-to-install-a-source-control-plug-in.md)).  
   
-3.  Yardımcıyı kullanıcı Arabirimi ve kaynak denetimi bağdaştırıcı paketi (kaynak denetimi işlevlerinin kaynak denetim eklentileri aracılığıyla işleyen Visual Studio bileşeni) tarafından istendiğinde görüntü oluşturma  
+3. Kullanıcı Arabirimi ve kaynak denetimi bağdaştırıcısı paketi (kaynak denetimi eklentileri aracılığıyla kaynak denetimi işlevlerini işleyen Visual Studio bileşeni) tarafından istendiğinde görünen bir Yardımcısı oluşturma  
   
- Komutuna yanıt olarak bir kaynak denetimi, Visual Studio IDE temel işlemleri için standart bir kullanıcı Arabirimi sunar ve daha sonra bilgileri için kaynak denetimi eklenti kaynak denetim eklentisi API tanımlanan işlevler aracılığıyla geçirir. Gelişmiş Seçenekler için kaynak denetimi eklenti üzerinde kendi Arabirim sunmak için örneğin, kaynak denetimindeki bir proje için gözatma çağrılabilir. Bu kullanıcının kaynak denetimiyle ilgilenirken UI iki farklı olması olası stilleri ile gelebilir anlamına gelir: Visual Studio sunan UI ve eklenti kaynak denetimi sunan UI. Gelişmiş kaynak denetimi işlemleri ile en dikkat çeken budur.  
+   Komutuna yanıt olarak bir kaynak denetimi, Visual Studio IDE temel işlemleri için standart bir kullanıcı Arabirimi sunar ve bu bilgileri için kaynak denetimi eklentisi tanımlanan kaynak denetimi eklentisi API işlevleri aracılığıyla geçirir. Gelişmiş seçenekleri için kaynak denetimi eklentisi üzerinde kendi Arabirim sunmak için örneğin kaynak-denetimli bir proje için gözatma çağrılabilir. Bu kullanıcının kaynak denetimi ile ilgilenirken iki farklı olması olası kullanıcı Arabirimi stilleri ile gelebilir anlamına gelir: sunan Visual Studio kullanıcı Arabirimi ve kullanıcı arabirimini kaynak denetimi eklentisi sunar. Gelişmiş kaynak denetimi işlemleri ile en dikkat çeken budur.  
   
-### <a name="drawbacks-to-implementing-a-source-control-plug-in"></a>Kaynak denetimi eklenti uygulamak için dezavantajları  
+### <a name="drawbacks-to-implementing-a-source-control-plug-in"></a>Kaynak Denetimi Eklentisi uygulamak için dezavantajları  
   
 -   Gelişmiş özellikler için olası Karışıklığı önlemek için önde gelen kullanıcı arabirimleri, iki farklı türlerde görebilirsiniz.  
   
--   Kaynak Denetim Eklentisi Kaynak Denetim eklentisi API tarafından kapsanan kaynak denetim modeli için sınırlıysa.  
+-   Kaynak Denetimi Eklentisi Kaynak Denetimi Eklentisi API tarafından kapsanan kaynak denetimi modeli için sınırlıysa.  
   
--   Kaynak Denetim eklentisi API bazı kaynak denetimi senaryoları için çok kısıtlayıcı olabilir.  
+-   Kaynak Denetimi Eklentisi API bazı kaynak denetimi senaryoları için çok kısıtlayıcı olması olabilir.  
   
-### <a name="advantages-to-implementing-a-source-control-plug-in"></a>Kaynak Denetim eklentisi uygulama avantajları  
+### <a name="advantages-to-implementing-a-source-control-plug-in"></a>Kaynak Denetimi Eklentisi uygulamak için avantajları  
   
--   Potansiyel olarak karmaşık UI uygulamak kaynak denetimi eklenti yok böylece visual Studio tüm temel kaynak denetimi işlemleri için tüm kullanıcı Arabirimi sağlar.  
+-   Visual Studio, kaynak denetimi eklentisi, olası karmaşık kullanıcı Arabirimi uygulama gerekmez. böylece tüm temel kaynak denetimi işlemleri için tüm kullanıcı Arabirimi sağlar.  
   
--   Katı API nedeniyle eklenti kaynak denetimi taşımalarına daha kapsamlı işlevsellik sağlamak için dış kaynak denetimi programlarla etkileşime; Visual Studio çok çok nasıl kaynak denetim işlevselliği, yalnızca o kaynak denetim eklentisi API'sine göre gerçekleştirilir yapıldığını ilgilenmez.  
+-   Katı API nedeniyle, kaynak denetimi eklentisi kolayca daha kapsamlı işlevsellik sağlamak için dış kaynak denetimi programları ile etkileşim kurabilir; Visual Studio nasıl çok fazla kaynak denetimi işlevlerini, yalnızca o kaynak denetimi eklentisi API göre gerçekleştirilir gerçekleştirilir ilgilenmez.  
   
--   Kaynak denetimi kaynak denetimden VSPackage eklenti uygulamanız daha kolaydır.  
+-   Kaynak Denetimi Eklentisi Kaynak denetimi VSPackage'ı uygulamak daha kolaydır.  
   
-## <a name="source-control-vspackage"></a>Kaynak denetimi VSPackage  
- [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] Kaynak denetimi işlevlerin tam denetim ve Visual Studio tarafından sağlanan kaynak denetimi kullanıcı arabiriminin tam değiştirme Visual Studio uygulamasına derin tümleştirme sağlar. Kaynak denetimi VSPackage Visual Studio ile kayıtlı ve kaynak denetimi işlevsellik sağlar. Visual Studio ile birkaç kaynak denetimi VSPackages kaydedilebilir rağmen yalnızca bunlardan birinin herhangi bir zamanda etkin olabilir. Etkin durumdayken kaynak denetimi VSPackage Visual Studio'da kaynak denetim işlevleri ve görünüm üzerinde tam denetime sahiptir. Tüm diğer kaynak denetimi sistemde kayıtlı VSPackages etkin değildir ve herhangi bir UI hiç görüntülemez.  
+## <a name="source-control-vspackage"></a>Kaynak denetimi VSPackage'ı  
+ [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] Visual Studio kaynak denetimi işlevlerini üzerinde tam denetim ve Visual Studio tarafından sağlanan bir kaynak denetimi kullanıcı arabiriminin tam değiştirme ile kapsamlı tümleştirme sağlar. Kaynak denetimi VSPackage'ı Visual Studio ile kayıtlıdır ve kaynak denetimi işlevlerini sağlar. Visual Studio ile birden çok kaynak denetimi VSPackage'ları kaydedilebilir ancak bunlardan yalnızca biri herhangi bir zamanda etkin olabilir. Etkin durumdayken kaynak denetimi VSPackage'ı Visual Studio'da Görünüm ve kaynak denetimi işlevlerini üzerinde tam denetime sahiptir. Tüm diğer kaynak denetimi sistemde kayıtlı VSPackage'ları, etkin olmayan ve herhangi bir UI hiç görüntülemez.  
   
- Kaynak denetimi VSPackage uygulama "tümü veya hiçbiri" stratejisi gerektirir. Kaynak denetimi VSPackage oluşturan bir dizi kaynak denetim arabirimleri ve yeni kullanıcı Arabirimi öğeleri (iletişim kutuları, menüleri ve araç çubuklarını) tüm kaynak denetim işlevselliği karşılamak üzere uygulamaya çaba önemli miktarda yatırım gerekir. Bkz: [kaynak denetimi VSPackage oluşturma](../../extensibility/internals/creating-a-source-control-vspackage.md) daha fazla ayrıntı için.  
+ Kaynak denetimi VSPackage'ı uygulayan bir "tümü veya hiçbiri" stratejisi gerektirir. Kaynak denetimi VSPackage'ı oluşturan, kaynak denetim arabirimleri ve yeni kullanıcı Arabirimi öğeleri (iletişim kutuları, menüler ve araç çubukları) tüm kaynak denetimi işlevini kapsayan bir dizi uygulamaya çabayı önemli ölçüde yatırım gerekir. Bkz: [bir kaynak denetimi VSPackage'ı oluşturma](../../extensibility/internals/creating-a-source-control-vspackage.md) daha fazla ayrıntı için.  
   
-### <a name="drawbacks-to-implementing-a-source-control-vspackage"></a>Kaynak denetimi VSPackage uygulamak için dezavantajları  
+### <a name="drawbacks-to-implementing-a-source-control-vspackage"></a>Bir kaynak denetimi VSPackage'ı uygulamak için dezavantajları  
   
--   VSPackage başarıyla Visual Studio ile tümleştirmek için karmaşık arabirimleri sayısı uygulamalıdır.  
+-   VSPackage'ı başarıyla Visual Studio ile tümleştirmek için karmaşık arabirimleri sayısı uygulamalıdır.  
   
--   VSPackage kaynak denetimi için gerekli tüm UI sağlamanız gerekir; Visual Studio bu alandaki hiçbir Yardım sağlar.  
+-   VSPackage'ı kaynak denetimi için gereken tüm kullanıcı Arabirimi sağlamanız gerekir; Visual Studio, bu alandaki herhangi bir Yardım sağlarız.  
   
--   Kaynak denetimi VSPackage içkin şekilde Visual Studio'ya bağlıdır ve tek başına programlarla işlevselliğini kolayca dış bir kaynak denetimi program sürümü ile paylaşılamaz şekilde çalışamaz.  
+-   Kaynak denetimi VSPackage'ı Visual Studio'ya içkin şekilde bağlıdır ve tek başına programlarla işlevi gibi bir kolayca dış bir kaynak denetim programı sürümü ile paylaşılamaz şekilde çalışamaz.  
   
-### <a name="advantages-to-implementing-a-source-control-vspackage"></a>Kaynak denetimi VSPackage uygulama avantajları  
+### <a name="advantages-to-implementing-a-source-control-vspackage"></a>Bir kaynak denetimi VSPackage'ı uygulama avantajları  
   
--   Kaynak denetimi UI üzerinde tam denetim ve işlevselliği VSPackage sahip olduğundan, kullanıcının kaynak denetimi için sorunsuz bir arabirim sunulur.  
+-   VSPackage'ı kaynak denetimi UI üzerinde tam denetim ve işlevsellik olduğu için kullanıcının kaynak denetimi için sorunsuz bir arabirim sunulur.  
   
--   Belirli kaynak denetim modeli için VSPackage sınırlı değildir.  
+-   VSPackage'ı belirli bir kaynak denetim modeli için sınırlı değildir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Kaynak denetimi](../../extensibility/internals/source-control.md)   
  [Kaynak Denetimi Eklentisi oluşturma](../../extensibility/internals/creating-a-source-control-plug-in.md)   
- [Kaynak denetimi VSPackage oluşturma](../../extensibility/internals/creating-a-source-control-vspackage.md)   
+ [Bir kaynak denetimi VSPackage'ı oluşturma](../../extensibility/internals/creating-a-source-control-vspackage.md)   
  [Kaynak Denetimindeki Yenilikler](../../extensibility/internals/what-s-new-in-source-control.md)

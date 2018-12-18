@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 079c6dc3ef36c19867ed4b292040876f630e63df
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 50c8db3ee875a86f072a75f084dbe0c7f68f847b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832992"
 ---
 # <a name="programnodearray"></a>PROGRAM_NODE_ARRAY
-Programları ilgi açıklayan nesnelerinin bir dizisi içerir.  
+İlgi çekici programlar açıklayan nesnelerinin bir dizisi içerir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,23 +43,23 @@ public struct tagPROGRAM_NODE_ARRAY {
   
 ## <a name="members"></a>Üyeler  
  dwCount  
- Nesnelerin sayısı `Members` dizi.  
+ Nesne sayısı `Members` dizisi.  
   
  Üyeler  
- Bir dizi [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) istenen programları açıklayan nesneleri.  
+ Bir dizi [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) istenen program tanımlayan nesne.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı parçası olan [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) hangi sırayla çağrısı ile doldurulur yapısı [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md) yöntemi.  
+ Bu yapı parçasıdır [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) sırayla bir çağrı tarafından girilir yapısının [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md)   
  [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md)   
  [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)

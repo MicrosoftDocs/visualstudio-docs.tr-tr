@@ -14,15 +14,16 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 91e4c4648108cdc6afa28f5a5dd8f9bfd46fcf59
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 04bc34de6e7ecbc438cfc63ed08c684cf4224366
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917030"
 ---
 # <a name="processinfoflags"></a>PROCESS_INFO_FLAGS
 
-Açıklar veya bir işlem özelliklerini belirtir.
+Açıklayan veya bir işlem özelliklerini belirtir.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -51,23 +52,23 @@ PIFLAG_SYSTEM_PROCESS
 İşlem bir sistem işlemi olduğunu gösterir.
 
 PIFLAG_DEBUGGER_ATTACHED  
-İşlemi bir hata ayıklayıcı tarafından ayıklanacak gösterir. Bu olabilir bir [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] hata ayıklayıcı veya bazı diğer hata ayıklayıcı, örneğin, WinDbg olabilir.
+Hata ayıklayıcı tarafından ayıklanmakta olan işlemi belirtir. Olabilir bir [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] hata ayıklayıcı veya bazı diğer hata ayıklayıcı, örneğin, WinDbg olabilir.
 
 PIFLAG_PROCESS_STOPPED  
-İşlem durduruldu gösterir. Geçerli eksikse `PIFLAG_DEBUGGER_ATTACHED` da belirtilmiş. Visual Studio 2005 ve sonraki sürümlerinde kullanılabilir.
+İşlem durdurulur gösterir. Yalnızca şu durumlarda geçerli `PIFLAG_DEBUGGER_ATTACHED` ayrıca belirtilir. Visual Studio 2005 ve sonraki sürümlerinde kullanılabilir.
 
 PIFLAG_PROCESS_RUNNING  
-İşlemin çalışmadığını gösterir. Geçerli eksikse `PIFLAG_DEBUGGER_ATTACHED` da belirtilmiş. Visual Studio 2005 ve sonraki sürümlerinde kullanılabilir.
+İşlemin çalışmadığını gösterir. Yalnızca şu durumlarda geçerli `PIFLAG_DEBUGGER_ATTACHED` ayrıca belirtilir. Visual Studio 2005 ve sonraki sürümlerinde kullanılabilir.
 
 ## <a name="remarks"></a>Açıklamalar
 
 İçin kullanılan `Flags` üyesi [PROCESS_INFO](../../../extensibility/debugger/reference/process-info.md) yapısı.
 
-Bu bayrakların bit ile birleştirilebilir `OR`.
+Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Başlık: msdbg.h
+Üstbilgi: msdbg.h
 
 Namespace: Microsoft.VisualStudio.Debugger.Interop
 

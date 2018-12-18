@@ -1,5 +1,5 @@
 ---
-title: Yeniden kullanılabilir grupları düğmelerini oluşturma | Microsoft Docs
+title: Yeniden kullanılabilir düğme grupları oluşturma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,26 +15,27 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 97ee7cc2ec63a94036472ccce07b1dc9fa736504
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4447ab5e5c0ced7852d0cb7dae3a4c0c7e3b3e68
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928184"
 ---
-# <a name="creating-reusable-groups-of-buttons"></a>Düğmelerinin yeniden kullanılabilir grupları oluşturma
-Komut grubu, her zaman birlikte menüsü veya araç çubuğunda görünen komutlarını koleksiyonudur. Herhangi bir komut grubu farklı bir üst menüleri .vsct dosyasının CommandPlacements bölümünde atayarak yeniden kullanılabilir.  
+# <a name="create-reusable-groups-of-buttons"></a>Yeniden kullanılabilir düğme grupları oluşturma
+Bir komut grubuyla, her zaman birlikte bir menü veya araç çubuğunda görünen komutlar koleksiyonudur. Herhangi bir komut grubu CommandPlacements bölümündeki farklı üst menüye atayarak yeniden kullanılabilir *.vsct* dosya.  
   
- Komut grupları genellikle düğmelerini içerir, ancak aynı zamanda diğer menüleri veya birleşik giriş kutuları içerebilirler.  
+ Komut grupları genellikle düğmeleri içerir, ancak bunlar diğer menü veya birleşik giriş kutuları de içerebilir.  
   
-### <a name="to-create-a-reusable-group-of-buttons"></a>Düğmeleri yeniden kullanılabilir bir grup oluşturmak için  
+## <a name="to-create-a-reusable-group-of-buttons"></a>Düğme yeniden kullanılabilir bir grup oluşturmak için  
   
-1.  Adlı VSIX proje oluşturma `ReusableButtons`. Daha fazla bilgi için bkz: [uzantı menü komutu ile oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).  
+1.  Adlı bir VSIX projesi oluşturun `ReusableButtons`. Daha fazla bilgi için [bir menü komutuyla uzantı oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).  
   
-2.  Proje açıldığında adlı bir özel komut öğesi şablonu Ekle **ReusableCommand**. İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusunda, Git **Visual C# / genişletilebilirlik** seçip **özel komut**. İçinde **adı** alan penceresinin alt kısmında, komut dosyası adı Değiştir **ReusableCommand.cs**.  
+2.  Projeyi açtığında, adlı bir özel komut öğesi şablonu ekleme **ReusableCommand**. İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusunda, Git **Visual C#** > **genişletilebilirlik** seçip **özel komut**. İçinde **adı** alan penceresinin en altında komut dosyası adı için değiştirme *ReusableCommand.cs*.  
   
-3.  .Vsct dosyasında simgeleri bölümüne gidin ve grupları ve proje için komutları içeren GuidSymbol öğesi bulunamıyor. GuidReusableCommandPackageCmdSet adlı.  
+3.  İçinde *.vsct* dosya, semboller bölümüne gidin ve grupları ve proje için komutları içeren GuidSymbol öğesi bulunamadı. GuidReusableCommandPackageCmdSet adlandırılmalıdır.  
   
-4.  Aşağıdaki örnekte olduğu gibi grubuna ekleyecek her düğme için bir IDSymbol ekleyin.  
+4.  Aşağıdaki örnekte olduğu gibi gruba eklediğiniz her düğme için bir Idsymbol ekleyin.  
   
     ```xml  
     <GuidSymbol name="guidReusableCommandPackageCmdSet" value="{7f383b2a-c6b9-4c1d-b4b8-a26dc5b60ca1}">  
@@ -44,9 +45,9 @@ Komut grubu, her zaman birlikte menüsü veya araç çubuğunda görünen komutl
     </GuidSymbol>  
     ```  
   
-     Varsayılan olarak, komut öğe şablonu adlı bir grup oluşturur **MyMenuGroup** ve her bir IDSymbol girişi ile birlikte sağlanan adına sahip bir düğme.  
+     Varsayılan olarak, komut öğe şablonu adlı bir grup oluşturur. **MyMenuGroup** ve her bir Idsymbol giriş ile birlikte sağlanan ada sahip bir düğme.  
   
-5.  Grupları bölümünde simgeleri bölümünde verilen olanları aynı GUID ve ID özniteliklere sahip bir Grup öğesi oluşturun. Ayrıca, varolan bir grubu kullanın veya aşağıdaki örnekteki gibi komut şablonu tarafından sağlanan girdi kullanabilirsiniz. Bu grubun görünür **Araçları** menüsü  
+5.  Grupları bölümünde sembolleri bölümde verilen olanlarla aynı GUID ve ID özniteliklere sahip bir Grup öğesi oluşturun. Ayrıca, mevcut bir grubunu kullanın veya aşağıdaki örnekteki gibi komut şablonu tarafından sağlanan giriş kullanabilirsiniz. Bu grubun görünen **Araçları** menüsü  
   
     ```xml  
     <Groups>  
@@ -56,11 +57,11 @@ Komut grubu, her zaman birlikte menüsü veya araç çubuğunda görünen komutl
     </Groups>  
     ```  
   
-### <a name="to-create-a-group-of-buttons-for-reuse"></a>Düğmeleri yeniden kullanım için bir grup oluşturmak için  
+## <a name="to-create-a-group-of-buttons-for-reuse"></a>Düğme yeniden kullanım için bir grup oluşturmak için  
   
-1.  Komutun veya menü tanımındaki bir üst grubun kullanarak ya da koyarak komut veya menü grubunda CommandPlacements bölümünü kullanarak, bir gruptaki bir komut veya menü koyabilirsiniz.  
+1.  Menü ve komut tanımı içinde üst olarak kullanarak veya koyarak komutu veya menü grubunda CommandPlacements bölümünü kullanarak, bir gruptaki bir komut veya menüyü koyabilirsiniz.  
   
-     Düğmeleri bölümünde grubunuzun üst olarak sahip bir düğme tanımlayın veya aşağıdaki örnekte gösterildiği gibi paketi şablonu tarafından sağlanan düğmesini kullanın.  
+     Düğmeler bölümünde grubunuz üst öğe olarak bulunan bir düğme tanımlayın veya aşağıdaki örnekte gösterildiği gibi paket şablon tarafından sağlanan düğmesini kullanın.  
   
     ```xml  
     <Button guid="guidReusableCommandPackageCmdSet" id="ReusableCommandId" priority="0x0100" type="Button">  
@@ -72,7 +73,7 @@ Komut grubu, her zaman birlikte menüsü veya araç çubuğunda görünen komutl
     </Button>  
     ```  
   
-2.  Bir düğme birden fazla grubunda bulunmasını istiyorsanız, bir giriş için komutları bölümünden sonra yerleştirilmelidir CommandPlacements bölümündeki oluşturun. CommandPlacement öğenin yerleştirmek istediğiniz düğmesinin eşleştiğinden GUID ve kimliği özniteliklerini ayarlayın ve ardından GUID ve üst öğesi Kimliğini bu hedef grubun aşağıdaki örnekte gösterildiği gibi ayarlayın.  
+2.  Bir düğmeyi birden fazla grubunda bulunmasını istiyorsanız, bir giriş için komutları bölümünden sonra yerleştirilmelidir CommandPlacements bölümdeki oluşturun. Yerleştirmek istediğiniz düğmenin uyacak şekilde CommandPlacement öğesi GUID ve ID özniteliklerini ayarlayın ve ardından GUID ve ID öğesi üst öğesi bu hedef grubun aşağıdaki örnekte gösterilen şekilde ayarlayın.  
   
     ```xml  
     <CommandPlacements>  
@@ -83,41 +84,41 @@ Komut grubu, her zaman birlikte menüsü veya araç çubuğunda görünen komutl
     ```  
   
     > [!NOTE]
-    >  Öncelik alanın değerini yeni komut grubu komutu konumunu belirler. Öğe öğe tanımında ayarlamak geçersiz kılar CommandPlacement önceliklerini ayarlayın. Düşük öncelikli işler değerlere sahip komutları önce daha yüksek öncelik değerine sahip komutlar görüntülenir. Yinelenen öncelik değerleri izin verilir, ancak aynı öncelik değerine sahip komutları göreli konumunu, çünkü garanti edilemez hangi sırayla **devenv/Setup** komut kayıt defterinden son arabirimi oluşturur tutarlı olmayabilir.  
+    >  Önceliği alanının değeri, yeni komut grubu komutu konumunu belirler. Öğe öğe tanımında ayarlanan geçersiz kılar CommandPlacement öncelikler ayarlayın. Düşük öncelikli değerlere sahip komutları önce daha yüksek öncelik değerine sahip komutlar görüntülenir. Yinelenen öncelik değerleri izin verilir, ancak aynı öncelik değerine sahip komutları göreli konumunu, çünkü garanti edilemez sırayı **devenv/Setup** komut, kayıt defterinden son arabirimi oluşturur tutarlı olmayabilir.  
   
-### <a name="to-put-a-reusable-group-of-buttons-on-a-menu"></a>Menüde düğmelerinin yeniden kullanılabilir bir grup yerleştirilecek  
+## <a name="to-put-a-reusable-group-of-buttons-on-a-menu"></a>Düğmeleri yeniden kullanılabilir bir grup bir menüye yerleştirmek için  
   
-1.  Girdi oluşturma `CommandPlacements` bölümü. GUID ve Kimliğini ayarlamak `CommandPlacement` olanlar, grubunuzun öğesine ve üst GUID ve ID olanlar hedef konumu ayarlayın.  
+1. Girdi oluşturma `CommandPlacements` bölümü. GUID ve Kimliğini `CommandPlacement` grubunuzun, bu öğeye üst GUID ve ID bu hedef konumu ayarlayın.  
   
-     CommandPlacements bölüm yalnızca komutları bölümünden sonra yerleştirilmelidir:  
+    CommandPlacements bölümü komutları Kısım sonra yerleştirilmelidir:  
   
-    ```xml  
-    <CommandTable>  
-    ...  
-      <Commands>... </Commands>  
-      <CommandPlacements>... </CommandPlacements>  
-    ...   
-    </CommandTable>  
-    ```  
+   ```xml  
+   <CommandTable>  
+   ...  
+     <Commands>... </Commands>  
+     <CommandPlacements>... </CommandPlacements>  
+   ...   
+   </CommandTable>  
+   ```  
   
-     Komut grubu birden fazla menüsünde dahil edilebilir. Ana menü, oluşturduğunuz tarafından sağlanan bir olabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] (olarak açıklanan ShellCmdDef.vsct veya SharedCmdDef.vsct), ya da başka bir VSPackage tanımlanmış. Ana menü sonunda bağlı olduğu sürece ana öğe Katmanlar sınırsız sayısıdır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] veya VSPackage tarafından görüntülenen bir kısayol menüsü.  
+    Bir komut grubuyla birden fazla menüsünde eklenebilir. Üst menü, oluşturduğunuz tarafından sağlanan bir olabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] (açıklandığı *ShellCmdDef.vsct* veya *SharedCmdDef.vsct*), ya da başka bir VSPackage içinde tanımlanır. Üst menü sonunda bağlı olduğu sürece, ana öğe katmanları sayısı sınırsızdır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] veya VSPackage tarafından görüntülenen bir kısayol menüsü.  
   
-     Aşağıdaki örnek Grup koyar **Çözüm Gezgini** diğer düğmeleri sağındaki araç.  
+    Aşağıdaki örnek grubu koyar **Çözüm Gezgini** diğer düğmeleri sağındaki araç çubuğu.  
   
-    ```xml  
-    <CommandPlacements>  
-        <CommandPlacement guid="guidReusableCommandPackageCmdSet" id="MyMenuGroup" priority="0xF00">  
-          <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_PROJWIN"/>  
-        </CommandPlacement>  
-    </CommandPlacements>  
-    ```  
+   ```xml  
+   <CommandPlacements>  
+       <CommandPlacement guid="guidReusableCommandPackageCmdSet" id="MyMenuGroup" priority="0xF00">  
+         <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_PROJWIN"/>  
+       </CommandPlacement>  
+   </CommandPlacements>  
+   ```  
   
-    ```xml  
-    <CommandPlacements>  
-      <CommandPlacement guid="guidButtonGroupCmdSet" id="MyMenuGroup"   
-          priority="0x605">  
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />  
-      </CommandPlacement>  
-    </CommandPlacements>  
+   ```xml  
+   <CommandPlacements>  
+     <CommandPlacement guid="guidButtonGroupCmdSet" id="MyMenuGroup"   
+         priority="0x605">  
+       <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />  
+     </CommandPlacement>  
+   </CommandPlacements>  
   
-    ```
+   ```

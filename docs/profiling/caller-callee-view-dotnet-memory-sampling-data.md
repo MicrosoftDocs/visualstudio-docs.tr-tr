@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: c5a80233a6c1aaed56770e0ec2bb6733a800ce06
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e2115f2f5c23d244d3a8650b46fff1f0f74689ec
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34548127"
 ---
 # <a name="callercallee-view---net-memory-sampling-data"></a>Arayan/Aranan görünümü - .NET bellek örnekleme verileri
 Arayan/Aranan görünümü .NET bellek profili oluşturma seçili işlev ve üst ve alt işlevleri için verileri görüntüler. Arayan/Aranan görünümü üç kılavuzları içerir.  
@@ -50,8 +51,8 @@ Arayan/Aranan görünümü .NET bellek profili oluşturma seçili işlev ve üst
 |**Özel bayt sayısı**|-Geçerli işlev için profil oluşturma işlevi tarafından ayrılan belleğin bayt sayısını çalıştırın. Bu sayı, geçerli işlev tarafından çağrılan işlevler tarafından ayrılmış bellek içermez.<br />-Çağıran işlev için geçerli işlevi çağıran işlevi gelen çağrıları tarafından oluşturulan özel bayt sayısı.<br />-Çağrılan işlev için geçerli işlevi gelen çağrıları tarafından oluşturulan işlevi örnekleri tarafından ayrılan bayt sayısı. Çağrılan işlev tarafından çağrılan işlevler tarafından ayrılan bayt sayısı dahil değildir.|  
 |**Özel bayt %**|Profil çalışmasını ayrılan tüm bayt bellek yüzdesi bu işlevin özel ayırmaları yoktu.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
- [Arayan/Aranan görünümü - NET bellek izleme verileri](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
- [Arayan / Aranan görünümü - örnekleme verileri](../profiling/caller-callee-view-sampling-data.md)   
+ [Arayan/Aranan görünümü - .NET bellek izleme verileri](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
+ [Arayan/Aranan görünümü - örnekleme verileri](../profiling/caller-callee-view-sampling-data.md)   
  [Arayan/Aranan görünümü - izleme verileri](../profiling/caller-callee-view-instrumentation-data.md)

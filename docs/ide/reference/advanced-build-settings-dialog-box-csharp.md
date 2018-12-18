@@ -1,10 +1,9 @@
 ---
-title: Gelişmiş derleme Ayarları iletişim kutusu (C#) | Microsoft Docs
-ms.custom: ''
+title: Gelişmiş Derleme Ayarları İletişim Kutusu (C#)
 ms.date: 06/20/2017
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - cs.AdvancedBuildSettings
 helpviewer_keywords:
@@ -15,72 +14,88 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 406b25a3130b69b94486e866479e819dc68e70a8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cf4fd5b48dc3bfcfbfe1809eebe656a5b8f2079d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928288"
 ---
 # <a name="advanced-build-settings-dialog-box-c"></a>Gelişmiş Derleme Ayarları İletişim Kutusu (C#)
 
-Kullanım **Gelişmiş derleme ayarları** iletişim kutusunun **Proje Tasarımcısı** Proje yapı yapılandırma özelliklerini Gelişmiş belirtmek için. Bu iletişim kutusunu uygulandığı [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] yalnızca projeleri.
+Kullanım **Gelişmiş derleme ayarları** iletişim kutusunun **Proje Tasarımcısı** Proje Gelişmiş yapı yapılandırması özelliklerini belirtmek için. Bu iletişim kutusunu uygulandığı [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)] yalnızca projeleri.
 
 ## <a name="general"></a>Genel
 
- Aşağıdaki seçenekler, genel Gelişmiş ayarları ayarlamanıza olanak verir.
+Aşağıdaki seçenekler, genel Gelişmiş ayarları ayarlamanızı sağlar.
 
- **Dil sürümü** kullanacağı dilin sürümünü belirtir. Bu seçenek yalnızca bir alt kümesini uygulanan özellikler izin vermek veya yalnızca mevcut bir standardı ile uyumlu özellikleri etkinleştirmek için derleyici zorlamak için kullanılabilmesi için özellik kümesi her sürümünde farklıdır. Bu ayar, aşağıdaki seçenekler vardır:
+**Dil sürümü**
 
- - **default**
+Kullanılacak dilin sürümünü belirtir. Yalnızca bir alt uygulanan özelliklerin izin vermek için veya yalnızca mevcut bir standardı ile uyumlu özellikleri etkinleştirmek için zorlamak için bu seçeneği kullanabilmeniz özellik kümesi her sürümde farklıdır. Bu ayar, şu seçeneklere sahiptir:
 
-   Geçerli sürüm hedefler.
+- **default**
+
+   Geçerli sürümünü hedefler.
 
 - **ISO-1** ve **ISO-2**
 
-  ISO-1 ve 2 ISO standart özellikler sırasıyla hedefler.
+   ISO-1 ve 2 ISO standart özellikleri sırasıyla hedefler.
 
-- **C# [sürüm numarası]**
+- **C#[sürüm numarası]**
 
- Belirli bir C# sürümünü hedefler. Daha fazla bilgi için bkz: [/langversion (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/langversion-compiler-option).
+   Belirli bir sürümünü hedefleyen C#. Daha fazla bilgi için [/langversion (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/langversion-compiler-option).
 
+**İç derleyici hata bildirimi**
 
- **İç derleyici hatası raporlama** derleyici hataları Microsoft'a belirtir. Varsa kümesine **istemi** bir iç derleyici hatası oluşursa (varsayılan), bir ileti bir hata raporu elektronik olarak Microsoft'a gönderme seçeneği sunar alacaksınız. Varsa kümesine **Gönder**, bir hata raporu otomatik olarak gönderilir. Varsa kümesine **sıra**, hata raporlarını sıraya alınmış. Varsa kümesine **hiçbiri**, yalnızca derleyicinin metin çıktısı hata bildirilir. Daha fazla bilgi için bkz: [/errorreport (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/errorreport-compiler-option).
+Derleyici hatalarını Microsoft'a belirtir. Varsa kümesine **istemi** derleyici iç hatası oluşursa (varsayılan), bir komut istemi bir hata raporu elektronik olarak Microsoft'a gönderme seçeneğini verir elde edersiniz. Varsa kümesine **Gönder**, bir hata raporu otomatik olarak gönderilir. Varsa kümesine **kuyruk**, hata raporlarını kuyruğa alınacak. Varsa kümesine **hiçbiri**, yalnızca derleyicinin metin çıktısında hata bildirilir. Daha fazla bilgi için [/errorreport (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/errorreport-compiler-option).
 
- **Denetlemek için aritmetik taşma/underflow** bir tamsayı aritmetiği deyimi kapsamında olmayan olup olmadığını belirtir [işaretli](/dotnet/csharp/language-reference/keywords/checked) veya [denetlenmeyen](/dotnet/csharp/language-reference/keywords/unchecked) anahtar sözcükleri ve, sonuçları bir değer veri aralığının dışında türü bir çalışma zamanı özel durumuna neden olur. Daha fazla bilgi için bkz: [/ checked (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/checked-compiler-option).
+**Aritmetik Taşma ve alttaşmayı denetle**
 
- **Mscorlib.dll başvurmadığından** mscorlib.dll tüm tanımlama, programa içe olup olmadığını belirtir <xref:System> ad alanı. Tanımlayın veya kendi oluşturmak istiyorsanız bu kutuyu <xref:System> ad alanı ve nesneleri. Daha fazla bilgi için bkz: [/nostdlib (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/nostdlib-compiler-option).
+Bir tamsayı aritmetik ifadesi, kapsamı içinde olup olmadığını belirtir [kullanıma](/dotnet/csharp/language-reference/keywords/checked) veya [denetlenmeyen](/dotnet/csharp/language-reference/keywords/unchecked) anahtar sözcükleri ve veri türü aralık dışında bir değer sonuçları bir çalışma zamanı neden olur özel durum. Daha fazla bilgi için [/ checked (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/checked-compiler-option).
+
+**Mscorlib.dll dosyasına başvurma**
+
+Mscorlib.dll programınıza tüm tanımlama içeri olup olmadığını belirtir <xref:System> ad alanı. Tanımlayın veya kendi oluşturmak istiyorsanız bu kutuyu <xref:System> ad alanı ve nesneler. Daha fazla bilgi için [/nostdlib (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/nostdlib-compiler-option).
 
 ## <a name="output"></a>Çıkış
 
- Aşağıdaki seçenekler, Gelişmiş çıktı seçenekleri belirtmenize olanak verir.
+Aşağıdaki seçenekler Gelişmiş çıkış seçenekleri belirtmenize olanak verir.
 
- **Hata ayıklama bilgileri** derleyici tarafından oluşturulan hata ayıklama bilgi türünü belirtir. Bir uygulamanın hata ayıklama performansını yapılandırma hakkında daha fazla bilgi için bkz: [bir görüntü Debug kolaylaştırma](http://msdn.microsoft.com/Library/7d90ea7a-150f-4f97-98a7-f9c26541b9a3). Bu ayar, aşağıdaki seçenekler vardır:
+**Hata ayıklama bilgileri**
+
+Derleyici tarafından oluşturulan hata ayıklama bilgilerinin türünü belirtir. Bir uygulamanın hata ayıklama performansını yapılandırma hakkında daha fazla bilgi için bkz: [bir görüntü için hata ayıklama kolaylaştıracak](/dotnet/framework/debug-trace-profile/making-an-image-easier-to-debug). Bu ayar, şu seçeneklere sahiptir:
 
 - **Yok**
 
-  Hiçbir hata ayıklama bilgilerini oluşturulacağını belirtir.
+   Hata ayıklama bilgisi oluşturulacağını belirtir.
 
-- **tam**
+- **Tam**
 
-  Bir hata ayıklayıcısı çalışan programa eklemeyi mümkün kılar.
+   Bir Haya ayıklayıcı çalışan programa etkinleştirir.
 
 - **pdbonly**
 
-  Kaynak kodu program hata ayıklayıcısı'ndaki başladı, ancak çalışan program hata ayıklayıcıya eklendiğinde yalnızca assembler görüntülenir, hata ayıklama sağlar.
-- **Taşınabilir**
+   Kaynak kodu programın hata ayıklayıcıda başlatıldı ancak çalışan programa hata ayıklayıcıya bağlı olduğu assembler yalnızca görüntüler hata ayıklamasına izin verir.
 
-  Üreten bir. PDB dosyası, diğer araçlar sağlayan bir platforma özgü olmayan ve taşınabilir simgesi özellikle hata ayıklayıcıları, ne hakkında bilgi ana yürütülebilir dosyanın ve nasıl üretilmiştir. Bkz: [taşınabilir PDB](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) daha fazla bilgi için.
+-  **Taşınabilir**
+
+   Üreten bir. PDB dosyası, diğer araçlar sağlayan bir platforma özgü olmayan ve taşınabilir sembol dosyası özellikle hata ayıklayıcıları, hakkında bilgi ana yürütülebilir dosyanın ve nasıl üretilmiştir. Bkz: [taşınabilir PDB](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) daha fazla bilgi için.
 
 - **Katıştırılmış**
 
-  Taşınabilir sembol bilgileri derleme içine katıştırır. Hiçbir dış. PDB dosyası oluşturulur.
+   Taşınabilir sembol bilgilerini derlemesine katıştırır. Dış yok. PDB dosyası oluşturulur.
 
-Daha fazla bilgi için bkz: [/Debug (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/debug-compiler-option).
+Daha fazla bilgi için [/Debug (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/debug-compiler-option).
 
-**Dosya Hizalama** çıktı dosyasında bölümlerin boyutunu belirtir. Geçerli değerler **512**, **1024**, **2048**, **4096**, ve **8192**. Bu değerleri bayt cinsinden ölçülür. Her bölüm çıkış dosyasının boyutunu etkileyen bu değeri olan bir sınır ile hizalanır. Daha fazla bilgi için bkz: [/filealign (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/filealign-compiler-option).
+**Dosya hizalama**
 
-**Kitaplık taban adresi** tercih edilen temel adrese DLL yükleneceği belirtir. Bir DLL için varsayılan taban adresi belirlediği [!INCLUDE[dnprdnshort](../../code-quality/includes/dnprdnshort_md.md)] ortak dil çalışma zamanı. Daha fazla bilgi için bkz: [/baseaddress (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/baseaddress-compiler-option).
+Bölüm boyutu, çıkış dosyasında belirtir. Geçerli değerler **512**, **1024**, **2048**, **4096**, ve **8192**. Bu değerler, bayt cinsinden ölçülür. Her bölümde, çıkış dosyasının boyutu etkileyen bu değer,'in katı bir sınır üzerinde hizalanır. Daha fazla bilgi için [/filealign (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/filealign-compiler-option).
+
+**Kitaplık temel adres**
+
+Bir DLL yüklemek için tercih edilen temel adresini belirtir. Bir DLL için varsayılan taban adresi belirlediği [!INCLUDE[dnprdnshort](../../code-quality/includes/dnprdnshort_md.md)] ortak dil çalışma zamanı. Daha fazla bilgi için [/baseaddress (C# Derleyici Seçenekleri)](/dotnet/csharp/language-reference/compiler-options/baseaddress-compiler-option).
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
- [C# Derleyici Seçenekleri](/dotnet/csharp/language-reference/compiler-options/index) [derleme sayfası, Proje Tasarımcısı (C#)](../../ide/reference/build-page-project-designer-csharp.md)
+- [C# Derleyici Seçenekleri](/dotnet/csharp/language-reference/compiler-options/index)
+- [Derleme Sayfası, Proje Tasarımcısı (C#)](../../ide/reference/build-page-project-designer-csharp.md)

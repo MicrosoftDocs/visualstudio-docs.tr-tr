@@ -1,6 +1,7 @@
 ---
-title: Kodlanmış UI testleri Visual Studio'da farklı Web tarayıcıları ile kullanma | Microsoft Docs
+title: Kodlanmış UI Testleriyle Farklı Web Tarayıcıları Kullanma
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
 ms.topic: conceptual
 ms.author: gewarren
@@ -8,27 +9,30 @@ manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: 061354c17fb2744e1700f30b10a20594a5091a6f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f7301ef674e3ad3b940204be30bfffa878f88e45
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52895112"
 ---
-# <a name="use-different-web-browsers-with-coded-ui-tests"></a>Kodlanmış UI testleriyle farklı Web tarayıcıları kullanma
+# <a name="use-different-web-browsers-with-coded-ui-tests"></a>Kodlanmış UI testleriyle farklı web tarayıcıları kullanma
 
 Kodlanmış UI testleri, web uygulamaları için Internet Explorer'ı kullanarak testlerinizi kaydederek sınamayı otomatikleştirebilirsiniz. Bu web uygulamaları için Internet Explorer veya başka tarayıcı türleri kullanarak testinizi özelleştirebilir ve geri oynatabilirsiniz.
 
-İlk olarak, yükleme [Selenium bileşenleri kodlanmış UI arası tarayıcı testi için](https://marketplace.visualstudio.com/items?itemName=AtinBansal.SeleniumcomponentsforCodedUICrossBrowserTesting).
+[!INCLUDE [coded-ui-test-deprecation](includes/coded-ui-test-deprecation.md)]
 
-## <a name="whats-supported-across-all-web-browsers"></a>Tüm web tarayıcıları arasında ne destekleniyor mu?
+İlk olarak, yükleme [Selenium bileşenlerini kodlanmış UI çapraz tarayıcı test etmek](https://marketplace.visualstudio.com/items?itemName=AtinBansal.SeleniumcomponentsforCodedUICrossBrowserTesting).
 
--   [Özellikleri denetlemek için özel kod ekleme](http://blogs.msdn.com/b/visualstudioalm/archive/2012/12/10/coded-ui-test-configuring-search-properties-while-recording-on-internet-explorer.aspx) özellikleri, arama ve kayıttan yürütme waiters gibi.
+## <a name="whats-supported-across-all-web-browsers"></a>Ne tüm web tarayıcıları destekleniyor mu?
+
+-   [Özellikleri denetlemek için özel kod ekleme](https://blogs.msdn.microsoft.com/devops/2012/12/09/coded-ui-test-configuring-search-properties-while-recording-on-internet-explorer/) properties, search ve playback waiters gibi.
 
 -   Açılır pencereler ve iletişim kutuları
 
--   [Dönüş türü ile temel JavaScript yürütme](http://blogs.msdn.com/b/visualstudioalm/archive/2013/01/18/introducing-jscript-execution-on-internetexplorer-and-crossbrowser-in-coded-ui-test.aspx)
+-   [Dönüş türü olmadan temel JavaScript yürütme](https://blogs.msdn.microsoft.com/devops/2013/01/18/introducing-javascript-execution-on-internetexplorer-and-crossbrowser-in-coded-ui-test/)
 
--   Arama esnekliği (akıllı eşleşme kullanarak) ve [performans iyileştirmeleri](http://blogs.msdn.com/b/visualstudioalm/archive/2012/02/01/guidelines-on-improving-performance-of-coded-ui-test-playback.aspx)
+-   Arama (akıllı eşleşme kullanarak) esneklik ve [performans geliştirmeleri](https://blogs.msdn.microsoft.com/devops/2012/01/31/guidelines-on-improving-performance-of-coded-ui-test-playback/)
 
 ## <a name="why-should-i-use-coded-ui-tests-across-multiple-web-browser-types"></a>Birden çok web tarayıcı türleri arasında kodlanmış UI testleri neden kullanmalıyım?
 
@@ -36,29 +40,29 @@ Kodlanmış UI testleri, web uygulamaları için Internet Explorer'ı kullanarak
 
 ## <a name="how-do-i-record-and-play-back-coded-ui-tests-on-web-applications-using-the-supported-web-browsers"></a>Kodlanmış UI testleri desteklenen web tarayıcısı kullanarak web uygulamaları üzerinde nasıl kaydederim ve kayıttan yürütürüm?
 
-**Kaydı:** Internet Explorer kullanarak, web uygulaması sınaması kaydetmek için kodlanmış UI Test derleyicisini kullanmanız gerekir. İsteğe bağlı olarak, doğrulama ve kodlanmış UI testleri için normalde yaptığınız gibi önceden tanımlanmış bir özellik kümesi kullanarak sınanmış denetimler için özel kod ekleyebilirsiniz. Daha fazla bilgi için bkz: [kullanım UI Otomasyon için Test kodunuzu](../test/use-ui-automation-to-test-your-code.md).
+**Kayıt:** Internet Explorer'ı kullanarak web uygulama testinizi kaydetmek için kodlanmış UI Test Oluşturucusu'nu kullanmanız gerekir. İsteğe bağlı olarak, doğrulama ve kodlanmış UI testleri için normalde yaptığınız gibi önceden tanımlanmış bir özellik kümesi kullanarak sınanmış denetimler için özel kod ekleyebilirsiniz. Daha fazla bilgi için [kodunuzu test etmek için kullanım UI Otomasyonu](../test/use-ui-automation-to-test-your-code.md).
 
 > [!NOTE]
 > Google Chrome veya Mozilla Firefox tarayıcısı kullanarak kodlanmış UI testleri kaydedemezsiniz.
 
- **Internet Explorer ile kayıttan:** hiçbir tarayıcı açıkça belirtildiğinde, Internet Explorer, varsayılan olarak testleri çalıştırırsınız. Açıkça ayarlayarak kullanılacak tarayıcı durum **BrowserWindow.CurrentBrowser** test kodunuzu bir özellik. Internet Explorer için bu özelliği ayarlanmalıdır **IE** veya **Internet Explorer**.
+ **Internet Explorer ile kayıttan yürütme:** hiçbir tarayıcı açıkça belirtilmediğinde testler varsayılan olarak Internet Explorer'da çalışır. Açıkça ayarlayarak kullanılacak tarayıcı durum **BrowserWindow.CurrentBrowser** özelliğini test kodunuzda. Internet Explorer için bu özelliği ayarlanmalıdır **IE** veya **Internet Explorer**.
 
- **Internet Explorer web tarayıcılarıyla kayıttan:** üzerinde Internet Explorer web tarayıcıları çalmak için test kodunuzu BrowserWindow.CurrentBrowser özelliğinde ya da değiştirme **Firefox** veya **Chrome** .
+ **Geri Internet Explorer web tarayıcılarıyla çalma:** Internet Explorer web tarayıcılarında çalmak için BrowserWindow.CurrentBrowser özelliğini test kodunuzda ya da değiştirin **Firefox** veya **Chrome** .
 
- Testleri üzerinde IE olmayan web tarayıcıları çalmak için yüklemelisiniz **Selenium bileşenleri kodlanmış UI arası tarayıcı testi için**.
+ Testleri IE olmayan web tarayıcılarında çalmak için yüklemelisiniz **kodlanmış UI çapraz tarayıcı test etmek için Selenium bileşenlerini**.
 
-### <a name="install-selenium-components"></a>Selenium bileşenlerini yükle
+### <a name="install-selenium-components"></a>Selenium bileşenlerini yükleme
 
 1.  Üzerinde **Araçları** menüsünde seçin **Uzantılar ve güncelleştirmeler**.
 
-2.  İçin arama uzantısı ve güncelleştirmeleri iletişim kutusu `Selenium components for Cross Browser Testing`.
+2.  İçinde **uzantı ve güncelleştirmeler** iletişim kutusu, arama `Selenium components for Cross Browser Testing`.
 
-3.  Uzantı vurgulayın ve seçin **karşıdan**.
+3.  Uzantısını vurgulayın ve seçin **indirme**.
 
     > [!TIP]
-    > Kodlanmış UI arası tarayıcı testi için Selenium bileşenleri indirebilirsiniz [burada](https://marketplace.visualstudio.com/items?itemName=AtinBansal.SeleniumcomponentsforCodedUICrossBrowserTesting).
+    > Kodlanmış UI çapraz tarayıcı test etmek için Selenium bileşenlerini indirebilirsiniz [burada](https://marketplace.visualstudio.com/items?itemName=AtinBansal.SeleniumcomponentsforCodedUICrossBrowserTesting).
 
-Daha fazla bilgi hakkında oluşturma ve kullanma kodlanmış UI testleri için bkz: [kodlanmış UI testleri oluşturma](../test/use-ui-automation-to-test-your-code.md).
+Daha fazla bilgi oluşturma ve kullanarak kodlanmış UI testleri için bkz. [Oluştur kodlanmış UI testleri](../test/use-ui-automation-to-test-your-code.md).
 
 ### <a name="enable-debugging"></a>Hata ayıklamayı etkinleştir
 
@@ -66,19 +70,19 @@ Web uygulamanızda hata ayıklamayı etkinleştirmek için aşağıdaki yapılan
 
 1.  Yalnızca Kendi Kodumu Etkinleştir:
 
-    1.  Üzerinde **Araçları** menüsünde seçin **seçenekleri** ve ardından **hata ayıklama**.
+    1.  Üzerinde **Araçları** menüsünde seçin **seçenekleri** seçip **hata ayıklama**.
 
-    2.  Seçin **yalnızca benim kodumu etkinleştir**.
+    2.  Seçin **yalnızca kendi kodumu etkinleştir**.
 
 2.  CLR özel durumları devre dışı bırakın:
 
     1.  Üzerinde **hata ayıklama** menüsünde seçin **özel durumları**.
 
-    2.  İçin **ortak dil çalışma zamanı özel durumları**, işaretini **kullanıcı işlenmemiş**.
+    2.  İçin **ortak dil çalışma zamanı özel durumları**, onay kutusunu temizleyin **kullanıcı-işlenmemiş**.
 
-Varsa değiştirme seçeneğini görmüyorsanız `BrowserWindow.CurrentBrowser` kodlanmış UI testi, çeşitli web tarayıcısı kullanarak kodlanmış UI testlerini desteklemiyor Visual Studio sürümünü kullanıyor olabilirsiniz. Bu tür kodlanmış UI testleri kullanmak için Visual Studio Enterprise edition kullanmanız gerekir.
+Varsa değiştirme seçeneği görmüyorum `BrowserWindow.CurrentBrowser` kodlanmış UI testi, Visual Studio'nun çeşitli web tarayıcıları kullanarak kodlanmış UI testlerini desteklemeyen bir sürümünü kullanıyor olabilirsiniz. Bu tür kodlanmış UI testleri kullanmak için Visual Studio Enterprise edition'ı kullanmanız gerekir.
 
-Bilmeniz gereken bazı şeyler şunlardır:
+Bilmeniz gereken bazı işlemler aşağıda verilmiştir:
 
 - Apple Safari web tarayıcısı desteklenmiyor.
 
@@ -90,9 +94,9 @@ Bilmeniz gereken bazı şeyler şunlardır:
 
 ## <a name="tips"></a>İpuçları
 
-Çıktı kodlanmış UI günlüklerinde ekran görüntüleri dahil etmek için yapılandırabilirsiniz. Bunu yapmak için bazı yapılandırma ayarları kümesinde gereksinim *QTAgent32.exe.config* dosya. Varsayılan olarak, bu dosya aşağıdaki konuma yüklenir:
+Çıktı kodlanmış UI günlüklerinde ekran görüntüleri dahil etmek için yapılandırabilirsiniz. Bunu yapmak için bazı yapılandırma ayarları kümesinde ihtiyacınız *QTAgent32.exe.config* dosya. Varsayılan olarak, bu dosya aşağıdaki konuma yüklenir:
 
-     *%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*
+*% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*
 
 Aşağıdaki değerleri ayarlayın:
 
@@ -100,24 +104,24 @@ Aşağıdaki değerleri ayarlayın:
 
 - `<add name="EqtTraceLevel" value="4" />`
 
-   Ekran görüntüleri değeri 3 veya daha yüksek olarak ayarlayarak, her eylem için alınır. Değeri 1 veya 2'ye ayarlandığında, ekran görüntüleri yalnızca hata eylemleri alır.
+   3 veya daha yüksek bir değere ayarlayarak, ekran görüntüleri her eylem için alınır. Değeri 1 veya 2'ye ayarlandığında, ekran görüntüleri yalnızca hata eylemleri alır.
 
-Daha fazla bilgi için bkz: [çözümleme kodlanmış UI testleri kullanarak kodlanmış UI Test günlüklerini](../test/analyzing-coded-ui-tests-using-coded-ui-test-logs.md).
+Daha fazla bilgi için [Çözümle kodlanmış UI testleri, kodlanmış UI test günlüklerini kullanarak](../test/analyzing-coded-ui-tests-using-coded-ui-test-logs.md).
 
-## <a name="video-resources"></a>Video Kaynakları
+## <a name="video-resources"></a>Görüntü kaynakları
 
- [IE ve kayıttan yürütme her yerde kaydedin](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!183&authkey=!ANqaLtCZbtJrImU)
+ [IE ve kayıttan yürütme her yerde kaydı](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!183&authkey=!ANqaLtCZbtJrImU)
 
- [Kodlanmış UI Test derleyicisini tarayıcı testleriyle çapraz Yazar](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!184&authkey=!AKG8CSow_qmeTq8)
+ [Çapraz tarayıcı testleri kodlanmış UI test Oluşturucusu ile yazar](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!184&authkey=!AKG8CSow_qmeTq8)
 
- [UI eşlemesi düz el kodlama kullanarak tarayıcı testleri çapraz Yazar](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!186&authkey=!AJaEvxJnsefyAT4)
+ [Çapraz tarayıcı testleri UI eşlemesi düz el kodlama kullanarak Yazar](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!186&authkey=!AJaEvxJnsefyAT4)
 
- [Çapraz tarayıcı testleri birden çok tarayıcılarda sırayla çalışır.](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!187&authkey=!ADI8eCQkxHnpOR8)
+ [Çapraz tarayıcı sırayla birden çok tarayıcı üzerinde testler](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!187&authkey=!ADI8eCQkxHnpOR8)
 
  [Tarayıcı test hatalarını giderme](https://skydrive.live.com/redir?resid=AE5CD7309CCCC43C!182&authkey=!AEpS48i295B49FI)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Kodunuzu Test Etmek için UI Otomasyonunu Kullanma](../test/use-ui-automation-to-test-your-code.md)
-- [Kodlanmış UI Testleri ve Eylem Kayıtları için Desteklenen Yapılandırmalar ve Platformlar](../test/supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)
-- [Kodlanmış UI Test Günlüklerini Kullanarak Kodlanmış UI Testlerini Çözümleme](../test/analyzing-coded-ui-tests-using-coded-ui-test-logs.md)
+- [UI otomasyonunu kullanarak kodunuzu test etme](../test/use-ui-automation-to-test-your-code.md)
+- [Kodlanmış UI testleri ve eylem kayıtları için desteklenen yapılandırmalar ve platformlar](../test/supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)
+- [Kodlanmış UI test günlüklerini kullanarak kodlanmış UI testlerini analiz etme](../test/analyzing-coded-ui-tests-using-coded-ui-test-logs.md)

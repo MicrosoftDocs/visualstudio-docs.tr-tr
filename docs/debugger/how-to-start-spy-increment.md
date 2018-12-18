@@ -1,7 +1,7 @@
 ---
 title: 'Nasıl yapılır: Spy ++ hizmetini başlatma | Microsoft Docs'
 ms.custom: ''
-ms.date: 11/04/2016
+ms.date: 11/12/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 helpviewer_keywords:
@@ -12,36 +12,37 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 064a78f9665d2a700a328979b8de169733c09d93
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 5e2e5ffabbb560165bd19bb3d52b940a5cc9e858
+ms.sourcegitcommit: a7de99f36e9ead7ea9e9bac23c88d05ddfc38b00
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52257175"
 ---
 # <a name="how-to-start-spy"></a>Nasıl Yapılır: Spy++ Hizmetini Başlatma
 Spy ++ Visual Studio'dan veya bir komut isteminde başlatabilirsiniz.  
   
- Başlattığınızda Spy ++'ta, bilgisayara değişiklik tıklatın izni istemek için bir ileti görüntülenirse **Evet**.  
+ Başladığınızda Spy ++'ta, değişiklik bilgisayara select izni istemek için bir ileti görüntülenirse **Evet**.  
   
 > [!NOTE]
->  Yalnızca bir örneği Spy ++ çalıştırabilirsiniz. Yalnızca başka bir örneği çalıştırmayı denerseniz, odağı almak şu anda çalışan örneğin neden olur.  
+>  Spy ++ yalnızca bir örneği çalıştırabilirsiniz. Yalnızca ikinci bir örneğini başlatmayı denerseniz, odağı almak o sırada çalıştırılan örneğinden neden olur.  
   
-### <a name="to-start-spy-from-visual-studio"></a>Spy ++ Visual Studio'dan başlatmak için  
+### <a name="start-spy-from-visual-studio"></a>Spy ++ Visual Studio'dan Başlat  
   
--   Üzerinde **Araçları** menüsünde tıklatın **Spy ++**.  
+Üzerinde **Araçları** menüsünde **Spy ++**.  
   
-     Başladıktan sonra Spy ++ bağımsız olarak çalıştığından, Visual Studio kapatabilirsiniz.  
+Başladıktan sonra Spy ++ birbirinden bağımsız olarak çalıştığından, Visual Studio'yu kapatabilirsiniz.  
   
-    > [!NOTE]
-    >  İletileri Spy ++ ile oturum açışınızda, işletim sisteminin daha da yavaş çalışmasına neden olabilir.  
+> [!NOTE]
+>  İletileri Spy ++ ile oturum açışınızda, işletim sisteminin daha yavaş çalışmasına neden olabilir.  
   
-### <a name="to-start-spy-at-a-command-prompt"></a>Spy ++ bir komut isteminden başlatmak için  
+### <a name="start-spy-at-a-command-prompt"></a>Spy ++ bir komut isteminden başlatmak  
   
-1.  Bir komut istemi penceresinde dizinleri spyxx.exe içeren klasöre gidin. Genellikle, bu klasör yoludur... \\ *Visual Studio yükleme klasörü*\Common7\Tools\\.  
+1.  Bir komut istemi penceresinde dizinleri spyxx.exe içeren klasöre değiştirin. Genellikle, bu klasörün yolu... \\ *Visual Studio yükleme klasörü*\Common7\Tools\\.  
   
-2.  Tür **spyxx.exe** yazıp ENTER tuşuna basın.  
+2.  Girin **spyxx.exe**. 
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Spy ++ kullanma](../debugger/using-spy-increment.md)   
  [Spy ++ görünümleri](../debugger/spy-increment-views.md)   
  [Spy++ Başvurusu](../debugger/spy-increment-reference.md)

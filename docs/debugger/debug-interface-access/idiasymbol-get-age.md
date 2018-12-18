@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9a81c41902b5e6a8421f15b69ebc77fe5ae6eebf
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 0ba915762a5eacffc32122a1dac4b7b046691e63
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868475"
 ---
 # <a name="idiasymbolgetage"></a>IDiaSymbol::get_age
-.Pdb Dosya yaşı değerini alır.  
+.Pdb dosyası yaş değerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,22 +34,22 @@ HRESULT get_age (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] .Pdb Dosya yaşı değerini döndürür.  
+ [out] .Pdb dosyası yaş değerini döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Geçerlilik süresi mutlaka herhangi bir bilinen saat değerine karşılık gelmiyor; Genellikle, .pdb dosyasını karşılık gelen bir .exe dosyası ile eşit olup olmadığını belirlemek için kullanılır.  
+ Yaş mutlaka herhangi bir bilinen bir saat değerine karşılık gelmiyor; Genellikle, bir .pdb dosyası ile ilgili bir .exe dosyası eşit olup olmadığını belirlemek için kullanılır.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v7.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

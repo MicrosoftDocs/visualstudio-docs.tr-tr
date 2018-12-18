@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: dd1aa9c73fad40d07be371ad7f9b3108464aeb34
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f6d42a7c5e9247359abfcdb4d65db5a4e0de247e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49916406"
 ---
 # <a name="disassemblyflags"></a>DISASSEMBLY_FLAGS
-Ayrıştırılmış bayrakları belirtir.  
+Ayrıştırılmış kod bayrakları belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,32 +55,32 @@ public enum enum_DISASSEMBLY_FLAGS {
  Bu yönerge önceki olandan farklı bir belge olduğunu gösterir.  
   
  DF_DISABLED  
- Bu yönerge çalıştırılmayacak gösterir.  
+ Bu yönerge yürütülmeyecek gösterir.  
   
  DF_INSTRUCTION_ACTIVE  
  Bu yönerge yürütülecek sonraki yönergeleri biri olduğunu gösterir (olabilir birden fazla).  
   
  DF_DATA  
- Bu yönerge gerçekten verilerin (kod değil) olduğunu gösterir.  
+ Bu yönerge gerçekten veri (kodunda değil) olduğunu gösterir.  
   
  DF_HASSOURCE  
- Bu yönerge kaynak sahip olduğunu gösterir. Profil oluşturma veya atık toplama kodu gibi bazı yönergeler, karşılık gelen hiçbir kaynak vardır.  
+ Bu yönerge kaynağına sahip olduğunu gösterir. Profil oluşturma ya da çöp toplama kod gibi bazı yönergeler, karşılık gelen hiçbir kaynak vardır.  
   
  DF_DOCUMENT_CHECKSUM  
- Belirten `bstrDocumentUrl` alanı sonra belgesi URL'si sağlama toplamı veri içeriyor. Açıklamalar bölümüne bakın [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) sağlama toplamı verilerin depolanma şeklini yapısı.  
+ Bildiren `bstrDocumentUrl` alanı sonra belgesi URL'si sağlama toplamı veri içeriyor. İçin Açıklamalar bölümüne bakın [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) yapısı için sağlama toplamı veriler nasıl depolanır.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Olarak kullanılan `dwFlags` üyesi [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md) yapısı.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [DisassemblyData](../../../extensibility/debugger/reference/disassemblydata.md)

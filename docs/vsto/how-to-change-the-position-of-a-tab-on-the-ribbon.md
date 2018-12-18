@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: Şeritteki sekmenin konumunu değiştirme | Microsoft Docs'
+title: 'Nasıl yapılır: Şeritteki sekmenin konumunu değiştirme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -15,20 +15,21 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 65a610ac75af4fe6e29070b83286fb3b4f8b91cc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 08bbdf81023be466d30e49215fc0dbe1d3812f20
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255395"
 ---
-# <a name="how-to-change-the-position-of-a-tab-on-the-ribbon"></a>Nasıl Yapılır: Şeritteki Sekmenin Konumunu Değiştirme
+# <a name="how-to-change-the-position-of-a-tab-on-the-ribbon"></a>Nasıl yapılır: Şeritteki sekmenin konumunu değiştirme
   Kullanarak bir Şerit üzerindeki özel sekme sırasını değiştirebilirsiniz **Sekme Koleksiyonu Düzenleyicisi**. Özel sekmeler önce veya sonra Şerit'te yerleşik sekmesine yerleştirebilirsiniz. Yerleşik bir sekmeyi zaten bir Microsoft Office uygulamasından Şerit'te olan sekme olarak kullanılır. Örneğin, **veri** sekme, yerleşik bir sekmeyi Excel'de kullanılabilir.  
   
  [!INCLUDE[appliesto_ribbon](../vsto/includes/appliesto-ribbon-md.md)]  
   
 ### <a name="to-change-the-order-of-tabs-on-the-ribbon"></a>Şeritteki sekmelerin sırasını değiştirmek için  
   
-1.  Şerit kod dosyası (.vb veya .cs dosyası) seçin **Çözüm Gezgini**.  
+1.  Şerit kod dosyasını seçin (*.vb* veya *.cs* dosyası) içinde **Çözüm Gezgini**.  
   
 2.  Üzerinde **Görünüm** menüsünde tıklatın **Tasarımcısı**.  
   
@@ -56,13 +57,13 @@ ms.lasthandoff: 04/16/2018
   
 5.  Ayarlama **OfficeId** yerleşik bir sekmeyi denetim kimliği özelliği.  
   
-     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office Fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
+     Denetim kimliklerinin bir listesi için bkz: [Office 2010 Yardım dosyalarını: Office fluent kullanıcı arabirimi denetim tanımlayıcıları](http://go.microsoft.com/fwlink/?LinkID=181052).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Şerite Genel Bakış](../vsto/ribbon-overview.md)   
  [Şerit Tasarımcısı](../vsto/ribbon-designer.md)   
  [Şerit XML](../vsto/ribbon-xml.md)   
  [İzlenecek yol: Şerit Tasarımcısını kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer.md)   
- [İzlenecek Yol: Şerit XML Kullanarak Özel Sekme Oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md)  
+ [İzlenecek yol: Şerit XML kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md)  
   
   

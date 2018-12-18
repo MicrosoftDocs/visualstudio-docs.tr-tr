@@ -1,30 +1,39 @@
 ---
 layout: LandingPage
+title: Visual Studio'da JavaScript uygulamaları oluşturma | Microsoft Docs
+description: Bilgi nasıl uygulamalar oluşturmak için Visual Studio 2017'yi kullanın.
 ms.topic: landing-page
-title: "Komut dosyası | Microsoft Docs"
-ms.openlocfilehash: 468b734d6381b9c40b1c9a4b6153d6ebafe38eb9
-ms.sourcegitcommit: 900ed1e299cd5bba56249cef8f5cf3981b10cb1c
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-nodejs
+ms.author: mikejo
+author: mikejo5000
+manager: douge
+ms.openlocfilehash: bc71a896022ea57a3867143ceb0a0d9e96b83149
+ms.sourcegitcommit: 1c675dae7c348defb32d9f7ccf7079a1062a1c4b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/19/2018
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48243936"
 ---
-# <a name="scripting-technologies"></a>Komut dosyası teknolojileri
+# <a name="javascript-in-visual-studio"></a>Visual Studio’da JavaScript
 
-Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu diller kullanarak uygulamaları yazmanızı sağlayan Visual Studio teknolojiler için bağlantılar için bağlantılar sağlar.
+Visual Studio, JavaScript veya TypeScript kullanarak uygulamaları oluşturmanıza yardımcı olmaya yönelik çeşitli araçlar sağlar.
+
+<h2>5 dakikalık hızlı başlangıçlar Visual Studio'da JavaScript kullanmayı öğrenin</h2>
 
 <ul class="panelContent cardsFTitle">
     <li>
-        <a href="https://docs.microsoft.com/visualstudio/nodejs/tutorial-nodejs">
+        <a href="https://docs.microsoft.com/visualstudio/ide/quickstart-nodejs?toc=/visualstudio/javascript/toc.json">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/logos/logo_nodejs.svg" alt="">
+                            <img src="/media/logos/logo_nodejs.svg" alt="Create a basic Node.js app">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Node.js için Araçlar hakkında bilgi edinin</h3>
+                        <h3>Temel bir Node.js uygulaması oluşturma</h3>
                     </div>
                 </div>
             </div>
@@ -32,125 +41,17 @@ Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-js-uwp">
+        <a href="https://docs.microsoft.com/visualstudio/javascript/quickstart-vuejs-with-nodejs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/logos/logo_windows.svg" alt="">
+                            <img src="/media/logos/logo_nodejs.svg" alt="Create a Vue.js app">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Evrensel Windows uygulamaları (UWP) kullanmaya başlama</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="http://www.typescriptlang.org/docs/tutorial.html">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_TS.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>TypeScript hakkında bilgi edinin</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://docs.microsoft.com/scripting/javascript/javascript-language-reference">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_JS.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>JavaScript hakkında bilgi edinin</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://docs.microsoft.com/azure/app-service-web/app-service-web-nodejs-get-started">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_nodejs.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Azure ve Node.js kullanmaya başlama</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://docs.microsoft.com/visualstudio/cross-platform/tools-for-cordova/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_cordova.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Apache Cordova için Araçlar</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://docs.microsoft.com/aspnet/core/client-side/angular">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_net.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ASP.NET ve frameworks AngularJS gibi kullanmaya başlama</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="https://docs.microsoft.com/scripting/chakra-hosting/javascript-runtime-hosting">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="/media/logos/logo_JS.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>JavaScript çalışma zamanı barındırma hakkında bilgi edinin</h3>
+                        <h3>Vue.js uygulaması oluşturma</h3>
                     </div>
                 </div>
             </div>
@@ -158,17 +59,40 @@ Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu
         </a>
     </li>
         <li>
-        <a href="https://docs.microsoft.com/scripting/winscript/windows-script-interfaces">
+        <a href="https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-js-uwp">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_learn-about.svg" alt="">
+                            <img src="/media/logos/logo_windows.svg" alt="Create a UWP app">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Windows komut dosyası arabirimleri (arşiv)</h3>
+                        <h3>Bir evrensel Windows uygulaması (UWP) oluşturma</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
+
+<h2>Öğreticileri ile daha ayrıntılı bilgiler edinin</h2>
+
+<ul class="panelContent cardsFTitle">
+    <li>
+        <a href="https://docs.microsoft.com/aspnet/core/client-side/spa/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/logos/logo_net.svg" alt="Create an app with ASP.NET and a JavaScript framework">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>AngularJS ve ASP.NET ile uygulama oluşturma</h3>
                     </div>
                 </div>
             </div>
@@ -176,17 +100,53 @@ Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu
         </a>
     </li>
     <li>
-        <a href="https://msdn.microsoft.com/library/d1et7k7c(v=vs.84).aspx">
+        <a href="https://docs.microsoft.com/visualstudio/javascript/tutorial-nodejs">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_learn-about.svg" alt="">
+                            <img src="/media/logos/logo_nodejs.svg" alt="Create a Node.js app with Express">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>JScript ve VBScript (arşiv)</h3>
+                        <h3>Express ile Node.js uygulaması oluşturma</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://docs.microsoft.com/visualstudio/javascript/tutorial-nodejs-with-react-and-jsx">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/logos/logo_nodejs.svg" alt="Create a Node.js app with React">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>React ile Node.js uygulaması oluşturma</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="https://docs.microsoft.com/visualstudio/cross-platform/tools-for-cordova/first-steps/build-your-first-app?view=toolsforcordova-2017">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/logos/logo_cordova.svg" alt="Create an app with Apache Cordova">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Apache Cordova ile uygulama oluşturma</h3>
                     </div>
                 </div>
             </div>
@@ -200,7 +160,7 @@ Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu
 
 <p><ul class="panelContent cardsW">
     <li>
-        <a href="https://docs.microsoft.com/scripting/javascript/javascript-language-reference">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -213,12 +173,51 @@ Bu sayfa, JavaScript ve TypeScript, ECMAScript tabanlı başvuru belgeleri ve bu
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/scripting/chakra-hosting/javascript-runtime-hosting">
+        <a href="http://www.typescriptlang.org/docs/tutorial.html">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>TypeScript</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/microsoft-edge/hosting/javascript-runtime-hosting">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
                         <h3>JavaScript Çalışma Zamanı Barındırma</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/fdee6589(v%3dvs.94)">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>Windows betik arabirimleri (arşiv)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
+    <li>
+        <a href="/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/d1et7k7c(v%3dvs.84)">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>JScript ve VBScript (arşiv)</h3>
                     </div>
                 </div>
             </div>

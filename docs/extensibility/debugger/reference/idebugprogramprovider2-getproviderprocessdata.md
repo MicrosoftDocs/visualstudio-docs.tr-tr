@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 77a6da58083feb8699c6db24207c265bf50c0f0e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9b0cc8d3a87cf89edebb5f1ac35a0493b9451dfa
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926247"
 ---
 # <a name="idebugprogramprovider2getproviderprocessdata"></a>IDebugProgramProvider2::GetProviderProcessData
 Belirtilen bir işlemden çalışan programların listesini alır.  
@@ -48,29 +49,29 @@ int GetProviderProcessData(
   
 #### <a name="parameters"></a>Parametreler  
  `Flags`  
- [in] Bayraklarını bileşimini [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) numaralandırması. Aşağıdaki bayraklar bu çağrı için tipik şunlardır:  
+ [in] Bayraklarının bir birleşimi [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) sabit listesi. Bu çağrı için tipik aşağıdaki bayraklar:  
   
 |Bayrağı|Açıklama|  
 |----------|-----------------|  
 |`PFLAG_REMOTE_PORT`|Çağıran uzak makinede çalışıyor.|  
-|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (dizimi hakkında ek bilgi her düğüm için döndürülecek).|  
+|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (taşıma hakkında ek bilgi, her düğüm için de döndürülür).|  
 |`PFLAG_ATTACHED_TO_DEBUGGEE`|Arayan bağlı, ancak hata ayıklayıcı tarafından başlatılan değil.|  
-|`PFLAG_GET_PROGRAM_NODES`|Çağıran program düğümler listesi için döndürülmesini istiyor.|  
+|`PFLAG_GET_PROGRAM_NODES`|Çağıran program düğümleri bir listesi için döndürülecek sorma.|  
   
  `pPort`  
- [in] Arama işlemi bağlantı noktası çalışıyor.  
+ [in] Çağırma işlemi bağlantı noktası çalışıyor.  
   
  `processId`  
- [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programı içeren işlem Kimliğini söz konusu bulunduran yapısı.  
+ [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programını içeren işlemin Kimliğini söz konusu tutan yapı.  
   
  `EngineFilter`  
- [in] GUID'ler dizisi (bunlar hiçbir motorları belirtilmezse, tüm programlar döndürülür sağlanan motorları desteği ne üzerinde; tabanlı gerçekten getirilen programlar filtrelemek için kullanılacak) Bu işlemde hata ayıklamak için atanan hata ayıklama altyapıları için.  
+ [in] Atanan (bunlar hiçbir motor belirtilirse, tüm programlar döndürülür ne sağlanan altyapılarını destekleyen üzerinde; temel, gerçekte döndürülen programların filtrelemek için kullanılacak) Bu işlemde hata ayıklamak için hata ayıklama altyapıları için GUID'leri dizisi.  
   
  `pProcess`  
- [out] A [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) istenen bilgileri girilir yapısı.  
+ [out] A [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) istenen bilgileri girilir yapısının.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yöntem, normalde bu işlemde çalışan programların listesini almak için bir işlem tarafından çağrılır. Döndürülen bilgilerin listesidir [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) nesneleri.  

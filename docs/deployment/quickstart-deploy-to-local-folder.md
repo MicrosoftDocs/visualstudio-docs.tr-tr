@@ -1,7 +1,7 @@
 ---
-title: Yerel bir klasöre - Visual Studio dağıtma | Microsoft Docs
+title: Yerel klasöre dağıtma
 ms.custom: ''
-ms.date: 11/22/2017
+ms.date: 06/22/2018
 ms.technology: vs-ide-deployment
 ms.topic: quickstart
 helpviewer_keywords:
@@ -12,58 +12,49 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 024d191628e413f07cd510595eac5c7d9fca085b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 517698aa2e042d74138579dae3633930b338cd61
+ms.sourcegitcommit: c57ae28181ffe14a30731736661bf59c3eff1211
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38781919"
 ---
-# <a name="deploy-a-web-app-or-net-core-app-to-a-local-folder-using-the-visual-studio-publish-tool"></a>Bir web uygulaması veya .NET Core uygulama Visual Studio yayımlama aracını kullanarak yerel bir klasöre dağıtma
+# <a name="deploy-an-app-to-a-local-folder-using-visual-studio"></a>Visual Studio kullanarak yerel bir klasöre uygulama dağıtma
 
-Kullanabileceğiniz **Yayımla** yerel bir klasöre uygulamanızı yayımlamak için aracı. 
+Kullanabileceğiniz **Yayımla** ASP.NET, ASP.NET Core, .NET Core ve Python uygulamaları yerel bir klasöre Visual Studio'dan yayımlamak için aracı. Node.js için adımları desteklenir ancak kullanıcı arabirimi farklıdır.
 
-ASP.NET, ASP.NET Core, .NET Core ve Visual Studio'da Python uygulamalar için şu adımları uygulayın. Node.js için adımları desteklenmektedir, ancak kullanıcı arabirimi farklıdır.
+[!INCLUDE [quickstart-prereqs](includes/quickstart-prereqs.md)]
 
-## <a name="create-a-new-project"></a>Yeni bir proje oluşturma 
+## <a name="deploy-to-a-local-folder"></a>Yerel klasöre dağıtma
 
-1. Visual Studio'da, **Dosya > Yeni proje**.
+1. Çözüm Gezgini'nde projeye sağ tıklayıp seçin **Yayımla** (veya **derleme** > **Yayımla** menü öğesi).
 
-1. Altında **Visual C#** veya **Visual Basic**, seçin **.NET Core**ve ardından Orta bölmede **konsol uygulaması (.NET Core)**.
+    ![Çözüm Gezgini'nde proje bağlam menüsünde Yayımla komutunu](../deployment/media/quickstart-publish.png "seçin yayımlama")
 
-1. Gibi bir ad yazın **MyLocalApp** tıklatıp **Tamam**.
+1. Tüm yayımlama profilleri, daha önce yapılandırdıysanız **Yayımla** bölmesi görünür. Seçin **yeni profil oluşturma**.
 
-    Visual Studio projesi oluşturur.
+1. İçinde **yayımlama hedefi seçin** iletişim kutusunda **klasör**.
 
-## <a name="deploy-to-a-local-folder"></a>Yerel bir klasöre dağıtma
+    ![Yayımlama seçilmeli olarak yerel klasörü seç](../deployment/media/quickstart-publish-folder.png "Klasör Seç")
 
-1. Çözüm Gezgini'nde projeye sağ tıklayın ve seçin **Yayımla**.
+1. Bir yol girin veya seçin **Gözat** yerel klasörü belirtin.
 
-    ![Seçin yayımlama](../deployment/media/quickstart-publish.png "seçin yayımlama")
+1. Seçin **yayımlama**. Visual Studio projeyi oluşturur ve belirtilen klasöre yayımlar. Proje özelliklerini **Yayımla** bir profili bölmesi görünür, Özet gösteriliyor.
 
-1. İçinde **Yayımla** bölmesinde seçin **klasörü**.
+    ![Yayımlama profili Özet gösteren özellik bölmesi](../deployment/media/quickstart-publish-folder-summary.png)
 
-    ![Klasörü seçin](../deployment/media/quickstart-publish-folder.png "klasörü seçin")
+1. Dağıtım ayarları yapılandırmak için seçin **yapılandırma** Özet ve select profilinde **ayarları** sekmesi.
 
-1. Bir yol girin veya ' **Gözat** bir yerel klasöre gidin.
+    ![Profil ayarları](../deployment/media/quickstart-profile-settings.png "profil ayarları")
 
-1. Tıklatın **yayımlama**.
+1. Bir hata ayıklama veya sürüm yapılandırmasına dağıtın ve ardından gibi seçenekleri **Kaydet**.
 
-    Visual Studio projesi oluşturur ve belirtilen klasöre yayımlar.
+1. Yeniden yayımlamak için seçin **Yayımla**.
 
-    Yayımla bölmesini bir profili özetini gösterir.
-
-1. Dağıtım ayarlarını yapılandırmak için tıklatın **ayarları** Özet profilinde.
-
-    ![Profil ayarları](../deployment/media/quickstart-profile-settings.png "profil ayarları") 
-
-1. Hata ayıklama veya yayın bir yapılandırma dağıtmanız ve ardından gibi seçeneklerini yapılandırın **kaydetmek**.
-
-1. Yeniden yayımlamak için tıklatın **Yayımla**.
-
-İstediğiniz şekilde yayımlanan dosyalarında dağıtın. Örneğin, bir ZIP dosyası paketini, basit Kopyala komutunu kullanın veya tercih ettiğiniz herhangi bir yükleme paketi ile dağıtabilirsiniz.
+Yayımlanan dosyaları istediğiniz herhangi bir şekilde dağıtın. Örneğin, bunları paketleyebilirsiniz bir *.zip* dosya, bir basit kopyası komutunu kullanın veya bunları seçtiğiniz herhangi bir yükleme paketi ile birlikte dağıtabilirsiniz.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-- [Yayımla aracı ile .NET Core Uygulaması dağıtma](/dotnet/core/deploying/deploy-with-vs)
-- [Bir masaüstü uygulamasını Microsoft Store için paketleme (Masaüstü Köprüsü)](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)
+- [Yayımla aracı ile .NET Core Uygulaması dağıtma](/dotnet/core/deploying/deploy-with-vs?toc=/visualstudio/deployment/toc.json&bc=/visualstudio/deployment/_breadcrumb/toc.json)
+- [Bir masaüstü uygulamasını Microsoft Store için paketleme (Masaüstü Köprüsü)](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net?toc=/visualstudio/deployment/toc.json&bc=/visualstudio/deployment/_breadcrumb/toc.json)
 - (.NET) [.NET Framework ve uygulamaları dağıtma](/dotnet/framework/deployment/)

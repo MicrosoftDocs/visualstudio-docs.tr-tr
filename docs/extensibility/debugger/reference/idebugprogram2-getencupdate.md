@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 83b4a22d8cfb1d8ab89adb5946305ea50425fa35
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c356154c5d77c01f84c5fe4446b8ac92235c10e4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867006"
 ---
 # <a name="idebugprogram2getencupdate"></a>IDebugProgram2::GetENCUpdate
-Bu yöntem, bu program için Düzenle ve devam (ÇÖZÜCÜ) güncelleştirme alır. Özel hata ayıklama altyapısı her zaman döndürür `E_NOTIMPL`.  
+Bu yöntem, bu program için Düzenle ve devam et (ENC) güncelleştirme alır. Her zaman bir özel hata ayıklama altyapısı döndürür `E_NOTIMPL`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int GetENCUpdate(
   
 #### <a name="parameters"></a>Parametreler  
  `ppUpdate`  
- [out] Bu program güncelleştirmek için kullanılan bir iç arabirim döndürür.  
+ [out] Bu program güncelleştirmek için kullanılan bir iç arabiriminde döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
 >  Bir özel hata ayıklama altyapısı her zaman döndürmelidir `E_NOTIMPL`.  

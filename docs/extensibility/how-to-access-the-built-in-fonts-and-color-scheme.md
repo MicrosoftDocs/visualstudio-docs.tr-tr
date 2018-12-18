@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: yerleşik yazı tipleri ve renk düzenini erişim | Microsoft Docs'
+title: 'Nasıl yapılır: yerleşik yazı tipi ve renk şeması erişim | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,71 +15,72 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5f72640369152b03ef86383fda1162b1cfbacba8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 295f6d26d086914bf75d5744ca47594dfefb6591
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49911258"
 ---
-# <a name="how-to-access-the-built-in-fonts-and-color-scheme"></a>Nasıl yapılır: yerleşik yazı tipleri ve renk düzenini erişim
-Visual Studio tümleşik geliştirme ortamı (IDE) Düzenleyicisi penceresini ile ilişkili bir düzeni yazı tiplerini ve renkleri vardır. Bu düzen üzerinden erişebilirsiniz <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> arabirimi.
+# <a name="how-to-access-the-built-in-fonts-and-color-ccheme"></a>Nasıl yapılır: yerleşik yazı tiplerinin erişmek ve ccheme renk
+Visual Studio tümleşik geliştirme ortamı (IDE) Düzenleyicisi penceresiyle ilişkilidir yazı tipleri ve renkler bir düzeni vardır. Bu düzen aracılığıyla erişebileceğiniz <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> arabirimi.
 
- Yerleşik yazı tiplerini ve renkleri düzenini kullanmak için bir VSPackage gerekir:
+ Yerleşik yazı tiplerini ve renkleri düzeni kullanmak için bir VSPackage gerekir:
 
--   Varsayılan yazı tiplerini ve renkleri hizmetle birlikte kullanmak üzere bir kategori tanımlayın.
+- Varsayılan yazı tipleri ve renkler hizmeti ile kullanmak için bir kategori tanımlayın.
 
--   Kategori varsayılan yazı tiplerini ve renkleri sunucusuna kaydedin.
+- Kategori varsayılan yazı tipleri ve renkler sunucusuna kaydedin.
 
--   Belirli bir pencere öğeleri yerleşik görüntüleme ve kategorileri kullanarak kullandığını IDE bildirmek <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer> ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer> arabirimleri.
+- Belirli bir pencere öğeleri yerleşik görüntüleme ve kategoriler kullanarak kullandığını IDE öneri <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer> ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer> arabirimleri.
 
- IDE penceresi için bir tanıtıcı olarak elde edilen kategoriyi kullanır. Kategori adı görüntülenir **ayarlarını göster:** açılan kutusunda **yazı tiplerini ve renkleri** özellik sayfası.
+  IDE penceresi için bir tanıtıcı elde edilen kategoriyi kullanır. Kategori adı görüntülenen **ayarlarını göster:** açılan kutusunda **yazı tipleri ve renkler** özellik sayfası.
 
-### <a name="to-define-a-category-using-built-in-fonts-and-colors"></a>Yerleşik yazı tipleri ve renkler kullanarak bir kategori tanımlamak için
+## <a name="to-define-a-category-using-built-in-fonts-and-colors"></a>Yerleşik yazı tipleri ve renkler kullanarak bir kategori tanımlamak için
 
 1.  Rastgele bir GUID oluşturun.
 
-     Bir kategori benzersiz şekilde tanımlamak için kullanılan bu GUID**.** Bu kategori IDE'nin varsayılan yazı tipleri ve renkler belirtimi yeniden kullanır.
+     Bu GUID, bir kategori benzersiz şekilde tanımlamak için kullanılır. Bu kategori, IDE'nin varsayılan yazı tipleri ve renkler belirtimi kullanır.
 
     > [!NOTE]
-    >  Yazı tipi ve renk verilerle alınırken <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> veya diğer arabirimleri VSPackages yerleşik bilgilere referans bu GUID kullanın.
+    >  Yazı tipi ve renk verilerle alınırken <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> veya diğer arabirimleri VSPackages yerleşik bilgi başvurmak için bu GUID kullanın.
 
-2.  IDE içinde görüntülendiğinde gerektiğinde yerelleştirilebilir böylece kategori adı bir dize tabloya VSPackage'nın kaynakları (.rc) dosyası içinde eklenmesi gerekir.
+2.  Kategori adı bir dize tablosu VSPackage'nın kaynakları içine eklenmesi gerekir (*.rc*), böylece IDE'de görüntülendiğinde gerektiğinde yerelleştirilebilen dosya.
 
-     Daha fazla bilgi için bkz: [ekleyerek veya silerek bir dize](/cpp/windows/adding-or-deleting-a-string).
+     Daha fazla bilgi için [ekleme veya silme bir dize](/cpp/windows/adding-or-deleting-a-string).
 
 ### <a name="to-register-a-category-using-built-in-fonts-and-colors"></a>Yerleşik yazı tipleri ve renkler kullanarak bir kategori kaydetmek için
 
-1.  Özel türde bir kategori aşağıdaki konumda kayıt defteri girişi oluşturun:
+1.  Özel bir kategori aşağıdaki konumda kayıt defteri girdisi türü oluşturun:
 
-     [HKLM\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\*\<Kategori >*]
+     *[HKLM\SOFTWARE\Microsoft \Visual Studio\\\<Visual Studio sürümü > \FontAndColors\\\<Kategori >*]
 
      *\<Kategori >* kategorisi yerelleştirilmemiş adıdır.
 
-2.  Stok yazı tipleri ve renk şeması ile dört değerleri kullanmak için kayıt defteri doldurun:
+2.  Stok yazı tipi ve renk şeması dört değerlerle kullanılacak kayıt defteri doldurun:
 
     |Ad|Tür|Veri|Açıklama|
     |----------|----------|----------|-----------------|
-    |Kategori|REG_SZ|GUID|Stok yazı tipi ve renk düzenini içeren bir kategori tanımlayan rasgele bir GUID.|
-    |Paket|REG_SZ|GUID|{F5E7E71D-1401-11D1-883B-0000F87579D2}<br /><br /> Bu GUID varsayılan yazı tipi ve renk yapılandırmaları kullanan tüm VSPackages tarafından kullanılır.|
-    |NameID|REG_DWORD|Kimlik|Yerelleştirilebilir kategori adı VSPackage içinde kaynak kimliği.|
-    |ToolWindowPackage|REG_SZ|GUID|Uygulama VSPackage GUID <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> arabirimi.|
+    |Kategori|REG_SZ|GUID|Stok yazı tipi ve renk düzenini içeren bir kategoriyi tanımlayan rastgele bir GUID.|
+    |Paket|REG_SZ|GUID|{F5E7E71D-1401-11D1-883B-0000F87579D2}<br /><br /> Bu GUID, varsayılan yazı tipi ve renk yapılandırmaları kullanan tüm VSPackages tarafından kullanılır.|
+    |Nameıd|REG_DWORD|Kimlik|VSPackage'ı bir yerelleştirilebilir kategori adı kaynak kimliği.|
+    |ToolWindowPackage|REG_SZ|GUID|VSPackage'ı uygulama GUID'i <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> arabirimi.|
 
-### <a name="to-initiate-the-use-of-system-provided-fonts-and-colors"></a>Sistem tarafından sağlanan yazı tiplerini ve renkleri kullanımını başlatmak için
+### <a name="to-initiate-the-use-of-system-provided-fonts-and-colors"></a>Sistem tarafından sağlanan yazı tipleri ve renkler kullanımı başlatmak için
 
-1.  Bir örneğini oluşturmak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer> arabirimi pencerenin uygulama ve başlatma bir parçası olarak.
+1. Bir örneğini oluşturmak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer> pencerenin uygulama ve başlatma bir parçası olarak arabirimi.
 
-2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer.GetPropertyCategory%2A> bir örneği elde etmek için yöntemi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer> geçerli karşılık gelen arabirimi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> örneği.
+2. Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer.GetPropertyCategory%2A> örneği elde etmek için yöntemi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer> geçerli karşılık gelen arabirimi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> örneği.
 
-3.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer.SetProperty%2A> iki kez.
+3. Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer.SetProperty%2A> iki kez.
 
-    -   Bir kez çağıran `VSEDITPROPID_ViewGeneral_ColorCategory`bağımsız değişken olarak.
+   - İle bir kez çağırmanız `VSEDITPROPID_ViewGeneral_ColorCategory`bağımsız değişken olarak.
 
-    -   Bir kez çağıran `VSEDITPROPID_ViewGeneral_FontCategory` bağımsız değişken olarak.
+   - İle bir kez çağırmanız `VSEDITPROPID_ViewGeneral_FontCategory` bağımsız değişken olarak.
 
-     Bu ayarlar ve varsayılan yazı tiplerini ve renkleri Hizmetleri penceresinin bir özellik olarak kullanıma sunar.
+     Bu ayarlar ve varsayılan yazı tipleri ve renkler Hizmetleri penceresinin bir özelliği olarak kullanıma sunar.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, yerleşik yazı tiplerini ve renkleri kullanımını başlatır.
+ Aşağıdaki örnek, kullanımını yerleşik yazı tipleri ve renkler başlatır.
 
 ```cpp
 CComVariant vt;
@@ -95,9 +96,9 @@ if (spPropCatContainer != NULL){
 }
 ```
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-- [Yazı tipleri ve renkler kullanarak](../extensibility/using-fonts-and-colors.md)
-- [Yazı tipi ve metin renklendirme için renk bilgilerini alma](../extensibility/getting-font-and-color-information-for-text-colorization.md)
-- [Saklı yazı tipi ve renk ayarlarını erişme](../extensibility/accessing-stored-font-and-color-settings.md)
+- [Yazı tipleri ve renkler kullan](../extensibility/using-fonts-and-colors.md)
+- [Metin renklendirmesi yazı tipi ve renk bilgilerini al](../extensibility/getting-font-and-color-information-for-text-colorization.md)
+- [Yazı tipi ve renk ayarlarını erişim depolanan](../extensibility/accessing-stored-font-and-color-settings.md)
 - [Yazı tipi ve renk genel bakış](../extensibility/font-and-color-overview.md)

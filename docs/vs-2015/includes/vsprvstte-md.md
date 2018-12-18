@@ -1,0 +1,1 @@
+Sınayıcılar için Visual Studio Team Edition

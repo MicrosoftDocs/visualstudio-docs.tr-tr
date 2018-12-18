@@ -12,21 +12,22 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4b33cffb8fba135043f316e6857f7da0ff138afe
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e05286c10758c19f1e3f5a5692f814a096763544
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263604"
 ---
 # <a name="call-tree-view---net-memory-instrumentation-data"></a>Çağrı ağacı görünümü - .NET bellek izleme verileri
 Çağrı ağacı görünümü izleme metodunu kullanarak toplanan .NET bellek ayırma profil oluşturma veri profili uygulamada geçiş işlevi yürütme yollarını görüntüler. Ağaç kökü uygulamanın veya bileşenin içine giriş noktasıdır. Her işlevi düğümü adlı, tüm işlevlere ve .NET bellek ve zamanlama verileri işlevi için listeler.  
   
  Çağrı ağacı görünümü çağrısı ağacında üst işlevi tarafından çağrılan işlev örnekleri için değerler. Yüzde değerleri, toplam sayısı veya boyutu çalıştırmak profil ayırmalarının işlevi örneği değerini karşılaştırarak hesaplanır.  
   
-## <a name="highlighting-the-execution-hot-path"></a>Yürütme etkin yolunuzda vurgulama  
+## <a name="highlight-the-execution-hot-path"></a>Yürütme etkin yolunu Vurgula  
  Çağrı ağacı görünümü genişletin ve işlem veya en büyük oluşturulan işlevi ya da çoğu bellek nesneleri yürütme yolu vurgulayın. En etkin yol görüntülemek için işlem veya işlevi sağ tıklayın ve ardından **genişletin etkin yolunuzda**.  
   
-## <a name="setting-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlama  
+## <a name="set-the-call-tree-root-node"></a>Çağrı ağacı kök düğümü ayarlayın  
  Profil oluşturma Çalıştır her işlem, bir kök düğümü olarak görüntülenir. Çağrı ağacı görünümü başlangıç düğümü başlangıç düğümü olarak ayarlamak istediğiniz düğümünü sağ tıklayarak ve ardından seçerek ayarlayabilirsiniz **ayarlamak kök**.  
   
  Kök düğüm kümesi olduğunda, Seçili düğümün alt ağacı dışında görünümünden diğer tüm girişleri kaldırın. Kök düğüm görüntülemekte olduğunuz düğüme geri sıfırlayabilirsiniz; Çağrı ağacı Görünümü penceresinde sağ tıklayın ve **sıfırlama kök**.  

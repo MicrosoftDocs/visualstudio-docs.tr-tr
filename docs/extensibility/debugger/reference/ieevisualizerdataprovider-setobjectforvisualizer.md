@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0d1a6272f8a04316c8695f301d5c45512b05f2d3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f02f90ce8325a0ba75c31904a689e84705a5273a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49866174"
 ---
 # <a name="ieevisualizerdataprovidersetobjectforvisualizer"></a>IEEVisualizerDataProvider::SetObjectForVisualizer
-Bu yöntem Görselleştirici temsil eden nesne değiştirir.  
+Bu yöntem Görselleştirici temsil eden nesneyi değiştirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,19 +45,19 @@ int SetObjectForVisualizer(
   
 #### <a name="parameters"></a>Parametreler  
  `pNewObject`  
- [in] Ayarlamak için nesne.  
+ [in] Ayarlanacağı nesne.  
   
  `error`  
- [out] Bu dize, nesne ayarı hata oluşursa, hata iletisi tutar.  
+ [out] Bu dize, nesne ayarlanırken bir hata oluştu, hata iletisi tutar.  
   
  `pException`  
- [out] Bir hata varsa, bu nesne özel durum bilgilerini tutar.  
+ [out] Bir hata varsa, bu nesne, özel durum bilgilerini tutar.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Hata bilgileri nasıl döndürdüğü belirlemek için uygulayan kadar olur. Ancak, bir hata varsa bu yöntem her zaman bir özel durum nesnesi döndürmelidir için bir özel durum nesnesi olmadığını bilmek döndürüldü olmadığını görmek için Görünüm bir hata oluştu. yalnızca bazı arayanlar olabilir mümkündür. Arayan yapmak ihtimaline karşın hata dizesi de sağlanan bunu kullanın.  
+ Bu, nasıl hata bilgileri döndürülür belirlemek için en fazla uygulayan olur. Ancak, bir hata olduğunda bu yöntem her zaman bir özel durum nesnesi döndürmelidir bu nedenle bir özel durum nesnesi var. bilmek döndürüldü, görmek için Görünüm, bir hata oluştu. yalnızca bazı çağıranlar olabilir mümkündür. Çağıranın olun ister durumunda hata dizesi ayrıca sağlanan bunu kullanın.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEEVisualizerDataProvider](../../../extensibility/debugger/reference/ieevisualizerdataprovider.md)   

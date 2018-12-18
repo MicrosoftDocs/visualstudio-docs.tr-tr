@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1ea20b2e7cbb1136fb0738e381f312472d48f80f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6a6630ecb01bd16584eae7b87f42a11958906ef6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49880662"
 ---
 # <a name="idebugcoreserver3getservername"></a>IDebugCoreServer3::GetServerName
-Sunucunun adını alır.  
+Sunucu adını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,13 +44,13 @@ int GetServerName(
  [out] Sunucunun adını döndürür.  
   
 > [!NOTE]
->  Dize boşaltma çağıran sorumludur.  
+>  Dize boşaltma için çağıran sorumludur.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- İçin bir kolay sunucu adı, çağrı [GetServerFriendlyName](../../../extensibility/debugger/reference/idebugcoreserver3-getserverfriendlyname.md) yöntemi.  
+ Kolay sunucu adı için şunu çağırın [GetServerFriendlyName](../../../extensibility/debugger/reference/idebugcoreserver3-getserverfriendlyname.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)   

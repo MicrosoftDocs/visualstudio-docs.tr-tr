@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: otomatik olarak artırma ClickOnce yayım sürümünü | Microsoft Docs'
+title: 'Nasıl yapılır: artırma ClickOnce yayım sürümünü otomatik olarak | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -19,29 +19,32 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 178599f8f32ff2cbe1c12996eafb15feee62d463
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b7dd1723d9d92d9bc1b667cc3fddbc3ea297d8b8
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52389130"
 ---
-# <a name="how-to-automatically-increment-the-clickonce-publish-version"></a>Nasıl yapılır: ClickOnce Yayım Sürümünü Otomatik Olarak Artırma
-Yayımlama sırasında bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] değiştirmek uygulamanın `Publish Version` özellik, bir güncelleştirme olarak yayımlanan uygulamaya eklenmesine neden olur. Varsayılan olarak, Visual Studio otomatik olarak arttırır `Revision` sayısı `Publish Version` her uygulama yayımlayın.  
-  
- Bu davranışı devre dışı bırakabilirsiniz **Yayımla** sayfasında **Proje Tasarımcısı**.  
-  
+# <a name="how-to-automatically-increment-the-clickonce-publish-version"></a>Nasıl yapılır: otomatik olarak artırma ClickOnce yayım sürümü
+
+Yayımlama sırasında bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama, değiştirme `Publish Version` özelliği, bir güncelleştirme olarak yayımlanacak uygulama neden olur. Varsayılan olarak, Visual Studio otomatik olarak artırır `Revision` sayısı `Publish Version` her zaman uygulama yayımlayın.
+
+Bu davranışı devre dışı bırakabilirsiniz **Yayımla** sayfasının **Proje Tasarımcısı**.
+
 > [!NOTE]
->  Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için tercih **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md).  
-  
-### <a name="to-disable-automatically-incrementing-the-publish-version"></a>Yayımla sürümünü otomatik olarak artırma devre dışı bırakmak için  
-  
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
-  
-2.  Tıklatın **Yayımla** sekmesi.  
-  
-3.  İçinde **yayımlama sürümü** bölümünde, Temizle **otomatik olarak her sürüm düzeltmelerle Artır** onay kutusu.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: kümesi ClickOnce yayım sürümünü](../deployment/how-to-set-the-clickonce-publish-version.md)   
- [ClickOnce uygulamalarını yayımlama](../deployment/publishing-clickonce-applications.md)   
- [Nasıl yapılır: Yayımlama Sihirbazını Kullanarak ClickOnce Uygulaması Yayımlama](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)
+> Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için seçin **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için [ayarlarına](../ide/environment-settings.md#reset-settings).
+
+## <a name="to-disable-automatically-incrementing-the-publish-version"></a>Yayınlama sürümünü otomatik olarak artırma devre dışı bırakmak için
+
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.
+
+2.  Tıklayın **Yayımla** sekmesi.
+
+3.  İçinde **yayımlama sürümü** bölümünde, NET **her yayında düzeltmeyi otomatik artış** onay kutusu.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Nasıl yapılır: ayarlama ClickOnce yayım sürümü](../deployment/how-to-set-the-clickonce-publish-version.md)
+- [ClickOnce uygulamalarını yayımlama](../deployment/publishing-clickonce-applications.md)
+- [Nasıl yapılır: yayımlama sihirbazını kullanarak ClickOnce uygulaması yayımlama](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)

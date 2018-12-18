@@ -13,18 +13,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d4484e5fdee3158b61e7d1ae6d33966141e2a6a5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4eb29336b401b020df52d1ccaa743bb7240e1d2b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49854825"
 ---
 # <a name="commentmarkatprofile"></a>CommentMarkAtProfile
-`CommentMarkAtProfile` Yöntemi .vsp dosyasında bir zaman damgası değeri, sayısal işareti ve bir açıklama dizesi ekler. Zaman damgası değeri dış olayları eşitlemek için kullanılır. CommentMarkAtProfile işlevi içeriyor iş parçacığı için profil oluşturma, işareti ve eklenecek açıklama için açık olması gerekir.  
+`CommentMarkAtProfile` Yöntemi, bir zaman damgası değeri, sayısal işareti ve bir açıklama dizesi olarak ekler. *Vsp* dosya. Zaman damgası değeri, dış olayları eşitlemek için kullanılabilir. CommentMarkAtProfile işlevi içeren bir iş parçacığı için profil oluşturma işareti ve yorum eklenecek için açık olmalıdır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkAtProfile (  
                                    __int64 dnTimestamp,  
                                    long lMarker,  
@@ -34,50 +35,50 @@ PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkAtProfile (
 #### <a name="parameters"></a>Parametreler  
  `dnTimestamp`  
   
- Bir zaman damgası değeri temsil eden bir 64-bit tam sayı.  
+ Zaman damgası değeri temsil eden bir 64-bit tamsayı.  
   
  `lMarker`  
   
- Eklenecek sayısal işaretçisi. İşaretin 0 (sıfır) değerine eşit veya daha büyük olmalıdır.  
+ Eklenecek sayısal işaretçisi. İşaretin değerinden büyük veya 0 (sıfır) eşit olmalıdır.  
   
  `szComment`  
   
- Metin dizesi eklemek için bir işaretçi. Dize NULL Sonlandırıcı dahil olmak üzere 256 karakterden kısa olmalıdır.  
+ Metin dizesi eklemek için bir işaretçi. Dize NULL Sonlandırıcı dahil olmak üzere en fazla 256 karakter olmalıdır.  
   
-## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri  
- Kullanarak işlevi başarısını veya başarısızlığını gösterir **PROFILE_COMMAND_STATUS** numaralandırması. Dönüş değeri aşağıdakilerden biri olabilir:  
+## <a name="property-valuereturn-value"></a>Özellik değeri/dönüş değeri  
+ İşlevi kullanarak başarısı veya başarısızlığı gösterir **PROFILE_COMMAND_STATUS** sabit listesi. Dönüş değeri aşağıdakilerden biri olabilir:  
   
 |Numaralandırıcı|Açıklama|  
 |----------------|-----------------|  
-|MARK_ERROR_MARKER_RESERVED|Parametre, küçük veya 0 değerine eşit değil. Bu değerler ayrılmıştır. Açıklama ve işareti kaydedilmedi.|  
-|MARK_ERROR_MODE_NEVER|Hiçbir zaman işlevi çağrıldığında profil oluşturma modu ayarlandı. Açıklama ve işareti kaydedilmedi.|  
-|MARK_ERROR_MODE_OFF|İşlevi çağrıldığında profil oluşturma modu OFF olarak ayarlandı. Açıklama ve işareti kaydedilmedi.|  
-|MARK_ERROR_NO_SUPPORT|Bu bağlamda işareti desteği yok. Açıklama ve işareti kaydedilmedi.|  
-|MARK_ERROR_OUTOFMEMORY|Olay kaydetmek bellek yoktu. Açıklama ve işareti kaydedilmedi.|  
-|MARK_TEXTTOOLONG|Dize en fazla 256 karakter aşıyor. Açıklama dizesi kesilir ve yorum ve işareti kaydedilir.|  
-|MARK_OK|MARK_OK başarılı olduğunu belirtmek için döndürülür.|  
+|MARK_ERROR_MARKER_RESERVED|Parametresi veya 0'a eşit olan küçük. Bu değerler ayrılmıştır. Açıklama ve işareti kaydedilmez.|  
+|MARK_ERROR_MODE_NEVER|HİÇ işlev çağrıldığında profil oluşturma modunda ayarlandı. Açıklama ve işareti kaydedilmez.|  
+|MARK_ERROR_MODE_OFF|İşlev çağrıldığında, profil oluşturma modunda OFF olarak ayarlandı. Açıklama ve işareti kaydedilmez.|  
+|MARK_ERROR_NO_SUPPORT|Bu bağlamda işareti desteği yok. Açıklama ve işareti kaydedilmez.|  
+|MARK_ERROR_OUTOFMEMORY|Bellek olayı kaydetmek kullanılabilir değildi. Açıklama ve işareti kaydedilmez.|  
+|MARK_TEXTTOOLONG|Dize en fazla 256 karakter aşıyor. Açıklama dizesi kesilmiş ve işareti ve yorum kaydedilir.|  
+|MARK_OK|MARK_OK tamamlandığını bildiren döndürülür.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- İşaretleri ve yorumları API işlevleri (CommentMarkAtProfile, CommentMarkProfile veya MarkProfile) veya işareti komutu ile yerleştirildiğinde işareti profili işlevi içeren iş parçacığı için profil oluşturma durumu olmalıdır. Profil işaretleri kapsamda geneldir. Örneğin, bir iş parçacığında eklenen bir profili işareti başlangıç ya da herhangi bir iş parçacığı .vsp dosyasındaki veri segmentinin sonunu işaretlemek için kullanılabilir.  
+ İşaretler ve açıklama işareti komutu veya API işlevleri (CommentMarkAtProfile, CommentMarkProfile veya MarkProfile) ile eklendiğinde işareti profili işlevi içeren iş parçacığı profil durumu olmalıdır. Profil işaretleri kapsam içinde geneldir. Örneğin, bir iş parçacığında eklenen bir profili işareti başlangıç veya bitiş .vsp dosyasının içinde herhangi bir iş parçacığı bir veri parçasının işaretlemek için kullanılabilir.  
   
 > [!IMPORTANT]
->  CommentMarkAtProfile yöntemleri yalnızca araçları ile kullanılmalıdır.  
+>  CommentMarkAtProfile yöntemleri, yalnızca izleme ile kullanılmalıdır.  
   
-## <a name="net-framework-equivalent"></a>.NET Framework Eşdeğeri  
- Microsoft.VisualStudio.Profiler.dll  
+## <a name="net-framework-equivalent"></a>.NET framework eşdeğeri  
+ *Microsoft.VisualStudio.Profiler.dll*  
   
 ## <a name="function-information"></a>İşlev bilgisi  
   
 |||  
 |-|-|  
-|**Üstbilgi**|VSPerf.h içerir|  
-|**Kitaplığı**|VSPerf.lib kullanın|  
-|**Unicode**|CommentMarkAtProfileW (Unicode) ve CommentMarkAtProfileA (ANSI) uygulanır.|  
+|**Üst bilgi**|Dahil *VSPerf.h*|  
+|**Kitaplık**|Kullanım *VSPerf.lib*|  
+|**Unicode**|(Unicode) CommentMarkAtProfileW ve CommentMarkAtProfileA (ANSI) uygulanır.|  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod CommentMarkAtProfile genel işlev çağrısının kullanımını gösterir. Örnek Win32 dize makroların kullanılması ve kod çağrıları ANSI işlevi etkin olup olmadığını belirlemek ANSI derleyici ayarları varsayar.  
+ Aşağıdaki kod CommentMarkAtProfile genel işlev çağrısının kullanımını gösterir. Örneğin, Win32 dize makroların kullanılması ve ANSI kod çağrıları işlevi etkin olup olmadığını belirlemek ANSI derleyici ayarlarını varsayar.  
   
-```  
+```cpp  
 void ExerciseCommentMarkAtProfile(void)  
 {  
     // Declare and initalize variables to pass to   
@@ -115,5 +116,5 @@ void ExerciseCommentMarkAtProfile(void)
 }  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio profil oluşturucu API Başvurusu (yerel)](../profiling/visual-studio-profiler-api-reference-native.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio Profiler API Başvurusu (yerel)](../profiling/visual-studio-profiler-api-reference-native.md)

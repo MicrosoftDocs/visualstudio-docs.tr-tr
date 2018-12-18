@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1b5210859115947115bce6525cd5b6cd15c4d59d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5938809aa7fcd2e913743fc778c66205e39988e8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49901105"
 ---
 # <a name="idebugclassfieldenumbaseclasses"></a>IDebugClassField::EnumBaseClasses
-Bu sınıfın temel sınıflar için bir numaralandırıcı oluşturur.  
+Bu sınıfın temel sınıfları için bir numaralandırıcı oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int EnumBaseClasses(
   
 #### <a name="parameters"></a>Parametreler  
  `ppEnum`  
- [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) temel sınıflar listesini temsil eden nesne. Hiçbir temel sınıflar yoksa null değeri döndürür.  
+ [out] Döndürür bir [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) temel sınıflar listesini temsil eden nesne. Temel olmayan sınıflar yoksa null değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK döndürür, temel sınıf ise S_SH_NO_BASE_CLASSES verir (ve `ppEnum` parametresi null bir değere ayarlanırsa); Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür, temel sınıf varsa S_SH_NO_BASE_CLASSES döndürür (ve `ppEnum` parametresi null bir değere ayarlanırsa); Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Numaralandırıcı nesnesi temel sınıflarda çoğu uzak taban sınıfı için en yakın (veya en çok türetilen) temel sınıf sırasına göre belirtilir. Örneğin, C++ sınıfları verilen:  
+ Numaralandırıcı nesnesi taban sınıflardaki en uzak temel sınıfın en Acil (veya en çok türetilen) temel sınıf sırada belirtilir. Örneğin, C++ sınıflarının verilen:  
   
 ```  
 class Root { }  
@@ -55,7 +56,7 @@ class Level2 : Level1 { }
 class MyClass : Level2 { }  
 ```  
   
- Numaralandırma sırasını temel sınıflar döndürecektir `Level2`, `Level1`, `Root`.  
+ Sabit taban sınıfları sırada döndürür `Level2`, `Level1`, `Root`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md)   

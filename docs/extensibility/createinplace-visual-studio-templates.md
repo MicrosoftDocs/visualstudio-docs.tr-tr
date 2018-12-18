@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e032a5fa57bd85aefdb5e8b7e0d270f491503e65
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 33d4a05f3c1f7a3aff83d05e1816308511414ad2
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231405"
 ---
-# <a name="createinplace-visual-studio-templates"></a>CreateInPlace (Visual Studio Şablonları)
-Projeyi oluşturmak ve belirtilen konumda parametre değişikliği veya geçici bir konuma parametre değişikliği ve sonra belirtilen konuma kaydedin belirtir.  
+# <a name="createinplace-visual-studio-templates"></a>Createınplace (Visual Studio şablonları)
+Projeyi oluşturmak ve belirtilen konumda parametre değiştirme işlemini gerçekleştirmek veya parametre değiştirme geçici bir konumda gerçekleştirin ve sonra belirtilen konuma kaydedin belirtir.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -35,31 +36,31 @@ Projeyi oluşturmak ve belirtilen konumda parametre değişikliği veya geçici 
 <CreateInPlace> true/false </CreateInPlace>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Metin ya da olmalıdır `true` veya `false`. Varsa `true`, Proje oluşturulur ve parametre değiştirme belirtilen konumda gerçekleştirildiğini **yeni proje** iletişim kutusu. Varsa `false`, parametrenin değiştirilmesi, geçici bir konuma gerçekleştirilir ve projeyi sonra belirtilen konuma kopyalanır.  
+ Metin olmalıdır `true` veya `false`. Varsa `true`projesi oluşturulur ve parametre değiştirme, belirtilen konumda gerçekleştirilir **yeni proje** iletişim kutusu. Varsa `false`, parametre değiştirme geçici bir konumda gerçekleştirilen ve projeyi daha sonra belirtilen konuma kopyalanır.  
   
 ## <a name="remarks"></a>Açıklamalar  
  `CreateInPlace` İsteğe bağlı bir öğedir. Varsayılan değer `true` şeklindedir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için meta veriler gösterilmektedir bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
+ Meta veriler için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -86,6 +87,6 @@ Projeyi oluşturmak ve belirtilen konumda parametre değişikliği veya geçici 
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)

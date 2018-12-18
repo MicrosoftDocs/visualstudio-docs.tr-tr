@@ -1,6 +1,7 @@
 ---
 title: 'CA2000: Kapsamı kaybetmeden önce verileri atın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -14,15 +15,20 @@ ms.assetid: 0c3d7d8d-b94d-46e8-aa4c-38df632c1463
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 436dec37598aac31d0de2e7cb495f49b2a0bf41e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 041cade3d1c65a40826920b94adf012aa9a4b021
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45549876"
 ---
 # <a name="ca2000-dispose-objects-before-losing-scope"></a>CA2000: Kapsamı kaybetmeden önce verileri atın
+
 |||
 |-|-|
 |TypeName|DisposeObjectsBeforeLosingScope|
@@ -31,34 +37,34 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Yerel bir nesne bir <xref:System.IDisposable> türü oluşturulur ancak nesne yapılan tüm başvuruları kapsamının dışına önce nesne atıldı değil.
+ Yerel bir nesne bir <xref:System.IDisposable> türü oluşturulur, ancak nesne tüm başvuruları kapsam dışına çıkmadan önce nesne atılmaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Önce tüm başvuruları kapsamının dışında bir seferlik nesne açıkça atıldı değil, nesne atık toplayıcı nesnesi sonlandırıcıyı çalıştığında belirsiz bir süre sonra silinecek. Olağanüstü bir olay oluşabilecek olduğundan, engeller sonlandırıcıyı çalışmasını nesnesinin nesne açıkça yerine atılmalıdır.
+## <a name="rule-description"></a>Kural açıklaması
+ Tüm başvuruları kapsam dışı olmadan önce atılabilir bir nesne açıkça elden değil, nesnenin çöp toplayıcı nesnenin Sonlandırıcısı çalıştığında belirsiz bir zamanda silinip. Olağanüstü bir olay ortaya çıkabilecek çünkü Sonlandırıcı engelleyecek çalışmasını nesne, nesne açıkça elden çıkarılmalıdır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için arama <xref:System.IDisposable.Dispose%2A> nesnesindeki önce tüm başvuruları kapsam dışındadır.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için çağrı <xref:System.IDisposable.Dispose%2A> tüm başvuruları kapsam dışı olmadan önce nesne üzerinde.
 
- Kullanabileceğiniz Not `using` deyimi (`Using` içinde [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) uygulayan nesneler sarmalamak için `IDisposable`. Bu şekilde kaydırılan nesneler otomatik olarak atıldı kapanışında `using` bloğu.
+ Kullanabileceğiniz Not `using` deyimi (`Using` içinde [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) uygulayan nesneler sarmalamak için `IDisposable`. Bu şekilde kaydırılan nesneler otomatik olarak atıldı kapanışında `using` blok.
 
- Bazı durumlarda şunlardır burada deyimiyle IDisposable nesnelerini korumak yeterli değildir ve CA2000 oluşmasına neden olabilir.
+ Bazı durumlar şunlardır burada using deyimi IDisposable nesneleri korumak yeterli değildir ve CA2000 oluşmasına neden olabilir.
 
--   Bir seferlik nesnesi döndüren gerektirir nesnesi kullanarak bir dışında bir try/finally bloğu içinde oluşturulur bloğu.
+- Atılabilir bir nesne döndürmekten gerektirir kullanarak bir dışında bir try/finally bloğu nesne oluşturulmuş blok.
 
--   Tek kullanımlık bir nesnenin üyelerine başlatma yapılmamalıdır oluşturucu kullanılarak yapılan bir ifade.
+- Tek kullanımlık bir nesnenin üyelerine başlatma yapılmamalıdır kullanarak bir oluşturucuda deyimi.
 
--   Yalnızca bir özel durum işleyici tarafından Korumalı Oluşturucular iç içe geçme. Örneğin,
+- Yalnızca bir özel durum işleyicisi tarafından korunan oluşturuculara iç içe geçirme. Örneğin,
 
     ```csharp
     using (StreamReader sr = new StreamReader(new FileStream("C:\myfile.txt", FileMode.Create)))
     { ... }
     ```
 
-     CA2000 StreamReader nesne yapımı içinde bir hata hiçbir zaman kapatılan FILESTREAM nesnesinde sağladığından oluşmasına neden olur.
+     CA2000 hiç kapalı FILESTREAM nesnesinde bir hata StreamReader nesnenin yapımı sağladığından oluşmasına neden olur.
 
--   Dinamik nesneler IDisposable nesnelerin Dispose desen uygulamak için bir gölge nesnesi kullanmanız gerekir.
+- Dinamik nesneler gölge nesne IDisposable nesnelerin Dispose deseni uygulamak için kullanmanız gerekir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Nesnenizde `Dispose` gibi <xref:System.IO.Stream.Close%2A> çağıran bir yöntem çağırmadığınız sürece veya uyarıyı oluşturan yöntem nesnenizi sarmalayan bir IDisposable nesnesi getirmediği sürece bu kuraldan bir uyarıyı bastırmayın.
 
 ## <a name="related-rules"></a>İlgili kuralları
@@ -67,19 +73,20 @@ ms.lasthandoff: 04/19/2018
  [CA2202: Nesneleri birden çok kez atmayın](../code-quality/ca2202-do-not-dispose-objects-multiple-times.md)
 
 ## <a name="example"></a>Örnek
- Bir seferlik nesnesi döndüren bir yöntem uyguluyorsanız, nesne atıldı emin olmak için bir try/finally bloğu bir catch bloğunun olmadan kullanın. Try/finally bloğu kullanarak hataya noktada oluşturulması ve bu nesne atıldı emin olmak özel durumlar izin verin.
 
- OpenPort1 yönteminde ISerializable nesneyi seri bağlantı noktası açmak için arama veya SomeMethod çağrısı başarısız olabilir. Bu uygulama üzerinde CA2000 uyarı tetiklenir.
+Atılabilir bir nesne döndüren bir yöntem uyguluyorsanız, nesneyi elden emin olmak için bir try/finally bloğu bir catch bloğu olmadan kullanın. Bir try/finally bloğu kullanarak hataya noktada oluşturulması ve bu nesneyi elden emin olmak özel durumlara izin.
 
- OpenPort2 yönteminde iki seri bağlantı noktası nesneler bildirilen ve ayarlanmış null şunlardır:
+OpenPort1 yönteminde ISerializable nesneyi çevirmek için SerialPort açmak için bir çağrı veya SomeMethod çağrısı başarısız olabilir. Bu uygulama üzerinde CA2000 uyarısı oluşturulur.
 
--   `tempPort`, yöntemi işlemleri başarılı olduğunu test etmek için kullanılır.
+OpenPort2 yönteminde bildirilmiş ve ayarlanmış null iki çevirmek için SerialPort nesneleri şunlardır:
 
--   `port`, yönteminin dönüş değeri için kullanılır.
+- `tempPort`, yöntemi işlemleri başarılı olduğunu test etmek için kullanılır.
 
- `tempPort` Oluşturulur ve açılır bir `try` bloğu ve diğer gerekli iş aynı gerçekleştirilir `try` bloğu. Sonunda `try` bloğu, açılan bağlantı noktası atanması `port` döndürülecek nesne ve `tempPort` nesne ayarlanmış `null`.
+- `port`, yöntemin dönüş değeri için kullanılır.
 
- `finally` Blok denetler değerini `tempPort`. Null değilse, yöntemi bir işlem başarısız oldu, ve `tempPort` tüm kaynakları serbest bırakılır emin olmak için kapalı. Verilen bağlantı noktası nesnesi yöntemi işlemleri başarılı ya da bir işlem başarısız olursa null olur açılmış seri bağlantı noktası nesne içerir.
+`tempPort` Oluşturulur ve açılır bir `try` blok ve diğer gerekli iş aynı gerçekleştirilir `try` blok. Sonunda `try` blok, açılan bağlantı noktası atanır `port` döndürülecek nesne ve `tempPort` nesne ayarlandığında `null`.
+
+`finally` Blok değerini denetler `tempPort`. Null değilse, yöntem bir işlem başarısız oldu, ve `tempPort` tüm kaynakları serbest bırakıldığından emin olmak için kapatılır. Döndürülen bağlantı nesnesi yöntemi işlemleri başarılı ya da bir işlem başarısız olursa null olacaktır açılmış çevirmek için SerialPort nesne içerir.
 
 ```csharp
 public SerialPort OpenPort1(string portName)
@@ -125,7 +132,6 @@ Public Function OpenPort1(ByVal PortName As String) As SerialPort
 
 End Function
 
-
 Public Function OpenPort2(ByVal PortName As String) As SerialPort
 
    Dim tempPort As SerialPort = Nothing
@@ -153,13 +159,15 @@ End Function
 ```
 
 ## <a name="example"></a>Örnek
- Varsayılan olarak, [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] derleyici sahip tüm aritmetik işleçler için taşma denetleyin. Bu nedenle, herhangi bir Visual Basic aritmetik işlem throw bir <xref:System.OverflowException>. Bu kuralları CA2000 gibi beklenmeyen ihlali neden olabilir. Örneğin, Visual Basic derleyici StreamReader değil çıkarılması neden olacağından bir özel durum oluşturabilir eklenmesi için yönerge denetimi taşma yayma çünkü aşağıdaki CreateReader1 işlevi CA2000 ihlaline neden olur.
+ Varsayılan olarak, [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] derleyici sahip tüm aritmetik işleçler için taşmayı denetle. Bu nedenle, herhangi bir Visual Basic aritmetik işlem fırlatabilir bir <xref:System.OverflowException>. Bu kurallar CA2000 gibi beklenmeyen ihlallerini neden olabilir. Örneğin, Visual Basic Derleyicisi, yönerge değil çıkarılması StreamReader neden olan bir özel durum oluşturabilir eklenmesi için denetimi taşma yayma çünkü aşağıdaki CreateReader1 işlevi bir CA2000 ihlaline neden olur.
 
- Bu sorunu gidermek için Visual Basic derleyici projenizdeki tarafından taşma denetimleri yayma devre dışı bırakabilir veya kodunuzu aşağıdaki CreateReader2 işlevi olduğu gibi değiştirebilirsiniz.
+ Bunu düzeltmek için projenizdeki Visual Basic derleyici tarafından taşma denetimleri yaymayı devre dışı bırakabilir veya kodunuz aşağıdaki CreateReader2 işlevi olduğu gibi değiştirebilirsiniz.
 
- Taşma denetimleri yayma devre dışı bırakmak için Çözüm Gezgini'nde proje adına sağ tıklayın ve ardından **özellikleri**. ' I tıklatın **derleme**, tıklatın **Gelişmiş derleme seçenekleri**ve ardından denetleyin **kaldırmak tamsayı taşma denetimleri**.
+ Taşma denetimleri yaymayı devre dışı bırakmak için Çözüm Gezgini'nde proje adına sağ tıklayın ve ardından **özellikleri**. Tıklayın **derleme**, tıklayın **Gelişmiş derleme seçenekleri**, iade edin **tamsayı taşması denetimlerini Kaldır**.
 
   [!code-vb[FxCop.Reliability.CA2000.DisposeObjectsBeforeLosingScope#1](../code-quality/codesnippet/VisualBasic/ca2000-dispose-objects-before-losing-scope-vboverflow_1.vb)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.IDisposable> [Desen dispose](/dotnet/standard/design-guidelines/dispose-pattern)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.IDisposable>
+- [Dispose Deseni](/dotnet/standard/design-guidelines/dispose-pattern)

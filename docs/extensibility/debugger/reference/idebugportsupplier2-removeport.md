@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9fc4fe83d88e23269b7979eb95733bda14f71725
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6557d72561a15f8a330a0fc8eb9bc0b44a296f52
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49947842"
 ---
 # <a name="idebugportsupplier2removeport"></a>IDebugPortSupplier2::RemovePort
 Bir bağlantı noktası kaldırır.  
@@ -43,10 +44,10 @@ int RemovePort(
  [in] Bir [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) kaldırılacak bağlantı noktasını temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem bağlantı noktasının bağlantı noktası tedarikçi iç etkin bağlantı noktalarının listesinden kaldırır.  
+ Bu yöntem bağlantı noktasının bağlantı noktası tedarikçi iç etkin bağlantı noktalarını listeden kaldırır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPortSupplier2](../../../extensibility/debugger/reference/idebugportsupplier2.md)   

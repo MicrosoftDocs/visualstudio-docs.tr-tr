@@ -10,23 +10,25 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 7575f08f3b84e69f0d23557e3a1843efa4bc5bf3
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 700b6c42cbdbf0a8b8c6f604a4c25f0042e2bffe
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50966784"
 ---
 # <a name="create-uml-modeling-projects-and-diagrams"></a>UML modelleme projeleri ve diyagramları oluşturma
 
-Visual Studio 2017 ile başlayarak, UML tasarımcılarına Visual Studio'dan kaldırılmıştır. Daha fazla bilgi için bkz [blog gönderisi](https://blogs.msdn.microsoft.com/visualstudioalm/2016/10/14/uml-designers-have-been-removed-layer-designer-now-supports-live-architectural-analysis/).
+Visual Studio 2017'den itibaren Visual Studio'da UML tasarımcılarına kaldırıldı. Daha fazla bilgi için bkz. Bu [blog gönderisi](https://blogs.msdn.microsoft.com/devops/2016/10/14/uml-designers-have-been-removed-layer-designer-now-supports-live-architectural-analysis/).
 
-UML kullanmak gerekiyorsa, Visual Studio'nun daha yeni sürümleri ile yan yana uyumlu Visual Studio 2015 Enterprise edition kullanabilirsiniz.
+UML kullanmak yine de gerekliyse, Visual Studio 2015 Enterprise edition, Visual Studio'nun sonraki sürümleri ile yan yana uyumlu kullanabilirsiniz.
 
 Visual Studio 2015'te UML kullanma hakkında daha fazla bilgi için bkz:
 
-* [Mimarinizi çözümleme ve mimarinizin modelini oluşturma](https://msdn.microsoft.com/library/57b85fsc%28v=vs.140%29.aspx)
-* [Uygulamanız için model oluşturma](https://msdn.microsoft.com/library/dd409436%28v=vs.140%29.aspx)
-* [Geliştirme sürecinizde modelleri kullanma](https://msdn.microsoft.com/library/dd409423%28v=vs.140%29.aspx)
-* [Geliştirme sırasında sisteminizi doğrulama](https://msdn.microsoft.com/library/dd409448%28v=vs.140%29.aspx)
-* [UML modellerini ve diyagramları genişletme](https://msdn.microsoft.com/library/ee329484%28v=vs.140%29.aspx)
+* [Mimarinizi çözümleme ve mimarinizin modelini oluşturma](analyze-and-model-your-architecture.md)
+* [Uygulamanız için model oluşturma](create-models-for-your-app.md)
+* [Geliştirme sürecinizde modelleri kullanma](use-models-in-your-development-process.md)
+* [Geliştirme sırasında sisteminizi doğrulama](validate-your-system-during-development.md)
+* [UML modellerini ve diyagramları genişletme](extend-uml-models-and-diagrams.md)

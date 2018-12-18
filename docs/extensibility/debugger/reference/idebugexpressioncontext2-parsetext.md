@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e95a8a76e7315f8963ea415f88bd9615f3b123a4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8672dcdf92ce7341c7ae540c4836a1775671da7c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832400"
 ---
 # <a name="idebugexpressioncontext2parsetext"></a>IDebugExpressionContext2::ParseText
-Sonraki değerlendirme için metin biçiminde bir ifade ayrıştırır.  
+Daha sonra değerlendirmesi için metin biçiminde bir ifade ayrıştırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -53,30 +54,30 @@ int ParseText(
  [in] Ayrıştırılacak ifade.  
   
  `dwFlags`  
- [in] Bayraklarını bileşimini [PARSEFLAGS](../../../extensibility/debugger/reference/parseflags.md) ayrıştırma denetimleri numaralandırması.  
+ [in] Bayraklarının bir birleşimi [PARSEFLAGS](../../../extensibility/debugger/reference/parseflags.md) ayrıştırma denetleyen sabit listesi.  
   
  `nRadix`  
- [in] Sayısal bilgileri Ayrıştırmada kullanılacak taban `pszCode`.  
+ [in] Herhangi bir sayısal bilgisi Ayrıştırmada kullanılacak sayı tabanı `pszCode`.  
   
  `ppExpr`  
- [out] Döndürür [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md) bağlama ve değerlendirme için hazır ayrıştırılmış ifadeyi temsil eden nesne.  
+ [out] Döndürür [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md) bağlama ve değerlendirme için hazır olan ayrıştırılmış ifadeyi temsil eden nesne.  
   
  `pbstrError`  
  [out] İfade bir hata varsa hata iletisi döndürür.  
   
  `pichError`  
- [out] Hata karakter dizinini döndürür `pszCode` ifadesi bir hata içeriyorsa.  
+ [out] Hata karakter dizinini döndürür `pszCode` ifade bir hata içeriyorsa.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem çağrıldığında, hata ayıklama altyapısı (DE) ifade ayrıştırabilir ve doğruluğu doğrulayın. `pbstrError` Ve `pichError` parametreleri doldurulmuş ifade geçersizse.  
+ Bu yöntem çağrıldığında, hata ayıklama altyapısı (DE) ifade ayrıştırma ve doğruluğu doğrulayın. `pbstrError` Ve `pichError` parametreleri doldurulmuş ifade geçersizse.  
   
- İfade, yalnızca Ayrıştırılan değerlendirilmez olduğunu unutmayın. Sonraki çağrı [EvaluateSync](../../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) veya [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) yöntemleri ayrıştırılmış ifadeyi değerlendirir.  
+ İfade, yalnızca ayrıştırılmış değerlendirilmez olduğunu unutmayın. Bir sonraki çağrı [EvaluateSync](../../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) veya [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) yöntemleri ayrıştırılmış ifadeyi değerlendirir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CEnvBlock` gösteren nesne [IDebugExpressionContext2](../../../extensibility/debugger/reference/idebugexpressioncontext2.md) arabirimi. Bu örnek bir ortam değişkeni adı olarak ayrıştırılacak ifade olarak değerlendirir ve bu değişkeninden değeri alır.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CEnvBlock` gösteren nesne [IDebugExpressionContext2](../../../extensibility/debugger/reference/idebugexpressioncontext2.md) arabirimi. Bu örnek, bir ortam değişkeni adı olarak ayrıştırılmak için ifadeyi değerlendirir ve söz konusu değişkeninin değerini alır.  
   
 ```cpp  
 HRESULT CEnvBlock::ParseText(  

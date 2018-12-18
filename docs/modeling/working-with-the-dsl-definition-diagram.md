@@ -16,60 +16,62 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: b9c245559622f4bfc461d592bd632a8d1b4c560d
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: d7e052f64e931769b1fedde7e184bfeefa43a77d
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50967408"
 ---
 # <a name="working-with-the-dsl-definition-diagram"></a>DSL Tanım Diyagramı ile Çalışma
-Diyagramı bir [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] tanımı etki alanına özgü dil tanımlamak için önemli bir araçtır. Etki alanınızı öğelerine model ve diyagramı ilişkileri tanımlayın ve daha okunabilir yapmak için diyagramın düzenini değiştirebilirsiniz ekleyebilirsiniz.
+Diyagramı bir [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] tanımı etki alanına özgü dil tanımlamak için önemli bir araçtır. Etki alanınıza öğeleri modelini ve diyagramda ilişkileri tanımlamak ve daha okunabilir yapmak için diyagramın düzenini değiştirebilirsiniz ekleyebilirsiniz.
 
-## <a name="the-layout-of-the-diagram"></a>Diyagramın düzenini
- [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] Tanımı diyagramı sahip iki bölüm **sınıflar ve ilişkiler** bölüm ve **diyagramı öğeleri** bölüm. **Sınıflar ve ilişkiler** bölüm, etki alanı sınıfları, etki alanı ilişkilerini ve devralma görüntüler. **Diyagramı öğeleri** bölüm şekil sınıfları, bağlayıcı sınıfları, Kulvar sınıfları ve oluşturulan Tasarımcısı Diyagramı görüntüler.
+## <a name="the-layout-of-the-diagram"></a>Diyagram Düzeni
+ [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] Tanım diyagramı sahip iki bölüm **sınıflar ve ilişkiler** bölüm ve **diyagram öğelerine** bölüm. **Sınıflar ve ilişkiler** bölüm alan sınıfları, etki alanı ilişkileri ve devralma görüntüler. **Diyagram öğelerine** bölüm şekil sınıfları, bağlayıcı sınıfları, Kulvar sınıfları ve oluşturulan Tasarımcısı Diyagramı görüntüler.
 
- Etki alanı sınıflarını birden çok yerde görünebilir **sınıflar ve ilişkiler** bölümler. Katıştırma veya başvuru ilişkileri kaynak ise diğer etki alanı sınıfları ve ilişkileri ağacı için temel sınıf ise, bir etki alanı sınıf tanımı bir devralma ağacında görüntüler. Etki alanı sınıfı yer tutucuları katıştırma veya başvuru ilişkileri hedefleri olarak görünür. Varsayılan olarak, yer tutucu öğeleri ile görüntülenen **etki alanı özellikleri** daraltılmış bölme. Bunlar, devralma veya katıştırma veya başvuru ilişkileri gösterme.
+ Etki alanı sınıfları birden fazla konumda görünebilir **sınıflar ve ilişkiler** bölümler. Gömme veya başvuru ilişkileri kaynağını ise, diğer etki alanı sınıfları ve ilişkileri ağacı temel sınıfı olan bir etki alanı sınıf tanımının devralma ağacını görüntüler. Etki alanı sınıfı yer tutucuları gömme veya başvuru ilişkileri hedefleri görünür. Varsayılan olarak, yer tutucu öğeleri ile görüntülenen **etki alanı özellikleri** daraltılmış bölme. Bunlar, devralma veya gömme veya başvuru ilişkileri gösterme.
 
- Bir etki alanı sınıf eklediğinizde, alt kısmında görünür **sınıflar ve ilişkiler** bölüm. Bir katıştırma eklediğinizde veya ilişki başvuru altında ve kaynak etki alanı sınıfının sağındaki çizilir.
+ Bir etki alanı sınıfı eklediğinizde, alt kısmında görünür **sınıflar ve ilişkiler** bölüm. Gömme ekleyin ya da ilişki başvuru altında ve kaynak etki alanı sınıfı sağındaki çizilir.
 
- Etki alanı sınıfları ve ilişkileri eklediğinizde, belirli bir etki alanı sınıfı bulması zor olabilir. Sağ tıklayarak bir etki alanı sınıfı bulabilirsiniz **DSL Explorer** ve ardından **diyagramındaki bulun**.
+ Etki alanı sınıfları ve ilişkileri ekleme gibi belirli bir etki alanı sınıfı bulması zor hale gelebilir. Bir alan sınıfına sağ tıklayarak bulabilirsiniz **DSL Gezgini** tıklayıp **diyagramda Bul**.
 
- Aşağıdaki bölümlerde okunmasını kolaylaştırmak için diyagram görünümünü nasıl değiştirebileceğiniz açıklanır.
+ Aşağıdaki bölümlerde, okunmasını kolaylaştırmak için diyagram görünümünü nasıl değiştirebileceğiniz açıklanır.
 
 ## <a name="copying-elements"></a>Öğeleri kopyalama
- Kopya kullanın, kesin ve DSL tanımı diyagramdaki öğelerde yapıştırın.
+ Kopyala, Kes ve DSL tanım diyagramı öğelere yapıştırın.
 
-## <a name="zooming-in-or-out-on-the-diagram"></a>Diyagramda yakınlaştırma veya uzaklaştırma
- Kullanarak veya diyagram uzaklaştırma yakınlaştırabilirsiniz **DSL Tasarımcısı** yakınlaştırma düzeyini ayarlamak için araç.
+## <a name="zooming-in-or-out-on-the-diagram"></a>Diyagram üzerinde yakınlaştırma veya uzaklaştırma
+ Kullanarak veya diyagram uzaklaştırmak yakınlaştırabilirsiniz **DSL Tasarımcısı** yakınlaştırma düzeyini ayarlamak için araç çubuğu.
 
-## <a name="hiding-map-lines"></a>Gizleme eşleme satırları
- Bir etki alanı sınıf veya etki alanı ilişkisinin ve şekli arasında çizilmiş satırları veya eşlenmiş bağlayıcı eşleme satırları markalarıdır. Tıklatarak eşleme satırları gizleyebilirsiniz **eşleme satırları göster** düğmesini **DSL Tasarımcısı** araç. Satırları göstermek için yeniden düğmesini tıklatın.
+## <a name="hiding-map-lines"></a>Eşleme satırlarını gizleme
+ Eşleme satırlarını, bir etki alanı sınıfı veya etki alanı ilişkisi ve şekli arasında çizilmiş satırları veya eşlenmiş bağlayıcı olabilir. Eşleme satırlarını tıklayarak gizleyebilirsiniz **eşleme satırlarını göster** düğmesini **DSL Tasarımcısı** araç çubuğu. Satırları göstermek için düğmeye tıklayın.
 
 ## <a name="changing-the-diagram-layout"></a>Diyagram düzeni değiştirme
- Düzenini değiştirebilirsiniz **sınıflar ve ilişkiler** gibi bölüm.
+ Düzenini değiştirebilirsiniz **sınıflar ve ilişkiler** gibi bölümleme.
 
 ### <a name="expandcollapse"></a>Genişlet/Daralt
- Bir etki alanı sınıf veya bir şekli tıklattıktan sonra'ı tıklatarak temsil eden bir bölme şekli öğesi boyutunu küçültebilirsiniz **Daralt**. Bu gizler **etki alanı özellikleri** şeklin bölme. Göstermek için **etki alanı özellikleri** yeniden compartment, şekli sağ tıklatın ve ardından **genişletme**.
+ Bir şekli alan sınıfıyla ya da sağ tıklatıp sonra temsil eden bir bölme şekli öğesi boyutunu azaltabilirsiniz **Daralt**. Bu gizler **etki alanı özellikleri** bölme şeklinin. Gösterilecek **etki alanı özellikleri** yeniden bölme, şekle sağ tıklayın ve ardından **genişletme**.
 
 ### <a name="move-updown"></a>Yukarı/Aşağı Taşı
- Öğeyi sağ tıklayarak ve ardından bölümünde bir etki alanı sınıfı ya da diyagram öğesi yukarı veya aşağı taşıyabilirsiniz **Yukarı Taşı** veya **Aşağı Taşı**. Katıştırma veya reference bir ilişki hedefi olarak görüntülenen bir yer tutucu öğesi taşırsanız, ilişki ile taşınır.
+ Öğeyi sağ tıklatıp ardından bölümünde bir etki alanı sınıfı veya diyagram öğesini yukarı veya aşağı taşıyabilirsiniz **Yukarı Taşı** veya **Aşağı Taşı**. İlişkinin bir gömme veya başvuru ilişkisi hedefi olarak görüntülenen bir yer tutucu öğesi taşırsanız, ile taşınır.
 
-### <a name="expandcollapse-relationships-tree"></a>İlişkileri ağaç Genişlet/Daralt
- Bir etki alanı sınıf katıştırma veya reference ilişkilerinde diğer etki alanı sınıflarla Kaynak rolü yürütülürse, etki alanı sınıf tanımını sağ tıklayarak ve ardından ilişkileri gizleyebilirsiniz **Daralt ilişkileri ağaç**. İlişkileri göstermek için tanımı öğeye sağ tıklayın ve ardından **ilişkileri ağacı genişletin**.
+### <a name="expandcollapse-relationships-tree"></a>İlişki ağacını Genişlet/Daralt
+ Bir etki alanı sınıfı gömme veya başvuru ilişkileri diğer alan sınıfları ile kaynak rol oynar, etki alanı sınıf tanımına sağ tıklatıp ardından ilişkileri gizleyebilir **Daralt ilişkileri ağaç**. İlişkileri göstermek için tanım öğesinin sağ tıklayın ve ardından **ilişkileri ağacı genişletin**.
 
-### <a name="expandcollapse-inheritance-tree"></a>Devralma ağacında Genişlet/Daralt
- Bir etki alanı sınıf diğer etki alanı sınıfların temel sınıfı ise, etki alanı sınıf tanımını sağ tıklayarak ve ardından devralma ağacında gizleyebilirsiniz **Daralt devralma ağacında**. Devralma ağacında göstermek için tanımı öğeye sağ tıklayın ve ardından **genişletin devralma ağacında**.
+### <a name="expandcollapse-inheritance-tree"></a>Devralma ağacını Genişlet/Daralt
+ Bir etki alanı sınıfı, diğer etki alanı sınıflarının temel sınıf ise, etki alanı sınıf tanımına sağ tıklatıp ardından devralma ağacını gizleyebilirsiniz **devralma ağacını Daralt**. Devralma ağacını göstermek için tanım öğesinin sağ tıklayın ve ardından **devralma ağacını Genişlet**.
 
 ### <a name="bring-tree-here"></a>Buraya Ağacı Getir
- Bir yer tutucu etki alanı sınıfına sağ tıklayarak ve ardından diyagramı birleştirebilir **getirin ağacı burada**. Yer tutucu etki alanı sınıf tanımı öğe haline gelir ve devralma ve ilişkileri ağaçları görüntüler. Bir ilişki veya bir devralma ilişkisi alt hedefi ise eski tanım öğesi bir yer tutucu öğe haline gelir; Aksi takdirde kaybolur.
+ Bir yer tutucu etki alanı sınıfı sağ tıklayarak ve ardından diyagram birleştirebilir **ağacı buraya getirin**. Yer tutucu etki alanı sınıfı, bir tanım öğesi haline gelir ve devralma ve ilişkiler ağaçları görüntüler. Bir ilişki veya devralma ilişkisi alt hedefi ise önceki tanım öğesi bir yer tutucu öğesi olur; Aksi takdirde, kaybolur.
 
 ### <a name="split-tree"></a>Ağacı Böl
- Bunları görüntüler etki alanı sınıf tanımını sağ tıklayarak ve ardından devralma veya ilişkiler ağaçları bölünebilir **bölünmüş ağaç**. Bir yer tutucu öğesi tanım öğesi olur ve tanımı etki alanı sınıf devralma ve ilişkileri ağaçları birlikte şimdi bölümünün altında görüntülenir.
+ Devralma ve ilişkiler ağaçları görüntüler etki alanı sınıf tanımı sağ tıklatıp ardından bozabilir **ağacı Böl**. Tanım öğesinin bir yer tutucu öğesi olur ve tanımı etki alanı sınıfı, devralma ve ilişkiler ağaçları birlikte artık bölümünün altında görüntülenir.
 
 ### <a name="show-as-class"></a>Sınıf Olarak Göster
- Bir etki alanı ilişkisinin ilişkileri türetilmiş ya da diğer etki alanı ilişkilerini katıştırma veya başvuru ilişkileri varsa, ilişki bir sınıf olarak ilişki sağ tıklayarak ve ardından görüntüleyebileceğiniz **Göster sınıfı** . İlişki ile görüntülenen bir **etki alanı özellikleri** compartment ve devralma ve ilişkileri ağaçları gösterir.
+ Bir etki alanı ilişkisi ilişkileri türetilmiş ya da diğer etki alanı ilişkileri gömme veya başvuru ilişkileri varsa, ilişkiyi sınıf olarak ilişkiye sağ tıklayın ve ardından görüntüleyebilirsiniz **sınıf olarak göster** . İlişki ile görüntülenen bir **etki alanı özellikleri** bölme ve devralma ve ilişkiler ağaçları gösterilir.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
-- [Etki alanına özgü dil araçları sözlüğü](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)
+- [Etki alanına özgü dil araçları sözlüğü](https://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

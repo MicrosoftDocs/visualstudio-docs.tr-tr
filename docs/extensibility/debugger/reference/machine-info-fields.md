@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5d0ff6f75c0ee17bef57b1f2632c4d6926948528
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 631ef4bbb23d4b0cedbf86d7eedb019580cf7e5b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49942510"
 ---
 # <a name="machineinfofields"></a>MACHINE_INFO_FIELDS
-Ne tür bilgileri almak için belirli bir makine için belirtir.  
+Hangi tür bilgiler almak için belirli bir makine için belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,29 +46,29 @@ public enum enum_MACHINE_INFO_FIELDS {
   
 ## <a name="members"></a>Üyeler  
  MCIF_NAME  
- Başlatma/kullanım `bstrName` yapısında alan.  
+ Başlat/kullanım `bstrName` yapısında alan.  
   
  MCIF_FLAGS  
- Başlatma/kullanım `Flags` yapısında alan.  
+ Başlat/kullanım `Flags` yapısında alan.  
   
  MIF_ALL  
- Tüm alanlar yapısında başlatma/kullanın.  
+ Tüm alanları yapısında başlatma/kullanın.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerler geçirilecek [GetMachineInfo](../../../extensibility/debugger/reference/idebugcoreserver2-getmachineinfo.md) hangi üyelerini belirtmek için yöntemi [MACHINE_INFO](../../../extensibility/debugger/reference/machine-info.md) yapısı başlatılması üzeresiniz.  
+ Bu değerler geçirilecek [GetMachineInfo](../../../extensibility/debugger/reference/idebugcoreserver2-getmachineinfo.md) hangi üyelerinin belirtmek üzere yöntem [MACHINE_INFO](../../../extensibility/debugger/reference/machine-info.md) yapısı olan başlatılacak.  
   
- Ayrıca kullanılan `Fields` üyesi `MACHINE_INFO` hangi alanların kullanılan ve geçerli olduğunu belirtmek için yapısı.  
+ Ayrıca kullanılan `Fields` üyesi `MACHINE_INFO` yapısı hangi alanların kullanılan ve geçerli olduğunu belirtmek için.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [MACHINE_INFO](../../../extensibility/debugger/reference/machine-info.md)   
  [GetMachineInfo](../../../extensibility/debugger/reference/idebugcoreserver2-getmachineinfo.md)

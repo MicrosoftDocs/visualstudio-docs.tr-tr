@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31138346"
 ---
 # <a name="using-and-providing-services"></a>Kullanarak ve hizmetleri sağlar
 İki VSPackages arasında bir sözleşme hizmetidir. Bir VSPackage arabirimleri kullanmak üzere başka bir VSPackage için belirli bir dizi sunar. Örneğin, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sunar <xref:Microsoft.VisualStudio.Shell.Interop.SVsActivityLog> isteğe bağlı olarak tüm VSPackage yükleri hizmet. Bu hizmet sağlayan <xref:Microsoft.VisualStudio.Shell.Interop.IVsActivityLog> etkinlik günlüğü yazmak için kullanılan arabirim. Daha fazla bilgi için bkz: [nasıl yapılır: etkinlik günlüğü kullanın](../extensibility/how-to-use-the-activity-log.md).  

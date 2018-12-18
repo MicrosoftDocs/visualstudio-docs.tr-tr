@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 292a6ba67ca6508d19d6dc56abb012ec13197244
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 611534843fd02cfd35fe3707917c6399c893db60
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910048"
 ---
 # <a name="idebugtypefieldbuildercreatepointertotype"></a>IDebugTypeFieldBuilder::CreatePointerToType
-Belirtilen tür için bir işaretçi oluşturur.  
+Belirtilen tür işaretçisi oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,10 +45,10 @@ int CreatePointerToType(
  [in] İşaret türü. Tarafından temsil edilen [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) arabirimi.  
   
  `pPtrToTypeField`  
- [out] Yeni bir tarafından temsil edilen işaretçi döndüren **IDebugField** nesnesi.  
+ [out] Yeni bir tarafından temsil edilen işaretçinin döndürür **IDebugField** nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugTypeFieldBuilder](../../../extensibility/debugger/reference/idebugtypefieldbuilder.md)

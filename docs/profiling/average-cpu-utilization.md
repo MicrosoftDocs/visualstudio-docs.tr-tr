@@ -14,15 +14,16 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7c34293a140ca82918c1bd3d03ae9c83eab8665a
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: fee580cdd708c555682f0309759678dee38ad2b1
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262328"
 ---
-# <a name="average-cpu-utilization"></a>Ortalama CPU Kullanımı
+# <a name="average-cpu-utilization"></a>Ortalama CPU kullanımı
 Profili işlemin ortalama kullanımı sistemin mantıksal çekirdekler işlemi süresince gösterir. Grafiği, belirli bir zamanda hangi belirli çekirdek etkindir göstermez. Örneğin, iki çekirdek her belirli bir süre boyunca % 50 kapasiteyle çalıştırıyorsanız, bu görünüm kullanılan bir mantıksal çekirdek gösterir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çekirdekler görünümü](../profiling/cores-view.md)   
  [CPU Kullanım Grafiği](../profiling/cpu-utilization-graph.md)

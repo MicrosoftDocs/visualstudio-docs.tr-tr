@@ -1,7 +1,7 @@
 ---
-title: Unity için Visual Studio araçlarını kullanmaya başlama | Microsoft Docs
+title: Unity için Visual Studio Araçları ile çalışmaya başlama | Microsoft Docs
 ms.custom: ''
-ms.date: 04/07/2017
+ms.date: 07/03/2018
 ms.technology: vs-unity-tools
 ms.topic: conceptual
 ms.assetid: 66b5b4eb-13b5-4071-98d2-87fafa4598a8
@@ -10,108 +10,87 @@ ms.author: crdun
 manager: crdun
 ms.workload:
 - unity
-ms.openlocfilehash: 0a2688b540b9256b43b674714c6c123e90acaaeb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9d924ee92258e348d5ffee1551fcde7707d711cf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855215"
 ---
-# <a name="getting-started-with-visual-studio-tools-for-unity"></a>Unity için Visual Studio araçlarını kullanmaya başlama
-Bu bölümde, Unity için Visual Studio araçlarını yükleme ve Unity projeniz Visual Studio ile çalışmak için yapılandırma hakkında bilgi edineceksiniz.
+# <a name="get-started-with-visual-studio-tools-for-unity"></a>Unity için Visual Studio Araçları ile çalışmaya başlama
 
-> [!IMPORTANT]
->  Unity 5.2 proje kurulumu basitleştirir Unity 2.1 için Visual Studio Araçları için yerleşik destek ekler. Bu yararlanmak için Unity sürüm 5.2.0 gerekir ya da Windows ve sürüm 2.1 veya üzeri Unity için Visual Studio Araçları daha yüksek.
+## <a name="install-visual-studio"></a>Visual Studio'yu yükleme
 
-## <a name="prerequisites"></a>Önkoşullar
- Unity için Visual Studio Araçları kullanmak için ihtiyacınız vardır:
+### <a name="unity-bundled-installation"></a>Unity ile birlikte yükleme
 
--   Bir sürümünü **Visual Studio** uzantıları, Visual Studio Community, Professional, Premium veya Enterprise gibi destekler. Visual Studio Community'yi ücretsiz indirebilirsiniz.
+Unity 2018.1 itibarıyla Visual Studio, Unity için varsayılan C# betik düzenleyicisidir ve Unity Hub yükleme aracının yanı sıra Unity Download Assistant'ta mevcuttur.
 
-     [Visual Studio Community'yi indirin](http://www.visualstudio.com/downloads/download-visual-studio-vs)
+- [store.unity.com](https://store.unity.com/) adresinden Unity'yi indirin.
 
--   **Unity** sürüm 4.0.0 veya üzeri; **Unity** sürüm 5.2.0 veya Visual Studio Araçları Unity sürüm 2.1 veya üzeri için yerleşik destek yararlanmak için daha yüksek.
+Yükleme sırasında Visual Studio'nun, Unity ile yüklenecek bileşenler listesinde işaretlendiğinden emin olun:
 
-     [Unity indirin](https://unity3d.com/get-unity/download)
+#### <a name="unity-hub"></a>Unity Hub
 
-## <a name="install-visual-studio-tools-for-unity"></a>Unity için Visual Studio araçlarını yükleme
- Karşıdan yükleyip Unity için Visual Studio Araçları Visual Studio Galerisi'nden. Visual Studio sürümünüz için doğru hizmet paketini yüklemeniz gerekir. VSTU Unity 5.2 veya üzeri için yerleşik destek yararlanmak sürüm 2.1 veya üzeri Unity için Visual Studio Araçları yüklediğinizden emin olun.
+![Unity hub'ı yükleme](media/vstu_unity-hub.png)
 
--   Visual Studio 2015 topluluk, Visual Studio 2015 Professional veya Visual Studio 2015 Enterprise için:
+#### <a name="unity-download-assistant"></a>Unity Yükleme Yardımcısı
 
-     [Unity için Visual Studio 2015 araçları yükle](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)
+![Unity Yükleme Yardımcısı'nı yükleme](media/vstu_download-assistant.png)
 
--   Visual Studio 2013 Community, Visual Studio 2013 Professional veya Visual Studio 2013 Premium için:
+#### <a name="check-for-updates-to-visual-studio"></a>Visual Studio güncelleştirmelerini denetleme
 
-     [Unity için Visual Studio 2013 araçları yükle](https://visualstudiogallery.msdn.microsoft.com/20b80b8c-659b-45ef-96c1-437828fe7cf2)
+Unity yüklemenize dahil olan Visual Studio sürümü, en son sürüm olmayabilir. En son araçlara ve özelliklere erişiminiz olduğundan emin olmak için güncelleştirmeleri denetlemeniz önerilir.
 
--   Visual Studio 2012 Professional veya Visual Studio 2012 Premium için:
+- [Visual Studio’yu güncelleştirme](../install/update-visual-studio.md)
 
-     [Unity için Visual Studio 2012 araçları yükle](https://visualstudiogallery.msdn.microsoft.com/7ab11d2a-f413-4ed6-b3de-ff1d05157714)
+### <a name="manual-installation"></a>El ile yükleme
 
--   Visual Studio 2010 Professional veya Visual Studio 2010 Premium için:
+Visual Studio 2017 zaten yüklüyse veya el ile yüklemeyi tercih ederseniz Visual Studio yükleyicisini çalıştırın.
 
-     [Unity için Visual Studio 2010 Araçları yükle](https://visualstudiogallery.msdn.microsoft.com/6e536faa-ce73-494a-a746-6a14753015f1)
+1. [Visual Studio yükleyicisini indirin](/visualstudio/install/install-visual-studio) veya zaten yüklüyse açın.
+
+1. İstediğiniz Visual Studio sürümü için **Değiştir**'e (zaten yüklüyse) veya **Yükle**'ye (yeni yüklemeler için) tıklayın.
+
+1. **İş yükleri** sekmesinde **Mobil ve Oyun** bölümüne gidip **Game development with Unity** (Unity ile oyun geliştirme) iş yükünü seçin.
+
+    ![Unity iş yükü](media/vstu_unity-workload.png)
+
+1. Yükleyici penceresinin sağ alt köşesindeki **Değiştir**'e (zaten yüklüyse) veya **Yükle**'ye (yeni yüklemeler için) tıklayın.
+
+## <a name="configure-unity-for-use-with-visual-studio"></a>Unity'yi Visual Studio ile kullanım için yapılandırma
+
+Unity 2018.1 itibarıyla Visual Studio, Unity'de varsayılan dış kod düzenleyicisi olmalıdır. Bunu onaylayabilir veya dış betik düzenleyicisini Visual Studio'nun belirli bir sürümü olarak değiştirebilirsiniz:
+
+1. **Edit** (Düzenle) menüsünde **Preferences** (Tercihler) seçeneğini belirleyin.
+
+   ![Tercihler'i seçme](media/vstu_unity-preferences.png)
+
+2. Tercihler iletişim kutusunda, **External Tools** (Dış Araçlar) sekmesini seçin.
+
+3. **External Script Editor** (Dış Betik Düzenleyici) listesinde istediğiniz Visual Studio sürümü listelenmişse seçin, aksi takdirde **Browse...** (Gözat...) seçeneğini belirleyin.
+
+   ![Visual Studio'yu seçme](media/vstu_unity-external-tools.png)
+
+4. **Browse...** (Gözat...) seçili ise Visual Studio yükleme dizininizdeki **Common7/IDE** klasörüne gidin ve **devenv.exe** öğesini seçip **Aç**'a tıklayın.
+
+   ![Aç'ı seçin](media/vstu_browse-for-application.png)
+
+5. **External Script Editor** (Dış Betik Düzenleyici) listesinde Visual Studio seçildikten sonra, **Editor Attaching** (Düzenleyici Ekleme) onay kutusunun seçili olduğundan emin olun.
+
+6. Yapılandırma işlemini tamamlamak için **Preferences** (Tercihler) iletişim kutusunu kapatın.
+
+## <a name="support-for-older-versions"></a>Eski sürümler için destek
+
+ Unity için Visual Studio Araçları'nı Visual Studio Market'ten indirip yükleyin. Visual Studio sürümünüz için doğru paketi yüklemeniz gerekir.
+
+- Visual Studio 2015 Community, Visual Studio 2015 Professional veya Visual Studio 2015 Enterprise için:
+
+   [Unity için Visual Studio 2015 Araçları'nı indirin](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)
 
 > [!NOTE]
->  Visual Studio Express sürümleri Unity için Visual Studio Araçları gibi uzantıları desteklemez. Visual Studio Community, Unity ve diğer uzantılar için Visual Studio Araçları destekleyen Visual Studio, boş bir sürümüdür. Çoğu kullanıcı için Visual Studio Community Express daha iyi bir seçimdir.
-
-> [!NOTE]
->  Visual Studio 2017 VSTU 3 Yükleyiciden seçebilirsiniz Unity iş yükü birlikte gelir.
-
-## <a name="your-first-unity-project-with-visual-studio-tools-for-unity"></a>İlk Unity projenizi Unity için Visual Studio Araçları ile
- Gereksinim duyduğunuz her şeyi sahip olduğunuza göre Visual Studio ile ilk Unity projeniz için hazırsınız. Unity projenizi Unity hangi sürümlerinin bağlı olarak farklı ayardır ve Unity için Visual Studio Araçları yüklenir. Unity ve yüklediğiniz Unity için Visual Studio Araçları sürümü için aşağıdaki adımları izleyin.
-
-### <a name="unity-52-and-higher-requires-vstu-21-or-higher"></a>5.2 ve daha yüksek unity (VSTU 2.1 veya üstü gerektirir)
- Unity 5.2 ile başlayarak, artık Visual Studio Araçları unitypackage projelerinizi aktarmanız gerekir. Projenizi bu unitypackage alıyorsa, Unity 5.2 göz ardı eder ve doğrudan Unity için Visual Studio Araçları yüklü konumundan yükler.
-
-#### <a name="1---create-a-unity-project"></a>1 - bir Unity projesi oluşturma
- Zaten ile Unity deneyimli, yeni bir proje oluşturun ya da kendi yükler. Unity önceki bir sürümü ile Unity için Visual Studio Araçları kullanmak için Visual Studio Araçları unitypackage alınan bir proje yüklemekte olduğunuz, UnityVS dizin silerek bu kaldırmanızı öneririz.
-
- Aksi takdirde, Unity için yeniyseniz, temel bir eğitici küçük başlatın. İle başlangıç örnek projeler ve Unity kendi oyun oluşturmak için gelen öğrenebilirsiniz dersleri öğreticiler bulmak için Unity öğrenin sayfasını ziyaret edin. Unity öğrenin sayfasında izleyin kolay öğreticileri birkaç farklı oyunlar için vardır.
-
- [Öğreticiler - Unity bilgi sayfası](http://unity3d.com/learn/tutorials/modules)
-
-#### <a name="2---configure-unity-editor-to-use-visual-studio-tools-for-unity"></a>2 - Unity Düzenleyicisi'ni Unity için Visual Studio Araçları kullanmak için yapılandırın
- Projenizi Unity için Visual Studio Araçları kullanmak üzere etkinleştirmek için Visual Studio, dış betik düzenleyicisi olarak ayarlamanız yeterlidir. Unity Düzenleyicisi'nde, ana menüdeki seçin **düzenleme, Tercihler**; ardından **Unity Tercihler** iletişim kutusunda, seçin **Harici Araçlar**. Ardından, ayarlayın **dış komut dosyası Düzenleyicisi** kullanmak istediğiniz Visual Studio sürümünü özelliğine (Unity için Visual Studio Araçları, Visual Studio'nun bu sürümü için de yüklenmelidir) ve emin olun **Düzenleyicisiekleme** özelliği ayarlanmış.
-
- Unity şu anda etkin için Visual Studio Araçları için yerleşik destekleyen emin olmak için bkz: **hakkında Unity** iletişim. Ana menüde Unity Düzenleyicisi'nde seçin **hakkında Unity Yardımı.** Unity için Visual Studio Araçları yüklü olduğunu ve doğru şekilde yapılandırıldığını varsa sol alt köşesinde görüntülenen bir ileti görürsünüz **hakkında Unity** iletişim.
-
- Son olarak, bir yapı hedef aracılığıyla ayarladığınızdan emin olun **Build Settings** sayfası ve, **komut dosyasında hata ayıklama** etkinleştirilir.
-
- ![Hata ayıklama için Unity derleme ayarlarını yapılandırın.](../cross-platform/media/vstu_debugging_build_settings.png "vstu_debugging_build_settings")
-
-#### <a name="3---launch-visual-studio-from-the-unity-editor"></a>3 - Visual Studio'yu Unity Düzenleyicisi'nden başlatın
- Unity 5.2 ile başlayan **Visual Studio Araçları** uzantısı menüsü Visual Studio'yu başlatın veya Unity için Visual Studio Araçları yapılandırmak için artık gerekli. Visual Studio Dış betik düzenleyicisi olarak yapılandırıldıktan sonra bunun yerine, yalnızca Visual Studio'da Unity Düzenleyicisi'ni ve kodunuzu betik dosyasından açılacak seçin.
-
-### <a name="previous-versions-of-unity-pre-52"></a>Önceki sürümlerini Unity (5.2 öncesi)
- Unity 5.2 önce Unity için Visual Studio Araçları için yerleşik destek yoktu. Bunun yerine, Visual Studio Araçları unitypackage almak ve Unity için Visual Studio Araçları kullanmak için diğer proje ayarlarını yapılandırmak için her proje gerekiyordu.
-
-#### <a name="1---create-a-unity-project"></a>1 - bir Unity projesi oluşturma
- Zaten ile Unity deneyimli, yeni bir proje oluşturun ya da kendi yükler. Yeni bir proje başlatıyorsanız oluşturduğunuzda Visual Studio Araçları unitypackage içeri aktarın.
-
- Aksi takdirde, Unity için yeniyseniz, temel bir eğitici küçük başlatın. İle başlangıç örnek projeler ve Unity kendi oyun oluşturmak için gelen öğrenebilirsiniz dersleri öğreticiler bulmak için Unity öğrenin sayfasını ziyaret edin. Unity öğrenin sayfasında izleyin kolay öğreticileri birkaç farklı oyunlar için vardır.
-
- [Öğreticiler - Unity bilgi sayfası](http://unity3d.com/learn/tutorials/modules)
-
-#### <a name="2---configure-unity-editor-to-use-visual-studio-tools-for-unity"></a>2 - Unity Düzenleyicisi'ni Unity için Visual Studio Araçları kullanmak için yapılandırın
- Varolan bir Unity projeden başlatıyorsanız veya proje oluşturduğunuzda, Visual Studio Araçları unitypackage içe alamadık, unitypackage şimdi içeri aktarmanız gerekir. Ana menüde Unity Düzenleyicisi'nde seçin **varlıklar, içeri aktarma paketini, Visual Studio 2015 Araçları** (Visual Studio yüklü olan sürümü için bir seçenek görmeniz gerekir).
-
- ![VSTU paket Unity projenize alın. ] (../cross-platform/media/vstu_configure_unity_import_vstu.png "vstu_configure_unity_import_vstu")
-
- Son olarak, bir yapı hedef aracılığıyla ayarladığınızdan emin olun **Build Settings** sayfası ve, **komut dosyasında hata ayıklama** etkinleştirilir.
-
- ![Hata ayıklama için Unity derleme ayarlarını yapılandırın.](../cross-platform/media/vstu_debugging_build_settings.png "vstu_debugging_build_settings")
-
-#### <a name="3---launch-visual-studio-from-unity-editor"></a>3 - Visual Studio'yu Unity Düzenleyicisi'nden başlatın
- Son adım, Unity Visual Studio başlatmaktır. Bu projeniz için bir Visual Studio çözümü oluşturur ve ardından Visual Studio'da açar.
-
- Unity Düzenleyicisi'nde, ana menüdeki seçin **Visual Studio Araçları, Visual Studio'da açın**.
-
- ![Unity projenizi Visual Studio'da açın. ] (../cross-platform/media/vstu_configure_open_in_visual_studio.png "vstu_configure_open_in_visual_studio")
+> Unity için Visual Studio Araçları, Unity 5.2 veya sonraki bir sürümünün yanı sıra Visual Studio Community, Professional, Premium ya da Enterprise gibi uzantıları destekleyen bir Visual Studio sürümü gerektirir. Unity yüklemenizde Unity için Visual Studio Araçları'nın etkinleştirildiğini doğrulamak için **Yardım** menüsünde **Unity Hakkında**'yı seçin ve iletişim kutusunun sol alt kısmında "Unity için Microsoft Visual Studio Araçları etkin" ifadesinin yer alıp almadığını kontrol edin.
+> ![Unity hakkında](media/vstu_about-unity.png)
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
- Çalışmak ve Unity projenizi Visual Studio'da hata ayıklama öğrenmek için bkz: [Unity için Visual Studio araçları kullanarak](../cross-platform/using-visual-studio-tools-for-unity.md).
-
-## <a name="see-also"></a>Ayrıca Bkz.
- [Unity giriş sayfası](http://unity3d.com)
+ Visual Studio'yu kullanarak Unity projenizde çalışma ve hata ayıklama hakkında bilgi edinmek için bkz. [Unity için Visual Studio Araçları](../cross-platform/using-visual-studio-tools-for-unity.md).

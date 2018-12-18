@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2421e25c51d005a069de316d1d465eca80a0432b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e66bba9cc7fc6f63c725a71cbf601f8015a70b82
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49874429"
 ---
 # <a name="idiadatasourceloaddatafromistream"></a>IDiaDataSource::loadDataFromIStream
-Bellek içi veri akışı erişilen bir program veritabanı (.pdb) dosyasında depolanan hata ayıklama verileri hazırlar.  
+Bir bellek içi veri akışı yoluyla erişilen bir program veritabanı (.pdb) dosyası içinde depolanan hata ayıklama verileri hazırlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,10 +34,10 @@ HRESULT loadDataFromIStream (
   
 #### <a name="parameters"></a>Parametreler  
  pIStream  
- [in] Bir <xref:IStream> kullanmak için veri akışı temsil eden nesne.  
+ [in] Bir <xref:IStream> kullanılacak veri akışını temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda bu yöntem için olası dönüş değerleri gösterir.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda, bu yöntem olası dönüş değerleri gösterir.  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
@@ -45,13 +46,13 @@ HRESULT loadDataFromIStream (
 |E_UNEXPECTED|Veri kaynağı zaten hazırlandı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem bellekten alınması için yürütülebilir bir dosya için hata ayıklama verilerin izin veren bir <xref:IStream> nesnesi.  
+ Bu yöntem bellekten alınabilmesi bir yürütülebilir dosya için hata ayıklama verileri sağlayan bir <xref:IStream> nesne.  
   
- Onaysız .pdb dosyasını yüklemek için kullanmak [Idiadatasource::loaddatafrompdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) yöntemi.  
+ Doğrulama olmadan bir .pdb dosyası yüklemek için kullanın [Idiadatasource::loaddatafrompdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) yöntemi.  
   
  Belirli bir ölçüte göre .pdb dosyasını doğrulamak için kullanın [Idiadatasource::loadandvalidatedatafrompdb](../../debugger/debug-interface-access/idiadatasource-loadandvalidatedatafrompdb.md) yöntemi.  
   
- Veri yükleme işlemi (bir geri çağırma mekanizma) erişmek için kullandığı [Idiadatasource::loaddataforexe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) yöntemi.  
+ (Bir geri dönüş mekanizması) veri yükleme işlemi için erişmek için kullandığı [Idiadatasource::loaddataforexe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiadatasource](../../debugger/debug-interface-access/idiadatasource.md)   

@@ -1,23 +1,25 @@
 ---
-title: Bir desteklenmeyen veritabanı sağlayıcısı'ndan bir veritabanı nesnesi seçilmedi
+title: Desteklenmeyen bir veritabanı sağlayıcısından bir veritabanı nesnesi seçtiniz
 ms.date: 11/04/2016
 ms.topic: reference
 ms.assetid: c0f1298e-31aa-471e-ae19-1bafffd2ae40
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 0646f153149d887ce87f2688d9c28b3da502ba1c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5b6eef41ebd3ae6fc08029a618cf276e22001235
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37116886"
 ---
-# <a name="you-have-selected-a-database-object-from-an-unsupported-database-provider"></a>Bir desteklenmeyen veritabanı sağlayıcısı'ndan bir veritabanı nesnesi seçilmedi
+# <a name="you-have-selected-a-database-object-from-an-unsupported-database-provider"></a>Desteklenmeyen bir veritabanı sağlayıcısından bir veritabanı nesnesi seçtiniz
 
-O/R Tasarımcısı yalnızca .NET Framework veri sağlayıcısı için SQL Server destekler (<xref:System.Data.SqlClient>). Tıklayabilirsiniz rağmen **Tamam** ve desteklenmeyen bir veritabanı sağlayıcılardan nesnelerle çalışmaya devam etmek için çalışma zamanında beklenmeyen davranışlarla karşılaşabilirsiniz.
+**O/R Tasarımcısı** yalnızca .NET Framework veri sağlayıcısı için SQL Server destekler (<xref:System.Data.SqlClient>). Tıklayabilirsiniz rağmen **Tamam** ve desteklenmeyen bir veritabanı sağlayıcılardan nesnelerle çalışmaya devam etmek için çalışma zamanında beklenmeyen davranışlarla karşılaşabilirsiniz.
 
 > [!NOTE]
 > SQL Server için .NET Framework veri sağlayıcısı kullanan veri bağlantıları desteklenir.
@@ -28,7 +30,7 @@ O/R Tasarımcısı yalnızca .NET Framework veri sağlayıcısı için SQL Serve
 
    Desteklenmeyen veritabanı sağlayıcısı kullanan bağlantı eşleme varlığı sınıfları tasarlama devam edebilirsiniz. Desteklenmeyen veritabanı sağlayıcıları kullandığınızda beklenmeyen davranışlarla karşılaşabilirsiniz.
 
-    -veya-
+    veya
 
 - Tıklatın **iptal**.
 

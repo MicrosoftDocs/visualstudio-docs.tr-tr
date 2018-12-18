@@ -1,63 +1,72 @@
 ---
-title: Visual Studio IDE özelleştirme | Microsoft Docs
-ms.custom: ''
+title: IDE’yi Özelleştirme
 ms.date: 11/20/2017
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cecb3d9d1c221fc35f9a0c16ff7d5f685a85978e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cfd3ed3461b40f85e66d62f01e68aff4ce740031
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53159509"
 ---
 # <a name="personalize-the-visual-studio-ide"></a>Visual Studio IDE'yi kişiselleştirme
 
-Visual Studio kendi geliştirme stili ve gereksinimleri en iyi desteklemek üzere çeşitli yollarla kişiselleştirebilirsiniz. Birçok ayarlarınızı sizinle Visual Studio örnekleri arasında dolaşıma&mdash;bkz [ayarları senkronize](../ide/synchronized-settings-in-visual-studio.md). Bu konu, farklı kişiselleştirme ve daha fazla bilgiyi burada bulabilirsiniz kısaca açıklanmaktadır.
+Visual Studio geliştirme tarzınıza ve gereksinimlerini en iyi desteklemek için çeşitli yollarla kişiselleştirebilirsiniz. Ayarlarınızı birçoğu, Visual Studio örnekleri arasında dolaştırmak&mdash;bkz [eşitlenen ayarlar](../ide/synchronized-settings-in-visual-studio.md). Bu makalede, farklı kişiselleştirme ve daha fazla bilgi bulabileceğiniz kısaca açıklanmaktadır.
+
+> [!NOTE]
+> Bu konu, Windows üzerinde Visual Studio için geçerlidir. Mac için Visual Studio için bkz: [Mac IDE için Visual Studio özelleştirme](/visualstudio/mac/customizing-the-ide).
+
+## <a name="default-settings"></a>Varsayılan ayarları
+
+Visual Studio geliştirme türüne yönelik en iyi duruma getirir bir varsayılan koleksiyon ayarlarını seçebilirsiniz. Daha fazla bilgi için [ortam ayarları](environment-settings.md).
 
 ## <a name="general-environment-options"></a>Genel ortam seçenekleri
 
-Birçok kişiselleştirme seçenekleri aracılığıyla sunulan [ortam seçenekleri](../ide/reference/environment-options-dialog-box.md) iletişim kutusu. Bu iletişim kutusunu erişmek için iki yol vardır:
+Birçok kişiselleştirme seçenekleri aracılığıyla sunulur [ortam seçenekleri](../ide/reference/environment-options-dialog-box.md) iletişim kutusu. Bu iletişim kutusunu erişmenin iki yolu vardır:
 
-- Menü çubuğunda seçin **Araçları**, **seçenekleri**ve henüz genişletilmişse genişletin **ortam** düğümü.
+- Menü çubuğunda, **Araçları** > **seçenekleri**, henüz expanded ise genişletin **ortam** düğümü.
 
-- Tür `environment` içinde **hızlı başlatma** kutusuna ve seçin **ortamı--> Genel** sonuçları listesinden.
+- Türü `environment` içinde **hızlı başlatma** kutusuna ve seçin **ortam--> Genel** sonuçları listesinde.
 
    > [!TIP]
-   > İletişim kutusu göründüğünde, basabilirsiniz **F1** çeşitli ayarları bu sayfada hakkında Yardım için.
+   > İletişim kutusu göründüğünde, basabilirsiniz **F1** çeşitli ayarları bu sayfada konusunda Yardım.
 
-## <a name="environment-color-themes"></a>Ortam renk temaları
+## <a name="environment-color-themes"></a>Ortam Renk temalarını
 
-Renk temasını hafif, koyu ve mavi türü arasında değiştirmek için `environment` içinde **hızlı başlatma** kutusuna ve ardından **ortamı--> Genel**. İçinde **seçenekleri** iletişim kutusu, değişiklik **renk temasını** seçeneği.
+Renk teması açık, koyu mavi yazıp arasında değiştirmek için `environment` içinde **hızlı başlatma** kutusuna ve ardından **ortam--> Genel**. İçinde **seçenekleri** iletişim kutusunda, değişiklik **renk teması** seçeneği.
 
-Düzenleyicideki renklendirme seçeneklerini değiştirmek için şunu yazın `environment` içinde **hızlı başlatma** kutusuna ve ardından **ortamı--> yazı tiplerini ve renkleri**. Bkz: [nasıl yapılır: yazı tiplerini ve renkleri değiştirme](../ide/how-to-change-fonts-and-colors-in-visual-studio.md).
+Düzenleyicide renklendirme seçeneklerini değiştirmek için şunu yazın `environment` içinde **hızlı başlatma** kutusuna ve ardından **ortam--> yazı tipleri ve renkler**. Bkz: [nasıl yapılır: Yazı tiplerini ve renkleri değiştirme](../ide/how-to-change-fonts-and-colors-in-visual-studio.md).
 
 ### <a name="main-menu-casing"></a>Ana menü büyük/küçük harf
 
-Ana menü büyük/küçük harf arasında değiştirebilirsiniz **ilk harfler büyük** ("dosyası") ve **tümü büyük harf** ("dosyası"). Türü `environment` içinde **hızlı başlatma** kutusunda **ortamı--> Genel**ve ardından değiştirmek **menü çubuğu için başlık servis talebi stil uygulamak** seçeneği.
+Ana menü büyük/küçük harf arasında değiştirebilirsiniz **ilk harfler büyük** ("dosyası") ve **tümü büyük harf** ("dosyası"). Türü `environment` içinde **hızlı başlatma** kutusunda **ortam--> Genel**ve ardından değiştirmek **menü çubuğuna başlık stilini Uygula** seçeneği.
 
-### <a name="customzing-menus-and-toolbars"></a>Customzing menüleri ve araç çubukları
+### <a name="customize-menus-and-toolbars"></a>Menüleri ve araç çubuklarını özelleştirme
 
-Menü veya araç öğe eklemek veya kaldırmak için bkz: [nasıl yapılır: menüleri ve araç çubuklarını özelleştirme](../ide/how-to-customize-menus-and-toolbars-in-visual-studio.md).
+Menü veya araç çubuğu öğe eklemek veya kaldırmak için bkz: [nasıl yapılır: Menüleri ve araç çubuklarını özelleştirme](../ide/how-to-customize-menus-and-toolbars-in-visual-studio.md).
 
 ## <a name="start-page"></a>Başlangıç sayfası
 
-Sizin ve ekibinizin için özel bir başlangıç sayfası oluşturmak için bkz: [başlangıç sayfasını özelleştirme](../ide/customizing-the-start-page-for-visual-studio.md).
+Siz ve takımınız için özel bir başlangıç sayfası oluşturmak için bkz [başlangıç sayfasını özelleştirme](../ide/customizing-the-start-page-for-visual-studio.md).
 
-## <a name="window-layouts"></a>Pencere düzenlerini
+## <a name="window-layouts"></a>Pencere düzenleri
 
-Tanımlar ve birden çok pencere düzenlerini kaydedin ve aralarında geçiş. Örneğin, kodlama için bir düzen ve hata ayıklama için bir tane tanımlayabilirsiniz. Pencere konumlar ve davranış düzenleyin ve özel düzenler kaydetmek için bkz: [pencere düzenlerini özelleştirme](../ide/customizing-window-layouts-in-visual-studio.md).
+Tanımlamak ve birden çok pencere düzenlerini kaydedebilir ve bunlar arasında geçiş yapabilirsiniz. Örneğin, kodlamak için kullanılan bir düzen ve hata ayıklama için bir tane tanımlayabilirsiniz. Pencere konumları ve davranışını düzenleyin ve özel düzenler kaydetmek için bkz: [pencere düzenlerini özelleştirme](../ide/customizing-window-layouts-in-visual-studio.md).
 
 ## <a name="external-tools"></a>Dış Araçlar
 
-Özelleştirebileceğiniz **Araçları** daha fazla bilgi için dış araçları başlatmak için menüsünde görmek [dış araçları yönetme](../ide/managing-external-tools.md).
+Özelleştirebileceğiniz **Araçları** dış Araçları'nı başlatmak için menü. Daha fazla bilgi için [dış araçları yönetme](../ide/managing-external-tools.md).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Visual Studio IDE genel bakış](../ide/visual-studio-ide.md)  
-[Hızlı Başlangıç: Visual Studio IDE ilk bakış](../ide/quickstart-ide-orientation.md)
+- [Ortam ayarları](environment-settings.md)
+- [Visual Studio IDE'ye genel bakış](../get-started/visual-studio-ide.md)
+- [Hızlı Başlangıç: Visual Studio IDE ilk bakma](../ide/quickstart-ide-orientation.md)
+- [IDE Mac için Visual Studio'yu özelleştirme](/visualstudio/mac/customizing-the-ide)

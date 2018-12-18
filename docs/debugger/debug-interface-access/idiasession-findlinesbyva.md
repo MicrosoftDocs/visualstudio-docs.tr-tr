@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9d88a93e5bd22befb661505bb09cdce6f5d3b544
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: c199411504db6d4465b6e02f4ffaad988c48b46c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49870659"
 ---
 # <a name="idiasessionfindlinesbyva"></a>IDiaSession::findLinesByVA
-Belirtilen sanal adres (VA) aralığında bulunan satırlar için satır numarası bilgilerini alır.  
+Belirtilen sanal adres (VA) aralığında bulunan satırlar için satır numarası bilgisi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,16 +36,16 @@ HRESULT findLinesByVA (
   
 #### <a name="parameters"></a>Parametreler  
  `va`  
- [in] VA. adresini belirtir  
+ [in] Bir VA. adresini belirtir  
   
  `length`  
- [in] Bu sorguyla kapsayacak şekilde adres aralığının bayt sayısını belirtir.  
+ [in] Bu sorguyu kapsayacak şekilde adres aralığını bayt sayısını belirtir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) tüm satır listesini içeren nesne belirtilen adres aralığı, kapak numaralandırır.  
+ [out] Döndürür bir [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md) tüm satır listesini içeren nesne belirtilen adres aralığını kapsayan numaralandırır.  
   
 ## <a name="example"></a>Örnek  
- Bu örnek işlevin sanal adres ve uzunluğu kullanarak bir işlevde bulunan tüm satır numaralarını alacağı bir işlev gösterir.  
+ Bu örnek, sanal işlevin adresi ve uzunluğu kullanarak bir işlev içinde yer alan tüm satır numaralarını alır bir işlev gösterir.  
   
 ```C++  
 IDiaEnumLineNumbers *GetLineNumbersByVA(IDiaSymbol *pFunc, IDiaSession *pSession)  

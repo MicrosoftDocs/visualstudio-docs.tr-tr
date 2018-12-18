@@ -1,5 +1,5 @@
 ---
-title: XMLNodes denetimi | Microsoft Docs
+title: XMLNodes denetimi
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,13 +16,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 0bb3451f491e4a663a99488f4b2099d58f0018eb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 18b1a9cf6028b02d16b15b17950b9918b7b79d89
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35258544"
 ---
-# <a name="xmlnodes-control"></a>XMLNodes Denetimi
+# <a name="xmlnodes-control"></a>XMLNodes denetimi
   **Önemli** Microsoft Word ile ilgili bu konudaki ayarlanan bilgileri avantajı ve kişiler ve kimlerin bulunur Amerika Birleşik Devletleri ve alt bölgeleri dışında veya kullanan kuruluşlar için özel olarak sunulan ya da geliştirme çalışan programlar Ocak Microsoft uygulaması belirli işlevlerin ne zaman kaldırıldı 2010'dan önce Microsoft tarafından lisanslanan Microsoft Word ürünleri için özel XML Microsoft Word içinden ilgili. Bu bilgiler Microsoft Word ile ilgili okumak veya kişiler veya Amerika Birleşik Devletleri ya da kimin kullanarak veya Microsoft tarafından 10 Ocak 2010 sonra lisanslı Microsoft Word ürünleri hakkında çalışan programlar geliştirme kendi bölgeleri kuruluşlar tarafından kullanılan ; Bu ürün bu tarihten önce lisanslı veya satın alınan ve Amerika Birleşik Devletleri dışında kullanmak için lisanslı ürünleri ile aynı davranır değil.  
   
  [!INCLUDE[appliesto_wdalldoc](../vsto/includes/appliesto-wdalldoc-md.md)]  
@@ -32,9 +33,9 @@ ms.lasthandoff: 04/16/2018
  Visual Studio XML düğümü koleksiyonunu oluşturduktan sonra Word nesne modeline çapraz geçiş yapmak zorunda kalmadan doğrudan denetimi karşı programlama yapabilirsiniz. <xref:Microsoft.Office.Tools.Word.XMLNodes> Denetimi belgeden sadece öğe eşlemesi kaldırılarak silinebilir.  
   
 > [!NOTE]  
->  Bir alt öğesi erişirseniz <xref:Microsoft.Office.Tools.Word.XMLNodes> aracılığıyla kontrol <xref:Microsoft.Office.Tools.Word.XMLNodes.Item%2A> özelliği, onu döndürür bir <xref:Microsoft.Office.Interop.Word.XMLNode> nesne yerine bir <xref:Microsoft.Office.Tools.Word.XMLNode> denetim. Daha fazla bilgi için bkz: [programsal sınırlamalar, ana bilgisayar öğeleri ve ana bilgisayar denetimleri](../vsto/programmatic-limitations-of-host-items-and-host-controls.md).  
+>  Bir alt öğesi erişirseniz <xref:Microsoft.Office.Tools.Word.XMLNodes> aracılığıyla kontrol <xref:Microsoft.Office.Tools.Word.XMLNodes.Item%2A> özelliği, onu döndürür bir <xref:Microsoft.Office.Interop.Word.XMLNode> nesne yerine bir <xref:Microsoft.Office.Tools.Word.XMLNode> denetim. Daha fazla bilgi için bkz: [konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md).  
   
-## <a name="binding-data-to-the-control"></a>Denetimine veri bağlama  
+## <a name="bind-data-to-the-control"></a>Denetimlere veri bağlama  
  Bir <xref:Microsoft.Office.Tools.Word.XMLNodes> denetimi, veri bağlamayı desteklemez. Bunun nedeni, <xref:Microsoft.Office.Tools.Word.XMLNodes> denetimi karmaşık veri bağlama yeteneğine sahip değil ve basit veri bağlama temsil edemez yinelenen veriler.  
   
 ## <a name="formatting"></a>Biçimlendirme  
@@ -59,10 +60,10 @@ ms.lasthandoff: 04/16/2018
   
 -   <xref:Microsoft.Office.Tools.Word.XMLNodes.ValidationError>  
   
-## <a name="comparing-events"></a>Olayları karşılaştırma  
+## <a name="compare-events"></a>Olayları karşılaştırma  
  Kullanıcının belirli bir bağlam içinde bilgilendirilmesine imleç taşındığında bir olay yakalayabilirsiniz <xref:Microsoft.Office.Tools.Word.XMLNodes> denetim. Örneğin, olabilir bir <xref:Microsoft.Office.Tools.Word.XMLNodes> adlı Denetim `Customer` bir alt öğesi olan <xref:Microsoft.Office.Tools.Word.XMLNodes> adlı Denetim `Company`, ve `Company` iki alt sahip <xref:Microsoft.Office.Tools.Word.XMLNodes> adlı denetimleri `CompanyName` ve `CompanyRegion` gibi:  
   
-```  
+```xml  
 <Customer>  
     <Company>  
         <CompanyName>  
@@ -81,12 +82,12 @@ ms.lasthandoff: 04/16/2018
   
  Aynı arasındaki farklar <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextLeave> olay ve <xref:Microsoft.Office.Tools.Word.XMLNodes.Deselect> olay.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)   
- [Genişletilmiş nesneleri kullanarak Word'ü Otomatikleştirme](../vsto/automating-word-by-using-extended-objects.md)   
+ [Genişletilmiş nesneleri kullanarak Word otomatikleştirme](../vsto/automating-word-by-using-extended-objects.md)   
  [XMLNode denetimi](../vsto/xmlnode-control.md)   
  [Nasıl yapılır: Word belgelerine XMLNodes denetimleri ekleme](../vsto/how-to-add-xmlnodes-controls-to-word-documents.md)   
  [Nasıl yapılır: şemaları Visual Studio içindeki Word belgeleriyle eşleme](../vsto/how-to-map-schemas-to-word-documents-inside-visual-studio.md)   
- [Konak Denetimlerinin ve Konak Öğelerinin Programlama Sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  
+ [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  
   
   

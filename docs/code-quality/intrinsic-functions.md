@@ -1,6 +1,7 @@
 ---
 title: İç İşlevler
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 f1_keywords:
@@ -16,11 +17,12 @@ ms.author: mblome
 manager: wpickett
 ms.workload:
 - multiple
-ms.openlocfilehash: 16764b73648ffa5be4fb96fead3568ebf24a1606
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0e58f84a48104553e5517d24f746769e6f0959e5
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31920954"
 ---
 # <a name="intrinsic-functions"></a>İç İşlevler
 Bu yan etkileri sahip olmayan bir ifade değil sağlanan SAL deyimde C/C++ bir ifade olabilir — örneğin, ++,--ve bu bağlamda tümüne sahip yan etkileri işlevi çağırır.  SAL ancak, bazı işlev benzeri nesneleri ve SAL ifadelerde kullanılabilir bazı ayrılmış simgeleri sağlar. Bunlar denir *iç işlevler*.

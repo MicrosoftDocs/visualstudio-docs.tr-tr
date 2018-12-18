@@ -17,24 +17,25 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: a6afa8e521ae11653d401b97a286e9478dde4bec
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 22fda2415cfb9847c006a0bb4a0d0de576beb073
+ms.sourcegitcommit: 30f653d9625ba763f6b58f02fb74a24204d064ea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36756082"
 ---
-# <a name="how-to-build-sharepoint-solutions"></a>Nasıl yapılır: SharePoint Çözümleri Derleme
-  SharePoint çözüm oluşturma Visual Studio'da diğer uygulamaları yapılandırmaktan farklı değildir. Uygulamaları yapılandırma hakkında daha fazla bilgi için bkz: [derleme ve Visual Studio'da derleme](/visualstudio/ide/compiling-and-building-in-visual-studio). SharePoint çözümleri için belirli bazı noktalar tartışma için bkz [nasıl yapılır: dağıtma ve bir SharePoint çözümünü yerel bir SharePoint sitesine yayımlama](../sharepoint/how-to-deploy-and-publish-a-sharepoint-solution-to-a-local-sharepoint-site.md).  
-  
-### <a name="to-build-sharepoint-solutions"></a>SharePoint çözümleri oluşturmak için  
-  
-1.  Bir hata ayıklama veya yayın derlemesi kılmak isteyip karar verin. Daha fazla bilgi için bkz: [hata ayıklayıcı proje ayarları](/visualstudio/debugger/debugger-project-settings).  
-  
-2.  Derleme veya çözüm ya da projeyi yeniden oluşturma için uygun seçeneği belirleyin. Daha fazla bilgi için bkz: [derleme ve Visual Studio'da derleme](/visualstudio/ide/compiling-and-building-in-visual-studio).  
-  
-3.  Menü çubuğunda seçin **yapı**, **yapı çözümü**.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [SharePoint Çözümleri Oluşturma ve Hatalarını Ayıklama](../sharepoint/building-and-debugging-sharepoint-solutions.md)  
-  
-  
+# <a name="how-to-build-sharepoint-solutions"></a>Nasıl yapılır: SharePoint çözümleri derleme
+
+SharePoint yapı çözümü Visual Studio'da diğer uygulamaları yapılandırmaktan farklı. Uygulamaları yapılandırma hakkında daha fazla bilgi için bkz: [derlemek ve Visual Studio'da derleme](../ide/compiling-and-building-in-visual-studio.md). SharePoint çözümleri için belirli bazı noktalar tartışma için bkz [nasıl yapılır: dağıtma ve bir SharePoint çözümünü yerel bir SharePoint sitesine yayımlama](../sharepoint/how-to-deploy-and-publish-a-sharepoint-solution-to-a-local-sharepoint-site.md).
+
+## <a name="to-build-sharepoint-solutions"></a>SharePoint çözümleri oluşturmak için
+
+1.  Bir hata ayıklama veya yayın derlemesi kılmak isteyip karar verin. Daha fazla bilgi için bkz: [hata ayıklayıcı proje ayarları](../debugger/debugger-project-settings.md).
+
+2.  Derleme veya çözüm ya da projeyi yeniden oluşturma için uygun seçeneği belirleyin. Daha fazla bilgi için bkz: [derleme ve Visual Studio'da derleme](../ide/compiling-and-building-in-visual-studio.md).
+
+3.  Menü çubuğunda seçin **yapı** > **yapı çözümü**.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Derleme ve SharePoint çözümlerini hata ayıklama](../sharepoint/building-and-debugging-sharepoint-solutions.md)

@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8c9bb5fab8386046f9b409e0d3ef801b4020e88c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 189bae80873e100be3371813add133982926edab
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915236"
 ---
 # <a name="idebugcomplussymbolprovidergetarraytypefromaddress"></a>IDebugComPlusSymbolProvider::GetArrayTypeFromAddress
-Hata ayıklama adresini verilen belirtilen dizi hakkındaki bilgileri alır yazın.  
+Alır, hata ayıklama adresini verilen belirtilen diziye hakkındaki bilgileri yazın.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,19 +51,19 @@ int GetArrayTypeFromAddress(
  [in] Hata ayıklama adresi temsil ettiği bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
   
  `pSig`  
- [in] İncelenecek dizisi.  
+ [in] İncelemek için dizi.  
   
  `dwSigLength`  
- [in] Bayt cinsinden uzunluğu `pSig` dizi.  
+ [in] Bayt cinsinden uzunluğu `pSig` dizisi.  
   
  `ppField`  
  [out] Tarafından temsil edilen dizi türü döndüren bir [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) arabirimi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::GetArrayTypeFromAddress(  

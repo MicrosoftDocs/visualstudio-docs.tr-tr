@@ -1,5 +1,5 @@
 ---
-title: Hata iletileri (Visual Studio'da Office Geliştirme) | Microsoft Docs
+title: Hata iletileri (Visual Studio'da Office Geliştirme)
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -15,23 +15,24 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: d8cb7bfe06eb90a8a551ce0db1be048ec7cc0ba8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c6f87f2bbdda39dd00cf2771d3764aea6ad89d0a
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34263283"
 ---
-# <a name="error-messages-office-development-in-visual-studio"></a>Hata İletileri (Visual Studio'da Office Geliştirme)
+# <a name="error-messages-office-development-in-visual-studio"></a>Hata iletileri (Visual Studio'da Office Geliştirme)
   Her hata iletisi konu sorunu çözmek için olası nedenler bir hata ve olası çözümleri veya geçici çözümler için bilgi sağlar.  
   
  Bir hata iletisi hakkında bilgi için aşağıdaki yollarla alabilirsiniz.  
   
-|||  
+|Yöntem|Açıklama|  
 |-|-|  
-|F1|Bir hata alırsanız, F1 tuşuna basabilirsiniz. Bu, karşılık gelen hata iletisi konu çevrimiçi belgeleri açar.|  
+|F1|Bir hata alırsanız, basabilirsiniz **F1**. Bu, karşılık gelen hata iletisi konu çevrimiçi belgeleri açar.|  
 |Tam metin araması|Hata iletisi metinde ilk cümle sözcükleri kullanarak tam metin araması kullanabilirsiniz. Üzerinde **yardımcı** menüsünde tıklatın **arama**.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Office ve Visual Studio'da SharePoint geliştirme](../vsto/office-and-sharepoint-development-in-visual-studio.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio'da Office ve SharePoint geliştirme](../vsto/office-and-sharepoint-development-in-visual-studio.md)  
   
   

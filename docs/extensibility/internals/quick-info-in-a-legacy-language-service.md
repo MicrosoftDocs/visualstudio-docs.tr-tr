@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31132165"
 ---
 # <a name="quick-info-in-a-legacy-language-service"></a>Eski dil hizmetindeki hızlı bilgi
 IntelliSense Hızlı bilgileri kullanıcı tanımlayıcısını şapka yerleştirir ve seçer bu tanımlayıcıyı hakkında bilgileri kaynağında gösterir **hızlı bilgi** gelen **IntelliSense** menüsü veya fare tutar İmleç üzerinden tanımlayıcısı. Bu tanımlayıcı bilgiler görüntülenecek araç ipucu neden olur. Bu bilgiler, genel tanımlayıcı türü oluşur. Hata ayıklama altyapısı etkin olduğunda, bu bilgileri geçerli değeri içerebilir. Dil hizmeti yalnızca tanımlayıcıları işlerken hata ayıklama altyapısı ifade değer sağlıyor.  

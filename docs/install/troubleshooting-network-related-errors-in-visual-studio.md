@@ -1,6 +1,6 @@
 ---
-title: Yüklediğinizde veya Visual Studio kullandığınızda ağ ile ilgili sorun giderme
-description: Yüklediğinizde veya bir güvenlik duvarı veya proxy sunucunun Visual Studio'yu kullanma karşılaşabileceğiniz ağ veya proxy ilgili hataları çözümler bulabilirsiniz.
+title: Ağ ya da proxy hatalarını giderme
+description: Yüklediğinizde veya Visual Studio'yu bir güvenlik duvarı veya proxy sunucusu arkasında kullanın karşılaşabileceğiniz ağ veya Ara sunucu ile ilgili hatalar için çözüm bulun.
 ms.custom: ''
 ms.date: 02/12/2018
 ms.technology: vs-acquisition
@@ -18,25 +18,26 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 41fed015f4ad80c3c3b74bc77ea3b9cc6ed8eb18
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: d344682f948421bf6d02ff14d41fa26fec1c3f32
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53047622"
 ---
-# <a name="troubleshooting-network-related-errors-when-you-install-or-use-visual-studio"></a>Yüklediğinizde veya Visual Studio kullandığınızda ağ ile ilgili sorun giderme
+# <a name="troubleshooting-network-related-errors-when-you-install-or-use-visual-studio"></a>Visual Studio yüklediğinizde veya kullandığınızda ağ ile ilgili hataları giderme
 
-Yüklediğinizde veya bir güvenlik duvarı veya proxy sunucunun Visual Studio'yu kullanma karşılaşabileceğiniz en tipik ağ veya proxy ilgili hataları biz çözümleri açıyor.
+Yüklediğinizde veya Visual Studio'yu bir güvenlik duvarı veya proxy sunucusu arkasında kullanın karşılaşabileceğiniz en sık karşılaşılan ağ veya Ara sunucu ile ilgili hatalar için çözümleri sorunumuz.
 
-## <a name="error-proxy-authorization-required"></a>Hata: "Proxy kimlik doğrulaması gerekli"
+## <a name="error-proxy-authorization-required"></a>Hata: "gerekli Proxy Yetkilendirmesi"
 
-Bu hata genellikle kullanıcılar bir proxy sunucu üzerinden Internet'e bağlı ve proxy sunucusu için bazı ağ kaynaklarına Visual Studio yapar çağrıları engeller oluşur.
+Bu hata genellikle kullanıcılar bir ara sunucu üzerinden İnternet'e bağlı ve proxy sunucu Visual Studio bazı ağ kaynaklarına yaptığı çağrılar engeller oluşur.
 
 ### <a name="to-fix-this-proxy-error"></a>Bu proxy hatayı düzeltmek için
 
-- Visual Studio'yu yeniden başlatın. Proxy kimlik doğrulaması iletişim kutusu görünür. İletişim kutusunda istendiğinde, kimlik bilgilerinizi girin.
+- Visual Studio'yu yeniden başlatın. Bir ara sunucu kimlik doğrulaması iletişim kutusu görünür. İletişim kutusunda istendiğinde kimlik bilgilerinizi girin.
 
-- Visual Studio'yu yeniden başlatmayı sorunu çözmezse, proxy sunucusu için http kimlik bilgileri istenmez olabilir:&#47;&#47;go.microsoft.com adresleri ancak bunu yapar &#42;. visualStudio.com adresleri. Bu sunucular için Visual Studio tüm oturum açma senaryoları engellemesini kaldırmak için aşağıdaki URL'ler uygulamaları güvenilir listeye almayı göz önünde bulundurun:
+- Visual Studio'yu yeniden başlatmak sorunu çözmezse, proxy sunucusu için http kimlik bilgileri istenmez olabilir:&#47;&#47;go.microsoft.com yöneliktir ancak bunu yapar &#42;. visualStudio.com adresleri. Bu sunucular için Visual Studio'da tüm oturum açma senaryoları engelini kaldırmak için aşağıdaki URL'leri beyaz listeye ekleme göz önünde bulundurun:
 
     - &#42;. windows.net
 
@@ -48,35 +49,35 @@ Bu hata genellikle kullanıcılar bir proxy sunucu üzerinden Internet'e bağlı
 
     - &#42;. live.com
 
-- Aksi takdirde http kaldırabilirsiniz:&#47;&#47;go.microsoft.com adres beyaz liste böylece http için proxy kimlik doğrulaması iletişim kutusu görüntülenir:&#47;&#47;go.microsoft.com adresi ve Visual Studio olduğunda sunucu uç noktaları yeniden.
+- Aksi takdirde http kaldırabilirsiniz:&#47;&#47;go.microsoft.com, http için Ara sunucu kimlik doğrulaması iletişim kutusu gösterilir böylece beyaz liste adres:&#47;&#47;go.microsoft.com adresi ve Visual Studio olduğunda sunucu uç noktaları yeniden başlatıldı.
 
     VEYA
 
-- Varsayılan kimlik bilgilerinizi proxy ile kullanmak istiyorsanız, aşağıdaki eylemleri gerçekleştirebilirsiniz:
+- Ara sunucunuzda varsayılan kimlik bilgilerinizi kullanmak istiyorsanız, aşağıdaki eylemleri gerçekleştirebilirsiniz:
 
-    1. Bul **devenv.exe.config** (devenv.exe yapılandırma dosyası) içinde: **%ProgramFiles%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE** veya **% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE**.
+  1. Bulma **devenv.exe.config** (devenv.exe yapılandırma dosyası) içindeki: **%ProgramFiles%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE** veya **% ProgramFiles (x86) %\Microsoft Görsel Studio\2017\Enterprise\Common7\IDE**.
 
-    1. Yapılandırma dosyasında bulmak `<system.net>` engelleme ve sonra bu kodu ekleyin:
+  2. Yapılandırma dosyasında bulunamıyor `<system.net>` engelleme ve sonra bu kodu ekleyin:
 
-        ```xml
-        <defaultProxy enabled="true" useDefaultCredentials="true">
-            <proxy bypassonlocal="True" proxyaddress=" HYPERLINK "http://<yourproxy:port#" http://<yourproxy:port#>"/>
-        </defaultProxy>
-        ```
+      ```xml
+      <defaultProxy enabled="true" useDefaultCredentials="true">
+          <proxy bypassonlocal="True" proxyaddress=" HYPERLINK "http://<yourproxy:port#>" http://<yourproxy:port#>"/>
+      </defaultProxy>
+      ```
 
-        Ağınızda için doğru proxy adresi eklemelisiniz `proxyaddress="<http://<yourproxy:port#>`.
+      Doğru ara sunucu adresi için ağınızda eklemelisiniz `proxyaddress="<http://<yourproxy:port#>`.
 
-    VEYA
+     VEYA
 
-- ' Ndaki yönergeleri de izleyebilirsiniz [doğrulanmış bir Web Proxy bağlanma](http://blogs.msdn.com/b/rido/archive/2010/05/06/how-to-connect-to-tfs-through-authenticated-web-proxy.aspx) nasıl proxy kullanmanıza olanak sağlayacak kodu ekleneceğini gösterir blog yayını.
+- Yönergeleri de izleyebilirsiniz [kimliği doğrulanmış bir Web Proxy üzerinden bağlanma](https://blogs.msdn.microsoft.com/rido/2010/05/06/how-to-connect-to-tfs-through-authenticated-web-proxy/) Ara sunucusunu kullanacak şekilde sağlayacak kodun nasıl ekleneceği gösterilmektedir blogda.
 
-## <a name="error-the-underlying-connection-was-closed"></a>Hata: "arka plandaki bağlantı kesildi"
+## <a name="error-the-underlying-connection-was-closed"></a>Hata: "temel alınan bağlantı kapatıldı"
 
-Bir güvenlik duvarı olan özel bir ağda Visual Studio kullanıyorsanız, Visual Studio bazı ağ kaynaklarına bağlanmak mümkün olmayabilir. Bu kaynaklar, oturum açma ve lisans, NuGet ve Azure Hizmetleri için Visual Studio Team Services (VSTS) içerebilir. Visual Studio bu kaynaklardan biri bağlanamazsa, aşağıdaki hata iletisini görebilirsiniz:
+Visual Studio, bir güvenlik duvarı özel bir ağda Visual Studio kullanıyorsanız, bazı ağ kaynaklarına bağlanmak mümkün olmayabilir. Azure DevOps Services oturum açma ve lisans, NuGet ve Azure Hizmetleri için bu kaynakları içerebilir. Bu kaynaklar birine bağlanmak Visual Studio başarısız olursa, aşağıdaki hata iletisini görebilirsiniz:
 
   **Temel alınan bağlantı kapatıldı: Gönder beklenmeyen bir hata oluştu**
 
-Visual Studio, ağ kaynaklarına bağlanmak için Aktarım Katmanı Güvenliği (TLS) 1.2 protokolünü kullanır. Visual Studio TLS 1.2 kullandığı durumlarda bazı özel ağlar üzerindeki güvenlik gereçlerinin bazı sunucu bağlantılarını Engellemesi.
+Visual Studio, ağ kaynaklarına bağlanmak için Aktarım Katmanı Güvenliği (TLS) 1.2 protokolünü kullanır. Visual Studio TLS 1.2 kullandığı durumlarda, bazı özel ağlar üzerindeki güvenlik gereçlerinin bazı sunucu bağlantılarını engelleyin.
 
 ### <a name="to-fix-this-connection-error"></a>Bu bağlantı hatayı düzeltmek için
 
@@ -102,28 +103,19 @@ Aşağıdaki URL'ler için bağlantılar sağlar:
 
 - CDN.vsassets.io (ana içerik teslim ağı veya CDN, içerik)
 
-- &#42;. gallerycdn.vsassets.io (ana bilgisayar VSTS uzantıları)
+- &#42;. gallerycdn.vsassets.io (ana Azure DevOps Hizmetleri uzantıları)
 
-- static2.sharepointonline.com (Visual Studio yazı tipleri gibi Office UI doku paketi kullanır ana bilgisayar kaynakları)
+- static2.sharepointonline.com (Office UI Fabric Seti'nde yazı tipleri gibi Visual Studio kullanan ana bilgisayar kaynakları)
 
-- &#42;. nuget.org (NuGet bağlantılar için)
+- &#42;. nuget.org (NuGet bağlantıları için)
 
- > [!NOTE]
- > Özel olarak sahip olunan NuGet sunucu URL'leri bu listede dahil. % APPData%\Nuget\NuGet.Config kullanmakta olduğunuz NuGet sunucularını denetleyebilirsiniz.
+  > [!NOTE]
+  > Özel NuGet sunucu URL'leri bu listede bulunmayabilir ait. % APPData%\Nuget\NuGet.Config kullanmakta olduğunuz NuGet sunucularını denetleyebilirsiniz.
 
-## <a name="get-support"></a>Destek alma
-
-Visual Studio yüklemenizin başarısız olursa bkz [sorun giderme Visual Studio 2017 yükleme ve yükseltme sorunlarını](troubleshooting-installation-issues.md) sayfası. Sorun giderme adımları yükleme hiçbiri yardımcı, bize yükleme Yardımı (yalnızca İngilizce) için canlı sohbet tarafından başvurabilirsiniz. Ayrıntılar için bkz [Visual Studio destek sayfası](https://www.visualstudio.com/vs/support/#talktous).
-
-Birkaç diğer destek seçenekleri şunlardır:
-
-* Ürün sorunları bize bildirebilirsiniz [bir sorun bildirmek](../ide/how-to-report-a-problem-with-visual-studio-2017.md) hem Visual Studio Yükleyicisi ve Visual Studio IDE görünür aracı.
-* Üzerinde bir ürün önerisi bizimle paylaşın [UserVoice](https://visualstudio.uservoice.com/forums/121579).
-* Ürün sorunlarını izlemek ve yanıtlar bulmak [Visual Studio Geliştirici topluluğu](https://developercommunity.visualstudio.com/).
-* ABD ve diğer Visual Studio geliştiriciler aracılığıyla devreye [Gitter topluluk Visual Studio konuşmada](https://gitter.im/Microsoft/VisualStudio). (Bu seçenek gerektiren bir [GitHub](https://github.com/) hesabı.)
+[!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 * [Visual Studio’yu bir güvenlik duvarı veya ara sunucusunun arkasına yükleme ve burada kullanma](install-and-use-visual-studio-behind-a-firewall-or-proxy-server.md)
 * [Visual Studio Yönetici Kılavuzu](visual-studio-administrator-guide.md)
-* [Visual Studio 2017 yükleyin](install-visual-studio.md)
+* [Visual Studio 2017'yi Yükleme](install-visual-studio.md)

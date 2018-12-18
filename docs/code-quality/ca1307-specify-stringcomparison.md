@@ -1,6 +1,7 @@
 ---
 title: 'CA1307: StringComparison belirtme'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2ef2f8dbb265f0e5c82f2ea0adefc35d0721b4bd
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 67f0d5152dcdef5ffa3abb76d92e68fd99f9b637
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45550420"
 ---
 # <a name="ca1307-specify-stringcomparison"></a>CA1307: StringComparison belirtme
+
 |||
 |-|-|
 |TypeName|SpecifyStringComparison|
@@ -30,18 +33,20 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Dize karşılaştırma işlemi ayarlı değil yöntemi aşırı yüklemesini kullanır bir <xref:System.StringComparison> parametresi.
+ Ayarlanmamış bir yöntemi aşırı bir dize karşılaştırma işlemi kullanan bir <xref:System.StringComparison> parametresi.
 
-## <a name="rule-description"></a>Kural Tanımı
- Çoğu dize işlemleri, en önemli <xref:System.String.Compare%2A> ve <xref:System.String.Equals%2A> yöntemleri sağlayan kabul eden bir aşırı bir <xref:System.StringComparison> bir parametre olarak numaralandırma değeri.
+## <a name="rule-description"></a>Kural açıklaması
+ Çoğu dize işlemleri, en önemli <xref:System.String.Compare%2A> ve <xref:System.String.Equals%2A> yöntemlerini sağlar kabul eden bir aşırı bir <xref:System.StringComparison> numaralandırma değeri olarak bir parametre.
 
- Her bir aşırı var. Bu alır bir <xref:System.StringComparison> parametresi, bu parametre almayan aşırı yerine kullanılmalıdır. Bu parametre açıkça ayarlayarak kodunuzun clearer yapılmış ve sürdürmek daha kolay görülür.
+ Her bir aşırı var. Bu alır bir <xref:System.StringComparison> parametresi, bu parametre almayan bir aşırı yükleme yerine kullanılmalıdır. Bu parametre açıkça ayarlayarak, genellikle yapılan daha açık ve bakımını kodudur.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için kabul aşırı dize karşılaştırma yöntemlerini değiştirme <xref:System.StringComparison> bir parametre olarak numaralandırması. Örneğin: değiştirme `String.Compare(str1, str2)` için `String.Compare(str1, str2, StringComparison.Ordinal)`.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için dize karşılaştırma yöntemleri kabul eden aşırı yüklemeler için değişiklik <xref:System.StringComparison> parametre olarak numaralandırması. Örneğin: değiştirmek `String.Compare(str1, str2)` için `String.Compare(str1, str2, StringComparison.Ordinal)`.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Kitaplığı veya uygulama için sınırlı bir yerel kitleye yöneliktir ve bu nedenle değil yerelleştirilmiş olabilir olduğunda bir uyarı bu kuraldan bastırmak güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Uygulama ve kitaplık yerel sınırlı bir kitle için tasarlanmıştır ve değil yerelleştirilecek olduğunda bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Genelleştirme uyarıları](../code-quality/globalization-warnings.md) [CA1309: sıralı StringComparison kullanın](../code-quality/ca1309-use-ordinal-stringcomparison.md)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Genelleştirme Uyarıları](../code-quality/globalization-warnings.md)
+- [CA1309: Sıralı StringComparison kullanın](../code-quality/ca1309-use-ordinal-stringcomparison.md)

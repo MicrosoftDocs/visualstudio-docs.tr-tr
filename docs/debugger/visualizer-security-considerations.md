@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31476523"
 ---
 # <a name="visualizer-security-considerations"></a>Görselleştirici Güvenlik Konuları
 Görselleştirici yazma olası güvenlik tehditlerini içerir. Bilinen hiçbir yararlanma şu anda bu olası tehditleri var, ancak geliştiriciler bunları farkında olmalı ve gelecekteki açıklarına karşı koruma sağlamak için burada açıklandığı gibi uygun güvenlik önlemleri alın.  

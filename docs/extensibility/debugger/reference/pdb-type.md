@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: dc610963fa1ca82fec30e04abb90583db48bdf55
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 83d891de330b66841b1ad48a7fc4593b1144e9e7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49888138"
 ---
 # <a name="pdbtype"></a>PDB_TYPE
-Bu yapı PDB sembol yapılan bir alan türü hakkındaki bilgileri belirtir.  
+Bu yapı, PDB sembol harcanan alan türü hakkında bilgileri belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,25 +45,25 @@ public struct PDB_TYPE {
   
 #### <a name="parameters"></a>Parametreler  
  ulAppDomainID  
- Simgenin geldiği uygulama kimliği. Bu uygulama örneğini benzersiz şekilde tanımlamak için kullanılır.  
+ Simgenin içinden gelen uygulama kimliği. Bu, uygulamanın bir örneğini benzersiz şekilde tanımlamak için kullanılır.  
   
  guidModule  
- Bu alan içeren modülü GUID.  
+ Bu alan içeren modül GUID.  
   
  symid  
- Bu alana karşılık gelen simgenin kimliği.  
+ Bu alana karşılık gelen simgesinin kimliği.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı birleşim içinde bir parçası olarak görünür [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) ne zaman yapısı `dwKind` alanını `TYPE_INFO` yapısı ayarlanmış `TYPE_KIND_PDB` (arasında bir değer [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) numaralandırma).  
+ Bu yapı birleşimde bir parçası olarak görünür [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) ne zaman yapısı `dwKind` alanını `TYPE_INFO` yapısı ayarlandığında `TYPE_KIND_PDB` (arasında bir değer [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) sabit listesi).  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md)   
  [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)

@@ -1,5 +1,5 @@
 ---
-title: Name öğesi (Visual Studio şablonları) | Microsoft Docs
+title: Ad öğesi (Visual Studio şablonları) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 202542388fc04b07c0792a550029b0d509327c74
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 743c732410c97aa795264dd6fe2495d2d14f2481
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39638876"
 ---
-# <a name="name-element-visual-studio-templates"></a>Name Öğesi (Visual Studio Şablonları)
-Gösterildiği gibi şablon adını belirtir. **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.  
+# <a name="name-element-visual-studio-templates"></a>Name öğesi (Visual Studio şablonları)
+İçinde göründüğü gibi şablonunun adını belirtir. **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -30,15 +31,15 @@ Gösterildiği gibi şablon adını belirtir. **yeni proje** veya **Yeni Öğe E
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Name> Template Name </Name>  
 ```  
   
-```  
+```xml  
 <Name Package="{PackageID}" ID="ResourceID" />  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
@@ -48,27 +49,27 @@ Gösterildiği gibi şablon adını belirtir. **yeni proje** veya **Yeni Öğe E
 |`Package`|Gelişmiş kullanıcı senaryoları için isteğe bağlı öznitelik.<br /><br /> Visual Studio Paketi belirten bir GUID kimliği|  
 |`ID`|Gelişmiş kullanıcı senaryoları için isteğe bağlı öznitelik.<br /><br /> Visual Studio kaynak kimliğini belirtir.|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
- Bir metin değeri sürece gereklidir `Package` ve `ID` öznitelikler kullanılır.  
+## <a name="text-value"></a>Metin değeri  
+ Bir metin değeri sürece gereklidir `Package` ve `ID` öznitelikleri kullanılır.  
   
- Metin şablonu adı sağlar.  
+ Metin şablonunun adını sağlar.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `Name` gerekli bir alt öğesidir `TemplateData`.  
+ `Name` gerekli alt öğesi olan `TemplateData`.  
   
 ## <a name="example"></a>Örnek  
- Meta veriler için bir proje şablonu için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
+ Aşağıdaki örnek, bir proje şablonu için meta verileri gösterir. bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
   
-```  
+```xml  
 <VSTemplate Type="Project" Version="3.0.0"  
     xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">  
     <TemplateData>  
@@ -92,6 +93,6 @@ Gösterildiği gibi şablon adını belirtir. **yeni proje** veya **Yeni Öğe E
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

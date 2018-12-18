@@ -13,42 +13,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0cf01e8a416407c570076812bf18aa6b21c21583
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 030ee092909c7faa519c68ac9800d051a96f6b42
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39636934"
 ---
 # <a name="drop-down-bar"></a>Aşağı açılan çubuğu
 Aşağı açılan çubuğu kod penceresinin en üstünde sağlanır ve iki açılan listeleri içerir.  
   
 ## <a name="drop-down-bar-interfaces"></a>Aşağı açılan çubuğu arabirimleri  
- İçinde [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)], örneğin, aşağı açılan çubuğu için listeleri içerir [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] öğeleri ve [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] öğeleri üye işlevleri aşağıdaki resimde gösterildiği gibi.  
+ İçinde [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)], örneğin, aşağı açılan çubuğu listelerini içerir [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] öğeleri ve [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] öğeleri üye işlevleri aşağıdaki resimde gösterildiği gibi.  
   
- ![Bırakma&#45;aşağı çubukları](../extensibility/media/vsdropdown_bar.gif "vsDropdown_bar")  
+ ![DROP&#45;aşağı çubukları](../extensibility/media/vsdropdown_bar.gif "vsDropdown_bar")  
 Aşağı açılan çubuğu  
   
- Aşağı açılan çubuğu uygularken, birincil önem dört arabirimi vardır:  
+ Bir açılan çubuğu uygularken birincil önem dört arabirimi vardır:  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient>  
   
-     Aşağı açılan çubuğu içerik yerleştirmek için bu arabirimi uygular. Her bir açılan birleşimini düz metin veya Süslü metin içerebilir (kalın, alt çizgi veya italik), pencere metin yazı tipi renklendirme veya çıkışı gri yazı tipi renklendirme olabilir ve isteğe bağlı olarak küçük bir bit eşlem açılan öğesinin yanındaki sağlayabilir. Benzer şekilde <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompletionSet> arabirimi, bit eşlem görüntüleri görüntü listelerinde sağlanır. Her açılan birleşimi farklı resim listesi olabilir; Bununla birlikte, her görüntü listesi aynı yükseklikte görüntülerini içermesi gerekir. Ayrıca, kullanarak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient.GetComboTipText%2A> yöntemi, her birleşim için bir araç ipucu sağlayabilir.  
+     Aşağı açılan çubuğunun içeriğini eklemek için bu arabirimi uygulayın. Her bir açılan birleşimini düz metin veya başvurmaktan metin içerebilir (kalın, italik veya alt çizgi), pencere metin yazı tipi renkleri veya çıkış gri yazı tipi renklendirme sahip olabilir ve isteğe bağlı olarak açılan öğesinin yanındaki küçük bir bit eşlem sağlayabilir. Benzer şekilde <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompletionSet> arabirimi, bit eşlem resimleri görüntü listeleri sağlanır. Farklı bir görüntü listesini her bir açılan bileşimi olabilir; Ancak, her bir görüntü listesi görüntüler aynı yükseklikte içermelidir. Ayrıca, kullanarak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient.GetComboTipText%2A> yöntemi, her bir birleşimi için bir araç ipucu sağlayabilir.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager>  
   
-     Bu arabirim oluşturmak veya kod penceresi açılır çubuğu yok etmek için çağırın. Bu arabirim, aşağı açılan çubuğu zaten bir kod penceresine çağırarak ekli olup olmadığını belirlemek için de kullanılabilir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> yöntemi. Çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> gelen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow>.  
+     Bu arabirim oluşturmak veya bir kod penceresinde açılan çubuğunu yok etmek için çağırın. Bu arabirim, aşağı açılan çubuğu zaten bir kod penceresine çağırarak ekli olup olmadığını belirlemek için de kullanılabilir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> yöntemi. Çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> gelen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow>.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBar>  
   
-     Bu arabirim aşağı açılan çubuğunda doğrudan iletişim kurmak için çağırın. Bu arabirim açılan yenilemeye zorlamak için kullanabileceğiniz içeriği çubuk veya liste kutuları birinde seçimini değiştirmek için.  
+     Doğrudan aşağı açılan çubuğu ile iletişim kurmak için bu arabirimi çağırın. Bu arabirim, açılan listeyi yenilemeye zorlamak için kullanabileceğiniz içeriği çubuk veya Seçimi liste kutuları biriyle değiştirin.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManagerEvents>  
   
-     Kayıtlı olmadığını `ShowDropdownBarOption` ardından kod Pencere Yöneticisi dil hizmeti kayıt defteri anahtarında, aşağı açılan çubuğu görüntülenip görüntülenmeyeceğini ilgili kullanıcı tercihlerini ile eşitlemek için bu olay izlemeniz gerekir. Bu seçenek Dil hizmeti anahtarınızı kaydetmez sonra açılan çubuğunu gösterme veya gizleme seçeneğini devre dışı bırakıldı **seçenekleri** menüsü.  
+     Kayıtlı `ShowDropdownBarOption` dil hizmeti kayıt defteri anahtarında, kod penceresi yöneticinize açılan çubuğu görüntülenip görüntülenmeyeceğini ilgili kullanıcı tercihlerini ile eşitlemek için bu olay izlemelidir. Bu seçenek Dil hizmeti anahtarınızı kaydetmeyin sonra açılan çubuğunu gösterme veya gizleme seçeneğini devre dışı **seçenekleri** menüsü.  
   
-## <a name="attaching-a-drop-down-bar-to-a-code-window"></a>Aşağı açılan çubuğu kod penceresine ekleme  
- Oluşturulduğunda açılan çubuğu kod penceresine eklemek için bir dil hizmeti açılır menüsünü iliştirin çubuk ne zaman <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager.AddAdornments%2A> yöntemi çağrılır. Çağrı, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> yöntemi gösteren açılan çubuğu zaten var, çağrı sonra olduğunu <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.AddDropdownBar%2A>. Erişim için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> arabirim, çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> gelen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow> işaretçi döndürdü, ne zaman, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> uygulama bağlı.  
+## <a name="attach-a-drop-down-bar-to-a-code-window"></a>Bir kod penceresine bir açılan çubuğu ekleme  
+ Oluşturulduğunda bir açılan çubuğu koda eklemek için bir dil hizmeti için açılan iliştirin ne zaman çubuk <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager.AddAdornments%2A> yöntemi çağrılır. Bir çağrı, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> yöntemi gösteren bir açılan çubuğu zaten mevcut çağırma ve emin <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.AddDropdownBar%2A>. Erişim için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> arabirim, çağrı <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> gelen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow> işaretçi döndürdü, ne zaman, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> uygulama bağlı.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eski API'sini kullanarak kod Windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)   
- [Eski Dil Hizmetinde Otomatik Değişkenler Penceresi için Destek](../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Eski API'sini kullanarak kod windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)   
+ [Eski dil hizmetinde gezinti çubuğu desteği](../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)

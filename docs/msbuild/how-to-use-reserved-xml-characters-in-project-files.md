@@ -13,17 +13,18 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8538ffdb1093accc8446d072ecc980586b73ee7b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 647dba94840383410d06f6e5bf96ec3b0146c394
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077665"
 ---
-# <a name="how-to-use-reserved-xml-characters-in-project-files"></a>Nasıl Yapılır: Proje Dosyalarında Ayrılmış XML Karakterlerini Kullanma
-Proje dosyaları yazarken, örneğin, özellik değerleri veya görev parametre değerlerini ayrılmış XML karakterlerini kullanmanız gerekebilir. Ancak, böylece proje dosyası ayrıştırılabilir bazı ayrılmış karakterler adlandırılmış bir varlık tarafından değiştirilmesi gerekir.  
+# <a name="how-to-use-reserved-xml-characters-in-project-files"></a>Nasıl yapılır: proje dosyalarında ayrılmış XML karakterlerini kullanma
+Proje dosyaları yazdığınızda, ayrılmış XML karakterleri, örneğin özellik değerlerini veya görev parametresi değerleri kullanmak gerekebilir. Ancak, proje dosyası ayrıştırıldığında, bazı ayrılmış karakterleri adlandırılmış varlık tarafından değiştirilmelidir.  
   
-## <a name="using-reserved-characters"></a>Ayrılmış karakterlerini kullanma  
- Aşağıdaki tabloda karşılık gelen adlandırılmış varlık tarafından değiştirilmesi gerekir ve böylece proje dosyası ayrıştırılabilir ayrılmış XML karakterlerini açıklanmaktadır.  
+## <a name="use-reserved-characters"></a>Ayrılmış karakterleri kullanın  
+ Aşağıdaki tabloda, ayrılmış XML karakterlerini karşılık gelen adlandırılmış varlık tarafından değiştirilmelidir ve böylece proje dosyası ayrıştırıldığında açıklanmaktadır.  
   
 |Ayrılmış karakter|Adlandırılmış varlık|  
 |------------------------|------------------|  
@@ -33,16 +34,16 @@ Proje dosyaları yazarken, örneğin, özellik değerleri veya görev parametre 
 |"|&amp;quot;|  
 |'|&amp;apos;|  
   
-#### <a name="to-use-double-quotes-in-a-project-file"></a>Proje dosyasında çift tırnak işareti kullanmak için  
+#### <a name="to-use-double-quotes-in-a-project-file"></a>Çift tırnak işareti bir proje dosyasında kullanmak için  
   
--   Varlık adlı karşılık gelen ile çift tırnak işareti yerine &amp;quot;. Örneğin, çift tırnak yerleştirmek için `EXEFile` öğe listesi, türü:  
+-   Adlandırılmış varlık, ilgili ile çift tırnak işaretleri yerine &amp;quot;. Örneğin, çift tırnak işaretlerini yerleştirmek için `EXEFile` öğe listesi, türü:  
   
     ```xml  
     <Message Text="The output file is &quot;@(EXEFile)&quot;."/>  
     ```  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneğinde çift tırnak işareti çıkış iletisini dosya adında vurgulamak için proje dosyası tarafından kullanılır.  
+ Aşağıdaki kod örneğinde proje dosyası tarafından çıkış iletisini dosya adında vurgulamak için çift tırnak işareti kullanılır.  
   
 ```xml  
 <Project DefaultTargets="Compile"  
@@ -71,6 +72,6 @@ Proje dosyaları yazarken, örneğin, özellik değerleri veya görev parametre 
 </Project>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [MSBuild başvurusu](../msbuild/msbuild-reference.md)    
  [MSBuild](../msbuild/msbuild.md)    

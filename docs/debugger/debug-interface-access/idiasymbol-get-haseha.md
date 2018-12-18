@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 066f86cf61a697f686153aa9e47c7920b86ea42e
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 936393d3edc9273c2240787d0d1fa42ec3691748
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49813472"
 ---
 # <a name="idiasymbolgethaseha"></a>IDiaSymbol::get_hasEHa
-İşlev zaman uyumsuz (yapılandırılmış) özel durum işleme bulunup bulunmadığını belirten bir bayrak alır.  
+İşlev (yapılandırılmış) zaman uyumsuz özel durum işlemeyi içerip içermediğini belirten bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,22 +34,22 @@ HRESULT get_hasEHa(
   
 #### <a name="parameters"></a>Parametreler  
  `pFlag`  
- [out] Döndürür `TRUE` hiçbir zaman uyumsuz özel durum işleme; işlevi varsa, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür `TRUE` hiç bir zaman uyumsuz özel durum işleme; işlevi varsa, aksi halde döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya bir hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliği simgesi kullanılabilir olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için mevcut olmadığı anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Zaman uyumsuz veya yapılandırılmış özel durum işlemeyi C++ stili özel durum işleme karıştırmak mümkündür, ancak belirli derleyici anahtarı, etkinleştirmek için /EHa gerektirir.  
+ Uyumlu veya zaman uyumsuz yapılandırılmış özel durum işlemeyi C++ stili özel durum işleme ile karıştırmak mümkündür, ancak belirli bir derleyici anahtarı, etkinleştirmek için/eha gerektirir.  
   
 ## <a name="requirements"></a>Gereksinimler  
   
 |Gereksinim|Açıklama|  
 |-----------------|-----------------|  
-|Başlık:|dia2.h|  
+|Üst bilgi:|dia2.h|  
 |Sürüm:|DIA SDK v8.0|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  

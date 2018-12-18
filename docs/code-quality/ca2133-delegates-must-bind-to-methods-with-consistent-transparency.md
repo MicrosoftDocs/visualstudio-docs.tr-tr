@@ -1,6 +1,7 @@
 ---
 title: 'CA2133: Temsilciler tutarlı saydamlığı olan yöntemlere bağlanmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -11,13 +12,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: eee7b4857f91d4d201b79e0814113b36b03fc151
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 11f6738d1f280869d5390b8109e61a6efb9c64b9
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45545547"
 ---
 # <a name="ca2133-delegates-must-bind-to-methods-with-consistent-transparency"></a>CA2133: Temsilciler tutarlı saydamlığı olan yöntemlere bağlanmalıdır
+
 |||
 |-|-|
 |TypeName|DelegatesMustBindWithConsistentTransparency|
@@ -26,19 +29,24 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 > [!NOTE]
->  Bu uyarı yalnızca CoreCLR (Silverlight Web uygulamalarına özeldir CLR sürüm) çalıştıran kod uygulanır.
+> Bu uyarı yalnızca CoreCLR (Silverlight web uygulamalarına özel olan CLR sürümü) çalışan kodu uygulanır.
 
 ## <a name="cause"></a>Sebep
- Bu uyarı harekete ile işaretli bir temsilci bağlayan bir yöntemde <xref:System.Security.SecurityCriticalAttribute> saydam veya ile işaretlenmiş bir yönteme <xref:System.Security.SecuritySafeCriticalAttribute>. Uyarı, saydam veya kritik bir yöntem için kritik güvenli temsilciyi bağlayan yöntemi de tetikler.
 
-## <a name="rule-description"></a>Kural Tanımı
- Temsilci türleri ve bunlar bağlamak yöntemleri tutarlı saydamlığı olması gerekir. Saydam ve güvenli kritik temsilcileri yalnızca diğer saydam veya güvenli kritik yöntemleri bağlayabilirsiniz. Benzer şekilde, kritik temsilcileri yalnızca kritik yöntemlere bağlayabilirsiniz. Bu bağlama kuralları bir temsilci aracılığıyla bir yöntemi çağırmak yalnızca kod de aynı yöntemi doğrudan emin olun. Örneğin, bağlama kuralları, kritik kodu saydam bir temsilci aracılığıyla doğrudan çağırma saydam kod engeller.
+Bu uyarı tetikler ile işaretlenmiş temsilciyi bağlayan bir yöntemi <xref:System.Security.SecurityCriticalAttribute> saydam veya ile işaretlenmiş bir yönteme <xref:System.Security.SecuritySafeCriticalAttribute>. Uyarı, saydam veya kritik bir yöntem için kritik güvenli temsilciyi bağlayan yöntemi de tetikler.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu uyarı ihlal düzeltmek için saydamlığı temsilci veya iki saydamlığını eşdeğer ve böylece bu bağlar yöntemi değiştirebilirsiniz.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın.
+Temsilci türleri ve bunların bağlamak yöntemleri tutarlı saydamlığı olmalıdır. Saydam ve güvenli kritik Temsilciler, yalnızca diğer saydam veya güvenli kritik yöntem bağlayabilirsiniz. Benzer şekilde, kritik temsilcileri yalnızca kritik yönteme bağlayabilirsiniz. Bu bağlama kurallarını bir yöntem bir temsilci aracılığıyla çağırabilirsiniz tek bir kod da aynı yöntemi doğrudan emin olun. Örneğin, bağlama kurallarını saydam kod saydam bir temsilci yoluyla doğrudan kritik kodu çağırmasını engellemek.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Bu uyarı ihlalini düzeltmek için temsilci veya iki saydamlık, böylece eşdeğer bağlar, yöntemin saydamlık değiştirin.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıyı bastırmayın.
 
 ### <a name="code"></a>Kod
- [!code-csharp[FxCop.Security.CA2133.DelegatesMustBindWithConsistentTransparency#1](../code-quality/codesnippet/CSharp/ca2133-delegates-must-bind-to-methods-with-consistent-transparency_1.cs)]
+
+[!code-csharp[FxCop.Security.CA2133.DelegatesMustBindWithConsistentTransparency#1](../code-quality/codesnippet/CSharp/ca2133-delegates-must-bind-to-methods-with-consistent-transparency_1.cs)]

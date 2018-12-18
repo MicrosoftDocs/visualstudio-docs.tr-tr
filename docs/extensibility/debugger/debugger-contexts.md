@@ -13,40 +13,41 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8a9310512417ac0e24046a1b7bcc1fd92099fe98
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 49af504b27afc6171a914d9559a5ff83f3d595eb
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39204108"
 ---
 # <a name="debugger-contexts"></a>Hata ayıklayıcı bağlamları
-İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama, hata ayıklama altyapısı (DE) aynı anda birçok farklı bağlamları içinde aşağıdaki gibi çalışır:  
+İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama, hata ayıklama altyapısı (DE) aynı anda birçok farklı bağlamları içinde şu şekilde çalışır:  
   
--   Bir programın yürütme akışında geçerli konumu açıklar kodu bağlamı.  
+-   Kod bağlamı bir programın yürütülmesine stream'de geçerli konumu açıklar.  
   
--   Belge bağlamı veya bir kaynak belge içindeki geçerli konumu açıklar konumu.  
+-   Belge bağlamı veya konum, kaynak belge içindeki geçerli konumu açıklar.  
   
--   Hangi ifadesinde değerlendirme devre dışı gerçekleşecek bağlam tanımlayan ifade değerlendirme bağlamı.  
+-   Hangi ifadesinde değerlendirmesi yer alacak bağlam tanımlayan ifade değerlendirme bağlamı.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Kod Bağlamı](../../extensibility/debugger/code-context.md)  
- Burada kod yönergeleri, ancak başka bir şekilde tarafından temsil edilebilir değil bugünün çalışma zamanı mimarilerindeki nontraditional diller karşı bir programın yönerge akışında adresi olarak kod bağlam açıklanır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Kod bağlamı](../../extensibility/debugger/code-context.md)  
+ Bugünün çalışma zamanı mimarileri nontraditional diller ve burada kod yönergeleri, ancak başka bir yolla tarafından temsil edilebilir değil, bir programın yönerge stream'de adresi olarak kod bağlamı anlatır.  
   
- [Belge Konumu](../../extensibility/debugger/document-position.md)  
- Visual Studio IDE bilinen bir kaynak dosya konumunda bir soyutlamasını yoluyla hata ayıklama içinde belge konumu tanımlar.  
+ [Belge konumu](../../extensibility/debugger/document-position.md)  
+ Visual Studio IDE'ye bilinen kaynak dosyada bir konumdaki bir soyutlama yoluyla hata ayıklama belge konumunu tanımlar.  
   
- [Belge Bağlamı](../../extensibility/debugger/document-context.md)  
- Anlatılmaktadır Visual Studio ile ilgili bir kaynak dosyası hata ayıklamaya hangi belge bağlamını temsil eder. Ayrıca simgesi işleyici kodu bağlamı belgelerine bağlamına nasıl eşlendiğini anlatılmaktadır.  
+ [Belge bağlamı](../../extensibility/debugger/document-context.md)  
+ Açıklar bir kaynak dosya ile ilgili olarak Visual Studio hata ayıklama hangi belge bağlamı temsil eder. Ayrıca, sembol işleyici kod bağlamı belge bağlamına nasıl eşlendiğini anlatılmaktadır.  
   
- [İfade Değerlendirme Bağlamı](../../extensibility/debugger/expression-evaluation-context.md)  
- Visual Studio'da bir ifade değerlendirme bağlamı hakkında bilgi sağlar. Örneğin, bir yığın çerçevesi ile ilişkili bir ifade değerlendirme bağlamı, yerel değişkenleri, yöntem parametreleri ve sınıf üyeleri değerlendirmek için bağlamı sağlar.  
+ [İfade değerlendirme bağlamı](../../extensibility/debugger/expression-evaluation-context.md)  
+ Visual Studio'da bir ifade değerlendirme bağlamı hakkında bilgi sağlar. Örneğin, bir yığın çerçevesiyle ilgili bir ifade değerlendirme bağlamı, yerel değişkenler, yöntem parametreleri ve sınıf üyeleri değerlendirmesi için bağlamı sağlar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="related-sections"></a>İlgili bölümler  
  [Hata ayıklama kavramları](../../extensibility/debugger/debugger-concepts.md)  
- Ana hata ayıklama mimari kavramlarını açıklar.  
+ Hata ayıklama ana mimari kavramlarını açıklar.  
   
  [Hata ayıklama bileşenleri](../../extensibility/debugger/debugger-components.md)  
- Hata ayıklama altyapısı (DE), ifade değerlendiricisi (EE) ve simge işleyici (SH) içeren Visual Studio hata ayıklama bileşenlerini genel bir bakış sağlar.  
+ Hata ayıklama altyapısı (DE) ifade değerlendiricisi (EE) ve sembol işleyici (SH) Visual Studio hata ayıklama Bileşenleri'ne genel bakış sağlar.  
   
- [Hata Ayıklama Görevleri](../../extensibility/debugger/debugging-tasks.md)  
- Bir program başlatma ve ifadeleri değerlendirme gibi çeşitli hata ayıklama görevlere bağlantılar içerir.
+ [Hata ayıklama görevleri](../../extensibility/debugger/debugging-tasks.md)  
+ Program başlatma ve ifadeleri değerlendirme gibi çeşitli hata ayıklama görevlerini bağlantılar içerir.

@@ -12,18 +12,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fb0ff0bfb8f4b7abf3abc7f31204d963c1f0a68b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 72b93d497a68ba09237c28fc56159c379b50c9c1
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35254569"
 ---
-# <a name="message-markers"></a>İleti İşaretçileri
+# <a name="message-markers"></a>İleti işaretçileri
 Bir ileti işaret günlük çıktıyı temsil eder. Bir ileti belirli bir süre boyunca belirli bir iş parçacığı tarafından verilen bir dizedir. İletilerin diğer araçları ile kullanmak için bir metin dosyasına dışarı aktarabilirsiniz. İleti dizesi görüntülemek için bir ileti üzerinde eşzamanlılık görselleştiricisi işaretçisini. İleti işaretçileri görüntüleyebilirsiniz [işaretçiler raporu](../profiling/markers-report.md).  Aşağıdaki çizimde bir ileti işaret gösterir.  
   
 ## <a name="message-aggregation-markers"></a>İleti toplama işaretçileri  
  Bazen birden çok iletileri bunu başka yakın bunlar ayrı ayrı çekilemez eşzamanlılık görselleştiricisi içinde oluşur. Bu durumda, bir *ileti toplama işaret* temsil olarak temel alınan iletileri gösterilir. Bu simgeleri birinde işaretçiyi getirdiğinizde, araç ipucu temsil edilen temel alınan iletilerin sayısını görüntüler. İletilerini görüntülemek için Yakınlaştır.  Bu süreç boyunca tüm yakınlaştırmak ve bir toplama işaretçi almaya devam, temel alınan iletileri görüntüleyebilirsiniz [işaretçiler raporu](../profiling/markers-report.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eşzamanlılık görselleştiricisi işaretleyicileri](../profiling/concurrency-visualizer-markers.md)   
  [Eşzamanlılık Görselleştiricisi SDK](../profiling/concurrency-visualizer-sdk.md)

@@ -1,5 +1,5 @@
 ---
-title: m_children alan | Microsoft Docs
+title: m_children alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,31 +13,32 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e71bc592e77daac877b571b14acd2d62a8657b9f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e27704484e5cfb320c8b65432fb3efb283054019
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231154"
 ---
-# <a name="mchildren-field"></a>m_children alan
-Bu görev ile kayıtlı alt görevler listesi.  
+# <a name="mchildren-field"></a>m_children alanı
+Bu göreve kaydedilmiş alt görevlerin listesi.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp 
 .field public class System.Collections.Generic.List`1<class System.Threading.Tasks.Task> m_children  
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
- Görev yürütülürken görevi yürüten iş parçacığı bu diziye erişim.  
+ Görev yürütülürken, görevi yürüten iş parçacığı bu dizinin erişmelidir.  
   
- Görev tamamlandı, bunlar herhangi bir şey için eklemeyin veya kaldırmadan bir şey sürece başka bir iş parçacığı bu alan erişebilir.  
+ Görev tamamlandıysa, diğer iş parçacıkları yoksa hiçbir şey eklemenize veya herhangi bir şey kaldırın sürece bu alan erişebilirsiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ContingentProperties sınıfı](../../extensibility/debugger/contingentproperties-class-internal-members.md)

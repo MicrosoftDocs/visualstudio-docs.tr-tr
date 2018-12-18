@@ -1,7 +1,7 @@
 ---
-title: Visual Studio IntelliSense | Microsoft Docs
-ms.custom: ''
-ms.date: 11/04/2016
+title: Parametre bilgisi, listesi üyeleri ve hızlı bilgi
+ms.date: 05/25/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -17,15 +17,16 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d6e87113f8c8a703a6eb4d893c0ca54a90bfb8d1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5e00b43f1705079a86d511239d7b38119868d8f4
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34748481"
 ---
-# <a name="using-intellisense-in-visual-studio"></a>Visual Studio'da IntelliSense kullanma
+# <a name="intellisense-in-visual-studio"></a>Visual Studio'da IntelliSense
 
-IntelliSense; Üyeleri Listeleme, Parametre Bilgisi, Hızlı Bilgi ve Tam Sözcük gibi bir dizi özellik için kullanılan genel bir terimdir. Bu özellikler, yalnızca birkaç tuş vuruşu ile kullandığınız kod hakkında daha fazla bilgi edinmenize, yazmakta olduğunuz parametreleri izlemenize ve özellik ve yöntem çağrıları eklemenize yardımcı olur.
+IntelliSense olan bir dizi özellik içeren bir kod tamamlama Yardımı: listesi üyeleri, parametre bilgisi, hızlı bilgi ve tam sözcük. Bu özellikler, kullanmakta olduğunuz kod hakkında daha fazla bilgi için yazmakta olduğunuz ve özellikleri ve yöntemleri yalnızca birkaç tuş vuruşları ile çağrıları ekleme parametreleri izlemenize yardımcı olur.
 
 IntelliSense'in birçok yönü dile özgüdür. Farklı diller için IntelliSense hakkında daha fazla bilgi için listelenen konulara bakın [Ayrıca bkz.](#see-also) bölümü.
 
@@ -37,37 +38,37 @@ Bir öğe seçtikten sonra kodunuza tuşlarına basarak eklenebilir **sekmesini*
 
 Üye listesinde, soldaki simge ad alanı, sınıf, işlev veya değişken gibi bir üye türünü temsil eder. Simge listesi için bkz [sınıf görünümü ve Nesne Tarayıcısı simgeleri](../ide/class-view-and-object-browser-icons.md). Basabilirsiniz şekilde listesi çok uzun olabilir **PgUp** ve **PgDn** listede yukarı veya aşağı gitme.
 
-![Visual Studio üye listesi](../ide/media/vs2015_intellisense.png "vs2015_Intellisense")
+![Visual Studio üye listesi](../ide/media/vs2015_intellisense.png)
 
-Çağırabilirsiniz **listesi üyeleri** yazarak el ile özellik **CTRL** + **J**, seçme **Düzenle**  >  **IntelliSense** > **listesi üyeleri**, veya seçerek **listesi üyeleri** Düzenleyicisi araç çubuğunda. Boş bir satırda veya tanınabilir bir kapsamın dışında çağrıldığında, bu liste genel ad alanında simgeleri görüntüler.
+Çağırabilirsiniz **listesi üyeleri** yazarak el ile özellik **Ctrl**+**J**, seçme **Düzenle**  >  **IntelliSense** > **listesi üyeleri**, veya seçerek **listesi üyeleri** Düzenleyicisi araç çubuğunda. Boş bir satırda veya tanınabilir bir kapsamın dışında çağrıldığında, bu liste genel ad alanında simgeleri görüntüler.
 
 Üyeleri listeleme (onun özellikle çağrılan sürece görünmemesi için) varsayılan olarak devre dışı bırakmak için Git **Araçları** > **seçenekleri** > **tüm diller**ve seçimini **otomatik listesi üyeleri**. Listesi üyeleri yalnızca belirli bir dil için etkinleştirmek istiyorsanız, Git **genel** o dil için ayarlar.
 
-Sadece yazdığınız metnin kodun içine eklendiği öneri moduna da geçebilirsiniz. Liste ve tuşuna değil bir tanımlayıcı girin, örneğin, **sekmesini**, tamamlanmasında modu giriş yazılan tanımlayıcı değiştirirsiniz. Tamamlanma modu ve öneri modu arasında geçiş yapmak için basın **Ctrl** + **Alt** + **boşluk**, veya seçin **Düzenle**  >  **IntelliSense** > **geçiş tamamlama modu**.
+Sadece yazdığınız metnin kodun içine eklendiği öneri moduna da geçebilirsiniz. Liste ve tuşuna değil bir tanımlayıcı girin, örneğin, **sekmesini**, tamamlanmasında modu giriş yazılan tanımlayıcı değiştirirsiniz. Tamamlanma modu ve öneri modu arasında geçiş yapmak için basın **Ctrl**+**Alt**+**alanı**, veya seçin **Düzenle**  >  **IntelliSense** > **geçiş tamamlama modu**.
 
 ## <a name="parameter-info"></a>Parametre Bilgisi
 
 Parametre Bilgisi; bir yöntem, öznitelik genel tür parametresi (C#) veya şablon (C++) tarafından istenen parametrelerin sayısı, adları ve türleri hakkında bilgi verir.
 
-Kalın yazı tipli parametre, işlevi yazarken gerekli olan bir sonraki parametreyi gösterir. Aşırı yüklenmiş işlevler için, işlev aşırı yüklerine ilişkin alternatif parametre bilgilerini görüntülemek üzere YUKARI ve AŞAĞI ok tuşlarını kullanabilirsiniz.
+Kalın yazı tipli parametre, işlevi yazarken gerekli olan bir sonraki parametreyi gösterir. Aşırı yüklenen işlevler için kullandığınız **yukarı** ve **aşağı** işlev aşırı yüklemelerinin alternatif parametre bilgilerini görüntülemek için ok tuşlarını.
 
-![Parametre bilgisi](../ide/media/vs2015_param_info.png "VS2015_param_Info")
+![Parametre Bilgisi](../ide/media/vs2015_param_info.png)
 
-XML Belgeleri yorumlarıyla işlevlere ve parametrelere ek açıklamalar koyduğunuzda, yorumlar Parametre Bilgisi olarak görüntülenir. Daha fazla bilgi için bkz: [XML kodu açıklamalarını sağlama](../ide/supplying-xml-code-comments.md).
+XML Belgeleri yorumlarıyla işlevlere ve parametrelere ek açıklamalar koyduğunuzda, yorumlar Parametre Bilgisi olarak görüntülenir. Daha fazla bilgi için bkz: [tedarik XML kodu açıklamaları](../ide/supplying-xml-code-comments.md).
 
-Parametre bilgisi seçerek el ile çalıştırabilirsiniz **Düzenle** > **IntelliSense** > **parametre bilgisi**, basarak **Ctrl**   +  **Shift** + **alanı**, veya seçerek **parametre bilgisi** Düzenleyicisi araç çubuğunda.
+Parametre bilgisi seçerek el ile çalıştırabilirsiniz **Düzenle** > **IntelliSense** > **parametre bilgisi**, basarak **Ctrl**  + **Shift**+**alanı**, veya seçerek **parametre bilgisi** Düzenleyicisi araç çubuğunda.
 
 ## <a name="quick-info"></a>Hızlı Bilgi
 
 Hızlı bilgi kodunuzdaki herhangi bir tanımlayıcı için bütün bildirimi görüntüler.
 
-![Visual Studio hızlı bilgi](../ide/media/vs2015_quick_info.png "VS2015_Quick_info")
+![Visual Studio hızlı bilgi](../ide/media/vs2015_quick_info.png)
 
 Üyeden seçtiğinizde **listesi üyeleri** kutusunda, hızlı bilgi de görünür.
 
-![Parametre bilgisi bir c&#35; kod dosyası](../ide/media/vs2015_paraminfo.png "VS2015_ParamInfo")
+![Parametre bilgisi bir c&#35; kod dosyası](../ide/media/vs2015_paraminfo.png)
 
-Seçerek el ile hızlı bilgi çağırabileceği **Düzenle** > **IntelliSense** > **hızlı bilgi**, basarak **Ctrl**  +  **I**, veya seçerek **hızlı bilgi** Düzenleyicisi araç çubuğunda.
+Seçerek el ile hızlı bilgi çağırabileceği **Düzenle** > **IntelliSense** > **hızlı bilgi**, basarak **Ctrl** + **I**, veya seçerek **hızlı bilgi** Düzenleyicisi araç çubuğunda.
 
 Bir işlev aşırı yüklenmişse, IntelliSense, tüm aşırı yük biçimleri için bilgileri görüntülemeyebilir.
 
@@ -77,11 +78,11 @@ Hızlı bilgi C++ kodunu giderek kapatabilirsiniz **Araçları** > **seçenekler
 
 Terim belirsizliğini ortadan kaldırmak için yeterli sayıda karakter girdikten sonra tam sözcüğü bir değişken, komut veya işlev adı kalan tamamlar. Tam sözcük seçerek çağırabileceği **Düzenle** > **IntelliSense** > **tam sözcüğü**, basarak **Ctrl** + **Alanı**, veya seçerek **tam sözcüğü** Düzenleyicisi araç çubuğunda.
 
-## <a name="intellisense-options"></a>IntelliSense Seçenekleri
+## <a name="intellisense-options"></a>IntelliSense seçenekleri
 
 IntelliSense seçenekleri varsayılan olarak açıktır. Bunları devre dışı bırakmak için seçin **Araçları** > **seçenekleri** > **metin düzenleyici** ve seçimini **parametre bilgilerini**veya **otomatik listesi üyeleri** üyeleri listeleme özelliği istemiyorsanız.
 
-## <a name="troubleshooting-intellisense"></a>IntelliSense Sorunlarını Giderme
+## <a name="troubleshoot-intellisense"></a>IntelliSense sorunlarını giderme
 
 IntelliSense seçenekleri, belirli durumlarda beklediğiniz gibi çalışmayabilir.
 
@@ -99,8 +100,8 @@ MessageBox( hWnd, "String literal|")
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Visual Basic IntelliSense](../ide/visual-basic-specific-intellisense.md)  
-[C# IntelliSense](../ide/visual-csharp-intellisense.md)  
-[JavaScript IntelliSense](../ide/javascript-intellisense.md)  
-[Kod yazma ve yeniden düzenleme (C++)](/cpp/ide/writing-and-refactoring-code-cpp)  
-[XML kodu açıklamalarını sağlama](../ide/supplying-xml-code-comments.md)
+- [Visual Basic IntelliSense](../ide/visual-basic-specific-intellisense.md)
+- [C# IntelliSense](../ide/visual-csharp-intellisense.md)
+- [JavaScript IntelliSense](../ide/javascript-intellisense.md)
+- [Yazma ve düzenleme kod (C++)](/cpp/ide/writing-and-refactoring-code-cpp)
+- [XML kodu açıklamaları sağlayın](../ide/supplying-xml-code-comments.md)

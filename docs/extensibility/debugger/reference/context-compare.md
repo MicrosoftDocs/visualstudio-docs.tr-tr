@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0563f037f77c18cc5e686c1ea6acf429c91ad06d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9a17d0b422b65093721a55d4bf8d632aba271a55
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950816"
 ---
 # <a name="contextcompare"></a>CONTEXT_COMPARE
-İki bellek bağlamları karşılaştırma ölçütlerini belirtir.  
+İki bellek bağlamları karşılaştırma ölçütü belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -57,44 +58,44 @@ public enum enum_CONTEXT_COMPARE {
   
 ## <a name="members"></a>Üyeler  
  CONTEXT_EQUAL  
- Hedef bellek bağlamına eşittir listedeki ilk bellek bağlam bulun.  
+ Hedef bellek bağlamına eşit olan listesinde ilk bellek içeriği bulur.  
   
  CONTEXT_LESS_THAN  
- Hedef bellek bağlamı'dan küçük listedeki ilk bellek bağlam bulun.  
+ Hedef bellek bağlam'dan küçük listedeki ilk bellek bağlam bulun.  
   
  CONTEXT_GREATER_THAN  
- Hedef bellek bağlamı büyük listedeki ilk bellek bağlam bulun.  
+ Hedef bellek bağlamını anlamaktan büyük listesinde ilk bellek içeriği bulur.  
   
  CONTEXT_LESS_THAN_OR_EQUAL  
- Küçük veya eşittir hedef bellek bağlamı listedeki ilk bellek bağlam bulun.  
+ Hedef bellek bağlam eşit veya daha az olan listesinde ilk bellek içeriği bulur.  
   
  CONTEXT_GREATER_THAN_OR_EQUAL  
- Büyük veya eşit hedef bellek bağlamı için listedeki ilk bellek bağlam bulun.  
+ Büyüktür veya eşittir hedef bellek bağlam listedeki ilk bellek bağlam bulun.  
   
  CONTEXT_SAME_SCOPE  
- İlk bellek bağlam hedef bellek bağlamı aynı kapsamı listesinde bulabilirsiniz.  
+ Hedef bellek bağlamı ile aynı kapsamda olan listesinde ilk bellek içeriği bulur.  
   
  CONTEXT_SAME_FUNCTION  
- İlk bellek bağlam hedef bellek kapsamı aynı işlevi listesinde bulabilirsiniz.  
+ Hedef bellek kapsamla aynı işlevde listesinde ilk bellek içeriği bulabilirsiniz.  
   
  CONTEXT_SAME_MODULE  
- İlk bellek bağlam hedef bellek bağlamı aynı modüldeki listesinde bulabilirsiniz.  
+ Hedef bellek içerik olarak aynı modülde listesinde ilk bellek içeriği bulabilirsiniz.  
   
  CONTEXT_SAME_PROCESS  
- İlk bellek bağlam hedef bellek bağlamı aynı işlemde listesinde bulabilirsiniz.  
+ Hedef bellek içerik olarak aynı işlemde olan listesinde ilk bellek içeriği bulur.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken olarak geçirilen [karşılaştırmak](../../../extensibility/debugger/reference/idebugmemorycontext2-compare.md) yöntemi.  
+ Bağımsız değişken olarak geçirilen [karşılaştırma](../../../extensibility/debugger/reference/idebugmemorycontext2-compare.md) yöntemi.  
   
- Bu değerler belirtilen karşılaştırma ölçütlerini karşılayan bir listedeki ilk bellek içeriği bulmak için kullanılır. Bellek bağlam kendisini karşı karşılaştırmak için bellek bağlamları listesi verilir `IDebugMemoryContext2::Compare` yöntemi. Karşılaştırma işleci olduğu listesindeki ilk bellek bağlamda `true` sonra döndürülür.  
+ Bu değerler, belirtilen karşılaştırma ölçütleri karşılayan bir listedeki ilk bellek içeriği bulmak için kullanılır. Bir bellek bağlamı kendisine karşı karşılaştırmak için bellek içerikleri bir listesi verilir `IDebugMemoryContext2::Compare` yöntemi. Karşılaştırma işleci olan listede ilk bellek bağlam `true` sonra döndürülür.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [Karşılaştırma](../../../extensibility/debugger/reference/idebugmemorycontext2-compare.md)
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Compare](../../../extensibility/debugger/reference/idebugmemorycontext2-compare.md)

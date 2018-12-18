@@ -1,5 +1,5 @@
 ---
-title: m_stateFlags alan | Microsoft Docs
+title: m_stateFlags alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,31 +13,32 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8842b4e7a3b6c0cb13b0c0d446e0e03b525ae903
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ee0cdebe00acce67fc9032a4ba9e7e566ecd9786
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39232084"
 ---
-# <a name="mstateflags-field"></a>m_stateFlags alan
-Geçerli durumuyla ilgili bilgileri depolar <xref:System.Threading.Tasks.Task> nesnesi.  
+# <a name="mstateflags-field"></a>m_stateFlags alanı
+Geçerli durumuyla ilgili bilgileri depolayan <xref:System.Threading.Tasks.Task> nesne.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .field assembly int32 modreq(System.Runtime.CompilerServices.IsVolatile) m_stateFlags  
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
- Tipik olarak kullandığınız <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=fullName> bu değer erişmek için özellik.  
+ Tipik olarak kullandığınız <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=fullName> bu değere erişmek için özelliği.  
   
- Bu üye aşağıdaki değerlerden herhangi bir bileşimi olabilir:  
+ Bu üye, aşağıdaki değerlerden herhangi bir birleşimi olabilir:  
   
 -   [TASK_STATE_EXECUTED](../../extensibility/debugger/task-state-executed-field.md)  
   
@@ -49,5 +50,5 @@ Geçerli durumuyla ilgili bilgileri depolar <xref:System.Threading.Tasks.Task> n
   
 -   [TASK_STATE_RAN_TO_COMPLETION](../../extensibility/debugger/task-state-ran-to-completion-field.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Task sınıfı](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görev sınıfı](../../extensibility/debugger/task-class-internal-members.md)

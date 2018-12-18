@@ -1,5 +1,5 @@
 ---
-title: Düzenleyici oluşturucuları | Microsoft Docs
+title: Düzenleyici fabrikaları | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,46 +13,47 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 676918b6366837b6ee77cf27bd5fba9fbf608729
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9f4dc0eca2c74161abb9cc4afe3917a160a18422
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49933137"
 ---
-# <a name="editor-factories"></a>Düzenleyici oluşturucuları
-Bir düzenleyici üreteci Düzenleyicisi nesneleri oluşturur ve bunları fiziksel bir görünüm olarak bilinen bir pencere çerçevesi koyar. Belge verileri ve düzenleyicileri ve tasarımcıları oluşturmak için gerekli olan belge görünümü nesneleri oluşturur. Bir düzenleyici üreteci, Visual Studio çekirdek Düzenleyicisi'ni ve herhangi bir standart Düzenleyicisi oluşturmak için gereklidir. Özel bir düzenleyici Ayrıca isteğe bağlı olarak bir düzenleyici üreteci ile oluşturulabilir.  
+# <a name="editor-factories"></a>Düzenleyici fabrikaları
+Bir düzenleyici fabrikası Düzenleyicisi nesneleri oluşturur ve bunları fiziksel bir görünüm olarak bilinen bir pencere çerçevesi koyar. Belge verileri ve düzenleyiciler ve tasarımcılar oluşturmak için gerekli olan belge görünümü nesneleri oluşturur. Bir düzenleyici fabrikası, Visual Studio çekirdek Düzenleyicisi ve herhangi bir standart düzenleyici oluşturmak için gereklidir. Özel bir düzenleyici Ayrıca isteğe bağlı olarak bir düzenleyici fabrikası ile oluşturulabilir.  
   
- Bir düzenleyici üreteci uygulayarak oluşturduğunuz <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> arabirimi. Aşağıdaki örnekte nasıl uygulandığını gösterir <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> bir düzenleyici üreteci oluşturmak için:  
+ Uygulayarak bir düzenleyici fabrikası oluşturma <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> arabirimi. Aşağıdaki örnek nasıl uygulanacağını göstermektedir <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> Düzenleyici fabrikası oluşturmak için:  
   
  [!code-vb[VSSDKEditorFactories#1](../extensibility/codesnippet/VisualBasic/editor-factories_1.vb)]
  [!code-csharp[VSSDKEditorFactories#1](../extensibility/codesnippet/CSharp/editor-factories_1.cs)]  
   
- Bir düzenleyici bu Düzenleyicisi tarafından işlenen bir dosya türünü açmayı ilk kez yüklenir. Belirli bir düzenleyici veya varsayılan Düzenleyicisi'ni açmak seçebilirsiniz. Varsayılan Düzenleyicisi'ni seçerseniz, tümleşik geliştirme ortamı (IDE) açmak için doğru Düzenleyicisi belirler ve ardından açar. Daha fazla bilgi için bkz: [projede açılır bir dosyayı hangi Düzenleyicisi'ni belirleme](../extensibility/internals/determining-which-editor-opens-a-file-in-a-project.md).  
+ Bu düzenleyici tarafından işlenen bir dosya türünü açmayı ilk kez bir düzenleyici yüklenir. Belirli bir düzenleyici veya varsayılan Düzenleyicisi'ni açmak seçebilirsiniz. Varsayılan Düzenleyicisi'ni seçerseniz, tümleşik geliştirme ortamı (IDE) açmak için doğru Düzenleyicisi belirler ve ardından açılır. Daha fazla bilgi için [belirlemek hangi Düzenleyicisi, bir projede bir dosya açar](../extensibility/internals/determining-which-editor-opens-a-file-in-a-project.md).  
   
-## <a name="registering-editor-factories"></a>Düzenleyici oluşturucuları kaydetme  
- Oluşturduğunuz bir düzenleyici kullanmadan önce hakkında bilgi işlemek dosya uzantıları dahil olmak üzere kaydetmeniz gerekir.  
+## <a name="register-editor-factories"></a>Düzenleyici üreteçlerini kaydedin  
+ Oluşturduğunuz bir düzenleyici kullanabilmeniz için önce işleyebileceği dosya uzantılarını da dahil olmak üzere, bunlar hakkında bilgi kaydetmeniz gerekir.  
   
- Yönetilen kodda, VSPackage yazılmışsa yönetilen paket Framework (MPF) yöntemini kullanabilirsiniz <xref:Microsoft.VisualStudio.Shell.Package.RegisterEditorFactory%2A> , VSPackage yüklendikten sonra Düzenleyici üreteci kaydetmek için. Yönetilmeyen kodunda, VSPackage yazılır sonra kullanarak Düzenleyici üreteci kaydolmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.SVsRegisterEditors> hizmet.  
+ VSPackage, yönetilen kodda yazılır, yönetilen paket Framework (MPF) yöntemi kullanabileceğiniz <xref:Microsoft.VisualStudio.Shell.Package.RegisterEditorFactory%2A> , VSPackage yüklendikten sonra Düzenleyici fabrikası kaydedilecek. Yönetilmeyen kodda yazılmış, VSPackage'ı sonra Düzenleyici fabrikası kullanarak kaydetmelisiniz <xref:Microsoft.VisualStudio.Shell.Interop.SVsRegisterEditors> hizmeti.  
   
-### <a name="registering-an-editor-factory-by-using-managed-code"></a>Yönetilen kod kullanarak bir düzenleyici üreteci kaydetme  
- Düzenleyici üreteci, VSPackage içinde 's kaydetmeniz gerekir `Initialize` yöntemi. İlk çağrı `base.Initialize`ve ardından arama <xref:Microsoft.VisualStudio.Shell.Package.RegisterEditorFactory%2A> her Düzenleyici üreteci için  
+### <a name="register-an-editor-factory-by-using-managed-code"></a>Yönetilen kod kullanarak bir düzenleyici üreteci kaydettirir.  
+ VSPackage içinde 's, düzenleyici fabrikası kaydetmelisiniz `Initialize` yöntemi. İlk çağrı `base.Initialize`ve sonra çağrı <xref:Microsoft.VisualStudio.Shell.Package.RegisterEditorFactory%2A> her Düzenleyici fabrikası için  
   
- Yönetilen kodda bir düzenleyici üreteci kaydını gerek yoktur VSPackage bu sizin için işleyecek olduğundan. Ayrıca, düzenleyici üreteci uyguluyorsa <xref:System.IDisposable>, kaydı olduğunda otomatik olarak atıldı.  
+ Yönetilen kodda bir düzenleyici fabrikası kaydını kaldırmak için gerek yoktur VSPackage'ı bu sizin için işleyecek olduğundan. Ayrıca, düzenleyici fabrikası uyguluyorsa <xref:System.IDisposable>, kaydı olduğunda otomatik olarak kapatılır.  
   
-### <a name="registering-an-editor-factory-by-using-unmanaged-code"></a>Yönetilmeyen kod kullanarak bir düzenleyici üreteci kaydetme  
- İçinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsPackage.SetSite%2A> Düzenleyicisi paketinizi kullanmak için uygulama `QueryService` çağrılacak yöntem `SVsRegisterEditors`. Bunu yapmak için bir işaretçi döndürür <xref:Microsoft.VisualStudio.Shell.Interop.IVsRegisterEditors>. Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsRegisterEditors.RegisterEditor%2A> uygulamanıza geçirerek yöntemi <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> arabirimi. Mplement gerekir <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> ayrı bir sınıf.  
+### <a name="register-an-editor-factory-by-using-unmanaged-code"></a>Yönetilmeyen kod kullanarak bir düzenleyici üreteci kaydettirir.  
+ İçinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsPackage.SetSite%2A> Düzenleyicisi paketinizi kullanmak için uygulama `QueryService` çağrılacak yöntem `SVsRegisterEditors`. Bunun yapılması, bir işaretçi döndürür <xref:Microsoft.VisualStudio.Shell.Interop.IVsRegisterEditors>. Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsRegisterEditors.RegisterEditor%2A> uygulamanıza geçirerek yöntemi <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> arabirimi. Ygula gerekir <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory> ayrı bir sınıf.  
   
-## <a name="the-editor-factory-registration-process"></a>Düzenleyici üreteci kayıt işlemi  
- Visual Studio, düzenleyici üreteci kullanarak düzenleyicinizi yüklediğinde aşağıdaki süreç gerçekleşir:  
+## <a name="the-editor-factory-registration-process"></a>Düzenleyici fabrikası kayıt işlemi  
+ Visual Studio Düzenleyicisi Fabrika kullanarak düzenleyiciniz yüklediğinde aşağıdaki süreç gerçekleşir:  
   
-1.  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Proje sistem çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A>.  
+1. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Proje sistem çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A>.  
   
-2.  Bu yöntem Düzenleyici üreteci döndürür. Proje Sistemi Düzenleyicisi için gereken gerçek kadar düzenleyicisinin paketi, ancak yüklenirken visual Studio gecikme olabilir.  
+2. Bu yöntem, düzenleyici üreteci döndürür. Visual Studio gecikmeler ancak, düzenleyicinin paket proje Sistemi Düzenleyicisi gerçekten gereken kadar yükleniyor.  
   
-3.  Visual Studio Proje Sistemi Düzenleyicisi gerektiğinde çağırır <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A>, belge görünümü ve belgenin veri nesneleri döndüren özel bir yöntem.  
+3. Visual Studio Proje Sistemi Düzenleyicisi gerektiğinde, çağıran <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A>, hem belge görünümü hem de belge veri nesneleri döndüren özel bir yöntem.  
   
-4.  Varsa, Fabrika Düzenleyicisi için Visual Studio tarafından çağırır <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A> bir belge veri nesnesi ve bir belge görünüm nesnesi döndürür, Visual Studio sonra belge penceresine oluşturur, belge görünüm nesnesi yerleştirir ve bir giriş çalışan belgesine yapar Belge veri nesnesi tablosu (RDT).  
+4. Varsa, düzenleyici fabrikası kullanarak Visual Studio tarafından çağıran <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory.CreateEditorInstance%2A> hem bir belge veri nesnesi hem de bir belge görünümü nesnesi döndürür, Visual Studio sonra belge penceresi oluşturur, belge view nesnesinin yerleştirir ve çalışan belgeye bir giriş yapar Belge veri nesnesi için tablo (RDT).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsEditorFactory>   
- [Çalıştırılan Belge Tablosu](../extensibility/internals/running-document-table.md)
+ [çalıştırılan Belge tablosu](../extensibility/internals/running-document-table.md)

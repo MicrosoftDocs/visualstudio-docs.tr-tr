@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: bc5c7367a8b134324073d40452ec9b7ec20c1ffc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: eff83198e337a3f89c88663722bf34046d3d4f62
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905746"
 ---
 # <a name="objecttype"></a>OBJECT_TYPE
 İfade değerlendirici nesneden türünü belirtir.  
@@ -69,61 +70,61 @@ public enum enum_OBJECT_TYPE {
   
 ## <a name="members"></a>Üyeler  
  OBJECT_TYPE_BOOLEAN  
- Nesne bir Boole değeri gösterir.  
+ Bir Boole değeri bir nesne olduğunu gösterir.  
   
  OBJECT_TYPE_CHAR  
- Nesne bir karakter olduğunu gösterir.  
+ Bir nesne bir karakter olduğunu gösterir.  
   
  OBJECT_TYPE_I1  
- Nesne tek baytlık imzalı bir tamsayı olduğunu gösterir.  
+ Nesnesi bir bayt imzalı bir tamsayı olduğu anlamına gelir.  
   
  OBJECT_TYPE_U1  
- Nesne tek baytlık bir işaretsiz tamsayı olduğunu gösterir.  
+ Bir nesne için bir tane bayt işaretsiz tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_I2  
- Nesne iki baytlık imzalı bir tamsayı olduğunu gösterir.  
+ Nesne iki baytlık bir işaretli tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_U2  
- Nesne iki baytlık bir işaretsiz tamsayı olduğunu gösterir.  
+ Bir nesne bir iki bayt işaretsiz tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_I4  
- Nesne dört baytlık imzalı bir tamsayı olduğunu gösterir.  
+ Nesne dört baytlık bir işaretli tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_U4  
- Nesne dört baytlık bir işaretsiz tamsayı olduğunu gösterir.  
+ Dört bayt işaretsiz tamsayı bir nesne olduğunu gösterir.  
   
  OBJECT_TYPE_I8  
- Nesne sekiz baytlık imzalı tamsayı olduğunu gösterir.  
+ Nesne bir sekiz bayt imzalı tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_U8  
- Nesne sekiz baytlık bir işaretsiz tamsayı olduğunu gösterir.  
+ Bir nesne bir sekiz bayt işaretsiz tamsayı olduğunu gösterir.  
   
  OBJECT_TYPE_R4  
- Nesne dört-bayt kayan noktalı sayı olduğunu gösterir.  
+ Nesne dört baytlık bir kayan noktalı sayı olduğunu gösterir.  
   
  OBJECT_TYPE_R8  
- Nesne sekiz-bayt kayan noktalı sayı olduğunu gösterir.  
+ Bir nesne bir sekiz bayt kayan noktalı sayı olduğunu gösterir.  
   
  OBJECT_TYPE_OBJECT  
- Nesne bir nesne olduğunu gösterir.  
+ Bir nesne bir nesne olduğunu gösterir.  
   
  OBJECT_TYPE_NULL  
  Nesne NULL olduğunu gösterir.  
   
  OBJECT_TYPE_CLASS  
- Nesne bir sınıf olduğunu belirtir.  
+ Bir nesne bir sınıf olduğunu belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bağımsız değişken olarak geçirilen [CreatePrimitiveObject](../../../extensibility/debugger/reference/idebugfunctionobject-createprimitiveobject.md) ve [CreateArrayObject](../../../extensibility/debugger/reference/idebugfunctionobject-createarrayobject.md) yöntemleri.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: ee.h  
+ Üstbilgi: ee.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [CreatePrimitiveObject](../../../extensibility/debugger/reference/idebugfunctionobject-createprimitiveobject.md)   
  [CreateArrayObject](../../../extensibility/debugger/reference/idebugfunctionobject-createarrayobject.md)

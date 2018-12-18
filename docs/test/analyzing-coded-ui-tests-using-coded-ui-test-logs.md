@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da günlüklerini kullanarak kodlanmış UI Test kodlanmış UI testlerini çözümleme | Microsoft Docs
+title: Kodlanmış UI Test Günlüklerini Kullanarak Kodlanmış UI Testlerini Çözümleme
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
 ms.topic: conceptual
 ms.author: gewarren
@@ -8,37 +9,40 @@ manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: 21bee57859f067afee884693fe8a808771374f04
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9c31dd90981cf39f1de296b2c96d6064afc730b4
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52896685"
 ---
-# <a name="analyzing-coded-ui-tests-using-coded-ui-test-logs"></a>Kodlanmış UI Test Günlüklerini Kullanarak Kodlanmış UI Testlerini Çözümleme
+# <a name="analyzing-coded-ui-tests-using-coded-ui-test-logs"></a>Kodlanmış UI test günlüklerini çözümleme kodlanmış UI testleri kullanarak
 
-Kodlanmış UI test günlüklerini filtresi ve kayıt kodlanmış UI testi hakkında önemli bilgiler çalıştırır. Günlükleri sorunları hızla hata ayıklama için izin veren bir biçimde sunulur.
+Kodlanmış UI test günlüklerini filtre ve kayıt kodlanmış UI testleri hakkında önemli bilgiler çalıştırır. Günlükler, sorunları hızlı bir şekilde hata ayıklama için izin veren bir biçiminde gösterilir.
 
-## <a name="step-1-enable-logging"></a>1. adım: günlük kaydını etkinleştir
+[!INCLUDE [coded-ui-test-deprecation](includes/coded-ui-test-deprecation.md)]
+
+## <a name="step-1-enable-logging"></a>1. adım: günlük kaydını etkinleştirme
 
 Senaryonuza bağlı olarak, günlüğü etkinleştirmek için aşağıdaki yöntemlerden birini kullanın:
 
-- Hedef .NET Framework sürüm 4 hiçbir *App.config* test projesinde mevcut dosya:
+- Hedef .NET Framework sürüm 4 olmadan *App.config* test projesinde dosya:
 
-   1. Açık **QTAgent32_40.exe.config** dosya. Varsayılan olarak, bu dosya bulunan *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*.
+   1. Açık *QTAgent32_40.exe.config* dosya. Varsayılan olarak, bu dosya bulunan *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*.
 
-   2. Değer EqtTraceLevel için istediğiniz günlük düzeyine değiştirin.
-
-   3. Dosyayı kaydedin.
-
-- Hedef .NET Framework sürüm 4.5 hiçbir *App.config* test projesinde mevcut dosya:
-
-   1. Açık **QTAgent32.exe.config** dosya. Varsayılan olarak, bu dosya bulunan *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*.
-
-   2. İstediğiniz günlük düzeyine EqtTraceLevel değerini değiştirin.
+   2. Değeri için gt;System.Diagnostics istediğiniz günlük düzeyine değiştirin.
 
    3. Dosyayı kaydedin.
 
-- *App.config* dosyasıdır test projesinde var:
+- Hedef .NET Framework sürüm 4.5 olmadan *App.config* test projesinde dosya:
+
+   1. Açık *QTAgent32.exe.config* dosya. Varsayılan olarak, bu dosya bulunan *% ProgramFiles (x86) %\Microsoft Visual Studio\2017\Enterprise\Common7\IDE*.
+
+   2. İstediğiniz günlük düzeyine gt;System.Diagnostics değerini değiştirin.
+
+   3. Dosyayı kaydedin.
+
+- *App.config* dosyasıdır ve test projesinde mevcut:
 
     - Açık *App.config* dosya projede ve yapılandırma düğümü altında aşağıdaki kodu ekleyin:
 
@@ -50,40 +54,40 @@ Senaryonuza bağlı olarak, günlüğü etkinleştirmek için aşağıdaki yönt
       </system.diagnostics>`
       ```
 
-- Test kodundan günlük kaydını etkinleştir:
+- Test kodu günlüğünü etkinleştir:
 
    <xref:Microsoft.VisualStudio.TestTools.UITesting.PlaybackSettings.LoggerOverrideState%2A> = HtmlLoggerState.AllActionSnapshot;
 
-## <a name="step-2-run-your-coded-ui-test-and-view-the-log"></a>2. adım: kodlanmış UI testi çalıştırın ve günlüğünü görüntüleme
+## <a name="step-2-run-your-coded-ui-test-and-view-the-log"></a>2. adım: kodlanmış UI testleri çalıştırmak ve günlüğünü görüntüleyin
 
-Değişiklikler ile kodlanmış bir UI testi çalıştırdığınızda **QTAgent32.exe.config** dosya Gezgini Test sonuçlarında bağlantı bir çıktı görmeniz yerinde. Yalnızca test, aynı zamanda için izleme düzeyi için "ayrıntılı." olarak ayarlandığında başarılı testler başarısız olduğunda günlük dosyaları oluşturulur
+Yapılan değişiklikler ile kodlanmış UI testi çalıştırdığınızda *QTAgent32.exe.config* dosya, yerinde bağlantısını bir çıktı görmeniz **Test Gezgini** sonuçları. Yalnızca, test, aynı zamanda için izleme düzeyi için "verbose." olarak ayarlandığında başarılı testleri başarısız olduğunda günlük dosyaları oluşturulur
 
-1.  Üzerinde **Test** menüsünde seçin **Windows** ve ardından **Test Gezgini**.
+1.  Üzerinde **Test** menüsünde seçin **Windows** seçip **Test Gezgini**.
 
-2.  Üzerinde **yapı** menüsünde seçin **yapı çözümü**.
+2.  Üzerinde **derleme** menüsünde seçin **Çözümü Derle**.
 
-3.  Test Gezgini içinde çalıştırmak, kendi kısayol menüsünü açın ve ardından istediğiniz kodlanmış UI testi seçin **seçin Testleri Çalıştır**.
+3.  İçinde **Test Gezgini**, kodlanmış UI testi çalıştırmak için kısayol menüsünü açın ve ardından istediğiniz seçin **seçili Testleri Çalıştır**.
 
-     Otomatikleştirilmiş testleri çalıştırın ve geçirilen veya başarısız olmadığını gösterir.
+     Otomatikleştirilmiş testleri çalıştırın ve geçti veya başarısız olmadığını gösterir.
 
     > [!TIP]
-    > Test Gezgini görüntülemek için seçin **Test** > **Windows**ve ardından **Test Gezgini**.
+    > Görüntülenecek **Test Gezgini**, seçin **Test** > **Windows**ve ardından **Test Gezgini**.
 
-4.  Seçin **çıkış** Test Gezgini sonuçlarında bağlantı.
+4.  Seçin **çıkış** bağlantısını **Test Gezgini** sonuçları.
 
-     ![Test Gezgini çıkış bağlantıyı](../test/media/cuit_htmlactionlog1.png "CUIT_HTMLActionLog1")
+     ![Test Gezgininde çıkış bağlantı](../test/media/cuit_htmlactionlog1.png)
 
-     Bu eylem günlüğü için bir bağlantı içerir test için çıktı görüntüler.
+     Bu eylem günlüğü bağlantısını içeren test için çıktıyı görüntüler.
 
-     ![Sonuçları ve kodlanmış UI testi çıkış bağlantılarından](../test/media/cuit_htmlactionlog2.png "CUIT_HTMLActionLog2")
+     ![Sonuçları ve kodlanmış UI testi çıkış bağlantıları](../test/media/cuit_htmlactionlog2.png)
 
 5.  Seçin *UITestActionLog.html* bağlantı.
 
      Günlük, web tarayıcınızda görüntülenir.
 
-     ![Kodlanmış UI testi günlük dosyası](../test/media/cuit_htmlactionlog3.png "CUIT_HTMLActionLog3")
+     ![Kodlanmış UI testi günlüğü dosyası](../test/media/cuit_htmlactionlog3.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Kodunuzu Test Etmek için UI Otomasyonunu Kullanma](../test/use-ui-automation-to-test-your-code.md)
-- [Nasıl yapılır: Microsoft Visual Studio'dan testler çalıştırma](http://msdn.microsoft.com/Library/1a1207a9-2a33-4a1e-a1e3-ddf0181b1046)
+- [UI otomasyonunu kullanarak kodunuzu test etme](../test/use-ui-automation-to-test-your-code.md)
+- [Nasıl yapılır: Microsoft Visual Studio'dan testler çalıştırma](https://msdn.microsoft.com/Library/1a1207a9-2a33-4a1e-a1e3-ddf0181b1046)

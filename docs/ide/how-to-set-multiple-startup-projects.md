@@ -1,9 +1,8 @@
 ---
-title: 'Nasıl yapılır: birden çok başlangıç projesi ayarlama | Microsoft Docs'
-ms.custom: ''
+title: 'Nasıl yapılır: Çoklu Başlangıç projeleri ayarlama'
 ms.date: 06/21/2017
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - startup projects, setting multiple startup projects
@@ -13,27 +12,29 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 322b82e37851ef78c97664df9c33db9194d9db90
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: aaff32bf9188b7cd33037992b9e2f120e6410e52
+ms.sourcegitcommit: 495bba1d8029646653f99ad20df2f80faad8d58b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39379432"
 ---
-# <a name="how-to-set-multiple-startup-projects"></a>Nasıl yapılır: birden çok başlangıç projesi ayarlama
-Visual Studio belirtmenize olanak verir nasıl daha fazla hata ayıklayıcı başlatıldığında bir proje çalıştırmak.  
+# <a name="how-to-set-multiple-startup-projects"></a>Nasıl yapılır: Çoklu Başlangıç projeleri ayarlama
 
-## <a name="to-set-multiple-startup-projects"></a>Birden fazla başlangıç projesi ayarlamak için  
+Visual Studio belirtmenize olanak tanır nasıl birden çok hata ayıklayıcıyı başlattığınızda bir proje çalıştırılır.
 
-1.  İçinde **Çözüm Gezgini**, (üst düğümü) çözümü seçin.  
+## <a name="to-set-multiple-startup-projects"></a>Birden fazla başlangıç projesi olarak ayarlamak için
 
-2.  Çözüm düğümün (sağ tıklatma) bağlam menüsünü seçin ve ardından **özellikleri**. **Çözüm özellik sayfaları** iletişim kutusu görüntülenir.  
+1.  İçinde **Çözüm Gezgini**, ' % s'çözümü (üst düğümü) seçin.
 
-3.  Genişletme **ortak özellikleri** düğümü seçin **başlangıç projesi**.  
+2.  Çözüm düğümün (sağ tıklama) bağlam menüsünü seçin ve ardından **özellikleri**. **Çözüm özellik sayfaları** iletişim kutusu görüntülenir.
+
+3.  Genişletin **ortak özellikler** düğümünü seçip **başlangıç projesi**.
 
 4.  Seçin **birden fazla başlangıç projesi** seçeneği ve uygun eylemleri ayarlayın.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)
-- [Çözümler ve projeler oluşturma](../ide/creating-solutions-and-projects.md)
+- [Projeler ve çözümler oluşturma](../ide/creating-solutions-and-projects.md)
 - [Proje ve çözüm özelliklerini yönetme](../ide/managing-project-and-solution-properties.md)

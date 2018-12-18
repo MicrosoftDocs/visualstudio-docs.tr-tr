@@ -1,7 +1,7 @@
 ---
-title: Hata ayıklayıcı değişkenleri için bellek görüntülemek | Microsoft Docs
+title: Hata ayıklayıcıda değişkenler için belleği görüntüleme | Microsoft Docs
 ms.custom: H1Hack27Feb2017
-ms.date: 11/04/2016
+ms.date: 10/04/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 f1_keywords:
@@ -25,96 +25,98 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 550c5ffe641fac5bb2d080a892143bf3ff9744b0
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: cdf8e5fc5ee0ac34b4c295f6cc593e0a93b548ae
+ms.sourcegitcommit: a7de99f36e9ead7ea9e9bac23c88d05ddfc38b00
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52257270"
 ---
-# <a name="use-the-memory-windows-in-the-visual-studio-debugger"></a>Visual Studio hata ayıklayıcısında bellek pencerelerini kullanma
-**Bellek** pencere, uygulamanız tarafından kullanılan bellek alanına bir görünüm sağlar. **İzleme** penceresinde **QuickWatch** iletişim kutusu, **otomobiller** penceresinde ve **Yereller** penceresini olan değişkenlerinin içeriğini göster belirli konumlara bellekte depolanır. Ancak **bellek** penceresi büyük ölçekli resim gösterir. Bu görünüm büyük (arabellekleri veya örneğin büyük dizeleri) de diğer windows gösterme veri parçaları incelemek için kullanışlı olabilir. Ancak, **bellek** penceresi verileri görüntülemek için sınırlı değildir. İçerik atanmamış bellekte verileri, kod veya Çöp rastgele bitleri olup her şeyi bellek alanını görüntüler.  
+# <a name="use-the-memory-windows-in-the-visual-studio-debugger-c-c-visual-basic-f"></a>Visual Studio hata ayıklayıcısında bellek windows kullanın (C#, C++, Visual Basic F#)
+
+Hata ayıklama sırasında **bellek** penceresi uygulamanızı kullanarak bellek alanını gösterir. 
+
+Hata ayıklayıcısı pencereleri gibi **Watch**, **Otolar**, **Yereller**ve **QuickWatch** iletişim belirli depolanan değişkenleri Göster Bellekteki konumu. **Bellek** penceresi genel resmi gösterir. Bellek görünümü, büyük (arabellek veya örneğin, büyük dizelerin) de diğer pencerelerinde görüntüleme veri parçaları incelemek için uygundur. 
+
+**Bellek** penceresi verileri görüntülemek için sınırlı değildir. Bu her şeyi veriler, kod ve çöp rastgele bitlerini atanmamış bellekte dahil bellek alanını görüntüler.  
+
+**Bellek** penceresi değildir komut dosyası veya SQL hata ayıklama için kullanılabilir. Bu diller bellek kavramını tanımıyoruz.  
   
- **Bellek** penceredir yalnızca adres düzeyi hata ayıklama içinde etkinse kullanılabilir **seçenekleri** iletişim kutusu, **hata ayıklama** düğümü. **Bellek** penceresi komut dosyası veya bellek kavramı tanımaz diller SQL için kullanılabilir değil.  
+## <a name="open-a-memory-window"></a>Bellek penceresi açın  
   
-## <a name="opening-a-memory-window"></a>Bellek penceresini açma  
+Diğer hata ayıklayıcı pencereleri gibi **bellek** windows yalnızca hata ayıklama oturumu sırasında kullanılabilir. 
+
+>[!IMPORTANT]
+>Etkinleştirmek için **bellek** windows **adres seviyesinde hata ayıklamayı** seçilmelidir **Araçları** > **seçenekleri** (veya **Hata ayıklama** > **seçenekleri**) > **hata ayıklama** > **genel**. 
+
+**Bellek penceresi açmak için**
   
-#### <a name="to-open-a-memory-window"></a>Bellek penceresi açmak için  
+1. Emin **adres seviyesinde hata ayıklamayı** seçili **Araçları** > **seçenekleri** (veya **hata ayıklama**  >  **Seçenekleri**) > **hata ayıklama** > **genel**. 
+   
+1. Yeşil bir ok seçerek hata ayıklamayı Başlat tuşuna basarak **F5**, veya seçerek **hata ayıklama** > **hata ayıklamayı Başlat**.  
+   
+2. Altında **hata ayıklama** > **Windows** > **bellek**seçin **bellek 1**, **bellek2**, **Bellek 3**, veya **bellek 4**. (Bazı sürümlerinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] yalnızca bir teklif **bellek** penceresi.)  
+
+## <a name="move-around-in-the-memory-window"></a>Bellek penceresinde gezinme  
+
+Bir bilgisayarın adres alanı büyük ve kaydırma tarafından yerinizi kolayca kaybedebilir **bellek** penceresi. 
+
+Daha yüksek bellek adresleri penceresinin altında görünür. Daha yüksek bir adresi görüntülemek için aşağı kaydırın. Daha düşük bir adresini görüntülemek üzere yukarı doğru ilerleyin.  
+
+Belirtilen bir adrese anında gidebilirsiniz **bellek** penceresi sürükle ve bırak özelliğini kullanarak veya adresini girerek **adresi** alan. **Adresi** alan alfasayısal adresleri ve adreslerine gibi değerlendirilen ifadeleri kabul `e.User.NonroamableId`. 
+
+İçindeki ifadenin hemen yeniden değerlendirmeyi zorlamak için **adresi** yuvarlatılmış oku seçin, alan **otomatik olarak yeniden değerlendir** simgesi. 
+
+Varsayılan olarak, **bellek** penceresi işler **adresi** ifadeleri uygulama çalışırken tekrar değerlendirilir Canlı ifadeleri olarak. Örneğin, Canlı ifadeler tarafından işaretçi değişkeninin dokunulan bellek görüntülemek için yararlı olabilir.  
+
+**Sürükle ve bırak bir bellek konumuna taşımak için için:**  
+   
+1. Hata ayıklayıcı penceresinde herhangi bir bellek adresi ya da bir bellek adresi içeren bir işaretçi değişkeni seçin.  
+   
+2. Adres veya işaretçiyi sürükleyip **bellek** penceresi. Bu adres sonra görünür **adresi** alan ve **bellek** penceresini ayarlar bu adrese üstünde görüntülenecek. 
   
-1.  Zaten hata ayıklama modunda olup olmadığı, hata ayıklama, başlatın.  
+**Adres alanında girerek bir bellek konumuna taşımak için:**
   
-2.  İçinde **hata ayıklama** menüsündeki **Windows**. Ardından, **bellek** ve ardından **bellek 1**, **bellek 2**, **bellek 3**, veya **bellek 4**. (Düşük düzeyli sürümleri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] yalnızca tek bir **bellek** penceresi. Bu sürümlerinden birini kullanıyorsanız, tıklatmanız **bellek**.)  
+- Adres veya ifadenin yapıştırın veya yazın **adresi** alan ve ENTER tuşuna **Enter**, veya açılır menüden arasından **adresi** alan. **Bellek** penceresini ayarlar bu adrese üstünde görüntülenecek.
   
-## <a name="paging-in-the-memory-window"></a>Bellek penceresi disk belleği  
- **Bellek** penceresine sahip bir dikey kaydırma çubuğu standart olmayan bir şekilde çalışır. Modern bir bilgisayarın adres alanı çok büyük ve, kolayca scrollbar Flash ele geçirme ve rastgele bir konuma sürükleyerek kayıp. Bu nedenle, Flash "üzerinde" ve her zaman scrollbar Merkezi'nde kalır. Yerel kod uygulamalarında yukarı veya aşağı sayfasında ancak hakkında serbestçe kaydırma yapamıyorsunuz.  
+## <a name="customize-the-memory-window"></a>Bellek penceresini özelleştirme 
+
+Varsayılan olarak, bellek içeriğini 1 baytlık tamsayı olarak onaltılık biçimde görünür ve sütunların gösterilen penceresi genişliğini belirler. Şeklini özelleştirebilir **bellek** penceresi bellek içeriğini gösterir.  
   
- Daha yüksek bellek adresleri pencerenin alt kısmında görüntülenir. Daha yüksek bir adresi görüntülemek için değil kadar kaydırın.  
+**Bellek içeriği biçimini değiştirmek için:**  
   
-#### <a name="to-page-up-or-down-in-memory"></a>Yukarı veya aşağı bellek sayfası  
+-  Sağ **bellek** penceresinde ve bağlam menüsünden istediğiniz biçimleri seçin.  
   
-1.  Page DOWN (daha yüksek bellek adresini Git) için dikey kaydırma çubuğu kaydırma altında tıklatın.  
+**Bellek penceresi sütun sayısını değiştirmek için:**
   
-2.  (Düşük bellek adresini Git) sayfasında için Flash dikey kaydırma çubuğu düğmesini tıklatın.  
+- Açılan menü okunu seçin **sütunları** alan ve görüntülemek veya seçmek için sütun sayısını seçin **otomatik** penceresi genişliği üzerinde göre otomatik ayarlama.  
   
-## <a name="selecting-a-memory-location"></a>Bellek konumu seçme  
- Anında bellekte seçili bir konuma taşımak istiyorsanız, bir Sürükle ve bırak işlemi kullanarak veya değer düzenleyerek bunu yapabilirsiniz **adresi** kutusu. **Adresi** kutusu yalnızca sayısal değerler aynı zamanda adreslere değerlendirmek ifadeleri kabul eder. Varsayılan olarak, **bellek** penceresi değerlendirir bir **adresi** programınızı yürütür olarak hangi değerlendirilir canlı bir ifade olarak ifade. Canlı ifadeleri çok kullanışlı olabilir. Örneğin, bir işaretçi işlemdeki bellek görüntülemek için bunları kullanabilirsiniz.  
+İçeriğini istemiyorsanız **bellek** uygulamanızı değiştirmek için pencere çalıştırır, Canlı ifade değerlendirmesi kapatabilirsiniz. 
+
+**Canlı değerlendirme açıp kapatmak için:**  
   
-#### <a name="to-select-a-memory-location-by-dragging-and-dropping"></a>Sürükleme ve bırakma bellek konumu seçmek için  
+- Sağ **bellek** penceresi ve select **otomatik olarak yeniden değerlendir** bağlam menüsünde. 
+
+  >[!NOTE]
+  >Canlı ifade değerlendirme bir geçiş olduğunu ve varsayılan olarak, bu nedenle seçerek **otomatik olarak yeniden değerlendir** devre dışı bırakır. Seçme **otomatik olarak yeniden değerlendir** yeniden açar yeniden açın. 
   
-1.  Tüm penceresinde bellek adresini içeren bir bellek adresi veya işaretçi değişkeni seçin.  
+Gizleme veya en üstündeki araç çubuğunu görüntüleme **bellek** penceresi. İçin erişebilir değil **adresi** alan veya araç gizlenen diğer araçlar.  
   
-2.  Adres veya işaretçi sürükleyin **bellek** penceresi.  
+**Araç çubuğunun görünümünü açıp kapatmak için:**  
   
-#### <a name="to-select-a-memory-location-by-editing"></a>Düzenleyerek bir bellek konumunu seçmek için  
+- Sağ **bellek** penceresi ve select **araç çubuğunu göster** bağlam menüsünde. Araç çubuğu, önceki durumuna bağlı olarak kaybolur ya da görünür.  
   
-1.  İçinde **bellek** penceresinde, seçin **adresi** kutusu.  
+## <a name="follow-a-pointer-through-memory"></a>Bellek işaretçiyle izleyin  
+
+Yerel kod uygulamalarda live ifadeleri yazmaç adlarını kullanabilirsiniz. Örneğin, yığın işaretçisi, yığın izlemek için kullanabilirsiniz.  
   
-2.  Tuşuna basın ve görmek istediğiniz adresini yazın veya yapıştırın **ENTER**.  
+**Bellek işaretçiyle izlemek için:**
   
-## <a name="changing-the-way-the-memory-window-displays-information"></a>Bellek penceresi görüntüler bilgileri şekilde değiştirme  
- Biçimini özelleştirebilirsiniz **bellek** penceresi bellek içeriğini gösterir. Varsayılan olarak, bellek içeriğini onaltılık biçimde bir-bayt tamsayı olarak görünür ve sütun sayısı geçerli penceresinin genişliğini tarafından otomatik olarak belirlenir.  
+1. İçinde **bellek** penceresi **adresi** geçerli kapsamda olan bir işaretçi ifadesi girin. Dile bağlı olarak, bu başvuru gerekebilir.  
   
-#### <a name="to-change-the-format-of-the-memory-contents"></a>Bellek içeriğini biçimini değiştirmek için  
+2. Tuşuna **girin**.  
+   
+   Kullanırken bir hata ayıklama komutu gibi **adım**, görüntülenen bellek adresi **adresi** alan ve en üstündeki **bellek** penceresi otomatik olarak bir işaretçi olarak değiştirir değiştirir.  
   
-1.  Sağ **bellek** penceresi.  
-  
-2.  İstediğiniz biçimi seçin.  
-  
-#### <a name="to-change-the-number-of-columns-in-the-memory-window"></a>Bellek penceresi sütun sayısını değiştirmek için  
-  
-1.  Üstündeki araç çubuğunda **bellek** penceresinde bulun **sütunları** listesi.  
-  
-2.  İçinde **sütunları** listesinde, görüntülemek veya seçmek istediğiniz sütun sayısını seçin **otomatik** penceresinin genişliğini sığması otomatik olarak ayarlamayı için.  
-  
- İçeriğini istemiyorsanız **bellek** programınızı değiştirmek için pencere çalıştırır, Canlı ifade değerlendirmesi devre dışı bırakabilir.  
-  
-#### <a name="to-toggle-live-evaluation"></a>Canlı değerlendirme geçiş yapmak için  
-  
-1.  Sağ **bellek** penceresi.  
-  
-2.  Kısayol menüsünde **otomatik olarak yeniden**.  
-  
-     Canlı değerlendirme açıksa seçeneği seçili olmalıdır ve tıklatarak Canlı değerlendirme devre dışı bırakır. Canlı değerlendirme kapalıysa, seçeneği seçili değilse ve canlı değerlendirmeye tıklatarak kapatır.  
-  
- Gizlemek veya en üstündeki araç çubuğunu görüntüleme **bellek** penceresi. Araç çubuğu gizli sürece kutusunu veya diğer araçları adres erişebilir değil.  
-  
-#### <a name="to-toggle-the-toolbar"></a>Araç çubuğu geçiş yapmak için  
-  
-1.  Sağ bir **bellek** penceresi.  
-  
-2.  Kısayol menüsünde **araç çubuğunu göster**.  
-  
-     Araç, önceki durumuna bağlı olarak kaybolur ya da görünür.  
-  
-## <a name="following-a-pointer-through-memory"></a>Bellek işaretçiyi aşağıdaki  
- Yerel kod uygulamalarda yazmaç adları dinamik ifadeleri olarak kullanabilirsiniz. Örneğin, yığın işaretçisi yığın izlemek için kullanabilirsiniz.  
-  
-#### <a name="to-follow-a-pointer-through-memory"></a>Bellek işaretçiyi izlemek için  
-  
-1.  İçinde **bellek** penceresi **adresi** bir işaretçi ifadesi yazın. İşaretçi değişkeni geçerli kapsamda olmalıdır. Dil bağlı olarak başvurabilir gerekebilir.  
-  
-2.  Tuşuna **ENTER**.  
-  
-     Şimdi, kullandığınızda, bir yürütme komutu gibi **adım**, görüntülenen bellek adresi işaretçi değişiklikleri otomatik olarak değiştirir.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata ayıklayıcı görünümü verileri](../debugger/viewing-data-in-the-debugger.md)

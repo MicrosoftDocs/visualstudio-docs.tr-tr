@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6b5adaccf5a74119ee5e697c9dfd7b7ad46d6151
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fe2b5ef3804c4ccfafbf164a8eb144e7822a6fdc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905512"
 ---
 # <a name="idebugdocumenttext2gettext"></a>IDebugDocumentText2::GetText
-Belgedeki belirtilen konumdan metni alır.  
+Belge belirtilen konumda metin alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,22 +47,22 @@ int GetText(
   
 #### <a name="parameters"></a>Parametreler  
  `pos`  
- [in] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) alınacak metnin konumunu gösterir yapısı.  
+ [in] A [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) alınacak metnin konumunu belirten yapısı.  
   
  `cMaxChars`  
  [in] Alınacak metnin karakter sayısı.  
   
  `pText`  
- [içinde out] İstenen metin oturum doldurulacak olan bir arabellek için bir işaretçi. Bu arabelleğin en az içermesi `cMaxChars` geniş karakter sayısı.  
+ [out içinde] İstenen metin ile doldurulacak olan arabellek için işaretçi. Bu arabelleğin en az içermesi `cMaxChars` geniş karakterlerin sayısı.  
   
  `pcNumChars`  
- [out] Gerçekte alınan karakterlerin sayısını döndürür.  
+ [out] Gerçekte alınan karakter sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Bu örnek nasıl bu yöntem C# içinden çağrılamaz gösterir.  
+ Bu örnek nasıl bu yöntem C# ' tan çağrılabilir gösterir.  
   
 ```csharp  
 using System.Runtime.Interop.Services;  

@@ -15,22 +15,23 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3680163c4b61313c1bbc3b64b39640e9dcc88afa
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 436839d9b6a5e55a91bcbad3ca9edc153782101d
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39233067"
 ---
 # <a name="command-line-switches-visual-studio-sdk"></a>Komut satırı anahtarları (Visual Studio SDK)
-Devenv.exe, başlatan yürütülebilir dosya [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE), özellikle VSPackages geliştirme için komut satırı anahtarları destekler. VSPackages Ayrıca kendi anahtarları Devenv komut satırında sunabilirsiniz. Aşağıdaki konular IDE içinde komut satırı anahtarları kullanma hakkında bilgi sağlar.  
+*Devenv.exe*, başlayan yürütülebilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE), özellikle VSPackage geliştirme için komut satırı anahtarları destekler. VSPackage de kendi anahtarlar kullanılabilir Devenv komut satırında yapabilirsiniz. Aşağıdaki konular IDE içinde komut satırı anahtarları kullanma hakkında bilgi sağlar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [VSPackage Geliştirme için Devenv Komut Satırı Anahtarları](../extensibility/devenv-command-line-switches-for-vspackage-development.md)  
- VSPackage geliştirme, hata ayıklama ve dağıtım basitleştirmek için kullanabileceğiniz Devenv komut satırı anahtarları açıklanır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [VSPackage geliştirme için Devenv komut satırı anahtarları](../extensibility/devenv-command-line-switches-for-vspackage-development.md)  
+ VSPackage geliştirme, hata ayıklama ve dağıtım basitleştirmek için kullanabileceğiniz Devenv komut satırı anahtarları açıklar.  
   
- [Komut Satırı Anahtarları Ekleme](../extensibility/adding-command-line-switches.md)  
- Uygulama, arayın ve kullanıcı tarafından girilen komut satırı anahtarları paketinize okuma açıklar.  
+ [Komut satırı anahtarları ekleme](../extensibility/adding-command-line-switches.md)  
+ Uygulama, arayın ve kullanıcı tarafından girilen komut satırı anahtarları paketiniz için okuma açıklar.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Devenv Komut Satırı Anahtarları](../ide/reference/devenv-command-line-switches.md)  
- Nasıl IDE ve nasıl, derleyebilir, çeşitli seçeneklerini ayarlayın Devenv sağlar yapı ve komut satırından projeleri hata ayıklama açıklanmaktadır. Ayrıca, Devenv anahtarları sözdizimi ve anahtarlar tablosu hakkında bilgi yoktur.
+## <a name="related-sections"></a>İlgili bölümler  
+ [Devenv komut satırı anahtarları](../ide/reference/devenv-command-line-switches.md)  
+ Nasıl IDE ve nasıl, derleyebilir, çeşitli seçenekleri Devenv sağlar oluşturun ve komut satırından projelerinde hata ayıklama açıklar. Ayrıca, söz dizimi Devenv anahtarları ve anahtarlar bir tablo hakkında bilgi yok.

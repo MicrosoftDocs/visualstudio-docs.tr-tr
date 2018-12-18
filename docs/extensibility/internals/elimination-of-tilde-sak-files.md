@@ -1,5 +1,5 @@
 ---
-title: Ortadan kaldırılması ~ SAK dosyaları | Microsoft Docs
+title: Saydamlığından ~ SAK dosyalarının | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,25 +15,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 61227652bf191280f69466f127c4a400ea43856e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9d840ea26757ca56ee58b5ac4941f7f3c1065562
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39497956"
 ---
-# <a name="elimination-of-sak-files"></a>Ortadan kaldırılması ~ SAK dosyaları
-Kaynak Denetim eklentisi API 1.2 içindeki ~ SAK dosyaları değiştirilir yetenek bayrakları ve kaynak denetim eklentisi MSSCCPRJ dosyasını ve paylaşılan kullanıma destekleyip desteklemediğini algılamak yeni işlevler tarafından.  
+# <a name="elimination-of-sak-files"></a>Saydamlığından ~ SAK dosyalarının
+Kaynak Denetimi Eklentisi API 1.2 içindeki *~ SAK* özellik bayraklarının dosyalar değiştirildi ve bir kaynak olup olmadığını algılayan yeni işlevleri denetim eklentisini destekler *MSSCCPRJ* dosya ve paylaşımlı kullanıma Almalarla.  
   
-## <a name="sak-files"></a>~ SAK dosyaları  
- Visual Studio .NET 2003 oluşturulan geçici dosyalar önekine sahip ~ SAK. Bu dosyalar, kaynak denetim eklentisi destekleyip desteklemediğini belirlemek için kullanılır:  
+## <a name="sak-files"></a>~ SAK dosyalarının  
+Visual Studio .NET 2003 oluşturulan geçici dosyalar ön ekine sahip *~ SAK*. Bu dosyalar kaynak denetimi eklentisi destekleyip desteklemediğini belirlemek için kullanılır:  
   
--   MSSCCPRJ. SCC dosyası.  
+- *MSSCCPRJ.SCC* dosya.  
   
--   Birden çok (paylaşılan) kullanıma alma.  
+- Birden çok (paylaşılan) kullanıma alma.  
+    
+Kaynak Denetimi Eklentisi API 1.2 ile sağlanan gelişmiş işlevleri destekleyen eklentileri için yeni özellikler, bayraklar ve İşlevler, aşağıdaki bölümlerde ayrıntılı kullanımı geçici dosyalar oluşturmadan bu özellikler IDE algılayabilir.  
   
- Kaynak Denetim eklentisi API 1.2 ile sağlanan gelişmiş işlevleri desteklemek eklentiler için yeni özellikleri, bayrakları ve İşlevler, aşağıdaki bölümlerde ayrıntılı kullanımı ile geçici dosyalar oluşturmadan bu yetenekleri IDE algılayabilir.  
-  
-## <a name="new-capability-flags"></a>Yeni yetenek bayrakları  
+## <a name="new-capability-flags"></a>Yeni özellik bayrakları  
  `SCC_CAP_SCCFILE`  
   
  `SCC_CAP_MULTICHECKOUT`  
@@ -41,16 +42,16 @@ Kaynak Denetim eklentisi API 1.2 içindeki ~ SAK dosyaları değiştirilir yeten
 ## <a name="new-functions"></a>Yeni işlevleri  
  [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md)  
   
- [SccIsMultiCheckoutEnabled](../../extensibility/sccismulticheckoutenabled-function.md)  
+ [Sccısmulticheckoutenabled](../../extensibility/sccismulticheckoutenabled-function.md)  
   
- Kaynak Denetim eklentisi birden çok (paylaşılan) kullanıma destekleyen sonra onu tanımlandığı `SCC_CAP_MULTICHECKOUT` yeteneği ve uygulayan `SccIsMultiCheckOutEnabled` işlevi. Bu işlev, herhangi bir kaynak tarafından denetlenen projeleri üzerinde kullanıma alma işlemi oluştuğunda çağrılır.  
+ Kaynak Denetimi Eklentisi birden çok (paylaşılan) kullanıma destekler ve ardından bunu bildirir, `SCC_CAP_MULTICHECKOUT` yetenek ve uygular `SccIsMultiCheckOutEnabled` işlevi. Kaynak denetimli projelerin herhangi bir kullanıma alma işlemi oluştuğunda, bu işlev çağrılır.  
   
- Kaynak Denetim eklentisi oluşturma ve bir MSSCCPRJ kullanımını destekliyorsa. SCC dosya, ardından bildirir `SCC_CAP_SCCFILE` yeteneği ve uygulayan [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md). Bu işlev, dosyaların bir listesini çağrılır. İşlevi döndürür `TRUE/FALSE` Visual Studio bir MSSCCPRJ kullanması gerekip gerekmediğini belirtmek her bir dosya için. Bunun için SCC dosya. Kaynak Denetim eklentisi bu yeni özellikler ve İşlevler değil desteklemeyi seçerse, bu dosyaları oluşturulmasını devre dışı bırakmak için aşağıdaki kayıt defteri anahtarını kullanabilirsiniz:  
+ Kaynak Denetimi Eklentisi oluşturulmasını ve kullanılmasını desteklediği durumlarda bir *MSSCCPRJ.SCC* bildirir, sonra dosya `SCC_CAP_SCCFILE` yetenek ve uygular [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md). Bu işlev, dosyaların bir listesini çağrılır. İşlev döndürür `TRUE' or 'FALSE` Visual Studio kullanması gerekip gerekmediğini belirtmek her bir dosya için bir *MSSCCPRJ.SCC* dosyasının. Kaynak denetimi eklentisi şu yeni özellikleri ve işlevleri desteklemiyor seçerse bu dosyalarının oluşturulmasını devre dışı bırakmak için aşağıdaki kayıt defteri anahtarını kullanabilirsiniz:  
   
- [HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl] "DoNotCreateTemporaryFilesInSourceControl" = dword: 00000001  
+ **[HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl] DoNotCreateTemporaryFilesInSourceControl** = *DWORD: 00000001*  
   
 > [!NOTE]
->  Bu kayıt defteri anahtarı DWORD: 00000000 için ayarlarsanız, varolmayan olan anahtarına eşdeğerdir ve Visual Studio hala geçici dosyalar oluşturma dener. Ancak, kayıt defteri anahtarı DWORD: 00000001 için ayarlarsanız, geçici dosyaları oluşturmak Visual Studio denemez. Bunun yerine eklenti kaynak denetimi MSSCCPRJ desteklemiyor varsayar. SCC dosya ve paylaşılan kullanıma desteklemez.  
+>  Bu kayıt defteri anahtarı ayarlanırsa *DWORD: 00000000*, varolmayan olan anahtarına eşdeğerdir ve Visual Studio geçici dosyalar oluşturmak yine de çalışır. Ancak, kayıt defteri anahtarı ayarlanırsa *DWORD: 00000001*, geçici dosyalar oluşturmak Visual Studio denemez. Bunun yerine kaynak denetimi eklentisi desteklemediği varsayar *MSSCCPRJ.SCC* dosya ve paylaşımlı kullanıma Almalarla desteklemez.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API Sürümü 1.2’deki Yenilikler](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API sürümü 1.2 yenilikler nelerdir?](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)

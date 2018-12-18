@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0986a6a0b4596671cb11b40b938848387124462f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4942a88378091d890507c1121f6863c309c40662
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49823041"
 ---
 # <a name="idiastackwalkhelperimageforva"></a>IDiaStackWalkHelper::imageForVA
-Bir sanal adres yere çalıştırılabilir programın bellek alanında verilen bellekte bir çalıştırılabilir programın görüntü başlangıcını döndürür.  
+Bellek bir sanal adres yere yürütülebilir dosyası bellek alanında belirtilen bir yürütülebilir dosyası görüntü başlangıcını döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -34,13 +35,13 @@ HRESULT imageForVA(
   
 #### <a name="parameters"></a>Parametreler  
  `vaContext`  
- [in] Herhangi bir yerde çalıştırılabilir programın alanı arasındadır sanal adres.  
+ [in] Yere yürütülebilir dosyası alanda bulunan sanal adres.  
   
  `pvaImageStart`  
- [out] Çalıştırılabilir programın görüntü başlangıç sanal adresini döndürür.  
+ [out] Yürütülebilir dosyası görüntüsünün sanal başlangıç adresini döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)

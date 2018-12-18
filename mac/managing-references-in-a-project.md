@@ -1,42 +1,49 @@
 ---
-title: Mac için Visual Studio'da bir projedeki başvuruları yönetme
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+title: Bir projedeki başvuruları yönetme
+description: Bu makalede, Mac için Visual Studio'da bir projedeki başvuruları yönetme işlemi açıklanır
+author: conceptdev
+ms.author: crdun
+ms.date: 05/06/2018
 ms.assetid: 4AD51385-B0A8-4BA7-B2D4-BF2BD167A142
-ms.openlocfilehash: 75395ed0d97eba5203adf7de384bb60f71313916
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 54e07d3c170859405ef584b884547dad335788f3
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51295286"
 ---
 # <a name="managing-references-in-a-project"></a>Bir projedeki başvuruları yönetme
 
-Mac için Visual Studio, projenizin ek başvuruları ekleme iki sağlar:
+Mac için Visual Studio projenize ek başvurular ekleme iki yöntem sunar:
 
 ![Proje başvuruları](media/projects-and-solutions-image10.png)
 
 Bunlar:
 
 * Referanslar
-* NuGets (eklenen paketler klasörü aracılığıyla)
+* Nuget'lar (eklenen Packages klasörünü aracılığıyla)
 
-Ayrıca, Web başvuruları ve yerel başvuruları da herhangi bir projesine eklenebilir.
+Ayrıca, Web başvuruları ve yerel başvurular da herhangi bir projesine eklenebilir.
 
 ## <a name="assembly-references"></a>Derleme başvuruları
 
-Xamarin her Framework'te üzerinde bir düzine derlemeleri ile birlikte gelir. Bu derleme paketleri tüm projenizde varsayılan olarak başvurulur. 
+Xamarin içindeki her bir çerçeve üzerinde bir düzine derlemeleri ile birlikte gelir. Bu derleme paketlerin hepsini projenizde varsayılan olarak başvurulur.
 
-Projenizde başvurulan paketleri düzenlemek için kullanın _Düzenle başvuruları_ başvuruları klasörü çift veya bağlam menüsü eylemlerini seçin Düzenle başvurular tarafından görüntülenen iletişim:
+Projenizde başvurulan paketleri düzenlemek için kullanın **başvuruları Düzenle** başvuruları klasörü çift tıklayarak ya da seçerek görüntülenen iletişim kutusunda **başvuruları Düzenle** üzerinde bağlama Menü eylemlerinin:
 
-![Derleme başvuruları iletişim](media/projects-and-solutions-image11.png)
+![Bütünleştirilmiş kod başvuruları iletişim](media/projects-and-solutions-image11.png)
 
-Her Xamarin çerçevesi için kullanılabilir derlemeler hakkında daha fazla bilgi için bkz [kullanılabilir derlemeleri](https://developer.xamarin.com/guides/cross-platform/advanced/available-assemblies/) Kılavuzu.
+Her bir Xamarin çerçeve için kullanılabilir derlemeler hakkında daha fazla bilgi için bkz [kullanılabilir derlemeler](https://developer.xamarin.com/guides/cross-platform/advanced/available-assemblies/) Kılavuzu.
 
 ## <a name="nuget"></a>NuGet
 
-NuGet en popüler .NET geliştirme paket yöneticisidir. Visual Studio Mac'ın NuGet desteği için projenize eklemek paketler için aramanıza olanak sağlar.
+NuGet, .NET geliştirme için en popüler paket yöneticisidir. NuGet desteği Mac için Visual Studio, projenize eklenecek paketleri aramak sağlar.
 
-Bunu yapmak için sağ **paket** klasöründe çözüm paneli ve paketleri Ekle'i seçin.
+Bunu yapmak için sağ **paket** klasöründe çözüm bölmesi ve paketleri Ekle'i seçin.
 
-Bir NuGet paketi kullanma hakkında daha fazla bilgi sağlanan [dahil olmak üzere bir NuGet paketini projenize](~/nuget-walkthrough.md) gözden geçirme.
+Bir NuGet paketi kullanma hakkında daha fazla bilgi sağlanır [dahil olmak üzere bir NuGet paketini projenize](nuget-walkthrough.md) gözden geçirme.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Başvuruları (Windows için Visual Studio) yönetme](/visualstudio/ide/managing-references-in-a-project)
+- [Başvuru eklerken NuGet uzantı SDK'sı (Windows için Visual Studio) ile kullanma](/visualstudio/ide/adding-references-using-nuget-versus-an-extension-sdk)

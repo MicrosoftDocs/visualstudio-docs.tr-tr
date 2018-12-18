@@ -1,6 +1,7 @@
 ---
 title: 'CA1810: Başvuru türü statik alanları satır içi başlatın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: e9693118-a914-4efb-9550-ec659d8d97d2
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: d0751a4f8f4402d6ba9a3128601ad6e735ac0d3e
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2a6fdfebe506fb2edb1814e18d3d090025c665fa
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45549449"
 ---
 # <a name="ca1810-initialize-reference-type-static-fields-inline"></a>CA1810: Başvuru türü statik alanları satır içi başlatın
+
 |||
 |-|-|
 |TypeName|InitializeReferenceTypeStaticFieldsInline|
@@ -32,36 +38,44 @@ ms.lasthandoff: 04/19/2018
 ## <a name="cause"></a>Sebep
  Bir başvuru türü açık bir statik Oluşturucu bildirir.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bir tür açık statik yapıcı bildirdiğinde, JIT derleyici her bir statik yöntemi kontrol ekler ve türün yapıcı örneği statik yapıcının daha önceden çağrıldığından emin olur. Statik başlatma herhangi bir statik üyesi erişildiğinde veya türünün bir örneği oluşturulduğunda tetiklenir. Ancak, türünde bir değişken bildirme, ancak bunu olabilen başlatma genel durumu değişirse önemli kullanmayın statik başlatma tetiklenmez.
+## <a name="rule-description"></a>Kural açıklaması
+ Bir tür açık statik yapıcı bildirdiğinde, JIT derleyici her bir statik yöntemi kontrol ekler ve türün yapıcı örneği statik yapıcının daha önceden çağrıldığından emin olur. Statik başlatma, statik bir üyeye erişildiğinde veya türünün bir örneği oluşturulduğunda tetiklenir. Ancak, statik başlatma türünün bir değişkeni bildirmek, ancak bunu olabilen başlatma genel durumu değişirse önemli kullanmayın tetiklenmiyor.
 
- Tüm statik verilerinin başlatılmış satır içi ve açık bir statik Oluşturucu bildirilmemiş Microsoft Ara dili (MSIL) derleyicileri Ekle `beforefieldinit` bayrağı ve hangi MSIL türü statik verileri başlatır bir örtük statik Oluşturucusu tanımı. JIT Derleyici karşılaştığında `beforefieldinit` , çoğu statik Oluşturucusu denetimleri eklenmez zaman bayrak. Statik olarak başlatılması biraz zaman statik alanları erişilen önce ancak statik yöntemi veya örnek oluşturucu başvurulmaz önce gerçekleşmesi için sağlanır. Bu statik başlatma türünde bir değişken bildirildikten sonra herhangi bir zamanda meydana gelebilir unutmayın.
+ Tüm statik veriler başlatılmış satır içi ve açık bir statik Oluşturucu bildirimi yapılmadı, Microsoft Ara dil (MSIL) derleyicileri ekleme `beforefieldinit` bayrağı ve MSIL türüne statik verinin başlatır örtük bir statik Oluşturucu, tanımı. JIT derleyicisi karşılaştığında `beforefieldinit` bayrak, çoğu zaman statik Oluşturucu denetimleri eklenmez. Statik başlatma, tüm statik alanları erişebilmek için önce ancak statik bir yöntemi veya örnek oluşturucusu olmayan çağrılmadan önce bir süre sonra gerçekleşmesi için sağlanır. Bu statik başlatma türünde bir değişken bildirildikten sonra herhangi bir zamanda meydana gelebilir unutmayın.
 
- Statik oluşturucu denetimleri performansı düşürebilir. Çoğunlukla statik Oluşturucu, yalnızca durum, yalnızca statik başlatmanın emin olmalısınız statik bir alana ilk erişim önce oluştuğu statik alanları başlatmak için kullanılır. `beforefieldinit` Davranıştır bu ve diğer birçok türleri için uygun. Yalnızca statik başlatma genel durum etkiler ve aşağıdakilerden biri doğru olduğunda uygunsuz olur:
+ Statik oluşturucu denetimleri performansı düşürebilir. Genellikle bir statik Oluşturucu, yalnızca statik alanları, servis talebi, yalnızca statik başlatmanın emin olmalısınız statik bir alana erişim ilk önce oluştuğu başlatmak için kullanılır. `beforefieldinit` Davranıştır bu ve diğer birçok tür için uygun. Yalnızca statik başlatma genel durumunu etkiler ve aşağıdaki koşullardan biri uygunsuz olur:
 
--   Genel durum etkisi pahalıdır ve türü kullanılmıyorsa, gerekli değildir.
+- Genel durum üzerindeki etkisini, pahalıdır ve türü kullanılmaz, gerekli değildir.
 
--   Genel durum etkileri herhangi türü statik alanları erişmeden erişilebilir.
+- Genel durum etkileri herhangi türü statik alanları erişmeden erişilebilir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
  Bu kural ihlalini düzeltmek için bildirildiğinde, tüm statik veriyi başlatın ve statik oluşturucuyu kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Performans ilgili bir sorun değilse bir uyarı bu kuraldan gizlemek güvenlidir; türü için bir statik yöntem çağrılır veya türünün bir örneği oluşturulur önce gerçekleşmesi için tarafından statik olarak başlatılması nedeni genel durum değişiklikleri pahalıdır veya gerekir veya garanti.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Performans önemli değilse bu kuraldan bir uyarıyı bastırmak güvenlidir; türün statik bir yöntem çağrılır veya türünün bir örneği oluşturulduktan önce gerçekleşmesi için statik başlatma tarafından neden genel durum değişiklikleri pahalıdır veya gerekir veya garanti.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bir tür gösterir `StaticConstructor`, kural ve bir tür ihlal `NoStaticConstructor`, kural karşılamak için satır içi başlatma ile statik Oluşturucusu değiştirir.
 
- [!code-csharp[FxCop.Performance.RefTypeStaticCtor#1](../code-quality/codesnippet/CSharp/ca1810-initialize-reference-type-static-fields-inline_1.cs)]
- [!code-vb[FxCop.Performance.RefTypeStaticCtor#1](../code-quality/codesnippet/VisualBasic/ca1810-initialize-reference-type-static-fields-inline_1.vb)]
+Aşağıdaki örnek, bir tür gösterir `StaticConstructor`, kural ve bir tür ihlal `NoStaticConstructor`, kural karşılamak için satır içi başlatma ile statik oluşturucuyu değiştirir.
 
- Eklenmesi Not `beforefieldinit` bayrağı MSIL tanımında `NoStaticConstructor` sınıfı.
+[!code-csharp[FxCop.Performance.RefTypeStaticCtor#1](../code-quality/codesnippet/CSharp/ca1810-initialize-reference-type-static-fields-inline_1.cs)]
+[!code-vb[FxCop.Performance.RefTypeStaticCtor#1](../code-quality/codesnippet/VisualBasic/ca1810-initialize-reference-type-static-fields-inline_1.vb)]
 
- **Ortak .class otomatik ANSI StaticConstructor** **genişletir [mscorlib]System.Object**
- **{**
- **} / / end StaticConstructorsınıfının** 
- **.class ortak otomatik ANSI beforefieldinit NoStaticConstructor** **genişletir [mscorlib]System.Object**
- **{** 
- **} / / end NoStaticConstructor sınıfının**
+Ek unutmayın `beforefieldinit` bayrağının MSIL tanımında `NoStaticConstructor` sınıfı.
+
+```
+.class public auto ansi StaticConstructor
+extends [mscorlib]System.Object
+{
+} // end of class StaticConstructor
+
+.class public auto ansi beforefieldinit NoStaticConstructor
+extends [mscorlib]System.Object
+{
+} // end of class NoStaticConstructor
+```
+
 ## <a name="related-rules"></a>İlgili kuralları
- [CA2207: Değer türü statik alanları satır içi başlatın](../code-quality/ca2207-initialize-value-type-static-fields-inline.md)
+
+- [CA2207: Değer türü statik alanları satır içi başlatın](../code-quality/ca2207-initialize-value-type-static-fields-inline.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4dffd06c7342b77f1e4293d50217a0c6a468bf18
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d7dfac01624d83518a749dd762837dfbea3d6e54
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915301"
 ---
 # <a name="idebugerrorevent2geterrormessage"></a>IDebugErrorEvent2::GetErrorMessage
-Bir kullanıcı tarafından okunabilen hata iletisi yapımı sağlayan bilgileri döndürür.  
+Kullanıcı tarafından okunabilen bir ileti yapımı sağlayan bilgileri döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,7 +51,7 @@ int GetErrorMessage(
   
 #### <a name="parameters"></a>Parametreler  
  `pMessageType`  
- [out] Arasında bir değer döndürür [MESSAGETYPE](../../../extensibility/debugger/reference/messagetype.md) ileti türünü tanımlayan numaralandırması.  
+ [out] Bir değer döndürür [MESSAGETYPE](../../../extensibility/debugger/reference/messagetype.md) ileti tipini açıklayan sabit listesi,.  
   
  `pbstrErrorFormat`  
  [out] Kullanıcı için son ileti biçimi (Ayrıntılar için bkz: "Açıklamalar").  
@@ -59,19 +60,19 @@ int GetErrorMessage(
  [out] Hata iletisi hakkında kodudur.  
   
  `pdwType`  
- [out] Hata önem derecesi (için MB_XXX sabitleri kullan `MessageBox`; Örneğin, `MB_EXCLAMATION` veya `MB_WARNING`).  
+ [out] Hata önem derecesi (için MB_XXX sabitleri kullanın `MessageBox`; Örneğin, `MB_EXCLAMATION` veya `MB_WARNING`).  
   
  `pbstrHelpFileName`  
- [out] Yardım dosyası (Yardım dosyası yoksa null bir değere ayarlanırsa) yolu.  
+ [out] Yardım dosyası (Yardım dosyası yoksa null bir değere ayarlanmış) yolu.  
   
  `pdwHelpId`  
  [out] (Yardım konusu yok ise 0 olarak ayarlanırsa) görüntülemek için Yardım konusu kimliği.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Hata iletisi satırları biçimlendirilmesi `"What I was doing.  %1"`. `"%1"` Sonra çağıran tarafından türetilmiş hata kodundan hata iletisini ile değiştirilmesi (içinde döndürülen `hrErrorReason`). `pMessageType` Parametresi, son hata iletisi nasıl görüntüleneceğini çağıran bildirir.  
+ Hata iletisi satırlar boyunca biçimlendirilmelidir `"What I was doing.  %1"`. `"%1"` Sonra çağıran tarafından türetilmiş hata kodundan hata iletisiyle geçecekti (içinde döndürülen `hrErrorReason`). `pMessageType` Parametresi arayan nasıl son hata iletisinin gösterilmemesi gerektiğini bildirir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugErrorEvent2](../../../extensibility/debugger/reference/idebugerrorevent2.md)   

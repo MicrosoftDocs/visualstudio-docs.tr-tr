@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c5283d72972e1ba579cafa82648cbf0ec0fcf80c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 35dac5f88a755ac0622fcf752f3bcc409341441c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49948986"
 ---
 # <a name="idebugfunctionobject2createobject"></a>IDebugFunctionObject2::CreateObject
-Verilen değerlendirme bayrağını ayarlar ve bir zaman aşımı değeri bir oluşturucu kullanan bir nesne oluşturur.  
+Verilen değerlendirme bayrağı ayarlar ve bir zaman aşımı değeri bir oluşturucu kullanan bir nesne oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,28 +50,28 @@ int CreateObject (
   
 #### <a name="parameters"></a>Parametreler  
  `pConstructor`  
- [in] Bir [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) oluşturulacak nesnenin oluşturucusu temsil eden nesne.  
+ [in] Bir [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) Oluşturucusu oluşturulacak nesne, temsil eden nesne.  
   
  `dwArgs`  
- [in] Parametre sayısı `pArg` dizi. Oluşturucuya geçirilen parametre sayısını temsil eder.  
+ [in] Parametre sayısı `pArg` dizisi. Oluşturucuya geçirilen parametrelerin sayısını temsil eder.  
   
  `pArgs`  
- [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oluşturucuya geçirilen parametreleri temsil eden nesne.  
+ [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) parametreleri temsil eden nesneleri, oluşturucuya geçirilen.  
   
  `dwEvalFlags`  
- [in] Bayraklarını bileşimini [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) değerlendirme nasıl gerçekleştirilmesi belirtin numaralandırması.  
+ [in] Bayraklarının bir birleşimi [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) nasıl gerçekleştirilecek bir değerlendirme olduğunu belirten sabit listesi.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım **SONSUZ** sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım **SONSUZ** süresiz bekleme.  
   
  `ppObject`  
- [out] Döndürür bir **IDebugObject** yeni oluşturulan nesnenin temsil eden.  
+ [out] Döndürür bir **IDebugObject** temsil eden yeni oluşturulan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir sınıf veya parametre oluşturucusu, gerektiren diğer karmaşık türü bir örneğini temsil eden bir nesne oluşturmak için bu yöntemi çağırın.  
+ Bir sınıf ya da bir parametresi olan bir oluşturucu gerektiren diğer karmaşık bir tür örneği temsil eden bir nesne oluşturmak için bu yöntemi çağırın.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionObject2](../../../extensibility/debugger/reference/idebugfunctionobject2.md)

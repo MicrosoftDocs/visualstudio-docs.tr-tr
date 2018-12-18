@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1ddbffefe729f0b4c5b89b46b96b32a90f05f297
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7787e974b093156b27b2ace4353e94db05063d7d
+ms.sourcegitcommit: 269b55b413d2c82e6aa56c6ab8e53da7926fb2e8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35238231"
 ---
 # <a name="functions-view---instrumentation-data"></a>İşlevler görünümü - izleme verileri
 İşlevler rapor görünümü profil oluşturma verileri işlevi adlarına göre listeler.  
@@ -82,7 +83,7 @@ ms.lasthandoff: 04/19/2018
 |**En fazla uygulama özel süresi**|Bu işlev için bir çağrı en fazla uygulama özel saati.|  
 |**Min uygulama özel süresi**|Bu işlev için bir çağrı minimum uygulama özel saati.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [İşlevler görünümü](../profiling/functions-view-sampling-data.md)   
  [İşlevler görünümü - örnekleme](../profiling/functions-view-dotnet-memory-sampling-data.md)   

@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 389204a8eae61bf5cd713ccd0c0d2dc29b88f656
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 59fa6304572f2c951bdd16e30cbace8441dc6b97
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908385"
 ---
 # <a name="idiasectioncontribgetlength"></a>IDiaSectionContrib::get_length
 Bir bölümdeki bayt sayısını alır.  
@@ -33,10 +34,10 @@ HRESULT get_length (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Bir bölüme baytlarının miktarını döndürür.  
+ [out] Bir bölümde bulunan bayt sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md)

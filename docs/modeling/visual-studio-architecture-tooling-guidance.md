@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Mimari Araç Kullanımı Kılavuzu
+title: Mimari Araç kullanımı Kılavuzu
 ms.date: 11/04/2016
 ms.topic: conceptual
 author: gewarren
@@ -7,16 +7,17 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: b70b229d128143a4c61dc9789e3a4797a0317643
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 558d0143343d04bdfadf530aca10466991b3f2f1
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53057515"
 ---
 # <a name="visual-studio-architecture-tooling-guidance"></a>Visual Studio Mimari Araç Kullanımı Kılavuzu
-Bu mimari Tooling yönergeleri, Visual Studio 2010 modelleme araçlarının kullanımı hakkında pratik bir kılavuz indirilebilir bir pakettir. Tüm modelleme araçları tümleşik bir şekilde nasıl kullanacağınızı üst düzey bir görünümünü sunar ve araçları kullanılan en yaygın senaryolar anlatılmaktadır.
 
- İçerik tarafından oluşturulan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ALM Rangers üyelere sahip özel bir grup [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ürün ekibi, Microsoft Services, Microsoft'un en değerli uzmanları (MVP) ve [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] topluluk yol açar.
+Bu mimari araç kullanımı yönergesi, Visual Studio 2010 modelleme araçlarının kullanımıyla ilgili faydalı yönergeler içeren indirilebilir bir pakettir. Tüm modelleme araçlarının tümleşik bir şekilde kullanma üst düzey bir görünümünü sunar ve araçları kullanılan en yaygın senaryoları açıklar.
 
- [Araç Mimari Kılavuzu yüklemek için burayı tıklatın. ](http://go.microsoft.com/fwlink/?LinkID=191984).
+İçerik, Visual Studio ALM Rangers Visual Studio ürün takımı, Microsoft Services, Microsoft'un en değerli uzmanları (MVP) ve Visual Studio topluluk gidiyor üyelere sahip özel bir grup tarafından oluşturuldu.

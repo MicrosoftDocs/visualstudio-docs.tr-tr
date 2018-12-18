@@ -1,6 +1,7 @@
 ---
 title: Yönetilen kod için Yönetilen Önerilen Kurallar kural kümesi
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 ms.assetid: 1d1160f8-4e51-4e70-99cd-82ad10ee7b32
@@ -9,11 +10,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 3f15fc1859e0b7b8f3e3d7dc4bcf7fb315690734
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 489d7fba60b3c7d72b7d0d5f1e94436ae5123c52
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31924816"
 ---
 # <a name="managed-recommended-rules-rule-set-for-managed-code"></a>Yönetilen kod için Yönetilen Önerilen Kurallar kural kümesi
 Microsoft yönetilen önerilen kurallar kural kümesi en kritik sorunlar olası güvenlik açıklarını, uygulama çökme (Crash) ve diğer önemli mantığı ve tasarım hataları gibi yönetilen kodda odaklanmak için kullanabilirsiniz. Bu kural, projeniz için oluşturduğunuz herhangi bir özel kural kümesi kümesini içermelidir.

@@ -1,0 +1,2 @@
+> [!NOTE]
+>  İçinde [!INCLUDE[vs_dev12](../includes/vs-dev12-md.md)], size bir SQL Server veritabanına bağlanabilirsiniz **SQL Server Nesne Gezgini** veya **veri bağlantıları** düğümünde **Sunucu Gezgini**. **SQL Server Nesne Gezgini** SQL Server Management Studio'ya benzer bir görünüm sağlar. Bu Gezgini menü çubuğundan açmak için seçin **görünümü**, **SQL Server Nesne Gezgini**. Daha fazla bilgi için [bağlı veritabanı geliştirme](http://go.microsoft.com/fwlink/?LinkId=233646).

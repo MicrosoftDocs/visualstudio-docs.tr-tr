@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e6eecf12f554a8a6143f9c040916da9f0e318b1f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5551cb5e66eae9471f2e4e79d2aa6587bf440120
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34749222"
 ---
 # <a name="c-library-reference"></a>C++ Kitaplık Başvurusu
 Bu bölüm eşzamanlılık görselleştiricisi SDK'sı için başvuru bilgileri içerir.  
@@ -24,8 +25,8 @@ Bu bölüm eşzamanlılık görselleştiricisi SDK'sı için başvuru bilgileri 
 > [!NOTE]
 >  Standart C++ dili bir alt çizgi ile başlayan tanımlayıcıları kullanımını ayırır (`_`) karakteri kitaplıklar gibi uygulamaları için. Kodunuzda bir alt çizgi ile başlayan adları kullanmayın. Bu kural, adları izleyen öğeleri garanti edilmez ve değiştirilebilir gelecek olan kod davranışını serbest bırakır. Bu nedenlerle, bu kod öğeler bu belgelerden göz ardı edilir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Eşzamanlılık Ad Alanı (Eşzamanlılık Görselleştiricisi)](../profiling/concurrency-namespace-concurrency-visualizer.md)  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Eşzamanlılık ad alanı (eşzamanlılık görselleştiricisi)](../profiling/concurrency-namespace-concurrency-visualizer.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eşzamanlılık Görselleştiricisi SDK](../profiling/concurrency-visualizer-sdk.md)

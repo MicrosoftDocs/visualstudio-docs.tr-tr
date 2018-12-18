@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1802d5784ad6e94aee4ff63fb51d2c92dbf164f0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fa68a3064cd40cca8c62f90c2f144a767ebb9e3e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855579"
 ---
 # <a name="guidarray"></a>GUID_ARRAY
-Kullanılabilir hata ayıklama altyapıları için benzersiz tanımlayıcı bir dizi açıklar.  
+Bir dizi benzersiz tanımlayıcıları kullanılabilir hata ayıklama altyapıları için açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,21 +43,21 @@ public struct GUID_ARRAY
   
 ## <a name="terms"></a>Koşulları  
  dwCount  
- Dizideki benzersiz tanımlayıcıları sayısı.  
+ Dizide benzersiz tanımlayıcıları sayısı.  
   
  Üyeler  
- Benzersiz tanımlayıcılar içeren bir dizi.  
+ Benzersiz tanımlayıcıları içeren bir dizi.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yapı tarafından döndürülen [GetEngineFilter](../../../extensibility/debugger/reference/idebugprocess3-getenginefilter.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Msdbg.h  
+ Üstbilgi: Msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetEngineFilter](../../../extensibility/debugger/reference/idebugprocess3-getenginefilter.md)

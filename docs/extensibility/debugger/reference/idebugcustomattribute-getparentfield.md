@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 76e80a29d9d73f26a1394d40cf6625e36b279f53
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3a0fe53b32b3aa36ae91f024d4764f4f1419a76e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927339"
 ---
 # <a name="idebugcustomattributegetparentfield"></a>IDebugCustomAttribute::GetParentField
-Özel öznitelik bağlı olduğu alan alır.  
+Özel öznitelik eklendiği alanını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetParentField(
   
 #### <a name="parameters"></a>Parametreler  
  `ppField`  
- [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) özel öznitelik bağlı alanını temsil eden nesne.  
+ [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) özel özniteliği bağlı alanını temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) yöntemi döndürülen [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) ne tür üst alan belirlemek için nesnesidir.  
+ Çağrı [GetKind](../../../extensibility/debugger/reference/idebugfield-getkind.md) yöntemi döndürülen [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) ne tür üst alan olmadığının nesnedir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCustomAttribute](../../../extensibility/debugger/reference/idebugcustomattribute.md)   

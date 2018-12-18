@@ -1,6 +1,7 @@
 ---
 title: 'CA1058: Türler belli temel türleri genişletmemelidir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4bd3461cae62f1d4b23f5afa22b0af67c78d41fc
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7c5232ef4f6f21b1f0f012954d121e6e0abdae9c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950868"
 ---
 # <a name="ca1058-types-should-not-extend-certain-base-types"></a>CA1058: Türler belli temel türleri genişletmemelidir
+
 |||
 |-|-|
 |TypeName|TypesShouldNotExtendCertainBaseTypes|
@@ -30,31 +33,31 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Dışarıdan görünen tür belirli temel türleri genişletir. Şu anda, bu kural, aşağıdaki türlerden türetilen türler raporları:
+ Dışarıdan görünen tür belirli temel türleri genişletir. Şu anda, bu kural aşağıdaki türlerden türetilen türler raporları:
 
--   <xref:System.ApplicationException?displayProperty=fullName>
+- <xref:System.ApplicationException?displayProperty=fullName>
 
--   <xref:System.Xml.XmlDocument?displayProperty=fullName>
+- <xref:System.Xml.XmlDocument?displayProperty=fullName>
 
--   <xref:System.Collections.CollectionBase?displayProperty=fullName>
+- <xref:System.Collections.CollectionBase?displayProperty=fullName>
 
--   <xref:System.Collections.DictionaryBase?displayProperty=fullName>
+- <xref:System.Collections.DictionaryBase?displayProperty=fullName>
 
--   <xref:System.Collections.Queue?displayProperty=fullName>
+- <xref:System.Collections.Queue?displayProperty=fullName>
 
--   <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>
+- <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>
 
--   <xref:System.Collections.SortedList?displayProperty=fullName>
+- <xref:System.Collections.SortedList?displayProperty=fullName>
 
--   <xref:System.Collections.Stack?displayProperty=fullName>
+- <xref:System.Collections.Stack?displayProperty=fullName>
 
-## <a name="rule-description"></a>Kural Tanımı
- İçin [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] sürüm 1, önerilir yeni özel durumlar çıkarmaya <xref:System.ApplicationException>. Öneri değişti ve yeni özel durumlar türetilen <xref:System.Exception?displayProperty=fullName> veya alt sınıfları <xref:System> ad alanı.
+## <a name="rule-description"></a>Kural açıklaması
+ .NET Framework sürüm 1 için yeni özel durumlar türetmek için önerildiği <xref:System.ApplicationException>. Öneri değiştirildi ve yeni özel durumlar türetilmelidir <xref:System.Exception?displayProperty=fullName> veya içinde alt sınıflarından birini <xref:System> ad alanı.
 
- Öğesinin bir alt oluşturmayın <xref:System.Xml.XmlDocument> , temel alınan bir nesne modeli veya veri kaynağı, bir XML görünümünü oluşturmak istiyorsanız.
+ Öğesinin oluşturmayın <xref:System.Xml.XmlDocument> , temel alınan bir nesne modeli veya veri kaynağı, bir XML görünümünü oluşturmak istiyorsanız.
 
-### <a name="non-generic-collections"></a>Genel olmayan koleksiyonları
- Kullanın ve/veya genel koleksiyonlar mümkün olduğunca genişletir. Daha önce gönderilen sürece genel olmayan koleksiyonları, kodunuzda genişletmez.
+### <a name="non-generic-collections"></a>Genel olmayan koleksiyon
+ Kullanın ve/veya mümkün olduğunda genel koleksiyonları genişletin. Daha önce sevk sürece genel olmayan koleksiyon kodunuzda genişletmez.
 
  **Yanlış kullanım örnekleri**
 
@@ -80,8 +83,8 @@ public class MyReadOnlyCollection : ReadOnlyCollection<T>
 }
 ```
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için farklı bir taban türü ya da bir genel koleksiyon türü türetilir.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için farklı bir temel tür ya da bir genel koleksiyon tür türetilir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural ihlalleri için uyarıdan hakkında engelleme <xref:System.ApplicationException>. Bu kural ihlalleri için uyarıdan hakkında gizlemek güvenlidir <xref:System.Xml.XmlDocument>. Kodu önceden yayımlanan, genel olmayan koleksiyonu hakkında bir uyarı gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Hakkında ihlalleri bu kuraldan bir uyarıyı bastırmayın <xref:System.ApplicationException>. Hakkında ihlalleri bu kuraldan bir uyarıyı bastırmak güvenlidir <xref:System.Xml.XmlDocument>. Kodu önceden yayımlanan, genel olmayan koleksiyonu hakkında bir uyarı bastırmak güvenlidir.

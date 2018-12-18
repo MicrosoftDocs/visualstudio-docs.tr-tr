@@ -1,6 +1,6 @@
 ---
-title: 'Nasıl yapılır: Düzenle ile kesme modunda düzenlemeler uygulama ve devam et | Microsoft Docs'
-ms.custom: ''
+title: Düzenle ve devam et ile kesme modunda düzenlemeleri uygulama | Microsoft Docs
+ms.custom: seodec18
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
 ms.topic: conceptual
@@ -24,41 +24,42 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f031598e0c8f290907e759bcfceac85c1b063f5f
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 51a69414a8b61368cbb492494187567554f98e4c
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53063732"
 ---
-# <a name="how-to-apply-edits-in-break-mode-with-edit-and-continue"></a>Nasıl Yapılır: Düzenle ve Devam Et ile Kesme Modunda Düzenlemeleri Uygulama
-Düzenle ve devam et, kodunuzu kesme modunda düzenleme ve ardından yürütme durdurup olmadan devam etmek için kullanabilirsiniz.  
+# <a name="how-to-apply-edits-in-break-mode-with-edit-and-continue-visual-basic"></a>Nasıl yapılır: Düzen ile kesme modunda düzenlemeleri uygulayın ve devam et (Visual Basic)
+Düzenle ve devam et, kesme modunda kodunuzu düzenleyin ve ardından durdurup yeniden başlatmadan yürütme devam etmek için kullanabilirsiniz.  
   
-Düzenle ve devam et hata ayıklama sırasında kullanma ile ilgili sınırlamalar için bkz: [desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md)]
+Hata ayıklarken Düzenle ve Devam Et'i kullanma ile ilgili kısıtlamalar için bkz: [desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md)]
   
 ### <a name="to-edit-code-in-break-mode"></a>Kesme modunda kod düzenlemek için  
   
-1.  Kesme modu, aşağıdakilerden birini yaparak girin:  
+1.  Aşağıdakilerden birini yaparak Kesme moduna girin:  
   
-    -   Kodunuzda bir kesme noktası ayarlayın ve ardından **hata ayıklamayı Başlat** gelen **hata ayıklama** menü ve uygulamanın kesme noktası isabet bekleyin.  
+    -   Kodunuzda bir kesme noktası ayarlayın ve ardından **hata ayıklamayı Başlat** gelen **hata ayıklama** menü ve kesme noktasına isabet uygulamaya tamamlanmasını bekleyin.  
   
-         -veya-  
+         veya  
   
-    -   Hata Ayıklamayı Başlat ve ardından **bölün tüm** gelen **hata ayıklama** menüsü.  
+    -   Hata ayıklamayı başlatın ve ardından **tümünü Kes** gelen **hata ayıklama** menüsü.  
   
-         -veya-  
+         veya  
   
-    -   Özel durum oluştuğunda seçin **düzenlemeyi etkinleştir** üzerinde**özel durum Yardımcısı**.  
+    -   Bir özel durum oluştuğunda seçin **düzenlemeyi etkinleştir** üzerinde **özel durum Yardımcısı'nı**.  
   
 2.  İstenen ve desteklenen kod değişiklikleri yapın.  
   
-     Daha fazla bilgi için bkz: [desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md).  
+     Daha fazla bilgi için [desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md).  
   
     > [!NOTE]
-    >  Bir kod, değişikliği yapmak için Düzenle ve devam et tarafından izin verilmiyor dener düzenlemeniz mor dalgalı bir çizgi altı çizili olacaktır ve görev görev listesinde görünür. Geçersiz kod değişikliği geri sürece kod yürütmeye devam etmek mümkün olmaz.  
+    >  Bir kod bu değişikliği yapmak için Düzenle ve devam et tarafından izin verilmiyor dener düzenlemeniz tarafından mor dalgalı çizgi altı çizili olacaktır ve bir görev görev listesinde görünür. Geçersiz kod değişikliği geri sürece kod yürütülmesine devam etmek mümkün olmayacaktır.  
   
 3.  Üzerinde **hata ayıklama** menüsünde tıklatın **devam** yürütme devam etmek için.  
   
-     Kodunuzu projeye dahil uygulanan düzenlemeleriniz ile artık yürütür.  
+     Kodunuz artık projeye dahil uygulanan düzenlemeleriniz ile yürütür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md)   

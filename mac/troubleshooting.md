@@ -1,16 +1,17 @@
 ---
-title: Mac sorun giderme için visual Studio
-description: Ortak sorunlar ve çözümleri Visual Studio için Mac kullanıcıları için.
+title: Sorun giderme
+description: Genel sorunlar ve çözümleri Visual Studio için Mac kullanıcıları için.
 ms.topic: troubleshooting
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+author: conceptdev
+ms.author: crdun
+ms.date: 05/06/2018
 ms.assetid: CE860D79-E29E-4B93-B094-BE74B35FC1C2
-ms.openlocfilehash: a802bf950b5f759a41f88fb9260449fadcea8974
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 3a5ea59e6f98891cd113ccad9a74038ca52cccf8
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51294649"
 ---
 # <a name="troubleshooting"></a>Sorun giderme
 
@@ -22,26 +23,30 @@ Günlükleri göz atarak bulunabilir **Yardım > açık günlük dizini** menü 
 
 ## <a name="viewing-exceptions"></a>Özel durumları görüntüleme
 
-Bir özel durum yakalandı, bir özel durum Kabarcık görünür. Daha fazla ayrıntı görüntülemek için seçin **ayrıntıları görüntüle** düğmesi:
+Bir özel durum yakalandığında, bir özel durum Kabarcık görünür. Daha fazla ayrıntı görüntülemek için seçin **ayrıntıları** düğmesi:
 
-![Bir özel durum hakkında daha fazla ayrıntı görüntülemek](media/troubleshooting-image2.png)
+![Bir özel durum hakkında daha fazla ayrıntı görüntüleyin](media/troubleshooting-image2.png)
 
-Bu görüntüler **ayrıntıları göster** özel durumla ilgili daha fazla bilgi sağlayan iletişim:
+Bu görüntüler **ayrıntıları göster** özel durumla ilgili daha fazla bilgi verdiğiniz iletişim kutusunda:
 
-![](media/troubleshooting-image3.png)
+![Ayrıntıları iletişim kutusunu göster](media/troubleshooting-image3.png)
 
-Yukarıdaki numaralı iletişim önemli bölümlerini aşağıda ayrıntılı olarak açıklanmıştır:
+Yukarıda numaralı iletişim önemli bölümleri aşağıda ayrıntılı olarak açıklanmıştır:
 
-1. Özel durum türü gözlenir özel durum türünün tam adını gösterir.
-2. Özel durum iletisi özel durum nesnesinin ileti özelliği değerini gösterir.
-3. Özel durum türü tam adı şu anda seçili durum için iç özel durum ağaç görünümünde gösterilir iç özel durum türü.
-4. İç özel durum iletisi iç özel durum ağaç görünümünde seçilen özel durum iletisi özelliğinin değerini gösterir.
-5. Stacktrace görüntüleyin. Bu açıklama ok daraltılmış ve yığın çerçeveleri girişleri içerir.
+1. Özel durum türünün tam adını gösteren özel durum türü dikkate alınır.
+2. Özel durum iletisi ileti özelliği, özel durum nesnesi değerini gösterir.
+3. Özel durum türünün tam adını şu anda seçili özel durum için iç özel durum ağaç görünümünde gösterir. iç özel durum türü.
+4. İç özel durum iletisi, iç özel durum ağaç görünümünde seçilen özel durumun iletisi özelliğinin değeri gösterir.
+5. Stacktrace görüntüleyin. Bu, bir açıklama ok daraltılmış ve yığın çerçeveleri girişler içeriyor.
 6. Kullanıcı olmayan kod girişleri örneği.
-7. Kullanıcı kodu girişleri örneği.
-8. Tüm özellikleri ve alanları özel durumun gösterir özelliklerini görüntüleyin. Bu, bir açıklama ok daraltılmış olabilir.
-9. İç özel duruma ağaç görünümü. Bu görünümde yukarı/aşağı ok veya fare ya da izleme paneli ile klavyeden iç özel durum seçin.
-10. Varsayılan olarak, bu ne ayarlanır **yalnızca proje kodunda hata ayıklama** hata ayıklayıcı ayarları seçeneğinde ayarlanır. Bu kutuyu seçerek tek bir satır stacktrace olarak daraltmak tüm kullanıcı olmayan kod olanak sağlar.
+7. Örnek kullanıcı kodu girdi.
+8. Özellikler Görünümü tüm özellikleri ve özel alanları gösterir. Bu, bir açıklama ok daraltılabilirler.
+9. İç özel duruma ağaç görünümü. Yukarı/aşağı okları veya fare ya da izleme paneli ile klavyeden bu görünümde iç özel durumlar'ı seçin.
+10. Varsayılan olarak, bu ne ayarlanır **yalnızca proje kodunda hata ayıklama** hata ayıklayıcı ayarlarında seçeneği ayarlanır. Bu kutuyu seçerek, tek bir satır olarak stacktrace daraltmak tüm kullanıcı olmayan kod olanak sağlar.
 11. Kopyalamak için Kopyala düğmesine `exception.ToString()` panoya çıktı.
 
-Özel durum bir iç özel duruma sahip olduğunda bu bölümleri bazıları yalnızca görünür olacağını unutmayın.
+Özel bir iç özel duruma sahip olduğunda bu bölümlerin bazıları yalnızca görünür olduğunu unutmayın.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [(Windows için Visual Studio) IDE hatalarında sorun giderme kaynakları](/visualstudio/ide/reference/resources-for-troubleshooting-integrated-development-environment-errors)

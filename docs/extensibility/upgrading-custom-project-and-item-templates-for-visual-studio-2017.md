@@ -16,6 +16,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31143484"
 ---
 # <a name="upgrading-custom-project-and-item-templates-for-visual-studio-2017"></a>Özel proje ve öğe şablonları için Visual Studio 2017 yükseltme
 
@@ -120,7 +121,7 @@ Yeni dosyalar doğru oluşturabilmesi için Visual Studio 2015 ve Visual Studio 
   
 ```  
   
- Tarafından sağlanan bilgileri [TemplateData](../extensibility/templatedata-element-visual-studio-templates.md) öğesi aynı kalır. **\<VSTemplateContainer >** öğesi ilişkili şablonu için .vstemplate dosyasına işaret eder.  
+ Tarafından sağlanan bilgileri [TemplateData](../extensibility/templatedata-element-visual-studio-templates.md) öğesi aynı kalır.  **\<VSTemplateContainer >** öğesi ilişkili şablonu için .vstemplate dosyasına işaret eder.  
   
  Visual Studio 2015 tarafından oluşturulan varsayılan öğesi .vstemplate dosyasını şöyledir:  
   
@@ -173,7 +174,7 @@ Yeni dosyalar doğru oluşturabilmesi için Visual Studio 2015 ve Visual Studio 
   
 ```  
   
- Tarafından sağlanan bilgileri  **\<TemplateData >** öğesi aynı kalır. **\<VSTemplateContainer >** öğesi ilişkili şablonu için .vstemplate dosyasına işaret eder  
+ Tarafından sağlanan bilgileri  **\<TemplateData >** öğesi aynı kalır.  **\<VSTemplateContainer >** öğesi ilişkili şablonu için .vstemplate dosyasına işaret eder  
   
  .Vstman dosyasının farklı öğeler hakkında daha fazla bilgi için bkz: [Visual Studio şablon bildirim şema başvurusu](../extensibility/visual-studio-template-manifest-schema-reference.md).  
   

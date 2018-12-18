@@ -7,24 +7,26 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 4c508327f03d52195b3e3d9ea40c3e7565ec0f03
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 97eb050bb99c522f5c5e97ea3355f3146086c29e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926299"
 ---
 # <a name="how-to-use-transactions-to-update-the-model"></a>Nasıl yapılır: Modeli Güncelleştirmek için İşlemleri Kullanma
-İşlemler deposuna yapılan değişiklikler bir grup olarak davranılır emin olun. Gruplandırılır değişiklikleri kaydedilmiş veya tek bir birim olarak geri alındı.
+İşlem depoya yapılan değişiklikler bir grup olarak kabul edilir emin olun. Gruplandırılmış değişiklikler kaydedilmiş veya tek bir birim olarak geri alındı.
 
- Her program kodunuzu değiştirir, ekler veya depoda herhangi bir öğeyi siler [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Görselleştirme ve modelleme SDK, bir işlem içinde bunu yapmalısınız. Etkin bir örneği olmalıdır <xref:Microsoft.VisualStudio.Modeling.Transaction> değişiklik olduğunda deposuyla ilişkili. Bu, tüm model öğelerini, ilişkileri, şekiller, diyagramları ve bunların özelliklerini için geçerlidir.
+ Her program kodunuza değiştirir, ekler veya Visual Studio Görselleştirme ve modelleme SDK'sı Store içindeki herhangi bir öğeyi siler. Bunu bir işlem içinde yapmalısınız. Etkin örneği olmalıdır <xref:Microsoft.VisualStudio.Modeling.Transaction> değişiklik gerçekleştiğinde Store ile ilişkili. Bu, tüm model öğelerini, ilişkiler, şekiller, diyagramları ve özellikleri için geçerlidir.
 
- İşlem mekanizması tutarsız durumları önlemenize yardımcı olur. İşlem sırasında bir hata oluşursa, tüm değişiklikler geri alınır. Kullanıcı bir geri alma komut gerçekleştirirse, her son işlem tek bir adım kabul edilir. Açıkça bunları ayrı işlemlerde yerleştirdiğiniz sürece kullanıcı son zamanlarda bir değişiklik bölümlerini geri alamazsınız.
+ İşlem mekanizması tutarsız durumları kaçınmanıza yardımcı olur. İşlem sırasında bir hata meydana gelirse, tüm değişiklikler geri alınır. Kullanıcı bir geri alma komutu gerçekleştiriyorsa, her bir son işlem tek bir adım olarak kabul edilir. Açıkça bunları ayrı işlemlerde yerleştirdiğiniz sürece kullanıcı son zamanlarda bir değişiklik bölümlerini geri alamazsınız.
 
 ## <a name="opening-a-transaction"></a>Bir işlem açma
- Bir işlem yönetme en kolay yöntem olan bir `using` deyimi içine bir `try...catch` deyimi:
+ Bir işlem yönetmenin en kolay yöntemi olan bir `using` ifadesi içine bir `try...catch` deyimi:
 
-```
+```csharp
 Store store; ...
 try
 {
@@ -48,37 +50,37 @@ catch (Exception ex)
 }
 ```
 
- En son engelleyen bir özel durum, `Commit()` deposu önceki durumuna geri sıfırlanacağı değişiklikleri sırasında oluşur. Bu, hataları modeli tutarsız bir durumda bırakmadığından emin olun yardımcı olur.
+ En son engelleyen bir özel durum, `Commit()` Store önceki durumuna sıfırlanacağı değişiklik sırasında gerçekleşir. Bu hataları modeli tutarsız bir durumda bırakmadığından emin olmanıza yardımcı olur.
 
- Herhangi bir sayıda bir işlem içinde değişiklikleri yapabilirsiniz. Yeni bir işlem etkin bir işlem içinde açabilirsiniz. İç içe geçmiş işlemler yürütün veya içeren işlem sona ermeden önce geri alma. Daha fazla bilgi için örnek için bkz: <xref:Microsoft.VisualStudio.Modeling.Transaction.TransactionDepth%2A> özelliği.
+ Herhangi bir sayıda bir işlem içinde değişiklik yapabilirsiniz. Yeni işlemlerinin etkin bir işlem içinde açabilirsiniz. İç içe işlem işleme veya içeren işlem sona ermeden önce geri yüklemeniz gerekir. Daha fazla bilgi için örneğin bakın <xref:Microsoft.VisualStudio.Modeling.Transaction.TransactionDepth%2A> özelliği.
 
- Değişikliklerinizi kalıcı yapmak için şunları yapmalısınız `Commit` bırakılana önce işlem. İşlem içinde yakalandı bir özel durum oluşursa, deposu değişiklikleri önce durumuna sıfırlar.
+ Yaptığınız değişiklikleri kalıcı hale getirmek için gereken `Commit` bırakılana önce işlem. İşlem içinde yakalanmamış özel bir durum oluşursa, Store değişiklikleri önce durumuna sıfırlar.
 
 ## <a name="rolling-back-a-transaction"></a>Bir işlemi geri alınıyor
- Mağaza kalır veya işlem önce durumuna döner emin olmak için bu taktiği birini kullanabilirsiniz:
+ Store kalır veya işlem önce durumuna döner emin olmak için bu taktikleri birini kullanabilirsiniz:
 
-1.  İşlem kapsamı içinde yakalandı bir özel durum yükseltin.
+1.  İşlem kapsamı içinde yakalanmamış bir özel durum yükseltir.
 
 2.  Açıkça işlem geri alma:
 
-    ```
+    ```csharp
     this.Store.TransactionManager.CurrentTransaction.Rollback();
     ```
 
-## <a name="transactions-do-not-affect-non-store-objects"></a>İşlemler deposu olmayan nesneleri etkilemez
- İşlemler yalnızca deposu durumunu yönetir. Bunlar, dosya, veritabanları veya DSL tanımının dışında sıradan türleriyle bildirilen nesneleri gibi dış öğelerine yapılan kısmi değişiklikleri geri alamazsınız.
+## <a name="transactions-do-not-affect-non-store-objects"></a>İşlem Store olmayan nesneler etkilemez
+ İşlemler yalnızca Store durumunu yönetir. Bunlar, dosyaları, veritabanları veya sıradan türleriyle DSL tanımının dışında bildirilen nesneler gibi dış öğeleri için yapılmış kısmi değişiklikler geri alınamaz.
 
- Bir özel durum bu tür bir değişiklik deposuyla tutarsız bırakırsanız, bu olasılığı özel durum işleyici olarak çalışılabilecek. Dış kaynaklara deposu nesneler ile eşitlenmiş kalmasını emin olmak için bir olay işleyicilerini kullanarak bir mağazadaki öğeye her dış nesne eşleştiği yoldur. Daha fazla bilgi için bkz: [olay işleyicileri yayılması değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
+ Bir özel durum böyle bir değişiklik Store hatasıyla tutarsız bırakabilir, özel durum işleyicisinde, olasılığını uğraşmanız. Dış kaynaklara Store nesneleriyle eşitlenmiş kalmasını sağlamak için bir olay işleyicilerini kullanarak dış her nesne bir mağaza öğeye eşleştirmektir yoludur. Daha fazla bilgi için [olay işleyicileri yaymak değişiklikleri dışında modeli](../modeling/event-handlers-propagate-changes-outside-the-model.md).
 
-## <a name="rules-fire-at-the-end-of-a-transaction"></a>Bir işlem sonunda kuralları yangın
- İşlem atılmadan önce bir işlem sonunda deposundaki öğelere eklenen kurallar tetiklenir. Her kural değişen bir model öğeye uygulanan bir yöntemdir. Örneğin, model öğesi değiştiğinde bir şekli durumunu güncelleştir "Düzelt" kuralları vardır ve bir model öğesi oluşturulduğunda, bir şekil oluşturun. Hiçbir belirtilen tetikleme sırasını yoktur. Bir kural tarafından yapılan bir değişikliği, başka bir kural tetikleyebilir.
+## <a name="rules-fire-at-the-end-of-a-transaction"></a>Bir işlem sonunda kurallarını tetikleme
+ İşlem bırakılmadan önce bir işlem sonunda, deponun öğelere eklenen kurallar tetiklenir. Her kural değişen bir model öğesine uygulanan bir yöntemdir. Örneğin, alt model öğesi değiştirildiğinde bir şekil durumunu güncelleştirme "Düzelt" kuralları vardır ve bir model öğesi oluşturulduğunda, Şekil oluşturma. Hiçbir belirtilen tetikleyicisinin tetikleme sırasını yoktur. Bir kural tarafından gerçekleştirilen bir değişikliğin başka bir kural tetikleyebilir.
 
- Kendi kurallarınızı tanımlayabilirsiniz. Kuralları hakkında daha fazla bilgi için bkz: [yanıtlama ve yayılıyor değişiklikleri](../modeling/responding-to-and-propagating-changes.md).
+ Kendi kurallarınızı tanımlayabilirsiniz. Kuralları hakkında daha fazla bilgi için bkz. [yanıt verme ve değişiklikleri yayma](../modeling/responding-to-and-propagating-changes.md).
 
- Kurallar, bir geri alma, bir yineleme veya geri alma komut sonrasında başlatılmaz.
+ Kurallar, bir geri alma, bir yineleme veya bir geri alma komutu sonrasında başlatılmaz.
 
 ## <a name="transaction-context"></a>İşlem bağlamı
- Her işlem, istediğiniz herhangi bir bilgi depolamak bir sözlük sahiptir:
+ Her işlem, istediğiniz bilgileri depolamak sözlük sahiptir:
 
  `store.TransactionManager`
 
@@ -86,18 +88,17 @@ catch (Exception ex)
 
  `.Context.Add(aKey, aValue);`
 
- Bu kural arasında bilgi aktarmak için kullanışlıdır.
+ Bu kurallar arasında bilgi aktarmak için kullanışlıdır.
 
 ## <a name="transaction-state"></a>İşlem durumu
- Değişiklik nedeni geri alma veya bir işlem yineleme varsa önlemek için gereken bazı durumlarda bir değişiklik yayılıyor. Başka bir değer deposunda güncelleştirebilirsiniz bir özellik değeri işleyicisi yazma, örneğin, gerçekleşebilir. Geri alma işlemi önceki durumlarına deponun tüm değerleri sıfırlar olduğundan, güncelleştirilmiş değerleri hesaplamak gerekli değildir. Bu kodu kullanın:
+ Değişiklikleri geri alma veya yineleme bir işlem tarafından neden oluyorsa önlemek için gereken bazı durumlarda bir değişiklik yayılıyor. Store içinde başka bir değere güncelleştirebilirsiniz bir özellik değeri işleyicisi yazma Bu, örneğin, durum ortaya çıkabilir. Geri alma işlemi Store tüm değerleri önceki durumlarına sıfırlar. çünkü, güncelleştirilmiş değeri hesaplamak gerekli değildir. Bu kodu kullanın:
 
-```
+```csharp
 if (!this.Store.InUndoRedoOrRollback) {...}
 ```
 
- Deponun bir dosyadan başlangıçta yüklenirken kuralları tetikleyebilir. Bu değişikliklere yanıt verme önlemek için kullanın:
+ Deponun bir dosyadan başlangıçta yüklenirken kuralları tetikleyebilir. Bu değişikliklere yanıt verme önlemek için bu seçeneği kullanın:
 
-```
+```csharp
 if (!this.Store.InSerializationTransaction) {...}
-
 ```

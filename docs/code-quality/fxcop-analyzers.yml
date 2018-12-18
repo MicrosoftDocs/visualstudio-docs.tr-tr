@@ -1,0 +1,103 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: fafde7c8355b5087c6168345c57540e0356227b1
+ms.sourcegitcommit: b9a32c3d94b19e7344f4872bc026efd3157cf220
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46135542"
+documentType: LandingData
+title: .NET derleyici platformu çözümleyiciler FxCop kod analizinden kaynaklanan geçirme
+metadata:
+  title: FxCop geçiş belgeleri
+  description: Eski FxCop Çözümleyicileri için kod analizi için geçirmeyi öğrenin.
+  ms.date: 07/18/2018
+  ms.prod: visual-studio-dev16
+  ms.technology: vs-ide-code-analysis
+  ms.topic: landing-page
+  ms.author: gewarren
+  author: gewarren
+  manager: douge
+abstract:
+  description: Kodu ilk kez analiz etme veya FxCop Çözümleyicileri kullanarak yönetilen kod analiz yeni şekilde geçirme öğrenin.
+  aside:
+    image:
+      alt: Ortak yönetim görevleri logosu
+      height: 133
+      width: 48
+      src: https://docs.microsoft.com/media/illustrations/bcs-partner-advanced-management-settings-8.svg
+    title: 
+sections:
+- title: Sık sorulan sorular
+  items:
+  - html: Bazı yanıtlarını <a href="fxcop-analyzers-faq.md">sık sorulan sorular</a> FxCop Çözümleyicileri arasındaki farklar hakkında.
+- title: Kod Analizi yeniyseniz...
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - href: roslyn-analyzers-overview.md
+      html: <p>Çözümleyiciler ne olduğunu öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_learn-about.svg
+      title: Çözümleyiciler genel bakış
+    - href: install-roslyn-analyzers.md
+      html: <p>Bir NuGet paketi veya Visual Studio uzantısı olarak Çözümleyicileri yüklemeyi öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      title: Çözümleyicilerini yükleme
+    - href: use-roslyn-analyzers.md
+      html: <p>C# veya Visual Basic kodu Çözümleyicileri yapılandırmayı öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_config-tools.svg
+      title: Yapılandırma ve Çözümleyicileri kullanma
+    - href: use-roslyn-analyzers.md#command-line-usage
+      html: <p>Komut satırından Çözümleyicileri kullanmayı öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_cligeneric.svg
+      title: Komut satırı kullanımı
+- title: FxCop kullanıcısıysanız...
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - href: roslyn-analyzers-overview.md#roslyn-analyzers-vs-static-code-analysis
+      html: <p>Statik (FxCop) Çözümleyicisi paket Kod Analizi arasındaki farkları öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_learn-about.svg
+      title: Farklı nedir?
+    - href: install-fxcop-analyzers.md
+      html: <p>FxCop Çözümleyicisi paketi yüklemeyi öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_setup.svg
+      title: FxCop çözümleyicilerini yükleme
+    - href: use-roslyn-analyzers.md#command-line-usage
+      html: <p>Komut satırından genellikle Kod Analizi çalıştırırsanız, komut satırından Çözümleyicileri kullanmayı öğrenin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_cligeneric.svg
+      title: Komut satırı kullanımı
+    - href: analyzer-rule-sets.md
+      html: <p>Çözümleyici paket kural kümeleri hakkında bilgi edinin.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_code-samples.svg
+      title: Kural kümeleri
+- title: İlgili makaleler
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - href: code-analysis-for-c-cpp-overview.md
+      html: <p>Yerel C++ kod üzerinde kod analizini çalıştırmayı öğrenin. Yönetilen C++ Kod Analizi kullanım dışı bırakılmıştır.</p>
+      image:
+        src: https://docs.microsoft.com/media/logos/logo_Cplusplus.svg
+      title: C++ Kod Analizi
+    - href: code-metrics-values.md
+      html: <p>Kod ölçümleri alma hakkında bilgi edinin. Kod ölçümleri için kullanıcı deneyimi değişmez.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_data-collection.svg
+      title: Kod ölçümleri

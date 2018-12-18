@@ -1,0 +1,49 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 74548e58da6430888387e300974f4e48d1138c07
+ms.sourcegitcommit: db680e8fa8066f905e7f9240342ece7ab9259308
+ms.translationtype: MT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "44343004"
+documentType: LandingData
+title: AI için Visual Studio Araçları
+metadata:
+  document_id: 83ceabb5-fb4f-a709-3fd2-37d024409f31
+  title: AI için Visual Studio Araçları | Microsoft Docs
+  ms.prod: visual-studio-dev15
+  ms.technology: vs-ai-tools
+  author: lisawong19
+  ms.author: liwong
+  manager: routlaw
+  ms.topic: landing-page
+  ms.date: 10-25-2017
+abstract:
+  description: AI için Visual Studio Araçları, derleme, test etme ve derin öğrenme çözümlerini dağıtmak için bir tümleşik geliştirme ortamıdır. Bizim hızlı başlangıç kılavuzlarımız, öğreticilerimiz ve örneklerimizle, yapay ZEKA araçları kullanmayı öğrenin.
+sections:
+- title: 5 dakikalık hızlı Başlangıçlar
+  items:
+  - type: paragraph
+    text: 'Derin öğrenme çözümüyle çalıştırmayı öğrenin:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/Tensorflow_logo.png
+      text: TensorFlow ve Python
+      href: tensorflow-local.md
+- title: Adım adım öğreticiler
+  items:
+  - type: paragraph
+    text: 'Bir derin öğrenme çözüm oluşturmayı öğrenin:'
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="/visualstudio/ai/tensorflow-vm">Bulutta bir TensorFlow modeli eğitme</a>
+- title: Örnekler
+  items:
+  - type: list
+    style: unordered
+    className: spaced noBullet
+    items:
+    - html: <a href="https://github.com/Microsoft/samples-for-ai">Örnekleri deposu</a>
+    - html: <a href="https://gallery.cortanaintelligence.com/projects">Machine Learning Galerisi</a>

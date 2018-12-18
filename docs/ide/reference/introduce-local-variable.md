@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da yerel bir değişken tanıtmak | Microsoft Docs
-ms.custom: ''
+title: Bir yerel değişken ekleme
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
 author: gewarren
@@ -9,13 +9,14 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: b7af958e923c6af7929b8e4a9309c210dbf8ced5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 108477845bb79d5ed13cb3ebdf3121e4960455a6
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53068088"
 ---
-# <a name="introduce-a-local-variable-in-visual-studio"></a>Visual Studio'da yerel bir değişken tanıtır
+# <a name="introduce-a-local-variable-in-visual-studio"></a>Visual Studio'da bir yerel değişken ekleme
 
 Bu kod oluşturma için geçerlidir:
 
@@ -23,51 +24,51 @@ Bu kod oluşturma için geçerlidir:
 
 - Visual Basic
 
-**Ne:** hemen var olan bir ifade değiştirmek için yerel bir değişken oluşturmanıza olanak sağlar.
+**Ne:** hemen var olan bir ifade değiştirmek için bir yerel değişken oluşturmanıza olanak tanır.
 
-**Ne zaman:** yerel bir değişkende olsaydı, kolayca daha sonra yeniden koduna sahip.
+**Ne zaman:** yerel bir değişkende olsaydı, kolayca daha sonra yeniden kullanılabilen kodlarla koda sahip.
 
-**Neden:** kopyalayın ve yerel değişken throughought kullanın, bir yerel değişkende sonucu depolamak ve bir kez işlemi gerçekleştirmek daha iyi ancak kodu çeşitli yerlerde kullanmak için birden çok kez yapıştırın.
+**Neden:** kopyalayın ve sonra işlemi gerçekleştirmek, sonucu yerel bir değişkende depolar ve yerel bir değişken boyunca kullanmanız daha iyi ancak kodu çeşitli konumlarda kullanmak için birden çok kez yapıştırın.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. Yeni yerel bir değişkene atamak istediğiniz ifade vurgulayın.
+1. Yeni bir yerel değişkene atamak istediğiniz ifade vurgulayın.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu C#](media/local-highlight-cs.png)
+       ![Vurgulanmış kodu C#](media/local-highlight-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu VB](media/local-highlight-vb.png)
+       ![Vurgulanmış kodu VB](media/local-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
    - **Fare**
-     - Sağ tıklatıp **hızlı Eylemler ve yapan yeniden düzenlemeler** menüsü.
-     - &nbsp; ![Ampul](media/bulb-cs.png) metin imleci kırmızı dalgalı satırıyla açıksa sol kenar boşluğunda görüntülenen simgesine.
+      - Sağ tıklayıp **hızlı Eylemler ve yeniden düzenlemeler** menüsü.
+      - &nbsp; ![Ampul](media/bulb-cs.png) kırmızı dalgalı çizgi içeren satırda metin imleci ise sol kenar boşluğunda görünür simge.
 
-   ![Yerel Önizleme tanıtır](media/local-preview-cs.png)
+   ![Yerel Önizleme Ekle](media/local-preview-cs.png)
 
-1. Seçin **(tüm oluşumları için) yerel tanıtmak '*ifade*'** açılır menüsünden.
+3. Seçin **(tüm örnekleri için) bir yerel değişken Ekle '*ifade*'** aşağı açılan menüden.
 
    > [!TIP]
-   > Kullanım **Önizleme değişiklikleri** önizleme penceresinin altındaki bağlantıyı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak seçiminizi yaptıktan önce.
+   > Kullanım **değişiklik önizlemesi** Önizleme pencerenin alt kısmındaki bağlantı [tüm değişiklikleri görmek için](../../ide/preview-changes.md) , oluşturulacak, seçim yapmadan önce.
 
-   Kendi kullanımdan çıkarımı yapılan tür yerel değişken oluşturulur. Yeni yerel değişken yeni bir ad verin.
+   Yerel değişken, kullanımdan çıkarılan türü ile oluşturulur. Yeni yerel değişkeni, yeni bir ad verin.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-      ![Uygulama arabirimi sonuç C#](media/local-result-cs.png)
+       ![C# arabirimi sonucu uygulayın](media/local-result-cs.png)
 
    - Visual Basic:
 
-      ![Uygulama arabirimi sonuç VB](media/local-result-vb.png)
+       ![Uygulama arabirimi sonucu VB](media/local-result-vb.png)
 
    > [!NOTE]
-   > Kullanabileceğiniz **.. olan örnek...**  her seçili ifadesi, yalnızca özellikle vurgulanmış bir örneğini değiştirmek için menü seçeneği.
+   > Kullanabileceğiniz **.. .all oluşumlarını...**  menü seçeneğini seçili ifadesi, yalnızca özellikle vurgulanmış bir her örneğini değiştirin.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

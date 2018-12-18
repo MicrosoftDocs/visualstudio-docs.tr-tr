@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9fdf3b6aee272990fb22feee13f8e46ee8550073
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: eb2388d93c05500dc3c12bb5d57cd17293f5e16c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49816813"
 ---
 # <a name="bperrorresolutioninfo"></a>BP_ERROR_RESOLUTION_INFO
-Konum, program ve iş parçacığı gibi bir hata kesme noktası çözüm açıklanır.  
+Konum, program ve iş parçacığı gibi bir hata kesme noktası çözünürlüğü açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,35 +51,35 @@ public struct BP_ERROR_RESOLUTION_INFO {
   
 ## <a name="members"></a>Üyeler  
  `dwFields`  
- Değerleri bir birleşimini [BPERESI_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) hangi alanların bu yapının doldurulmuş belirtme numaralandırması.  
+ Değerleri birleşimi [BPERESI_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) bu yapının alanları doldurulmalıdır belirten sabit listesi.  
   
  `bpResLocation`  
- [BP_RESOLUTION_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md) kesme noktası çözümleme konumunu belirten birleşimi.  
+ [BP_RESOLUTION_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md) UNION, kesme noktası çözünürlüğü konumu belirtir.  
   
  `pProgram`  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) kesme noktası hatanın gerçekleştiği uygulama temsil eden nesne.  
   
  `pThread`  
- [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme noktası hatayı oluşturan uygulama çalışan iş parçacığı temsil eden nesne.  
+ [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme Notası hatası oluşturulan uygulama çalışan iş parçacığı temsil eden nesne.  
   
  `bstrMessage`  
- Bu hata resolution kaynaklanan herhangi bir uyarı veya hata iletisi içeren bir dize.  
+ Bu hata resolution kaynaklanan uyarı veya hata iletisi içeren bir dize.  
   
  `dwType`  
- Arasında bir değer [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) kesme hatası türünü belirten numaralandırma.  
+ Bir değer [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) kesme noktası hata türünü belirten sabit listesi.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı, sunucudan döndürülen [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md) yöntemi.  
+ Bu yapı döndürüldüğü [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md)   
  [BPRESI_FIELDS](../../../extensibility/debugger/reference/bpresi-fields.md)   
  [BP_RESOLUTION_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md)   

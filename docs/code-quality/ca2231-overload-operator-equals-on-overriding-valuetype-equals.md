@@ -1,6 +1,7 @@
 ---
 title: 'CA2231: ValueType.Equals değerini geçersiz kılmada eşittir işlecini aşırı yükle'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -14,29 +15,34 @@ ms.assetid: 114c0161-261a-40ad-8b2c-0932d6909d2a
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 81d4a0d571a1692748453d64aa5d4cc3dced87ec
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: afdbb6f75754f5f7c839326139a57f2c20de97c3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49816601"
 ---
 # <a name="ca2231-overload-operator-equals-on-overriding-valuetypeequals"></a>CA2231: ValueType.Equals değerini geçersiz kılmada eşittir işlecini aşırı yükle
+
 |||
 |-|-|
 |TypeName|OverloadOperatorEqualsOnOverridingValueTypeEquals|
 |CheckId|CA2231|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Değer türü geçersiz kılmaları <xref:System.Object.Equals%2A?displayProperty=fullName> ancak eşitlik işleci uygulamaz.
+ Bir değer türü geçersiz kılmalar <xref:System.Object.Equals%2A?displayProperty=fullName> ama eşitlik işlecini uygulamaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Çoğu programlama dillerinde hiçbir değer türleri için eşitlik işleci (==) varsayılan uygulaması yoktur. Programlama diliniz işlecin destekliyorsa, eşitlik işleci uygulama düşünmelisiniz. Davranışını olarak aynı olmalıdır <xref:System.Object.Equals%2A>.
+## <a name="rule-description"></a>Kural açıklaması
+ Çoğu programlama dillerinde, hiçbir varsayılan değer türleri için eşitlik operatörünün (==) uygulaması yok. İşleç aşırı yüklemeleri programlama dilini destekler, eşitlik imlecini uygulamadan düşünmelisiniz. Davranışını olarak aynı <xref:System.Object.Equals%2A>.
 
- Varsayılan eşitlik işleci aşırı yüklenmiş bir eşitlik işleci uygulamasında kullanamazsınız. Bunun yapılması bir yığın taşması neden olur. Eşitlik işleci uygulamak için uygulamanızda Object.Equals yöntemini kullanın. Örneğin:
+ Eşitlik işleci aşırı yüklenmiş bir uygulamada varsayılan eşitlik işlecini kullanamazsınız. Bunun yapılması, yığın taşmasına neden olur. Eşitlik işleci uygulamak için uygulamanızda Object.Equals yöntemi kullanın. Örneğin:
 
 ```vb
 If (Object.ReferenceEquals(left, Nothing)) Then
@@ -52,14 +58,14 @@ if (Object.ReferenceEquals(left, null))
 return left.Equals(right);
 ```
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için eşitlik işleci uygulayın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için eşitlik işlecini uygular.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural bir uyarıdan gizlemek güvenlidir; Ancak, mümkünse eşitlik işleci sağlamanızı öneririz.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Bu kuraldan bir uyarıyı bastırmak güvenlidir; Ancak, mümkünse eşitlik işlecini sağlamanızı öneririz.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bu kural ihlal eden bir türü tanımlar.
+ Aşağıdaki örnek bu kuralı ihlal eden bir tür tanımlar.
 
  [!code-csharp[FxCop.Usage.EqualsGetHashCode#1](../code-quality/codesnippet/CSharp/ca2231-overload-operator-equals-on-overriding-valuetype-equals_1.cs)]
 
@@ -74,5 +80,6 @@ return left.Equals(right);
 
  [CA2218: GetHashCode'u Eşittir'i geçersiz kılarak geçersiz kılın](../code-quality/ca2218-override-gethashcode-on-overriding-equals.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Object.Equals%2A?displayProperty=fullName>
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Object.Equals%2A?displayProperty=fullName>

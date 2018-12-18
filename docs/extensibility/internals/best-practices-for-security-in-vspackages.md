@@ -1,5 +1,5 @@
 ---
-title: En iyi uygulamalar VSPackages güvenliği | Microsoft Docs
+title: Vspackage'larda güvenlik için en iyi uygulamalar | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,23 +15,24 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 689c85e090e44612a87474e8c77dc0e146706e84
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 629e7076335ee3cd9e2260d6242f586579bd8e0d
+ms.sourcegitcommit: 3dd15e019cba7d35dbabc1aa3bf55842a59f5278
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46370711"
 ---
-# <a name="best-practices-for-security-in-vspackages"></a>VSPackages güvenlik için en iyi yöntemler
-Yüklemek için [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] , bilgisayarınızda, yönetici kimlik bilgilerine sahip bir bağlamda çalıştırması gerekir. Güvenlik ve dağıtımını temel birimi bir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] uygulama [VSPackages](../../extensibility/internals/vspackages.md). Kullanarak bir VSPackage kaydedilmelidir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], yönetici kimlik bilgilerini de gerektirir.  
+# <a name="best-practices-for-security-in-vspackages"></a>Vspackage'larda güvenlik için en iyi uygulamalar
+Yüklenecek [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] bilgisayarınızda yönetici kimlik bilgilerine sahip bir bağlamda çalıştırıyor olmalısınız. Güvenliği ve dağıtımı temel birimini bir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] uygulama [VSPackage](../../extensibility/internals/vspackages.md). Bir VSPackage'ı kullanarak kaydedilmelidir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], gerektiren yönetici kimlik bilgileri.  
   
- Yöneticiler, kayıt defteri ve dosya sistemi yazma ve herhangi bir kod çalıştırmak için tam izinleri sahiptir. Geliştirme, dağıtma veya bir VSPackage yüklemek için bu izinleri olmalıdır.  
+ Yöneticiler, kayıt defteri ve dosya sistemine yazma ve herhangi bir kodu çalıştırmak için tam izinleri vardır. Geliştirme, dağıtma veya bir VSPackage'ı yüklemek için bu izinlere sahip olmalıdır.  
   
- Yüklendikten hemen sonra bir VSPackage tam güvenilir. VSPackage ile ilişkili izni nedeniyle bu yüksek düzey farkında olmadan kötü amaçlı kullanıcılardan VSPackage yüklemek mümkündür.  
+ VSPackage yüklendikten hemen sonra tam olarak güvenilirdir. VSPackage'ı ile ilişkili izin nedeniyle bu yüksek düzeyde farkında olmadan kötü amaçlı olan bir VSPackage'ı yüklemek mümkündür.  
   
- Kullanıcılar, yalnızca güvenilir kaynaklardan gelen VSPackages güncelleştirmesini emin olun. VSPackages geliştirme şirketler kesin adı ve oturumunu, kullanıcı o oynama güvence altına almak için engellenir. Şirketler VSPackages geliştirme, web hizmetleri ve değerlendirmek ve güvenlik sorunları düzeltmek için uzaktan yükleme gibi dış bağımlılıklarını incelemeniz gerekir.  
+ Kullanıcılar VSPackages yalnızca güvenilir kaynaklardan gelen yükleme emin olmanız gerekir. VSPackage geliştirme şirketler kesin ad ve oturumunu, kullanıcı söz konusu oynama güvence altına almak için engellenir. VSPackage geliştirme şirketler, web hizmetleri ve değerlendirmek ve güvenlik sorunları düzeltmek için uzaktan yükleme gibi dış bağımlılıklarını incelemeniz gerekir.  
   
- Daha fazla bilgi için .NET Framework için güvenli kodlama yönergeleri bakın ([http://msdn.microsoft.com/library/d55zzx87.aspx](http://msdn.microsoft.com/library/d55zzx87.aspx)).  
+ Daha fazla bilgi için [güvenli kodlama yönergeleri için .NET Framework](/previous-versions/visualstudio/visual-studio-2008/d55zzx87(v=vs.90)).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eklenti güvenliği](http://msdn.microsoft.com/Library/44a5c651-6246-4310-b371-65378917c799)   
- [DDEX güvenlik](http://msdn.microsoft.com/en-us/44a52a70-5c98-450e-993d-4a3b32f69ba8)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Eklenti güvenliği](https://msdn.microsoft.com/Library/44a5c651-6246-4310-b371-65378917c799)   
+ [DDEX güvenlik](https://msdn.microsoft.com/library/44a52a70-5c98-450e-993d-4a3b32f69ba8)

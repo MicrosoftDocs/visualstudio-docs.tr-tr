@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9bff0c60ea8401896eb5399ed797d90b62bf0d0a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2daec6615f98d6e253e65bdc66cb7f1f545f9857
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822221"
 ---
 # <a name="idebugprogrampublisher2unpublishprogram"></a>IDebugProgramPublisher2::UnpublishProgram
-Bir program ayıklanacak kullanılamaz hale getirir.  
+Bir programı hata ayıklaması kullanılabilir hale getirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int UnpublishProgram(
   
 #### <a name="parameters"></a>Parametreler  
  `pDebuggeeInterface`  
- [in] Bir `IUnknown` program arabirimi. Bunun için sağlanan değerin aynısıdır [PublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-publishprogram.md) yöntemi ve kaldırılmakta program benzersiz olarak tanıtan (diğer bir deyişle, onu bir tanımlama bilgisi olarak kullanılır).  
+ [in] Bir `IUnknown` program arabirimi. Bunun için sağlanan değerin aynısıdır [PublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-publishprogram.md) yöntemi ve kaldırılmakta olan program benzersiz olarak tanımlayan (diğer bir deyişle, bir tanımlama bilgisi kullanılır).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir program hata ayıklama motorları ve oturum hata ayıklama yöneticisi yapmak için kullanın [PublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-publishprogram.md) yöntemi.  
+ Bir program hata ayıklama motoru ve oturum hata ayıklama Yöneticisi olmak için [PublishProgram](../../../extensibility/debugger/reference/idebugprogrampublisher2-publishprogram.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md)   

@@ -1,6 +1,7 @@
 ---
 title: 'CA2223: Üyeler dönüş türünden daha fazla farklı olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4caffc53ff99f20a0dee94990dd6f5b966f2e047
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 93822dd3db325e3463c4a8f175c8ca289cac9e5d
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45549832"
 ---
 # <a name="ca2223-members-should-differ-by-more-than-return-type"></a>CA2223: Üyeler dönüş türünden daha fazla farklı olmalıdır
+
 |||
 |-|-|
 |TypeName|MembersShouldDifferByMoreThanReturnType|
@@ -30,22 +33,21 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- İki ortak veya korumalı üyeler dönüş türü dışında birbirinin aynı olan imzalar sahiptir.
+ İki ortak veya korumalı üyeler dönüş türü dışında aynı imzalara sahip olduğunu.
 
-## <a name="rule-description"></a>Kural Tanımı
- Ortak dil çalışma zamanı dışında aynı üyeleri arasında ayırt etmek için dönüş türleri kullanımına izin verir ancak bu özellik ortak dil belirtimi değil veya .NET programlama dillerini ortak bir özellik değil. Üyeleri yalnızca dönüş türüne göre farklılık gösterir, geliştiriciler ve geliştirme araçları doğru bunlar arasında ayrım.
+## <a name="rule-description"></a>Kural açıklaması
+ Ortak dil çalışma zamanı aynı üyeler arasında ayrım yapmak için dönüş türleri kullanımına izin verse de, bu özellik ortak dil belirtimi ne de, bir .NET programlama dillerinin ortak özelliğidir. Üyeler yalnızca dönüş türüne göre farklı olduğunda, geliştiricilerin ve geliştirme araçları doğru bunları ayırt değil.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için böylece yalnızca, adları ve parametre türleri göre benzersiz veya üyeleri gösterme üyeleri tasarımını değiştirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için böylece yalnızca, adları ve/veya parametre türleri dayalı olarak benzersizdirler veya üyeleri gösterme üyelerin tasarım değiştirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
  Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte, Microsoft Ara dili (MSIL), bu kural ihlal eden bir tür gösterir. Bu kural C# veya Visual Basic kullanarak ihlal olamaz dikkat edin.
+ Aşağıdaki örnekte, bu kuralı ihlal eden bir tür Microsoft Ara dilini (MSIL) gösterir. Bu kural C# veya Visual Basic kullanarak ihlal olamaz dikkat edin.
 
 ```
-
 .namespace UsageLibrary
 {
   .class public auto ansi beforefieldinit ReturnTypeTest
@@ -92,5 +94,4 @@ ms.lasthandoff: 04/19/2018
   } // end of class ReturnTypeTest
 
 } // end of namespace UsageLibrary
-
 ```

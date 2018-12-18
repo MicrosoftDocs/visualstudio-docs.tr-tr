@@ -19,18 +19,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c2b8e9051a127a7338bc5d1ae6bd82b2e65ba3f4
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: e1556897fe3efb2e8b1a4060ff8de20ca159a68d
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44279147"
 ---
 # <a name="edit-and-continue-dialog-box"></a>Düzenle ve Devam Et İletişim Kutusu
-(Yalnızca yerel) Hata ayıklama sırasında kodu düzenlediğinizde bu iletişim kutusu görünür ve **Düzenle ve devam et** kod değişiklikleri uygulayabilirsiniz tanır. Daha fazla bilgi için bkz: [Düzenle ve devam et](../debugger/edit-and-continue.md).  
+(Yalnızca yerel) Hata ayıklarken, kodu düzenledikten sonra bu iletişim kutusu açılır ve **Düzenle ve devam et** kod değişiklikleri uygulayabilirsiniz tanır. Daha fazla bilgi için [Düzenle ve devam et](../debugger/edit-and-continue.md).  
   
  **Bana bu iletişim kutusunu bir daha gösterme**  
- Bu onay kutusunu seçerseniz **Düzenle ve devam et** kod değişikliklerini gelecekteki izin istemeden uygulanır. Bu uyarıyı tekrar giderek açabilirsiniz **seçenekleri** açma iletişim kutusu, **hata ayıklama** tıklayarak klasörü **Düzenle ve devam et** sayfasında ve seçerek**Hata ayıklama komutları tarafından çağrılan** ve **önce sor**.  
+ Bu onay kutusunu seçerseniz **Düzenle ve devam et** kod değişikliklerini gelecekteki izin istemeden uygulanır. Bu uyarıyı yeniden giderek etkinleştirebilirsiniz **seçenekleri** açma iletişim kutusu, **hata ayıklama** klasörüne tıklayarak, **Düzenle ve devam et** sayfasında ve seçerek**Hata ayıklama komutları tarafından çağrılan** ve **önce sor**.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata ayıklama güvenliği](../debugger/debugger-security.md)   
- [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](http://msdn.microsoft.com/Library/009d225f-ef65-463f-a146-e4c518f86103)
+ [Hata ayıklayıcısı güvenliği](../debugger/debugger-security.md)   
+ [Düzenle ve devam et, hata ayıklama, Seçenekler iletişim kutusu](https://msdn.microsoft.com/library/bcew296c.aspx)

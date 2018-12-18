@@ -1,33 +1,36 @@
 ---
-title: İş ortaklarına Microsoft Partner Network (MPN) sunulan visual Studio abonelikleri
+title: Microsoft iş ortağı ağı (MPN) iş ortakları için sunulan visual Studio abonelikleri
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 03/16/2018
 ms.topic: Get-Started-Article
-description: Ayrıntıları hangi abonelikleri sunulan, hangi kuralları geçerli ve kaç tane abonelikleri MPN sunulur.
+description: Hangi abonelikler sunulur, hangi kuralları uygulamak ve kaç aboneliğe MPN'ye sunulan ayrıntıları.
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 9593614b58f8f4c77ec24891cdb9ada33eac3e60
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 7175dd503c2e91091b5bb6499fa54c0e5f2586ec
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49876776"
 ---
-# <a name="visual-studio-subscriptions-offered-to-partners-in-the-microsoft-partner-network-mpn"></a>İş ortaklarına Microsoft Partner Network (MPN) sunulan visual Studio abonelikleri
-Kimin bir uzmanlığı kazanmak veya kimin MPN eylem paketinde satınalma iş ortakları, Visual Studio abonelikleri kullanmak uygundur. Bu abonelikleri kullanıcı başına lisanslanır ve yalnızca belirli bir iş ortağı şirket için çalışan kullanıcı adlandırılmış atanan olduğunda geçerlidir. 
+# <a name="visual-studio-subscriptions-offered-to-partners-in-the-microsoft-partner-network-mpn"></a>Microsoft iş ortağı ağı (MPN) iş ortakları için sunulan visual Studio abonelikleri
+Kimin bir uzmanlık kazanın veya MPN eylem paketinde kimler satın iş ortakları, Visual Studio aboneliklerini kullanmak uygundur. Bu abonelik kullanıcı başına lisanslanır ve yalnızca belirli bir iş ortağı şirketin çalışan kullanıcı adlandırılmış atandığında geçerlidir.
 
-## <a name="subscriptions-for-partners-with-an-mpn-competency"></a>MPN uzmanlığına sahip iş ortakları için abonelikleri
-Düzey--bir iş ortağı uzmanlığı--kazandığı olduğunda da Gümüş veya altın ortakları Visual Studio Enterprise abonelik çekirdek sayısı kazanırsınız. Bu temel iş ortağı en az bir gold uzmanlığına kazandığı durumunda değişiklikler yararlanır. Visual Studio Enterprise abonelik için kabaca eşdeğerdir özel bir tekliftir [Visual Studio Enterprise yıllık bulut aboneliği](https://www.visualstudio.com/vs/pricing/), ancak (birçok sunulur ayrı olarak çok kaldırılan belirli avantajları İş ortakları genel MPN avantajları olarak yerine Visual Studio Enterprise abonelikleri bir parçası olarak MPN sunulur). 
+## <a name="subscriptions-for-partners-with-an-mpn-competency"></a>Bir MPN uzmanlığına sahip iş ortakları için abonelikler
+Düzey--ortak bir uzmanlık--işletmeyse olduğunda düzeyinde silver veya gold iş ortakları Visual Studio Enterprise abonelikleri çekirdek sayısı kazanın. Bu çekirdek en az bir gold uzmanlığına sahip iş ortağı kazandırır, değişiklikleri yararlanır. Visual Studio Enterprise aboneliği kabaca özel bir tekliftir [Visual Studio Enterprise yıllık bulut aboneliği](https://visualstudio.microsoft.com/vs/pricing/), ancak (çoğu sunulur ayrı kaldırıldı belirli avantajlar İş ortakları genel MPN avantajlarını yerine Visual Studio Enterprise abonelikleri parçası olarak sunulan MPN aracılıyla).
 
-### <a name="core-visual-studio-benefit-for-earning-at-least-one-competency-of-any-kind"></a>Herhangi bir türde en az bir uzmanlığı getirisi için Visual Studio avantajı çekirdek
-| Yalnızca Gümüş düzeyinde kazanılan yetkinlikleri               | Altın düzeyinde kazanılan en az bir uzmanlığı   | 
+### <a name="core-visual-studio-benefit-for-earning-at-least-one-competency-of-any-kind"></a>Visual Studio avantajı için herhangi bir türde en az bir uzmanlık kazanmaya çekirdek
+
+| Yalnızca Gümüş düzeyinde kazanılan uzmanlıklar               | En az bir uzmanlık gold düzeyinde kazanılan   |
 |------------------------------------------------------------|----------------------------------------------------|
 | 5 visual Studio Enterprise abonelikleri                   | 10 visual Studio Enterprise abonelikleri          |
 
-### <a name="additional-visual-studio-benefit-for-select-competencies"></a>Select yetkinlikleri için ek Visual Studio avantajı
-| Uzmanlığı                                  | Ek abonelikleri kazanılan **Gümüş** uzmanlığı | Ek abonelikleri kazanılan **altın** uzmanlığı |
+### <a name="additional-visual-studio-benefit-for-select-competencies"></a>Select uzmanlıklar için ek Visual Studio avantajı
+
+| Uzmanlığı                                  | Kazanılan ek abonelikler için **silver** uzmanlığı | Kazanılan ek abonelikler için **altın** uzmanlığı |
 |---------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------|
 | Uygulama Geliştirme                     | 5 visual Studio Enterprise abonelikleri                  | 25 visual Studio Enterprise abonelikleri               |
 | Bulut müşteri ilişkileri yönetimi      | 5 visual Studio Enterprise abonelikleri                  | 25 visual Studio Enterprise abonelikleri               |
@@ -35,36 +38,38 @@ Düzey--bir iş ortağı uzmanlığı--kazandığı olduğunda da Gümüş veya 
 | Bulut üretkenliği                          | 5 visual Studio Enterprise abonelikleri                  | 25 visual Studio Enterprise abonelikleri               |
 | DevOps                                      | 1 visual Studio Enterprise abonelikleri                  | 5 visual Studio Enterprise abonelikleri                |
 
-Bir iş ortağı kazandığı kaç yetkinlikleri bağımsız olarak, Visual Studio abonelik sayısı sınırlı aşağıdaki gibidir:
+Bir iş ortağı işletmeyse kaç uzmanlıklar ne olursa olsun, Visual Studio abonelik sayısını şöyle sınırlandırılmıştır:
 
-### <a name="limits-for-visual-studio-subscriptions-earned-through-competencies"></a>Visual Studio abonelikler yetkinlikleri kazanılan sınırları
-| Yalnızca Gümüş yetkinlikleri sahip iş ortakları için en fazla avantajı                   | En az bir gold uzmanlığına sahip iş ortakları için en fazla avantajı               | 
+### <a name="limits-for-visual-studio-subscriptions-earned-through-competencies"></a>Visual Studio abonelikleri uzmanlıklar kazanılan sınırları
+
+| En fazla teklifi yalnızca silver uzmanlıklar sahip iş ortakları için                   | En az bir gold uzmanlığına sahip iş ortakları için en büyük avantajı               |
 |------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| Ülke başına 25 visual Studio Enterprise abonelik; Dünya çapında 75          | Ülke başına 50 visual Studio Enterprise abonelik; Dünya çapında 150         |
+| Ülke başına 25 visual Studio Enterprise abonelikleri; Dünya çapında 75          | Ülke başına 50 visual Studio Enterprise abonelikleri; dünya genelinde 150         |
 
 
-## <a name="subscriptions-for-partners-purchasing-the-action-pack"></a>Eylem paketi satın iş ortakları için abonelikleri
-Bir uzmanlığına sahip iş ortakları eylem paketi satın almak uygun değildir. İş ortağı yalnızca bir eylem paketi alınabilir.
+## <a name="subscriptions-for-partners-purchasing-the-action-pack"></a>Eylem paketi satın alma iş ortakları için abonelikler
+Bir uzmanlığa sahip iş ortakları, eylem paketi satın almak uygun değildir. İş ortağı yalnızca bir eylem paketi satın alınabilir.
 
-İş ortağı eylem paketiyle kazandığı **3 Visual Studio Professional (MPN) abonelikleri**. Visual Studio Professional (MPN), ticari olarak kullanılabilir bir eşdeğer pazardaki olmadan özel bir tekliftir. İşte ne bulunur:
-- Visual Studio Professional--yalnızca en son sürümü
-- Windows Enterprise--geliştirme ve yalnızca test için kullanmak üzere en son sürümünü yalnızca
-- Windows Server--Geliştirme ve yalnızca test için kullanmak üzere en son sürümünü yalnızca
+Eylem paketi ile iş ortağı işletmeyse **3 Visual Studio Professional (MPN) abonelikleri**. Visual Studio Professional (MPN) pazarında bir ticari olarak satışta eşdeğeri olmayan özel bir tekliftir. Dahil edilen nedir aşağıda verilmiştir:
+- Visual Studio Professional – yalnızca en son sürümü
+- Windows Enterprise--yalnızca geliştirme ve test için kullanılacak en son sürümünü yalnızca
+- Windows Server--yalnızca geliştirme ve test için kullanılacak en son sürümünü yalnızca
 
-Visual Studio Professional (MPN) aboneleri de indirin ve SQL Server Geliştirici sürümü de dahil olmak üzere kendi geliştirme için ücretsiz yazılımlar kullanın.
+Visual Studio Professional (MPN) aboneleri de indirebilir ve SQL Server Geliştirici sürümü dahil olmak üzere kendi geliştirme için ücretsiz yazılım kullanın.
 
-Visual Studio Professional (MPN) abonelik VSTS avantajları, aylık Azure kredisi, teknik destek, eğitim veya ticari olarak sunulan Visual Studio abonelikleri ile kullanılabilir diğer abone Avantajlarınızı içermez.
+Visual Studio Professional (MPN) aboneliği Azure DevOps Hizmetleri avantajları, aylık Azure kredisi, teknik destek, eğitim veya sunulan Visual Studio abonelikleri ile kullanılabilir olan diğer abone avantajları dahil değildir ticari olarak.
 
-## <a name="internal-use-only-restriction"></a>İç yalnızca kullanım kısıtlaması
-MPN kuralları programı teklifi yalnızca dahili olarak kullanılabilir olarak sunulan tüm yazılımların iznine. Bu, tek tek Visual Studio abonelerin kullanın ve genel MPN yazılım lisans yararları sunulan yazılım uygular. 
+## <a name="internal-use-only-restriction"></a>İç yalnızca kullanım kısıtlama
+MPN kuralları programı teklifi yalnızca dahili olarak kullanılabilen gibi sunulan tüm yazılımların gidemez. Bu tek tek Visual Studio aboneleri kullan ve genel MPN yazılım lisans avantajlarından sunulan yazılımlar için geçerlidir.
 
-Bu dahili yalnızca kullanım kısıtlaması temelde tarafların kendi kuruluşunuz dışındaki yaparlar iş parçası olarak iş ortaklarının yazılım kullanamayacağınız anlamına gelir. Bu nedenle ortak çalışanlar tarafından kullanılan bir uygulama oluşturmaya yalnızca sorun yoktur, ancak, istemci projesinin bir parçası olan bir uygulama oluşturmaya izin.
+Bu iç yalnızca kullanım kısıtlama aslında kendi kuruluş dışındaki taraflara yönelik yaptıkları iş parçası olarak iş ortaklarının yazılım kullanamayacağınız anlamına gelir. Böylece ortak çalışanlar tarafından kullanılacak olan bir uygulama oluşturmak yalnızca bir sakınca yoktur ancak bir istemci projesinin parçası olan bir uygulama oluşturmaya izin.
 
-## <a name="sign-in-required-with-visual-studio"></a>Oturum Visual Studio ile gerekli açma
-MPN sunulan Visual Studio aboneliklerle lisanslı kullanıcı için aynı kimlik/Visual Studio aboneliğini etkinleştirmek için kullanılan oturum açma kullanarak Visual Studio oturum gerekir. Ürün anahtarları ürün kilidini açmak için sunulmuyor, oturum açma Visual Studio çalıştırmak için tek seçenektir. Visual Studio abone çevrimdışı Visual Studio çalışmayı durduruyor önce en çok 30 gün boyunca çalışır. Çevrimiçi, Visual Studio sessizce çalışırken yenilemeleri kullanıcının lisans durumunu düzenli aralıklarla abonelik emin olmak için geçerlidir.
+## <a name="sign-in-required-with-visual-studio"></a>Visual Studio ile gerekli oturum
+MPN sunulan Visual Studio abonelikleri ile Lisanslı Kullanıcı Visual Studio için aynı kimlik/Visual Studio aboneliği etkinleştirmek için kullanılan oturum açma bilgilerini kullanarak oturum açmanız gerekir.
+Ürün anahtarları, ürünün kilidini açmak için sunulmaz, oturum açma, Visual Studio çalıştıran tek seçenektir. Visual Studio abonesi, Visual Studio çalışmayı durduruyor önce en fazla 30 gün boyunca çevrimdışı çalışabilir. Sessiz bir şekilde çevrimiçi olarak Visual Studio çalışırken yenilemeleri kullanıcının lisans durumunu düzenli aralıklarla abonelik emin olmak için geçerlidir.
 
 ## <a name="resources"></a>Kaynaklar
 
-- [MPN programı Yönetici Kılavuzu](https://assets.microsoft.com/en-us/Program-Administrator-Guide-to-Software-and-Online-Services-Benefits_1.pdf) -Visual Studio abonelikleri MPN çalışanlara atamak yönergeler içerir.
-- [Visual Studio abonelikleri MPN çalışanlara atama](manage-mpn-subscriptions.md)
-- [Kullanım koşulları](http://www.microsoft.com/useterms/) -Visual Studio abonelikleri MPN sunulan satışı (NFR) EULA için Visual Studio abonelikleri tabidir.
+- [MPN Program Yöneticisi Kılavuzu](https://assets.microsoft.com/en-us/Program-Administrator-Guide-to-Software-and-Online-Services-Benefits_1.pdf) -MPN çalışanlara Visual Studio abonelikleri atamak yönergeler içerir.
+- [MPN çalışanlara Visual Studio abonelikleri atama](manage-mpn-subscriptions.md)
+- [Kullanım koşulları](http://www.microsoft.com/useterms/) -MPN sunulan Visual Studio Abonelikleri, Visual Studio abonelikleri yeniden satılamaz (NFR) EULA tabidir.

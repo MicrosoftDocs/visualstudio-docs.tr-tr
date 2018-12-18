@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2b164e7e317da54f6ea22131e923c55901acec49
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b8a4f9e99dc1eb0c1cedc6d82690330eb6420098
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49880149"
 ---
 # <a name="idebugsymbolproviderdirectgetmethodfromaddress"></a>IDebugSymbolProviderDirect::GetMethodFromAddress
-Belirtilen hata ayıklama adresindeki yöntemi hakkında bilgi alır.  
+Belirtilen hata ayıklama adresindeki yöntem hakkında bilgi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -51,10 +52,10 @@ int GetMethodFromAddress(
   
 #### <a name="parameters"></a>Parametreler  
  `pAddress`  
- [in] Tarafından temsil edilen adres hata ayıklama [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
+ [in] Tarafından temsil edilen adresi hata ayıklama [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) arabirimi.  
   
  `pGuid`  
- [out] Modül benzersiz tanımlayıcısı.  
+ [out] Modülün benzersiz tanımlayıcısı.  
   
  `pAppID`  
  [out] Uygulama etki alanı tanımlayıcısı.  
@@ -63,16 +64,16 @@ int GetMethodFromAddress(
  [out] Belirteç, içeren sınıfı temsil eder.  
   
  `pTokenMethod`  
- [out] Belirteç, modülü temsil eder.  
+ [out] Modülü temsil eden belirteç.  
   
  `pdwOffset`  
- [out] Bayt başından uzaklık `pAddress` parametresi.  
+ [out] Başından itibaren bayt uzaklığını `pAddress` parametresi.  
   
  `pdwVersion`  
- [out] Yönteminin sürüm numarası.  
+ [out] Yöntem sürüm numarası.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProviderDirect](../../../extensibility/debugger/reference/idebugsymbolproviderdirect.md)

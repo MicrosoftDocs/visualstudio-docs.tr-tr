@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 11e8dcebf06c5779ee51b11e315c5277d99b4971
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: baf6f6b7643c3d24a0f691a95477ad805823e541
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49922386"
 ---
 # <a name="idebuggenericfielddefinitiontypeparamcount"></a>IDebugGenericFieldDefinition::TypeParamCount
-Genel alanıyla ilişkili tür parametreleri sayısını alır.  
+Genel alanla ilişkili tür parametreleri sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,13 +40,13 @@ int TypeParamCount(
   
 #### <a name="parameters"></a>Parametreler  
  `pcParams`  
- [içinde out] Tür parametreleri sayısı.  
+ [out içinde] Tür parametreleri sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Varsa listesi\<T >, 1, bu yöntemi döndürür ve liste\<T1, T2 >, bu yöntem 2 döndürür. Tür parametreleri varsa bu yöntem 0 döndürür.  
+ Varsa listesi\<T >, bu yöntem, 1 döndürür ve liste\<T1, T2 >, bu yöntem 2 döndürür. Bu yöntem, hiçbir tür parametreleri yoksa 0 döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugGenericFieldDefinition](../../../extensibility/debugger/reference/idebuggenericfielddefinition.md)

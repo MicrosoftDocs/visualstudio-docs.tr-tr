@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ae83bf4d0f8ba6435a962f5c1477e460d69ae27f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8c740c853fff0701bf27d3c37d69141440525b44
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875781"
 ---
 # <a name="bplocationdatastring"></a>BP_LOCATION_DATA_STRING
-Kullanıcı tümleşik geliştirme ortamı (IDE) girebilirsiniz bir dize temel alan veri kesme noktaları ayarlamak için kullanılır.  
+Tümleşik geliştirme ortamından (IDE) kullanıcının girebileceği bir dize temel alan veri kesme noktaları ayarlamak için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,28 +38,28 @@ typedef struct _BP_LOCATION_DATA_STRING {
   
 ## <a name="members"></a>Üyeler  
  `pThread`  
- [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme oluştuğu iş parçacığı temsil eden nesne.  
+ [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme noktası oluştuğu iş parçacığını temsil eden nesne.  
   
  `bstrContext`  
- Kod içinde kesme, genellikle bir yöntemi veya işlev adı olarak görülen bir çağrı yığınında bağlamı.  
+ Kod içinde kesme, genellikle bir yöntem veya işlev adı olarak görülen bir çağrı yığınında bağlamı.  
   
  `bstrDataExpr`  
- Kesme noktası ayarlamak için kullanıcı veri dizesi girer.  
+ Veri dizesi, kesme noktası ayarlamak için kullanıcı girer.  
   
  `dwNumElements`  
- Kesme noktası oluştuğu veri dizesi öğe sayısı.  
+ Kesme noktası oluştuğu veri dizedeki öğe sayısı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı üyesi olan [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı UNION bir parçası olarak.  
+ Bu yapı üyesidir [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı bir birleşimin parçası olarak.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md)   
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)

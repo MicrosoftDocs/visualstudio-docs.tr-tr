@@ -10,13 +10,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: acb8959aa18741c61e4a6719641645eb9be9ea70
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3e6c28682bb6b93a2a72aaa353a2af68a9450cb9
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37058597"
 ---
-# <a name="visualizing-eventsource-events-as-markers"></a>EventSource Olaylarını İşaretleyici Olarak Görselleştirme
+# <a name="visualize-eventsource-events-as-markers"></a>EventSource olaylarını işaretleyici olarak Görselleştirme
 Eşzamanlılık görselleştiricisi EventSource olaylarını işaretleyici olarak görüntüleyebilir ve işaretlerinin görüntülenme biçimini kontrol edebilirsiniz. EventSource işaretçileri görüntülemek için GUID ETW sağlayıcısını kullanarak kayıt [Gelişmiş ayarları](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) iletişim kutusu. Eşzamanlılık görselleştiricisi EventSource olaylarını olarak göstermek için varsayılan kuralları sahip [bayrak işaretleyicileri](../profiling/flag-markers.md), [aralık işaretçileri](../profiling/span-markers.md), ve [ileti işaretçileri](../profiling/message-markers.md). EventSource olaylarını olaylara özel alanlar ekleyerek görüntülenme biçimini özelleştirebilirsiniz. İşaretçileri hakkında daha fazla bilgi için bkz: [eşzamanlılık görselleştiricisi işaretleyicileri](../profiling/concurrency-visualizer-markers.md). EventSource olaylarını hakkında daha fazla bilgi için bkz: <xref:System.Diagnostics.Tracing>.  
   
 ## <a name="default-visualization-of-eventsource-events"></a>EventSource olayların varsayılan Görselleştirme  
@@ -24,9 +25,9 @@ Eşzamanlılık görselleştiricisi EventSource olaylarını işaretleyici olara
   
 ### <a name="marker-type"></a>İşaret türü  
   
-1.  Olayları [Opcode](http://msdn.microsoft.com/en-us/d97953df-669b-4c55-b1a8-925022b339b7) win: başlangıç veya win: Durdur kabul edilir başına veya sonuna bir aralık sırasıyla.  İç içe geçmiş veya yayılma çakışan görüntülenemiyor. Bir iş parçacığı üzerinde başlayan ve başka birinde son olay çiftleri görüntülenemiyor.  
+1.  Olayları [Opcode](/windows/desktop/WES/eventmanifestschema-opcodetype-complextype) win: başlangıç veya win: Durdur kabul edilir başına veya sonuna bir aralık sırasıyla.  İç içe geçmiş veya yayılma çakışan görüntülenemiyor. Bir iş parçacığı üzerinde başlayan ve başka birinde son olay çiftleri görüntülenemiyor.  
   
-2.  Sürece, işlem kodu win: Başlangıç ne win: Durdur bir olay işaret bayrak olarak kabul edilir kendi [düzeyi](http://msdn.microsoft.com/en-us/dfa4e0a9-4d89-4f50-aef9-1dae0dc11726) (EVENT_RECORD alanı. EVENT_HEADER. EVENT_DESCRIPTOR) olan win: ayrıntılı ya da daha yüksek.  
+2.  Sürece, işlem kodu win: Başlangıç ne win: Durdur bir olay işaret bayrak olarak kabul edilir kendi [düzeyi](/windows/desktop/WES/defining-severity-levels) (EVENT_RECORD alanı. EVENT_HEADER. EVENT_DESCRIPTOR) olan win: ayrıntılı ya da daha yüksek.  
   
 3.  Diğer durumlarda, olay iletisi olarak kabul edilir.  
   
@@ -52,7 +53,7 @@ Eşzamanlılık görselleştiricisi EventSource olaylarını işaretleyici olara
 ### <a name="text"></a>Metin  
  Printf türü biçimlendirilmiş metin iletisi olay için tanımlanan değilse işaret açıklaması görüntülenir. Aksi takdirde, olayın adı ve her yükü alanının değeri açıklamasıdır.  
   
-## <a name="customizing-visualization-of-eventsource-events"></a>EventSource olaylarını görselleştirme özelleştirme  
+## <a name="customize-visualization-of-eventsource-events"></a>EventSource olaylarını görselleştirme özelleştirme  
  EventSource olaylarını olaya uygun alanlar ekleyerek aşağıdaki bölümlerde açıklandığı gibi görüntülenme biçimini özelleştirebilirsiniz.  
   
 ### <a name="marker-type"></a>İşaret türü  
@@ -94,5 +95,5 @@ Eşzamanlılık görselleştiricisi EventSource olaylarını işaretleyici olara
 > [!NOTE]
 >  Bunları kısmen aynı iş parçacığı üzerinde üst üste veya bunları bir iş parçacığında başlatmaya izin vermek yayılma, iç içe SpanID kullanılmasına izin verin ve başka bir uç desteklenmiyor.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eşzamanlılık Görselleştiricisi İşaretleyicileri](../profiling/concurrency-visualizer-markers.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Eşzamanlılık görselleştiricisi işaretleyicileri](../profiling/concurrency-visualizer-markers.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9f2b007fa110c9ef5c344f488e710e3eaf4d097b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ff18f393c609faed6f5aeadbec9903f2d5a5dab5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832543"
 ---
 # <a name="idebugprogram2detach"></a>IDebugProgram2::Detach
-Hata ayıklama altyapısı programdan ayırır.  
+Programın hata ayıklama altyapısından ayırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,10 +38,10 @@ int Detach();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Ayrılmış bir program çalışmaya devam eder, ancak artık hata ayıklama oturumunun parçası değil. Hata ayıklama altyapısı ayrılmış sonra hiçbir daha fazla program hata ayıklama olayı gönderilir.  
+ Ayrılmış bir program çalışmaya devam eder, ancak artık hata ayıklama oturumunun parçası değildir. Hata ayıklama altyapısı ayrılmış sonra daha fazla program hata ayıklama olay gönderilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)

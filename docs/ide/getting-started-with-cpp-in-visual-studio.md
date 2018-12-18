@@ -1,159 +1,160 @@
 ---
-title: Visual Studio'da C++ kullanmaya başlama | Microsoft Docs
+title: C++ ile çalışmaya başlama
+description: ''
 ms.custom: mvc
 ms.date: 12/04/2017
+ms.prod: visual-studio-dev15
 ms.technology: vs-acquisition
 ms.topic: tutorial
 author: corob-msft
-ms.author: tglee
+ms.author: corob
 manager: douge
 dev_langs:
 - CPP
 ms.workload:
 - cplusplus
-ms.openlocfilehash: ec0ab12b1df5a36c81a394406610c16fe184f0d8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 406b3c24cf3c46b694afc8ab24c0ddca11b434ee
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53160003"
 ---
 # <a name="get-started-with-c-in-visual-studio"></a>Visual Studio'da C++ kullanmaya başlama
 
-Bu hızlı başlangıç araçları ve Visual Studio ile C++ uygulamaları geliştirirken kullanabileceğiniz iletişim kutuları çoğu öğrenmeniz tamamlayın. Bir "Hello, World" oluşturma-stil konsol uygulaması sırasında tümleşik geliştirme ortamı (IDE) çalışma hakkında daha fazla bilgi edinin.
+Birçok Visual Studio ile C++ uygulamaları geliştirirken kullanabileceğiniz iletişim kutuları ve araçları sahibi bu hızlı başlangıcı tamamlayın. Bir "Hello, World" Oluştur-tümleşik geliştirme ortamında (IDE) çalışma hakkında daha fazla bilgi edinirken konsol uygulaması stili.
 
 ## <a name="prerequisites"></a>Önkoşullar
 
-Bu hızlı başlangıç tamamlamak için C++ ile ilgili bilgi sahibi olmanız gerekmez, ancak bazı genel programlama ve hata ayıklama kavramlarını bilgi sahibi olmanız gerekir. Visual Studio belgelerinde nasıl c++'ta programlanacağı öğretmek değildir. C++ öğrenme kaynakları için iyi bir kılavuzdur [başlama](https://isocpp.org/get-started) ISO C++ Web sayfasında.
+Bu hızlı başlangıcı tamamlamak için C++ ile ilgili bilgi sahibi olmanız gerekmez, ancak bazı genel programlama ve hata ayıklama kavramlarını bilmelisiniz. Visual Studio belgeleri c++'ta nasıl programlama yapılacağı öğretmek değildir. İyi bir kılavuzdur c++ öğrenme kaynakları [başlama](https://isocpp.org/get-started) ISO C++ sitesinde sayfasında.
 
-İzlemek için Visual Studio 2017 sürüm kopyasını 15.3 veya sonrasını ihtiyacınız **C++ ile masaüstü geliştirme** yüklü iş yükü. Yükleme için hızlı bir kılavuz için bkz: [Visual Studio yükleme C++ Destek](/cpp/build/vscpp-step-0-installation).
+Örneği takip etmek için bir kopyasını bir Visual Studio 2017 sürüm 15.3 veya üzeri ile ihtiyacınız **C++ ile masaüstü geliştirme** iş yükü yüklenmiş. Yükleme hızlı bir kılavuz için bkz: [Visual Studio'da C++ yükleme desteği](/cpp/build/vscpp-step-0-installation).
 
 ## <a name="create-a-console-app"></a>Bir konsol uygulaması oluşturma
 
 Henüz çalışmıyorsa, Visual Studio'yu başlatın.
 
-![Visual C ile IDE&#43; &#43; uygulanan ayarları](../ide/media/get-started-cpp-ide-layout.png "IDE Visual C ile&#43; &#43; uygulanan ayarları")
+![Visual C ile IDE&#43; &#43; uygulanan ayarları](../ide/media/get-started-cpp-ide-layout.png)
 
-Visual Studio açtıktan sonra IDE üç temel bölümlerini görebilirsiniz: aracı windows, menüleri ve araç çubukları ve ana penceresi alanı. Araç pencereleri ve uygulama penceresinin sol tarafında üzerinde sabitlenir. **Hızlı başlatma** kutusu, menü çubuğundaki ve standart araç en üstünde bulundu. Pencerenin merkezi içerir **başlangıç sayfası**. Bir çözüm ya da projeyi açtığınızda, düzenleyiciler ve tasarımcıları bu alanında görünür. Bir uygulama geliştirirken, çoğu zaman, bu merkezi alanında harcanır.
+Visual Studio'yu açtıktan sonra IDE üç temel bölümlerini görebilirsiniz: windows, menüler ve araç çubuklarını ve ana pencere alanını aracı. Araç pencereleri ve uygulama penceresinin sol tarafında sabitlenir. **Hızlı başlatma** standart araç kutusu ve menü çubuğu üstünde bulunur. Pencerenin ortasına içeren **başlangıç sayfası**. Bir çözüm veya projeyi açtığınızda, düzenleyiciler ve tasarımcılar Bu alanda görüntülenir. Uygulama geliştirirken zamanınızın çoğunu bu Orta alanda harcanır.
 
-Visual Studio kullanan *projeleri* bir uygulama kodunu düzenlemenizi ve *çözümleri* projelerinizi düzenlemek için. Bir proje tüm seçenekleri, yapılandırmaları ve uygulamalarınızı oluşturmak için kullanılan kuralları içerir. Ayrıca, projenin tüm dosyaları ve dış dosyaları arasındaki ilişkiyi yönetir. Uygulamanızı oluşturmak için ilk olarak, yeni proje ve çözüm oluşturun.
+Visual Studio kullanan *projeleri* bir uygulama için kod düzenleme ve *çözümleri* projelerinizi düzenlemek için. Bir proje, tüm seçenekleri, yapılandırmaları ve uygulamalarınızı oluşturmak için kullanılan kuralları içerir. Tüm proje dosyaları ve dış dosyaları arasındaki ilişki da yönetir. Uygulamanızı oluşturmak için ilk olarak, yeni proje ve çözüm oluşturun.
 
-### <a name="to-create-a-console-app-project"></a>Bir konsol uygulama projesi oluşturmak için
+### <a name="to-create-a-console-app-project"></a>Bir konsol uygulaması projesi oluşturmak için
 
-1. Menü çubuğunda seçin **Dosya > Yeni > Proje** açmak için **yeni proje** iletişim kutusu.
+1. Menü çubuğunda, **Dosya > Yeni > Proje** açmak için **yeni proje** iletişim kutusu.
 
-   ![Menü çubuğunda, Dosya > Yeni > Proje](../ide/media/get-started-cpp-file-new-project-menu.png "menü çubuğunda, Dosya > Yeni > Proje")
+   ![Menü çubuğunda, Dosya > Yeni > Proje](../ide/media/get-started-cpp-file-new-project-menu.png)
 
 1. İçinde **yeni proje** iletişim kutusunda **yüklü > Visual C++** zaten seçili değilse. Orta bölmede seçin **Windows konsol uygulaması** şablonu. İçinde **adı** düzenleme kutusu, girin *HelloApp*.
 
-   ![Yeni Proje iletişim kutusu, uygulama projesi oluşturmak için kullanın](../ide/media/get-started-cpp-new-project-dialog.png "yeni proje iletişim kutusu, uygulama projesi oluşturmak için kullanın")
+   ![Yeni Proje iletişim uygulama projenizi oluşturmak için kullanın](../ide/media/get-started-cpp-new-project-dialog.png)
 
-   İletişim kutusu bileşenleri yükledikten ve Visual Studio iş yükleri bağlı olarak farklı seçenekleriniz olabilir. Visual C++ proje şablonları görmüyorsanız Visual Studio yükleyiciyi yeniden çalıştırın ve yüklemek gereken **C++ ile masaüstü geliştirme** iş yükü. Bunu doğrudan yapabilirsiniz **yeni proje** iletişim. Yükleyici başlatmak için tercih **açık Visual Studio yükleyicisi** iletişim kutusundaki bağlantı.
+   İletişim kutusu bileşenleri yükledikten ve Visual Studio iş yüklerine bağlı olarak farklı bir seçenek olabilir. Visual Studio yükleyiciyi yeniden çalıştırın ve yüklemek gereken Visual C++ proje şablonları görmüyorsanız **C++ ile masaüstü geliştirme** iş yükü. Bunu doğrudan yapabilirsiniz **yeni proje** iletişim. Yükleyiciyi başlatın, tercih **açık Visual Studio yükleyicisi** iletişim kutusundaki bağlantı.
 
-1. Seçin **Tamam** uygulama proje ve çözüm oluşturmak için düğmesi.
+1. Seçin **Tamam** uygulama projesi ve çözümü oluşturmak için.
 
-   HelloApp proje ve çözüm, bir Windows konsol uygulaması için temel dosyalarla oluşturulur ve otomatik olarak yüklenen **Çözüm Gezgini**. *HelloApp.cpp* dosya Kod Düzenleyicisi'nde açılır. Bu öğe görünür **Çözüm Gezgini**:
+   HelloApp projeyi ve çözümü, bir Windows konsol uygulaması için temel dosyalar oluşturulur ve otomatik olarak yüklenen **Çözüm Gezgini**. *HelloApp.cpp* dosyası Kod Düzenleyicisi'nde açılır. Bu öğelerin görünür **Çözüm Gezgini**:
 
-   ![Çözüm Gezgini'ndeki çözüme dosyaları](../ide/media/get-started-cpp-solution-explorer.png "Çözüm Gezgini'ndeki çözüme dosyaları")
+   ![Çözüm Gezgini'nde çözüm dosyaları](../ide/media/get-started-cpp-solution-explorer.png)
 
-## <a name="add-code-to-the-app"></a>Uygulama için kod ekleme
+## <a name="add-code-to-the-app"></a>Kod uygulamaya ekleme
 
-Ardından, word görüntülemek için kod konsol penceresinde "Hello ifadesini" ekleyin.
+Ardından, word görüntülenecek kod konsol penceresinde "Hello" ekleyin.
 
 ### <a name="to-edit-code-in-the-editor"></a>Kod Düzenleyicisi'nde düzenlemek için
 
-1. İçinde *HelloApp.cpp* dosya, satırından önce boş bir satıra girin `return 0;` ve ardından bu kodu girin:
+1. İçinde *HelloApp.cpp* dosya, satırından önce boş bir satıra girin `return 0;` ve sonra bu kodu girin:
 
    ```cpp
    cout << "Hello\n";
    ```
 
-   Kırmızı kırık çizgi altında görünür `cout`. İşaretçinin üzerine getirirseniz, hata iletisi görüntülenir.
+   Altında kırmızı dalgalı çizgi görünür `cout`. İşaretçi geldiğinizde, bir hata iletisi görüntülenir.
 
-   ![Cout hata metni](../ide/media/get-started-cpp-intellisense-error.png "cout hata metni")
+   ![Cout hata metni](../ide/media/get-started-cpp-intellisense-error.png)
 
-   Hata iletisi de görünür **hata listesi** penceresi. Bu pencere seçerek görüntüleyebilirsiniz **Görünüm > hata listesi** menü çubuğunda.
+   Hata iletisi ayrıca görünür **hata listesi** penceresi. Bu pencere seçerek görüntüleyebilirsiniz **Görüntüle > hata listesi** menü çubuğundaki.
 
-   ![Hata Listesi penceresini hata](../ide/media/get-started-cpp-error-list.png "hata listesi penceresini hatası")
+   ![Hata Listesi penceresindeki hata](../ide/media/get-started-cpp-error-list.png)
 
-   Kodunuz için bir bildirim eksik [std::cout](/cpp/standard-library/iostream), içinde bulunan  *\<iostream >* üstbilgi dosyası.
+   Kodunuz için bir bildirim eksik [std::cout](/cpp/standard-library/iostream), içinde bulunan  *\<iostream >* üst bilgi dosyası.
 
-1. Eklenecek *iostream* başlığı, sonra bu kodu girin `#include "stdafx.h"`:
+1. Eklenecek *iostream* üst bilgi, sonra bu kodu girin `#include "stdafx.h"`:
 
    ```cpp
    #include <iostream>
    using namespace std;
    ```
 
-   Büyük olasılıkla kodu girdiğiniz gibi görünen bir kutusu fark. Bu kutu otomatik tamamlama önerileri girdiğiniz karakterler içerir. Sınıfta veya arabirimde üye ve parametre bilgileri de dahil olmak üzere kodlama istemleri sağlayan C++ IntelliSense parçası kullanıcının. Kodu önceden tanımlanmış taşlarıdır kod parçacıkları de kullanabilirsiniz. Daha fazla bilgi için bkz: [kullanarak IntelliSense](../ide/using-intellisense.md) ve [kod parçacıkları](../ide/code-snippets.md).
+   Büyük olasılıkla kod girildiği gibi görünen bir kutu fark. Bu kutu otomatik tamamlama önerileri, girdiğiniz karakterleri için içerir. C++ IntelliSense, sınıf veya arabirim üyeleri ve parametre bilgileri de dahil olmak üzere kodlama istemleri sağlar gereksinimlerimizim bir parçasıdır. Önceden tanımlanmış kod bloklarını olan kod parçacıklarını da kullanabilirsiniz. Daha fazla bilgi için [IntelliSense kullanarak](../ide/using-intellisense.md) ve [kod parçacıkları](../ide/code-snippets.md).
 
-   ![Sabit Kod düzenleyicisinde](../ide/media/get-started-cpp-cout-fix.png "sabit Kod Düzenleyicisi")
+   ![Sabit Kod Düzenleyicisi'nde](../ide/media/get-started-cpp-cout-fix.png)
 
-   Altında kırmızı kırık çizgi `cout` hata düzelttiğinizde kaybolur.
+   Altında kırmızı dalgalı çizgi `cout` hatayı düzeltmeniz kaybolur.
 
 1. Değişiklikleri dosyaya kaydetmek için basın **Ctrl + S**.
 
-## <a name="build-the-app"></a>Uygulaması oluşturma
+## <a name="build-the-app"></a>Uygulama oluşturma
 
-Kodunuzu oluşturmak kolaydır. Menü çubuğunda seçin **Yapı > Yapı çözümü**. Visual Studio HelloApp çözüm oluşturur ve raporları ilerleme **çıkış** penceresi.
+Kodunuzu derlemek kolay bir işlemdir. Menü çubuğunda, **Yapı > Çözümü Derle**. Visual Studio HelloApp çözümü oluşturur ve ilerleme raporları **çıkış** penceresi.
 
-   ![HelloApp çözümü derleme](../ide/media/get-started-cpp-build-solution.gif "HelloApp çözümü oluşturun")
+   ![HelloApp çözümü oluşturun](../ide/media/get-started-cpp-build-solution.gif)
 
 ## <a name="debug-and-test-the-app"></a>Hata ayıklama ve uygulamayı test etme
 
-"Hello" sözcüğü konsol penceresinde görünür olup olmadığını görmek için HelloApp ayıklayabilirsiniz.
+"Hello" sözcüğünü konsol penceresinde görünür olup olmadığını görmek için HelloApp ayıklayabilirsiniz.
 
-### <a name="to-debug-the-app"></a>Uygulama hata ayıklamak için
+### <a name="to-debug-the-app"></a>Uygulamanın hatalarını ayıklamak için
 
-Hata ayıklayıcı başlatmayı seçin **hata ayıklama > hata ayıklamayı Başlat** menü çubuğunda.
+Hata ayıklayıcıyı başlatmak için **hata ayıklama > hata ayıklamayı Başlat** menü çubuğundaki.
 
-![Hata ayıklama menüsündeki komutu hata ayıklamayı Başlat](../ide/media/get-started-cpp-start-debugging-menu.png "hata ayıklamayı Başlat menüsündeki hata ayıklama")
+![Hata ayıklama komutu hata ayıklama menüsünden başlayın.](../ide/media/get-started-cpp-start-debugging-menu.png)
 
-Hata ayıklayıcı başlar ve kodu çalıştırır. Konsol penceresi (bir komut istemi gibi görünüyor ayrı bir pencerede) birkaç saniye görünür ancak hata ayıklayıcı çalışmayı durdurduğunda hızlı bir şekilde kapatır. Metin görmek için program yürütme durdurmak için kesme noktası ayarlamanız gerekir.
+Hata ayıklayıcıyı başlatır ve kodu çalıştırır. Konsol penceresi (bir komut istemi gibi görünüyor ayrı bir pencerede) için birkaç saniye görüntülenir ancak hata ayıklayıcı çalışmayı durdurduğunda hızla kapatır. Metin görmek için program yürütme durdurmak için bir kesme noktasını ayarlamanız gerekir.
 
 ### <a name="to-add-a-breakpoint"></a>Bir kesme noktası eklemek için
 
-1. Düzenleyicisi'nde imleci satıra yerleştirin `return 0;`. Menü çubuğunda seçin **hata ayıklama > kesme**. Bir kesme noktası ayarlamak için sol kenar boşluğunda de tıklayabilirsiniz.
+1. Düzenleyicide, imleç satıra `return 0;`. Menü çubuğunda, **hata ayıklama > iki durumlu kesme noktası**. Bir kesme noktası ayarlamak için sol kenar boşluğunda de tıklayabilirsiniz.
 
-     ![Hata Ayıklama menüsünde kesme komutu geçiş](../ide/media/get-started-cpp-toggle-breakpoint-menu.png "Debug menüsünden kesme komutu")
+     ![Hata ayıklama menüsünden kesim noktasını Değiştir komutu](../ide/media/get-started-cpp-toggle-breakpoint-menu.png)
 
      Düzenleyici penceresinin en sol kenar boşluğunda, kod satırının yanında kırmızı bir daire görünür.
 
-     ![Kesme noktası belirtilen pencere kenar boşluğunda](../ide/media/get-started-cpp-breakpoint-set.png "kesme noktası belirtilen pencere kenar boşluğunda")
+     ![Kesme noktası penceresinin kenar boşluğundaki gösterilir](../ide/media/get-started-cpp-breakpoint-set.png)
 
-1. Hata ayıklama başlatmak için basın **F5**.
+1. Hata ayıklamayı başlatmak için basın **F5**.
 
-   Hata ayıklayıcıyı başlatır, ve word gösteren bir konsol penceresi görünür **Hello**.
+   Hata ayıklayıcıyı başlatır, word gösteren bir konsol penceresi görünür **Hello**.
 
-   ![Metin konsol penceresinde Hello](../ide/media/get-started-cpp-helloapp-window.png "Hello konsol penceresinde metin")
+   ![Konsol penceresinde Hello metin](../ide/media/get-started-cpp-helloapp-window.png)
 
 1. Hata ayıklamayı durdurmak için basın **Shift + F5**.
 
-Konsol projesi hata ayıklama hakkında daha fazla bilgi için bkz: [konsol projeleri](../debugger/debugging-preparation-console-projects.md).
+Konsol projesi hata ayıklama hakkında daha fazla bilgi için bkz. [konsol projeleri](../debugger/debugging-preparation-console-projects.md).
 
 ## <a name="build-a-release-version-of-the-app"></a>Uygulama sürümü oluşturma
 
-Her şeyi çalıştığını doğruladıktan, uygulamanın yayın derlemesi hazırlayabilirsiniz. Yayın hata ayıklama bilgilerini ve daha küçük, daha hızlı kodu oluşturmak için kullanım derleyici en iyi duruma getirme seçenekleri bırakın oluşturur.
+Her şeyin çalıştığını doğruladığınıza göre uygulamanın bir yayın derlemesini hazırlayabilirsiniz. Yayın bırakın daha küçük, daha hızlı kod oluşturmak için derleyici en iyi duruma getirme seçenekleri kullanın ve hata ayıklama bilgileri oluşturur.
 
 ### <a name="to-clean-the-solution-files-and-build-a-release-version"></a>Çözüm dosyalarını temizlemek ve yayın sürümünü oluşturmak için
 
-1. Menü çubuğunda seçin **Yapı > temiz çözüm** Ara dosyaları ve önceki yapıları sırasında oluşturulan çıkış dosyaları silmek için.
+1. Menü çubuğunda, **Yapı > çözümü Temizle** Ara dosyaları ve önceki derlemeler sırasında oluşturulan çıktı dosyalarını silmek için.
 
-   ![Yapı menüsünde çözümü Temizle komutunu](../ide/media/get-started-cpp-clean-solution-menu.png "ExploreIDE CleanSolution")
+   ![Derle menüsünde çözümü Temizle komutu](../ide/media/get-started-cpp-clean-solution-menu.png)
 
-1. HelloApp çözüm yapılandırmasını değiştirmek için **hata ayıklama** için **sürüm**, araç çubuğunda, çözüm yapılandırmaları denetimindeki açılır seçin ve ardından **sürüm**.
+1. HelloApp çözüm yapılandırmasını değiştirmek için **hata ayıklama** için **yayın**, araç çubuğunda, çözüm yapılandırmaları denetimi açılan menüyü seçin ve ardından **yayın**.
 
-   ![Uygulama sürümü yapı](../ide/media/get-started-cpp-set-release-configuration.png "C ++ IDE_ChangingBuildtoRelease")
+   ![Uygulamanın yayın sürümünü oluşturma](../ide/media/get-started-cpp-set-release-configuration.png)
 
-1. Çözümü oluşturun. Menü çubuğunda seçin **Yapı > Yapı çözümü**.
+1. Çözümü oluşturun. Menü çubuğunda, **Yapı > Çözümü Derle**.
 
-Bu yapı tamamlandığında kopyalayın ve herhangi bir komut istemi penceresinde çalıştırın bir uygulama oluşturduğunuzu düşünün. Bunu çok yapmanız, ancak büyük işlemleri için geçididir.
+Bu derleme tamamlandığında, kopyalama ve herhangi bir komut istemi penceresinde çalıştırın bir uygulama oluşturdunuz. Bu çok bunu yapabilirsiniz, ancak büyük şeyler için geçididir.
 
-Bu hızlı başlangıç Tamamlanıyor Tebrikler! Daha fazla örnek keşfetmek, bkz: [Visual Studio örnekleri](../ide/visual-studio-samples.md).
+Bu hızlı başlangıcı tamamladığınızda Tebrikler!
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[C++ Masaüstü geliştirmesi için Visual Studio IDE kullanma](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development)  
-[İzlenecek yol: C# veya Visual Basic ile basit uygulama oluşturma](../ide/walkthrough-create-a-simple-application-with-visual-csharp-or-visual-basic.md)  
-[Visual Studio için üretkenlik ipuçları](../ide/productivity-tips-for-visual-studio.md)  
-[Visual Studio Örnekleri](../ide/visual-studio-samples.md)  
-[Visual Studio ile Geliştirmeye Başlarken](../ide/get-started-developing-with-visual-studio.md)
+- [C++ Masaüstü geliştirmesi için Visual Studio IDE kullanma](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development)
+- [İzlenecek yol: Basit bir uygulama oluşturacaksınız C# veya Visual Basic](../ide/walkthrough-create-a-simple-application-with-visual-csharp-or-visual-basic.md)
+- [Visual Studio için üretkenlik ipuçları](../ide/productivity-tips-for-visual-studio.md)

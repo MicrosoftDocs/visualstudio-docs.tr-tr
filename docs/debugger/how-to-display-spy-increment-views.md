@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31471693"
 ---
 # <a name="how-to-display-spy-views"></a>Nasıl Yapılır: Spy++ Görünümlerini Görüntüleme
 Spy ++ başladığında, açılır [Windows görünümü](../debugger/windows-view.md), tüm windows ve makinenizde denetimleri ağaç görünümü. Bu kök pencere başlıklı "Windows 1." Ayrıca üç diğer Spy ++ görünümleri kullanılabilir yok: [iletiler görünümünü](../debugger/messages-view.md), [işlemler görünümü](../debugger/processes-view.md), ve [iş parçacıkları görünümü](../debugger/threads-view.md). İstenen görünümünden görüntüleyebilirsiniz **Spy** menüsü. Daha fazla bilgi için bkz: [Spy ++ görünümleri](../debugger/spy-increment-views.md).  

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c436500e54f128a4095b50b2332b0d21eef7d469
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9decc11ed13029831d78e1a79deb4134cc377e99
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903211"
 ---
 # <a name="idebugprogramengines2setengine"></a>IDebugProgramEngines2::SetEngine
-Programı veya program düğümü hangi hata ayıklama altyapısı bu program hata ayıklama için kullanılacak (DE) söyler.  
+Program veya program düğüm hangi hata ayıklama altyapısı bu programda hata ayıklamak için kullanılacak (DE) bildirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int SetEngine(
   
 #### <a name="parameters"></a>Parametreler  
  `guidEngine`  
- [in] DE GUID.  
+ [in] DE GUİD'si.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramEngines2](../../../extensibility/debugger/reference/idebugprogramengines2.md)

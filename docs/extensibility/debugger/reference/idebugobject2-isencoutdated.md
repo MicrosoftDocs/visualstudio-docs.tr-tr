@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ab51e2dbc75de33bcafe28295b5e47e4b4358538
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e6ec1e09628b2bd1da23bda6baaa1fa157dfbf08
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928106"
 ---
 # <a name="idebugobject2isencoutdated"></a>IDebugObject2::IsEncOutdated
-Bu yöntem, bu nesnenin veya üst kapsayıcı Düzenle ve devam et durumu güncel olup olmadığını belirler. Bu yöntem ve her zaman döndürür özel ifade değerlendiricisi uygulamıyor `E_NOTIMPL`.  
+Bu yöntem, bu nesnenin veya üst kapsayıcı düzenleme ve devam et durumu güncel olup olmadığını belirler. Özel ifade değerlendiricisi, bu yöntem ve her zaman döndürür uygulamıyor `E_NOTIMPL`.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int IsEncOutdated(
   
 #### <a name="parameters"></a>Parametreler  
  `pfEncOutdated`  
- [out] Sıfır olmayan (`TRUE`) Düzenle ve devam et durumu eski ise, sıfır (`FALSE`) değilse.  
+ [out] Sıfır olmayan (`TRUE`) Düzenle ve devam et durumu güncel olduğunda sıfır (`FALSE`), değilse.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
->  Bir özel ifade değerlendiricisi her zaman döndürmelidir `E_NOTIMPL`.  
+>  Özel ifade değerlendiricisi her zaman döndürmelidir `E_NOTIMPL`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject2](../../../extensibility/debugger/reference/idebugobject2.md)

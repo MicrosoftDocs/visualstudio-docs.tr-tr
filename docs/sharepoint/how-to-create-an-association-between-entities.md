@@ -26,16 +26,17 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: c341586fbd2a22f38385a6c613058318f5c2d6a0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 51527092332f1fa82019f1abf9251a8b44aedf06
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120437"
 ---
-# <a name="how-to-create-an-association-between-entities"></a>Nasıl yapılır: Varlıklar Arasında İlişkilendirme Oluşturma
+# <a name="how-to-create-an-association-between-entities"></a>Nasıl yapılır: varlıklar arasında ilişkilendirme oluşturma
   İş verileri bağlantı (BDC) modelinizdeki ilişkilendirmeleri oluşturarak varlıklar arasındaki ilişkiler tanımlayabilirsiniz. Visual Studio tüketicileri modelin her bir ilişkilendirme hakkında bilgi sağlayan yöntemler oluşturur. Bu yöntemler, SharePoint web bölümleri, liste veya veri ilişkileri kullanıcı arabiriminde (UI) görüntülemek için özel uygulamaları tarafından kullanılabilecek.  
   
- BDC Tasarımcısı'nda ilişkilendirmeleri iki tür oluşturabilirsiniz: yabancı anahtar tabanlı ilişkileri ve yabancı anahtar kullanmadan ilişkilendirmeleri. Daha fazla bilgi için bkz: [arasında bir ilişki varlıkları oluşturma](../sharepoint/creating-an-association-between-entities.md).  
+ BDC Tasarımcısı'nda ilişkilendirmeleri iki tür oluşturabilirsiniz: yabancı anahtar tabanlı ilişkileri ve yabancı anahtar kullanmadan ilişkilendirmeleri. Daha fazla bilgi için bkz: [varlıklar arasında ilişkilendirme oluşturma](../sharepoint/creating-an-association-between-entities.md).  
   
 ### <a name="to-create-an-association-between-entities"></a>Varlıklar arasında ilişkilendirme oluşturmak için  
   
@@ -63,9 +64,9 @@ ms.lasthandoff: 04/16/2018
   
 8.  Hedef varlık ilişkisi Gezgini yönteminde ilişkili kaynak varlık döndüren kodu ekleyin.  
   
-     İlişkilendirme Gezgini yöntemleri örnekler için bkz: [arasında bir ilişki varlıkları oluşturma](../sharepoint/creating-an-association-between-entities.md).  
+     İlişkilendirme Gezgini yöntemleri örnekler için bkz: [varlıklar arasında ilişkilendirme oluşturma](../sharepoint/creating-an-association-between-entities.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [Varlıklar arasında ilişkilendirme oluşturma](../sharepoint/creating-an-association-between-entities.md)   
  [İş verileri bağlantı modeli tasarlama](../sharepoint/designing-a-business-data-connectivity-model.md)   
  [Nasıl yapılır: bir Bulucu yöntemi ekleme](../sharepoint/how-to-add-a-finder-method.md)   
@@ -77,6 +78,5 @@ ms.lasthandoff: 04/16/2018
  [Nasıl yapılır: bir yönteme parametre ekleme](../sharepoint/how-to-add-a-parameter-to-a-method.md)   
  [Nasıl yapılır: yöntem örneği tanımlama](../sharepoint/how-to-define-a-method-instance.md)   
  [Nasıl yapılır: bir parametrenin tür tanımlayıcısını tanımlama](../sharepoint/how-to-define-the-type-descriptor-of-a-parameter.md)   
- [İzlenecek yol: İş Verileri Kullanarak SharePoint'te Dış Liste Oluşturma](../sharepoint/walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data.md)  
-  
+ [İzlenecek yol:, iş verileri kullanarak SharePoint'te dış liste oluşturma](../sharepoint/walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data.md)  
   

@@ -1,6 +1,7 @@
 ---
 title: 'CA2200: Yığın ayrıntılarını korumak için yeniden fırlatma'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,36 +14,46 @@ ms.assetid: 046e1b98-c4dc-4515-874f-9c0de2285621
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: c43ba2e9f87d19111ceb43708780c0dd2e9e7e39
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1cc85931ed51bcd3df3a044452af59a530746805
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45550897"
 ---
 # <a name="ca2200-rethrow-to-preserve-stack-details"></a>CA2200: Yığın ayrıntılarını korumak için yeniden fırlatma
+
 |||
 |-|-|
 |TypeName|RethrowToPreserveStackDetails|
 |CheckId|CA2200|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir özel durum yeniden oluşturulur ve özel durum açıkça belirtilen `throw` deyimi.
 
-## <a name="rule-description"></a>Kural Tanımı
- Bir özel durum oluşturulduktan sonra bunu izleme bilgileri yığın izlemesi parçasıdır. Yığın izlemesi, özel durum oluşturur ve özel durum yakalar yöntemi ile biten yöntemi ile başlayan yöntemi çağrı hiyerarşisi listesidir. Özel durum belirterek yeniden özel durum, `throw` deyimi, yığın izlemesi geçerli bir yöntem yeniden başlatılıp başlatılmayacağını ve özel durum oluşturdu özgün yöntemi ve geçerli yöntemi arasındaki yöntem çağrılarını listesi kaybolur. Özel özgün yığın izleme bilgileri korumak için kullanın `throw` özel belirtmeden deyimi.
+Bir özel durum yeniden oluşur ve özel durum açıkça belirtilen `throw` deyimi.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için özel durum açıkça belirtmeden özel durum yeniden oluşturun.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın.
+Bir özel durum sonra bunu izleme bilgileri parçası yığın izlemesi aşağıdadır. Yığın izlemesi, özel durum oluşturur ve özel durumu yakalar yöntemi ile biten yöntem ile başlayan yöntemi çağrı hiyerarşisini listesidir. Özel durum belirterek yeniden durum varsa `throw` deyimi, yığın izlemesi geçerli bir yöntem yeniden başlatılır ve özel durum döndüren özgün yöntem ile geçerli yöntemi arasındaki yöntem çağrılarını listesini kaybolur. Özel durum ile özgün yığın izleme bilgileri tutmak için kullanın `throw` özel durum belirtmeden deyimi.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Bu kural ihlalini düzeltmek için özel durum açıkça belirtmeden özel durumu yeniden.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bir yöntemi gösterir `CatchAndRethrowExplicitly`, kural ve bir yöntem ihlal `CatchAndRethrowImplicitly`, kural karşılar.
 
- [!code-csharp[FxCop.Usage.Rethrow#1](../code-quality/codesnippet/CSharp/ca2200-rethrow-to-preserve-stack-details_1.cs)]
- [!code-vb[FxCop.Usage.Rethrow#1](../code-quality/codesnippet/VisualBasic/ca2200-rethrow-to-preserve-stack-details_1.vb)]
+Aşağıdaki örnek bir yöntemi gösterir `CatchAndRethrowExplicitly`, kural ve bir yöntem ihlal `CatchAndRethrowImplicitly`, kural karşılar.
+
+[!code-csharp[FxCop.Usage.Rethrow#1](../code-quality/codesnippet/CSharp/ca2200-rethrow-to-preserve-stack-details_1.cs)]
+[!code-vb[FxCop.Usage.Rethrow#1](../code-quality/codesnippet/VisualBasic/ca2200-rethrow-to-preserve-stack-details_1.vb)]

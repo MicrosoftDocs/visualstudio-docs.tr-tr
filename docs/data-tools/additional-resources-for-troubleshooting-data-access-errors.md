@@ -1,6 +1,6 @@
 ---
-title: Veri erişimi hatalarında sorun giderme için ek kaynaklar
-ms.date: 11/04/2016
+title: Veri erişim forumları
+ms.date: 06/27/2018
 ms.topic: troubleshooting
 f1_keywords:
 - DSD_ImportXmlSchemaSameFileWrnHelpId
@@ -222,36 +222,37 @@ ms.assetid: 357c9f0a-9d59-4db4-9b7c-b96cad839961
 author: gewarren
 ms.author: gewarren
 manager: douge
-robots: noindex,nofollow
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: bed8ea08496d8751c093d448c5138b97db39dd3d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 677374404de8469c8a99a906638f326ae7a9ff3c
+ms.sourcegitcommit: e9d1018a01af62c3dc5aeb6b325faba7e20bd496
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089082"
 ---
-# <a name="additional-resources-for-troubleshooting-data-access-errors"></a>Veri erişimi hatalarında sorun giderme için ek kaynaklar
+# <a name="troubleshoot-data-access-errors-on-the-forums"></a>Forumlarda veri erişimi hatalarında sorun giderme
 
-Microsoft Developer Network (MSDN) ortak forumlarında sorun giderme hataları ve Uyarıları Yardım bulabilirsiniz. Aşağıdaki tabloda ilgili verileri forumları MSDN'de kullanılabilir listeler.
+Microsoft Developer Network (MSDN) ortak forumlarında sorun giderme hataları ve Uyarıları Yardım bulabilirsiniz. MSDN'de kullanılabilir bazı ilgili verileri forumları şunlardır:
 
- [Windows Forms veri denetimleri ve Veri bağlamada](http://go.microsoft.com/fwlink/?LinkId=160179) Windows Forms veri erişimi hakkında ve genel tartışmalar sorular için bir forum sağlar.
+- [Windows Forms veri denetimleri ve veri bağlama](https://social.msdn.microsoft.com/Forums/windows/en-US/home?forum=winformsdatacontrols)
 
- [ADO.NET veri kümesi Forumu](http://go.microsoft.com/fwlink/?LinkId=160180) veri kümeleri hakkında ve genel tartışmalar sorular için bir forum sağlar.
+- [ADO.NET veri kümesi Forumu](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataset)
 
- [ADO.NET Entity Framework ve LINQ to Entities](http://go.microsoft.com/fwlink/?LinkId=191520) bir forum sorular için Entity Framework uygulamaları ve LINQ to Entities dili hakkında ve genel tartışmalar sağlar.
+- [ADO.NET Entity Framework ve LINQ to Entities](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetentityframework)
 
- [WCF Veri Hizmetleri Forumu](http://go.microsoft.com/fwlink/?LinkId=160181) veri hizmetleri hakkında ve genel tartışmalar sorular için bir forum sağlar.
+- [WCF Veri Hizmetleri Forumu](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataservices)
 
- [SQL Server veri erişim Forumu](http://go.microsoft.com/fwlink/?LinkID=160184) bir forum sorular için Microsoft SQL Server veri erişimi, hakkında ve genel tartışmalara sağlar.
+- [SQL Server veri erişim Forumu](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/home?forum=sqldataaccess)
 
- [LINQ-SQL Forumu](http://go.microsoft.com/fwlink/?LinkId=160183) LINQ-SQL hakkında ve genel tartışmalar sorular için bir forum sağlar.
+- [LINQ-SQL Forumu](https://social.msdn.microsoft.com/Forums/en-US/home?forum=linqtosql)
 
- [ADO.NET veri sağlayıcıları Forumu](http://go.microsoft.com/fwlink/?LinkId=160182) farklı .NET Framework Veri Sağlayıcısı hakkında ve genel tartışmalara sorular için bir forum sağlar.
+- [ADO.NET veri sağlayıcıları Forumu](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataproviders)
 
- SQL Server bağlantı sorunlarını giderme hakkında daha fazla bilgi için bkz: [SQL Server veritabanı altyapısı bağlantı sorunlarını giderme nasıl](http://go.microsoft.com/fwlink/?LinkID=246151).
+SQL Server bağlantı sorunlarını giderme hakkında daha fazla bilgi için bkz: [sorun giderme için SQL Server veritabanı motorunun bağlanma](https://social.technet.microsoft.com/wiki/contents/articles/2102.how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx).
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [.NET için Visual Studio veri araçları](../data-tools/visual-studio-data-tools-for-dotnet.md)

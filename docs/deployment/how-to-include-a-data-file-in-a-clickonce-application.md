@@ -18,72 +18,71 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8240e4bb8ba540fcdd4453e39d9fa6b00b31bef2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: cfba7612ec0e019b8c8dfa7c7406435b6e43e6cc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49917927"
 ---
-# <a name="how-to-include-a-data-file-in-a-clickonce-application"></a>Nasıl yapılır: ClickOnce Uygulamasına bir Veri Dosyası Dahil Etme
-Her [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yüklediğiniz uygulama burada uygulama yönetebilir, kendi veri hedef bilgisayarın yerel disk üzerinde veri dizinine atanır. Veri dosyaları, tüm dosya türlerini içerebilir: metin dosyaları, XML dosyalarını veya hatta Microsoft Access veritabanı (.mdb) dosyaları. Aşağıdaki yordamlar herhangi türde bir veri dosyası ekleme gösterir, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama.  
+# <a name="how-to-include-a-data-file-in-a-clickonce-application"></a>Nasıl yapılır: ClickOnce uygulamasına bir veri dosyası Ekle
+Her [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] yüklediğiniz bir uygulama, bir veri dizini hedef bilgisayarın yerel diskte, burada uygulama yönetebilir, kendi veri atanır. Veri dosyaları, tüm dosya türlerini içerebilir: metin dosyalarını, XML dosyaları veya hatta bir Microsoft Access veritabanına (*.mdb*) dosyaları. Aşağıdaki yordamlar bir veri dosyası herhangi bir tür ekleme gösterir, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama.  
   
 ### <a name="to-include-a-data-file-by-using-mageexe"></a>Mage.exe kullanarak bir veri dosyası eklemek için  
   
-1.  Uygulamanızın dosyaları geri kalanı ile uygulama dizininize veri dosyası ekleyin.  
+1. Uygulamanızın dosyaların geri kalanı ile birlikte uygulama dizininize veri dosyası ekleyin.  
   
-     Tipik olarak, uygulama dizini dağıtımın geçerli sürümüyle etiketli bir dizin olacaktır — Örneğin, v1.0.0.0.  
+    Genellikle, uygulama dizininize dağıtımın geçerli sürümüyle etiketli bir dizin olacaktır — Örneğin, v1.0.0.0.  
   
-2.  Uygulama bildiriminizi listesi veri dosyasını güncelleştirin.  
+2. Uygulama bildiriminizi listesine veri dosyasını güncelleştirin.  
   
-     **Mage -u v1.0.0.0\Application.manifest - FromDirectory v1.0.0.0**  
+    `mage -u v1.0.0.0\Application.manifest -FromDirectory v1.0.0.0`  
   
-     Bu görevi gerçekleştirme uygulama bildiriminizi dosyaların listesini yeniden oluşturur ve karma imzaları da otomatik olarak oluşturur.  
+    Bu görevi gerçekleştirme uygulama bildiriminizi dosyaların listesini yeniden oluşturur ve karma imzaları da otomatik olarak oluşturur.  
   
-3.  Uygulama bildirimini, tercih edilen metin veya XML düzenleyicisinde açın ve Bul `file` öğesi son eklenen dosya için.  
+3. Uygulama bildirimi, tercih edilen bir metin veya XML düzenleyicisinde açın ve bulun `file` son eklenen dosya için öğesi.  
   
-     Adlı bir XML dosyası eklediyseniz `Data.xml`, dosya aşağıdaki kod örneğine benzer görünecektir.  
+    Adlı bir XML dosyası eklediyseniz `Data.xml`, dosyanın aşağıdaki kod örneği için benzer olacaktır.  
   
- `<file name="Data.xml" hash="23454C18A2DC1D23E5B391FEE299B1F235067C59" hashalg="SHA1" asmv2:size="39500" />`  
+   `<file name="Data.xml" hash="23454C18A2DC1D23E5B391FEE299B1F235067C59" hashalg="SHA1" asmv2:size="39500" />`  
   
-1.  Öznitelik Ekle `type` bu öğeye ve bir değeri ile sağlayın `data`.  
+4. Öznitelik Ekle `type` bu öğeye ve değerli tedarik `data`.  
   
- `<file name="Data.xml" writeableType="applicationData" hash="23454C18A2DC1D23E5B391FEE299B1F235067C59" hashalg="SHA1" asmv2:size="39500" />`  
+   `<file name="Data.xml" writeableType="applicationData" hash="23454C18A2DC1D23E5B391FEE299B1F235067C59" hashalg="SHA1" asmv2:size="39500" />`  
   
-1.  Uygulama bildiriminizi anahtar çifti ya da sertifika kullanarak yeniden oturum açın ve Dağıtım bildiriminizi yeniden imzalayın.  
+5. Uygulama bildiriminizi anahtar çifti veya sertifikayı kullanarak yeniden imzalayın ve ardından, dağıtım bildirimini yeniden imzalamanız.  
   
-     Uygulama bildiriminin, karma değiştiğinden Dağıtım bildiriminizi yeniden oturum açmanız gerekir.  
+    Uygulama bildiriminin, karma değiştiğinden, dağıtım bildirimini yeniden imzalamanız gerekir.  
   
-     **Mage -s uygulama bildirimi - cf cert_file - pwd parola**  
+    `mage -s app manifest -cf cert_file -pwd password`
   
-     **Mage -u dağıtım bildirim - appm uygulama bildirimi**  
+    `mage -u deployment manifest -appm app manifest`
   
-     **Mage -s dağıtım bildirimi - cf SertifikaDosyası - pwd parola**  
-  
-2.  
+    `mage -s deployment manifest -cf certfile -pwd password`
   
 ### <a name="to-include-a-data-file-by-using-mageuiexe"></a>MageUI.exe kullanarak bir veri dosyası eklemek için  
   
-1.  Uygulamanızın dosyaları geri kalanı ile uygulama dizininize veri dosyası ekleyin.  
+1.  Uygulamanızın dosyaların geri kalanı ile birlikte uygulama dizininize veri dosyası ekleyin.  
   
-2.  Tipik olarak, uygulama dizini dağıtımın geçerli sürümüyle etiketli bir dizin olacaktır — Örneğin, v1.0.0.0.  
+2.  Genellikle, uygulama dizininize dağıtımın geçerli sürümüyle etiketli bir dizin olacaktır — Örneğin, v1.0.0.0.  
   
-3.  Üzerinde **dosya** menüsünde tıklatın **açmak** uygulama bildiriminizi açmak için.  
+3.  Üzerinde **dosya** menüsünde tıklayın **açın** uygulama bildiriminizi açın.  
   
 4.  Seçin **dosyaları** sekmesi.  
   
-5.  Sekmenin üstünde metin kutusuna, uygulamanızın dosyaları içeren dizini girin ve ardından **Populate**.  
+5.  Uygulamanızın dosyaları içeren dizine sekmenin üstünde metin kutusuna girin ve ardından **Doldur**.  
   
-     Veri dosyanız kılavuzda görüntülenir.  
+     Veri dosyası kılavuzunda görünür.  
   
 6.  Ayarlama **dosya türü** veri dosyasına değerini **veri**.  
   
-7.  Uygulama bildirimini kaydedin ve dosyayı yeniden imzalayın.  
+7.  Uygulama bildirimini kaydedin ve sonra dosyayı yeniden imzalayın.  
   
-     MageUI.exe dosyayı yeniden imzalayın isteyip istemediğinizi sorar.  
+     *MageUI.exe* dosyayı yeniden imzalamanızı ister.  
   
-8.  Dağıtım bildiriminizi yeniden imzalama  
+8.  Dağıtım bildirimini yeniden imzalamanız  
   
-     Uygulama bildiriminin, karma değiştiğinden Dağıtım bildiriminizi yeniden oturum açmanız gerekir.  
+     Uygulama bildiriminin, karma değiştiğinden, dağıtım bildirimini yeniden imzalamanız gerekir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [ClickOnce Uygulamalarında Yerel ve Uzak Veri Erişimi](../deployment/accessing-local-and-remote-data-in-clickonce-applications.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [ClickOnce uygulamalarında yerel ve uzak veri erişimi](../deployment/accessing-local-and-remote-data-in-clickonce-applications.md)

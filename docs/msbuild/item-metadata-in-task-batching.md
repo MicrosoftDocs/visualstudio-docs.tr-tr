@@ -1,5 +1,5 @@
 ---
-title: Toplu görev işleme meta veri öğesi | Microsoft Docs
+title: Toplu Görev işlemede meta veri öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: msbuild
@@ -15,29 +15,30 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c55bd7be84b118f08fbedff1931c4517e963b5a7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f1804bde2c3da7f83658784ca1520791a930f901
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39177201"
 ---
-# <a name="item-metadata-in-task-batching"></a>Toplu Görev İşlemede Öğe Meta Verileri
-[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] öğe listelerini farklı kategorileri veya toplu işlemi bölme yeteneği, öğe meta verileri temel alarak ve bir görev her batch ile bir kez çalıştırın. Hangi öğeleri hangi batch ile tam olarak geçirilen anlamak kafa karıştırıcı olabilir. Bu konuda toplu işleme ile ilgili aşağıdaki ortak senaryolar için geçerlidir.  
+# <a name="item-metadata-in-task-batching"></a>Toplu Görev işlemede öğe meta verileri
+[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] öğe listeleri farklı kategorileri veya toplu işlemi bölmek için özelliği, öğe meta verileri temel alarak ve bir görevi, her batch ile bir kez çalıştırın. Tam olarak hangi batch ile hangi öğeleri geçirilen anlamak kafa karıştırıcı olabilir. Bu konu, toplu işleme içeren aşağıdaki yaygın senaryoları kapsar.  
   
--   Bir öğe listesi yığınlara bölme  
+-   Bir öğe listesini toplu işler bölme  
   
--   Yığınlara birkaç öğe listesi bölme  
+-   Toplu işler çeşitli öğesi listeleri bölme  
   
 -   Bir öğe aynı anda toplu işleme  
   
--   Filtreleme öğesi listeleri  
+-   Filtre öğesi listeleri  
+
+İle toplu işlem hakkında daha fazla bilgi için [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)], bkz: [toplu işleme](../msbuild/msbuild-batching.md).  
   
- Toplu işleme ile ilgili daha fazla bilgi için [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)], bkz: [Batching](../msbuild/msbuild-batching.md).  
+## <a name="divide-an-item-list-into-batches"></a>Toplu işler bir öğe listesini Böl  
+ Toplu işleme, öğe meta verileri temel alarak farklı toplu bir öğe listesi bölün ve her toplu işlerin bir görevle ayrı ayrı geçirebilirsiniz olanak tanır. Uydu derlemeleri oluşturmak için kullanışlıdır.  
   
-## <a name="dividing-an-item-list-into-batches"></a>Bir öğe listesi yığınlara bölme  
- Toplu işleme, öğe meta verileri temel alarak farklı toplu bir öğe listesi böler ve her toplu göreve dönüştürme ayrı olarak geçirin olanak sağlar. Uydu derlemeleri oluşturma için kullanışlıdır.  
-  
- Aşağıdaki örnek, öğe meta verileri temel alarak toplu bir öğe listesi bölmek gösterilmiştir. `ExampColl` Öğe listesi göre üç toplu bölündüğü `Number` öğe meta verileri. Varlığını `%(ExampColl.Number)`içinde `Text` özniteliği bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi. `ExampColl` Öğe listesi göre üç toplu bölündüğü `Number` meta verileri ve her bir toplu iş geçirilir ayrı olarak göreve dönüştürebilir.  
+ Aşağıdaki örnek, bir öğe listesi öğesi meta verileri temel alarak gruplayın bölmek gösterilmektedir. `ExampColl` Öğe listesi üç toplu göre bölündüğü `Number` öğe meta verileri. Varlığını `%(ExampColl.Number)`içinde `Text` öznitelik bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi. `ExampColl` Öğe listesi üç toplu göre bölündüğü `Number` meta verileri ve her toplu işin geçirilen ayrı olarak görevle.  
   
 ```xml  
 <Project  
@@ -71,8 +72,8 @@ ms.lasthandoff: 04/19/2018
   
 </Project>  
 ```  
-  
- [İleti görevi](../msbuild/message-task.md) görev aşağıdaki bilgileri görüntüler:  
+
+[İleti görevini](../msbuild/message-task.md) aşağıdaki bilgileri görüntüler:  
   
  `Number: 1 -- Items in ExampColl: Item1;Item4`  
   
@@ -80,13 +81,13 @@ ms.lasthandoff: 04/19/2018
   
  `Number: 3 -- Items in ExampColl: Item3;Item6`  
   
-## <a name="dividing-several-item-lists-into-batches"></a>Birden fazla öğe bölerek yığınlara listeler  
- [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] birden çok öğe listesi, aynı meta verileri temel alarak toplu bölebilirsiniz. Bu, farklı öğe listelerini birden çok derleme yapı yığınlara ayırmak kolaylaştırır. Örneğin, bir uygulama toplu ve bir derleme toplu ve kaynak dosyalarının bir uygulama toplu ve bir derleme toplu olarak ayrılmış bir öğe listesi bölünmüş .cs dosyaların bir öğe listesi olabilir. Bu öğe listelerini tek bir görev geçip uygulama ve derleme yapı toplu işleme sonra kullanabilirsiniz.  
+## <a name="divide-several-item-lists-into-batches"></a>Toplu işler çeşitli öğesi listeleri bölme  
+ [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] birden çok öğe listesi, aynı meta verileri temel alarak gruplayın bölebilirsiniz. Bu, farklı öğe listeleri birden çok derleme oluşturmak için yığınlara ayırmak kolaylaştırır. Örneğin, bir öğe listesi olabilir *.cs* öğe listesi kaynak dosyaları, bölünmüş uygulama batch ve bir derleme toplu iş halinde ve dosyaları bölünmüş bir uygulama batch ve bir derleme toplu. Bu öğe listeleri bir görevle geçirmek ve hem uygulama hem de derleme oluşturmak için toplu işleme sonra kullanabilirsiniz.  
   
 > [!NOTE]
->  Bir görev geçirilen bir öğe listesi başvurulan meta verilerle hiç öğe içeriyorsa, bu öğesi listesindeki her öğenin her toplu geçirilir.  
+>  Bir göreve geçirilen bir öğe listesi başvurulan meta verilerle hiçbir öğe içeriyorsa, her öğe, öğe listesinde her toplu iş içine geçirilir.  
   
- Aşağıdaki örnek, öğe meta verileri temel alarak toplu birden çok öğe listesi bölmek gösterilmiştir. `ExampColl` Ve `ExampColl2` öğesi listeleri her bölünen göre üç toplu içine `Number` öğe meta verileri. Varlığını `%(Number)`içinde `Text` özniteliği bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi. `ExampColl` Ve `ExampColl2` öğesi listeleri göre üç toplu içine bölünen `Number` meta verileri ve her bir toplu iş geçirilir ayrı olarak göreve dönüştürebilir.  
+Aşağıdaki örnek, birden çok öğe listesi öğesi meta verileri temel alarak gruplayın bölme gösterilmektedir. `ExampColl` Ve `ExampColl2` öğesi listeleri her ayrılmıştır göre üç gruplayın `Number` öğe meta verileri. Varlığını `%(Number)`içinde `Text` öznitelik bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi. `ExampColl` Ve `ExampColl2` öğesi listeleri göre üç toplu işler halinde bölünmüştür `Number` meta verileri ve her toplu işin geçirilen ayrı olarak görevle.  
   
 ```xml  
 <Project  
@@ -124,7 +125,7 @@ ms.lasthandoff: 04/19/2018
 </Project>  
 ```  
   
- [İleti görevi](../msbuild/message-task.md) görev aşağıdaki bilgileri görüntüler:  
+[İleti görevini](../msbuild/message-task.md) aşağıdaki bilgileri görüntüler:  
   
  `Number: 1 -- Items in ExampColl: Item1 ExampColl2: Item4`  
   
@@ -132,10 +133,10 @@ ms.lasthandoff: 04/19/2018
   
  `Number: 3 -- Items in ExampColl: Item3 ExampColl2: Item6`  
   
-## <a name="batching-one-item-at-a-time"></a>Bir öğe aynı anda toplu işleme  
- Toplu işleme de oluşturulduktan sonra her öğeye atanan tanınmış öğe meta verileri üzerinde gerçekleştirilebilir. Bu toplu işlem için kullanılacak bir koleksiyondaki her öğe bazı meta verileri gerekir güvence altına alır. `Identity` Meta veri değeri her öğe için benzersizdir ve her bir öğe listesi öğesinde ayrı bir toplu iş bölmek için yararlıdır. İyi bilinen öğe meta verisi tam bir listesi için bkz: [tanınmış öğe meta verisi](../msbuild/msbuild-well-known-item-metadata.md).  
+## <a name="batch-one-item-at-a-time"></a>Bir öğe aynı anda batch  
+ Toplu işleme da oluşturulduktan sonra her öğeye atanan tanınmış öğe meta verileri üzerinde gerçekleştirilebilir. Bu, bir koleksiyondaki her öğe için toplu işlem kullanma için bazı meta verileri olacağını garanti eder. `Identity` Meta veri değeri, her öğe için benzersiz olan ve bir öğe listesini her öğe ayrı bir toplu iş ayırma için kullanışlıdır. İyi bilinen öğe meta verileri tam bir listesi için bkz. [tanınmış öğe meta verileri](../msbuild/msbuild-well-known-item-metadata.md).  
   
- Aşağıdaki örnekte, her bir öğe listesinden bir öğe aynı anda toplu olarak gösterilmiştir. Çünkü `Identity` meta verileri her öğenin değeri benzersiz `ExampColl` öğe listesinden bir öğe öğe listesinin içeren her bir toplu iş altı yığınlara bölünür. Varlığını `%(Identity)`içinde `Text` özniteliği bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi.  
+ Aşağıdaki örnek, her bir öğe listesini bir öğe aynı anda toplu olarak gösterilmiştir. Çünkü `Identity` her öğenin meta veri değerini benzersiz `ExampColl` her toplu iş öğesi listesi bir öğe içeren öğe listesi altı toplu işler bölünmüştür. Varlığını `%(Identity)`içinde `Text` öznitelik bildirir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] toplu işleme gerçekleştirilmesi.  
   
 ```xml  
 <Project  
@@ -160,7 +161,7 @@ ms.lasthandoff: 04/19/2018
 </Project>  
 ```  
   
- [İleti görevi](../msbuild/message-task.md) görev aşağıdaki bilgileri görüntüler:  
+[İleti görevini](../msbuild/message-task.md) aşağıdaki bilgileri görüntüler:  
   
 ```  
 Identity: "Item1" -- Items in ExampColl: Item1  
@@ -171,10 +172,10 @@ Identity: "Item5" -- Items in ExampColl: Item5
 Identity: "Item6" -- Items in ExampColl: Item6  
 ```  
   
-## <a name="filtering-item-lists"></a>Filtreleme öğesi listeler  
- Toplu işleme göreve geçirmeden önce bir öğe listesi belirli öğeleri filtrelemek için kullanılabilir. Örneğin, filtre `Extension` iyi bilinen öğe meta veri değeri, yalnızca belirli bir uzantıya sahip dosyaların bir görevi çalıştırmayı sağlar.  
+## <a name="filter-item-lists"></a>Öğe listeleri filtreleyebilirsiniz.  
+ Toplu işleme için bir görev iletmeden önce belirli öğeleri bir öğe listesini filtrelemek için kullanılabilir. Örneğin, filtre `Extension` tanınmış öğe meta veri değeri bir görev yalnızca belirli bir uzantıya sahip dosya çubuğunda çalıştırmanıza olanak sağlar.  
   
- Aşağıdaki örnek, öğe meta verileri temel alarak toplu bir öğe listesi böler ve bir görev geçirildiğinde bu toplu filtre gösterilmektedir. `ExampColl` Öğe listesi göre üç toplu bölündüğü `Number` öğe meta verileri. `Condition` Görevinin özniteliği belirtir, yalnızca toplu işlemleri ile bir `Number` öğe meta veri değeri `2` göreve geçirilen  
+ Aşağıdaki örnek, bir öğe listesi, toplu iş öğesi meta verileri temel alarak böler ve bir görevle geçirildiğinde bu toplu filtre uygulamak gösterilmektedir. `ExampColl` Öğe listesi üç toplu göre bölündüğü `Number` öğe meta verileri. `Condition` Görevin özniteliği belirtir, sadece toplu işlemleri ile bir `Number` öğesi meta veri değeri `2` görevle geçirilir  
   
 ```xml  
 <Project  
@@ -212,16 +213,16 @@ Identity: "Item6" -- Items in ExampColl: Item6
 </Project>  
 ```  
   
- [İleti görevi](../msbuild/message-task.md) görev aşağıdaki bilgileri görüntüler:  
+[İleti görevini](../msbuild/message-task.md) aşağıdaki bilgileri görüntüler:  
   
 ```  
 Items in ExampColl: Item2;Item5  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Tanınmış öğe meta verisi](../msbuild/msbuild-well-known-item-metadata.md)   
  [Öğe unsuru (MSBuild)](../msbuild/item-element-msbuild.md)   
  [Itemmetadata öğesi (MSBuild)](../msbuild/itemmetadata-element-msbuild.md)   
  [Toplu işleme](../msbuild/msbuild-batching.md)   
  [MSBuild kavramları](../msbuild/msbuild-concepts.md)   
- [MSBuild Başvurusu](../msbuild/msbuild-reference.md)
+ [MSBuild başvurusu](../msbuild/msbuild-reference.md)

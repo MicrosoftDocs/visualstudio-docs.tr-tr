@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e58b4896b7935926904ecf37f4d8d130618d5961
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c7264648775f078af16a0a26ecc3bba3a129374c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49909869"
 ---
 # <a name="idebugdynamicfieldcomplusgettypefromprimitive"></a>IDebugDynamicFieldCOMPlus::GetTypeFromPrimitive
-Verili ilkel tür bir türü alır.  
+Verilen temel eleman türü bir tür alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,13 +42,13 @@ int GetTypeFromPrimitive(
   
 #### <a name="parameters"></a>Parametreler  
  `dwCorElementType`  
- [in] Değeri [CorElementType numaralandırması](/dotnet/framework/unmanaged-api/metadata/corelementtype-enumeration) , ilkel türü temsil eder.  
+ [in] Değerini [CorElementType numaralandırması](/dotnet/framework/unmanaged-api/metadata/corelementtype-enumeration) temsil eden temel türü.  
   
  `ppType`  
- [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) türü temsil eder.  
+ [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) temsil eden tür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDynamicFieldCOMPlus](../../../extensibility/debugger/reference/idebugdynamicfieldcomplus.md)

@@ -12,34 +12,35 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f19da533d2ab13e7493eae53af8dea3af4e520df
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 55906da398f7f52460523cb74a77945d84037ebc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49866772"
 ---
 # <a name="messages-tab-message-options-dialog-box"></a>İletiler Sekmesi, İleti Seçenekleri İletişim Kutusu
-Kullanım **iletileri** listesine ileti türlerini seçmek için sekme [iletiler görünümünü](../debugger/messages-view.md)ve ileti arama ölçütlerini belirtmek için. Görüntülenecek [ileti seçenekleri iletişim kutusu](../debugger/message-options-dialog-box.md), seçin **günlük iletilerini** gelen **Spy** menüsü.  
+Kullanım **iletileri** listesine ileti türlerini seçmek için sekmesinde [iletiler görünümünü](../debugger/messages-view.md)ve ileti arama ölçütlerini belirtmek için. Görüntülenecek [ileti seçenekleri iletişim kutusu](../debugger/message-options-dialog-box.md), seçin **günlük iletilerini** gelen **Spy** menüsü.  
   
- Genellikle, ilk seçtiğiniz **ileti grupları**ve ardından seçimi tek tek seçerek ince ayar yapma **iletileri görüntülemek için**. **Tüm** düğmesini seçer tüm ileti türleri ve **hiçbiri** düğmesi tüm türleri temizler.  
+ Genellikle, ilk kez seçtiğinizde **ileti grupları**ve seçim tek tek seçerek ince ayar yapma **görünümüne iletileri**. **Tüm** düğmesini seçer tüm ileti türleri ve **hiçbiri** düğmesi tüm türleri temizler.  
   
- Aşağıdaki ayarlar kullanılabilir **iletileri** sekmesi:  
+ Aşağıdaki ayarlar kullanılabilir **iletileri** sekmesinde:  
   
- **İletileri görüntülemek için**  
- Belirli iletileri görüntülemek için seçin. Yeni bir ileti penceresi oluşturduğunuzda, tüm iletileri görüntüleyebilirsiniz. Filtre zaman gelen iletileri **iletileri** sekmesinde, bu filtre yalnızca uygulanır yeni iletiler, zaten Windows görünümünde görüntülenen iletileri.  
+ **İletiler görünümü**  
+ Belirli iletileri görüntülemek için seçin. Yeni bir ileti penceresinde oluşturduğunuzda, onu tüm iletileri görüntüleyebilirsiniz. Filtre zaman gelen iletileri **iletileri** sekmesinde, filtre yalnızca uygulandığı yeni iletileri, zaten Windows görünümünde görüntülenen iletileri.  
   
  **İleti grupları**  
- İleti gruplarını görüntülemek için seçin. Kullanılabilir grupları Ekle:  
+ İleti gruplarını görüntülemek için seçin. Kullanılabilir gruplar şunlardır:  
   
--   WM_USER: bir kod WM_USER eşit veya daha büyük  
+- WM_USER: bir kod ile büyüktür veya eşittir WM_USER  
   
--   Kayıtlı: kayıtlı **RegisterWindowMessage** çağırın  
+- Kayıtlı: kayıtlı **RegisterWindowMessage** çağırın  
   
--   Bilinmiyor: Bilinmeyen iletileri aralıktaki 0 (WM_USER - 1)  
+- Bilinmiyor: Bilinmeyen iletileri 0 aralığındaki (WM_USER - 1)  
   
- Unutmayın bunlar **ileti grupları** altında belirli girişlere eşlemediğinden **iletiler için görünümü**. Bir grup seçtiğinizde, seçimi doğrudan ileti akışı uygulanır.  
+  Unutmayın bu **ileti grupları** altında belirli girdiler için eşlemeyin **iletiler için görünümü**. Bir grubu seçtiğinizde, doğrudan ileti akışına seçimi uygulanır.  
   
- Bir gri onay kutusu içinde **ileti grupları** belirten **iletiler için görünümü** liste kutusu, o gruptaki iletilerde değiştirildi; o gruptaki ileti türlerinin tümü seçilir.  
+  Gri bir onay kutusu içinde **ileti grupları** belirten **iletiler için görünümü** liste kutusu, o gruptaki iletileri değiştirildi; ileti türlerini o gruptaki tüm seçilir.  
   
- **Ayarları varsayılan olarak Kaydet**  
- Daha sonra kullanmak için geçerli ayarları ileti arama seçenekleri kaydedin. Bu ayarlar, ayrıca Spy ++ çıkarken kaydedilir.
+  **Ayarları varsayılan olarak Kaydet**  
+  Daha sonra kullanmak için geçerli ayarları ileti arama seçenekleri kaydedin. Bu ayarlar, ayrıca Spy ++ çıkarken kaydedilir.

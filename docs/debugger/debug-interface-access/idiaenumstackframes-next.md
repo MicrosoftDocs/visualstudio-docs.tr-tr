@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 68e84c31cb98cdbbe69e62aa1e572386100277a0
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 42d096ce41c5ff9f254e7f44d595159130e43548
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949857"
 ---
 # <a name="idiaenumstackframesnext"></a>IDiaEnumStackFrames::Next
-Belirtilen sayıda yığın çerçeve öğeyi numaralandırma dizisini alır.  
+Yığın çerçeve öğelerin belirtilen bir sayı sabit listesi dizisinden alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,16 +36,16 @@ HRESULT Next(
   
 #### <a name="parameters"></a>Parametreler  
  celt  
- [in] Alınacak Numaralandırıcı stackframe öğe sayısı.  
+ [in] Alınacak Numaralandırıcı stackframe öğeleri sayısı.  
   
- rgelt  
- [out] İstenen ile doldurulması için bir dizi [Idiastackframe](../../debugger/debug-interface-access/idiastackframe.md) nesneleri.  
+ http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/winui/windowsuserinterface/userinput/rawinput/rawinputreference/rawinputstructures/rawinputdevice.asp  
+ [out] İstenen ile doldurulacak bir dizi [Idiastackframe](../../debugger/debug-interface-access/idiastackframe.md) nesneleri.  
   
  pceltFetched  
- [out] Yığın sayısı çerçeve öğeleri getirilen Numaralandırıcı döndürür.  
+ [out] Yığın çerçeve öğeleri getirilen bir numaralandırıcı döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` olması durumunda daha fazla yığın çerçeve yok. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa daha fazla yığın çerçevesi yok. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaenumstackframes](../../debugger/debug-interface-access/idiaenumstackframes.md)   

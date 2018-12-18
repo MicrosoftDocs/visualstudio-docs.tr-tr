@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0645d2364712769a6b4f18ef14fbbcb503a51888
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 66b8f904ac8add69db0c6d1760b5427cb8c802ae
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49918363"
 ---
 # <a name="idiaframedataexecute"></a>IDiaFrameData::execute
-Yığın geriye doğru izleme gerçekleştirir ve sonuçları bir yığın ilerlemesi çerçeve arabiriminde döndürür.  
+Yığın geriye doğru izleme gerçekleştirir ve sonuçları yığın ilerlemesi çerçeve arabiriminde döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,20 +34,20 @@ HRESULT execute (
   
 #### <a name="parameters"></a>Parametreler  
  `frame`  
- [in] Bir [Idiastackwalkframe](../../debugger/debug-interface-access/idiastackwalkframe.md) çerçeve yazmaçlar durumunu tutan nesne.  
+ [in] Bir [Idiastackwalkframe](../../debugger/debug-interface-access/idiastackwalkframe.md) çerçeve yazmaçların durumu tutan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda bu yöntem için olası dönüş değerleri gösterir.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda, bu yöntem olası dönüş değerleri gösterir.  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|E_DIA_INPROLOG|Başlangıç kodunda yığın çerçevesi yürütülemiyor.|  
-|E_DIA_SYNTAX|Ayrıştırma hatası çerçeve programında karşılaştı.|  
-|E_DIA_FRAME_ACCESS|Erişim kaydeder veya bellek oluşturulamıyor.|  
-|E_DIA_VALUE|Bir değer (örneğin, sıfıra bölme) hesaplama hatası.|  
+|E_DIA_INPROLOG|Giriş kodundaki yığın çerçevesi yürütülemiyor.|  
+|E_DIA_SYNTAX|Ayrıştırma hatası çerçeve programında karşılaşıldı.|  
+|E_DIA_FRAME_ACCESS|Erişim kayıtları veya bellek alınamıyor.|  
+|E_DIA_VALUE|Bir değerin (örneğin, sıfıra bölünme) hesaplama hatası.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, yığın geriye doğru izleme için hata ayıklama sırasında çağrılır. [Idiastackwalkframe](../../debugger/debug-interface-access/idiastackwalkframe.md) nesne kayıtları için güncelleştirmeleri almak ve tarafından kullanılan yöntemler sağlamak için istemci uygulaması tarafından gerçekleştirilir `execute` yöntemi.  
+ Bu yöntem, yığın geriye doğru izleme hata ayıklama sırasında çağrılır. [Idiastackwalkframe](../../debugger/debug-interface-access/idiastackwalkframe.md) nesne kayıtlar için güncelleştirmeleri almak ve tarafından kullanılan yöntemleri sağlaması için istemci uygulaması tarafından gerçekleştirilir `execute` yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaframedata](../../debugger/debug-interface-access/idiaframedata.md)   

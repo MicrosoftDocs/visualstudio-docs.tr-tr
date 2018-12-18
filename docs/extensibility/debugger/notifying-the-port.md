@@ -1,5 +1,5 @@
 ---
-title: Bağlantı noktası bildiren | Microsoft Docs
+title: Bağlantı noktasına bildirme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,40 +13,41 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1420ca8768ddf1eaedc0d515810bc88b3491c4db
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3a45882b1410391843b9e98dcce6e963774c15dd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868306"
 ---
-# <a name="notifying-the-port"></a>Bağlantı noktası bildirme
-Bir programı başlattıktan sonra bağlantı noktası, aşağıdaki gibi bildirilmesi gerekir:  
+# <a name="notify-the-port"></a>Bağlantı noktası bildir
+Bir programın tanıtımından sonra bağlantı noktası, şu şekilde bildirilmesi gerekir:  
   
-1.  Bir bağlantı noktasına yeni bir program düğüm aldığında, hata ayıklama oturumu program oluşturma olay gönderir. Olay ile program temsil eden bir arabirim taşır.  
+1. Bir bağlantı noktası, yeni bir programı düğüm aldığında, bir program oluşturma olayı hata ayıklama oturumu için geri gönderir. Olay ile program temsil eden bir arabirim taşır.  
   
-2.  Hata ayıklama oturumu program ekleyebilirsiniz. bir hata ayıklama altyapısı (DE) tanıtıcısı için sorgular.  
+2. Hata ayıklama oturumu program ekleyebilirsiniz hata ayıklama altyapısı (DE) tanımlayıcısı için sorgular.  
   
-3.  Hata ayıklama oturumu DE Bu program için izin verilen DEs listesinde olup olmadığını denetler. Hata ayıklama oturumu çözümün etkin program ayarları, ilk olarak hata ayıklama paketi tarafından geçirilen bu listeyi alır.  
+3. Hata ayıklama oturumunu DE Bu program için izin verilen DEs listesinde olup olmadığını denetler. Hata ayıklama oturumu ilk olarak hata ayıklama paketi tarafından geçirilen, çözümün etkin programı ayarlar bu listeyi alır.  
   
-     İzin verilen listesinde DE olması gerekir, aksi takdirde DE programa eklenmemiş.  
+    İzin verilen listede DE olması gerekir, aksi takdirde DE programa bağlı değil.  
   
- Program aracılığıyla, bir bağlantı noktası önce yeni bir program düğüm aldığında, oluşturduğu bir [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) programı temsil eden arabirim.  
-  
-> [!NOTE]
->  Bu ile karıştırılmamalıdır `IDebugProgram2` daha sonra hata ayıklama altyapısı (DE) tarafından oluşturulan arabirimi.  
-  
- Bağlantı noktası gönderir bir [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md) program oluşturma olayı bir COM yoluyla oturum hata ayıklama Yöneticisi (SDM) dön `IConnectionPoint` arabirimi.  
+   Programlama yoluyla bir bağlantı noktası yeni bir programı düğümü ilk kez aldığında, oluşturduğu bir [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) program temsil eden arabirim.  
   
 > [!NOTE]
->  Bu ile karıştırılmamalıdır `IDebugProgramCreateEvent2` daha sonra DE tarafından gönderilen arabirimi.  
+>  Bu ile karıştırılmamalıdır `IDebugProgram2` arabirimi daha sonra hata ayıklama altyapısı (DE) tarafından oluşturuldu.  
   
- Olay arabirimini birlikte kendisi, bağlantı noktası gönderir [IDebugPort2](../../extensibility/debugger/reference/idebugport2.md), [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md), ve [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) bağlantı noktasını temsil eder, arabirimleri işlemek ve , sırasıyla program. SDM çağrıları [IDebugProgram2::GetEngineInfo](../../extensibility/debugger/reference/idebugprogram2-getengineinfo.md) program ayıklayabilirsiniz DE GUİD'si alınamadı. GUID başlangıçta uygulamasından edinilen [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) arabirimi.  
+ Bağlantı noktası gönderen bir [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md) oturum hata ayıklama Yöneticisi (SDM) yoluyla bir COM program oluşturma olayına geri `IConnectionPoint` arabirimi.  
   
- SDM DE izin verilen DEs listede olup olmadığını denetler. SDM çözümün etkin program ayarları, ilk olarak hata ayıklama paketi tarafından geçirilen bu listeyi alır. İzin verilen listesinde DE olması gerekir, aksi takdirde programına bağlanmayacak.  
+> [!NOTE]
+>  Bu ile karıştırılmamalıdır `IDebugProgramCreateEvent2` arabirimi, tarafından DE daha sonra gönderilir.  
   
- Aygıtların kimliğini bilinen sonra SDM programına eklemek hazırdır.  
+ Olay arabirimi yanı sıra kendisini, bağlantı noktası gönderir [IDebugPort2](../../extensibility/debugger/reference/idebugport2.md), [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md), ve [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) bağlantı noktasını temsil eder ve arabirimler, işlemek ve , sırasıyla program. SDM çağrıları [IDebugProgram2::GetEngineInfo](../../extensibility/debugger/reference/idebugprogram2-getengineinfo.md) programda hata ayıklamak DE GUID alınamıyor. GUID başlangıçta elde edildiği [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) arabirimi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Bir Program başlatma](../../extensibility/debugger/launching-a-program.md)   
- [Başlatma sonra ekleme](../../extensibility/debugger/attaching-after-a-launch.md)   
- [Hata Ayıklama Görevleri](../../extensibility/debugger/debugging-tasks.md)
+ SDM DE izin verilen DEs Listesi penceresinde olup olmadığını denetler. SDM çözümün etkin programı ayarlar, ilk olarak hata ayıklama paketi tarafından geçirilen bu listeyi alır. İzin verilen listede DE olması gerekir, aksi takdirde, programın da bağlı değil.  
+  
+ Kimliğini DE tanındıktan sonra SDM programa eklemek hazırdır.  
+  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Program başlatma](../../extensibility/debugger/launching-a-program.md)   
+ [Başlatmadan sonra ekleme](../../extensibility/debugger/attaching-after-a-launch.md)   
+ [Hata ayıklama görevleri](../../extensibility/debugger/debugging-tasks.md)

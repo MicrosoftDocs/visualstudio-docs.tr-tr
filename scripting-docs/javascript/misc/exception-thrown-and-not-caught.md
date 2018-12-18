@@ -1,13 +1,13 @@
 ---
-title: "Oluşturulan özel durum yakalanmadı | Microsoft Docs"
-ms.custom: 
+title: Oluşturulan özel durum yakalanmadı | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-client-threshold
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - javascript
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VS.WebClient.Help.SCRIPT5022
@@ -16,7 +16,7 @@ dev_langs:
 - TypeScript
 - DHTML
 ms.assetid: b5235490-a8e7-42e3-804e-d85235bc6f05
-caps.latest.revision: 
+caps.latest.revision: 6
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -25,6 +25,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24788768"
 ---
 # <a name="exception-thrown-and-not-caught"></a>Oluşan özel durum yakalanmadı
 Bulunan bir `throw` kodunuzu, ancak deyiminde değil içinde içine bir **deneyin** bloğu veya Hayır ilişkili **catch** hata bloğunun. Özel durumlar içinden **deneyin** kullanarak engelleme **throw** deyimi ve yakalanan dışında **deneyin** ile engelleme bir **catch** deyimi.  

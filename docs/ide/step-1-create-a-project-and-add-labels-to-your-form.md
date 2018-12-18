@@ -1,9 +1,9 @@
 ---
-title: '1. adım: Proje oluşturma ve formunuza etiketler ekleme | Microsoft Docs'
+title: '1. adım: Proje oluşturma ve formunuza etiketler ekleme'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.technology:
-- vs-acquisition
+ms.prod: visual-studio-dev15
+ms.technology: vs-acquisition
 ms.topic: conceptual
 ms.assetid: f44e50be-a5f5-4d77-9cff-dd52374c3f74
 author: TerryGLee
@@ -11,169 +11,168 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 992541fe80067a6255ae0909edba0bf8f239c004
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: eb29a985a39344c5bffad59e63a9d540311ec648
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49925129"
 ---
-# <a name="step-1-create-a-project-and-add-labels-to-your-form"></a>1. Adım: Proje Oluşturma ve Formunuza Etiketler Ekleme
-Bu test geliştirme ilk adımlar, olarak projesi oluşturun ve etiketler, bir düğmeyi ve diğer denetimlerin bir forma ekleyin. Ayrıca, eklediğiniz her denetim için özellikler de ayarlayın. Proje formu denetimlerini içerir ve (sonraki öğreticide) kodu. Test sorunları etiketlerini göster düğmesini test başlatır ve diğer denetimlerin test yanıtlar ve test tamamlamak için kalan süreyi gösterir.  
-  
+# <a name="step-1-create-a-project-and-add-labels-to-your-form"></a>1. adım: Proje oluşturma ve formunuza etiketler ekleme
+
+Bu sınavı geliştirmede ilk adım olarak projeyi oluşturun ve bir forma etiketler, bir düğme ve diğer denetimleri ekleyin. Ayrıca eklediğiniz her denetimin özelliklerini ayarlarsınız. Proje formu, denetimleri, içerir ve (öğreticide daha ilerideki) kodu. Etiketler sınav sorularını gösterir düğme sınavı başlatır ve diğer denerimler ise sınav yanıtlarını ve sınavı bitirmek için kalan süreyi gösterir.
+
 > [!NOTE]
->  Bu konuda bir öğretici serisi kodlama temel kavramları hakkında bir parçasıdır. Öğretici genel bakış için bkz: [Eğitmen 2: bir zaman aşımına matematik test oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).  
-  
-### <a name="to-create-a-project-and-and-set-properties-for-a-form"></a>Bir proje oluşturmak için ve ve bir form özelliklerini ayarlama  
-  
-1.  Menü çubuğunda seçin **dosya**, **yeni**, **proje**.  
-  
-2.  İçinde **yüklü şablonlar** listesinde, ya da seçin **C#** veya **Visual Basic**.  
-  
-3.  Şablonları listesinden seçip **Windows Forms uygulaması** şablon adlandırın **matematik test**ve ardından **Tamam** düğmesi.  
-  
-     Adlı bir form **Form1.cs** veya **Form1.vb** , seçtiğiniz programlama dili bağlı olarak görünür.  
-  
-4.  Form seçin ve sonra değiştirmek kendi **metin** özelliğine **matematik test**.  
-  
-     **Özellikleri** penceresi formun özelliklerini içerir.  
-  
-5.  Formun boyutunu 500 piksel genişliğinde 400 piksel uzunluğunda değiştirin.  
-  
-     Tümleşik geliştirme ortamı (IDE) sol alt köşesindeki doğru boyutta görünene kadar kendi kenarları sürükleyerek formu yeniden boyutlandırabilirsiniz. Alternatif olarak, değerlerini değiştirebilirsiniz **boyutu** özelliği.  
-  
-6.  Değerini değiştirme **FormBorderStyle** özelliğine **Fixed3D**ve **MaximizeBox** özelliğine **False**.  
-  
-     Bu değerler, formu yeniden boyutlandırma test tutmayı engeller.  
-  
-### <a name="to-create-the-time-remaining-box"></a>Zaman kalan kutusu oluşturmak için  
-  
-1.  Ekleme bir **etiket** Denetim Araç Kutusu'ndan ve değerini ayarlama kendi **(ad)** özelliğine `timeLabel`.  
-  
-     Bu etiket test kalan saniye sayısını gösterir sağ üst köşesinde kutusunda olur.  
-  
-2.  Değişiklik **AutoSize** özelliğine **False** böylece kutusunu yeniden boyutlandırabilirsiniz.  
-  
-3.  Değişiklik **kenarlık stili** özelliğine **FixedSingle** kutunun etrafında bir çizgi çizmek için.  
-  
-4.  Ayarlama **boyutu** özelliğine **200, 30**.  
-  
-5.  Etiket mavi ayırıcı satırları nerede görüneceğini formun sağ üst köşesinde taşıyın.  
-  
-     Bu satırlar form üzerinde denetimleri hizalama yardımcı olur.  
-  
-6.  İçinde **özellikleri** penceresinde, seçin **metin** özelliği ve değerini temizlemek için Geri tuşu'i seçin.  
-  
-7.  Artı işareti (+) seçin **yazı tipi** özelliği ve değerini değiştirme **boyutu** özelliğine **15.75**.  
-  
-     Aşağıdaki resimde gösterildiği gibi birkaç yazı tipi özelliklerini değiştirebilirsiniz.  
-  
-     ![Yazı tipi boyutunu gösteren Özellikler penceresi](../ide/media/express_setfontsize.png "Express_setFontSize")  
-Yazı tipi boyutunu gösteren Özellikler penceresi  
-  
-8.  Başka bir tane eklemek **etiket** Denetim Araç Kutusu'ndan ve yazı tipi boyutunu ayarlamak **15.75**.  
-  
-9. Ayarlama **metin** özelliğine **zaman sol**.  
-  
-10. Böylece yalnızca solunda hizalanacak etiketi taşımak **timeLabel** etiketi.  
-  
-### <a name="to-add-controls-for-the-addition-problems"></a>Denetimler ek sorunlar için eklemek için  
-  
-1.  Ekleme bir **etiket** Denetim Araç Kutusu'ndan ve ardından kendi **metin** özelliğine **?** (soru işareti).  
-  
-2.  Ayarlama **AutoSize** özelliğine **False**.  
-  
-3.  Ayarlama **boyutu** özelliğine **60, 50**.  
-  
-4.  Yazı tipi boyutunu ayarlamak **18**.  
-  
-5.  Ayarlama **TextAlign** özelliğine **MiddleCenter**.  
-  
-6.  Ayarlama **konumu** özelliğine **50, 75** formdaki denetim konumlandırmak için.  
-  
-7.  Ayarlama **(ad)** özelliğine **plusLeftLabel**.  
-  
-8.  Seçin **plusLeftLabel** etiket ve Ctrl + C tuşlarını seçin veya **kopya** üzerinde **Düzenle** menüsü.  
-  
-9. Ctrl + V tuşlarını seçerek üç kez etiketi Yapıştır veya **Yapıştır** üzerinde **Düzenle** menüsü.  
-  
-10. Böylece bir satır kutusunun sağ tarafında bulunan üç yeni etiket düzenleme **plusLeftLabel** etiketi.  
-  
-     Boşluk ve bunları satır ayırıcı satırları kullanabilirsiniz.  
-  
-11. İkinci etiketin değerini **metin** özelliğine **+** (artı işareti).  
-  
-12. Üçüncü etiketin değerini **(ad)** özelliğine **plusRightLabel**.  
-  
-13. Dördüncü etiketin değerini **metin** özelliğine **=** (eşittir işareti).  
-  
-14. Ekleme bir **NumericUpDown** Denetim Araç Kutusu'ndan, yazı tipi boyutunu ayarlamak **18**ve genişliğini ayarlamak **100**.  
-  
-     Bu tür daha sonra denetimi hakkında daha fazla bilgi edineceksiniz.  
-  
-15. Satır yukarı **NumericUpDown** Denetim toplama problemi etiket denetimleri ile.  
-  
-16. Değerini değiştirme **(ad)** özelliği için **NumericUpDown** denetimini **toplam**.  
-  
-     Aşağıdaki resimde gösterildiği gibi ilk satırı oluşturduğunuzu düşünün.  
-  
-     ![Matematik testi ilk satırının](../ide/media/express_firstrow.png "Express_firstRow")  
-Matematik testi ilk satırının  
-  
-### <a name="to-add-controls-for-the-subtraction-multiplication-and-division-problems"></a>Çıkarma, çarpma ve bölme sorunları için denetimleri eklemek için  
-  
-1.  Toplama problemi (dört etiket denetimleri ve NumericUpDown denetimi) için tüm beş denetimleri kopyalayın ve ardından bunları yapıştırın.  
-  
-     Form hala seçili beş yeni denetimler içerir.  
-  
-2.  Ek denetimleri hizaya gelecek şekilde tüm denetimler yerine taşıyın.  
-  
-     Ayırıcı satırları iki satır arasındaki yeterli uzaklığı vermek için kullanabilirsiniz.  
-  
-3.  Değerini değiştirme **metin** ikinci label özelliği **-** (eksi).  
-  
-4.  İlk soru işareti etiketi adı **minusLeftLabel**.  
-  
-5.  Ad ikinci soru işareti etiketi **minusRightLabel**.  
-  
-6.  Ad **NumericUpDown** denetim **fark**.  
-  
-7.  Beş denetimleri iki kez daha yapıştırın.  
-  
-8.  Üçüncü satır için ilk etiket adı **timesLeftLabel**, İkinci etiketin değiştirme **metin** özelliğine **×** (çarpma oturum) ad üçüncü label **timesRightLabel**ve NumericUpDown denetimi adı **ürün**.  
-  
-9. Dördüncü satır için ilk etiket adı **dividedLeftLabel**, İkinci etiketin değiştirme **metin** özelliğine **÷** (bölme işareti) üçüncü etiket adı  **dividedRightLabel**ve NumericUpDown denetimi adı **sayının**.  
-  
+> Bu konu, temel kodlama kavramları hakkındaki bir öğretici serisinin bir parçasıdır. Öğreticiye genel bakış için bkz. [öğretici 2: zamanlı matematik testi oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).
+
+## <a name="to-create-a-project-and-set-properties-for-a-form"></a>Bir proje oluşturun ve bir formun özelliklerini ayarlamak için
+
+1.  Menü çubuğunda, **dosya** > **yeni** > **proje**.
+
+2.  İçinde **yüklü şablonlar** listesinde **C#** veya **Visual Basic**.
+
+3.  Şablonlar listesinde seçin **Windows Forms uygulaması** şablon adlandırın **matematik sınavı**ve ardından **Tamam** düğmesi.
+
+     Adlı bir form *Form1.cs* veya *Form1.vb* , seçtiğiniz programlama diline bağlı olarak görünür.
+
+4.  Formu seçin ve ardından değiştirmek, **metin** özelliğini **matematik sınavı**.
+
+     **Özellikleri** penceresi formun özelliklerini içerir.
+
+5.  Formun boyutunu 500 piksel genişliğe ve 400 piksel uzunluğa ayarlayın değiştirin.
+
+     Form tümleşik geliştirme ortamı (IDE) sol alt köşesinde doğru boyutu görünene kadar kenarlarını sürükleyerek yeniden boyutlandırabilirsiniz. Alternatif olarak, değerlerini değiştirebilirsiniz **boyutu** özelliği.
+
+6.  Değiştirin **FormBorderStyle** özelliğini **Fixed3D**, ayarlayıp **MaximizeBox** özelliğini **False**.
+
+     Bu değerler, sınava girenlerin formu yeniden boyutlandırmasını engeller.
+
+## <a name="to-create-the-time-remaining-box"></a>Kutusunda kalan süreyi oluşturmak için
+
+1.  Ekleme bir <xref:System.Windows.Forms.Label> denetimi **araç kutusu**ve ardından değerini kendi **(ad)** özelliğini **timeLabel**.
+
+     Bu etiket, sağ üst köşedeki sınavda kalan saniye sayısını gösteren bir kutusu olacaktır.
+
+2.  Değişiklik **AutoSize** özelliğini **False** böylece kutuyu yeniden boyutlandırabilirsiniz.
+
+3.  Değişiklik **BorderStyle** özelliğini **FixedSingle** kutu çevresinde bir çizgi çizmek için.
+
+4.  Ayarlama **boyutu** özelliğini **200, 30**.
+
+5.  Etiketi, mavi aralık çizgilerinin görüneceği yeri formun sağ üst köşesine taşıyın.
+
+     Bu satırlar formdaki denetimleri hizalamanıza yardımcı olur.
+
+6.  İçinde **özellikleri** penceresinde seçin **metin** özelliği ve ardından **geri** değerini temizlemek için anahtar.
+
+7.  Artı işaretini seçin (**+**) yanındaki **yazı tipi** özelliği ve değerini değiştirin **boyutu** özelliğini **15.75 olarak**.
+
+     Aşağıdaki resmin gösterdiği gibi birkaç yazıtipi özelliğini değiştirebilirsiniz.
+
+     ![Yazı tipi boyutunu gösteren Özellikler penceresi](../ide/media/express_setfontsize.png)
+
+8.  Başka bir etiket denetimi ekleme **araç kutusu**ve ardından yazı tipi boyutunu ayarlayın **15.75 olarak**.
+
+9. Ayarlama **metin** özelliğini **kalan süre**.
+
+10. Etiket hemen soluna hizalanacağı şekilde taşıyın **timeLabel** etiketi.
+
+### <a name="to-add-controls-for-the-addition-problems"></a>Toplama problemleri için denetimler ekleme
+
+1.  Bir etiket denetimi ekleme **araç kutusu**ve ardından kendi **metin** özelliğini **?** (soru işareti).
+
+2.  Ayarlama **AutoSize** özelliğini **False**.
+
+3.  Ayarlama **boyutu** özelliğini **60, 50**.
+
+4.  Yazı tipi boyutunu **18**.
+
+5.  Ayarlama **TextAlign** özelliğini **MiddleCenter**.
+
+6.  Ayarlama **konumu** özelliğini **50, 75** denetimin form üzerinde yerleştirmek için.
+
+7.  Ayarlama **(ad)** özelliğini **plusLeftLabel**.
+
+8.  Seçin **plusLeftLabel** etiket ve ardından ya da **Ctrl**+**C** anahtarları veya **kopyalama** üzerinde  **Düzen** menüsü.
+
+9. Ya da seçerek etiketi üç kez yapıştırın **Ctrl**+**V** anahtarları veya **Yapıştır** üzerinde **Düzenle** menüsü.
+
+10. Böylece bir satır sağında bulunan üç yeni etiket düzenleyin **plusLeftLabel** etiketi.
+
+     Boşluk satırlarını aralarında boşluk ve satır yukarı kullanabilirsiniz.
+
+11. İkinci etiketin değerini **metin** özelliğini **+** (artı).
+
+12. Üçüncü etiketin değerini **(ad)** özelliğini **plusRightLabel**.
+
+13. Dördüncü etiketin değerini **metin** özelliğini **=** (eşittir işareti).
+
+14. Ekleme bir <xref:System.Windows.Forms.NumericUpDown> denetimi **araç kutusu**, yazı tipi boyutunu ayarlayın **18**ve genişliğini ayarlayın **100**.
+
+     Bu bir sonraki denetim türü hakkında daha fazla öğreneceksiniz.
+
+15. NumericUpDown denetimini ek sorunun etiket denetimleri ile hizalar.
+
+16. Değiştirin **(ad)** NumericUpDown denetimi için özellik **toplam**.
+
+     Aşağıdaki resmin gösterdiği gibi ilk satırı oluşturdunuz.
+
+     ![Matematik sınavının ilk satırı](../ide/media/express_firstrow.png)
+
+## <a name="to-add-controls-for-the-subtraction-multiplication-and-division-problems"></a>Çıkarma, çarpma ve bölme problemleri için denetimler ekleme
+
+1.  Beş denetimin tümünü (dört Label denetimi ve NumericUpDown denetimi) ek sorun için kopyalayın ve ardından bunları yapıştırın.
+
+     Form, hala seçili olan beş yeni denetimler içerir.
+
+2.  Ek denetimler altında hizaya gelecek şekilde tüm denetimleri yere taşıyın.
+
+     Boşluk satırlarını iki satır arasında yeterli uzaklık vermek için kullanabilirsiniz.
+
+3.  Değiştirin **metin** İkinci etiketin özelliği **-** (eksi işareti).
+
+4.  İlk soru işareti etiketini ad **minusLeftLabel**.
+
+5.  İkinci soru işareti etiketini ad **minusRightLabel**.
+
+6.  NumericUpDown denetimini **fark**.
+
+7.  Beş denetimi iki kez yapıştırın.
+
+8.  Üçüncü satırda ilk etiketi adı **timesLeftLabel**, İkinci etiketin değiştirme **metin** özelliğini **×** üçüncüetiketiolarakadlandırın(çarpıişareti)**timesRightLabel**ve NumericUpDown denetimini **ürün**.
+
+9. Dördüncü satır için ilk etiketin adını **dividedLeftLabel**, İkinci etiketin değiştirme **metin** özelliğini **bölü;** (bölme oturum) üçüncü etiketi adı  **dividedRightLabel**ve NumericUpDown denetimini **bölümü**.
+
     > [!NOTE]
-    >  Bu öğretici çarpma oturum × ve bölme oturum ÷ kopyalayın ve forma yapıştırın.  
-  
-### <a name="to-add-a-start-button-and-set-the-tab-index-order"></a>Başlat düğmesi ekleme ve sekme dizin sırasını ayarlamak için  
-  
-1.  Ekleme bir **düğmesini** Denetim Araç Kutusu'ndan ve ardından kendi **(ad)** özelliğine **startButton**.  
-  
-2.  Ayarlama **metin** özelliğine **test Başlat**.  
-  
-3.  Yazı tipi boyutunu ayarlamak **14**.  
-  
-4.  Ayarlama **AutoSize** özelliğine **doğru**, metnin sığması için otomatik olarak yeniden boyutlandırmak için düğmesini neden olur.  
-  
-5.  Orta düğme formun alt kısmındaki yakın.  
-  
-6.  Değerini **TabIndex** özelliği için **startButton** denetimini **1**.  
-  
+    > Bu öğreticide çarpı işareti × ve bölme oturum bölü; kopyalayın ve bunları form üzerine yapıştırın.
+
+## <a name="to-add-a-start-button-and-set-the-tab-index-order"></a>Bir başlatma düğmesi ekleme ve sekme indisi sırasını ayarlama
+
+1.  Ekleme bir <xref:System.Windows.Forms.Button> denetimi **araç kutusu**ve ardından kendi **(ad)** özelliğini **startButton**.
+
+2.  Ayarlama **metin** özelliğini **sınavın başlaması**.
+
+3.  Yazı tipi boyutunu **14**.
+
+4.  Ayarlama **AutoSize** özelliğini **True**, düğme metin sığdırmak için otomatik olarak yeniden boyutlandırmak neden olur.
+
+5.  Düğmeyi formun altına yakın ortalayın.
+
+6.  Değerini **TabIndex** özelliği **startButton** denetimini **1**.
+
     > [!NOTE]
-    >  **TabIndex** özelliği test alanın SEKME tuşuna seçtiğinde denetimlerini sırasını ayarlar. Nasıl çalıştığını görmek için herhangi bir iletişim kutusunu açın (örneğin, menü çubuğunda, tercih **dosya**, **açmak**) ve ardından SEKME tuşuna birkaç kez seçin. Nasıl imlecinizi denetimi denetimi her zaman için SEKME tuşunu seçin taşınır izleyin. Bu form oluştururken Programcı sırasını karar.  
-  
-7.  Değerini **TabIndex** özelliği NumericUpDown toplam denetimi için **2**, fark denetimi için **3**, ürün denetimi için **4**ve sayının denetimi için **5**.  
-  
-     Form aşağıdaki gibi görünmelidir.  
-  
-     ![İlk matematik testi form](../ide/media/express_formlaidout.png "Express_FormLaidOut")  
-İlk matematik testi formu  
-  
-8.  Doğrulamak için olup olmadığını **TabIndex** özelliği çalışır beklediğiniz, kaydetme ve F5 tuşuna seçerek veya seçerek programınızı çalıştırma gibi **hata ayıklama**, **hata ayıklamayı Başlat** menü çubuğunda, ve ardından SEKME tuşuna birkaç kez seçin.  
-  
-### <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için  
-  
--   Öğretici bir sonraki adıma dönmek için bkz: [2. adım: rasgele bir toplama problemi oluşturma](../ide/step-2-create-a-random-addition-problem.md).  
-  
--   Genel Bakış konuya geri dönmek için bkz: [Eğitmen 2: bir zaman aşımına matematik test oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).
+    > **TabIndex** özelliği, sınava giren seçtiğinde denetimlerin sırasını ayarlar **sekmesini** anahtarı. Nasıl çalıştığını görmek için herhangi bir iletişim kutusunu açın (örneğin, menü çubuğunda, **dosya** > **açın**) ve ardından **sekmesini** anahtar birkaç kez. Nasıl imlecinizin denetimden denetime her zaman, hareket ettiğini izleyin **sekmesini** anahtarı. Programcı sipariş oluşturan oluştururken verdi.
+
+7.  Değerini **TabIndex** özelliğinin değerini NumericUpDown toplam denetimi için için **2**, fark denetimi için **3**, ürün denetimi için **4**ve bölüm denetimi için **5**.
+
+     Form aşağıdaki gibi görünmelidir.
+
+     ![İlk matematik sınavı formu](../ide/media/express_formlaidout.png)
+
+8.  Doğrulamak için olup olmadığını **TabIndex** beklediğiniz, kaydedin ve seçerek programınızı çalıştırma özelliği çalışır **F5** anahtar veya göre seçme **hata ayıklama**  >  **Hata ayıklamayı Başlat** menüsünde çubuk ve ardından **sekmesini** anahtar birkaç kez.
+
+## <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için
+
+-   Sonraki öğretici adımına gitmek için bkz: [2. adım: rasgele bir toplama problemi oluşturma](../ide/step-2-create-a-random-addition-problem.md).
+
+-   Genel Bakış konusuna dönmek için bkz: [öğretici 2: zamanlı matematik testi oluşturma](../ide/tutorial-2-create-a-timed-math-quiz.md).

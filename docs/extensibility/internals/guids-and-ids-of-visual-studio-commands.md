@@ -1,5 +1,5 @@
 ---
-title: GUID ve Visual Studio komutları kimliklerini | Microsoft Docs
+title: GUID'leri ve kimlikleri Visual Studio komutları | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -17,52 +17,53 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1566b7e252867779e2bf7cbf26e2a6cbcb8b009f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 35e2c354293679d9cb6044b0c5f21b77aadb7f52
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220166"
 ---
-# <a name="guids-and-ids-of-visual-studio-commands"></a>GUID ve Visual Studio komut kimlikleri
-Visual Studio tümleşik geliştirme ortamı (IDE) dahil komutların GUID ve ID değerleri, Visual Studio SDK'sı bir parçası olarak yüklenen .vsct dosyalarında tanımlanır. Daha fazla bilgi için bkz: [IDE-Defined komutlar, menüler ve grupları](../../extensibility/internals/ide-defined-commands-menus-and-groups.md).  
+# <a name="guids-and-ids-of-visual-studio-commands"></a>GUID'leri ve kimlikleri, Visual Studio komutları
+Visual Studio tümleşik geliştirme ortamında (IDE) dahil komutların GUID ve ID değerleri Visual Studio SDK'ın bir parçası olarak yüklenen .vsct dosyaları tanımlanır. Daha fazla bilgi için [IDE tanımlı komutlar, menüler ve gruplar](../../extensibility/internals/ide-defined-commands-menus-and-groups.md).  
   
- .Vsct dosyalarında tanımlanan IDE nesneleri ile çalışma hakkında daha fazla bilgi için bkz: [genişletme menüleri ve komutları](../../extensibility/extending-menus-and-commands.md).  
+ Tanımlanan IDE nesneler ile çalışma hakkında daha fazla bilgi için *.vsct* dosyaları görmek [genişletmek menüler ve komutlar](../../extensibility/extending-menus-and-commands.md).  
   
-## <a name="finding-a-command-definition"></a>Bir komut tanımı bulma  
- Visual Studio birden fazla bin komutları tanımladığından, tüm burada listelemek için zordur. Bunun yerine, bir komut tanımı bulmak için aşağıdaki adımları izleyin.  
+## <a name="find-a-command-definition"></a>Bir komut tanımı bulunamadı  
+ Visual Studio 1000'den fazla komutları tanımladığından, tüm burada listeleyin zordur. Bunun yerine, bir komut tanımı bulmak için aşağıdaki adımları izleyin.  
   
-#### <a name="to-locate-a-command-definition"></a>Bir komut tanımı bulmak için  
+### <a name="to-locate-a-command-definition"></a>Bir komut tanımı bulunamadı  
   
-1.  Aşağıdaki dosyalarda Visual Studio'da açın *Visual Studio SDK yükleme yolu*\VisualStudioIntegration\Common\Inc\ klasörü: SharedCmdDef.vsct, ShellCmdDef.vsct, VsDbgCmdUsed.vsct, Venusmenu.vsct.  
+1. Aşağıdaki dosyaları Visual Studio'da açın *< Visual Studio SDK yükleme yolunu\>\VisualStudioIntegration\Common\Inc\\*  klasör: *SharedCmdDef.vsct*, *ShellCmdDef.vsct*, *VsDbgCmdUsed.vsct*, *Venusmenu.vsct*.  
   
-     Visual Studio komutların çoğu SharedCmdDef.vsct ve ShellCmdDef.vsct tanımlanır. Hata ayıklayıcı için ilgilidir komutları VsDbgCmdUsed.vsct tanımlar ve Web geliştirme için belirli komutları Venusmenu.vsct tanımlar.  
+    Çoğu Visual Studio komutları tanımlanan *SharedCmdDef.vsct* ve *ShellCmdDef.vsct*. *VsDbgCmdUsed.vsct* hata ayıklayıcıya, ilgili komutları tanımlar ve *Venusmenu.vsct* Web geliştirmeye özgü komutlar tanımlar.  
   
-2.  Komutu bir menü öğesini menü öğesinin tam metin unutmayın. Komut bir araç çubuğunda ise üzerinde duraklattığınızda görüntülenen araç ipucu metni unutmayın.  
+2. Komut bir menü öğesi ise, menü öğesinin tam metin unutmayın. Araç çubuğu üzerindeki bir düğme komutsa üzerine geldiğinizde görüntülenen araç ipucu metni unutmayın.  
   
-3.  Açmak için CTRL + F tuşlarına basın **Bul** iletişim kutusu.  
+3. Tuşuna **Ctrl**+**F** açmak için **Bul** iletişim kutusu.  
   
-4.  İçinde **Aranan** 2. adımda not ettiğiniz metin yazın.  
+4. İçinde **Aranan** 2. adımda not ettiğiniz metin yazın.  
   
-5.  Doğrulayın **tüm açık belgeleri** görüntülenen **konum** kutusu.  
+5. Doğrulayın **tüm açık belgeleri** görüntülenen **konum** kutusu.  
   
-6.  Tıklatın **Sonrakini Bul** metin seçildiyse kadar düğme `<Strings>` bölümünü bir [Button öğesi](../../extensibility/button-element.md).  
+6. Tıklayın **Sonrakini Bul** içinde metin seçilene kadar düğmesini `<Strings>` bölümünü bir [Button öğesi](../../extensibility/button-element.md).  
   
-     `<Button>` Komutu görünen öğedir komut tanımı.  
+    `<Button>` Komutu görünen öğedir komut tanımı.  
   
- Komut tanımı bulduğunuzda, komutu bir kopyasını başka bir menü veya araç çubuğunda oluşturarak koyabilirsiniz bir [CommandPlacement öğesi](../../extensibility/commandplacement-element.md) aynı olan `guid` ve `id` değerleri olarak komutu. Daha fazla bilgi için bkz: [, yeniden kullanılabilir grupları düğmeler oluşturma](../../extensibility/creating-reusable-groups-of-buttons.md).  
+   Komut tanımı bulduğunuzda, komutu bir kopyasını başka bir menü veya araç çubuğunda oluşturarak koyabilirsiniz bir [CommandPlacement öğesi](../../extensibility/commandplacement-element.md) aynı olan `guid` ve `id` değerleri komutu. Daha fazla bilgi için [yeniden kullanılabilir düğme grupları oluşturma](../../extensibility/creating-reusable-groups-of-buttons.md).  
   
 ### <a name="special-cases"></a>Özel durumlar  
- Aşağıdaki durumlarda menü metni veya araç ipucu metni tam komut tanımı'nda nedir eşleşmiyor olabilir.  
+ Aşağıdaki durumlarda, araç ipucu metnini ve menü metni tam olarak komut tanımında nedir eşleşmiyor olabilir.  
   
--   Altı çizili bir karaktere gibi içeren menü öğeleri **yazdırma** komutunu **dosya** menüsünde, P çizilir.  
+-   Gibi bir altı çizili karakter içeren bir menü öğelerini **yazdırma** komutunu **dosya** Burada, menü *P* çizilir.  
   
-     Menü öğesi adlarında '&' karakteri koyarak karakter görüntülenir altı çizili olarak. Ancak, özel karakterler belirtmek için '&' karakteri kullanır ve görüntülenecek olan ve işareti yazılmalıdır olduğunu gerektirir, XML .vsct dosyaları yazılmış olarak&amp;'. Bu nedenle, bir dosyadaki .vsct **P**azdır komutu görünür olarak '&amp;yazdırma '.  
+     Ve işareti tarafından öncelenen karakterleri (&) karakter menü öğesi adları, görüntülenen altı çizili olarak. Ancak, *.vsct* dosyaları, özel karakterler belirtmek için (&) karakteri kullanır ve görüntülenecek ve işareti olarak yazılmalıdır olduğunu gerektiren XML'de yazılır  *&amp;amp;*. Bu nedenle bir *.vsct* dosyası **yazdırma** komut görünür olarak  *&amp;amp; Yazdırma*.  
   
--   Dinamik metin sahip komutları **kaydetmek** *geçerli Filename*ve dinamik olarak üretilen öğeler gibi menü öğeleri üzerindeki **son kullanılan dosyalar** listesi.  
+-   Dinamik metin sahip komutları **Kaydet** \<geçerli dosya\>ve dinamik olarak üretilen öğeler gibi menü öğeleri üzerinde **son kullanılan dosyalar** listesi.  
   
-     Dinamik metin araması yapmak için güvenilir bir yolu yoktur. Bunun yerine, istenen komut bakarak barındıran Grup bulma [GUID ve Visual Studio menüleri kimlikleri](../../extensibility/internals/guids-and-ids-of-visual-studio-menus.md) veya [GUID ve kimlikleri, Visual Studio araç çubukları](../../extensibility/internals/guids-and-ids-of-visual-studio-toolbars.md)ve arama söz konusu grubun kimliği. Komut tanımı grup olarak yoksa kendi [üst öğesi](../../extensibility/parent-element.md), SharedCmdPlace.vsct ve ShellCmdPlace.vsct (veya hata ayıklayıcı komutlarını VsDbgCmdPlace.vsct) arama bir `<CommandPlacement>` üst ayarlar öğesi komutu. SharedCmdPlace.vsct, ShellCmdPlace.vsct, andVsDbgCmdPlace.vsct olan *Visual Studio SDK yükleme yolu*\VisualStudioIntegration\Common\Inc\ klasör.  
+     Dinamik metin araması için güvenilir bir yolu yoktur. Bunun yerine, danışmanlık tarafından istenen komut barındıran Grup bulma [GUID'leri ve kimlikleri, Visual Studio menü](../../extensibility/internals/guids-and-ids-of-visual-studio-menus.md) veya [GUID'leri ve kimlikleri, Visual Studio araç çubukları](../../extensibility/internals/guids-and-ids-of-visual-studio-toolbars.md)ve arama bu grubun kimliği. Komut tanımı grup olarak yoksa, [üst öğe](../../extensibility/parent-element.md), arama *SharedCmdPlace.vsct* ve *ShellCmdPlace.vsct* (veya  *VsDbgCmdPlace.vsct* hata ayıklayıcı komutları için) için bir `<CommandPlacement>` ayarlar komutu üst öğesi. *SharedCmdPlace.vsct*, *ShellCmdPlace.vsct*, ve *VsDbgCmdPlace.vsct* bulunan *\<Visual Studio SDK yükleme yolunu\>\ VisualStudioIntegration\Common\Inc\\* klasör.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [MenuCommands Vs. OleMenuCommands](../../extensibility/menucommands-vs-olemenucommands.md)   
- [Visual Studio komut tablosu (. Vsct) dosyaları](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [MenuCommands vs. OleMenuCommands](../../extensibility/menucommands-vs-olemenucommands.md)   
+ [Visual Studio komut tablosu (.vsct) dosyaları](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)   
  [VSCT XML Şeması Başvurusu](../../extensibility/vsct-xml-schema-reference.md)

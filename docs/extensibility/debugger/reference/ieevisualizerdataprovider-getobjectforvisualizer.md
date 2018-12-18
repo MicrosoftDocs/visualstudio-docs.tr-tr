@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 994632a0883d45e550d519deb3288b959691e080
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af233b7a4a7fe482ce258811c8a2833f335ae1f6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49861546"
 ---
 # <a name="ieevisualizerdataprovidergetobjectforvisualizer"></a>IEEVisualizerDataProvider::GetObjectForVisualizer
-Bu yöntem bu Görselleştirici temsil eden nesnesini alır.  
+Bu yöntem, bu Görselleştirici temsil eden nesneyi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int GetObjectForVisualizer(
  [out] Bu Görselleştirici tarafından temsil edilen nesne  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `GetObjectForVisualizer` önbelleğe alınan bir nesnenin sürümü iade etmesine izin verilir. Arayan güncel bir nesnedir, ardından bunu çağıracak emin olmak istiyorsa [GetNewObjectForVisualizer](../../../extensibility/debugger/reference/ieevisualizerdataprovider-getnewobjectforvisualizer.md).  
+ `GetObjectForVisualizer` Nesne önbelleğe alınmış bir sürümü iade etmesine izin verilir. Çağıranın güncel bir nesnedir ve ardından bunu çağıracak emin olmak istiyorsa [GetNewObjectForVisualizer](../../../extensibility/debugger/reference/ieevisualizerdataprovider-getnewobjectforvisualizer.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEEVisualizerDataProvider](../../../extensibility/debugger/reference/ieevisualizerdataprovider.md)   

@@ -19,101 +19,102 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5c59ffc2324f25c42b505505b0dbea9160ef023a
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: efe2e5ab9f2074c1706f14ac52f655921af4b9a2
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39080470"
 ---
-# <a name="how-to-specify-which-files-are-published-by-clickonce"></a>Nasıl yapılır: ClickOnce Tarafından Hangi Dosyaların Yayımlandığını Belirtme
-Yayımlama sırasında bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] projedeki uygulama, tüm kod olmayan dosyalar uygulama ile birlikte dağıtılır. Bazı durumlarda, değil istediğiniz veya belirli dosyaları yayımlamanız gerekir veya koşullara göre belirli dosyaları yüklemek isteyebilirsiniz. Visual Studio dosyaları dışarıda bırak, dosyaları veri dosyası veya önkoşul işaretlemek ve koşullu yüklemek için dosya grupları oluşturmak için özellikleri sağlar.  
+# <a name="how-to-specify-which-files-are-published-by-clickonce"></a>Nasıl yapılır: ClickOnce tarafından hangi dosyaların yayımlandığını belirtme
+Yayımlama sırasında bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] projedeki uygulama, tüm kod dışı dosyalara yanı sıra uygulama dağıtılır. Bazı durumlarda değil istediğiniz veya belirli dosyaları yayımlamanız gerekir veya koşullara göre belirli dosyaları yüklemek isteyebilirsiniz. Visual Studio dosyaları dışarıda bırak, dosyalar, veri dosyalarını veya önkoşul olarak işaretleme ve koşullu yüklemek için dosya grupları oluşturmak için özellikler sunar.  
   
- Dosyaları bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama yönetilir **uygulama dosyalarını** iletişim kutusu, erişilebilir **Yayımla** sayfasında **Proje Tasarımcısı**.  
+ Dosyaları bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama yönetilen **uygulama dosyaları** iletişim kutusu, erişilebilir **Yayımla** sayfasının **Proje Tasarımcısı**.  
   
- Başlangıçta, adlı tek bir dosya grubu yoktur **(gerekli)**. Ek dosya grupları oluşturun ve bunlara dosyalar atayabilirsiniz. Değiştiremezsiniz **indirme grubu** uygulamayı çalıştırmak için gerekli olan dosyalar için. Örneğin, uygulamanın .exe veya dosyaları veri dosyalarını ait olmalıdır üzere işaretlenmiş **(gerekli)** grubu.  
+ Başlangıçta, adlı tek bir dosya grubu var. **(gerekli)**. Ek dosya grupları oluşturun ve dosyalarını atayabilirsiniz. Değiştiremezsiniz **indirme grubu** uygulamayı çalıştırmak gerekli olan dosyalar için. Örneğin, uygulamanın .exe veya dosyaları veri dosyalarını ait olarak işaretledi **(gerekli)** grubu.  
   
- Varsayılan yayımlama durum ile bir dosya değerini etiketli **(otomatik)**. Örneğin, uygulamanın .exe yayımla durumuna sahip **Ekle (otomatik)** varsayılan olarak.  
+ Yayımlama durumu varsayılan bir dosyanın değeri ile etiketlenir **(otomatik)**. Örneğin, uygulamanın .exe yayımla durumuna sahip **Ekle (otomatik)** varsayılan olarak.  
   
- İle dosyaları **yapı eylemi** özelliğini **içerik** uygulama dosyaları olarak atanan ve varsayılan olarak dahil olarak işaretlenir. Bunlar eklenebilen, hariç veya veri dosyaları olarak işaretlenmiş. Özel durumlar aşağıdaki gibidir:  
+ İle dosyaları **derleme eylemi** özelliğini **içerik** uygulama dosyaları belirlenmiştir ve varsayılan olarak dahil olarak işaretlenir. Bunlar eklenebilen, hariç veya veri dosyaları olarak işaretlenmiş. Özel durumlar aşağıdaki gibidir:  
   
--   SQL veritabanı (.mdf ve .mdb) ve XML dosyaları gibi veri dosyalarını varsayılan veri dosyaları olarak işaretlenir.  
+-   SQL veritabanı gibi veri dosyaları (*.mdf* ve *.mdb*) dosyalarını ve XML dosyalarını işaretlenir veri dosyaları olarak varsayılan olarak.  
   
--   Derlemeler (.dll dosyaları) yönelik başvurular referans eklediğinizde, aşağıdaki gibi atanır: varsa **kopya yerel** olan **False**, varsayılan bir önkoşul derleme olarak işaretlenmiş (**önkoşul ( Otomatik)**), bulunmalıdır GAC'ye uygulama yüklenmeden önce. Varsa **kopya yerel** olan **True**, derleme varsayılan uygulama bütünleştirilmiş olarak işaretlenmiş (**Ekle (otomatik)**) ve yükleme sırasında uygulama klasörüne kopyalanır. Bir COM referansı görünür **uygulama dosyalarını** iletişim kutusu (olarak .ocx dosyası) yalnızca IF kendi **Isolated** özelliği ayarlanmış **doğru**. Varsayılan olarak dahil edilir.  
+-   Derlemelere başvuruları (*.dll* dosyaları) başvuru eklediğinizde, aşağıdaki gibi belirlenmiştir: varsa **Yereli Kopyala** olduğu **False**, varsayılan olarak bir önkoşul olarak işaretlenmiş derleme (**önkoşul (otomatik)**), bulunmalıdır GAC'de uygulama yüklenmeden önce. Varsa **Yereli Kopyala** olduğu **True**, derleme varsayılan olarak bir uygulama derleme olarak işaretlenir (**Ekle (otomatik)**) ve yükleme sırasında uygulama klasörüne kopyalanır. Bir COM başvurusu görünür **uygulama dosyaları** iletişim kutusu (olarak bir *.ocx* dosyası) yalnızca kendi **yalıtılmış** özelliği **True**. Varsayılan olarak dahil edilir.  
   
-### <a name="to-add-files-to-the-application-files-dialog-box"></a>Uygulama dosyaları iletişim kutusu için dosyaları ekleme  
+### <a name="to-add-files-to-the-application-files-dialog-box"></a>Uygulama dosyaları iletişim kutusuna dosya eklemek için  
   
-1.  Bir veri dosyası seçin **Çözüm Gezgini**.  
+1.  Bir veri dosyasını seçin **Çözüm Gezgini**.  
   
-2.  Özellikler penceresinde değiştirin **yapı eylemi** özelliğine **içerik** değeri.  
+2.  Özellikler penceresinde değişiklik **derleme eylemi** özelliğini **içerik** değeri.  
   
-### <a name="to-exclude-files-from-clickonce-publishing"></a>ClickOnce yayımlama dosyaları dışlamak için  
+### <a name="to-exclude-files-from-clickonce-publishing"></a>ClickOnce yayımlama dosyaları hariç tutmak için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **Yayımla** sekmesi.  
+2.  Tıklayın **Yayımla** sekmesi.  
   
-3.  Tıklatın **uygulama dosyalarını** açmak için düğmeye **uygulama dosyalarını** iletişim kutusu.  
+3.  Tıklayın **uygulama dosyaları** açmak için düğmeyi **uygulama dosyaları** iletişim kutusu.  
   
-4.  İçinde **uygulama dosyalarını** iletişim kutusunda, dışlamak istediğiniz dosyayı seçin.  
+4.  İçinde **uygulama dosyaları** iletişim kutusunda, çıkarmak istediğiniz dosyayı seçin.  
   
-5.  İçinde **yayımlama durumu** alan, select **hariç** aşağı açılan listeden.  
+5.  İçinde **yayımlama durumu** alanın, Seç **hariç** aşağı açılan listeden.  
   
 ### <a name="to-mark-files-as-data-files"></a>Dosyaları veri dosyaları olarak işaretlemek için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **Yayımla** sekmesi.  
+2.  Tıklayın **Yayımla** sekmesi.  
   
-3.  Tıklatın **uygulama dosyalarını** açmak için düğmeye **uygulama dosyalarını** iletişim kutusu.  
+3.  Tıklayın **uygulama dosyaları** açmak için düğmeyi **uygulama dosyaları** iletişim kutusu.  
   
-4.  İçinde **uygulama dosyalarını** iletişim kutusunda, dışlamak istediğiniz dosyayı seçin.  
+4.  İçinde **uygulama dosyaları** iletişim kutusunda, dışlamak istediğiniz dosyayı seçin.  
   
-5.  İçinde **yayımlama durumu** alan, select **veri dosyası** aşağı açılan listeden.  
+5.  İçinde **yayımlama durumu** alanın, Seç **veri dosyası** aşağı açılan listeden.  
   
 ### <a name="to-mark-files-as-prerequisites"></a>Dosyaları önkoşul olarak işaretlemek için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **Yayımla** sekmesi.  
+2.  Tıklayın **Yayımla** sekmesi.  
   
-3.  Tıklatın **uygulama dosyalarını** açmak için düğmeye **uygulama dosyalarını** iletişim kutusu.  
+3.  Tıklayın **uygulama dosyaları** açmak için düğmeyi **uygulama dosyaları** iletişim kutusu.  
   
-4.  İçinde **uygulama dosyalarını** iletişim kutusunda, bir önkoşul işaretlemek istediğiniz uygulama derlemesi (.dll dosyası) seçin. Uygulamanız için bu listesinde görünmesi uygulama derlemesine başvuru olması gerektiğini unutmayın.  
+4.  İçinde **uygulama dosyaları** iletişim kutusunda, uygulama derlemeyi seçin (*.dll* dosyası) bir önkoşul olarak işaretlemek istediğiniz. Uygulamanızı uygulama derlemesine bir başvuru listesinde görünmesi için sırayla sahip olmaları gerektiğini unutmayın.  
   
-5.  İçinde **yayımlama durumu** alan, select **önkoşul** aşağı açılan listeden.  
+5.  İçinde **yayımlama durumu** alanın, Seç **önkoşul** aşağı açılan listeden.  
   
 ### <a name="to-add-a-new-file-group"></a>Yeni bir dosya grubu eklemek için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **Yayımla** sekmesi.  
+2.  Tıklayın **Yayımla** sekmesi.  
   
-3.  Tıklatın **uygulama dosyalarını** açmak için düğmeye **uygulama dosyalarını** iletişim kutusu.  
+3.  Tıklayın **uygulama dosyaları** açmak için düğmeyi **uygulama dosyaları** iletişim kutusu.  
   
-4.  İçinde **uygulama dosyalarını** iletişim kutusunda **grup** yeni gruba dahil etmek istediğiniz bir dosya için alan.  
+4.  İçinde **uygulama dosyaları** iletişim kutusunda **grubu** yeni gruba dahil etmek istediğiniz bir dosya için alan.  
   
     > [!NOTE]
-    >  Dosyaları olmalıdır **yapı eylemi** özelliğini **içerik** dosya adları görünmesi **uygulama dosyalarını** iletişim kutusu.  
+    >  Dosyaları olmalıdır **derleme eylemi** özelliğini **içerik** dosya adlarını görünmesi **uygulama dosyaları** iletişim kutusu.  
   
-5.  İçinde **indirme grubu** alan, select  **\<yeni... >** aşağı açılan listeden.  
+5.  İçinde **indirme grubu** alanın, Seç  **\<yeni … >** aşağı açılan listeden.  
   
 6.  İçinde **yeni grup** iletişim kutusunda grup için bir ad girin ve ardından **Tamam**.  
   
-### <a name="to-add-a-file-to-a-group"></a>Bir gruba bir dosya eklemek için  
+### <a name="to-add-a-file-to-a-group"></a>Bir dosya grubuna eklemek için  
   
-1.  Seçili bir proje ile **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
+1.  Seçili bir projeyle **Çözüm Gezgini**, **proje** menüsünde tıklatın **özellikleri**.  
   
-2.  Tıklatın **Yayımla** sekmesi.  
+2.  Tıklayın **Yayımla** sekmesi.  
   
-3.  Tıklatın **uygulama dosyalarını** açmak için düğmeye **uygulama dosyalarını** iletişim kutusu.  
+3.  Tıklayın **uygulama dosyaları** açmak için düğmeyi **uygulama dosyaları** iletişim kutusu.  
   
-4.  İçinde **uygulama dosyalarını** iletişim kutusunda **grup** yeni gruba dahil etmek istediğiniz bir dosya için alan.  
+4.  İçinde **uygulama dosyaları** iletişim kutusunda **grubu** yeni gruba dahil etmek istediğiniz bir dosya için alan.  
   
-5.  İçinde **indirme grubu** alanında, aşağı açılan listeden bir grup seçin.  
+5.  İçinde **indirme grubu** alanında, aşağı açılan listeden bir grubu seçin.  
   
     > [!NOTE]
-    >  Değiştiremezsiniz **indirme grubu** uygulamayı çalıştırmak için gerekli olan dosyalar için.  
+    >  Değiştiremezsiniz **indirme grubu** uygulamayı çalıştırmak gerekli olan dosyalar için.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ClickOnce uygulamalarını yayımlama](../deployment/publishing-clickonce-applications.md)   
- [Nasıl yapılır: Yayımlama Sihirbazını Kullanarak ClickOnce Uygulaması Yayımlama](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)
+ [Nasıl yapılır: yayımlama sihirbazını kullanarak ClickOnce uygulaması yayımlama](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)

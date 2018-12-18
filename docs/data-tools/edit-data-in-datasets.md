@@ -12,14 +12,16 @@ ms.assetid: 50d5c580-fbf7-408f-be70-e63ac4f4d0eb
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: f9acc81270ecf9c0dfc60d3e1cfed524e0ce97f5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c1ad74243c70b4ca7aaa8460759abbc898d30bb9
+ms.sourcegitcommit: 30f653d9625ba763f6b58f02fb74a24204d064ea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36757155"
 ---
 # <a name="edit-data-in-datasets"></a>Veri kümelerindeki verileri düzenleme
 Herhangi bir veritabanı bir tablodaki verileri düzenleme çok gibi veri tablolarındaki verileri düzenleyin. İşlem ekleme, güncelleştirme ve tablodaki kayıt silme içerebilir. Veri bağlama formunda, hangi alanlar kullanıcı düzenlenebilir belirtebilirsiniz. Bu durumlarda, böylece değişiklikleri veritabanına geri daha sonra gönderilebilir tüm değişiklik izleme veri bağlama altyapısı işler. Verileri programlı olarak düzenlemeleri yapın ve bu değişiklikleri veritabanına geri göndermek istiyorsanız, nesneleri ve değişiklik izleme bunu yöntemleri kullanmanız gerekir.
@@ -42,14 +44,14 @@ Satır dizini biliyorsanız, erişebilir ve satır şu şekilde düzenler:
 ## <a name="to-insert-new-rows-into-a-dataset"></a>Bir veri kümesine yeni satır eklemek için
 Verilere bağlı denetimler genellikle kullanan uygulamalar aracılığıyla yeni kayıtlar ekleme **yeni Ekle** düğmesini bir [BindingNavigator denetimi](/dotnet/framework/winforms/controls/bindingnavigator-control-windows-forms).
 
-El ile yeni kayıtlar ekleme için yeni bir veri satırı DataTable nesnesinde yöntemini çağırarak oluşturun. Satır Ekle <xref:System.Data.DataRow> koleksiyonu (<xref:System.Data.DataTable.Rows%2A>), <xref:System.Data.DataTable>:
+El ile yeni kayıtlar ekleme için yeni bir veri satırı DataTable nesnesinde yöntemini çağırarak oluşturun. Ardından, satır <xref:System.Data.DataRow> koleksiyonu (<xref:System.Data.DataTable.Rows%2A>), <xref:System.Data.DataTable>:
 
 [!code-csharp[VbRaddataEditing#1](../data-tools/codesnippet/CSharp/edit-data-in-datasets_3.cs)]
 [!code-vb[VbRaddataEditing#1](../data-tools/codesnippet/VisualBasic/edit-data-in-datasets_3.vb)]
 
 Veri kümesi veri kaynağına güncelleştirmeleri göndermek için gereken bilgileri korumak için kullanmak <xref:System.Data.DataRow.Delete%2A> yöntemi bir veri tablosunda satırları kaldırır. Örneğin, uygulamanız bir TableAdapter kullanıyorsa (veya <xref:System.Data.Common.DataAdapter>), TableAdapter's `Update` yöntemi siler olması ve veritabanında satır bir <xref:System.Data.DataRow.RowState%2A> , <xref:System.Data.DataRowState.Deleted>.
 
-Uygulamanızı bir veri kaynağına güncellemelerin gerekmez, ardından veri satır koleksiyonu doğrudan erişerek kayıtlarını kaldırmak mümkündür (<xref:System.Data.DataRowCollection.Remove%2A>).
+Uygulamanızı bir veri kaynağına güncellemelerin gerekmez varsa, veri satır koleksiyonu doğrudan erişerek kayıtlarını kaldırmak mümkündür (<xref:System.Data.DataRowCollection.Remove%2A>).
 
 #### <a name="to-delete-records-from-a-data-table"></a>Bir veri tablosundan kayıtları silmek için
 

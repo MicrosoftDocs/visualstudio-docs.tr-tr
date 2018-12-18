@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b1db0cfea540458e0c8b288430027df03fa4cf2e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 60b664680c806f5553e45854a6e678befac952fb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822242"
 ---
 # <a name="idebugprocess3getdebugreason"></a>IDebugProcess3::GetDebugReason
-Bu yöntem, hata ayıklama işlemi başlatıldı nedenini döndürür.  
+Bu yöntem, hata ayıklama işlemi başlatıldı nedeni döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int GetDebugReason(
   
 #### <a name="parameters"></a>Parametreler  
  `pReason`  
- [out] Arasında bir değer döndürür [DEBUG_REASON](../../../extensibility/debugger/reference/debug-reason.md) numaralandırması.  
+ [out] Bir değer döndürür [DEBUG_REASON](../../../extensibility/debugger/reference/debug-reason.md) sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProcess3](../../../extensibility/debugger/reference/idebugprocess3.md)   

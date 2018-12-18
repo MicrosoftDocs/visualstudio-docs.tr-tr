@@ -11,11 +11,12 @@ ms.author: svukel
 manager: viveis
 ms.workload:
 - vssdk
-ms.openlocfilehash: d916ea30dd9b72a2d8bd59e8d3d34f9e73c74877
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dcb2d1d922b4ebd4943c42c478400c5873af9cc4
+ms.sourcegitcommit: 498e39e89a89ad7bf9dcb0617424fff999b1c3b2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36302982"
 ---
 # <a name="open-folder-extensibility"></a>Açık klasör genişletilebilirliği
 
@@ -53,7 +54,7 @@ Aşağıdaki türler kullanan özellikler Klasör Aç desteklemek için yeni API
 
 ## <a name="feedback-comments-issues"></a>Geri bildirim, yorumlar, sorunları
 
-Klasörü açın ve `Microsoft.VisualStudio.Workspace.*` apı'leridir etkin geliştirme aşamasındadır. Beklenmeyen davranışları görürseniz, ilgi sürüm için bilinen sorunlar bakın. Geliştirici topluluğu oy verin ve sorunları oluşturmak için önerilen yerdir. Her görüş için sorununuzu ayrıntılı bir açıklaması öneririz. İçin geliştirirken Visual Studio sürümü, (ne uyguladık ve ile etkileşim) kullandığınız API'leri, beklenen sonucu ve gerçek sonucunu içerir. Mümkünse, devenv.exe işlemin dökümünü içerir. GitHub'ın sorun geri Bu bildirimde için izleme kullanın ve ilgili belgelere.
+Klasörü açın ve `Microsoft.VisualStudio.Workspace.*` apı'leridir etkin geliştirme aşamasındadır. Beklenmeyen davranışları görürseniz, ilgi sürüm için bilinen sorunlar bakın. [Geliştirici topluluğu](https://developercommunity.visualstudio.com) oy verin ve sorunları oluşturmak için önerilen yerdir. Her görüş için sorununuzu ayrıntılı bir açıklaması öneririz. İçin geliştirirken Visual Studio sürümü, (ne uyguladık ve ile etkileşim) kullandığınız API'leri, beklenen sonucu ve gerçek sonucunu içerir. Mümkünse, devenv.exe işlemin dökümünü içerir. GitHub'ın sorun geri Bu bildirimde için izleme kullanın ve ilgili belgelere.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 

@@ -1,5 +1,5 @@
 ---
-title: Sistem gereksinimleri algılama | Microsoft Docs
+title: Sistem gereksinimlerini algılama | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,28 +14,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5e98235bd224876b00714e1f71210ea69cb6faff
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a794391001934164e52bdd73d940cb73ff3b5f3b
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500088"
 ---
-# <a name="detecting-system-requirements"></a>Sistem gereksinimleri algılama
-Visual Studio yüklenmiş bir VSPackage çalışamaz. VSPackage yüklemesini yönetmek için Microsoft Windows Installer kullandığınızda, Visual Studio yüklü olup olmadığını algılamak için yükleyici yapılandırabilirsiniz. Diğer gereksinimler sistem örneğin denetlemek üzere, belirli bir Windows sürümü veya belirli bir RAM tutarına da yapılandırabilirsiniz.  
+# <a name="detect-system-requirements"></a>Sistem gereksinimlerini algılama
+VSPackage Visual Studio'nun yüklü olduğu sürece çalışamaz. Microsoft Windows Installer, VSPackage'ı yüklemesini yönetmek için kullandığınız zaman, Visual Studio yüklü olup olmadığını algılamak için yükleyici yapılandırabilirsiniz. Ayrıca, örneğin sistemin diğer gereksinimleri denetlemek üzere, belirli bir Windows sürümü veya belirli bir RAM miktarını yapılandırabilirsiniz.  
   
-## <a name="detecting-visual-studio-editions"></a>Visual Studio sürümlerini algılama  
- Visual Studio sürümü yüklü olup olmadığını belirlemek için yükleme kayıt defteri anahtarının değerini (REG_DWORD) 1 uygun klasöründe olduğunu aşağıdaki tabloda listelendiği gibi doğrulayın. Visual Studio sürümlerini hiyerarşisini olduğuna dikkat edin:  
+## <a name="detect-visual-studio-editions"></a>Visual Studio sürümleri algılayın  
+ Visual Studio sürümü yüklü olup olmadığını belirlemek için aşağıdakileri doğrulayın değerini **yükleme** kayıt defteri anahtarı *(REG_DWORD) 1* uygun klasöründe, aşağıdaki tabloda listelendiği gibi. Visual Studio sürümleri hiyerarşisini olduğuna dikkat edin:  
   
 1.  Enterprise  
   
 2.  Professional  
   
 3.  Topluluk  
-  
- "Daha yüksek" sürümü yüklendiğinde, bu sürüm de olduğu gibi "daha düşük" sürümleri için kayıt defteri anahtarları eklenir. Diğer bir deyişle, Enterprise edition yüklediyseniz, yükleme anahtar 1 Professional ve topluluk sürümleri yanı sıra, kuruluş için ayarlanır. Bu nedenle ihtiyacınız yalnızca "Yüksek" sürümü için denetlemeniz gerekir.  
+      
+Daha yeni bir sürümü yüklü olduğunda, bu sürüm için kayıt defteri anahtarlarını önceki sürümlerinde olduğu gibi de eklenir. Diğer bir deyişle, Enterprise edition yüklü değilse, **yükleme** anahtarı ayarlanır *1* Professional ve Community sürümlerinde yanı sıra, kuruluş için. Bu nedenle, gereksinim duyduğunuz yalnızca en son sürümü için denetlenecek gerekir.  
   
 > [!NOTE]
->  Kayıt Defteri Düzenleyicisi'ni 64 bit sürümünde 32-bit anahtarları HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node altında görüntülenen\\. Visual Studio anahtarları HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DevDiv\vs\Servicing altında olan\\.  
+>  Kayıt Defteri Düzenleyicisi'ni 64-bit sürümünde 32 bit anahtarlar altında görüntülenen **HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\\**. Visual Studio anahtarları altındadır **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DevDiv\vs\Servicing\\**.  
   
 |Ürün|Anahtar|  
 |-------------|---------|  
@@ -44,8 +45,8 @@ Visual Studio yüklenmiş bir VSPackage çalışamaz. VSPackage yüklemesini yö
 |Visual Studio Community 2015|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DevDiv\vs\Servicing\14.0\community|  
 |Visual Studio 2015 (tümleşik ve yalıtılmış) Kabuğu|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DevDiv\vs\Servicing\14.0\isoshell|  
   
-## <a name="detecting-when-visual-studio-is-running"></a>Visual Studio çalıştırırken algılama  
- VSPackage yüklendikten sonra Visual Studio çalışıyorsa, VSPackage doğru kaydedilemedi. Yükleyici, Visual Studio çalıştırırken algılamak ve programı yüklemek reddeder. Windows Installer böyle algılamayı etkinleştirmek için tablo girişleri kullanmanıza izin vermez. Bunun yerine, bir özel eylem şu şekilde oluşturmanız gerekir: kullanım `EnumProcesses` devenv.exe işlem algılamak ve ya da bir başlatma koşulu veya koşullu olarak kullanılan bir yükleyici özelliği ayarlamak için işlevi görüntülemek kapatmak için kullanıcıdan bir iletişim kutusu Visual Studio.  
+## <a name="detect-when-visual-studio-is-running"></a>Visual Studio çalışırken Algıla  
+ Vspackage'i yüklediğinizde Visual Studio çalışıyorsa, VSPackage'ı doğru kaydedilemez. Yükleyici, Visual Studio çalışırken algılamak ve programı yüklemek geri çevir. Windows Installer gibi algılamayı etkinleştirmek için tablo girişleri kullanmanıza izin vermez. Bunun yerine, özel bir eylem şu şekilde oluşturmanız gerekir: kullanım `EnumProcesses` algılamak için işlev *devenv.exe* işlemek ve ardından ayarlayın ya da kullanılan bir yükleyici özellik başlatma koşulu veya koşullu olarak bir iletişim kutusu görüntüler. Bu, Visual Studio kapatmak için kullanıcıya sorar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Windows Installer ile VSPackage Yükleme](../../extensibility/internals/installing-vspackages-with-windows-installer.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Windows Installer ile VSPackage yükleme](../../extensibility/internals/installing-vspackages-with-windows-installer.md)

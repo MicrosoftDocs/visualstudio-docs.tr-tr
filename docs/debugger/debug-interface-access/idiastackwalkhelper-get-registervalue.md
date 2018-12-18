@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6ccc491ec9e966b8d893b6d669aafc64ebc5c8cf
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: af5f68aaf5b2caed50d28a1a53022a095d478e60
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49887923"
 ---
 # <a name="idiastackwalkhelpergetregistervalue"></a>IDiaStackWalkHelper::get_registerValue
 Bir kayıt değeri alır.  
@@ -34,17 +35,17 @@ HRESULT get_registerValue (
   
 #### <a name="parameters"></a>Parametreler  
  `index`  
- [in] Arasında bir değer [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md) hangi değerin alınacağı kaydetmek belirtme numaralandırması.  
+ [in] Bir değer [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md) hangi değerin alınacağı kaydetme belirten sabit listesi.  
   
  `pRetVal`  
  [out] Kayıt geçerli değerini döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Boyutunu rağmen `pRetVal` parametresi, bir uygulama, yalnızca ne kayıt normalde tutan depolamanız gerekir. Örneğin, yalnızca en düşük 8 bitlik verilen değer bir 8 bit kaydı tutar. Bu 8 bit değeri bu yönteminden döndürülen durumlarda 64-bit genişletilir.  
+ Boyutu rağmen `pRetVal` parametresi, bir uygulama yalnızca ne kasa normalde tutan depolamanız gerekir. Örneğin, yalnızca düşük 8 bitlik verilen değer 8-bit kayıt tutar. Bu 8-bit değeri, 64-bit Bu yöntemden döndürülen genişletilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)   
- [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md)
+ [CV_HREG_e Numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md)

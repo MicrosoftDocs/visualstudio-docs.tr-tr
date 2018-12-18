@@ -20,34 +20,35 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9269be9c47a430a262379c251add9ddfe48d3731
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 548fd2182292d9e7fdeac59d09dab2977c351d0b
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39155535"
 ---
-# <a name="resolvekeysource-task"></a>ResolveKeySource Görevi
-Güçlü ad anahtarı kaynağı belirler.  
+# <a name="resolvekeysource-task"></a>ResolveKeySource görevi
+Tanımlayıcı ad anahtar kaynağını belirler.  
   
 ## <a name="task-parameters"></a>Görev parametreleri  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır `ResolveKeySource` görev.  
+ Parametreleri aşağıdaki tabloda açıklanmıştır `ResolveKeySource` görev.  
   
 |Parametre|Açıklama|  
 |---------------|-----------------|  
-|`AutoClosePasswordPromptShow`|İsteğe bağlı `Int32` parametresi.<br /><br /> Alır veya ileti sayımı görüntülemek için saniye cinsinden süreyi ayarlar.|  
+|`AutoClosePasswordPromptShow`|İsteğe bağlı `Int32` parametresi.<br /><br /> Alır veya ileti sayımın görüntülemek için saniye cinsinden süreyi ayarlar.|  
 |`AutoClosePasswordPromptTimeout`|İsteğe bağlı `Int32` parametresi.<br /><br /> Alır veya parola istemi iletişim kutusunu kapatmadan önce beklenecek saniye cinsinden süreyi ayarlar.|  
 |`CertificateFile`|İsteğe bağlı `String` parametresi.<br /><br /> Alır veya sertifika dosyasının yolunu ayarlar.|  
 |`CertificateThumbprint`|İsteğe bağlı `String` parametresi.<br /><br /> Alır veya sertifika parmak izini ayarlar.|  
-|`KeyFile`|İsteğe bağlı `String` parametresi.<br /><br /> Alır veya anahtar dosyasının yolunu ayarlar.|  
-|`ResolvedKeyContainer`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya ayarlar çözülmüş anahtar kapsayıcısı.|  
-|`ResolvedKeyFile`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya çözümlenmiş anahtar dosyası ayarlar.|  
-|`ResolvedThumbprint`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya çözümlenmiş sertifika parmak izini ayarlar.|  
-|`ShowImportDialogDespitePreviousFailures`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, önceki arızalarına karşı alma iletişim kutusunu göster.|  
-|`SuppressAutoClosePasswordPrompt`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Alır veya parola istemi iletişim kutusu otomatik-kapatmaz olup olmadığını belirten bir Boole değeri ayarlar.|  
+|`KeyFile`|İsteğe bağlı `String` parametresi.<br /><br /> Alır veya ayarlar anahtar dosyasının yolu.|  
+|`ResolvedKeyContainer`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya ayarlar çözümlenen anahtar kapsayıcısı.|  
+|`ResolvedKeyFile`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya ayarlar çözümlenen anahtar dosyası.|  
+|`ResolvedThumbprint`|İsteğe bağlı `String` çıkış parametresi.<br /><br /> Alır veya çözümlenen sertifika parmak izini ayarlar.|  
+|`ShowImportDialogDespitePreviousFailures`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Varsa `true`, önceki arızalarına Al iletişim kutusunu göster.|  
+|`SuppressAutoClosePasswordPrompt`|İsteğe bağlı `Boolean` parametresi.<br /><br /> Alır veya ayarlar parola istemi iletişim otomatik-kapatmaz olmadığını belirten bir Boole değeri.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Tasks.TaskExtension> sınıfı, kendisi <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Tasks.TaskExtension> kendisi sınıfının devraldığı <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Görevler](../msbuild/msbuild-tasks.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görevleri](../msbuild/msbuild-tasks.md)   
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)

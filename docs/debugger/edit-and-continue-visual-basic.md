@@ -21,37 +21,38 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: aa3b8c287129c164d8c6984ac52375d6012fbd68
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 290216d9baa2692b1cb05741f3b1afc22c74988c
+ms.sourcegitcommit: 8cdc6e2ad2341f34bd6b02859a7c975daa0c9320
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53307667"
 ---
 # <a name="edit-and-continue-visual-basic"></a>Düzenle ve Devam Et (Visual Basic)
-Düzenle ve devam et için bir özelliktir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] , hata ayıklama kesme modunda yürütülürken kodunuzu değiştirmek olanak sağlar. Kod düzenlemeleri uygulandıktan sonra yerinde yeni düzenlemelerle kodu yürütme devam ve etkisi görebilirsiniz.  
+Düzenle ve devam et özelliği olan [!INCLUDE [vbprvb](../code-quality/includes/vbprvb_md.md)] , hata ayıklama kesme modunda yürütülürken kodunuzu değiştirmenize olanak sağlar. Kod düzenlemeler uygulandıktan sonra yeni düzenlemeler yerinde ile kod yürütmeyi devam etmek ve etkisine bakın.  
   
- Düzenle ve kesme modu girişinizde özellik devam kullanabilirsiniz. Kesme modu, yönerge işaretçisi, sarı bir ok ucunu kaynak penceresinde, yürütülebilir bir deyim gövdesindeki olacak bir yöntemi veya özelliği içeren satırı noktalarına sonraki yürütüldü.
+ Düzen ve kesme moduna her özellik devam edebilirsiniz. Kesme modu, yönerge işaretçisini, kaynak penceresinde sarı bir ok, yürütülebilir bir deyimin gövdesindeki olacak bir metot veya özellik içeren satırı noktalarına sonraki yürütüldü.
 
- Düzenle ve devam et hata ayıklama oturumu sırasında yapmak isteyebilirsiniz çoğu değişiklikleri destekler, ancak bazı özel durumlar vardır. Daha fazla bilgi için bkz: [desteklenen kod değişiklikleri (C# ve Visual Basic)](../debugger/supported-code-changes-csharp.md).   
+ Düzenle ve devam et hata ayıklama oturumu sırasında yapmak isteyebilirsiniz değişikliklerin çoğu destekler, ancak bazı özel durumlar vardır. Daha fazla bilgi için [desteklenen kod değişiklikleri (C# ve Visual Basic)](../debugger/supported-code-changes-csharp.md).   
   
- Yetkisiz bir düzenleme yaptığınızda, değişiklik mor dalgalı alt çizgi ile işaretlenir ve bir görev görev listesinde görüntülenir. Düzenle ve devam et kullanmaya devam etmek istiyorsanız, yetkisiz bir düzen geri almanız gerekir. Belirli yetkisiz düzenlemeleri dış Düzenle ve devam et yapıldığında izin verilir. Yetkisiz bir düzen sonuçlarını korumak istiyorsanız, hata ayıklamayı durdurun ve uygulamanızı yeniden başlatmanız gerekir.  
+ Yetkisiz bir düzenleme yaptığınız değişikliği mor dalgalı çizgi ile işaretlenmiş ve bir görev görev listesinde görüntülenir. Düzenle ve devam et kullanmaya devam etmek isterseniz, yetkisiz bir düzenlemeyi geri almanız gerekir. Yetkisiz olduğu belirli düzenlemeleri dış Düzenle ve devam et yapıldığında izin verilebilir. Yetkisiz bir düzenleme sonuçlarını korumak istiyorsanız, hata ayıklamayı durdurmak ve uygulamanızı yeniden başlatın.  
   
- Düzenle ve devam et UWP uygulamaları Windows 10 ve .NET Framework 4.6 hedef x86 hem x64 uygulamalar desteklenir (yalnızca masaüstü sürümü .NET Framework'dur) masaüstü veya sonraki sürümleri.
+ Düzenle ve devam et UWP uygulamaları için Windows 10 ve .NET Framework 4.6 hedefleyen x86 ve x64 uygulamaları desteklenir (yalnızca masaüstü bir sürümünde olan .NET Framework) masaüstü veya sonraki sürümleri.
 
  > [!NOTE]
- > Desteklenmeyen uygulamalar ve platformlar ASP.NET 5, Silverlight 5 ve Windows 8.1 içerir.
+ > Desteklenmeyen uygulamalar ve platformlar, ASP.NET 5, Silverlight 5 ve Windows 8.1 içerir.
   
- Düzenle ve devam et desteklenmiyor kullanarak hata ayıklama başlattığınızda **ekleme işlemi için**. Düzenle ve devam et iyileştirilmiş kodda veya karma için desteklenmeyen yönetilen ve yerel kodu. Daha fazla bilgi için bkz: [desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md).
+ Düzenle ve devam et desteklenmez kullanarak hata ayıklamaya başladığınızda **iliştirme**. Düzenle ve devam et desteklenmez kod en iyileştirilmiş veya karışık yönetilen ve yerel kod. Daha fazla bilgi için [desteklenen kod değişiklikleri (C# ve Visual Basic)](../debugger/supported-code-changes-csharp.md).
   
- Bu bölümdeki konular, bu özelliği kullanmak nasıl ve ne tür değişiklikler hakkında daha ayrıntılı bilgi verilmez sağlar.  
+ Bu bölümdeki konularda, bu özelliği kullanmak nasıl ve ne tür değişiklikler hakkında ek ayrıntılar izin verilmeyen sağlar.  
   
 ## <a name="in-this-section"></a>Bu Bölümde  
- [Nasıl yapılır: Düzenle ile kesme modunda düzenlemeler uygulama ve devam et](../debugger/how-to-apply-edits-in-break-mode-with-edit-and-continue.md)  
- Kesme modunda düzenlemeler kodu uygulamak açıklanmaktadır.  
+ [Nasıl yapılır: Düzen ile kesme modunda düzenlemeleri uygulayın ve devam et](../debugger/how-to-apply-edits-in-break-mode-with-edit-and-continue.md)  
+ Kodu kesme modunda düzenlemeleri uygulama açıklanmaktadır.  
   
- [Desteklenen kod değişiklikleri (C# ve Visual Basic](../debugger/supported-code-changes-csharp.md)   
- Ne düzenlemeleri türleri olamaz açıklar başlığında gerçekleştirilen [!INCLUDE[vb_current_short](../debugger/includes/vb_current_short_md.md)] Düzenle ve devam et.  
+ [Desteklenen kod değişiklikleri (C# ve Visual Basic)](../debugger/supported-code-changes-csharp.md)   
+ Ne düzenlemeleri türleri olamaz açıklar gerçekleştirilen [!INCLUDE [vb_current_short](../debugger/includes/vb_current_short_md.md)] Düzenle ve devam et.  
   
 ## <a name="related-sections"></a>İlgili Bölümler  
- [Düzenle ve devam et](../debugger/edit-and-continue.md)  
- Düzenle ve devam et konuların listesini sağlar.
+ [Düzenle ve Devam Et](../debugger/edit-and-continue.md)  
+ Düzenle ve devam et üzerinde konuların listesini sağlar.

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3d240c931db24cc353d7bb461645771eb4520921
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: afe3431e282a8cd48ea33851cef00fba116e389a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833947"
 ---
 # <a name="idebugmanagedobjectsetfrommanagedobject"></a>IDebugManagedObject::SetFromManagedObject
-Bir parametre olarak sağlanan değer sınıfı örnekten değer sınıfı nesnesinin örneğini değerini ayarlar.  
+Bir parametre olarak sağlanan değer sınıfının örneğini değer sınıf nesnesini örneğinin değerini ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int SetFromManagedObject(
   
 #### <a name="parameters"></a>Parametreler  
  `pManagedObject`  
- [in] Yeni bir değer içeren Yönetilen Nesne temsil eden bir arabirim.  
+ [in] Yeni değer içeren yönetilen nesneyi temsil eden arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem yönetilen nesne tarafından belirtildiği şekilde değiştirmek için kullanılan [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) nesnesi.  
+ Bu yöntem tarafından temsil edilen yönetilen nesneyi değiştirmek için kullanılan [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) nesne.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md)

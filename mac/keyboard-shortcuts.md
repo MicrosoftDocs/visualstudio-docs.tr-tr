@@ -1,41 +1,42 @@
 ---
-title: Kaynak Düzenleyici ortak klavye kısayolları
-description: ''
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+title: Kaynak Düzenleyicisi ortak klavye kısayolları
+description: Bu makalede, Visual Studio'da bazı ortak klavye kısayollarının Mac Kaynak Düzenleyici açıklanır.
+author: conceptdev
+ms.author: crdun
+ms.date: 11/06/2018
 ms.assetid: 48E06A61-7294-4EC8-A09D-1763C32AD910
-ms.openlocfilehash: ba0e1d7b5625dbe0b9bb86f43f5e402d6cf07043
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 2ac2a98223e86a564ff6ce733e11767a918bc55b
+ms.sourcegitcommit: 54c65f81a138fc1e8ff1826f7bd9dcec710618cc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51948796"
 ---
 # <a name="common-keyboard-shortcuts-in-visual-studio-for-mac"></a>Mac için Visual Studio'da ortak klavye kısayolları
 
 ## <a name="show-code-generation-window"></a>Kod oluşturma penceresini göster
 
-Bu komut, bağlam kod oluşturur:
+Bu komut, bağlamsal kod oluşturur:
 
- `⌘ + 1`
+`⌘ + 1`
 
-![Seçili simgenin ilgili kod oluşturma için seçeneklerle bir panel görüntülenir](media/keyboard-shortcuts-image8.png)
+![Seçili sembol için ilgili kod oluşturma için seçeneklerle bir paneli görüntülenir.](media/keyboard-shortcuts-image8.png)
 
-## <a name="search-files-symbols-and-commands"></a>Arama dosyaları, simgeler ve komutlar
+## <a name="search-files-symbols-and-commands"></a>Arama dosyaları, simgeler ve komutları
 
-`control + .` 
+`control + .`
 
-## <a name="autocomplete"></a>Otomatik Tamamlama 
+## <a name="autocomplete"></a>Otomatik Tamamlama
 
-`control + /` 
+`control + /`
 
 ## <a name="quick-fixes-and-actions"></a>Hızlı düzeltmeler ve Eylemler
 
-Görüntüler [yeniden düzenleme](~/refactoring.md) bağlamı eylemler:
+Görüntüler [yeniden düzenleme](refactoring.md) bağlam eylemler:
 
 `option + enter`
 
-![Görüntüler bağlam Eylemler](media/keyboard-shortcuts-image9.png)
+![Görüntüler bağlam eylemleri](media/keyboard-shortcuts-image9.png)
 
 ## <a name="find-in-files"></a>Dosyalarda Bul
 
@@ -43,30 +44,34 @@ Görüntüler [yeniden düzenleme](~/refactoring.md) bağlamı eylemler:
 
 ## <a name="file-switcher"></a>Dosya değiştirici
 
-Dosyalar arasında hızlı geçiş sağlar:
+Hızlı dosyaları arasında geçişi sağlar:
 
 `control + tab`
 
-## <a name="move-lines-around-in-editor"></a>Satırları Düzenleyicisi'nde hareket etme
+## <a name="move-lines-around-in-editor"></a>Düzenleyicide satırları gezinme
 
-`alt + up/down` 
+`alt + up/down`
 
-Kullanmak **alt + yukarı** geçerli satır ya da geçerli seçili satırları Taşı ve kullanmak için komutu **alt + aşağı** satırları aşağı taşımak için komutu. Dil eklenti destekliyorsa, satırları ve bu moddan kapsam taşıdığınızda bağlam eşleşecek şekilde yeniden girintili olmayacaktır.
+Kullanma **alt + yukarı** geçerli satırı veya geçerli seçili satırları Taşı ve kullanmak için komutu **alt + aşağı** satırları Aşağı Taşı komutu. Dil eklentisi destekliyorsa, satır içine ve dışına kapsamı'na taşıdığınızda bağlam eşleştirilecek yeniden girintilenecek.
 
-## <a name="word-navigation"></a>Word gezinme
+## <a name="word-navigation"></a>Word Gezinti
 
-Düzeltme sonraki veya önceki sözcük taşır:
+Giriş işaretini bir sonraki veya önceki sözcüğe taşır:
 
 `option + left/right`
 
-## <a name="line-navigation"></a>Satır gezinme
+## <a name="line-navigation"></a>Satır Gezinti
 
-Şapka başına veya satırın sonuna taşır:
+Giriş işaretini başında veya satırın sonuna taşır:
 
 `⌘ + left/right`
 
 ## <a name="expands-the-selection"></a>Seçimi genişletir
 
-Word, alt ifadeler, deyimi ve satır üye seçimi mantıksal bir şekilde genişletir:
+Word, alt ifadeler, deyim ve satır üye seçimi mantıksal şekilde genişletir:
 
-`alt + shift + up` Seçilecek `alt + shift + down` görseldeki seçimini kaldırmak için
+`alt + shift + up` Seçilecek `alt + shift + down` seçimini kaldırmak için
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [(Windows üzerinde) Visual Studio'da klavye kısayolları](/visualstudio/ide/tips-and-tricks-for-visual-studio)

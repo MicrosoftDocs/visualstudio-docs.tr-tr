@@ -1,6 +1,7 @@
 ---
 title: 'Nasıl Yapılır: Gölgelendiriciyi Dışarı Aktarma'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: 0bd48bf4-9792-4456-a545-e462a2be668d
@@ -9,43 +10,40 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8975bbff3e845f0bee66f5c0e27f9935d1986593
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: bd06664cda1c60d2624b77a0381e1269fcb3c484
+ms.sourcegitcommit: 25fc9605ba673afb51a24ce587cf4304b06aa577
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028983"
 ---
-# <a name="how-to-export-a-shader"></a>Nasıl Yapılır: Gölgelendiriciyi Dışarı Aktarma
-Bu belgede gölgelendirici tasarımcının uygulamanızı kullanabilmeleri yönlendirilmiş grafik gölgelendirici dili (DGSL) gölgelendirici dışarı aktarmak için nasıl kullanılacağı gösterilmektedir.
+# <a name="how-to-export-a-shader"></a>Nasıl yapılır: gölgelendiriciyi dışarı aktarma
 
- Bu belgede, bu etkinliği gösterir:
+Bu makalede nasıl yapılacağı açıklanır **gölgelendirici Tasarımcısı** böylece uygulamanızda kullanabilirsiniz yönlendirilmiş grafik gölgelendirici dili (DGSL) gölgelendiriciyi dışarı aktarma için.
 
--   Gölgelendirici dışarı aktarma
+## <a name="export-a-shader"></a>Gölgelendiriciyi dışarı aktarma
 
-## <a name="exporting-a-shader"></a>Gölgelendirici dışarı aktarma
- Gölgelendirici Tasarımcısı'nı kullanarak ve uygulamanızda kullanabilmeniz için önce bir gölgelendirici oluşturduktan sonra API grafiklerinizi özelliğini algılayan bir biçimde dışarı gerekir. Farklı gereksinimlerini karşılamak için farklı şekillerde gölgelendirici dışarı aktarabilirsiniz.
+Gölgelendirici Tasarımcısı'nı kullanarak ve uygulamanızda kullanmadan önce bir gölgelendirici oluşturduktan sonra bunu, grafik API'si anlayan bir biçimde dışarı aktarmanız gerekir. Farklı ihtiyaçları karşılamak üzere farklı şekillerde gölgelendiriciyi dışarı aktarabilirsiniz.
 
-#### <a name="to-export-a-shader"></a>Gölgelendirici dışarı aktarmak için
+1. Visual Studio'da açın bir **görsel gölgelendirici grafiği (.dgsl)** dosya.
 
-1.  İçinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], açık bir **Visual gölgelendirici grafik (.dgsl)** dosyası.
+     Yoksa bir **görsel gölgelendirici grafiği (.dgsl)** açın, içinde açıklandığı gibi oluşturmak için dosya [nasıl yapılır: temel renk gölgelendiricisi oluşturma](../designers/how-to-create-a-basic-color-shader.md).
 
-     Yoksa bir **Visual gölgelendirici grafik (.dgsl)** açın, açıklandığı gibi oluşturmak için dosya [nasıl yapılır: temel bir renk gölgelendirici oluşturmak](../designers/how-to-create-a-basic-color-shader.md).
+2. Üzerinde **gölgelendirici Tasarımcısı** araç seçin **Gelişmiş** > **dışarı** > **dışarı aktarma olarak**. **Gölgelendiriciyi dışarı aktarma** iletişim kutusu görüntülenir.
 
-2.  Üzerinde **gölgelendirici Tasarımcısı** araç seçin **Gelişmiş**, **verme**, **verme olarak**. **Verme gölgelendirici** iletişim kutusu görüntülenir.
-
-3.  İçinde **farklı türde Kaydet** aşağı açılan listesinde, dışa aktarmak istediğiniz biçimi seçin.
+3. İçinde **farklı kaydetme türü** aşağı açılan listesinde, dışa aktarmak istediğiniz biçimi seçin.
 
      Seçebileceğiniz biçimler şunlardır:
 
-     **HLSL piksel gölgelendirici (\*.hlsl)** gölgelendirici yüksek düzey gölgelendirici dili (HLSL) kaynak kodu olarak dışa aktarır. Bu seçenek, bir uygulamada bile dağıtıldıktan sonra gölgelendirici daha sonra değiştirmek mümkün kılar. Bu, hata ayıklama ve son kullanıcı sorunları göre kod düzeltme eki daha kolay hale getirebilir, ancak aynı zamanda, gölgelendirici istenmeyen şekilde değiştirmek bir kullanıcı için kolaylaştırır — Örneğin, haksız avantajlı rekabetçi bir oyunda elde etmek için. Bu da gölgelendirici yükleme süresini artırabilir.
+     **HLSL piksel gölgelendiricisi (\*.hlsl)** gölgelendirici üst düzey gölgelendirici dili (HLSL) kaynak kodu dışarı aktarır. Bu seçenek, bir uygulamada bile dağıtıldıktan sonra gölgelendirici daha sonra değiştirmek mümkün kılar. Bu, hata ayıklama ve son kullanıcı sorunları göre kod düzeltme eki kolaylaştırabilir, ancak aynı zamanda istenmeyen yollarla gölgelendiricinize değiştirmek bir kullanıcı için kolaylaştırır — Örneğin, bir rekabet oyununda bir haksız avantaj elde etmek için. Gölgelendirici yükleme süresi da artırabilir.
 
-     **Derlenmiş piksel gölgelendirici (\*.cso)** gölgelendirici HLSL bayt dışa aktarır. Bu seçenek bir uygulamada bile dağıtıldıktan sonra gölgelendirici daha sonra değiştirmek yaptığı mümkündür. Bu, hata ayıklama ve son kullanıcı sorunları göre kod düzeltme eki kolaylaştırabilir, ancak gölgelendirici önceden derlenmiş olduğundan gölgelendirici uygulama tarafından yüklendiğinde, ek çalışma zamanı zahmetine değil. Yeterince deneyimli kullanıcılar hala istenmeyen şekilde gölgelendirici değiştirebilirsiniz ancak gölgelendirici derleme bu önemli ölçüde daha zor hale getirir.
+     **Derlenmiş piksel gölgelendiricisi (\*.cso)** gölgelendirici HLSL bayt dışarı aktarır. Bu seçenek, bir uygulamada bile dağıtıldıktan sonra gölgelendirici daha sonra değiştirmek mümkün kılar. Bu, hata ayıklama ve son kullanıcı sorunları göre kod düzeltme eki kolaylaştırabilir, ancak önceden derlenmiş gölgelendirici olduğundan, gölgelendirici uygulama tarafından yüklendiğinde, ek çalışma zamanı yükü tabi değildir. Yeterince deneyimli kullanıcılar hala istenmeyen yollarla gölgelendiriciyi değiştirebilirsiniz, ancak gölgelendirici derleme bu önemli ölçüde daha zor hale getirir.
 
-     **C++ üstbilgi (\*.h)** gölgelendirici HLSL bayt içeren bir bayt dizisi tanımlayan C tarzı başlık olarak dışa aktarır. Bu seçenek hata ayıklamak ve düzeltme test etmek için uygulama yeniden derlenmesi için son kullanıcı sorunları göre kod düzeltme eki daha uzun süren yapabilirsiniz. Bu seçenek, imkansız olsa, bir uygulama dağıtıldıktan sonra gölgelendirici değiştirmek zorlaştırır olduğundan, ancak bu çoğu zorluk gölgelendirici istenmeyen şekilde değiştirmek için isteyen bir kullanıcıya gösterir.
+     **C++ üst bilgisi (\*.h)** gölgelendirici HLSL bayt içeren bir bayt dizisi tanımlayan bir C stili başlığı dışarı aktarır. Bu seçenek, hata ayıklama ve son kullanıcı sorunlarını düzeltme test etmek için uygulamayı yeniden derlenmesi için temel kod düzeltme eki daha fazla zaman zorlaştırabilir. Ancak, bu seçenek, imkansız olsa, bir uygulama dağıtıldıktan sonra gölgelendirici değiştirmek zorlaştırır çünkü gölgelendirici istenmeyen yollarla değiştirmek isteyen bir kullanıcı için birçok zorluk sunduğu.
 
-4.  İçinde **dosya adı** birleşik giriş kutusu, dışarı aktarılan gölgelendirici için bir ad belirtin ve ardından **kaydetmek** düğmesi.
+4. İçinde **dosya adı** birleşik giriş kutusu, dışarı aktarılan gölgelendirici için bir ad belirtin ve ardından **Kaydet** düğmesi.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Nasıl Yapılır: Temel Renk Gölgelendiricisi Oluşturma](../designers/how-to-create-a-basic-color-shader.md)
+- [Nasıl yapılır: Temel renk gölgelendiricisi oluşturma](../designers/how-to-create-a-basic-color-shader.md)
 - [Gölgelendirici Tasarımcısı](../designers/shader-designer.md)

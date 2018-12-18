@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 63bf182e4e8b17133fbefd4f4a19c4b8b4a458e9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b276b2bff8e8ab5af0f007fbc5bd5dd6074c4d9d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896054"
 ---
 # <a name="idebugfieldgetextendedinfo"></a>IDebugField::GetExtendedInfo
 Bu yöntem, bir alan hakkında bilgi genişletilmiş.  
@@ -44,24 +45,24 @@ int GetExtendedInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `guidExtendedInfo`  
- [in] Döndürülecek bilgi seçer. Geçerli değerler şunlardır:  
+ [in] Döndürülecek bilgileri seçer. Geçerli değerler şunlardır:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|`guidConstantValue`|Bayt dizisi olarak değer.|  
-|`guidConstantType`|Tür imzası türünde.|  
+|`guidConstantValue`|Bayt dizisi olarak değeri.|  
+|`guidConstantType`|Tür imzası olarak türü.|  
   
  `prgBuffer`  
- [out] Genişletilmiş bilgiler döndürür.  
+ [out] Genişletilmiş bilgileri döndürür.  
   
  `pdwLen`  
- [içinde out] Genişletilmiş bilgiler boyutunu bayt cinsinden döndürür.  
+ [out içinde] Genişletilmiş bilgileri boyutunu bayt cinsinden döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Şu anda, bu yöntem yalnızca türünü veya bir sabit değerini döndürür. Arayan döndürülen arabelleği serbest gerekir `prgBuffer` göre COM'ın çağırma `CoTaskMemFree` işlevi (C++) veya <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> (C#).  
+ Şu anda, bu yöntem, yalnızca türe veya bir sabit değerini döndürür. Çağırana döndürülen arabellek boşaltmanız gerekir `prgBuffer` COM'ın çağırarak `CoTaskMemFree` işlevi (C++) veya <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> (C#).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

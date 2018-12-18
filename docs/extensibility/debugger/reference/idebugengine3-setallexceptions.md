@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e492eb2e3208e379581548ac3dcc393fa82414ab
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af66ca2fda6a3e190e6b98cf09962890beb3b5a0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875820"
 ---
 # <a name="idebugengine3setallexceptions"></a>IDebugEngine3::SetAllExceptions
-Bu yöntem tüm bekleyen özel durumları durumunu ayarlar.  
+Bu yöntem, bekleyen tüm özel durumları durumunu ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,7 +44,7 @@ int SetAllExceptions(
  [in] Aşağıdakilerden birini [EXCEPTION_STATE](../../../extensibility/debugger/reference/exception-state.md) değerleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngine3](../../../extensibility/debugger/reference/idebugengine3.md)   

@@ -1,38 +1,38 @@
 ---
 ms.technology: vs-ai-tools
-ms.openlocfilehash: 053ea5ad7579a040cdefbf7e519c852dc4fb7fe9
-ms.sourcegitcommit: 8cbe6b38b810529a6c364d0f1918e5c71dee2c68
+ms.openlocfilehash: 7e09023659b1f44af1951e157878d78b641be3f3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49915951"
 ---
-# <a name="create-an-ai-project-from-existing-code"></a>Var olan koddan AI projesi oluşturma
+# <a name="create-an-ai-project-from-existing-code"></a>Mevcut koddan bir yapay ZEKA projesi oluşturma
 
-Seçtiğiniz sonra [AI için Visual Studio Araçları yüklü](installation.md), var olan Python kodu bir Visual Studio projeye Getir kolaydır.
+Kaydederler [yapay ZEKA için Visual Studio Araçları yüklü](installation.md), varolan bir Python kodu bir Visual Studio projesine getirmek kolaydır.
 
 > [!Important]
->
-> Burada anlatılan işlemine taşımayın veya özgün kaynak dosyalarını kopyalayın. Bir kopya ile çalışmak isterseniz, klasörü ilk çoğaltma.
+> Burada açıklanan işlemi taşıma veya kopyalama orijinal kaynak dosyalarına desteklemez. Bir kopya ile çalışmak istiyorsanız, klasörü ilk çoğaltma.
 
 1. Visual Studio'yu başlatın ve seçin **Dosya > Yeni > Proje**.
 
-1. İçinde **yeni proje** iletişim, arama "**AI Araçları**" seçin "**gelen varolan Python kodu**" şablonu, bir ad ve konum proje verin ve seçin**Tamam**.
+2. İçinde **yeni proje** iletişim, arama "**yapay ZEKA Araçları**" seçin "**alanından mevcut Python kodu**" Şablon, proje adını ve konumunu verin ve seçin**Tamam**.
 
-    ![Var olan koddan adım 1 yeni proje](media\create-project-existing\new-ai-project.png)
+   ![Yeni Proje varolan koddan 1. adım](media/create-project-existing/new-ai-project.png)
 
-1. Görüntülenen Sihirbazı'nda mevcut kodunuzu yolunu ayarlama, dosya türleri için bir filtre ayarlamak ve projenizi gerektirir ve ardından seçin arama yollarını belirtin **Tamam**. Yollar hangi arama bilmiyorsanız, bu alanı boş bırakın.
+3. Görüntülenen sihirbazında, mevcut kodunuzu yolunu ayarlama, dosya türleri için bir filtre ayarlayın ve projenize gerektirir ve ardından arama yolları belirtin **Tamam**. Hangi arama yolları bilmiyorsanız, bu alanı boş bırakın.
 
-![Var olan koddan 2. adım yeni proje](media\create-project-existing\azurebatch-newproject.png)
+   ![Yeni Proje varolan koddan 2. adım](media/create-project-existing/azurebatch-newproject.png)
 
-> Mevcut kodunuzu bir Azure Machine Learning projesinin bir parçası ise denetleyin "**olan Azure Machine Learning klasörü**" başarılı dönüştürülmesi hangi deneme gibi önemli Azure Machine Learning yapılandırma ayrıntılarını sağlamak için hesabı, hangi çalışma alanında, kullanmak için işlem bağlamı ve daha fazlası.
+   Mevcut kodunuzu Azure Machine Learning projesinin bir parçasıysa denetleyin **olan Azure Machine Learning klasör** deneme gibi önemli Azure Machine Learning yapılandırma ayrıntıları başarıyla dönüştürülmesini sağlamak için Hesap, işlem bağlamları kullanmak için çalışma alanı ve daha fazlası.
 
-1. Bir başlatma dosyası ayarlamak için dosyayı Çözüm Gezgini'nde sağ tıklatın ve seçin bulun **başlangıç dosyası olarak ayarlamak**.
+4. Bir başlangıç dosyası ayarlamak için dosyada bulun **Çözüm Gezgini**, sağ tıklatın ve seçin **başlangıç dosyası olarak ayarla**.
 
-1. İsterseniz, Ctrl + F5 tuşuna basarak veya seçerek program Çalıştır **hata ayıklama > hata ayıklama olmadan Başlat**.
+5. Tuşlarına basarak programı çalıştırın **Ctrl**+**F5** veya seçerek **hata ayıklama > hata ayıklama olmadan Başlat**.
 
 > [!div class="nextstepaction"]
 > [Öğretici: Visual Studio'da Python ile çalışma](../python/tutorial-working-with-python-in-visual-studio-step-00-installation.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-- [El ile varolan bir Python ortamı tanımlama](../python/managing-python-environments-in-visual-studio.md#manually-identifying-an-existing-environment)
+- [El ile bir Python ortamı tanımlayın](../python/managing-python-environments-in-visual-studio.md#manually-identify-an-existing-environment)

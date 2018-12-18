@@ -10,11 +10,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 60692f77645857214c12ba04968d9acee0df5008
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ba5d8c3e2644c94a4e15115661341a34c9e6f761
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845434"
 ---
 # <a name="lineoff"></a>LineOff
 Örnekleme profili oluşturma yöntemi kullanırken varsayılan olarak, profil oluşturucu kaynak kodu satır sayısı ve satır numarası uzaklık verilerini toplar. VSPerfCmd **LineOff** seçeneği devre dışı bırakır satır numarası veri toplama VSPerfCmd uygulamayı başlatmak için kullanıldığında. Profil oluşturma verilerini işleve toplanır ne zaman düzey **LineOff** belirtilir.  
@@ -23,7 +24,7 @@ ms.lasthandoff: 04/19/2018
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cmd  
 VSPerfCmd.exe /Launch:AppName /LineOff [Options]  
 ```  
   
@@ -39,13 +40,13 @@ VSPerfCmd.exe /Launch:AppName /LineOff [Options]
 ## <a name="example"></a>Örnek  
  Bu örnek uygulama ve profil oluşturucu başlatır ve satır düzeyi örnekleme devre dışı bırakır.  
   
-```  
+```cmd  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Launch:TestApp.exe /LineOff  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
- [Bağımsız uygulamaların profilini oluşturma](../profiling/command-line-profiling-of-stand-alone-applications.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
- [Profil oluşturma hizmetleri](../profiling/command-line-profiling-of-services.md)
+ [Bağımsız uygulamalar profili](../profiling/command-line-profiling-of-stand-alone-applications.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
+ [Profil Hizmetleri](../profiling/command-line-profiling-of-services.md)

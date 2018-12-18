@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ccfafd854d9493ac57ef9dc082ddb7969e0b6136
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a5e1be1da0ca207f5bc030bf5de72efdb0d24ea8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49897608"
 ---
 # <a name="idebugextendedfieldgetextendedkind"></a>IDebugExtendedField::GetExtendedKind
-Belirtilen genişletilmiş alan türü alır.  
+Belirtilen genişletilmiş alan türünü alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -39,10 +40,10 @@ int GetExtendedKind(
   
 #### <a name="parameters"></a>Parametreler  
  `pdwKind`  
- [içinde out] Değeri [FIELD_KIND_EX](../../../extensibility/debugger/reference/field-kind-ex.md) alan türünü tanımlar numaralandırması.  
+ [out içinde] Değerini [FIELD_KIND_EX](../../../extensibility/debugger/reference/field-kind-ex.md) alan türünü tanımlayan sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExtendedField](../../../extensibility/debugger/reference/idebugextendedfield.md)

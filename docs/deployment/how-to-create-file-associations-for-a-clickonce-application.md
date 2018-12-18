@@ -17,44 +17,45 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: bf60327e622f8eb32757d29051e3dce94661722d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 25d8d12b8ad49b40309845def60964c13a3da708
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49919401"
 ---
-# <a name="how-to-create-file-associations-for-a-clickonce-application"></a>Nasıl yapılır: ClickOnce Uygulaması için Dosya İlişkilendirmeleri Oluşturma
-[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] Böylece uygulama, kullanıcı o türden bir dosya açıldığında otomatik olarak başlatılır uygulamaları bir veya daha fazla dosya adı uzantıları ile ilişkilendirilebilir. Dosya adı uzantısı desteği ekleme bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulamasıdır kolay.  
+# <a name="how-to-create-file-associations-for-a-clickonce-application"></a>Nasıl yapılır: ClickOnce uygulaması için dosya ilişkilendirmeleri oluşturma
+[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] böylece kullanıcı o türden bir dosyayı açtığında uygulamayı otomatik olarak başlatılacak bir veya daha fazla dosya adı uzantılarına sahip uygulamalar ilişkilendirilebilir. Dosya adı uzantısı desteği için ekleme bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulamasıdır basit.  
   
-### <a name="to-create-file-associations-for-a-clickonce-application"></a>ClickOnce uygulaması için dosya ilişkilendirmeleri oluşturmak için  
+### <a name="to-create-file-associations-for-a-clickonce-application"></a>ClickOnce uygulaması için dosya ilişkilendirmeleri oluşturma  
   
-1.  Oluşturma bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama normalde veya var olan kullanmak [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama.  
+1. Oluşturma bir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama normal olarak veya mevcut [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] uygulama.  
   
-2.  Bir metin veya Not Defteri gibi bir XML Düzenleyicisi ile uygulama bildirimini açın.  
+2. Uygulama bildirimi, bir metin veya Not Defteri gibi bir XML Düzenleyicisi ile açın.  
   
-3.  Bul `assembly` öğesi. Daha fazla bilgi için bkz: [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).  
+3. Bulma `assembly` öğesi. Daha fazla bilgi için [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md).  
   
-4.  Bir alt öğesi olarak `assembly` öğesi ekleme bir `fileAssociation` öğesi. `fileAssociation` Öğesi dört özniteliğe sahiptir:  
+4. Bir alt öğesi olarak `assembly` öğe, Ekle bir `fileAssociation` öğesi. `fileAssociation` Öğesinde dört öznitelikler bulunur:  
   
-    -   `extension`: Uygulama ile ilişkilendirmek istediğiniz dosya adı uzantısı.  
+   - `extension`: Uygulamayla ilişkilendirmek istediğiniz dosya adı uzantısı.  
   
-    -   `description`: Windows Kabuğu'nda görünür dosya türü bir açıklaması.  
+   - `description`: Windows Kabuğu'nda görünür dosya türünün açıklaması.  
   
-    -   `progid`: Kayıt defterinde işaretlemek için dosya türü benzersiz olarak tanımlayan bir dize.  
+   - `progid`: Kayıt defterinde işaretlemek için dosya türü benzersiz olarak tanımlayan bir dize.  
   
-    -   `defaultIcon`: Bu dosya türü için kullanılacak bir simge. Simge bir dosya kaynak uygulama bildirimi olarak eklenmelidir. Daha fazla bilgi için bkz: [nasıl yapılır: ClickOnce uygulamasına bir veri dosyası dahil](../deployment/how-to-include-a-data-file-in-a-clickonce-application.md).  
+   - `defaultIcon`: Bu dosya türü için kullanılacak bir simge. Simge dosyası kaynak uygulama bildirimi olarak eklenmesi gerekir. Daha fazla bilgi için [nasıl yapılır: ClickOnce uygulamasına bir veri dosyası dahil](../deployment/how-to-include-a-data-file-in-a-clickonce-application.md).  
   
-     Bir örnek için `file` ve `fileAssociation` öğeler, bkz [ \<fileAssociation > öğesi](../deployment/fileassociation-element-clickonce-application.md).  
+     Bir örneği `file` ve `fileAssociation` öğeler, bkz [ \<fileAssociation > öğesi](../deployment/fileassociation-element-clickonce-application.md).  
   
-5.  Birden çok dosya türünü uygulama ile ilişkilendirmek istiyorsanız, ek eklemeniz `fileAssociation` öğeleri. Unutmayın `progid` özniteliği her biri için farklı olmalıdır.  
+5. Birden fazla dosya türü uygulamayla ilişkilendirmek istiyorsanız, ek Ekle `fileAssociation` öğeleri. Unutmayın `progid` özniteliği, her biri için farklı olmalıdır.  
   
-6.  Uygulama bildirimine tamamladıktan sonra bildirimi yeniden imzalayın. Komut satırından Mage.exe kullanarak bunu yapabilirsiniz.  
+6. Uygulama bildirimini tamamladıktan sonra bildirimi yeniden imzalayın. Komut satırından kullanarak bunu yapabilirsiniz *Mage.exe*.  
   
-     `mage -Sign WindowsFormsApp1.exe.manifest -CertFile mycert.pfx`  
+    `mage -Sign WindowsFormsApp1.exe.manifest -CertFile mycert.pfx`  
   
-     Daha fazla bilgi için bkz: [Mage.exe (bildirim üretme ve düzenleme aracı)](/dotnet/framework/tools/mage-exe-manifest-generation-and-editing-tool)  
+    Daha fazla bilgi için [Mage.exe (bildirim üretme ve düzenleme aracı)](/dotnet/framework/tools/mage-exe-manifest-generation-and-editing-tool)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [\<fileAssociation > öğesi](../deployment/fileassociation-element-clickonce-application.md)   
  [ClickOnce Uygulama bildirimi](../deployment/clickonce-application-manifest.md)   
  [Mage.exe (Bildirim Oluşturma ve Düzenleme Aracı)](/dotnet/framework/tools/mage-exe-manifest-generation-and-editing-tool)

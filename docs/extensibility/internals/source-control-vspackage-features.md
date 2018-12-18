@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31134958"
 ---
 # <a name="source-control-vspackage-features"></a>Kaynak denetimi VSPackage özellikleri
 Bu bölümde, kaynak denetimi VSPackage çeşitli özelliklerini açıklar. Kayıt özetler ve seçim ayrıntıları için bu tür bir VSPackage ve üç ana kaynak denetimi ilgili özellikleri açıklanır: Sorgu düzenleme sorgu Kaydet (QEQS) olayları, simge değiştirme ve kaynak denetimi için özel kullanıcı arabirimi (UI) işleme İşlevler.  

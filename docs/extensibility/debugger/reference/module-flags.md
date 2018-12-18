@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 945a4a0fd5a7de1e9d04d409390caddfc718d92d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 89dbb562dfbab83f56664aad7fdd107ea9d0e397
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873987"
 ---
 # <a name="moduleflags"></a>MODULE_FLAGS
-Bir modül tanımlamak için kullanılır.  
+Bir modülü tanımlamak için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,32 +55,32 @@ public enum enum_MODULE_FLAGS {
  Hiçbir modül belirtir.  
   
  MODULE_FLAG_SYSTEM  
- Bir Sistem Modülü belirtir.  
+ Bir sistem modülünün belirtir.  
   
  MODULE_FLAG_SYMBOLS  
- Bir simge modül belirtir.  
+ Sembol Modülü belirtir.  
   
  MODULE_FLAG_64BIT  
- Bir 64-bit modül belirtir.  
+ Bir 64-bit Modülü belirtir.  
   
  MODULE_FLAG_OPTIMIZED  
- İyileştirilmiş Modülü belirtir. Bu durum yansıtılmıştır **modülleri** penceresi.  
+ İyileştirilmiş Modülü belirtir. Bu durumu yansıtılır **modülleri** penceresi.  
   
  MODULE_FLAG_UNOPTIMIZED  
- Modül getirilmemiş belirtir. Bu durum yansıtılmıştır **modülleri** penceresi. Bu varsayılan durumdur.  
+ Modül getirilmemiş belirtir. Bu durumu yansıtılır **modülleri** penceresi. Varsayılan durum budur.  
   
 ## <a name="remarks"></a>Açıklamalar  
  İçin kullanılan `m_dwModuleFlags` üyesi [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md) yapısı.  
   
- Bu bayrakların bit ile birleştirilebilir `OR`.  
+ Bu bayrak bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [MODULE_INFO](../../../extensibility/debugger/reference/module-info.md)

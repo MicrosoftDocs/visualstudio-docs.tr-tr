@@ -18,25 +18,25 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 061ede31c0d3d0f72daf3417851aaa76adc3570d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 80724e21a1c004bd99f194e76179d9c08d6b570a
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120419"
 ---
-# <a name="sharepoint-development-samples-and-walkthroughs"></a>SharePoint Geliştirme Örnekleri ve İzlenecek Yollar
+# <a name="sharepoint-development-samples-and-walkthroughs"></a>SharePoint geliştirme örnekleri ve izlenecek yollar
   Bu bölümde örnek uygulamalar, örnek kod ve sözdizimi, yapı ve SharePoint çözümleri oluşturmak için kullanılan teknikleri gösteren adım adım talimatları içerir.  
   
  Örnek kod açıklayıcı amacıyla tasarlanmıştır ve dağıtılan çözümlerinde değişiklik olmadan kullanılmamalıdır. Özellikle, güvenlik büyük dikkate almanız gerekir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde
   
 |Konu|Açıklama|  
 |-----------|-----------------|  
-|[SharePoint Geliştirme Örnekleri](../sharepoint/sharepoint-development-samples.md)|Visual Studio'da SharePoint geliştirme araçlarını kullanmayı gösteren örnek uygulamalar açıklanmaktadır.|  
-|[SharePoint Geliştirme Yönergeleri](../sharepoint/sharepoint-development-walkthroughs.md)|Visual Studio'da SharePoint geliştirme araçları giriş sağlayan adım adım kılavuzlar listeler.|  
+|[SharePoint geliştirme örnekleri](../sharepoint/sharepoint-development-samples.md)|Visual Studio'da SharePoint geliştirme araçlarını kullanmayı gösteren örnek uygulamalar açıklanmaktadır.|  
+|[SharePoint geliştirme yönergeleri](../sharepoint/sharepoint-development-walkthroughs.md)|Visual Studio'da SharePoint geliştirme araçları giriş sağlayan adım adım kılavuzlar listeler.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [SharePoint Çözümleri Oluşturma](../sharepoint/create-sharepoint-solutions.md)  
-  
+## <a name="see-also"></a>Ayrıca bkz.
+ [SharePoint çözümleri oluşturma](../sharepoint/create-sharepoint-solutions.md)  
   

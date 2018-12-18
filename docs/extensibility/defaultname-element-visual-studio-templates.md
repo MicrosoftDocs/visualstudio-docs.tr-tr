@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: e67d8970859906e839abf89e85e38c24c2d88066
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 03513b786c17e5bef3d8fa1fff79c1c3e73fe6a0
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500325"
 ---
-# <a name="defaultname-element-visual-studio-templates"></a>DefaultName Öğesi (Visual Studio Şablonları)
-Oluşturulduğunda proje ve öğe için Visual Studio Proje sistemi oluşturacak ad belirtir.  
+# <a name="defaultname-element-visual-studio-templates"></a>DefaultName öğesi (Visual Studio şablonları)
+Oluşturulduğunda, Visual Studio Proje sistemi oluşturacak proje veya öğe için ad belirtir.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -36,22 +37,22 @@ Oluşturulduğunda proje ve öğe için Visual Studio Proje sistemi oluşturacak
 </DefaultName>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
  Bu metin proje veya öğe varsayılan adını belirtir.  
@@ -59,14 +60,14 @@ Oluşturulduğunda proje ve öğe için Visual Studio Proje sistemi oluşturacak
 ## <a name="remarks"></a>Açıklamalar  
  `DefaultName` İsteğe bağlı bir öğedir.  
   
- Projeler için bu öğe projeye diskte depolar dizinin adını belirtir. Öğeleri için kaynak dosyasının dosya adını belirtir.  
+ Projeleri için bu öğenin proje diskte depolar dizinin adını belirtir. Öğeler için kaynak dosyasının dosya adını belirtir.  
   
- Bir proje veya öğesi oluşturduğunuzda, varsayılan adını kullanarak değiştirebilirsiniz **adı** herhangi birinden kullanılabilir seçeneği **yeni proje** iletişim kutusu veya **Yeni Öğe Ekle** iletişim kutusu.  
+ Bir proje veya öğe oluşturduğunuzda, varsayılan adını kullanarak değiştirebilirsiniz **adı** 'nden ya da mevcut olan seçenek **yeni proje** iletişim kutusu veya **Add New Item** iletişim kutusu.  
   
- Proje ve öğe için varsayılan adı oluşturmak için proje sistemi istemiyorsanız, daha sonra ayarlamak [ProvideDefaultName](../extensibility/providedefaultname-element-visual-studio-templates.md) öğesine `False`.  
+ Proje veya öğe için varsayılan adı oluşturmak için proje sistemi istemiyorsanız ayarlayın [ProvideDefaultName](../extensibility/providedefaultname-element-visual-studio-templates.md) öğesine `False`.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek standart madde şablon için meta verileri gösterilmektedir bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] sınıfı.  
+ Standart öğesi şablonu için meta veriler aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] sınıfı.  
   
 ```  
 <VSTemplate Type="Item" Version="3.0.0"  
@@ -84,6 +85,6 @@ Oluşturulduğunda proje ve öğe için Visual Studio Proje sistemi oluşturacak
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

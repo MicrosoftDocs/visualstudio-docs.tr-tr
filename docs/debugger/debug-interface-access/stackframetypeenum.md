@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 329661e857859a1f6452506ba2984ac962bf4ff2
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: fcf5e120e769b69c064306432c3026194eb0d851
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49853943"
 ---
 # <a name="stackframetypeenum"></a>StackFrameTypeEnum
 Yığın çerçeve türünü belirtir.  
@@ -38,29 +39,29 @@ enum StackFrameTypeEnum {
   
 ## <a name="elements"></a>Öğeleri  
  `FrameTypeFPO`  
- Çerçeve işaretçisi atlanmış; FPO bilgileri kullanılabilir.  
+ Çerçeve işaretçisini; atlanmış FPO bilgisi yok.  
   
  `FrameTypeTrap`  
- Çekirdek Tuzak Çerçevesi.  
+ Çekirdek yakalama çerçevesi.  
   
  `FrameTypeTSS`  
- Çekirdek Tuzak Çerçevesi.  
+ Çekirdek yakalama çerçevesi.  
   
  `FrameTypeStandard`  
  Standart EBP yığın çerçevesi.  
   
  `FrameTypeFrameData`  
- Çerçeve işaretçisi atlanmış; Çerçeve veri bilgileri kullanılabilir.  
+ Çerçeve işaretçisini; atlanmış Çerçeve veri bilgileri kullanılabilir.  
   
  `FrameTypeUnknown`  
- Hata ayıklama bilgisi yok çerçevesi.  
+ Çerçeve herhangi bir hata ayıklama bilgisi yok.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu numaralandırma değerleri için yapılan bir çağrı tarafından döndürülen [Idiastackframe::get_type](../../debugger/debug-interface-access/idiastackframe-get-type.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: cvconst.h  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [IDiaStackFrame::get_type](../../debugger/debug-interface-access/idiastackframe-get-type.md)

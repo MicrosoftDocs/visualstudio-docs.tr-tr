@@ -13,96 +13,97 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5fc289426c2560e978819efcd8eaf17e56b224a8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ba86f77219329c0e34edecf10aca69e8bedf2226
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49843242"
 ---
-# <a name="supplying-undo-support-to-designers"></a>Tasarımcılar geri alma desteği sağlama
-Tasarımcıları, düzenleyiciler gibi genellikle böylece kullanıcılar kendi son değişiklikler code öğesi değiştirirken çevirebilirsiniz geri alma işlemleri desteklemesi gerekir.  
+# <a name="supplying-undo-support-to-designers"></a>Tasarımcılara Geri Alma Desteği Sağlama
+Tasarımcılar, düzenleyiciler gibi genellikle kullanıcılar, bir kod öğesi değiştirirken son değişikliklerini ters çevirebilirsiniz böylece geri alma işlemlerinin desteklemesi gerekir.  
   
- Visual Studio'da uygulanan çoğu tasarımcıları otomatik olarak ortamı tarafından sağlanan geri desteğine sahip.  
+ Visual Studio'da uygulanan çoğu tasarımcıları otomatik olarak ortamı tarafından sağlanan geri alma desteği vardır.  
   
- Geri alma özelliğini desteklemek için gereken Tasarımcı uygulamaları:  
+ Tasarımcı için geri alma özelliğini desteklemek için gereken uygulamaları:  
   
--   Özet temel sınıf uygulayarak geri yönetimi sağlar <xref:System.ComponentModel.Design.UndoEngine>  
+- Soyut temel sınıf uygulayarak geri Yönetimi sağlayın. <xref:System.ComponentModel.Design.UndoEngine>  
   
--   Sağlar kalıcılığını ve CodeDOM destek uygulayarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService> ve <xref:System.ComponentModel.Design.IComponentChangeService> sınıfları.  
+- Kalıcılık sağlar ve CodeDOM desteği uygulayarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService> ve <xref:System.ComponentModel.Design.IComponentChangeService> sınıfları.  
   
- Kullanarak tasarımcıları yazma hakkında daha fazla bilgi için [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], bkz: [genişletme tasarım zamanı desteği](http://msdn.microsoft.com/Library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
+  Tasarımcılar kullanarak yazma hakkında daha fazla bilgi için [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], bkz: [tasarım zamanı desteğini genişletmek](https://msdn.microsoft.com/Library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2).  
   
- [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] Varsayılan geri alma altyapısı tarafından sağlar:  
+  [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] Varsayılan geri alma altyapısı tarafından sağlar:  
   
--   Sağlama, Yönetim uygulamaları aracılığıyla geri <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> ve <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit> sınıfları.  
+- Sağlama, Yönetim uygulamaları aracılığıyla geri <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> ve <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit> sınıfları.  
   
--   Kalıcılığı ve varsayılan CodeDOM desteğini sağladığını <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> ve <xref:System.ComponentModel.Design.IComponentChangeService> uygulamaları.  
+- Kalıcılığı ve varsayılan aracılığıyla CodeDOM desteği sağlayan <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> ve <xref:System.ComponentModel.Design.IComponentChangeService> uygulamaları.  
   
-## <a name="obtaining-undo-support-automatically"></a>Geri alma desteği otomatik olarak alma  
- Oluşturulan Tasarımcısı [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] otomatik ve tam geri alma desteği olan ise, Tasarımcı:  
+## <a name="obtaining-undo-support-automatically"></a>Otomatik olarak geri alma desteği alma  
+ Oluşturduğunuz herhangi bir tasarımcı [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] otomatik ve tam geri desteğine sahip ise, Tasarımcı:  
   
--   Kullanır bir <xref:System.Windows.Forms.Control> sınıfı için kendi kullanıcı arabirimi tabanlı.  
+-   Kullanan bir <xref:System.Windows.Forms.Control> kullanıcı arabirimi için sınıf tabanlı.  
   
 -   Standart CodeDOM tabanlı kod oluşturma ve ayrıştırma sistem kod oluşturma ve kalıcılığı için kullanır.  
   
-     Visual Studio CodeDOM desteği ile çalışma hakkında daha fazla bilgi için bkz: [dinamik kaynak kodu oluşturma ve derleme](/dotnet/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation)  
+     Visual Studio CodeDOM desteği ile çalışma hakkında daha fazla bilgi için bkz. [dinamik kaynak kodu oluşturma ve derleme](/dotnet/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation)  
   
-## <a name="when-to-use-explicit-designer-undo-support"></a>Açık Tasarımcı geri alma desteği kullanma zamanı  
- Biri tarafından sağlanan dışında bir görünüm bağdaştırıcısı olarak adlandırılan bir grafik kullanıcı arabirimi kullanıyorsanız, tasarımcıları kendi geri alma yönetim sağlamanız gerekir <xref:System.Windows.Forms.Control>.  
+## <a name="when-to-use-explicit-designer-undo-support"></a>Zaman açık Tasarımcı geri alma desteği  
+ Tasarımcılar tarafından sağlanan dışındaki bir görünüm bağdaştırıcısı olarak adlandırılan bir grafik kullanıcı arabirimi kullanıyorlarsa kendi geri yönetim sağlaması gerekir <xref:System.Windows.Forms.Control>.  
   
- Bir grafik tasarımı web tabanlı arabirimi ürün bunun bir örneğini oluşturma yerine bir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] grafik arabirim tabanlı.  
+ Buna örnek olarak bir ürün olan bir grafik tasarımı web tabanlı arabirimi oluşturmak olabilir yerine [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] grafik arabirim tabanlı.  
   
- Böyle durumlarda, bu görünüm bağdaştırıcısı ile kaydetmek ihtiyacım var [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kullanarak <xref:Microsoft.VisualStudio.Shell.Design.ProvideViewAdapterAttribute>ve açık geri yönetim sağlar.  
+ Bu gibi durumlarda, bu görünüm bağdaştırıcısı ile kaydetmek ihtiyacım var [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] kullanarak <xref:Microsoft.VisualStudio.Shell.Design.ProvideViewAdapterAttribute>ve açık geri alma yönetimi sağlayın.  
   
- CodeDOM ve kalıcılığı desteği olmayan kullanırsanız sağlamanız gereken tasarımcıları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sağlanan kod oluşturma modeli <xref:System.CodeDom> ad alanı.  
+ Tasarımcılar ihtiyacınız olmayan kullanırsanız CodeDOM ve Kalıcılık desteği sağlamak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sağlanan kod oluşturma modeli <xref:System.CodeDom> ad alanı.  
   
-## <a name="undo-support-features-of-the-designer"></a>Tasarımcı desteği özelliklerini geri al  
- Varsayılan uygulamaları sağlamak için gereken arabirimlerin geri kullanmıyorsa tasarımcıların kullanılabilir Destek ortamı SDK'sı sağlar <xref:System.Windows.Forms.Control> kullanıcı arabirimlerini veya standart CodeDOM ve kalıcılığı modeli için sınıflar temel.  
+## <a name="undo-support-features-of-the-designer"></a>Tasarımcı desteği özelliklerini al  
+ Ortamı SDK'sı varsayılan uygulamaları sağlamak için gereken arabirimleri geri kullanmayan tasarımcılar tarafından kullanılabilmesi için destek sağlar <xref:System.Windows.Forms.Control> sınıfların kullanıcı arabirimlerini veya standart bir CodeDOM ve Kalıcılık modeli.  
   
- <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> Sınıfı türer [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] <xref:System.ComponentModel.Design.UndoEngine> uygulaması kullanarak sınıfı <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager> yönetmek için sınıf işlemleri geri al.  
+ <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> Sınıf türetilir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] <xref:System.ComponentModel.Design.UndoEngine> uygulaması kullanarak <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager> sınıfı yönetmek için geri alma işlemleri.  
   
  Visual Studio Tasarımcı geri alma için aşağıdaki özellik sağlar:  
   
--   Birden çok tasarımcıları arasında bağlantılı geri alma işlevselliği.  
+- Birden çok tasarımcılar arasında bağlantılı geri alma işlevselliği.  
   
--   Bir tasarımcı içinde alt birimler etkileşim kurabilir ile üst uygulayarak <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleParentUndoUnit> üzerinde <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit>.  
+- Bir tasarımcı içinde alt birimleri uygulayarak ebeveynleri ile çalışabilirler <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleParentUndoUnit> üzerinde <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit>.  
   
- Ortamı SDK'sı sağlayarak CodeDOM ve kalıcılığı desteği sağlar:  
+  Ortamı SDK'sı CodeDOM ve Kalıcılık sağlanarak destek sağlar:  
   
--   <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> bir uygulamaları olarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>  
+- <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> bir uygulamaları olarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>  
   
- A <xref:System.ComponentModel.Design.IComponentChangeService> tarafından sağlanan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]'' tasarım ana bilgisayar.  
+  A <xref:System.ComponentModel.Design.IComponentChangeService> tarafından sağlanan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]'' tasarım ana bilgisayar.  
   
-## <a name="using-the-environment-sdk-features-to-supply-undo-support"></a>Geri alma desteği sağlamak için ortamı SDK özellikleri kullanma  
- Geri alma destek almak için bir tasarımcı uygulayan bir nesne gerekir:  
+## <a name="using-the-environment-sdk-features-to-supply-undo-support"></a>Geri alma desteği sağlamak için ortamı SDK özelliklerini kullanma  
+ Geri alma desteği elde etmek için bir tasarımcı uygulayan bir nesne gerekir:  
   
--   Örneği ve örneği başlatılamıyor <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> geçerli bir sınıfla <xref:System.IServiceProvider> uygulaması.  
+- Örneği oluşturmak ve bir örneğini başlatır <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> geçerli bir sınıfla <xref:System.IServiceProvider> uygulaması.  
   
--   Bu <xref:System.IServiceProvider> sınıfı aşağıdaki hizmetleri sağlar:  
+- Bu <xref:System.IServiceProvider> sınıfı aşağıdaki hizmetleri sağlar:  
   
-    -   <xref:System.ComponentModel.Design.IDesignerHost>.  
+  - <xref:System.ComponentModel.Design.IDesignerHost>.  
   
-    -   <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>  
+  - <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>  
   
-         Kullanarak tasarımcıları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] CodeDOM serileştirme kullanmayı seçebilir <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> ile sağlanan [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] kendi uygulaması olarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>.  
+     Tasarımcılar kullanarak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] CodeDOM serileştirme kullanmayı seçebilir <xref:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService> ile sağlanan [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] uygulaması olarak <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>.  
   
-         Bu durumda, <xref:System.IServiceProvider> sınıfı için sağlanan <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> Oluşturucusu uygulaması bu nesneyi döndürmelidir <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService> sınıfı.  
+     Bu durumda, <xref:System.IServiceProvider> sınıfı için sağlanan <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> Oluşturucusu uygulaması bu nesne döndürmelidir <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService> sınıfı.  
   
-    -   <xref:System.ComponentModel.Design.IComponentChangeService>  
+  - <xref:System.ComponentModel.Design.IComponentChangeService>  
   
-         Varsayılan kullanılarak tasarımcıları <xref:System.ComponentModel.Design.DesignSurface> tarafından sağlanan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tasarım konak bir varsayılan uygulaması olması garanti edilir <xref:System.ComponentModel.Design.IComponentChangeService> sınıfı.  
+     Varsayılan değeri kullanmanın tasarımcıları <xref:System.ComponentModel.Design.DesignSurface> tarafından sağlanan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tasarım konak varsayılan bir uygulama olmasını garanti edilir <xref:System.ComponentModel.Design.IComponentChangeService> sınıfı.  
   
- Uygulama tasarımcıları bir <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> tabanlı geri alma mekanizması, değişiklikleri otomatik olarak izler:  
+  Uygulama tasarımcıları bir <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine> tabanlı geri alma mekanizması, değişiklikleri otomatik olarak izler:  
   
--   Özellik değişiklikleri aracılığıyla yapılır <xref:System.ComponentModel.TypeDescriptor> nesnesi.  
+- Özellik değişiklikleri aracılığıyla yapılan <xref:System.ComponentModel.TypeDescriptor> nesne.  
   
--   <xref:System.ComponentModel.Design.IComponentChangeService> geri alınamaz bir değişiklik işlendiğinde olayları el ile oluşturulur.  
+- <xref:System.ComponentModel.Design.IComponentChangeService> kabul edilen geri alınamaz bir değişiklik olduğunda olayları el ile oluşturulur.  
   
--   Tasarımcı değişikliği bağlamı içinde oluşturulduğu bir <xref:System.ComponentModel.Design.DesignerTransaction>.  
+- Tasarımcı değişikliği bağlamı içinde oluşturulmuş bir <xref:System.ComponentModel.Design.DesignerTransaction>.  
   
--   Açıkça kullanarak geri alma birimleri bir uygulama tarafından sağlanan standart geri birim oluşturmak Tasarımcı seçer <xref:System.ComponentModel.Design.UndoEngine.UndoUnit> veya Visual Studio özgü uygulama <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit>, den türetilen <xref:System.ComponentModel.Design.UndoEngine.UndoUnit> ve ayrıca sağlar bir her ikisi de uyarlamasını <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleParentUndoUnit>.  
+- Açıkça kullanarak geri alma birimi uygulaması tarafından sağlanan standart geri alma birimi oluşturmak Tasarımcı seçer <xref:System.ComponentModel.Design.UndoEngine.UndoUnit> veya Visual Studio özel uygulama <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine.UndoUnit>, öğesinden türetildiğini <xref:System.ComponentModel.Design.UndoEngine.UndoUnit> ve aynı zamanda sağlayan bir Her iki uygulama <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleParentUndoUnit>.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  <xref:System.ComponentModel.Design.UndoEngine>   
  <xref:Microsoft.VisualStudio.Shell.Design.OleUndoEngine>   
- [Tasarım zamanı desteği genişletme](http://msdn.microsoft.com/Library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)
+ [Tasarım zamanı desteği sunma](https://msdn.microsoft.com/Library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)

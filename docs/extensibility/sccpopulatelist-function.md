@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 26e7bbb4a99c3cd649eedb7638feb5b6170b3b59
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 73cc3886fe486498f7d0fbe89d0b68cf873c9d0b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903575"
 ---
-# <a name="sccpopulatelist-function"></a>SccPopulateList işlevi
-Bu işlev belirli kaynak denetimi komut için dosyaları listesini güncelleştirir ve kaynak denetimi durumu verilen tüm dosyalarda sağlar.  
+# <a name="sccpopulatelist-function"></a>SccPopulateList İşlevi
+Bu işlev, belirli bir kaynak denetim komut için dosyaları listesini güncelleştirir ve tüm belirli dosyalar kaynak denetimi durumunu sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,31 +42,31 @@ SCCRTN SccPopulateList (
   
 #### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
- nKomut  
- [in] Tüm dosyalara uygulanan kaynak denetimi komutu `lpFileNames` dizi (bkz [komut kodu](../extensibility/command-code-enumerator.md) olası komutların listesini görmek için).  
+ nyürütülen komut  
+ [in] Tüm dosyalara uygulanacak Kaynak Denetimi'ne `lpFileNames` dizi (bkz [komut kodu](../extensibility/command-code-enumerator.md) olası komutların listesini görmek için).  
   
  nFiles  
- [in] Dosya sayısı `lpFileNames` dizi.  
+ [in] Dosya sayısı `lpFileNames` dizisi.  
   
  lpFileNames  
- [in] Dosya adları IDE bilinen bir dizi.  
+ [in] IDE'ye bilinen dosya adları dizisi.  
   
  pfnPopulate  
- [in] Ekleme ve dosyaları kaldırmak için aramayı IDE geri çağırma işlevi (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) Ayrıntılar için).  
+ [in] Ekleme ve kaldırma dosyaları aramak için IDE geri çağırma işlevi (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) Ayrıntılar için).  
   
  pvCallerData  
- [in] Geri çağırma işlevi değişmeden iletilecek olan değer.  
+ [in] Geri çağırma işlevine geçirilecek değer değişmedi.  
   
  lpStatus  
- [içinde out] Her dosya için durumu bayrakları döndürmek için eklenti kaynak denetimi için bir dizi.  
+ [out içinde] Kaynak denetimi durumu bayrakları her dosya için döndürülecek eklentisi için bir dizi.  
   
  fOptions  
- [in] Komut bayrakları ("PopulateList bayrağı" bölümüne bakın [bit işaretleri belirli komutları tarafından kullanılan](../extensibility/bitflags-used-by-specific-commands.md) Ayrıntılar için).  
+ [in] Komut bayrakları ("PopulateList bayrağı" bölümüne bakın [kullanılan bit bayrakları tarafından belirli komutları](../extensibility/bitflags-used-by-specific-commands.md) Ayrıntılar için).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
@@ -73,19 +74,19 @@ SCCRTN SccPopulateList (
 |SCC_E_NONSPECIFICERROR|Belirli olmayan hata oluştu.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu işlev, dosyaların listesini görmek için geçerli durumunu inceler. Kullandığı `pfnPopulate` çağıran bir dosya için ölçüt eşleşmediğinde bildirmek için geri çağırma işlevi `nCommand`. Örneğin, komut ise `SCC_COMMAND_CHECKIN` ve listedeki bir dosyayı kullanıma alınmadı sonra geri çağıran bildirmek için kullanılır. Bazen, eklenti kaynak denetimi komutu bir parçası olarak ve bunları Ekle diğer dosyaları bulabilirsiniz. Bu, örneğin, bir Visual Basic kullanıcının bilgilendirilmesine projesi tarafından kullanılan ancak Visual Basic proje dosyasında görünmez bir .bmp dosyası kullanıma izin verir. Kullanıcının seçtiği **almak** IDE'de komutu. IDE kullanıcı alabilirsiniz düşündüğü tüm dosyaların bir listesini görüntüler, ancak liste gösterilen önce `SccPopulateList` işlevi listenin görüntülenecek güncel olduğundan emin olmak için çağrılır.  
+ Bu işlev, geçerli durumu için dosyaların listesini inceler. Kullandığı `pfnPopulate` bir dosya için ölçüt eşleşmediğinde çağrıyı yapana bunu bildirmesi için geri çağırma işlevi `nCommand`. Örneğin, komut ise `SCC_COMMAND_CHECKIN` ve listedeki bir dosyayı kullanıma alınmamış sonra geri çağıran bildirmek için kullanılır. Bazen, kaynak denetimi eklentisi komutunun bir parçası olması ve eklemediğiniz diğer dosyaları bulabilirsiniz. Bu, örneğin, bir Visual Basic kullanıcının kendi projesi tarafından kullanılır, ancak Visual Basic proje dosyasında görünmez .bmp dosyayı kullanıma izin verir. Kullanıcının **alma** IDE'de komutu. IDE kullanıcı alabilirsiniz gördüğü tüm dosyaların listesini görüntüler, ancak liste gösterilmeden önce `SccPopulateList` işlevi listenin görüntülenecek güncel olduğundan emin olmak için çağrılır.  
   
 ## <a name="example"></a>Örnek  
- IDE kullanıcı alabilirsiniz düşündüğü dosyaların bir listesini oluşturur. Bu liste görüntülemeden önce çağırır `SccPopulateList` işlev, eklenti kaynak denetimi fırsatı veren ekleyin ve dosyaları listeden silin. Eklenti listesi verilen geri çağırma işlevini çağırarak değiştirir (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) daha fazla ayrıntı için).  
+ IDE kullanıcı alabilirsiniz gördüğü dosyaların bir listesini oluşturur. Bu liste görüntülemeden önce çağrı `SccPopulateList` işlev, kaynak denetimi eklentisi için fırsatı veren ekleyin ve dosyaları listeden silin. Eklenti Listesi belirli bir geri çağırma işlevini çağırarak değiştirir (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) daha fazla ayrıntı için).  
   
- Çağrılacak eklenti devam `pfnPopulate` ekleyen ve tamamlandı ve ardından döndürür kadar dosyalarını siler işlevi `SccPopulateList` işlevi. IDE daha sonra kendi listesini görüntüleyebilirsiniz. `lpStatus` Dizi IDE tarafından geçirilen özgün listesindeki tüm dosyaları temsil eder. Tüm bu dosyaları ayrıca yapma için durumunu eklenti doldurur geri çağırma işlevini kullanın.  
+ Çağırmak eklenti devam `pfnPopulate` ekler ve tamamlandı ve ardından döndürür kadar dosyaları, siler, işlev `SccPopulateList` işlevi. IDE, daha sonra kendi listesini görüntüleyebilirsiniz. `lpStatus` Dizi IDE tarafından geçirilen orijinal listesindeki tüm dosyaları temsil eder. Tüm bu dosya ayrıca için yapma durumunu eklenti doldurur, geri çağırma işlevini kullanın.  
   
 > [!NOTE]
->  Kaynak Denetim eklentisi her zaman yalnızca hemen listesi olduğu gibi bırakarak bu işlevden döndürülecek seçeneği vardır. Bir eklenti bu işlevi uyguluyorsa, bu ayarlayarak gösterebilir `SCC_CAP_POPULATELIST` yapılan ilk çağrıda yetenek bit bayrak [SccInitialize](../extensibility/sccinitialize-function.md). Varsayılan olarak, eklenti her zaman geçirilen tüm öğeleri dosyaları varsayılmaktadır. Ancak, IDE ayarlarsa `SCC_PL_DIR` içinde bayrak `fOptions` parametresi, geçirilen tüm öğeleri olan dizinler olarak kabul edilmesi için. Eklenti ait tüm dosyaları dizinler eklemeniz gerekir. IDE hiçbir zaman karışımını dosyaları ve dizinleri geçer.  
+>  Kaynak Denetimi Eklentisi, yalnızca hemen listesi olduğu gibi bırakarak bu işlevden döndürülecek seçeneği her zaman vardır. Bir eklenti bu işlevi uyguluyorsa, bu ayarlayarak gösterebilir `SCC_CAP_POPULATELIST` özelliği bit bayrak yapılan ilk çağrıda [Sccınitialize](../extensibility/sccinitialize-function.md). Varsayılan olarak, eklentinin her zaman geçirilen tüm öğeleri dosyalarıdır varsaymanız gerekir. Ancak, IDE ayarlarsa `SCC_PL_DIR` bayrağını `fOptions` parametresi, geçirilen tüm öğeleri olan dizin olarak kabul edilmesi için. Eklenti ait tüm dosyaların dizinlerinde eklemelisiniz. IDE karışımını dosyalar ve dizinler hiçbir zaman geçer.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
- [SccInitialize](../extensibility/sccinitialize-function.md)   
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+ [Sccınitialize](../extensibility/sccinitialize-function.md)   
  [POPLISTFUNC](../extensibility/poplistfunc.md)   
- [Özel komutlar tarafından kullanılan bit işaretleri](../extensibility/bitflags-used-by-specific-commands.md)   
- [Komut kodu](../extensibility/command-code-enumerator.md)
+ [Özel komutlar tarafından kullanılan bit bayrakları](../extensibility/bitflags-used-by-specific-commands.md)   
+ [Komut Kodu](../extensibility/command-code-enumerator.md)

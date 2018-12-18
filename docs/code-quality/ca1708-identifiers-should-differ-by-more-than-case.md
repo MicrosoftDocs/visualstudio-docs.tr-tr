@@ -1,6 +1,7 @@
 ---
 title: 'CA1708: Tanımlayıcılar örnekten daha fazla farklı olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cf10202293091fd02eee3d8eb94f0f93b8edd2ae
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b2bda5a9f5d569057455af9e31fb5d6852c9881e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49815500"
 ---
 # <a name="ca1708-identifiers-should-differ-by-more-than-case"></a>CA1708: Tanımlayıcılar örnekten daha fazla farklı olmalıdır
+
 |||
 |-|-|
 |TypeName|IdentifiersShouldDifferByMoreThanCase|
@@ -30,21 +33,21 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Küçük harfe dönüştürüldüğünde iki tür, üyeler, parametreleri ya da tam ad alanları adlarını aynıdır.
+ İki tür, üye, parametre veya tam ad alanları adları, küçük harfe dönüştürüldüğünde aynıdır.
 
-## <a name="rule-description"></a>Kural Tanımı
- Ortak dil çalışma zamanı hedef dilleri büyük/küçük harf duyarlı olması gerekmediğinden ad alanları, türler, üyeler ve parametreler için tanımlayıcılar yalnızca büyük/küçük harfe göre farklılık göstermeyebilir. Örneğin, [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] yaygın olarak kullanılan bir büyük küçük harf duyarsız dildir.
+## <a name="rule-description"></a>Kural açıklaması
+ Ortak dil çalışma zamanı hedef dilleri büyük/küçük harf duyarlı olması gerekmediğinden ad alanları, türler, üyeler ve parametreler için tanımlayıcılar yalnızca büyük/küçük harfe göre farklılık göstermeyebilir. Örneğin, [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] yaygın olarak kullanılan bir büyük küçük harf duyarsız dilidir.
 
- Bu kural yalnızca herkese görünür üyelere ateşlenir.
+ Bu kural yalnızca herkese görünür üyelere tetikler.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Büyük küçük harf duyarsız bir biçimde diğer tanımlayıcıları ile karşılaştırıldığında, benzersiz bir ad seçin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Büyük küçük harf duyarlı bir şekilde diğer tanımlayıcılarla karşılaştırılır, benzersiz bir ad seçin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın. Kitaplık tüm kullanılabilir dilde kullanılamayabilir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Bu kuraldan uyarıyı bastırmayın. Kitaplığı, .NET Framework içindeki kullanılabilir tüm dillerde kullanılabilir olmayabilir.
 
 ## <a name="example-of-a-violation"></a>Bir ihlali örneği
- Aşağıdaki örnek, bu kural ihlal gösterir.
+ Aşağıdaki örnek, bu kural ihlalini gösterir.
 
  [!code-csharp[FxCop.Naming.IdentifiersShouldDifferByMoreThanCase#1](../code-quality/codesnippet/CSharp/ca1708-identifiers-should-differ-by-more-than-case_1.cs)]
 

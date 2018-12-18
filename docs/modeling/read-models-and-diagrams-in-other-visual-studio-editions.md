@@ -1,5 +1,6 @@
 ---
 title: Diğer Visual Studio sürümlerindeki modelleri ve diyagramları okuma
+titleSuffix: ''
 ms.date: 11/04/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -9,32 +10,36 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: cd78d2c1e04ac37361d1e35c0f65b2e1c6637aea
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: e6fa953c294bb355d61126354b0752590e536c40
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059239"
 ---
 # <a name="read-models-and-diagrams-in-other-visual-studio-editions"></a>Diğer Visual Studio sürümlerindeki modelleri ve diyagramları okuma
-Bir model oluşturmayı desteklemiyor Visual Studio sürümünde bir model açtığınızda model salt okunur modunda açılır. Bu modda diyagramları düzenini değiştirebilirsiniz ancak modeli değiştiremezsiniz.
 
- Model oluşturma Visual Studio'nun hangi sürümleri desteklemek için bkz [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
+Bir model oluşturmayı desteklemiyor Visual Studio sürümünde bir modeli açtığınızda, model salt okunur modunda açar. Bu modda, diyagram düzenini değiştirebilirsiniz, ancak modeli değiştiremezsiniz.
 
-## <a name="obtaining-access-to-a-model-and-diagrams"></a>Bir Model ve diyagramları erişim elde etme
- Bir bağımlılık diyagramı okumak için ilk modelleme projesi açmak için Visual Studio'yu kullanın ve sonra diyagramında açın.
+Visual Studio'nun hangi sürümlerinin modeli oluşturulmasını desteklemek için bkz [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
 
- Bu nedenle, bir bağımlılık diyagramı okumak istiyorsanız, bunu oluşturulduğu modelleme projesi için erişim izni de olmalıdır. Bunu aşağıdakilerden projeden erişerek yapabilirsiniz [!INCLUDE[esprscc](../code-quality/includes/esprscc_md.md)], veya proje dosyalarının bir kopyasını alma.
+## <a name="obtaining-access-to-a-model-and-diagrams"></a>Bir Model ve diyagramlarını erişim elde etme
+
+Bir bağımlılık diyagramı okumak için ilk modelleme projesini açmak için Visual Studio'yu kullanın ve ardından diyagramında açın.
+
+Bu nedenle, bir bağımlılık diyagramı okumak istiyorsanız, oluşturulduğu modelleme projesine erişim de olmalıdır. Kaynak denetiminden proje erişme ya da proje dosyalarının bir kopyasını alma ya da bunu yapabilirsiniz.
 
 > [!NOTE]
->  Bu kodu uygulanmaz eşlemeleri ve .NET sınıf diyagramları koddan oluşturulan. Bu diyagramları modelleme projesine bağımsız olarak görüntülenebilir.
+> Bu kod için geçerli değildir haritaları ve .NET sınıf diyagramları koddan oluşturulan. Bu diyagramlar bir modelleme projesi bağımsız olarak görüntülenebilir.
 
- Bir bağımlılık diyagramı okumak için en düşük gereksinim duyduğunuz dosyaları kümesini şu şekildedir:
+Bir bağımlılık diyagramı okumak için gereken dosyalar en düşük kümesini şu şekildedir:
 
--   İki okumak, örneğin, istediğiniz diyagram için dosya diyagram **MyDiagram.classdiagram ve MyDiagram.classdiagram.layout**.
+-   İki dosyaları okumak için örneğin, istediğiniz diyagram için diyagram **MyDiagram.classdiagram ve MyDiagram.classdiagram.layout**.
 
     > [!NOTE]
-    >  Bağımlılık diyagramları için de adlı dosyayı olmalıdır * Diyagramım ***. layerdiagram.suppressions**.
+    > Bağımlılık diyagramları için adlı bir dosya da olmalıdır _Diyagramım_**. layerdiagram.suppressions**.
 
 -   Modelleme Proje dosyası (**MyModel.modelproj**)
 
@@ -42,21 +47,17 @@ Bir model oluşturmayı desteklemiyor Visual Studio sürümünde bir model açt�
 
 -   Şemada başvurulan herhangi bir paket için paket dosyaları (**ModelDefinition\MyPackage.uml**)
 
-## <a name="changes-that-you-can-make-in-read-only-mode"></a>Salt okunur modda yaptığınız değişiklikler
- Bir model oluşturmayı desteklemiyor Visual Studio sürümünde bir model ve onun diyagramlarını açarsanız modeli değiştiremezsiniz. Diğer bir deyişle, öğeleri ve diyagramlarda veya model Gezgini'nde görüntülenen ilişkileri değiştiremezsiniz. Ancak, bazı değişiklikler diyagramları düzene yapabilirsiniz:
+## <a name="changes-that-you-can-make-in-read-only-mode"></a>Salt okunur modunda yaptığınız değişiklikler
 
--   Şekiller ve bağlayıcılar diyagramda yeniden düzenleyin.
+Bir model oluşturmayı desteklemiyor Visual Studio sürümünde bir model ve diyagramlarını açarsanız, modeli değiştiremezsiniz. Diğer bir deyişle, öğeleri ve ilişkileri diyagramlarda veya model Gezgini'nde görüntülenen değiştiremezsiniz. Ancak, diyagramların düzene bazı değişiklikler yapabilirsiniz:
 
--   Şekilleri genişletme ve daraltma.
+- Şekilleri ve bağlayıcıları diyagram üzerinde yeniden düzenleyin.
 
- Bu değişiklikleri kaydedebilirsiniz. Değişikliklerinizi diğer kullanıcılar için görünür yapmak istiyorsanız, en az güncelleştirilmiş göndermelidir **.layout** dosyaları.
+- Şekilleri genişletme ve daraltma.
 
-##  <a name="RelatedTopics"></a> İlgili Konular
-
-|Başlık|Açıklama|
-|-----------|-----------------|
-|[Bağımlılık Diyagramları: Başvuru](../modeling/layer-diagrams-reference.md)|Bir katman diyagramı varolan ya da önerilen bir mimari yapısını gösterir. Kod yazıldığında otomatik olarak bir katman diyagramı karşı doğrulanabilir.|
+Bu değişiklikleri kaydedebilirsiniz. Değişikliklerinizi diğer kullanıcılarına görünür hale getirmek isterseniz, en az güncelleştirilmiş gönderdiğiniz gerekir **.layout** dosyaları.
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
+- [Bağımlılık Diyagramları: Başvuru](../modeling/layer-diagrams-reference.md)
 - [Uygulamanız için model oluşturma](../modeling/create-models-for-your-app.md)

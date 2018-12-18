@@ -25,30 +25,31 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6be491a5c7a0ceb0ed536416cdd3b273f96b4bb1
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 970051c5f53c152ea6fee334c3c1f856172b5ed9
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44280551"
 ---
 # <a name="create-custom-views-of-managed-objects"></a>Yönetilen nesnelerin özel görünümlerini oluşturma
-Visual Studio veri türleri hata ayıklayıcı değişken pencerelerini görüntüler şekilde özelleştirebilirsiniz.  
+Visual Studio hata ayıklayıcı değişken pencerelerinde veri türleri görüntüleme biçimini özelleştirebilirsiniz.  
   
 ## <a name="attributes"></a>Öznitelikler  
- C# ve Visual Basic özel veri kullanma genişletmeleri ekleyebilirsiniz <xref:System.Diagnostics.DebuggerTypeProxyAttribute>, <xref:System.Diagnostics.DebuggerDisplayAttribute>, ve <xref:System.Diagnostics.DebuggerBrowsableAttribute>.  
+ C# ve Visual Basic kullanarak özel verileri için genişletmeleri ekleyebilirsiniz <xref:System.Diagnostics.DebuggerTypeProxyAttribute>, <xref:System.Diagnostics.DebuggerDisplayAttribute>, ve <xref:System.Diagnostics.DebuggerBrowsableAttribute>.  
   
- İçinde [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)] kod, Visual Basic DebuggerBrowsable özniteliğini desteklemiyor. Bu sınırlama .NET Framework'ün daha yeni sürümlerinde kaldırılmıştır.  
+ İçinde [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)] kod, Visual Basic DebuggerBrowsable özniteliği desteklemiyor. Bu sınırlama, .NET Framework'ün daha yeni sürümlerde kaldırılmıştır.  
   
 ## <a name="visualizers"></a>Görselleştiriciler  
- Herhangi bir yönetilen veri türü görüntülenecek Görselleştirici yazabilirsiniz. Daha fazla bilgi için bkz: [nasıl yapılır: Görselleştirici yazma](../debugger/how-to-write-a-visualizer.md).  
+ Herhangi bir yönetilen veri türü görüntülenecek Görselleştirici yazabilirsiniz. Daha fazla bilgi için [nasıl yapılır: Görselleştirici yazma](../debugger/how-to-write-a-visualizer.md).  
   
 ## <a name="native-code"></a>Yerel kod  
- Yerel kod için Program Files\Microsoft Visual Studio 11.0\Common7\Packages\Debugger dizininde bulunan dosya autoexp.dat özel veri türü genişletmeleri ekleyebilirsiniz. Yazma yönergeler `autoexp` kuralları dosyasında bulunur.  
+ Yerel kod için özel veri türü genişletmeleri, Program Files\Microsoft Visual Studio 11.0\Common7\Packages\Debugger dizininde bulunan dosya autoexp.dat ekleyebilirsiniz. Yazma yönergeler `autoexp` kuralları dosyasında bulunur.  
   
 > [!CAUTION]
->  Bu dosya yapısını ve sözdizimi autoexp kuralları, Visual Studio, bir sürümünden sonraki değişebilir.  
+>  Bu dosya yapısını ve söz dizimi autoexp kurallarının bir Visual Studio sürümünden sonraki değişebilir.  
   
- Yerel tür görünümleri bir ifade değerlendiricisi eklenti yazarak da özelleştirilebilir. Daha fazla bilgi için bkz: [EEAddIn örnek: hata ayıklama ifade değerlendiricisi eklenti](http://msdn.microsoft.com/en-us/d4f6b068-c812-45bc-9ec0-7e0363c4bb9e).  
+ Yerel tür görünümleri, bir ifade değerlendirici eklenti yazarak da özelleştirilebilir. Daha fazla bilgi için [EEAddIn örnek: hata ayıklama ifade değerlendirici eklenti](https://msdn.microsoft.com/library/d4f6b068-c812-45bc-9ec0-7e0363c4bb9e).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [DebuggerTypeProxy özniteliğini kullanma](../debugger/using-debuggertypeproxy-attribute.md)   

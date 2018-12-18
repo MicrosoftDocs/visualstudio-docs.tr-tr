@@ -1,45 +1,47 @@
 ---
-title: Hızlı Başlangıç - Cookiecutter kullanarak bir Python projesi oluşturma
-description: Bu Hızlı Başlangıç için Python Cookiecutter şablonu kullanarak bir Visual Studio projesi oluşturun.
-ms.date: 09/22/2017
+title: Hızlı Başlangıç - Cookiecutter kullanarak Python projesi oluşturma
+description: Bu hızlı başlangıçta, bir Cookiecutter şablonu kullanarak Python için bir Visual Studio projesi oluşturun.
+ms.date: 12/06/2018
 ms.prod: visual-studio-dev15
 ms.technology: vs-python
 ms.topic: quickstart
 author: kraigb
 ms.author: kraigb
 manager: douge
+ms.custom: seodec18
 ms.workload:
 - python
 - data-science
-ms.openlocfilehash: c8e4ec1691dc1826fa6772d6d69723659245cece
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b8ad6d53a337e6a2a0d879ff9637156fb3d6d791
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062709"
 ---
-# <a name="quickstart-create-a-project-from-a-cookiecutter-template"></a>Hızlı Başlangıç: Proje Cookiecutter Şablondan Oluştur
+# <a name="quickstart-create-a-project-from-a-cookiecutter-template"></a>Hızlı Başlangıç: bir Cookiecutter şablonundan proje oluşturma
 
-Seçtiğiniz sonra [Python desteği Visual Studio 2017 yüklü](installing-python-support-in-visual-studio.md), GitHub için yayımlanan birçok bir Cookiecutter şablondan yeni bir proje oluşturmak kolaydır. [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) şablonları bulmak, şablon seçenekleri giriş ve projeler ve dosyaları oluşturmak için bir grafik kullanıcı arabirimi sağlar. Visual Studio 2017 ile eklemiştir ve Visual Studio'nun önceki sürümleri ayrı olarak yüklenebilir.
+Kaydederler [Python desteği Visual Studio 2017'de yüklü](installing-python-support-in-visual-studio.md), Github'da yayımlanan birçok bir Cookiecutter şablonundan yeni bir proje oluşturmak kolaydır. [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) şablonları keşfedin, şablon seçeneklerini giriş ve projeleri ve dosyaları oluşturmak için bir grafik kullanıcı arabirimi sağlar. Visual Studio 2017 ile eklemiştir ve Visual Studio'nun önceki sürümlerinde ayrı olarak yüklenebilir.
 
-1. Bu Hızlı Başlangıç için önce burada gösterilen Cookiecutter şablonu için gereken Python paketlerini içerir Anaconda3 Python dağıtımı yükleyin. Visual Studio yükleyicisi, belirleyin **Değiştir**, seçeneklerini genişletin **Python geliştirme** sağ tarafında ve select "Anaconda3" (32 bit veya 64 bit). Yükleme Internet hızınıza bağlı olarak biraz zaman alabilir ancak bu gerekli paketleri yüklemek için en basit yolu olduğunu unutmayın.
+1. Bu hızlı başlangıçta, ilk burada gösterilen Cookiecutter şablonu için gerekli Python paketlerini içeren Anaconda3 Python dağıtım yükleyin. Visual Studio Yükleyicisi'ni çalıştırın, seçin **Değiştir**, seçeneklerini genişletip **Python geliştirme** seçin ve sağ tarafındaki **Anaconda3** (32 bit veya 64-bit). Yükleme, Internet hızına bağlı olarak biraz zaman alabilir, ancak bu, gerekli paketleri yüklemek için en basit yoludur unutmayın.
 
 1. Visual Studio'yu başlatın.
 
-1. Seçin **Dosya > Yeni > Cookiecutter gelen...** . Bu komut, burada şablonları göz atabilirsiniz Visual Studio'da bir pencere açılır. 
+1. Seçin **dosya** > **yeni** > **Cookiecutter gelen**. Bu komut şablonları burada göz atabilirsiniz Visual Studio'da bir pencere açılır. 
 
-    ![Cookiecutter şablondan yeni proje](media/projects-from-cookiecutter1.png)
+    ![Cookiecutter şablonundan yeni proje](media/projects-from-cookiecutter1.png)
 
-1. "Microsoft/python-sklearn-sınıflandırıcı-cookiecutter" şablonu seçili sonra seçin **sonraki**. (İşlemi ilk kez Cookiecutter kullandığınızda birkaç dakika sürebilir.)
+1. Seçili **Microsoft/python-sklearn-sınıflandırıcı-cookiecutter** şablonu seçip **sonraki**. (İşlemi ilk kez Cookiecutter kullandığınızda birkaç dakika sürebilir.)
 
-1. Sonraki adımda, yeni projede için bir konum ayarlamak **oluşturmak için** alan sonra select **oluşturma**.
+1. Sonraki adımda, yeni proje için bir konum kümesi **oluşturmak için** alan ve ardından seçin **Oluştur**.
 
-    ![İkinci adım Cookiecutter kullanarak, proje özelliklerini ayarlama](media/projects-from-cookiecutter2.png)
+    ![Cookiecutter kullanarak, proje özelliklerini ayarlama ikinci adım](media/projects-from-cookiecutter2.png)
 
-1. İşlem tamamlandığında, "Dosyaları başarıyla oluşturuldu." iletisini görürsünüz Komutu seçin **Çözüm Gezgini'nde açık** projeyi açın.
+1. İşlem tamamlandığında, ileti gördüğünüz **dosyaları başarıyla oluşturuldu.** Komutu seçin **Çözüm Gezgini'nde açın** projeyi açmak için.
 
-1. CTRL + F5 tuşuna basın veya seçin **hata ayıklama > hata ayıklama olmadan Başlat** programı çalıştırmak için. 
+1. Tuşuna **Ctrl**+**F5** veya **hata ayıklama** > **hata ayıklama olmadan Başlat** programı çalıştırmak için. 
 
-    ![Python sklearn sınıflandırıcı cookiecutter şablon proje çıktısı](media/projects-from-cookiecutter4.png)
+    ![Python sklearn sınıflandırıcı cookiecutter şablonu projenin çıkışı](media/projects-from-cookiecutter4.png)
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
@@ -49,6 +51,6 @@ Seçtiğiniz sonra [Python desteği Visual Studio 2017 yüklü](installing-pytho
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Cookiecutter uzantısını kullanma](using-python-cookiecutter-templates.md)
-- [El ile varolan bir Python yorumlayıcısı tanımlayan](managing-python-environments-in-visual-studio.md#manually-identifying-an-existing-environment).
-- [Python desteği Visual Studio 2015 ve daha önce yükleme](installing-python-support-in-visual-studio.md).
-- [Konumları yüklemek](installing-python-support-in-visual-studio.md#install-locations).
+- [El ile var olan bir Python yorumlayıcısı tanımlayın](managing-python-environments-in-visual-studio.md#manually-identify-an-existing-environment)
+- [Visual Studio 2015'te ve daha önce Python desteğini yükleme](installing-python-support-in-visual-studio.md)
+- [Yükleme konumları](installing-python-support-in-visual-studio.md#install-locations)

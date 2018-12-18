@@ -17,6 +17,7 @@ ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31581181"
 ---
 # <a name="summary-view---resource-contention-view"></a>Özet görünümü - kaynak çakışması görünümü
 Özet görünümü, bir kaynağa erişim için beklenen karşın, bir iş parçacığı veya işlem askıya alındı, uygulamanızda olaylar hakkında bilgi görüntüler.  

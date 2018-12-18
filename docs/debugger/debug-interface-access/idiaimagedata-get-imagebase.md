@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9cd7cb16a4f6a6a629102eafbc212e4b2fff0f00
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 6e0037ef4bbbfc499d23e517e0fb3522b8f042c7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822990"
 ---
 # <a name="idiaimagedatagetimagebase"></a>IDiaImageData::get_imageBase
 Görüntü tabanlı burada bellek konumunu alır.  
@@ -33,13 +34,13 @@ HRESULT get_imageBase (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Önerilen görüntü taban değeri döndürür.  
+ [out] Önerilen görüntü temel değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yüklendiğinde görüntü temel çakışmalar nedeniyle görüntünün otomatik olarak bir kullanılmayan bellek konumuna rebased. Bu yöntem modülünde derleme zamanında depolanan temel İpucu (önerilen bellek konumuna) döndürür.  
+ Yüklendiğinde görüntü temel çakışmalar nedeniyle görüntü otomatik olarak bir kullanılmayan bellek konumuna ReBase işlemi gerçekleştirildi. Bu yöntem, derleme zamanında modülünde depolanmış temel İpucu (önerilen bellek konumu) döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaImageData](../../debugger/debug-interface-access/idiaimagedata.md)

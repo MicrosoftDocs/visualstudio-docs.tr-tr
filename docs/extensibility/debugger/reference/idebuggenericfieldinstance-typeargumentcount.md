@@ -14,11 +14,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a2fb72a486c58c0213361eb983371493f7ebafc5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 066084853c63f7f824b27b365e9abf0f2d695970
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822247"
 ---
 # <a name="idebuggenericfieldinstancetypeargumentcount"></a>IDebugGenericFieldInstance::TypeArgumentCount
 Bu örnek için parametre bağımsız değişkenlerini türünün sayısını döndürür.  
@@ -39,13 +40,13 @@ int TypeArgumentCount(
   
 #### <a name="parameters"></a>Parametreler  
  `pcArgs`  
- [içinde out] Bu örnek için tür parametre değişken sayısı.  
+ [out içinde] Tür parametresi bağımsız değişkenleri için bu örneği sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Örneğin, varsa listesi\<int >, 1, bu yöntemi döndürür ve liste\<int, float2 > 2 Bu yöntemi döndürür. Hiçbir tür bağımsız değişkeni varsa bu yöntem 0 döndürür.  
+ Örneğin, liste\<int >, bu yöntem, 1 döndürür ve liste\<int, float2 > 2 Bu yöntemi döndürür. Bu yöntem, hiçbir tür bağımsız değişkenleri yoksa 0 döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugGenericFieldInstance](../../../extensibility/debugger/reference/idebuggenericfieldinstance.md)

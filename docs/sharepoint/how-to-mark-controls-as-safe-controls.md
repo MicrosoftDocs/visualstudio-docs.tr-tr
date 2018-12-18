@@ -19,13 +19,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: d703beb24821663b08ed69238fcf27e2a752d64b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 04470034f1fa1531a1677b4acd6b36f0b99c8a62
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120572"
 ---
-# <a name="how-to-mark-controls-as-safe-controls"></a>Nasıl Yapılır: Denetimleri Güvenli Denetim Olarak İşaretleme
+# <a name="how-to-mark-controls-as-safe-controls"></a>Nasıl yapılır: denetimleri güvenli denetim olarak işaretle
   Güvenlik için komut dosyası ekleme karşı korumalı Web denetimleri ve olmayan Web denetimleri SharePoint ayırır. Denetimleri, korumalı veya *güvenli denetimler*, güvenilir olmayan kullanıcılar tarafından erişilebilir. Denetimleri güvenli denetim girişleri özelliğini, bir SharePoint proje öğesi veya güvenli olarak işaretleyebilirsiniz **paket tasarımcısını** paketi derleme eklediğinizde. Daha fazla bilgi için bkz.  
   
  [Web.config dosyası ayarlarını değiştir](http://go.microsoft.com/fwlink/?LinkId=178965) ve [güvenli bir denetim olarak bir Web Bölümü derlemesi kaydetme](http://go.microsoft.com/fwlink/?LinkId=171013).  
@@ -35,7 +36,7 @@ ms.lasthandoff: 04/16/2018
   
 ## <a name="marking-safe-controls-in-the-safe-control-entries-property"></a>Güvenli denetimler güvenli denetim girişleri özelliğinde işaretleme  
   
-#### <a name="to-mark-controls-as-safe-or-unsafe-in-the-safe-control-entries-property"></a>Denetimleri güvenli veya güvenli denetim girişleri özelliğinde Güvensiz olarak işaretlemek için  
+#### <a name="to-mark-controls-as-safe-or-unsafe-in-the-safe-control-entries-property"></a>Denetimleri güvenli veya güvenli denetim girişleri özelliğinde Güvensiz olarak işaretlemek için
   
 1.  Bir SharePoint çözüm ile Visual Web Bölümü projesi oluşturun.  
   
@@ -59,7 +60,7 @@ ms.lasthandoff: 04/16/2018
   
 ## <a name="marking-safe-controls-in-the-package-designer"></a>Güvenli denetimler paket Tasarımcısı'nda işaretleme  
   
-#### <a name="to-mark-controls-as-safe-or-unsafe-in-the-package-designer"></a>Güvenli veya paket Tasarımcısı'nda Güvensiz olarak işaretlemek için denetler  
+#### <a name="to-mark-controls-as-safe-or-unsafe-in-the-package-designer"></a>Güvenli veya paket Tasarımcısı'nda Güvensiz olarak işaretlemek için denetler
   
 1.  Bir SharePoint çözüm ile Visual Web Bölümü projesi oluşturun.  
   
@@ -67,11 +68,11 @@ ms.lasthandoff: 04/16/2018
   
      Daha sonra kullanıldığından denetimi ad alanı not edin.  
   
-3.  Menü çubuğunda seçin **yapı**, **yapı çözümü** Projeyi derlemek için.  
+3.  Menü çubuğunda seçin **yapı** > **yapı çözümü** Projeyi derlemek için.  
   
 4.  Başka bir SharePoint çözüm oluşturun.  
   
-5.  İçinde **Çözüm Gezgini**Package.Package dosya için kısayol menüsünü açın ve ardından **açmak** açmak için **paket tasarımcısını**.  
+5.  İçinde **Çözüm Gezgini**, kısayol menüsünü açın *Package.Package* dosya ve ardından **açmak** açmak için **paket tasarımcısını**.  
   
 6.  İçinde **paket tasarımcısını**, seçin **Gelişmiş** sekmesi.  
   
@@ -100,7 +101,7 @@ ms.lasthandoff: 04/16/2018
     > [!NOTE]  
     >  **Derleme adı** aracılığıyla eklenen derlemeler için değer **Gelişmiş** sekmesinde **paket tasarımcısını** olamaz bir belirteç, onu kesin olarak adlandırılmamış derleme olmalıdır. Daha fazla bilgi için bkz: [bkz](http://go.microsoft.com/fwlink/?LinkId=177513).  
   
-13. Başka bir güvenli denetim girdisi oluşturmak için SEKME tuşunu seçin.  
+13. Seçin **sekmesini** başka bir güvenli denetim girdisi oluşturmak için anahtar.  
   
 14. Seçin **yeni öğe eklemek için burayı tıklatın** yeniden düğmesine tıklayın.  
   
@@ -114,10 +115,9 @@ ms.lasthandoff: 04/16/2018
     |Güvenli|Seçin **güvenli** onay kutusu.|  
     |Komut dosyası karşı güvenli|Seçin **karşı güvenli betik** onay kutusu.|  
   
-16. Sekme tuşunu seçin ve ardından **Tamam** düğmesi iletişim kutusunu kapatın.  
+16. Seçin **sekmesini** anahtar ve ardından **Tamam** düğmesi iletişim kutusunu kapatın.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Paketleme ve dağıtım bilgileri proje öğeleri sağlama](../sharepoint/providing-packaging-and-deployment-information-in-project-items.md)   
- [SharePoint Çözümlerini Paketleme ve Dağıtma](../sharepoint/packaging-and-deploying-sharepoint-solutions.md)  
-  
+## <a name="see-also"></a>Ayrıca bkz.
+ [Proje öğelerinde paketleme ve dağıtım bilgileri sağlayın](../sharepoint/providing-packaging-and-deployment-information-in-project-items.md)   
+ [Paket ve SharePoint çözümlerini dağıtma](../sharepoint/packaging-and-deploying-sharepoint-solutions.md)  
   

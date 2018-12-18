@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da Roslyn çözümleyiciler yükleyin
-ms.date: 03/26/2018
+title: Roslyn çözümleyicilerini yükleme
+ms.date: 08/03/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 helpviewer_keywords:
@@ -12,68 +13,67 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 8a3b40b3b471e6bb57da561ac51f23086a0f01bd
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: aa0805b3cffe5a44ae2c6198c6ca2682ceca9f95
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49865413"
 ---
-# <a name="install-net-compiler-platform-analyzers"></a>.NET derleme platformu çözümleyiciler yükleyin
+# <a name="install-net-compiler-platform-analyzers"></a>.NET derleyici platformu çözümleyicilerini yükleme
 
-Visual Studio 2017 .NET derleyici platformu çekirdek kümesini içerir (*Roslyn*) Çözümleyicileri. Bu çözümleyiciler her zaman açıktır. NuGet paketleri, veya olarak Visual Studio uzantıları ek çözümleyiciler yükleyebilirsiniz *VSIX* dosyaları.
+Visual Studio 2017'yi içeren bir dizi temel .NET derleyici Platformu (*Roslyn*) çözümleyici. Bu çözümleyici her zaman açıktır. NuGet paketleri olarak veya Visual Studio uzantıları olarak ek Çözümleyicileri yükleyebileceğiniz *VSIX* dosyaları.
 
-## <a name="to-install-nuget-package-analyzers"></a>NuGet paket çözümleyiciler yüklemek için
+## <a name="to-install-nuget-analyzer-packages"></a>NuGet Çözümleyicisi paketleri yüklemek için
 
-1. [Hangi Çözümleyicisi paket sürümünü](https://github.com/dotnet/roslyn-analyzers#recommended-version-of-analyzer-packages) yüklemek için Visual Studio sürümüne.
+1. Üzerinde www.nuget.org yüklemek istediğiniz Çözümleyicisi paket bulun. Örneğin, isteyebileceğiniz [Microsoft FxCop Çözümleyicileri yükleme](install-fxcop-analyzers.md#to-install-fxcop-analyzers-as-a-nuget-package) kodunuzu diğerlerinin yanı sıra güvenlik ve performans sorunları için denetlenecek.
 
-1. Visual Studio içinde kullanarak paketi yükleyin [Paket Yöneticisi Konsolu](/nuget/quickstart/install-and-use-a-package-in-visual-studio#package-manager-console) veya [Paket Yöneticisi kullanıcı Arabirimi](/nuget/quickstart/install-and-use-a-package-in-visual-studio#package-manager-console).
+2. Visual Studio kullanarak kullanarak paketi yükleyin [Paket Yöneticisi Konsolu](/nuget/quickstart/install-and-use-a-package-in-visual-studio#package-manager-console) veya [Paket Yöneticisi UI](/nuget/quickstart/install-and-use-a-package-in-visual-studio#package-manager-console).
 
    > [!NOTE]
-   > Her bir Çözümleyicisi paket nuget.org sayfası yapıştırmak için komutu gösterir **Paket Yöneticisi Konsolu**. Hatta metni panoya kopyalamak için kullanışlı bir düğme vardır.
-   >
-   > ![Paket Yöneticisi konsol komutu gösteren NuGet.org sayfası](media/nuget-package-manager-command.png)
+   > Her bir çözümleyici paket www.nuget.org sayfa yapıştırmak için komutu gösterir **Paket Yöneticisi Konsolu**. Metni panoya kopyalamak için kullanışlı bir düğme bile yoktur.
+   > 
+   > ![NuGet.org sayfasında Paket Yöneticisi Konsolu komut gösteriliyor](media/nuget-install-command.png)
 
-   Çözümleyicisi derlemeleri yüklenir ve görüntülenmesini **Çözüm Gezgini** altında **başvuruları** > **çözümleyiciler**.
+   Çözümleyici bütünleştirilmiş kodlarının yüklenir ve görünür **Çözüm Gezgini** altında **başvuruları** > **Çözümleyicileri**.
 
-   ![Çözüm Gezgini'nde çözümleyiciler düğümü](media/solution-explorer-analyzers-node.png)
+## <a name="to-install-vsix-analyzers"></a>VSIX Çözümleyicileri yüklemek için
 
-## <a name="to-install-vsix-analyzers"></a>VSIX çözümleyiciler yüklemek için
-
-1. Visual Studio'da seçin **Araçları** > **Uzantılar ve güncelleştirmeler**.
+1. Visual Studio'da **Araçları** > **Uzantılar ve güncelleştirmeler**.
 
    **Uzantılar ve güncelleştirmeler** iletişim kutusu açılır.
 
    > [!NOTE]
-   > Alternatif olarak, doğrudan uzantısını [Visual Studio Market'te](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2017).
+   > Alternatif olarak, bulmak ve doğrudan Çözümleyicisi uzantısını indirin [Visual Studio Market](https://marketplace.visualstudio.com).
 
-1. Genişletme **çevrimiçi** sol bölmesinde ve seçip **Visual Studio Market'te**.
+2. Genişletin **çevrimiçi** sol bölmesi ve ardından **Visual Studio Market**.
 
-1. Arama kutusuna "kod çözümlemesi" yazın ve Ara **Microsoft kod çözümleme 2017** uzantısı.
+3. Arama kutusuna, yüklemek istediğiniz Çözümleyicisi uzantısının adını yazın. Örneğin, isteyebileceğiniz [Microsoft FxCop Çözümleyicileri yükleme](install-fxcop-analyzers.md#to-install-fxcop-analyzers-as-a-vsix) kodunuzu diğerlerinin yanı sıra güvenlik ve performans sorunları için denetlenecek.
 
-   ![Microsoft Kod Analizi uzantısı](media/extensions-and-updates-code-analysis.png)
+4. Seçin **indirme**.
 
-1. Seçin **karşıdan**.
+   Uzantı yüklenir.
 
-   Uzantı indirilir.
+5. Seçin **Tamam** iletişim kutusunu kapatın ve ardından başlatmak için Visual Studio'nun tüm örneklerini kapatın **VSIX yükleyicisi**.
 
-1. Seçin **Tamam** iletişim kutusunu kapatın ve ardından başlatmak için Visual Studio tüm örneklerini kapatın **VSIX yükleyici**.
-
-   **VSIX yükleyici** iletişim kutusu açılır.
+   **VSIX yükleyicisi** iletişim kutusu açılır.
 
    ![Microsoft Kod Analizi için VSIX yükleyicisi](media/vsix-installer-code-analysis.png)
 
-1. Seçin **Değiştir** yüklemeyi başlatmak için.
+6. Seçin **Değiştir** yüklemeyi başlatmak için.
 
-1. Bir veya iki dakika sonra yükleme işlemini tamamlar. Seçin **Kapat**.
+7. Bir veya iki dakika sonra yükleme işlemini tamamlar. Seçin **Kapat**.
 
-1. Visual Studio'yu yeniden açın.
+8. Visual Studio'yu yeniden açın.
 
-Yüklenen, seçim olup olmadığını ' uzantısı denetlemek istiyorsanız **Araçları** > **Uzantılar ve güncelleştirmeler**. İçinde **Uzantılar ve güncelleştirmeler** iletişim kutusunda **yüklü** solda, kategori ve ada göre uzantısı için arama yapın.
+Seçeneğini yüklü olup olmadığını ' uzantısı denetlemek istiyorsanız **Araçları** > **Uzantılar ve güncelleştirmeler**. İçinde **Uzantılar ve güncelleştirmeler** iletişim kutusunda, **yüklü** solda, kategori ve uzantısı adına göre arayın.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
-- [Visual Studio'da Roslyn çözümleyiciler kullanın](../code-quality/use-roslyn-analyzers.md)
+> [!div class="nextstepaction"]
+> [Roslyn çözümleyicilerini Visual Studio'da kullanın](../code-quality/use-roslyn-analyzers.md)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Visual Studio'da Roslyn çözümleyiciler genel bakış](../code-quality/roslyn-analyzers-overview.md)
+- [Roslyn çözümleyicilerini Visual Studio'da genel bakış](../code-quality/roslyn-analyzers-overview.md)
+- [FxCop Çözümleyicileri yükleyin](../code-quality/install-fxcop-analyzers.md)

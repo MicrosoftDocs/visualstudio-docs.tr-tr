@@ -1,3 +1,3 @@
-  **Uygulama alanı:** Bu konu başlığı altındaki bilgiler, Excel ve Word için belge düzeyindeki projelere ve VSTO eklentisi projelerine yöneliktir. Daha fazla bilgi için bkz: [Office uygulaması ve proje türüne göre kullanılabilen özellikler](../../vsto/features-available-by-office-application-and-project-type.md).
+  **İçin geçerlidir:** belgesi için bu konudaki bilgiler, geçerli\-düzeyi projelerine ve VSTO ekleme\-Excel ve Word projelerinde. Daha fazla bilgi için [Office uygulaması ve proje türüne göre kullanılabilen özellikler](../../vsto/features-available-by-office-application-and-project-type.md).
 
   

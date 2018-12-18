@@ -1,5 +1,5 @@
 ---
-title: En iyi geliştirme eklentilerinde Office COM, VSTO ve VBA yöntemler | Microsoft Docs
+title: COM, VSTO ve VBA eklentileri için Office geliştirme en iyi uygulamalar
 ms.custom: ''
 ms.date: 07/25/2017
 ms.technology:
@@ -14,56 +14,57 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 6da083b12717606233d4c8dd9bc175b42722d53e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3f821b9769b9353fbee6379ddc1b3826f87ac2de
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50671099"
 ---
-# <a name="development-best-practices-for-com-vsto-and-vba--add-ins-in-office"></a>COM, VSTO ve VBA eklentilerinde Office için en iyi uygulamaları geliştirme
-  COM, VSTO veya VBA eklentiler için Office geliştiriyorsanız, bu makalede açıklanan geliştirme en iyi uygulamaları izleyin.   Bu, olmanıza yardımcı olur:
+# <a name="development-best-practices-for-com-vsto-and-vba-add-ins-in-office"></a>COM, VSTO ve VBA eklentileri için Office geliştirme en iyi uygulamalar
+  Office için COM, VSTO veya VBA eklentileri geliştiriyorsanız, bu makalede açıklanan geliştirme en iyi uygulamaları izleyin.   Bu, olmanıza yardımcı olur:
 
--  Eklentilerinizi farklı sürümleri ve Office dağıtımlar arasında uyumluluk.
--  Azaltılan karmaşıklık eklenti dağıtım kullanıcılar ve BT yöneticileri için.
--  İstenmeyen yükleme veya çalışma zamanı hatalarının eklentiniz gerçekleşmez.
+-  Eklentilerinizi farklı sürümleri ve dağıtılmasına Office uyumluluğu.
+-  Azaltılmış karmaşıklık eklentisi kullanıcılar ve BT yöneticileri için dağıtım.
+-  Eklentinizi, istenmeyen yükleme veya çalışma zamanı hataları gerçekleşmez.
 
->Not: Kullanarak [Masaüstü köprüsü](/windows/uwp/porting/desktop-to-uwp-root) , COM hazırlamak için VSTO veya VBA eklentisi için Windows mağazası desteklenmiyor. COM, VSTO ve VBA eklentiler, Windows mağazası veya Office deposunda dağıtılamıyor. 
+>Not: Kullanarak [Masaüstü köprüsü](/windows/uwp/porting/desktop-to-uwp-root) , COM hazırlamak için VSTO veya VBA eklentisi için Windows Store desteklenmiyor. COM, VSTO ve VBA eklentileri, Windows Store veya Office Store dağıtılamıyor. 
   
 ## <a name="do-not-check-for-office-during-installation"></a>Office için yükleme sırasında denetleme  
- Office eklentisini yükleme işlemi sırasında yüklenip yüklenmediğini belirle eklentinizi sahip öneririz yok. Office yüklü değilse, eklenti yükleyebilir ve kullanıcı Office yüklendikten sonra erişebilir. 
+ Office Eklentisi yükleme işlemi sırasında yüklü olup olmadığını algılama eklenti sahip önerilmemektedir. Office yüklü değilse, eklentiyi yükleyin ve kullanıcı Office yüklendikten sonra buna erişebilir. 
   
-## <a name="use-embedded-interop-types-nopia"></a>Katıştırılmış birlikte çalışma türlerini (NoPIA) kullanın  
-Çözümünüzü daha sonra .NET 4.0 kullanır veya kullanıyorsanız katıştırılmış birlikte çalışma türleri (NoPIA) yerine Office birincil birlikte çalışma derlemeleri (PIA bağlı olarak) yeniden dağıtılabilir. Türü katıştırma kullanarak çözümünüzü yükleme boyutunu azaltır ve ileriye dönük uyumluluk sağlar. Office 2010 yeniden dağıtılabilir PIA birlikte gelen Office son sürümünü oluştu. Daha fazla bilgi için bkz: [izlenecek yol: Microsoft Office derlemelerinden tür bilgilerini katıştırma](https://msdn.microsoft.com/en-us/library/ee317478.aspx) ve [tür Eşdeğerliği ve katıştırılmış birlikte çalışma türlerini](/windows/uwp/porting/desktop-to-uwp-root).
+## <a name="use-embedded-interop-types-nopia"></a>Gömülü birlikte çalışma türleri (NoPIA) kullanın  
+Çözümünüz .NET 4.0 kullanıyorsa ya da daha sonra katıştırılmış birlikte çalışma türleri (NoPIA) yerine Office birincil birlikte çalışma derlemeleri (PIA bağlı olarak) yeniden dağıtılabilir. Ekleme türü kullanarak çözümünüzü, yükleme boyutunu azaltır ve gelecekte uyumluluk sağlar. Office 2010 yeniden dağıtılabilir PIA birlikte gelen Office son sürümünü oluştu. Daha fazla bilgi için [izlenecek yol: Microsoft Office derlemelerinden tür bilgilerini katıştırma](https://msdn.microsoft.com/library/ee317478.aspx) ve [tür eşdeğerliği ve katıştırılmış birlikte çalışma türleri](/windows/uwp/porting/desktop-to-uwp-root).
 
-Çözümünüzü .NET önceki bir sürümünü kullanıyorsa, .NET 4.0 veya sonraki sürümü kullanmak için çözümünüzün güncelleştirmenizi öneririz. .NET 4.0 veya sonraki sürümü kullanarak, daha yeni sürümlerinde Windows çalışma zamanı Önkoşullar azaltır.
+Çözümünüz .NET önceki bir sürümünü kullanıyorsa, .NET 4.0 veya sonraki sürümü kullanmak için çözümünüzün güncelleştirmenizi öneririz. .NET 4.0 veya sonraki sürümü kullanarak daha yeni sürümlerinde Windows çalışma zamanı önkoşulları azaltır.
   
 ## <a name="avoid-depending-on-specific-office-versions"></a>Bağlı olarak belirli Office sürümleri kaçının  
-Çözümünüzü yalnızca Office, daha yeni sürümlerinde kullanılabilir olan işlevsellik kullanıyorsa, çalışma zamanında (örneğin, özel durum işleme veya sürüm denetleyerek kullanarak) özelliği (mümkünse, özellik düzeyinde) bulunduğunu doğrulayın. Nesne modelinde gibi desteklenen API'lerini kullanarak belirli sürümler yerine, en düşük sürümlerle doğrulamak [Application.Version özelliği](https://msdn.microsoft.com/en-us/library/office/microsoft.office.interop.excel._application.version.aspx). Bunlar yüklemeleri, ortamları ve sürümler arasında değişebildiğinden Office ikili meta verileri, yükleme yolları veya kayıt defteri anahtarlarını kullanan öneririz yok.
+Çözümünüzü yalnızca Office daha yeni sürümlerde kullanılabilir olan işlevsellik kullanıyorsa, çalışma zamanında (örneğin, özel durum işleme veya sürüm denetimi tarafından kullanarak) özelliği (Eğer Mümkünse, özellik düzeyinde) bulunduğunu doğrulayın. Nesne modelinde gibi desteklenen API'leri kullanarak, belirli sürümler yerine, en düşük sürümlerle doğrulama [Application.Version özelliği](<xref:Microsoft.Office.Interop.Excel._Application.Version%2A>). Yüklemeleri, ortamlar ve sürümler arasında değiştirebilirsiniz çünkü Office ikili meta verileri, yükleme yolları veya kayıt defteri anahtarlarını kullanan önerilmemektedir.
 
-## <a name="enable-both-32-bit-and-64-bit-office-usage"></a>32 bit ve 64 bit Office kullanımı etkinleştir   
-Yalnızca belirli verileri için kullanılabilir kitaplıkları çözümünüzü bağlıdır sürece varsayılan derleme hedefiniz hem 32 bit (x86) hem de 64 bit (x64) desteklemelidir. Office'in 64 bit sürümü özellikle büyük veri ortamlarda benimseme artmaktadır. Destek 32-bit ve 64-bit, Office'in 32 bit ve 64-bit sürümleri arasında geçiş için kullanıcılarınızın kolaylaştırır.
+## <a name="enable-both-32-bit-and-64-bit-office-usage"></a>Hem 32-bit hem de 64 bit Office kullanımını etkinleştir   
+Yalnızca belirli bir bit genişliği için kullanılabilen kitaplıkları çözümünüzü bağımlı sürece, varsayılan derleme hedefini hem 32-bit (x86) hem de 64-bit (x64) desteklemelidir. Office'in 64 bit sürümü, özellikle büyük veri ortamlarda bir benimseme artmaktadır. Destek hem 32-bit hem de 64-bit, 32-bit ve 64 bit Office sürümleri arasında geçiş kullanıcılarınızın kolaylaştırır.
 
-VBA kodu yazarken kullanmak için 64-bit güvenli deyimleri bildirme ve değişkenleri uygun olarak Dönüştür. Ayrıca, belgeler için her bit kodu sağlayarak Office 32 bit veya 64 bit sürümlerini çalıştıran kullanıcılar arasında paylaşılabilen emin olun. Daha fazla bilgi için bkz: [uygulamalarına genel bakış için 64-Bit Visual Basic](https://msdn.microsoft.com/en-us/library/office/gg264421.aspx).
+VBA kodu yazarken kullanmak için 64-bit güvenli ifadeleri bildirme ve değişkenleri uygun'olarak Dönüştür. Ayrıca, belgeler için her bit genişliği kod sağlayarak Office 32 bit veya 64 bit sürümlerini çalıştıran kullanıcılar arasında paylaşılabilen emin olun. Daha fazla bilgi için [uygulamalara genel bakış için 64 bit Visual Basic](/office/vba/Language/Concepts/Getting-Started/64-bit-visual-basic-for-applications-overview).
 
-## <a name="support-restricted-environments"></a>Kısıtlı ortamları desteği   
-Çözümünüzü kullanıcı hesabı yükseltme veya yönetici ayrıcalıkları gerektirmemelidir. Buna ek olarak, çözümü ayarlama veya değiştirme bağlı olmaması gerekir:
+## <a name="support-restricted-environments"></a>Kısıtlı ortamlarını destekler   
+Çözümünüzü kullanıcı hesabı ayrıcalık veya yönetici ayrıcalıkları gerektirmez. Ayrıca, çözüm ayarlama veya değiştirme bağlı olmaması gerekir:
 
 - Geçerli çalışma dizini.
-- DLL yükleme dizinleri.
+- DLL dizinleri yükleyin.
 - YOLU değişken.
 
-## <a name="change-the-save-location-of-shared-data-and-settings"></a>Kaydetme değiştirmek konumunu paylaşılan veri ve ayarları
-Çözümü bir eklenti ve Office harici bir işlem oluşuyorsa, exchange verileri veya eklenti ve dış işlem arasında ayarları için kullanıcının uygulama veri klasörü veya kayıt defteri kullanmayın. Bunun yerine, kullanıcının geçici klasör, Belgeler klasörünü veya çözümünüzün yükleme dizini kullanmayı düşünün.
+## <a name="change-the-save-location-of-shared-data-and-settings"></a>Kayıt değiştirme konumunu paylaşılan veriler ve ayarlar
+Çözüm, bir eklenti ve Office harici bir işlemde oluşuyorsa, verileri veya ayarları eklenti ve dış işlem arasındaki değişimi için kullanıcının uygulama verisi klasörü veya kayıt defteri kullanmayın. Bunun yerine, kullanıcının geçici klasörü, Belgeler klasörünü veya çözümünüzün yükleme dizini kullanmayı düşünün.
 
-## <a name="increment-the-version-number-with-each-update"></a>Her güncelleştirme sürüm numarasını Artır
-İkili dosyalarının sürüm numarasını çözümünüzde ayarlayın ve her güncelleştirme ile artırın. Bu, sürümler arasındaki değişiklikleri tanımlamak ve uyumluluğu değerlendirmek kullanıcılar için daha kolay hale getirir.
+## <a name="increment-the-version-number-with-each-update"></a>Her bir güncelleştirmeyle sürüm numarasını Artır
+Çözümünüzde ikili dosyaları sürüm numarasını ayarlayın ve her bir güncelleştirme ile artırın. Bu sürümler arasındaki değişiklikleri tanımlamak ve uyumluluğunu değerlendirmek kullanıcılar için kolaylaştırır.
 
 ## <a name="provide-support-statements-for-the-latest-versions-of-office"></a>En son Office sürümleri için destek bildirimleri sağlayın
-Müşteriler kendi COM, VSTO ve VBA ofisinde çalıştırılan eklentileri için destek bildirimleri sağlamak için ISV istiyoruz. Office 365 ProPlus kullanarak açık destek deyimleri yardımcı müşterilerinizin listeleme hazırlık araçları destek anlayın. 
+Müşteriler, COM, VSTO ve VBA çalıştıran Office eklentileri için destek bildirimleri sağlamak için ISV seçmenizi istiyoruz. Office 365 ProPlus'ı kullanarak, açık destek deyimleri yardımcı müşterileri listeleme hazırlık araçları destek anlayın. 
 
-Office istemci uygulamaları (Word veya Excel gibi) için destek bildirimleri sağlamak için önce eklentilerinizi geçerli Office sürümü çalıştırın ve eklentinizi gelecekteki bir sürümde bozarsa güncelleştirmeleri sağlamayı Yürüt doğrulayın. Microsoft yeni bir yapı ya da Office için bir güncelleştirme yayımlandığında eklentilerinizi test etmek zorunda değildir. Microsoft Office COM, VSTO ve VBA genişletilebilirlik platform nadiren değişiklikleri ve bu değişiklikleri belgelendiğinden.
+Office istemci uygulamaları (Word veya Excel gibi) için destek bildirimleri sağlamak için önce eklentilerinizi geçerli Office sürümde çalıştırın ve ardından eklentinizi gelecekteki bir sürümde keserse güncelleştirmeler sağlamayı tamamlama doğrulayın. Microsoft yeni bir derleme veya Office için bir güncelleştirme yayımladığında eklentilerinizi test etmek zorunda değildir. Microsoft Office'te COM, VSTO ve VBA genişletilebilirlik platform nadiren değiştirir ve bu değişiklikleri iyi belgelenmiştir.
 
->Önemli: Microsoft hazır olma durumunu raporlar ve ISV kişi bilgileri için desteklenen eklentiler listesini tutar. Listelenen eklentiniz almak için bkz: [ https://aka.ms/readyforwindows ](https://aka.ms/readyforwindows).
+>Önemli: Microsoft hazırlık raporlar ve ISV iletişim bilgileri için desteklenen eklentileri listesini tutar. Listelenen eklentinizi almak için bkz. [ https://aka.ms/readyforwindows ](https://aka.ms/readyforwindows).
 
-## <a name="use-process-monitor-to-help-debug-installation-or-loading-issues"></a>İşlem İzleyicisi yükleme veya sorunları yüklenirken hata ayıklamaya yardımcı olması için kullanın
-Eklentiniz uyumluluk sorunları yük veya yükleme sırasında varsa, bunlar dosya veya kayıt defteri erişim ile ilgili sorunlar için ilişkili. Kullanım [işlem İzleyicisi](/sysinternals/downloads/procmon) veya oturum ve sorunu belirlemeye yardımcı olmak için çalışma ortamını karşı davranışı karşılaştırmak için benzer bir hata ayıklama aracı.
+## <a name="use-process-monitor-to-help-debug-installation-or-loading-issues"></a>Yükleme veya sorunları yüklenirken hata ayıklama yardımcı olması için işlem İzleyicisi'ni kullanın
+Eklentinizi uyumluluk sorunları yükleme veya yük varsa, bunlar dosya veya kayıt defteri erişim sorunlarıyla ilgili olabilir. Kullanım [işlem İzleyicisi](/sysinternals/downloads/procmon) veya benzer bir hata ayıklama araç oturum ve sorunun belirlenmesine yardımcı olacak bir çalışma ortamı karşı davranışını karşılaştırın.

@@ -16,19 +16,20 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 60ea2bcf1770e8c20db61c93a2b4ed6516b0daff
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a306276e015d06fe3becf297d0bb5834f640a1a7
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34571652"
 ---
-# <a name="vsinstr-warnings"></a>VSInstr Uyarıları
-Aşağıdaki tabloda VSInstr.exe aracı tarafından verilen uyarılar listeler. Görünmesini gizlemek için uyarı numaralarını NOWARN seçeneğiyle kullanabilirsiniz.  
+# <a name="vsinstr-warnings"></a>Vsınstr uyarıları
+Aşağıdaki tabloda tarafından verilen uyarılar *VSInstr.exe* aracı. Görünmesini gizlemek için uyarı numaralarını NOWARN seçeneğiyle kullanabilirsiniz.  
   
 |Uyarı sayısı|Açıklama|  
 |--------------------|-----------------|  
 |**VSP2000**|İç Hata. Bu çalıştırılabilir için modül dosya adı alınamıyor.|  
-|**VSP2001**|\<derleme adı > kesin adlandırılmış bir derlemedir. Bunu yürütülebilmesi yeniden imzalanmış olmalıdır.<br /><br /> Bu uyarı, imzalı bir derleme izlenmiş oluşur. Sn.exe aracı ikili çekilmeye veya geçici olarak devre dışı güçlü ad gereksinim kapatmak için kullanabilirsiniz. Daha fazla bilgi için bkz: [Sn.exe (tanımlayıcı ad aracı)](/dotnet/framework/tools/sn-exe-strong-name-tool).|  
+|**VSP2001**|\<derleme adı > kesin adlandırılmış bir derlemedir. Bunu yürütülebilmesi yeniden imzalanmış olmalıdır.<br /><br /> Bu uyarı, imzalı bir derleme izlenmiş oluşur. Kullanabileceğiniz *sn.exe* aracı ikili çekilmeye veya geçici olarak devre dışı güçlü ad gereksinim kapatmak için. Daha fazla bilgi için bkz: [Sn.exe (tanımlayıcı ad aracı)](/dotnet/framework/tools/sn-exe-strong-name-tool).|  
 |**VSP2002**|İşlevi bulunamadı \<funcname > dosyasındaki \<dosya adı ><br /><br /> Bir işlev içinde belirtilen dosya bulunamıyorsa bu uyarıyı oluşur.|  
 |**VSP2003**|Herhangi bir işlev atlar çapraz bulunamadı \<funcname > dosyasındaki \<dosyaadı >.<br /><br /> Vsınstr iptal edilmez edilemez, bu uyarıyı arası atlar ortaya çıkar. Çapraz atlama kodu iyileştirme için kullanılır.|  
 |**VSP2004**|İşlev \<funcname > DIŞLAMA komut satırı anahtarını kullanarak hariç tutuldu ancak çapraz atlama içerdiğinden gerekli.<br /><br /> Bu uyarı işlevi hariç TUTMA seçeneğini kullanarak hariç tutuldu ancak izleme işlemi sırasında gerekli oluşur. Profil Oluşturucu otomatik olarak gerekli işlevi içerir.|  
@@ -43,5 +44,5 @@ Aşağıdaki tabloda VSInstr.exe aracı tarafından verilen uyarılar listeler. 
 |**VSP2013**|Bu görüntüyü bir 32 bitlik işlem olarak çalışmasını gerektirir. CLR üstbilgi bayrakları bu yansıtacak şekilde güncelleştirildi.<br /><br /> Profil Oluşturucu ikili 64-bit işletim sistemlerinin 32 bit işlem WOW64 öykünücüsünde açabilirsiniz şekilde değiştirir. Varolan bir 64-bit işlemde yüklenen kitaplıklarını (DLL'ler) bu başarısız olabilir. Bu uyarı bağımlılığın kullanıcıyı uyarır.|  
 |**VSP2014**|Sonuçta elde edilen izleme eklenmiş görüntü geçersiz olduğu belirlendi ve çalışmayabilir.<br /><br /> Bu ileti, geçersiz bir PE üstbilgi son Araçlı derleme sahip oluşur.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSInstr](../profiling/vsinstr.md)

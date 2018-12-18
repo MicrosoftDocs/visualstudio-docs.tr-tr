@@ -1,7 +1,7 @@
 ---
-title: Dosyalarda Bul | Microsoft Docs
-ms.custom: ''
+title: Dosyalarda Bul
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -21,11 +21,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e7e181883fff125349949f081826157f2a3aa36f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e1470868e207687a7b35f46724b80b0da0a0e71c
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31946565"
 ---
 # <a name="find-in-files"></a>Dosyalarda Bul
 
@@ -69,19 +70,19 @@ Belirtir, alt **konum** klasörü arama yapılır.
 
 Genişlet veya daralt **bulma seçeneklerini** bölümü. Aşağıdaki seçenekler seçilen veya temizlenmiş:
 
-**Büyük küçük harf duyarlı**  
+**Büyük küçük harf duyarlı**
 
 Seçili olduğunda, bir **Bul sonuçları** arama büyük küçük harfe duyarlı olur
 
-**Tam sözcükleri eşleştir**  
+**Tam sözcükleri eşleştir**
 
 Seçili olduğunda, **Bul sonuçları** windows yalnızca tam sözcük eşleşmeleri döndürür.
 
-**Normal İfadeler Kullanma**  
+**Normal İfadeler Kullanma**
 
 Bu onay kutusunu seçtiyseniz eşleştiği metnin desenlerini tanımlamak için özel gösterimler kullanabilirsiniz **Aranan** veya **yerine** metin kutuları. Bu gösterimler listesi için bkz: [Visual Studio'da normal ifadeler kullanarak](../ide/using-regular-expressions-in-visual-studio.md).
 
-**Bu dosya türlerini arayın**  
+**Bu dosya türlerini arayın**
 
 Bu liste içinde arama yapmak dosya türlerini gösterir **konum** dizinleri. Bu alan ise boş, tüm dosyaların **konum** dizinleri arama yapılır.
 
@@ -91,7 +92,7 @@ Herhangi bir öğeyi listeden, bu belirli türdeki dosyaları bulacağı öncede
 
 Genişlet veya daralt **neden seçenekleri** bölümü. Aşağıdaki seçenekler seçilen veya temizlenmiş:
 
-**Sonuçları 1 pencere Bul**  
+**Sonuçları 1 pencere Bul**
 
 Seçili olduğunda, geçerli arama sonuçları içeriğinin yerine geçecek **Bul sonuçları 1** penceresi. Bu pencere arama sonuçlarınızı görüntülemesi için otomatik olarak açılır. Bu pencere el ile açın, seçin **diğer pencereler** gelen **Görünüm** menü ve seçin **Bul sonuçları 1**.
 
@@ -109,6 +110,6 @@ Arama görüntüleme kendilerini eşleşen yerine arama içeren dosyaların bir 
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Metin bulma ve değiştirme](../ide/finding-and-replacing-text.md)  
-[Dosyalarda Değiştir](../ide/replace-in-files.md)  
-[Visual Studio komutları](../ide/reference/visual-studio-commands.md)
+- [Metin bulma ve değiştirme](../ide/finding-and-replacing-text.md)
+- [Dosyalarda Değiştir](../ide/replace-in-files.md)
+- [Visual Studio komutları](../ide/reference/visual-studio-commands.md)

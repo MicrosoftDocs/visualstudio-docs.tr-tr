@@ -9,38 +9,40 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 80392454c44ea491b3f082c11c0ff08e47029296
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 7b486cec0808f6d0b98770cf354e27054f27ebdd
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50966628"
 ---
 # <a name="working-with-the-domain-specific-language-explorer"></a>Etki Alanına Özgü Dil Gezgini ile Çalışma
-**DSL Explorer** ağaç görünümünde birkaç tür bilgiyi görüntüler. Çoğu DSL Gezgini'ndeki öğeleri hakkında daha fazla bilgi için bkz: [bir etki alanına özgü dil tanımlamak nasıl](../modeling/how-to-define-a-domain-specific-language.md).
+**DSL Gezgini** ağaç görünümünde çeşitli bilgiler görüntüler. DSL Gezgini içindeki öğelerin çoğu hakkında daha fazla bilgi için bkz: [etki alanına özgü bir dili tanımlama nasıl](../modeling/how-to-define-a-domain-specific-language.md).
 
- Aşağıdaki düğümler vardır:
+ Aşağıdaki düğümleri içerir:
 
--   **Bağlantı oluşturucular**. Modeldeki bağlantı oluşturucular listesi.
+-   **Bağlantı oluşturucular**. Modelde bağlantı oluşturucular bir listesi.
 
--   **Bağlayıcılar**. Model Bağlayıcısı diyagramı öğeleri listesi.
+-   **Bağlayıcılar**. Model Bağlayıcısı diyagram öğeleri listesi.
 
--   **Diyagram**. Diyagram ve bağlayıcı eşlemeleri ve Şekil eşlemeleri listelerini tanımlayan özellikleri kümesi.
+-   **Diyagram**. Diyagram ve bağlayıcı eşlemeleri ve Şekil eşlemeleri listesi tanımlayan özellikleri kümesi.
 
--   **Etki alanı sınıflarını**. Modeldeki etki alanı sınıfların listesi.
+-   **Etki alanı sınıfları**. Etki alanı sınıfları modelinde listesi.
 
--   **Etki alanı ilişkilerini**. Etki alanı ilişkilerini modelinde listesi.
+-   **Etki alanı ilişkileri**. Etki alanı ilişkileri modelinde listesi.
 
--   **Etki alanı türleri**. Model içinde kullanılan yerleşik ve dış türlerinin listesi.
+-   **Etki alanı türleri**. Model içinde kullanılan yerleşik ve dış türleri listesi.
 
--   **Düzenleyici**. Listesini **araç** sekmeler ve içerdikleri öğeleri ve model için doğrulama ayarları. Doğrulama hakkında daha fazla bilgi için bkz: [bir etki alanına özgü dil doğrulama](../modeling/validation-in-a-domain-specific-language.md).
+-   **Düzenleyici**. Listesini **araç kutusu** sekmeler ve içerdikleri öğelerin ve model için doğrulama ayarları. Doğrulama hakkında daha fazla bilgi için bkz: [etki alanına özgü bir dilde doğrulama](../modeling/validation-in-a-domain-specific-language.md).
 
--   **Explorer davranış**. Oluşturulan Tasarımcısı'nda explorer davranışını belirten ayarları. Explorer özelleştirme hakkında daha fazla bilgi için bkz: [Model Gezgini özelleştirme](../modeling/customizing-the-model-explorer.md).
+-   **Gezgin davranışı**. Gezgin davranışını belirtin oluşturulan tasarımcıdaki ayarlar. Explorer özelleştirme hakkında daha fazla bilgi için bkz. [Model Gezginini özelleştirme](../modeling/customizing-the-model-explorer.md).
 
--   **Şekilleri**. Modeldeki şekli diyagramı öğeleri listesi.
+-   **Şekiller**. Modeldeki şekli diyagram öğeleri listesi.
 
--   **XML serileştirme davranış**. Model için seri hale getirme ayarları. Seri hale getirme hakkında daha fazla bilgi için bkz: [özelleştirme dosya depolama ve XML serileştirme](../modeling/customizing-file-storage-and-xml-serialization.md).
+-   **XML serileştirme davranışı**. Model için serileştirme ayarlar. Seri hale getirme hakkında daha fazla bilgi için bkz: [özelleştirme dosya depolamayı ve XML serileştirmeyi](../modeling/customizing-file-storage-and-xml-serialization.md).
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
-- [Etki alanına özgü dil araçları sözlüğü](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)
+- [Etki alanına özgü dil araçları sözlüğü](https://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

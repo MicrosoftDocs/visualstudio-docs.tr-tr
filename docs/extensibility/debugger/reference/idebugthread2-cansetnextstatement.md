@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0482f460e86944d80f7ae1988fa97118071466c1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af14a59251aecf7e54d156d777db0f1d799348a3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49891329"
 ---
 # <a name="idebugthread2cansetnextstatement"></a>IDebugThread2::CanSetNextStatement
-Geçerli yönerge işaretçisi verilen yığın çerçevesi için ayarlanmış olup olmadığını belirler.  
+Dosyadaki geçerli yönerge işaretçisini belirli bir yığın çerçevesine ayarlayıp ayarlayamayacağını belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int CanSetNextStatement (
   
 #### <a name="parameters"></a>Parametreler  
  `pStackFrame`  
- Gelecekte kullanılmak üzere ayrılmış; null bir değere ayarlayın. Null değeri geçerli yığın çerçevesini kullanın.  
+ Gelecekte kullanılmak üzere ayrılmış; null bir değere ayarlayın. Bu null değeri ise, geçerli yığın çerçevesi kullanın.  
   
  `pCodeContext`  
- [in] Bir [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md) çalıştırılmak üzere kod konumu açıklar nesne ve onun bağlamı.  
+ [in] Bir [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md) çalıştırılmak üzere kod konumu açıklayan nesne ve onun bağlamı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem döndürürse `S_OK`, ardından çağıran [SetNextStatement](../../../extensibility/debugger/reference/idebugthread2-setnextstatement.md) gerçekten next deyimi ayarlamak için yöntemi.  
+ Bu yöntem döndürürse `S_OK`, ardından çağırın [SetNextStatement](../../../extensibility/debugger/reference/idebugthread2-setnextstatement.md) gerçekten sonraki deyimi ayarlamak için yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)   

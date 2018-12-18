@@ -1,7 +1,7 @@
 ---
-title: Yeniden düzenleme Visual Studio'da yeniden adlandırma | Microsoft Docs
-ms.custom: ''
+title: Yeniden Adlandır yeniden düzenleyin
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
 author: gewarren
@@ -14,13 +14,14 @@ dev_langs:
 - VB
 ms.workload:
 - dotnet
-ms.openlocfilehash: 5735203131811b9423cd34f430665fb16a51ad34
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 02b08f3218ab6f1380884d2385899d6dd486bb81
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53063159"
 ---
-# <a name="rename-a-code-symbol-refactoring"></a>Bir kod simgesi yeniden düzenleme yeniden adlandırma
+# <a name="rename-a-code-symbol-refactoring"></a>Bir kod sembol yeniden düzenlemeyi yeniden adlandırma
 
 Bu yeniden düzenleme için geçerlidir:
 
@@ -28,53 +29,53 @@ Bu yeniden düzenleme için geçerlidir:
 
 - Visual Basic
 
-**Ne:** alanları, yerel değişkenleri, yöntemleri, ad alanları, özellikleri ve türleri gibi kodu sembolleri tanımlayıcıları yeniden adlandır olanak sağlar.
+**Ne:** alanlar, yerel değişkenler, yöntemleri, ad alanları, özellikler ve türler gibi kod simgeleri tanımlayıcıları yeniden adlandırın olanak tanır.
 
-**Ne zaman:** güvenli bir şekilde bir şey tüm örneklerini bulun ve yeni bir ad kopyala/yapıştır zorunda kalmadan yeniden adlandırmak istediğiniz.
+**Ne zaman:** güvenli bir şekilde bir şey tüm örneklerini bulun ve yeni adı kopyala/yapıştır gerekmeden yeniden adlandırmak istiyor.
 
-**Neden:** Kopyala ve yeni bir ad arasında projenin tamamında yapıştırma misiniz olasılıkla neden hatalar. Bu yeniden düzenleme aracı doğru bir şekilde yeniden adlandırma eylemi gerçekleştirir.
+**Neden:** kopyalayıp yeni bir ad, bir projenin tamamı yapıştırarak musunuz büyük olasılıkla hatalara neden. Bu yeniden düzenleme aracı doğru yeniden adlandırma eylemi gerçekleştirir.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. Vurgula veya metin imleci yeniden adlandırılacak öğesi içinde:
+1. Vurgulama veya yeniden adlandırılacak öğe metin imleci yerleştirin:
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu - C#](media/rename-highlight-cs.png)
+       ![Vurgulanan kodu:C#](media/rename-highlight-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu - Visual Basic](media/rename-highlight-vb.png)
+       ![Vurgulanmış kodu - Visual Basic](media/rename-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl + R**, ardından **Ctrl + R**. (Bağlı olarak hangi profilinde seçtiğiniz klavye kısayolu farklı olabileceğini unutmayın.)
+      - Tuşuna **Ctrl + R**, ardından **Ctrl + R**. (Bağlı olarak hangi profilinde seçtiğiniz klavye kısayolu farklı olabileceğini unutmayın.)
    - **Fare**
-     - Seçin **Düzenle > yeniden düzenlemeniz > yeniden adlandırma**.
-     - Kod sağ tıklatıp **yeniden adlandırma**.
+      - Seçin **Düzenle > yeniden düzenleyin > Yeniden Adlandır**.
+      - Kod sağ tıklayıp **Yeniden Adlandır**.
 
-1. Öğeyi yeni bir ad yazarak yeniden adlandırın.
+3. Yeni bir ad yazarak öğeyi yeniden adlandırın.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Animasyon - C# yeniden adlandırma](media/rename-animated-cs.gif)
+      ![Animasyon yeniden adlandır-C#](media/rename-animated-cs.gif)
 
    - Visual Basic:
 
-    ![Rename - VB](media/rename-rename-vb.png)
+      ![Rename - VB](media/rename-rename-vb.png)
 
    > [!TIP]
-   > Ayrıca açıklamaları ve bu yeni ad kullanmak üzere diğer dizeleri güncelleştirebilirsiniz yanı [Önizleme değişiklikleri](../../ide/preview-changes.md) önce kaydetme, içinde onay kutularını kullanarak **yeniden adlandırmak** üstünde görünür kutusunu düzenleyicinizi sağında.
+   > Ayrıca açıklamalar ve diğer dizeleri bu yeni adı kullanacak şekilde güncelleştirebilirsiniz yanı [değişiklikleri Önizleme](../../ide/preview-changes.md) önce kaydetme, içinde onay kutularını kullanarak **Yeniden Adlandır** en üstünde açılan kutusunda düzenleyiciniz sağında.
 
-1. Değişiklikle memnun kaldığınızda, seçin **Uygula** düğmesini veya tuşuna **Enter** ve değişiklikler uygulanır.
+4. Değişiklik ile tamamladığınızda seçin **Uygula** düğme veya basın **Enter** ve değişiklikler uygulanır.
 
 > [!NOTE]
-> Bir çakışma neden olacağından, zaten bir ad kullanırsanız **yeniden adlandırma** kutusu sizi uyaracaktır.
+> Bir çakışma neden zaten var olan bir ad kullanırsanız **Yeniden Adlandır** kutusunun sizi uyaracaktır.
 >
-> ![Çakışma yeniden adlandırma](media/rename-conflict-cs.png)
+> ![Yeniden adlandırma çakışması](media/rename-conflict-cs.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Yeniden Düzenleme](../refactoring-in-visual-studio.md)  
-[Değişiklikleri Önizleme](../../ide/preview-changes.md)
+- [Yeniden Düzenleme](../refactoring-in-visual-studio.md)
+- [Değişiklikleri Önizleme](../../ide/preview-changes.md)

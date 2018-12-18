@@ -1,53 +1,54 @@
 ---
 ms.technology: vs-ai-tools
-ms.openlocfilehash: 73292b9e0c7df23db839a7a13f70dbc2432d564f
-ms.sourcegitcommit: 8cbe6b38b810529a6c364d0f1918e5c71dee2c68
+ms.openlocfilehash: 738ada7e72af6c6bfbb93b8c494fdec2aadf68c1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49895957"
 ---
-# <a name="clone-a-repository-of-python-code-in-visual-studio"></a>Visual Studio'da Python kodu bir depoyu kopyalayın
+# <a name="clone-a-repository-of-python-code-in-visual-studio"></a>Visual Studio'da Python kodunun bir depoyu kopyalama
 
-Seçtiğiniz sonra [AI için Visual Studio Araçları yüklü](installation.md), kolayca depoyu Python kodu kopyalayın ve bir proje oluşturun.
+Kaydederler [yapay ZEKA için Visual Studio Araçları yüklü](installation.md), kolayca Python kodu bir depoyu kopyalamak ve bir proje oluşturun.
 
-1. Visual Studio yükleyiciyi çalıştırmak GitHub depoları için bağlanmak için **Değiştir**seçip **bileşenleri tek tek** sekmesi. Ekranı aşağı kaydırarak **kod Araçları** bölümünde, select **Visual Studio için GitHub uzantısı**ve seçin **Değiştir**.
+1. Visual Studio Yükleyicisi'ni çalıştırın, GitHub depoları için bağlanmayı seçin **Değiştir**seçip **tek tek bileşenler** sekmesi. Ekranı aşağı kaydırarak **kod Araçları** bölümünden **Visual Studio için GitHub uzantısı**seçip **Değiştir**.
 
-    ![Visual Studio yükleyicisinde GitHub uzantısı seçme](media\create-project-repo\installation-github-extension.png)
+    ![Visual Studio Yükleyicisi'nde GitHub uzantısı seçme](media/create-project-repo/installation-github-extension.png)
 
 2. Visual Studio'yu başlatın.
 
-3. Seçin **Görünüm > Takım Gezgini...**  açmak için **Takım Gezgini** , GitHub veya Visual Studio Team Services bağlanmak veya için bir depoyu kopyalayın penceresi.
+3. Seçin **Görüntüle > Takım Gezgini...**  açmak için **Takım Gezgini** penceresi içinde GitHub veya Azure DevOps bağlanabilir, ya da bir depoyu kopyalayın.
 
-    ![Takım Gezgini penceresi gösteren Visual Studio Team Services, GitHub ve depo kopyalama](media\create-project-repo\team-explorer.png)
+    ![Azure DevOps, GitHub'ı gösteren ve bir depo kopyalama Takım Gezgini penceresi](media/create-project-repo/team-explorer.png)
 
-4. Altında URL'si alanına **yerel Git depoları**, girin `https://github.com/Microsoft/samples-for-ai`, kopyalanan dosyalar için bir klasör girin ve seçin **kopya**.
+4. Altında alanına **yerel Git depoları**, girin `https://github.com/Microsoft/samples-for-ai`, kopyalanan dosyalar için bir klasör girin ve seçin **kopya**.
 
     > [!Tip]
-    > Takım Gezgini'nde belirttiğiniz klasör, kopyalanan dosyalarını almak için belirli bir klasördür. Farklı `git clone` komutunu Takım Gezgini'nde kopyasını oluşturma otomatik olarak oluşturmaz alt depo adını.
+    > Takım Gezgini'nde belirttiğiniz klasör, kopyalanan dosyalar almak için belirli bir klasördür. Farklı `git clone` komutunu, Ekip Gezgini'nde bir kopya oluşturma otomatik olarak oluşturmaz bir alt klasör deponun adını.
 
-5. Kopyalama tamamlandıktan sonra deposu panoya gitmek için Takım Gezgini, alttaki Depo klasörünü çift tıklatın. Altında **çözümleri**seçin **yeni...** .
+5. Kopyalama tamamlandığında, Team Explorer'ı depo panosuna gitmek için sayfanın alt kısmında depo klasörü çift tıklatın. Altında **çözümleri**seçin **yeni...** .
 
-    ![Takım Gezgini penceresi, bir kopya yeni proje oluşturma](media\create-project-repo\team-explorer-new-project.png)
+    ![Takım Gezgini penceresinde, bir kopya yeni proje oluşturma](media/create-project-repo/team-explorer-new-project.png)
 
-6. İçinde **yeni proje** görünen seçin iletişim "**ilk varolan Python kodu**", proje için bir ad belirtin, Ayarla **konumu** deposu olarak aynı klasöre ve seçin **Tamam**. Görüntülenen Sihirbazı'nda seçin **son**.
+6. İçinde **yeni proje** görüntülenen iletişim seçin "**ilk mevcut Python kodu**", proje için bir ad belirtin, Ayarla **konumu** deposu olarak aynı klasöre ve seçin **Tamam**. Açılan sihirbazda seçin **son**.
 
-7. Seçin **Görünüm > Çözüm Gezgini** menüsünde.
+7. Seçin **Görüntüle > Çözüm Gezgini** menüsünde.
 
-8. Çözüm Gezgini'nde genişletin `TensorFlow Examples> MNIST` düğümünü sağ tıklatın `convolutional.py`seçip **başlangıç dosyası olarak ayarlayın**. Bu adım Visual Studio Proje çalıştırırken kullanması gereken hangi dosya söyler.
+8. Çözüm Gezgini'nde `TensorFlow Examples> MNIST` düğümünü sağ `convolutional.py`seçip **başlangıç dosyası olarak ayarla**. Bu adım, Visual Studio projeyi çalışırken kullanması gereken hangi dosya söyler.
 
-10. CTRL + F5 tuşuna basın veya seçin **hata ayıklama > hata ayıklama olmadan Başlat** programı çalıştırmak için. Görürseniz bir ', önceki adımda ayarlama Çalışma dizini yeniden denetleyin.
+9. Tuşuna **Ctrl**+**F5** veya **hata ayıklama > hata ayıklama olmadan Başlat** programı çalıştırmak için. Görürseniz bir ', önceki adımda ayarı çalışma dizini yeniden denetleyin.
 
+10. Program başarıyla çalıştırıldığında, eğitim indirin ve veri kümesi, test sonra modeli eğitmek ve çıkış, hata oranı Başlat görürsünüz. İstediğiniz zaman içinde azaltmak için hata oranı
 
-11. Program başarıyla çalıştığında, bunu, eğitim karşıdan yükle ve veri kümesi, test sonra modeli eğitmek ve çıkış hata oranı Başlat görürsünüz. İstediğiniz zaman içinde azaltmak için hata oranı
+    ![İlk Python MNIST programının çıktısı](media/create-project-repo/tensorflow-mnist-running.png)
 
-    ![İlk Python MNIST program çıktısı](media\create-project-repo\tensorflow-mnist-running.png)
+   > [!NOTE]
+   > Anaconda kullanıyorsanız ve eksik numpy hakkında bir hata iletisi, gerekebilir [Anaconda kullanmak için Python ortamınız değiştirme](../python/selecting-a-python-environment-for-a-project.md).
 
-> Anaconda kullanıyorsanız ve eksik numpy hakkında bir hata alırsanız gerekebilir [Python ortamınızı Anaconda kullanacak şekilde değiştirme](../python/selecting-a-python-environment-for-a-project.md).
+11. İlerleme durumunu TensorBoard görselleştirebilirsiniz. Projenize sağ tıklayın ve tıklayın **çalıştırma TensorBoard** TensorBoard günlükleri çıkış dizini'ı seçin.
 
-11. İlerleme TensorBoard ile görselleştirebilirsiniz. Projenize sağ tıklayın ve tıklayın **çalıştırmak TensorBoard** TensorBoard günlükleri, çıktı dizini seçin.
+   ![tensorboard çalıştırın](media/create-project-repo/run-tensorboard.png)
 
-    ![tensorboard Çalıştır](media\create-project-repo\run-tensorboard.png)
+12. Kaliteyi artırma anlamına gelir, zaman içinde azalan hata dikkat edin.
 
-11. Fazla mesai, azalan hata kalitesini arttırma anlamına gelir dikkat edin
-
-    ![tensorboard Çalıştır](media\create-project-repo\tensorboard.png)
+   ![tensorboard çalıştırın](media/create-project-repo/tensorboard.png)

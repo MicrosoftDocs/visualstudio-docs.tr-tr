@@ -14,41 +14,42 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cb49d47dbd01b1d84228e1f01dc4cbf7f49dfc8d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 223535ef0b90869db191327abc7a757b5b79ae6b
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677226"
 ---
 # <a name="utilization-view"></a>Kullanım Görünümü
-**Kullanım görünümü** CPU, GPU ve geçerli işlem tarafından kullanılan diğer sistem kaynaklarını hakkındaki bilgileri görüntüler (seçin **Çözümle** > **eşzamanlılık Görselleştirici** eşzamanlılık görselleştiricisi başlatmak için). Çözümlenen işlemi, boşta işlemi, sistem işlem ve zaman içinde sistem üzerinde çalışan diğer işlemler tarafından ortalama Çekirdek kullanımını gösterir. Hangi belirli çekirdek herhangi bir anda etkin göstermez. Örneğin, iki çekirdek her belirli bir süre için yüzde 50 kapasiteyle çalıştırıyorsanız, bu görünüm kullanılan bir mantıksal çekirdek gösterir. Profil oluşturma süresi kısa bir süre parçalara bölerek oluşturulan görüntüleyin. Her segment için grafiğin üzerinde mantıksal çekirdekler bu zaman aralığı boyunca yürütülen işlem iş parçacıklarının ortalama sayısı çizer.  
+**Kullanım görünümü** CPU, GPU ve geçerli bir işlem tarafından kullanılan diğer sistem kaynaklarını hakkındaki bilgileri görüntüler (seçin **Çözümle** > **eşzamanlılık Görselleştirici** eşzamanlılık görselleştiricisi'ni başlatmak için). Bu analiz edilen işlem, işlem, sistem işlemi ve zaman içinde sistem üzerinde çalışan diğer işlemler tarafından ortalama Çekirdek kullanımını gösterir. Hangi belirli çekirdek herhangi bir zamanda etkin göstermez. Örneğin, iki çekirdek her belirli bir süre için yüzde 50 kapasitesine çalıştırıyorsanız, bu görünüm kullanılan bir mantıksal çekirdek gösterir. Görünüm, profil oluşturma süresi kısa süre parçalara bölerek oluşturulur. Her bir kesim için ortalama mantıksal çekirdekler üzerinde bu zaman aralığı boyunca yürütülen işlem iş parçacıklarının sayısını grafik çizer.  
   
  ![CPU Kullanımı görünümü](../profiling/media/vsts_ppacpuutil.png "VSTS_PPAcpuUtil")  
   
- Zamanında (x ekseni) ve hedef süreci, boşta işlemi ve sistem işlemi tarafından kullanılan ortalama mantıksal çekirdekler grafiğini gösterir. (Boşta çekirdekleri boşta işlemi gösterilmektedir. Sistem iş adına diğer işlemler gerçekleştirebilir Windows işleminde işlemidir.) Sistem hesabı için kalan tüm çekirdek kullanımını üzerinde çalışan kalan işlemler.  
+ Zamanında (x ekseni) ve hedef işlem, işlem ve sistem işlemi tarafından kullanılan ortalama mantıksal çekirdek grafiğini gösterir. (Boşta Çekirdek Boşta işlemi gösterilmektedir. Sistem iş adına diğer işlemleri gerçekleştirebilen Windows işlemde işlemidir.) Kullanımı, kalan tüm çekirdek sistem hesabına çalışan kalan işlemler.  
   
- Y ekseni üzerindeki mantıksal çekirdek sayısı gösterilir. Windows eşzamanlı çoklu iş parçacığı destek donanımda mantıksal çekirdekler (örneğin, Hyper-Threading) değerlendirir. Bu nedenle, çekirdek başına iki donanım iş parçacığı destek dört çekirdekli bir işlemciye sahip bir sistem sekiz mantıksal-çekirdek sistem olarak görünür. Bu durum, çekirdekler görünümü için de geçerlidir. Daha fazla bilgi için bkz: [çekirdekler görünümü](../profiling/cores-view.md).  
+ Mantıksal çekirdek sayısı, y ekseninde gösterilir. Windows, mantıksal çekirdek (örneğin, Hyper-Threading) donanım eşzamanlı çoklu iş parçacığı destek değerlendirir. Bu nedenle, çekirdek başına iki donanım iş parçacıklarının destekleyen bir dört çekirdekli işlemciye sahip bir sistem bir sekiz mantıksal-çekirdek sistem olarak görünür. Bu çekirdek görünümüne de geçerlidir. Daha fazla bilgi için [çekirdek görünümü](../profiling/cores-view.md).  
   
- GPU Etkinlik Grafiği, zaman içinde kullanılan DirectX motorları sayısını gösterir.  DMA paket işleme altyapının kullanılıyor.  Grafiğin belirli DirectX altyapısı (örneğin, 3B motor, Video altyapısı ve diğerleriyle) göstermez.  
+ GPU Etkinlik Grafiği, zaman içinde kullanılan DirectX altyapıları sayısını gösterir.  DMA paket işliyorsa altyapının kullanılır.  Grafiğin belirli DirectX altyapısı (örneğin, 3B altyapısı, Video altyapısı ve diğerleri) göstermez.  
   
 ## <a name="purpose"></a>Amaç  
- Eşzamanlılık görselleştiricisi kullandığınızda kullanım görünümü performans araştırmalar için başlangıç noktası olarak öneririz. Zaman içinde bir uygulamada eşzamanlılık derecesini genel bir bakış sağladığından, hızlı bir şekilde performans ayarlama gerektiren alanları tanımlamak veya paralelleştirme kullanabilirsiniz.  
+ Eşzamanlılık görselleştiricisi kullandığınızda kullanım görünümü performans araştırmalar için başlangıç noktası olarak öneririz. Zaman içinde bir uygulamada eşzamanlılık derecesini genel bir bakış sağladığından, hızlı bir şekilde performans ayarlama gerektiren alanlarını tanımlayacak şekilde veya paralelleştirme kullanabilirsiniz.  
   
- Performans ayarlama düşünüyorsanız beklentilerinizi karşılamıyor davranışını tanımlamak çalışıyor olabilir. Ayrıca mantıksal CPU çekirdekleri düşük kullanımını sahip bölgeler nedenini ve varlığı için arıyor olabilir. Ayrıca CPU ve GPU'ya arasında kullanım desenlerini görmek.  
+ Performans ayarlama ilgileniyorsanız beklentilerinizi karşılamıyor davranışını tanımlamak çalışıyor olabilir. Ayrıca aramanız varlığı ve mantıksal CPU çekirdeği düşük kullanımına sahip bölgelerin neden. Ayrıca CPU ve GPU arasında kullanım düzenlerini arıyor olabilirsiniz.  
   
- Bir uygulama parallelizing düşünüyorsanız, her iki CPU bağımlı alanları yürütme veya burada CPU kullanmıyorsanız alanları için büyük olasılıkla öğrenmek isterler.  
+ Bir uygulama paralelleştirmek içinde ilgileniyorsanız, yürütme ya da CPU bağımlı alanlarını veya burada CPU kullanmıyorsanız alanları için büyük olasılıkla bakıyorsunuz.  
   
- CPU bağımlı alanları yeşil. Grafik uygulama seri ise göstermesi bir çekirdek gösterir.  
+ CPU bağımlı alanlar yeşil şunlardır. Grafik uygulaması seri ise kullanılan bir çekirdek gösterir.  
   
- Burada CPU kullanmıyorsanız gri alanlarıdır. Bu uygulama boşta olduğu noktaları veya diğer CPU bağımlı iş ile çakışan tarafından paralellik olanaklarını sağlayan gerçekleştirme engelleme g/ç gösterebilir.  
+ Burada CPU kullanmıyorsanız gri alanlardır. Bu uygulamanın boşta olduğu noktaları veya diğer CPU bağımlı iş ile çakışan tarafından paralellik olanaklarını sağlayan gerçekleştirme engelleme g/ç temsil edebilir.  
   
- İlgi davranışını bulduğunuzda, o bölge üzerinde seçerek yakınlaştırabilirsiniz. Yakınlaştırma, sonra iş parçacıkları görünümü ya da daha ayrıntılı bir analiz çekirdekler görünümü geçiş yapabilirsiniz.  
+ İlgilendiğiniz bir davranış bulduğunuzda, bu bölgede seçerek yakınlaştırma yapabilirsiniz. Size yakınlaştırma sonra iş parçacıkları görünümü ya da daha ayrıntılı analiz için çekirdekler görünümü geçebilirsiniz.  
   
- C++ AMP veya DirectX kullanarak GPU kullanıyorsanız, GPU altyapısı kullanın veya GPU beklenmedik bir şekilde boşta olduğu alanlarına sayısı tanımlamak için ilginizi çekebilir.  
+ C++ AMP veya DirectX kullanarak GPU kullanıyorsanız, GPU kullanımı veya GPU beklenmedik bir şekilde boşta olduğu alanları motorlarında sayısını tanımlanmasına ilginizi çekebilir.  
   
-## <a name="zooming"></a>Yakınlaştırma  
- CPU kullanım grafiği veya GPU Etkinlik Grafiği yakınlaştırmak için bir bölüm seçin veya grafiği yukarıda yakınlaştırma kaydırıcı aracını kullanın. Diğer görünümlere geçiş yaparken yakınlaştırma ayarını devam ettirir. Yeniden uzaklaştırmak için yakınlaştırma kaydırıcı aracını kullanın. Ayrıca, Ctrl + kaydırma kullanarak yakınlaştırabilirsiniz.  
+## <a name="zoom"></a>Yakınlaştır  
+ CPU kullanım grafiği veya GPU Etkinlik Grafiği yakınlaştırmak için bir bölüm seçin veya grafiğe yukarıda yakınlaştırma kaydırıcı aracını kullanın. Diğer görünümlerle geçiş yakınlaştırma ayarını devam ettirir. Yeniden uzaklaştırmak için yakınlaştırma kaydırıcı aracını kullanın. Kullanarak ayrıca yakınlaştırabilirsiniz **Ctrl**+**kaydırma**.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eşzamanlılık görselleştiricisi](../profiling/concurrency-visualizer.md)   
- [Çekirdekler Görünümü](../profiling/cores-view.md)
+ [Çekirdekler görünümü](../profiling/cores-view.md)

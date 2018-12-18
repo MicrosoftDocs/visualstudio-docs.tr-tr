@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: uygulama geri alma yönetimi | Microsoft Docs'
+title: 'Nasıl yapılır: uygulamak yönetim geri alma | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,73 +13,74 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b01b7b8edf5ebe4b8c3e5277e87f9797860b552f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 227a002b5bd1b333da177944056eef7aca2cc393
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49830021"
 ---
 # <a name="how-to-implement-undo-management"></a>Nasıl yapılır: uygulama geri alma yönetimi
-Geri alma yönetimi için kullanılan birincil arabirimdir <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>, ortamı tarafından gerçekleştirilir. Geri alma yönetimini desteklemek için ayrı geri birimleri uygulamak (diğer bir deyişle, <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit>, birden çok tek tek adımları içerebilir.  
+Geri alma yönetimi için kullanılan birincil arabirimidir <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>, ortamı tarafından gerçekleştirilir. Geri alma yönetimini desteklemek için ayrı geri alma birimi uygulayın (diğer bir deyişle, <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit>, birden çok tek tek adımları içerebilir.  
   
- Geri alma Yönetimi uygulamak nasıl düzenleyicinizi birden çok görünüm veya destekleyip desteklemediğini bağlı olarak değişir. Her uygulama için yordamlar aşağıdaki bölümlerde ayrıntılı olarak belirtilir.  
+ Geri alma yönetim nasıl uygulayacağınıza düzenleyiciniz birden çok görünüm veya destekleyip desteklemediğini bağlı olarak değişir. Her uygulama için yordamlar aşağıdaki bölümlerde ayrıntılı şekilde verilmiştir.  
   
-## <a name="cases-where-an-editor-supports-a-single-view"></a>Burada bir düzenleyici tek bir görünüm destekler durumları  
- Bu senaryoda, birden çok görünüm Düzenleyicisi desteklemez. Yalnızca bir düzenleyici ve bir belge yoktur ve geri alma desteği. Geri alma Yönetimi uygulamak için aşağıdaki yordamı kullanın.  
+## <a name="cases-where-an-editor-supports-a-single-view"></a>Burada tek bir görünümde bir düzenleyici destekler durumları  
+ Bu senaryoda, birden çok görünüm Düzenleyici desteklemez. Yalnızca bir düzenleyici ve tek bir belge yoktur ve bunlar geri alma desteği. Geri alma Yönetimi uygulamak için aşağıdaki yordamı kullanın.  
   
-#### <a name="to-support-undo-management-for-a-single-view-editor"></a>Tek görünüm Düzenleyicisi için geri alma yönetimini desteklemek için  
+### <a name="to-support-undo-management-for-a-single-view-editor"></a>Geri alma yönetimini desteklemek için tek görünüm Düzenleyicisi için  
   
-1.  Çağrı `QueryInterface` üzerinde `IServiceProvider` pencere çerçevesi için arabirimde `IOleUndoManager`, geri alma yöneticisi erişmek için belge görünümü nesnesinden (`IID_IOLEUndoManager`).  
+1.  Çağrı `QueryInterface` üzerinde `IServiceProvider` pencere çerçevesi için arabirimdeki `IOleUndoManager`, geri alma yöneticisi erişmek için belge görünümü nesnesinden (`IID_IOLEUndoManager`).  
   
-2.  Bir Görünüm penceresi çerçeveye tarihli zaman çağırmak için kullanabileceği bir site işaretçi alır `QueryInterface` için `IServiceProvider`.  
+2.  Bir görünümü bir pencere çerçevesine tarihli, onu çağırmak için kullanabileceğiniz bir site işaretçi alır. `QueryInterface` için `IServiceProvider`.  
   
-## <a name="cases-where-an-editor-supports-multiple-views"></a>Burada bir düzenleyici birden çok görünüm destekleyen durumları  
- Belge ve görünüm ayrımı varsa, normalde bir geri alma yöneticisi belge ile ilişkili değil. Tüm geri birimleri belge veri nesneyle ilişkili bir geri alma yöneticisi yerleştirilir.  
+## <a name="cases-where-an-editor-supports-multiple-views"></a>Burada bir düzenleyici birden çok görünüm destekler durumları  
+ Belge ve görünüm ayrımı varsa, belge ile ilişkili normalde bir geri alma yöneticisi yok. Tüm geri alma birimi belge veri nesneyle ilişkili bir geri alma yöneticisi yerleştirilir.  
   
- Görünüm var olduğu her görünüm için bir geri alma yöneticisi sorgulanırken yerine belge veri nesnesi çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> geri alma yöneticisi örneği oluşturmak için bir sınıf tanımlayıcısı CLSID_OLEUndoManager belirtme. Sınıf tanımlayıcısı OCUNDOID.h dosyasında tanımlanır.  
+ Belge verilerini nesne görünümü var olduğu her görünüm için bir geri alma yöneticisi sorgulama yerine çağrıları <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> geri alma yöneticisi örneklemek için bir sınıf tanımlayıcısı CLSID_OLEUndoManager belirtme. Sınıf tanımlayıcısı tanımlanan *OCUNDOID.h* dosya.  
   
- Kullanırken <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> kendi geri alma yöneticisi örneği oluşturmak için geri alma yöneticisi ortamına kanca için aşağıdaki yordamı kullanın.  
+ Kullanırken <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> kendi geri alma yöneticisi örneği oluşturmak için geri alma Yöneticisi'ni kullanarak ortama bağlama için aşağıdaki yordamı kullanın.  
   
-#### <a name="to-hook-your-undo-manager-into-the-environment"></a>Geri alma yöneticisi ortamına bağlanmanıza  
+### <a name="to-hook-your-undo-manager-into-the-environment"></a>Geri alma Yöneticisi'ni kullanarak ortama yeteneklerinizi  
   
-1.  Çağrı `QueryInterface` döndürülen nesne üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2> için `IID_IOleUndoManager`. İşaretçi depolamak <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>.  
+1. Çağrı `QueryInterface` yönteminden döndürülen nesne üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2> için `IID_IOleUndoManager`. İşaretçi Store <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>.  
   
-2.  Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IOleCommandTarget`. İşaretçi depolamak <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>.  
+2. Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IOleCommandTarget`. İşaretçi Store <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>.  
   
-3.  Geçiş, <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.Exec%2A> saklı çağrılarını `IOleCommandTarget` arabirimi aşağıdaki StandardCommandSet97 komutları için:  
+3. Geçiş, <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> ve <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.Exec%2A> saklı çağırıyor `IOleCommandTarget` arabirimi aşağıdaki StandardCommandSet97 komutlar için:  
   
-    -   cmdidUndo  
+   -   cmdidUndo  
   
-    -   cmdidMultiLevelUndo  
+   -   cmdidMultiLevelUndo  
   
-    -   cmdidRedo  
+   -   cmdidRedo  
   
-    -   cmdidMultiLevelRedo  
+   -   cmdidMultiLevelRedo  
   
-    -   cmdidMultiLevelUndoList  
+   -   cmdidMultiLevelUndoList  
   
-    -   cmdidMultiLevelRedoList  
+   -   cmdidMultiLevelRedoList  
   
-4.  Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IVsChangeTrackingUndoManager`. İşaretçi depolamak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>.  
+4. Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IVsChangeTrackingUndoManager`. İşaretçi Store <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>.  
   
-     İşaretçi kullanmak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager> çağırmak için <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.MarkCleanState%2A>, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.AdviseTrackingClient%2A>ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.UnadviseTrackingClient%2A> yöntemleri.  
+    İşaretçi kullanın <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager> çağrılacak <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.MarkCleanState%2A>, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.AdviseTrackingClient%2A>ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.UnadviseTrackingClient%2A> yöntemleri.  
   
-5.  Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IVsLinkCapableUndoManager`.  
+5. Çağrı `QueryInterface` üzerinde `IOleUndoManager` için `IID_IVsLinkCapableUndoManager`.  
   
-6.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkCapableUndoManager.AdviseLinkedUndoClient%2A> belgenizi ile hangi de uygulamanız gerekir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkedUndoClient> arabirimi. Belgenizi kapatıldığında, çağrı `IVsLinkCapableUndoManager::UnadviseLinkedUndoClient`.  
+6. Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkCapableUndoManager.AdviseLinkedUndoClient%2A> belgenizi ile hangi de uygulamanız gerekir <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkedUndoClient> arabirimi. Belge kapatıldığında aramanızı `IVsLinkCapableUndoManager::UnadviseLinkedUndoClient`.  
   
-7.  Belgenizi kapatıldığında, çağrı `QueryInterface` için geri alma yöneticinize üzerinde `IID_IVsLifetimeControlledObject`.  
+7. Belge kapatıldığında aramanızı `QueryInterface` için geri alma yöneticinize üzerinde `IID_IVsLifetimeControlledObject`.  
   
-8.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLifetimeControlledObject.SeverReferencesToOwner%2A>.  
+8. Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLifetimeControlledObject.SeverReferencesToOwner%2A>.  
   
-9. Belgeye değişiklik yapıldığında, çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> yöneticisiyle üzerinde bir `OleUndoUnit` sınıfı. <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> Yöntemi tutar nesneye bir başvurusu nedenle genellikle, yayın, sonra sağ <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A>.  
+9. Belgeye değişiklik yapıldığında çağrı <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> yöneticisiyle üzerinde bir `OleUndoUnit` sınıfı. <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> Yöntemi tutar nesnesine bir başvuru bu nedenle genellikle bu yayın sonrasında doğru <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A>.  
   
- `OleUndoManager` Sınıfı, bir tek geri yığını örneği temsil eder. Bu nedenle, geri alma veya yineleme için izlenen verileri varlığı başına bir geri alma Yöneticisi nesnesi yok.  
+   `OleUndoManager` Sınıfı, bir tek geri alma yığını örneği temsil eder. Bu nedenle, veri varlığı geri alma veya yineleme için izlenen her bir geri alma Yöneticisi nesnesi yok.  
   
 > [!NOTE]
->  Geri alma Yöneticisi nesnesi yaygın metin düzenleyicisi tarafından kullanılırken, bu metin Düzenleyicisi'ni belirli desteği olan bir genel bileşendir. Birden çok düzeyli geri alma veya yineleme desteklemek istiyorsanız, bunu yapmak için bu nesneyi kullanabilirsiniz.  
+>  Geri alma Yöneticisi nesnesi metin düzenleyici tarafından yaygın olarak kullanılır, ancak belirli hiçbir metin düzenleyicisi desteği olan bir genel bileşen var. Çok düzeyli geri alma veya yineleme desteklemek istiyorsanız, bunu yapmak için bu nesneyi kullanırsınız.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLifetimeControlledObject>   
- [Nasıl yapılır: geri alma yığını temizleyin](../extensibility/how-to-clear-the-undo-stack.md)
+ [Nasıl yapılır: geri alma yığını Temizle](../extensibility/how-to-clear-the-undo-stack.md)

@@ -1,6 +1,7 @@
 ---
-title: Değer (XElement dinamik özellik)
+title: Değer (XElement dinamik özelliği)
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: reference
 ms.assetid: b30e770d-9646-4632-9738-cc9f51bb2343
@@ -9,32 +10,33 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 25aa4baa8672d9cb9443adb0cf45c59b117cf70c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0ba779446e3cfd450d50d71f21fd2e2434db158f
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077055"
 ---
-# <a name="value-xelement-dynamic-property"></a>Değer (XElement dinamik özellik)
+# <a name="value-xelement-dynamic-property"></a>Değer (XElement dinamik özelliği)
 
-Alır veya öğenin içeriğini ayarlar.
+Alır veya ayarlar öğenin içeriğini.
 
 ## <a name="syntax"></a>Sözdizimi
 
-```
+```xaml
 elem.Value
 ```
 
-## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri
+## <a name="property-valuereturn-value"></a>Özellik değeri/dönüş değeri
 
 A <xref:System.String> , birleştirilmiş öğenin içeriğini temsil eder.
 
 ## <a name="remarks"></a>Açıklamalar
 
-Bu özellik eşdeğerdir <xref:System.Xml.Linq.XElement.Value%2A> özelliği <xref:System.Xml.Linq.XElement?displayProperty=fullName> sınıfı, ancak bu dinamik özellik de değişiklik bildirimleri destekler.
+Bu özellik değerine eşdeğer olan <xref:System.Xml.Linq.XElement.Value%2A> özelliği <xref:System.Xml.Linq.XElement?displayProperty=fullName> sınıfı, ancak bu dinamik özellik de değişiklik bildirimleri destekler.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=fullName>
-- [XElement Sınıfı Dinamik Özellikleri](../designers/xelement-class-dynamic-properties.md)
+- [XElement sınıfı dinamik özellikleri](../designers/xelement-class-dynamic-properties.md)
 - [Xml](../designers/xml-xelement-dynamic-property.md)

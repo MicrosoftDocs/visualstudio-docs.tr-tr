@@ -1,5 +1,5 @@
 ---
-title: Grafik denetimi | Microsoft Docs
+title: Grafik denetimi
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -14,35 +14,36 @@ helpviewer_keywords:
 - Chart control [Office development in Visual Studio], events
 - Chart control [Office development in Visual Studio]
 - Chart control [Office development in Visual Studio], data binding
-author: TerryGLee
-ms.author: tglee
+author: John-Hart
+ms.author: johnhart
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: c473c026f5d5f9a5919626fb667994e6ffdc01f4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 439d31b05a861a7c83a10fa728a1e8d3defb305f
+ms.sourcegitcommit: 20c0991d737c540750c613c380cd4cf5bb07de51
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248091"
 ---
-# <a name="chart-control"></a>Grafik Denetimi
-  <xref:Microsoft.Office.Tools.Excel.Chart> Denetim olayları gösteren bir grafik nesnesi değil. Bir çalışma sayfasına bir grafik eklediğinizde, Visual Studio oluşturur bir <xref:Microsoft.Office.Tools.Excel.Chart> dayalı Microsoft Office Excel nesne modeline çapraz geçiş yapmak zorunda kalmadan doğrudan programlama yapabilirsiniz, nesne.  
+# <a name="chart-control"></a>Grafik denetimi
+  <xref:Microsoft.Office.Tools.Excel.Chart> Olayları ortaya koyan bir çizelge nesnesine bir denetimdir. Visual Studio bir grafik çalışma sayfasına eklediğinizde, oluşturur bir <xref:Microsoft.Office.Tools.Excel.Chart> Microsoft Office Excel nesne modeline geçiş yapmak zorunda kalmadan doğrudan programlayabileceğiniz, nesne.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-## <a name="creating-the-control"></a>Denetimi oluşturma  
- Ekleyebileceğiniz <xref:Microsoft.Office.Tools.Excel.Chart> Microsoft Office Excel çalışma zamanında veya belge düzeyi projesindeki çalışma zamanında denetimler.  
+## <a name="create-the-control"></a>Denetim oluşturma  
+ Ekleyebileceğiniz <xref:Microsoft.Office.Tools.Excel.Chart> tasarım zamanında veya çalışma zamanında bir belge düzeyi projesi bir Microsoft Office Excel çalışma sayfasına denetimler.  
   
- Ekleyebileceğiniz <xref:Microsoft.Office.Tools.Excel.Chart> denetimlerini çalışma zamanında VSTO eklenti. Daha fazla bilgi için bkz: [nasıl yapılır: çalışma sayfalarına Grafik denetimleri ekleme](../vsto/how-to-add-chart-controls-to-worksheets.md).  
+ Ekleyebileceğiniz <xref:Microsoft.Office.Tools.Excel.Chart> denetimlerini çalışma zamanında VSTO eklenti. Daha fazla bilgi için [nasıl yapılır: Çalışma sayfalarına Grafik denetimleri ekleme](../vsto/how-to-add-chart-controls-to-worksheets.md).  
   
 > [!NOTE]  
->  Dinamik olarak oluşturulmuş grafik nesneleri çalışma sayfasında sürdürülmez çalışma kapatıldığında konak kontrolü olarak. Daha fazla bilgi için bkz: [Office belgelerine çalışma zamanında denetimler ekleme](../vsto/adding-controls-to-office-documents-at-run-time.md).  
+>  Dinamik olarak oluşturulan grafik nesneleri çalışma sayfasında sürdürülmez çalışma kapatıldığında denetimleri gibi. Daha fazla bilgi için [Office belgelerine çalışma zamanında denetimler ekleme](../vsto/adding-controls-to-office-documents-at-run-time.md).  
   
 ## <a name="formatting"></a>Biçimlendirme  
- Tüm biçimlendirme, uygulanabilir bir <xref:Microsoft.Office.Interop.Excel.Chart> de uygulanabilir bir <xref:Microsoft.Office.Tools.Excel.Chart> denetim. Bu, kenarlıklar, yazı tipi, grafik türü, kılavuz çizgilerini, gösterge ve veri etiketlerini içerir.  
+ Tüm biçimlendirme, uygulanabilir bir <xref:Microsoft.Office.Interop.Excel.Chart> için de uygulanabilir bir <xref:Microsoft.Office.Tools.Excel.Chart> denetimi. Bu, kenarlıkların, yazı tipleri, grafik türü, kılavuz çizgileri, gösterge ve veri etiketleri içerir.  
   
 ## <a name="events"></a>Olaylar  
- Aşağıdaki olaylar kullanılabilir <xref:Microsoft.Office.Tools.Excel.Chart> denetimi:  
+ Aşağıdakiler için kullanılabilir <xref:Microsoft.Office.Tools.Excel.Chart> denetimi:  
   
 -   <xref:Microsoft.Office.Tools.Excel.Chart.ActivateEvent>  
   
@@ -74,14 +75,14 @@ ms.lasthandoff: 04/16/2018
   
 -   <xref:Microsoft.Office.Tools.Excel.Chart.SeriesChange>  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office geliştirme örnekleri ve izlenecek yollar](../vsto/office-development-samples-and-walkthroughs.md)   
- [Genişletme Word belgelerini ve Excel çalışma kitaplarını çalışma zamanında VSTO eklentileri](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
+ [Word belgelerini ve Excel çalışma kitaplarını VSTO eklentileri çalışma zamanında genişletme](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
  [Office belgelerindeki denetimler](../vsto/controls-on-office-documents.md)   
  [Office belgelerine çalışma zamanında denetimler ekleme](../vsto/adding-controls-to-office-documents-at-run-time.md)   
- [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirme](../vsto/automating-excel-by-using-extended-objects.md)   
- [Nasıl yapılır: çalışma sayfalarına Grafik denetimleri ekleme](../vsto/how-to-add-chart-controls-to-worksheets.md)   
+ [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirmek](../vsto/automating-excel-by-using-extended-objects.md)   
+ [Nasıl yapılır: Çalışma sayfalarına Grafik denetimleri ekleme](../vsto/how-to-add-chart-controls-to-worksheets.md)   
  [Office çözümlerinde denetimlere veri bağlama](../vsto/binding-data-to-controls-in-office-solutions.md)   
- [Konak Denetimlerinin ve Konak Öğelerinin Programlama Sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  
+ [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  
   
   

@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b0701706deee68cf2dde522d48f9aa62b9a00142
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: a92e0fa81bdfc7c33e790c5022c2fbe341d632be
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49847716"
 ---
 # <a name="thunkordinal"></a>THUNK_ORDINAL
 Dönüştürücü türlerini belirtir.  
@@ -47,10 +48,10 @@ typedef enum THUNK_ORDINAL {
  A `this` adjustor dönüştürücü.  
   
  THUNK_ORDINAL_VCALL  
- Sanal çağrısı dönüştürücü.  
+ Sanal çağrı dönüştürücü.  
   
  THUNK_ORDINAL_PCODE  
- P-kodu dönüştürücü.  
+ P-code dönüştürücü.  
   
  THUNK_ORDINAL_LOAD  
  Gecikme yükü dönüştürücü.  
@@ -62,11 +63,11 @@ typedef enum THUNK_ORDINAL {
  Dal noktası trampoline dönüştürücü.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu numaralandırma değerleri çağrısından döndürülen [Idiasymbol::get_thunkordinal](../../debugger/debug-interface-access/idiasymbol-get-thunkordinal.md) yöntemi.  
+ Bu sabit listesi değerleri çağrısından döndürülen [Idiasymbol::get_thunkordinal](../../debugger/debug-interface-access/idiasymbol-get-thunkordinal.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: cvconst.h  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [IDiaSymbol::get_thunkOrdinal](../../debugger/debug-interface-access/idiasymbol-get-thunkordinal.md)

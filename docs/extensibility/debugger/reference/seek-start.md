@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 55be60c35ea3af97cb9129670ef422d1a649fead
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a10d749022757860c6f7cc620091c2ac10623976
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905229"
 ---
 # <a name="seekstart"></a>SEEK_START
-Ayrıştırılmış akışında aramayı başlayacağı konumu belirtir.  
+Ayrıştırılmış kodu stream'de arama başlatılacağı konumu belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,31 +50,31 @@ public enum enum_SEEK_START {
   
 ## <a name="members"></a>Üyeler  
  SEEK_START_BEGIN  
- Geçerli belgenin başında aramayı başlatır.  
+ Geçerli belgenin başlangıcında aramayı başlatır.  
   
  SEEK_START_END  
- Geçerli belgenin sonuna aramayı başlatır.  
+ Geçerli belgenin sonunda aramayı başlatır.  
   
  SEEK_START_CURRENT  
  Geçerli belge geçerli konumuna aramayı başlatır.  
   
  SEEK_START_CODECONTEXT  
- Geçerli belgede verilen kodu bağlamı aramayı başlatır.  
+ Geçerli belgede belirli kod bağlamında aramayı başlatır.  
   
  SEEK_START_CODELOCID  
- Verilen kodu konumu tanımlayıcıda aramayı başlatır. Kod konumu tanımlayıcıları elde edilir çağırarak [GetCurrentLocation](../../../extensibility/debugger/reference/idebugdisassemblystream2-getcurrentlocation.md).  
+ Verilen kod konum tanımlayıcısı aramayı başlatır. Kod konumu tanımlayıcılarını elde edilen çağırarak [GetCurrentLocation](../../../extensibility/debugger/reference/idebugdisassemblystream2-getcurrentlocation.md).  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken olarak geçirilen [Seek](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md) yöntemi.  
+ Bağımsız değişken olarak geçirilen [arama](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [Arama](../../../extensibility/debugger/reference/idebugdisassemblystream2-seek.md)   
  [GetCurrentLocation](../../../extensibility/debugger/reference/idebugdisassemblystream2-getcurrentlocation.md)

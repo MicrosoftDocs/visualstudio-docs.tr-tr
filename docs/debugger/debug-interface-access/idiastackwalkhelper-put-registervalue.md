@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2c094384fd4c1e01b28edcc809d58ab56b3bb225
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 81ac9c2366f97497fca4f7faa49facf2a3f819b9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49838939"
 ---
 # <a name="idiastackwalkhelperputregistervalue"></a>IDiaStackWalkHelper::put_registerValue
-Bir kayıt değerini ayarlar.  
+Bir kayıt değeri ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -34,17 +35,17 @@ HRESULT put_registerValue (
   
 #### <a name="parameters"></a>Parametreler  
  `index`  
- [in] Arasında bir değer [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md) yazmak için Kaydet'i belirtme numaralandırması.  
+ [in] Bir değer [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md) yazmak için kayıt belirten sabit listesi.  
   
  `NewVal`  
- [in] Yeni değer kaydedin.  
+ [in] Yeni kayıt değeri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Değer boyutu rağmen yalnızca ne kayıt normalde tutan uygulaması depolamanız gerekir. Örneğin, bir 8 bit kaydı yalnızca en düşük 8 bitlik verilen değer tutan.  
+ Değer boyutuna rağmen bir uygulama yalnızca ne kasa normalde tutan depolamanız gerekir. Örneğin, 8-bit kayıt yalnızca düşük 8 bitlik verilen değeri tutan.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)   
- [CV_HREG_e numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md)
+ [CV_HREG_e Numaralandırması](../../debugger/debug-interface-access/cv-hreg-e.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a54fd51b63bb53521b9f1e9c75f75e49d771b0ba
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 6be173020e4aeb3b69197a038b4bc6d66c7eedc8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908307"
 ---
 # <a name="idiaframedatagetfunctionstart"></a>IDiaFrameData::get_functionStart
-Blok işlevinin giriş noktası içerip içermediğini gösteren bir bayrak alır.  
+Blok bir işlev giriş noktası içerip içermediğini gösteren bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_functionStart (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` giriş noktası; blok içeriyorsa, aksi takdirde döndürür `FALSE`.  
+ [out] Döndürür `TRUE` blok giriş noktası; sahipse döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Çerçeve bir satır içi yöntemi veya işlev eklenen işlev olabilmesinden dolayı bir işlev başlangıcı olmaması yığın çerçevesi mümkündür.  
+ Bir satır içi yöntem veya işlev bir işleve eklenen çerçeveyi temsil ettiğinden, bir işlev başlangıcını olmaması bir yığın çerçevesini mümkündür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;Paket&gt; öğe (Önyükleyici) | Microsoft Docs'
+title: '&lt;Paket&gt; öğesi (Önyükleyici) | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -17,18 +17,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c04676f03f4734a25601e772208939e0b3f8482d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 49867ddc897a9c1a1241a891a3ba3de866d84688
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49899246"
 ---
-# <a name="ltpackagegt-element-bootstrapper"></a>&lt;Paket&gt; öğe (Önyükleyici)
-`Package` Bir paket dosyası içinde en üst düzey XML öğesidir.  
-  
+# <a name="ltpackagegt-element-bootstrapper"></a>&lt;Paket&gt; öğesi (Önyükleyici)
+`Package` En üst düzey XML öğesi bir paket dosyası içinde bir öğedir.  
+
 ## <a name="syntax"></a>Sözdizimi  
-  
-```  
+
+```xml  
 <Package  
     Culture  
     Name  
@@ -74,7 +75,7 @@ ms.lasthandoff: 04/19/2018
             SearchDepth  
         />  
     </InstallChecks>  
-  
+
     <Commands  
         Reboot  
     >  
@@ -110,7 +111,7 @@ ms.lasthandoff: 04/19/2018
             </ExitCodes>  
         </Command>  
     </Commands>  
-  
+
     <PackageFiles  
         CopyAllComponents  
     >  
@@ -121,14 +122,14 @@ ms.lasthandoff: 04/19/2018
             PublicKey  
         />  
     </PackageFiles>  
-  
+
     <Strings>  
         <String  
             Name  
         >  
         </String>  
     </Strings>  
-  
+
     <Schedules>  
         <Schedule  
             Name  
@@ -140,33 +141,34 @@ ms.lasthandoff: 04/19/2018
     </Schedules>  
 </Package>  
 ```  
-  
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `Package` Öğesi gereklidir. Aşağıdaki özniteliklere sahiptir.  
-  
-|Öznitelik|Açıklama|  
-|---------------|-----------------|  
-|`Culture`|Gerekli. Kullanılacak dili belirleyen bu paket için kültürü tanımlar. Bu öznitelik içine bir anahtardır `Strings` yükleme sırasında ürün adlarını ve hata iletileri için kültüre özgü dizeleri listeler öğesi.|  
-|`Name`|Gerekli. Gibi bir araçla geliştiriciye görüntülenen paketin adını [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu öznitelik içine bir anahtardır `Strings` içermelidir öğesi bir `String` öğeyle `Name` ve `Culture` özelliklerini ayarlamak eşleşecek şekilde `Name` ve `Culture` özelliklerini `Package`.|  
-|`LicenseAgreement`|İsteğe bağlı. Son Kullanıcı Lisans Sözleşmesi (EULA) içeren dağıtım paketinde dosyasının adını belirtir.  Bu dosya, düz metin (.txt) veya zengin metin biçimi olabilir. (.rtf)|  
-  
+
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `Package` Öğesi gereklidir. Bunu, aşağıdaki özniteliklere sahiptir.  
+
+
+| Öznitelik | Açıklama |
+|--------------------| - |
+| `Culture` | Gerekli. Kullanılacak dili belirler. Bu paket için kültür tanımlar. Bu öznitelik içine bir anahtardır `Strings` öğesi, yükleme sırasında ürün adları ve hata iletileri için kültüre özgü dizeleri listeler. |
+| `Name` | Gerekli. Gibi bir araç geliştiriciye görüntülenen paketten adını [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu öznitelik içine bir anahtardır `Strings` içermesi gereken öğesi bir `String` öğeyle `Name` ve `Culture` özelliklerini ayarlama eşleştirilecek `Name` ve `Culture` özelliklerini `Package`. |
+| `LicenseAgreement` | İsteğe bağlı. Son Kullanıcı Lisans Sözleşmesi (EULA) içeren dağıtım paketi dosyasının adını belirtir.  Bu dosya ya da düz metin olabilir (*.txt*) veya zengin metin biçimi. (*.rtf*) |
+
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneğinde yeniden dağıtma için tam bir paket dosyası gösterir [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
-  
-```  
+ Aşağıdaki kod örneği dağıtma için tam bir paket dosyası gösterir [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
+
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
-  
+
 <Package  
   xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"  
   Name="DisplayName"  
   Culture="Culture"  
   LicenseAgreement="eula.rtf"  
 >  
-  
+
     <PackageFiles>  
         <PackageFile Name="eula.rtf"/>  
     </PackageFiles>  
-  
+
     <!-- Defines a localizable string table for error messages-->  
     <Strings>  
         <String Name="DisplayName">.NET Framework 2.0</String>  
@@ -184,9 +186,9 @@ ms.lasthandoff: 04/19/2018
         <String Name="InstMsiAExe">http://go.microsoft.com/fwlink/?LinkId=37285</String>  
         <String Name="Msi30Exe">http://go.microsoft.com/fwlink/?LinkId=37287</String>  
     </Strings>  
-  
+
 </Package>  
 ```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Ürün ve Paket Şema Başvurusu](../deployment/product-and-package-schema-reference.md)
+
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Ürün ve paket şema başvurusu](../deployment/product-and-package-schema-reference.md)

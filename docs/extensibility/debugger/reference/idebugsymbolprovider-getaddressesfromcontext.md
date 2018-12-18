@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 09bc0d4fc0a723c259e2897b95abbd8611b10c7d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 94920e72b7d83e45fc7d7e49849f3c1983b180ef
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49931525"
 ---
 # <a name="idebugsymbolprovidergetaddressesfromcontext"></a>IDebugSymbolProvider::GetAddressesFromContext
-Bu yöntem bir belge bağlamı hata ayıklama adresleri bir diziye eşler.  
+Bu yöntem, bir belge bağlamına bir hata ayıklama adresleri dizisine eşler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,21 +50,21 @@ int GetAddressesFromContext(
  [in] Belge bağlamı.  
   
  `fStatmentOnly`  
- [in] TRUE ise, tek bir deyimde hata ayıklama adreslere sınırlar.  
+ [in] TRUE ise tek bir deyimde hata ayıklama adresler sınırlar.  
   
  `ppEnumBegAddresses`  
- [out] Bu deyimi veya satır ile ilişkili başlangıç hata ayıklama adresleri için bir numaralandırıcı döndürür.  
+ [out] Bu deyim veya satır ile ilişkili başlangıç hata ayıklama adresi için bir numaralandırıcı döndürür.  
   
  `ppEnumEndAddresses`  
- [out] Döndürür bir [IEnumDebugAddresses](../../../extensibility/debugger/reference/ienumdebugaddresses.md) bu deyimi veya satır ile ilişkili bitiş hata ayıklama adresleri için Numaralandırıcı.  
+ [out] Döndürür bir [IEnumDebugAddresses](../../../extensibility/debugger/reference/ienumdebugaddresses.md) bu deyimi veya satır ile ilişkili bitiş hata ayıklama adresi için bir numaralandırıcı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir belge bağlamı genellikle kaynak satırları aralığını belirtir. Bu satırlar ile ilişkili hata ayıklama adresleri bitiş ve başlangıç bu yöntem sağlar. Bazı diller birden fazla satır ya da birden fazla deyim içeren satırları span deyimleri sağlar. Bu yöntem, tek bir deyimde hata ayıklama adreslere sınırlamak için bir bayrak sağlar.  
+ Bir belge bağlamına genellikle bir dizi kaynak satırları gösterir. Bu yöntem, başlangıç sağlar ve bitiş adreslerini hata ayıklama bu satırlar ile ilişkili. Bazı diller, birden fazla satır ya da birden fazla deyim içeren satırları span deyimleri sağlar. Bu yöntem, tek bir deyimde hata ayıklama adresler sınırlamak için bir bayrak sağlar.  
   
- Şablonları durumunda olduğu gibi birden fazla hata ayıklama adresine sahip tek bir deyimde mümkündür.  
+ Tek bir deyimde şablonları olduğu gibi birden çok hata ayıklama adresi olması mümkündür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   

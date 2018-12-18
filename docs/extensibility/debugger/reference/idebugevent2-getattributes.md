@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6d6305d7000456eb81cf01c9e85e6c2a421ed800
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 515775a064d1e260d9eb028c6e1b6020b7d642cd
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49935308"
 ---
 # <a name="idebugevent2getattributes"></a>IDebugEvent2::GetAttributes
-Bu hata ayıklama olay için özniteliklerini alır.  
+Bu hata ayıklama olayı özniteliklerini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int GetAttribute(
   
 #### <a name="parameters"></a>Parametreler  
  `pdwAttrib`  
- [out] Bayraklarını bileşimini [EVENTATTRIBUTES](../../../extensibility/debugger/reference/eventattributes.md) numaralandırması.  
+ [out] Bayraklarının bir birleşimi [EVENTATTRIBUTES](../../../extensibility/debugger/reference/eventattributes.md) sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) arabirimidir tüm olayları ortak. Bu yöntem, olay türünü açıklar; Örneğin, olay zaman uyumlu veya zaman uyumsuz ve durdurma etkinliğidir.  
+ [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) tüm olaylar için ortak arabirim. Bu yöntem olayın türünü açıklar; Örneğin, zaman uyumlu veya zaman uyumsuz olayıdır ve durdurma etkinliğidir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md)   

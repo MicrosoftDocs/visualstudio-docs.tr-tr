@@ -18,35 +18,36 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1ad10cae4ebd3aee6b65ad408ea3a3df3f82fd02
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f33772a35e8e47a77e0fdaddd28b7471ef5abcce
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081416"
 ---
 # <a name="ltpublisheridentitygt-element-clickonce-deployment"></a>&lt;publisherIdentity&gt; öğesi (ClickOnce dağıtımı)
-Bu dağıtım bildirimini imzalamış yayımcı hakkında bilgi içerir.  
+Bu dağıtım bildirimi imzalayan yayımcı hakkında bilgi içerir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <publisherIdentity  
    name  
    issuerKeyHash  
 />  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `publisherIdentity` Öğesi imzalı bildirimler için gereklidir. Aşağıdaki tabloda, öznitelikleri gösterir `publisherIdentity` öğesi destekler.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `publisherIdentity` Öğesi imzalı bildirimler için gereklidir. Aşağıdaki tabloda, öznitelikleri gösterir `publisherIdentity` öğeyi destekler.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`name`|Gerekli. Bu uygulamayı yayımlayan tarafın kimliğini açıklar.|  
-|`issuerKeyHash`|Gerekli. Sertifikayı verenin ortak anahtarın SHA-1 karma içerir.|  
+|`name`|Gerekli. Bu uygulamayı yayımlayan taraf kimliğini açıklar.|  
+|`issuerKeyHash`|Gerekli. Ortak anahtar sertifika verenin SHA-1 karması içerir.|  
   
 #### <a name="parameters"></a>Parametreler  
   
-## <a name="property-valuereturn-value"></a>Özellik Değeri/Dönüş Değeri  
+## <a name="property-valuereturn-value"></a>Özellik değeri/dönüş değeri  
   
 ## <a name="exceptions"></a>Özel Durumlar  
   

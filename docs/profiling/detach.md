@@ -10,11 +10,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 40ef2e9e8cfcfd6c825723254f0d5a0891d2e1f1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 91b93eb99b1068e1695e26136eacc6abf2886774
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34764497"
 ---
 # <a name="detach"></a>Ayır
 VSPerfCmd.exe **ayırma** seçeneği keser profil oluşturucu belirtilen işlemler veya tüm işlemlerin hiçbiri belirtilmezse. Profil oluşturma örnekleme yöntemini kullanarak başlatılmış olması gerekir.  
@@ -28,7 +29,7 @@ VSPerfCmd.exe **ayırma** seçeneği keser profil oluşturucu belirtilen işleml
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cmd  
 VSPerfCmd.exe /Detach[:PIDs|ProcessNames]  
 ```  
   
@@ -51,7 +52,7 @@ VSPerfCmd.exe /Detach[:PIDs|ProcessNames]
 ## <a name="example"></a>Örnek  
  Bu örnekte, **ayırma** komutu askıya profil oluşturma ve **kapatma** komutu Profil Oluşturucu veri dosyası kapatır.  
   
-```  
+```cmd  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Launch:TestApp.exe  
 ;REM Excercise the application  
@@ -59,8 +60,8 @@ VSPerfCmd.exe /Detach
 VSPerfCmd.exe /Shutdown  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
- [Bağımsız uygulamaların profilini oluşturma](../profiling/command-line-profiling-of-stand-alone-applications.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
- [Profil oluşturma hizmetleri](../profiling/command-line-profiling-of-services.md)
+ [Bağımsız uygulamalar profili](../profiling/command-line-profiling-of-stand-alone-applications.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
+ [Profil Hizmetleri](../profiling/command-line-profiling-of-services.md)

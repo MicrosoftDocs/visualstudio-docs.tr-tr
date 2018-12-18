@@ -1,11 +1,11 @@
 ---
 title: IPerPropertyBrowsing2::GetDisplayString | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IPerPropertyBrowsing2.GetDisplayString
@@ -14,18 +14,19 @@ apilocation:
 helpviewer_keywords:
 - IPerPropertyBrowsing2::GetDisplayString
 ms.assetid: 8f75c6a9-86a9-4e2d-8cb4-74e7b1c0a524
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: be6f665d1f63966b3828868f4fb8fbf1cae002e9
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: be88a76ce22dfd863e680fcc1a6794065ecaf76f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49836885"
 ---
 # <a name="iperpropertybrowsing2getdisplaystring"></a>IPerPropertyBrowsing2::GetDisplayString
-Alır döndürülen metin kendiliğinden görülemeyen türlerini görüntülemek için bir dize özelliği tanımlayan bir ad ve arayanın kullanıcı arabiriminde görüntülenir.  
+Alır kendiliğinden görüntülenebilir olmayan türleri döndürülen metni görüntülemek için bir dize özelliği açıklayan bir addır ve arayanın kullanıcı arabiriminde görüntülenen.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,16 +39,16 @@ HRESULT GetDisplayString(
   
 #### <a name="parameters"></a>Parametreler  
  `dispid`  
- [in] Görüntü adı istenen özellik tanıtıcısı gönderme.  
+ [in] Görünen adı istenen özellik tanımlayıcısı gönderme.  
   
  `pBstr`  
- [out] İşaretçi `BSTR` tarafından tanımlanan özellik için görünen ad içeren `dispID`.  
+ [out] İşaretçi `BSTR` tarafından tanımlanan bir özellik için görünen ad içeren `dispID`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Geçerli bir döndürür `HRESULT`, genellikle `S_OK`.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen dize özelliğinin geçerli bir değer değil. Bu yalnızca bir dize özelliği görüntülenir.  
+ Döndürülen dize özelliği geçerli bir değer değil. Bu yalnızca bir dize özelliği görüntülenir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Iperpropertybrowsing2 arabirimi 1](../../winscript/reference/iperpropertybrowsing2-interface-1.md)
+ [IPerPropertyBrowsing2 Arabirimi 1](../../winscript/reference/iperpropertybrowsing2-interface-1.md)

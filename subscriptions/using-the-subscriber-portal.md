@@ -1,55 +1,56 @@
 ---
-title: -Abone portalı kullanarak http://my.visualstudio.com | Microsoft Docs
+title: Abone portalı - kullanarak http://my.visualstudio.com | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 01/04/2018
 ms.topic: Get-Started-Article
-description: Visual Studio abonelikleri portalında kullanılabilir avantajları tam aralığını hakkında bilgi edinin
+description: Visual Studio abonelikleri portalında kullanılabilir avantajları tamamı hakkında bilgi edinin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: cb6e33e442a5b4d63f4c1950df382da9a439643f
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 6bd5e0ac308a8644f6428deb7468e00007f7c70b
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47859026"
 ---
-# <a name="using-the-subscriber-portal---myspanspanvisualstudiospanspancom"></a>-Abone portalı kullanarak my. <span> </span>Visual Studio<span></span>.com
+# <a name="using-the-subscriber-portal---myspanspanvisualstudiospanspancom"></a>Abone portalı - kullanarak benim. <span> </span>visualstudio<span></span>.com
 
-Visual Studio abonelikleri Portal [ https://my.visualstudio.com ](https://my.visualstudio.com?wt.mc_id=o~msft~docs), tam aralığın Visual Studio aboneliğiniz ile sağlanan avantajlarından yararlanmak için hepsi bir arada kaynak. 
+Visual Studio abonelikleri portalında [ https://my.visualstudio.com ](https://my.visualstudio.com?wt.mc_id=o~msft~docs), Visual Studio aboneliğiniz üzerinden sağlanan avantajların tam aralığının yararlanmak için hepsi bir arada bir kaynaktır.
 
-Portalı kullanarak aboneliğinizle ilişkili kimlik bilgilerinizle oturum gerektirir.  Bu, Microsoft hesabı (MSA) ya da size, işvereniniz ya da Okul gibi bir kuruluş tarafından sağlanan e-posta adresi olabilir.  Hakkında bilgi edinin [oturum açma](/visualstudio/subscriptions/signing-in).
+Portalı kullanarak, aboneliğinizle ilişkili kimliği oturum gerektirir.  Bu, Microsoft hesabı (MSA) veya İşveren veya Okul gibi bir kurum tarafından sağlanmış bir e-posta adresi olabilir.  Hakkında bilgi edinin [oturum açarken](signing-in.md).
 
-Portal altı sayfalarında düzenlenmiştir.  Her bir sayfada, farklı ürünleri veya hizmetleri aboneliğinizle dahil erişim sağlar.  Altı avantajları, indirmeler, ürün anahtarları, abonelikler, destek ve Market sayfalarıdır.  
+Portalda altı sayfalarında düzenlenmiştir.  Her sayfa, farklı ürünleri veya hizmetleri aboneliğinize dahil olan erişim sağlar.  Altı avantajları, indirmeler, ürün anahtarları, abonelikler, destek ve Market sayfalarıdır. 
 
 ## <a name="benefitshttpsmyvisualstudiocombenefitswtmcidomsftdocs"></a>[Avantajları](https://my.visualstudio.com/benefits?wt.mc_id=o~msft~docs)
-Araçlar ve hizmetler aboneliğinizde yer alan "kutucukları olarak" avantajları sayfasında görüntülenir.  Tüm avantajları olan tüm abonelikler dahil edilir. Döşeme üç kategorilerde gruplanır: araçlar, Professional geliştirme ve destek.  Visual Studio geliştirme Essentials kullanıyorsanız, diğer üç kategoriden seçili avantajları içerebilir öne çıkan bir kategori başlıklı de görürsünüz.
+Araç ve Hizmetleri aboneliğinize dahil olan "kutucukları olarak" avantajlar sayfasında görüntülenir.  Tüm avantajlar, tüm aboneliklere dahildir. Kutucuk üç kategorilerde gruplanır: araçlar, profesyonel geliştirme ve destek.  Visual Studio Dev Essentials'ı kullanıyorsanız, diğer üç kategoriden seçili avantajları içerebilir öne çıkan bir kategori başlıklı de görürsünüz.
 
 ### <a name="tools"></a>Araçlar
-Araçlar kategori çekirdek geliştirme araçları, Visual Studio IDE, Visual Studio Team Services, yanı sıra, iş ortakları tarafından sağlanan araçları gibi burada bulabilirsiniz grubudur.  Azure ve Visual Studio Uygulama Merkezi gibi hizmetleri de görürsünüz.
+Çekirdek geliştirme araçları, Visual Studio IDE, Azure DevOps, hem de iş ortaklarımız tarafından sağlanan araçları gibi burada bulabilirsiniz araçları kategorisidir.  Ayrıca, Azure ve Visual Studio App Center gibi hizmetleri de görürsünüz.
 
 ### <a name="professional-development"></a>Profesyonel Geliştirme
-Bu kategori, Microsoft ve tüm geliştirme becerilerinizi ilerleyin ve tüm öğeleri kodu gerisinde kalmak yardımcı olması için MSDN dergisi aboneliği yanı sıra ortaklarımızın çevrimiçi eğitim gibi fayda içerir.  
+Bu kategori, Microsoft ve iş ortaklarımız, tüm geliştirme becerilerinizi geliştirin ve kod gerisinde kalın yardımcı olmak için MSDN Magazine aboneliği yanı sıra gelen çevrimiçi eğitim gibi avantajları içerir.
 
 ### <a name="support"></a>Destek
-Azure hakkında bir sorunuz mu var?  Forumlar aracılığıyla Azure topluluktan yardım alın veya Azure danışma sohbet (Önizleme) yararlanabilir.  Danışman sohbet hizmeti teknik belgeleri ve ürün bilgileri bulmanıza yardımcı olmak ve abonelik ile ilgili sorular yardımcı olmak için kullanılabilir.  Select abonelikleri geliştirme ve test ortamlarında çalışan çeşitli Microsoft ürünleri ile sorunları çözmenize yardımcı olmak için olay tabanlı teknik destek de içerir. 
+Azure ile ilgili bir sorunuz mu var?  Forumları aracılığıyla Azure topluluğundan yardım alın ya da Azure Danışmanı Sohbeti (Önizleme) avantajlarından yararlanın.  Concierge Chat hizmet, teknik belgeler ve ürün bilgileri bulmanıza yardımcı olmak için ve abonelik ile ilgili sorular yardımcı olmak için kullanılabilir.  Select Abonelikleri, geliştirme ve test ortamlarında çalışan çeşitli Microsoft ürünleriyle sorunları çözmenize yardımcı olması için teknik destek olay tabanlı de içerir.
 
 ## <a name="downloadshttpsmyvisualstudiocomdownloadswtmcidomsftdocs"></a>[İndirmeler](https://my.visualstudio.com/downloads?wt.mc_id=o~msft~docs)
-Abonelik veya sahip olduğunuz program bağlı olarak, yazılım yüklemeleri güncelleştirmelerini arasında değişen erişimi ve düzeltme ekleri, dolayısıyla çok çeşitli senaryoları uygulamalarınızı test edebilirsiniz eski sürümleri yanı sıra geçerli ürünleri kapsamlı bir kitaplık için.  
+Aboneliği veya programı sahip bağlı olarak, güncelleştirmeleri arasında yazılım indirme işlemleri erişiminiz ve yamaları geçerli ürünler ve bunun yanı sıra çok çeşitli senaryolar uygulamalarınızı test etmek daha eski sürümleri kapsamlı bir kitaplık.
 
-İndirme sayfasını ziyaret ettiğinizde tek bir hesap ile ilişkili birden fazla aboneliğine sahip aboneleri için basitleştirmek için sahip olduğunuz en yüksek abonelik kullanılabilir yüklemeler görürsünüz.  Böylece, tüm abonelik olsun kullanmakta olduğunuz, indirme görebilirsiniz. 
+İndirme sayfasını ziyaret ettiğinde, tek bir hesapla ilişkili birden çok aboneliğiniz varsa aboneler için kolaylaştırmak için size ait en yüksek abonelik için kullanılabilir yüklemeler görürsünüz.  Böylece, tüm hangi abonelik ne olursa olsun, şu anda kullanmakta olduğunuz indirmelerinizi görebilirsiniz.
 
 ## <a name="product-keyshttpsmyvisualstudiocomproductkeyswtmcidomsftdocs"></a>[Ürün anahtarları](https://my.visualstudio.com/productkeys?wt.mc_id=o~msft~docs)
-Yükleme ve ürün etkinleştirme ve zaten talep hangi tuşlarını görmek için anahtarları almak için ürün anahtarları sayfasını ziyaret edin.  Hatta anahtarlarınızı güvenli olarak saklamak için tümünün listesini dışarı aktarabilirsiniz.  
+Yükleme ve ürün etkinleştirme ve zaten kullanmış hangi tuşlarını görmek için anahtarlarını almak için ürün anahtarlarını sayfasını ziyaret edin.  Bile anahtarlarınızı flooring'in tümünün listesini dışarı aktarabilirsiniz.
 
-## <a name="subscriptionshttpsmyvisualstudiocomsubscriptionswtmcidomsftdocs"></a>[Abonelikleri](https://my.visualstudio.com/subscriptions?wt.mc_id=o~msft~docs)
-Abonelik sayfasında, kendi, abonelikler arasında geçiş yapın, bunları yenilemek ve yeni abonelikler etkinleştirme abonelikleri görmek için özellikleriyle sağlar. Ayrıca, mevcut Visual Studio IDE, Visual Studio Team Services ve Azure kaynakları ile zaten ilişkili bir alternatif hesapla Microsoft Account kullanarak erişim abonelikleri ilişkilendirebilirsiniz.  
+## <a name="subscriptionshttpsmyvisualstudiocomsubscriptionswtmcidomsftdocs"></a>[Abonelikler](https://my.visualstudio.com/subscriptions?wt.mc_id=o~msft~docs)
+Abonelik sayfasında, sahibi, abonelikler arasında geçiş yapmak, bunları yenilemeniz ve yeni aboneliklerini aktifleştirmeye abonelikleri görmek için ilgili özellikleri sağlar. Ayrıca, mevcut Visual Studio IDE, Azure DevOps ve Azure kaynakları ile zaten ilişkili alternatif hesap ile Microsoft Account kullanarak erişim abonelikleri ilişkilendirebilirsiniz.
 
 ## <a name="support"></a>Destek
-Avantajları sayfasında destek kategorisindeki bulunan tek tek avantajları ek olarak, destek sayfası en iyi Visual Studio aboneliğiniz size yardımcı olacak kaynaklar için erişim sağlar.  
-- Araştır [sık sorulan sorular](https://www.visualstudio.com/my/myvsfaq)
-- Erişim [destek kaynaklarını](https://www.visualstudio.com/subscriptions/support/) teknik sorunları veya abonelik satış, hesapları ve faturalama ile ilgili soruları çözümlemek için.
+
+Avantajlar sayfasında destek kategorisinde bulunan tek avantajlarına ek olarak, destek sayfası en iyi Visual Studio aboneliğinizi yardımcı olacak kaynaklar erişim sağlar. Erişim [destek kaynaklarını](https://visualstudio.microsoft.com/subscriptions/support/) teknik sorunlar veya abonelikleri satış, hesaplar ve faturalandırma ile ilgili soruları çözebilir.
 
 ## <a name="marketplacehttpsmarketplacevisualstudiocom"></a>[Market](https://marketplace.visualstudio.com/)
-Visual Studio bulut aboneliği yenilemek gerekiyor?  Visual Studio ailesi ürünleri için en son uzantıları yüklemek istediğiniz?  Market kullanıcıların uzantılar, araçları ve Visual Studio Team Services, Team Foundation Server ve Visual Studio Code daha da iyi hale Hizmetleri bulmasına yardımcı olur. Bile, bir yayımcı haline gelir ve kendi uzantıları Market'te yayımlayın. 
+
+Visual Studio bulut aboneliğini gerekiyor?  Visual Studio ürün ailesi için en güncel uzantıları indirmek istiyor?  Market uzantıları, araçları ve Azure DevOps, Team Foundation Server ve Visual Studio Code'u daha da iyi hale hizmetlerini bulmalarına yardımcı olur. Bile, bir yayımcı olur ve kendi uzantılarınızı Market'te yayımlayın.

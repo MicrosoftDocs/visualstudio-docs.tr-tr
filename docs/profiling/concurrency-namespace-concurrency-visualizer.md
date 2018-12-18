@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ef7a262317cde29540d109a78f49f4bfd8192de5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: aec7bc6373644b81dd45eeeadefa33ab3af88396
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34548144"
 ---
-# <a name="concurrency-namespace-concurrency-visualizer"></a>Eşzamanlılık Ad Alanı (Eşzamanlılık Görselleştiricisi)
+# <a name="concurrency-namespace-concurrency-visualizer"></a>Eşzamanlılık ad alanı (eşzamanlılık görselleştiricisi)
 `Concurrency` Ad alanı sınıflar sağlar ve size işlevleri erişim eşzamanlılık çalışma zamanı C++ için eşzamanlı bir programlama çerçevesi. Daha fazla bilgi için bkz: [eşzamanlılık çalışma zamanı](/cpp/parallel/concrt/concurrency-runtime).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 namespace Concurrency;  
 ```  
   
@@ -40,5 +41,5 @@ namespace Concurrency;
 ## <a name="requirements"></a>Gereksinimler  
  **Başlık:** cvmarkersobj.h  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [C Kitaplığı Başvurusu](../profiling/c-library-reference.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [C Kitaplık Başvurusu](../profiling/c-library-reference.md)

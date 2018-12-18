@@ -1,0 +1,115 @@
+items:
+- name: Visual Studio ile Azure Geliştirme
+  href: index.yml
+  expanded: true
+- name: Azure'a Yayımlama
+  items:
+  - name: Bulut hizmeti yayımlama
+    href: vs-azure-tools-publishing-a-cloud-service.md
+  - name: Visual Studio IDE’yi kullanarak yayımlama
+    href: vs-azure-tools-publish-azure-application-wizard.md
+  - name: PowerShell betiği kullanarak yayımlama
+    href: vs-azure-tools-publishing-using-powershell-scripts.md
+  - name: Azure VM'ye ASP.NET Web Uygulaması yayımlama
+    href: /azure/virtual-machines/windows/publish-web-app-from-visual-studio?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+  - name: Azure Cloud Services’a Web App yayımlama
+    href: vs-azure-tools-migrate-publish-web-app-to-cloud-service.md
+  expanded: true
+- name: Azure Hizmetlerine bağlanma
+  items:
+  - name: Azure depolama ekleme
+    href: vs-azure-tools-connected-services-storage.md
+  - name: Azure Active Directory (AD) ekleme
+    href: /azure/active-directory/develop/vs-active-directory-add-connected-service?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+  - name: Mobile Services’ı ekleme
+    href: vs-azure-tools-connected-services-add-mobile-services.md
+  expanded: false
+- name: Azure Cloud Services geliştirme
+  items:
+  - name: Bulut hizmeti projeleriyle çalışma
+    items:
+    - name: Özel Azure bulutlarına erişme
+      href: vs-azure-tools-access-private-azure-clouds-with-visual-studio.md
+    - name: Azure bulut hizmeti projesi oluşturma
+      href: vs-azure-tools-azure-project-create.md
+    - name: Azure bulut hizmetlerindeki rolleri yönetme
+      href: vs-azure-tools-cloud-service-project-managing-roles.md
+    - name: Bulut hizmeti yayımlamaya veya dağıtmaya hazırlanma
+      href: vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md
+    - name: Azure bulut hizmeti için sabit bir sanal IP adresi tutma
+      href: vs-azure-tools-cloud-service-retain-a-constant-virtual-ip-address.md
+    - name: Komut satırından Azure projeleri oluşturma
+      href: vs-azure-tools-command-line-build.md
+    - name: Azure bulut hizmeti rollerini yapılandırma
+      href: vs-azure-tools-configure-roles-for-cloud-service.md
+    - name: Azure bulut hizmeti projesi yapılandırma
+      href: vs-azure-tools-configuring-an-azure-project.md
+    - name: Azure projenizi birden çok hizmet yapılandırması kullanacak şekilde yapılandırma
+      href: vs-azure-tools-multiple-services-project-configurations.md
+    - name: Projeleri Azure Araçları’nın güncel sürümüne yükseltme
+      href: vs-azure-tools-upgrade-projects-to-the-current-version-of-the-azure-tools.md
+  - name: Bulut hizmetini test etme ve hatalarını ayıklama
+    items:
+    - name: Azure bulut hizmetinin veya sanal makinenin hatalarını ayıklama
+      href: vs-azure-tools-debug-cloud-services-virtual-machines.md
+    - name: Azure bulut hizmetinde hata ayıklamanın çeşitli yöntemlerini öğrenme
+      href: vs-azure-tools-debugging-cloud-services-overview.md
+    - name: Azure Cloud Services ve sanal makineler için tanılamayı ayarlama
+      href: vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md
+    - name: Emulator Express kullanarak Azure bulut hizmetini yerel makinede çalıştırma ve hatalarını ayıklama
+      href: vs-azure-tools-emulator-express-debug-run.md
+    - name: IntelliTrace ile yayımlanan bir Azure bulut hizmetinin hatalarını ayıklama
+      href: vs-azure-tools-intellitrace-debug-published-cloud-services.md
+    - name: Bulut hizmetinin performansını test etme
+      href: vs-azure-tools-performance-profiling-cloud-services.md
+    - name: Azure Kodunuzu İyileştirme
+      href: vs-azure-tools-optimizing-azure-code-in-visual-studio.md
+  - name: Azure'a bulut hizmeti yayımlama
+    items:
+    - name: Azure bulut hizmetine bir Web Uygulaması geçirme ve yayımlama
+      href: vs-azure-tools-migrate-publish-web-app-to-cloud-service.md
+    - name: Visual Studio Azure Uygulamasını Yayımlama Sihirbazı’nı kullanma
+      href: vs-azure-tools-publish-azure-application-wizard.md
+    - name: Visual Studio kullanarak bulut hizmeti yayımlama
+      href: vs-azure-tools-publishing-a-cloud-service.md
+    - name: Windows PowerShell betiklerini kullanarak geliştirme ve test ortamlarına yayımlama
+      href: vs-azure-tools-publishing-using-powershell-scripts.md
+    - name: Publish-WebApplicationVM (Windows PowerShell betiği)
+      href: vs-azure-tools-publish-webapplicationvm.md
+    - name: Publish-WebApplicationWebSite (Windows PowerShell betiği)
+      href: vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script.md
+    - name: Hizmet yapılandırmalarını ve profillerini yönetme
+      href: vs-azure-tools-service-configurations-and-profiles-how-to-manage.md
+    - name: Adlandırılmış kimlik doğrulama bilgilerini ayarlama
+      href: vs-azure-tools-setting-up-named-authentication-credentials.md
+  - name: Azure Depolama ile çalışma
+    items:
+    - name: Depolama Gezgini'yle çalışmaya başlama
+      href: /azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+    - name: Depolama Öykünücüsünü yapılandırma ve kullanma
+      href: /azure/vs-azure-tools-storage-emulator-using?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+    - name: Tablo Tasarımcısı için filtre dizelerini oluşturma
+      href: vs-azure-tools-table-designer-construct-filter-strings.md
+    - name: Azure blob depolama kaynaklarını Depolama Gezgini’yle yönetme
+      href: /azure/vs-azure-tools-storage-explorer-blobs?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+    - name: Depolama Gezgini’ni Azure dosya depolamasıyla kullanma
+      href: /azure/vs-azure-tools-storage-explorer-files?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+    - name: Microsoft Azure Depolama Gezgini sürüm notları
+      href: /azure/vs-azure-tools-storage-explorer-relnotes?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+    - name: Depolama Gezgini erişilebilirliği
+      href: /azure/vs-azure-tools-storage-explorer-accessibility?toc=/visualstudio/azure/toc.json&bc=/visualstudio/azure/breadcrumb/toc.json
+  expanded: false
+- name: Cloud Explorer
+  items:
+  - name: Sunucu Gezgini'ni kullanarak depolama kaynaklarına göz atma ve bu kaynakları yönetme
+    href: vs-azure-tools-storage-resources-server-explorer-browse-manage.md
+  - name: Cloud Explorer’da Azure hizmetlerinizle ilişkilendirilmiş kaynakları yönetme
+    href: vs-azure-tools-resources-managing-with-cloud-explorer.md
+  - name: Sunucu Gezgini’nden Azure sanal makinelere erişme
+    href: vs-azure-tools-virtual-machines-access-from-server-explorer.md
+ms.openlocfilehash: 32d3d25dce14c40fb4d080d6467696695e9aec99
+ms.sourcegitcommit: e481d0055c0724d20003509000fd5f72fe9d1340
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "51003747"

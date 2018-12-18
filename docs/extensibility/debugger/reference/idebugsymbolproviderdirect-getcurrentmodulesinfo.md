@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 37e6922a81889c4350ec92ded3ad4497ccff789d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af5954fb8cd527af526702d8e290c879caa04f46
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875860"
 ---
 # <a name="idebugsymbolproviderdirectgetcurrentmodulesinfo"></a>IDebugSymbolProviderDirect::GetCurrentModulesInfo
-Sembol Grup modülleri hakkında bilgi alır.  
+Sembol grubu modülleri hakkında bilgi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,22 +48,22 @@ int GetCurrentModulesInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `pCount`  
- [in] Modülleri sayısı `ppGuids` dizi.  
+ [in] Modüllerde sayısı `ppGuids` dizisi.  
   
  `ppGuids`  
- [in] Modüller için benzersiz tanımlayıcı içeren bir dizi.  
+ [in] Modüller için benzersiz tanımlayıcıları içeren bir dizi.  
   
  `pADIds`  
- [in] Uygulama etki alanları için tanımlayıcı.  
+ [in] Uygulama etki alanları için tanımlayıcıları.  
   
  `pCurrentState`  
- [in] Sembol grubunun geçerli durumunu.  
+ [in] Sembol grubunun geçerli durumu.  
   
  `ppCDModItfs`  
- [out] Sembol Grup modülleri içeren bir nesne döndürür.  
+ [out] Sembol grubu modüller içeren bir nesne döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProviderDirect](../../../extensibility/debugger/reference/idebugsymbolproviderdirect.md)

@@ -1,5 +1,5 @@
 ---
-title: Eski API kullanarak metin katmanları erişim | Microsoft Docs
+title: Eski API'yi kullanarak metin katmanları erişme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,41 +13,42 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d21b31940f1e1ebca767b9d3f0cf5ab802181bda
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1506c035fca0cdaf4916d93daad8ced7550bfe6e
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39078673"
 ---
-# <a name="accessing-text-layers-by-using-the-legacy-api"></a>Eski API kullanarak metin katmanları erişme
-Bir metin katmanı genellikle metin düzenini bazı yönlerinin yalıtır. Örneğin, "işlevi--bir zamanda" katman önce ve sonra şapka (metin ekleme noktasını) içeren bir işlev metni gizler.  
+# <a name="access-text-layers-by-using-the-legacy-api"></a>Eski API'yi kullanarak erişim metin katmanları
+Metin katmanı, genellikle bazı yönlerini metin düzenini kapsüller. Örneğin, "işlevi--bir zamanda" katman metin önce ve sonra giriş işaretinin (ekleme noktası metni) içeren bir işlev gizliyor.  
   
- Metin katmanının bir arabellek ve bir görünüm arasında bulunur ve görünümü arabellek içeriği görür şekilde değiştirir.  
+ Arabellek ve bir görünüm arasında metin katmanı bulunur ve görünümü arabellek içeriği görür şeklini değiştirir.  
   
 ## <a name="text-layer-information"></a>Metin katmanı bilgileri  
- Aşağıdaki listede metin katmanları nasıl çalıştığı açıklanmaktadır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]:  
+ Aşağıdaki listede, metin katmanları nasıl çalıştığı açıklanmaktadır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]:  
   
--   Metni metin katmanı söz dizimi renklendirme ve işaretçileri olan donatılacak.  
+-   Metin katmanındaki metin söz dizimi renklendirme ve işaretçileri ile donatılmış.  
   
--   Şu anda kendi Katmanlar uygulayamaz.  
+-   Şu anda kendi katmanları uygulayamaz.  
   
--   Bir katman sunan <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer>, türetilen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines>. Metin arabelleğini de polymorphically katmanlarda ile mücadele etmek bir görünümünü sağlar bir katmanı olarak uygulanır.  
+-   Kullanıma sunan bir katmana <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer>, türetilen <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines>. Metin arabelleği, ayrıca temel alınan katmanlarla polymorphically yarayan bir görünüm sağlayan bir katman olarak uygulanır.  
   
--   Herhangi bir sayıda katmanlar, arabellek ve görünüm arasında kalan. Her katman yalnızca altındaki Katman işler ve görünümü büyük ölçüde en üst katman ile ilgilidir. (Görünümü arabellek hakkında bazı bilgiler sahip.)  
+-   Görünüm ve arabellek arasında herhangi bir sayıda katmanları şekilde. Her katman yalnızca aşağıdaki katman ile ilgilidir ve görünüm büyük ölçüde en üst katman ile ilgilidir. (Görünüm arabellek hakkında bazı bilgiler yok.)  
   
--   Bir katman, Katmanlar etkileyebilir. Standart olayları kaynaklanan ötesinde üzerindeki katmanların etkileyemez.  
+-   Bir katman altında olan katmanları etkileyebilir. Bu standart olayları kaynaklanan ötesinde üzerindeki katmanların etkilemez.  
   
--   Düzenleyicisi'nde gizli metin, yapay metin ve sözcük kaydırma katmanları olarak uygulanır. Gizli ve yapay metin katmanları ile doğrudan etkileşim olmaksızın uygulayabilirsiniz. Daha fazla bilgi için bkz: [eski dil hizmetinde anahat oluşturma](../extensibility/internals/outlining-in-a-legacy-language-service.md) ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsSyntheticTextSession>.  
+-   Düzenleyici'de, gizli metin ve yapay metin kaydırmayı katmanları olarak uygulanır. Gizli ve yapay metin katmanları ile doğrudan etkileşim olmadan uygulayabilirsiniz. Daha fazla bilgi için [eski dil hizmetinde ana hat oluşturmayı](../extensibility/internals/outlining-in-a-legacy-language-service.md) ve <xref:Microsoft.VisualStudio.TextManager.Interop.IVsSyntheticTextSession>.  
   
--   Her metin katmanı aracılığıyla sunulan yerel kendi koordinat sistemini sahip <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer> arabirimi. Temel metin arabelleğini yalnızca tek bir çizgi içerebilir ancak satır-wrap katmanında, örneğin, iki satır içerebilir.  
+-   Her metin katmanı aracılığıyla kullanıma kendi yerel koordinat sistemini sahip <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer> arabirimi. Temel alınan metin arabelleğini tek bir satır içerebilir ancak satır kaydırma katmanı, örneğin, iki satır içerebilir.  
   
--   Görünüm katmanlar arasında iletişim kurar <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLayeredTextView> arabirimi. Bu arabirim görünümü koordinatları arabellek koordinatları ile mutabık kılmak için kullanın.  
+-   Görünüm katmanları iletişim kurar <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLayeredTextView> arabirimi. Bu arabirim görünümü koordinatları arabellek koordinatları ile mutabık kılmak için kullanın.  
   
--   Metin kaynaklandığı yapay metin katmanının bir yerel uygulaması sağlamalısınız gibi herhangi bir katman <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer.CreateTrackingPoint%2A>.  
+-   Kaynaklı metin yapay metin katmanı, bir yerel uygulaması sağlamalısınız gibi tüm katman <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer.CreateTrackingPoint%2A>.  
   
--   Yanında <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer>, bir metin katmanı uygulamalıdır <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> ve olayları yangın <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents> arabirimi.  
+-   Yanında <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLayer>, metin katmanı uygulamalıdır <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> ve olayları yangın <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents> arabirimi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Sözdizimi özel düzenleyicilerde renklendirme](../extensibility/syntax-coloring-in-custom-editors.md)   
- [Metin işaretçileri eski API ile kullanma](../extensibility/using-text-markers-with-the-legacy-api.md)   
- [Düzenleyici denetimleri ve menüleri eski API kullanarak özelleştirme](../extensibility/customizing-editor-controls-and-menus-by-using-the-legacy-api.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Özel düzenleyicilerde söz dizimi renklendirmesi](../extensibility/syntax-coloring-in-custom-editors.md)   
+ [Metin işaretçileri eski API'si ile kullanma](../extensibility/using-text-markers-with-the-legacy-api.md)   
+ [Düzenleyici denetimleri ve menüler eski API'yi kullanarak özelleştirme](../extensibility/customizing-editor-controls-and-menus-by-using-the-legacy-api.md)

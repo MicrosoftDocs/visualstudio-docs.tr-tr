@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 154586701386f5f8f56c128920e12ca3147deb6b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: de6f5bf513d9d3582ba05bf7a34471d13743f8de
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500689"
 ---
-# <a name="customparameter-element-visual-studio-templates"></a>CustomParameter Öğesi (Visual Studio Şablonları)
-Özel parametre adı ve şablonu bir proje veya öğesi oluşturulurken kullanılacak bir değer içerir.  
+# <a name="customparameter-element-visual-studio-templates"></a>CustomParameter öğesi (Visual Studio şablonları)
+Bir özel parametre adı ve şablondan bir proje veya öğe oluşturulduğunda kullanılacak değeri içerir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -30,30 +31,30 @@ ms.lasthandoff: 04/16/2018
 <CustomParameter Name="name" Value="value">  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Name`|Gerekli. Parametrenin adı. Parametreler için biçimidir $*adı*$.|  
+|`Name`|Gerekli. Parametrenin adı. Parametre biçimi $*adı*$.|  
 |`Value`|Gerekli. Parametre değiştirme değeri.|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[CustomParameters](../extensibility/customparameters-element-visual-studio-templates.md)|Sihirbaz parametre değişiklik yaptığında için Şablon Sihirbazı'nı geçirilecek özel parametreler gruplandırır.|  
+|[CustomParameters](../extensibility/customparameters-element-visual-studio-templates.md)|Sihirbaz parametresi değişiklik yaptığında için Şablon Sihirbazı'nı geçirilecek özel parametreler gruplandırır.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir şablon içerdiğinde `CustomParameter` öğeleri, her örneği `Name` özniteliği ile değiştirilir `Value` oluşturulan proje veya öğesi dosya özniteliği.  
+ Bir şablon içerdiğinde `CustomParameter` öğeleri, her örnek `Name` özniteliği ile değiştirilir `Value` oluşturulan proje veya öğe dosya özniteliği.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte bir şablonda birden fazla özel parametreler kullanmayı gösterir. Bir proje veya öğesi oluşturulduğunda aşağıdaki özel parametrelerle, tüm örneklerinin bir şablondan `$color1$` ve `$color2$` şablonda dosyaları ile değiştirilecek `Red` ve `Blue`sırasıyla.  
+ Aşağıdaki örnek, şablonda birkaç özel parametreler kullanmayı gösterir. Bir proje veya öğe oluşturulduğunda aşağıdaki özel parametreleri, tüm örneklerini ile bir şablondan `$color1$` ve `$color2$` şablon dosyaları ile değiştirilecek `Red` ve `Blue`sırasıyla.  
   
 ```  
 <CustomParameters>  
@@ -62,7 +63,7 @@ ms.lasthandoff: 04/16/2018
 </CustomParameters>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [CustomParameters öğesi (Visual Studio şablonları)](../extensibility/customparameters-element-visual-studio-templates.md)   
  [Şablon parametreleri](../ide/template-parameters.md)   
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)

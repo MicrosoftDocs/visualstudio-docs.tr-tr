@@ -15,6 +15,7 @@ ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31584587"
 ---
 # <a name="resource-monitoring-performance-rules"></a>Kaynak İzleme Performans Kuralları
 Kaynak İzleme kategorideki performans iletileri, uygulamanızın performansı ile ilgili ek bilgiler sağlar. Bu veriler, performans sorunlarını analiz etmek için kullanabilirsiniz. Bu, bilgi ve her çalıştırma profili oluşturma için bildirilen kurallardır.  

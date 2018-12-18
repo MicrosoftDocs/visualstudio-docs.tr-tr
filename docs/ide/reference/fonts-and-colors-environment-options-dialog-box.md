@@ -1,12 +1,10 @@
 ---
-title: Yazı tipleri ve renkler, ortam, Seçenekler iletişim kutusu | Microsoft Docs
-ms.custom: ''
+title: Yazı Tipleri ve Renkler, Ortam, Seçenekler İletişim Kutusu
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
-- VS.ToolsOptionsPag.Environment.Fonts_And_Colors
 - VS.ToolsOptionsPages.FontsAndColors
 - VS.ToolsOptionsPages.Environment.Fonts_And_Colors
 - VS.Environment.Fonts And Colors
@@ -29,209 +27,228 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a089bc9fe61d1ddc8e4510c4da03235c7ab782ee
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7f15ac427d3e6fd6ddf7988c82ad46ffe537d299
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52389273"
 ---
 # <a name="fonts-and-colors-environment-options-dialog-box"></a>Yazı Tipleri ve Renkler, Ortam, Seçenekler İletişim Kutusu
-**Yazı tiplerini ve renkleri** sayfasında **seçenekleri** iletişim kutusu çeşitli kullanıcı arabirimi öğeleri için özel bir yazı tipi ve renk şeması tümleşik geliştirme ortamı (IDE) oluşturmanızı sağlar. Bu iletişim kutusunu tıklatarak erişebilirsiniz **Araçlar / Seçenekler**, seçilerek **ortam / yazı tipleri ve renkler**. Bu sayfayı listede görünmüyorsa, seçin **tüm ayarları göster** içinde **seçenekleri** iletişim kutusu.  
-  
-> [!NOTE]
->  Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için tercih **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md).  
-  
- Renk şeması değişikliklerine içinde yapmanız oturumunda etkili olmaz. Visual Studio başka bir örneğini açarak ve değişikliklerinizi uygulamak için altında beklediğiniz koşullar oluşturan renk değişiklikleri değerlendirebilirsiniz.  
-  
- **Ayarlarını göster**  
- Yazı tipi ve renk düzenleri değiştirebileceğiniz tüm kullanıcı arabirimi öğeleri listeler. Bu listeden bir öğe seçtikten sonra seçili öğe için renk ayarlarını özelleştirebilirsiniz **görüntülemek öğeleri**.  
-  
--   **Metin Düzenleyici**  
-  
-     Yazı tipi stilini, boyutu ve rengi görüntü ayarlarını Metin Düzenleyicisi için yapılan değişiklikler metnin varsayılan metin düzenleyicinizde görünümünü etkiler. IDE dışında bir metin düzenleyicide açılan belgeler bu ayarları tarafından etkilenmez.  
-  
--   **Yazıcı**  
-  
-     Yazı tipi stilini, boyutu ve rengi görüntü ayarları yazıcı için yapılan değişiklikler Yazdırılan belgeleri içindeki metnin görünümünü etkiler.  
-  
+
+**Yazı tipleri ve renkler** sayfasının **seçenekleri** iletişim kutusu, çeşitli kullanıcı arabirimi öğeleri için özel bir yazı tipi ve renk şeması tümleşik geliştirme ortamında (IDE) oluşturmanıza olanak sağlar. Bu iletişim kutusuna tıklayarak erişebilirsiniz **Araçlar / Seçenekler**seçip **ortam / yazı tipleri ve renkler**. Bu sayfa, listede görünmüyorsa, seçin **tüm ayarları göster** içinde **seçenekleri** iletişim kutusu.
+
+Renk düzenini değişiklikler, yapmanızın oturumu sırasında etkili olmaz. Renk değişiklikleri başka bir Visual Studio örneği açma ve yaptığınız değişiklikleri uygulamak için altında beklediğiniz koşullar üretme değerlendirebilirsiniz.
+
+**Ayarlarını göster**
+
+Yazı tipi ve renk düzenleri değiştirebileceğiniz tüm kullanıcı arabirimi öğeleri listeler. Bu listeden bir öğeyi seçtikten sonra seçili öğe için renk ayarlarını özelleştirebilirsiniz **görüntü öğeleri**.
+
+-   **Metin Düzenleyici**
+
+     Yazı tipi stili, boyutu ve rengi görüntü ayarlarını Metin Düzenleyicisi için yapılan değişiklikler varsayılan metin düzenleyicinizde metin görünümünü etkiler. IDE dışında bir metin düzenleyicisinde açık belgeler, bu ayarları tarafından etkilenmez.
+
+-   **Yazıcı**
+
+     Yazı tipi stili, boyutu ve rengi görüntü ayarları yazıcı için yapılan değişiklikler, yazdırılan belgelerde metin görünümünü etkiler.
+
     > [!NOTE]
-    >  Gerektiğinde, metin düzenleyicisinde görüntülemek için kullanılan daha yazdırma için farklı varsayılan yazı tipini seçebilirsiniz. Tek baytlı ve çift baytlık karakterler içeren kodu yazdırırken bu yararlı olabilir.  
-  
--   **Deyim tamamlama**  
-  
-     Yazı tipi stili ve boyutu deyim tamamlama Düzenleyicisi'nde açılır görünür metni değiştirir.  
-  
--   **Düzenleyici araç ipucu**  
-  
-     Yazı tipi stili ve boyutu Düzenleyicisi'nde görüntülenen ipuçlarında görüntülenen metni için değiştirir.  
-  
--   **Ortam yazı tipi**  
-  
-     Yazı tipi stili ve boyutu için zaten ayrı bir seçenek olmayan tüm IDE kullanıcı arabirimi öğeleri değiştirir **ayarlarını göster.** Örneğin, bu seçenek için geçerlidir **başlangıç sayfası** ancak değil etkileyeceği **çıkış** penceresi.  
-  
--   **[Tüm metin Aracı Pencereleri]**  
-  
-     Yazı tipi stilini, boyutu ve rengi değişiklikler çıkış bölmeleri IDE'de sahip aracı Windows bu öğeyi etkileyen metnin görünümü için ayarları görüntüleyin. Örneğin, çıktı penceresinde, komut penceresinde, komut penceresi, vb.  
-  
+    > Gerektiği gibi yazdırma, görüntü ve metin düzenleyicisindeki için farklı varsayılan yazı tipi seçebilirsiniz. Tek baytlı hem çift baytlık karakterler içeren kod yazdırırken bu yararlı olabilir.
+
+-   **Deyim tamamlama**
+
+     Deyim tamamlama açılır Düzenleyicisi'nde görüntülenen metnin boyutunu ve yazı tipi stili değiştirir.
+
+-   **Düzenleyici araç ipucu**
+
+     Düzenleyici'de gösterilen ipuçlarında görüntülenen metin boyutunu ve yazı tipi stili değiştirir.
+
+-   **Ortam yazı tipi**
+
+     Yazı tipi stili ve boyutu için zaten ayrı bir seçenek olmayan tüm IDE kullanıcı arabirimi öğelerini değiştirir **ayarlarını göster.** Örneğin, bu seçenek için geçerlidir **başlangıç sayfası** ancak değil etkileyecek **çıkış** penceresi.
+
+-   **[Tüm metin aracı Windows]**
+
+     Yazı tipi stili, boyutu ve rengi değişiklikler, çıkış bölmeleri sahip IDE'de araç pencereleri, bu öğeyi etkileyen metin görünümünü için ayarları görüntüleyin. Örneğin, çıkış penceresine, komut penceresinde, komut penceresi, vb.
+
     > [!NOTE]
-    >  Değişiklikler metne **[tüm metin Aracı Pencereleri]** öğeleri etkili olmaz, yaptığınız bunları oturumu sırasında. Visual Studio başka bir örneğini açarak bu değişiklikleri değerlendirebilirsiniz.  
-  
-**Varsayılanları kullanın**  
-Seçilen liste öğesinin yazı tipi ve renk değerleri sıfırlar **ayarlarını göster**. **Kullanım** düğmesi, diğer görüntü düzenleri seçime uygun olduğunda görünür. Örneğin, yazıcı için iki düzeni seçebilirsiniz.  
-  
-**Yazı tipi (kalın sabit genişlikte yazı tiplerini gösterir)**  
-Sisteminizde yüklü tüm yazı tiplerini listeler. Aşağı açılan menüden ilk göründüğünde, seçili öğe için geçerli yazı tipi **ayarlarını göster** alan vurgulanır. Yazı tipleri sabit — Düzenleyicisi'nde hizalamak daha kolay olan — kalın olarak görünür.  
-  
-**Boyutu**  
-Kullanılabilen listelerini vurgulanan yazı tipi boyutlarını gelin. Yazı tipi boyutunu değiştirme, etkiler tüm **görüntülemek öğeleri** için **ayarlarını göster** seçim.  
-  
-**Öğeleri görüntüleme**  
-Ön plan ve arka plan rengini değiştirebileceğiniz öğeleri listeler.  
-  
+    > Değişiklikleri için metni **[tüm metin aracı Windows]** öğeleri etkili olmaz, yaptığınız bunları oturumu sırasında. Visual Studio'nun başka bir örneğini açarak bu tür değişiklikleri değerlendirebilirsiniz.
+
+**Varsayılanları Kullan**
+
+Yazı tipi ve renk değerleri seçili liste öğesini sıfırlar **ayarlarını göster**. **Kullanım** diğer ekran düzenleri seçim için kullanılabilir hale geldiğinde düğmesi görünür. Örneğin, yazıcı için iki düzeni seçebilirsiniz.
+
+**Yazı tipi (kalın tür sabit-genişlikli yazı gösterir)**
+
+Sisteminizde yüklü tüm yazı tiplerini listeler. Aşağı açılan menüyü ilk görüntülendiğinde, seçili öğe için geçerli yazı tipi **ayarlarını göster** alan vurgulanır. Yazı tipleri sabit — düzenleyicide hizalamak daha kolay olan — kalın yazı tipinde görünür.
+
+**Boyutu**
+
+Kullanılabilen listelerini vurgulanan yazı tipi boyutlarını gelin. Yazı tipi boyutunu değiştirme, etkilediği tüm **görüntü öğeleri** için **ayarlarını göster** seçimi.
+
+**Öğeleri görüntüle**
+
+Ön ve arka plan rengi değiştirebileceğiniz öğeler listelenir.
+
 > [!NOTE]
->  **Düz metin** varsayılan görüntü öğedir. Özellikler, bu nedenle atanan **düz metin** diğer görüntü öğelerine atanan özellikler tarafından geçersiz kılınır. Örneğin mavi renk atayın, **düz metin** ve için yeşil renk **tanımlayıcısı**, tüm tanımlayıcılar yeşil renkte görüntülenir. Bu örnekte, **tanımlayıcısı** özelliklerini geçersiz kılma **düz metin** özellikleri.  
-  
- Görüntü öğelerin bazıları şunlardır:  
-  
-|Görüntü öğesi|Açıklama|  
-|------------------|-----------------|  
-|**Düz metin**|Metin Düzenleyicisi'nde.|  
-|**Seçili metni**|Düzenleyici odağa sahip olduğunda, geçerli seçim bulunan metin.|  
-|**Etkin olmayan seçili metni**|Düzenleyici odağını kaybetmiş yükleyen bulunan geçerli seçime dahil metin.|  
-|**Gösterge Boşluğu**|Kod kesme noktaları ve yer işareti simgeleri görüntülendiği Düzenleyicisi'nin sol kenar boşluğu.|  
-|**Satır numaraları**|Her kod satırının yanındaki görünür isteğe bağlı numaraları|  
-|**Görünür boşluk**|Boşluk, sekme ve word göstergeleri sarmalama|  
-|**Yer işareti**|Yer işaretleri olan satırları. **Yer işareti** yalnızca gösterge boşluğu devre dışıysa görülebilir.|  
-|**Ayraç eşleştirme (Vurgu)**|Vurgulama Ayraç eşleştirme için genellikle kalın biçimlendirme olur.|  
-|**Ayraç eşleştirme (dikdörtgen)**|Vurgulama, normal bir gri dikdörtgen arka planda olur.|  
-|**Kesme noktası (devre dışı)**|Kullanılmadı.|  
-|**Kesme noktası (etkin)**|Deyimleri veya basit kesme noktaları içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi kesme noktaları etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası (hata)**|Deyimleri veya bir hata durumunda kesme noktaları içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası (uyarı)**|Deyimleri ya da bir uyarı durumdaki kesme noktaları içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası - Gelişmiş (devre dışı)**|Koşullu veya isabet sayılan kesme noktaları devre dışı deyimleri ya da içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası - Gelişmiş (etkin)**|Deyimleri veya koşullu veya isabet sayılan kesme noktaları içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası - Gelişmiş (hata)**|Deyimleri veya bir hata durumunda koşullu veya isabet sayılan kesme noktaları içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Kesme noktası - Gelişmiş (uyarı)**|Deyimleri ya da bir uyarı durumdaki koşullu veya isabet sayılan kesme noktaları içeren satırları Vurgu rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen kesme noktası - (devre dışı)**|Deyimleri ya da devre dışı eşlenen kesme noktaları içeren satırları Vurgu rengini belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenmiş bir kesme noktası - (etkin)**|Kesme noktaları deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen kesme noktası - (hata)**|Kesme noktaları bir hata durumuna deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen kesme noktası - (uyarı)**|Uyarı durumundaki kesme noktaları deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**C/C++ kullanıcı anahtar sözcükleri**|Yoluyla bir sabit belirli kod dosyası içinde tanımlanan `#define` yönergesi.|  
-|**Return çağırın**|Kaynak deyimleri veya çağrı dönüş noktaları bağlam üst olmayan yığın çerçevesi için hata ayıklama sırasında geçildiğinde belirten satırları Vurgu rengini belirtir.|  
-|**Kod parçacığı bağımlı alanı**|Geçerli düzenlenebilir bir alanı değiştirildiğinde güncelleştirilir bir alandır.|  
-|**Kod parçacığı alanı**|Kod parçacığı etkin olduğunda düzenlenebilir bir alanı.|  
-|**Daraltılabilir metin**|Metin veya Görünüm Kod Düzenleyicisi'nin içinden ve değiştirilebilir kod bloğu.|  
-|**Yorum**|Kod açıklamaları.|  
-|**Derleyici Hatası**|Derleyici Hatası gösteren düzenleyicisinde Mavi dalgalı çizgiler.|  
-|**Kapsama alanı işlemdeki değil**|Birim testi tarafından kapsanmayan kodu.|  
-|**Kapsama alanı kısmen işlemdeki**|Birim testi tarafından bir kısmen kapsanan kodu.|  
-|**Kapsama alanı işlemdeki**|Birim testi tarafından bir tamamen kapsamdaki kodu.|  
-|**CSS açıklama**|Geçişli stil sayfaları bir yorum. Örneğin:<br /><br /> / * Açıklama \*/|  
-|**CSS anahtar sözcüğü**|Geçişli stil sayfası dilindeki anahtar sözcükler.|  
-|**CSS özellik adı**|Arka plan gibi bir özelliğin adı.|  
-|**CSS özellik değeri**|Mavi gibi özelliğine atanan değer.|  
-|**CSS Seçici**|Hangi öğelerin tanımlayan bir dize ilgili kuralı uygular. Bir seçici ya da bir basit seçiciyi, böyle bir 'H1' veya 'H1 birkaç basit Seçici oluşur B' gibi bir bağlamsal Seçici olabilir.|  
-|**CSS dize değeri**|Geçişli stil sayfaları dizesinde.|  
-|**Geçerli listesi konumu**|Çıktı penceresi veya Bul sonuçları windows gibi bir liste aracı penceresinde için geçerli satır gittiğinizde.|  
-|**Geçerli deyimi**|Kaynağı deyim ya da hata ayıklama sırasında geçerli adım konumu gösterir satır Vurgu rengini belirtir.|  
-|**Değiştirilen veri hata ayıklayıcı**|İçinde değiştirilen verileri görüntülemek için kullanılan metin rengini **kaydeder** ve **bellek** windows.|  
-|**Tanımı pencere arka planı**|Arka plan rengini **kod tanımı** penceresi.|  
-|**Tanımı penceresi geçerli eşleşme**|Geçerli tanımında **kod tanımı** penceresi.|  
-|**Ayrıştırılmış dosya adı**|Dosya adı sonu içinde görüntülemek için kullanılan metin rengini **ayrıştırılmış** penceresi.|  
-|**Ayrıştırılmış kaynak**|İçinde kaynak satırları görüntülemek için kullanılan metin rengini **ayrıştırılmış** penceresi.|  
-|**Ayrıştırılmış simgesi**|Sembol adları içinde görüntülemek için kullanılan metin rengini **ayrıştırılmış** penceresi.|  
-|**Ayrıştırılmış metin**|İşlem kodu ve içindeki verileri görüntülemek için kullanılan metin rengini **ayrıştırılmış** penceresi.|  
-|**Dışlanan kodu**|Her koşullu önişlemci yönergesi gibi derlenecek değil kod `#if`.|  
-|**Tanımlayıcı**|Sınıf adları, yöntem adları ve değişken adları gibi kodda tanımlayıcıları.|  
-|**Anahtar sözcüğü**|Ayrılmış anahtar sözcükler verilen dil için. Örneğin: sınıf ve ad alanı.|  
-|**Bellek adresi**|İçinde adresi sütunu görüntülemek için kullanılan metin rengini **bellek** penceresi.|  
-|**Değiştirilen bellek**|İçinde değiştirilen verileri görüntülemek için kullanılan metin rengini **bellek** penceresi.|  
-|**Bellek verileri**|M içindeki verileri görüntülemek için kullanılan metin rengini**bellek** penceresi.|  
-|**Bellek okunamıyor**|İçinde okunamaz bellek alanları görüntülemek için kullanılan metin rengini **bellek** penceresi.|  
-|**Sayı**|Gerçek bir sayısal değer temsil eden kod bir sayı.|  
-|**işleci**|İşleçler gibi +, -, ve! =.|  
-|**Diğer hata**|Diğer hata dalgalı çizgiler tarafından kapsanmayan diğer hata türleri. Şu anda bu utangaç düzenlemeleri Düzenle ve devam et içerir.|  
-|**Önişlemci anahtar sözcüğü**|Anahtar sözcükler gibi önişlemci tarafından kullanılan #include.|  
-|**Salt okunur bölge**|Düzenlenemez kodu. Kod tanımı Görünümü penceresi veya Düzenle ve devam et sırasında değiştirilemez kod görüntülenen örnek kod.|  
-|**Arka plan yeniden düzenleme**|Arka plan rengini **Değişiklikleri Önizle** iletişim kutusu.|  
-|**Geçerli alan yeniden düzenleme**|Arka plan rengi olarak yeniden işlenmesi için geçerli öğenin **Değişiklikleri Önizle** iletişim kutusu.|  
-|**Bağımlı alan yeniden düzenleme**|Başvurular olarak yeniden işlenmesi için öğesinin rengini **Değişiklikleri Önizle** iletişim kutusu.|  
-|**Verileri kaydetme**|İçindeki verileri görüntülemek için kullanılan metin rengini **kaydeder** penceresi.|  
-|**NAT kaydetme**|Tanınmayan veri ve içindeki nesneleri görüntülemek için kullanılan metin rengini **kaydeder** penceresi.|  
-|**Akıllı etiket**|Akıllı etiketler çağrıldığında anahattı belirtmek için kullanılır.|  
-|**SQL DML işaretçisi**|Transact-SQL editöre uygular. DML deyimleri bu Düzenleyicisi'nde, varsayılan olarak sınırlayıcı mavi bir kutu ile işaretlenir.|  
-|**Eski kod**|Değiştirilen kod bir güncelleştirme bekleniyor. Bazı durumlarda, Düzenle ve devam et kod değişikliklerini hemen uygulanamıyor, ancak bunları hata ayıklama devam ederken daha sonra geçerli olacaktır. Bu şu anda yürütülmekte olan işlevini çağırmanız gerekir işlevi düzenlerseniz veya çağrı yığınındaki bekleyen bir işleve 64 bayttan fazla yeni değişkenleri eklerseniz oluşur. Bu durumda, hata ayıklayıcı "Eski kod Uyarısı" iletişim kutusu görüntüler ve değiştirilen kod söz konusu işlevi tamamlandıktan ve yeniden çağrılıncaya kadar yürütmeye devam eder. Düzenle ve devam et, o anda kod değişiklikleri uygular.|  
-|**Dize**|Dize sabit değerleri.|  
-|**Dize (C# Verbatim @)**|Harfi harfine yorumlanır değişmez değerleri C# dize. Örneğin:<br /><br /> @"x"|  
-|**Sözdizimi hatası**|Hataları ayrıştırılamıyor.|  
-|**Görev listesi kısayolu**|Varsa bir **görev listesi** kısayol bir satır eklenir ve gösterge boşluğu devre dışıdır, satır vurgulanır.|  
-|**Tracepoint (devre dışı)**|Kullanılmadı.|  
-|**Tracepoint (etkin)**|Deyimleri veya basit tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Tracepoint (hata)**|Deyimleri veya bir hata durumunda tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Tracepoint (uyarı)**|Deyimleri ya da bir uyarı durumdaki tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Tracepoint - Gelişmiş (devre dışı)**|Koşullu veya isabet sayılan tracepoints devre dışı deyimleri ya da içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Tracepoint - Gelişmiş (etkin)**|Deyimleri veya koşullu veya isabet sayılan tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Tracepoint - Gelişmiş (hata)**|Deyimleri veya bir hata durumunda koşullu veya isabet sayılan tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**(Uyarı) Gelişmiş Tracepoint-**|Deyimleri ya da bir uyarı durumdaki koşullu veya isabet sayılan tracepoints içeren satırları Vurgu rengini belirtir. Bu seçenek yalnızca deyimi düzeyi tracepoints etkin olduğunda geçerlidir veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen Tracepoint - (devre dışı)**|Deyimleri ya da devre dışı eşlenen tracepoints içeren satırları Vurgu rengini belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen Tracepoint - (etkin)**|Tracepoints deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen Tracepoint - (hata)**|Bir hata durumuna tracepoints deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Eşlenen Tracepoint - (uyarı)**|Uyarı durumundaki tracepoints deyimleri veya içeren satırları için vurgulama renk eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP veya ASP.NET hata ayıklama için geçerli veya **vurgulayın kesme noktaları veya geçerli deyim için tüm kaynak satırını** seçeneği seçildiğinde [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusunu](../../debugger/general-debugging-options-dialog-box.md).|  
-|**Sonra değişiklikleri izle Kaydet**|Dosya açıldıktan sonra değiştirilmiş olan kod satırlarının ancak olan diske kaydedilir.|  
-|**Önce değişiklikleri izle Kaydet**|Dosya açıldıktan sonra değiştirilmiş ancak olmayan kod satırlarını diske kaydedilir.|  
-|**Kullanıcı türleri**|Kullanıcılar tarafından tanımlanan türleri.|  
-|**Kullanıcı türleri (temsilcileri)**|Renk temsilcileri yazın.|  
-|**Kullanıcı türleri (numaralandırmaları)**|Numaralandırmalar için kullanılan renk yazın.|  
-|**Kullanıcı türleri (arabirimi)**|Arabirimler için renk yazın.|  
-|**Kullanıcı (değer) türleri**|Renk yapılar gibi değer türleri için C# ' yazın.|  
-|**Visual Basic yalnızca işaret okuma**|Visual Basic Çözücü, özel durum bölgeler, bir yöntemin tanımı ve yaprak olmayan çağrısı çerçeveler gibi atamak için kullanılan belirli bir işaretçi.|  
-|**Uyarı**|Derleyici Uyarısı.|  
-|**Uyarı satırları yolu**|Statik çözümleme uyarı satırlar için kullanılır.|  
-|**XML özniteliği**|Öznitelik adları.|  
-|**XML özniteliği teklifleri**|XML öznitelikleri için tırnak karakteri.|  
-|**XML özniteliği değeri**|XML öznitelikleri içerikleri.|  
-|**XML Cdata bölümü**|İçeriği \<! [ CDATA [...]] >.|  
-|**XML açıklama**|İçeriğini \<!---->.|  
-|**XML ayırıcısı**|XML sözdizimi sınırlayıcıları dahil olmak üzere, <, <?, <!, \<!--,-->,?\>, \<! [,]] > ve [,].|  
-|**XML belge özniteliği**|Gibi bir xml belgeleri değerini özniteliği \<param name = "T" > Burada "t" renklendirilen.|  
-|**XML belge açıklaması**|Xml belgeleri açıklamaları içine açıklamalar.|  
-|**XML belge etiketi**|Gibi etiketleri XML belge açıklamaları<br /><br /> /// \<Özet >.|  
-|**XML anahtar sözcüğü**|CDATA, IDREF ve NDATA gibi DTD anahtar sözcükler.|  
-|**XML adı**|Öğe adları ve işleme talimatlarını hedef adı.|  
-|**XML işleme yönergesi**|Hedef adı hariç yönergeleri, işleme içerikleri.|  
-|**XML metni**|Düz metin öğe içeriği.|  
-|**XSLT anahtar sözcüğü**|XSLT öğe adları.|  
-  
- **Öğe ön plan**  
- Seçili öğenin ön için seçebileceğiniz kullanılabilir renkleri listeler **görüntülemek öğeleri**. Bazı öğeler ilişkili olan ve bu nedenle tutarlı görüntü düzeni bakımını yapmanız çünkü metin ön plan rengini de derleyici hatası, anahtar sözcüğü veya işleci gibi öğeler için varsayılanları değiştirilir.  
-  
- **Otomatik** öğeleri ön plan rengini diğer görüntü öğelerinden devralır gibi **düz metin**. Devralınan görünen öğeyi rengini değiştirdiğinizde, bu seçeneği kullanarak, ilgili görüntü öğeleri de rengini otomatik olarak. Seçtiyseniz, örneğin, **otomatik** değerini **derleyici hatası** ve daha sonra rengini değiştirmiş **düz metin** kırmızı, **derleyici hatası**kırmızı renk de otomatik olarak devralır.  
-  
- **Varsayılan** Visual Studio başlangıç öğesi ilk kez görünür rengi. Tıklatarak **Varsayılanlar kullan** düğme bu renk sıfırlar.  
-  
- **Özel**  
- Görüntü öğeleri listesinde seçili öğe için özel bir renk kümesi olanak tanımak için renk iletişim kutusu görüntüler.  
-  
+> **Düz metin** varsayılan görünen öğedir. Özellikler bu nedenle, atanan **düz metin** diğer görüntü öğelerine atanan özellikler tarafından geçersiz kılınır. Örneğin, mavi renk atarsanız **düz metin** ve için yeşil renk **tanımlayıcısı**, tüm tanımlayıcılar yeşil renkte görünür. Bu örnekte, **tanımlayıcı** özelliklerini geçersiz kılma **düz metin** özellikleri.
+
+Bazı görüntü öğeleri şunlardır:
+
+|Görüntü öğesi|Açıklama|
+|------------------|-----------------|
+|**Düz metin**|Düzenleyicide metni.|
+|**Seçili metni**|Düzenleyici odaklandığında geçerli seçime dahil metin.|
+|**Etkin olmayan seçili metin**|Düzenleyici odağı kaybettiğinde geçerli seçime dahil metin.|
+|**Belirteç kenar boşluğu**|Kodu kesme noktaları ve yer simgelerini görüntüleyen Düzenleyicisi'nin sol kenar boşluğu.|
+|**Satır numaraları**|Her kod satırının yanında görüntülenen isteğe bağlı sayı|
+|**Görünür boşluk**|Göstergeleri boşluklar, sekmeler ve sözcük kaydırma|
+|**Yer işareti**|Yer işaretleri satırları. **Yer işareti** yalnızca gösterge kenar boşluğunu devre dışı bırakılırsa görünür olur.|
+|**Ayraç eşleştirme (vurgula)**|Vurgulama, ayraç eşleştirme için genellikle kalın yazı olur.|
+|**Ayraç eşleştirme (dikdörtgen)**|Vurgulama, genellikle arka planda gri bir dikdörtgen'dır.|
+|**Kesme noktası (devre dışı)**|Kullanılmadı.|
+|**Kesme noktası (etkin)**|Deyimleri ya da basit kesme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyi kesme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası (hata)**|Deyimleri ya da bir hata durumunda kesme noktaları içeren satırları vurgulama rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası (uyarı)**|Deyimleri ya da bir uyarı durumdaki kesme noktaları içeren satırları vurgulama rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası - Gelişmiş (devre dışı)**|Deyimleri ya da içeren satırları vurgulama rengini veya isabet sayılan, koşullu kesme noktalarını devre dışı belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası - Gelişmiş (etkin)**|Deyimleri veya veya isabet sayılan, koşullu kesme noktaları içeren satırları vurgulama rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası - Gelişmiş (hata)**|Deyimleri ya da bir hata durumunda veya isabet sayılan, koşullu kesme noktaları içeren satırları vurgulama rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası - Gelişmiş (uyarı)**|Deyimleri ya da bir uyarı durumunda veya isabet sayılan, koşullu kesme noktaları içeren satırları vurgulama rengini belirtir. Geçerli deyimi düzeyi kesme noktaları etkin değilse veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenmiş kesme noktası - (devre dışı)**|Deyimleri ya da devre dışı eşlenmiş kesme noktaları içeren satırları vurgulama rengini belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Kesme noktası - eşlenmiş (etkin)**|Kesme deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenmiş kesme noktası - (hata)**|Kesme noktaları hata durumunda deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenmiş kesme noktası - (uyarı)**|Uyarı durumundaki kesme noktaları deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**C/C++ kullanıcı anahtar sözcükleri**|Belirli bir kod dosyası içinde bir sabit yoluyla tanımlanan `#define` yönergesi.|
+|**Çağrı dönüşü**|Kaynak deyimleri ya da bağlam üstte olmayan yığın çerçevesi için hata ayıklama sırasında geçildiğinde çağrı dönüş noktaları gösteren satırlarını vurgulama rengini belirtir.|
+|**Kod parçacığı bağımlı alan**|Geçerli düzenlenebilir bir alanı değiştirildiğinde güncelleştirilecek alan.|
+|**Kod parçacığı alanı**|Kod parçacığı etkin olduğunda düzenlenebilir bir alanı.|
+|**Daraltılabilir metin**|Bir blok metin veya kod görünümü içinde Kod Düzenleyicisi içine ve dışına açılıp kapatılabilir.|
+|**Yorum**|Kod açıklamaları.|
+|**Derleyici Hatası**|Derleyici Hatası gösteren düzenleyicide Mavi dalgalı çizgiler.|
+|**Kullanılmayan alan kapsamı**|Birim testi tarafından kapsanmayan kodu.|
+|**Kısmen dokunulan kapsam alanı**|Birim testi tarafından bir kısmen kapsanan kod.|
+|**Dokunulan kapsam alanı**|Birim testi tarafından bir tamamen kapsanan kod.|
+|**CSS açıklama**|Geçişli stil sayfaları açıklama. Örneğin:<br /><br /> / * Açıklama \*/|
+|**CSS anahtar sözcüğü**|Geçişli stil sayfası anahtar sözcükleri.|
+|**CSS özellik adı**|Arka plan gibi bir özelliğin adı.|
+|**CSS özellik değeri**|Mavi gibi bir özelliğine atanan değer.|
+|**CSS Seçici**|İlgili kuralın uygulanacağı hangi öğeleri tanımlayan bir dize. Seçici, bir basit seçiciyi, böyle bir 'H1' veya 'H1, birkaç basit Seçici oluşan B', gibi bağlamsal bir seçici ya da olabilir.|
+|**CSS dize değeri**|Geçişli stil sayfaları dizesi.|
+|**Geçerli liste konumu**|Sonuçları Bul windows ya da çıkış penceresi gibi bir liste araç penceresindeki için satıra gitme.|
+|**Geçerli deyim**|Kaynak ifadesi veya hata ayıklama sırasında geçerli adım konumunu belirten bir satır için vurgulama rengini belirtir.|
+|**Hata ayıklayıcı verisi değişti**|İçinde değişen verileri görüntülemek için kullanılan metin rengi **kaydeder** ve **bellek** windows.|
+|**Tanımlama penceresi arka planı**|Arka plan rengini **kod tanımı** penceresi.|
+|**Tanımlama penceresi geçerli eşleştirme**|Geçerli tanımında **kod tanımı** penceresi.|
+|**Ayrıştırılmış kod dosya adı**|Dosya adı sonu içinde görüntülemek için kullanılan metin rengi **ayrıştırılmış kodu** penceresi.|
+|**Ayrıştırılmış kod kaynağı**|İçinde kaynak satırları görüntülemek için kullanılan metin rengi **ayrıştırılmış kodu** penceresi.|
+|**Ayrıştırılmış kod sembolü**|İçinde Sembol adlarını görüntülemek için kullanılan metin rengi **ayrıştırılmış kodu** penceresi.|
+|**Ayrıştırılmış kod metni**|İşlem kodu ve içindeki verileri görüntülemek için kullanılan metin rengi **ayrıştırılmış kodu** penceresi.|
+|**Hariç tutulan kod**|Her koşullu bir önişlemci yönergesi gibi derlenecek olmayan kod `#if`.|
+|**tanımlayıcı**|Sınıf adları, yöntem adları ve değişken adları gibi kod tanımlayıcıları.|
+|**Anahtar sözcüğü**|Ayrılmış anahtar sözcükler belirtilen dil için. Örneğin: sınıf ve ad alanı.|
+|**Bellek adresi**|Adres sütunu içinde görüntülemek için kullanılan metin rengi **bellek** penceresi.|
+|**Bellek değişti**|İçinde değişen verileri görüntülemek için kullanılan metin rengi **bellek** penceresi.|
+|**Bellek verileri**|İçindeki verileri görüntülemek için kullanılan metin rengi **bellek** penceresi.|
+|**Bellek okunamaz**|İçindeki okunamaz bellek alanları görüntülemek için kullanılan metin rengi **bellek** penceresi.|
+|**Sayı**|Bir sayı kodda gerçek bir sayısal değer temsil eder.|
+|**İşleci**|İşleçler gibi +, -, ve! =.|
+|**Diğer hata**|Diğer hata ilişkilendirmelerini tarafından kapsanmayan diğer hata türleri. Şu anda bu rude düzenlemeleri Düzenle ve devam et'te içerir.|
+|**Önişlemci anahtar sözcüğü**|Anahtar sözcükler gibi önişlemci tarafından kullanılan #include.|
+|**Salt okunur bölge**|Bu kodu düzenlenemez. Örneğin kod tanımı görünümünün veya Düzenle ve devam et sırasında değiştirilemez kod görüntülenen kodu.|
+|**Arkaplan yeniden düzenleniyor**|Arka plan rengini **Değişiklikleri Önizle** iletişim kutusu.|
+|**Geçerli alan düzenleniyor**|Arka plan rengi geçerli öğenin içinde düzenlenmeye **Değişiklikleri Önizle** iletişim kutusu.|
+|**Bağımlı alan düzenleniyor**|Başvuruları içinde düzenlenmeye öğenin rengini **Değişiklikleri Önizle** iletişim kutusu.|
+|**YAZMAÇ verisi**|İçindeki verileri görüntülemek için kullanılan metin rengi **kaydeder** penceresi.|
+|**Saklayıcı NAT**|Tanınmayan veri ve nesneleri içinde görüntülemek için kullanılan metin rengi **kaydeder** penceresi.|
+|**Akıllı etiket**|Akıllı etiketler çağrıldığında anahat belirtmek için kullanılır.|
+|**SQL DML işaretçisi**|Transact-SQL Düzenleyicisi için geçerlidir. Bu düzenleyicide DML deyimleri, varsayılan olarak sınırlayıcı mavi bir kutu ile işaretlenir.|
+|**Eski kod**|Değiştirilen kodu bir güncelleştirme bekleniyor. Bazı durumlarda, Düzenle ve devam et kod değişikliklerini hemen uygulanamaz, ancak daha sonra hata ayıklamaya devam et olarak uygulanır. Bu şu anda Yürütülüyor işlevini çağırmanız gerekir bir işlev düzenlerseniz veya çağrı yığını üzerinde bekleyen bir işleve 64 bayttan daha fazla yeni değişkenleri eklerseniz oluşur. Bu durumda, hata ayıklayıcı bir "Eski kod Uyarısı" iletişim kutusu görüntüler ve değiştirilen kod söz konusu işlevi tamamlanır ve yeniden çağrılıncaya kadar yürütülmeye devam eder. Düzenle ve devam et, o anda kod değişiklikleri uygular.|
+|**dize**|Dize sabitleri.|
+|**Dize (C# Verbatim @)**|Verbatim yorumlanır C# dilinde değişmez değerler dize. Örneğin:<br /><br /> @"x"|
+|**Sözdizimi hatası**|Ayrıştırma hataları.|
+|**Görev listesi kısayolu**|Varsa bir **görev listesi** bir satır için kısayol eklenir ve gösterge kenar boşluğunu devre dışı bırakıldı, satır vurgulanır.|
+|**İzleme noktası (devre dışı)**|Kullanılmadı.|
+|**İzleme noktası (etkin)**|Deyimleri veya satırları içeren basit bir izleme noktaları için vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası (hata)**|Deyimleri ya da bir hata durumunda izleme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası (uyarı)**|Deyimleri ya da bir uyarı durumdaki izleme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası - Gelişmiş (devre dışı)**|Koşullu veya isabet sayılan izleme noktaları deyimleri ya da içeren satırları vurgulama rengi devre dışı belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası - Gelişmiş (etkin)**|Deyimleri veya koşullu veya isabet sayılan izleme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası - Gelişmiş (hata)**|Deyimleri ya da bir hata durumunda koşullu veya isabet sayılan izleme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası - Gelişmiş (uyarı)**|Deyimleri ya da bir uyarı durumdaki koşullu veya isabet sayılan izleme noktaları içeren satırları vurgulama rengini belirtir. Bu seçenek yalnızca deyimi düzeyinde izleme noktaları etkin değilse geçerlidir veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenen İzleme noktası - (devre dışı)**|Deyimleri ya da devre dışı eşlenen İzleme noktası içeren satırları vurgulama rengini belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**İzleme noktası - eşlenmiş (etkin)**|İzleme noktaları deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenen İzleme noktası - (hata)**|Hata durumunda izleme noktaları deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Eşlenen İzleme noktası - (uyarı)**|Uyarı durumundaki izleme noktaları deyimleri ya da içeren satırları vurgulama rengini eşlenen belirtir. Deyimi düzeyi kesme noktaları etkin değilse, ASP ya da ASP.NET hata ayıklama için geçerli veya **kesme noktaları veya geçerli deyim için tüm kaynak satırını Vurgula** seçeneği seçili [genel, hata ayıklama, Seçenekler iletişim kutusu Kutusu](../../debugger/general-debugging-options-dialog-box.md).|
+|**Saklamadan sonra değişiklikleri**|Dosya açıldıktan sonra değiştirilmiş kod satırlarını ancak bunlar diske kaydedildi.|
+|**Saklamadan önce değişiklikleri**|Dosya açıldıktan sonra değiştirilmiş, ancak olmayan kod satırlarını diske kaydedildi.|
+|**Kullanıcı türleri**|Kullanıcı tarafından tanımlanan türleri.|
+|**Kullanıcı türleri (temsilcileri)**|Renk için temsilcileri yazın.|
+|**Kullanıcı türleri (numaralandırmalar)**|Sabit listeleri için kullanılan rengi yazın.|
+|**Kullanıcı türleri (arabirimler)**|Arabirimler için renk yazın.|
+|**Kullanıcı türleri (değer türleri)**|Yapılar gibi değer türleri için renk C# dilinde yazın.|
+|**Visual Basic yalnızca işaret okuyun**|Visual Basic EnC, özel bölgeler, bir yöntem tanımını ve yaprak olmayan çağrı çerçeveleri gibi atamak için kullanılan belirli bir işaretçi.|
+|**Uyarı**|Derleyici Uyarısı.|
+|**Uyarı satırları yolu**|Statik analiz uyarı satırları için kullanılır.|
+|**XML özniteliği**|Öznitelik adları.|
+|**XML özniteliği tırnak karakterleri**|İçin XML özniteliği tırnak karakterleri.|
+|**XML özniteliği değeri**|XML öznitelikleri içeriği.|
+|**XML Cdata bölümü**|İçeriğini \<! [ CDATA [...]] >.|
+|**XML açıklaması**|İçeriğini \<!---->.|
+|**XML sınırlayıcısı**|XML sözdizimi sınırlayıcılar dahil olmak üzere, <, <?, <!, \<!--,-->,?\>, \<! [,]] > ve [,].|
+|**XML belge özniteliği**|Xml belgeleri, öznitelik değeri, gibi \<param name = "I" > Burada "ı" renklendirilmiş.|
+|**XML belge açıklaması**|Xml belgeleri yorumlarında bulunan açıklamalar.|
+|**XML belgesi etiketi**|XML belge etiketlerle yorumlarını, gibi<br /><br /> /// \<Özet >.|
+|**XML anahtar sözcüğü**|DTD'nin anahtar sözcükler NVERİ CDATA ve IDREF gibi.|
+|**XML adı**|Öğe adları ve işleme yönergeleri hedef adı.|
+|**XML işleme yönergesi**|İşleme, hedef adı dahil değil yönergeleri içeriği.|
+|**XML metni**|Düz metin öğe içeriği.|
+|**XSLT anahtar sözcüğü**|XSLT öğe adları.|
+
+**Öğe ön planı**
+
+Seçili öğenin ön plan için seçebileceğiniz kullanılabilir renklerin listeler **görüntü öğeleri**. Bazı öğeler ilgilidir ve bu nedenle bir ekran düzeni korumanız gerekir çünkü metin ön plan rengini değiştirme derleyici hatası, anahtar sözcük veya işleç gibi öğeler için varsayılanları de değişir.
+
+**Otomatik**
+
+Öğeleri devral ön plan rengini diğer görüntü öğeleri gibi **düz metin**. Devralınan görünen öğenin rengini değiştirme bu seçeneği kullandığınızda, ilgili görüntü öğeleri de rengini otomatik olarak. Seçtiyseniz, örneğin, **otomatik** değerini **derleyici hatası** ve daha sonra rengi değişir **düz metin** kırmızı, **derleyici hatası**kırmızı renk da otomatik olarak devralır.
+
+**Default**
+
+Öğesi ilk kez Visual Studio'yu başlattığınızda görünen renk. Tıklayarak **Varsayılanlar kullan** düğme için bu renk sıfırlar.
+
+**Özel**
+
+Görüntü öğeleri listesinde seçili öğe için özel bir renk ayarlamanızı izin vermek için renk iletişim kutusu görüntüler.
+
 > [!NOTE]
->  Özel Renk Tanımla yeteneğinizi bilgisayar ekranınızın renk ayarlarını sınırlı olabilir. Örneğin, bilgisayarınızın 256 renk görüntüleyecek şekilde ayarlandığından ve özel bir renk seçerseniz **renk** Varsayılanları iletişim kutusu, IDE en yakın kullanılabilir **temel renk** ve içinde siyah renk görüntüler **Renk** Önizleme kutusu.  
-  
- **Öğe arka planı**  
- Seçili öğe için bir arka plan rengi, seçebileceğiniz bir renk paleti sağlar **görüntülemek öğeleri**. Bazı öğeler ilişkili olan ve bu nedenle tutarlı görüntü düzeni bakımını yapmanız çünkü metin arka plan rengini de derleyici hatası, anahtar sözcüğü veya işleci gibi öğeler için varsayılanları değiştirilir.  
-  
- **Otomatik** öğeleri arka plan rengi diğer görüntü öğelerinden devralır gibi **düz metin**. Devralınan görünen öğeyi rengini değiştirdiğinizde, bu seçeneği kullanarak, ilgili görüntü öğeleri de rengini otomatik olarak. Seçtiyseniz, örneğin, **otomatik** değerini **derleyici hatası** ve daha sonra rengini değiştirmiş **düz metin** kırmızı, **derleyici hatası**kırmızı renk de otomatik olarak devralır.  
-  
- **Varsayılan** Visual Studio başlangıç öğesi ilk kez görünür rengi. Tıklatarak **Varsayılanlar kullan** düğme bu renk sıfırlar.  
-  
- **Özel**  
- Görüntü öğeleri listesinde seçili öğe için özel bir renk kümesi olanak tanımak için renk iletişim kutusu görüntüler.  
-  
- **Kalın**  
- Metnini görüntülemek için bu seçeneği seçili **görüntülemek öğeleri** kalın metin. Kalın metin düzenleyicide tanımlamak daha kolay olur.  
-  
- **Örnek**  
- Yazı tipi stilini, boyut ve renk şeması örneği görüntüler **ayarlarını göster** ve **görüntülemek öğeleri** seçili. Farklı biçimlendirme seçeneklerini denerken sonuçların önizlemesini görmek için bu kutusunu kullanın.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Ortam Seçenekleri iletişim kutusu](../../ide/reference/environment-options-dialog-box.md)   
- [Seçenekler iletişim kutusu](../../ide/reference/options-dialog-box-visual-studio.md)   
- [Nasıl yapılır: yazı tiplerini ve renkleri değiştirme](../../ide/how-to-change-fonts-and-colors-in-visual-studio.md)
+> Renk ayarlarını bilgisayar ekranınızın tarafından özel renkler tanımlama yeteneğiniz sınırlı olabilir. Örneğin, bilgisayar, 256 renkleri görüntülemek için ayarlanır ve özel bir renk seçin **renk** iletişim kutusu, IDE varsayılan olarak en yakın kullanılabilir **temel renk** ve görüntüler, siyah renk **Renk** Önizleme kutusu.
+
+**Öğe arka planı**
+
+Seçili öğe için bir arka plan rengi içinden seçebileceğiniz bir renk paletini sağlar **görüntü öğeleri**. Bazı öğeler ilgilidir ve bu nedenle bir ekran düzeni korumanız gerekir çünkü metin arka plan rengini değiştirme derleyici hatası, anahtar sözcük veya işleç gibi öğeler için varsayılanları de değişir.
+
+**Otomatik**
+
+Öğeleri devral arka plan rengi diğer görüntü öğeleri gibi **düz metin**. Devralınan görünen öğenin rengini değiştirme bu seçeneği kullandığınızda, ilgili görüntü öğeleri de rengini otomatik olarak. Seçtiyseniz, örneğin, **otomatik** değerini **derleyici hatası** ve daha sonra rengi değişir **düz metin** kırmızı, **derleyici hatası**kırmızı renk da otomatik olarak devralır.
+
+**Default**
+
+Öğesi ilk kez Visual Studio'yu başlattığınızda görünen renk. Tıklayarak **Varsayılanlar kullan** düğme için bu renk sıfırlar.
+
+**Özel**
+
+Görüntü öğeleri listesinde seçili öğe için özel bir renk ayarlamanızı izin vermek için renk iletişim kutusu görüntüler.
+
+**Kalın**
+
+Metni görüntülemek için bu seçeneği seçili **görüntü öğeleri** kalın metin. Kalın metin, düzenleyicide tanımlamak kolaydır.
+
+**Örnek**
+
+Yazı tipi stili, boyut ve renk şeması örneği görüntüler **ayarlarını göster** ve **görüntü öğeleri** seçili. Farklı biçimlendirme seçenekleri ile denerken sonuçlarını önizlemek için bu kutuyu kullanabilirsiniz.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Ortam Seçenekleri İletişim Kutusu](../../ide/reference/environment-options-dialog-box.md)
+- [Seçenekler İletişim Kutusu](../../ide/reference/options-dialog-box-visual-studio.md)
+- [Nasıl Yapılır: Yazı Tiplerini ve Renkleri Değiştirme](../../ide/how-to-change-fonts-and-colors-in-visual-studio.md)

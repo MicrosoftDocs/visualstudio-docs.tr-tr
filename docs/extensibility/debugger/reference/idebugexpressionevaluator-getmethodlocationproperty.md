@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f10a26eca06aed24d53b70cd406fe3f24e2fe898
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af772ebfd844679c7fb8d482b0fd0adf7d84e0e7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905356"
 ---
 # <a name="idebugexpressionevaluatorgetmethodlocationproperty"></a>IDebugExpressionEvaluator::GetMethodLocationProperty
-Bu yöntem, bir bellek adresine yöntemi konumu ve uzaklık dönüştürür.  
+Bu yöntem, bir bellek adresi bir yöntem konum ve uzaklık dönüştürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -51,24 +52,24 @@ int GetMethodLocationProperty(
  [in] Uzaklık ve yöntemi konumunu bir dize olarak ifade.  
   
  `pSymbolProvider`  
- [in] Sembol sağlayıcısı olarak ifade edilen bir [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md) nesnesi.  
+ [in] Sembol sağlayıcısı olarak ifade edilen bir [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md) nesne.  
   
  `pAddress`  
- [in] Bir adresi olarak ifade edilen yöntem içinde bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesnesi.  
+ [in] Bir adresi olarak ifade edilen metodundaki bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesne.  
   
  `pBinder`  
- [in] Bağlayıcı olarak ifade edilen bir [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md) nesnesi.  
+ [in] Bağlayıcı olarak ifade edilen bir [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md) nesne.  
   
  `ppProperty`  
- [out] Döndürür bir [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) bellek adresi temsil eden arabirim.  
+ [out] Döndürür bir [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) bellek adresini temsil eden arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Döndürülen adresi, örneğin bir kesme noktası ayarlamak için kullanılabilir.  
   
- Adı rağmen `upstrFullyQualifiedMethodPlusOffset`, bu parametre bir kısmen tam yöntem adı geçirilebilir. Bu durumda, seçili kapsayan bir yöntemdir `pAddress`. Bu parametre nasıl yorumlanacağını ifade değerlendiricisi ve desteklenen dil kadar uygulamasıdır.  
+ Adına rağmen `upstrFullyQualifiedMethodPlusOffset`, bu parametre, kısmen nitelenmiş yöntem adı geçirilebilir. Bu durumda, seçilen yöntemi kapsayan sertifikadır `pAddress`. Bu parametre nasıl yorumlanacağını ifade değerlendiricisi ve desteklediği dil kadar uygulamasıdır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   

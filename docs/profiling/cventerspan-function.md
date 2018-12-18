@@ -26,18 +26,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5e069b13f3ceda00383bda8d0c33d74059e785f0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4084ce78d1acaf5a34f95ea88046bf0860efc9ca
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34750122"
 ---
-# <a name="cventerspan-function"></a>CvEnterSpan İşlevi
+# <a name="cventerspan-function"></a>CvEnterSpan işlevi
 Yeni bir aralık başlangıcını işaretler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```C  
 HRESULT CvEnterSpanW(  
     _In_reads_bytes_(16) PCV_MARKERSERIES pMarkerSeries,   
     _Out_ PCV_SPAN* ppSpan,   
@@ -119,17 +120,17 @@ HRESULT CvEnterSpanExVA(
  İleti biçimi dizesi. NULL olamaz.  
   
  `ppSpan`  
- Sonuçta elde edilen aralık nesnesi tutacak değişkeninin adresi. Adres boş olamaz, değişkeni herhangi bir değer olabilir.  
+ Sonuçta elde edilen aralık nesnesi tutacak değişkeni adresidir. Adres boş olamaz, değişkeni herhangi bir değer olabilir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  İletiyi başarıyla yazıldığında S_OK. Hata kodu vardı herhangi bir hata durumunda. Hata koşulu denetlemek için başarılı/başarısız makroları kullanın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkers.h  
+ **Başlık:** *cvmarkers.h*  
   
  **Unicode:** CvEnterSpanW, CvEnterSpanVW, CvEnterSpanExW, CvEnterSpanExVW  
   
  **ANSI:** CvEnterSpanA, CvEnterSpanVA, CvEnterSpanExA, CvEnterSpanExVW  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)

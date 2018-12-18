@@ -14,38 +14,39 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 14f28c8e2758d2dde9cf38db268abc9fa9b4f863
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4d7288de9b0724d8ff4ef7b6174f59e747a9879d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49870269"
 ---
 # <a name="commandplacement-element"></a>CommandPlacement öğesi
-CommandPlacement öğesi düğmeleri, grupları ve menüleri birden fazla grup veya menü eklenmesini sağlar. CommandPlacement öğesini kullanarak, bir kullanıcı arabirimi görünümünü değiştirmek için bu öğeler tamamen yeniden tanımlamanız gerekmez.  
+CommandPlacement öğesi düğmeler, grupları ve menüler birden fazla grup veya menüdeki dahil edilmesini sağlar. CommandPlacement öğesi kullanarak tam bir kullanıcı arabirimi görünümünü değiştirmek için bu öğeleri bulunabileceğini gerekmez.  
   
- Daha fazla bilgi için bkz: [, yeniden kullanılabilir grupları düğmeler oluşturma](../extensibility/creating-reusable-groups-of-buttons.md).  
+ Daha fazla bilgi için [yeniden kullanılabilir düğme grupları oluşturma](../extensibility/creating-reusable-groups-of-buttons.md).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
 ```  
-<CommandPlacement guid=guidMyCommandSet" id="MyCommand" priority="0x001" >  
+<CommandPlacement guid="guidMyCommandSet" id="MyCommand" priority="0x001" >  
   <Parent>... </Parent>  
 </CommandPlacement>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|GUID|Gerekli. ' Da tanımlandığı gibi komut kümesini GUID [simgeleri öğesi](../extensibility/symbols-element.md).|  
-|kimlik|Gerekli. Menü, Grup veya tanımlandığı şekilde yerleştirilmesini komut kimliğini `Symbols Element`.|  
+|GUID|Gerekli. Sınıfında tanımlandığı gibi komut kümesi GUID'si [Symbols öğesi](../extensibility/symbols-element.md).|  
+|kimlik|Gerekli. Menü, Grup veya sınıfında tanımlandığı gibi yerleştirilmesini komut kimliğini `Symbols Element`.|  
 |önceliği|Gerekli. Üst öğesi görsel öğe konumunu belirler.|  
-|Koşul|İsteğe bağlı. Bkz: [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
+|Koşul|İsteğe bağlı. Bkz: [koşullu Aattributes](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
@@ -55,7 +56,7 @@ CommandPlacement öğesi düğmeleri, grupları ve menüleri birden fazla grup v
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[CommandPlacements Öğesi](../extensibility/commandplacements-element.md)|Grupları CommandPlacements ve CommandPlacement öğelerinin belirtir.|  
+|[CommandPlacements öğesi](../extensibility/commandplacements-element.md)|CommandPlacements ve CommandPlacement öğelerin grupları belirtir.|  
   
 ## <a name="example"></a>Örnek  
   
@@ -68,6 +69,6 @@ CommandPlacement öğesi düğmeleri, grupları ve menüleri birden fazla grup v
 </CommandPlacements>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [CommandPlacements öğesi](../extensibility/commandplacements-element.md)   
- [Visual Studio Komut Tablosu (.Vsct) Dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+ [Visual Studio komut tablosu (.vsct) dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

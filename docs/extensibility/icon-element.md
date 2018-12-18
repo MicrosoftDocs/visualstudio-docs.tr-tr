@@ -14,42 +14,43 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f15dcfec5c89c6bf2b2ae68ea29e18890dc9187e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2494e75c312385a1a0c86709eb417d4b124a97de
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39497699"
 ---
 # <a name="icon-element"></a>Icon öğesi
-Simge etiketinin GUID özniteliği tanımlı bir bit eşlem GUID'dir.  ID özniteliği yuva bit eşlem şeridinde seçer. Bu öğe isteğe bağlıdır.  Bu öğe atlanırsa değerini **guidOfficeIcon:msotcidNoIcon** kapsanan.  
+Guid özniteliği simge etiketi, tanımlı bir bit eşlem GUID'dir. `id` Özniteliği, bit eşlem şeridinde yuvası seçer. Bu öğe isteğe bağlıdır. Bu öğe değilse, değeri dahil **guidOfficeIcon:msotcidNoIcon** kapsanan.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Icon guid="guidImages" id="bmpPic1" />  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|GUID|Gerekli. Tanımlanan bir bit eşlem GUID.|  
+|GUID|Gerekli. Tanımlı bir bit eşlem guid'si.|  
 |kimlik|Gerekli. Yuva bit eşlem şeridinde seçer.|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
 |Yok.|Yok.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Buttons Öğesi](../extensibility/buttons-element.md)||  
+|[Buttons öğesi](../extensibility/buttons-element.md)||  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Komut Tablosu (.Vsct) Dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio komut tablosu (.vsct) dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

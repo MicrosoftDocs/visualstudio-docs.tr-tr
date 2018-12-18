@@ -14,13 +14,14 @@ translation.priority.ht:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 95d76781f651b681b81e4dd18848b404d8a85664
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.sourcegitcommit: c57ae28181ffe14a30731736661bf59c3eff1211
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38809274"
 ---
- Visual Studio bilgisayar üzerinde oluşturmak simgelerle kodunuzdaki hataları ayıklamanıza olması gerekir. Uzaktan hata ayıklayıcı performansını çok yerel semboller kullandığınızda, daha iyidir.  Uzak simgeleri kullanmanız gerekiyorsa, uzak makinede simgeleri aramak için uzaktan hata ayıklama İzleyicisi bildirmeniz gerekir.  
+ Kodunuzu Visual Studio bilgisayar üzerinde oluşturmak simgelerle hata ayıklamanız mümkün olması gerekir. Uzaktan hata ayıklayıcı performansının çok yerel semboller kullandığınızda daha iyidir.  Uzak sembolleri kullanmanız gerekirse, uzak makinede simgeleri aramak için uzaktan hata ayıklama İzleyicisi söylemeniz gerekir.  
   
- Visual Studio 2013 güncelleştirme 2'de başlayarak, yönetilen kod için Uzak sembolleri kullanmak için aşağıdaki msvsmon komut satırı anahtarını kullanabilirsiniz:`Msvsmon /FallbackLoadRemoteManagedPdbs`  
+ Visual Studio 2013 güncelleştirme 2'de başlayarak, yönetilen kod için Uzak semboller kullanmak için aşağıdaki msvsmon komut satırı anahtarını kullanabilirsiniz: `Msvsmon /FallbackLoadRemoteManagedPdbs`  
   
- Daha fazla bilgi için lütfen uzaktan hata ayıklama yardımına bakın (basın **F1** uzaktan hata ayıklayıcı penceresini veya tıklatın **Yardım > kullanım**). Daha fazla bilgi bulabilirsiniz [.NET uzaktan simge yükleme ve yapılan değişiklikleri Visual Studio 2012 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/10/16/net-remote-symbol-loading-changes-in-visual-studio-2012-and-2013.aspx)
+ Daha fazla bilgi için lütfen uzak hata ayıklama yardıma bakın (basın **F1** uzaktan hata ayıklayıcı penceresinde veya tıklatın **Yardım > kullanım**). Daha fazla bilgi bulabilirsiniz [.NET uzaktan sembolü yükleniyor Visual Studio 2012 ve 2013 değişiklikleri](http://blogs.msdn.com/b/visualstudioalm/archive/2013/10/16/net-remote-symbol-loading-changes-in-visual-studio-2012-and-2013.aspx)

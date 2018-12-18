@@ -1,9 +1,9 @@
 ---
-title: Araç kutusu öğelerini, WPF bileşenlerini seçin | Microsoft Docs
-ms.custom: ''
+title: Araç Kutusu Öğelerini, WPF Bileşenlerini Seçme
 ms.date: 06/21/2017
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 f1_keywords:
 - vs.chooseitems.wpfcomponents
 helpviewer_keywords:
@@ -14,11 +14,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 955d0ab74d59606e63a4772aee5de96c920544ed
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6d05e69acb414c08e752593fbfdb08246c3d14a2
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31949626"
 ---
 # <a name="choose-toolbox-items-wpf-components"></a>Araç kutusu öğelerini, WPF bileşenlerini seçin
 
@@ -36,16 +37,20 @@ Bu sekme, **araç kutusu öğelerini Seç** iletişim kutusunda, yerel bilgisaya
 
 Sütunlarda **WPF bileşenleri** sekmesi aşağıdaki bilgileri içerir:
 
-Ad  
+**Ad**
+
 WPF denetimleri için bilgisayarın kayıt defterinde girişi mevcut adlarını listeler.
 
-Ad Alanı  
+**Namespace**
+
 Hiyerarşisini görüntüler [.NET Framework sınıf API](/dotnet/api/?view=netframework-4.7) bileşen yapısını tanımlayan ad alanı. Bilgisayarınızda yüklü her .NET Framework ad alanındaki kullanılabilir bileşenleri listelemek için bu sütun sıralama.
 
-Derleme adı  
+**Derleme adı**
+
 Her bileşen için ad alanı içeren .NET Framework derleme adını görüntüler. Bilgisayarınızda yüklü her .NET Framework derlemesi içinde yer alan ad alanlarını listelemek için bu sütun sıralama.
 
-Dizin  
+**Dizin**
+
 .NET Framework derlemesinin konumunu görüntüler. Genel Derleme Önbelleği tüm derlemeler için varsayılan konumdur. Genel Derleme Önbelleği hakkında daha fazla bilgi için bkz: [derlemeler ve genel derleme önbelleği ile çalışma](/dotnet/framework/app-domains/working-with-assemblies-and-the-gac).
 
 ## <a name="uielement-list"></a>UIElement Listesi
@@ -54,15 +59,15 @@ Dizin
 
 Metin kutusunda sağladığınız dizenin göre WPF denetimleri listesini filtreler. Tüm eşleşmeleri herhangi birinden dört sütun gösterilir.
 
-### <a name="clear"></a>Temizle
+**Temizle**
 
 Filtre dizesi temizler.
 
-### <a name="browse"></a>Gözat
+**Gözat**
 
 Açılır **açık** iletişim kutusu, WPF denetimleri içeren derlemeler gezinmenize olanak sağlar. Genel Derleme Önbelleği'nde bulunmayan derlemelerini yüklemek için bunu kullanın.
 
-### <a name="language"></a>Dil
+**Dil**
 
 Seçili WPF denetimi içeren derlemenin yerelleştirilmiş dilini gösterir.
 
@@ -80,5 +85,5 @@ Ad alanı ve denetlemek için derleme eşleyerek denetimlerinizi XAML görünüm
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Araç Kutusu](../../ide/reference/toolbox.md)  
-[WPF Kullanmaya Başlarken](../../designers/getting-started-with-wpf.md)
+- [Araç Kutusu](../../ide/reference/toolbox.md)
+- [WPF Kullanmaya Başlarken](../../designers/getting-started-with-wpf.md)

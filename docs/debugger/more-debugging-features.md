@@ -1,5 +1,5 @@
 ---
-title: Daha fazla hata ayıklama özelliği | Microsoft Docs
+title: Daha fazla hata ayıklama özellikleri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -15,38 +15,39 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a46c62c05b762bee3233062a5b84e3ffca20e15a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 38783f5ec228965010dbe8054373803185fe2e7c
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44282709"
 ---
 # <a name="more-debugging-features"></a>Daha Fazla Hata Ayıklama Özelliği
-Bu bölümde, Visual Studio hata ayıklayıcısı ile kullanabileceğiniz ek özellikler içerir.  
+Bu bölüm, Visual Studio hata ayıklayıcısı ile kullanabileceğiniz ek özellikler içerir.  
   
- İpuçları ve hata ayıklama daha hızlı ve daha kolay yapmak için öneriler listesi için bkz: [hata ayıklama ipuçları ve püf noktaları](http://blogs.msdn.com/b/visualstudio/archive/2015/05/22/debugging-tips-and-tricks.aspx).  
+ İpuçları ve püf noktaları, daha hızlı ve kolay bir şekilde hata ayıklama yapmak için bir listesi için bkz. [hata ayıklama ipuçları ve püf noktaları](https://blogs.msdn.microsoft.com/visualstudio/2015/05/22/debugging-tips-and-tricks/).  
   
 ## <a name="additional-features"></a>Ek Özellikler  
  [Hata ayıklama sırasında XAML özelliklerini denetleme](../debugger/inspect-xaml-properties-while-debugging.md)  
- Kullanımını açıklar **Canlı görsel ağaç** ve **dinamik özellik Explorer** araçları.  
+ Kullanımını açıklar **Live Visual Tree** ve **Live Property Explorer** araçları.  
   
- [Hata ayıklayıcı ayarları ve hazırlığı](../debugger/debugger-settings-and-preparation.md)  
- Hata ayıklayıcı farklı bağlamlarda kullanılacak ayarlamanız gerekebilir farklı ayarlar açıklanır.  
+ [Hata Ayıklayıcısı Ayarları ve Hazırlığı](../debugger/debugger-settings-and-preparation.md)  
+ Hata ayıklayıcı farklı bağlamlardaki kullanacak şekilde gerekebilir farklı ayarlar açıklanır.  
   
- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)  
- Farklı bir hata ayıklama windows açıklar ve  
+ [Hata Ayıklayıcıda Verileri Görüntüleme](../debugger/viewing-data-in-the-debugger.md)  
+ Farklı hata ayıklama pencerelerinde açıklar ve  
   
- [Tam zamanında hata ayıklama](../debugger/just-in-time-debugging-in-visual-studio.md)  
- Yalnızca hata ayıklama, Visual Studio dışında çalışırken bir program kilitlenirse bağlandığınızda hata ayıklayıcı otomatik olarak başlatmak için zaman içinde ele alınmıştır.  
+ [Tam Zamanında Hata Ayıklama](../debugger/just-in-time-debugging-in-visual-studio.md)  
+ Just-ın-hata ayıklama, bir program Visual Studio dışında çalışırken çöktüğünde hata ayıklayıcıyı otomatik olarak başlayacak Time açıklanır.  
   
- [İzlenecek yol: Tasarım zamanında hata ayıklama](../debugger/walkthrough-debugging-at-design-time.md)  
- Visual Studio komut penceresi uygulamanızı çalışırken bir işlevi veya alt yordama yürütmek için nasıl kullanılacağını gösterir. 
+ [İzlenecek Yol: Tasarım Zamanında Hata Ayıklama](../debugger/walkthrough-debugging-at-design-time.md)  
+ Uygulamanız çalışmıyorken bir işlevi veya alt yordamı yürütmek için Visual Studio komut penceresi kullanmayı gösterir. 
   
- [Düzenle ve devam et](../debugger/edit-and-continue.md)  
- Düzenle ve devam et, programınızı kesme modunda çalışırken, kaynak kodunuzu değiştirmek ve hata ayıklama oturumu sona erdirin ve programınızı yeniden oluşturmak zorunda kalmadan bu değişiklikleri uygulamak olanak tanıyan bir araç açıklar ve etkinleştirme veya bu devre dışı bırakma hakkında yönergeler sağlar özelliği.  
+ [Düzenle ve Devam Et](../debugger/edit-and-continue.md)  
+ Düzenle ve devam et, programınız kesme modundayken, kaynak kodunuzu değiştirmenize ve hata ayıklama oturumunu sona erdirmek ve programınızı yeniden oluşturmanıza gerek kalmadan bu değişiklikleri uygulamak sağlayan bir araç açıklar ve bunu devre dışı bırakma veya etkinleştirme yönergeleri sağlar özelliği.  
   
- [Döküm dosyalarını kullanma](../debugger/using-dump-files.md)  
- Döküm dosyalarını, kaydetme ve açma yönergeleri de dahil olmak üzere açıklar. Döküm dosyalarını, genellikle bir kilitlenme sonrasında, zaman içinde belirli bir noktada programınızın durumunun anlık görüntüsü içerir. Bir kilitlenme oluşur ve kilitlenme pdb ve kaynak dosyaları derleme makine üzerinde hata ayıklamak için döküm dosyası kullanmak programınızı kaynak dosyalarına sahip olmayan bir makinede test veya pdb yüklü değilse, bir döküm dosyası kaydedebilirsiniz. 
+ [Döküm Dosyalarını Kullanma](../debugger/using-dump-files.md)  
+ Kaydetme ve açma yönergeleri de dahil olmak üzere, döküm dosyalarını açıklar. Döküm dosyaları, genellikle bir çökmeden sonra zaman içinde belirli bir noktada, programınızın durumunun bir anlık görüntüsünü içerir. Bir kilitlenme oluşur ve döküm dosyasını kaynak dosyaların ve Pdb'lerin olan yapı makinesinde kilitlenme hatalarını ayıklamak için kaynak dosyalarına sahip bir makinede programınızı test etmek veya yüklü PBS'nin, döküm dosyasını kaydedebilirsiniz. 
   
- [Nasıl yapılır: gizli hata ayıklayıcı komutlarını geri yükleme](../debugger/how-to-restore-hidden-debugger-commands.md)  
- Hata ayıklayıcı komutlarını IDE varsayılan ayarları tarafından gizli görünür hale getirmek açıklar.
+ [Nasıl Yapılır: Gizli Hata Ayıklayıcısı Komutlarını Geri Yükleme](../debugger/how-to-restore-hidden-debugger-commands.md)  
+ Hata ayıklayıcı komutları IDE varsayılan ayarları tarafından gizlenen görünür hale getirmek açıklar.

@@ -1,7 +1,7 @@
 ---
-title: Eşleşen dosya Visual Studio'da yeniden düzenleme için taşıma türü | Microsoft Docs
-ms.custom: ''
+title: Türü eşleşen dosya yeniden düzenleme için Taşı
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
 author: gewarren
@@ -12,13 +12,14 @@ dev_langs:
 - VB
 ms.workload:
 - dotnet
-ms.openlocfilehash: 4cabe20e6cf84b69bf711831d1a402f67fd908c7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 997cf31d14acd65abd003bcb00cce4a9797b394a
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53059645"
 ---
-# <a name="move-a-type-to-a-matching-file-refactoring"></a>Bir eşleşen dosya yeniden düzenleme için bir türü taşıma
+# <a name="move-a-type-to-a-matching-file-refactoring"></a>Bir eşleşen dosya yeniden düzenleme için bir tür Taşı
 
 Bu yeniden düzenleme için geçerlidir:
 
@@ -26,41 +27,41 @@ Bu yeniden düzenleme için geçerlidir:
 
 - Visual Basic
 
-**Ne:** aynı ada sahip ayrı bir dosyaya seçilen tür taşımanıza olanak tanır.
+**Ne:** Seçili türde aynı ada sahip ayrı bir dosyaya geçiş yapmanıza izin veren.
 
-**Ne zaman:** ayırmak istediğiniz aynı dosyada birden çok sınıflar, yapılar, arabirimler, vb. vardır.
+**Ne zaman:** ayırmak istediğiniz aynı dosyaya birden fazla sınıflar, yapılar, arabirimler, vb. vardır.
 
-**Neden:** aynı dosyada birden çok tür yerleştirme zorlaştırabilir bu tür bulunamıyor. Aynı ada sahip dosyaları türleri taşıyarak, kodu daha okunabilir ve gitmek daha kolay olur.
+**Neden:** aynı dosyaya birden fazla yerleştirme yapabilirsiniz, bu tür bulmak zordur. Aynı ada sahip dosyaları türleri taşıyarak, kod daha okunabilir ve giderek daha kolay hale gelir.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. Vurgula veya metin imleci taşımak için türünün adı içinde:
+1. Burada tanımlanan türünün adı imleci yerleştirin. Örneğin:
 
-   - C# ' TA:
+   ```csharp
+   class Person
+   ```
 
-    ![Vurgulanmış kodu - C#](media/movetype-highlight-cs.png)
+   ```vb
+   Class Person
+   ```
+
+2. Ardından, aşağıdakilerden birini yapın:
+
+   - Tuşuna **Ctrl**+**.**
+   - Tür adına sağ tıklayıp **hızlı Eylemler ve yeniden düzenlemeler**
+
+1. Seçin **türüne taşımak için *TypeName*.cs** menüsünden, burada *TypeName* seçtiğiniz türünün adı.
+
+   Yeni bir dosya türü ile aynı ada sahip bir proje türü taşınır.
+
+   - C# İÇİN:
+
+      ![Satır içi sonucu-C#](media/movetype-result-cs.png)
 
    - Visual Basic:
 
-    ![Vurgulanmış kodu - Visual Basic](media/movetype-highlight-vb.png)
-
-1. Ardından, aşağıdakilerden birini yapın:
-
-   - **Klavye**
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve select **türüne taşımak için *TypeName*.cs** önizleme penceresi açılan, gelen nerede *TypeName* seçtiğiniz türünün adı.
-   - **Fare**
-     - Kod sağ tıklayın, **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve select **türüne taşımak için *TypeName*.cs** önizleme penceresi açılan, gelen nerede  *TypeName* seçtiğiniz türünün adı.
-
-   Türü, çözümün parçası olarak bu ada sahip yeni bir dosyaya taşınır.
-
-   - C# ' TA:
-
-    ![Satır içi sonucu - C#](media/movetype-result-cs.png)
-
-   - Visual Basic:
-
-    ![Satır içi sonucu - Visual Basic](media/movetype-result-vb.png)
+      ![Satır içi sonucu - Visual Basic](media/movetype-result-vb.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Yeniden Düzenleme](../refactoring-in-visual-studio.md)
+- [Yeniden Düzenleme](../refactoring-in-visual-studio.md)

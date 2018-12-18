@@ -10,20 +10,21 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 502fe56f04fe933e51e9afa5376a35a53445c099
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d6b076023f725ac037ae5863bc8955e6952285ac
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34764913"
 ---
-# <a name="creating-basic-profiling-reports-from-the-command-line"></a>Komut Satırından Temel Profil Oluşturma Raporları Oluşturma
-Bu konuda .vsp ya da veri dosyası profil .vsps virgülle ayrılmış değer (.csv) raporlar üretmek temel VSPerfReport komutları açıklanmaktadır. Tüm rapor seçeneklerini açıklaması için bkz: [VSPerfReport](../profiling/vsperfreport.md).  
+# <a name="create-basic-profiling-reports-from-the-command-line"></a>Komut satırından temel profil oluşturma raporları oluşturma
+Bu makalede virgülle ayrılmış değer üretmek temel VSPerfReport komutları (. *CSV*) gelen raporları bir. *vsp* veya. *vsps* veri dosyası profil oluşturma. Tüm rapor seçeneklerini açıklaması için bkz: [VSPerfReport](../profiling/vsperfreport.md).  
   
 ## <a name="report-commands"></a>Rapor komutları  
  Belirtilen bir profil oluşturma veri dosyası için bir rapor oluşturmak için aşağıdaki komutlardan birini kullanın.  
   
  **VSPerfReport** `VSPFile` **/Summary:All**  
- .Vsp ya da .vsps dosyası için kullanılabilir tüm raporlar oluşturur.  
+ Tüm raporlar için kullanılabilir oluşturur. *vsp* veya. *vsps* dosya.  
   
  **VSPerfReport** `VSPFile` **/Özet:**`ReportType`[,`ReportType`...]  
  Belirtilen rapor türleri oluşturur.  

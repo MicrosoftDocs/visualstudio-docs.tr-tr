@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 92be0bc15542010cfeea8a9ee70e69ff52e14163
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2c5b04bfa04b1b6fd6599e5fdd06d6c58210f635
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39638449"
 ---
-# <a name="promptforsaveoncreation-element-visual-studio-templates"></a>PromptForSaveOnCreation Öğesi (Visual Studio Şablonları)
-Kullanıcı bir proje kaydetme konumu sorulup sorulmayacağını belirtir **yeni proje** bir projesi oluştururken, iletişim kutusu. Bu öğe ayarlanmışsa `true`, kullanıcı için kaydetmeniz istenir sonra konum if `false`, değil istenir. (Diğer bir deyişle, bir geçici projesi oluşturulur.)  
+# <a name="promptforsaveoncreation-element-visual-studio-templates"></a>PromptForSaveOnCreation öğesi (Visual Studio şablonları)
+İçin bir proje kaydetme konumunun kullanıcıya sorulup sorulmayacağını belirtir **yeni proje** bir proje oluştururken iletişim kutusu. Bu öğe ayarlanırsa `true`, kullanıcı bir kayıt istenir konumunu if `false`, bunlar istenmez. (Diğer bir deyişle, geçici bir Proje oluşturulur.)  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -30,37 +31,37 @@ Kullanıcı bir proje kaydetme konumu sorulup sorulmayacağını belirtir **yeni
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <PromptForSaveOnCreation> true/false </PromptForSaveOnCreation>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Gerekli öğe.<br /><br /> Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Metin ya da olmalıdır `true` veya `false`, `true` kullanıcı için kaydetmeniz istenir belirten yeni bir proje oluşturulurken konumu.  
+ Metin olmalıdır `true` veya `false`, `true` kullanıcı bir kayıt istenir gösteren yeni bir proje oluştururken bir konum.  
   
 ## <a name="remarks"></a>Açıklamalar  
  `PromptForSaveOnCreation` İsteğe bağlı bir öğedir. Varsayılan değer `false` şeklindedir.  
   
- Geçici projeler oluşturma ve diskteki proje içeriğini kaydetmeden değiştirme projeleri ' dir.  
+ Geçici projeler oluşturmak ve değiştirmek, proje içeriğini diske kaydetmeden projelerdir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek değerini ayarlar `PromptForSaveOnCreation` eşit `false`, geçici bir proje olarak oluşturulacak sınırlamayı belirtir.  
+ Aşağıdaki örnekte ayarlar `PromptForSaveOnCreation` eşit `false`, projenin geçici bir proje olarak oluşturulmasına izin vermek için belirtir.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -87,6 +88,6 @@ Kullanıcı bir proje kaydetme konumu sorulup sorulmayacağını belirtir **yeni
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
- [Proje ve Öğe Şablonları Oluşturma](../ide/creating-project-and-item-templates.md)
+ [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)

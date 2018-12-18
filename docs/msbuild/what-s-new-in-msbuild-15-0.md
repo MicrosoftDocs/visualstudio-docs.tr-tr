@@ -1,5 +1,5 @@
 ---
-title: Ne&#39;s MSBuild 15'deki yenilikler | Microsoft Docs
+title: Hangi&#39;s MSBuild 15'deki yenilikler | Microsoft Docs
 ms.custom: ''
 ms.date: 03/01/2017
 ms.technology: msbuild
@@ -10,43 +10,47 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1757dc778c45d3b9c6afd7f289b6598728dc7687
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2333f45cca5510a4ba3bb0f54abf45a569454cf8
+ms.sourcegitcommit: 25fc9605ba673afb51a24ce587cf4304b06aa577
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028969"
 ---
-# <a name="whats-new-in-msbuild-15"></a>MSBuild 15 yenilikler nelerdir?
-MSBuild kullanılabilir olarak şimdi parçası [.NET Core SDK](https://www.microsoft.com/net/download/core) ve .NET Core projelerde Windows, macOS ve Linux oluşturabilirsiniz.  
+# <a name="whats-new-in-msbuild-15"></a>MSBuild 15'te Yenilikler
+
+MSBuild olarak kullanıma sunuldu parçası [.NET Core SDK'sı](https://www.microsoft.com/net/download/core) ve Windows, macOS ve Linux üzerinde .NET Core projeleri oluşturabilirsiniz.
 
 ## <a name="changed-path"></a>Değiştirilen yolu
- MSBuild, şimdi her sürümü Visual Studio'nun altında bir klasöre yüklenir. Örneğin, `C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild`. MSBuild bulmak için aşağıdaki PowerShell modülünü de kullanabilirsiniz: [vssetup.powershell](https://github.com/Microsoft/vssetup.powershell).
 
- MSBuild artık Genel Derleme Önbelleği'nde yüklenir. MSBuild programlı olarak başvurmak için NuGet paketlerini kullanın.
+ MSBuild, şimdi Visual Studio'nun her sürümü altında bir klasöre yüklenir. Örneğin, *C:\Program Files (x86) \Microsoft Visual Studio\2017\Enterprise\MSBuild*. MSBuild bulmak için aşağıdaki PowerShell modülünü de kullanabilirsiniz: [vssetup.powershell](https://github.com/Microsoft/vssetup.powershell).
 
-## <a name="changed-properties"></a>Değiştirilen Özellikler  
- Aşağıdaki MSBuild özellikleri nedeniyle yeni sürüm numarasını güncelleştirildi.  
+ MSBuild artık genel derleme önbelleğinde yüklü değil. MSBuild'ı programlı olarak başvurmak için NuGet paketlerini kullanın.
 
--   `MSBuildToolsVersion` Bu araçlar için 15.0 sürümüdür. Derleme 15.1.0.0 sürümüdür.
+## <a name="changed-properties"></a>Özellikleri değiştirilmiş
 
--   `MSBuildToolsPath` artık bir sabit konumu yok. Varsayılan olarak, Visual Studio yükleme konumuna göre MSBuild\15.0\Bin klasöründe bulunan, ancak yükleme konumu adresindeki değiştirilebilir Visual Studio yükleme süresi.
+ Aşağıdaki MSBuild özellikleri nedeniyle yeni sürüm numarası güncelleştirildi.
 
--   `ToolsVersion` değerleri, kayıt defterinde artık ayarlanır.  
+- `MSBuildToolsVersion` Bu araçlar için 15.0 sürümüdür. Derleme 15.1.0.0 sürümüdür.
 
--   `SDK35ToolsPath` Ve `SDK40ToolsPath` noktası özelliklerini (örneğin, 10.0A 4.X araçları için) Visual Studio'nun bu sürümü ile paketlenmiştir .NET Framework SDK'sının.  
+- `MSBuildToolsPath` artık sabit bir konum vardır. Varsayılan olarak bulunur *MSBuild\15.0\Bin* klasörüyle ilgili Visual Studio yükleme konumunu, ancak Visual Studio yükleme konumu yükleme sırasında değiştirilebilir.
+
+- `ToolsVersion` değerleri, kayıt defterinde artık ayarlanır.
+
+- `SDK35ToolsPath` Ve `SDK40ToolsPath` noktası özelliklerini (örneğin, 10.0A 4.X araçları için) Visual Studio'nun bu sürümü ile paketlenmiştir .NET Framework SDK'sına.
 
 ## <a name="updates"></a>Güncelleştirmeler
-- [Proje öğesi](../msbuild/project-element-msbuild.md) yeni bir sahip `SDK` özniteliği. Ayrıca `Xmlns` özniteliktir artık isteğe bağlı. Daha fazla bilgi için bkz: [paketleri, meta verileri ve çerçeveleri](/dotnet/core/packages) ve [csproj eklemeler biçimlendirmek için .NET Core](/dotnet/core/tools/csproj).
-- [Madde öğesi](../msbuild/item-element-msbuild.md) dış hedefleri olan yeni bir `Update` özniteliği. Ayrıca, bir sınırlama `Remove` özniteliği ortadan kaldırılmıştır.
-- `Directory.Build.props` bir dizini altındaki projelerine özelleştirmeleri sağlayan bir kullanıcı tarafından tanımlanan dosyasıdır. Bu dosya sürece Microsoft.Common.props otomatik olarak içeri aktarılır özelliği `ImportDirectoryBuildTargets` ayarlanır **false**. `Directory.Build.targets` Microsoft.Common.targets tarafından alınır.
-- Herhangi bir meta veri öznitelikleri geçerli listesiyle çakışan olmayan bir ad ile isteğe bağlı olarak bir özniteliği olarak ifade edilebilir. Daha fazla bilgi için bkz: [öğe unsuru](../msbuild/item-element-msbuild.md).
+- [Proje öğesi](../msbuild/project-element-msbuild.md) yeni bir `SDK` özniteliği. Ayrıca `Xmlns` özniteliği, artık isteğe bağlıdır. Hakkında daha fazla bilgi için `SDK` özniteliği için bkz: [nasıl yapılır: kullanım MSBuild proje SDK'ları](../msbuild/how-to-use-project-sdk.md), [paketler, meta paketler ve çerçeveler](/dotnet/core/packages) ve [csproj eklemeler biçimlendirmek için .NET Çekirdek](/dotnet/core/tools/csproj).
+- [Öğe unsuru](../msbuild/item-element-msbuild.md) dış hedefleri olan yeni bir `Update` özniteliği. Ayrıca, kısıtlama `Remove` özniteliği ortadan kaldırılmıştır.
+- *Directory.Build.props* özelleştirmeleri bir dizin altında projelerine sağlayan kullanıcı tanımlı bir dosya. Bu dosya gelen otomatik olarak içeri aktarılır *Microsoft.Common.props* sürece özelliği `ImportDirectoryBuildTargets` ayarlanır **false**. *Directory.Build.targets* tarafından alınan *Microsoft.Common.targets*.
+- Herhangi bir meta veri öznitelikleri geçerli listesi ile çakışmadığından bir ad ile isteğe bağlı olarak bir özniteliği olarak ifade edilebilir. Daha fazla bilgi için [öğe](../msbuild/item-element-msbuild.md).
 
 ## <a name="new-property-functions"></a>Yeni özellik işlevleri
 
 - `EnsureTrailingSlash` zaten yoksa eğik bir yolu ekler.
-- `NormalizePath` yol öğeleri birleştirir ve çıkış dizesi geçerli işletim sistemi için doğru dizin ayırıcı karakteri sahip olmasını sağlar.
-- `NormalizeDirectory` yol öğelerini bir araya getirir, eğik sağlar ve çıkış dizesi geçerli işletim sistemi için doğru dizin ayırıcı karakteri sahip olmasını sağlar.
-- `GetPathOfFileAbove` Bunu hemen önceki dosyasının yolunu döndürür. Arama için işlevsel olarak eşdeğerdir `<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />`
+- `NormalizePath` yol öğesi bir araya getirir ve çıkış dizesi geçerli işletim sistemi için doğru dizin ayırıcı karakterleri sahip olmasını sağlar.
+- `NormalizeDirectory` yol öğesi bir araya getirir, sonunda bir eğik çizgi sağlar ve çıkış dizesi geçerli işletim sistemi için doğru dizin ayırıcı karakterleri sahip olmasını sağlar.
+- `GetPathOfFileAbove` Bu tek hemen önceki dosya yolunu döndürür. Arama için işlevsel olarak eşdeğerdir `<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />`
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 [MSBuild](../msbuild/msbuild.md)

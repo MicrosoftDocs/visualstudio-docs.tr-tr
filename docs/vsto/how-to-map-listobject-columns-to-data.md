@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: ListObject sütunlarıyla verileri eşleme | Microsoft Docs'
+title: 'Nasıl yapılır: eşleme ListObject sütunlarıyla verileri'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,57 +16,58 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 370f82c6a167a9747a3a41ac3720bc4f679fb8d2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b77d33b8d30ed7f581e27e1cbe07d0c90715ff04
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677734"
 ---
-# <a name="how-to-map-listobject-columns-to-data"></a>Nasıl Yapılır: ListObject Sütunlarıyla Verileri Eşleme
-  Bağladığınızda bir <xref:Microsoft.Office.Tools.Excel.ListObject> denetimini bir <xref:System.Data.DataTable>bir listedeki tüm sütunları görüntülemek istemeyebilirsiniz veya verilere bağlı olmayan bazı sütunları olabilir. Görünmesini istediğiniz sütunları eşleyebilirsiniz <xref:Microsoft.Office.Tools.Excel.ListObject> çağırdığınızda <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi.  
+# <a name="how-to-map-listobject-columns-to-data"></a>Nasıl yapılır: eşleme ListObject sütunlarıyla verileri
+  Bağladığınızda bir <xref:Microsoft.Office.Tools.Excel.ListObject> denetimi bir <xref:System.Data.DataTable>, listedeki tüm sütunları görüntülemek istemeyebilirsiniz veya verilerine bağlı olmayan bazı sütunları olabilir. Görünmesini istediğiniz sütunları eşlemeniz <xref:Microsoft.Office.Tools.Excel.ListObject> çağırdığınızda <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- ![video bağlantı](../vsto/media/playvideo.gif "video bağlantı") ilgili video gösterimi için bkz: [nasıl I: oluşturmak listesini bir SharePoint listesine bağlı Excel'de?](http://go.microsoft.com/fwlink/?LinkID=130263).  
+ ![video bağlantı](../vsto/media/playvideo.gif "video bağlantı") ilgili video gösterimi için bkz. [nasıl bir SharePoint listesine bağlı Excel'de bir listesi: oluşturma musunuz?](http://go.microsoft.com/fwlink/?LinkID=130263).  
   
-## <a name="mapping-columns"></a>Sütunları eşleme  
+## <a name="map-columns"></a>Sütun eşleme  
   
-#### <a name="to-map-a-data-table-to-columns-in-a-list"></a>Veri tablosu bir listedeki sütunlara eşlemek için  
+### <a name="to-map-a-data-table-to-columns-in-a-list"></a>Bir veri tablosuna sütun listesinde eşlemek için  
   
 1.  Oluşturma <xref:System.Data.DataTable> sınıf düzeyinde.  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#16](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet3.cs#16)]
      [!code-vb[Trin_VstcoreHostControlsExcel#16](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet3.vb#16)]  
   
-2.  Örnek sütunlar ve verilerde ekleme `Startup` olay işleyicisi `Sheet1` sınıfı (belge düzeyi projede) veya `ThisAddIn` sınıfında (VSTO eklenti projesindeki).  
+2.  Örnek sütunları ve verileri ekleme `Startup` olay işleyicisine `Sheet1` sınıfı (belge düzeyi projede) veya `ThisAddIn` (bir VSTO eklenti projesinde sınıftaki).  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#17](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet3.cs#17)]
      [!code-vb[Trin_VstcoreHostControlsExcel#17](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet3.vb#17)]  
   
-3.  Çağrı <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi ve sütun adları göründükleri sırada geçirin. Yeni oluşturulan için liste nesnesi bağlanacak <xref:System.Data.DataTable>, ancak liste nesnesindeki sütunların sırası içinde göründükleri sırada farklı <xref:System.Data.DataTable>.  
+3.  Çağrı <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi ve sütun adları göründükleri sırayla geçirin. Liste nesnesi bağlı için yeni oluşturulan <xref:System.Data.DataTable>, ancak liste nesnesinde sütunların sırasını sırada görüntülendiğini içinde farklılık gösterir <xref:System.Data.DataTable>.  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#18](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet3.cs#18)]
      [!code-vb[Trin_VstcoreHostControlsExcel#18](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet3.vb#18)]  
   
-## <a name="specifying-unmapped-columns"></a>Eşlenmemiş sütunları belirtme  
- Sütunları eşlediğinizde bir <xref:System.Data.DataTable>, bazı sütunlar verileri boş bir dize geçirerek bağlanmalıdır değil olduğunu da belirtebilirsiniz. Verilere bağlı yeni bir sütun daha sonra eklenen <xref:Microsoft.Office.Tools.Excel.ListObject> denetim.  
+## <a name="specify-unmapped-columns"></a>Eşlenmemiş sütunları belirtme  
+ Sütunları eşlemeniz ne zaman bir <xref:System.Data.DataTable>, belirli sütunları veri için boş bir dize olarak geçirerek bağlanmalıdır değil olduğunu da belirtebilirsiniz. Verilere bağlı olmayan yeni bir sütun daha sonra eklenen <xref:Microsoft.Office.Tools.Excel.ListObject> denetimi.  
   
-#### <a name="to-specify-an-unmapped-column-when-mapping-listobject-columns"></a>ListObject sütunları eşlerken eşlenmeyecek bir sütunu belirtmek için  
+### <a name="to-specify-an-unmapped-column-when-mapping-listobject-columns"></a>ListObject sütunlarıyla eşlerken eşlenmemiş bir sütun belirtmek için  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi ve sütun adları göründükleri sırada geçirin. Boş bir dize eşlenmeyecek sütunun nerede eklenir belirtmek için kullanın; Bu durumda, bir başlık sütunu ve soyadı sütununun arasında.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Excel.ListObject.SetDataBinding%2A> yöntemi ve sütun adları göründükleri sırayla geçirin. Burada eşlenmemiş bir sütun eklenir belirtmek için boş bir dize kullanın. Bu durumda, başlık sütunu arasında son ad sütunu.  
   
      [!code-csharp[Trin_VstcoreHostControlsExcel#19](../vsto/codesnippet/CSharp/Trin_VstcoreHostControlsExcelCS/Sheet3.cs#19)]
      [!code-vb[Trin_VstcoreHostControlsExcel#19](../vsto/codesnippet/VisualBasic/Trin_VstcoreHostControlsExcelVB/Sheet3.vb#19)]  
   
-## <a name="compiling-the-code"></a>Kod Derleniyor  
- Bu kod örneği, var olan varsayar <xref:Microsoft.Office.Tools.Excel.ListObject> adlı `list1` bu kodu göründüğü çalışma sayfası üzerinde.  
+## <a name="compile-the-code"></a>Kod derleme  
+ Bu kod örneği, mevcut bir varsayar <xref:Microsoft.Office.Tools.Excel.ListObject> adlı `list1` bu kodu göründüğü çalışma.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Genişletme Word belgelerini ve Excel çalışma kitaplarını çalışma zamanında VSTO eklentileri](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Word belgelerini ve Excel çalışma kitaplarını VSTO eklentileri çalışma zamanında genişletme](../vsto/extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md)   
  [Office belgelerindeki denetimler](../vsto/controls-on-office-documents.md)   
  [Office belgelerine çalışma zamanında denetimler ekleme](../vsto/adding-controls-to-office-documents-at-run-time.md)   
- [Nasıl yapılır: ListObject denetimlerini veri ile doldurma](../vsto/how-to-fill-listobject-controls-with-data.md)   
- [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirme](../vsto/automating-excel-by-using-extended-objects.md)   
- [ListObject Denetimi](../vsto/listobject-control.md)  
+ [Nasıl yapılır: dolgu ListObject denetimlerini veri ile](../vsto/how-to-fill-listobject-controls-with-data.md)   
+ [Genişletilmiş nesneleri kullanarak Excel'i otomatikleştirmek](../vsto/automating-excel-by-using-extended-objects.md)   
+ [ListObject denetimi](../vsto/listobject-control.md)  
   
   

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31103883"
 ---
 # <a name="idebugcodecontext2"></a>IDebugCodeContext2
 Bu arabirim bir kod yönergesi başlangıç konumunu temsil eder. Çoğu çalışma zamanı mimari için bugün, bir kod bağlamı, adresi bir programın yürütme akış olarak düşünülebilir.  

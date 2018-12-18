@@ -1,5 +1,5 @@
 ---
-title: Visual Studio yük testlerini düzenleme | Microsoft Docs
+title: Yük Testlerini Düzenleme
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -9,41 +9,46 @@ ms.assetid: ba16ed02-137e-40bf-a4cb-45d87d922d37
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 6e79dd964593e79c69ec6ec8ab44f10ff4c9ca99
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a2bc06ed17522eef36841b72859554163068afa6
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048639"
 ---
-# <a name="edit-load-tests"></a>Yük testleri Düzenle
+# <a name="edit-load-tests"></a>Yük testlerini düzenleme
 
-Yük testleri Web performans testleri veya çok sayıda kullanıcı aynı anda bir sunucuya erişirken benzetimini yapmak için birim testleri çalıştırın. Bir yük testi için uygulama stres ve performans verilerini erişmenizi sağlar. Bir yük testi kullanıcı yükleri gibi çeşitli yük koşullarını taklit etmek ve ağ türleri için yapılandırılabilir.
+Çalıştırma web başarım testi veya birim testleri, bir sunucu aynı anda erişen birçok kullanıcının benzetimini yapmak için yük testleri. Bir yük testi uygulama stres ve performans verilerine erişmenizi sağlar. Bir yük testi, kullanıcı yükleri gibi çeşitli yük koşulları taklit etmek ve ağ türleri için yapılandırılabilir.
 
-> [!NOTE]
-> Yük testi yalnızca Visual Studio 2017 Enterprise Edition'da kullanılabilir.
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
-Bir yük testi tarafından tanımlanan *senaryoları*, *sayaç*, ve *çalışma ayarları*. Aşağıdaki çizimde arasındaki farklar açıklanmaktadır [senaryoları](../test/edit-load-test-scenarios.md), [sayaç](../test/specify-counter-sets-and-threshold-rules-for-load-testing.md), ve [çalışma ayarları](../test/load-test-run-settings-properties.md):
+Bir yük testi tarafından tanımlanan *senaryoları*, *sayaç kümeleri*, ve *çalıştırma ayarları*. Aşağıdaki çizim arasındaki farklar açıklanmaktadır [senaryoları](../test/edit-load-test-scenarios.md), [sayaç kümeleri](../test/specify-counter-sets-and-threshold-rules-for-load-testing.md), ve [çalıştırma ayarları](../test/load-test-run-settings-properties.md):
 
 ![Yük testi mimarisi](../test/media/load_test_editor.png)
 
+## <a name="software-requirements"></a>Yazılım gereksinimleri
+
+Yalnızca Web performans ve yük testi projelerini Visual Studio Enterprise sürümünde kullanılabilir.
+
 ## <a name="edit-load-test-scenario-settings"></a>Yük testi senaryosu ayarlarını Düzenle
 
-Bir senaryo, bir kullanıcı grubuna bir sunucu uygulaması ile nasıl etkileşim kurduğu modellemek için kullanılır. Bir senaryo yük düzeni, bir test karışımı modeli, test karışımı, bir tarayıcı karışımı ve ağ karışımı oluşur. Bir yük testi birden fazla senaryosu olabilir ve tek bir senaryo Web performans testleri ve birim testleri içerebilir. Gruplandırma benzer ayarıyla birlikte, bir senaryo gruplamak ve bir yapıdaki birlikte testler için olanak sağlar.
+Bir senaryo, bir kullanıcı grubu, bir sunucu uygulaması ile nasıl etkileşimde bulunduğunu modellemek için kullanılır. Bir senaryo, bir yük düzeni, test karışımı modeli, test karışımı, tarayıcı karışımı ve ağ karışımını oluşur. Bir yük testi birden fazla senaryosu olabilir ve tek bir senaryo, web performans testleri ve birim testleri içerebilir. Gruplandırma benzer ayarıyla birlikte, bir senaryo grup ve testler bir yapıdaki birlikte çalıştırmanıza olanak tanır.
 
-Daha fazla bilgi için bkz: [yük testi senaryolarını düzenleme](../test/edit-load-test-scenarios.md) ve [yük testi senaryosu özellikleri](../test/load-test-scenario-properties.md).
+Daha fazla bilgi için [yük testi senaryolarını düzenleme](../test/edit-load-test-scenarios.md) ve [yük testi senaryosu özellikleri](../test/load-test-scenario-properties.md).
 
-## <a name="configure-and-manage-performance-counter-sets"></a>Yapılandırma ve performans sayaç kümelerini yönetme
+## <a name="configure-and-manage-performance-counter-sets"></a>Yapılandırma ve performans sayaç kümelerini Yönet
 
-Yük testleri performans sayacı verilerini analiz ederken kullanışlı olan teknoloji tarafından düzenlenen adlandırılmış sayaç kümeleri, sağlar. Sayaç kümeleri yük testi, IIS, ASP.NET ve SQL içerir. Yeni Yük Testi Sihirbazı ile bir yük testi oluşturduğunuzda, bir başlangıç önceden tanımlanmış ve önemli sayaç kümesi yük testine dahil etmek için belirttiğiniz bilgisayarlar için yapılandırılır. Yük Testi Düzenleyicisi'nde sayaçlarınızın yönetin.
+Yükleme testleri, performans sayacı verilerini çözümlediğinizde kullanışlı olan teknoloji tarafından düzenlenen adlandırılmış sayaç kümeleri sağlar. Sayaç kümleri, yükleme testi, IIS, ASP.NET ve SQL içerir. İle bir yük testi oluşturduğunuzda, **Yeni Yük Testi Sihirbazı**, başlangıç bir önceden tanımlanmış ve önemli sayaç kümesi yük testine dahil etmek üzere belirttiğiniz bilgisayarlar için yapılandırılır. Sayaçlarınızı yönettiğiniz **Yük Testi Düzenleyicisi**.
 
-Daha fazla bilgi için bkz: [sayaç kümelerini ve eşik kurallarını bilgisayarlar için bir yük testinde belirtme](../test/specify-counter-sets-and-threshold-rules-for-load-testing.md).
+Daha fazla bilgi için [sayaç kümelerini ve eşik kurallarını bilgisayarlar için bir yük testinde belirtin](../test/specify-counter-sets-and-threshold-rules-for-load-testing.md).
 
-## <a name="configure-and-manage-load-test-run-settings"></a>Yapılandırma ve yük testi çalıştırma ayarlarını yönetme
+## <a name="configure-and-manage-load-test-run-settings"></a>Yapılandırma ve yükleme testi çalıştırma ayarlarını yönetme
 
-Çalışma ayarları bir yük testi çalışma biçimini etkileyen özelliklerdir. Çalıştırma Ayarları Özellikleri penceresinde kategoriler halinde düzenlenir.
+Çalıştırma ayarları yük testinin çalışma biçimini etkileyen özelliklerdir. Çalıştırma ayarları kategorilere göre düzenlenir **özellikleri** penceresi.
 
-Daha fazla bilgi için bkz: [yük testi çalıştırma ayarları yapılandırma](../test/configure-load-test-run-settings.md) ve [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
+Daha fazla bilgi için [yapılandırma yük testi çalıştırma ayarları](../test/configure-load-test-run-settings.md) ve [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

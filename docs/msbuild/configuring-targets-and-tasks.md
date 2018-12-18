@@ -10,24 +10,25 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f71ef4a5b2471dd8b15ac96b61a67dd159b12833
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b6075eea96d217b029f7febb8bcf80aef2a47eb2
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39151151"
 ---
-# <a name="configuring-targets-and-tasks"></a>Hedefleri ve Görevleri Yapılandırma
-MSBuild hedefleri ve görevleri çalıştırmak için yapılandırabilirsiniz zaman-işlem MSBuild ile böylece üzerinde çalıştığını bir farklılık bağlamları hedefleyebilirsiniz. Örneğin, geliştirme bilgisayarında .NET Framework 4.5 64-bit işletim sisteminde çalışırken 32 bitlik bir .NET Framework 2.0 uygulama hedefleyebilirsiniz. .NET Framework 4 veya önceki sürümleri çalıştıran bilgisayarlar ayrıca hedefleyebilirsiniz. 32 veya 64 bit ve belirli .NET Framework sürüm bileşimi olarak bilinen *hedef bağlamı*.  
+# <a name="configure-targets-and-tasks"></a>Hedefleri ve görevleri yapılandırma
+MSBuild hedefleri ve görevleri çalıştırmak için yapılandırabilirsiniz giden işlem MSBuild ile böylece üzerinde çalıştığını olandan farklı Bağlamlar hedefleyebilirsiniz. Örneğin, geliştirme bilgisayarında .NET Framework 4.5 64-bit işletim sisteminde çalışırken bir 32 bitlik .NET Framework 2.0 uygulama hedefleyebilirsiniz. .NET Framework 4 veya önceki sürümleri çalıştıran bilgisayarlar ayrıca hedefleyebilirsiniz. 32 veya 64 bit ve belirli bir .NET Framework sürüm birleşimi olarak da bilinen *hedef bağlam*.  
   
 ## <a name="installation"></a>Yükleme  
- .NET Framework 4.5 ve 4.5.1 ortak dil çalışma zamanı (CLR), hedefler, görevleri ve araçları, .NET Framework 4 yeniden adlandırma olmadan değiştirin. .NET Framework 4.5.1'deki parçası olarak yüklenmiş [!INCLUDE[vs_dev12](../extensibility/includes/vs_dev12_md.md)].  
+ .NET Framework 4.5 ve 4.5.1 yeniden adlandırma olmadan ortak dil çalışma zamanı (CLR), hedefler, görevleri ve araçlar .NET Framework 4'ün değiştirin. .NET Framework 4.5.1 parçası olarak yüklü [!INCLUDE[vs_dev12](../extensibility/includes/vs_dev12_md.md)].  
   
- MSBuild ayrıca Visual Studio'dan yüklemek istiyorsanız, yükleme paketinden indirebilirsiniz [MSBuild karşıdan](http://go.microsoft.com/fwlink/?LinkId=309745). Ayrıca kullanmak istediğiniz .NET Framework sürümleri de yüklemeniz gerekir.  
+ MSBuild Visual Studio'dan ayrı olarak yüklemek istiyorsanız, yükleme paketinden indirebilirsiniz [MSBuild indirme](http://go.microsoft.com/fwlink/?LinkId=309745). Ayrıca, kullanmak istediğiniz .NET Framework sürümleri yüklemeniz gerekir.  
   
-## <a name="targets-and-tasks"></a>Hedefler ve Görevler  
- Derleme görevleri daha büyük bir bağlamları hedeflemek için işlem dışı belirli MSBuild çalıştırır.  Örneğin, bir 32 bit MSBuild derleme görevi bir 64-bit bilgisayarda hedeflemek için 64-bit işlem çalıştırabilirsiniz. Bu tarafından denetlenir `UsingTask` bağımsız değişkenleri ve `Task` parametreleri. Bu bağımsız değişkenleri ve parametreleri tarafından .NET Framework 4.5 yüklü hedeflerini ayarlayın ve değişiklik çeşitli hedef bağlamları için uygulamalar oluşturmak için gerekli değildir.  
+## <a name="targets-and-tasks"></a>Hedefleri ve görevleri  
+ MSBuild çalıştırmaları belirli bağlamları daha büyük bir hedef için işlem dışı Görevler oluşturun.  Örneğin, 32-bit MSBuild 64 bit bilgisayar hedeflemek için 64-bit işlem içinde derleme görevi çalışabilir. Bu tarafından denetlenir `UsingTask` bağımsız değişkenleri ve `Task` parametreleri. Bu bağımsız değişkenleri ve parametreleri tarafından .NET Framework 4.5 yüklü hedeflerini ayarlayın ve değişiklik çeşitli hedef bağlamları yönelik uygulamalar oluşturmak için gerekli değildir.  
   
- Kendi hedef bağlamı oluşturmak istiyorsanız, bu bağımsız değişkenleri ve parametreleri uygun şekilde ayarlamanız gerekir. .NET Framework 4.5 Microsoft.Common.targets dosyasını ve örnekler için Microsoft.Common.Tasks dosyasını bakın.  Birden çok hedef bağlamlarla çalışabilmeniz için özel bir görev oluşturma veya varolan görevleri değiştirme hakkında daha fazla bilgi için bkz: [nasıl yapılır: yapılandırma hedefleri ve görevleri](../msbuild/how-to-configure-targets-and-tasks.md).  
+ Kendi hedef bağlam oluşturmak istiyorsanız, bu bağımsız değişkenleri ve parametreleri uygun şekilde ayarlamanız gerekir. .NET Framework 4.5 içinde Ara *Microsoft.Common.targets* dosya ve *Microsoft.Common.Tasks* örnekler için dosya.  Birden fazla hedef bağlamı ile çalışabilmeniz için özel bir görev oluşturma veya var olan görevleri değişiklik yapma hakkında daha fazla bilgi için bkz. [nasıl yapılır: hedefleri ve görevleri yapılandırma](../msbuild/how-to-configure-targets-and-tasks.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çoklu sürüm desteği](../msbuild/msbuild-multitargeting-overview.md)

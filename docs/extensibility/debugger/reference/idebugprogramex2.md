@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31120968"
 ---
 # <a name="idebugprogramex2"></a>IDebugProgramEx2
 Bu arabirim, hata ayıklama Yöneticisi (SDM) için bir program ekleyin ve bir programla ilişkili program düğümü alma oturum sağlar.  

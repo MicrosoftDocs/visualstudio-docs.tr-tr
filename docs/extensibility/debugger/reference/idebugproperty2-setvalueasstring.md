@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a5fb55fb6f9a90cf39120be408428524f64463d3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d8f165ade12f6a4d8661ca4b0070efb1452ec09a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903042"
 ---
 # <a name="idebugproperty2setvalueasstring"></a>IDebugProperty2::SetValueAsString
-Belirli bir dizeden bir özelliğin değerini ayarlar.  
+Belirli bir dizedeki bir özelliğin değerini ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,18 +48,18 @@ int SetValueAsString (
  [in] Ayarlanacak değer içeren bir dize.  
   
  `nRadix`  
- [in] Herhangi bir sayısal bilgi yorumlanırken kullanılacak bir sayı tabanını. Bu sayı tabanını otomatik olarak belirlemek girişiminde 0 olabilir.  
+ [in] Sayısal yedeklenmesine yorumlama olarak kullanılacak bir sayı tabanı. Bu sayı tabanı otomatik olarak belirlemek girişiminde 0 olabilir.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süreyi belirtir. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süreyi belirtir. Kullanım `INFINITE` süresiz bekleme.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde hata kodunu döndürür. Diğer olası değerler aşağıdaki tabloda gösterilmektedir.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür. Diğer olası değerler aşağıdaki tabloda gösterilmektedir.  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |`E_SETVALUE_VALUE_CANNOT_BE_SET`|Dize bir özellik değeri dönüştürülemedi veya özellik değeri ayarlanamadı.|  
-|`E_SETVALUE_VALUE_IS_READONLY`|Salt okunur bir özelliktir.|  
+|`E_SETVALUE_VALUE_IS_READONLY`|Özellik salt okunurdur.|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)

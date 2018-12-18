@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: bir yükleyici için kayıt defteri bilgilerini oluştur | Microsoft Docs'
+title: 'Nasıl yapılır: bir yükleyicinin kayıt defteri bilgileri oluştur | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,33 +15,34 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c125ce9b7b8feb27bd8568e52cd363e3d451bd40
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b52d0c894aadd829806e7cc41ac9e78e95df32ba
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39513264"
 ---
-# <a name="how-to-generate-registry-information-for-an-installer"></a>Nasıl yapılır: bir yükleyici için kayıt defteri bilgilerini oluştur
-RegPkg.exe yardımcı programı, yönetilen VSPackage için bir kayıt bildirimi oluşturmak için kullanılabilir. Windows Installer kurulum pakete bildirim birleştirilebilir. RegPkg de üretebilir temel kurulum kaynak dosyasında bulunan bir dosya [Windows Installer XML araç takımı](http://go.microsoft.com/fwlink/?LinkId=62238).  
+# <a name="how-to-generate-registry-information-for-an-installer"></a>Nasıl yapılır: bir yükleyicinin kayıt defteri bilgilerini oluşturma
+*RegPkg.exe* yardımcı programı, yönetilen bir VSPackage için bir kayıt bildirimi oluşturmak için kullanılabilir. Bildirimi, Windows Installer kurulum pakete eklenebilir. RegPkg ayrıca temel kurulum kaynak dosyada bulunan bir dosya oluşturmak [Windows Installer XML araç takımı](http://go.microsoft.com/fwlink/?LinkId=62238).  
   
 > [!IMPORTANT]
->  Geliştirme sisteminizde belirli yol adları RegPkg oluşturur, RegPkg her kullanışınızda kullanmak için çıktı düzenlemeniz gerekir böylece uygun Windows Installer özellikleri biçimlendirilmiş. Örneğin, Inprocserver32 değeri olmalıdır **[SystemFolder]mscoree.dll** ve yolları kullanması gereken **[#filekey]** ve **[$componentkey]**. Bu şekilde çıkış ayarlama, farklı bir sürücüde veya farklı bir dizin, yerelleştirilmiş dizin adlarını ve kullanıcıların yollarını yüklü Windows bilgisayarları destekler. Daha fazla bilgi için bkz: [biçimlendirilmiş](http://go.microsoft.com/fwlink/?LinkId=71120) Windows Installer SDK'sındaki. İçin geliştirme sistem yolları RegPkg kuralarına varsa — örneğin, form File_ kimliklerini dosya*filename*— daha az değişiklik.  
+>  RegPkg geliştirme sisteminize özel yol adları oluşturur, RegPkg her kullanışınızda kullanılacak çıktıyı düzenlemek için uygun bir Windows Installer özellikleri biçimlendirilmiş. Örneğin, `InprocServer32` değeri  *\<SystemFolder\>mscoree.dll* ve yolları kullanması gereken *\<#filekey\>* ve  *\<$componentkey\>*. Bu şekilde çıkış ayarlama farklı bir sürücüde veya farklı bir dizin, yerelleştirilmiş dizin adları ve kullanıcıların seçim yapabileceği yollarını yüklü Windows bilgisayarları destekler. Daha fazla bilgi için [biçimlendirilmiş](http://go.microsoft.com/fwlink/?LinkId=71120) Windows Installer SDK. RegPkg kuralları için geliştirme sistem yolları izlerseniz — Örneğin, form kimlikleri dosya *File_\<filename\>*— daha az sayıda değişiklik.  
   
 ### <a name="to-create-a-registration-manifest"></a>Bir kayıt bildirimi oluşturmak için  
   
--   RegPkg ile Çalıştır **/regfile** geçin. Diğer anahtarları, çıkış dosyasının adını ve VSPackage yolunu sağlayın.  
+-   RegPkg ile çalıştırma **/regfile** geçin. Herhangi diğer anahtarlar, çıkış dosyasının adını ve yolunu bir VSPackage sağlar.  
   
      Örneğin, komut isteminde, aşağıdaki gibi yazın:  
   
     ```  
-    [Visual Studio SDK installation path]\VisualStudioIntegration\Tools\Bin\RegPkg /regfile:MyRegFile.reg MyPackage.dll  
+    <Visual Studio SDK installation path>\VisualStudioIntegration\Tools\Bin\RegPkg /regfile:MyRegFile.reg MyPackage.dll  
     ```  
   
 ### <a name="to-view-a-registration-manifest"></a>Bir kayıt bildirimi görüntülemek için  
   
 -   Kayıt bildirimi herhangi bir metin düzenleyicisinde açın.  
   
-     Aşağıdaki örnek RegPkg IronPython dil hizmeti için oluşturduğu kayıt bildirimidir:  
+     RegPkg IronPython dil hizmeti oluşturan kayıt bildirimi örnektir:  
   
     ```  
     REGEDIT4  
@@ -98,21 +99,21 @@ RegPkg.exe yardımcı programı, yönetilen VSPackage için bir kayıt bildirimi
   
     ```  
   
-### <a name="to-create-a-windows-installer-xml-toolset-include-file"></a>Bir Windows Installer XML araç takımı içerme dosyası oluşturmak için  
+### <a name="to-create-a-windows-installer-xml-toolset-include-file"></a>Oluşturma bir Windows Installer XML araç takımı içerme dosyası  
   
--   RegPkg ile Çalıştır **/wixfile** geçin. Diğer anahtarları, çıkış dosyasının adını ve VSPackage yolunu sağlayın.  
+-   RegPkg ile çalıştırma **/wixfile** geçin. Herhangi diğer anahtarlar, çıkış dosyasının adını ve yolunu bir VSPackage sağlar.  
   
      Örneğin, komut isteminde, aşağıdaki gibi yazın:  
   
     ```  
-    [Visual Studio SDK installation path]\VisualStudioIntegration\Tools\Bin\RegPkg /codebase /wixfile:IronPython.LanguageService.wxi ..\bin\Release\IronPython.LanguageService.dll  
+    <Visual Studio SDK installation path>\VisualStudioIntegration\Tools\Bin\RegPkg /codebase /wixfile:IronPython.LanguageService.wxi ..\bin\Release\IronPython.LanguageService.dll  
     ```  
   
-### <a name="to-view-a-windows-installer-xml-toolset-include-file"></a>Bir Windows Installer XML araç takımı içerme dosyası görüntülemek için  
+### <a name="to-view-a-windows-installer-xml-toolset-include-file"></a>Bir Windows Installer XML görüntülemek için araç takımı içerme dosyası  
   
 -   Açık Windows Installer XML araç takımı içerme dosyası herhangi bir metin düzenleyicisinde.  
   
-     Aşağıdaki örnek RegPkg oluşturur içerme dosyası IronPython dil hizmeti verilmiştir:  
+     RegPkg oluşturan içerme dosyası IronPython dil hizmeti örnektir:  
   
     ```  
     <Include>  
@@ -182,6 +183,6 @@ RegPkg.exe yardımcı programı, yönetilen VSPackage için bir kayıt bildirimi
     </Include>  
     ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [VSPackages kaydetme](http://msdn.microsoft.com/en-us/31e6050f-1457-4849-944a-a3c36b76f3dd)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [VSPackage kaydetme](http://msdn.microsoft.com/en-us/31e6050f-1457-4849-944a-a3c36b76f3dd)   
  [VSPackage’lar](../../extensibility/internals/vspackages.md)

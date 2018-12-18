@@ -1,2 +1,0 @@
-## <a name="ensure-the-development-environment-was-successfully-created"></a>Geliştirme ortamı başarıyla oluşturulduğundan emin olun
-Önceki bölümde biz başlayacağı zamana `vsce env create` bir geliştirme ortamı oluşturmak için komutu. Bu yaklaşık 7 dakika sürebilir tamamlamak için bu nedenle geri başarıyla oluşturulduğunu denetleyin. Her zaman erişiminiz ortamları ve bu komutla bunların durumunu denetleyebilirsiniz: `vsce env list`. 

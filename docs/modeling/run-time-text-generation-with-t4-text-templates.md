@@ -15,20 +15,22 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: d5cfc884cc595e1e95df4b309bfaeb0e12949d34
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: dde7b368297979e53d4ee09b75961652749d3321
+ms.sourcegitcommit: 495bba1d8029646653f99ad20df2f80faad8d58b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39380749"
 ---
 # <a name="run-time-text-generation-with-t4-text-templates"></a>T4 Metin Şablonları İle Çalışma Süresi Metni Oluşturma
 
-Visual Studio çalışma zamanı metin şablonları kullanarak çalışma zamanında, uygulamanızda metin dizelerini oluşturabilir. Burada uygulama yürütür bilgisayarda Visual Studio mevcut değil. Derleme zamanında çalışma zamanında yürütülen kod şablon oluşturduğundan çalışma zamanı şablonları bazen "metin şablonları ön işlemesi yapılan" olarak adlandırılır.
+Visual Studio çalışma zamanı metin şablonları kullanarak uygulamanızdaki çalışma zamanında metin dizesi oluşturabilirsiniz. Visual Studio burada uygulama yürütür bilgisayar yok. Derleme zamanında çalışma zamanında yürütülen kod şablonu oluşturduğundan çalışma zamanı şablonları bazen "önceden işlenmiş metin şablonlarını" olarak adlandırılır.
 
-Her bir şablon metni karışımını aynıdır oluşturulan dize ve program kod parçaları görünür. Program parçaları dize değişken bölümleri için değerler sağlayın ve ayrıca koşullu ve yinelenen bölümleri denetleyin.
+Oluşturulan dize ve program kod parçalarını görüneceği şekilde her bir metin karışımını şablonudur. Program parçalarını dize değişkeni bölümleri için değerler sağlayın ve ayrıca koşullu ve tekrarlanan bölümleri denetimi.
 
-Örneğin, aşağıdaki şablonu bir HTML raporu oluşturur bir uygulamada kullanılabilir.
+Örneğin, aşağıdaki şablonu, bir HTML raporu oluşturur bir uygulamada kullanılabilir.
 
 ```html
 <#@ template language="C#" #>
@@ -45,26 +47,26 @@ This report is Company Confidential.
 </body></html>
 ```
 
-Şablon değişkeni bölümleri program kodu ile değiştirilmiştir HTML sayfası olduğuna dikkat edin. Bu tür bir sayfanın tasarımını HTML sayfası statik prototipi yazarak başlamadan. Ardından Tablo ve değişken diğer bölümleri değişir içerik bir gün sonraki oluşturur program kodu yerine.
+Şablon değişken parçaları program kodu ile değiştirilmiş bir HTML sayfası olduğuna dikkat edin. Böyle bir sayfa tasarımını, statik bir HTML sayfası prototipi yazarak gelebilecek. Tablo ve değişken diğer bölümleri değişen içeriği sonraki bir gün oluşturduğu program kod ile değiştirmeniz.
 
-Bir şablon kullanarak, uygulama yapar, örneğin, bir uzun dizi yazma deyimi, oranla son formun çıkış görmek daha kolay olur. Çıkış biçimine değişiklik yapmadan daha kolay ve daha güvenilirdir.
+Şablon kullanarak kendi uygulama yapar, örneğin, uzun bir dizisinden yazma deyimleri, daha son formun çıktıyı görmek daha kolay olur. Çıkış biçimine değişiklik yapmasını daha kolay ve daha güvenilir.
 
-## <a name="creating-a-run-time-text-template-in-any-application"></a>Herhangi bir uygulamada bir çalışma zamanı metin şablonu oluşturma
+## <a name="creating-a-run-time-text-template-in-any-application"></a>Herhangi bir uygulama çalışma zamanı metin şablonu oluşturma
 
-### <a name="to-create-a-run-time-text-template"></a>Çalışma zamanı metin şablonu oluşturmak için
+### <a name="to-create-a-run-time-text-template"></a>Bir çalışma zamanı metin şablonu oluşturmak için
 
-1. Çözüm Gezgini'nde, proje kısayol menüsünden seçin **Ekle**, **yeni öğe**.
+1. Çözüm Gezgini'nde projenizin kısayol menüsünden seçin **Ekle** > **yeni öğe**.
 
 2. İçinde **Yeni Öğe Ekle** iletişim kutusunda **çalışma zamanı metin şablonu**. (Visual Basic'te konum altında **ortak öğeler** > **genel**.)
 
 3. Şablon dosyanız için bir ad yazın.
 
     > [!NOTE]
-    > Şablon dosyası adı, oluşturulan kodda bir sınıf adı olarak kullanılır. Bu nedenle, boşluk veya noktalama olmamalıdır.
+    > Şablon dosyası adı, oluşturulan kodda bir sınıf adı olarak kullanılacaktır. Bu nedenle, boşluk veya noktalama işareti olmamalıdır.
 
-4. Seçin **eklemek**.
+4. Seçin **ekleme**.
 
-    Yeni bir dosya uzantısına sahip oluşturulan **.tt**. Kendi **özel araç** özelliği ayarlanmış **TextTemplatingFilePreprocessor**. Aşağıdaki satırları içerir:
+    Yeni bir dosya uzantısı olan oluşturulduğunda **.tt**. Kendi **özel araç** özelliği **TextTemplatingFilePreprocessor**. Aşağıdaki satırları aşağıdakileri içerir:
 
     ```
     <#@ template language="C#" #>
@@ -74,36 +76,36 @@ Bir şablon kullanarak, uygulama yapar, örneğin, bir uzun dizi yazma deyimi, o
     <#@ import namespace="System.Collections.Generic" #>
     ```
 
-## <a name="converting-an-existing-file-to-a-run-time-template"></a>Varolan bir dosyayı bir çalışma zamanı şablonu dönüştürme
+## <a name="converting-an-existing-file-to-a-run-time-template"></a>Bir çalışma zamanı şablonu için mevcut bir dosyayı dönüştürme
 
-Bir şablon oluşturmak için en iyi yolu varolan çıktısı örneği dönüştürmek için ' dir. Örneğin, uygulamanızın HTML dosyaları oluşturur, bir düz HTML dosyası oluşturarak başlatabilirsiniz. Düzgün çalıştığını ve hizmetin görünümünü doğru olduğundan emin olun. Ardından bu Visual Studio projenize ekleyin ve şablona dönüştürebilirsiniz.
+Bir şablon oluşturmak için en iyi yolu, var olan bir çıkış örneğidir dönüştürülmesidir. Örneğin, HTML dosyaları, uygulama oluşturacak, bir düz HTML dosyası oluşturarak başlayabilirsiniz. Görünümünü doğru olduğunu ve doğru çalıştığından emin olun. Ardından Visual Studio projenize ekleyin ve şablona dönüştürebilirsiniz.
 
-### <a name="to-convert-an-existing-text-file-to-a-run-time-template"></a>Var olan bir metin dosyasını bir çalışma zamanı şablonu dönüştürmek için
+### <a name="to-convert-an-existing-text-file-to-a-run-time-template"></a>Var olan bir metin dosyası için bir çalışma zamanı şablonu dönüştürmek için
 
-1. Dosya Visual Studio projenize ekleyin. Çözüm Gezgini'nde proje kısayol menüsünden seçin **Ekle** > **varolan öğeyi**.
+1. Dosyayı Visual Studio projenize ekleyin. Çözüm Gezgini'nde projenizin kısayol menüsünden seçin **Ekle** > **var olan öğe**.
 
-2. Dosyanın ayarlamak **özel Araçlar** özelliğine **TextTemplatingFilePreprocessor**. Çözüm Gezgini'nde dosyayı kısayol menüsünden seçin **özellikleri**.
+2. Dosya kümesi **özel Araçlar** özelliğini **TextTemplatingFilePreprocessor**. Çözüm Gezgini içinde dosyanın kısayol menüsünden seçin **özellikleri**.
 
     > [!NOTE]
-    > Özellik zaten ayarladıysanız, bu olduğundan emin olun **TextTemplatingFilePreprocessor** ve **TextTemplatingFileGenerator**. Zaten uzantısına sahip bir dosya içeriyorsa bu durum oluşabilir **.tt**.
+    > Özellik zaten ayarlanmışsa, bu olduğundan emin olun **TextTemplatingFilePreprocessor** değil **TextTemplatingFileGenerator**. Uzantı zaten olan bir dosya eklerseniz bu durum ortaya çıkabilir **.tt**.
 
-3. Dosya adı uzantısına değişiklik **.tt**. Bu adım isteğe bağlı olsa da, yanlış bir düzenleyicide dosyayı açmayı önlemenize yardımcı olabilir.
+3. İçin dosya adı uzantısını değiştiren **.tt**. Bu adım isteğe bağlı olsa da, dosyanın yanlış bir düzenleyicide açmayı önlemek yardımcı olur.
 
-4. Herhangi bir boşluk veya noktalama dosya adı ana bölümünden kaldırın. Örneğin, "My Web Page.tt" yanlış olur, ancak "MyWebPage.tt" doğrudur. Dosya adı, oluşturulan kodda bir sınıf adı olarak kullanılır.
+4. Dosya adının ana bölümünden herhangi bir boşluk veya noktalama işareti kaldırın. Örneğin, "My Web Page.tt" yanlış olacaktır, ancak "MyWebPage.tt" doğrudur. Dosya adı, oluşturulan kodda bir sınıf adı olarak kullanılacaktır.
 
-5. Aşağıdaki satırı dosyanın başına ekleyin. Visual Basic projesinde çalışıyorsanız, "C#" "VB" ile değiştirin.
+5. Aşağıdaki satırı dosyasının başına ekleyin. Visual Basic projesinde çalışıyorsanız, "C#" "VB" ile değiştirin.
 
     `<#@ template language="C#" #>`
 
-## <a name="the-content-of-the-run-time-template"></a>Çalışma zamanı şablonu içeriği
+## <a name="the-content-of-the-run-time-template"></a>Çalışma zamanı şablon içeriği
 
 ### <a name="template-directive"></a>Şablon yönergesi
 
-Dosyasını oluştururken haliyle şablonun ilk satırı tutun:
+Dosyasını oluştururken olduğu gibi şablon ilk satırını alın:
 
 `<#@ template language="C#" #>`
 
-Language parametresini, projenizin dile bağlıdır.
+Language parametresini, projenizin dil bağlı olacaktır.
 
 ### <a name="plain-content"></a>Düz içerik
 
@@ -119,7 +121,7 @@ This report is Company Confidential.
 
 ### <a name="embedded-program-code"></a>Katıştırılmış program kodu
 
-Program kod arasında ekleyebilirsiniz `<#` ve `#>`. Örneğin:
+Program kodu arasında ekleyebilirsiniz `<#` ve `#>`. Örneğin:
 
 ```csharp
 <table>
@@ -144,15 +146,15 @@ Program kod arasında ekleyebilirsiniz `<#` ve `#>`. Örneğin:
 </table>
 ```
 
-Deyimleri arasında eklenen fark `<# ... #>` ve ifadeler arasına eklenir `<#= ... #>`. Daha fazla bilgi için bkz: [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
+Deyimleri arasında eklenmiş olduğunu fark `<# ... #>` ve ifadeleri arasına eklenir `<#= ... #>`. Daha fazla bilgi için [T4 metin şablonu yazma](../modeling/writing-a-t4-text-template.md).
 
 ## <a name="using-the-template"></a>Şablon kullanma
 
-### <a name="the-code-built-from-the-template"></a>Şablondan oluşturulan kodu
+### <a name="the-code-built-from-the-template"></a>Şablondan oluşturulan kod
 
-Kaydettiğinizde **.tt** dosya, bir temsilcisine **.cs** veya **.vb** dosyası oluşturulur. Çözüm Gezgini'nde bu dosyayı görmek için genişletin **.tt** dosya düğümü. Visual Basic projesinde öncelikle seçin **tüm dosyaları göster** Çözüm Gezgini araç çubuğunda.
+Kaydettiğinizde **.tt** dosya, bir yan kuruluşu çalışanı **.cs** veya **.vb** dosyası oluşturulur. Bu dosyada görmek için **Çözüm Gezgini**, genişletme **.tt** dosya düğümü. Bir Visual Basic projesinde önce seçin **tüm dosyaları göster** içinde **Çözüm Gezgini** araç çubuğu.
 
-Şube dosya adında bir yöntem içeren bir parçalı sınıf içerdiğine dikkat edin `TransformText()`. Bu yöntem uygulamanızdan çağırabilirsiniz.
+Adlı yöntemi içeren bir parçalı sınıf dosyası içerdiğine dikkat edin `TransformText()`. Uygulamanızdan bu yöntem çağırabilirsiniz.
 
 ### <a name="generating-text-at-run-time"></a>Çalışma zamanında metin oluşturma
 
@@ -170,17 +172,17 @@ Dim pageContent = page.TransformText()
 System.IO.File.WriteAllText("outputPage.html", pageContent)
 ```
 
-Oluşturulan sınıfın belirli bir ad alanına yerleştirmek için ayarlanmış **özel aracı Namespace** metin şablonu dosyasının özelliği.
+Oluşturulan sınıfın belirli bir ad alanında yerleştirmek için ayarlanmış **özel aracı Namespace** metin şablonu dosyasının özelliği.
 
 ### <a name="debugging-runtime-text-templates"></a>Hata ayıklama çalışma zamanı metin şablonları
 
-Hata ayıklama ve çalışma zamanı metin şablonları sıradan kodu aynı şekilde test edin.
+Hata ayıklama ve çalışma zamanı metin şablonları aynı şekilde sıradan bir kod olarak test edin.
 
-Bir metin şablonu bir kesme noktası ayarlayabilirsiniz. Visual Studio'da hata ayıklama modunda uygulama başlatırsanız kod boyunca adım ve her zamanki gibi izleme deyimleri değerlendirin.
+Metin şablonunda bir kesme noktası ayarlayabilirsiniz. Uygulamayı Visual Studio'dan hata ayıklama modunda başlatmak, kodda adım adım ve her zamanki yolla watch nevyhodnocovat.
 
-### <a name="passing-parameters-in-the-constructor"></a>Oluşturucuda parametreleri geçirme
+### <a name="passing-parameters-in-the-constructor"></a>Oluşturucuda parametre geçirme
 
-Genellikle bir şablonu bazı veriler uygulamanın diğer bölümleri içe aktarmanız gerekir. Bu kolaylaştırmak için şablon tarafından oluşturulmuş bir parçalı sınıf kodudur. Aynı sınıfın başka bir bölümünü başka bir dosyaya projenizde oluşturabilirsiniz. Bu dosya bir Oluşturucu parametreleri, özellikleri ve şablonda katıştırılmış bir kod tarafından hem uygulama geri kalanı tarafından erişilen olabilir işlevleri içerebilir.
+Genellikle bir şablon uygulamanın diğer kısımlarını bazı veriler almanız gerekir. Bunu kolaylaştırmak için şablon tarafından oluşturulan bir kısmi sınıf kodudur. Aynı sınıfın başka bir bölümünü başka bir dosyaya projenizde oluşturabilirsiniz. Bu dosya bir oluşturucuyla parametreleri, özellikler ve şablonda gömülü kod tarafından hem uygulama geri kalanı tarafından erişilebilen işlevleri içerebilir.
 
 Örneğin, ayrı bir dosya oluşturabilirsiniz **MyWebPageCode.cs**:
 
@@ -191,7 +193,7 @@ partial class MyWebPage
     public MyWebPage(MyData data) { this.m_data = data; }}
 ```
 
-Şablon dosyası **MyWebPage.tt**, yazma:
+Şablon dosyanızda **MyWebPage.tt**, şunu yazabilirsiniz:
 
 ```html
 <h2>Sales figures</h2>
@@ -206,7 +208,7 @@ partial class MyWebPage
 </table>
 ```
 
-Bu şablon uygulamada kullanmak için:
+Bu şablonu kullanmak için:
 
 ```csharp
 MyData data = ...;
@@ -215,9 +217,9 @@ String pageContent = page.TransformText();
 System.IO.File.WriteAllText("outputPage.html", pageContent);
 ```
 
-#### <a name="constructor-parameters-in-visual-basic"></a>Visual Basic'te Oluşturucu parametreleri
+#### <a name="constructor-parameters-in-visual-basic"></a>Visual Basic'te Oluşturucu parametresi
 
-Visual Basic'te ayrı bir dosya **MyWebPageCode.vb** içerir:
+Visual Basic'te, ayrı bir dosya **MyWebPageCode.vb** içerir:
 
 ```vb
 Namespace My.Templates
@@ -230,7 +232,7 @@ Namespace My.Templates
 End Namespace
 ```
 
-Şablon dosyası içerebilir:
+Şablon dosyasını içerebilir:
 
 ```html
 <#@ template language="VB" #>
@@ -250,7 +252,7 @@ This report is Company Confidential.
 </body></html>
 ```
 
-Şablon çağrılan oluşturucuda parametresini geçirerek:
+Şablon çağrılan oluşturucuda parametre geçirerek:
 
 ```vb
 Dim data = New My.Templates.MyData
@@ -262,55 +264,55 @@ System.IO.File.WriteAllText("outputPage.html", pageContent)
 
 #### <a name="passing-data-in-template-properties"></a>Şablon özelliklerinde veri geçirme
 
-Veri geçirme alternatif bir yol şablonu için bir parçalı sınıf tanımında Şablon sınıfı için genel özellikleri eklemektir. Uygulamanızı çağırmadan önce özellikleri ayarlayabilirsiniz `TransformText()`.
+Şablon sınıfı bir parçalı sınıf tanımında genel özellikler eklemek için alternatif bir veri yolu şablon var. Uygulamanızı çağırmadan önce özellikleri ayarlayabilirsiniz `TransformText()`.
 
-Şablon sınıfınız kısmi tanımında alanlar ekleyebilirsiniz. Bu, şablonun birbirini izleyen yürütmeleri arasında veri iletmek sağlar.
+Ayrıca, Şablon sınıfı bir kısmi tanımı alanlar ekleyebilirsiniz. Bu, şablonun birbirini izleyen yürütmeleri arasında veri iletmek sağlar.
 
-### <a name="use-partial-classes-for-code"></a>Kısmi sınıflar için kodu kullanın
+### <a name="use-partial-classes-for-code"></a>Kısmi sınıflar için kod kullanın.
 
-Çoğu geliştiricinin kod büyük gövdeleri şablonlarında yazılmasını engellemek tercih edilir. Bunun yerine, şablon dosyası olarak aynı ada sahip bir parçalı sınıf yöntemlerini tanımlayabilirsiniz. Bu yöntemlerin şablondan çağırın. Bu şekilde, daha fazla şablon gösterir açıkça hedef çıkış dizesi gibi görünecektir. Sonucun görünümü hakkındaki tartışmalara görüntülediği verileri oluşturma mantığından ayrılabilir.
+Kodun büyük gövdeleri şablonlarında yazılmasını önlemek birçok geliştiricinin tercih. Bunun yerine, şablon dosyası olarak aynı ada sahip bir kısmi sınıftaki yöntemleri tanımlayabilirsiniz. Şablondan bu yöntemi çağırın. Bu şekilde, daha fazla şablon gösterir açıkça hedef çıkış dizesi gibi görünecektir. Görünüm hakkında tartışmalar sonucun görüntülediği verileri oluşturma mantığından ayrılabilir.
 
-### <a name="assemblies-and-references"></a>Derlemeler ve başvurular
+### <a name="assemblies-and-references"></a>Derlemeleri ve başvuruları
 
-Bir .NET veya diğer derleme gibi başvurmak için şablon kodunuzu istiyorsanız **System.Xml.dll**, projenizin eklemek **başvuruları** normal şekilde.
+Bir .NET veya diğer derleme gibi başvurmak için şablon kodunuz istiyorsanız **System.Xml.dll**, projenizin ekleme **başvuruları** her zamanki şekilde.
 
-Aynı şekilde bir ad alanı içe aktarmak istediğiniz bir `using` deyimi, bunu yapabilirsiniz ile `import` yönergesi:
+Bir ad alanı aynı şekilde içeri aktarmak istiyorsanız bir `using` deyimi, bunu yapabilirsiniz ile `import` yönergesi:
 
 ```
 <#@ import namespace="System.Xml" #>
 ```
 
-Bu yönergeleri dosyasının başında hemen sonra yerleştirilmelidir `<#@template` yönergesi.
+Bu yönergeler, dosyanın başında hemen sonra yerleştirilmelidir `<#@template` yönergesi.
 
-### <a name="shared-content"></a>Paylaşılan içerik
+### <a name="shared-content"></a>Paylaşılan içeriği
 
-Çeşitli şablonlar arasında paylaşılan metin varsa, ayrı bir dosyaya yerleştirin ve görünmesi gereken her dosyasına eklenecek:
+Çeşitli şablonlar arasında paylaşılan metin varsa, ayrı bir dosyada yerleştirin ve her dosyada görünmesi gerekir içerir:
 
 ```
 <#@include file="CommonHeader.txt" #>
 ```
 
-Eklenen içeriğe program kodunu ve düz metin herhangi bir karışımını içerebilir ve diğer içerebilir yönergeleri ve diğer yönergeleri içerir.
+Eklenen İçerik herhangi bir program kodu ve düz metin karışımını içerebilir ve diğer içerebilir yönergeleri ve diğer yönergeleri içerir.
 
-INCLUDE yönergesi herhangi bir şablon dosyası veya içerdiği metnin içinde kullanılabilir.
+INCLUDE yönergesi, bir şablon dosyası ya da eklenen dosyadaki metni içinde her yerde kullanılabilir.
 
-### <a name="inheritance-between-run-time-text-templates"></a>Çalışma zamanı metin şablonları arasındaki devralma
+### <a name="inheritance-between-run-time-text-templates"></a>Çalışma zamanı metin şablonları arasında devralmayı
 
-Özet bir temel sınıf şablonu yazarak çalışma zamanı şablonları arasında içerik paylaşabilirsiniz. Kullanım `inherits` parametresinin `<@#template#>` başka bir çalışma zamanı Şablon sınıfı başvurmak için yönergesi.
+Çalışma zamanı şablonları, soyut bir temel sınıf şablonu yazarak arasında içerik paylaşabilirsiniz. Kullanım `inherits` parametresinin `<@#template#>` başka bir çalışma zamanı Şablon sınıfı başvurmak için yönergesi.
 
-#### <a name="inheritance-pattern-fragments-in-base-methods"></a>Devralma deseni: parçaları temel yöntemler
+#### <a name="inheritance-pattern-fragments-in-base-methods"></a>Devralma deseni: temel yöntemlerini parçaları
 
-Aşağıdaki örnekte kullanılan düzende aşağıdaki noktaları dikkat edin:
+Aşağıdaki örnekte kullanılan deseni, aşağıdaki noktalara dikkat edin:
 
-- Taban sınıfı `SharedFragments` sınıf özelliği blokları içinde yöntemlerini tanımlar `<#+ ... #>`.
+- Temel sınıf `SharedFragments` sınıf özelliği bloklarını içinde yöntemlerini `<#+ ... #>`.
 
-- Taban sınıf boş metin içermiyor. Bunun yerine, tüm metin bloğu içinde sınıf özelliği yöntemlerini oluşur.
+- Boş metin temel sınıfı içerir. Bunun yerine, tüm alt metin bloğu içinde sınıf özellik yöntemleri oluşur.
 
-- Türetilmiş sınıf içinde tanımlanan yöntemler çağırır `SharedFragments`.
+- Türetilmiş sınıf içinde tanımlanan yöntemleri çağırır `SharedFragments`.
 
-- Uygulama çağrıları `TextTransform()` yöntemi türetilmiş sınıfın temel sınıf dönüştürmez ancak `SharedFragments`.
+- Uygulama çağrıları `TextTransform()` yöntemi türetilmiş sınıfın temel sınıf dönüştürme değil ancak `SharedFragments`.
 
-- Temel ve türetilmiş sınıflarının çalışma zamanı metin şablonları; yine de uygun istiyor musunuz? diğer bir deyişle, **özel araç** özelliği ayarlanmış **TextTemplatingFilePreprocessor**.
+- Hem temel sınıfını hem türetilen sınıflarını çalışma zamanı metin şablonları, diğer bir deyişle, **özel araç** özelliği **TextTemplatingFilePreprocessor**.
 
 **SharedFragments.tt:**
 
@@ -345,7 +347,7 @@ string result = t1.TransformText();
 Console.WriteLine(result);
 ```
 
-**Sonuçta çıktı:**
+**Sonuçta elde edilen çıktı:**
 
 ```
 begin 1
@@ -355,7 +357,7 @@ end 1
 
 #### <a name="inheritance-pattern-text-in-base-body"></a>Devralma deseni: Temel gövdesinde metin
 
-Şablon devralma kullanarak bu alternatif yaklaşımda metin toplu temel şablonunda tanımlanır. Veri türetilmiş şablonları sağlar ve metin temel içerik uyan parça.
+Şablon devralma kullanarak bu alternatif yaklaşım içinde metnin toplu temel şablonunda tanımlanır. Türetilmiş şablonlara veri sağlar ve metin temel içeriğinize uyan parça.
 
 **AbstractBaseTemplate1.tt:**
 
@@ -415,7 +417,7 @@ string result = t1.TransformText();
 Console.WriteLine(result);
 ```
 
-**Sonuçta çıktı:**
+**Sonuç çıktısı:**
 
 ```
 Here is the description for this derived template:
@@ -429,9 +431,9 @@ End material for DerivedTemplate1.
 
 ## <a name="related-topics"></a>İlgili Konular
 
-Tasarım zamanı şablonları: kod oluşturmak için bir şablon kullanmak istiyorsanız, uygulamanızı bir parçası haline gelir, bkz: [T4 metin şablonları kullanarak tasarım zamanı kodu oluşturma](../modeling/design-time-code-generation-by-using-t4-text-templates.md).
+Tasarım zamanı şablonları: kod üretmek için bir şablon kullanmak istiyorsanız, uygulamanızın bir parçası haline gelir, bkz: [T4 metin şablonları kullanarak tasarım zamanı kodu oluşturma](../modeling/design-time-code-generation-by-using-t4-text-templates.md).
 
-Çalışma zamanı şablonları şablonları ve bunların içeriği derleme zamanında burada belirlenen herhangi bir uygulamada kullanılabilir. Ancak çalışma zamanında değiştirme şablonlardan metin oluşturan bir Visual Studio uzantısı yazmak isterseniz bkz [bir VS uzantısında metin dönüştürmeyi çağırma](../modeling/invoking-text-transformation-in-a-vs-extension.md).
+Çalışma zamanı şablonları, şablonları ve bunların içeriğini derleme zamanında burada belirlenir, herhangi bir uygulamada kullanılabilir. Ancak, çalışma zamanında değiştirme şablonlardan metin oluşturan Visual Studio uzantısı yazmak istiyorsanız bkz [bir VS uzantısında metin dönüştürmeyi çağırma](../modeling/invoking-text-transformation-in-a-vs-extension.md).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

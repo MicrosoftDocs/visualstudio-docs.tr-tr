@@ -1,5 +1,5 @@
 ---
-title: Dizin durum kodu Numaralandırıcı | Microsoft Docs
+title: Dizin durumu kod numaralandırıcısı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 539dc4c2ea7b33ce88465f1d8f6651dc890c8e45
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a4ffdef238aaa628d0b72bcc945cf3dc1754fd8b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833973"
 ---
-# <a name="directory-status-code-enumerator"></a>Dizin durum kodu Numaralandırıcı
-`SccDirStatus` Numaralandırıcı kaynak denetim sistemi bir dizin durumunu belirtin adlandırılmış sabit değerleri içerir. Bu numaralandırma tarafından kullanılan [SccDirQueryInfo](../extensibility/sccdirqueryinfo-function.md). Bu sürüm kaynak denetim eklentisi API 1.2 sunulmuştur.  
+# <a name="directory-status-code-enumerator"></a>Dizin durumu kod numaralandırıcısı
+`SccDirStatus` Numaralandırıcı kaynak denetimi Sistemi'nde bir dizin durumunu belirten adlandırılmış sabit değerleri içerir. Bu sabit listesi tarafından kullanılan [Sccdirqueryınfo](../extensibility/sccdirqueryinfo-function.md). Bu kaynak denetimi eklentisi API 1.2 sürümünde kullanıma sunulmuştur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,10 +37,10 @@ enum SccDirStatus {
   
 ## <a name="members"></a>Üyeler  
  SCC_DIRSTATUS_INVALID  
- Durum edinilemedi; üzerinde kullanmayın.  
+ Durumu alınamadı; üzerinde güvenmeyin.  
   
  SCC_DIRSTATUS_NOTCONTROLLED  
- Dizin kaynak denetimi altında değil.  
+ Dizin, kaynak denetimi altında değil.  
   
  SCC_DIRSTATUS_CONTROLLED  
  Kaynak denetimi altında dizindir.  
@@ -47,6 +48,6 @@ enum SccDirStatus {
  SCC_DIRSTATUS_EMPTYPROJ  
  Bu dizine karşılık gelen proje boştur.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim Eklentileri](../extensibility/source-control-plug-ins.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak denetimi eklentileri](../extensibility/source-control-plug-ins.md)   
  [SccDirQueryInfo](../extensibility/sccdirqueryinfo-function.md)

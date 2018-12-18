@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c5836069aacb80a3d917a8e272150a477589c3ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f9c5e1fc300a150b15acc48f12dc3b8c6c01e277
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882655"
 ---
 # <a name="idebugexpressionevaluatorsetlocale"></a>IDebugExpressionEvaluator::SetLocale
 Bu yöntem yazdırılabilir sonuçları oluşturmak için kullanılacak dili ayarlar.  
@@ -43,10 +44,10 @@ int SetLocale(
  [in] Dil tanımlayıcısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- EE anında dillerini mümkün olması gerekir (EE) ifade değerlendiricisi yüklenir ancak bu yöntem birçok kez çağrılabilir. EE hata iletileri ve dizeleri uygun dili döndürmek için bu yerel ayar kullanır.  
+ Bu yöntem, EE diller çalışma sırasında geçiş yapmak için (EE) ifade değerlendiricisi yüklenir ancak birden çok kez çağrılabilir. EE hata iletileri ve dizeleri uygun dilde döndürmek için bu yerel ayarı kullanır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExpressionEvaluator](../../../extensibility/debugger/reference/idebugexpressionevaluator.md)

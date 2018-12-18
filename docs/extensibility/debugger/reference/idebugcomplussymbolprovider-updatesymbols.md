@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ae7919db95eba749888d8004522f1f820dfdfbc9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 56a93435ac4b7cfa6741a106a025b20f11d1b6e2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49928548"
 ---
 # <a name="idebugcomplussymbolproviderupdatesymbols"></a>IDebugComPlusSymbolProvider::UpdateSymbols
-Belirtilen veri akışından olanla bellekte hata ayıklama simgeleri güncelleştirir.  
+Belirtilen veri akışı'ndan olanla hata ayıklama sembolleri bellekte güncelleştirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,13 +47,13 @@ int UpdateSymbols (
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `pUpdateStream`  
- [in] Güncelleştirilmiş hata ayıklama simgeleri içeren veri akışı.  
+ [in] Güncelleştirilmiş hata ayıklama sembollerini içeren veri akışı.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::UpdateSymbols(  
@@ -91,7 +92,7 @@ Error:
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5eb14280947ff93a4a0c2ab6d2cf025037fc06aa
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 88fcbf0667c026cbbfc449936f92d440590e9a8f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49834272"
 ---
 # <a name="idebugprogram2terminate"></a>IDebugProgram2::Terminate
-Program sonlandırır.  
+Program sona erer.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,13 +38,13 @@ int Terminate();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Mümkünse, program sonlandırıldı ve işleminden kaldırıldı; Aksi takdirde hata ayıklama altyapısı (DE) tüm gerekli temizleme gerçekleştirir.  
+ Mümkünse, program sonlandırıldı ve işlemden kaldırıldı; Aksi takdirde, hata ayıklama altyapısı (DE) gerekli tüm temizleme işlemlerini gerçekleştirir.  
   
- Bu yöntem veya [Sonlandır](../../../extensibility/debugger/reference/idebugprocess2-terminate.md) yöntemi IDE'de, genellikle tüm hata ayıklama durdurma kullanıcıya yanıt tarafından çağrılır. İdeal olarak, bu yöntemin kullanımı programın işlemi içinde sonlanmalıdır. Bu mümkün değilse, DE program bu işlemde başka engellenmesine (ve tüm gerekli temizleme yapın). Varsa `IDebugProcess2::Terminate` yöntemi tarafından IDE çağrıldı, süre sonra tüm işlem sonlandırılacak `IDebugProgram2::Terminate` yöntemi çağrılır.  
+ Bu yöntem veya [sonlandırma](../../../extensibility/debugger/reference/idebugprocess2-terminate.md) yöntemi IDE'de, genellikle tüm hata ayıklamayı durdurma kullanıcıya yanıt tarafından çağrılır. İdeal olarak, bu yöntemin uygulanmasını program süreci içinde sonlanmalıdır. Bu mümkün değilse DE program bu işlemde daha fazla engellemeniz (ve gerekli tüm temizleme işlemlerini yapın). Varsa `IDebugProcess2::Terminate` yöntemi, IDE tarafından çağrıldı, süre sonra tüm işlem sonlandırılacak `IDebugProgram2::Terminate` yöntemi çağrılır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
- [Sonlandırma](../../../extensibility/debugger/reference/idebugprocess2-terminate.md)
+ [Terminate](../../../extensibility/debugger/reference/idebugprocess2-terminate.md)

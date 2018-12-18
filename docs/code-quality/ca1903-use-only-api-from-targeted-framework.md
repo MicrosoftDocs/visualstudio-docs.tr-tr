@@ -1,6 +1,7 @@
 ---
 title: 'CA1903: Yalnızca hedeflenen çerçeveden API kullanın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,53 +16,57 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a5d8fa2d2580d27e0bdbc45ae0098f432f919eec
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b1d42a74cfaf93ba0e8e5aec7e15c522d2e26b7a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49822819"
 ---
 # <a name="ca1903-use-only-api-from-targeted-framework"></a>CA1903: Yalnızca hedeflenen çerçeveden API kullanın
+
 |||
 |-|-|
 |TypeName|UseOnlyApiFromTargetedFramework|
 |CheckId|CA1903|
 |Kategori|Microsoft.Portability|
-|Yeni Değişiklik|-Bir harici olarak görünür üye veya türün imza karşı harekete zaman kesiliyor.<br /><br /> Bir yöntemin gövdesine harekete zaman olmayan sonu -.|
+|Yeni Değişiklik|-Bir açıkça görünen üyenin veya türün karşı imza tetiklendiğinde kesiliyor.<br /><br /> Bir yöntemin gövdesinde tetiklendiğinde bölünemez -.|
 
 ## <a name="cause"></a>Sebep
- Bir üye ya da türü bir üye ya da projenin hedef çerçevesi ile eklenmedi bir hizmet paketi sürümünde sunulan türü kullanıyor.
+ Bir üyenin veya türün bir üyesi veya hizmet paketi bulunmayan projenin hedeflenen çerçeve ile sunulan türü kullanıyor.
 
-## <a name="rule-description"></a>Kural Tanımı
- Yeni üyeler ve türleri .NET Framework 2.0 Service Pack 1 ve 2, .NET Framework 3.0 Service Pack 1 ve 2 ve .NET Framework 3.5 Service Pack 1'de eklendi. .NET Framework'ün önemli sürümlerini hedefleyen projeler, yeni API'leri bu bağımlılıkları kasıtsız olarak alabilir. Bu bağımlılığı önlemek için bu kural tüm yeni üyeler ve projenin hedef çerçevesi varsayılan olarak dahil edilmemiş türlerinin kullanımları tetikler.
+## <a name="rule-description"></a>Kural açıklaması
+ .NET Framework 2.0 Service Pack 1 ve 2, .NET Framework 3.0 Service Pack 1 ve 2 ve .NET Framework 3.5 Service Pack 1'de yeni üyeleri ve türleri dahil edilmişti. Önemli .NET Framework sürümlerini hedefleyen projeler, yeni API'leri yanlışlıkla bu bağımlılıkları alabilir. Bu bağımlılığı önlemek için bu kural herhangi bir yeni üyeler ve varsayılan olarak projenin hedef çerçevesi ile bulunmayan türleri kullanımları tetikler.
 
  **Hedef Framework ve hizmet paketi bağımlılıkları**
 
 |||
 |-|-|
-|Hedef framework olduğunda|Sürümünde sunulan üyelerinin kullanımları üzerinde etkinleşir|
-|.NET Framework 2.0|.NET framework 2,0 SP1, .NET Framework 2.0 SP2|
-|.NET Framework 3.0|.NET framework 2,0 SP1, .NET Framework 2.0 SP2, .NET Framework 3.0 SP1, .NET Framework 3.0 SP2|
+|Hedef Framework'ü olduğunda|Kullanımları sürümünde üyeleri üzerinde harekete geçirilir|
+|.NET Framework 2.0|.NET framework 2.0 SP1, .NET Framework 2.0 SP2|
+|.NET Framework 3.0|.NET framework 2.0 SP1, .NET Framework 2.0 SP2, .NET Framework 3.0 SP1, .NET Framework 3.0 SP2|
 |.NET Framework 3.5|.NET Framework 3.5 SP1 |
 |.NET Framework 4|Yok|
 
- Bir projenin hedef çerçevesi değiştirmek için bkz: [belirli bir .NET Framework sürümü hedefleme](../ide/targeting-a-specific-dotnet-framework-version.md).
+ Bir projenin hedef Framework'ü değiştirmek için bkz: [belirli bir .NET Framework sürümünü hedefleme](../ide/targeting-a-specific-dotnet-framework-version.md).
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Hizmet paketi bağımlılığı kaldırmak için tüm kullanımları yeni üye veya türü kaldırın. Bu kasıtlı bağımlılık ise, gizlemek veya bu kuralı kapatın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Hizmet paketi bağımlılığı kaldırmak için yeni üyenin veya türün tüm kullanımları kaldırın. Bu kasıtlı bir bağımlılık ise, uyarı veya bu kuralını devreden çıkar.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Belirtilen hizmet paketi bilinçli bir bağımlılığı değilse bir uyarı bu kuraldan bastırmak değil. Bu durumda, bu hizmet paketi yüklü olmayan sistemlerde çalıştırmak, uygulamanızın başarısız olabilir. Gizlemek veya bu kasıtlı bağımlılık ise bu kural kapatın.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Belirtilen hizmet paketinin bilinçli bağımlı değilse bu kuraldan bir uyarıyı bastırmayın. Bu durumda, uygulamanız bu hizmet paketinin yüklü olmadığı sistemlerde çalıştırmak başarısız olabilir. Bu uyarının gösterilmemesi veya bu kasıtlı bir bağımlılık ise bu kuralı devre dışı bırakabilirsiniz.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, yalnızca .NET 2.0 Service Pack 1'de kullanılabilir DateTimeOffset türü kullanan bir sınıfı gösterir. Bu örnek, .NET Framework 2.0 proje özelliklerini hedef Framework aşağı açılan listesinde seçili gerektirir.
+ Aşağıdaki örnek, yalnızca .NET 2.0 Service Pack 1'de kullanılabilir olan DateTimeOffset türü kullanan bir sınıfı gösterir. Bu örnek, .NET Framework 2.0 proje özelliklerini hedef çerçeve açılır listede seçilen gerektirir.
 
  [!code-csharp[FxCop.Portability.UseOnlyApiFromTargetedFramework#1](../code-quality/codesnippet/CSharp/ca1903-use-only-api-from-targeted-framework_1.cs)]
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, yukarıda açıklanan ihlali kullanımları DateTimeOffset türü DateTime türü ile değiştirerek giderir.
+ Aşağıdaki örnek, yukarıda açıklanan ihlali kullanımları DateTimeOffset türü DateTime türü ile değiştirerek düzeltir.
 
  [!code-csharp[FxCop.Portability.UseOnlyApiFromTargetedFramework2#1](../code-quality/codesnippet/CSharp/ca1903-use-only-api-from-targeted-framework_2.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Taşınabilirlik uyarıları](../code-quality/portability-warnings.md) [belirli .NET Framework sürümünü hedefleme](../ide/targeting-a-specific-dotnet-framework-version.md)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Taşınabilirlik Uyarıları](../code-quality/portability-warnings.md)
+- [Belirli Bir .NET Framework Sürümünü Hedefleme](../ide/targeting-a-specific-dotnet-framework-version.md)

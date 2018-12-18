@@ -21,6 +21,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31465427"
 ---
 # <a name="baseclass"></a>BaseClass
 Her bir kullanıcı tanımlı tür (UDT) simgesi için temel sınıfı bir alt tarafından tanımlanan bir `SymTagBaseClass` etiketi. [Idiasymbol::get_type](../../debugger/debug-interface-access/idiasymbol-get-type.md) özelliği için temel alınan UDT simgesi içerir ve temel UDT tüm özelliklerini kullanılabilir bu BaseClass simgesi bir parçası olarak.  

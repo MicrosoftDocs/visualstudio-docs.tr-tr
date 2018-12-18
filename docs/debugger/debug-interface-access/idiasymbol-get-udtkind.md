@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4a1ddc76e6a791421be6f55d985d1c8d59715de8
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f1bad5019b03612195de119e5ed6a6308d1e39b6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49925610"
 ---
 # <a name="idiasymbolgetudtkind"></a>IDiaSymbol::get_udtKind
-Kullanıcı tanımlı bir tür (UDT) çeşitli alır.  
+Bir kullanıcı tanımlı tür (UDT) çeşitli alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,14 +34,14 @@ HRESULT get_udtKind (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Arasında bir değer döndürür [UdtKind numaralandırması](../../debugger/debug-interface-access/udtkind.md) UDT türünü belirten numaralandırma: yapısı, sınıf veya birleşimi.  
+ [out] Bir değer döndürür [UdtKind numaralandırması](../../debugger/debug-interface-access/udtkind.md) bir UDT türünü belirten sabit listesi: yapısı, sınıf veya birleşim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE` veya hata kodu.  
   
 > [!NOTE]
->  Dönüş değeri `S_FALSE` özelliğin simge için kullanılabilir olup olmadığı anlamına gelir.  
+>  Dönüş değeri `S_FALSE` özelliği simge için kullanılabilir değil anlamına gelir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [UdtKind numaralandırması](../../debugger/debug-interface-access/udtkind.md)
+ [UdtKind Numaralandırması](../../debugger/debug-interface-access/udtkind.md)

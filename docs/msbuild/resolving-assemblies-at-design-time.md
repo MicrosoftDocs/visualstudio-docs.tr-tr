@@ -12,30 +12,31 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1df70002bf2d69e6d8d41abab5007209b5caf3ef
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ad24bcf461dab05444f0e26ffd4e0c826f3f2bed
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39153468"
 ---
-# <a name="resolving-assemblies-at-design-time"></a>Tasarım Zamanında Derlemeleri Çözme
-Bir derleme başvurusu Ekle iletişim kutusunun .NET sekmesi aracılığıyla başvuru eklediğinizde, başvuru Ara başvuru bütünleştirilmiş türü ve imza tüm bilgileri içeren, ancak, mutlaka içermediğinden bir derlemeyi başka bir deyişle, gösterir. kod. .NET sekmesi, .NET Framework çalışma zamanı derlemeleri karşılık başvuru derlemeleri listeler. Ayrıca, çalışma zamanı derlemeleri üçüncü taraflar tarafından kullanılan kayıtlı AssemblyFoldersEx klasörlerde karşılık başvuru derlemeleri listeler.  
+# <a name="resolve-assemblies-at-design-time"></a>Tasarım zamanında derlemeleri çözme
+Bir derlemeye bir başvuru eklediğinizde **.NET** sekmesinde **Başvuru Ekle** iletişim kutusunda, bir ara başvuru bütünleştirilmiş kodu başvuru işaret eder; diğer bir deyişle, tüm türü içeren bir bütünleştirilmiş kod ve imza bilgilerini ancak mutlaka içermediğinden herhangi bir kod. **.NET** sekmesi, .NET Framework çalışma zamanı derlemeleri karşılık gelen başvuru derlemelerini listeler. Ayrıca, çalışma zamanı derlemeleri üçüncü taraflar tarafından kullanılan kayıtlı AssemblyFoldersEx klasörlerdeki karşılık gelen başvuru derlemelerini listeler.  
   
-## <a name="multi-targeting"></a>Çoklu Sürüm Desteği  
- [!INCLUDE[vs_dev12](../extensibility/includes/vs_dev12_md.md)] Hedef üzerinde ortak dil çalışma zamanı (CLR) sürüm 2.0 ya da çalıştırmak .NET Framework sürümleri veya sürüm imkan tanıyan 4. Bu, .NET Framework sürüm 2.0, 3.0, 3.5, 4, 4.5 ve 4.5.1 ve Silverlight sürümleri 1.0, 2.0 ve 3.0 içerir. Yeni bir .NET Framework sürüm varsa CLR Version 2.0 sürümü tabanlı veya sürüm 4 yayımlanır, Framework hedefleme pack kullanılarak yüklenebilir ve onu otomatik olarak Visual Studio bir hedef olarak görünür.  
+## <a name="multi-targeting"></a>Çoklu sürüm desteği  
+ [!INCLUDE[vs_dev12](../extensibility/includes/vs_dev12_md.md)] Hedef ya da sürüm 2.0 ortak dil çalışma zamanı (CLR) üzerinde çalışan .NET Framework sürümlerinde veya sürüm sayesinde 4. Bu sürümler, .NET Framework sürümleri 2.0, 3.0, 3.5, 4, 4.5 ve 4.5.1 ve Silverlight sürüm 1.0, 2.0 ve 3.0 içerir. Yeni bir .NET Framework sürümü, CLR Version 2.0 sürümü üzerinde temel veya sürüm 4 yayımlanır, Framework targeting pack kullanılarak yüklenebilir ve bu otomatik olarak Visual Studio'da hedefi olarak gösterilir.  
   
-## <a name="how-type-resolution-works"></a>Tür Çözümlemesi Nasıl Çalışır?  
- Çalışma zamanında, bin dizinini GAC ve yoklama yollar bakarak CLR derlemesi türlerini çözümler. Bu fusion yükleyicisi tarafından işlenir. Ancak fusion yükleyicisi ne onu aradığı nasıl biliyor? Bu, uygulamanın ne zaman yerleşik tasarım zamanında yapılan bir çözüm bağlıdır.  
+## <a name="how-type-resolution-works"></a>Çözüm works nasıl yazın  
+ Çalışma zamanında CLR bütünleştirilmiş kodundaki türler GAC'de bakarak çözümler *bin* dizin ve yoklama yollar. Bu fusion yükleyicisi tarafından işlenir. Ancak, ne, aradığı fusion yükleyici nasıl bilir? Uygulama zaman oluşturulmadan tasarım zamanında yapılan bir çözüm bağlıdır.  
   
- Derleme sırasında derleyici uygulama türleri başvuru derlemeleri kullanarak çözümler. .NET Framework yüklendiğinde, .NET Framework sürümlerinde 2.0, 3.0, 3.5, 4, 4.5 ve 4.5.1, başvuru derlemeleri yüklenir.  
+ Derleme sırasında derleyici, başvuru bütünleştirilmiş kodları kullanarak uygulama türlerini çözümler. .NET Framework yüklendiğinde .NET Framework sürümlerinde 2.0, 3.0, 3.5, 4, 4.5 ve 4.5.1, başvuru bütünleştirilmiş kodları yükleyin.  
   
- Başvuru derlemeleri karşılık gelen .NET Framework SDK sürümüyle birlikte gelen hedefleme paketi tarafından sağlanır. Framework çalışma zamanı derlemeleri sağlar. Uygulamaları oluşturmak için .NET Framework ve karşılık gelen .NET Framework SDK'yı yüklemeniz gerekir.  
+ Başvuru bütünleştirilmiş kodları, karşılık gelen .NET Framework SDK sürümüyle birlikte gönderilen hedefleme paketini tarafından sağlanır. Framework, yalnızca çalışma zamanı derlemeleri sağlar. Uygulamaları oluşturmak için hem .NET Framework hem de ilgili .NET Framework SDK'yı yüklemeniz gerekir.  
   
- Belirli bir .NET Framework hedeflediğinizde, yapı sistem tüm türleri başvuru derlemeleri hedefleme paketinde kullanarak çözümler. Çalışma zamanında fusion yükleyicisi bu aynı tür GAC içinde genellikle bulunan çalışma zamanı derlemeleri çözümler.  
+ Belirli bir .NET Framework hedefleme, derleme sistemi targeting pack başvuru derlemelerini kullanarak tüm türleri çözümler. Çalışma zamanında fusion Yükleyici bu aynı tür GAC genellikle bulunan çalışma zamanı derlemeleri çözümler.  
   
- Başvuru derlemeleri kullanılabilir değilse, yapı sistem çalışma zamanı derlemeleri kullanarak derleme türlerini çözümler. Çalışma zamanı derlemeleri GAC'de göre alt sürüm numaralarını ayrılırlar değil çünkü çözümleme için yanlış derleme yapılan mümkündür. .NET Framework sürüm 3.5 sunulan yeni bir yöntem sürüm 3.0 hedefleme sırasında başvurulan Bu, örneğin, olabilir. Yapı başarılı olur ve uygulama yapı makinesinde çalışır, ancak sürüm 3.5 yüklü olmayan bir makineye dağıtıldığında başarısız olur.  
+ Başvuru bütünleştirilmiş kodları mevcut değilse derleme sisteminin çalışma zamanı derlemeleri kullanarak derleme türlerini çözümler. GAC içindeki çalışma zamanı derlemeleri alt sürüm numaralarına göre ayırt edilen değildir çünkü çözüm yanlış derlemeye yapılan mümkündür. .NET Framework sürüm 3.5 tanıtılan yeni bir yöntem sürüm 3.0 hedefleyen sırasında başvuruluyorsa Bu, örneğin, meydana gelmiş olabilir. Derleme başarılı olur ve uygulama derleme makinesi üzerinde çalışır, ancak sürüm 3.5 yüklü olmayan bir makine dağıtıldığında başarısız olur.  
   
- Şimdi .NET Framework SDK ile birlikte gelen hedefleme paketi yeniden dağıtımı (redist) listesi adlı Framework'ün bu sürümünde tüm çalışma zamanı derlemeleri listesini içerir. Derlemenin sürümü yanlış türleriyle çözmek derleme sistem mümkün kılar.  
+ Artık .NET Framework SDK ile birlikte gelen hedefleme paketini Framework'ün yanlış karşı türleri çözümlemek için derleme sistemini imkansızdır (redist) yeniden dağıtım listesi olarak adlandırılan bu sürümünde tüm çalışma zamanının derlemelerin bir listesini içerir. bütünleştirilmiş kod sürümü.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Gelişmiş kavramlar](../msbuild/msbuild-advanced-concepts.md)

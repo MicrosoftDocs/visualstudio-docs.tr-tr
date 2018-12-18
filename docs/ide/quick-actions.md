@@ -1,6 +1,7 @@
 ---
-title: Hızlı Eylemler | Microsoft Docs
+title: Hızlı Eylemler, ampuller ve tornavidalar
 ms.date: 03/28/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 author: gewarren
@@ -11,44 +12,55 @@ dev_langs:
 - VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 941980eff8fc2474df9555b326278abdb9b26dac
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7089a9a654d1c346fefcca119f74a87d89f323b8
+ms.sourcegitcommit: bc43970c000f07c9cc2051f1264a9742943a9755
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51349380"
 ---
 # <a name="quick-actions"></a>Hızlı Eylemler
 
-Hızlı Eylemler kolayca düzenleme olanak tanır, oluşturmak veya aksi halde tek bir eylemle kodunu değiştirin. Hızlı Eylemler C# ' ta kullanılabilir [C++](/cpp/ide/writing-and-refactoring-code-cpp)ve Visual Basic kod dosyaları. Bazı eylemler için bir dil özeldir ve diğer tüm diller için geçerlidir.
+Hızlı Eylemler, kolayca yeniden düzenleme sağlar, oluşturmak veya aksi halde kodu tek eylemle değiştirin. Hızlı eylemler için kullanılabilir C#, [C++](/cpp/ide/writing-and-refactoring-code-cpp)ve Visual Basic kod dosyalarında. Bazı eylemler bir dile özgü olan ve diğer tüm diller için geçerlidir.
 
 Hızlı eylemler için kullanılabilir:
 
-- bir kod düzeltme için geçerli bir [Çözümleyicisi kod](../code-quality/roslyn-analyzers-overview.md) kural ihlali
-- [gizlemek](../code-quality/use-roslyn-analyzers.md) bir kod Çözümleyicisi Kuralı ihlali
-- bir yeniden düzenleme uygulamak (örneğin, [satır içi geçici bir değişken](../ide/reference/inline-temporary-variable.md))
-- kod oluşturma (örneğin, [yerel bir değişken tanıtmak](../ide/reference/introduce-local-variable.md))
+- Bir kod düzeltmesini uygulayın bir [Çözümleyicisi kod](../code-quality/roslyn-analyzers-overview.md) kuralı ihlali
+- [Bastır](../code-quality/use-roslyn-analyzers.md) kod Çözümleyicisi Kuralı ihlali
+- Geçerli bir yeniden düzenleme (örneğin, [satır içi geçici değişken](../ide/reference/inline-temporary-variable.md))
+- Kod oluşturma (örneğin, [bir yerel değişken ekleme](../ide/reference/introduce-local-variable.md))
 
-Ampul simgesini kullanarak hızlı Eylemler uygulanabilir ![küçük ampul simge](media/vs2015_lightbulbsmall.png), basarak veya **Ctrl**+**.** imlecinizi bir eylem kullanılabilir kod satırında olduğunda. Bir kırmızı dalgalı ve Visual Studio ise ampul sorunu gidermeye yönelik bir öneri sahip görürsünüz. Örneği için kırmızı dalgalı tarafından belirtilen bir hata varsa, düzeltmeleri bu hata için kullanılabilir durumda olduğunda bir ampul görünür.
+> [!NOTE]
+> Bu konu, Windows üzerinde Visual Studio için geçerlidir. Mac için Visual Studio için bkz: [yeniden düzenleme (Mac için Visual Studio)](/visualstudio/mac/refactoring).
 
-Herhangi bir dil için üçüncü tarafların özel tanılama ve öneriler, örneğin bir SDK'ın bir parçası olarak sağlayabilir ve bu kurallara göre Visual Studio ampuller hafif.
+Ampul kullanarak hızlı Eylemler uygulanabilir ![ampul](media/light-bulb-icon.png) veya tornavida ![tornavida simgesi](media/screwdriver-icon.png) simgeleri veya basarak **Ctrl** + **.** imlecinizi bir eylem kullanılabilir kod satırına olduğunda. Gördüğünüz hata ampul ![hata ampul simgesini](media/error-light-bulb-icon.png) hata belirten bir kırmızı dalgalı çizgi yoktur ve Visual Studio, bu hata için bir düzeltme sahiptir.
 
-## <a name="to-see-a-light-bulb"></a>Bir ampul görmek için
+Herhangi bir dilde üçüncü taraflara özel tanılama ve öneriler, örneğin bir SDK'ın bir parçası olarak sağlayabilir ve Visual Studio ampuller bu kurallara dayalı vurgulamasında kullanılır.
 
-1. Çoğu durumda, bir hata içeren satırları şapka taşıdığınızda, fare bir hata noktasında veya düzenleyicinin sol kenar boşluğunda geldiğinizde ampuller kendiliğinden görünür. Kırmızı dalgalı gördüğünüzde, bunun üzerine ampul görüntülenecek gelebilirsiniz. Ayrıca, herhangi bir yere satırda sorunun nerede oluştuğunu gitmek için klavye ve fare kullandığınızda görüntülemek bir ampul neden olabilir.
+## <a name="icons"></a>Simgeler
 
-1. Tuşuna **Ctrl**+**.** Ampul çağırma ve olası listesine doğrudan gitmek için bir satır üzerinde herhangi bir yere giderir.
+Hızlı eylem kullanılabilir olduğunda görüntülenen simge, kullanılabilir düzeltme veya yeniden düzenleme tür gittiğinin belirtisini verir. *Tornavida* ![tornavida simgesi](media/screwdriver-icon.png) simgesi gösterir yalnızca kodunu değiştirmek kullanılabilir eylemleri vardır, ancak bunları mutlaka kullanmamalısınız. *Sarı bir ampul* ![ampul](media/light-bulb-icon.png) simgesi gösterir kullanılabilir eylemler, *gereken* kodunuzu geliştirmek için yapın. *Hata ampul* ![hata ampul simgesini](media/error-light-bulb-icon.png) simgesi gösterir, kodunuzdaki bir hatayı düzeltir bir eylem yoktur.
 
-   ![Ampul fare bekleyerek ile](../ide/media/vs2015_lightbulb_hover.png)
+## <a name="to-see-a-light-bulb-or-screwdriver"></a>Ampul veya tornavida görmek için
+
+- Bir düzeltme varsa, bir hatanın konumda fare geldiğinizde ampuller kendiliğinden görünür.
+
+   ![Ampul fare vurgulama ile](../ide/media/vs2015_lightbulb_hover.png)
+
+- Giriş işaretini bir hızlı eylem kullanılabilir kod satırına taşıdığınızda ampuller ve tornavidalar düzenleyicinin sol kenar boşluğunda görünür.
+
+- Tuşuna **Ctrl**+**.** Hızlı Eylemler ve yeniden düzenlemeler kullanılabilir bir listesini görmek için herhangi bir yerde bir satıra.
 
 ## <a name="to-see-potential-fixes"></a>Olası düzeltmeleri görmek için
 
-Ya da aşağı oka veya olası ampul için uygulayabileceğiniz hızlı eylemlerin bir listesini görüntülemek için bağlantıyı düzeltmeleri Göster'i tıklatın.
+Ampul yanındaki ya da aşağı oku seçin veya **olası düzeltmeleri göster** kullanılabilir hızlı eylemlerin bir listesini görüntülemek için bağlantı.
 
 ![Genişletilmiş ampul](../ide/media/vs2015_lightbulb_hover_expanded.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Visual Studio'da kod oluşturma](../ide/code-generation-in-visual-studio.md)
+- [Visual Studio'da kod üretimi](../ide/code-generation-in-visual-studio.md)
 - [Yaygın Hızlı Eylemler](../ide/common-quick-actions.md)
 - [Kod stilleri ve hızlı Eylemler](../ide/code-styles-and-quick-actions.md)
-- [Kod yazma ve yeniden düzenleme (C++)](/cpp/ide/writing-and-refactoring-code-cpp)
+- [Yazma ve yeniden düzenleme kod (C++)](/cpp/ide/writing-and-refactoring-code-cpp)
+- [Yeniden düzenleme (Mac için Visual Studio)](/visualstudio/mac/refactoring)

@@ -7,35 +7,37 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 231781ee06088fef73f33fa84e9b53825f5f6a82
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 624afd32a9b0f44e3190fba7e3b126663b96f6f4
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860205"
 ---
 # <a name="t4-output-directive"></a>T4 Çıkış Yönergesi
 
-İçinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] metin şablonları `output` yönergesi dosya adı uzantısı ve dönüştürülen dosyanın kodlamasını tanımlamak için kullanılır.
+Visual Studio metin şablonlarında `output` yönergesi, dosya adı uzantısı ve dönüştürülen dosyanın kodlamasını tanımlamak için kullanılır.
 
- Örneğin, varsa, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] proje içeriyor adlı bir şablon dosyası **MyTemplate.tt** aşağıdaki yönergesi içerir:
+ Örneğin, Visual Studio projenize adlı şablon dosyası içeriyorsa **MyTemplate.tt** aşağıdaki yönerge içerir:
 
  `<#@output extension=".cs"#>`
 
- ardından [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] adlı bir dosya oluşturur **MyTemplate.cs**
+ Visual Studio adlı bir dosya oluşturur sonra **MyTemplate.cs**
 
- `output` Bir çalışma zamanı (önceden işlenmiş) metin şablonu yönerge gerekli değildir. Bunun yerine, uygulamanızı çağrılarak oluşturulan dize edinir `TextTransform()`. Daha fazla bilgi için bkz: [T4 metin şablonları ile çalışma zamanı metin oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
+ `output` Çalışma zamanı (önceden işlenmiş) metin şablonunda yönergesi gerekli değildir. Bunun yerine, çağırarak uygulamanızı oluşturulan dizesi edinir `TextTransform()`. Daha fazla bilgi için [T4 metin şablonları ile çalışma süresi metni oluşturma](../modeling/run-time-text-generation-with-t4-text-templates.md).
 
-## <a name="using-the-output-directive"></a>Çıktı yönergesi kullanma
+## <a name="using-the-output-directive"></a>Çıkış yönergesini kullanma
 
 ```
 <#@ output extension=".fileNameExtension" [encoding="encoding"] #>
 ```
 
- Olmamalıdır birden fazla `output` her metin şablonu yönerge.
+ Olmalıdır en fazla bir `output` her metin şablonunda yönergesi.
 
-## <a name="extension-attribute"></a>Uzantı özniteliği
- Oluşturulan metin çıkış dosyasının dosya adı uzantısını belirtir.
+## <a name="extension-attribute"></a>Uzantı özniteliğine
+ Oluşturulan metin çıktı dosyasının dosya adı uzantısını belirtir.
 
  Varsayılan değer **.cs**
 
@@ -50,11 +52,11 @@ ms.lasthandoff: 04/20/2018
  Kabul edilebilir değerler: Tüm geçerli dosya adı uzantısı.
 
 ## <a name="encoding-attribute"></a>kodlama özniteliği
- Çıktı dosyası oluşturulduğunda kullanılacak kodlama belirtir. Örneğin:
+ Çıkış dosyası oluşturulurken kullanılacak kodlamayı belirtir. Örneğin:
 
  `<#@ output encoding="utf-8"#>`
 
- Kodlama metin şablonu dosya tarafından kullanılan varsayılan değerdir.
+ Metin şablonu dosyası tarafından kullanılan kodlama varsayılan değerdir.
 
  Kabul edilebilir değerler: `us-ascii`
 
@@ -68,6 +70,6 @@ ms.lasthandoff: 04/20/2018
 
  `utf-32`
 
- `0` (Sistem varsayılan)
+ `0` (Sistem varsayılanı)
 
- Genel olarak, Web adı dize veya kod sayfası sayısı tarafından döndürülen Kodlamalar birini kullanabilirsiniz <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=fullName>.
+ Genel olarak, Web adı dizesi veya herhangi biri tarafından döndürülen kodlamalarının kod sayfası numarası kullanabilirsiniz <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=fullName>.

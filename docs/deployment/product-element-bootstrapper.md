@@ -1,5 +1,5 @@
 ---
-title: '&lt;Ürün&gt; öğe (Önyükleyici) | Microsoft Docs'
+title: '&lt;Ürün&gt; öğesi (Önyükleyici) | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -17,18 +17,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fa27f5b2af87ec3a174c26ccae1ad4e4e47749b3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 90179df4595ea58a771dd941ea388555b52c7374
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39080411"
 ---
-# <a name="ltproductgt-element-bootstrapper"></a>&lt;Ürün&gt; öğe (Önyükleyici)
-`Product` Ürün dosyası içinde en üst düzey XML öğesidir.  
+# <a name="ltproductgt-element-bootstrapper"></a>&lt;Ürün&gt; öğesi (Önyükleyici)
+`Product` En üst düzey XML öğesi bir ürün dosyası içinde bir öğedir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Product  
 ProductCode  
 >  
@@ -138,8 +139,8 @@ ProductCode
 </Package>  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `Product` Öğesi, bir ürün dosyası gereklidir. Aşağıdaki özniteliklere sahiptir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `Product` Öğesi, bir ürün dosyasında gereklidir. Aşağıdaki özniteliği var.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
@@ -148,7 +149,7 @@ ProductCode
 ## <a name="example"></a>Örnek  
  Aşağıdaki kod örneği yüklemek için bir tam ürün dosyası gösterir [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
   
 <Product  
@@ -250,5 +251,5 @@ ProductCode
 </Product>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Ürün ve Paket Şema Başvurusu](../deployment/product-and-package-schema-reference.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Ürün ve paket şema başvurusu](../deployment/product-and-package-schema-reference.md)

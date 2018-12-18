@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: uygulamaya özel görev bölmesi ekleme | Microsoft Docs'
+title: 'Nasıl yapılır: uygulamaya özel görev bölmesi ekleme'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,13 +16,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 818b8e2937692ff0ec445d2a94193beaa1b480bd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b8608fcc263be4750c38b6fe3f84967f40dd34ab
+ms.sourcegitcommit: 697162f54d3c4e30df702fd0289e447e211e3a85
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/25/2018
+ms.locfileid: "34548820"
 ---
-# <a name="how-to-add-a-custom-task-pane-to-an-application"></a>Nasıl Yapılır: Uygulamaya Özel Görev Bölmesi Ekleme
+# <a name="how-to-add-a-custom-task-pane-to-an-application"></a>Nasıl yapılır: uygulamaya özel görev bölmesi ekleme
   VSTO eklentisini kullanarak bir özel görev bölmesi uygulamaları için yukarıda listelenen ekleyebilirsiniz. Daha fazla bilgi için bkz: [özel görev bölmeleri](../vsto/custom-task-panes.md).  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
@@ -30,11 +31,11 @@ ms.lasthandoff: 04/16/2018
 > [!NOTE]  
 >  Bilgisayarınız, aşağıdaki yönergelerde yer alan Visual Studio kullanıcı arabirimi öğelerinden bazıları için farklı adlar veya konumlar gösterebilir. Sahip olduğunuz Visual Studio sürümü ve kullandığınız ayarlar bu öğeleri belirler. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="adding-a-custom-task-pane-to-an-application"></a>Uygulamaya özel görev bölmesi ekleme  
+## <a name="add-a-custom-task-pane-to-an-application"></a>Uygulamaya özel görev bölmesi ekleme  
   
-#### <a name="to-add-a-custom-task-pane-to-an-application"></a>Uygulamaya özel görev bölmesi ekleme  
+### <a name="to-add-a-custom-task-pane-to-an-application"></a>Uygulamaya özel görev bölmesi ekleme  
   
-1.  Bir VSTO eklenti projesi yukarıda listelenen uygulamalardan birinin oluşturun veya açın. Daha fazla bilgi için bkz: [nasıl yapılır: Visual Studio'da Office projeleri oluşturma](../vsto/how-to-create-office-projects-in-visual-studio.md).  
+1.  Bir VSTO eklenti projesi yukarıda listelenen uygulamalardan birinin oluşturun veya açın. Daha fazla bilgi için bkz: [nasıl yapılır: Visual Studio oluşturma Office projelerinde](../vsto/how-to-create-office-projects-in-visual-studio.md).  
   
 2.  Üzerinde **proje** menüsünde tıklatın **kullanıcı denetimi Ekle**.  
   
@@ -59,9 +60,9 @@ ms.lasthandoff: 04/16/2018
     > [!NOTE]  
     >  Bu kod, özel görev bölmesini uygulamadaki etkin pencereyi ilişkilendirir. Bazı uygulamalar, görev bölmesinde diğer belgelerin veya öğelerin uygulamadaki ile görünmesini sağlamak için bu kodu değiştirmek isteyebilirsiniz. Daha fazla bilgi için bkz: [özel görev bölmeleri](../vsto/custom-task-panes.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office kullanıcı arabirimini özelleştirme](../vsto/office-ui-customization.md)   
  [Özel görev bölmeleri](../vsto/custom-task-panes.md)   
- [İzlenecek Yol: Uygulamayı Özel Görev Bölmesinden Otomatikleştirme](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md)  
+ [İzlenecek yol: uygulamayı özel görev bölmesinden otomatikleştirme](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md)  
   
   

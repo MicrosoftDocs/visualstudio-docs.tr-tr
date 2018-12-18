@@ -9,55 +9,57 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 322a8aac233f739180de903779210e1446306166
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 1ace7528eb1685765fe5c7ff11ce9b3c3234a941
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49919162"
 ---
 # <a name="the-text-template-transformation-process"></a>Metin Şablonu Dönüştürme Süreci
-Metin şablonu dönüştürme süreci metin şablonu dosyası giriş olarak alır ve çıktı olarak yeni bir metin dosyası oluşturur. Örneğin, Visual Basic veya C# kodu oluşturmak için metin şablonlarını kullanabilir veya bir HTML raporu oluşturabilirsiniz.
+Metin şablonu dönüştürme süreci, bir metin şablonu dosyasını girdi olarak alır ve çıktı olarak yeni bir metin dosyası oluşturur. Örneğin, Visual Basic veya C# kodu oluşturmak için metin şablonlarını kullanabilir veya bir HTML raporu oluşturabilirsiniz.
 
- Bu işlemde üç bileşeni ele bölümü: altyapı, ana bilgisayar ve yönerge işlemcileri. Altyapı işlemini denetler; çıktı dosyası üretmek için ana bilgisayar ve yönerge işlemcisi ile etkileşime girer. Ana bilgisayar dosyaları ve derlemeleri bulma ortamıyla herhangi bir etkileşimi sağlar. Yönerge işlemcisi bir XML dosyası veya bir veritabanından veri okumak gibi işlevlerini ekler.
+ Üç bileşeni, bu işlemde bölümü yararlanın: altyapısı, konak ve yönerge işlemcilerine. Altyapı işlemi denetler; Çıkış dosyası üretmek için konak ve yönerge işlemcisinin ile etkileşime girer. Ana bilgisayar dosyaları ve derlemeleri bulma gibi ortamı, herhangi bir etkileşim sağlar. Yönerge işlemcisini bir XML dosyasına veya bir veritabanından veri okuma gibi işlevler ekler.
 
- Metin şablonu dönüştürme süreci iki adımda gerçekleştirilir. İlk olarak, altyapı oluşturulan dönüşüm sınıfı olarak bilinen bir geçici sınıf oluşturur. Bu sınıf yönergeleri ve denetim blokları tarafından oluşturulan kodu içerir. Bundan sonra altyapısı derler ve çıktı dosyası üretmek için oluşturulan dönüşüm sınıfı yürütür.
+ Metin şablonu dönüştürme süreci iki adımda gerçekleştirilir. İlk olarak, motorun oluşturulan dönüştürme sınıfına bilinen bir geçici sınıf oluşturur. Bu sınıf yönergeleri ve denetim blokları tarafından oluşturulan kodu içerir. Bundan sonra altyapısı derler ve çıktı dosyası üretmek için oluşturulan dönüştürme sınıfına yürütür.
 
 ## <a name="components"></a>Bileşenler
 
 |Bileşen|Açıklama|Özelleştirilebilir (Evet/Hayır)|
-|---------------|-----------------|------------------------------|
-|Altyapısı|Metin şablonu dönüştürme süreci Altyapısı bileşeni denetler|Hayır.|
-|Ana bilgisayar|Ana bilgisayar altyapısı ve kullanıcı ortamını arasındaki arabirimdir. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] metin dönüştürme süreci yöneticisidir.|Evet. Özel bir ana bilgisayar yazabilirsiniz.|
-|Yönerge işlemcileri|Yönerge işlemcileri metin şablonlarındaki yönergeleri işlemek sınıflarıdır. Metin şablonu için bir giriş kaynağından veri sağlamak için yönergeleri kullanın.|Evet. Özel yönerge işlemcileri yazma|
+|-|-|-|
+|Altyapısı|Metin şablonu dönüştürme süreci motorunda denetler|Hayır.|
+|Ana bilgisayar|Konak, altyapısı ve kullanıcı ortamını arasındaki arabirimdir. Visual Studio, metin dönüştürme işleminin bir ana bilgisayardır.|Evet. Özel bir ana bilgisayar yazabilirsiniz.|
+|Yönerge işlemcileri|Yönerge işlemcileri yönergeleri metin şablonlarında işleyen sınıflardır. Bir metin şablonu için bir giriş kaynağından veri sağlamak yönergeleri kullanabilirsiniz.|Evet. Özel yönerge işlemcilerinizi yazabilirsiniz.|
 
 ## <a name="the-engine"></a>Altyapısı
- Altyapı şablonu dönüştürme işleminde kullanılan tüm dosyaları işler ana bilgisayardan bir dize olarak alır. Altyapı sonra herhangi bir özel yönerge işlemcileri ve ortam diğer yönlerini bulmak için ana sorar. Altyapı derler ve oluşturulan dönüşüm sınıfı çalıştırır. Altyapısı normal metin bir dosyaya kaydeder ana bilgisayar için oluşturulan metin döndürür.
+ Altyapı şablonu dönüştürme işleminde kullanılan tüm dosyaları işler ana bilgisayarından bir dize olarak alır. Altyapı sonra herhangi bir özel yönerge işlemcileri ve ortam diğer yönlerini bulmak için ana ister. Altyapı derler ve oluşturulan dönüştürme sınıfına çalıştırır. Altyapı, normalde bir dosyaya metin kaydeder barındırmak için oluşturulan metni döndürür.
 
 ## <a name="the-host"></a>Ana bilgisayar
- Ana bilgisayar ortamı aşağıdakiler de dahil olmak üzere dönüştürme süreci dışında ilişkili herhangi bir şey sorumludur:
+ Konak, ortamın dışında aşağıdakiler dahil olmak üzere dönüştürme işlemi, ilgili her şeyin sorumludur:
 
--   Metin ve ikili dosyaları altyapısı veya bir yönerge işlemcisi tarafından istenen bulunuyor. Konak, dizinler ve genel derleme önbelleğinde derlemeleri bulmak için arama yapabilirsiniz. Özel yönerge işlemcisi kod altyapısı için ana bulabilir. Konak ayrıca bulun ve metin dosyalarını okuma ve içeriklerini dize olarak döndürür.
+-   Metin ve ikili dosyaları altyapısı veya bir yönerge işlemcisi tarafından istenen bulunuyor. Konak, dizinler ve genel derleme önbelleğinde derlemeleri bulmak için arama yapabilirsiniz. Özel yönerge işlemcisi kod altyapısı için konak bulabilirsiniz. Konak ayrıca bulun ve metin dosyalarını okuma ve içeriklerini dize olarak döndürür.
 
--   Standart derlemeler ve altyapısı tarafından oluşturulan dönüşüm sınıfı oluşturmak için kullanılan ad alanları listesi sağlama.
+-   Standart derlemeler ve altyapı tarafından oluşturulan dönüştürme sınıfına oluşturmak için kullanılan ad alanları listesi sağlama.
 
--   Altyapı derler ve oluşturulan dönüşüm sınıfı yürütür kullanılan uygulama etki alanı sağlama. Ayrı uygulama etki alanı ana bilgisayar uygulaması şablonu kod hataları korumak için kullanılır.
+-   Altyapı derler ve oluşturulan dönüştürme sınıfına çalıştırdığında kullanılan uygulama etki alanı sağlama. Ayrı uygulama etki alanı, şablon kodunun hataları konak uygulama korumak için kullanılır.
 
 -   Oluşturulan çıktı dosyası yazılıyor.
 
--   Oluşturulan çıktı dosyası için varsayılan uzantısı ayarlama.
+-   Oluşturulan çıktı dosyası için varsayılan uzantı ayarlanıyor.
 
--   Metin şablonu dönüştürme hataları işleme. Örneğin, ana bilgisayar kullanıcı arabiriminde hataları görüntüleyin veya bunları bir dosyaya yazar. (İçinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], hatalar, hata ileti penceresinde görüntülenir.)
+-   Metin şablonu dönüştürme hataları işleme. Örneğin, ana bilgisayar hataları kullanıcı arabiriminde görüntülemek veya bunları bir dosyaya yazma. (Visual Studio'da, hatalar hata iletisi penceresinde görüntülenir.)
 
--   Bir kullanıcı bir değer sağlamadan bir yönerge olarak adlandırılan, gerekli bir parametre sağlama. Yönerge işlemcisi yönergesi ve parametre adını belirtin ve varsa, varsayılan bir değer sağlamak için konak isteyin.
+-   Bir kullanıcı bir değer sağlamadan bir yönerge olarak adlandırılan, gerekli parametre değerini sağlama. Yönerge işlemcisini, yönerge ve parametre adını belirtin ve varsa varsayılan değer sağlamak için konak isteyin.
 
 ## <a name="directives-and-directive-processors"></a>Yönergeleri ve yönerge işlemcileri
- Bir yönerge metin şablonunuzda bir komuttur. Oluşturma işlemi parametreleri sağlar. Genellikle kaynak ve türünü modelin veya diğer giriş ve çıkış dosyasının dosya adı uzantısı yönergeleri tanımlar.
+ Bir yönerge, metin şablonunuza bir komuttur. Bu, oluşturma işlemi parametrelerini sağlar. Genellikle kaynak ve türü modeli veya başka bir giriş ve çıkış dosyasının dosya adı uzantısı yönergeleri tanımlar.
 
- Bir yönerge işlemcisi, bir veya daha fazla yönergeleri işleyebilir. Bir şablon dönüştürme, şablonunuzda yönergeleri uğraşmanız bir yönerge işlemcisi yüklenmiş olması gerekir.
+ Bir yönerge işlemcisi, bir veya daha fazla yönergeleri işleyebilir. Bir şablon dönüştürdüğünüzde, şablonunuzda yönergeleri ile giderebilirsiniz bir yönerge işlemcisi yüklemiş olmanız gerekir.
 
- Yönergeleri oluşturulan dönüşüm sınıfında kodu ekleyerek çalışır. Oluşturulan dönüşüm sınıfı oluşturduğunda, bir metin şablonu ve yönerge tüm çağrıları motoru işlemleri yönergeleri çağırın. Bir yönerge başarıyla çağrısından sonra metin şablonu yazma kodu kalan yönergesi sağlayan işlevselliğini güvenebilirsiniz. Örneğin, aşağıdaki çağrıyı yapabilir `import` şablonunuzda yönerge:
+ Yönergesi oluşturulan dönüştürme sınıfına kod ekleyerek çalışır. Oluşturulan dönüştürme sınıfına oluşturduğunda, bir metin şablonu ve Makinesi'nin yönerge tüm çağrıları yönergeleri çağırın. Bir yönergeyi başarıyla çağırdıktan sonra metin şablonunuza yazdığınız kodun geri kalanını yönergenin sağladığı işlevselliğe dayanabilir. Örneğin, aşağıdaki çağrısını yapabileceğiniz `import` yönergesinde, şablonda:
 
  `<#@ import namespace="System.Text" #>`
 
- Bu standart yönerge işlemcisi dönüştürür bir `using` oluşturulan dönüşüm sınıfı deyiminde. Daha sonra `StringBuilder` olarak niteleme olmadan şablon kodunuzu rest sınıfında `System.Text.StringBuilder`.
+ Standart bir yönerge işlemcisi için dönüştürür bir `using` oluşturulan dönüştürme sınıfına deyiminde. Ardından `StringBuilder` sınıfı olarak niteleme olmadan şablon kodunuzun geri kalanında `System.Text.StringBuilder`.

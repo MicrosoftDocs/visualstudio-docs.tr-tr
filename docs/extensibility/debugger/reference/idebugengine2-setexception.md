@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 371a5c45e7df725babab96587e5064e5290d80ac
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f200f02ec3a79c3ccdece3a4cc0ae5b10e2b491c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927608"
 ---
 # <a name="idebugengine2setexception"></a>IDebugEngine2::SetException
-Hata ayıklama altyapısı (DE) belirli bir özel durum nasıl yöneteceğini belirtir.  
+Hata ayıklama altyapısı (DE) verilen bir özel durumun nasıl işleyeceğini belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int SetException(
   
 #### <a name="parameters"></a>Parametreler  
  `pException`  
- [in] Bir [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) özel durumu ve hata ayıklamak nasıl açıklar yapısı.  
+ [in] Bir [EXCEPTION_INFO](../../../extensibility/debugger/reference/exception-info.md) özel durum ve hata ayıklamak nasıl açıklayan yapısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- SE belirtildiği için bir özel durum ilk fırsat adresindeki oluşturma programı durdurun, fırsat, ikinci veya hiç.  
+ Bir DE belirtildiği bir ilk fırsat özel duruma oluşturma programı durdurun, fırsat, ikinci ya da hiç.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)   

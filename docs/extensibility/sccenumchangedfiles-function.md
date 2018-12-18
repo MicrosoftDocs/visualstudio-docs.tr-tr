@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 762bda21f8480224347bd0c8c202c282298e07cc
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7c0284dd268621fddeaa9322c9a3cc17de7a3e71
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49811627"
 ---
 # <a name="sccenumchangedfiles-function"></a>SccEnumChangedFiles işlevi
-Yerel dosyaların listesini göz önüne alındığında, bu işlev hangi dosyaların kaynak kodu denetimi veritabanında karşılık gelen sürümlerinden farklı olduğunu belirler.  
+Bu işlev yerel dosyaların listesini göz önünde bulundurulduğunda, hangi dosyaların kaynak kod denetimi veritabanında karşılık gelen sürümlerinden farklı olduğunu belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,29 +37,29 @@ SCCRTN SccEnumChangedFiles(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pContext  
- [in] Kaynak Denetim eklentisi bağlam işaretçi.  
+ [in] Kaynak Denetimi Eklentisi bağlam işaretçisi.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  cFiles  
- [in] Belirtilen dosya adları sayısı `lpFileNames` dizi. Ayrıca boyutunu belirtir `plIsFileDifferent` dizi.  
+ [in] Belirtilen dosya adları sayısını `lpFileNames` dizisi. Ayrıca boyutunu belirtir `plIsFileDifferent` dizisi.  
   
  lpFileNames  
- [in] Denetlemek için yerel dosya adları dizisi.  
+ [in] Denetlenecek yerel dosya adları dizisi.  
   
  plIsFileDifferent  
- [içinde out] Her dosyanın fark durumunu belirten değerleri dizisi (dizisi en az olmalıdır `cFiles` girişleri). Dosyayı farklı sıfır olmayan anlamına gelir.  
+ [out içinde] Her dosya farkı durumunu belirten değerleri dizisi (dizisi en az olmalıdır `cFiles` girişleri). NonZero dosyanın farklı olduğu anlamına gelir.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|İşlem başarıyla tamamlandı.|  
 |SCC_UNSPECIFIEDERROR|Genel hata.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)

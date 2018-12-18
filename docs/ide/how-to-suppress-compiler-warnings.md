@@ -1,75 +1,76 @@
 ---
-title: Visual Studio'da projeler ve NuGet paketleri için Derleyici uyarılarını gizleme | Microsoft Docs
-ms.custom: ''
+title: Projeler ve NuGet paketleri için Derleyici uyarılarını gizleme
 ms.date: 01/24/2018
-ms.technology: vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-compile
 ms.topic: conceptual
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 25fc8d4412410c2687593661760dcf94512c972b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6f805ce50a94304651aca6dd1379fbbf2f5ecc7b
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53060371"
 ---
 # <a name="how-to-suppress-compiler-warnings"></a>Nasıl yapılır: Derleyici uyarılarını gizleme
 
-Derleyici uyarıları bir veya daha fazla tür filtreleyerek bir derleme günlüğü declutter. Örneğin, yapı günlük ayrıntı düzeyini ayarlamak, oluşturulan çıktı yalnızca bir kısmını gözden geçirmek isteyebilirsiniz **Normal**, **ayrıntılı**, veya **tanılama**. Ayrıntı hakkında daha fazla bilgi için bkz: [nasıl yapılır: görünümü, kaydetme ve derleme günlüğü dosyalarını yapılandırma](../ide/how-to-view-save-and-configure-build-log-files.md).
+Derleyici uyarılarını bir veya daha fazla tür filtreleyerek yapı günlüğüne declutter. Örneğin, derleme günlük ayrıntı düzeyini ayarlamak, oluşturulan çıktıyı yalnızca bir bölümünü incelemek isteyebilirsiniz **Normal**, **ayrıntılı**, veya **tanılama**. Ayrıntı düzeyi hakkında daha fazla bilgi için bkz. [nasıl yapılır: görüntüleme, kaydetme ve yapılandırma derleme günlüğü dosyalarını](../ide/how-to-view-save-and-configure-build-log-files.md).
 
-## <a name="suppress-specific-warnings-for-visual-c-or-f"></a>Visual C# veya F # için belirli uyarıları bastırma #
+## <a name="suppress-specific-warnings-for-visual-c-or-f"></a>Görsel için belirli uyarıları gösterme C# veyaF# #
 
-Kullanım **yapı** C# ve F # projeleri için belirli uyarıları gizlemek için özellik sayfası.
+Kullanım **derleme** için belirli uyarıları bastırmak için özellik sayfası C# ve F# projeleri.
 
-1. İçinde **Çözüm Gezgini**, uyarıları bastırma projesini seçin.
+1. İçinde **Çözüm Gezgini**, uyarıları bastırmak istediğiniz projeyi seçin.
 
-1. Menü çubuğunda seçin **Görünüm** > **özellik sayfaları**.
+1. Menü çubuğunda, **görünümü** > **özellik sayfaları**.
 
-1. Seçin **yapı** sayfası.
+1. Seçin **derleme** sayfası.
 
-1. İçinde **uyarıları bastırma** kutusunda, gizlemek istediğiniz uyarıların hata kodlarını noktalı virgülle ayırarak belirtin.
+1. İçinde **uyarıları bastırma** kutusunda, gizlemek istediğiniz uyarıları hata kodlarının noktalı virgülle ayırarak belirtin.
 
 1. Çözümü yeniden derleyin.
 
-## <a name="suppress-specific-warnings-for-visual-c"></a>Visual C++ için belirli uyarıları bastırma
+## <a name="suppress-specific-warnings-for-visual-c"></a>Visual C++ için belirli uyarıları gösterme
 
-Kullanım **yapılandırma özellikleri** C++ projeleri için belirli uyarıları gizlemek için özellik sayfası.
+Kullanım **yapılandırma özellikleri** C++ projeleri için belirli uyarıları bastırmak için özellik sayfası.
 
-1. İçinde **Çözüm Gezgini**, projeyi seçin veya kaynak uyarıları bastırma istediğiniz dosyası.
+1. İçinde **Çözüm Gezgini**, projeyi seçin veya uyarıları bastırmak istediğiniz dosya kaynağı.
 
-1. Menü çubuğunda seçin **Görünüm** > **özellik sayfaları**.
+1. Menü çubuğunda, **görünümü** > **özellik sayfaları**.
 
-1. Seçin **yapılandırma özellikleri** kategorisi seçin **C/C++** kategorisi ve ardından **Gelişmiş** sayfası.
+1. Seçin **yapılandırma özellikleri** kategorisi seçin **C/C++** kategori seçip **Gelişmiş** sayfası.
 
 1. Aşağıdaki adımlardan birini uygulayın:
 
-    - İçinde **belirli uyarıları devre dışı** kutusunda, noktalı virgülle ayrılmış gizlemek istediğiniz uyarıların hata kodlarını belirtin.
+    - İçinde **belirli uyarıları devre dışı** kutusunda, gizlemek istediğiniz uyarıları hata kodlarının noktalı virgülle ayrılmış belirtin.
 
-    - İçinde **belirli uyarıları devre dışı** kutusunda, seçin **Düzenle** daha fazla seçenek görüntülemek için.
+    - İçinde **belirli uyarıları devre dışı** kutusunda **Düzenle** daha fazla seçenek görüntülenecek.
 
-1. Seçin **Tamam** düğmesine tıklayın ve ardından çözümü yeniden derleyin.
+1. Seçin **Tamam** düğmesini ve ardından çözümü yeniden oluşturun.
 
 ## <a name="suppress-warnings-for-visual-basic"></a>Visual Basic için uyarıları bastırma
 
-Visual Basic'te belirli derleyici uyarıları düzenleyerek gizleyebilirsiniz *.vbproj* proje dosyası. Tarafından uyarıları gizlemek için *kategori*, kullanabileceğiniz [derleme özellik sayfası](../ide/reference/compile-page-project-designer-visual-basic.md). Daha fazla bilgi için bkz: [Visual Basic'te uyarıları yapılandırmak](../ide/configuring-warnings-in-visual-basic.md).
+Visual Basic için belirli bir derleyici uyarılarını düzenleyerek gizleyebilirsiniz *.vbproj* proje dosyası. Tarafından uyarıları bastırmak için *kategori*, kullanabileceğiniz [derleme özellik sayfasında](../ide/reference/compile-page-project-designer-visual-basic.md). Daha fazla bilgi için [Visual Basic ile uyarıları yapılandırma](../ide/configuring-warnings-in-visual-basic.md).
 
-### <a name="to-suppress-specific-warnings-for-visual-basic"></a>Visual Basic'te belirli uyarıları gizlemek için
+### <a name="to-suppress-specific-warnings-for-visual-basic"></a>Visual Basic için belirli uyarıları bastırmak için
 
-Bu örnek nasıl düzenleneceğini gösterir *.vbproj* belirli derleyici uyarıları gizlemek için dosya.
+Bu örnek nasıl düzenleneceğini gösterir *.vbproj* belirli derleyici uyarıları bastırmak için dosya.
 
-1. İçinde **Çözüm Gezgini**, uyarıları bastırma projesini seçin.
+1. İçinde **Çözüm Gezgini**, uyarıları bastırmak istediğiniz projeyi seçin.
 
-1. Menü çubuğunda seçin **proje** > **projeyi**.
+1. Menü çubuğunda, **proje** > **projeyi**.
 
-1. İçinde **Çözüm Gezgini**projesi için sağ tıklatın veya kısayol menüsünü açın ve ardından **Düzenle <ProjectName>.vbproj**.
+1. İçinde **Çözüm Gezgini**, projeyi sağ tıklatın veya kısayol menüsünü açın ve ardından **Düzenle <ProjectName>.vbproj**.
 
-    XML proje dosyası Kod Düzenleyicisi'nde açılır.
+    XML proje dosyasını Kod düzenleyicisinde açılır.
 
-1. Bulun `<NoWarn>` yapı yapılandırma öğesi, ile oluşturmakta olduğunuz ve değeri olarak bir veya daha fazla uyarı numaraları ekleme `<NoWarn>` öğesi. Birden çok uyarı numaralarını belirtirseniz, bunları virgül ile ayırın.
+1. Bulun `<NoWarn>` öğesi için yapı yapılandırmasını, oluşturmakta olduğumuz ve değeri olarak bir veya daha fazla uyarı numaralarını ekleme `<NoWarn>` öğesi. Birden çok uyarı numaralarını belirtirseniz, bunların virgülle ayırın.
 
-     Aşağıdaki örnekte gösterildiği `<NoWarn>` öğesi için *hata ayıklama* x x86 yapılandırmasına yapı platformuyla gizlenen iki derleyici uyarıları:
+     Aşağıdaki örnekte gösterildiği `<NoWarn>` öğesi için *hata ayıklama* derleme yapılandırması bir x86 platformuyla gizlenen iki derleyici uyarıları:
 
     ```xml
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -87,7 +88,7 @@ Bu örnek nasıl düzenleneceğini gösterir *.vbproj* belirli derleyici uyarıl
     ```
 
    > [!NOTE]
-   > .NET core projeleri, varsayılan olarak yapı yapılandırma özelliği gruplarını içermiyor. .NET Core projesinde uyarıları gizlemek için dosyaya yapı yapılandırma bölümü el ile ekleyin. Örneğin:
+   > .NET core projeleri derleme Yapılandırma özelliği grupları varsayılan olarak içermez. .NET Core projesinde uyarıları bastırmak için dosyaya derleme yapılandırma bölümü el ile ekleyin. Örneğin:
    >
    > ```xml
    > <Project Sdk="Microsoft.NET.Sdk">
@@ -104,27 +105,27 @@ Bu örnek nasıl düzenleneceğini gösterir *.vbproj* belirli derleyici uyarıl
 
 1. Değişiklikleri kaydetmek *.vbproj* dosya.
 
-1. Menü çubuğunda seçin **proje** > **projeyi yeniden yükle**.
+1. Menü çubuğunda, **proje** > **projeyi**.
 
-1. Menü çubuğunda seçin **yapı** > **çözümü yeniden derle**.
+1. Menü çubuğunda, **derleme** > **çözümü yeniden derle**.
 
-    **Çıkış** penceresi artık belirttiğiniz uyarıları gösterir.
+    **Çıkış** penceresi artık belirtilen uyarıları gösterir.
 
-Daha fazla bilgi için bkz: [/nowarn derleyici seçeneği](/dotnet/visual-basic/reference/command-line-compiler/nowarn) için Visual Basic komut satırı derleyicisi.
+Daha fazla bilgi için [/nowarn derleyici seçeneği](/dotnet/visual-basic/reference/command-line-compiler/nowarn) Visual Basic komut satırı derleyicisi için.
 
 ## <a name="suppress-warnings-for-nuget-packages"></a>NuGet paketleri için uyarıları bastırma
 
-Bazı durumlarda, projenin tamamı için yerine tek bir NuGet paketi için NuGet Derleyici uyarılarını bastırma isteyebilirsiniz. Proje düzeyinde gizlemek istemediğiniz için uyarı bir amaca hizmet eder. Örneğin, NuGet uyarıları biri, paket projenizi ile tamamen uyumlu olmayabilir bildirir. Proje düzeyinde bastırmak ve daha sonra ek bir NuGet paketi eklerseniz, uyumluluk uyarı oluşturan, hiçbir zaman anlarsınız.
+Bazı durumlarda, bir projenin tamamı için yerine tek bir NuGet paketi için NuGet Derleyici uyarılarını bastırma isteyebilirsiniz. Proje düzeyinde bastırmak istemediğiniz için uyarı bir amaca hizmet verir. Örneğin, bir NuGet uyarıları, paketi projenize ile tam olarak uyumlu olmayabilir bildirir. Proje düzeyinde gösterme ve daha sonra ek bir NuGet paketi ekleme, uyumluluk uyarısı üreten, hiçbir zaman anlarsınız.
 
-### <a name="to-suppress-a-specific-warning-for-a-single-nuget-package"></a>Tek bir NuGet paketi için belirli bir uyarıyı gizlemek için
+### <a name="to-suppress-a-specific-warning-for-a-single-nuget-package"></a>Tek bir NuGet paketi için belirli bir uyarıyı bastırmak için
 
-1. İçinde **Çözüm Gezgini**, derleyici uyarılarını gizleme NuGet paketi seçin.
+1. İçinde **Çözüm Gezgini**, istediğiniz Derleyici uyarılarını bastırmak için NuGet paketini seçin.
 
    ![Çözüm Gezgini'nde NuGet paketi](media/nuget-package-with-warning.png)
 
-1. Sağ tıklatın veya bağlam menüsünden seçin **özellikleri**.
+1. Sağ tıklayın veya bağlam menüsünü seçin **özellikleri**.
 
-1. İçinde **NoWarn** kutusunu paket özelliklerini gizlemek için bu paket için istediğiniz uyarı sayı girin. Birden fazla gizlemek istiyorsanız, uyarı sayıları ayırmak için virgül kullanın.
+1. İçinde **NoWarn** kutusu paket özelliklerini bu paket için gizlemek istediğiniz uyarı numarasını girin. Birden fazla uyarıyı engellemek istiyorsanız, uyarı numaralarını ayırmak için virgül kullanın.
 
    ![NuGet paket özellikleri](media/nuget-properties-nowarn.png)
 
@@ -132,6 +133,6 @@ Bazı durumlarda, projenin tamamı için yerine tek bir NuGet paketi için NuGet
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[İzlenecek yol: bir uygulama oluşturma](../ide/walkthrough-building-an-application.md)  
-[Nasıl yapılır: görünümü, kaydetme ve derleme günlüğü dosyalarını yapılandırma](../ide/how-to-view-save-and-configure-build-log-files.md)  
-[Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)
+- [İzlenecek yol: Uygulama oluşturma](../ide/walkthrough-building-an-application.md)
+- [Nasıl yapılır: görüntüleme, kaydetme ve derleme günlüğü dosyalarını yapılandırma](../ide/how-to-view-save-and-configure-build-log-files.md)
+- [Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)

@@ -1,6 +1,7 @@
 ---
 title: XAML Tasarımcısı’nda nesneleri düzen kapsayıcılarına yerleştirme
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: 29c80c38-0fa3-48d6-b3a8-3b864f482e44
@@ -9,27 +10,28 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - uwp
-ms.openlocfilehash: cb33effc9823960875a76d868c215552860a0c7b
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f8faa01ddc56c5beaa2412bd91a9e68a8bba9525
+ms.sourcegitcommit: e5a382de633156b85b292f35e3d740f817715d47
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38978183"
 ---
 # <a name="organize-objects-into-layout-containers-in-xaml-designer"></a>XAML Tasarımcısı’nda nesneleri düzen kapsayıcılarına yerleştirme
 
 Bu makalede, XAML Tasarımcısı için Düzen panelleri ve denetimleri açıklar.
 
-Bir sayfada görünecek nesneleri oluşturulacağı yeri düşünün; görüntüleri, düğmeler ve videolar gibi nesneleri. Satır ve sütunları tek bir satıra dikey veya yatay veya sabit konumlarda görünmesini istediğiniz olabilir.
+Nesneleri bir sayfada görüntülenmesini istediğiniz düşünün; Görüntü, düğmeler ve video gibi nesneleri. Dikey veya yatay veya sabit konumlarda satırlar ve sütunlar, tek bir satırda görünmesini istediğiniz olabilir.
 
-Sayfa nasıl görünebilir hakkında düşünmek ettikten sonra bir düzen paneli seçin. Nesnelerinizi eklemek için bir şey gerektiğinden tüm sayfaları ile başlatın. Varsayılan olarak bu bir **kılavuz**, ancak bunu değiştirebilirsiniz.
+Bir düzen paneli, sayfanın nasıl görünebilir hakkında düşünmek ettikten sonra seçin. Nesnelerinizi eklediğiniz bir şey gerektiğinden tüm sayfaları ile başlayın. Varsayılan olarak bu bir **kılavuz**, ancak isterseniz bunu değiştirebilirsiniz.
 
-Düzen panelleri sayfasında nesneleri Düzenle yardımcı olur, ancak, birden fazla yaparlar. Bunlar farklı ekran boyutlarına ve çözümlemeleri için tasarım Yardım. Kullanıcıların uygulamanızı çalıştırdığınızda, bir düzen panelinde her şeyi kendi cihazının ekran Gayrimenkul eşleşecek şekilde yeniden boyutlandırır. Doğal olarak, bunu yapmak için düzeninizi istemiyorsanız, düzeni veya tüm düzeni parçası için bu davranışı geçersiz kılabilirsiniz. Yükseklik ve genişlik özelliklerini kontrol eden için kullanabilirsiniz.
+Düzen bölmeleri, sayfadaki nesneleri Düzenle yardımcı, ancak, birden fazla yapın. Bunlar farklı ekran boyutlarını ve çözünürlüklerini tasarım Yardım. Kullanıcıların uygulamanızı çalıştırdığınızda, her şeyi bir düzen paneli cihazlarının ekran gerçek boyutunuzu eşleşecek şekilde yeniden boyutlandırır. Elbette, düzeninizi yapmak istemiyorsanız, bir bölümü düzeni veya tüm düzeni için bu davranışı geçersiz kılabilirsiniz. Yükseklik ve genişlik Özellikleri'ı, kontrol etmek için kullanabilirsiniz.
 
 ## <a name="layout-panels"></a>Düzen bölmeleri
 
-Bu düzen panelleri birini seçerek sayfanızı başlatın. Sayfanız birden fazla olabilir. Örneğin, ile başlayabilir bir **kılavuz** Düzen panelinde ve ardından ekleyin bir **StackPanel** bir alanına **kılavuz** böylece bu öğenin dikey denetimlerinde düzenleyebilirsiniz.
+Sayfanız, bu düzen bölmelerini birini seçerek başlatın. Sayfanız birden fazla olabilir. Örneğin, ile başlayabilir bir **kılavuz** Düzen paneli ve ardından eklemek bir **StackPanel** bir alanda **kılavuz** böylece o öğenin dikey denetimlerinde düzenleyebilirsiniz.
 
-Aşağıdaki Düzen panelleri en özellik kullanılır, ancak diğer vardır. Bunları bulabilirsiniz tümü **varlıklar** paneli.
+Aşağıdaki Düzen bölmelerini bu özellik en kullanılır, ancak diğerleri vardır. Bunları bulabilirsiniz tümü **varlıklar** paneli.
 
 - [Kılavuz](#Grid)
 
@@ -45,53 +47,53 @@ Aşağıdaki Düzen panelleri en özellik kullanılır, ancak diğer vardır. Bu
 
 ### <a name="grid"></a>Kılavuz
 
-Nesneleri satırlar ve sütunlar halinde düzenleyin.
+Nesneleri, satırlar ve sütunlar halinde düzenleyin.
 
-![Kılavuz düzeni paneli](../designers/media/98b234b2-ac3b-441f-9136-98375fee87b7.png)
+![Kılavuz Düzen panelini](../designers/media/98b234b2-ac3b-441f-9136-98375fee87b7.png)
 
 ### <a name="uniformgrid"></a>UniformGrid
 
-Nesneleri eşit ya da Tekdüzen, kılavuz bölgelere düzenleyin. Bu pano, görüntüleri listesini düzenleme için mükemmeldir.
+Nesneler eşit veya tek düzen kılavuz bölgeye yerleştirin. Bu panelde, görüntülerin listesini düzenlemek için idealdir.
 
-![UniformGrid düzeni paneli](../designers/media/928b9284-a7e8-4678-875a-656b80b78076.png)
+![UniformGrid Düzen paneli](../designers/media/928b9284-a7e8-4678-875a-656b80b78076.png)
 
 (Yalnızca WPF projeleri için kullanılabilir.)
 
 ### <a name="canvas"></a>Tuval
 
-Nesneleri istediğiniz herhangi bir şekilde düzenleyin. Kullanıcıların uygulamanızı çalıştırdığınızda, bu öğeler ekranında konumlar sabit.
+Nesneleri istediğiniz gibi düzenleyin. Kullanıcıların uygulamanızı çalıştırdığınızda, bu öğeleri ekranında konumları sabit.
 
-![Tuvale düzeni paneli](../designers/media/e1ae27f0-3a57-454e-b580-877dcea8836d.png)
+![Tuval düzeni panelini](../designers/media/e1ae27f0-3a57-454e-b580-877dcea8836d.png)
 
 ### <a name="stackpanel"></a>StackPanel
 
-Tek bir satıra nesneleri yatay veya dikey olarak düzenleyin.
+Tek bir satırda nesneleri, yatay veya dikey olarak düzenleyin.
 
-![StackPanel düzeni paneli](../designers/media/a85a7b57-b0a8-495e-b985-f0291e41d093.png)
+![StackPanel Düzen paneli](../designers/media/a85a7b57-b0a8-495e-b985-f0291e41d093.png)
 
 ### <a name="wrappanel"></a>WrapPanel
 
-Nesneleri sırayla soldan sağa düzenleyin. Bölmenin sağ uçta sınırında dışında yer çalıştığında, *sarmalar* içerikten sonraki satıra vb. soldan sağa üst-alt. Nesneleri üst alta, akması de bir kaydırma panel yönünü dikey soldan sağa yapabilirsiniz.
+Nesneleri sırayla soldan sağa düzenleyin. Bölmenin en sağdaki ucuna dışında yer çalıştığında, *sarmalar* içeriği sonraki satıra vb. soldan sağa üst-alt. Böylece nesnelerin üst alta, akış, ayrıca bir sarmalama panelinin yönü dikey soldan sağa yapabilirsiniz.
 
 (Yalnızca WPF projeleri için kullanılabilir.)
 
-![WrapPanel düzeni paneli](../designers/media/b1c415fb-9a32-4a18-aa0b-308fca994ac9.png)
+![WrapPanel Düzen paneli](../designers/media/b1c415fb-9a32-4a18-aa0b-308fca994ac9.png)
 
 ### <a name="dockpanel"></a>DockPanel
 
-Kalırlar şekilde nesneleri düzenleyin veya *yerleştirme*, bölmenin bir kenara.
+Böylece bunlar kalmasını nesneleri düzenleyin veya *dock*, panelin bir kenarında için.
 
 (Yalnızca WPF projeleri için kullanılabilir.)
 
-![DockPanel düzeni paneli](../designers/media/72d46b58-9a49-4dd5-8af7-6843c0440226.png)
+![DockPanel Düzen paneli](../designers/media/72d46b58-9a49-4dd5-8af7-6843c0440226.png)
 
-**Kısa bir video izlemek:** ![Oynat düğmesini](../designers/media/bldadminconsoleinitialconfigicon.PNG) [WPF - DockPanel](https://www.youtube.com/watch?v=EBH_OIM-zPo)
+**Kısa bir video izleyin:** ![Oynat düğmesine](../designers/media/bldadminconsoleinitialconfigicon.PNG) [WPF - DockPanel](https://www.youtube.com/watch?v=EBH_OIM-zPo)
 
 ## <a name="layout-controls"></a>Düzen denetimleri
 
-Nesnelerinizi de düzen denetimleri ekleyebilirsiniz. Bunlar olarak olmayan özellik bakımından zengin bir düzen paneli, ancak bunları belirli senaryolar için yararlı bulabileceğiniz gibi.
+Nesnelerinizi Düzen denetimlere de ekleyebilirsiniz. Bunlar olarak olmayan özellik açısından zengin gibi bir düzen paneli, ancak bunları belirli senaryolar için yararlı bulabilirsiniz.
 
-Aşağıdaki düzen denetimleri en popüler olduğu, ancak diğer vardır. Bunları bulabilirsiniz tümü **varlıklar** paneli.
+Aşağıdaki düzen denetimleri en popüler olduğunu, ancak diğerleri vardır. Bunları bulabilirsiniz tümü **varlıklar** paneli.
 
 - [Kenarlık](#Border)
 
@@ -103,23 +105,23 @@ Aşağıdaki düzen denetimleri en popüler olduğu, ancak diğer vardır. Bunla
 
 ### <a name="border"></a>Kenarlık
 
-Bir sınır, arka plan ya da ikisini geçici bir nesne oluşturun. Yalnızca bir nesneye ekleyebilirsiniz bir **kenarlık**. Kenarlık veya arka plan için birden fazla nesne uygulamak istiyorsanız, Düzen paneline ekleme **kenarlık**. Ardından, nesneleri bu panel veya denetim ekleyin.
+Kenarlık, arka plan veya her ikisi de bir nesnenin çevresindeki oluşturun. Yalnızca bir nesne için ekleyebileceğiniz bir **kenarlık**. Kenarlık veya arka plan bilgileri için birden fazla nesne uygulamak istediğiniz düzen paneline ekleyin **kenarlık**. Ardından, nesneleri, paneli veya denetim ekleyin.
 
 ![Kenarlık düzen denetimi](../designers/media/e761238b-99fd-43c5-bbc4-57538b8289ff.png)
 
 ### <a name="popup"></a>Açılan Pencere
 
-Bir pencerede kullanıcılara bilgileri veya seçenekleri göster. Yalnızca bir nesneye ekleyebilirsiniz bir **açılan**. Varsayılan olarak, bir **açılan** içeren bir **kılavuz** ancak bunu değiştirebilirsiniz.
+Bilgileri veya seçenekleri kullanıcılar bir pencerede gösterilir. Yalnızca bir nesne için ekleyebileceğiniz bir **açılan**. Varsayılan olarak, bir **açılan** içeren bir **kılavuz** ancak isterseniz bunu değiştirebilirsiniz.
 
 ### <a name="scrollviewer"></a>ScrollViewer
 
-Bir sayfa veya bir sayfa alanı aşağı etkinleştir kullanır. Yalnızca bir nesneye ekleyebilirsiniz bir **ScrollViewer** bir düzen paneli aşağıdaki gibi eklemek için algılama çok kolaylaştırır şekilde bir **kılavuz** veya **StackPanel**.
+Bir sayfa veya alan bir sayfa kaydırarak olanak tanıyın. İçin yalnızca bir nesne ekleyebileceğiniz bir **ScrollViewer** mantıklı bir düzen paneli gibi eklemek için kolaylaştırır. böylece bir **kılavuz** veya **StackPanel**.
 
 ![ScrollViewer düzen denetimi](../designers/media/06b326d4-f23d-41a6-b26b-e1aff37572a7.png)
 
 ### <a name="viewbox"></a>Viewbox
 
-Yakınlaştırma Denetimi ile ölçek nesneleri çok benzer olacaktır. Yalnızca bir nesneye ekleyebilirsiniz bir **Viewbox**. Birden fazla nesne Bu etkiyi uygulamak istiyorsanız, bir düzen paneline eklemek **ViewBox**ve ardından bu düzeni paneline denetimlerinizi ekleyin.
+Yakınlaştırma Denetimi ile ölçek nesneleri çok benzer olacaktır. Yalnızca bir nesne için ekleyebileceğiniz bir **Viewbox**. Birden fazla nesne için efekti uygulamak istiyorsanız, bir düzen paneline Ekle **ViewBox**ve ardından bu düzen paneline denetimleri ekleyin.
 
 (Yalnızca WPF projeleri için kullanılabilir.)
 
@@ -127,5 +129,5 @@ Yakınlaştırma Denetimi ile ölçek nesneleri çok benzer olacaktır. Yalnızc
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [XAML Tasarımcısı'nda öğeleriyle çalışma](../designers/working-with-elements-in-xaml-designer.md)
-- [XAML Tasarımcısı kullanarak bir kullanıcı Arabirimi oluşturma](../designers/creating-a-ui-by-using-xaml-designer-in-visual-studio.md)
+- [XAML Tasarımcısı’nda öğelerle çalışma](../designers/working-with-elements-in-xaml-designer.md)
+- [XAML Tasarımcısı’nı kullanarak bir kullanıcı arabirimi oluşturma](../designers/creating-a-ui-by-using-xaml-designer-in-visual-studio.md)

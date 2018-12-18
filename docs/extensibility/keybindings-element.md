@@ -1,5 +1,5 @@
 ---
-title: Taşıyan öğesi | Microsoft Docs
+title: KeyBindings öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,25 +16,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 91a5fd99216e712e567d4543f3f29dc2b6b21aa1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6cd80b00cc6c22a4e683f1ba329665de332bf299
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926572"
 ---
-# <a name="keybindings-element"></a>Taşıyan öğesi
-Taşıyan öğesi grupları KeyBinding öğeleri ve diğer taşıyan gruplandırmaları.  
+# <a name="keybindings-element"></a>KeyBindings öğesi
+KeyBindings öğesi grupları tuş öğeleri ve diğer KeyBindings gruplandırmaları.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <KeyBindings>  
   <KeyBinding>... </KeyBinding>  
   <KeyBinding>... </KeyBinding>  
 </KeyBindings>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
@@ -43,22 +44,22 @@ Taşıyan öğesi grupları KeyBinding öğeleri ve diğer taşıyan gruplandır
 |---------------|-----------------|  
 |Koşul|İsteğe bağlı. Bkz: [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[KeyBinding Öğesi](../extensibility/keybinding-element.md)|Komutlar için klavye kısayolları belirtir.|  
-|[Taşıyan](../extensibility/keybindings-element.md)|Grupları KeyBinding öğeleri ve diğer taşıyan gruplandırmaları.|  
+|[KeyBinding öğesi](../extensibility/keybinding-element.md)|Komut için klavye kısayolları belirtir.|  
+|[Tuş bağlama](../extensibility/keybindings-element.md)|Tuş öğeleri gruplandırır ve diğer KeyBindings gruplandırmaları.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[CommandTable Öğesi](../extensibility/commandtable-element.md)|Komutları temsil eden tüm öğeleri tanımlar.|  
+|[CommandTable öğesi](../extensibility/commandtable-element.md)|Komutları temsil eden tüm öğeleri tanımlar.|  
   
 ## <a name="example"></a>Örnek  
   
-```  
+```xml  
 <KeyBindings>  
   <KeyBinding guid="guidWidgetPackage" id="cmdidUpdateWidget"   
     editor="guidWidgetEditor" key1="VK_F5"/>  
@@ -67,6 +68,6 @@ Taşıyan öğesi grupları KeyBinding öğeleri ve diğer taşıyan gruplandır
 </KeyBindings>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [KeyBinding öğesi](../extensibility/keybinding-element.md)   
- [Visual Studio Komut Tablosu (.Vsct) Dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+ [Visual Studio komut tablosu (.vsct) dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

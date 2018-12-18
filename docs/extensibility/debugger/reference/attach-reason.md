@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2dc7736f9210ef15cec8cece45d7899cc116a334
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6e2e103a345a3a064afb96cc7861bd3394da3a0f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49861624"
 ---
 # <a name="attachreason"></a>ATTACH_REASON
-Bir program düğüm eklemek için hata ayıklama altyapısı (DE) nedenini belirtir.  
+Bir program düğüme iliştirmek için hata ayıklama altyapısı (DE) nedenini belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,16 +55,16 @@ public enum enum_ATTACH_REASON {
  Bir kullanıcı isteği nedeniyle ekleyin.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerleri parametre olarak kullanılan [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) ve [Attach](../../../extensibility/debugger/reference/idebugprogramex2-attach.md) yöntemleri.  
+ Bu değerler için parametre olarak kullanılan [iliştirme](../../../extensibility/debugger/reference/idebugengine2-attach.md) ve [iliştirme](../../../extensibility/debugger/reference/idebugprogramex2-attach.md) yöntemleri.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [Ekleme](../../../extensibility/debugger/reference/idebugengine2-attach.md)   
  [Attach](../../../extensibility/debugger/reference/idebugprogramex2-attach.md)

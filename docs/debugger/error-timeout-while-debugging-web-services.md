@@ -17,16 +17,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6f7b97aa665062b0d0388764cb0ab75956087924
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 41c6793e1fdf4e3ed2d7e42fbd32bd20ad9f494a
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37056274"
 ---
 # <a name="error-timeout-while-debugging-web-services"></a>Hata: Web Hizmetlerinde Hata Ayıklarken Zaman Aşımı
 Arama koddan XML Web Hizmetleri Adımlama, hata ayıklama devam edemiyor olmasına, çağrı bazen sonucunda zaman aşımı olabilir. Bunun gibi bir hata iletisi görebilirsiniz.  
   
-```  
+```cmd
 An unhandled exception of type 'System.Net.WebException' occurred in   
 system.Web.services.dll  
 Additional information: The operation has timed-out.  
@@ -35,7 +36,7 @@ Additional information: The operation has timed-out.
 ## <a name="solution"></a>Çözüm  
  Bu sorunu önlemek için XML Web hizmeti çağrısı için zaman aşımı değeri sonsuz olarak, bu örnekte gösterilen şekilde ayarlayın:  
   
-```  
+```csharp
 Service1 obj = new Service1();  
 obj.TimeOut = -1; // infinite time out.  
 ```  

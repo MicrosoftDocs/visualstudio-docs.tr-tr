@@ -17,83 +17,84 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3b6b75deb576e5cb4e23975e80428433fbbc143a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b5701044e20f2122199d9d0ca5558e453e6e5f72
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49906032"
 ---
 # <a name="visual-studio-sdk"></a>Visual Studio SDK
-Visual Studio SDK, Visual Studio özellikleri genişletme veya Visual Studio'ya yeni özellikler tümleştirmenize yardımcı olur. Uzantılarınızın diğer kullanıcıların yanı sıra Visual Studio Market'te dağıtabilirsiniz. Visual Studio genişletebilirsiniz yolları bazıları şunlardır:  
+Visual Studio SDK, Visual Studio özellikleri genişletmek veya yeni özelliklerini Visual Studio'ya tümleştirmenize yardımcı olur. Diğer kullanıcılara yanı sıra Visual Studio Marketi uzantılarınızı dağıtabilirsiniz. Visual Studio genişletebileceğiniz yollardan bazılarını aşağıda verilmiştir:  
   
--   IDE komutlar, düğmeler, menüler ve diğer kullanıcı Arabirimi öğeleri ekleme  
+- IDE komutları, düğmeler, menüler ve diğer kullanıcı Arabirimi öğeleri ekleyin  
   
--   Araç pencereleri yeni işlevsellik için ekleme  
+- Aracı penceresi için yeni işlevsellik ekleme  
   
--   Belirli bir dil için IntelliSense genişletme veya yeni programlama dili için IntelliSense sağlar  
+- Belirli bir dil için IntelliSense genişletin veya yeni bir programlama dili için IntelliSense sağlar  
   
--   Ampuller ipuçları ve geliştiricilerin yardımcı önerileri daha iyi bir kod yazmak sağlamak için kullanın  
+- İpuçları ve geliştiricilerin yardımcı önerileri daha iyi kod yazma sağlamak ampuller kullanın  
   
--   Yeni bir dil desteğini etkinleştirme  
+- Yeni bir dil desteğini etkinleştirme  
   
--   Özel proje türü ekleme  
+- Özel Proje Türü Ekle  
   
--   Geliştiriciler Visual Studio Market'te aracılığıyla milyonlarca ulaşma  
+- Milyonlarca geliştirici Visual Studio Market aracılığıyla ulaşın  
   
- Visual Studio uzantısı önce hiçbir zaman yazdıysanız en ve bu özellikler hakkında daha fazla bilgi bulmalısınız [geliştirmek Visual Studio uzantıları başlangıç](../extensibility/starting-to-develop-visual-studio-extensions.md).  
+  Visual Studio uzantısı önce hiçbir zaman yazdıysanız, konumunda ve bu özellikler hakkında daha fazla bilgi bulmalısınız [Visual Studio uzantıları geliştirmeye başlama](../extensibility/starting-to-develop-visual-studio-extensions.md).  
   
-## <a name="installing-the-visual-studio-sdk"></a>Visual Studio SDK yükleme  
- Visual Studio SDK, Visual Studio kurulumunda isteğe bağlı bir özelliktir. VS SDK'yı daha sonra da yükleyebilirsiniz. Daha fazla bilgi için bkz: [Visual Studio SDK'sını yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
+## <a name="install-the-visual-studio-sdk"></a>Visual Studio SDK’yı Yükleme  
+ Visual Studio SDK, Visual Studio kurulumunda isteğe bağlı bir özelliktir. VS SDK'yi daha sonra yükleyebilirsiniz. Daha fazla bilgi için [Visual Studio SDK'yı yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
   
-## <a name="whats-new-in-the-visual-studio-2017-sdk"></a>Visual Studio 2017 SDK'da yenilikler nelerdir?  
- Visual Studio SDK içinde VSIX v3 biçimini yanı sıra yeni uzantınızı güncelleştirmenizi gerektiren değişiklikler gibi bazı yeni özellikler vardır. Daha fazla bilgi için bkz: [Visual Studio 2017 SDK yenilikler](../extensibility/what-s-new-in-the-visual-studio-2017-sdk.md).  
+## <a name="whats-new-in-the-visual-studio-2017-sdk"></a>Visual Studio 2017 SDK'daki yenilikler  
+ Visual Studio SDK VSIX v3 biçimi yanı sıra yeni uzantınızı güncelleştirmenizi gerektiren değişiklikler gibi bazı yeni özellikleri var. Daha fazla bilgi için [Visual Studio 2017 SDK'daki yenilikler](../extensibility/what-s-new-in-the-visual-studio-2017-sdk.md).  
   
 ## <a name="visual-studio-user-experience-guidelines"></a>Visual Studio kullanıcı deneyimi yönergeleri  
- Uzantı için kullanıcı Arabirimi tasarlamak için harika ipuçları alın [Visual Studio kullanıcı deneyimi yönergeleri](../extensibility/ux-guidelines/visual-studio-user-experience-guidelines.md).  
+ Uzantı için kullanıcı arabirimini tasarlamaya yönelik harika ipuçları alın [Visual Studio kullanıcı deneyimi yönergeleri](../extensibility/ux-guidelines/visual-studio-user-experience-guidelines.md).  
   
- Ayrıca uzantınız ile yüksek DPI cihazlarda harika Ara nasıl öğrenebilirsiniz bizim [adresleme DPI sorunları](../extensibility/addressing-dpi-issues2.md) konu.  
+ Uzantınız ile yüksek DPI cihazlarda harika görünecek yapma da bilgi edinebilirsiniz [adresi DPI sorunlarını](../extensibility/addressing-dpi-issues2.md) makalesi.  
   
- Yararlanmak [Görüntü hizmeti ve Katalog](../extensibility/image-service-and-catalog.md) mükemmel görüntü yönetimi ve yüksek DPI ve tema için destek.  
+ Yararlanmak [Görüntü hizmeti ve Kataloğu](../extensibility/image-service-and-catalog.md) harika görüntü yönetimi ve yüksek DPI ve Tema oluşturma desteği.  
   
-## <a name="finding-and-installing-existing-visual-studio-extensions"></a>Bulma ve mevcut Visual Studio uzantıları yükleme  
- Visual Studio uzantıları bulabilirsiniz **Uzantılar ve güncelleştirmeler** iletişim kutusunda **Araçları** menüsü. Daha fazla bilgi için bkz: [bulma ve Visual Studio uzantılarını kullanarak](../ide/finding-and-using-visual-studio-extensions.md). Uzantıları bulabileceğiniz [Visual Studio Market'te](https://marketplace.visualstudio.com/)  
+## <a name="find-and-install-existing-visual-studio-extensions"></a>Bulma ve mevcut Visual Studio uzantılarını yükleme  
+ Visual Studio uzantılarınızdaki bulabilirsiniz **Uzantılar ve güncelleştirmeler** iletişim kutusunda **Araçları** menüsü. Daha fazla bilgi için [Bul ve Visual Studio uzantıları kullanım](../ide/finding-and-using-visual-studio-extensions.md). Uzantılar da bulabilirsiniz [Visual Studio Market](https://marketplace.visualstudio.com/)  
   
-## <a name="visual-studio-sdk-reference"></a>Visual Studio SDK'sı başvurusu  
- Visual Studio SDK API Başvurusu, bulabilirsiniz [Visual Studio SDK'sı başvurusu](../extensibility/visual-studio-sdk-reference.md).  
+## <a name="visual-studio-sdk-reference"></a>Visual Studio SDK başvurusu  
+ Visual Studio SDK'sı API Başvurusu, bulabilirsiniz [Visual Studio SDK başvurusu](../extensibility/visual-studio-sdk-reference.md).  
   
 ## <a name="visual-studio-sdk-samples"></a>Visual Studio SDK örnekleri  
- VS SDK uzantıları açık kaynak örnekleri GitHub üzerinde bulabilirsiniz [Visual Studio örnekleri](https://aka.ms/vs2015sdksamples). Bu GitHub deposuna Visual Studio çeşitli Genişletilebilir özellikleri göstermek örnekleri içerir.  
+ Açık kaynak örnekleri VS SDK uzantıları github'da bulabilirsiniz [Visual Studio örnekleri](https://aka.ms/vs2015sdksamples). Bu GitHub deposunu Visual Studio'da çeşitli Genişletilebilir özelliklerini gösteren örnekleri içerir.  
   
 ## <a name="other-visual-studio-sdk-resources"></a>Diğer Visual Studio SDK kaynakları  
- VSSDK hakkında sorularınız varsa veya uzantıları geliştirme deneyimlerinizi paylaşmak istiyorsanız kullanabileceğiniz [Visual Studio genişletilebilirlik Forumu](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vsx) veya [ExtendVS Gitter Chatroom](https://gitter.im/Microsoft/extendvs).  
+ VSSDK ilgili sorularınız varsa veya uzantıları geliştirmeye, deneyimlerini paylaşmak istiyorsanız kullanabileceğiniz [Visual Studio genişletilebilirlik Forumu](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vsx) veya [ExtendVS Gitter odası](https://gitter.im/Microsoft/extendvs).  
   
- Daha fazla bilgi bulabilirsiniz [VSX Arcana blog](http://blogs.msdn.com/b/vsx/) ve Microsoft MVPs tarafından yazılan bloglar sayısı:  
+ Daha fazla bilgi bulabilirsiniz [VSX Arcana blog](https://blogs.msdn.microsoft.com/vsx/) ve bloglar Microsoft MVPs tarafından yazılan bir dizi:  
   
--   [Sık kullanılan Visual Studio uzantıları](http://geekswithblogs.net/sdorman/archive/2014/10/05/favorite-visual-studio-extensions.aspx)  
+-   [Sık kullandığınız Visual Studio uzantıları](http://geekswithblogs.net/sdorman/archive/2014/10/05/favorite-visual-studio-extensions.aspx)  
   
--   [Visual Studio genişletilebilirlik](http://www.visualstudioextensibility.com/overview/vs/)  
+-   [Visual Studio genişletilebilirliği](http://www.visualstudioextensibility.com/overview/vs/)  
   
--   [Visual Studio genişletme](http://blog.slaks.net/2013-10-18/extending-visual-studio-part-1-getting-started/)  
+-   [Visual Studio'yu genişletme](http://blog.slaks.net/2013-10-18/extending-visual-studio-part-1-getting-started/)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Menü komutu ile bir uzantısı oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md)   
- [Nasıl yapılır: Visual Studio 2017 genişletilebilirlik projeleri geçirme](../extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017.md)   
- [Sık sorulan sorular: Eklentiler VSPackage Uzantıları dönüştürme](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md)   
- [Yönetilen kod birden çok iş parçacığı yönetme](../extensibility/managing-multiple-threads-in-managed-code.md)   
- [Genişletme menüleri ve komutları](../extensibility/extending-menus-and-commands.md)   
- [Araç çubukları komut ekleme](../extensibility/adding-commands-to-toolbars.md)   
- [Genişletme ve aracı Windows özelleştirme](../extensibility/extending-and-customizing-tool-windows.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Bir menü komutuyla uzantı oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md)   
+ [Nasıl yapılır: genişletilebilirlik projelerini Visual Studio 2017'ye geçirme](../extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017.md)   
+ [SSS: eklentileri VSPackage uzantılarına dönüştürme](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md)   
+ [Yönetilen kodda birden çok iş parçacığı yönetme](../extensibility/managing-multiple-threads-in-managed-code.md)   
+ [Menüler ve komutlar genişletme](../extensibility/extending-menus-and-commands.md)   
+ [Araç çubuklarına komut ekleme](../extensibility/adding-commands-to-toolbars.md)   
+ [Genişletme ve özelleştirme araç penceresi](../extensibility/extending-and-customizing-tool-windows.md)   
  [Düzenleyici ve dil hizmeti uzantıları](../extensibility/editor-and-language-service-extensions.md)   
  [Projeleri genişletme](../extensibility/extending-projects.md)   
- [Genişletme kullanıcı ayarları ve seçenekleri](../extensibility/extending-user-settings-and-options.md)   
+ [Kullanıcı ayarlarını ve seçeneklerini genişletme](../extensibility/extending-user-settings-and-options.md)   
  [Özel proje ve öğe şablonları oluşturma](../extensibility/creating-custom-project-and-item-templates.md)   
- [Özellikler ve özellik penceresi genişletme](../extensibility/extending-properties-and-the-property-window.md)   
- [Visual Studio diğer bölümleri genişletme](../extensibility/extending-other-parts-of-visual-studio.md)   
- [Kullanarak ve hizmetleri sağlar](../extensibility/using-and-providing-services.md)   
- [VSPackages yönetme](../extensibility/managing-vspackages.md)   
- [Visual Studio yalıtılmış Kabuk](../extensibility/visual-studio-isolated-shell.md)   
- [Visual Studio uzantıları aktarma](../extensibility/shipping-visual-studio-extensions.md)   
+ [Özellikler ve özellik penceresini genişletme](../extensibility/extending-properties-and-the-property-window.md)   
+ [Visual Studio'nun diğer bölümlerini genişletme](../extensibility/extending-other-parts-of-visual-studio.md)   
+ [Kullanım ve hizmetleri sağlar](../extensibility/using-and-providing-services.md)   
+ [VSPackage'ları yönetme](../extensibility/managing-vspackages.md)   
+ [Visual Studio yalıtılmış Kabuğu](../extensibility/visual-studio-isolated-shell.md)   
+ [Visual Studio uzantıları gönderin](../extensibility/shipping-visual-studio-extensions.md)   
  [Visual Studio SDK içinde](../extensibility/internals/inside-the-visual-studio-sdk.md)   
- [Visual Studio SDK'sı için destek](../extensibility/support-for-the-visual-studio-sdk.md)   
+ [Visual Studio SDK desteği](../extensibility/support-for-the-visual-studio-sdk.md)   
  [Arşiv](../extensibility/archive.md)   
- [Visual Studio SDK Başvurusu](../extensibility/visual-studio-sdk-reference.md)
+ [Visual Studio SDK başvurusu](../extensibility/visual-studio-sdk-reference.md)

@@ -20,77 +20,61 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 55a569a973f874636f1b620f6983c077f177f1ac
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 765e5b154e7787af7afae8ca1f52338cc061a598
+ms.sourcegitcommit: bccb05b5b4e435f3c1f7c36ba342e7d4031eb398
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51220755"
 ---
-# <a name="signfile-task"></a>SignFile Görevi
-Belirtilen sertifika kullanarak belirtilen dosyayı açar.  
+# <a name="signfile-task"></a>SignFile görevi
+
+Belirtilen dosyayı belirtilen sertifikayı kullanarak imzalar.
   
-## <a name="parameters"></a>Parametreler  
- Aşağıdaki tabloda parametrelerinin açıklanmaktadır `SignFile` görev.  
+## <a name="parameters"></a>Parametreler
+
+ Parametreleri aşağıdaki tabloda açıklanmıştır `SignFile` görev.
   
- SHA-256 sertifikaları yalnızca .NET 4.5 sahip makinelerde izin verilen ve daha yüksek olduğunu unutmayın.  
+ SHA-256'yı sertifikaları izin verilen .NET 4.5 olan makinelere ve daha yüksek olduğunu unutmayın.
   
 > [!WARNING]
->  Visual Studio 2013 güncelleştirme 3'ten başlayarak, bu görev dosyası için hedef framework sürümü belirtmenize olanak sağlayan yeni bir imza içeriyor. MSBuild işlem SHA-256 kullandığından mümkün karmaları nerede olursa olsun yalnızca hedef çerçevesini .NET 4.5 olduğunda yeni imza kullanmak için kullanmaları ya da daha yüksek. Hedef çerçevesini .NET 4.0 veya aşağıda, SHA-256 karma kullanılmayacak.  
+> Visual Studio 2013 güncelleştirme 3'te başlayarak, bu görevin dosyası için hedef framework sürümünü belirtmenizi sağlayan yeni bir imzası vardır. SHA-256'yı MSBuild işleminde kullandığı için mümkün olan karma yere yalnızca hedef Framework'ü .NET 4.5 olduğunda yeni imza kullanmak için kullanmaları ya da daha yüksek olursunuz. Aşağıda veya .NET 4.0 hedef çerçeve ise SHA-256 karma kullanılmayacak.
   
-|Parametre|Açıklama|  
-|---------------|-----------------|  
-|`CertificateThumbprint`|Gerekli `String` parametresi.<br /><br /> İmzalama için kullanılacak sertifikayı belirtir. Bu sertifika, geçerli kullanıcının kişisel deposunda olması gerekir.|  
-|`SigningTarget`|Gerekli <xref:Microsoft.Build.Framework.ITaskItem> parametresi.<br /><br /> Sertifika ile imzalamak için dosyaları belirtir.|  
-|`TimestampUrl`|İsteğe bağlı `String` parametresi.<br /><br /> Bir zaman sunucu URL'sini belirtir.|  
-|`TargetFrameworkVersion`|Hedef için kullanılan .NET Framework sürümü.|  
+|Parametre|Açıklama|
+|---------------|-----------------|
+|`CertificateThumbprint`|Gerekli `String` parametresi.<br /><br /> İmzalama için kullanılacak sertifikayı belirtir. Bu sertifika, geçerli kullanıcının kişisel deposunda olmalıdır.|
+|`SigningTarget`|Gerekli <xref:Microsoft.Build.Framework.ITaskItem> parametresi.<br /><br /> Sertifika ile imzalamak için dosyaları belirtir.|
+|`TimestampUrl`|İsteğe bağlı `String` parametresi.<br /><br /> Zaman damgası sunucusunun URL'sini belirtir.|
+|`TargetFrameworkVersion`|Hedef için kullanılan .NET Framework sürümü.|
   
-## <a name="remarks"></a>Açıklamalar  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [görev taban sınıfı](../msbuild/task-base-class.md).  
+## <a name="remarks"></a>Açıklamalar
+
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [görev taban sınıfı](../msbuild/task-base-class.md).
   
-## <a name="example"></a>Örnek  
- Aşağıdaki örnek kullanır `SignFile` belirtilen dosyalarını imzalamak için görev `FilesToSign` tarafından belirtilen sertifika ile öğe koleksiyonu `Certificate` özelliği.  
-  
-```xml  
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
-    <ItemGroup>  
-        <FileToSign Include="File.exe" />  
-    </ItemGroup>  
-    <PropertyGroup>  
-        <Certificate>Cert.cer</Certificate>  
-    </PropertyGroup>  
-    <Target Name="Sign">  
-        <SignFile  
-            CertificateThumbprint="$(CertificateThumbprint)"  
-            SigningTarget="@(FileToSign)"   
-            TargetFrameworkVersion="v4.5" />  
-    </Target>  
-</Project>  
-```  
-  
+## <a name="example"></a>Örnek
+
+ Aşağıdaki örnekte `SignFile` belirtilen dosyaları imzalamak için görev `FilesToSign` koleksiyon öğesi tarafından belirtilen sertifika ile `Certificate` özelliği.
+
+```xml
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <FileToSign Include="File.exe" />
+    </ItemGroup>
+    <PropertyGroup>
+        <Certificate>Cert.cer</Certificate>
+    </PropertyGroup>
+    <Target Name="Sign">
+        <SignFile
+            CertificateThumbprint="$(CertificateThumbprint)"
+            SigningTarget="@(FileToSign)"
+            TargetFrameworkVersion="v4.5" />
+    </Target>
+</Project>
+```
+
 > [!NOTE]
->  Sertifika parmak izi sertifika SHA-1 karmasıdır. Daha fazla bilgi için bkz: [güvenilen kök CA sertifika SHA-1 karması elde](http://msdn.microsoft.com/en-us/dd641990-9a88-4228-a245-017797131a87).  
+> Sertifika parmak izini sertifika SHA-1 karmasını ' dir. Daha fazla bilgi için [SHA-1 karmasını bir güvenilen kök CA sertifikası elde](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733076\(v\=ws.10\)).
   
-## <a name="example"></a>Örnek  
- Aşağıdaki örnek kullanır `Exec` belirtilen dosyalarını imzalamak için görev `FilesToSign` tarafından belirtilen sertifika ile öğe koleksiyonu `Certificate` özelliği. Oluşturma işlemi sırasında Windows Installer dosyalarını imzalamak için bunu kullanabilirsiniz.  
-  
-```xml  
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
-    <ItemGroup>  
-        <FileToSign Include="File.msi" />  
-    </ItemGroup>  
-    <PropertyGroup>  
-        <Certificate>Cert.cer</Certificate>  
-    </PropertyGroup>  
-    <Target Name="Sign">  
-        <Exec Command="signtool.exe sign /f CertFile /p Password "@(FileToSign)" "/>  
-        <SignFile  
-            CertificateThumbprint="$(CertificateThumbprint)"  
-            SigningTarget="@(FileToSign)"   
-            TargetFrameworkVersion="v4.0" />  
-    </Target>  
-</Project>  
-```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)   
  [Görevler](../msbuild/msbuild-tasks.md)

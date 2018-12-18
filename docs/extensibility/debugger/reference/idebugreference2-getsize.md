@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fa96ea3d7b8834e5c8e74acff18be95a4c57b361
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 69924f0094753e87ac2f169a3348d59999e43ddc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49911310"
 ---
 # <a name="idebugreference2getsize"></a>IDebugReference2::GetSize
-Başvuru değeri bayt cinsinden boyutu alır. Daha sonraki kullanımlar için ayrılmıştır.  
+Başvuru değeri bayt cinsinden boyutunu alır. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,7 +41,7 @@ int GetSize (
   
 #### <a name="parameters"></a>Parametreler  
  `pdwSize`  
- [out] Başvuru değeri bayt cinsinden boyutu döndürür.  
+ [out] Başvuru değeri bayt cinsinden boyutunu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Her zaman döndürür `E_NOTIMPL`.  

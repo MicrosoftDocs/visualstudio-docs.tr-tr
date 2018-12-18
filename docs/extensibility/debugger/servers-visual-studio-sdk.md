@@ -1,5 +1,5 @@
 ---
-title: Sunucuları (Visual Studio SDK) | Microsoft Docs
+title: Sunucular (Visual Studio SDK) | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,23 +14,24 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2904641e8188abc6ef2382b2da272a9f96fd0f81
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 871eeb59832c640ede32e0fcd188941605c4afcb
+ms.sourcegitcommit: 8d38d5d2f2b75fc1563952c0d6de0fe43af12766
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276659"
 ---
-# <a name="servers-visual-studio-sdk"></a>Sunucuları (Visual Studio SDK)
-Hata ayıklayıcı mimarisi bakımından bir **server**:  
+# <a name="servers-visual-studio-sdk"></a>Sunucular (Visual Studio SDK)
+Hata ayıklayıcı mimarisinde bir *sunucu*:  
   
--   Bağlantı noktaları ve bağlantı noktası üreticiler bir kapsayıcı ve bağlantı noktaları ve bağlantı noktası Üreticiler oturum hata ayıklama Yöneticisi (SDM) iletişim kurmak ve altyapıları hata ayıklamak için kullanılır.  
+-   Bir kapsayıcı bağlantı noktaları ve bağlantı noktası sağlayıcıları ve bağlantı noktaları ve bağlantı noktası sağlayıcıları oturum hata ayıklama Yöneticisi (SDM) ve hata ayıklama altyapısı ile iletişim kurar.  
   
--   Kendisi adına göre tanımlayabilir ve bağlantı noktaları ve bağlantı noktası Üreticiler numaralandırır.  
+-   Kendi adına göre tanımlayabilir ve kendi bağlantı noktası ve bağlantı noktası sağlayıcıları numaralandırılamadı.  
   
--   Tarafından temsil edilen bir [IDebugCoreServer2](../../extensibility/debugger/reference/idebugcoreserver2.md) yalnızca Visual Studio (Visual Studio çalışan her örneği için bir sunucu bir örneği) tarafından uygulanan arabirimi.  
+-   Tarafından temsil edilen bir [IDebugCoreServer2](../../extensibility/debugger/reference/idebugcoreserver2.md) yalnızca Visual Studio (bir Visual Studio çalışan her örneği için bir sunucu örneğini) tarafından uygulanan arabirimi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Bağlantı noktaları](../../extensibility/debugger/ports.md)   
- [Bağlantı noktası Üreticiler](../../extensibility/debugger/port-suppliers.md)   
+ [Bağlantı noktası sağlayıcıları](../../extensibility/debugger/port-suppliers.md)   
  [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)   
  [IDebugCoreServer2](../../extensibility/debugger/reference/idebugcoreserver2.md)

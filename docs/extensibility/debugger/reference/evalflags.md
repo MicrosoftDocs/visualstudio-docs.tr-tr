@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7c718414749bb6c748f25fb90837644fe984a274
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ef229fb06f8b265b76dc40019b18ae3c796740f7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49829969"
 ---
 # <a name="evalflags"></a>EVALFLAGS
 İfade değerlendirme denetim bayrakları belirtir.  
@@ -53,39 +54,39 @@ public enum enum_EVALFLAGS {
   
 ## <a name="members"></a>Üyeler  
  EVAL_RETURNVALUE  
- Dönüş değeri varsa değerlendirilmesi belirtir.  
+ Dönüş değeri varsa, değerlendirilecek belirtir.  
   
  EVAL_NOSIDEEFFECTS  
- Yan etkileri değil verileceğini belirtir.  
+ Yan etkileri izin verilmeyeceğini belirtir.  
   
  EVAL_ALLOWBPS  
- Durdurma kesme noktaları üzerinde belirtir.  
+ Durdurma kesme noktalarında belirtir.  
   
  EVAL_ALLOWERRORREPORT  
  Hata izin verilmesi için konağa raporlama belirtir. Internet Explorer'da komut ifade değerlendirmesi için kullanılır.  
   
  EVAL_FUNCTION_AS_ADDRESS  
- İşlev çağırma yerine adresleri olarak değerlendirilecek işlevler zorlar.  
+ İşlev çağırma yerine adresleri olarak değerlendirilecek işlevleri zorlar.  
   
  EVAL_NOFUNCEVAL  
- İşlev değerlendirilen gelen engeller. Örneğin, göz önünde bulundurun `int` ifadesinde belirteci `myExpression(int) + 10`. Bu işlev doğru adresi olarak ancak olmayan bir değer olarak değerlendirilebilir.  
+ İşlevi, değerlendirilen öğesinden engeller. Örneğin, düşünün `int` ifade belirteci `myExpression(int) + 10`. Bu işlev bir adres, ancak bir değer olarak değil doğru değerlendirilebilir.  
   
  EVAL_NOEVENTS  
- İfade değerlendirme sırasında meydana gelen olayları oturum hata ayıklama Yöneticisi'ni (SDM) ya da IDE gönderilmemelidir belirtmek için bayraklayın.  
+ İfade değerlendirme sırasında meydana gelen olayları oturum hata ayıklama Yöneticisi (SDM) veya IDE gönderilmemelidir belirten bayrak.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu bayrakların bağımsız değişken olarak geçirilen [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) ve [EvaluateSync](../../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) yöntemleri.  
+ Bu bayraklar bağımsız değişken olarak geçirilen [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) ve [EvaluateSync](../../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) yöntemleri.  
   
- Bu bayrakların bit düzeyinde OR ile birleştirilebilir.  
+ Bu bayraklar bir bit düzeyinde OR ile birleştirilebilir.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md)   
  [EvaluateSync](../../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md)

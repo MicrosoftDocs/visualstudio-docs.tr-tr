@@ -1,0 +1,858 @@
+- name: Visual Studio'da Office ve SharePoint Geliştirme
+  href: office-and-sharepoint-development-in-visual-studio.md
+  items:
+    - name: Office için VSTO Eklentileri Oluşturma
+      href: create-vsto-add-ins-for-office-by-using-visual-studio.md
+      items:
+        - name: Başlarken
+          href: getting-started-office-development-in-visual-studio.md
+          items:
+            - name: Office Çözümleri Geliştirmesine Genel Bakış
+              href: office-solutions-development-overview-vsto.md
+            - name: .NET Framework 4 veya .NET Framework 4.5'i Hedefleyen Office Projelerinin Tasarımı Üzerinde Yapılan Değişiklikler
+              href: changes-to-the-design-of-office-projects-that-target-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md
+            - name: Office Uygulaması ve Proje Türüne Göre Kullanılabilir Özellikler
+              href: features-available-by-office-application-and-project-type.md
+            - name: Office Çözümleri Geliştirmek İçin Bilgisayarı Yapılandırma
+              href: configuring-a-computer-to-develop-office-solutions.md
+              items:
+                - name: Office Çözümleri Geliştirmek İçin Bilgisayarı Yapılandırma
+                  href: how-to-configure-a-computer-to-develop-office-solutions.md
+                - name: Office Çalışma Zamanı Yeniden Dağıtılabilir için Visual Studio Araçları Yükleme
+                  href: how-to-install-the-visual-studio-tools-for-office-runtime-redistributable.md
+                - name: Office Birincil Birlikte Çalışma Derlemelerini Yükleme
+                  href: how-to-install-office-primary-interop-assemblies.md
+            - name: Excel İçin Belge Düzeyi Özelleştirme Programlamasına Başlama
+              href: getting-started-programming-document-level-customizations-for-excel.md
+            - name: Word'de Belge Düzeyinde Özelleştirme Programlamasına Başlama
+              href: getting-started-programming-document-level-customizations-for-word.md
+            - name: VSTO Eklentilerini Programlamaya Başlama
+              href: getting-started-programming-vsto-add-ins.md
+            - name: Visual Studio'da VBA ve Office Çözümleri Karşılaştırması
+              href: vba-and-office-solutions-in-visual-studio-compared.md
+            - name: Office Programlarındaki Ortak Görevler
+              href: common-tasks-in-office-programming.md
+            - name: Office Çözümleri Geliştirmek için Ek Kaynaklar
+              href: additional-resources-for-developing-office-solutions.md
+        - name: Office Çözümlerini Yükseltme ve Geçirme
+          href: upgrading-and-migrating-office-solutions.md
+          items:
+            - name: Office Çözümlerini .NET Framework 4 veya Sonraki Sürümlere Geçirme
+              href: migrating-office-solutions-to-the-dotnet-framework-4-or-later.md
+              items:
+                - name: Office Projelerini Çalıştırmak için Gereken Değişiklikler
+                  href: required-changes-to-run-office-projects-that-you-migrate-to-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md
+                - name: Excel ve Word Projelerini Güncelleştirme
+                  href: updating-excel-and-word-projects-that-you-migrate-to-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md
+                - name: Office Projelerindeki Şerit Özelleştirmelerini Güncelleştirme
+                  href: updating-ribbon-customizations-in-office-projects-that-you-migrate-to-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md
+                - name: Outlook Projelerindeki Form Bölgelerini Güncelleştirme
+                  href: updating-form-regions-in-outlook-projects-that-you-migrate-to-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md
+        - name: Visual Studio'da Office Çözümleri Mimarisi
+          href: architecture-of-office-solutions-in-visual-studio.md
+          items:
+            - name: Belge Düzeyi Özelleştirmeler Mimarisi
+              href: architecture-of-document-level-customizations.md
+            - name: VSTO Eklentileri Mimarisi
+              href: architecture-of-vsto-add-ins.md
+            - name: Office Çalışma Zamanı İçin Visual Studio Araçlarına Genel Bakış
+              href: visual-studio-tools-for-office-runtime-overview.md
+              items:
+                - name: Office Çalışma Zamanı Yükleme Senaryoları için Visual Studio Araçları
+                  href: visual-studio-tools-for-office-runtime-installation-scenarios.md
+                - name: Office Çalışma Zamanı İçin Visual Studio Araçlarındaki Derlemeler
+                  href: assemblies-in-the-visual-studio-tools-for-office-runtime.md
+            - name: VSTO Eklentileri için Kayıt Defteri Girişleri
+              href: registry-entries-for-vsto-add-ins.md
+            - name: Özel Belge Özelliklerine Genel Bakış
+              href: custom-document-properties-overview.md
+        - name: Office Çözümleri Tasarlama ve Oluşturma
+          href: designing-and-creating-office-solutions.md
+          items:
+            - name: Office Proje Şablonlarına Genel Bakış
+              href: office-project-templates-overview.md
+            - name: Visual Studio'da Office Projeleri Oluşturma
+              href: how-to-create-office-projects-in-visual-studio.md
+            - name: Çözümleri Microsoft Office'in Farklı Sürümlerinde Çalıştırma
+              href: running-solutions-in-different-versions-of-microsoft-office.md
+            - name: Visual Studio Ortamında Office Projeleri
+              href: office-projects-in-the-visual-studio-environment.md
+            - name: Office Projelerinde Özellikler
+              href: properties-in-office-projects.md
+            - name: Office Çözümlerinde Uygulama ve Dağıtım Bildirimleri
+              href: application-and-deployment-manifests-in-office-solutions.md
+            - name: Birincil Birlikte Çalışma Derlemeleriyle Office Uygulamalarını Hedefleme
+              href: how-to-target-office-applications-through-primary-interop-assemblies.md
+            - name: Office Çözümü için Yapılandırma Bilgilerini Kurma
+              href: how-to-set-up-configuration-information-for-an-office-solution.md
+            - name: Visual Studio İçinde Office İşlevselliğini Kullanma
+              href: using-office-functionality-inside-of-visual-studio.md
+              items:
+                - name: Belge Düzeyi Çözümlerde Belge Koruması
+                  href: document-protection-in-document-level-solutions.md
+                - name: Bilgi Hakları Yönetimine ve Yönetilen Kod Uzantılarına Genel Bakış
+                  href: information-rights-management-and-managed-code-extensions-overview.md
+                - name: Kodun Kısıtlı İzinle Belgelerin Arkasında Çalışmasına İzin Verme
+                  href: how-to-permit-code-to-run-behind-documents-with-restricted-permissions.md
+                - name: Office Belgelerinde Parola Koruması
+                  href: password-protection-on-office-documents.md
+                - name: Kod Çalıştırmadan Office Çözümlerini Açma
+                  href: how-to-open-office-solutions-without-running-code.md
+        - name: Office Çözümleri Geliştirme
+          href: developing-office-solutions.md
+          items:
+            - name: Office Çözümlerinde Kod Yazma
+              href: writing-code-in-office-solutions.md
+              items:
+                - name: Office Çözümlerinde İsteğe Bağlı Parametreler
+                  href: optional-parameters-in-office-solutions.md
+                - name: Office Çözümlerinde Geç Bağlama
+                  href: late-binding-in-office-solutions.md
+                - name: Office Projelerindeki Nesnelere Genel Erişim
+                  href: global-access-to-objects-in-office-projects.md
+                - name: Office Projelerindeki Olaylar
+                  href: events-in-office-projects.md
+                - name: Office Projelerinde Olay İşleyicileri Oluşturma
+                  href: how-to-create-event-handlers-in-office-projects.md
+                - name: Office Çözümlerinin İşbirlikçi Geliştirmesi
+                  href: collaborative-development-of-office-solutions.md
+            - name: VSTO Eklentilerini Programlama
+              href: programming-vsto-add-ins.md
+              items:
+                - name: Bir VSTO Eklentisinin Performansını İyileştirme
+                  href: improving-the-performance-of-a-vsto-add-in.md
+                - name: VSTO Eklentilerindeki Word Belgelerini ve Excel Çalışma Kitaplarını Çalışma Zamanında Genişletme
+                  href: extending-word-documents-and-excel-workbooks-in-vsto-add-ins-at-run-time.md
+                - name: VSTO Eklentilerinde Diğer Office Çözümlerinden Kod Çağırma
+                  href: calling-code-in-vsto-add-ins-from-other-office-solutions.md
+                - name: 'İnceleme: VSTO Eklentisinde VBA''dan Kod Çağırma'
+                  href: walkthrough-calling-code-in-a-vsto-add-in-from-vba.md
+                - name: Genişletilebilirlik Arabirimlerini Kullanarak Kullanıcı Arabirimi Özelliklerini Özelleştirme
+                  href: customizing-ui-features-by-using-extensibility-interfaces.md
+            - name: Belge Düzeyi Özelleştirmelerini Programlama
+              href: programming-document-level-customizations.md
+              items:
+                - name: VBA ve Belge Düzeyi Özelleştirmelerini Birleştirme
+                  href: combining-vba-and-document-level-customizations.md
+                  items:
+                    - name: Visual Basic Projesinde Kodu VBA Kullanımına Sunma
+                      href: how-to-expose-code-to-vba-in-a-visual-basic-project.md
+                    - name: 'Visual C# Projesinde Kodu VBA Kullanımına Sunma'
+                      href: how-to-expose-code-to-vba-in-a-visual-csharp-project.md
+                    - name: 'İzlenecek Yol: Visual Basic Projesinde VBA''dan Kod Çağırma'
+                      href: walkthrough-calling-code-from-vba-in-a-visual-basic-project.md
+                    - name: 'İzlenecek Yol: Visual C# Projesinde VBA''dan Kod Çağırma'
+                      href: walkthrough-calling-code-from-vba-in-a-visual-csharp-project.md
+                - name: ServerDocument Sınıfını Kullanarak Sunucuda Belge Yönetme
+                  href: managing-documents-on-a-server-by-using-the-serverdocument-class.md
+                  items:
+                    - name: Belgelerden Yönetilen Kod Uzantılarını Kaldırma
+                      href: how-to-remove-managed-code-extensions-from-documents.md
+                    - name: Belgelere Yönetilen Kod Uzantıları Ekleme
+                      href: how-to-attach-managed-code-extensions-to-documents.md
+            - name: Office Kullanıcı Arabirimini Özelleştirme
+              href: office-ui-customization.md
+              items:
+                - name: Office Belgelerindeki Denetimler
+                  href: controls-on-office-documents.md
+                  items:
+                    - name: Konak Öğelerine ve Denetimlerine Genel Bakış
+                      href: host-items-and-host-controls-overview.md
+                    - name: Konak Denetimlerinin ve Konak Öğelerinin Programlama Sınırlamaları
+                      href: programmatic-limitations-of-host-items-and-host-controls.md
+                    - name: Office Belgelerindeki Windows Forms Denetimlerine Genel Bakış
+                      href: windows-forms-controls-on-office-documents-overview.md
+                      items:
+                        - name: Office Belgelerindeki Windows Forms Denetimleri Sınırlamaları
+                          href: limitations-of-windows-forms-controls-on-office-documents.md
+                        - name: Office Belgelerine Windows Forms Denetimleri Ekleme
+                          href: how-to-add-windows-forms-controls-to-office-documents.md
+                        - name: 'İzlenecek Yol: CheckBox Denetimlerini Kullanarak Belge Biçimlendirmesini Değiştirme'
+                          href: walkthrough-changing-document-formatting-using-checkbox-controls.md
+                        - name: 'İzlenecek Yol: CheckBox Denetimlerini Kullanarak Çalışma Sayfası Biçimlendirmesini Değiştirme'
+                          href: walkthrough-changing-worksheet-formatting-using-checkbox-controls.md
+                        - name: 'İzlenecek Yol: Belgedeki Metin Kutusunda Düğme Kullanarak Metin Görüntüleme'
+                          href: walkthrough-displaying-text-in-a-text-box-in-a-document-using-a-button.md
+                        - name: 'İzlenecek Yol: Düğme Kullanarak Çalışma Sayfasındaki Metin Kutusunda Metin Görüntüleme'
+                          href: walkthrough-displaying-text-in-a-text-box-in-a-worksheet-using-a-button.md
+                        - name: 'İzlenecek Yol: Radyo Düğmelerini Kullanarak Belgede Grafik Güncelleme'
+                          href: walkthrough-updating-a-chart-in-a-document-using-radio-buttons.md
+                        - name: 'İzlenecek Yol: Radyo Düğmelerini Kullanarak Çalışma Sayfasında Grafik Güncelleme'
+                          href: walkthrough-updating-a-chart-in-a-worksheet-using-radio-buttons.md
+                        - name: Çalışma Sayfası Hücreleri İçinde Denetimleri Yeniden Boyutlandırma
+                          href: how-to-resize-controls-within-worksheet-cells.md
+                        - name: Yazdırırken Çalışma Sayfası Denetimlerini Gizleme
+                          href: how-to-hide-controls-on-worksheets-when-printing.md
+                    - name: Office Belgelerine Çalışma Zamanında Denetim Ekleme
+                      href: adding-controls-to-office-documents-at-run-time.md
+                      items:
+                        - name: Office Belgelerinde Dinamik Denetimleri Kalıcı Kılma
+                          href: persisting-dynamic-controls-in-office-documents.md
+                - name: Şerite Genel Bakış
+                  href: ribbon-overview.md
+                  items:
+                    - name: Şerit Özelleştirmeye Başlama
+                      href: how-to-get-started-customizing-the-ribbon.md
+                    - name: Şerit Tasarımcısı
+                      href: ribbon-designer.md
+                    - name: 'İzlenecek Yol: Şerit Tasarımcısını Kullanarak Özel Sekme Oluşturma'
+                      href: walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer.md
+                    - name: Şerit Nesne Modeline Genel Bakış
+                      href: ribbon-object-model-overview.md
+                    - name: 'İzlenecek Yol: Şerit Denetimlerini Çalışma Zamanında Güncelleme'
+                      href: walkthrough-updating-the-controls-on-a-ribbon-at-run-time.md
+                    - name: Outlook İçin Şerit Özelleştirme
+                      href: customizing-a-ribbon-for-outlook.md
+                    - name: InfoPath İçin Şerit Özelleştirme
+                      href: customizing-a-ribbon-for-infopath.md
+                    - name: Çalışma Zamanında Şerite Erişme
+                      href: accessing-the-ribbon-at-run-time.md
+                    - name: Şeritteki Sekmenin Konumunu Değiştirme
+                      href: how-to-change-the-position-of-a-tab-on-the-ribbon.md
+                    - name: Yerleşik Bir Sekmeyi Özelleştirme
+                      href: how-to-customize-a-built-in-tab.md
+                    - name: Backstage Görünümüne Denetimler Ekleme
+                      href: how-to-add-controls-to-the-backstage-view.md
+                    - name: Şerit Grubuna İletişim Kutusu Başlatıcısı Ekleme
+                      href: how-to-add-a-dialog-box-launcher-to-a-ribbon-group.md
+                    - name: Şerit Tasarımcısından Şerit XML'ine Dışarıya Şerit Aktarma
+                      href: how-to-export-a-ribbon-from-the-ribbon-designer-to-ribbon-xml.md
+                    - name: Şerit XML
+                      href: ribbon-xml.md
+                    - name: 'İzlenecek Yol: Şerit XML Kullanarak Özel Sekme Oluşturma'
+                      href: walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md
+                - name: Eylemler Bölmesine Genel Bakış
+                  href: actions-pane-overview.md
+                  items:
+                    - name: Word Belgelerine veya Excel Çalışma Kitaplarına Eylemler Bölmesi Ekleme
+                      href: how-to-add-an-actions-pane-to-word-documents-or-excel-workbooks.md
+                    - name: Eylemler Bölmesindeki Denetim Düzenini Yönetme
+                      href: how-to-manage-control-layout-on-actions-panes.md
+                    - name: 'İzlenecek Yol: Word Eylemler Bölmesindeki Denetimlere Veri Bağlama'
+                      href: walkthrough-binding-data-to-controls-on-a-word-actions-pane.md
+                    - name: 'İzlenecek Yol: Excel Eylemler Bölmesindeki Denetimlere Veri Bağlama'
+                      href: walkthrough-binding-data-to-controls-on-an-excel-actions-pane.md
+                    - name: 'İzlenecek Yol: Eylemler Bölmesinden Belgeye Metin Ekleme'
+                      href: walkthrough-inserting-text-into-a-document-from-an-actions-pane.md
+                - name: Özel Görev Bölmeleri
+                  href: custom-task-panes.md
+                  items:
+                    - name: Uygulamaya Özel Görev Bölmesi Ekleme
+                      href: how-to-add-a-custom-task-pane-to-an-application.md
+                    - name: 'İzlenecek Yol: Uygulamayı Özel Görev Bölmesinden Otomatikleştirme'
+                      href: walkthrough-automating-an-application-from-a-custom-task-pane.md
+                    - name: 'İzlenecek Yol: Özel Görev Bölmesini Şerit Düğmesi ile Eşitleme'
+                      href: walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md
+                    - name: 'İzlenecek Yol: Outlook''ta E-Posta İletileri ile Birlikte Özel Görev Bölmelerini Görüntüleme'
+                      href: walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md
+                - name: Office Çözümlerinde WPF Denetimlerini Kullanma
+                  href: using-wpf-controls-in-office-solutions.md
+                - name: Şeritte Geliştirici Sekmesini Gösterme
+                  href: how-to-show-the-developer-tab-on-the-ribbon.md
+                - name: Eklenti Kullanıcı Arayüzü Hatalarını Gösterme
+                  href: how-to-show-add-in-user-interface-errors.md
+                - name: Kısayol Menülerine Komut Ekleme
+                  href: how-to-add-commands-to-shortcut-menus.md
+                - name: 'İzlenecek Yol: Windows Formu Kullanarak Veri Toplama'
+                  href: walkthrough-collecting-data-using-a-windows-form.md
+            - name: Office Çözümlerindeki Veriler
+              href: data-in-office-solutions.md
+              items:
+                - name: Office Çözümlerinde Verileri Denetimlere Bağlama
+                  href: binding-data-to-controls-in-office-solutions.md
+                  items:
+                    - name: Çalışma Sayfalarını Veritabanı Verileriyle Doldurma
+                      href: how-to-populate-worksheets-with-data-from-a-database.md
+                    - name: Belgeleri Veritabanı Verileriyle Doldurma
+                      href: how-to-populate-documents-with-data-from-a-database.md
+                    - name: Belgeleri Hizmet Verileriyle Doldurma
+                      href: how-to-populate-documents-with-data-from-services.md
+                    - name: 'İzlenecek Yol: Bir VSTO eklenti Projesinde Bir Hizmetten Verilere Bağlanma'
+                      href: walkthrough-binding-to-data-from-a-service-in-a-vsto-add-in-project.md
+                    - name: Belgeleri Nesne Verileriyle Doldurma
+                      href: how-to-populate-documents-with-data-from-objects.md
+                    - name: Çalışma Sayfasındaki Veritabanı Kayıtları Arasında Kaydırma
+                      href: how-to-scroll-through-database-records-in-a-worksheet.md
+                    - name: Konak Kontrolü Verileriyle Veri Kaynağını Güncelleme
+                      href: how-to-update-a-data-source-with-data-from-a-host-control.md
+                    - name: 'İzlenecek Yol: Belge Düzeyi Projede Basit Veri Bağlama'
+                      href: walkthrough-simple-data-binding-in-a-document-level-project.md
+                    - name: 'İzlenecek Yol: Belge Düzeyi Projede Karmaşık Veri Bağlama'
+                      href: walkthrough-complex-data-binding-in-a-document-level-project.md
+                    - name: 'İzlenecek Yol: VSTO eklenti Projesinde Basit Veri Bağlama'
+                      href: walkthrough-simple-data-binding-in-vsto-add-in-project.md
+                    - name: 'İzlenecek Yol: VSTO eklenti Projesinde Karmaşık Veri Bağlama'
+                      href: walkthrough-complex-data-binding-in-vsto-add-in-project.md
+                - name: Özel XML Bölümlerine Genel Bakış
+                  href: custom-xml-parts-overview.md
+                  items:
+                    - name: Belge Düzeyi Özelleştirmelerine Özel XML Bölümleri Ekleme
+                      href: how-to-add-custom-xml-parts-to-document-level-customizations.md
+                    - name: VSTO Eklentilerini Kullanarak Belgelere Özel XML Bölümleri Ekleme
+                      href: how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins.md
+                - name: Belge Düzeyi Özelleştirmelerdeki Önbelleğe Alınmış Veriler
+                  href: cached-data-in-document-level-customizations.md
+                  items:
+                    - name: Verileri Önbelleğe Alma
+                      href: caching-data.md
+                      items:
+                        - name: Çevrimdışı veya Sunucuda Kullanmak Üzere Verileri Önbelleğe Alma
+                          href: how-to-cache-data-for-use-offline-or-on-a-server.md
+                        - name: Veri Kaynağını Programlamayla Office Belgesinden Önbelleğe Alma
+                          href: how-to-programmatically-cache-a-data-source-in-an-office-document.md
+                        - name: Parola Korumalı Belgede Veriyi Önbelleğe Alma
+                          href: how-to-cache-data-in-a-password-protected-document.md
+                        - name: 'İzlenecek Yol: Önbellekteki Veri Kümesini Kullanarak Ana Öğe-Ayrıntı İlişkisi Oluşturma'
+                          href: walkthrough-creating-a-master-detail-relation-using-a-cached-dataset.md
+                    - name: Sunucudaki Belgelerde Verilere Erişme
+                      href: accessing-data-in-documents-on-the-server.md
+                      items:
+                        - name: 'İzlenecek Yol: Sunucudaki Çalışma Kitabına Veri Ekleme'
+                          href: walkthrough-inserting-data-into-a-workbook-on-a-server.md
+                        - name: 'İzlenecek Yol: Sunucudaki Çalışma Kitabından Önbelleğe Alınmış Verileri Alma'
+                          href: walkthrough-retrieving-cached-data-from-a-workbook-on-a-server.md
+                        - name: 'İzlenecek Yol: Sunucudaki Çalışma Kitabında Bulunan Önbelleğe Alınmış Verileri Değiştirme'
+                          href: walkthrough-changing-cached-data-in-a-workbook-on-a-server.md
+                - name: Belge Düzeyi Özelleştirmelerde XML Şemaları ve Verileri
+                  href: xml-schemas-and-data-in-document-level-customizations.md
+                  items:
+                    - name: Şemaları Visual Studio İçindeki Word Belgeleriyle Eşleştirme
+                      href: how-to-map-schemas-to-word-documents-inside-visual-studio.md
+                    - name: Şemaları Visual Studio İçindeki Çalışma Sayfalarıyla Eşleştirme
+                      href: how-to-map-schemas-to-worksheets-inside-visual-studio.md
+                - name: Office Çözümlerinde Yerel Veritabanı Dosyaları Kullanmaya Genel Bakış
+                  href: using-local-database-files-in-office-solutions-overview.md
+            - name: Otomatik Kaydetme’nin Office Çözümlerine Etkisi
+              href: how-autosave-impacts-office-solutions.md
+            - name: Office Çözümlerinde Sorun Giderme
+              href: troubleshooting-office-solutions.md
+              items:
+                - name: Office Çözümleri Hatalarında Sorun Giderme
+                  href: troubleshooting-errors-in-office-solutions.md
+                - name: Devre Dışı Bırakılmış VSTO Eklentisini Yeniden Etkinleştirme
+                  href: how-to-re-enable-a-vsto-add-in-that-has-been-disabled.md
+                - name: Office Çözümlerindeki Hatalar İçin Ek Destek
+                  href: additional-support-for-errors-in-office-solutions.md
+            - name: 'Office’te COM, VSTO ve VBA eklentileri için en iyi geliştirme yöntemleri'
+              href: development-best-practices-for-com-vsto-and-vba-add-ins-in-office.md
+            - name: Office'te İş Parçacığı Desteği
+              href: threading-support-in-office.md
+            - name: Belge Özelliklerinden Okuma ve Yazma
+              href: how-to-read-from-and-write-to-document-properties.md
+            - name: Özel Belge Özelliklerini Oluşturma ve Değiştirme
+              href: how-to-create-and-modify-custom-document-properties.md
+            - name: Office Çok Dilde Kullanıcı Arabirimini Hedefleme
+              href: how-to-target-the-office-multilingual-user-interface.md
+            - name: Office Projelerinde Erişilebilirlik
+              href: accessibility-in-office-projects.md
+        - name: Excel Çözümleri
+          href: excel-solutions.md
+          items:
+            - name: Excel Nesne Modeline Genel Bakış
+              href: excel-object-model-overview.md
+              items:
+                - name: Çalışma Kitaplarıyla Çalışma
+                  href: working-with-workbooks.md
+                  items:
+                    - name: Program Aracılığıyla Yeni Çalışma Kitaplarını Açma
+                      href: how-to-programmatically-create-new-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarını Açma
+                      href: how-to-programmatically-open-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarını Kapatma
+                      href: how-to-programmatically-close-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarını Kaydetme
+                      href: how-to-programmatically-save-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarını Koruma
+                      href: how-to-programmatically-protect-workbooks.md
+                    - name: Program Aracılığıyla Son Kullanılan Çalışma Kitabı Dosyalarını Listeleme
+                      href: how-to-programmatically-list-recently-used-workbook-files.md
+                    - name: Program Aracılığıyla Metin Dosyalarını Çalışma Kitapları Biçiminde Açma
+                      href: how-to-programmatically-open-text-files-as-workbooks.md
+                - name: Çalışma Sayfaları ile Çalışma
+                  href: working-with-worksheets.md
+                  items:
+                    - name: Program Aracılığıyla Çalışma Kitaplarına Yeni Çalışma Sayfaları Ekleme
+                      href: how-to-programmatically-add-new-worksheets-to-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarını Kopyalama
+                      href: how-to-programmatically-copy-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarından Çalışma Sayfaları Silme
+                      href: how-to-programmatically-delete-worksheets-from-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Sayfaları Seçme
+                      href: how-to-programmatically-select-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Kitabındaki Tüm Çalışma Sayfalarını Listeleme
+                      href: how-to-programmatically-list-all-worksheets-in-a-workbook.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarını Yazdırma
+                      href: how-to-programmatically-print-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarındaki Çalışma Sayfalarını Taşıma
+                      href: how-to-programmatically-move-worksheets-within-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarını Gizleme
+                      href: how-to-programmatically-hide-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarını Koruma
+                      href: how-to-programmatically-protect-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarından Korumayı Kaldırma
+                      href: how-to-programmatically-remove-protection-from-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Sayfası Açıklamaları Ekleme ve Silme
+                      href: how-to-programmatically-add-and-delete-worksheet-comments.md
+                    - name: Program Aracılığıyla Çalışma Sayfası Açıklamalarını Görüntüleme
+                      href: how-to-programmatically-display-worksheet-comments.md
+                    - name: Program Aracılığıyla Çalışma Sayfasında Satırları Gruplama
+                      href: how-to-programmatically-group-rows-in-a-worksheet.md
+                    - name: Program Aracılığıyla Seçili Hücreler İçeren Çalışma Sayfalarındaki Satırlarda Biçimlendirmeyi Değiştirme
+                      href: how-to-programmatically-change-formatting-in-worksheet-rows-containing-selected-cells.md
+                    - name: Program Aracılığıyla Çalışma Sayfaları Arasında Veri ve Biçimlendirme Kopyalama
+                      href: how-to-programmatically-copy-data-and-formatting-across-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarında Yazımı Denetleme
+                      href: how-to-programmatically-check-spelling-in-worksheets.md
+                    - name: Program Aracılığıyla Çalışma Sayfalarında Verileri Sıralama
+                      href: how-to-programmatically-sort-data-in-worksheets.md
+                - name: Aralıklarla Çalışma
+                  href: working-with-ranges.md
+                  items:
+                    - name: Program Aracılığıyla Koddaki Çalışma Sayfası Aralıklarına Bakma
+                      href: how-to-programmatically-refer-to-worksheet-ranges-in-code.md
+                    - name: Program Aracılığıyla Aralıkları Artımlı Şekilde Değişen Verilerle Otomatik Biçimde Doldurma
+                      href: how-to-programmatically-automatically-fill-ranges-with-incrementally-changing-data.md
+                    - name: Program Aracılığıyla Excel Aralıklarında Veri Değerlerini Depolama ve Alma
+                      href: how-to-programmatically-store-and-retrieve-date-values-in-excel-ranges.md
+                    - name: Program Aracılığıyla Çalışma Kitaplarındaki Aralıklara Biçimler Uygulama
+                      href: how-to-programmatically-apply-styles-to-ranges-in-workbooks.md
+                    - name: Program Aracılığıyla Çalışma Sayfası Aralıklarında Metin Arama
+                      href: how-to-programmatically-search-for-text-in-worksheet-ranges.md
+                    - name: Program Aracılığıyla Excel Aralıklarına Renk Uygulama
+                      href: how-to-programmatically-apply-color-to-excel-ranges.md
+                    - name: Program Aracılığıyla Excel Hesapları Çalıştırma
+                      href: how-to-programmatically-run-excel-calculations-programmatically.md
+                    - name: Program Aracılığıyla Çalışma Sayfası Hücresinde Bir Dizeyi Görüntüleme
+                      href: how-to-programmatically-display-a-string-in-a-worksheet-cell.md
+            - name: Genişletilmiş Nesneleri Kullanarak Excel'i Otomatikleştirme
+              href: automating-excel-by-using-extended-objects.md
+              items:
+                - name: Çalışma Kitabı Konak Öğesi
+                  href: workbook-host-item.md
+                - name: Çalışma Sayfası Konak Öğesi
+                  href: worksheet-host-item.md
+                - name: Grafik Denetimi
+                  href: chart-control.md
+                - name: ListObject Denetimi
+                  href: listobject-control.md
+                - name: NamedRange Denetimi
+                  href: namedrange-control.md
+                - name: XmlMappedRange Denetimi
+                  href: xmlmappedrange-control.md
+                - name: Çalışma Sayfalarına Grafik Denetimleri Ekleme
+                  href: how-to-add-chart-controls-to-worksheets.md
+                - name: Çalışma Sayfalarına ListObject Denetimleri Ekleme
+                  href: how-to-add-listobject-controls-to-worksheets.md
+                - name: Çalışma Sayfalarına NamedRange Denetimleri Ekleme
+                  href: how-to-add-namedrange-controls-to-worksheets.md
+                - name: Çalışma Sayfalarına XMLMappedRange Denetimleri Ekleme
+                  href: how-to-add-xmlmappedrange-controls-to-worksheets.md
+                - name: NamedRange Denetimlerinin Boyutunu Değiştirme
+                  href: how-to-resize-namedrange-controls.md
+                - name: ListObject Denetimlerinin Boyutunu Değiştirme
+                  href: how-to-resize-listobject-controls.md
+                - name: ListObject Denetimine Yeni Bir Satır Eklendiğinde Veriyi Doğrulama
+                  href: how-to-validate-data-when-a-new-row-is-added-to-a-listobject-control.md
+                - name: ListObject Sütunlarıyla Verileri Eşleme
+                  href: how-to-map-listobject-columns-to-data.md
+                - name: ListObject Denetimlerini Veri ile Doldurma
+                  href: how-to-fill-listobject-controls-with-data.md
+                - name: 'İzlenecek Yol: NamedRange Denetimi Olaylarına Karşı Programlama'
+                  href: walkthrough-programming-against-events-of-a-namedrange-control.md
+            - name: Birlikte Yazmayı ve Eklentileri Anlama
+              href: understanding-coauthoring-and-addins.md
+            - name: Excel Çözümlerini Genelleştirme ve Yerelleştirme
+              href: globalization-and-localization-of-excel-solutions.md
+            - name: Excel Çalışma Sayfalarında Windows Forms Denetimlerini Kullanma
+              href: using-windows-forms-controls-on-excel-worksheets.md
+            - name: 'İzlenecek Yol: Excel İçin İlk Belge Düzeyi Özelleştirmeyi Oluşturma'
+              href: walkthrough-creating-your-first-document-level-customization-for-excel.md
+            - name: 'İnceleme: Excel için İlk VSTO Eklentinizi Oluşturma'
+              href: walkthrough-creating-your-first-vsto-add-in-for-excel.md
+            - name: 'İzlenecek Yol: Çalışma Zamanında VSTO Eklenti Projesindeki Çalışma Sayfasına Denetimler Ekleme'
+              href: walkthrough-adding-controls-to-a-worksheet-at-run-time-in-vsto-add-in-project.md
+        - name: InfoPath Çözümleri
+          href: infopath-solutions.md
+        - name: Outlook Çözümleri
+          href: outlook-solutions.md
+          items:
+            - name: Outlook Nesne Modeline Genel Bakış
+              href: outlook-object-model-overview.md
+              items:
+                - name: Kişi Öğeleriyle Çalışma
+                  href: working-with-contact-items.md
+                  items:
+                    - name: Program Aracılığıyla Outlook Kişilerine Erişme
+                      href: how-to-programmatically-access-outlook-contacts.md
+                    - name: Program Aracılığıyla Belirli bir Kişi Arama
+                      href: how-to-programmatically-search-for-a-specific-contact.md
+                    - name: Program Aracılığıyla Outlook Kişilerine Giriş Ekleme
+                      href: how-to-programmatically-add-an-entry-to-outlook-contacts.md
+                    - name: Program Aracılığıyla Kişilerde E-posta Adresi Arama
+                      href: how-to-programmatically-search-for-an-e-mail-address-in-contacts.md
+                    - name: Program Aracılığıyla Outlook Kişilerini Silme
+                      href: how-to-programmatically-delete-outlook-contacts.md
+                - name: Posta Öğeleriyle Çalışma
+                  href: working-with-mail-items.md
+                  items:
+                    - name: Program Aracılığıyla E-posta Öğesi Oluşturma
+                      href: how-to-programmatically-create-an-e-mail-item.md
+                    - name: Program Aracılığıyla E-posta Gönderme
+                      href: how-to-programmatically-send-e-mail-programmatically.md
+                    - name: Program Aracılığıyla E-Posta İletisi Alındığında İşlem Gerçekleştirme
+                      href: how-to-programmatically-perform-actions-when-an-e-mail-message-is-received.md
+                    - name: Program Aracılığıyla Outlook E-Posta Öğelerinden Ekleri Kaydetme
+                      href: how-to-programmatically-save-attachments-from-outlook-e-mail-items.md
+                    - name: Program Aracılığıyla Outlook E-Posta Öğelerine Dosya Ekleme
+                      href: how-to-programmatically-attach-files-to-outlook-e-mail-items.md
+                    - name: Program Aracılığıyla Gelen Kutusundan Okunmamış İletileri Alma
+                      href: how-to-programmatically-retrieve-unread-messages-from-the-inbox.md
+                - name: Klasörlerle Çalışma
+                  href: working-with-folders.md
+                  items:
+                    - name: Program Aracılığıyla Belirli Klasör İçinde Arama Yapma
+                      href: how-to-programmatically-search-within-a-specific-folder.md
+                    - name: Program Aracılığıyla Klasörü Ada Göre Alma
+                      href: how-to-programmatically-retrieve-a-folder-by-name.md
+                    - name: Program Aracılığıyla Web Sayfasını Outlook Klasörüyle İlişkilendirme
+                      href: how-to-programmatically-associate-a-web-page-with-an-outlook-folder.md
+                    - name: Program Aracılığıyla Özel Klasör Öğeleri Oluşturma
+                      href: how-to-programmatically-create-custom-folder-items.md
+                    - name: Program Aracılığıyla Outlook'ta Öğeleri Taşıma
+                      href: how-to-programmatically-move-items-in-outlook.md
+                - name: Takvim Öğeleriyle Çalışma
+                  href: working-with-calendar-items.md
+                  items:
+                    - name: Program Aracılığıyla Randevuları Oluşturma
+                      href: how-to-programmatically-create-appointments.md
+                    - name: Program Aracılığıyla Randevuları Silme
+                      href: how-to-programmatically-delete-appointments.md
+                    - name: Program Aracılığıyla Özel bir Takvim Oluşturma
+                      href: how-to-programmatically-create-a-custom-calendar.md
+                    - name: Program Aracılığıyla Toplantı İsteği Oluşturma
+                      href: how-to-programmatically-create-a-meeting-request.md
+                - name: Program Aracılığıyla Geçerli Outlook Öğesini Belirleme
+                  href: how-to-programmatically-determine-the-current-outlook-item.md
+            - name: Outlook Form Bölgeleri Oluşturma
+              href: creating-outlook-form-regions.md
+              items:
+                - name: Outlook Form Bölgeleri Oluşturma Yönergeleri
+                  href: guidelines-for-creating-outlook-form-regions.md
+                - name: Outlook Eklenti Projesine Form Bölgesi Ekleme
+                  href: how-to-add-a-form-region-to-an-outlook-add-in-project.md
+                - name: Form Bölgesini Outlook İleti Sınıfıyla İlişkilendirme
+                  href: associating-a-form-region-with-an-outlook-message-class.md
+                - name: 'İzlenecek Yol: Outlook Form Bölgesi Tasarlama'
+                  href: walkthrough-designing-an-outlook-form-region.md
+                - name: 'İzlenecek Yol: Outlook''ta Tasarlanan Form Bölgesini İçeri Aktarma'
+                  href: walkthrough-importing-a-form-region-that-is-designed-in-outlook.md
+                - name: Form Bölgesine Çalışma Zamanında Erişme
+                  href: accessing-a-form-region-at-run-time.md
+                - name: Outlook'un Form Bölgesini Görüntülemesini Engelleme
+                  href: how-to-prevent-outlook-from-displaying-a-form-region.md
+                - name: Outlook Form Bölgelerindeki Özel Eylemler
+                  href: custom-actions-in-outlook-form-regions.md
+            - name: 'İnceleme: Outlook için İlk VSTO Eklentinizi Oluşturma'
+              href: walkthrough-creating-your-first-vsto-add-in-for-outlook.md
+        - name: PowerPoint Çözümleri
+          href: powerpoint-solutions.md
+          items:
+            - name: 'İnceleme: PowerPoint için İlk VSTO Eklentinizi Oluşturma'
+              href: walkthrough-creating-your-first-vsto-add-in-for-powerpoint.md
+        - name: Proje Çözümleri
+          href: project-solutions.md
+          items:
+            - name: 'İzlenecek yol: Project için İlk VSTO Eklentinizi Oluşturma'
+              href: walkthrough-creating-your-first-vsto-add-in-for-project.md
+        - name: Visio Çözümleri
+          href: visio-solutions.md
+          items:
+            - name: Visio Nesne Modeline Genel Bakış
+              href: visio-object-model-overview.md
+            - name: Visio Belgeleriyle Çalışma
+              href: working-with-visio-documents.md
+              items:
+                - name: Program Aracılığıyla Yeni Visio Belgeleri Oluşturma
+                  href: how-to-programmatically-create-new-visio-documents.md
+                - name: Program Aracılığıyla Visio Belgelerini Açma
+                  href: how-to-programmatically-open-visio-documents.md
+                - name: Program Aracılığıyla Visio Belgelerini Kapatma
+                  href: how-to-programmatically-close-visio-documents.md
+                - name: Program Aracılığıyla Visio Belgelerini Kaydetme
+                  href: how-to-programmatically-save-visio-documents.md
+                - name: Program Aracılığıyla Visio Belgelerini Yazdırma
+                  href: how-to-programmatically-print-visio-documents.md
+            - name: Visio Şekilleri ile Çalışma
+              href: working-with-visio-shapes.md
+              items:
+                - name: Program Aracılığıyla Visio Belgesine Şekiller Ekleme
+                  href: how-to-programmatically-add-shapes-to-a-visio-document.md
+                - name: Program Aracılığıyla Visio Belgelerinde Şekilleri Kopyalama ve Yapıştırma
+                  href: how-to-programmatically-copy-and-paste-shapes-in-a-visio-document.md
+        - name: Word Çözümleri
+          href: word-solutions.md
+          items:
+            - name: Word Nesne Modeline Genel Bakış
+              href: word-object-model-overview.md
+              items:
+                - name: Belgelerle Çalışma
+                  href: working-with-documents.md
+                  items:
+                    - name: Program Aracılığıyla Yeni Belgeler Oluşturma
+                      href: how-to-programmatically-create-new-documents.md
+                    - name: Program Aracılığıyla Mevcut Belgeleri Açma
+                      href: how-to-programmatically-open-existing-documents.md
+                    - name: Program Aracılığıyla Belgeleri Kapatma
+                      href: how-to-programmatically-close-documents.md
+                    - name: Program Aracılığıyla Belgeleri Kaydetme
+                      href: how-to-programmatically-save-documents.md
+                    - name: Program Aracılığıyla Belgeleri Yazdırma
+                      href: how-to-programmatically-print-documents.md
+                    - name: Program Aracılığıyla Baskı Önizlemede Belgeleri Görüntüleme
+                      href: how-to-programmatically-display-documents-in-print-preview.md
+                    - name: Program Aracılığıyla Yerleşik Word İletişim Kutularını Kullanma
+                      href: how-to-programmatically-use-built-in-dialog-boxes-in-word.md
+                    - name: Program Aracılığıyla Gizli Modda Word İletişim Kutuları Kullanma
+                      href: how-to-programmatically-use-word-dialog-boxes-in-hidden-mode.md
+                    - name: Program Aracılığıyla Belgelere Resim ve Word Art Ekleme
+                      href: how-to-programmatically-add-pictures-and-word-art-to-documents.md
+                    - name: Program Aracılığıyla Belgeleri ve Belge Parçalarını Koruma
+                      href: how-to-programmatically-protect-documents-and-parts-of-documents.md
+                    - name: Program Aracılığıyla Belgelerde Yazımı Denetleme
+                      href: how-to-programmatically-check-spelling-in-documents.md
+                    - name: Program Aracılığıyla Belgelere Üst Bilgiler ve Alt Bilgiler Ekleme
+                      href: how-to-programmatically-add-headers-and-footers-to-documents.md
+                    - name: Program Aracılığıyla Belgelerden Tüm Açıklamaları Kaldırma
+                      href: how-to-programmatically-remove-all-comments-from-documents.md
+                - name: Belgelerde Metinle Çalışma
+                  href: working-with-text-in-documents.md
+                  items:
+                    - name: Program Aracılığıyla Belgelerde Aralıkları Tanımlama ve Seçme
+                      href: how-to-programmatically-define-and-select-ranges-in-documents.md
+                    - name: Program Aracılığıyla Aralıklarda Başlangıç ve Bitiş Karakterlerini Alma
+                      href: how-to-programmatically-retrieve-start-and-end-characters-in-ranges.md
+                    - name: Program Aracılığıyla Aralık Oluştururken Paragraf İşaretlerini Hariç Tutma
+                      href: how-to-programmatically-exclude-paragraph-marks-when-creating-ranges.md
+                    - name: Program Aracılığıyla Belgelerde Aralıkları Genişletme
+                      href: how-to-programmatically-extend-ranges-in-documents.md
+                    - name: Program Aracılığıyla Word Belgelerinde Aralıkları Sıfırlama
+                      href: how-to-programmatically-reset-ranges-in-word-documents.md
+                    - name: Program Aracılığıyla Belgelerde Aralıkları veya Seçimleri Daraltma
+                      href: how-to-programmatically-collapse-ranges-or-selections-in-documents.md
+                    - name: Program Aracılığıyla Word Belgelerine Metin Ekleme
+                      href: how-to-programmatically-insert-text-into-word-documents.md
+                    - name: Program Aracılığıyla Belgelerde Metni Biçimlendirme
+                      href: how-to-programmatically-format-text-in-documents.md
+                    - name: Program Aracılığıyla Yer İşareti Metnini Güncelleştirme
+                      href: how-to-programmatically-update-bookmark-text.md
+                    - name: Program Aracılığıyla Belgelerde Metin Arama ve Değiştirme
+                      href: how-to-programmatically-search-for-and-replace-text-in-documents.md
+                    - name: Program Aracılığıyla Word'de Arama Seçeneklerini Ayarlama
+                      href: how-to-programmatically-set-search-options-in-word.md
+                    - name: Program Aracılığıyla Belgelerde Bulunan Öğeler Arasında Döngü Gerçekleştirme
+                      href: how-to-programmatically-loop-through-found-items-in-documents.md
+                    - name: Program Aracılığıyla Aramalardan Sonra Seçimleri Geri Yükleme
+                      href: how-to-programmatically-restore-selections-after-searches.md
+                    - name: Program Aracılığıyla Belgelerde Karakter Sayma
+                      href: how-to-programmatically-count-characters-in-documents.md
+                    - name: Program Aracılığıyla Belgelerde Metni Gizleme
+                      href: how-to-programmatically-hide-text-in-documents.md
+                    - name: Program Aracılığıyla Belgelerde Metne Açıklama Ekleme
+                      href: how-to-programmatically-add-comments-to-text-in-documents.md
+                - name: Sekmelerle Çalışma
+                  href: working-with-tables.md
+                  items:
+                    - name: Program Aracılığıyla Word Tabloları Oluşturma
+                      href: how-to-programmatically-create-word-tables.md
+                    - name: Program Aracılığıyla Belge Özellikleriyle Word Tablolarını Doldurma
+                      href: how-to-programmatically-populate-word-tables-with-document-properties.md
+                    - name: Program Aracılığıyla Word Tablolarına Satır ve Sütun Ekleme
+                      href: how-to-programmatically-add-rows-and-columns-to-word-tables.md
+                    - name: Program Aracılığıyla Word Tablolarında Hücrelere Metin ve Biçimlendirme Ekleme
+                      href: how-to-programmatically-add-text-and-formatting-to-cells-in-word-tables.md
+            - name: Genişletilmiş Nesneleri Kullanarak Word'ü Otomatikleştirme
+              href: automating-word-by-using-extended-objects.md
+              items:
+                - name: Belge Konak Öğesi
+                  href: document-host-item.md
+                - name: İçerik Denetimleri
+                  href: content-controls.md
+                - name: Yer İşareti Denetimi
+                  href: bookmark-control.md
+                - name: XMLNode Denetimi
+                  href: xmlnode-control.md
+                - name: XMLNodes Denetimi
+                  href: xmlnodes-control.md
+                - name: Word Belgelerine İçerik Denetimleri Ekleme
+                  href: how-to-add-content-controls-to-word-documents.md
+                - name: Word Belgelerine Yer İşareti Denetimi Ekleme
+                  href: how-to-add-bookmark-controls-to-word-documents.md
+                - name: Word Belgelerine XMLNode Denetimleri Ekleme
+                  href: how-to-add-xmlnode-controls-to-word-documents.md
+                - name: Word Belgelerine XMLNodes Denetimleri Ekleme
+                  href: how-to-add-xmlnodes-controls-to-word-documents.md
+                - name: İçerik Denetimlerini Kullanarak Belge Bölümlerini Koruma
+                  href: how-to-protect-parts-of-documents-by-using-content-controls.md
+                - name: Yer İşareti Denetimlerini Yeniden Boyutlandırma
+                  href: how-to-resize-bookmark-controls.md
+                - name: 'İzlenecek Yol: İçerik Denetimlerini Kullanarak Şablon Oluşturma'
+                  href: walkthrough-creating-a-template-by-using-content-controls.md
+                - name: 'İzlenecek Yol: İçerik Denetimlerini Özel XML Bölümlerine Bağlama'
+                  href: walkthrough-binding-content-controls-to-custom-xml-parts.md
+                - name: 'İzlenecek Yol: Yer İşaretleri İçin Kısayol Menüleri Oluşturma'
+                  href: walkthrough-creating-shortcut-menus-for-bookmarks.md
+            - name: 'İzlenecek Yol: Word İçin İlk Belge Düzeyi Özelleştirmeyi Oluşturma'
+              href: walkthrough-creating-your-first-document-level-customization-for-word.md
+            - name: 'İnceleme: Word için İlk VSTO Eklentinizi Oluşturma'
+              href: walkthrough-creating-your-first-vsto-add-in-for-word.md
+            - name: 'İzlenecek Yol: VSTO Eklentisindeki Belgeye Çalışma Zamanında Denetim Ekleme'
+              href: walkthrough-adding-controls-to-a-document-at-run-time-in-a-vsto-add-in.md
+        - name: Office Çözümleri Oluşturma
+          href: building-office-solutions.md
+        - name: Office Projelerinde Hata Ayıklama
+          href: debugging-office-projects.md
+        - name: Office Çözümleri Güvenliğini Sağlama
+          href: securing-office-solutions.md
+          items:
+            - name: Office Çözümlerine Güven Verme
+              href: granting-trust-to-office-solutions.md
+            - name: Belgelere Güven Verme
+              href: granting-trust-to-documents.md
+            - name: Güvenli Dağıtım
+              href: secure-deployment.md
+            - name: Ekleme Listelerini Kullanarak Office Çözümlerine Güvenme
+              href: trusting-office-solutions-by-using-inclusion-lists.md
+            - name: Ekleme Listesi Güvenliğini Yapılandırma
+              href: how-to-configure-inclusion-list-security.md
+            - name: Office Çözümleriyle İlgili Belirli Güvenlik Konuları
+              href: specific-security-considerations-for-office-solutions.md
+            - name: Office Çözümlerini İmzalama
+              href: how-to-sign-office-solutions.md
+            - name: Office Çözüm Güvenliğinde Sorunu Giderme
+              href: troubleshooting-office-solution-security.md
+        - name: Office Çözümünü Dağıtma
+          href: deploying-an-office-solution.md
+          items:
+            - name: ClickOnce Kullanarak Office Çözümü Dağıtma
+              href: deploying-an-office-solution-by-using-clickonce.md
+            - name: Windows Installer Kullanarak Office Çözümü Dağıtma
+              href: deploying-an-office-solution-by-using-windows-installer.md
+            - name: Office Çözümü Dağıtımında Sorunu Giderme
+              href: troubleshooting-office-solution-deployment.md
+              items:
+                - name: Office Çözümleri İçin Olay Günlüğüne Kaydetme
+                  href: event-logging-for-office-solutions.md
+        - name: Örnekler ve İzlenecek Yollar
+          href: office-development-samples-and-walkthroughs.md
+          items:
+            - name: Office Geliştirme Örnekleri
+              href: office-development-samples.md
+            - name: Word Kullanımında İzlenecek Yollar
+              href: walkthroughs-using-word.md
+            - name: Excel Kullanarak İzlenecek Yollar
+              href: walkthroughs-using-excel.md
+            - name: Office Çözümlerindeki Verilerde İzlenecek Yol
+              href: data-in-office-solutions-walkthroughs.md
+            - name: Office Kullanıcı Arabirimi Özelleştirmesinde İzlenecek Yollar
+              href: office-ui-customization-walkthroughs.md
+            - name: Güvenlik ve Dağıtmada İzlenecek Yollar
+              href: security-and-deployment-walkthroughs.md
+        - name: Genel Başvuru (Visual Studio'da Office Geliştirme)
+          href: general-reference-office-development-in-visual-studio.md
+          items:
+            - name: Office Birincil Birlikte Çalışma Derlemeleri
+              href: office-primary-interop-assemblies.md
+            - name: Office Çözümleri İçin Uygulama Bildirimleri
+              href: application-manifests-for-office-solutions.md
+              items:
+                - name: <customHostSpecified> Öğesi
+                  href: customhostspecified-element-office-development-in-visual-studio.md
+                - name: <addin> Öğesi
+                  href: addin-element-office-development-in-visual-studio.md
+                - name: <entryPointsCollection> Öğesi
+                  href: entrypointscollection-element-office-development-in-visual-studio.md
+                - name: <entryPoints> Öğesi
+                  href: entrypoints-element-office-development-in-visual-studio.md
+                - name: <entryPoint> Öğesi
+                  href: entrypoint-element-office-development-in-visual-studio.md
+                - name: <update> Öğesi
+                  href: update-element-office-development-in-visual-studio.md
+                - name: <postActions> Öğesi
+                  href: postactions-element-office-development-in-visual-studio.md
+                - name: <postAction> Öğesi
+                  href: postaction-element-office-development-in-visual-studio.md
+                - name: <postActionData> Öğesi
+                  href: postactiondata-element-office-development-in-visual-studio.md
+                - name: <application> Öğesi
+                  href: application-element-office-development-in-visual-studio.md
+                - name: <customizations> Öğesi
+                  href: customizations-element-office-development-in-visual-studio.md
+                - name: <customization> Öğesi
+                  href: customization-element-office-development-in-visual-studio.md
+                - name: <document> Öğesi
+                  href: document-element-office-development-in-visual-studio.md
+                - name: <appAddin> Öğesi
+                  href: appaddin-element-office-development-in-visual-studio.md
+                - name: <friendlyName> Öğesi
+                  href: friendlyname-element-office-development-in-visual-studio.md
+                - name: <description> Öğesi
+                  href: description-element-office-development-in-visual-studio.md
+                - name: <formRegions> Öğesi
+                  href: formregions-element-office-development-in-visual-studio.md
+                - name: <formRegion> Öğesi
+                  href: formregion-element-office-development-in-visual-studio.md
+                - name: <vstoRuntime> Öğesi
+                  href: vstoruntime-element-office-development-in-visual-studio.md
+            - name: Office Çözümleri İçin Dağıtım Bildirimleri
+              href: deployment-manifests-for-office-solutions.md
+            - name: Kullanıcı Arabirimi Başvurusu (Visual Studio'da Office Geliştirme)
+              href: user-interface-reference-office-development-in-visual-studio.md
+              items:
+                - name: 'Microsoft Office Word Klavyesi, Microsoft Office Klavyesi Ayarları, Seçenekler İletişim Kutusu'
+                  href: microsoft-office-word-keyboard-microsoft-office-keyboard-settings-options-dialog-box.md
+                - name: 'Microsoft Office Excel Klavyesi, Microsoft Office Klavyesi Ayarları, Seçenekler İletişim Kutusu'
+                  href: microsoft-office-excel-keyboard-microsoft-office-keyboard-settings-options-dialog-box.md
+                - name: 'Proje Yükseltme, Seçenekler İletişim Kutusu'
+                  href: project-upgrade-options-dialog-box.md
+                - name: 'Yayımlama Sayfası, Proje Tasarımcısı (Visual Studio''da Office Geliştirme)'
+                  href: publish-page-project-designer-office-development-in-visual-studio.md
+                - name: Yayımlama Sihirbazı (Visual Studio'da Office Geliştirme)
+                  href: publish-wizard-office-development-in-visual-studio.md
+            - name: Hata İletileri (Visual Studio'da Office Geliştirme)
+              href: error-messages-office-development-in-visual-studio.md
+              items:
+                - name: Microsoft Office bu bilgisayarda yüklü değil
+                  href: microsoft-office-is-not-installed-on-this-computer.md
+                - name: Bu projeyi oluşturmak için kullanılan çalışma kitabı tasarımcının yükleyemeyeceği ActiveX denetimleri içeriyor
+                  href: the-workbook-used-to-create-this-project-contains-activex-controls-that-the-designer-cannot-load.md
+                - name: .ofs dosyasındaki bir veya daha fazla özellik seçilen ileti sınıfı için geçerli değil
+                  href: one-or-more-properties-in-the-dot-ofs-file-are-not-valid-for-the-message-class-selected.md
+                - name: Microsoft Office Sistemi projesi için Visual Studio Araçları oluşturmak veya açmak için VBA erişimini etkinleştirme
+                  href: enable-access-to-vba-to-create-or-open-a-visual-studio-tools-for-office-system-project.md
+        - name: Yönetilen Başvuru (Visual Studio'da Office Geliştirme)
+          href: managed-reference-office-development-in-visual-studio.md
+        - name: Yönetilmeyen API Başvuru (Visual Studio'da Office Geliştirme)
+          href: unmanaged-api-reference-office-development-in-visual-studio.md
+          items:
+            - name: EnsureVSTOComponent İşlevi
+              href: ensurevstocomponent-function.md
+            - name: GetValidCompatibleFramework İşlevi
+              href: getvalidcompatibleframework-function.md
+            - name: GetVstoSolutionMetadata İşlevi
+              href: getvstosolutionmetadata-function.md
+            - name: IManagedAddin Arabirimi
+              href: imanagedaddin-interface.md
+              items:
+                - name: Load Yöntemi
+                  href: imanagedaddin-load.md
+                - name: Unload Yöntemi
+                  href: imanagedaddin-unload.md
+            - name: IWefDebuggingSupport Arabirimi
+              href: iwefdebuggingsupport-interface.md
+              items:
+                - name: GetAutoInsertExtensions Metodu
+                  href: getautoinsertextensions-method.md
+                - name: SetWefProcessId Yöntemi
+                  href: setwefprocessid-method.md
+    - name: Visual Studio'da SharePoint Geliştirme
+      href: ../sharepoint/toc.yml

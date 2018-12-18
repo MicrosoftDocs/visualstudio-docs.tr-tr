@@ -13,40 +13,41 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8c227f38c926cb6d764ddf47541b8bd744eb6f7c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a60b766763ca5f68f8c379fbab9372e41c319671
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39251104"
 ---
 # <a name="program-control"></a>Program denetimi
-Visual Studio'da hata ayıklama, tüm aşağıdaki atlama ve yordamları etmeden program düzeyinde gerçekleşir:  
+Visual Studio'da hata ayıklama, tüm aşağıdaki adımlama ve yordamları devam program düzeyinde gerçekleşir:  
   
--   Sonraki deyim ayarlama, diğer bir deyişle, bilgisayarınızı belirli çerçeve ortamında yürütülecek sonraki yönerge için ayarlama  
+-   Sonraki deyimin ayarlanması, diğer bir deyişle, bilgisayarınızı belirli çerçeve ortamında yürütülecek sonraki yönergesi için ayarlama  
   
--   Yürütme, diğer bir deyişle, sürüm modundan çıkmak devam etme  
+-   Yürütme, Adımlama modundan çıkmak diğer bir deyişle, devam  
   
--   Sonraki yönerge Adımlama  
+-   Sonraki yönergeyi Adımlama  
   
--   Geçerli sürüm modu ile devam etmeden  
+-   Geçerli bir atlama modu ile devam etme  
   
 -   Program tarafından bulunan iş parçacıklarını askıya alma  
   
 -   Program tarafından bulunan iş parçacıklarını sürdürme  
   
 > [!NOTE]
->  Çağrı yığını görüntüleme iş parçacığı düzeyinde uygulanır. Bir iş parçacığı için çağrı yığını görüntülerken çerçevesini bilgilerin numaralandırmak için tüm yöntemleri uygulamak [IEnumDebugFrameInfo2](../../extensibility/debugger/reference/ienumdebugframeinfo2.md) arabirimi.  
+>  Çağrı yığınını görüntüleme iş parçacığı düzeyinde uygulanır. Bir iş parçacığı için çağrı yığınını görüntülerken çerçeve bilgileri numaralandırmak için tüm yöntemleri uygulamalıdır [IEnumDebugFrameInfo2](../../extensibility/debugger/reference/ienumdebugframeinfo2.md) arabirimi.  
   
-## <a name="methods-of-program-control"></a>Program denetim yöntemleri  
- Aşağıdaki tabloda yöntemlerini gösterilmektedir [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) , gerekir uygulanan en düşük düzeyde işlev hata ayıklama altyapısı (DE) ve yürütme denetimi için.  
+## <a name="methods-of-program-control"></a>Program denetiminin yöntemleri  
+ Aşağıdaki tabloda yöntemlerini gösterilmektedir [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) , uygulanmalı en düşük düzeyde işlev hata ayıklama altyapısı (DE) ve yürütme denetimi için.  
   
 |Yöntem|Açıklama|  
 |------------|-----------------|  
 |[IDebugProgram2::Execute](../../extensibility/debugger/reference/idebugprogram2-execute.md)|Durdurulmuş bir program tarafından bulunan tüm iş parçacığı çalışmaya devam eder. Yürütme denetimi için gereklidir.|  
 |[IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md)|Durdurulmuş bir program tarafından bulunan tüm iş parçacığı çalışmaya devam eder. Yürütme denetimi için gereklidir.|  
-|[IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md)|Bir adımı verilen iş parçacığı üzerinde gerçekleştirir. Program tarafından bulunan tüm diğer iş parçacığı çalışmaya devam eder. Yürütme denetimi için gereklidir.|  
+|[IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md)|Bir adım belirli bir iş parçacığı üzerinde gerçekleştirir. Program tarafından bulunan tüm diğer iş parçacıklarını çalışmaya devam eder. Yürütme denetimi için gereklidir.|  
   
- Birden çok iş parçacıklı programlar için aynı zamanda uygulamalıdır [IDebugProgram2::EnumThreads](../../extensibility/debugger/reference/idebugprogram2-enumthreads.md) yöntemi ve tüm yöntemleri [IEnumDebugThreads2](../../extensibility/debugger/reference/ienumdebugthreads2.md) arabirimi.  
+ Çok iş parçacıklı programlarda, ayrıca uygulamalıdır [IDebugProgram2::EnumThreads](../../extensibility/debugger/reference/idebugprogram2-enumthreads.md) yöntemi ve tüm yöntemleri [IEnumDebugThreads2](../../extensibility/debugger/reference/ienumdebugthreads2.md) arabirimi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Yürütme Denetimi ve Durum Değerlendirmesi](../../extensibility/debugger/execution-control-and-state-evaluation.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Yürütme denetimi ve durum değerlendirmesi](../../extensibility/debugger/execution-control-and-state-evaluation.md)

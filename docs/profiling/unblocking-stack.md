@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c77f9240b223ad903cc89be0e49f3b0ea46d2fe3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 8d2a22c413c7f27b5aff14fa21d28163963a7351
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34477034"
 ---
-# <a name="unblocking-stack"></a>Yığın Engellemesini Kaldırma
+# <a name="unblock-stack"></a>Yığın engellemesini kaldırma
 Şu anda seçili iş parçacığı öğesi engeli kaldırılmış sonra geçerli işlemdeki başka bir iş parçacığı, yaptığınız iş parçacığı için çağrı yığını tarafından yürütmek için daha sonra başlayan engellenen kesimi temsil ediyorsa engellemelerini kaldırma bu sekmede gösterilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

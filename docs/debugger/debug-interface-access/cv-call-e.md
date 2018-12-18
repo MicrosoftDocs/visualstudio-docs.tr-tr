@@ -14,17 +14,18 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ccdc9df86180883a5a3891563b22625fab4a2ad2
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: ca4be9d62ee9e0261e5c08a50b53df013ad6ffcf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49851132"
 ---
 # <a name="cvcalle"></a>CV_call_e
-Bir işlev için çağırma kuralı belirtir.  
+Bir işlev çağırma kuralını belirtir.  
   
 > [!NOTE]
->  Yalnızca en yaygın numaralandırma değerlerinin burada belgelenmiştir. Tam numaralandırma cvconst.h üstbilgi dosyasında kullanılabilir.  
+>  En yaygın numaralandırma değerlerinden yalnızca aşağıda belirtilmiştir. Tam numaralandırma cvconst.h üstbilgi dosyasında kullanılabilir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,29 +42,29 @@ typedef enum CV_call_e {
   
 ## <a name="elements"></a>Öğeleri  
  CV_CALL_NEAR_C  
- Yakın sağdan sola push kullanarak bir işlev çağırma kuralı belirtir. Çağıran işlevi yığını temizler.  
+ Yakın sağdan sola push kullanarak bir işlev çağırma kuralını belirtir. Çağıran işlev, yığını temizler.  
   
  CV_CALL_NEAR_FAST  
- Yazmaçları ile yakın soldan sağa push kullanarak bir işlev çağırma kuralı belirtir. Çağrılan işlev parametre baytları toplamı yığın temizlemek için kullanır.  
+ Yazmaçları ile yakın bir soldan sağa anında iletme kullanarak bir işlevi çağırma kuralını belirtir. Çağrılan işlev parametresi baytların toplamından yığın temizlemek için kullanır.  
   
  CV_CALL_NEAR_STD  
- Yakın standart çağrı (sağdan sola itme) kullanarak bir işlev çağırma kuralı belirtir.  
+ Yakın bir standart çağrı (sağdan sola anında iletme) kullanarak bir işlev çağırma kuralını belirtir.  
   
  CV_CALL_NEAR_SYS  
- Yakın bir sistem çağrısı kullanarak bir işlev çağırma kuralı belirtir.  
+ Yakın bir sistem çağrısı kullanarak bir işlev çağırma kuralını belirtir.  
   
  CV_CALL_THISCALL  
- İşlev çağırma kuralıyla belirtir `this` çağrı (`this` işaretçi geçirilen kaydına).  
+ Kullanarak bir işlev çağırma kuralını belirtir `this` çağırın (`this` işaretçi geçirildi kayıttaki).  
   
  CV_CALL_CLRCALL  
- Ortak dil çalışma zamanı (CLR tarafından) (çağırma kuralı olarak da bilinen bir yönetilen kod) kullanılan bir işlev çağırma kuralı belirtir.  
+ Ortak dil çalışma zamanı (CLR tarafından) (çağırma kuralı olarak da bilinen bir yönetilen kod için) kullanılan bir işlevi çağırma kuralını belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu numaralandırma değerleri için yapılan bir çağrı tarafından döndürülen [Idiasymbol::get_callingconvention](../../debugger/debug-interface-access/idiasymbol-get-callingconvention.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: cvconst.h  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [IDiaSymbol::get_callingConvention](../../debugger/debug-interface-access/idiasymbol-get-callingconvention.md)

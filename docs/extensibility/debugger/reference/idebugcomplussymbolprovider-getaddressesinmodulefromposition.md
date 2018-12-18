@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 64d34c7bfbfdac039692c7edbce83f69f8085800
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 08afe6dd2e9546b8d066f347d96105342cd268d0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905122"
 ---
 # <a name="idebugcomplussymbolprovidergetaddressesinmodulefromposition"></a>IDebugComPlusSymbolProvider::GetAddressesInModuleFromPosition
-Belirtilen modül belge konumda hata ayıklama adreslerinin bir diziye eşler.  
+Belirtilen modül belge konumda hata ayıklama adresi bir diziye eşler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,25 +55,25 @@ int GetAddressesInModuleFromPosition(
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `pDocPos`  
- [in] Belgenin konumu.  
+ [in] Belge konumu.  
   
  `fStatmentOnly`  
- [in] Varsa `TRUE`, tek bir deyimde hata ayıklama adreslere sınırlar.  
+ [in] Varsa `TRUE`, tek bir deyimde hata ayıklama adresler sınırlar.  
   
  `ppEnumBegAddresses`  
- [out] Bu deyimi veya satır ile ilişkili başlangıç hata ayıklama adresleri için bir numaralandırıcı döndürür.  
+ [out] Bu deyim veya satır ile ilişkili başlangıç hata ayıklama adresleri için bir numaralandırıcı döndürür.  
   
  `ppEnumEndAddresses`  
- [out] Bu deyimi veya satır ile ilişkili bitiş hata ayıklama adresleri için bir numaralandırıcı döndürür.  
+ [out] Bu deyim veya satır ile ilişkili bitiş hata ayıklama adresleri için bir numaralandırıcı döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::GetAddressesInModuleFromPosition(  

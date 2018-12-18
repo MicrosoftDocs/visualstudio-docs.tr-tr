@@ -10,20 +10,21 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5c9fc350a3eaadd919f339a37843f37291ed6ff3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3afc0a50847591445c106d86460ee1821fe0df81
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50219204"
 ---
 # <a name="launch"></a>Başlat
-**Başlatma** seçeneği profil oluşturucu örnekleme yöntemini kullanarak başlar ve ayrıca belirtilen uygulamayı başlatır.  
+**Başlatma** seçeneği profil oluşturucu örnekleme metodu kullanılarak başlatılır ve ayrıca belirtilen uygulamayı başlatır.  
   
- Kullanılacak **başlatma** seçeneğini belirtmeniz gerekir **örnek** yönteminde **Başlat** seçeneği.  
+ Kullanılacak **başlatma** seçeneğini belirtmelisiniz **örnek** yönteminde **Başlat** seçeneği.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cmd  
 VSPerfCmd.exe /Launch:AppName [Options]  
 ```  
   
@@ -31,59 +32,59 @@ VSPerfCmd.exe /Launch:AppName [Options]
  `AppName`  
  Başlatmak için uygulamanın adı. Geçerli dizindeki tam ve kısmi yollar desteklenir.  
   
-## <a name="valid-options"></a>Geçerli seçenekleri  
+## <a name="valid-options"></a>Geçerli seçenekler şunlardır:  
  Aşağıdaki VSPerfCmd seçenekleri ile birleştirilebilir **başlatma** tek bir komut satırı seçeneği.  
   
  **Başlat:** `Method`  
  Komut satırı Profil Oluşturucu oturumu başlatır ve belirtilen profil oluşturma yöntemini ayarlar.  
   
- **GlobalOn**ve **GlobalOff**  
- Sürdürür (**GlobalOn**) veya duraklatır (**GlobalOff**) profil, ancak profil oluşturma oturumu bitmez.  
+ **GlobalOn** ve **GlobalOff**  
+ Sürdürür (**GlobalOn**) veya duraklatır (**GlobalOff**) profil oluşturma, ancak profil oluşturma oturumu sona ermez.  
   
  **ProcessOn:** `PID` ve **ProcessOff**:`PID`  
  Sürdürür (**ProcessOn**) veya duraklatır (**ProcessOff**) belirtilen işlem için profil oluşturma.  
   
  **TargetCLR**  
- Profil oluşturma oturumu içinde birden fazla sürümü yüklendiğinde, .NET Framework ortak dil çalışma zamanı (CLR) profiline sürümünü belirtir. Varsayılan olarak, ilk yüklenen sürüm profili.  
+ Profil oluşturma oturumu içinde birden fazla sürümü yüklendiğinde, .NET Framework ortak dil çalışma zamanı (CLR) profil sürümü belirtir. Varsayılan olarak, ilk yüklenen sürümü profil oluşturulan.  
   
 ## <a name="exclusive-options"></a>Dışlayan seçenekleri  
- Aşağıdaki seçenekler yalnızca kullanılabilir **başlatma** seçeneği.  
+ Aşağıdaki seçenekler ile yalnızca kullanılabilir **başlatma** seçeneği.  
   
  **Console**  
  Yeni bir pencerede belirtilen komut satırı uygulamasını başlatır.  
   
- **Bağımsız değişken:** `ArgList`  
- Uygulamaya geçirilecek bağımsız değişkenleri listesini belirtir.  
+ **Bağımsız değişkenleri:** `ArgList`  
+ Uygulamaya devredilecek bağımsız değişkenler listesini belirtir.  
   
  **LineOff**  
- Satır düzeyi profil oluşturma veri koleksiyonunu devre dışı bırakır.  
+ Satır düzeyi profil oluşturma verilerinin toplanmasını devre dışı bırakır.  
   
 ## <a name="sampling-options"></a>Örnekleme seçenekleri  
- Örnekleme aralığı şunlardan biri belirtilebilir üzerinde **başlatma** komut satırı. Varsayılan örnekleme aralığı 10,000,000 işlemci saat döngüsü ' dir.  
+ Örnekleme aralığı şunlardan biri belirtilebilir üzerinde **başlatma** komut satırı. Varsayılan örnekleme aralığı 10.000.000 işlemci saat döngülerini ' dir.  
   
- **Zamanlayıcı**[**:**`Cycles`]**PF**[**:**`Events`]**Sys**[**:**`Events`] **Sayaç**[**:**`Name`,`Reload`,`FriendlyName`]**GC**[:**ayırma** &#124;  **Ömür**]  
- Örnekleme aralığı türü ve numarası belirtir.  
+ **Zamanlayıcı**[**:**`Cycles`]**PF**[**:**`Events`]**Sys**[**:**`Events`] **Sayaç**[**:**`Name`,`Reload`,`FriendlyName`]**GC**[:**ayırma** &#124;  **yaşam süresi**]  
+ Sayısı ve örnekleme aralığı türünü belirtir.  
   
--   **Zamanlayıcı** -Samples her `Cycles` durdurulamaz harici işlemci saat döngüsü. Varsa `Cycles` belirtilmezse, 10,000,000 döngüleri kullanılır.  
+-   **Zamanlayıcı** -örnekleri her `Cycles` durdurulmamış işlemci saat döngüsü. Varsa `Cycles` belirtilmezse, 10.000.000 döngüleri kullanılır.  
   
--   **PF** -Samples her `Events` sayfa hataları. Varsa `Events` belirtilmezse, 10 sayfa hataları.  
+-   **PF** -örnekleri her `Events` sayfa hataları. Varsa `Events` belirtilmezse, 10 sayfa hataları.  
   
--   **Sys** -Samples her `Events` çağrıları işletim sistemi. Varsa `Events` belirtilmezse, 10 sistem çağrıları kullanılır.  
+-   **Sys** -örnekleri her `Events` işletim sistem çağrıları. Varsa `Events` belirtilmezse, 10 sistem çağrıları kullanılır.  
   
--   **Sayaç** -Samples her `Reload` CPU performans sayacı tarafından belirtilen sayıda `Name`. İsteğe bağlı olarak, `FriendlyName` profil oluşturucu raporlarında sütun başlığı olarak kullanılacak bir dize belirtebilirsiniz.  
+-   **Sayaç** -örnekleri her `Reload` CPU performans sayaç tarafından belirtilen sayıda `Name`. İsteğe bağlı olarak, `FriendlyName` profil oluşturucusu raporu sütun başlığına olarak kullanılacak bir dize belirtebilirsiniz.  
   
--   **GC** -toplar .NET bellek verileri. Varsayılan olarak (**ayırma**), her bellek ayırma etkinlikte toplanan veriler. Zaman **ömrü** parametresi belirtilmişse, veri her atık toplama etkinlikte de toplanır.  
+-   **GC** -toplar .NET bellek verileri. Varsayılan olarak (**ayırma**), her bir bellek ayırma etkinlikte toplanan veriler. Zaman **ömrü** parametresi belirtildiğinde, veriler ayrıca her çöp toplama olayını toplanır.  
   
 ## <a name="example"></a>Örnek  
- Bu örnek kullanımını gösteren **başlatma** bir uygulamayı başlatmak için.  
+ Bu örnek kullanımını gösterir **başlatma** bir uygulamayı başlatmak için.  
   
-```  
+```cmd  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Launch:TestApp.exe  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
- [Bağımsız uygulamaların profilini oluşturma](../profiling/command-line-profiling-of-stand-alone-applications.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
- [Profil oluşturma hizmetleri](../profiling/command-line-profiling-of-services.md)
+ [Bağımsız uygulamalar profili](../profiling/command-line-profiling-of-stand-alone-applications.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
+ [Profil hizmetler](../profiling/command-line-profiling-of-services.md)

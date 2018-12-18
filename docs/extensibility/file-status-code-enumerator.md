@@ -1,5 +1,5 @@
 ---
-title: Durum kodu Numaralandırıcı dosya | Microsoft Docs
+title: Dosya durumu kod numaralandırıcısı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b3415440c80fcaa88edbecee924a118f82a9dd99
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 884c7ab1b5d4fe1461fd1ae00fbc670f0bc7b6f2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49921021"
 ---
-# <a name="file-status-code-enumerator"></a>Dosya durumu kod Numaralandırıcı
-`SccStatus` Numaralandırıcı kaynak denetim sistemi dosyasının durumunu belirtin adlandırılmış sabit değerleri içerir. Bu numaralandırma tarafından kullanılan [SccQueryInfo](../extensibility/sccqueryinfo-function.md) ve `POPLISTFUNC` geri çağırma işlevi (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) Ayrıntılar için).  
+# <a name="file-status-code-enumerator"></a>Dosya durumu kod numaralandırıcısı
+`SccStatus` Numaralandırıcı kaynak denetimi sisteminizden bir dosya durumunu belirten adlandırılmış sabit değerleri içerir. Bu sabit listesi tarafından kullanılan [Sccqueryınfo](../extensibility/sccqueryinfo-function.md) ve `POPLISTFUNC` geri çağırma işlevi (bkz [POPLISTFUNC](../extensibility/poplistfunc.md) Ayrıntılar için).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -52,7 +53,7 @@ enum SccStatus {
   
 ## <a name="members"></a>Üyeler  
  SCC_STATUS_INVALID  
- Durum edinilemedi; üzerinde kullanmayın.  
+ Durumu alınamadı; üzerinde güvenmeyin.  
   
  SCC_STATUS_NOTCONTROLLED  
  Dosya kaynak denetimi altında değil.  
@@ -67,19 +68,19 @@ enum SccStatus {
  Dosya başka bir kullanıcı tarafından kullanıma alındı.  
   
  SCC_STATUS_OUTEXCLUSIVE  
- Dosya özel olarak kullanıma alınmış.  
+ Dosya özel olarak kullanıma.  
   
  SCC_STATUS_OUTMULTIPLE  
  Dosya birden fazla kullanıcı tarafından kullanıma alındı.  
   
  SCC_STATUS_OUTOFDATE  
- Dosya en güncel değil.  
+ Dosyanın en son değil.  
   
  SCC_STATUS_DELETED  
- Dosya projeden silindi.  
+ Dosyayı projeden silindi.  
   
  SCC_STATUS_LOCKED  
- Dosyası kilitli; Daha fazla sürümleri izin verilir.  
+ Dosya kilitli; Daha fazla sürüm izin verilir.  
   
  SCC_STATUS_MERGED  
  Dosya birleştirilmiş ancak henüz sabit/doğrulandı.  
@@ -88,16 +89,16 @@ enum SccStatus {
  Dosya, projeler arasında paylaşılır.  
   
  SCC_STATUS_PINNED  
- Açık bir sürüm olarak paylaşılan dosya.  
+ Açık bir sürüm için paylaşılan bir dosya.  
   
  SCC_STATUS_MODIFIED  
- Dosya değişiklik/bozuk/ihlal olmuştur.  
+ Dosya değişiklik/ayrılmış/ihlal olmuştur.  
   
  SCC_STATUS_OUTBYUSER  
- Dosya geçerli kullanıcı tarafından kullanıma alındı.  
+ Dosya geçerli bir kullanıcı tarafından kullanıma alındı.  
   
  SCC_STATUS_NOMERGE  
- Dosya hiç ile birleştirilebilir ve GET önce kaydedilmedi.  
+ Dosya hiçbir zaman ile birleştirilebilir ve GET önce kaydedilmemiş.  
   
  SCC_STATUS_RESERVED_1  
  İç kullanım için ayrılmıştır.  
@@ -105,7 +106,7 @@ enum SccStatus {
  SCC_STATUS_RESERVED_2  
  İç kullanım için ayrılmıştır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim Eklentileri](../extensibility/source-control-plug-ins.md)   
- [SccQueryInfo](../extensibility/sccqueryinfo-function.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak denetimi eklentileri](../extensibility/source-control-plug-ins.md)   
+ [Sccqueryınfo](../extensibility/sccqueryinfo-function.md)   
  [POPLISTFUNC](../extensibility/poplistfunc.md)

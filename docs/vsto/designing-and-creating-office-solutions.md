@@ -1,5 +1,5 @@
 ---
-title: Tasarlama ve Office çözümleri oluşturma | Microsoft Docs
+title: Office çözümleri oluşturma ve tasarlama
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,94 +18,95 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: e43824ed3fa34a7cd22b98fb25f946f36cb8eab6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 05cf317823d4f5853d960109bd97da77ea8a927d
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50671254"
 ---
-# <a name="designing-and-creating-office-solutions"></a>Office Çözümleri Tasarlama ve Oluşturma
-  Visual Studio birkaç farklı türde Office çözümleri oluşturmak için kullanabileceğiniz proje şablonları sağlar. Bu bölümde belgelerin proje şablonlarını açıklar ve Office projeleri oluşturma hakkında yönergeler sağlar. Projenizi oluşturduktan sonra kod ve kullanıcı arabirimi özelleştirmelerini uygulamak hakkında daha fazla bilgi için bkz: [Office çözümleri geliştirme](../vsto/developing-office-solutions.md).  
+# <a name="design-and-create-office-solutions"></a>Office çözümleri oluşturma ve tasarlama
+  Visual Studio, birkaç farklı türde Office çözümleri oluşturmak için kullanabileceğiniz proje şablonları sağlar. Belgelerinin bu bölümü, proje şablonlarını açıklar ve Office projeleri oluşturma hakkında yönergeler sağlar. Projenizi oluşturduktan sonra kodun ve kullanıcı arabirimi özelleştirmelerinin gerçekleştirme hakkında daha fazla bilgi için bkz. [geliştirme Office çözümleri](../vsto/developing-office-solutions.md).  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
 > [!NOTE]  
->  Office deneyimi boyunca genişletmek çözümleri geliştirirken ilgileniyor [birden çok platform](https://dev.office.com/add-in-availability)? Yeni [Office eklentileri modeli](https://dev.office.com/docs/add-ins/overview/office-add-ins). VSTO eklentilerini ve çözümlerle karşılaştırıldığında küçük bir yer Office eklentileri sahip ve teknoloji, HTML5, JavaScript, CSS3 ve XML gibi programlama neredeyse her web kullanarak oluşturabilirsiniz.  
+>  Office deneyiminiz boyunca genişleten çözümleri geliştirme yapmakla mı ilgileniyorsunuz [birden çok platform](https://dev.office.com/add-in-availability)? Yeni kontrol [Office eklentilerini modeli](https://dev.office.com/docs/add-ins/overview/office-add-ins). Office eklentileri, VSTO eklentileri ve çözümleri için karşılaştırma küçük ayak izine sahip ve neredeyse tüm web teknolojisi, HTML5, JavaScript, CSS3 ve XML gibi programlama kullanarak oluşturabilirsiniz.  
   
-## <a name="creating-office-projects"></a>Office projeleri oluşturma  
- Başlamadan önce gereksinimlerinizi belirlemek ve en uygun çözümü türünü bulur. Örneğin, Office çözümünüzün uygulama kullanılır, her zaman bir VSTO eklenti en iyi sığar gereksinimlerinizi çalıştırmanız gerekir. Kod ile tek bir belgenin tümleşiktir varsa, bir belge düzeyi özelleştirme oluşturun. Bu proje türleri, Visual Studio Proje şablonları kullanılabilir. Visual Studio ile birlikte Office proje şablonları hakkında daha fazla bilgi için bkz: [Office proje şablonlarına genel bakış](../vsto/office-project-templates-overview.md). Office projeleri oluşturma hakkında daha fazla bilgi için bkz: [nasıl yapılır: Visual Studio'da Office projeleri oluşturma](../vsto/how-to-create-office-projects-in-visual-studio.md).  
+## <a name="create-office-projects"></a>Office projeleri oluşturma  
+ Başlamadan önce gereksinimlerinizi belirlemek ve türüne en uygun çözümü bulmak gerekir. Örneğin Office çözümünüzü uygulama kullanılır, her seferinde bir VSTO eklentisi en iyi sığar gereksinimlerinizi çalıştırmanız gerekir. Kod bir tek belge ile tümleşiktir, belge düzeyinde özelleştirme oluşturun. Bu proje türleri, Visual Studio Proje şablonları kullanılabilir. Visual Studio ile birlikte gelen Office proje şablonları hakkında daha fazla bilgi için bkz. [Office proje şablonlarına genel bakış](../vsto/office-project-templates-overview.md). Office projeleri oluşturma hakkında daha fazla bilgi için bkz. [nasıl yapılır: Visual Studio'da oluşturma Office projelerinde](../vsto/how-to-create-office-projects-in-visual-studio.md).  
   
- Office projelerinde özellikler ve diğer Visual Studio Proje türleri farklıdır proje öğeleri vardır. Örneğin, bir belge düzeyi projesi oluşturduğunuzda, belge veya projenizdeki çalışma kitabının açılabilir ve Visual Studio içinde düzenlenebilir. Daha fazla bilgi için bkz: [Visual Studio ortamında Office projeleri](../vsto/office-projects-in-the-visual-studio-environment.md).  
+ Office projelerinde özellikler ve Visual Studio'da proje türlerinde farklı proje öğeleri var. Örneğin, bir belge düzeyi projesi oluşturduğunuzda, belge veya çalışma kitabı, projenizdeki açılabilir ve Visual Studio içinde düzenlenebilir. Daha fazla bilgi için [Visual Studio ortamında Office projeleri](../vsto/office-projects-in-the-visual-studio-environment.md).  
   
-## <a name="choosing-a-net-framework-version"></a>.NET Framework sürümünü seçme  
- Gereksinimlerinize en uygun proje türünü seçtikten sonra geliştirme sürecinizde kullanmak için .NET Framework'ün hangi sürümünün seçebilirsiniz. Office projelerinde aşağıdaki .NET Framework sürümlerini hedefleyebilirsiniz:  
+## <a name="choose-a-net-framework-version"></a>Bir .NET Framework sürümünü seçin  
+ Gereksinimlerinize en uygun proje türü seçtikten sonra hangi geliştirme sürecinizde kullanmak için .NET Framework sürümünü seçebilirsiniz. Office projelerinde aşağıdaki .NET Framework sürümlerini hedef:  
   
--   [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)]  
+- [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)]  
   
--   [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)]  
+- [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)]  
   
--   [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)]  
+- [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)]  
   
- Projeniz için seçtiğiniz .NET Framework sürümünü çalıştırmak, çözümünüz için son kullanıcı bilgisayarlarında gereklidir. Örneğin, projenizin hedeflediği [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] son kullanıcı bilgisayarlarında gereklidir. .NET Framework 3.5 son kullanıcı bilgisayarlarında yüklü yalnızca bu örnekte, çözümünüzü çalışmaz.  
+  Projeniz için seçtiğiniz .NET Framework sürümü, çözümünüzün çalışması için son kullanıcı bilgisayarlarında gereklidir. Örneğin, projenizin hedeflediği [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] son kullanıcı bilgisayarlarında gereklidir. Son kullanıcı bilgisayarlarında yüklü .NET Framework 3.5, yalnızca bu örnekte, çözümünüzü çalışmaz.  
   
- .NET Framework 3.5 hedefleyen bir VSTO eklenti projesi geçirirseniz, Visual Studio projenize hedef Framework'ü değişiklikleri [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] veya üstü yüklü olan Office sürümüne bağlı olarak.  
+  .NET Framework 3.5 hedefleyen bir VSTO eklenti projesinde geçirirseniz, Visual Studio projeniz için hedef Framework'ü değişiklikleri [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] veya üzeri yüklü olan Office sürümüne bağlı olarak.  
   
- Ancak, Visual Studio hedef Framework'ü değişiklikler sonra bazı özellikleri kullanıyorsa, bazı projenizdeki kodu değiştirmeniz gerekebilir. Hedef Framework'ü değiştirme hakkında daha fazla bilgi için bkz: [nasıl yapılır: .NET Framework sürümü hedef](../ide/how-to-target-a-version-of-the-dotnet-framework.md). Projenizde yapmanız gerekebilen değişiklikler hakkında daha fazla bilgi için bkz: [geçirme Office çözümlerini .NET Framework 4 veya sonraki bir sürüme](../vsto/migrating-office-solutions-to-the-dotnet-framework-4-or-later.md).  
+  Ancak, hedef Framework'ü Visual Studio değiştirdikten sonra belirli özellikleri kullanıyorsa, kodu projenizdeki bazı değiştirmeniz gerekebilir. Hedef Framework'ü değiştirme hakkında daha fazla bilgi için bkz. [nasıl yapılır: .NET Framework sürümü hedefleme](../ide/how-to-target-a-version-of-the-dotnet-framework.md). Projenizde yapmak ihtiyaç duyabilirsiniz değişiklikler hakkında daha fazla bilgi için bkz. [geçirme Office çözümlerini .NET Framework 4 veya sonraki bir sürüme](../vsto/migrating-office-solutions-to-the-dotnet-framework-4-or-later.md).  
   
- Visual Studio, projenizin hedef .NET Framework değiştirir ve çözümünüzü dağıtmak için ClickOnce kullanarak, .NET Framework'ün karşılık gelen sürümü de seçtiğinizden emin olun **Önkoşullar** iletişim kutusu. Projeniz için hedef Framework'ü değiştirdiğinizde, bu seçimi otomatik olarak değişmez. Daha fazla bilgi için bkz: [nasıl yapılır: Office çözümlerini çalıştırmak için yükleme önkoşulları son kullanıcı bilgisayarlarında](http://msdn.microsoft.com/en-us/74dd2c52-838f-4abf-b2b4-4d7b0c2a0a98).  
+  Visual Studio projeniz için hedef .NET Framework değiştirir ve çözümünüzü dağıtmak için ClickOnce'ı kullanıyorsanız, aynı zamanda ilgili .NET Framework sürümünü seçtiğinizden emin **önkoşulları** iletişim kutusu. Projeniz için hedef Framework'ü değiştirdiğinizde, bu seçenek otomatik olarak değiştirmez. Daha fazla bilgi için [nasıl yapılır: son kullanıcı bilgisayarlarında Office çözümlerinin çalışması için Önkoşulları Yükleme](https://msdn.microsoft.com/74dd2c52-838f-4abf-b2b4-4d7b0c2a0a98).  
   
 > [!NOTE]  
->  .NET Framework 3.5 veya önceki kullanarak oluşturduğunuz Office projelerinde hedefleyemez [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)]. Kullanarak oluşturduğunuz office projeleri [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)] sürümünde ilk yapılan özellikleri gerektirir [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)]  
+>  .NET Framework 3.5 veya Office projelerinde kullanarak oluşturduğunuz önceki hedefleyemez [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)]. Kullanarak oluşturduğunuz office projeleri [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)] sürümünde ilk yapılan özellikleri gerektirir [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)]  
   
-### <a name="understanding-when-the-office-pias-are-required-on-end-user-computers"></a>Son kullanıcı bilgisayarlarında Office PIA gerektiğinde anlama  
- Varsayılan olarak, Office birincil birlikte çalışma derlemeleri (PIA) son kullanıcı bilgisayarlarında yüklü gerekmez **birlikte çalışma türlerini katıştır** projesinde her Office PIA başvuru özelliği ayarlanmış **doğru**, hangi varsayılan değerdir. Bu senaryoda, projeyi derlerken çözümünüz tarafından kullanılan PIA türleri için tür bilgisi çözüm derlemeye katıştırılır. Çalışma zamanında gömülü tür bilgileri yerine PIA Office uygulamasının COM tabanlı nesne modelini çağırmak için kullanılır. PIA türlerinden çözümünüze nasıl katıştırılmış hakkında daha fazla bilgi için bkz: [tür Eşdeğerliği ve katıştırılmış birlikte çalışma türlerini](/dotnet/framework/interop/type-equivalence-and-embedded-interop-types).  
+### <a name="understand-when-the-office-pias-are-required-on-end-user-computers"></a>Son kullanıcı bilgisayarlarında Office PIA'ların gerektiğinde anlama  
+ Varsayılan olarak, Office birincil birlikte çalışma derlemeleri (PIA), son kullanıcı bilgisayarlarında yüklü olması gerekmez **birlikte çalışma türlerini katıştır** özelliği projedeki her Office PIA başvurusu **True**, Varsayılan değer olan. Projeyi oluşturduğunuzda bu senaryoda, çözümünüz tarafından kullanılan PIA türler için tür bilgileri çözüm derlemesine eklenir. Çalışma zamanında, Office uygulamasının COM tabanlı nesne modeline çağrı yapmak yerine PIA'ların gömülü tür bilgileri kullanılır. PIA'ların türlerinden çözümünüze nasıl katıştırılmış hakkında daha fazla bilgi için bkz. [tür eşdeğerliği ve katıştırılmış birlikte çalışma türleri](/dotnet/framework/interop/type-equivalence-and-embedded-interop-types).  
   
- Varsa **birlikte çalışma türlerini katıştır** projesinde her Office PIA başvuru özelliği ayarlanmış **yanlış**, Office PIA yüklenmeli ve genel derleme önbelleğinde her son kullanıcı bilgisayarda kayıtlı, Çözüm çalışır. Çoğu durumda, PIA Office ile varsayılan olarak yüklenir, ancak çözümünüz için bir önkoşul olarak yeniden dağıtılabilir PIA da içerebilir. Daha fazla bilgi için bkz: [dağıtım için Office çözümü önkoşulları](http://msdn.microsoft.com/en-us/9f672809-43a3-40a1-9057-397ce3b5126e).  
+ Varsa **birlikte çalışma türlerini katıştır** özelliği projedeki her Office PIA başvurusu **False**, Office PIA'ların yüklenmeli ve her bir son kullanıcı bilgisayarında genel derleme önbelleğinde kayıtlı, Çözüm çalıştırır. Çoğu durumda, varsayılan Office PIA'ların yüklü, ancak PIA çözümünüz için bir önkoşul olarak yeniden dağıtılabilir'i de içerebilir. Daha fazla bilgi için [Office çözüm dağıtım önkoşullarını](https://msdn.microsoft.com/9f672809-43a3-40a1-9057-397ce3b5126e).  
   
-### <a name="understanding-the-client-profile"></a>İstemci profilini anlama  
- .NET Framework istemci profili tam .NET Framework'ün bir alt kümesidir. .NET Framework istemci profili, .NET Framework'teki yalnızca istemci özelliklerini kullanmanız gerekir ve Office çözümünüz için en hızlı olası dağıtım deneyimi sağlamak istiyorsanız hedefleyebilirsiniz. Daha fazla bilgi için bkz: [.NET Framework istemci profili](/dotnet/framework/deployment/client-profile).  
+### <a name="understand-the-client-profile"></a>İstemci profili anlama  
+ .NET Framework istemci profili, tam .NET Framework'ün bir alt kümesidir. .NET Framework istemci profili .NET Framework yalnızca istemci özelliklerini kullanmanız gerekir ve Office çözümünüz için en hızlı olası dağıtım deneyimi sağlamak istiyorsanız hedefleyebilirsiniz. Daha fazla bilgi için [.NET Framework istemci profili](/dotnet/framework/deployment/client-profile).  
   
- ' İ hedefleyen Office proje oluşturduğunuzda [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)] varsayılan olarak hedeflenir. İçin tam geliştirmek istiyorsanız [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], Proje oluşturulduktan sonra bu seçenek ayarlamanız gerekir. Daha fazla bilgi için bkz: [nasıl yapılır: .NET Framework sürümü hedef](../ide/how-to-target-a-version-of-the-dotnet-framework.md).  
+ Hedefleyen bir Office projesi oluşturduğunuzda, [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], [!INCLUDE[net_client_v40_long](../vsto/includes/net-client-v40-long-md.md)] varsayılan olarak hedeflenir. Tam için geliştirmek istiyorsanız [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)], projeyi oluşturduktan sonra bu seçenek ayarlamanız gerekir. Daha fazla bilgi için [nasıl yapılır: .NET Framework sürümü hedefleme](../ide/how-to-target-a-version-of-the-dotnet-framework.md).  
   
-## <a name="creating-solutions-for-the-64-bit-edition-of-microsoft-office"></a>Çözümleri Microsoft Office'in 64-bit sürümü için oluşturma  
- Microsoft Office 64-bit ve 32-bit sürümlerinde kullanılabilir. Her iki sürümde de çalıştırabilirsiniz Office çözümleri oluşturmak için projenizin platform hedefi ayarları ayarlanmalıdır **herhangi bir CPU**. Office projeleri için varsayılan değer budur. Daha fazla bilgi için bkz: [Office çözümleri oluşturma](../vsto/building-office-solutions.md).  
+## <a name="create-solutions-for-the-64-bit-edition-of-microsoft-office"></a>Çözümleri Microsoft Office'in 64 bit sürümü için oluşturma  
+ Microsoft Office, 64-bit ve 32-bit sürümlerinde kullanılabilir. Her iki sürümde de çalıştırabilirsiniz Office çözümleri oluşturmak için projeniz için platform hedefi ayarı ayarlanmalıdır **herhangi bir CPU**. Office projeleri için varsayılan değer budur. Daha fazla bilgi için [yapı Office çözümleri](../vsto/building-office-solutions.md).  
   
- Ayrı 64-bit ve 32-bit sürümü vardır [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] Microsoft Office 64-bit ve 32 bit sürümleri tarafından kullanılır. Daha fazla bilgi için bkz: [Office çalışma zamanı genel bakış için Visual Studio Araçları](../vsto/visual-studio-tools-for-office-runtime-overview.md).  
+ Ayrı 64-bit ve 32-bit sürümleri vardır [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] Microsoft Office'in 64-bit ve 32-bit sürümleri tarafından kullanılır. Daha fazla bilgi için [Office çalışma zamanına genel bakış için Visual Studio Araçları](../vsto/visual-studio-tools-for-office-runtime-overview.md).  
   
 ## <a name="assemblies-in-office-solutions"></a>Office çözümlerinde derlemeler  
- Visual Studio'da Office geliştirme araçlarını kullanarak bir Office proje oluşturduğunuzda, yazdığınız kodu sonunda bir derlemeye derlenmiştir. Derleme genellikle paylaşılan bir sunucu veya istemci bilgisayarda bir dizine dağıtılır.  
+ Visual Studio'da Office geliştirme araçlarını kullanarak bir Office projesi oluşturduğunuzda, yazdığınız kod sonunda bütünleştirilmiş kod içine derlenmiş. Derleme, paylaşılan bir sunucu veya istemci bilgisayarda bir dizine dağıtılır.  
   
- Office çözümlerinde derlemeler bir Office uygulaması tarafından yüklenir. Bütünleştirilmiş kod, derleme yüklendikten sonra bir kullanıcı bir menü öğesini tıkladığında uygulamada, örneğin, başlatılan olaylara yanıt verebilir. Bütünleştirilmiş kod ayrıca nesne modelini çağırıp uygulamayı genişletebilir çağırın ve sınıflarda birini kullanabilirsiniz [!INCLUDE[dnprdnshort](../sharepoint/includes/dnprdnshort-md.md)]. Daha fazla bilgi için bkz: [belge düzeyi özelleştirmeler mimarisi](../vsto/architecture-of-document-level-customizations.md) ve [mimarisi, VSTO eklentileri](../vsto/architecture-of-vsto-add-ins.md).  
+ Office çözümlerindeki derlemelerin bir Office uygulaması tarafından yüklenir. Derleme yüklendikten sonra derleme içindeki kod bir kullanıcı bir menü öğesini tıkladığında uygulamada, örneğin, başlatılan olaylara yanıt verebilir. Derlemedeki kod uygulamasını otomatikleştirmek ve genişletmek için nesne modeli ayrıca çağırabilir ve sınıflarda birini kullanabilirsiniz [!INCLUDE[dnprdnshort](../sharepoint/includes/dnprdnshort-md.md)]. Daha fazla bilgi için [belge düzeyi özelleştirmeler mimarisi](../vsto/architecture-of-document-level-customizations.md) ve [mimarisi, VSTO eklentileri](../vsto/architecture-of-vsto-add-ins.md).  
   
- Office çözümleri derleme tanımlamak için dağıtım bildirimleri ve uygulama bildirimlerini kullanın. Uygulama bulmak, bağlantı ve doğru derleme çalıştırmak bildirimler derlemenin adı, sürüm ve konumu hakkında bilgi içerir. Daha fazla bilgi için bkz: [uygulama ve dağıtım bildirimlerini Office çözümlerinde](../vsto/application-and-deployment-manifests-in-office-solutions.md).  
+ Office çözümleri, derlemeyi tanımlamak üzere dağıtım bildirimleri ve uygulama bildirimleri kullanın. Uygulama bulmak, bağlantı ve doğru derleme çalıştırın böylece bildirimleri derlemenin adı, sürümü ve konum hakkında bilgiler içerir. Daha fazla bilgi için [uygulama ve dağıtım bildirimlerini Office çözümlerinde](../vsto/application-and-deployment-manifests-in-office-solutions.md).  
   
- Belge düzeyi projelerine bütünleştirilmiş yanı sıra bir belge içerir. Belge uygulamanın ön ucu olarak görev yapar ve tüm kullanıcı etkileşimi gerçekleştiği. Her bir belgenin ilişkili yalnızca bir ana proje derlemesi olabilir; Ancak, birden çok belge aynı derlemeye işaret edebilir.  
+ Belge düzeyi projeler derleme yanı sıra bir belge ekleyin. Belge uygulama ön ucu görev yapar ve tüm kullanıcı etkileşimi gerçekleştiği. Her bir belgeyi yalnızca bir ana proje derlemesi ile ilişkili olabilir; Ancak, birden çok belge aynı derlemeye işaret edebilir.  
   
- Belge düzeyi projelerine derlemelerde belgede gömülü değildir. Bunun yerine, başka bir yerde depolanır ve belgenin uygulama bildirimi tarafından tanımlanır.  
+ Belge düzeyi projelere derlemelerde belgeye gömülü değildir. Bunun yerine, başka bir yerde saklanır ve belgenin uygulama bildirimi tarafından tanımlanır.  
   
 ## <a name="security-considerations-for-assemblies"></a>Derlemeler için güvenlik konuları  
- Office çözümünü bir bilgisayarda çalıştırmak çözüm tarafından kullanılan derlemeler çalıştırmak için güvenilir olması gerekir. Güvenlik hakkında daha fazla bilgi için bkz: [Office çözümleri güvenliğini sağlama](../vsto/securing-office-solutions.md).  
+ Bir bilgisayarda çalıştırmak bir Office çözümü için çözüm tarafından kullanılan derlemeler çalıştırmak için güvenilir olması gerekir. Güvenlik hakkında daha fazla bilgi için bkz: [güvenli Office çözümleri](../vsto/securing-office-solutions.md).  
   
- Çözüm derleme ve projenizin çıktı klasöründe bulunan tüm başvurulan derlemeler varsayılan olarak, projeyi derlerken geliştirme bilgisayarınızda çalıştırmak için güvenilir. Daha fazla bilgi için bkz: [Office çözümleri oluşturma](../vsto/building-office-solutions.md).  
+ Varsayılan olarak, çözüm derlemesini ve projenizin çıkış klasöründe bulunan başvurulan derlemeler projeyi oluşturduğunuzda, geliştirme bilgisayarınızda çalıştırmanıza güvenilirdir. Daha fazla bilgi için [yapı Office çözümleri](../vsto/building-office-solutions.md).  
   
- Güvenlik nedenleriyle, yerel bilgisayarınızda proje oluşturmak en iyi yerine geliştirme üzerinde paylaşılan bir konum. Daha fazla bilgi için bkz: [işbirlikçi geliştirme, Office çözümleri](../vsto/collaborative-development-of-office-solutions.md).  
+ Güvenlik nedenleriyle, paylaşılan bir konumda yerel bilgisayarınızda projeleri oluşturmak en iyi yerine geliştirme. Daha fazla bilgi için [Office çözümlerinin işbirlikçi geliştirmesi](../vsto/collaborative-development-of-office-solutions.md).  
   
-## <a name="referenced-assemblies"></a>Başvurulmuş Derlemeler  
- Derleme projenin başvurularında listelenen diğer derlemelerden başvuruda bulunabilir. Ancak, bir belge düzeyi projesi derleme başka bir belge düzeyi proje derlemesi başvuramaz.  
+## <a name="referenced-assemblies"></a>Başvurulan derlemeler  
+ Derleme proje başvuruları listelenen diğer derlemelere başvurabilir. Ancak, bir belge düzeyi projesi derleme başka bir belge düzeyi projesi derleme başvuramaz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office proje şablonlarına genel bakış](../vsto/office-project-templates-overview.md)   
  [Nasıl yapılır: Visual Studio'da Office projeleri oluşturma](../vsto/how-to-create-office-projects-in-visual-studio.md)   
  [Visual Studio ortamında Office projeleri](../vsto/office-projects-in-the-visual-studio-environment.md)   
  [Office projelerinde Özellikler](../vsto/properties-in-office-projects.md)   
  [Çözümleri Microsoft Office'in farklı sürümlerinde çalıştırma](../vsto/running-solutions-in-different-versions-of-microsoft-office.md)   
- [Nasıl yapılır: birincil birlikte çalışma derlemeleriyle Office uygulamalarını](../vsto/how-to-target-office-applications-through-primary-interop-assemblies.md)   
- [Uygulama ve dağıtım bildirimlerini Office çözümleri](../vsto/application-and-deployment-manifests-in-office-solutions.md)   
- [Nasıl yapılır: Office çözümü için yapılandırma bilgilerini ayarlama](../vsto/how-to-set-up-configuration-information-for-an-office-solution.md)   
+ [Nasıl yapılır: birincil birlikte çalışma derlemeleriyle hedef Office uygulamaları](../vsto/how-to-target-office-applications-through-primary-interop-assemblies.md)   
+ [Office çözümlerinde uygulama ve dağıtım bildirimleri](../vsto/application-and-deployment-manifests-in-office-solutions.md)   
+ [Nasıl yapılır: bir Office çözümü için yapılandırma bilgilerini ayarlama](../vsto/how-to-set-up-configuration-information-for-an-office-solution.md)   
  [Visual Studio içinde Office işlevselliğini kullanma](../vsto/using-office-functionality-inside-of-visual-studio.md)   
- [Office çözümü dağıtma](../vsto/deploying-an-office-solution.md)   
+ [Office çözümünü dağıtma](../vsto/deploying-an-office-solution.md)   
  [Office programlarındaki ortak görevler](../vsto/common-tasks-in-office-programming.md)   
  [Office çözümleri geliştirme](../vsto/developing-office-solutions.md)   
- [Visual Studio'da Office Çözümleri Mimarisi](../vsto/architecture-of-office-solutions-in-visual-studio.md)  
+ [Visual Studio'da Office çözümleri mimarisi](../vsto/architecture-of-office-solutions-in-visual-studio.md)  
   
   

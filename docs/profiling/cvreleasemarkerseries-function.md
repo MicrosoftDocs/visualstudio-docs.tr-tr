@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d28041defb536c01d4e71d38f7eddb18dc2d709f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 27c5bbc5d47972a4829c4e46f6aafdcf8ee76fad
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34749365"
 ---
-# <a name="cvreleasemarkerseries-function"></a>CvReleaseMarkerSeries İşlevi
+# <a name="cvreleasemarkerseries-function"></a>CvReleaseMarkerSeries işlevi
 İşaretçi serisi serbest bırakır. Aksi takdirde uygulamanızı yayınlama çökebilir sonra işaret serisi nesne kullanmayın. İşaretçi serisi yayımlamayı hatası bellek sızıntısı neden olur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```C  
 HRESULT CvReleaseMarkerSeries(  
    _In_reads_bytes_(16) PCV_MARKERSERIES pMarkerSeries  
 );  
@@ -39,7 +40,7 @@ HRESULT CvReleaseMarkerSeries(
  İşaret serisi başarıyla yayınlandığı veya tüm hatalar oluştu. hata kodu var. durumda olduğunda S_OK. Hata koşulu denetlemek için başarılı/başarısız makroları kullanın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkers.h  
+ **Başlık:** *cvmarkers.h*  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)

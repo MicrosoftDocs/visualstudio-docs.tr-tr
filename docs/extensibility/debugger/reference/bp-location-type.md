@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: db35e354b2cfbe91b9c6041dc6239d2dfd2531f8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 087f6c3ce0cbde32bd06a614e562c3d36fc86888
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927365"
 ---
 # <a name="bplocationtype"></a>BP_LOCATION_TYPE
-Kesme noktası bir kesme noktası isteği için konum türünü belirtir.  
+Bir kesme noktası istek için bir kesme noktası konumu türünü belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -69,65 +70,65 @@ public enum enum_BP_LOCATION_TYPE {
   
 ## <a name="members"></a>Üyeler  
  BPLT_NONE  
- Kesme noktası konumu belirtir.  
+ Hiçbir kesme noktası konumu belirtir.  
   
  BPLT_FILE_LINE  
- Konum kesme noktası bir dosya satırı türünü belirtir.  
+ Kesme noktası konum türü, bir dosya satırı belirtir.  
   
  BPLT_FUNC_OFFSET  
- Konum kesme noktası işlevi offset türünü belirtir.  
+ Kesme noktası konum türü bir işlev uzaklığı belirtir.  
   
  BPLT_CONTEXT  
- Konum kesme noktası bir içerik türünü belirtir.  
+ Kesme noktası konum türü bağlamı olarak belirtir.  
   
  BPLT_STRING  
  Kesme noktası konum türü bir dize olarak belirtir.  
   
  BPLT_ADDRESS  
- Konum kesme noktası bir adres türünü belirtir.  
+ Kesme noktası konum türü bir adresi belirtir.  
   
  BPLT_RESOLUTION  
- Konum kesme noktası bir çözüm türünü belirtir.  
+ Kesme noktası konum türü bir çözüm belirtir.  
   
  BPLT_CODE_FILE_LINE  
- Bir kaynak kodu satır kesme konum türünü belirtir.  
+ Kesme noktası konum türü, bir kaynak kod satırı belirtir.  
   
  BPLT_CODE_FUNC_OFFSET  
- Konum kesme noktası kodu işlevi offset türünü belirtir.  
+ Kesme noktası konum türü bir kod işlevi uzaklığı belirtir.  
   
  BPLT_CODE_CONTEXT  
- Konum kesme noktası kodu bağlamı olarak türünü belirtir.  
+ Kesme noktası konum türü kod bağlamı olarak belirtir.  
   
  BPLT_CODE_STRING  
- Kesme noktası konum türünü kod dize olarak belirtir.  
+ Kesme noktası konum türü, bir kod dize olarak belirtir.  
   
  BPLT_CODE_ADDRESS  
- Konum kesme noktası kodu adresi olarak türünü belirtir.  
+ Kesme noktası konum türü bir kod adresiyle belirtir.  
   
  BPLT_DATA_STRING  
- Kesme noktası konum türünü verileri dize olarak belirtir.  
+ Kesme noktası konum türü verileri dize olarak belirtir.  
   
  BPLT_TYPE_MASK  
- Kesme noktası türü değeri dışında ayıklanabilir böylece bir bit maskesi belirtir.  
+ Kesme noktası türü, değer dışında ayıklanabileceği bir bit maskesi belirtir.  
   
  BPLT_LOCATION_TYPE_MASK  
- Kesme noktası konum türü değeri dışında ayıklanabilir böylece bir bit maskesi belirtir.  
+ Kesme noktası konum türü değeri dışında ayıklanabileceği bir bit maskesi belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bir parametre olarak geçirilen [GetLocationType](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getlocationtype.md) yöntemi.  
   
- Kesme noktası konum türü bir kesme noktası türü ve konumu türü oluşur. Bu bir kesme noktası konum türü hiçbir zaman yalnızca bir kesme noktası türü olduğu anlamına gelir (örneğin, `BPT_CODE`) veya bir konum yazın (örneğin, `BPLT_FILE_LINE`). Bu numaralandırma şu anda desteklenen tüm kesme noktası konumu türleri için önceden tanımlanmış sabitleri dahil edilen (`BPLT_CODE_FILE_LINE` aracılığıyla `BPLT_DATA_STRING`).  
+ Bir kesme noktası konum türü, bir kesme noktası türü ve konum türü oluşur. Bu bir kesme noktası konum türü hiçbir zaman yalnızca bir kesme noktası türü olduğu anlamına gelir (örneğin, `BPT_CODE`) veya bir konum türü (örneğin, `BPLT_FILE_LINE`). Şu anda desteklenen tüm kesme noktası konumu türleri için önceden tanımlanmış sabitleri bu numaralandırmada dahil edilir (`BPLT_CODE_FILE_LINE` aracılığıyla `BPLT_DATA_STRING`).  
   
- `BPT_CODE` ve `BPT_DATA` üyeleri olan [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) numaralandırması.  
+ `BPT_CODE` ve `BPT_DATA` üyeleri [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) sabit listesi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetLocationType](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getlocationtype.md)   
  [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md)

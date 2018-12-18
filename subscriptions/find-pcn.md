@@ -1,40 +1,40 @@
 ---
-title: Nasıl ı my "Genel Müşteri numarası" (PCN) veya Yetkilendirme numarası bulun? | Microsoft Docs
+title: Benim "Genel Müşteri Numaramı (PCN) veya yetkilendirme numarasını nasıl bulabilirim? | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 12/29/2017
 ms.topic: Get-Started-Article
-description: Genel Müşteri numarası (PCN) veya Yetkilendirme numarası bulun öğrenin
+description: Genel müşteri numarasını (PCN) veya yetkilendirme numaranızı bulmak hakkında bilgi edinin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 224cb02d2ffdeceb4c2288175968324badd0911c
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: da4a9f1342abfc5701aadf32798305e349eb3ed7
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39637025"
 ---
-# <a name="how-do-i-locate-my-public-customer-number-pcn-or-authorization-number"></a>Nasıl ı my "Genel Müşteri numarası" (PCN) veya Yetkilendirme numarası bulun?
+# <a name="how-do-i-locate-my-public-customer-number-pcn-or-authorization-number"></a>Benim "Genel Müşteri Numaramı (PCN) veya yetkilendirme numarasını nasıl bulabilirim?
 
-Kuruluşunuzun aboneliği yönetim portalına ekleme tamamlamak için genel müşteri numarası (PCN) veya Yetkilendirme numarası gerekir. Bu makale, kuruluşunuz için bu numaraları bulmak için adımları sağlar.  
+Kuruluşunuzun abonelik yönetimi portalında ekleme işlemini tamamlamak için genel müşteri numarasını (PCN) veya yetkilendirme numaranızı gerekir. Bu makalede, kuruluşunuz için bu numaraları bulmak için adımları sağlar.  
 
-## <a name="to-locate-your-pcn-or-authorization-number"></a>PCN veya Yetkilendirme numarası bulmak için
+## <a name="to-locate-your-pcn-or-authorization-number"></a>PCN veya yetkilendirme numaranızı bulmak için
 
-1.  Toplu Lisanslama hizmeti merkezi adresindeki için oturum açın: [ https://www.Microsoft.com/licensing/servicecenter ](https://www.Microsoft.com/licensing/servicecenter).
+1.  Toplu Lisanslama hizmeti Merkezi'nde için oturum açın: [ https://www.Microsoft.com/licensing/servicecenter ](https://www.Microsoft.com/licensing/servicecenter).
 
-    ![VLSC'ye oturum açın](_img/vlsc/vlsc-login.png)
+2. Abonelikler sekmesinden seçin **Visual Studio abonelikleri**.
+    > [!div class="mx-imgBorder"]
+    > ![VLSC'de abonelikleri seçin](_img/vlsc/vlsc-subscriptions.png)
 
-2. Abonelikleri sekmesinden seçin **Visual Studio abonelikleri**.
+3. PCN veya genel müşteri numarası yarı yarıya page down bulunur.
+    > [!div class="mx-imgBorder"]
+    > ![VLSC'de PCN'yi bulmanız](_img/vlsc/vlsc-pcn.png)
 
-    ![İçinde VLSC Subscriptions'ı seçin](_img/vlsc/vlsc-subscriptions.png)
-
-3. Yarı yarıya PCN veya genel müşteri numarası page down bulunur.
     
-    ![İçinde VLSC PCN bulun](_img/vlsc/vlsc-pcn.png)
+Yukarıdaki sayfayı görmüyor ve Visual Studio oturum açma sayfasına yönlendirilirsiniz, lütfen kopyalayın ve aşağıdaki bağlantıyı tarayıcınıza yapıştırın: https://www.microsoft.com/Licensing/servicecenter/Subscription/AgreementSearch.
 
-Yukarıdaki sayfa görmediğinizden ve Visual Studio oturum açma sayfasına yönlendirilir, lütfen kopyalayın ve aşağıdaki bağlantıyı tarayıcınıza yapıştırın: https://www.microsoft.com/Licensing/servicecenter/Subscription/AgreementSearch.
+## <a name="if-i-have-more-than-one-pcn-which-one-should-i-use"></a>Birden çok PCN'ye sahipsem hangisini kullanmalıyım?
 
-## <a name="if-i-have-more-than-one-pcn-which-one-should-i-use"></a>Birden fazla PCN varsa, hangisini kullanmalıyım?
-
-Birden çok genel müşteri numarası (PCN) varsa, her PCN için bir benzersiz ekleme URL içeren bir e-posta alır. Her benzersiz URL'yi yalnızca biri son üç basamak aynı e-posta ile de sağlanır karşılık gelen PCN çalışır. Her PCN her e-posta benzersiz bağlantısını ekleme işlemini tamamlamak için gerekir. 
+Birden fazla genel müşteri numarasını (PCN) varsa, her PCN için benzersiz bir ekleme URL'si içeren bir e-posta alırsınız. Her benzersiz URL, yalnızca son üç hanesi de aynı e-postada sağlanır, karşılık gelen PCN ile çalışır. Her PCN için her bir e-postadaki benzersiz bağlantı aracılığıyla ekleme işlemini tamamlamak gerekir. 

@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: bir parola korumalı belgede veriyi önbelleğe alma | Microsoft Docs'
+title: 'Nasıl yapılır: bir parola korumalı belgede veriyi önbelleğe alma'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,22 +17,23 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 71ce65cd253ea6473a07a98542449a1e47ae9d7c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c15d3fee1728118df2701cc940dc288ae500942d
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255349"
 ---
-# <a name="how-to-cache-data-in-a-password-protected-document"></a>Nasıl Yapılır: Parola Korumalı Belgede Veriyi Önbelleğe Alma
+# <a name="how-to-cache-data-in-a-password-protected-document"></a>Nasıl yapılır: bir parola korumalı belgede veriyi önbelleğe alma
   Bir belge veya bir parolayla korunduğu çalışma kitabının veri önbelleğindeki veri eklerseniz, önbelleğe alınmış verilerde yapılan değişiklikleri otomatik olarak kaydedilmez. Projenizdeki iki yöntemi geçersiz kılarak önbelleğe alınmış veri değişikliklerini kaydedebilir.  
   
  [!INCLUDE[appliesto_alldoc](../vsto/includes/appliesto-alldoc-md.md)]  
   
 ## <a name="caching-in-word-documents"></a>Word belgelerinde önbelleğe alma  
   
-#### <a name="to-cache-data-in-a-word-document-that-is-protected-with-a-password"></a>Bir parola ile korunan bir Word belgesinde veriyi önbelleğe almak için  
+### <a name="to-cache-data-in-a-word-document-that-is-protected-with-a-password"></a>Bir parola ile korunan bir Word belgesinde veriyi önbelleğe almak için  
   
-1.  İçinde `ThisDocument` sınıfı, bir ortak alan veya önbelleğe alınacak özelliği işaretleyin. Daha fazla bilgi için bkz: [veri önbelleğe alma](../vsto/caching-data.md).  
+1.  İçinde `ThisDocument` sınıfı, bir ortak alan veya önbelleğe alınacak özelliği işaretleyin. Daha fazla bilgi için bkz: [veriyi önbelleğe](../vsto/caching-data.md).  
   
 2.  Geçersiz kılma <xref:Microsoft.Office.Tools.Word.DocumentBase.UnprotectDocument%2A> yönteminde `ThisDocument` sınıfı ve belgeden korumayı kaldırın.  
   
@@ -48,15 +49,15 @@ ms.lasthandoff: 04/16/2018
  [!code-csharp[Trin_CachedDataProtectedDocument#1](../vsto/codesnippet/CSharp/Trin_CachedDataProtectedDocument/ThisDocument.cs#1)]
  [!code-vb[Trin_CachedDataProtectedDocument#1](../vsto/codesnippet/VisualBasic/Trin_CachedDataProtectedDocument/ThisDocument.vb#1)]  
   
-### <a name="compiling-the-code"></a>Kod Derleniyor  
+### <a name="compile-the-code"></a>Kod derleme  
  Bu kodu ekleyin `ThisDocument` projenizdeki sınıfı. Bu kod parola adlı bir alana saklandığı varsayılır `securelyStoredPassword`.  
   
-## <a name="caching-in-excel-workbooks"></a>Excel çalışma kitaplarını önbelleğe alma  
+## <a name="cache-in-excel-workbooks"></a>Excel çalışma kitaplarını önbelleğe alma  
  Excel projelerinde kullanarak tüm çalışma kitabını korumaya aldığınızda bu yordam gereklidir <xref:Microsoft.Office.Tools.Excel.Workbook.Protect%2A> yöntemi. Bu yordamı kullanarak yalnızca belirli bir çalışma bir parolayla koruyun durumunda gerekli değildir <xref:Microsoft.Office.Tools.Excel.Worksheet.Protect%2A> yöntemi.  
   
-#### <a name="to-cache-data-in-an-excel-workbook-that-is-protected-with-a-password"></a>Parola korumalı Excel çalışma kitabında veriyi önbelleğe almak için  
+### <a name="to-cache-data-in-an-excel-workbook-that-is-protected-with-a-password"></a>Parola korumalı Excel çalışma kitabında veriyi önbelleğe almak için  
   
-1.  İçinde `ThisWorkbook` sınıf veya biri `Sheet` *n* sınıfları, işaretlemek ortak alan veya önbelleğe alınacak özelliği. Daha fazla bilgi için bkz: [veri önbelleğe alma](../vsto/caching-data.md).  
+1.  İçinde `ThisWorkbook` sınıf veya biri `Sheet` *n* sınıfları, işaretlemek ortak alan veya önbelleğe alınacak özelliği. Daha fazla bilgi için bkz: [veriyi önbelleğe](../vsto/caching-data.md).  
   
 2.  Geçersiz kılma <xref:Microsoft.Office.Tools.Excel.WorkbookBase.UnprotectDocument%2A> yönteminde `ThisWorkbook` sınıfı ve koruma çalışma kitabından kaldırın.  
   
@@ -72,12 +73,12 @@ ms.lasthandoff: 04/16/2018
  [!code-vb[Trin_CachedDataProtectedWorkbook#1](../vsto/codesnippet/VisualBasic/Trin_CachedDataProtectedWorkbook/ThisWorkbook.vb#1)]
  [!code-csharp[Trin_CachedDataProtectedWorkbook#1](../vsto/codesnippet/CSharp/Trin_CachedDataProtectedWorkbook/ThisWorkbook.cs#1)]  
   
-### <a name="compiling-the-code"></a>Kod Derleniyor  
+### <a name="compile-the-code"></a>Kod derleme  
  Bu kodu ekleyin `ThisWorkbook` projenizdeki sınıfı. Bu kod parola adlı bir alana saklandığı varsayılır `securelyStoredPassword`.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Verileri önbelleğe alma](../vsto/caching-data.md)   
- [Nasıl yapılır: veri kullanımı için çevrimdışı veya sunucuda önbelleğe alma](../vsto/how-to-cache-data-for-use-offline-or-on-a-server.md)   
- [Nasıl Yapılır: Veri Kaynağını Programlamayla Office Belgesinden Önbelleğe Alma](../vsto/how-to-programmatically-cache-a-data-source-in-an-office-document.md)  
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Verileri önbelleğe](../vsto/caching-data.md)   
+ [Nasıl yapılır: çevrimdışı veya sunucuda kullanmak için verileri önbelleğe alma](../vsto/how-to-cache-data-for-use-offline-or-on-a-server.md)   
+ [Nasıl yapılır: program aracılığıyla bir veri kaynağı Office belgesinden önbelleğe alma](../vsto/how-to-programmatically-cache-a-data-source-in-an-office-document.md)  
   
   

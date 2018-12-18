@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 120bf38afbf05f367757de3a5e453cab8b4311b1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 43c8c7dcba7ea1125c031f0cc64a902d88f67017
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49849437"
 ---
 # <a name="evalflags90"></a>EVALFLAGS90
-İfade değerlendirme denetim bayrakları geçerli değerlerini sıralar. Bu numaralandırma genişletir [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) numaralandırması.  
+İfade değerlendirme denetim bayrakları için geçerli değerleri listeler. Bu numaralandırma genişletir [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) sabit listesi.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -65,37 +66,37 @@ public enum enum_EVALFLAGS90
   
 #### <a name="parameters"></a>Parametreler  
  EVAL90_RETURNVALUE  
- Dönüş değeri varsa değerlendirilmesi belirtir.  
+ Dönüş değeri varsa, değerlendirilecek belirtir.  
   
  EVAL90_NOSIDEEFFECTS  
- Yan etkileri değil verileceğini belirtir.  
+ Yan etkileri izin verilmeyeceğini belirtir.  
   
  EVAL90_ALLOWBPS  
- Durdurma kesme noktaları üzerinde belirtir.  
+ Durdurma kesme noktalarında belirtir.  
   
  EVAL90_ALLOWERRORREPORT  
- Ana bilgisayara izin verilmesi için Raporlama hata belirtir. Internet Explorer'da komut ifade değerlendirmesi için kullanılır.  
+ Konağa izin verilmesi için Raporlama hata belirtir. Internet Explorer'da komut ifade değerlendirmesi için kullanılır.  
   
  EVAL90_FUNCTION_AS_ADDRESS  
- İşlev çağırma yerine adresleri olarak değerlendirilecek işlevler zorlar.  
+ İşlev çağırma yerine adresleri olarak değerlendirilecek işlevleri zorlar.  
   
  EVAL90_NOFUNCEVAL  
- İşlev değerlendirilen gelen engeller. Örneğin, göz önünde bulundurun `int` ifadesinde belirteci `myExpression(int) + 10`. Bu işlev doğru adresi olarak ancak olmayan bir değer olarak değerlendirilebilir.  
+ İşlevi, değerlendirilen öğesinden engeller. Örneğin, düşünün `int` ifade belirteci `myExpression(int) + 10`. Bu işlev bir adres, ancak bir değer olarak değil doğru değerlendirilebilir.  
   
  EVAL90_NOEVENTS  
- İfade değerlendirme sırasında meydana gelen olayları oturum hata ayıklama Yöneticisi'ni (SDM) ya da IDE gönderilmemelidir belirtmek için bayraklayın.  
+ İfade değerlendirme sırasında meydana gelen olayları oturum hata ayıklama Yöneticisi (SDM) veya IDE gönderilmemelidir belirten bayrak.  
   
  EVAL90_DESIGN_TIME_EXPR_EVAL  
  Tasarım zamanı ifade değerlendirmesi sağlar.  
   
  EVAL90_ALLOW_IMPLICIT_VARS  
- Açık değişken oluşturma sağlar.  
+ Örtük değişken oluşturmaya izin verir.  
   
  EVAL90_FORCE_EVALUATION_NOW  
- Hemen gerçekleşmesi için değerlendirme zorlar. Bu, kullanıcı isteği gibi bir isteği hizmet verirken yararlıdır.  
+ Hemen oluşmasını zorlar değerlendirmesi'ni kullanın. Bu, hizmet kullanıcı isteği gibi bir istek olduğunda yararlıdır.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Msdbg90.h  
+ Üstbilgi: Msdbg90.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   

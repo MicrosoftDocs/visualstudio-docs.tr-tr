@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31475800"
 ---
 # <a name="using-spy"></a>Spy++ Kullanma
 Spy ++ (SPYXX. EXE) sistemin işlemler, iş parçacıkları, windows ve pencere iletileri grafik bir görünümünü sağlar bir Win32 tabanlı yardımcı programıdır. Spy ++ Yardımı bu bölümde aşağıdaki Yardım konuları içerir:  

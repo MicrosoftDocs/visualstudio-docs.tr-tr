@@ -17,45 +17,45 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 1e60843119ee72f1164288f50b27116cdda31e9b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1695a23ba9dddc27a37f23c714678fe6b779d328
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35676895"
 ---
-# <a name="msbuild-properties-supported-by-sharepoint"></a>SharePoint Tarafından Desteklenen MSBuild Özellikleri
-  Tüm [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] Microsoft.VisualStudio.SharePoint.targets dosya, proje dosyası veya proje kullanıcı dosyası içinde tanımlanmış özelliği kullanılabilir [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint projeleri. Ortak yanı sıra [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] SharePoint projesi tarafından sağlanan özellikleri SharePoint projelerine özel ek özellikleri tanımlar.  
+# <a name="msbuild-properties-supported-by-sharepoint"></a>SharePoint tarafından desteklenen MsBuild özellikleri
+  Tüm [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] Microsoft.VisualStudio.SharePoint.targets dosyası, proje dosyası veya proje kullanıcı dosyası içinde tanımlanan bir özellik kullanılabilir [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] SharePoint projeleri. Ortak yanı sıra [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] SharePoint Proje tarafından sağlanan özellikleri SharePoint projelerine özgü ek özellikleri tanımlar.  
   
- Ortak bir listesi için [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] özellikleri, görmek [yaygın MSBuild proje özellikleri](http://go.microsoft.com/fwlink/?LinkID=168687). .Targets dosyasında, proje dosyası (.csproj veya .vbproj) veya proje kullanıcı dosyasında programlama dili tarafından desteklenen özelliklerin tam listesi için konum (csproj.user veya. vbproj.user).  
+ Ortak bir listesi için [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] özellikleri görmek [yaygın MSBuild proje özellikleri](http://go.microsoft.com/fwlink/?LinkID=168687). Programlama diliniz tarafından desteklenen özelliklerin tam listesi için konum *.targets* dosyası, proje dosyası (*.csproj* veya *.vbproj*), ya da proje kullanıcı dosyası () *csproj.user* veya *. vbproj.user*).  
   
-## <a name="msbuild-properties-specific-to-sharepoint"></a>MSBuild özellikleri özel SharePoint için  
- Aşağıdaki tabloda [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] SharePoint projeleri için özellikle uygulanan özellikleri [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. Diğer özellikleri vardır, ancak dahili kullanım içindir.  
+## <a name="msbuild-properties-specific-to-sharepoint"></a>SharePoint'e özgü MsBuild özellikleri
+ Aşağıdaki tabloda [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] SharePoint projeleri için özel olarak uygulanan Özellikler [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. Diğer özellikler var, ancak bunlar dahili kullanım içindir.  
   
 |Özellik adı|Açıklama|  
 |-------------------|-----------------|  
 |SharePointSiteUrl|Temsil eden bir dize [!INCLUDE[TLA2#tla_url](../sharepoint/includes/tla2sharptla-url-md.md)] SharePoint sitesi.|  
-|SandboxedSolution|Çözüm Korumalı bir çözüm olup olmadığını belirten bir Boole değeri.|  
+|SandboxedSolution|Çözüm bir korumalı çözüm olup olmadığını belirten bir Boole değeri.|  
 |ActiveDeploymentConfiguration|Etkin dağıtım yapılandırması.|  
-|IncludeAssemblyInPackage|Derleme paket dosyasında dahil edilip edilmediğini gösteren bir Boole değeri.|  
-|PreDeploymentCommand|Dağıtım öncesi komutu adımda yürütülecek komut temsil eden bir dize değeri.|  
-|PostDeploymentCommand|Dağıtım sonrası komut adımda yürütülecek komut temsil eden bir dize değeri.|  
-|CustomBeforeSharePointTargets|Yolunu temsil eden bir dize bir [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] hedefler dosyası. Hedef dosya varsa ve tanımlanır, herhangi bir SharePoint hedefleri veri önce içeri aktarılır. Bu özellik sevk edilen SharePoint hedefleri dosyayı değiştirmeden paket işlemi önceden tanımlanması paketleme ilgili özellikleri tarafından özelleştirmenizi sağlar, ancak hedefler dosyası hala tüm SharePoint projelerine yöneliktir.|  
-|CustomAfterSharePointTargets|Yolunu temsil eden bir dize bir [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] hedefler dosyası. Hedef dosya varsa ve tanımlanır, SharePoint hedefleri verilerinin bir tüm içe aktarılır. Bu özellik paketleme ilgili özellikler ve hedefleri sevk edilen SharePoint hedefleri dosyasını değiştirmek zorunda kalmadan kılarak paket işlemi özelleştirmenizi sağlar, ancak hedefler dosyası hala tüm SharePoint projelerine yöneliktir.|  
-|LayoutPath|Burada her paketlenmiş dosya geçici olarak yerleştirilir .wsp dosyasına eklenmeden önce kök dizini temsil eden bir dize. Bu yol eklemek, kaldırmak veya .wsp dosyasının içeriğini değiştirmek için kullandığı için paketlenmesi için dosyaları değiştirmek için BeforeLayout ve AfterLayout hedefleri geçersiz kıldığınızda bilmek yararlı olabilir.|  
-|BasePackagePath|Paket yerleştirildiği klasörü temsil eden bir dize. Bu değeri Bin\Debug gibi projenin çıktı dizini kullanır.|  
+|IncludeAssemblyInPackage|Derleme paket dosyasını dahil edilip edilmediğini belirten bir Boole değeri.|  
+|PreDeploymentCommand|Dağıtım öncesi komutu adımda çalıştırılacak komutu temsil eden bir dize değeri.|  
+|PostDeploymentCommand|Dağıtım sonrası komutu adımda çalıştırılacak komutu temsil eden bir dize değeri.|  
+|CustomBeforeSharePointTargets|Yolu temsil eden bir dize bir [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] hedefler dosyası. Hedef dosya varsa ve tanımlanan herhangi bir SharePoint hedefleri veri önce içeri aktarılır. Bu özellik paket işlemi önceden tanımlanması paketlemeyle ilgili özellikleri tarafından sevk edilen SharePoint hedefleri dosyayı değiştirmeden özelleştirmenize olanak sağlar, ancak hedefler dosyasındaki tüm SharePoint projeleri için geçerli olacaktır.|  
+|CustomAfterSharePointTargets|Yolu temsil eden bir dize bir [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] hedefler dosyası. Hedef dosya varsa ve tanımlanır, SharePoint hedefleri verilerinin bir tüm olarak içeri aktarılır. Bu özellik paketlemeyle ilgili özelliklerin ve hedeflerin sevk edilen SharePoint hedefleri dosyasını değiştirmek zorunda kalmadan kılarak paket işlemi özelleştirmenizi sağlar, ancak hedefler dosyasındaki tüm SharePoint projeleri için geçerli olacaktır.|  
+|LayoutPath|Burada paketlenmesi dosyaların her biri geçici olarak yerleştirilir eklenen önce kök dizinini temsil eden bir dize *.wsp* dosya. Bu yol eklemek, kaldırmak veya içeriğini değiştirmek için kullanabileceğiniz için paketlenecek şekilde dosyaları değiştirmek için BeforeLayout ve AfterLayout hedefleri geçersiz kılma zaman bilmek de yararlı olabilir. *.wsp* dosya.|  
+|BasePackagePath|Paket yerleştirildiği klasör temsil eden bir dize. Bu değer Bin\Debug gibi bir projenin çıkış dizinine kullanır.|  
 |PackageExtension|Pakete eklenecek dosya adı uzantısını temsil eden bir dize. Wsp varsayılan değerdir.|  
-|AssemblyDeploymentTarget|Proje derleme SharePoint sunucusu üzerinde dağıtıldığı konumu temsil eden bir dize. Değeri GlobalAssemblyCache (varsayılan) veya WebApplication olduğu. Bu özellik ayrıca Özellikler penceresinde ayarlayabilirsiniz.|  
-|PackageWithValidation|Doğrulama önce paketleme gerçekleştirip gerçekleştirmediğini belirtir bir Boole değeri. Bu özellik, paketleri oluşturulurken doğrulama hataları yoksayma olanak tanır.|  
-|ValidatePackageDependsOn|Önce ValidatePackage hedef yürütmek için ek hedefleri tanımlayan bir dize.|  
-|TokenReplacementFileExensions|Paketlemesi sırasında yerine kendi belirteçlere sahip dosyaları tanımlayan bir dize.|  
+|AssemblyDeploymentTarget|Proje derleme SharePoint sunucusu üzerinde dağıtıldığı konum temsil eden bir dize. Kendi GlobalAssemblyCache (varsayılan) ya da WebApplication değerdir. Bu özelliği de Özellikler penceresinde ayarlayabilirsiniz.|  
+|PackageWithValidation|Doğrulama önce paketleme yapılıp yapılmayacağını belirten bir Boole değeri. Bu özellik paketleri oluşturulurken doğrulama hatalarını yoksay olanak sağlar.|  
+|ValidatePackageDependsOn|Ek hedefler ValidatePackage hedeften önce yürütülecek tanımlayan bir dize.|  
+|TokenReplacementFileExensions|Paketleme sırasında değiştirilen belirteçleriyle dosyaları tanımlayan bir dize.|  
   
-## <a name="using-msbuild-properties-in-the-properties-page"></a>Özellikler sayfasında MSBuild özellikleri kullanma  
- Sabit kodlanmış dizelerde kullanmak yerine, esneklik için **dağıtım öncesi komut satırı** ve **dağıtım sonrası komut satırı** kutuları SharePoint Özellikler sayfasında, SharePoint kullanabilirsiniz. bağımsız değişken olarak özellikleri. Örneğin, belirli bir belirtme yerine [!INCLUDE[TLA2#tla_url](../sharepoint/includes/tla2sharptla-url-md.md)] dize için SharePoint sitesi, bunun yerine kullanabileceğiniz `$(SharePointSiteUrl)`.  
+## <a name="use-msbuild-properties-in-the-properties-page"></a>MsBuild özellikleri özellikleri sayfasını kullanın.
+ Esneklik, sabit kodlanmış dizeleri kullanmak yerine **dağıtım öncesi komut satırını** ve **dağıtım sonrası komut satırı** kutuları SharePoint Özellikler sayfasında SharePoint kullanabilirsiniz. bağımsız değişkenler olarak özellikleri. Örneğin, belirli bir belirtme yerine [!INCLUDE[TLA2#tla_url](../sharepoint/includes/tla2sharptla-url-md.md)] dize SharePoint sitesi için bunların yerine kullanabileceğiniz `$(SharePointSiteUrl)`.  
   
 > [!NOTE]  
->  Kullanabilirsiniz [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] değişken sözdizimi `$(` *propertyName* `)` veya ortam değişkeni sözdizimi `%` *propertyName* `%` bir özelliği belirtmek için.  
+>  Kullanabilirsiniz [!INCLUDE[vstecmsbuild](../sharepoint/includes/vstecmsbuild-md.md)] değişkeni sözdizimini `$(` *propertyName* `)` veya ortam değişkeni sözdizimini `%` *propertyName* `%` bir özellik belirtmek için.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.
  [MSBuild Başvurusu](/visualstudio/msbuild/msbuild-reference)  
-  
   

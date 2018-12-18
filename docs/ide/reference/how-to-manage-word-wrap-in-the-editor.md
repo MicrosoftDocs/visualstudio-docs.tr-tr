@@ -1,9 +1,8 @@
 ---
-title: 'Nasıl yapılır: düzenleyicide sözcük kaydırmayı yönetme | Microsoft Docs'
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+title: Sözcük kaydırma
+ms.date: 11/07/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - word wrap
@@ -15,42 +14,49 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: edd81a4c4168d7733b21ec84123e984e42b71063
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6fc38d1ee5a8e5543675700c35cc0cb298aefad9
+ms.sourcegitcommit: bc43970c000f07c9cc2051f1264a9742943a9755
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51349120"
 ---
-# <a name="how-to-manage-word-wrap-in-the-editor"></a>Nasıl Yapılır: Düzenleyicide Sözcük Kaydırmayı Yönetme
+# <a name="how-to-manage-word-wrap-in-the-editor"></a>Nasıl yapılır: düzenleyicide sözcük kaydırmayı yönetme
 
-Ayarlayın ve temizleyin **sözcük kaydırma** seçeneği. Bu seçenek ayarlandığında, geçerli Kod Düzenleyicisi penceresini genişliğini aşan uzun bir satır kısmı sonraki satırında görüntülenir. Örneğin, numaralandırma, satır kullanımını kolaylaştırmak için bu seçeneği temizlenirse, uzun satırları uçlarından görmek için sağa kaydırma yapabilirsiniz.
+Ayarlayın ve silebileceği **sözcük kaydırmayı** seçeneği. Bu seçenek ayarlandığında, geçerli Kod Düzenleyicisi penceresinin genişliğini aşan bir uzun satır bölümü ve sonraki satırda görüntülenir. Örneğin, numaralandırma, satır kullanımını kolaylaştırmak için bu seçeneği temizlenirse, uzun satırları ucunda görmek için sağa kaydırma yapabilirsiniz.
 
 > [!NOTE]
-> İletişim kutuları ve menü komutlarını gördüğünüz içinde açıklanana değişebilir **yardımcı** etkin ayarlarınıza veya edition bağlı olarak. Ayarlarınızı değiştirmek için tercih **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../../ide/personalizing-the-visual-studio-ide.md).
+> Bu konu yalnızca Windows üzerinde Visual Studio için geçerlidir. Mac için Visual Studio, sözcük kaydırma şu anda desteklemiyor.
 
-## <a name="procedure"></a>Yordam
+## <a name="to-set-word-wrap-preferences"></a>Sözcük kaydırmayı tercihleri ayarlamak için
 
-### <a name="to-set-word-wrap-preferences"></a>Sözcük kaydırma tercihlerini ayarlamak için
-  
-1.  Üzerinde **Araçları** menüsünde, select **seçenekleri**.  
-  
-2.  İçinde **metin düzenleyici** klasörünü seçin **genel** içinde seçenekleri **tüm diller** bu seçenek genel olarak ayarlamak için alt.  
-  
-     — veya —  
-  
-     Seçin **genel** alt programlama dili için Seçenekler.  
-  
-3.  Altında **ayarları**seçin veya temizleyin **sözcük kaydırma** seçeneği.  
-  
-     Zaman **sözcük kaydırma** seçeneği seçildiğinde, **Göster sözcük kaydırma için görsel karakterlerinin** seçeneği etkinleşir.  
-  
-4.  Seçin **Göster visual karakterlerin sözcük kaydırma için** burada uzun bir satır sarmalar ikinci bir satır başı oku göstergesi görüntülemek isterseniz seçeneği. Gösterge okları görüntülememek tercih ediyorsanız bu seçeneği temizleyin.  
-  
+1.  Üzerinde **Araçları** menüsünde **seçenekleri**.
+
+2.  İçinde **metin düzenleyici** klasörü seçin **genel** seçeneklerini **tüm diller** genel olarak bu seçeneği ayarlamak için alt.
+
+     — veya —
+
+     Seçin **genel** alt programlama dili için Seçenekler.
+
+3.  Altında **ayarları**seçin veya temizleyin **sözcük kaydırmayı** seçeneği.
+
+     Zaman **sözcük kaydırmayı** seçeneği belirlenmişse **sözcük kaydırma için görsel karakterleri Göster** seçeneği etkinleştirilir.
+
+4.  Seçin **sözcük kaydırma için görsel karakterleri Göster** burada bir uzun satır sarmalar ikinci satıra bir dönüş ok göstergesi görüntülenmesini isterseniz seçeneği. Gösterge oklar görüntülenmemesi isterseniz bu seçeneği temizleyin.
+
     > [!NOTE]
-    >  Bu anımsatıcı okları kodunuzu eklenmez: yalnızca görüntüleme amacıyla oldukları.  
-  
+    > Bu anımsatıcı okları kodunuza eklenmez; yalnızca görüntüleme amaçları için değildirler.
+
+## <a name="known-issues"></a>Bilinen sorunlar
+
+Burada Visual Studio için diğer düzenleyiciler farklı davranır sözcük kaydırmayı Not Defteri ++, Sublime Text veya Visual Studio Code biliyorsanız, aşağıdaki sorunlarından haberdar olmalı:
+
+* [Tüm satırı Üçlü seçmek değil](https://developercommunity.visualstudio.com/content/problem/268989/triple-click-doesnt-select-whole-line-when-word-wr.html)
+* [Kes komutu tüm satırı silmez.](https://developercommunity.visualstudio.com/content/problem/138259/cut-command-should-delete-logical-line.html)
+* [End tuşuna basarak iki kez hareket sonlandırmak için imleci satırın](https://developercommunity.visualstudio.com/content/problem/138274/pressing-end-key-twice-should-move-cursor-to-end-o.html)
+
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Düzenleyiciyi Özelleştirme](../../ide/customizing-the-editor.md)  
-[Metin Düzenleyici Seçenekleri iletişim Kutusu](../../ide/reference/text-editor-options-dialog-box.md)  
-[Kod yazma](../../ide/writing-code-in-the-code-and-text-editor.md)
+- [Düzenleyiciyi Özelleştirme](../../ide/customizing-the-editor.md)
+- [Metin Düzenleyici Seçenekleri iletişim Kutusu](../../ide/reference/text-editor-options-dialog-box.md)
+- [Kod Düzenleyicisi özellikleri](../../ide/writing-code-in-the-code-and-text-editor.md)

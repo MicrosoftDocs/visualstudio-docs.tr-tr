@@ -1,5 +1,5 @@
 ---
-title: Paylaşılan ve sürümü tutulan VSPackages arasında seçme | Microsoft Docs
+title: Paylaşılan ve sürümü tutulan Vspackage'lar arasında seçim yapma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,54 +15,55 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ce7f58d664c6a186146272af16324be2fee90983
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3bb3cebb9cdc00f6e4ef486ef6330cf2b18c6dc1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49817308"
 ---
-# <a name="choosing-between-shared-and-versioned-vspackages"></a>Paylaşılan ve sürümü tutulan VSPackages arasında seçme
-Visual Studio farklı sürümlerini aynı bilgisayarda bulunabilir. VSPackages herhangi bir karışımını destekler [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sürümleri.  
+# <a name="choose-between-shared-and-versioned-vspackages"></a>Paylaşılan ve sürümü tutulan Vspackage'lar arasında seçin
+Visual Studio'nun farklı sürümleri aynı bilgisayarda bulunabilir. VSPackage'ları herhangi bir karışımını destekleyebilmesi [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sürümleri.  
   
- VSPackages yan yana yüklemelerini iki stratejileri, paylaşılan stratejisi ya da sürümlü stratejisi ile etkinleştirebilirsiniz. Her ikisi birden fazla sürümünü varlığını uyum [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ve sürümleri ilişkili [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].  
+ VSPackage yan yana yüklemeleri iki stratejileri, paylaşılan stratejisi ya da tutulan stratejisi üzerinden etkinleştirebilirsiniz. Her ikisini birden çok sürümünün varlığı uyum [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ve sürümleri ilişkili [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].  
   
- Paylaşılan stratejinize bir VSPackage birden fazla sürümünü kullanmak için kayıtlı [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Sürümü tutulan stratejinize birden çok VSPackage DLL'leri yüklenen her sürümü için bir tane [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek.  
+ Paylaşılan stratejide bir VSPackage'ı birden çok sürümünü kullanmak için kayıtlı [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Tutulan stratejide birden çok VSPackage DLL'leri yüklenen her sürümü için bir tane [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek.  
   
-## <a name="shared-vspackages"></a>Paylaşılan VSPackages  
- Paylaşılan VSPackage kullanarak uygun birden çok sürümlerinde aynı VSPackage kullandığınızda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Paylaşılan VSPackage uygulamak için aşağıdaki adımları izlemelisiniz:  
+## <a name="shared-vspackages"></a>Paylaşılan VSPackage'ları  
+ Paylaşılan bir VSPackage'ı kullanarak uygun içinde birden çok sürümünü aynı VSPackage'ı kullandığınızda [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Paylaşılan bir VSPackage'ı uygulamak için aşağıdaki adımları izlemelisiniz:  
   
--   VSPackage birden çok sürümü ile uyumlu hale getirmek [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. İki yolla bunu yaparsanız, bu nedenle kullanılabilir:  
+- VSPackage, birden çok sürümü ile uyumlu hale getirmek [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu nedenle iki şekilde de kullanılabilir:  
   
-    -   Yalnızca en erken sürümünün özellikleri kullanarak, VSPackage sınırlamak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek.  
+  - Yalnızca en eski sürümünü özelliklerini kullanarak, VSPackage sınırlamak [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek.  
   
-    -   Sürümüne uyarlamak için VSPackage program [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çalıştığı içinde. Ardından, yeni hizmetler için sorgu başarısız olursa, VSPackage eski sürümlerinde desteklenen diğer hizmet sunabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+  - Sürümüne uyum sağlamak için VSPackage program [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çalıştığı içinde. Ardından, yeni hizmetler için sorgu başarısız olursa, VSPackage'ı eski sürümlerinde desteklenen diğer hizmet sunabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
--   VSPackage uygun şekilde kaydedin. Daha fazla bilgi için bkz: [VSPackage kayıt](../extensibility/internals/vspackage-registration.md) ve [yönetilen VSPackage kayıt](http://msdn.microsoft.com/en-us/f69e0ea3-6a92-4639-8ca9-4c9c210e58a1).  
+- VSPackage'ı uygun şekilde kaydedin. Daha fazla bilgi için [VSPackage kaydı](../extensibility/internals/vspackage-registration.md) ve [yönetilen VSPackage kaydı](https://msdn.microsoft.com/library/f69e0ea3-6a92-4639-8ca9-4c9c210e58a1).  
   
--   Dosya uzantılarını uygun şekilde kaydedin. Daha fazla bilgi için bkz: [yan yana dağıtımlar için dosya adı uzantılarını kaydetme](../extensibility/registering-file-name-extensions-for-side-by-side-deployments.md).  
+- Dosya uzantılarını uygun şekilde kaydedin. Daha fazla bilgi için [yan yana dağıtımlar için dosya adı uzantılarını kaydetme](../extensibility/registering-file-name-extensions-for-side-by-side-deployments.md).  
   
--   Uygun sürümleri için VSPackage dağıtan bir yükleyici oluşturma [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Daha fazla bilgi için bkz: [yükleme VSPackages ile Windows Installer](../extensibility/internals/installing-vspackages-with-windows-installer.md) ve [bileşen Yönetimi](../extensibility/internals/component-management.md).  
+- Uygun sürümleri için VSPackage dağıtan bir yükleyici oluşturma [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Daha fazla bilgi için [Windows Installer ile VSPackage yükleme](../extensibility/internals/installing-vspackages-with-windows-installer.md) ve [bileşen Yönetim](../extensibility/internals/component-management.md).  
   
--   Kayıt çakışma sorunu giderir. Daha fazla bilgi için bkz: [VSPackage kayıt](../extensibility/internals/vspackage-registration.md).  
+- Kayıt çakışma sorunu giderir. Daha fazla bilgi için [VSPackage kaydı](../extensibility/internals/vspackage-registration.md).  
   
--   Paylaşılan ve sürümü tutulan dosyaları başvuru güvenli yüklenmesi ve kaldırılması birden çok sürümü ile izin vermek için sayım saygı emin olun. Daha fazla bilgi için bkz: [bileşen Yönetimi](../extensibility/internals/component-management.md).  
+- Paylaşılan ve sürümü tutulan dosyaları birden çok sürümünün kaldırılması ve güvenli yüklenmesine izin vermek için başvuru sayımını uyduğunuzdan emin olun. Daha fazla bilgi için [bileşen Yönetim](../extensibility/internals/component-management.md).  
   
-## <a name="versioned-vspackages"></a>Sürümü tutulan VSPackages  
- Sürümü tutulan VSPackage stratejisi altında oluşturduğunuz her sürümü için bir VSPackage [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek. Bunun yapılması uygun sonraki sürümleri tarafından sağlanan hizmetlerin yararlanmak beklediğiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], her VSPackage diğerlerini etkilemeden geliştirin. Bununla birlikte, tek bir kod tabanının veya birden çok bağımsız kod temelleri, birden çok ikili dosyaları oluşturma sürümlü stratejisi paylaşılan stratejisi'den daha fazla ilk geliştirme gerektirdiği. Her bir sürümü için ayrı bir kurulum ya da sürümleri algılar tek bir kurulum oluşturmanız gerekir çünkü Ayrıca, ek kurulum iş gerekebilecek [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] yüklenen ve, VSPackage destekler.  
+## <a name="versioned-vspackages"></a>Sürümü tutulan Vspackage'lar  
+ Tutulan VSPackage stratejisi altında bir VSPackage'ı her sürümü için oluşturduğunuz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] destek. Bunu yapmanın uygun sonraki sürümleri tarafından sağlanan hizmetlerin avantajlarından yararlanmak beklediğiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], diğerleri etkilenmeden her VSPackage geliştirebilirsiniz. Bununla birlikte, tek bir kod tabanını veya birden çok bağımsız kod tabanlarında, birden çok ikili dosyaları oluşturma tutulan stratejisi paylaşılan stratejisi değerinden daha fazla ilk geliştirme gerektirdiği. Her sürümü için ayrı bir kurulum veya sürümleri algılayan tek bir kurulum oluşturmanız gerekir çünkü Ayrıca, ek kurulum çalışması gerekebilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] yüklenen ve, VSPackage'ı destekler.  
   
 ## <a name="binary-compatibility"></a>İkili uyumluluğu  
- Genellikle, Visual Studio'nun daha yeni sürümleri çalıştırmak için Visual Studio'nun önceki sürümleri ile geliştirilen yerel kodlu VSPackages ikili uyumluluğu sağlar. Ancak, üç önemli özel durum vardır:  
+ Genel olarak, Visual Studio sonraki sürümleri için Visual Studio'nun önceki sürümleriyle geliştirilmiş yerel kodlu VSPackages ikili uyumluluğu sağlar. Bununla birlikte, üç önemli özel durum vardır:  
   
--   Belirli bir ortak dil çalışma zamanı sürümü, VSPackage dayanır sonra hangi sürümünde belirlemelisiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çalışır.  
+- Belirli bir ortak dil çalışma zamanı sürümü, VSPackage'ı kullanır ardından hangi sürümünde belirlemelisiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] çalışır.  
   
--   Bir VSPackage bir bağımlılık, başka bir VSPackage veya başka bir ürünün belirli bir özellik olabilir. Sonuç olarak, yalnızca bağımlılık burada sağlanıyorsa VSPackage çalıştırabilirsiniz.  
+- VSPackage belirli bir özelliğini başka bir VSPackage'ı veya başka bir ürün üzerinde bir bağımlılık olabilir. Sonuç olarak, yalnızca bağımlılık burada sağlanırsa VSPackage'ı çalıştırabilirsiniz.  
   
--   Bir güvenlik düzeltme tarafından bir VSPackage etkilenebilir bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] hizmet paketi veya sonraki bir sürümünü [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu gibi durumlarda bir VSPackage önceki bir sürümü ile geliştirilen [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] sürümlerinde çalışmayabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] güvenlik düzeltme ekini uygulandıktan sonra. Ancak, sonraki bir sürümü ile paketinizi yeniden derleyin ve önceki sürümlerinde de çalıştırmak sahip.  
+- VSPackage bir güvenlik düzeltme tarafından etkilenebilecek bir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] hizmet paketi veya sonraki bir sürümü [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu gibi durumlarda, önceki bir sürümü ile VSPackage geliştirilen [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] sürümlerinde çalışmayabilir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] güvenlik düzeltme uygulandıktan sonra. Ancak, paketiniz sonraki bir sürümü ile yeniden oluşturun ve önceki sürümlerinde de çalıştırmak sahip.  
   
- Yönetilen VSPackages bir sürümü kullanılarak oluşturulur gerekir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ve [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] hedef sürümü eşleşen [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+  Yönetilen VSPackages bir sürümü kullanılarak oluşturulur gerekir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ve [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] hedef sürümü, eşleşen [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
- VSPackage ikili dosyaları ikili uyumluluğu için planlama ek olarak, ayrıca çözümünü göz önünde bulundurun ve dosya biçimleri proje. Yeni bir proje türü, VSPackage oluşturur, bunu yalnızca bir sürümü ya da birden fazla sürümünü çalıştırılıp çalıştırılmayacağını karar vermelisiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Daha fazla bilgi için bkz: [özel projeleri yükseltme](../extensibility/internals/upgrading-projects.md#upgrading-custom-projects).  
+  VSPackage ikili dosyalarınız için ikili uyumluluğu için planlama yanı sıra, ayrıca çözümünü göz önünde bulundurun ve proje dosya biçimleri. Yeni bir proje türü, VSPackage oluşturur, bunu yalnızca bir sürüm veya birden çok sürümünü çalıştırıp çalıştıramayacağını karar vermelisiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Daha fazla bilgi için [özel projelerini yükseltme](../extensibility/internals/upgrading-projects.md#upgrading-custom-projects).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Windows Installer ile VSPackages yükleme](../extensibility/internals/installing-vspackages-with-windows-installer.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Windows Installer ile VSPackage yükleme](../extensibility/internals/installing-vspackages-with-windows-installer.md)   
  [Bileşen Yönetimi](../extensibility/internals/component-management.md)

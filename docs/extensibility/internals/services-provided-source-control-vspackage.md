@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31129608"
 ---
 # <a name="services-provided-source-control-vspackage"></a>Sağlanan hizmetlerin (kaynak denetimi VSPackage)
 Hizmetleri üzerinden işlevselliği VSPackages arasında ve Visual Studio tümleşik geliştirme ortamı (IDE) ve yüklü VSPackages arasında paylaşılan birincil sistemdir. Hizmetler ve önemine Visual Studio IDE içinde ayrıntılı açıklaması için bkz:[kullanma ve servisleri](../../extensibility/using-and-providing-services.md).  

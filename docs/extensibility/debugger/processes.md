@@ -13,35 +13,36 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 75230740e84bb6660629b38e84df56fa8e5c1856
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: df35a6e1614b558f7b94c24956e2dcdbc676a9e5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49927150"
 ---
 # <a name="processes"></a>İşlemler
-Hata ayıklayıcı mimarisi bakımından bir **işlem**:  
+Hata ayıklayıcı mimarisinde bir *işlem*:  
   
--   Programları kümesi için bir kapsayıcıdır. Bu, yakından iş parçacığı kümesi için bir kapsayıcıdır Windows işlemine benzerdir.  
+- Bir dizi program için bir kapsayıcıdır. Bu iş parçacığı bir dizi için bir kapsayıcı bir Windows işlem yakından benzerdir.  
   
--   Kendisi adına, tanımlayıcı veya fiziksel tanımlayıcı göre tanımlayabilirsiniz.  
+- Kendisini adı, tanımlayıcı veya fiziksel tanımlayıcısı tarafından tespit edebilirsiniz.  
   
--   Çalışan diğer tüm programları (ve bunların iş parçacıkları) sıralayabilirsiniz.  
+- Tüm çalışan programları (ve bunların iş parçacıkları) sıralayabilirsiniz.  
   
--   Kendisi, onu çalıştığı bağlantı noktasını ve içerdiği makine tanımlayabilirsiniz.  
+- Kendisi, içinde çalıştığı bağlantı noktası ve içerdiği makine tanımlayabilirsiniz.  
   
--   Bir tane oluşturabilirsiniz veya daha fazla program oluşturduğu programlardan herhangi biri sonlandırma veya durdurmak bir program neden.  
+- Bir tane oluşturabilirsiniz veya daha fazla program oluşturduğu programlardan herhangi biriyle sonlandırmak veya bir programın durmasına neden.  
   
--   Tarafından temsil edilen bir [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md) işlemi başlatıldığında oluşturmuş arabirimi. Bir işlem ya da oturum hata ayıklama Yöneticisi tarafından (SDM) başlatılır veya [LaunchSuspended](../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md).  
+- Tarafından temsil edilen bir [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md) işlemi başlatıldığında oluşturulduğu arabirimi. Bir işlem ya da oturum hata ayıklama Yöneticisi tarafından (SDM) başlatılmadı veya [LaunchSuspended](../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md).  
   
- Hata ayıklama paket hata ayıklama altyapısı (DE) bir işlemin çağırarak iliştirebilirsiniz [Attach](../../extensibility/debugger/reference/idebugprocess2-attach.md). Başka bir deyişle, DE ele alabilir işlemde çalışan tüm olası programlar ekler. Örneğin, ortak dil çalışma zamanı DE bir işlem bağlanıyorsa, yönetilen kod çalışmakta olan programların ekler.  
+  Hata ayıklama paketi bir hata ayıklama altyapısı (DE) bir işleme çağırarak iliştirilebilir [iliştirme](../../extensibility/debugger/reference/idebugprocess2-attach.md), işleyebileceği işlemde çalışan tüm olası programlar için DE bağlayan anlamına gelir. Örneğin, ortak dil çalışma zamanı DE bir işleme iliştirir, yönetilen kod çalışan programlar ekler.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Programlar](../../extensibility/debugger/programs.md)   
  [İş parçacıkları](../../extensibility/debugger/threads.md)   
  [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)   
- [Paket hata ayıklama](../../extensibility/debugger/debug-package.md)   
- [Altyapısı hata ayıklama](../../extensibility/debugger/debug-engine.md)   
+ [Paket hatalarını ayıklama](../../extensibility/debugger/debug-package.md)   
+ [Hata ayıklama altyapısı](../../extensibility/debugger/debug-engine.md)   
  [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md)   
  [LaunchSuspended](../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md)   
  [Attach](../../extensibility/debugger/reference/idebugprocess2-attach.md)

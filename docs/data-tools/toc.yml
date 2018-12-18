@@ -1,0 +1,245 @@
+- name: Genel Bakış
+  href: accessing-data-in-visual-studio.md
+- name: Öğreticiler
+  items:
+    - name: ADO.NET kullanarak basit veri uygulaması oluşturma
+      href: create-a-simple-data-application-by-using-adonet.md
+    - name: WPF ve Entity Framework kullanarak basit veri uygulaması oluşturma
+      href: create-a-simple-data-application-with-wpf-and-entity-framework-6.md
+    - name: C++ uygulamasından verilere bağlanma
+      href: visual-studio-data-tools-for-cpp.md
+    - name: O/R Tasarımcısı kullanarak LINQ to SQL sınıfları oluşturma
+      href: walkthrough-creating-linq-to-sql-classes-by-using-single-table-inheritance-o-r-designer.md
+    - name: N katmanlı veri uygulaması oluşturma
+      href: walkthrough-creating-an-n-tier-data-application.md
+- name: Kavramlar
+  items:
+    - name: Uyumlu veritabanı sistemleri
+      href: installing-database-systems-tools-and-samples.md
+    - name: .NET için Visual Studio veri araçları
+      href: visual-studio-data-tools-for-dotnet.md
+    - name: Entity Framework araçları
+      href: entity-data-model-tools-in-visual-studio.md
+    - name: Veri kümesi araçları
+      href: dataset-tools-in-visual-studio.md
+      items:
+        - name: Yazılan ve yazılmayan veri kümelerinin karşılaştırması
+          href: typed-vs-untyped-datasets.md
+        - name: TableAdapter’lara genel bakış
+          href: fill-datasets-by-using-tableadapters.md
+        - name: N katmanlı uygulamalarda veri kümeleriyle çalışma
+          href: work-with-datasets-in-n-tier-applications.md
+    - name: Veritabanı projeleri ve veri katmanı uygulamaları (DAC)
+      href: creating-and-managing-databases-and-data-tier-applications-in-visual-studio.md
+    - name: N katmanlı veri uygulamalarına genel bakış
+      href: n-tier-data-applications-overview.md
+- name: Nasıl yapılır kılavuzları
+  items:
+    - name: Veritabanı Oluşturma
+      href: create-a-sql-database-by-using-a-designer.md
+    - name: Bağlantı ekleme
+      href: add-new-connections.md
+      items:
+        - name: Bağlantı dizelerini kaydetme ve düzenleme
+          href: how-to-save-and-edit-connection-strings.md
+        - name: Bir Access veritabanındaki verilere bağlanma
+          href: connect-to-data-in-an-access-database-windows-forms.md
+    - name: .NET veri kaynakları ekleme
+      href: add-new-data-sources.md
+    - name: LINQ to SQL Araçlarını kullanma
+      href: linq-to-sql-tools-in-visual-studio2.md
+      items:
+        - name: Bir DataContext metodunun dönüş türünü değiştirme
+          href: how-to-change-the-return-type-of-a-datacontext-method-o-r-designer.md
+        - name: Saklı yordamlarla eşlenen DataContext metotları oluşturma
+          href: how-to-create-datacontext-methods-mapped-to-stored-procedures-and-functions-o-r-designer.md
+        - name: O/R Tasarımcısı kullanarak devralmayı yapılandırma
+          href: how-to-configure-inheritance-by-using-the-o-r-designer.md
+        - name: Tablolar ve görünümler ile eşlenen LINQ to SQL sınıfları oluşturma
+          href: how-to-create-linq-to-sql-classes-mapped-to-tables-and-views-o-r-designer.md
+        - name: O/R Tasarımcısı Tarafından Oluşturulan Kodu Genişletme
+          href: how-to-extend-code-generated-by-the-o-r-designer.md
+        - name: LINQ to SQL sınıfları arasında ilişkilendirme oluşturma
+          href: how-to-create-an-association-relationship-between-linq-to-sql-classes-o-r-designer.md
+        - name: Varlık sınıflarına doğrulama ekleme
+          href: how-to-add-validation-to-entity-classes.md
+        - name: 'Varlık sınıflarının ekleme, güncelleştirme ve silme davranışını özelleştirme'
+          href: walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes.md
+        - name: 'Güncelleştirme, ekleme ve silme işlemleri gerçekleştirmek için saklı yordamlar atama'
+          href: how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer.md
+        - name: Çoğullaştırmayı açıp kapatma
+          href: how-to-turn-pluralization-on-and-off-o-r-designer.md
+    - name: Veri kümesi araçlarını kullanma
+      items:
+        - name: Visual Studio’da veri kümeleri oluşturma ve yapılandırma
+          href: create-and-configure-datasets-in-visual-studio.md
+          items:
+            - name: Veri kümeleri arasında ilişki oluşturma
+              href: relationships-in-datasets.md
+            - name: Veri Kümesi Tasarımcısı kullanarak Veri Kümesi oluşturma
+              href: walkthrough-creating-a-dataset-with-the-dataset-designer.md
+            - name: Veri Kümesi Tasarımcısı kullanarak Veri Tablosu oluşturma
+              href: walkthrough-creating-a-datatable-in-the-dataset-designer.md
+        - name: TableAdapters
+          items:
+            - name: TableAdapter’lar oluşturma ve yapılandırma
+              href: create-and-configure-tableadapters.md
+            - name: Parametreleştirilmiş TableAdapter sorguları oluşturma
+              href: create-parameterized-tableadapter-queries.md
+            - name: Bir TableAdapter ile veritabanına doğrudan erişme
+              href: directly-access-the-database-with-a-tableadapter.md
+            - name: Bir veri kümesini doldururken kısıtlamaları kapatma
+              href: turn-off-constraints-while-filling-a-dataset.md
+            - name: Bir TableAdapter’ın işlevselliğini genişletme
+              href: extend-the-functionality-of-a-tableadapter.md
+        - name: Bir veri kümesinin içine XML verileri okuma
+          href: read-xml-data-into-a-dataset.md
+        - name: Veri kümelerindeki verileri düzenleme
+          href: edit-data-in-datasets.md
+        - name: Veri kümelerindeki verileri doğrulama
+          href: validate-data-in-datasets.md
+        - name: Verileri yeniden veritabanına kaydetme
+          href: save-data-back-to-the-database.md
+          items:
+            - name: Veritabanına yeni kayıtlar ekleme
+              href: insert-new-records-into-a-database.md
+            - name: TableAdapter kullanarak verileri güncelleştirme
+              href: update-data-by-using-a-tableadapter.md
+            - name: Hiyerarşik güncelleştirme yürütme
+              href: hierarchical-update.md
+            - name: Bir eşzamanlılık özel durumunu işleme
+              href: handle-a-concurrency-exception.md
+            - name: Bir işlemi kullanarak veri kaydetme
+              href: save-data-by-using-a-transaction.md
+              items:
+                - name: 'İzlenecek yol: Bir işlemde veri kaydetme'
+                  href: save-data-in-a-transaction.md
+            - name: Bir veritabanına (birden çok tablo) veri kaydetme
+              href: save-data-to-a-database-multiple-tables.md
+            - name: Verileri bir nesneden veritabanına kaydetme
+              href: save-data-from-an-object-to-a-database.md
+            - name: TableAdapter DBDirect metotlarıyla veri kaydetme
+              href: save-data-with-the-tableadapter-dbdirect-methods.md
+            - name: Bir veri kümesini XML olarak kaydetme
+              href: save-a-dataset-as-xml.md
+        - name: Veri kümelerini sorgulama
+          href: query-datasets.md
+        - name: N katmanlı uygulamalar
+          items:
+            - name: N Katmanlı bir veri kümesine doğrulama ekleme
+              href: add-validation-to-an-n-tier-dataset.md
+            - name: N katmanlı uygulamalarda veri kümelerine kod ekleme
+              href: add-code-to-datasets-in-n-tier-applications.md
+            - name: N katmanlı uygulamalarda TableAdapter’lara kod ekleme
+              href: add-code-to-tableadapters-in-n-tier-applications.md
+            - name: Veri kümeleri ile TableAdapter’ları farklı projelere ayırma
+              href: separate-datasets-and-tableadapters-into-different-projects.md
+    - name: Veri kaynaklarına denetim bağlama
+      href: bind-controls-to-data-in-visual-studio.md
+      items:
+        - name: Veri Kaynakları penceresinden sürüklendiğinde denetimin oluşturulmasını ayarlama
+          href: set-the-control-to-be-created-when-dragging-from-the-data-sources-window.md
+        - name: Veri kaynakları penceresine özel denetimler ekleme
+          href: add-custom-controls-to-the-data-sources-window.md
+        - name: Verilere WPF denetimleri bağlama
+          href: bind-wpf-controls-to-data-in-visual-studio.md
+          items:
+            - name: Bir veri kümesine WPF denetimleri bağlama
+              href: bind-wpf-controls-to-a-dataset.md
+            - name: Bir WCF veri hizmetine WPF denetimleri bağlama
+              href: bind-wpf-controls-to-a-wcf-data-service.md
+            - name: Arama tabloları oluşturma
+              href: create-lookup-tables-in-wpf-applications.md
+            - name: İlgili verileri gösterme
+              href: display-related-data-in-wpf-applications.md
+            - name: Bir veritabanından resimlere denetim bağlama
+              href: bind-controls-to-pictures-from-a-database.md
+        - name: Verilere Windows Forms denetimleri bağlama
+          href: bind-windows-forms-controls-to-data-in-visual-studio.md
+          items:
+            - name: Bir Windows Forms uygulamasındaki verileri filtreleme ve sıralama
+              href: filter-and-sort-data-in-a-windows-forms-application.md
+            - name: Verileri kaydetmeden önce verilere bağlı denetimler üzerinde işlem içi düzenlemeler yürütme
+              href: commit-in-process-edits-on-data-bound-controls-before-saving-data.md
+            - name: Arama tabloları oluşturma
+              href: create-lookup-tables-in-windows-forms-applications.md
+            - name: Veri aramak için Windows Form oluşturma
+              href: create-a-windows-form-to-search-data.md
+            - name: Basit veri bağlamayı destekleyen bir kullanıcı denetimi oluşturma
+              href: create-a-windows-forms-user-control-that-supports-simple-data-binding.md
+            - name: Karmaşık veri bağlamayı destekleyen bir kullanıcı denetimi oluşturma
+              href: create-a-windows-forms-user-control-that-supports-complex-data-binding.md
+            - name: Arama verileri bağlamayı destekleyen bir kullanıcı denetimi oluşturma
+              href: create-a-windows-forms-user-control-that-supports-lookup-data-binding.md
+            - name: Formlar arasında veri geçirme
+              href: pass-data-between-forms.md
+        - name: Özel nesneler bağlama
+          href: bind-objects-in-visual-studio.md
+        - name: Visual Studio'nun verilere bağlı denetimler için başlık oluşturma biçimini özelleştirme
+          href: customize-how-visual-studio-creates-captions-for-data-bound-controls.md
+    - name: Windows Communication Foundation Hizmetleri ve WCF Veri Hizmetleri
+      href: windows-communication-foundation-services-and-wcf-data-services-in-visual-studio.md
+      items:
+        - name: Kavramsal bir modelle çalışma
+          href: working-with-a-conceptual-model-wcf-data-services.md
+        - name: Bir hizmetteki verilere bağlanma
+          href: how-to-connect-to-data-in-a-service.md
+        - name: Windows Forms'da WCF Hizmeti oluşturma
+          href: walkthrough-creating-a-simple-wcf-service-in-windows-forms.md
+        - name: WPF ve Entity Framework ile WCF veri hizmeti oluşturma
+          href: walkthrough-creating-a-wcf-data-service-with-wpf-and-entity-framework.md
+        - name: Hizmet başvurularında sorun giderme
+          href: troubleshooting-service-references.md
+        - name: Hizmet başvurusu yapılandır iletişim kutusu
+          href: configure-service-reference-dialog-box.md
+        - name: WCF Veri Hizmeti başvurusunu güncelleme veya kaldırma
+          href: how-to-add-update-or-remove-a-wcf-data-service-reference.md
+    - name: .mdf dosyalarını yükseltme
+      href: upgrade-dot-mdf-files.md
+    - name: Veri erişimi hatalarıyla ilgili sorunları giderme
+      href: additional-resources-for-troubleshooting-data-access-errors.md
+- name: Başvuru
+  items:
+    - name: O/R Tasarımcısı (Linq to SQL)
+      items:
+        - name: DataContext metotları
+          href: datacontext-methods-o-r-designer.md
+        - name: Veri sınıfı devralma
+          href: data-class-inheritance-o-r-designer.md
+        - name: O/R Tasarımcısı iletileri
+          href: o-r-designer-messages.md
+          items:
+            - name: Seçilen sınıf bir veya birden çok DataContext yöntemi için bir dönüş türü olarak kullanıldığından silinemiyor
+              href: the-selected-class-cannot-be-deleted-because-it-is-used-as-a-return-type-for-one-or-more-datacontext-methods.md
+            - name: Bağlantı dizesi şifresiz parola içeren kimlik bilgileri içeriyor ve tümleşik güvenliği kullanmıyor
+              href: the-connection-string-contains-credentials-with-a-clear-text-password-and-is-not-using-integrated-security.md
+            - name: <property name> özelliği <association name> ilişkilendirmesine katıldığından silinemiyor
+              href: the-property-property-name-cannot-be-deleted-because-it-is-participating-in-the-association-association-name.md
+            - name: <property name> özelliği silinemiyor
+              href: the-property-property-name-cannot-be-deleted.md
+            - name: Uygulama Ayarları dosyasındaki bağlantı özelliği eksik veya hatalı
+              href: the-connection-property-in-the-application-settings-file-is-missing-or-incorrect.md
+            - name: 'Bir <association name> ilişkisi oluşturulamıyor: özellik türleri eşleşmiyor'
+              href: cannot-create-an-association-association-name-property-types-do-not-match.md
+            - name: 'Uyarı. Davranışı Yapılandır iletişim kutusunda, uygulanmamış değişiklikler gerçekleştirildi'
+              href: warning-changes-have-been-made-to-the-configure-behavior-dialog-box-that-have-not-been-applied.md
+            - name: Desteklenmeyen bir veritabanı sağlayıcısından bir veritabanı nesnesi seçtiniz
+              href: you-have-selected-a-database-object-from-an-unsupported-database-provider.md
+            - name: 'Bu ilgili metot, aşağıdaki varsayılan ekleme, güncelleştirme ve silme metotları için yedek bir metottur'
+              href: this-related-method-is-the-backing-method-for-the-following-default-insert-update-or-delete-methods.md
+            - name: 'Seçilen bir veya birden çok öğe, tasarımcı tarafından desteklenmeyen bir veri türü içeriyor'
+              href: one-or-more-selected-items-contain-a-data-type-that-is-not-supported-by-the-designer.md
+            - name: Bir DataContext yöntemin dönüş türünü değiştirme işlemi geri alınamaz
+              href: changing-the-return-type-of-a-datacontext-method-cannot-be-undone.md
+            - name: Tasarımcı hata ayıklama sırasında değiştirilemez
+              href: the-designer-cannot-be-modified-while-debugging.md
+            - name: Seçili bağlantı desteklenmeyen bir veritabanı sağlayıcısı kullanıyor
+              href: the-selected-connection-uses-an-unsupported-database-provider.md
+            - name: 'Tasarımcıya eklemekte olduğunuz nesneler, tasarımcının kullanmakta olduğundan farklı bir veri bağlantısı kullanıyor'
+              href: the-objects-you-are-adding-to-the-designer-use-a-different-data-connection-than-the-designer-is-currently-using.md
+            - name: 'Bir <association name> ilişkisi oluşturulamıyor: özellik iki kere listelenmiş'
+              href: cannot-create-an-association-association-name-property-listed-twice.md
+            - name: Veritabanı nesnesi için şema bilgileri alınamıyor
+              href: could-not-retrieve-schema-information-for-database-object-object-name.md
+            - name: 'Seçili veritabanı nesnelerinin biri veya daha fazlası, hedef sınıfın şemasıyla eşleşmeyen bir şema döndürüyor'
+              href: one-or-more-selected-database-objects-return-a-schema-that-does-not-match-the-schema-of-the-target-class.md

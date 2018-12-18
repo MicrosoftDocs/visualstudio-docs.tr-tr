@@ -14,49 +14,50 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 788107666f8103a77753b93fa7c1febc73f9b97f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4fdaeb87966f051c134d7c2d2354c0f5a3e725da
+ms.sourcegitcommit: 9765b3fcf89375ca499afd9fc42cf4645b66a8a2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46495863"
 ---
-# <a name="project-property-user-interface"></a>Proje özelliği kullanıcı arabirimi
-Proje alt öğeleri projesinde kullanabilirsiniz **özellik sayfaları** iletişim kutusunda Temel Proje tarafından verdiği Gizle veya sağlanan salt okunur denetimler ve tüm sayfaları yapın veya Projealtözgüsayfalarıekleme**Özellik sayfaları** iletişim kutusu.
+# <a name="project-property-user-interface"></a>Proje Özelliği Kullanıcı Arabirimi
+Proje alt öğeleri projede kullanabileceğiniz **özellik sayfaları** iletişim kutusu temel proje tarafından verdiği Gizle veya salt okunur denetimleri ve tüm sayfaları sağlanan olarak olun veya proje alt özel sayfalar eklemek için **Özellik sayfaları** iletişim kutusu.
 
-## <a name="extending-the-project-property-dialog-box"></a>Proje özellik iletişim kutusu genişletme
- Proje alt Otomasyon Extender'larının ve proje yapılandırma Gözat nesneleri uygular. Bu Extender'larının uygulamak <xref:EnvDTE.IFilterProperties> belirli özellikler gizli veya salt okunur hale getirmek için arabirim. **Özellik sayfaları** temel proje tarafından uygulanan temel projenin iletişim kutusu geliştirir Otomasyon Extender'larının tarafından gerçekleştirilen filtreleme.
+## <a name="extending-the-project-property-dialog-box"></a>Proje özelliği iletişim kutusu genişletme
+ Proje alt Otomasyon Genişleticileri ve proje yapılandırma Gözat nesneleri uygular. Bu genişleticilerini uygulama <xref:EnvDTE.IFilterProperties> belirli özellikleri, gizli ya da salt okunur hale getirmek için arabirim. **Özellik sayfaları** temel projenin temel proje tarafından uygulanan iletişim kutusu, Otomasyon Genişleticileri tarafından gerçekleştirilen filtreleme geliştirir.
 
- Genişletme işlemi bir **proje özelliği** iletişim kutusu aşağıda ana hatları verilmiştir:
+ Genişletme işleminin bir **proje özelliği** iletişim kutusunda aşağıdaki ana hatları verilmiştir:
 
--   Temel Proje Extender'larının proje alt türden uygulayarak alır <xref:EnvDTE80.IInternalExtenderProvider> arabirimi. Gözat, Proje Otomasyonu ve tüm temel projenin proje yapılandırma Gözat nesneleri bu arabirimi uygular.
+-   Temel projenin Genişleticileri uygulayarak proje alt türden alır <xref:EnvDTE80.IInternalExtenderProvider> arabirimi. Göz atma, proje otomasyon ve tüm temel projenin proje yapılandırma Gözat nesneleri bu arabirimi uygulayın.
 
--   Uygulaması <xref:EnvDTE80.IInternalExtenderProvider> proje Gözat nesnesi ve proje Otomasyon nesnesi için temsilci seçme için <xref:EnvDTE80.IInternalExtenderProvider> uygulaması proje alt Toplayıcısı'nın (diğer bir deyişle, bunlar `QueryInterface` için <xref:EnvDTE80.IInternalExtenderProvider> üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> Proje nesnesi).
+-   Uygulamasını <xref:EnvDTE80.IInternalExtenderProvider> proje Gözat nesnesi ve proje Otomasyon nesnesi için temsilci seçmek için <xref:EnvDTE80.IInternalExtenderProvider> uygulaması proje alt Toplayıcısı'nı (diğer bir deyişle, bunlar `QueryInterface` için <xref:EnvDTE80.IInternalExtenderProvider> üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> Proje nesne).
 
--   Temel projeyi yapılandırma Gözat nesnesi de uygulayan <xref:EnvDTE80.IInternalExtenderProvider> proje alt yapılandırma nesnesinden Otomasyon genişletici içinde doğrudan kablo. Kendi uygulama temsilci için <xref:EnvDTE80.IInternalExtenderProvider> proje alt toplayıcısı tarafından uygulanan arabirimi.
+-   Ayrıca temel proje yapılandırması Gözat nesnesi uygulayan <xref:EnvDTE80.IInternalExtenderProvider> proje alt yapılandırma nesnesinden Otomasyon Extender içinde doğrudan bağlayabilirsiniz. Uygulaması temsilciler için <xref:EnvDTE80.IInternalExtenderProvider> proje alt toplayıcı tarafından uygulanan arabirimi.
 
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfgBrowseObject.GetProjectItem%2A>, proje Gözat, yapılandırma nesnesi tarafından döndürür uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> nesnesi.
+-   <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfgBrowseObject.GetProjectItem%2A>, proje göz atma, yapılandırma nesnesi tarafından döndürür uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> nesne.
 
--   <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfgBrowseObject.GetCfg%2A>, aynı zamanda proje Gözat, yapılandırma nesnesi tarafından döndürür uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfg> nesnesi.
+-   <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfgBrowseObject.GetCfg%2A>, aynı zamanda proje göz atma, yapılandırma nesnesi tarafından döndürür uygulanan <xref:Microsoft.VisualStudio.Shell.Interop.IVsCfg> nesne.
 
--   Proje alt çalışma zamanında temel projenin çeşitli Genişletilebilir nesneler için uygun CATIDs aşağıdaki alarak belirleyebilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2> değerler:
-
-    -   <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2>
+-   Aşağıdaki alarak uygun Catıdlerini çeşitli Genişletilebilir nesnelerin temel projenin çalışma zamanında proje alt belirleyebilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2> değerleri:
 
     -   <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2>
 
     -   <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2>
 
-Proje kapsamı CATIDs belirlemek için yukarıdaki özelliklerini proje alt alır [VSITEMID. Kök](<xref:Microsoft.VisualStudio.VSConstants.VSITEMID#Microsoft_VisualStudio_VSConstants_VSITEMID_Root>) gelen `VSITEMID typedef`. Proje alt Ayrıca hangi denetlemek isteyebilirsiniz **özellik sayfaları** iletişim kutusu sayfaları proje için görüntülenen hem yapılandırma bağımlı hem bağımsız yapılandırma. Bazı proje subtypes yerleşik sayfaları kaldırmak ve proje alt belirli sayfalara eklemek gerekebilir. Bu, yönetilen istemci projesi çağrıları etkinleştirmek için <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> yöntemi aşağıdaki özellikler için:
+    -   <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID2>
 
--   `VSHPROPID_PropertyPagesCLSIDList` — Yapılandırma bağımsız özellik sayfaları CLSID noktalı virgülle ayrılmış listesi.
+Proje alt Catıdlerini için Proje kapsamını belirlemek için yukarıdaki özelliklerini alır [VSITEMID. Kök](<xref:Microsoft.VisualStudio.VSConstants.VSITEMID#Microsoft_VisualStudio_VSConstants_VSITEMID_Root>) gelen `VSITEMID typedef`. Proje alt Ayrıca hangi denetlemek isteyebilir **özellik sayfaları** iletişim kutusu sayfaları projesi için görüntülenen yapılandırmaya bağımlı hem bağımsız yapılandırma. Bazı proje alt türleri yerleşik sayfaları kaldırın ve proje alt türü belirli sayfalar eklemek gerekebilir. Bu, yönetilen bir istemci projesi çağrıları etkinleştirmek için <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> yöntemi için şu özellikleri:
 
--   `VSHPROPID_CfgPropertyPagesCLSIDList —` yapılandırmaya bağlı özellik sayfaları CLSID noktalı virgülle ayrılmış listesi.
+-   `VSHPROPID_PropertyPagesCLSIDList` — CLSID yapılandırma bağımsız özellik sayfaları'nın noktalı virgülle ayrılmış listesi.
 
-Proje alt tür çünkü toplamalar <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> nesnesi, hangi denetlemek için bu özellikleri tanımı geçersiz **özellik sayfaları** iletişim kutuları görüntülenir. Proje alt bu özellikleri iç temel projeden alın ve ardından ekleyebilir veya CLSID gerektiği şekilde kaldırabilirsiniz.
+-   `VSHPROPID_CfgPropertyPagesCLSIDList —` CLSID yapılandırma bağımlı özellik sayfaları'nın noktalı virgülle ayrılmış listesi.
 
-Proje alt tarafından eklenen yeni özellik sayfaları bir proje yapılandırma Gözat nesnesi temel proje uygulamasından verilir. Bu proje yapılandırma Gözat nesnesi Otomasyon Extender'larının destekler. AutomationExtenders hakkında daha fazla bilgi için bkz: [uygulanması ve Otomasyon Extender'larının](http://msdn.microsoft.com/Library/0d5c218c-f412-4b28-ab0c-33a611f62356). Proje alt çağrı tarafından uygulanan özellik sayfaları <xref:EnvDTE.Project.Extender%2A> temel projeyi yapılandırma Gözat nesnesini genişletir kendi proje alt yapılandırma Gözat nesnesini almak için.
+Proje alt tür çünkü toplamalar <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> nesnesi, hangi denetlemek için bu özelliklerin tanımı geçersiz **özellik sayfaları** iletişim kutusu görüntülenir. Proje alt türü iç temel projeden bu özelliklerini almak ve daha sonra ekleyebilir veya CLSID gerektiği şekilde kaldırabilirsiniz.
+
+Proje alt türü tarafından eklenen yeni özellik sayfaları, temel proje uygulamasından bir proje yapılandırması Gözat nesnesi verilir. Bu proje yapılandırması Gözat nesnesi Otomasyon Genişleticileri destekler. AutomationExtenders hakkında daha fazla bilgi için bkz. [uygulanması ve Otomasyon Genişleticileri kullanılarak](https://msdn.microsoft.com/Library/0d5c218c-f412-4b28-ab0c-33a611f62356). Proje alt çağrı tarafından uygulanan özellik sayfalarını <xref:EnvDTE.Project.Extender%2A> temel projenin yapılandırma Gözat nesnesini genişletir, kendi proje alt yapılandırma Gözat nesnesi almak için.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - <xref:EnvDTE.IFilterProperties>
-- [Özellik sayfaları iletişim kutusu](http://msdn.microsoft.com/en-us/4a3d34ac-ed03-45e8-ae60-a0e1aad300e4)
+- [Özellik sayfaları iletişim kutusu](/previous-versions/visualstudio/visual-studio-2010/as5chysf(v=vs.100))

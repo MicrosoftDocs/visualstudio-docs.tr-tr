@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 70766aef19c199a191f141947f1b5a458450c322
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 7192483b4f2ce88235fc5e8d48f1d51ef71b442f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49913013"
 ---
 # <a name="parseflags"></a>PARSEFLAGS
 Bir ifade ayrıştırmayı belirtir.  
@@ -45,25 +46,25 @@ public enum enum_PARSEFLAGS {
   
 ## <a name="members"></a>Üyeler  
  PARSE_EXPRESSION  
- İfade bir ifade değil gösterir.  
+ İfade bir deyim olmadığını gösterir.  
   
  PARSE_FUNCTION_AS_ADDRESS  
- İfade bir adresi olarak ayrıştırılması (ve daha sonra değerlendirilmesi için) olduğunu gösterir.  
+ İfade bir adres olarak ayrıştırılması (ve daha sonra değerlendirilmesi için) olduğunu gösterir.  
   
  PARSE_DESIGN_TIME_EXPR_EVAL  
- İfade tasarım sırasında Ayrıştırılmakta olan gösterir (diğer bir deyişle, bir tasarımcı açık olduğunda).  
+ Tasarım sırasında Ayrıştırılmakta olan ifade gösterir (diğer bir deyişle, bir tasarımcı açık olduğunda).  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bir parametre olarak geçirilen [ParseText](../../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md) ve [ayrıştırma](../../../extensibility/debugger/reference/idebugexpressionevaluator-parse.md) yöntemleri.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [ParseText](../../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md)   
- [Ayrıştırma](../../../extensibility/debugger/reference/idebugexpressionevaluator-parse.md)
+ [Parse](../../../extensibility/debugger/reference/idebugexpressionevaluator-parse.md)

@@ -1,5 +1,5 @@
 ---
-title: ContingentProperties sınıfı - iç üyeleri | Microsoft Docs
+title: ContingentProperties sınıfı - dahili üyeler | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,24 +14,25 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b44bec34394df6f976416a827d7eb5d67cb99f6a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8e3497b31e663967417544d8e87d40d860c2e4a8
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39204420"
 ---
-# <a name="contingentproperties-class---internal-members"></a>ContingentProperties sınıfı - iç üyeleri
-İçin ek özellikler içeren bir <xref:System.Threading.Tasks.Task> nesnesi.  
+# <a name="contingentproperties-class---internal-members"></a>ContingentProperties sınıfı - dahili üyeler
+İçin ek özellikler içeren bir <xref:System.Threading.Tasks.Task> nesne.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (mscorlib.dll içinde)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ Bu iç üyeleri .NET Framework'ten erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .class auto ansi nested assembly beforefieldinit ContingentProperties  
        extends System.Object  
 ```  
@@ -42,10 +43,10 @@ ms.lasthandoff: 04/16/2018
   
 |Ad|Açıklama|  
 |----------|-----------------|  
-|[m_children](../../extensibility/debugger/m-children-field.md)|Bu görev ile kayıtlı alt görevler listesi.|  
+|[m_children](../../extensibility/debugger/m-children-field.md)|Bu göreve kaydedilmiş alt görevlerin listesi.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Yalnızca ihtiyaç duyulduğunda .NET Framework, bu sınıfın alanları başlatır.  
+ .NET Framework, yalnızca ihtiyacınız olduğunda bu sınıfın alanları başlatır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [.NET Framework için Paralel Uzantı Dahili Bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [.NET Framework için paralel uzantı dahili bileşenleri](../../extensibility/debugger/parallel-extension-internals-for-the-dotnet-framework.md)

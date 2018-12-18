@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 519281487e85ec7dffc0e7bb470d044dc2bae885
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 61f82cdeda76cd8660fff47e30edf37c81d154f5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867799"
 ---
 # <a name="idebugbinder3getexceptionobjectandtype"></a>IDebugBinder3::GetExceptionObjectAndType
-Bu yöntem herhangi bir nesneyle ilişkili özel durumu alır.  
+Bu yöntem, herhangi bir nesne ile ilişkili özel durumu alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int GetExceptionObjectAndType(
   
 #### <a name="parameters"></a>Parametreler  
  `ppException`  
- [out] Özel durumu temsil eden nesne döndürür.  
+ [out] Özel durumu temsil eden nesneyi döndürür.  
   
  `ppField`  
- [out] (Bu, bir null değer olabilir) bir özel duruma neden belirli bir alanı temsil eden nesne döndürür.  
+ [out] (Bu, bir null değer olabilir) özel duruma neden belirli bir alanı temsil eden nesneyi döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
->  Bir özel durum olup olmadığını doğrulamak için tarafından döndürülen değeri denetleyin `ppException`: null değeri olan sonra Bu nesneyle ilişkili bir istisna değildir.  
+>  Tarafından döndürülen değeri, bir özel durum olup olmadığını denetleyin `ppException`: null değeri mi sonra Bu nesneyle ilişkili aynı durum geçerlidir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md)

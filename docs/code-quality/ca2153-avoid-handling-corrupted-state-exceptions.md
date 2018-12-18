@@ -1,6 +1,7 @@
 ---
-title: 'CA2153: Bozuk durum özel durumları işleme kaçının'
+title: 'CA2153: Bozuk Durum Özel Durumlarını İşlemekten Kaçının'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 author: gewarren
@@ -8,52 +9,57 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 035c68feddafffbb7e1502a07db47ab80eac61c5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5043c8cb9cefb8ffdb600083ba2dc4bb49d5e3f5
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45547532"
 ---
-# <a name="ca2153-avoid-handling-corrupted-state-exceptions"></a>CA2153: Bozuk durum özel durumları işleme kaçının
+# <a name="ca2153-avoid-handling-corrupted-state-exceptions"></a>CA2153: Bozuk Durum Özel Durumlarını İşlemekten Kaçının
 
 |||
 |-|-|
 |TypeName|AvoidHandlingCorruptedStateExceptions|
 |CheckId|CA2153|
 |Kategori|Microsoft.Security|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
 
-[Bozuk durumu özel durumları (CSE)](https://msdn.microsoft.com/magazine/dd419661.aspx) belleğin belirtmek Bozulması işleminize bulunmaktadır. Bir saldırganın bir yararlanma bozuk bellek bölgeye yerleştirebilirsiniz işleminin çökmesine izin vermek yerine bu yakalama güvenlik açıklarına neden olabilir.
+[Bozuk durum özel durumlar (CSE)](https://msdn.microsoft.com/magazine/dd419661.aspx) belirtmek, Bellek Bozulması işleminizde mevcut. Bir saldırgan bozuk bir bellek bölgesini bir yararlanma yerleştirebilirsiniz, kilitlenme işlemine izin vermek yerine bu yakalama güvenlik açıklarına neden olabilir.
 
-## <a name="rule-description"></a>Kural Tanımı
- CSE bir işlemin durumunu olduğundan bozuk ve sistem tarafından yakalandı olduğunu gösterir. Yönteminizi uygun ile işaretlerseniz bozuk durumda senaryosunda, genel işleyicisi özel durumu yalnızca yakalar. `HandleProcessCorruptedStateExceptions` özniteliği. Varsayılan olarak, [ortak dil çalışma zamanı (CLR)](/dotnet/standard/clr) catch işleyicileri için CSE'ler çağırma kullanılamaz.
+## <a name="rule-description"></a>Kural açıklaması
 
- Bu tür özel durumları yakalama olmadan çökmesine işlem kodu dahi günlük olarak en güvenli seçenek izin veriyor Bellek Bozulması hatalar yararlanmaya saldırganlar izin verebilirsiniz.
+CSE, bir işlemin durumunu olduğundan bozuk ve sistem tarafından yakalandı, gösterir. Yönteminizi uygun ile işaretlerseniz bozuk durumda senaryosunda, genel işleyicisi özel durumu yalnızca yakalar. `HandleProcessCorruptedStateExceptions` özniteliği. Varsayılan olarak, [ortak dil çalışma zamanı (CLR)](/dotnet/standard/clr) catch işleyicileri CSE'ler için çağırma kullanılamaz.
 
- Bu uyarı catch(exception) veya catch (özel durum belirtimi) gibi tüm özel durumları yakalar genel bir işleyici ile CSE'ler yakalama zaman tetikler.
+Bu tür özel durumları yakalama olmadan kilitlenme işleme bile kod günlük olarak en güvenli seçenek vermektir Bellek Bozulması hataları yararlanmaya saldırganlar izin verebilirsiniz.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu uyarıyı çözümlemek için aşağıdakilerden birini yapmalısınız:
+Catch(exception) veya catch (özel durum belirtimi olmadan) gibi tüm özel durumları yakalayan bir genel işleyici ile CSE'ler yakalama bu uyarıyı tetikler.
 
- 1. Kaldırma `HandleProcessCorruptedStateExceptions` özniteliği. Burada CSE'ler catch işleyicileri geçirilecek değil varsayılan çalışma zamanı davranışı döner.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
- 2. Bir özel durum türleri catch işleyicileri in preference of genel catch işleyicisi kaldırın.  Bu işleyici kodu bunları güvenli bir şekilde işleyebilir (çok nadir) varsayılarak CSE'ler içerebilir.
+Bu uyarıyı çözmek için şunlardan birini yapın:
 
- 3. CSE yeniden özel çağırana geçirilir ve çalışan işlemi bitiş sonuçlanacaktır sağlayan catch işleyicisinde atar.
+- Kaldırma `HandleProcessCorruptedStateExceptions` özniteliği. Bu, burada CSE'ler catch işleyicileri geçirilen değil varsayılan çalışma zamanı davranışı geri döner.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın.
+- Belirli bir özel durum türleri catch işleyicileri in preference of genel catch işleyicisi kaldırın. Bu işleyici kodu bunları güvenli bir şekilde işleyebilir (nadir) varsayılarak CSE'ler içerebilir.
+
+- CSE, özel durum çağırana geçirilir ve çalışan işlemi sonlandırarak içinde sonuçlanır catch işleyicisi rethrow.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="pseudo-code-example"></a>Sözde kod örneği
 
 ### <a name="violation"></a>İhlali
- Bu kural tarafından algılanan desen aşağıdaki sözde kodu gösterilmektedir.
 
-```
+Bu kural tarafından algılanan düzeni aşağıdaki sözde kod göstermektedir.
+
+```csharp
 [HandleProcessCorruptedStateExceptions]
-//method to handle and log CSE exceptions
+// Method to handle and log CSE exceptions.
 void TestMethod1()
 {
     try
@@ -62,15 +68,16 @@ void TestMethod1()
     }
     catch (Exception e)
     {
-        // Handle error
+        // Handle error.
     }
 }
 ```
 
 ### <a name="solution-1"></a>Çözüm 1
- HandleProcessCorruptedExceptions özniteliğini kaldırmadan özel durumları olmayan işlenmesi sağlar.
 
-```
+HandleProcessCorruptedExceptions öznitelik kaldırma, özel durumları değil işlenmesi sağlar.
+
+```csharp
 void TestMethod1()
 {
     try
@@ -79,19 +86,20 @@ void TestMethod1()
     }
     catch (IOException e)
     {
-        // Handle error
+        // Handle error.
     }
     catch (UnauthorizedAccessException e)
     {
-        // Handle error
+        // Handle error.
     }
 }
 ```
 
 ### <a name="solution-2"></a>Çözüm 2
- Genel catch işleyicisi kaldırın ve yalnızca bir özel durum türleri yakalayın.
 
-```
+Genel bir catch işleyicisi kaldırın ve yalnızca belirli bir özel durum türleri yakalayın.
+
+```csharp
 void TestMethod1()
 {
     try
@@ -100,19 +108,20 @@ void TestMethod1()
     }
     catch (IOException e)
     {
-        // Handle error
+        // Handle error.
     }
     catch (UnauthorizedAccessException e)
     {
-        // Handle error
+        // Handle error.
     }
 }
 ```
 
 ### <a name="solution-3"></a>Çözüm 3
- Özel durum yeniden oluşturun.
 
-```
+Özel durumu yeniden.
+
+```csharp
 void TestMethod1()
 {
     try
@@ -121,7 +130,7 @@ void TestMethod1()
     }
     catch (Exception e)
     {
-        // Handle error
+        // Handle error.
         throw;
     }
 }

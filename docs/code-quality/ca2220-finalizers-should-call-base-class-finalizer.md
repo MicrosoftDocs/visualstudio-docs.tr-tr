@@ -1,6 +1,7 @@
 ---
 title: 'CA2220: Sonlandırıcılar taban tür sonlandırıcıları çağırmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,36 +16,44 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 874f0d744f00808d038cdf2bc0343ae7438b76db
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c814324ac21017acf6a0182f7807b0a0878c8aca
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551213"
 ---
 # <a name="ca2220-finalizers-should-call-base-class-finalizer"></a>CA2220: Sonlandırıcılar taban tür sonlandırıcıları çağırmalıdır
+
 |||
 |-|-|
 |TypeName|FinalizersShouldCallBaseClassFinalizer|
 |CheckId|CA2220|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Geçersiz kılan bir türü <xref:System.Object.Finalize%2A?displayProperty=fullName> çağrılmayan <xref:System.Object.Finalize%2A> devralınabilir. taban sınıf yöntemi.
 
-## <a name="rule-description"></a>Kural Tanımı
- Sonlandırılma, devralma hiyerarşisi aracılığıyla gönderilmelidir. Bu emin olmak için türleri bir temel sınıf'i çağırın <xref:System.Object.Finalize%2A> yönteminden kendi içinde <xref:System.Object.Finalize%2A> yöntemi. C# derleyici temel sınıf sonlandırıcıyı çağrısı otomatik olarak ekler.
+Geçersiz kılan bir tür <xref:System.Object.Finalize%2A?displayProperty=fullName> arama <xref:System.Object.Finalize%2A> temel sınıfındaki yöntemi.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için temel türün çağrısı <xref:System.Object.Finalize%2A> yönteminden, <xref:System.Object.Finalize%2A> yöntemi.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın. Ortak dil çalışma zamanı hedef bazı derleyicileri Microsoft Ara dile (MSIL) temel türün sonlandırıcıyı yapılan bir çağrı ekleyin. Bu kural bir uyarıdan bildirilirse, derleyici çağrı eklemez ve kodunuzu eklemeniz gerekir.
+Sonlandırılma, devralma hiyerarşisi aracılığıyla gönderilmelidir. Bunu sağlamak için kendi temel sınıf türleri çağırmalıdır <xref:System.Object.Finalize%2A> yönteminden kendi içinde <xref:System.Object.Finalize%2A> yöntemi. C# derleyicisi, temel sınıf Sonlandırıcı çağrısını otomatik olarak ekler.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+
+Bu kural ihlalini düzeltmek için temel türün çağrı <xref:System.Object.Finalize%2A> yönteminden, <xref:System.Object.Finalize%2A> yöntemi.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu kuraldan uyarıyı bastırmayın. Ortak dil çalışma zamanını hedefleyen bazı derleyiciler, Microsoft Ara diline (MSIL) temel türün Sonlandırıcısı için bir çağrı ekleyin. Bu kuraldan bir uyarıyı bildirilirse, derleyici arama eklemez ve kod eklemeniz gerekir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki Visual Basic örnek bir türü gösterir `TypeB` doğru çağırır <xref:System.Object.Finalize%2A> devralınabilir. taban sınıf yöntemi.
 
- [!code-vb[FxCop.Usage.IDisposableBaseCalled#1](../code-quality/codesnippet/VisualBasic/ca2220-finalizers-should-call-base-class-finalizer_1.vb)]
+Aşağıdaki Visual Basic örnek, bir tür gösterir `TypeB` doğru çağrılarının <xref:System.Object.Finalize%2A> temel sınıfındaki yöntemi.
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Dispose Deseni](/dotnet/standard/design-guidelines/dispose-pattern)
+[!code-vb[FxCop.Usage.IDisposableBaseCalled#1](../code-quality/codesnippet/VisualBasic/ca2220-finalizers-should-call-base-class-finalizer_1.vb)]
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Dispose Deseni](/dotnet/standard/design-guidelines/dispose-pattern)

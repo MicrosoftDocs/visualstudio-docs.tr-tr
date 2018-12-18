@@ -1,7 +1,7 @@
 ---
-title: Bul komutu kutusunu | Microsoft Docs
-ms.custom: ''
+title: Bulma komut kutusu
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -13,11 +13,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 215ab2501f3221a9235c75d5a9b28f631692b1de
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c5e11d83ea0c87bae058f5421c424922fa389a9c
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34752417"
 ---
 # <a name="findcommand-box"></a>Bul/Komut kutusu
 
@@ -27,7 +28,7 @@ Aramak için metin ve Visual Studio komutları çalıştırmak **Bul/komut** kut
 
 **Bul/komut** kutusuna girilen son 20 öğeleri korur ve bir aşağı açılan listede görüntüler. Seçerek listeyi gidebilirsiniz **ok tuşları**.
 
-![Bul&#47;komut kutusu](../ide/media/findcommandbox.png "FindCommandBox")
+![Bul&#47;komut kutusu](../ide/media/findcommandbox.png)
 
 ## <a name="searching-for-text"></a>Metin arama
 
@@ -55,5 +56,5 @@ Bir şapka (**^**) karakter komutunda anlamına karakter hemen sonrasında tam a
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Komut penceresi](../ide/reference/command-window.md)  
-[Metin bulma ve değiştirme](../ide/finding-and-replacing-text.md)
+- [Komut penceresi](../ide/reference/command-window.md)
+- [Metin bulma ve değiştirme](../ide/finding-and-replacing-text.md)

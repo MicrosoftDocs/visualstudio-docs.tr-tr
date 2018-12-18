@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 7711042d3e3c6ef6d5b785bb6f9c1bf3f29a3399
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 47272cbfc572d85af631edb6d33cf6a0c6f4b20d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49909074"
 ---
 # <a name="idiapropertystoragereadbstr"></a>IDiaPropertyStorage::ReadBSTR
-Okur `BSTR` özelliği kümesindeki bir değer.  
+Okur `BSTR` değerlerde özellik kümesi.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -34,16 +35,16 @@ HRESULT ReadBSTR (
   
 #### <a name="parameters"></a>Parametreler  
  `id`  
- [in] Okunacak özellik tanımlayıcısını (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
+ [in] Okunacak özellik tanımlayıcısı (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
   
  `pValue`  
  [out] Özellik değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_INVALIDARG` özellik türü değilse `BSTR`.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_INVALIDARG` özelliği türü değilse `BSTR`.  
   
 ## <a name="remarks"></a>Açıklamalar  
- A `BSTR` sıfır sonlandırılan geniş karakter dizesi şeklinde Windows tarafından tanımlanır.  
+ A `BSTR` Windows geniş karakter sıfır ile sonlandırılmış dize olarak tanımlanır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaPropertyStorage](../../debugger/debug-interface-access/idiapropertystorage.md)

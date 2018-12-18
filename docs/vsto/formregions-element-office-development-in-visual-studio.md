@@ -1,5 +1,5 @@
 ---
-title: "&lt;formRegions&gt; öğesi (Visual Studio'da Office Geliştirme) | Microsoft Docs"
+title: "&lt;formRegions&gt; öğesi (Visual Studio'da Office Geliştirme)"
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,44 +17,45 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: c51b626c104d5342c00dbd45a2c565315c9c2225
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b978ef47db6b8803b7730aef14173c3eb19b16e8
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35676729"
 ---
 # <a name="ltformregionsgt-element-office-development-in-visual-studio"></a>&lt;formRegions&gt; öğesi (Visual Studio'da Office Geliştirme)
-  `formRegions` Öğesinin `vstov4` ad alanı, VSTO eklenti ile ilişkili Microsoft Office Outlook form bölgeleri içerir.  
+  `formRegions` Öğesinin `vstov4` ad alanı, VSTO eklentisi ile ilişkili olan Microsoft Office Outlook form bölgeleri içerir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <formRegions>  
   <formRegion>  
   </formRegion>  
 </formRegions>  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `formRegions` Öğesinin `vstov4` ad alanı içeren tüm `formRegion` bir Outlook VSTO eklenti için öğeleri. Yalnızca Outlook VSTO form bölgeleri içeren eklentileri için gereklidir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `formRegions` Öğesinin `vstov4` ad alanı içeren tüm `formRegion` bir Outlook VSTO eklentisi için öğeleri. Yalnızca Outlook VSTO form bölgeleri içeren eklentileri için gereklidir.  
   
- Yalnızca bir olabilir `formRegions` uygulama bildiriminde tanımlanan öğe.  
+ Yalnızca bir `formRegions` uygulama bildiriminde tanımlanan öğe.  
   
  `formRegions` Öğesi özniteliklere sahip değildir.  
   
- `formRegions` Öğesinin öğesi yok.  
+ `formRegions` Öğesinin şu öğe.  
   
 ### <a name="formregion"></a>formRegion  
- Outlook VSTO form bölgeleri içeren eklentileri için gereklidir. `formRegion` Öğesi tanımlanmış [ &#60;formRegion&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/formregion-element-office-development-in-visual-studio.md).  
+ VSTO Outlook form bölgeleri içeren eklentileri için gereklidir. `formRegion` Öğe içinde tanımlanan [ &#60;formRegion&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/formregion-element-office-development-in-visual-studio.md).  
   
-## <a name="vsto-add-in-example"></a>VSTO eklentileri örneği  
+## <a name="vsto-add-in-example"></a>VSTO eklenti örneği  
   
 ### <a name="description"></a>Açıklama  
- Aşağıdaki kod örneği gösterilmektedir bir `formRegions` kullanarak dağıtılmış uygulama düzeyi Office çözümü için bir uygulama bildirimi öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği sağlanan daha büyük bir örneğin parçasıdır [uygulama bildirimleri Office çözümleri için](../vsto/application-manifests-for-office-solutions.md).  
+ Aşağıdaki kod örneğinde gösterilmiştir bir `formRegions` öğesi kullanılarak dağıtılan bir uygulama düzeyinde Office çözümü için uygulama bildiriminde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği, sağlanan daha büyük bir örneğin parçasıdır [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md).  
   
 ### <a name="code"></a>Kod  
   
-```  
+```xml  
 <vstov4:formRegions>  
   <vstov4:formRegion  
       name="OutlookAddIn1.FormRegion1">  
@@ -65,9 +66,9 @@ ms.lasthandoff: 04/16/2018
 </vstov4:formRegions>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md)   
  [Office çözümleri için dağıtım bildirimleri](../vsto/deployment-manifests-for-office-solutions.md)   
- [ClickOnce Uygulama Bildirimi](/visualstudio/deployment/clickonce-application-manifest)  
+ [ClickOnce Uygulama bildirimi](/visualstudio/deployment/clickonce-application-manifest)  
   
   

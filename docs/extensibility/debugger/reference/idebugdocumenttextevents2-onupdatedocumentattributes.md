@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 098698041ab90611e29132a9f9205b7b78238062
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3bda3f7869715b3c0ab08d64cdb7ef1f13ca4898
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49816735"
 ---
 # <a name="idebugdocumenttextevents2onupdatedocumentattributes"></a>IDebugDocumentTextEvents2::onUpdateDocumentAttributes
-Olay alıcısı belge nitelikleri güncelleştirildi bildirir.  
+Olay alıcısı belge öznitelikleri güncelleştirildiğini bildirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int onUpdateDocumentAttributes(
   
 #### <a name="parameters"></a>Parametreler  
  `textdocattr`  
- [in] Bayraklarını bileşimini [TEXT_DOC_ATTR_2](../../../extensibility/debugger/reference/text-doc-attr-2.md) belge güncelleştirilmiş özniteliklerini belirtir numaralandırması.  
+ [in] Bayraklarının bir birleşimi [TEXT_DOC_ATTR_2](../../../extensibility/debugger/reference/text-doc-attr-2.md) belgenin güncelleştirilmiş özniteliklerini belirten sabit listesi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentTextEvents2](../../../extensibility/debugger/reference/idebugdocumenttextevents2.md)   

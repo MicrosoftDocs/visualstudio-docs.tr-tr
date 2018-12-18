@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 76c7217b9b4159a368575d5acef92b03775478b4
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e9de75488c297eef426fb5a93c71f0ff3bad148d
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255612"
 ---
-# <a name="report-based-on-visible-time-range"></a>Görünür Zaman Aralığı Tabanlı Rapor
+# <a name="report-based-on-visible-time-range"></a>Görünür zaman aralığı tabanlı rapor
 Profil görünümü şu anda görünür zaman aralığı ve kanallar dayalı raporlar gösterilir. Farklı veri alt kümesi ayrıntılarını görmek için gösterge öğelerini tıklatın.  
   
  Burada tablolarda veriler hakkında daha fazla bilgi bulabilirsiniz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Gösterilecek iş parçacığı etkinliği yok](../profiling/no-thread-activity-to-show-threads-view.md)   
  [Yürütme Profil raporu](../profiling/execution-profile-report.md)   
  [Eşitleme zamanı](../profiling/synchronization-time.md)   

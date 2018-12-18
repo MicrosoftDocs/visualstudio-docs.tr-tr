@@ -14,17 +14,18 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6e2e1045adb451c7f4dd06b888fca356d26b7ff3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0cdf74d0c6c77a2c7c22829c8aaa3e238e65703a
+ms.sourcegitcommit: af428c7ccd007e668ec0dd8697c88fc5d8bca1e2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "51744882"
 ---
-# <a name="vsct-compiler-command-line-flags"></a>VSCT derleyici komut satırı bayrakları
-Visual Studio komut tablosu (VSCT) derleyici .vsct dosyaları başarılı derlenmesini emin olmak için komut satırı anahtarları sağlar.  
+# <a name="vsct-compiler-command-line-flags"></a>VSCT Derleyici Komut Satırı Bayrakları
+Visual Studio komut tablosu (VSCT) derleyici .vsct dosyaları başarılı derlenmesini sağlamak için komut satırı anahtarları sağlar.  
   
 ## <a name="command-line-parameters"></a>Komut satırı parametreleri  
- Temel VSCT Yardım'dan görüntülemek için bir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] **komutu** penceresinde gidin *Visual Studio SDK yükleme yolu*\VisualStudioIntegration\Tools\Bin\ klasörü ve türü:  
+ Temel VSCT Yardım görüntülemek için bir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] **komut** penceresinde gidin *Visual Studio SDK yükleme yolunu*\VisualStudioIntegration\Tools\Bin\ klasörü ve türü:  
   
 ```  
 vsct /?  
@@ -39,42 +40,42 @@ Syntax: vsct <infile> [<outfile>] [-S[symbols file]] [-D<preprocessor-define>]*
 [-I<include-path>]* [-L<language>] [-E[C|H|N]:<name>]  
   
   -D    Specify any additional preprocessor defines  
-  -I    Indcate what additional include paths to send to the preprocessor  
-  -L    Specify the langauge to use when selecting strings  
+  -I    Indicate what additional include paths to send to the preprocessor  
+  -L    Specify the language to use when selecting strings  
   -E    Emit C# objects in the specified namespace for command items,  
-        folowed by [L|F|H|N]:<value>  
+        followed by [L|F|H|N]:<value>  
         F = Name of the file to emit (used if -EL is provided)  
         L = Name of a language providing a CodeDOM provider  
         N = namespace (required if -EL is provided)  
         H = C++ header  
-  -c    Clean build skipping dependancy checks  
+  -c    Clean build skipping dependency checks  
   -v    Verbose output  
 ```  
   
 > [!NOTE]
->  Karakterler - (tire) ve / (eğik çizgi) komut satırı parametreleri belirten için kabul edilen hem gösterimdir.  
+>  Karakter - (dash) ve / (eğik çizgi) komut satırı parametrelerini belirten için kabul edilen iki gösterimdir.  
   
- Kabul edilebilir bayrakları ve anlamları şu şekildedir.  
+ Kabul edilebilir bayrakları ve bunların anlamı aşağıda verilmiştir.  
   
 |Anahtar|Açıklama|  
 |------------|-----------------|  
-|-D|Ek tanımlanmış semboller belirtin.|  
-|-I|Ek başvurulara çözülürken kullanılmalıdır yol eklemeyi gösterir.|  
+|-D|Ek tanımlı simgeleri belirtin.|  
+|-I|Ek dosya başvuruları çözümlenirken kullanılacak yol eklemeyi gösterir.|  
 |-L|Belirtin <xref:System.Globalization.CultureInfo> kültür adı, örneğin "en-US".|  
-|-E|C# nesnelerini ve ardından komut öğeleri için belirtilen ad alanında Yayımla [C&#124;H&#124;N]:*filename*burada C C#, H = C++ üstbilgi, N = ad alanı =. Ad alanı, C# için gereklidir.|  
-|-v|Ayrıntılı çıktı.|  
+|-E|Yayma C# tarafından izlenen nesneleri komut öğeler için belirtilen ad alanı [C&#124;H&#124;N]:*filename*nerede C = C#, H C++ üst bilgi, N = ad alanı =. Ad alanı, C# için gereklidir.|  
+|-v|Ayrıntılı çıkış.|  
   
- -L anahtara karşılık gelen ikili .cto dosya oluşturmak için dizelerin bir grup seçmek için derleyiciye verilen <xref:System.Globalization.CultureInfo> kültür adı. Belirtilen kültür adı bir veya daha fazla dil özniteliği eşleşmelidir [dizeleri öğesi](../../extensibility/strings-element.md) .vsct dosyasında. Dizeleri öğenin hiçbir Language özniteliği varsa içeren öğesinden devralındı [CommandTable öğesi](../../extensibility/commandtable-element.md).  
+ -L anahtar dizeler için karşılık gelen ikili .cto dosyasını oluşturmak için bir grup seçmek için derleyiciye belirtilen <xref:System.Globalization.CultureInfo> kültür adı. Bir veya daha fazla dil özniteliğinde belirtilen kültür adı eşleşmelidir [Strings öğesi](../../extensibility/strings-element.md) .vsct dosyası içinde. Strings öğesi hiçbir dil özniteliği varsa, içeren uyarıdan devralınır [CommandTable öğesi](../../extensibility/commandtable-element.md).  
   
- .Vsct dosyasında birden çok dize öğesi olabilir ve her farklı bir dil öznitelik olabilir. Genelleştirme VSCT derleyici birden çok kez çalıştırma ve her bir kültür adı için -M anahtarı değiştirerek elde edilir.  
+ .Vsct dosyası birden çok dize öğesi olabilir ve her farklı bir dil özniteliği olabilir. Genelleştirme, birden çok kez VSCT derleyici çalıştıran ve her bir kültür adı için -M anahtarı değiştirerek elde edilir.  
   
- -L anahtar tarafından belirtilen kültür adı herhangi bir dize öğesi Language özniteliği eşleşmiyorsa derleyici dil ve bölge eşleşecek şekilde çalışacaktır. Örneğin, "en-US" bulunamazsa derleyici "tr" Bunun yerine çalışacaktır. Başarısız olan, işletim sisteminin geçerli kültür çalışacaktır. Başarısız olan, bulduğu ilk dizeleri öğesi derlenir.  
+ Dizeleri herhangi bir öğenin dil özniteliği -L anahtar tarafından belirtilen kültür adı ile eşleşmiyorsa, derleyici dil ve bölge eşleşecek şekilde çalışacaktır. Örneğin, "en-US" bulunamazsa derleyici "en" Bunun yerine çalışacaktır. Bu başarısız olursa, işletim sisteminin geçerli kültürü çalışacaktır. Bu başarısız olursa, bulduğu ilk olan Strings öğesi derlenir.  
   
- -E anahtar komutu tablosu tarafından kullanılan sembolleri içeren bir C-style üstbilgi dosyası yayma ya da komut simgeleri nesneleri içeren bir C# dosyası yaymak üzere kullanılabilir.  
+ -E anahtar, komut tablosu tarafından kullanılan simgeler içeren C stili bir başlık dosyası yayma ya da komut simgelerinin nesneleri içeren bir C# dosyası yaymak için kullanılabilir.  
   
- -D ve - ı anahtarları aynı ada sahip Cl.exe C önişlemci bayrakları sözdizimi vardır. -D X = Y biçimine sahip tanımları XML tabanlı genişlemesi için kullanılan \<tanımlanan > içinde testleri `Condition` öznitelikleri. -I yol eklemeyi çözümlemek için kullanılan \<Ekle >, \<Extern > ve \<bit eşlem > dosya başvuruları. Daha fazla bilgi için bkz: [VSCT XML Şeması Başvurusu](../../extensibility/vsct-xml-schema-reference.md).  
+ -D ve - anahtarlar aynı ada sahip Cl.exe C önişlemcisi bayrakları sözdizimi vardır. -D X = Y biçimi tanımları XML tabanlı genişletilmesi için kullanılan \<tanımlanan > içinde testleri `Condition` öznitelikleri. -I yol eklemeyi çözümlemek için kullanılan \<Ekle >, \<Extern > ve \<bit eşlem > dosya başvuruları. Daha fazla bilgi için [VSCT XML Şeması Başvurusu](../../extensibility/vsct-xml-schema-reference.md).  
   
- VSCT derleyici de önceden oluşturulmuş bir ikili dosya uygulayamaz. Bunu yapmak için bir ikili dosya için tedarik \<GirişDosyası >.   İkili dosya VSCT derleyici tarafından üretilen, zaten ekli kendi simgeleri olacaktır ve çıktı simgesel adları ile oluşturur bir \<simgeleri > çıkış bölümü. İkili CTC derleyici tarafından üretilen, çıktı gerçek GUID'ler ve kimliklerini içerir. Geçerli Ctc.exe sürümleri tarafından üretilen *.ctsym dosya ikili giriş dosyası ile aynı klasörde ise, simgeler bu dosyasından yüklenen ve çıktısı için kullanılacak.  
+ VSCT derleyici, ayrıca önceden oluşturulmuş bir ikili dosya uygulayamaz. Bunu yapmak için ikili dosya kaynağı \<infile >.   İkili dosya VSCT derleyici tarafından üretilmişse, simge zaten eklenmiş olacaktır ve sembolik adları ile çıktı oluşturur bir \<sembolleri > çıkış bölümü. İkili CTC derleyici tarafından üretilmişse, çıkış gerçek GUID'leri ve kimlikleri içerir. Ctc.exe geçerli sürümleri tarafından üretilen *.ctsym dosya ikili giriş dosyasıyla aynı klasörde ise sembolleri bu dosyasından yüklenen ve çıktısı için kullanılacak.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Visual Studio komut tablosu (. Vsct) dosyaları](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)   

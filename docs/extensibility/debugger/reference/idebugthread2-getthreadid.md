@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ac1701b3f52975e962860d558bc70b1847eef8e5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4968bdd26607f68c8a1e8e4467904939ee0f528d
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873454"
 ---
 # <a name="idebugthread2getthreadid"></a>IDebugThread2::GetThreadId
 Sistem iş parçacığı tanımlayıcısını alır.  
@@ -40,16 +41,16 @@ int GetThreadId (
   
 #### <a name="parameters"></a>Parametreler  
  `pdwThreadId`  
- [out] Sistem iş parçacığı tanımlayıcısını döndürür.  
+ [out] Sistem iş parçacığı tanıtıcısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir iş parçacığı kimliği, bir iş parçacığı bir işlemde başka iş parçacıkları arasında tanımlamak için kullanılır.  
+ Bir iş parçacığı kimliği bir iş parçacığı bir işlemdeki diğer iş parçacıkları arasında tanımlamak için kullanılır.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CProgram` uygulayan nesne [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CProgram` uygulayan nesne [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) arabirimi.  
   
 ```cpp  
 HRESULT CProgram::GetThreadId(DWORD* pdwThreadId) {     

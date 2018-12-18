@@ -12,101 +12,100 @@ ms.assetid: 25e4c36b-2db6-4e71-9010-b7068255d09d
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: ed20865726832b57d4d0624d6305daa6ba0fe6fa
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: f0cb2737356813a9b637d7f16e9d5cda704c022a
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52389506"
 ---
-# <a name="configure-service-reference-dialog-box"></a>Hizmet Başvurusu Yapılandırma İletişim Kutusu
+# <a name="configure-service-reference-dialog-box"></a>Hizmet Başvurusu Yapılandır iletişim kutusu
 
-**Hizmet başvurusu Yapılandır** iletişim kutusu, Windows Communication Foundation (WCF) hizmetlerini davranışını yapılandırmanızı sağlar.
+**Hizmet başvurusu yapılandırma** iletişim kutusu Windows Communication Foundation (WCF) hizmetlerini davranışını yapılandırmanıza olanak sağlar.
 
-> [!NOTE]
-> Gördüğünüz iletişim kutuları ve menü komutları, etkin ayarlarınıza ve ürün sürümüne bağlı olarak Yardım menüsünde açıklanana göre farklılık gösterebilir. Ayarlarınızı değiştirmek için Araçlar menüsünden içeri ve dışarı aktarma ayarları seçin. Daha fazla bilgi için bkz: [Visual Studio IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md).
+Erişim için **hizmet başvurusu yapılandırma** iletişim kutusunda sağ tıklatıp hizmeti başvurusunun **Çözüm Gezgini** ve **hizmet başvurusu Yapılandır**. İletişim kutusunu tıklatarak da erişebilirsiniz **Gelişmiş** düğmesine **hizmet Başvurusu Ekle iletişim kutusunu**.
 
-Erişim için **hizmet başvurusu Yapılandır** iletişim kutusunda sağ tıklatıp hizmeti başvuru **Çözüm Gezgini** ve **hizmet başvurusu Yapılandır**. İletişim kutusunu tıklatarak da erişebilirsiniz **Gelişmiş** düğmesini **hizmet Başvurusu Ekle iletişim kutusu**.
+## <a name="task-list"></a>Görev listesi
 
-## <a name="task-list"></a>Görev Listesi
+- Bir WCF Hizmeti barındırıldığı adresini değiştirmek için yeni adresi girin. **adresi** alan.
 
-- Bir WCF Hizmeti barındırıldığı adresini değiştirmek için yeni adresini girin **adresi** alan.
+- WCF istemci sınıfları için erişim düzeyini değiştirmek için bir erişim düzeyi anahtar sözcüğünü seçin **erişim sınıflar için erişim düzeyi** listesi.
 
-- Bir WCF istemcisi sınıfları için erişim düzeyini değiştirmek için bir erişim düzeyi anahtar sözcük seçin **erişim düzeyi oluşturulan sınıflar için** listesi.
+- Zaman uyumsuz olarak bir WCF Hizmeti yöntemlerini çağırmak için seçin **zaman uyumsuz işlemler oluşturma** onay kutusu.
 
-- Bir WCF Hizmeti yöntemleri zaman uyumsuz olarak çağırmak için seçin **zaman uyumsuz işlemler oluşturmak** onay kutusu.
+- Bir WCF İstemcisi'nde ileti anlaşması türleri oluşturmak için Seç **her zaman ileti anlaşmaları Oluştur** onay kutusu.
 
-- Bir WCF istemcisi ileti sözleşme türleri oluşturmak için seçin **her zaman ileti sözleşmeleri oluşturmak** onay kutusu.
+- Bir WCF istemcisi için liste veya sözlük koleksiyon türleri belirtmek için türlerinden seçin **koleksiyon türü** ve **zlük koleksiyon türü** listeler.
 
-- Liste veya sözlük koleksiyon türleri için bir WCF istemcisi belirtmek için türlerinden birini **koleksiyon türü** ve **sözlük koleksiyon türü** listeler.
+- Tür paylaşımı devre dışı bırakma, temizleme **bütünleştirilmiş kodlardaki türleri yeniden** onay kutusu. Tür başvurulan derlemeleri bir alt kümesi için paylaşımını etkinleştirmek için işaretleyin **bütünleştirilmiş kodlardaki türleri yeniden** onay kutusunu seçin **belirtilen bütünleştirilmiş kodlardaki türleri yeniden**, istenen seçin başvurularının **başvurulan derlemelerin listesini**.
 
-- Tür paylaşımı devre dışı bırakmak için temizleyin **yeniden başvurulan derlemelerin türlerinde** onay kutusu. Başvurulan derlemeler bir kısmı için paylaşımı türünü etkinleştirmek için seçin **yeniden başvurulan derlemelerin türlerinde** onay kutusunu seçin **yeniden belirtilen başvurulan derlemelerin türlerinde**ve istediğiniz değerleri seçin başvurur **başvurulan derlemeler listesi**.
+## <a name="uielement-list"></a>UIElement listesi
 
-## <a name="uielement-list"></a>UIElement Listesi
+ **Adresi**
 
- **Adres**
-
- Web adresini güncelleştirmek için burada bir hizmet başvurusu için bir hizmet arar kullanılır. Örneğin, geliştirme sırasında hizmet bir geliştirme sunucusu üzerinde barındırılan ardından daha sonra bir üretim sunucusu için bir adres değişikliği araya taşındı.
+ Burada bir hizmet başvurusu için bir hizmet arar web adresini güncelleştirir. Örneğin, geliştirme sırasında hizmet bir geliştirme sunucusu üzerinde barındırılan ve ardından bir üretim sunucusu için bir adres değişikliği araya taşınır.
 
 > [!NOTE]
-> Address öğesi ne zaman kullanılabilir değil **hizmet başvurusu Yapılandır** iletişim kutusunda görüntülenen **hizmet Başvurusu Ekle iletişim kutusu**.
+> Address öğesi ne zaman kullanılabilir olmayan **hizmet başvurusu yapılandırma** gelen iletişim kutusu görüntülenir **hizmet Başvurusu Ekle iletişim kutusunu**.
 
  **Oluşturulan sınıflar için erişim düzeyi**
 
  WCF istemci sınıfları için kod erişim düzeyini belirler.
 
 > [!NOTE]
-> Web sitesi projeleri için bu seçenek her zaman ayarlanır `Public` ve değiştirilemez. Daha fazla bilgi için bkz: [sorun giderme hizmeti başvuruları](../data-tools/troubleshooting-service-references.md).
+> Web sitesi projeleri için bu seçenek her zaman ayarlanır `Public` ve değiştirilemez. Daha fazla bilgi için [hizmet başvurularında sorun giderme](../data-tools/troubleshooting-service-references.md).
 
- **Zaman uyumsuz işlemler**
+ **Zaman uyumsuz işlemler oluşturma**
 
- WCF hizmet yöntemleri zaman uyumlu olarak adlı olup olmadığını belirler (varsayılan) veya zaman uyumsuz olarak.
+ WCF hizmet yöntemleri çağrıldığında olup olmadığını zaman uyumlu olarak belirler (varsayılan) veya zaman uyumsuz olarak.
 
- **Görev tabanlı işlemler**
+ **Görev tabanlı işlemler oluştur**
 
- Zaman uyumsuz kod yazarken, bu seçenek, görev paralel kitaplığı (tanıtılan TPL) .net 4 ile yararlanmak sağlar. Bkz: [görev paralel kitaplığı (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl).
+ Zaman uyumsuz kod yazarken, bu seçenek, görev paralel kitaplığı (sunulan TPL) .NET 4 yararlanmanıza olanak tanır. Bkz: [görev paralel kitaplığı (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl).
 
- **İleti sözleşmeleri her zaman oluştur**
+ **Her zaman ileti anlaşmaları oluştur**
 
- İleti sözleşmesi türleri için bir WCF istemcisi oluşturulan olup olmadığını belirler. İleti sözleşmeleri hakkında daha fazla bilgi için bkz: [kullanarak ileti sözleşmeleri](/dotnet/framework/wcf/feature-details/using-message-contracts).
+ İleti anlaşması türleri için bir WCF istemcisi oluşturulan olup olmadığını belirler. İleti sözleşmeleri hakkında daha fazla bilgi için bkz: [ileti anlaşmaları kullanma](/dotnet/framework/wcf/feature-details/using-message-contracts).
 
  **Koleksiyon türü**
 
- Liste koleksiyonu türü WCF istemcisi için belirtir. Varsayılan türdür <xref:System.Array>.
+ Bir WCF istemcisi için liste koleksiyon türünü belirtir. Varsayılan türü <xref:System.Array>.
 
- **Sözlük koleksiyon türü**
+ **Zlük koleksiyon türü**
 
- Sözlük koleksiyon türü için bir WCF istemcisi belirtir. Varsayılan türdür <xref:System.Collections.Generic.Dictionary%602>.
+ Zlük koleksiyon türü için bir WCF istemcisi belirtir. Varsayılan türü <xref:System.Collections.Generic.Dictionary%602>.
 
- **Başvurulan derlemeler içindeki türleri yeniden kullan**
+ **Başvurulan bütünleştirilmiş kodlardaki türleri yeniden kullan**
 
- Bir WCF istemcisi yeniden kullanmak bir hizmet eklenen veya güncelleştirilen yeni türleri oluşturma yerine başvurulan derlemelerin zaten var deneyip denemeyeceğini belirler. Varsayılan olarak, bu seçenek denetlenir.
+ Bir WCF istemcisi hizmet eklendiğinde veya güncelleştirildiğinde yeni türleri oluşturma yerine başvurulan derlemelerde ne zaten var. yeniden dener olup olmadığını belirler. Varsayılan olarak, bu seçenek denetlenir.
 
- **Başvurulan tüm derlemelerde türleri yeniden kullan**
+ **Tüm başvurulan bütünleştirilmiş kodlardaki türleri yeniden kullan**
 
- Seçili olduğunda, içindeki tüm türler **başvurulan derlemeler listesi** mümkünse yeniden kullanılır. Varsayılan olarak, bu seçenek seçilidir.
+ Seçili olduğunda, tüm türlerin **başvurulan derlemelerin listesini** mümkünse tanımlarlar. Varsayılan olarak, bu seçenek seçilidir.
 
- **Belirtilen başvurulan derlemelerin türleri yeniden kullan**
+ **Belirtilen bütünleştirilmiş kodlardaki türleri yeniden kullan**
 
- Seçili olduğunda, yalnızca seçili türlerinde **başvurulan derlemeler listesi** yeniden kullanılır.
+ Seçili olduğunda, yalnızca seçilen türlerinde **başvurulan derlemelerin listesini** tanımlarlar.
 
- **Başvurulan derlemeler listesi**
+ **Başvurulan bütünleştirilmiş kodların listesi**
 
- Başvurulan derlemeler için proje veya Web sitesi listesini içerir. Zaman **yeniden belirtilen başvurulan derlemelerin türlerinde** seçildiğinde, ayrı ayrı derlemeler seçilir veya temizlenir.
+ Proje veya Web sitesi için başvurulan derlemelerin bir listesini içerir. Seçtiğinizde, **belirtilen bütünleştirilmiş kodlardaki türleri yeniden**, seçebilir veya ayrı ayrı derlemeler temizleyin.
 
  **Web Başvurusu Ekle**
 
- Web Başvurusu Ekle iletişim kutusu görüntüler.
+ Görüntüler **Web başvurusu Ekle'yi** iletişim kutusu.
 
 > [!NOTE]
 > Bu seçenek yalnızca 2.0 sürümünü hedefleyen projeler için kullanılması gereken [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].
-
+>
 > [!NOTE]
-> **Web Başvuru Ekle** düğmesi durumda yalnızca **hizmet başvurusu Yapılandır** iletişim kutusunda görüntülenen **hizmet Başvurusu Ekle iletişim kutusu**.
+> **Web başvurusu Ekle'yi** düğmesi kullanılabilir yalnızca zaman **hizmet başvurusu yapılandırma** gelen iletişim kutusu görüntülenir **hizmet Başvurusu Ekle iletişim kutusunu**.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Nasıl yapılır: Web hizmetine başvuru ekleme](how-to-add-update-or-remove-a-wcf-data-service-reference.md)
+- [Nasıl yapılır: web hizmetine başvuru ekleme](how-to-add-update-or-remove-a-wcf-data-service-reference.md)
 - [Windows Communication Foundation Hizmetleri ve WCF Veri Hizmetleri](../data-tools/configure-service-reference-dialog-box.md)

@@ -1,5 +1,5 @@
 ---
-title: İşlev Ayrıntıları görünümü | Microsoft Docs
+title: İşlev Ayrıntıları görünümünde | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -15,100 +15,101 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a7ce7bfbe9d68a7edcc0711c1f7e954612e67d0c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7bfc700f0757d99686e28942ff796cf117b1456f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951229"
 ---
 # <a name="function-details-view"></a>İşlev Ayrıntıları Görünümü
-**İşlev Ayrıntıları görünümü** penceresinde aşağıdaki bilgiler görüntülenir:  
+**İşlev Ayrıntıları görünümü** penceresinde aşağıdaki bilgileri görüntüler:  
   
--   **Maliyet dağıtım** çubuk grafik seçili işlev adı veriliyordu tarafından işlevleri arasında ve seçtiğiniz bir işlev ile seçilen işlevi yürütülen işlevleri çağırma arasındaki ilişkileri temsil eder .  
+- **Maliyet dağılımı** çubuk grafik, seçtiğiniz bir işlev ve seçili işlev çağıran işlevler arasında ve seçili işlev tarafından çağrılan işlevler arasındaki ilişkileri temsil eder .  
   
--   **İşlevi performans ayrıntıları** belirttiğiniz işlevi için Özet profil oluşturma verilerini gösteren tablo.  
+- **İşlevi performans ayrıntıları** belirttiğiniz işlevi için Özet profil oluşturma verilerini gösteren tablo.  
   
--   **İşlevi kod görünümü** penceresi kodu kullanılabilir olduğunda bu işlev kodu gösterir.  
+- **İşlev kod görünümü** kod kullanılabilir olduğunda, işlev kodunu gösteren bir pencere.  
   
- **İşlevi kod görünümü** ayrı bir bölme bir penceredir. Varsayılan olarak, iki bölmeleri yatay olarak ayrılır ve **işlevi kod görünümü** pencere çerçevesi alt kısmındaki konumlandırılır.  
+  **İşlev kod görünümü** ayrı bir bölme bir penceredir. Varsayılan olarak, yatay, iki bölme bölme ve **işlev kod görünümü** penceresi çerçevenin en altında konumlandırılmış.  
   
--   İki dikey bölmeleri için tıklatın **bölünmüş ekran dikey** araç çubuğunda.  
+- İki bölmeyi dikey olarak Böl için tıklatın **ekranı dikey olarak bölünmüş** araç.  
   
--   Bölmeleri göreli boyutunu değiştirmek için çerçeveler arasında gölgeli kenarlık'ı tıklatın ve kenarlık farklı bir konuma sürükleyin.  
+- Bölmelerin göreli boyutlarını değiştirmek için gölgeli kenarlık kareleri arasında tıklayın ve kenarlığı farklı bir konuma sürükleyin.  
   
-## <a name="cost-distribution-bar-chart"></a>Maliyet dağıtım çubuk grafiği  
+## <a name="cost-distribution-bar-chart"></a>Maliyet dağıtımı çubuk grafik  
   
 ### <a name="performance-metrics"></a>Performans ölçümleri  
- İçinde **performans ölçüm** aşağı açılan listesinde, hangi değerlerin görüntülenir belirtebilirsiniz. Profil oluşturma veri dosyasında kullanılan profil oluşturma yöntemi kullanılabilir değerleri bağlıdır. Adlar parantez içinde satır adlarıdır **işlevi performans ayrıntıları** tablo.  
+ İçinde **performans ölçümü** aşağı açılan listesinde, hangi değerlerin görüntülenir belirtebilirsiniz. Kullanılabilir değerler, profil oluşturma veri dosyasında kullanılan profil oluşturma yöntemine bağlıdır. Adlar parantez içinde: satır adları **işlevi performans ayrıntıları** tablo.  
   
 ### <a name="bar-chart"></a>Çubuk Grafiği  
  **İşlevleri çağırma**  
   
- **İşlevleri çağırma** çubuğu seçili işlevini çağırdı işlevleri gösterir. Seçili işlevi için performans ölçüm toplam değerini çağıran işleve katkı orantılı olarak arama işlevi içeriyor blok boyutunda olabilir.  
+ **Çağıran fonksiyonları** çubuğu seçili işlev çağıran işlevler gösterir. Çağıran işlevin içeren bloğun performans ölçümü seçilen işlevin toplam değerini çağırma işlevine katkısını derlemekten boyutudur.  
   
- Görünümde seçili işlevi yapmak için bir arama işlevi adını tıklatabilirsiniz.  
+ Görünümünde seçili işlev yapmak için bir çağıran işlevin adını tıklayabilirsiniz.  
   
--   Listelemek için çok fazla işlevleri çağırma varsa, en küçük Katkıları işlevleriyle toplanır bir **diğer** bloğu. Tıklatın **diğer** seçili işlevinde tüm çağıran ve çağrılan işlevlerini görüntülemek için **arayan/Aranan görünümü** penceresi. Daha fazla bilgi için bkz: [arayan/Aranan görünümü](../profiling/caller-callee-view.md).  
+- Listelemek için çok fazla arama işlevleri varsa, en küçük katkılar işlevleriyle toplanır bir **diğer** blok. Tıklayın **diğer** seçilen işlevin çağrılmasından ve çağrılan işlevlerinden görüntülenecek **arayan/Aranan görünümü** penceresi. Daha fazla bilgi için [arayan/Aranan görünümü](../profiling/caller-callee-view.md).  
   
--   Hiçbir işlevleri çağırma varsa veya işlevi bir iş parçacığı veya işlem girişi işlevinin ise bir **, üst yığın** blok görüntülenir.  
+- Çağıran işlev yok yoksa veya işlev bir iş parçacığı veya işlem girişi işlevi ise bir **üst, yığın** bloğu görünür.  
   
- **Seçili işlevi**  
+  **Seçili işlevi**  
   
- Seçili işlevi çubuğu çağrılan işlevlerin ve kod Katkıları seçili işlevinin toplam performans ölçüm seçili işlev gösterir. Proportion için çağrılan işlev veya işlev gövdesi içeriyor blok boyutu olan toplam değeri kendi katkısı seçili işlevi için performans ölçüsünün.  
+  Seçili işleve çubuğu, seçilen işlevin toplam performans ölçüm seçili işlev çağrılan işlevlerin ve kod Katkıları gösterir. Proportion için çağrılan bir işlevin veya işlev gövdesinin içeren blok boyutu olduğundan seçilen işlevin performans ölçüm, toplam değere katkıyı.  
   
- Görünümde seçili işlevi yapmak için çağrılan bir işlevin adını tıklatabilirsiniz.  
+  Görünümünde seçili işlev yapmak için çağrılan bir işlevin adını tıklayabilirsiniz.  
   
--   **Toplam** performans ölçüm seçili işlevi için bir değerdir.  
+- **Toplam** performans ölçümü seçilen işlevin bir değerdir.  
   
--   **İşlev gövdesi** bloğunu işlevinin gövdesini kodda doğrudan yürütülmesi oluştu performans ölçüm toplam değerini miktarını temsil eder.  
+- **İşlev gövdesi** blok doğrudan işlevinin gövdesindeki kod yürütülmesi gerçekleşen performans ölçümü toplam değerini miktarını temsil eder.  
   
--   Seçili işlev tarafından çağrılan işlevleri bloklarında listelenir. Seçili işlevleri blok boyutunu toplam performans ölçümü çağrılan işlev oluştu seçili işlevi için miktarını temsil eder.  
+- Seçili işlev tarafından çağrılmış işlevler bloklar halinde listelenmiştir. Seçilen işlevlerin blok boyutu içinde çağrılan işlev oluştu seçilen işlevin toplam performans ölçümü miktarını temsil eder.  
   
--   Listelemek için çok fazla işlevleri çağırma varsa, en küçük Katkıları işlevleriyle toplanır bir **diğer** bloğu. Tıklatın **diğer** seçili işlevinde tüm çağıran ve çağrılan işlevlerini görüntülemek için **arayan/Aranan görünümü** penceresi. Daha fazla bilgi için bkz: [arayan/Aranan görünümü](../profiling/caller-callee-view.md).  
+- Listelemek için çok fazla arama işlevleri varsa, en küçük katkılar işlevleriyle toplanır bir **diğer** blok. Tıklayın **diğer** seçilen işlevin çağrılmasından ve çağrılan işlevlerinden görüntülenecek **arayan/Aranan görünümü** penceresi. Daha fazla bilgi için [arayan/Aranan görünümü](../profiling/caller-callee-view.md).  
   
--   Hiçbir çağrılan işlevlerin varsa bir **alt, yığın** blok görüntülenir.  
+- Çağrılan işlev yok, ise bir **alt, yığın** bloğu görünür.  
   
 ## <a name="function-performance-details"></a>İşlev performans ayrıntıları  
- İşlev performans ayrıntıları tablo Özet verilerini seçili işlevi için performans ölçümleri sağlar. Hem değer hem de yüzde görünür. Grafik ve ayrıntıları görünür profil oluşturma verileri tablo belirt belirttiğiniz **performans ölçüm** listesi.  
+ İşlev performans Ayrıntıları tablosu özet verilerini seçili işlev için performans ölçümlerini sağlar. Hem değer hem de yüzde görünür. Belirtme ve grafik ayrıntıları görünen profil oluşturma verileri tablo olarak belirttiğiniz **performans ölçümü** listesi.  
   
 |Sütun|Açıklama|  
 |------------|-----------------|  
-|**Özel**|-İşlev gövdesi yürütülmesi içinde oluşan performans ölçüm miktarı.|  
-|**Çağrılarında**|-Seçili işlevini çağırdı işlevlerde oluştu performans ölçüm tutar.|  
-|**Her ikisi de dahil toplam**|-Toplam **özel** ve **içinde çağrıları** değerleri.|  
+|**Özel**|-İşlev gövdesi yürütme gerçekleşen performans ölçümü miktarı.|  
+|**Çağrıları**|-Seçili işlev çağıran işlevler içinde gerçekleşen performans ölçümü miktarı.|  
+|**Kapsamlı toplam**|-Toplam **özel** ve **içinde çağrıları** değerleri.|  
   
 ## <a name="function-code-view"></a>İşlev kod görünümü  
- **İşlevi kod görünümü** penceresi kullanılabilir olduğunda kaynak kodunu listesini görüntüler. Diğer işlevleri çağırmak kaynak kod satırlarını yanındaki gölgeli bir sütun çağrılan işlev için performans ölçümü değerleri içerir. Kaynak kodu düzenlemek için kaynak kodu dosyasının bağlantısını tıklatın.  
+ **İşlev kod görünümü** penceresi, kullanılabilir olduğunda kaynak kodunu bir listesini görüntüler. Diğer işlevlerini kaynak kod satırlarına yanındaki gölgeli bir sütun çağrılan işlev için performans ölçüm değerleri içerir. Kaynak kodu düzenlemek için kaynak kodu dosyasının bağlantısını tıklayın.  
   
-## <a name="cost-distribution-bar-chart-values"></a>Maliyet dağıtım çubuk grafik değerleri  
+## <a name="cost-distribution-bar-chart-values"></a>Maliyet dağıtımı çubuk grafik değerleri  
   
 ### <a name="sampling"></a>Örnekleme  
- Aşağıdaki tabloda örnekleme yöntemini kullanarak toplanan profil oluşturma verileri için performans ölçüm listesindeki değerlerin açıklanmaktadır.  
+ Performans ölçümü liste için örnekleme metodu kullanılarak toplanmış olduğu profil oluşturma veri değerleri aşağıdaki tabloda açıklanmaktadır.  
   
 |||  
 |-|-|  
-|**Kapsayıcı örnekleri (toplanan örnekleri)**|-Bir arama işlevi için seçilen işlevi çağırma bu işlev tarafından çağrıldığında, toplanan örnek sayısı.<br />-İşlev gövdesi için seçilen işlevi kendi kodu çalıştırırken, toplanan örnek sayısı.<br />-Çağrılan işlev için çağrılan işlev seçili işlev çağrısından nedeniyle yürütürken, toplanan örnek sayısı.|  
+|**Kapsamlı örnekler (toplanan örnekler)**|-Bir arama işlevi için seçili işlev tarafından çağıran bu işlev çağrıldığında, toplanan örnek sayısı.<br />-İşlev gövdesi için seçili işlev kendi kod yürütülürken toplanan örnek sayısı.<br />-Çağrılan işlev için seçili işlev çağrısından nedeniyle çağrılan işlev yürütülürken toplanan örnek sayısı.|  
   
 ### <a name="instrumentation"></a>İzleme  
- Aşağıdaki tabloda izleme metodunu kullanarak toplanan profil oluşturma verileri için performans ölçüm listesindeki değerlerin açıklanmaktadır.  
+ Araçlar yöntemini kullanarak toplanan profil oluşturma verisi için performans ölçümü listesindeki değerlerin aşağıdaki tabloda açıklanmaktadır.  
   
 |||  
 |-|-|  
-|**Geçen dahil süre (geçen süre)**|Geçen süre, bağlam anahtarlarının ve girdi/çıktı işlemleri gibi işletim sistemi çağrılarında harcanan zamanın içerir.<br /><br /> -İçin bir **işlevi çağırma**, işlev tarafından adı veriliyordu seçili işlevi örneklerini yürütme harcanan süre miktarı. Seçili işlev tarafından çağrılan işlevlerde geçen süre dahil edilir.<br />-İçin **işlev gövdesi**, geçen süre toplam miktarı harcanan seçili işlevi kodu çalıştırma. Çağrılan işlevlerde geçen süre dahil değildir.<br />-Adlı bir işlev için tutar seçili işlevin adı veriliyordu işlevi örneklerini yürütme için harcanan süre. Toplam harcanan zamanın işlevini çağırdı işlevlerde içerir. Seçili işlev tarafından çağrılan işlevlerde geçen süre dahil edilir.|  
-|**Uygulama dahil saati (uygulama)**|Uygulama zamanı bağlam anahtarlarının ve girdi/çıktı işlemleri gibi işletim sistemi çağrılarında harcanan zamanın içermez.<br /><br /> -İçin bir **işlevi çağırma**, işlev tarafından adı veriliyordu seçili işlevi örneklerini yürütme harcandığını uygulama süre miktarı. Seçili işlev tarafından çağrılan işlevlerde geçen süre dahil edilir.<br />-İçin **işlev gövdesi**, toplam uygulama harcanan zaman seçili işlevi kodu çalıştırma. Çağrılan işlevlerde geçen süre dahil değildir.<br />-Adlı bir işlev için tutar uygulama tarafından seçilen işlevi adı veriliyordu işlevi örneklerini yürütme için harcanan süre. Toplam harcanan zamanın işlevini çağırdı işlevlerde içerir.|  
+|**Geçen kapsamlı süre (geçen süre)**|Geçen süre bağlam anahtarları ve giriş/çıkış işlemleri gibi işletim sistemi çağrılarında harcanan süreyi içerir.<br /><br /> -İçin bir **işlevi çağırma**, işlev tarafından çağrılan örneklerini seçili işlev yürütülürken harcanan süre miktarı. Seçili işlev tarafından çağırılan işlevlerde geçen süre dahildir.<br />-İçin **işlev gövdesi**, geçen süre toplam harcanan seçili işlev kodunu yürütülüyor. Çağrılan işlevlerde geçen süre dahil değildir.<br />-İçin çağrılan bir işlev, seçili işlev tarafından çağrılan işlev örneklerini yürütülürken harcanan süre tutar. Toplam harcanan zaman işlevi olarak adlandırılan işlevler içerir. Seçili işlev tarafından çağırılan işlevlerde geçen süre dahildir.|  
+|**Kapsamlı uygulama süresi (uygulama zamanı)**|Uygulama süresi bağlam anahtarları ve giriş/çıkış işlemleri gibi işletim sistemi çağrılarında harcanan süreyi içermez.<br /><br /> -İçin bir **işlevi çağırma**, işlev tarafından çağrılan örneklerini seçili işlev yürütülürken harcanan süreyi uygulama. Seçili işlev tarafından çağırılan işlevlerde geçen süre dahildir.<br />-İçin **işlev gövdesi**, toplam uygulama süreyi harcanan seçili işlev kodunu yürütülüyor. Çağrılan işlevlerde geçen süre dahil değildir.<br />-İçin çağrılan bir işlev, seçili işlev tarafından çağrılan işlev örneklerini yürütülürken harcanan tutar uygulama süre. Toplam harcanan zaman işlevi olarak adlandırılan işlevler içerir.|  
   
 ### <a name="net-memory"></a>.NET bellek  
- Aşağıdaki tabloda .NET bellek profili oluşturma yöntemi kullanılarak toplanan profil oluşturma verileri için performans ölçüm listesindeki değerlerin açıklanmaktadır.  
+ .NET bellek profil oluşturma yöntemini kullanarak toplanan profil oluşturma verisi için performans ölçümü listesindeki değerlerin aşağıdaki tabloda açıklanmaktadır.  
   
 |||  
 |-|-|  
-|**Kapsayıcı ayırmaları (ayırmaları)**|-İçin bir **işlevi çağırma**, işlevini çağırdı seçili işlevi örnekleri tarafından ayrılan nesne sayısı. Seçili işlevini çağırdı işlevleri tarafından ayrılan nesnelerin sayısını içerir.<br />-İçin **işlev gövdesi**, tarafından ayrılan nesne sayısını kendi kodu çalıştırırken seçili işleve göre. Seçili işlev tarafından çağrılan işlevlerinde ayrılmış nesneleri dahil edilmez.<br />-Çağrılan işlev için seçilen işlevin adı veriliyordu işlevi örnekleri tarafından ayrılan nesne sayısı. İşlevi çağrıldığında işlevleri tarafından ayrılan nesnelerin sayısını içerir.|  
-|**Kapsayıcı bayt (bayt)**|-İçin bir **işlevi çağırma**, işlevini çağırdı seçili işlevi örnekleri tarafından ayrılan bayt sayısı. Seçili işlevini çağırdı işlevleri tarafından ayrılan bayt sayısını içerir.<br />-İçin **işlev gövdesi**, kendi kodu çalıştırırken, seçili işlevi tarafından ayrılan bayt toplam sayısı. Seçili işlev tarafından çağrılan işlevlerinde ayrılan bayt dahil edilmez.<br />-Çağrılan işlev için seçilen işlevin adı veriliyordu işlevi örnekleri tarafından ayrılan bayt sayısı. İşlevi çağrıldığında işlevleri tarafından ayrılan bayt sayısını içerir.|  
+|**Kapsamlı ayırmalar (ayırmalar)**|-İçin bir **işlevi çağırma**, çağrılan işlev seçili işlev örneği tarafından ayrılan nesne sayısı. Seçili işlev çağıran işlevler tarafından ayrılan nesneler içerir.<br />-İçin **işlev gövdesi**, tarafından ayrılan nesnelerin sayısını kendi kod yürütülürken seçili işleve göre. Seçili işlev tarafından çağırılan işlevlerdeki ayrılan nesneler dahil edilmez.<br />-Çağrılan işlev için seçili işlev tarafından çağrılan işlev örnekleri tarafından ayrılan nesne sayısı. İşlev çağıran işlevler tarafından ayrılan nesneler içerir.|  
+|**Kapsamlı bayt (bayt)**|-İçin bir **işlevi çağırma**, çağrılan işlev seçili işlev örneği tarafından ayrılan bayt sayısı. Seçili işlev çağıran işlevler tarafından ayrılan bayt sayısını içerir.<br />-İçin **işlev gövdesi**, kendi kod yürütülürken seçili işlev tarafından ayrılan bayt sayısı. Seçili işlev tarafından çağırılan işlevlerdeki ayrılan bayt sayısı dahil edilmez.<br />-Çağrılan işlev için seçili işlev tarafından çağrılan işlev örnekleri tarafından ayrılan bayt sayısı. İşlev çağıran işlevler tarafından ayrılan bayt sayısını içerir.|  
   
 ### <a name="concurrency"></a>Eşzamanlılık  
- Aşağıdaki tabloda eşzamanlılık yöntemi kullanılarak toplanan profil oluşturma verileri için performans ölçüm listesindeki değerlerin açıklanmaktadır.  
+ Eşzamanlılık metodu kullanarak toplanan profil oluşturma verisi için performans ölçümü listesindeki değerlerin aşağıdaki tabloda açıklanmaktadır.  
   
 |||  
 |-|-|  
-|**Kapsayıcı çekişmeleri (çekişmeleri)**|-İçin bir **işlevi çağırma**, işlevini çağırdı seçili işlevi durumlarda oluştu kaynak Çekişme olayları sayısı. Çekişme olayları seçili işlevini çağırdı işlevlerde içerir.<br />-İçin **işlev gövdesi**, işlev kendi kod yürütülürken oluşan Çekişme olayları toplam sayısı. Seçili işlevi tarafından adı veriliyordu işlevlerinde gerçekleşen çekişmeleri dahil edilmez.<br />-Çağrılan işlev için seçilen işlevin adı veriliyordu işlevi örneklerini oluştu Çekişme olayları sayısı. Sayı oluştu Çekişme olayları işlevini çağırdı işlevlerde içerir.|  
-|**Kapsayıcı saati (engellenen) engellendi**|-Bir arama işlevi için kaynak harcanan zamanın Çekişme olayları seçili örnekleri için işlev işlevini çağırdı. Zaman engellenen zaman adlı işlevi seçili işlevlerde içerir.<br />-İçin **işlev gövdesi**, işlev kendi kod yürütülürken oluşan Çekişme olayları harcanan toplam süre. Seçili işlevini çağırdı işlevlerde gerçekleşen çekişmeleri dahil edilmez.<br />-Çağrılan işlev için kaynak çakışması olaylarda seçili işlevini çağırdı işlevi örnekleri için harcanan süre. Zaman oluştu engellenen zaman işlevini çağırdı işlevlerde içerir.|
+|**Kapsamlı Çekişmeler (Çekişme)**|-İçin bir **işlevi çağırma**, çağrılan işlev seçili işlev durumlarda oluşan kaynak Çekişme olayları sayısı. Çekişme olayları seçili işlev çağıran işlevler içerir.<br />-İçin **işlev gövdesi**, işlev, kendi kod yürütülürken oluşan Çekişme olaylarının toplam sayısı. Seçili işlev tarafından çağrılan işlevler gerçekleşen Çekişme dahil edilmez.<br />-Çağrılan işlev için seçili işlev tarafından çağrılan işlev örneklerinde oluştu Çekişme olayları sayısı. Çekişme olayları işlevi çağıran işlevler içerir.|  
+|**Kapsamlı engellenen zaman (engellenme süresi)**|-Bir arama işlevi için kaynak harcanan süreyi olayların seçili örnekleri için işlev Çekişme işlevi çağrılır. Saat çağrılan işlev seçili işlevlerde engellenme süresi içeriyor.<br />-İçin **işlev gövdesi**, işlev, kendi kod yürütülürken oluşan Çekişme olayları harcanan toplam süre. Seçili işlev çağıran işlevler içinde oluşan çakışmaları dahil edilmez.<br />-Çağrılan işlev için kaynak Çekişme olayları seçili işlevi çağıran işleve örnekleri için harcanan süre. Saat işlevi çağıran işlevler oluştu engellenme süresi içeriyor.|

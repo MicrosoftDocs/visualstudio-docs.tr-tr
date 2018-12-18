@@ -1,8 +1,9 @@
 ---
-title: Visual Studio'da kod ölçümleri sonuçları penceresi
+title: Kod ölçümleri penceresi
 ms.date: 12/12/2017
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
-ms.topic: conceptual
+ms.topic: reference
 f1_keywords:
 - vs.codemetrics.output
 helpviewer_keywords:
@@ -14,39 +15,38 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0053bcc23d8bb56a052e8d9203c08ce3ed17f2f9
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6aa1de7b3c4a029038072e84bea1918ea33031db
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50967174"
 ---
-# <a name="using-the-code-metrics-results-window"></a>Kod ölçümleri sonuçları penceresi kullanma
+# <a name="use-the-code-metrics-results-window"></a>Kod ölçümleri sonuçları penceresini kullanma
 
-**Kod ölçümleri sonuçları** penceresi kod ölçümleri analiz tarafından oluşturulan veri görüntüler. Kod ölçüm verileri değerleri hakkında daha fazla bilgi için bkz: [kod ölçüm değerleri](../code-quality/code-metrics-values.md).
+**Kod ölçümleri sonuçları** penceresi kod ölçümleri analiz tarafından oluşturulan verileri görüntüler. Kod ölçüm verileri değerleri hakkında daha fazla bilgi için bkz: [kod ölçüm değerleri](../code-quality/code-metrics-values.md).
 
-## <a name="displaying-code-metrics-results"></a>Kod ölçümleri sonuçları görüntüleme
+## <a name="display-code-metrics-results"></a>Kod ölçümleri sonuçları görüntüleme
 
-**Kod ölçümleri sonuçları** penceresi kod ölçümleri sonuçları oluşturduğunuzda otomatik olarak görüntülenir. Ayrıca, herhangi bir zamanda penceresinde görüntüleyebilirsiniz.
+**Kod ölçümleri sonuçları** penceresinde kod ölçümleri sonuçları oluşturduğunuzda otomatik olarak görüntülenir. Ayrıca, herhangi bir zamanda penceresinde görüntüleyebilirsiniz.
 
-### <a name="to-display-the-code-metrics-results-window"></a>Kod ölçümleri sonuçları penceresi görüntülemek için
+Kod ölçümleri sonuçları penceresi şu menü sıraları birini kullanarak görüntüleyebilirsiniz:
 
 - Üzerinde **Çözümle** menüsünde seçin **Windows** > **kod ölçümleri sonuçları**.
 
-   \- veya -
+- Üzerinde **görünümü** menüsünde seçin **diğer Windows** > **kod ölçümleri sonuçları**.
 
-- Üzerinde **Görünüm** menüsünde seçin **diğer pencereler** > **kod ölçümleri sonuçları**.
+**Kod ölçümleri sonuçları** sonuç içerse bile penceresi açılır.
 
-**Kod ölçümleri sonuçları** penceresi görüntülenir, hiçbir sonuç içerse bile.
-
-### <a name="to-view-code-metrics-details"></a>Kod ölçümleri ayrıntılarını görüntülemek için
+### <a name="to-view-code-metrics-details"></a>Kod ölçümleri görüntülemek için ayrıntıları
 
 Kod ölçümleri sonuçları oluşturulduysa ağacında genişletin **hiyerarşi** sütun.
 
-## <a name="filtering-code-metrics-results"></a>Kod ölçümleri sonuçları filtresi
+## <a name="filter-code-metrics-results"></a>Kod ölçümleri sonuçları filtresi
 
-Görüntülenen sonuçları filtreleyebilirsiniz **kod ölçümleri sonuçları** üstündeki araç çubuğunu kullanarak penceresi. Örneğin, bir bakım dizin 65 aşağıda sahip sonuçları görmek isteyebilirsiniz.
+Görüntülenen sonuçlarını filtreleyebilirsiniz **kod ölçümleri sonuçları** üstündeki araç çubuğunu kullanarak pencere. Örneğin, bir bakım dizini 65 aşağıda olan sonuçları görmek isteyebilirsiniz.
 
-**Filtre** açılan kutusu sonuçları sütunlarının adlarını içerir. Bir filtre tanımlandığında, listenin girinti birlikte eklenir. Listenin tanımlanan son on filtreleri içerebilir.
+**Filtre** açılan kutusu sonuçları sütun adlarını içerir. Bir filtre tanımlandığında, listenin bir girinti birlikte eklenir. Liste, tanımlanan son 10 filtreler içerebilir.
 
 ### <a name="to-filter-the-code-metrics-results"></a>Kod ölçümleri sonuçları filtrelemek için
 
@@ -56,71 +56,55 @@ Görüntülenen sonuçları filtreleyebilirsiniz **kod ölçümleri sonuçları*
 
 3.  İçinde **Max**, görüntülenecek maksimum değeri yazın.
 
-4.  Tıklatın **Filtre Uygula** düğmesi.
+4.  Tıklayın **Filtre Uygula** düğmesi.
 
-5.  Sonucu ayrıntıları görmek için hiyerarşi ağacı genişletin.
+5.  Sonuç ayrıntıları görmek için hiyerarşi ağacı genişletin.
 
-## <a name="adding-removing-and-rearranging-data-columns"></a>Ekleme, kaldırma ve veri sütunları yeniden düzenleme
+## <a name="add-remove-and-rearrange-data-columns"></a>Eklemek, kaldırmak ve veri sütunları yeniden düzenleme
 
-Ekleyebileceğiniz veya Kaldır sonuçları sütunlarından **kod ölçümleri sonuçları** penceresi. Ayrıca, böylece istediğiniz sırayla göründükleri sonuçları sütunları düzenleyebilirsiniz.
+Ekleyebilir ve sütunları Kaldır sonuçları **kod ölçümleri sonuçları** penceresi. Ayrıca, istediğiniz sırayla görünecekleri sonuçları sütunları yeniden düzenleyebilirsiniz.
 
-### <a name="to-remove-a-column"></a>Bir sütunu kaldırmak için
+### <a name="add-or-remove-a-column"></a>Bir sütun ekleyip
 
-1. Tıklatın **Sütun Ekle/Kaldır** düğmesi.
+1. Tıklayın **sütunları Ekle/Kaldır** düğmesini veya herhangi bir sütunun başlığına sağ tıklayın ve ardından **sütunları Ekle/Kaldır**.
 
-     \- veya - herhangi bir sütun başlığını sağ tıklatın ve ardından **Sütun Ekle/Kaldır**.
+1. İçinde **sütunları Ekle/Kaldır** iletişim kutusu, seçin veya temizleyin ekleyin veya kaldırın ve ardından istediğiniz sütun için onay kutusunu **Tamam**.
 
-1. İçinde **Sütun Ekle/Kaldır** iletişim kutusu, onay kutusunu temizleyerek sütunu için kaldırın ve ardından istediğiniz **Tamam**.
+### <a name="rearrange-columns"></a>Sütunları yeniden düzenleme
 
-### <a name="to-add-a-previously-removed-column"></a>Önceden Kaldırılan sütun eklemek için
+1. Tıklayın **sütunları Ekle/Kaldır** düğmesi.
 
-1. Tıklatın **Sütun Ekle/Kaldır** düğmesi.
+1. İçinde **sütunları Ekle/Kaldır** iletişim kutusunda, yukarı veya aşağı oku seçin ve taşımak istediğiniz sütunu seçin.
 
-     \- veya -
+1. Sütun, istediğiniz yerde konumlandırıldığında seçin **Tamam**.
 
-     Herhangi bir sütun başlığını sağ tıklatın ve ardından **Sütun Ekle/Kaldır**.
+## <a name="copy-data-to-the-clipboard-or-excel"></a>Pano veya Excel veri kopyalama
 
-1. İçinde **Sütun Ekle/Kaldır** iletişim kutusunda, eklemek ve ardından istediğiniz sütun için onay kutusunu seçin **Tamam**.
+Seçin ve seçili bir satır kod ölçümleri verileri, adı ve her veri sütununun değeri için bir satır içeren bir metin dizesi olarak panoya kopyalayın. Ayrıca **Microsoft Excel'de Seçimi Aç** tüm kod ölçümleri sonuçları bir Excel elektronik tablosuna dışarı aktarmak için.
 
-### <a name="to-rearrange-columns"></a>Sütunları yeniden düzenlemek için
+## <a name="create-a-work-item-based-on-code-metric-results"></a>Kod ölçüm sonuçlarına göre iş öğesi oluşturma
 
-1. Tıklatın **Sütun Ekle/Kaldır** düğmesi.
+Oluşturabileceğiniz bir [Azure panoları](/azure/devops/boards/index?view=vsts) temel alan iş öğesi sonuçlanıyor **kod ölçüm sonuçlarını** penceresi. İş öğesi oluşturulduğunda, Visual Studio otomatik olarak bir başlık girer **başlık** alan ve kod ölçümleri verileri altında **geçmişi** sekmesi.
 
-     \- veya -
-
-     Herhangi bir sütun başlığını sağ tıklatın ve ardından **Sütun Ekle/Kaldır**.
-
-1. İçinde **Sütun Ekle/Kaldır** iletişim kutusunda, taşıyın ve sonra Yukarı veya aşağı oka tıklatın istediğiniz sütun seçin.
-
-1. Sütun istediğiniz yerde konumlandırıldığında tıklatın **Tamam**.
-
-## <a name="copying-data-to-the-clipboard-or-excel"></a>Pano veya Excel'e veri kopyalama
-
-Seçin ve kod ölçümleri verileri seçili satırını adını ve her veri sütununun değeri için bir satır içeren bir metin dizesi olarak panoya kopyalayın. Tıklatarak **Microsoft Excel'de Aç seçimi** tüm kod ölçümleri sonuçları bir Excel elektronik tabloya vermek için.
-
-## <a name="creating-a-work-item-based-on-code-metric-results"></a>Kod ölçüm sonuçlarına dayalı bir iş öğesi oluşturma
-
-Oluşturabileceğiniz bir [Visual Studio Team Services (VSTS)](/vsts/index) dayanır iş öğesi sonuçları **kod ölçüm sonuçlarını** penceresi. İş öğesi oluşturulduğunda, Visual Studio otomatik olarak bir başlık girer **başlık** alan ve kod ölçümleri verileri altında **geçmişi** sekmesi.
-
-VSTS hakkında daha fazla bilgi için iş öğelerini, bkz: [iş öğeleri (VSTS)](/vsts/work/work-items/index).
+Azure panoları hakkında daha fazla bilgi için iş öğeleri, bkz: [iş öğelerini](/azure/devops/boards/work-items/index?view=vsts).
 
 ### <a name="to-create-a-work-item-based-on-a-result"></a>Bir sonuca bağlı bir iş öğesi oluşturmak için
 
-1.  Sonuca sağ tıklayın.
+1.  Bir sonuca sağ tıklayın.
 
-2.  İşaret **iş öğesi oluşturma**ve ardından oluşturmak istediğiniz iş öğesi türü (**hata**, **görev**, vb.).
+2.  İşaret **iş öğesi oluştur**ve ardından oluşturmak istediğiniz iş öğesinin türüne tıklayın (**hata**, **görev**, vb.).
 
-3.  Tüm gerekli alanları doldurarak iş öğesi formunu tamamlayın.
+3.  Tüm gerekli alanları doldurarak iş öğesi formu tamamlayın.
 
 4.  Üzerinde **dosya** menüsünde tıklatın **Tümünü Kaydet** iş öğesini kaydetmek için.
 
 ### <a name="to-create-a-bug-based-on-a-result"></a>Bir sonuca bağlı bir hata oluşturmak için
 
-1.  Sonucun seçmek için tıklatın.
+1.  Seçmek için sonuca tıklayın.
 
-2.  Tıklatın **iş öğesi oluşturma** düğmesi.
+2.  Tıklayın **iş öğesi oluşturma** düğmesi.
 
-3.  Tüm gerekli alanları doldurarak iş öğesi formunu tamamlayın.
+3.  Tüm gerekli alanları doldurarak iş öğesi formu tamamlayın.
 
 4.  Üzerinde **dosya** menüsünde tıklatın **Tümünü Kaydet** iş öğesini kaydetmek için.
 

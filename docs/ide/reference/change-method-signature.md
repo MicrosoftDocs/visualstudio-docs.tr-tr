@@ -1,7 +1,7 @@
 ---
-title: Visual Studio'da bir yöntem imzası yeniden düzenlemeniz | Microsoft Docs
-ms.custom: ''
+title: Yöntem imzası yeniden düzenleyin
 ms.date: 01/26/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: reference
 author: gewarren
@@ -15,13 +15,14 @@ dev_langs:
 - VB
 ms.workload:
 - dotnet
-ms.openlocfilehash: ce920d11d7f29f166bf551d8ce95df11f5abf9d6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 81f907ae1f7def1ce401990dc505f423aac5a4c1
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062342"
 ---
-# <a name="change-a-method-signature-refactoring"></a>Bir yöntem imza yeniden düzenleme değiştirme
+# <a name="change-a-method-signature-refactoring"></a>Bir yöntem imzası yeniden düzenleme değiştirme
 
 Bu yeniden düzenleme için geçerlidir:
 
@@ -29,56 +30,56 @@ Bu yeniden düzenleme için geçerlidir:
 
 - Visual Basic
 
-**Ne:** kaldırın ya da bir yöntemin parametre sırasını değiştirme imkan tanır.
+**Ne:** kaldırın ya da bir yöntemin parametre sırasını değiştirme sağlar.
 
-**Ne zaman:** taşımak veya çeşitli konumlara kullanılmakta olan bir yöntem parametresi kaldırmak istediğiniz.
+**Ne zaman:** taşımak veya çeşitli konumlarda kullanılmakta olan bir yöntem parametresi kaldırmak istediğiniz.
 
-**Neden:** el ile kaldırın ve parametreleri yeniden Sırala sonra bu yöntem tüm çağrıları bulmak ve bunları tek tek değiştirmek, ancak hatalarına neden olabilir.  Bu yeniden düzenleme aracı görevi otomatik olarak gerçekleştirir.
+**Neden:** el ile kaldırın ve parametreleri yeniden Sırala ve ardından bu yönteme tüm çağrılarını bulun ve bunları tek tek değiştirmek, ancak hatalarına neden olabilir.  Bu yeniden düzenleme aracı görevi otomatik olarak gerçekleştirir.
 
 ## <a name="how-to"></a>Nasıl Yapılır Konuları
 
-1. Vurgula veya metin imleci değiştirmek için yöntemi veya kendi kullanımlarından adını içinde:
+1. Vurgulama veya değiştirmek için yöntemi veya kendi kullanımlarından adını metin imleci yerleştirin:
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![Vurgulanmış kodu C#](media/changesignature-highlight-cs.png)
+       ![Vurgulanmış kodu C#](media/changesignature-highlight-cs.png)
 
-   - VB:
+   - VB İÇİN:
 
-    ![Vurgulanmış kodu Visual Basic](media/changesignature-highlight-vb.png)
+       ![Vurgulanan kod Visual Basic](media/changesignature-highlight-vb.png)
 
-1. Ardından, aşağıdakilerden birini yapın:
+2. Ardından, aşağıdakilerden birini yapın:
 
    - **Klavye**
-     - Tuşuna **Ctrl + R**, ardından **Ctrl + V**.  (Bağlı olarak hangi profilinde seçtiğiniz klavye kısayolu farklı olabileceğini unutmayın.)
-     - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve select **değişiklik imza** gelen önizleme penceresi açılır.
+      - Tuşuna **Ctrl + R**, ardından **Ctrl + V**.  (Bağlı olarak hangi profilinde seçtiğiniz klavye kısayolu farklı olabileceğini unutmayın.)
+      - Tuşuna **Ctrl**+**.** Tetikleyici için **hızlı Eylemler ve yeniden düzenlemeler** menü ve select **değişiklik imzası** gelen önizleme penceresi açılır.
    - **Fare**
-     - Seçin **Düzenle > yeniden düzenlemeniz > kaldırmak parametreleri**.
-     - Seçin **Düzenle > yeniden düzenlemeniz > parametreleri yeniden Sırala**.
-     - Kod sağ tıklayın, **hızlı Eylemler ve yapan yeniden düzenlemeler** menü ve Seç **değişiklik imza** gelen önizleme penceresi açılır.
+      - Seçin **Düzenle > Yeniden Düzenle > parametreleri Kaldır**.
+      - Seçin **Düzenle > Yeniden Düzenle > parametreleri yeniden Sırala**.
+      - Kod sağ tıklayın, **hızlı Eylemler ve yeniden düzenlemeler** menü ve select **değişiklik imzası** gelen önizleme penceresi açılır.
 
-1. İçinde **değiştirmek imza** , POP iletişim yöntemini imza değiştirmek için sağ tarafta düğmeleri kullanabilirsiniz:
+3. İçinde **değişiklik imzası** , açılan iletişim yöntem imzası değiştirmek için sağ tarafındaki düğmeleri kullanabilirsiniz:
 
-   ![İmza iletişim değiştirme](media/changesignature-dialog-cs.png)
+   ![Değişiklik imzası iletişim](media/changesignature-dialog-cs.png)
 
    | Düğme | Açıklama
    | ------ | ---
-   | **Yukarı/Aşağı** | Seçilen parametre listesi yukarı ve Aşağı Taşı
-   | **Kaldır**  | Seçili parametreyi listeden kaldırın
-   | **Geri yükleme** | Seçili, çizilmiş parametre listesine geri yükleme
+   | **Yukarı/Aşağı** | Seçili parametreyi listede yukarı ve Aşağı Taşı
+   | **Kaldır** | Seçili parametreyi listeden kaldırın
+   | **Geri yükleme** | Seçildiğinde, çizilmiş parametre listesine geri yükleme
 
    > [!TIP]
-   > Kullanım **başvuru değişikliklerini Önizleme** onay kutusu [sonuç görmek](../../ide/preview-changes.md) kendisine gerçekleştirmeden önce.
+   > Kullanım **başvuru değişikliklerini önizle** onay kutusu [sonucu görmek](../../ide/preview-changes.md) kendisine gerçekleştirmeden önce.
 
-1. İşiniz bittiğinde, basın **Tamam** değişiklik yapmak için düğmesi.
+4. İşlemi tamamladığınızda, basın **Tamam** değişiklik yapmak için düğme.
 
-   - C# ' TA:
+   - C# İÇİN:
 
-    ![İmza sonucu - C# değiştirme](media/changesignature-result-cs.png)
+      ![İmza sonucu Değiştir-C#](media/changesignature-result-cs.png)
 
    - Visual Basic:
 
-    ![İmza sonucu - Visual Basic değiştirme](media/changesignature-result-vb.png)
+      ![İmza sonucu - Visual Basic değiştirme](media/changesignature-result-vb.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

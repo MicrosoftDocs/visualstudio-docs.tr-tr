@@ -1,9 +1,8 @@
 ---
-title: Çift yönlü dillerde uygulamalar oluşturma | Microsoft Docs
-ms.custom: ''
+title: Çift Yönlü Dillerde Uygulamalar Oluşturma
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - Hebrew character display, creating applications
@@ -15,79 +14,81 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 33d8b601c3c099068c68ba67e11aaf65365ea022
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9f93dea099d9223347c727f3e7a838fcb78d3742
+ms.sourcegitcommit: b6dfa1bdf4c23c2e341754454bbd4758db2218e0
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48863640"
 ---
 # <a name="creating-applications-in-bi-directional-languages"></a>Çift yönlü dillerde uygulamalar oluşturma
-Visual Studio sağ Arapça ve İbranice gibi sola, yazılan dillerde düzgün görünen metin uygulamaları oluşturmak için kullanabilirsiniz. Bazı özellikler için kolayca özellikleri ayarlayabilirsiniz. Diğer durumlarda, kodda özellikleri uygulamalıdır.  
-  
+
+Sağ-Arapça ve İbranice gibi sola doğru dillerde yazılan metin görüntüleyen uygulamalar oluşturmak için Visual Studio kullanabilirsiniz. Bazı özellikler için özellikleri ayarlayabilirsiniz. Diğer durumlarda, kod özellikleri uygulamalıdır.
+
 > [!NOTE]
->  Girin ve çift yönlü diller görüntülemek için uygun dili ile yapılandırılmış Windows sürümü ile çalışmalısınız. Bu uygun dil paketi yüklü olan Windows İngilizce sürümünü veya Windows uygun şekilde yerelleştirilmiş sürümü olabilir.  
-  
-## <a name="types-of-application-that-support-bi-directional-languages"></a>Çift yönlü dil desteği uygulama türleri  
-  
--  Windows uygulamaları. Çift yönlü metin, sağdan sola okuma sırası ve (windows, menüler, iletişim kutuları ve benzeri düzeni ters) yansıtma desteği içeren tam çift yönlü uygulamaları oluşturabilirsiniz. Yansıtma dışında bu özellikler varsayılan olarak veya özellik ayarları olarak kullanılabilir. Yansıtma kendiliğinden ileti kutuları gibi bazı özellikler desteklenir. Ancak, diğer durumlarda kodda yansıtma uygulamalıdır. Daha fazla bilgi için bkz: [Windows Forms uygulamaları için çift yönlü destek](http://msdn.microsoft.com/Library/7b622fa4-f390-4e4d-b624-83a1917cccf2).  
-  
--  Web uygulamaları. Web Hizmetleri desteği ve UTF-8 ve Unicode metin gönderme, çift yönlü dilleri içeren uygulamalar için uygun hale getirme alma. Bir Web uygulaması çift yönlü destek derecesini kullanıcının tarayıcısının bu çift yönlü özellikleri ne kadar iyi destekleyen bağımlı olduğu için web istemcisi uygulamalarını tarayıcılar kendi kullanıcı arabirimi için kullanır. Visual Studio'da, Arapça veya İbranice metni, sağdan sola okuma sırası, dosya kodlamasını ve yerel kültür ayarları desteği olan uygulamaları oluşturabilirsiniz. Daha fazla bilgi için bkz: [ASP.NET web uygulamaları için çift yönlü destek](http://msdn.microsoft.com/Library/5576f9b1-9b86-41ef-8354-092d366bcd03).  
-  
--  Konsol uygulamaları. Konsol uygulamaları metin çift yönlü dil desteği dahil etmeyin. Windows konsol uygulamaları ile nasıl çalıştığı bir sonuç budur.  
-  
-## <a name="visual-studio-features-that-are-fully-supported"></a>Tam olarak desteklenen visual Studio özellikleri  
- Visual Studio tasarım zamanında bu şekilde çift yönlü diller kullanabilirsiniz:  
-  
--   **Metin girişi** Visual Studio Unicode'u destekler, böylece eğer sisteminiz ayarlanmış uygun yerel ve giriş dili, Arapça veya İbranice metin girebilirsiniz. (Arapça Keşide ve Vurgu destekler.)  
-  
--   **Nesne adları** çözümleri, projeler, dosyalar, klasörler ve benzeri adları atamak için çift yönlü diller kullanabilirsiniz. Kodda, değişkenleri, sınıflar, nesne, öznitelikler, meta verileri ve diğer öğelerin adları için çift yönlü diller kullanabilirsiniz.  
-  
--   **Dosya kodlama** kaydedin ve bir dile özgü veya Unicode kodlama ile dosyaları açın. Daha fazla bilgi için bkz: [nasıl yapılır: kaydedin ve açık dosyaları kodlamayla](../ide/how-to-save-and-open-files-with-encoding.md).  
-  
-## <a name="features-with-limited-or-no-support"></a>Sınırlı olan veya hiç destek özellikleri  
- Diğer özellikler çift yönlü dil uygulamaları için ortak tam olarak Visual Studio veya bazı durumlarda hiç desteklenmez. Bu güncelleştirmeler şunlardır:  
-  
-**Sağdan sola okuma sırası** varsayılan olarak, Visual Studio'da kullandığınız metin girişi denetimler soldan sağa okuma sırası kullanın. Çoğu durumda, standart Windows hareketleri okuma sırasını değiştirmek için kullanabilirsiniz. Örneğin, basabilirsiniz **Ctrl + RightShift** geçiş yapmak için **özellikleri** özellik değerleri için sağdan sola okuma sırası desteklemek için penceresi.  
-  
-Ancak, sağdan sola okuma sırası Visual Studio'da her yerde desteklenmiyor. Özel durumlar şunlardır:  
-  
--   Her zaman onay kutularını, açılan listeleri ve diğer Visual Studio iletişim kutularındaki denetimler soldan sağa okuma düzenini kullanın.  
-  
--   Kod Düzenleyicisi (ve metin düzenleyici) sağdan sola okuma sırası desteklemiyor. Bir çift yönlü dil metin girebilirsiniz, ancak okuma sırası soldan sağa her zaman.  
-  
-## <a name="naming-things-using-arabic-or-hebrew-text"></a>Arapça veya İbranice metin kullanarak nesneleri adlandırma  
- Klasörleri, değişkenleri veya diğer nesnelerin adları atamak için Arapça veya İbranice metin kullanabilirsiniz. Arapça ile çalışırken, Keşide ve vurgu işaretleri dahil olmak üzere herhangi bir Arapça karakter kullanabilirsiniz.  
-  
- Aşağıdaki öğeleri Arapça veya İbranice kullanarak adlandırılabilir ve Visual Studio'da düzgün ele alınacaktır:  
-  
--   Çözüm, proje ve proje yola dahil herhangi bir klasör de dahil olmak üzere, dosya adları. **Çözüm Gezgini** çözüm ve öğe adları doğru bir şekilde görüntüler.  
-  
--   Dosya içerikleri. Açın ya da dosya Unicode kodlama veya seçili bir kod sayfası ile kaydedin.  
-  
+> Girin ve çift yönlü diller görüntülemek için uygun dili ile yapılandırılmış bir Windows sürümü ile çalışmalısınız. Bu bir İngilizce sürümüyle ilgili dil paketi yüklü olan Windows veya Windows uygun şekilde yerelleştirilmiş sürümünü olabilir.
+
+## <a name="types-of-application-that-support-bi-directional-languages"></a>Çift yönlü dil desteği uygulama türleri
+
+-  Windows uygulamaları. İki yönlü metin, sağdan sola okuma düzeni ve yansıtma (windows, menüler, iletişim kutuları ve benzeri düzenini ters) için destek içeren tam çift yönlü uygulamalar oluşturabilirsiniz. Yansıtma dışında bu özellikler varsayılan olarak veya özellik ayarları olarak kullanılabilir. Yansıtma ileti kutuları gibi bazı özellikler için doğal olarak desteklenir. Ancak, diğer durumlarda kod yansıtma uygulamalıdır. Daha fazla bilgi için [Windows Forms uygulamaları için iki yönlü destek](/dotnet/framework/winforms/advanced/bi-directional-support-for-windows-forms-applications).
+
+-  Web uygulamaları. Web Hizmetleri için destek ve alma UTF-8 ve Unicode metin gönderme, çift yönlü diller içeren uygulamalar için uygun hale getirir. Bir web uygulaması yönlü destek derecesini bağımlı kullanıcının tarayıcı yönlü özelliklere ne kadar iyi destekler, bu nedenle web istemcisi uygulamalarını tarayıcılar için kendi kullanıcı arabirimini kullanır. Visual Studio'da, Arapça veya İbranice metin, sağdan sola okuma düzeni, dosya kodlamasını ve yerel kültür ayarları için desteğe sahip uygulamalar oluşturabilirsiniz. Daha fazla bilgi için [ASP.NET web uygulamaları için çift yönlü destek](https://msdn.microsoft.com/Library/5576f9b1-9b86-41ef-8354-092d366bcd03).
+
+-  Konsol uygulamaları. Konsol uygulamaları, metin çift yönlü dil desteği içermez. Windows konsol uygulamaları ile nasıl çalıştığına ilişkin bir sonucu budur.
+
+## <a name="visual-studio-features-that-are-fully-supported"></a>Tam olarak desteklenen visual Studio özellikleri
+ Visual Studio'da tasarım zamanında çift yönlü diller aşağıdaki şekillerde kullanabilirsiniz:
+
+-   **Metin girişi** Visual Studio Unicode'u destekler, dolayısıyla sisteminizi ayarlanmış uygun yerel ve giriş dili, Arapça veya İbranice metin girebilirsiniz. (Keşide ve aksan Arapça desteği içerir.)
+
+-   **Nesne adları** çift yönlü diller çözümleri, projeleri, dosyaları, klasörleri ve benzeri için ad atamak için kullanabilirsiniz. Kodu, değişkenleri, sınıflar, nesne, öznitelikler, meta verileri ve diğer öğeleri adları için çift yönlü diller kullanabilirsiniz.
+
+-   **Dosya kodlama** kaydedebilir ve dosyaları bir dile özgü veya Unicode kodlaması ile açın. Daha fazla bilgi için [nasıl yapılır: dosyaları kaydetme ve açma kodlamayla](../ide/how-to-save-and-open-files-with-encoding.md).
+
+## <a name="features-with-limited-or-no-support"></a>Sınırlı veya destek özellikleri
+ Çift yönlü dil uygulamaları için ortak diğer özellikler tamamen Visual Studio'da veya bazı durumlarda, hiç desteklenmez. Bu güncelleştirmeler şunlardır:
+
+**Sağdan sola okuma düzeni** varsayılan olarak, Visual Studio'da kullandığınız metin girişi denetimleri sağdan sola okuma düzeni kullanır. Çoğu durumda, standart Windows hareketleri okuma sırasını değiştirmek için kullanabilirsiniz. Örneğin, basabilirsiniz **Ctrl + RightShift** geçiş yapmak için **özellikleri** özellik değerleri için sağdan sola okuma düzeni desteklemek için penceresi.
+
+Ancak, sağdan sola okuma düzeni, Visual Studio'da her yerde desteklenmiyor. Özel durumlar şunlardır:
+
+-   Her zaman onay kutuları, açılan listeler ve diğer Visual Studio iletişim kutularındaki denetimler sağdan sola okuma düzeni kullanın.
+
+-   Kod Düzenleyicisi'ni (ve metin düzenleyici) sağdan sola okuma düzeni desteklemez. Bir çift yönlü dil metin girebilirsiniz, ancak okuma düzeni, her zaman sol ve sağ.
+
+## <a name="naming-things-using-arabic-or-hebrew-text"></a>Arapça veya İbranice metin kullanarak nesneleri adlandırma
+ Arapça veya İbranice metin, klasörleri, değişkenleri veya diğer nesnelerin adları atamak için kullanabilirsiniz. Arapça ile çalışırken Keşide ve aksan işaretleri dahil olmak üzere herhangi bir Arapça karakter kullanabilirsiniz.
+
+ Aşağıdaki öğeleri, Arapça veya İbranice kullanarak adlı ve Visual Studio doğru şekilde ele alınacaktır:
+
+-   Çözüm, proje ve proje yola dahil tüm klasörleri dahil olmak üzere, dosya adları. **Çözüm Gezgini** doğru bir şekilde çözüm ve öğe adlarını görüntüler.
+
+-   Dosya içerikleri. Açabilir veya dosyaları Unicode kodlama veya seçili bir kod sayfası ile kaydedin.
+
     > [!NOTE]
-    >  Kod Düzenleyicisi özel bir durumdur. Ayrıntılı bilgi için aşağıya bakın.  
-  
--   Veri öğeleri. **Sunucu Gezgini** bu öğeleri düzgün görüntülemek ve bunları düzenleme olanak sağlar.  
-  
--   Öğeleri Windows panoya kopyalandı.  
-  
--   Öznitelikler ve meta veriler.  
-  
--   Özellik değeri. Arapça veya İbranice metinde kullanabileceğiniz **özellikleri** penceresi. Pencere standart Windows tuş vuruşları kullanarak sağdan sola ve soldan sağa okuma düzeni arasında geçiş yapmanızı sağlar (**Ctrl + RightShift** sağdan sola için ve **Ctrl + LeftShift** için soldan sağa).  
-  
--   Kod ve metin. (Aynı zamanda olan metin düzenleyici) Kod düzenleyicisinde adı sınıfları, İşlevler, değişkenleri, özellikleri, dize değişmez değerleri, öznitelikleri ve benzeri Arapça veya İbranice kullanabilirsiniz. Ancak, düzenleyici sağdan sola okuma sırası desteklemiyor; metin her zaman sol kenar boşluğunda başlatır.  
-  
+    >  Kod Düzenleyicisi, bir özel durumdur. Ayrıntılar için aşağıya bakın.
+
+-   Veri öğeleri. **Sunucu Gezgini** bu öğeleri doğru görüntüler ve bunları düzenlemenize izin.
+
+-   Öğeleri Windows panoya kopyalandı.
+
+-   Öznitelikler ve meta verileri.
+
+-   Özellik değeri. Arapça veya İbranice metin kullanabileceğiniz **özellikleri** penceresi. Pencere, standart Windows tuş vuruşları kullanarak sağdan sola ve sağa sola okuma düzeni arasında geçiş yapmanıza izin verir (**Ctrl + RightShift** sağdan sola için ve **Ctrl + LeftShift** için soldan sağa).
+
+-   Kod ve metin. (Aynı zamanda olan metin düzenleyiciyi) Kod düzenleyicisinde, Arapça veya İbranice adı sınıfları, İşlevler, değişkenler, özellikler, dize değişmez değerleri, öznitelikleri ve benzeri kullanabilirsiniz. Ancak, düzenleyici sağdan sola okuma düzeni desteklemez; metin her zaman sol kenar boşluğunda başlatır.
+
     > [!TIP]
-    > Bunları, programlarına kodlamak yerine kaynak dosyalarında dize değişmez değerleri yerleştirmeniz önerilir. Daha fazla bilgi için bkz: [(.NET Framework) masaüstü uygulamalarında kaynakları](/dotnet/framework/resources/index).
-  
+    > Bunları, programlarına kodlamak yerine kaynak dosyalarında dize değişmez değerleri koyun önerilir. Daha fazla bilgi için [(.NET Framework) masaüstü uygulamalarında kaynakların](/dotnet/framework/resources/index).
+
     > [!NOTE]
-    > Nasıl, bu dillerde adlandırılan nesnelere başvurmak için tutarlı olması gerekir. Örneğin, Arapça bir değişkeni adlandırırken Keşide kullanırsanız, her zaman bu değişkene başvururken Keşide kullanmalısınız veya hatalar neden.  
-  
--   Kod açıklamaları. Arapça veya İbranice yorumlar oluşturabilirsiniz. Açıklama Oluşturucu aracında bu diller de kullanabilirsiniz.  
-  
+    > Nasıl, bu dillerde adlı nesnelere başvurmak için tutarlı olması gerekir. Örneğin, Arapça bir değişkeni adlandırmada Kaşida kullanırsanız, bu değişkene söz konusu olduğunda her zaman Kaşida kullanmalısınız veya hatalara neden olabilecek.
+
+-   Kod açıklamaları. Açıklamalar, Arapça veya İbranice oluşturabilirsiniz. Açıklama Oluşturucu aracında bu diller de kullanabilirsiniz.
+
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Windows Forms uygulamaları için çift yönlü destek](/dotnet/framework/winforms/advanced/bi-directional-support-for-windows-forms-applications)  
-[ASP.NET web uygulamaları için çift yönlü destek](http://msdn.microsoft.com/Library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
-[Uygulamaları Genelleştirme](../ide/globalizing-applications.md)  
-[Uygulamaları yerelleştirme](../ide/localizing-applications.md)
+- [Windows Forms uygulamaları için iki yönlü destek](/dotnet/framework/winforms/advanced/bi-directional-support-for-windows-forms-applications)
+- [ASP.NET web uygulamaları için çift yönlü destek](https://msdn.microsoft.com/Library/5576f9b1-9b86-41ef-8354-092d366bcd03)
+- [Uygulamaları Genelleştirme](../ide/globalizing-applications.md)
+- [Uygulamaları yerelleştirme](../ide/localizing-applications.md)

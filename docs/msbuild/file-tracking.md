@@ -12,39 +12,39 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 51d17894025800acd9c8ab0736ebe92d7f790fc7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 394b40a304d2aba3b79c5878befe33a8a1aaf8b8
+ms.sourcegitcommit: c57ae28181ffe14a30731736661bf59c3eff1211
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37945565"
 ---
-# <a name="file-tracking"></a>Dosya İzleme
-İzleme dosyası bir işlem ve alt işlemleri için Windows dosya sistemi çağrıları günlüğe kaydeder. Aşağıda listelenen işlevleri çağırarak programları bu günlüğü açıp kapatabilirsiniz ve kullanmak için günlük dosyasını belirtmek ne zaman denetleyin.  
+# <a name="file-tracking"></a>Dosya izleme
+Dosya izleme bir işlem ve onun alt işlemleri için Windows dosya sistemi çağrıları günlüğe kaydeder. Aşağıda listelenen işlevleri çağırarak, programlar bu oturum açıp kapatmak ve kullanmak için günlük dosyasını belirtmek ne zaman denetler.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
  [EndTrackingContext](../msbuild/endtrackingcontext.md)  
- Geçerli bağlam izlemeyi durdurun.  
+ Geçerli bağlamı İzlemeyi Durdur.  
   
  [ResumeTracking](../msbuild/resumetracking.md)  
- Çağrı sonra izleme Sürdür [SuspendTracking](../msbuild/suspendtracking.md).  
+ Çağrısı yapıldıktan sonra izlemeyi Sürdür [SuspendTracking](../msbuild/suspendtracking.md).  
   
  [SetThreadCount](../msbuild/setthreadcount.md)  
  İzleme için kullanılacak iş parçacığı sayısını ayarlayın.  
   
  [StartTrackingContext](../msbuild/starttrackingcontext.md)  
- Yeni bir izleme bağlamı başlayın.  
+ Yeni bir izleme bağlamına başlayın.  
   
  [StartTrackingContextWithRoot](../msbuild/starttrackingcontextwithroot.md)  
- Belirtilen kök sahip yeni bir izleme bağlamı başlayın.  
+ Belirtilen kök ile yeni bir izleme bağlamına başlayın.  
   
  [StopTrackingAndCleanup](../msbuild/stoptrackingandcleanup.md)  
- İzleme ve kullanılan yayın kaynakları sonlandırın.  
+ İzleme ve kullanılan yayın kaynaklarını sonlandır.  
   
  [SuspendTracking](../msbuild/suspendtracking.md)  
- İzleme geçici olarak askıya alın.  
+ Geçici olarak askıya alma izleme.  
   
  [WriteAllTLogs](../msbuild/writealltlogs.md)  
- İzleme günlükleri tüm bağlamları için kullanıma yazma.  
+ Tüm Bağlamlar için izleme günlüklerini dışarı yazın.  
   
  [WriteContextTLogs](../msbuild/writecontexttlogs.md)  
- Geçerli bağlam için izleme günlüğüne çıkışı yazma.
+ Geçerli bağlam için izleme günlüğünü dışarı yazın.

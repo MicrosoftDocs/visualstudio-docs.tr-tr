@@ -1,10 +1,9 @@
 ---
-title: Özellik sayfaları, JavaScript | Microsoft Docs
-ms.custom: ''
+title: Özellik Sayfaları, JavaScript
 ms.date: 06/21/2017
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - javascript.project.property.debugging.debuggertype
 - javascript.project.property.debugging.requireauthentication
@@ -19,70 +18,83 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 338ddfe5253c5d4ab148234e8345275620ecac3f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a35ee6d086153adc718a1616c0c8f0c8c606fbb7
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220036"
 ---
 # <a name="property-pages-javascript"></a>Özellik Sayfaları, JavaScript
-**Özellik sayfaları**proje ayarlarına erişim sağlar. Görünür sayfalarını kullanabilirsiniz **özellik sayfaları** proje özelliklerini değiştirmek için.  
+**Özellik sayfaları** proje ayarlarına erişim sağlar. Görüntülenen sayfaları kullanabilirsiniz **özellik sayfaları** proje özelliklerini değiştirmek için.
 
-Proje Özellikleri erişmek için bir proje düğümünde seçin **Çözüm Gezgini**. Üzerinde **proje** menüsünde tıklatın **özellikleri**.  
+Proje özelliklerine erişmek için bir proje düğümü seçin **Çözüm Gezgini**. Üzerinde **proje** menüsünü tıklatın **özellikleri**.
 
-[!INCLUDE[note_settings_general](../../data-tools/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](../../data-tools/includes/note_settings_general_md.md)]
 
-Aşağıdaki sayfaları ve seçenekleri görünür **özellik sayfaları**.  
+Aşağıdaki sayfalar ve seçenekleri görünür **özellik sayfaları**.
 
-## <a name="configuration-and-platform-page"></a>Yapılandırma ve Platform sayfası  
- Yapılandırma ve görüntülemek veya değiştirmek için platform seçmek için aşağıdaki seçenekleri kullanın.  
+## <a name="configuration-and-platform-page"></a>Yapılandırma ve Platform sayfası
+ Görüntülenecek veya değiştirilecek platform ve yapılandırmayı seçmek için aşağıdaki seçenekleri kullanın.
 
- **Yapılandırma**  
- Görüntülemek veya değiştirmek için yapılandırma ayarlarını belirtir. Ayarlar **hata ayıklama** (varsayılan), **sürüm**, **tüm yapılandırmaları**, veya kullanıcı tanımlı bir yapılandırma. Daha fazla bilgi için bkz: [nasıl yapılır: ayarlama hata ayıklama ve yayın yapılandırmaları Visual Studio'da](../../debugger/how-to-set-debug-and-release-configurations.md).  
+ **Yapılandırma**
 
- **Platform**  
- Görüntülemek veya değiştirmek için platform ayarlarını belirtir. Ayarlar **herhangi bir CPU** (için varsayılan [!INCLUDE[win8_appname_long](../../debugger/includes/win8_appname_long_md.md)] uygulamalar), **x64**, **ARM**, **x86**, veya kullanıcı tanımlı bir platform. Daha fazla bilgi için bkz: [nasıl yapılır: ayarlama hata ayıklama ve yayın yapılandırmaları Visual Studio'da](../../debugger/how-to-set-debug-and-release-configurations.md).  
+ Görüntülenecek veya değiştirilecek yapılandırma ayarlarını belirtir. Ayarlar **hata ayıklama** (varsayılan), **yayın**, **yapılandırmalarında**, veya kullanıcı tarafından tanımlanan bir yapılandırmadır. Daha fazla bilgi için [nasıl yapılır: ayarlama hata ayıklama ve dağıtım yapılandırmalarını Visual Studio'da](../../debugger/how-to-set-debug-and-release-configurations.md).
 
-## <a name="general-page"></a>Genel sayfası  
- Proje genel özelliklerini ayarlamak için aşağıdaki seçenekleri kullanın.  
+ **Platform**
 
-> [!NOTE]
->  Bazı seçeneklere yalnızca UWP uygulamalarında kullanılabilir.  
+ Görüntülenecek veya değiştirilecek platform ayarlarını belirtir. Ayarlar **herhangi bir CPU** (için varsayılan [!INCLUDE[win8_appname_long](../../debugger/includes/win8_appname_long_md.md)] uygulamaları), **x64**, **ARM**, **x86**, veya kullanıcı tarafından tanımlanan bir platformdur. Daha fazla bilgi için [nasıl yapılır: ayarlama hata ayıklama ve dağıtım yapılandırmalarını Visual Studio'da](../../debugger/how-to-set-debug-and-release-configurations.md).
 
- **Çıkış yolu**  
- Projenin yapılandırması için çıkış dosyalarının konumunu belirtir. Göreli yolu; mutlak bir yol girin, mutlak yolu projede kaydedilir. Bin\Debug varsayılan yoldur.  
-
- Basitleştirilmiş derleme yapılandırmaları kullandığınızda, proje sistemi sürümünü veya bir hata ayıklama geliştirmek belirler. Tıkladığınızda **hata ayıklama**, **hata ayıklamayı Başlat** (veya F5 tuşuna basın) yapı, hata ayıklama konumunu bakılmaksızın koymak **çıkış yolu** , belirtin. Ancak, **yapı çözümü** komutunu **yapı** menüsü, belirttiğiniz konuma yerleştirir. Menü çubuğunda, Gelişmiş derleme yapılandırmaları etkinleştirmeyi seçerseniz **Araçları**, **seçenekleri**. İçinde **seçenekleri** iletişim kutusunda, genişletin **projeler ve çözümler**seçin **genel**ve ardından temizlemek **Göster Gelişmiş derleme yapılandırmaları**onay kutusu. Bu, tüm yapılandırma değerleri üzerinde el ile denetim ve hata ayıklama ve yayın sürümü olup olmadığını yerleşik sunar.  
-
- **Varsayılan dil**  
- Proje için varsayılan dili belirtir. Seçtiğiniz dil seçeneği **saat, dil ve bölge** Denetim Masası'nda kullanıcının tercih edilen dili belirtir. Proje için bir varsayılan dil belirterek, kullanıcının tercih edilen dili uygulamada sağlanan Türkçe kaynaklar eşleşmiyorsa, belirtilen varsayılan dil kaynakları kullanılan emin olun.  
-
-## <a name="debug-page"></a>Hata ayıklama sayfası  
- Davranış projesinde hata ayıklama özelliklerini ayarlamak için aşağıdaki seçenekleri kullanın.  
+## <a name="general-page"></a>Genel sayfası
+ Projenin genel özellikler ayarlamak için aşağıdaki seçenekleri kullanın.
 
 > [!NOTE]
->  Bazı seçeneklere yalnızca UWP uygulamalarında kullanılabilir.  
+> Bazı seçenekler yalnızca UWP uygulamalarında kullanılabilir.
 
- **Hata ayıklayıcı başlatmak için**  
- Hata ayıklayıcı için varsayılan ana bilgisayar belirtir.  
 
--   Seçin **yerel makine** Visual Studio ana bilgisayara uygulamayı başlatmak için. Daha fazla bilgi için bkz: [yerel makine üzerinde çalışan uygulamalar](../../debugger/run-windows-store-apps-on-the-local-machine.md).  
+ **Çıkış yolu**
 
--   Seçin **Simulator** Benzeticisinde uygulamayı başlatmak için. Daha fazla bilgi için bkz: [benzeticisinde çalışan uygulamalar](../../debugger/run-windows-store-apps-in-the-simulator.md).  
+ Projenin yapılandırması için çıkış dosyalarının konumunu belirtir. Yol görelidir; mutlak bir yol girerseniz, mutlak yol projeye kaydedilir. Bin\Debug varsayılan yoldur.
 
--   Seçin **uzak makine** uzak bir bilgisayarda uygulamayı başlatmak için. Uzaktan hata ayıklama hakkında daha fazla bilgi için bkz: [uzak makinede çalışan uygulamalar](../../debugger/run-windows-store-apps-on-a-remote-machine.md).  
+ Basitleştirilmiş yapı yapılandırmaları kullandığınızda, proje sistemi bir hata ayıklama sürüm yayını mı belirler. Tıkladığınızda **hata ayıklama**, **hata ayıklamayı Başlat** (veya F5 tuşuna basın) derleme, hata ayıklama konumuna koyar koymak **çıkış yolu** belirtirsiniz. Ancak, **Çözümü Derle** komutunu **derleme** menü, belirttiğiniz konuma koyar. Menü çubuğunda, Gelişmiş derleme yapılandırmalarını etkinleştirmeyi tercih **Araçları**, **seçenekleri**. İçinde **seçenekleri** iletişim kutusunda **projeler ve çözümler**seçin **genel**ve ardından temizlemek **Show Gelişmiş derleme yapılandırmaları**onay kutusu. Bu, tüm yapılandırma değerleri üzerinde el ile denetim ve hata ayıklama veya sürüm sürümü olup olmadığını oluşturulmuştur sağlar.
 
-**Uygulama başlatma**  
-F5 tuşuna basın veya'i tıklattığınızda uygulama başlatılıp başlatılmayacağını belirtir **hata ayıklama**, **hata ayıklamayı Başlat**. Seçin **Evet** için uygulamayı Başlat; Aksi halde seçin **Hayır**. Seçerseniz **Hayır**, başlatmak için farklı bir yöntem kullanıyorsanız uygulama hala ayıklayabilirsiniz.  
+ **Varsayılan dil**
 
-**Hata ayıklayıcı türü**  
-Hata ayıklamak için kod türlerini belirtir. Seçin **yalnızca betik** JavaScript kodunda hata ayıklama için. Seçin **yalnızca yönetilen** ortak dil çalışma zamanı tarafından yönetilen kodda hata ayıklamak için. Seçin **yalnızca yerel** C++ kod hatalarını ayıklamak için. Seçin **betik ile yerel** C++ ve JavaScript hata ayıklamak için. Seçin **karma (yönetilen ve yerel)** yönetilen hata ayıklama hem ve C++ kodu.  
+ Projenin varsayılan dilini belirtir. Seçilen dil seçeneği **saat, dil ve bölge** Denetim Masası'nda kullanıcının tercih edilen dili belirtir. Proje için varsayılan dil belirleyerek kullanıcının tercih ettiği dil uygulamada sağlanan dil kaynaklarıyla eşleşmiyorsa belirtilen varsayılan dil kaynaklarını kullanıldığından emin olun.
 
-**Yerel ağ geri döngü izin ver**  
-Uygulama test etmek için IP geri döngü adresine erişime izin verilip verilmediğini belirtir. Seçin **Evet** istemci uygulaması aynı makinede olması durumunda, aksi çalışan sunucu uygulaması olduğu geri döngü adresine kullanımına izin vermek için seçin **Hayır**. Bu özellik kullanılabilir yalnızca **başlatmak için hata ayıklayıcı** özelliği ayarlanmış **uzak makine**.  
+## <a name="debug-page"></a>Hata ayıklama sayfası
+ Davranış projesinde hata ayıklama özelliklerini ayarlamak için aşağıdaki seçenekleri kullanın.
 
-**Makine adı**  
-Hata ayıklayıcı barındırmak için uzak bilgisayarın adını belirtir. Bu özellik kullanılabilir yalnızca **başlatmak için hata ayıklayıcı** ayarlanır **uzak makine**.  
+> [!NOTE]
+> Bazı seçenekler yalnızca UWP uygulamalarında kullanılabilir.
 
-**Kimlik doğrulaması gerektirir**  
-Uzak bilgisayar kimlik doğrulaması gerekip gerekmediğini belirtir. Bu özellik kullanılabilir yalnızca **başlatmak için hata ayıklayıcı** ayarlanır **uzak makine**.
+
+ **Hata ayıklayıcıyı başlatmak için**
+
+ Hata ayıklayıcı için varsayılan ana bilgisayar belirtir.
+
+-   Seçin **yerel makine** Visual Studio ana bilgisayarda uygulamayı başlatmak için. Daha fazla bilgi için [yerel makine üzerinde çalışan uygulamalar](../../debugger/run-windows-store-apps-on-the-local-machine.md).
+
+-   Seçin **simülatör** Simulator'da uygulamayı başlatmak için. Daha fazla bilgi için [uygulamaları simülatörde çalıştırılan](../../debugger/run-windows-store-apps-in-the-simulator.md).
+
+-   Seçin **uzak makine** uzak bir bilgisayarda uygulamayı başlatmak için. Uzaktan hata ayıklama hakkında daha fazla bilgi için bkz. [uzak makinede çalışan uygulamalar](../../debugger/run-windows-store-apps-on-a-remote-machine.md).
+
+**Uygulamayı Başlat**
+
+F5 tuşuna basın veya tıklayın uygulamanın başlatılıp başlatılmayacağını belirtir **hata ayıklama**, **hata ayıklamayı Başlat**. Seçin **Evet** için uygulamayı başlatın; Aksi takdirde seçin **Hayır**. Seçerseniz **Hayır**, başlatmak için farklı bir yöntem kullanıyorsanız yine de uygulamayı ayıklayabilirsiniz.
+
+**Hata ayıklayıcı türü**
+
+Hata ayıklanacak kod türlerini belirtir. Seçin **yalnızca betik** JavaScript kod hatası ayıklamak için. Seçin **yalnızca yönetilen** ortak dil çalışma zamanı tarafından yönetilen kodda hata ayıklamak için. Seçin **yalnızca yerel** C++ kod hatalarını ayıklamak için. Seçin **betik ile yerel** C++ ve JavaScript hata ayıklama. Seçin **(yönetilen ve yerel) karışık** yönetilen hatasını ayıklamak ve C++ kodu.
+
+**Yerel ağ geri döngüsüne izin ver**
+
+Uygulamayı test etmek için IP Geridöngü adresine erişime izin verilip verilmediğini belirtir. Seçin **Evet** istemci uygulaması aynı makinede ise, aksi takdirde çalışan sunucu uygulaması olduğu geri döngü adresinin kullanımına izin vermek için seçin **Hayır**. Bu özellik yalnızca **başlatmak için hata ayıklayıcı** özelliği **uzak makine**.
+
+**Makine adı**
+
+Hata ayıklayıcıyı barındıracak uzak bilgisayarın adını belirtir. Bu özellik yalnızca **başlatmak için hata ayıklayıcı** ayarlanır **uzak makine**.
+
+**Kimlik doğrulaması gerektir**
+
+Uzak bilgisayarın kimlik doğrulaması gerektirip gerektirmediğini belirtir. Bu özellik yalnızca **başlatmak için hata ayıklayıcı** ayarlanır **uzak makine**.

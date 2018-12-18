@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: deda42120dc98e0222910c48b0faf574a57f03dd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3d71ab824017d054b8543770b7eaf1efe2856867
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49860350"
 ---
 # <a name="providerfields"></a>PROVIDER_FIELDS
 Bir program sağlayıcı ile ilişkili özellikleri belirtir.  
@@ -49,17 +50,17 @@ public enum enum_PROVIDER_FIELDS {
  `fIsDebuggerPresent` Alan geçerlidir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerleri döndürülür `Fields` üyesi [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) hangi alanların yapısı açıkça doldurulmuştur belirtmek için yapısı.  
+ Bu değerleri döndürülür `Fields` üyesi [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md) yapısı yapının hangi alanların açıkça doldurulmuştur belirtmek için.  
   
- Bu değerlerin Bitsel ile birleştirilebilir `OR`.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR`.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [PROVIDER_PROCESS_DATA](../../../extensibility/debugger/reference/provider-process-data.md)

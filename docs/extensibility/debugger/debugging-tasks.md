@@ -1,5 +1,5 @@
 ---
-title: Görevler hata ayıklama | Microsoft Docs
+title: Hata ayıklama görevleri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,49 +13,50 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 77cc933c49e15786221fd1cd3eb7e242118527a1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8a1d2ae4b05398daa7c42be441cebecb304bf956
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39204173"
 ---
-# <a name="debugging-tasks"></a>Hata ayıklama görevleri
-Bir program hata ayıklamak için onu başlatılması gerekir ve hata ayıklama altyapısı (DE) bağlı gerekir, aksi takdirde DE daha önce başlatılan program için'e bağlı olması gerekir. Bağlandıktan sonra DE belirli başlangıç olayları oluşturmanız gerekir. IDE içinde ayarlama kesme noktaları bağlamak hata ayıklama paket yanıt olarak çalışır. Program ilişkili bir kesme noktası geldiğinde durur ve kullanıcı girişi için bekler.  
+# <a name="debug-tasks"></a>Hata ayıklama görevleri
+Bir programda hata ayıklamak için onu başlatan gerekir ve bir hata ayıklama altyapısı (DE) bağlı gerekir, aksi takdirde DE daha önce başlatılan bir program için'e bağlı olması gerekir. Bağlandıktan sonra DE bazı başlangıç olayları oluşturmanız gerekir. Yanıt olarak, hata ayıklama paketi IDE içinde ayarlanan kesme noktaları bağlama dener. Programı ilişkili bir kesme noktasına ulaştığında, durdurur ve kullanıcı girdisini bekler.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Güvenlik Sorunları](../../extensibility/debugger/security-issues.md)  
- Bir program hata ayıklamak için gereken güvenlik adımlar açıklanmaktadır.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Güvenlik sorunları](../../extensibility/debugger/security-issues.md)  
+ Bir programda hata ayıklamak için gerekli olan güvenlik adımlar açıklanmaktadır.  
   
- [Program Başlatma](../../extensibility/debugger/launching-a-program.md)  
- Programını başlatmak için işletim sistemi çağırır SE belirtmek adım adım yönergeler verilmektedir.  
+ [Bir program Başlat](../../extensibility/debugger/launching-a-program.md)  
+ Programı başlatmak için işletim sistemini çağıran bir DE belirleme konusunda adım adım yönergeler sağlar.  
   
- [Doğrudan Programa Ekleme](../../extensibility/debugger/attaching-directly-to-a-program.md)  
- Bir programda zaten çalıştırılan bir işlemde hata ayıklamak için kullanılan işlem açıklanır.  
+ [Doğrudan programa ekleme](../../extensibility/debugger/attaching-directly-to-a-program.md)  
+ Bir programda zaten çalışan bir işlemde hata ayıklamak için kullanılan işlem açıklanır.  
   
- [Başlatmadan Sonra Başlangıç Olaylarını Gönderme](../../extensibility/debugger/sending-startup-events-after-a-launch.md)  
- Program kendi ana giriş noktası ve hata ayıklama için hazır kadar DE programına bağlandıktan sonra gerçekleşecek olayları listeler.  
+ [Başlatmadan sonra Başlangıç olaylarını gönderme](../../extensibility/debugger/sending-startup-events-after-a-launch.md)  
+ Program kendi ana giriş noktasıdır ve hata ayıklama için hazır olana kadar DE programa ekledikten sonra gerçekleşecek olaylar listeler.  
   
- [Yürütme Denetimi](../../extensibility/debugger/control-of-execution.md)  
- Ne DE genellikle bir giriş noktası olay, bir yük tamamlama olayı veya koşullara bağlı olarak bir durdurma olay gönderir açıklanmaktadır.  
+ [Yürütme denetimi](../../extensibility/debugger/control-of-execution.md)  
+ Açıklayan nasıl DE genellikle bir giriş noktası olayı, bir yük tamamlama olayı veya koşullara bağlı olarak bir durdurma olay gönderir.  
   
- [Kesme Noktaları Bağlama](../../extensibility/debugger/binding-breakpoints.md)  
- Kullanıcı bir kesme noktası ayarlarsa, IDE isteği formulates ve nasıl kesme noktası oluşturmak için hata ayıklama oturumu ister açıklanmaktadır.  
+ [Kesme noktaları bağlama](../../extensibility/debugger/binding-breakpoints.md)  
+ Nasıl, kullanıcı bir kesme noktası ayarlar, IDE istek formulates ve kesme noktası oluşturmak için hata ayıklama oturumu ister açıklar.  
   
- [İfadeleri Değerlendirme](../../extensibility/debugger/evaluating-expressions.md)  
- İfadeleri nasıl oluşturulur ve bir ifade değerlendirildiğinde ne olacağını açıklar.  
+ [İfadeleri değerlendirme](../../extensibility/debugger/evaluating-expressions.md)  
+ İfadeler nasıl oluşturulduğunu ve bir ifade değerlendirildiğinde ne olacağını açıklar.  
   
- [Verileri Görselleştirme ve Görüntüleme](../../extensibility/debugger/visualizing-and-viewing-data.md)  
- Tür görselleştiriciler ve özel görüntüleyicileri ifade değerlendiricisi (EE) nasıl desteklenen açıklanmaktadır.  
+ [Görselleştirme ve verileri görüntüleme](../../extensibility/debugger/visualizing-and-viewing-data.md)  
+ Tür görselleştiricileri ve özel görüntüleyiciler (EE) ifade değerlendiricisi tarafından nasıl desteklendiği anlatılır.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Hata Ayıklayıcı Kavramları](../../extensibility/debugger/debugger-concepts.md)  
- Ana hata ayıklama mimari kavramlarını açıklar.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Hata ayıklayıcı kavramları](../../extensibility/debugger/debugger-concepts.md)  
+ Hata ayıklama ana mimari kavramlarını açıklar.  
   
- [Hata Ayıklayıcı Bileşenleri](../../extensibility/debugger/debugger-components.md)  
- DE, EE ve sembol işleyici (SH) içeren Visual Studio hata ayıklama bileşenlerini genel bir bakış sağlar.  
+ [Hata ayıklayıcı bileşenleri](../../extensibility/debugger/debugger-components.md)  
+ DE EE ve sembol işleyici (SH) Visual Studio hata ayıklama Bileşenleri'ne genel bakış sağlar.  
   
- [Hata Ayıklayıcı Bağlamları](../../extensibility/debugger/debugger-contexts.md)  
- Nasıl DE aynı anda kod, belgeler ve ifade değerlendirme bağlamı içinde çalıştığı açıklanmaktadır. , Her üç bağlamları, konum, konum veya değerlendirme için ilgili açıklar.  
+ [Hata ayıklayıcı bağlamları](../../extensibility/debugger/debugger-contexts.md)  
+ Nasıl DE aynı anda kod, belgeler ve ifade değerlendirme bağlamı içinde çalıştığı açıklanmaktadır. , Her üç bağlamları, konumu, konum veya değerlendirme için ilgili açıklar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Başlarken](../../extensibility/debugger/getting-started-with-debugger-extensibility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kullanmaya başlama](../../extensibility/debugger/getting-started-with-debugger-extensibility.md)

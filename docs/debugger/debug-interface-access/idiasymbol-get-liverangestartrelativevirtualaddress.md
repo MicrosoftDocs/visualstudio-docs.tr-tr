@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 94041c195d608b0641ab500dc8ab066adc87db36
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 872547326edb54fc5b843bdd74a8035e1119dca0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49948076"
 ---
 # <a name="idiasymbolgetliverangestartrelativevirtualaddress"></a>IDiaSymbol::get_liveRangeStartRelativeVirtualAddress
-Yerel simgenin geçerli adres aralığının başlangıcını döndürür.  
+Yerel sembol geçerli adres aralığını başlangıcını döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,20 +34,20 @@ HRESULT get_liveRangeStartRelativeVirtualAddress (
   
 #### <a name="parameters"></a>Parametreler  
  `address`  
- [out] Adres aralığının başlangıcını döndürür.  
+ [out] Adres aralığı başlangıcını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürülen göreli sanal adres simgenin geçerli aralığın başlangıcıdır.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürülen göreli sanal adres simgenin geçerli aralığın başlangıcıdır.  
   
 > [!NOTE]
->  Döndürülen hata kodu simgenin dinamik aralık bilgileri yok anlamına gelir.  
+>  Döndürülen hata kodu sembol Canlı aralığı bilgisi yok anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Dia2.h  
+ Üstbilgi: Dia2.h  
   
- Kitaplığı: diaguids.lib  
+ Kitaplık: diaguids.lib  
   
  DLL: msdia100.dll  
   

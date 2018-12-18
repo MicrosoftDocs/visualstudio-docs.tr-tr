@@ -1,6 +1,7 @@
 ---
 title: Şekiller ve yollar çizin
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: d5378c59-e2e5-49f0-91f1-aa82d984a33c
@@ -9,123 +10,111 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 89ddd089022e8a5e0f2500fb2c778a9ec4106612
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 97172253a088be86f20fae77fe62d01330a3b801
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39513104"
 ---
 # <a name="draw-shapes-and-paths"></a>Şekiller ve yollar çizin
-XAML Tasarımcısı'nda bir *şekli* tam ne beklediğiniz olduğundan. Örneğin: dikdörtgen, daire veya elips. A *yolu* bir şekil, daha esnek bir sürümüdür. Bunları yeniden şekillendirmek gibi şeyler veya bunları birlikte form yeni şekillere birleştirebilirsiniz.
 
- Şekiller ve yollar da yüksek çözünürlüklü ekranlar ölçeklendirmek için vektör grafikleri kullanın. Vektör grafikleri hakkında daha fazla bilgi edinmek istiyorsanız, bkz: [vektör grafikleri nelerdir](https://www.youtube.com/watch?v=MoCSwF0n-io) veya [vektör grafikleri](http://www.webopedia.com/TERM/V/vector_graphics.html).
+XAML Tasarımcısı'nda bir *şekli* tamamen beklediğiniz. Örneğin: dikdörtgen, daire veya elips. A *yolu* bir şekil daha esnek bir sürümüdür. Yeni şekil için bunları birleştirmek ya da bunları yeniden şekillendirmek gibi şeyler.
 
- **Bu konuda:**
-
--   [Bir şekil çizme](#Shape)
-
--   [Yol çizme](#Path)
-
--   [Bir şekli bir yola Dönüştür](#Convert)
-
--   [Yolları Birleştir](#Combine)
-
--   [Bileşik yol oluşturma](#Compound)
-
--   [Kırpma yolu oluşturun](#Clipping)
+Şekiller ve yollar iyi yüksek çözünürlüklü ekranlar için ölçeklendirme vektör grafik kullanın. Vektör grafikleri hakkında daha fazla bilgi edinmek istiyorsanız bkz [vektör grafikleri nelerdir](https://www.youtube.com/watch?v=MoCSwF0n-io) veya [vektör grafikleri](http://www.webopedia.com/TERM/V/vector_graphics.html).
 
 ##  <a name="Shape"></a> Bir şekil çizme
- Şekilleri bulabilirsiniz **varlıklar** paneli.
+ Şekillerde bulabilirsiniz **varlıklar** paneli.
 
- ![Şekil kategorisini varlıklarını Masası](../designers/media/b4_shapes_assetspanel.png "b4_Shapes_AssetsPanel")
+ ![Şekil kategorisini varlıklar paneli](../designers/media/b4_shapes_assetspanel.png)
 
- İstediğiniz herhangi bir şekil çalışma yüzeyine sürükleyin. Ardından, ölçeklendirme, döndürme, taşıyabilir veya şekli eğme şekil üzerinde tanıtıcıları kullanabilirsiniz.
+ İstediğiniz herhangi bir şekil, çalışma yüzeyine sürükleyin. Ardından, ölçeklendirme, döndürmek, taşıyın veya şekil eğriltmek için şeklin üzerinde tutamaçlarını kullanabilirsiniz.
 
- ![](../designers/media/84261e83-3091-4490-ab58-4218b188439e.png "84261e83-3091-4490-ab58-4218b188439e")
+ ![Handles](../designers/media/84261e83-3091-4490-ab58-4218b188439e.png)
 
-##  <a name="Path"></a> Yol çizme
- Bir yolu, bağlı çizgiler ve eğrilerle dizisidir. Kullanılamayan ilginç şekiller oluşturmak için bir yol kullanın **varlıklar** paneli.
+##  <a name="Path"></a> Bir yol çizin
+ Bir dizi bağlantılı çizgiler ve eğrilerdir yoludur. Kullanılamayan, ilginç şekiller oluşturmak için bir yol kullanın **varlıklar** paneli.
 
- Çizgi, kalem veya kalem kullanarak bir yol çizebilirsiniz. Bu araçlar bulabilirsiniz **Araçları** paneli.
+ Bir yolu, bir satır, Kalem ve kağıt kullanarak çizebilirsiniz. Bu araçlarda bulabilirsiniz **Araçları** paneli.
 
- ![](../designers/media/717956a8-b6a5-4e37-8af3-70bcfc78c82a.png "717956a8-b6a5-4e37-8af3-70bcfc78c82a") ![ ] (../designers/media/8fbbbb21-be83-4cf6-903b-3a49f00c9860.png "8fbbbb21-be83-4cf6-903b-3a49f00c9860")
+ ![Kalem aracı](../designers/media/717956a8-b6a5-4e37-8af3-70bcfc78c82a.png) ![Kalem aracı seçenekleri](../designers/media/8fbbbb21-be83-4cf6-903b-3a49f00c9860.png)
 
 ### <a name="draw-a-straight-line"></a>Düz çizgi çizme
- Kullanım **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54"), veya **satır** aracı ![ ] (../designers/media/eb618397-5283-48be-8396-3449be7b6fbf.png "eb618397-5283-48be-8396-3449be7b6fbf").
+ Kullanım **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png), veya **satırı** aracı ![Çizgi aracı](../designers/media/eb618397-5283-48be-8396-3449be7b6fbf.png).
 
- **Kalem aracını kullanarak** ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54")
+ **Kalem aracıyla** ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png)
 
- Çalışma yüzeyi başlangıç noktasını tanımlamak için bir kez tıklatın ve satırın sonuna tanımlamak üzere yeniden tıklayın.
+ Çalışma yüzeyinde başlangıç noktasını tanımlamak için bir kez tıklayın ve satırın sonuna tanımlamak için yeniden tıklayın.
 
- **Satırı aracını kullanarak** ![ ] (../designers/media/eb618397-5283-48be-8396-3449be7b6fbf.png "eb618397-5283-48be-8396-3449be7b6fbf")
+ **Satırı aracını kullanarak** ![satırı aracı](../designers/media/eb618397-5283-48be-8396-3449be7b6fbf.png)
 
- Yüzeyinde çizgiyi başlatmak istediğiniz sürükleyin ve sona eklenecek satırı istediğiniz noktada bırakın.
+ Çalışma yüzeyinde satır başlatmak istediğiniz sürükleyin ve ardından çizginin sona ermesini istediğiniz noktada bırakın.
 
 ### <a name="draw-a-curve"></a>Eğri çizme
- Kullanım **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54").
+ Kullanım **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png).
 
- Bir satırın başlangıç noktasını tanımlayın ve ardından istenen eğri oluşturmak için işaretçinizi sürükleme için yüzeyinde bir kez tıklatın.
+ Çalışma yüzeyinde bir satırın başlangıç noktasını tanımlamak tıklayın ve istenen eğri oluşturmak için işaretçiyi sürükleyin için bir kez tıklayın.
 
- Yolu kapatmak istiyorsanız, ilk satırın noktasında'ı tıklatın.
+ Yolu kapatmak istiyorsanız ilk satırın noktasında tıklayın.
 
 ### <a name="change-the-shape-of-a-curve"></a>Eğrinin şeklini değiştirme
- Kullanım **doğrudan seçim** aracı ![ ] (../designers/media/6dd6571f-c116-451d-8dd2-1f88b8406362.png "6dd6571f-c116-451d-8dd2-1f88b8406362").
+ Kullanım **doğrudan seçim** aracı ![doğrudan seçim aracı](../designers/media/6dd6571f-c116-451d-8dd2-1f88b8406362.png).
 
- Şeklin tıklatın ve ardından herhangi bir noktasını eğri şekiller değiştirmek için Şekil üzerinde sürükleyin.
+ Şekle tıklayın ve ardından eğri şekiller değiştirmek için şekli üzerinde herhangi bir noktaya sürükleyin.
 
 ### <a name="draw-a-free-form-path"></a>Serbest form yolu çizme
- Kullanım **kalem** aracı ![ ] (../designers/media/509dc167-734f-46c9-b012-987ee63450cd.png "509dc167-734f-46c9-b012-987ee63450cd").
+ Kullanım **kalem** aracı ![Kalem aracı](../designers/media/509dc167-734f-46c9-b012-987ee63450cd.png).
 
- Gerçek bir Kurşun kullanarak yaptığınız gibi yüzeyinde serbest biçimli yolu çizin.
+ Çalışma yüzeyinde, gerçek bir kalem kullanarak yaptığınız gibi serbest biçimli yolu çizin.
 
-### <a name="remove-part-of-a-path"></a>Yolunun bir bölümü kaldırılamıyor
- Kullanım **doğrudan seçim** aracı ![ ] (../designers/media/6dd6571f-c116-451d-8dd2-1f88b8406362.png "6dd6571f-c116-451d-8dd2-1f88b8406362").
+### <a name="remove-part-of-a-path"></a>Yolun bir bölümünü kaldırın
+ Kullanım **doğrudan seçim** aracı ![doğrudan seçim aracı](../designers/media/6dd6571f-c116-451d-8dd2-1f88b8406362.png).
 
- Silin ve ardından istediğiniz kesimi içeren yolu seçin **silmek** düğmesi.
+ Silin ve ardından istediğiniz kesimi içeren yolu seçin **Sil** düğmesi.
 
-### <a name="remove-a-point-in-a-path"></a>Bir yol için bir nokta Kaldır
- Kullanım **seçimi** aracı ![ ] (../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png "2ff91340-477e-4efa-a0f7-af20851e4daa")ve **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54").
+### <a name="remove-a-point-in-a-path"></a>Bir yolda bir noktası Kaldır
+ Kullanım **seçimi** aracı ![seçim aracını](../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png)ve **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png).
 
- Kullanım **seçimi** aracı ![ ] (../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png "2ff91340-477e-4efa-a0f7-af20851e4daa") yolunu seçin. Ardından, **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54") kaldırmak istediğiniz noktası tıklatın.
+ Kullanım **seçimi** aracı ![seçim aracını](../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png) yolunu seçin. Ardından, **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png) kaldırmak istediğiniz noktayı tıklatın.
 
-### <a name="add-a-point-to-a-path"></a>Bir yol için bir nokta ekleyin
- Kullanım **seçimi** aracı ![ ] (../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png "2ff91340-477e-4efa-a0f7-af20851e4daa")ve **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54").
+### <a name="add-a-point-to-a-path"></a>Bir nokta yolunu Ekle
+ Kullanım **seçimi** aracı ![seçim aracını](../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png)ve **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png).
 
- Kullanım **seçimi** aracı ![ ] (../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png "2ff91340-477e-4efa-a0f7-af20851e4daa") yolunu seçin. Kullanım **kalem** aracı ![ ] (../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png "894f8612-e0ed-4e00-84cf-a9bc8f38fc54") noktası eklemek istediğiniz yolun herhangi bir yeri tıklatın.
+ Kullanım **seçimi** aracı ![seçim aracını](../designers/media/2ff91340-477e-4efa-a0f7-af20851e4daa.png) yolunu seçin. Kullanım **kalem** aracı ![Kalem aracı](../designers/media/894f8612-e0ed-4e00-84cf-a9bc8f38fc54.png) noktası eklemek istediğiniz yola göre herhangi bir yeri tıklatın.
 
 ##  <a name="Convert"></a> Bir şekli bir yola Dönüştür
- Bir şekli bir yolu değiştirmek şekilde değiştirmek için bir yol şekli dönüştürün.
+ Bir şekli bir yolu değiştirmek yollarla değiştirmek için şekli bir yola Dönüştür.
 
- **Kısa bir video izlemek:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.PNG "BldAdminConsoleInitialConfigIcon") [yollarını ile çalışma: bir şekli bir yola Dönüştür](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=147).
+ **Kısa bir video izleyin:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.png) [yolları ile çalışma: bir şekli bir yola dönüştürmek](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=147).
 
 ##  <a name="Combine"></a> Yolları Birleştir
- Tek bir yol yolları ve şekiller birleştirebilirsiniz.
+ Tek bir yol, yol ve Şekil birleştirebilirsiniz.
 
- ![](../designers/media/2df17a5d-a338-4ef4-96c5-dae51cc1ca8a.png "2df17a5d-A338-4ef4-96c5-dae51cc1ca8a")
+ ![Yolları Birleştir](../designers/media/2df17a5d-a338-4ef4-96c5-dae51cc1ca8a.png)
 
 |||||
 |-|-|-|-|
-|![](../designers/media/b1_1.png "B1_1")|Birleştirme öncesi iki şekil|![](../designers/media/b1_4.png "B1_4")|Kesiştir|
-|![](../designers/media/b1_2.png "B1_2")|Birleştir|![](../designers/media/b1_5.png "B1_5")|Örtüşmeyi Dışla|
-|![](../designers/media/b1_3.png "B1_3")|Bölme|![](../designers/media/b1_6.png "B1_6")|Çıkarma|
+|![Birleştirme öncesi iki şekil](../designers/media/b1_1.png)|Birleştirme öncesi iki şekil|![Kesiştir](../designers/media/b1_4.png)|Kesiştir|
+|![Örtüşmeyi Dışla](../designers/media/b1_2.png)|Birleştir|![](../designers/media/b1_5.png)|Örtüşmeyi Dışla|
+|![Çıkarma](../designers/media/b1_3.png)|Bölme|![](../designers/media/b1_6.png)|Çıkarma|
 
- **Kısa bir video izlemek:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.PNG "BldAdminConsoleInitialConfigIcon") [yollarını ile çalışma: yolları Birleştir](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=195).
+ **Kısa bir video izleyin:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.png) [yolları ile çalışma: yolları Birleştir](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=195).
 
-##  <a name="Compound"></a> Bileşik yol oluşturma
+##  <a name="Compound"></a> Bileşik yol Oluştur
  Bileşik yol oluşturduğunuzda, yolların herhangi bir kesişen bölümleri sonuçtan çıkartılır ve sonuçlanan yol en alt yolun görsel özelliklerini kabul eder.
 
- Bileşik bir yol oluşturduktan sonra istediğiniz zaman parçalayın.
+ Bileşik yol oluşturduktan sonra istediğiniz zaman parçalara ayırabilirsiniz.
 
- ![](../designers/media/2157a8aa-d9a7-4de4-8de5-b10d28f08a84.png "2157a8aa-d9a7-4de4-8DE5-b10d28f08a84")
+ ![Bileşik yol Kes](../designers/media/2157a8aa-d9a7-4de4-8de5-b10d28f08a84.png)
 
- **Kısa bir video izlemek:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.PNG "BldAdminConsoleInitialConfigIcon") [yollarını ile çalışma: bileşik yol oluşturma](https://www.youtube.com/watch?v=Io5bC0-nH6Q).
+ **Kısa bir video izleyin:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.png) [yolları ile çalışma: bileşik yol Oluştur](https://www.youtube.com/watch?v=Io5bC0-nH6Q).
 
-##  <a name="Clipping"></a> Kırpma yolu oluşturun
+##  <a name="Clipping"></a> Bir kırpma yolunu oluşturun
  Bir kırpma yolu, kırpma yolu dışına düşen maskelenmiş nesnenin kısımlarını saklayarak, diğer nesneye uygulanan bir yol veya şekildir.
 
- ![](../designers/media/22471e98-a841-4f39-a3ef-36090cf5a625.png "22471e98-a841-4f39-a3ef-36090cf5a625")
+ ![Kırpma yolu](../designers/media/22471e98-a841-4f39-a3ef-36090cf5a625.png)
 
- **Kısa bir video izlemek:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.PNG "BldAdminConsoleInitialConfigIcon") [yollarını ile çalışma: kırpma yolu oluşturmak](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=232).
+ **Kısa bir video izleyin:** ![yüklü Özellikleri Yapılandır](../designers/media/bldadminconsoleinitialconfigicon.png) [yolları ile çalışma: bir kırpma yolunu oluşturun](https://www.youtube.com/watch?v=Io5bC0-nH6Q#t=232).
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

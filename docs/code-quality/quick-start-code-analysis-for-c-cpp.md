@@ -1,6 +1,7 @@
 ---
 title: 'Hızlı Başlangıç: C/C++ İçin Kod Çözümleme'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 helpviewer_keywords:
@@ -11,107 +12,108 @@ ms.author: mblome
 manager: wpickett
 ms.workload:
 - cplusplus
-ms.openlocfilehash: e43c505716fe437f53ac1d1b8e7921ec76e153d0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3aefc42e77c6ccaf14a426a26e12b81b49bb5632
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49818776"
 ---
-# <a name="quickstart-code-analysis-for-cc"></a>Hızlı Başlangıç: C/C++ için Kod Analizi
+# <a name="quickstart-code-analysis-for-cc"></a>Hızlı başlangıç: C/C++ için kod analizi
 
-Kod çözümleme düzenli olarak C veya C++ kodu çalıştırarak uygulamanızı kalitesini artırabilir. Bu ortak sorunları, iyi bir programlama uygulama ya da test aracılığıyla bulmak zordur kusurları ihlalleri bulmanıza yardımcı olabilir. Kod çözümleme geçerli olan, ancak hala siz veya kodunuzu kullanan diğer kişiler için sorunlarına neden olabilir belirli kod düzenleri arar çünkü kod analizi uyarıları derleyici hataları ve Uyarıları farklılık gösterir.
+Kod Analizi düzenli olarak C veya C++ kodu çalıştırarak uygulamanızı kalitesini artırabilir. Bu yaygın sorunlar, iyi bir programlama uygulama ya da test sürecinde bulmak zor olan hataları ihlalleri bulmanıza yardımcı olabilir. Geçerli olan, ancak yine de siz veya kodunuzu kullanan diğer kişilerin sorunlarına neden olabilir, belirli bir kod desenleri için Kod Analizi arar çünkü kod çözümleme uyarıları derleyici hataları ve Uyarıları farklılık gösterir.
 
-## <a name="configure-rule-sets-for-a-project"></a>Bir proje için kural kümeleri yapılandırma
+## <a name="configure-rule-sets-for-a-project"></a>Bir proje için kural kümelerini yapılandırma
 
 1. İçinde **Çözüm Gezgini**, proje adı için kısayol menüsünü açın ve ardından **özellikleri**.
 
 2. Aşağıdaki adımlar isteğe bağlıdır:
 
-    1. İçinde **yapılandırma** ve **Platform** listeleri, derleme yapılandırmasını ve hedef platformu seçin.
+    1. İçinde **yapılandırma** ve **Platform** listeleri, derleme yapılandırması ve hedef platformu seçin.
 
-    2. Varsayılan olarak, Kod Analizi uyarıları dış araçları tarafından otomatik olarak oluşturulan kodundan bildirmiyor. Oluşturulan kodundan uyarıları görüntülemek için temizleyin **bastırmak oluşturulan kod sonuçlarından** onay kutusu.
+    2. Varsayılan olarak, Kod Analizi uyarıları otomatik olarak dış araçları tarafından oluşturulan kodu raporlamaz. Üretilen koddan gelen uyarıları görüntülemek için temizleyin **üretilen koddan gelen sonuçları Gizle** onay kutusu.
 
         > [!NOTE]
-        > Hataları ve Uyarıları formlar ve şablonlar görüntülendiğinde bu seçenek kod çözümleme hataları ve Uyarıları oluşturulan kodundan engelleme. Hem görüntülemek ve bir form veya şablon için kaynak kodunu sağlayabilirsiniz.
+        > Bu seçenek hataları ve Uyarıları formları ve şablonlar görüntülendiğinde kod çözümleme hataları ve Uyarıları üretilen koddan gelen engellemez. Hem görüntüleyebilir ve bir form veya şablon için kaynak kodunu korumak.
 
-3. Kod çözümleme proje seçilen yapılandırma kullanılarak oluşturulmuştur her zaman çalıştırmak için seçin **derlemede C/C++ için Kod Analizi etkinleştir** onay kutusu. Ayrıca Kod Analizi el ile açarak çalıştırabilirsiniz **Çözümle** menüsüne ve ardından seçme **çalıştırmak kod çözümleme** *ProjectName*.
+3. Seçili yapılandırma kullanarak proje oluşturulan her zaman, Kod Analizi çalıştırmak için seçin **C/c++ derlemede kod çözümlemeyi etkinleştir** onay kutusu. Ayrıca kod analizini el ile açıp çalıştırabilirsiniz **Çözümle** menüsüne ve ardından **kod çözümlemeyi Çalıştır** *ProjectName*.
 
-4. İçinde **bu kural kümesini çalıştırmak** listesinde, aşağıdakilerden birini yapın:
+4. İçinde **bu kural kümesini Çalıştır** listesinde, aşağıdakilerden birini yapın:
 
-    - Kullanmak istediğiniz kural kümesini seçin.
+    - Kullanmak istediğiniz bir kural kümesi seçin.
 
-    - Seçin  **\<Gözat... >** var olan bir özel kural kümesini belirlemek için listede değil.
+    - Seçin  **\<Gözat … >** var olan bir özel kural kümesini belirlemek için listesinde değil.
 
     - Tanımlayan bir [özel kural kümesi](../code-quality/how-to-create-a-custom-rule-set.md).
 
 ### <a name="standard-cc-rule-sets"></a>Standart C/C++ kural kümeleri
 
-Visual Studio iki standart yerel kod için kural kümesini içerir:
+Visual Studio iki standart yerel kod için kural kümesi içerir:
 
 |Kural kümesi|Açıklama|
 |--------------|-----------------|
-|Microsoft yerel Minimum kurallar önerilir|Bu kural kümesine olası güvenlik açıklarını ve uygulama çökme (Crash) dahil olmak üzere, yerel kodunuzda en kritik sorunlar odaklanır. Yerel projeleriniz için oluşturduğunuz herhangi bir özel kural kümesi içinde bu kural kümesi içermelidir.|
-|Microsoft yerel önerilen kurallar|Bu kural kümesine çok çeşitli sorunlar ele alınmaktadır. Bu yerel Minimum önerilen kurallar Microsoft tüm kurallar içerir.|
+|Önerilen Microsoft yerel Minimum kurallar|Bu kural kümesi, olası güvenlik açıkları ve Uygulama Kilitlenmesi gibi yerel, kodunuzda en kritik sorunlara odaklanır. Doğal projeleriniz için oluşturduğunuz herhangi bir özel kural kümesi bu kural kümesini içermelidir.|
+|Microsoft yerel önerilen kurallar|Bu kural kümesi, çok çeşitli sorunları kapsar. Bu yerel en az önerilen kurallar Microsoft tüm kurallar içerir.|
 
-## <a name="run-code-analysis"></a>Kod çözümleme çalıştırın
+## <a name="run-code-analysis"></a>Kod analizini Çalıştır
 
-Proje Özellikleri sayfaların kod çözümleme sayfasında projenizi derleme her zaman çalıştırmak için Kod Analizi yapılandırabilirsiniz. Kod çözümleme el ile de çalıştırabilirsiniz.
+Proje özellik sayfaları, Kod Analizi sayfasında projenizi her çalıştırma için Kod Analizi yapılandırabilirsiniz. Kod analizini el ile çalıştırabilirsiniz.
 
-Kod çözümleme bir çözüm üzerinde çalıştırmak için:
+Bir çözüm üzerinde kod analizi çalıştırmak için:
 
-- Üzerinde **yapı** menüsünde seçin **çalıştırmak Kod Analizi çözüm üzerinde**.
+- Üzerinde **derleme** menüsünde seçin **çözüm üzerinde kod analizini Çalıştır**.
 
- Kod çözümleme bir proje üzerinde çalıştırmak için:
+Bir proje üzerinde kod analizi çalıştırmak için:
 
-- Çözüm Gezgini'nde proje adını seçin.
+1. Çözüm Gezgini'nde proje adını seçin.
 
-- Üzerinde **yapı** menüsünde seçin **çalıştırmak kod çözümleme** *proje adı*.
+2. Üzerinde **derleme** menüsünde seçin **kod çözümlemeyi Çalıştır** *proje adı*.
 
- Çözüm ve Proje derlenir ve Kod Analizi çalıştırır. Sonuçlar hata listesinde görüntülenir.
+   Proje veya çözüm derlenir ve Kod Analizi çalıştırır. Sonuçlar hata Listesi'nde görüntülenir.
 
-## <a name="analyze-and-resolve-code-analysis-warnings"></a>Çözümleme ve Kod Analizi uyarıları gidermek
+## <a name="analyze-and-resolve-code-analysis-warnings"></a>Analiz ve kod çözümleme uyarıları çözün
 
-Belirli bir uyarı analiz etmek için hata listesine uyarı başlığını seçin. Sorun hakkında ek bilgileri görüntülemek için uyarı genişletir. Mümkün olduğunda, kod analizi için uyarı öncülük analiz mantığı ve satır numaralarını görüntüler. Sorunun olası çözümleri dahil olmak üzere uyarı hakkında ayrıntılı bilgi için karşılık gelen çevrimiçi Yardım konusunu görüntülemek için uyarı kimliği seçin.
+Belirli bir uyarıyı çözümlemek için hata listesinde bir uyarı başlığı seçin. Sorun hakkında ek bilgileri görüntülemek için uyarı genişletir. Mümkün olduğunda, kod analizi, uyarıya yol açan analiz mantığı ve satır numaralarını görüntüler. Sorun için olası çözümleri dahil olmak üzere uyarı hakkında ayrıntılı bilgi için karşılık gelen Yardım konusunun görüntülenecek Uyarı Kimliği'ni seçin.
 
-Bir uyarıyı seçtiğinizde, uyarıya neden olan kod satırı Visual Studio Kod Düzenleyicisi'nde vurgulanır.
+Bir uyarıyı seçtiğinizde, Visual Studio Kod Düzenleyicisi'nde uyarıya yol açan kod satırının vurgulanır.
 
-Sorun anladıktan sonra kodunuzda çözebilirsiniz. Ardından, uyarı artık hata listesinde görüntülenir ve yeni uyarılar gerçekleşti, düzeltme henüz emin olmak için Kod Analizi yeniden çalıştırın.
+Sorun anladıktan sonra kodunuzu çözebilirsiniz. Sonra uyarı artık hata Listesi'nde görüntülenir ve düzeltmenizi henüz oluşturulan tüm yeni uyarılar emin olmak için kod analizini yeniden çalıştırın.
 
 ## <a name="suppress-code-analysis-warnings"></a>Kod çözümleme uyarılarını bastırma
 
-Kod çözümleme uyarısı düzeltme değil zaman karar verebilirsiniz zamanlar vardır. Uyarı çözümleme sorunu kodunuzu herhangi bir gerçek uygulaması içinde çıkabilecek olasılık ile ilgili çok fazla değiştirilemeyen gerektirir karar verebilirsiniz. Veya uyarıda kullanılan analiz belirli bağlam için uygun olduğunu düşünüyorsanız. Artık hata listesinde görünecekleri bireysel uyarıları gizleyebilirsiniz.
+Kod Analizi uyarısı düzeltmemeyi ne zaman karar verebilirsiniz zamanlar vardır. Uyarı çözümleme sorunu kodunuzun tüm gerçek uygulamasında ortaya çıkacağını olasılık ile ilgili çok fazla değiştirilemeyen gerektirir karar verebilirsiniz. Veya uyarıda kullanılan analiz belirli bir içerik için uygun olduğunu düşündüğünüz. Böylece artık hata listesinde görünürler bireysel uyarıları gösterilmemesini sağlayabilirsiniz.
 
-Bir uyarıyı gizlemek için:
+Bir uyarıyı bastırmak için:
 
-1. Ayrıntılı bilgi görüntülenmiyorsa genişletmek için uyarı başlığını seçin.
+1. Ayrıntılı bilgi görüntülenmiyorsa genişletmek için uyarı başlığı seçin.
 
-2. Seçin **Eylemler** uyarı sonundaki bağlantı.
+2. Seçin **eylemleri** Uyarı alt kısmındaki bağlantı.
 
-3. Seçin **bastırmak ileti** ve ardından **içinde kaynak**.
+3. Seçin **ileti Gizle** seçip **içinde kaynak**.
 
- Bir ileti gizleme ekler `#pragma warning (disable:` *WarningId* `)` kod satırı için uyarı gizler.
+   Bir ileti gizleme ekler `#pragma warning (disable:[warning ID])` , kod satırının için uyarı bastırır.
 
-## <a name="create-work-items-for-code-analysis-warnings"></a>İş öğeleri için Kod Analizi uyarıları oluşturma
+## <a name="create-work-items-for-code-analysis-warnings"></a>İş öğeleri için kod çözümleme uyarıları oluşturma
 
-Visual Studio içinde hatalardan oturum iş öğesi izleme özelliğini kullanabilirsiniz. Bu özelliği kullanmak için Team Foundation Server örneğine bağlamanız gerekir.
+Visual Studio içinden hatalardan oturum iş öğesi izleme özelliğini kullanabilirsiniz. Bu özelliği kullanmak için Team Foundation Server'ın bir örneğine bağlanmak gerekir.
 
 **Bir veya daha fazla C/C++ kod uyarıları için bir iş öğesi oluşturmak için**
 
-1. Hata listesi genişletin ve Uyarıları seçin
+1. Hata listesini genişletin ve Uyarıları seçin
 
-2. Uyarılar için kısayol menüsünden seçin **iş öğesi oluşturma**ve ardından iş öğesi türünü seçin.
+2. Uyarılar için kısayol menüsünde **iş öğesi oluştur**, iş öğesi türünü seçin.
 
-3. Visual Studio seçili uyarılar için bir tek iş öğesi oluşturur ve iş öğesi bir IDE belge penceresinde görüntüler.
+3. Visual Studio seçili uyarılar için tek bir iş öğesi oluşturur ve iş öğesini IDE'nin belge penceresinde görüntüler.
 
 4. Ek bilgileri ekleyin ve ardından **çalışma öğesini Kaydet**.
 
-## <a name="search-and-filter-code-analysis-results"></a>Arama ve filtreleme kod çözümleme sonuçları
+## <a name="search-and-filter-code-analysis-results"></a>Kod Analizi sonuçları arama ve filtreleme
 
-Uyarı iletilerini uzun listeler arayabilir ve birden çok proje çözümü uyarıları filtreleyebilirsiniz.
+Uzun listesi uyarı iletilerini arayabilir ve çoklu proje çözümlerinde uyarıları filtreleyebilirsiniz.
 
-- **Başlığı veya Uyarı Kimliği Filtresi uyarılarını için**: Ara kutusuna anahtar sözcüğü girin.
+- **Başlık veya Uyarı Kimliği Filtresi uyarılarını için**: anahtar sözcük arama kutusuna girin.
 
-- **Önem derecesi bazında Filtresi uyarılarını için**: varsayılan olarak, bir önem derecesi kod çözümleme iletileri atanan **uyarı**. Bir veya daha fazla iletileri olarak önemini atayabilirsiniz **hata** özel bir kuralda ayarlayın. Üzerinde **önem** sütunu **hata listesi**, aşağı açılan oku tıklatın ve ardından filtre simgesini seçin. Seçin **uyarı** veya **hata** ilgili önem atanan iletileri görüntülemek için. Seçin **Tümünü Seç** tüm iletileri görüntülemek için.
+- **Filtre Uyarıları önem derecesine göre için**: varsayılan olarak, Kod Analizi ileti önem derecesi atanan **uyarı**. Bir veya daha fazla ileti olarak önemi atamak için **hata** özel bir kuralda ayarlayın. Üzerinde **önem derecesi** sütununun **hata listesi**, açılan liste okunu ve ardından filtre simgesini seçin. Seçin **uyarı** veya **hata** ilgili önem atanmış olan iletileri görüntülemek için. Seçin **Tümünü Seç** tüm iletileri görüntülemek için.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

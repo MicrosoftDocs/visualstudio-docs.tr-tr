@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31135828"
 ---
 # <a name="support-for-the-autos-window-in-a-legacy-language-service"></a>Eski dil hizmetinde otomatik değişkenler penceresi desteği
 **Otomobiller** penceresi değişkenleri ve ayıklanacak program (ya da bir kesme noktası veya bir özel durum nedeniyle) duraklatıldığında kapsamındaki parametreleri gibi ifadeleri görüntüler. İfadeler değişkenleri, yerel veya genel ve yerel kapsamda değiştirilmiş parametreleri içerebilir. **Otomobiller** penceresi örneklemesi bir sınıf, yapı veya başka bir türü de içerebilir. Bir ifade değerlendiricisi değerlendirebilir herhangi bir şey olası gösterilebileceği **otomobiller** penceresi.  

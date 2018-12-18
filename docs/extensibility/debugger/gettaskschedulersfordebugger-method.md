@@ -1,5 +1,5 @@
 ---
-title: GetTaskSchedulersForDebugger yöntemi | Microsoft Docs
+title: GetTaskSchedulersForDebugger metodu | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,32 +13,33 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d5d0b78a4f115d1ba07848db914289c35034d465
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4dc8e43629eab80dc3164813d0b8d0f380e8f86a
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231194"
 ---
-# <a name="gettaskschedulersfordebugger-method"></a>GetTaskSchedulersForDebugger Method
-Tüm dizisini alır <xref:System.Threading.Tasks.TaskScheduler> şu an etkin olan nesneleri.  
+# <a name="gettaskschedulersfordebugger-method"></a>GetTaskSchedulersForDebugger Metodu
+Tüm alır <xref:System.Threading.Tasks.TaskScheduler> şu anda etkin olan nesneler.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .method assembly hidebysig static class System.Threading.Tasks.TaskScheduler[] GetTaskSchedulersForDebugger() cil managed  
 ```  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Tüm bir dizi <xref:System.Threading.Tasks.TaskScheduler> bu şu anda etkin olan nesneler <xref:System.AppDomain>.  
+## <a name="return-value"></a>Dönüş değeri  
+ Tüm dizi <xref:System.Threading.Tasks.TaskScheduler> bu şu anda etkin olan nesneler <xref:System.AppDomain>.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem iş parçacığı içinde korumalı değil ve diğer örnekleriyle aynı anda kullanılmamalıdır <xref:System.Threading.Tasks.TaskScheduler>. Hata ayıklayıcı diğer tüm iş parçacıklarının yalnızca duraklattı olduğunda hata ayıklayıcı'dan çağrılmalıdır.  
+ Bu yöntem iş parçacığı güvenli değildir ve diğer örnekleri aynı anda kullanmamalısınız <xref:System.Threading.Tasks.TaskScheduler>. Bu yöntem bir hata ayıklayıcı'dan aramanızı yalnızca hata ayıklayıcı, diğer tüm iş parçacıkları askıya aldı.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [TaskScheduler sınıfı](../../extensibility/debugger/taskscheduler-class-internal-members.md)

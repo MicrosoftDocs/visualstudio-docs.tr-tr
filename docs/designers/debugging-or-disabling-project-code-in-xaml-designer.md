@@ -1,6 +1,8 @@
 ---
-title: Hata ayıklama veya XAML Tasarımcısı'nda proje kodunu devre dışı bırakma
+title: XAML Tasarımcısı’nda proje kodu hatalarını ayıklama veya proje kodunu devre dışı bırakma
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: ac600581-8fc8-49e3-abdf-1569a3483d74
 author: gewarren
@@ -8,16 +10,18 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - uwp
-ms.openlocfilehash: 536c69aa9131068397fd0a86576f473db82fbe10
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 191d180a68edd439c729fa963b607c992ff3c00e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49816817"
 ---
-# <a name="debugging-or-disabling-project-code-in-xaml-designer"></a>Hata ayıklama veya XAML Tasarımcısı'nda proje kodunu devre dışı bırakma
-Çoğu durumda, İşlenmeyen özel durumlar XAML Tasarımcısı'nda özellikleri ya da farklı değerler döndürebilecek veya Tasarımcısı'nda, uygulamanızı çalıştırırken farklı şekillerde iş yöntemleri erişmeye proje kodu neden olabilir. Başka bir örneği Visual Studio Proje kodda hata ayıklama bu özel durumları çözümlemek ya da geçici olarak Tasarımcısı'nda proje kodunu devre dışı bırakarak engelleyin.
+# <a name="debug-or-disable-project-code-in-xaml-designer"></a>XAML Tasarımcısı’nda proje kodu hatalarını ayıklama veya proje kodunu devre dışı bırakma
 
- Proje kodunu içerir:
+Çoğu durumda, İşlenmeyen özel durumları **XAML** Tasarımcısı özellikleri veya yöntemleri farklı değerler döndürür veya tasarımcıda uygulamanız çalıştığında zaman farklı bir şekilde iş erişmeye çalışan proje kodunu tarafından kaynaklanabilir. Visual Studio'nun başka bir örnek proje kodunda hata ayıklama tarafından bu özel durumları çözmek veya Tasarımcısı'nda proje kodu devre dışı bırakarak özel durumlar geçici olarak engelleyin.
+
+Proje kodu içerir:
 
 -   Özel denetimler ve kullanıcı denetimleri
 
@@ -25,64 +29,77 @@ ms.lasthandoff: 04/19/2018
 
 -   Değer dönüştürücüler
 
--   Tasarım zamanı veri proje koddan oluşturulan karşı bağlamaları
+-   Proje koddan oluşturulan tasarım zamanı verilerine karşı bağlamaları
 
- Visual Studio Proje kodunu devre dışı bırakıldığında, yer tutucular gösterir özellik adı verileri nerede artık kullanılamaz; bir bağlama için gibi veya artık çalışır durumda bir denetim için bir yer tutucu.
+Visual Studio, proje kodunu devre dışı bırakıldığında, yer tutucuları gösterir. Örneğin, Visual Studio veriler artık kullanılabilir olduğu bir bağlama veya artık çalışan bir denetim için bir yer tutucu için özellik adını gösterir.
 
- ![İşlenmeyen özel durum iletişim](../designers/media/xaml_unhandledexception.png "XAML_UnhandledException")
+![İşlenmeyen özel durum iletişim kutusu](../designers/media/xaml_unhandledexception.png)
 
-#### <a name="to-determine-if-project-code-is-causing-an-exception"></a>Proje kodunu bir özel durum neden olup olmadığını belirlemek için
+## <a name="to-determine-if-project-code-is-causing-an-exception"></a>Proje kodu bir özel durum neden olup olmadığını belirlemek için
 
-1.  İşlenmeyen özel durum iletişim kutusunda seçin **Tasarımcısı'nı yeniden yüklemek için burayı tıklatın** bağlantı.
+1.  İşlenmeyen özel durum iletişim kutusunda seçin **tasarımcıyı yeniden yüklemek için burayı tıklatın** bağlantı.
 
-2.  Menü çubuğunda seçin **hata ayıklama**, **hata ayıklamayı Başlat** oluşturun ve uygulamayı çalıştırın.
+2.  Menü çubuğunda **hata ayıklama** > **hata ayıklamayı Başlat** oluşturun ve uygulamayı çalıştırın.
 
-     Uygulama oluşturulur ve başarılı bir şekilde çalışır Tasarımcısı'nda çalışan, proje kodu tarafından tasarım zamanında özel durum neden olabilir.
+     Uygulama oluşturur ve başarıyla çalıştığından, tasarım zamanı özel durum Tasarımcısı'nda çalışan proje kodunu nedeni olabilir.
 
-#### <a name="to-debug-project-code-running-in-the-designer"></a>Proje Tasarımcısı'nda çalışan kodu hata ayıklamak için
+## <a name="to-debug-project-code-running-in-the-designer"></a>Tasarımcıda çalışan proje kodu hatalarını ayıklamak için
 
-1.  İşlenmeyen özel durum iletişim kutusunda seçin **çalışan proje kodunu devre dışı bırakın ve Tasarımcısı yeniden yüklemek için burayı tıklatın** bağlantı.
+1.  İşlenmeyen özel durum iletişim kutusunda seçin **çalışan proje kodunu devre dışı bırakmak ve tasarımcıyı yeniden yüklemek için burayı tıklatın** bağlantı.
 
-2.  Windows Görev Yöneticisi'nde seçin **Görevi Sonlandır** düğmesi Visual Studio XAML Tasarımcısı'nın şu anda çalışan tüm örneklerini kapatın.
+2.  Windows Görev Yöneticisi'nde seçin **Görevi Sonlandır** çalışmakta olan tüm örneklerini Visual Studio XAML Tasarımcısı'nı kapatmak için düğme.
 
-     ![XAML Tasarımcısı Görev Yöneticisi durumlarda](../designers/media/xaml_taskmanager.png "XAML_TaskManager")
+     ![Görev Yöneticisi'nde XAML Tasarımcısı örnekleri](../designers/media/xaml_taskmanager.png)
 
 3.  Visual Studio'da kod veya hata ayıklamak istediğiniz denetimi içeren XAML sayfası açın.
 
-4.  Visual Studio yeni bir örneğini açın ve ardından projenizi ikinci bir örneğini açın.
+4.  Visual Studio'nun yeni bir örneğini açın ve ardından projenizi ikinci bir örneğini açın.
 
 5.  Proje kodunuzda bir kesme noktası ayarlayın.
 
-6.  Menü çubuğunda, Visual Studio, yeni bir örneğini seçin **hata ayıklama**, **ekleme işlemi için**.
+6.  Menü çubuğunda, Visual Studio, yeni bir örneğini seçin **hata ayıklama** > **iliştirme**.
 
-7.  İçinde **ekleme işlemi için** iletişim, **kullanılabilir işlemler** listesinde, seçin **XDesProc.exe**ve ardından **Attach** düğmesi.
+7.  İçinde **iliştirme** iletişim, **kullanılabilir işlemler** listesinde **XDesProc.exe**ve ardından **iliştirme** düğmesi.
 
-     ![XAML Tasarımcısı işlem](../designers/media/xaml_attach.png "XAML_Attach")
+     ![XAML Tasarımcısı işlemi](../designers/media/xaml_attach.png)
 
-     XAML Tasarımcısı'nda Visual Studio'nun ilk örneği işlemidir.
+     XAML Tasarımcısı'nda Visual Studio ilk örneğinin işlemidir.
 
-8.  Menü çubuğunda Visual Studio'nun ilk örneği seçin **hata ayıklama**, **hata ayıklamayı Başlat**.
+8.  Visual Studio menü çubuğunda, ilk örneğini seçin **hata ayıklama** > **hata ayıklamayı Başlat**.
 
-     Şimdi, koda Tasarımcısı'nda çalışan geçebilirsiniz.
+     Artık tasarımcıda çalıştıran kodunuzla geçebilirsiniz.
 
-#### <a name="to-disable-project-code-in-the-designer"></a>Tasarımcıda proje kodunu devre dışı bırakmak için
+## <a name="to-disable-project-code-in-the-designer"></a>Tasarımcısı'nda proje kodu devre dışı bırakmak için
 
--   İşlenmeyen özel durum iletişim kutusunda seçin **çalışan proje kodunu devre dışı bırakın ve Tasarımcısı yeniden yüklemek için burayı tıklatın** bağlantı.
+-   İşlenmeyen özel durum iletişim kutusunda seçin **çalışan proje kodunu devre dışı bırakmak ve tasarımcıyı yeniden yüklemek için burayı tıklatın** bağlantı.
 
--   Alternatif olarak, XAML Tasarımcısı'nda araç çubuğundaki seçin **proje kodunu devre dışı bırakma** düğmesi.
+-   Alternatif olarak, araç çubuğunda **XAML Tasarımcısı**, seçin **proje kodunu devre dışı bırak** düğmesi.
 
-     ![Proje kodunu devre dışı bırak düğmesi](../designers/media/xaml_disablecode.png "XAML_DisableCode")
+     ![Proje kodunu devre dışı bırak düğmesi](../designers/media/xaml_disablecode.png)
 
-     Proje kodunu tekrar etkinleştirmeniz için düğmesini geçiş yapabilirsiniz.
-
-    > [!NOTE]
-    >  ARM veya X64 hedefleyen projeler için işlemci, Visual Studio Proje kodunu Tasarımcısı'nda çalıştırılamaz böylece **proje kodunu devre dışı bırakma** Tasarımcısı'nda düğmesi devre dışı.
-
--   Her iki seçenek yeniden yüklemek Tasarımcı neden olur ve ardından tüm ilişkili proje kodunu devre dışı bırakır.
+     Proje kodu tekrar etkinleştirmeniz için düğmesine geçiş yapabilirsiniz.
 
     > [!NOTE]
-    >  Proje kodunu devre dışı bırakma tasarım zamanı veri kaybına yol açabilir. Tasarımcıda çalışan kodda hata ayıklamak için bir alternatiftir.
+    > ARM veya X64 hedefleyen projeler için işlemcileri, Visual Studio Tasarımcısı'nda proje kodu çalıştırılamaz böylece **proje kodunu devre dışı bırak** Tasarımcısı'nda düğmesi devre dışı.
+
+-   İki seçenekten birini yeniden ve tüm ilişkili proje kodunu devre dışı bırakmak Tasarımcı neden olur.
+
+    > [!NOTE]
+    > Proje kodunu devre dışı bırakmak için tasarım zamanı veri kaybına neden olabilir. Tasarımcıda çalışan kodda hata ayıklamak için kullanılan bir alternatiftir.
+
+## <a name="control-display-options"></a>Denetim görüntüleme seçenekleri
+
+> [!NOTE]
+> **Denetim görüntüleme seçenekleri** yalnızca Windows 10 Fall Creators Update (derleme 16299) hedefleyen Evrensel Windows platformu uygulamaları için kullanılabilir veya üzeri. **Denetimi görüntüleme seçeneklerini** özelliği Visual Studio 2017 15,9 veya sonraki bir sürümü kullanılabilir. 
+
+XAML Tasarımcısı'nda, yalnızca Windows SDK platform denetimlerini görüntülemek için Denetim görüntüleme seçeneklerini değiştirebilirsiniz. Bu XAML tasarımcının güvenilirliğini artırabilir.
+
+Denetim görüntüleme seçeneklerini değiştirmek için Tasarımcı penceresinin sol alt simgeyi tıklatın ve ardından altındaki bir seçenek belirleyin **denetimi görüntüleme seçeneklerini**:
+
+![Denetim görüntüleme seçenekleri](../designers/media/control_display_options.png)
+
+Seçtiğinizde, **yalnızca görüntü platformu denetimleri**, SDK'larından gelen tüm özel denetimleri, müşteri kullanıcı denetimleri ve daha fazla değil işleme tamamen. Bunun yerine, bunlar denetimin konumunu ve boyutunu göstermek için geri dönüş denetimleri tarafından değiştirilir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Visual Studio ve Visual Studio için Blend'de XAML tasarlama](../designers/designing-xaml-in-visual-studio.md)
+- [Visual Studio ve Visual Studio için Blend, XAML tasarım](../designers/designing-xaml-in-visual-studio.md)

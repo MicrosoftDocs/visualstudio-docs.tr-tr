@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b5fc3fb1ad607eb7efb1ba20265545c18b1c1b46
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2b288d9995797a000f16533fcee9dafd85171722
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49864615"
 ---
 # <a name="idebugexpression2evaluatesync"></a>IDebugExpression2::EvaluateSync
-Bu yöntem ifade zaman uyumlu olarak değerlendirilir.  
+Bu yöntem, zaman uyumlu olarak ifadeyi değerlendirir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,30 +47,30 @@ int EvaluateSync(
   
 #### <a name="parameters"></a>Parametreler  
  `dwFlags`  
- [in] Bayraklarını bileşimini [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) ifade değerlendirme denetim numaralandırması.  
+ [in] Bayraklarının bir birleşimi [EVALFLAGS](../../../extensibility/debugger/reference/evalflags.md) ifade değerlendirme denetleyen sabit listesi.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` süresiz bekleme.  
   
  `pExprCallback`  
- [in] Bu parametre bir null değer her zaman olur.  
+ [in] Bu parametre, her zaman null değeri olur.  
   
  `ppResult`  
- [out] Döndürür [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) ifade değerlendirme sonucunu içeren nesne.  
+ [out] Döndürür [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) ifade değerlendirme sonucu içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Bazı tipik hata kodları şunlardır:  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Bazı tipik hata kodları şunlardır:  
   
 |Hata|Açıklama|  
 |-----------|-----------------|  
-|E_EVALUATE_BUSY_WITH_EVALUATION|Başka bir deyim şu anda değerlendiriliyor ve eşzamanlı ifade değerlendirme desteklenmiyor.|  
+|E_EVALUATE_BUSY_WITH_EVALUATION|Başka bir ifade şu anda değerlendirilen ve eşzamanlı ifade değerlendirme desteklenmiyor.|  
 |E_EVALUATE_TIMEOUT|Değerlendirme zaman aşımına uğradı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Zaman uyumlu değerlendirme yapmak için bir olay değerlendirme tamamlanmasından sonra Visual Studio geri göndermek gerekli değildir.  
+ Eşzamanlı değerlendirme için yeniden değerlendirme tamamlandıktan sonra Visual Studio için bir olay göndermek gerekli değildir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnekte basit bir için bu yöntemi uygulaması gösterilmektedir `CExpression` uygulayan nesne [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md) arabirimi.  
+ Aşağıdaki örnek, bu yöntem için basit bir uygulama gösterilmektedir `CExpression` uygulayan nesne [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md) arabirimi.  
   
 ```cpp  
 HRESULT CExpression::EvaluateSync(EVALFLAGS dwFlags,  

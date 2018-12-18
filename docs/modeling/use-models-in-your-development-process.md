@@ -1,6 +1,7 @@
 ---
 title: Geliştirme sürecinizde modelleri kullanma
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
 ms.topic: conceptual
 helpviewer_keywords:
@@ -10,135 +11,136 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b814f35e8c93ff8204fe39943dbaafbce03376a0
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 25debac1e5f2e977e5dd36ec8b4a083a1a362d1b
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50967226"
 ---
 # <a name="use-models-in-your-development-process"></a>Geliştirme sürecinizde modelleri kullanma
 
-Visual Studio'da anlamak ve bir sistem, uygulama veya bileşen değiştirmenize yardımcı olmak için bir model kullanabilirsiniz. Bir model sisteminizin çalıştığı world görselleştirme, kullanıcıların ihtiyaçlarını açıklamak, sisteminizin mimarisiyle tanımlamak, kodu çözümlemenize ve kodunuzun gereksinimleri karşıladığından emin olun yardımcı olabilir. Bkz: [kanal 9 Video: modelleme mimarisine artırmak](http://go.microsoft.com/fwlink/?LinkID=252078).
+Visual Studio'da anlamanıza ve sistem, uygulama veya bileşen değiştirme yardımcı olmak için bir model kullanabilirsiniz. Bir model, sisteminizin çalıştığı dünyanın görselleştirin, kullanıcıların ihtiyaçlarını açıklamak, sisteminizin mimarisini tanımlayın, kod çözümleme ve kodunuzu gereksinimleri karşıladığından emin olun yardımcı olabilir. Bkz: [kanal 9 videosu: mimariyi modelleme aracılığıyla geliştirmek](http://go.microsoft.com/fwlink/?LinkID=252078).
 
-Visual Studio hangi sürümlerinin her türde bir model desteklediğini görmek için bkz: [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
+Visual Studio'nun hangi sürümlerinin her model türünü desteklemek için bkz [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
 
-Modelleri çeşitli şekillerde yardımcı olabilir:
+Modelleri, çeşitli şekillerde yardımcı olabilir:
 
-- Modelleme diyagramları çizim, gereksinimler, mimari ve üst düzey tasarımı ilgili kavramları açıklamak yardımcı olur. Daha fazla bilgi için bkz: [Model kullanıcı gereksinimlerini](../modeling/model-user-requirements.md).
+- Modelleme diyagramları çizmek gereksinimleri, mimari ve üst düzey tasarım kavramları açıklamak yardımcı olur. Daha fazla bilgi için [kullanıcı gereksinimlerini modelleme](../modeling/model-user-requirements.md).
 
-- Modeller ile çalışmak gereksinimlerdeki tutarsızlıkları kullanıma yardımcı olabilir.
+- Modellerle çalışma gereksinimleri tutarsızlıklar kullanıma yardımcı olabilir.
 
-- Modeller ile iletişim kurarken önemli kavramları iletişim yardımcı değerinden muğlak doğal dili. Daha fazla bilgi için bkz: [uygulama Mimarinizi Model](../modeling/model-your-app-s-architecture.md).
+- Modelleri ile iletişim kurulurken önemli kavramlar iletişim kurmasına yardımcı değerinden muğlak doğal dil. Daha fazla bilgi için [uygulama Mimarinizi modelleme](../modeling/model-your-app-s-architecture.md).
 
-- Modeller, kod veya veritabanı şemaları ve belgeler gibi diğer yapılarını oluşturmak için bazen kullanabilirsiniz. Örneğin, Visual Studio'nun modelleme bileşenleri bir modelden oluşturulur. Daha fazla bilgi için bkz: [oluştur ve uygulamanızı modeller aracılığıyla yapılandırma](../modeling/generate-and-configure-your-app-from-models.md).
+- Modelleri, kod veya veritabanı şemalarını veya belgeler gibi diğer yapıları üretmek için bazen kullanabilirsiniz. Örneğin, Visual Studio'nun modelleme bileşenleri modelden üretilir. Daha fazla bilgi için [oluşturur ve uygulamanızı modeller aracılığıyla yapılandırma](../modeling/generate-and-configure-your-app-from-models.md).
 
 Çok çeşitli işlemlerden aşırı yüksek Çevik seremoni modellerinde kullanabilirsiniz.
 
-## <a name="use-models-to-reduce-ambiguity"></a>Belirsizliği azaltmak için modelleri kullanın
+## <a name="use-models-to-reduce-ambiguity"></a>Belirsizliği azaltmak için modelleri kullanır.
 
-Model oluşturma dili doğal dil az belirsizdir ve genellikle yazılım geliştirme sırasında gereken fikirleri ifade etmek için tasarlanmıştır.
+Dil modelleme, doğal dil daha az belirsiz ve genellikle yazılım geliştirme sırasında gerekli fikirleri ifade etmek için tasarlanmıştır.
 
-Projeniz Çevik uygulamaları takip küçük bir ekibe sahipse, kullanıcı hikayeleri açıklığa kavuşturmak amacıyla modelleri kullanabilirsiniz. Müşterinin gereksinimlerine hakkında ile tartışmalara bir model oluşturma yararlı soruları çok daha hızlı ve ani veya prototip kod yazma daha geniş bir alan, ürün arasında oluşturabilir.
+Çevik yöntemleri küçük bir takım projeniz varsa, kullanıcı hikayelerini açıklığa kavuşturmanıza yardımcı olacak modeller kullanabilirsiniz. Müşteri ihtiyaçlarını hakkındaki tartışmalara model oluşturma yararlı soruları çok daha hızlı ve ani değişiklik ya da prototip kod yazmaya daha geniş bir alan, ürünün üzerinden oluşturabilirsiniz.
 
-Projenizi büyük ve dünya farklı kısımlarını takımlar içeriyorsa, gereksinimleri ve mimariyi düz metin olarak yapabileceğiniz çok daha etkili iletişim yardımcı olmak için modelleri kullanabilirsiniz.
+Projeniz büyük ve takımlar dünyanın dört bir yanındaki farklı kısımlarını içerir, gereksinimleri ve mimari düz metin olarak yapabilecekleriniz daha verimli iletişim kurmasına yardımcı olacak modeller kullanabilirsiniz.
 
-Her iki durumda da neredeyse her zaman bir model oluşturma tutarsızlıklar ve belirsizlikleri önemli bir azalmayla sonuçlanır. Farklı Paydaşlar sık sistem çalıştığı iş dünyanın farklı anlayışları, ve farklı geliştiriciler sık sisteminin nasıl çalıştığı, farklı anlayışları sahiptir. Bir modeli kullanarak bir tartışma odağı olarak genellikle bu farklılıkları gösterir. Bir model tutarsızlıkları azaltmak için nasıl kullanılacağı hakkında daha fazla bilgi için bkz: [Model kullanıcı gereksinimlerini](../modeling/model-user-requirements.md).
+Her iki durumda da neredeyse her zaman bir model oluşturma önemli bir azalma tutarsızlıklar ve belirsizlikleri sonuçlanır. Farklı proje katılımcıları sık sistem çalıştığı iş dünyanın farklı anlayışları sahip ve farklı geliştiriciler genellikle sistem nasıl çalıştığına ilişkin farklı anlarlar. Bir model, genellikle bir tartışmaya bir odak olarak kullanarak bu farklılıkları gösterir. Tutarsızlıkları azaltmak için bir modeli kullanma hakkında daha fazla bilgi için bkz. [kullanıcı gereksinimlerini modelleme](../modeling/model-user-requirements.md).
 
-## <a name="use-models-with-other-artifacts"></a>Modelleri diğer yapılar ile kullanma
+## <a name="use-models-with-other-artifacts"></a>Diğer yapılar ile modelleri kullanma
 
-Bir model tek başına bir gereksinimler belirtimi veya bir mimari değil. Bunlardan bazı yönlerini daha net bir şekilde ifade etmek için bir araç olan, ancak yazılım tasarımı sırasında gerekli tüm kavramlar ifade edilebilir. Modelleri bu nedenle iletişimin OneNote sayfalarını veya paragrafları gibi başka bir şekilde birlikte kullanılmalıdır, Microsoft Office belgeleri, iş öğelerini [!INCLUDE[esprfound](../code-quality/includes/esprfound_md.md)], ya da proje yer duvarında Yapışkan Notlar. Son öğenin dışında tüm bu nesne türleri için model öğelerini bölümleri bağlanabilir.
+Bir modeli kendisini gereksinimleri belirtimi veya bir mimari değildir. Bunların bazılarını daha net bir şekilde ifade etmek için bir araç olan, ancak yazılım tasarımı sırasında gerekli tüm kavramları ifade edilebilir. Modeller, bu nedenle iletişimin OneNote sayfaları veya zaman paragraflar, Microsoft Office belgeleri, iş öğesi Team Foundation ya da proje odası duvardaki Yapışkan notlar gibi başka bir yolla birlikte kullanılmalıdır. Son öğe dışında tüm bu nesne türleri için model öğeleri bölümleri bağlanabilir.
 
-Normalde modeller ile birlikte kullanılan diğer yönlerini belirtimi arasında şunlar yer alır. Ölçek ve stil projenizin bağlı olarak birkaç bu yönlerinin kullanın veya herhangi bir hiç kullanmamak:
+Normalde modelleri ile birlikte kullanılan belirtimi diğer yönleri arasında şunlar yer alır. Ölçek ve projenizin stili bağlı olarak birkaç bu görünüşler kullanın veya herhangi kullanmamak:
 
-- Kullanıcı hikayeleri. Kullanıcı hikayesi kullanıcıları ve projenin yineleme birinde teslim edilecek sistemin davranışı durumunun diğer Paydaşlar ile açıklanan kısa bir açıklamasıdır. "Müşteri yapabilirsiniz..." tipik kullanıcı hikayesi başlar Kullanıcı hikayesi kullanım örnekleri grubunu getirebilir veya önceden geliştirilmiş kullanım durumlarının uzantıları tanımlayabilirsiniz. Tanımlama veya kullanım örneklerini genişletme kullanıcı hikayesinin daha anlaşılır yardımcı olun.
+- Kullanıcı hikayeleri. Kullanıcı hikayesi kullanıcıların ve diğer proje katılımcıları projenin yineleme birinde teslim sistemin davranışı durumunun ele kısa bir açıklamasıdır. "Müşteri şunları yapabilecek..." tipik bir kullanıcı hikayesi başlar. Kullanıcı hikayesi, kullanım örnekleri grubu yapabilecek veya kullanım örneklerinin önceden geliştirilen uzantıları tanımlayabilirsiniz. Tanımlama veya kullanım örneklerinin genişletme kullanıcı hikayesinin daha anlaşılır hale getirmeye yardımcı olur.
 
-- Değişiklik istekleri. Bir değişiklik isteğini daha resmi projesinde, kullanıcı hikayesi Çevik projesinde çok benzer. Çevik yaklaşım önceki yinelemelerde geliştirilmiş olan için tüm gereksinimleri değiştikçe değerlendirir.
+- Değişiklik istekleri. Daha resmi proje içinde bir değişiklik isteğinin, Çevik bir proje içinde bir kullanıcı hikayesini çok benzer. Çevik bir yaklaşım, önceki yinelemelerde geliştirildiği bilgisayardakinden için tüm gereksinimleri değiştikçe değerlendirir.
 
-- Kullanım örneği açıklaması. Kullanım örneği, bir kullanıcının belirli bir hedefe ulaşmak için kullanıcının sistem ile etkileşimde bulunan bir yolunu temsil eder. Tam açıklama hedef, ana ve alternatif dizileri olayları ve olağanüstü sonuçları içerir. Kullanım örneği diyagramı özetlemek ve kullanım örneklerini genel bir bakış sağlayan yardımcı olur.
+- Kullanım örneği açıklaması. Kullanım örneği, bir kullanıcı belirli bir hedefe ulaşmak için sistemi ile etkileşime giren bir yolunu temsil eder. Tam bir açıklaması, olaylar ve olağanüstü sonuçlar ana ve alternatif dizileri, hedef içerir. Bir kullanım durumu diyagramı özetlemenize ve kullanım örneklerine genel bakış sağlayan yardımcı olur.
 
-- Senaryoları. Bir senaryodur nasıl sistem, kullanıcılar ve diğer sistemler değeri katılımcılara sunmak için birlikte çalışan gösteren olayların sırası oldukça ayrıntılı bir açıklaması. Kullanıcı arabiriminin slide show ya da kullanıcı arabiriminin bir prototip sürebilir. Bir kullanım örneği veya kullanım örnekleri dizisini açıklayabilirsiniz.
+- Senaryo. Bir sistem, kullanıcıların ve diğer sistemler için birlikte nasıl değer proje katılımcılarına sağlamak çalıştığını gösteren bir olay dizisi oldukça ayrıntılı bir açıklaması bir senaryodur. Bu kullanıcı arabiriminin bir slide show veya kullanıcı arabiriminin bir prototip biçiminde. Bir kullanım örneği veya kullanım örneklerinin bir dizisini tanımlayabilirsiniz.
 
-- Sözlük. Projenin gereksinimler sözlüğü, müşterilerin kendi world ele kelimeleri açıklar. Kullanıcı arabirimi ve gereksinimler modeli de bu koşulları kullanmanız gerekir. Sınıf diyagramında Bu terimlerin birçoğu arasındaki ilişkileri açıklanmasına yardımcı olabilir. Sözlük ve diyagramları oluşturma yalnızca kullanıcılar ve geliştiriciler arasında anlamaları azaltır, ancak ayrıca neredeyse her zaman farklı iş Paydaşlar arasındaki yanlış anlamaları kullanıma sunar.
+- Sözlük. Projenin gereksinimleri sözlüğü, müşteriler kendi dünya tartışmak kelimeleri açıklar. Kullanıcı arabirimi ve gereksinim modelleri de bu koşulları kullanmalısınız. Bir sınıf diyagramı, çoğu bu terimlerin arasındaki ilişkiler açıklanmasına yardımcı olabilir. Sözlük ve diyagramları oluşturma yalnızca kullanıcılar ve geliştiriciler arasında anlamaları azaltır, ancak artırarak yanlış anlaşılmaların farklı iş hissedarları arasında de neredeyse her zaman kullanıma sunar.
 
-- İş kuralları. Birçok iş kuralları ilişkilendirmeler ve öznitelikler gereksinimleri sınıf modelindeki değişmez kısıtlamalar ve sıralı diyagramlar kısıtlamalar olarak ifade edilebilir.
+- İş kuralları. Birçok iş kuralları, ilişkileri ve gereksinimleri sınıfı modeldeki öznitelik sabit kısıtlama olarak ve sıralı diyagramlar üzerinde kısıtlama olarak belirtilebilir.
 
-- Üst düzey tasarımı. Başlıca parçaları ve onların birlikte nasıl uyduğunu açıklar. Bileşen, dizi ve arabirim diyagramları üst düzey tasarımı önemli bir parçasıdır.
+- Üst düzey tasarım. Başlıca parçaları ve bunlar birbirine nasıl uyduğunu açıklar. Bileşen, dizisi ve arabirimi diyagramları bir üst düzey tasarım önemli bir parçasıdır.
 
-- Tasarım desenleri. Tasarımın sistem farklı bölümleri arasında paylaşılan kurallarını açıklar.
+- Tasarım desenleri. Sistemin farklı bölümlerinin arasında paylaşılan Tasarım Kuralları açıklar.
 
-- Sınama belirtimleri. Test betikler ve test kodu için tasarımlar, sınama adımları dizisini açıklamak üzere etkinlik ve sıralı diyagramlar iyi kullanımını yapabilirsiniz. Böylece gereksinimleri değiştiğinde bunlar kolayca değiştirilebilir sistem testleri gereksinimler modeli açısından ifade edilmelidir.
+- Sınama belirtimleri. Test betikleri ve test kodu tasarımlarında test adımları dizileri tanımlamak için etkinlik ve sıra diyagramları iyi kullanımını yapabilirsiniz. Böylece gereksinimleri değiştiğinde bunlar kolayca değiştirilebilir sistem testleri gereksinimleri modeli açısından ifade edilmelidir.
 
-- Proje planı. Proje planı veya biriktirme listesi her özelliğin teslim zaman tanımlar. Her bir özelliğin ne durumları ve uygulayan veya genişletir iş kurallarını kullanmak belirterek tanımlayabilirsiniz. Doğrudan planında ya da iş kuralları ve kullanım örnekleri için başvurabilir veya ayrı bir belge bir özellikler kümesi tanımlayabilir ve planda özellik başlıklarını kullanın.
+- Proje planı. Proje planı veya biriktirme listesine her bir özelliğin ne zaman teslim edilecek tanımlar. Her özellik, çalışmaları ve iş kuralları uygulayan veya genişletir kullandıklarınız belirterek tanımlayabilirsiniz. İş kuralları ve kullanım durumları için plan doğrudan ya da başvurabilir veya bir özellikler kümesi içinde ayrı bir belge tanımlayın ve özellik başlıkları plandaki kullanın.
 
-## <a name="use-models-in-iteration-planning"></a>Yineleme Planlama modelleri kullanma
+## <a name="use-models-in-iteration-planning"></a>Yineleme planlamasında modelleri kullanma
 
-Tüm projeleri, ölçek ve kuruluşun farklı olmasına rağmen tipik bir proje yinelemelerini altı ve iki hafta arasında bir dizi olarak planlanmaktadır. Sonraki yinelemelerden planları ve kapsamını ayarlamak için kullanılacak Erken yinelemeler görüşleri izin vermek için yeteri kadar yineleme planlama önemlidir.
+Tüm projeler, ölçek ve kuruluşun farklı olsa da, tipik bir proje yinelemesi iki ve altı hafta arasında bir dizi olarak sunulması planlanmaktadır. Erken yinelemeler kapsam ve sonraki yinelemeler için planları ayarlamak için kullanılacak görüşleri izin vermek için yeterli yinelemeler önemlidir.
 
-Aşağıdaki öneriler yinelemeli projesinde modelleme faydaları hayata geçirmek yardımcı olmak yararlı bulabilirsiniz.
+Aşağıdaki öneriler, modelleme projesinde yinelemeli avantajlarını daha iyi anlamanıza yardımcı olmak yararlı bulabilirsiniz.
 
-### <a name="sharpen-focus-as-each-iteration-approaches"></a>Her yineleme yaklaşımı olarak Odağı Keskinleştirme
+### <a name="sharpen-focus-as-each-iteration-approaches"></a>Her yineleme yaklaştığında odak keskinleştirin
 
-Her yineleme yaklaşımı olarak modelleri yinelemenin sonunda teslim edilecek nedir tanımlamaya yardımcı olmak için kullanın.
+Her yineleme yaklaştığında, yinelemenin sonunda teslim edilecek nedir tanımlamaya yardımcı olmak için modelleri kullanır.
 
-- Erken yinelemeler ayrıntılı her şeyi model yok. İlk yinelemede kullanıcı sözlüğündeki ana öğeler için bir sınıf diyagramı oluşturmak, önemli kullanım örneklerini diyagramı ve ana bileşenlerini diyagramı çizin. Ayrıntı daha sonra projede değişir olduğundan bunları ince ayrıntılarıyla tanımlamaz. Özellikler veya kullanıcı hikayelerini listesini oluşturmak için bu modelde tanımlanmış terimleri kullanın. Yaklaşık proje boyunca tahmini iş yükünü dengelemek için yinelemelere özellikler atayın. Daha sonra projede bu atamaları değiştirecek.
+- Erken yinelemeler ayrıntılı her şeyi model yok. İlk yinelemeyi kullanıcı sözlüğündeki ana öğeler için bir sınıf diyagramı oluşturun, önemli kullanım örneği diyagramı çizme ve ana bileşenleri diyagramı çizme. Daha sonra projede ayrıntı değişeceği ince ayrıntılı olarak bunlardan birine tanımlamaz. Bu modelde tanımlanan koşullara özellikleri veya kullanıcı hikayelerini listesini oluşturmak için kullanın. Özellikleri yaklaşık proje boyunca tahmini iş yükünü dengelemek için yinelemelere atayabilirsiniz. Bu atamaları, daha sonra projeyi değiştirir.
 
-- En önemli kullanım örneklerini Basitleştirilmiş sürümleri erken yineleme uygulamak deneyin. Genişletme olanlar sonraki yinelemelerde kullanım. Bu yaklaşım gereksinimlerinde bir kusur veya hakkında herhangi bir şey yapmak için çok geç proje mimarisinde keşfetme riskini azaltmaya yardımcı olur.
+- En önemli kullanım örneklerini Basitleştirilmiş sürümleri erken bir yineleme uygulamak bu seçeneği deneyin. Genişletme sonraki yinelemelerde bu kullanım örnekleri. Bu yaklaşım, özel olarak gereksinimler eksiktir veya mimari hakkında herhangi bir şey yapmak için çok geç projesinde keşfetme riskini azaltmaya yardımcı olur.
 
-- Her yineleme sonuna yakın gereksinimleri veya sonraki yinelemede geliştirilen kullanıcı hikayelerini ayrıntılı olarak tanımlamak için gereksinimler Atölyesi tutun. Kullanıcılar ve geliştiriciler ve sistem sınayıcılar yanı sıra önceliklerini, karar verebilirsiniz iş Paydaşlar davet edin. 2 haftalık yineleme için gereksinimleri tanımlamak üç saat izin verir.
+- Her yinelemenin sonuna, ayrıntılı olarak sonraki yinelemesine geliştirilen kullanıcı hikayeleri ve gereksinimlerini tanımlamak için gereksinimler Atölyesi tutun. Kullanıcılar ve öncelikler, yanı sıra geliştiricilere ve sistem test edicilere karar verebilirsiniz iş hissedarlar davet edin. 2 haftalık yineleme gereksinimlerini tanımlamak üç saat bekleyin.
 
-- Atölye amacı, sonraki yinelemeye ucu tarafından elde kabul herkese içindir. Modelleri araçlardan biri gereksinimleri belirlemenize yardımcı olması için kullanın. Yineleme Biriktirme Atölye çıktısını listesidir: geliştirme listesini diğer bir deyişle, görevlerinin [!INCLUDE[esprfound](../code-quality/includes/esprfound_md.md)] ve test paketleri [!INCLUDE[TCMext](../misc/includes/tcmext_md.md)].
+- Atölyesi amacı, sonraki yineleme sonunda elde edilecek kabul herkese yöneliktir. Modelleri araçlarından birini gereksinimleri belirlemenize yardımcı olması için kullanın. Atölyesi çıktısını bir yineleme biriktirme listesi olduğu: Team Foundation ve test paketleri geliştirme görevleri başka bir deyişle, bir listesini [!INCLUDE[TCMext](../misc/includes/tcmext_md.md)].
 
-- Geliştirme görevleri için tahminleri belirlemek yalnızca gereksinim duyduğunuz kadar duymanıza gereksinimleri Atölye içinde tasarımı tartışın. Aksi takdirde kullanıcıların doğrudan deneyebileceği sistem davranışını tartışmaya tutun. Gereksinimler modelini mimari modelden ayrı tutun.
+- Geliştirme görevlerini tahminleri belirlemek yalnızca gereksinim duymanıza kadar tasarımı gereksinimlerini atölyeyi tartışın. Aksi takdirde, kullanıcıların doğrudan deneyebileceği sistemi davranışını tartışmaya tutun. Gereksinimler modelini mimari modelden ayrı tutun.
 
-- Yedeğin Paydaşlar genellikle sizden biraz kılavuzluk ile UML diyagramlarını anlama herhangi bir sorun vardır.
+- Yedeğin proje katılımcıları, genellikle sizden bazı yönergeler içeren bir UML diyagramları anlama herhangi bir sorun vardır.
 
-### <a name="link-model-to-work-items"></a>İş öğeleri için bağlantı modeli
+### <a name="link-model-to-work-items"></a>İş öğelerine bağlantı modeli
 
-Gereksinimler Atölyesi sonra gereksinimler modeli ayrıntılarını özenli ve modeli geliştirme görevlerine bağlayın. Bu iş öğelerini bağlantılandırarak yapmak [!INCLUDE[esprfound](../code-quality/includes/esprfound_md.md)] model öğelerine.
+Gereksinimleri Atölyesi sonra gereksinimler modelini ayrıntılarını özenli ve model geliştirme görevlerine bağlayın. Team Foundation iş öğelerini model öğelere bağlayarak bunu yapabilirsiniz.
 
-İş öğeleri için herhangi bir öğe bağlayabilirsiniz, ancak en yararlı öğeler aşağıdaki gibidir:
+Herhangi bir öğe iş öğelerine bağlayabilirsiniz, ancak en yararlı öğeler aşağıdaki gibidir:
 
-- İş kurallarını veya hizmet gereksinimlerinin kalitesini açıklayan yorumlar. Daha fazla bilgi için bkz: [Model kullanıcı gereksinimlerini](../modeling/model-user-requirements.md).
+- İş kuralları veya hizmet gereksinimlerinin kalitesini açıklayan yorumlar. Daha fazla bilgi için [kullanıcı gereksinimlerini modelleme](../modeling/model-user-requirements.md).
 
-### <a name="link-model-to-tests"></a>Testleri bağlantı modeli
+### <a name="link-model-to-tests"></a>Testler için bağlantı modeli
 
-Kabul testleri tasarım kılavuzu için gereksinimler modeli kullanın. Bu testler eşzamanlı olarak geliştirme iş oluşturun.
+Kabul testleri tasarım kılavuzu için gereksinimler modelini kullanın. Bu testleri eşzamanlı geliştirme işi oluşturun.
 
-Bu teknik hakkında daha fazla bilgi için bkz: [model aracılığıyla test geliştirme](../modeling/develop-tests-from-a-model.md).
+Bu yöntem hakkında daha fazla bilgi için bkz: [model aracılığıyla test geliştirme](../modeling/develop-tests-from-a-model.md).
 
 ### <a name="estimate-remaining-work"></a>Kalan işi tahmin etme
 
-Gereksinimler modeli, her bir yineleme boyutuna göre proje toplam boyutunu tahmin yardımcı olabilir. Sayısı ve karmaşıklığı kullanım örnekleri ve sınıfların değerlendiriliyor gerekir geliştirme iş tahmin etmenize yardımcı olabilir. Ne zaman ilk birkaç yineleme kapsanan gereksinimler karşılaştırması tamamladınız ve gereksinimlerini karşılamak için hala yaklaşık bir maliyet ölçüsü ve rest projenin kapsamını verebilirsiniz.
+Gereksinimler modelini, her yineleme boyutu ile ilgili proje toplam boyutunu tahmin yardımcı olabilir. Sayısı ve karmaşıklığı kullanım örnekleri ve sınıflarının değerlendirerek gerekli olacak geliştirme iş tahmin etmenize yardımcı olabilir. İlk birkaç yinelemenin kapsanan gereksinimler karşılaştırması tamamladıktan ve gereksinimlerini karşılamak için hala zaman maliyeti yaklaşık bir ölçü ve projenin geri kalanını kapsamını verebilirsiniz.
 
-Her yineleme sonuna yakın gelecek yinelemeler için gereksinimlerin atamasını gözden geçirin. Kullanım örneği diyagramı içindeki bir alt sistemi olarak her bir yineleme sonunda yazılım durumunu göstermek için yararlı olabilir. Tartışmalara kullanım örnekleri taşıyın ve kullanım örneği uzantıları bu alt sistemleri birinden diğerine.
+Her yinelemenin sonuna, gelecekteki yinelemeleri için gereksinimlerin atamasını gözden geçirin. Alt kullanım örneği diyagramı sistemde olarak her yinelemenin sonunda, yazılım durumunu göstermek için yararlı olabilir. Tartışmalarınızda kullanım örneklerini ve bu alt sistemlerin birinden diğerine büyük/küçük harf uzantıları kullanın.
 
-## <a name="levels-of-abstraction"></a>Soyutlama düzeyleri
+## <a name="levels-of-abstraction"></a>Özet Düzeyi
 
-Modelleri soyutlama yazılım ile ilgili olarak bir dizi vardır. En somut modeller doğrudan program kodunu gösterir ve en soyut modeller olabilir ya da koddaki temsil edilmeyen iş kavramlarını temsil eder.
+Modelleri, bir dizi yazılım ile ilgili Özet vardır. En somut modeller, program kodu doğrudan temsil eder ve en soyut modeller olabilir veya kodda temsil edilmeyen iş kavramlarını göstermek.
 
-Bir model birçok türdeki diyagram görüntülenebilir. Modelleri ve diyagramları hakkında daha fazla bilgi için bkz: [uygulamanız için model oluşturma](../modeling/create-models-for-your-app.md).
+Bir model çeşitli türlerde diyagramları görüntülenebilir. Modelleri ve diyagramları hakkında daha fazla bilgi için bkz. [uygulamanız için model oluşturma](../modeling/create-models-for-your-app.md).
 
-Farklı türlerdeki diyagram soyutlama farklı düzeylerde tasarım açıklamak için yararlıdır. Çoğu diyagram türlerinin birden fazla düzeyde yararlıdır. Bu tablo her diyagram türünün nasıl kullanılabileceğini gösterir.
+Farklı türlerdeki diyagram, farklı düzeylerde soyutlama tasarım açıklamak için yararlıdır. Çoğu diyagram türleri, birden fazla düzeyde yararlı olur. Bu tablo, her diyagram türü nasıl kullanılabileceğini gösterir.
 
 |Tasarım düzeyi|Diyagram türleri|
-|------------------|-------------------|
-|İş işlemi<br /><br /> İçinde sisteminizi kullanılacak bağlamı anlamak kullanıcıların ondan gerekenler anlamanıza yardımcı olur.|-Kavramsal sınıf diyagramları iş işlemi içinde kullanılan iş kavramlarını açıklar.|
-|Kullanıcı gereksinimleri<br /><br /> Kullanıcıların sisteminizden gerekenler tanımı.|-İş kuralları ve Hizmet gereksinimlerinin kalitesi ayrı belgelerde açıklanabilir.|
-|Üst düzey tasarım<br /><br /> Sistem genel yapısını: ana bileşenler ve onların birlikte nasıl eşleştiği.|-Bağımlılık diyagramları sistemin bölümler halinde nasıl yapılandırıldığını açıklar. Program kodunu mimariye uyduğundan emin olmak için bağımlılık diyagramları karşı doğrulayabilirsiniz.|
-|Kod çözümleme<br /><br /> Diyagramları koddan oluşturulabilir.|-Bağımlılık diyagramları sınıflar arasındaki bağımlılıkları gösterir. Güncelleştirilmiş kod bir bağımlılık diyagramına karşı doğrulanabilir.<br />-Sınıf diyagramları kodda sınıfları gösterir.|
+|-|-|
+|İş süreci<br /><br /> Sisteminiz içinde kullanılacak bağlamı anlamak kullanıcılar bundan gerekenler anlamanıza yardımcı olur.|-Kavramsal sınıf diyagramları, iş süreci içinde kullanılan iş kavramlarını açıklar.|
+|Kullanıcı gereksinimleri<br /><br /> Kullanıcıların sisteminizi gerekenler tanımı.|-İş kuralları ve hizmet gereksinimleri kalitesini ayrı belgelerinde açıklanabilir.|
+|Üst düzey tasarım<br /><br /> Sistemin genel yapısını: ana bileşenleri ve bunların birlikte nasıl birleştirin.|-Bağımlılık diyagramları, sistemin bölümler halinde nasıl yapılandırıldığını açıklar. Program kodu mimariye uymasını sağlamak için bağımlılık diyagramlarına karşı doğrulayabilir.|
+|Kod Analizi<br /><br /> Diyagramları, koddan oluşturulabilir.|-Bağımlılık diyagramları sınıfları arasındaki bağımlılıkları gösterir. Bir bağımlılık diyagramına karşı güncelleştirilmiş kod doğrulanabilir.<br />-Sınıf diyagramları, kod içinde sınıfları gösterir.|
 
 ## <a name="external-resources"></a>Dış kaynaklar
 
 |**Kategori**|**Bağlantılar**|
-|------------------|---------------|
-|**Videolar**|![video bağlantı](../data-tools/media/playvideo.gif "PlayVideo") [MSDN nasıl yapmak ı videolar: oluşturma ve kullanma UML modellerini ve diyagramları (Visual Studio 2010 Ultimate)](http://go.microsoft.com/fwlink/?LinkId=214460)<br /><br /> ![video bağlantı](../data-tools/media/playvideo.gif "PlayVideo") [Channel 9: Visual Studio 2010 ile UML](http://go.microsoft.com/fwlink/?LinkID=201106)<br /><br /> ![video bağlantı](../data-tools/media/playvideo.gif "PlayVideo") [MSDN nasıl yapmak ı serisi: UML araçları ve genişletilebilirlik (Visual Studio 2010 Ultimate)](http://go.microsoft.com/fwlink/?LinkID=214467)|
-|**Forumları**|- [Visual Studio Görselleştirme ve Modelleme Araçları](http://go.microsoft.com/fwlink/?LinkId=184720)<br />- [Visual Studio Görselleştirme ve modelleme SDK (DSL araçları)](http://go.microsoft.com/fwlink/?LinkId=184721)|
-|**Bloglar**|[Visual Studio ALM + Team Foundation Server blogu](http://go.microsoft.com/fwlink/?LinkID=201340)|
-|**Teknik makaleler ve günlükleri**|[MSDN Mimari Merkezi](http://go.microsoft.com/fwlink/?LinkId=201343)<br /><br /> [Visual Studio Mimari Araç Kullanımı Kılavuzu](../modeling/visual-studio-architecture-tooling-guidance.md)|
+|-|-|
+|**Videolar**|![video bağlantısı](../data-tools/media/playvideo.gif) [videoları MSDN Nasıl Yaparım: oluşturma ve kullanma UML modellerini ve diyagramları (Visual Studio 2010 Ultimate)](http://go.microsoft.com/fwlink/?LinkId=214460)<br /><br /> ![video bağlantısı](../data-tools/media/playvideo.gif) [Channel 9: Visual Studio 2010 ile UML](http://go.microsoft.com/fwlink/?LinkID=201106)<br /><br /> ![video bağlantısı](../data-tools/media/playvideo.gif) [MSDN nasıl yaparım serisi: UML araçları ve genişletilebilirlik (Visual Studio 2010 Ultimate)](http://go.microsoft.com/fwlink/?LinkID=214467)|
+|**Forumları**|- [Visual Studio Görselleştirme ve Modelleme Araçları](http://go.microsoft.com/fwlink/?LinkId=184720)<br />- [Visual Studio Görselleştirme ve modelleme SDK'sını (DSL araçları)](http://go.microsoft.com/fwlink/?LinkId=184721)|
+|**Bloglar**|[Microsoft DevOps](https://blogs.msdn.microsoft.com/devops/)|
+|**Teknik makaleler ve belgeler**|[MSDN Mimari Merkezi](http://go.microsoft.com/fwlink/?LinkId=201343)<br /><br /> [Visual Studio Mimari Araç Kullanımı Kılavuzu](../modeling/visual-studio-architecture-tooling-guidance.md)|
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Çevik Geliştirme modelleri kullanma](http://msdn.microsoft.com/592ac27c-3d3e-454a-9c38-b76658ed137f)
+- [Çevik Yazılım geliştirmede modeller kullanma](https://msdn.microsoft.com/592ac27c-3d3e-454a-9c38-b76658ed137f)
 - [Uygulamanız için model oluşturma](../modeling/create-models-for-your-app.md)
 - [Kullanıcı gereksinimlerini modelleme](../modeling/model-user-requirements.md)
 - [Uygulama mimarinizi modelleme](../modeling/model-your-app-s-architecture.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f0ffea7be736cbf6d04c368ba6124d0faf22be61
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1ea3ac73ceb5ce61cbf7cc9acb71c610b1a34b59
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49846271"
 ---
 # <a name="idebugexceptionevent2canpasstodebuggee"></a>IDebugExceptionEvent2::CanPassToDebuggee
-Hata ayıklama altyapısı (DE) yürütme devam ettiğinde ayıklanacak programın bu özel durum geçirme seçeneğiniz destekleyip desteklemediğini belirler.  
+Hata ayıklama altyapısı (DE) yürütme devam ettiğinde ayıklanan programa bu özel durum geçirme seçeneğiniz destekleyip desteklemediğini belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,11 +38,11 @@ int CanPassToDebuggee();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Ya da döndürür `S_OK` (özel durum programına aktarılabilecek) veya `S_FALSE` (özel durum geçirilemez).  
+ Döndürür `S_OK` (özel durum programa geçirilebilir) veya `S_FALSE` (özel durum geçirilemez).  
   
 ## <a name="remarks"></a>Açıklamalar  
- DE ayıklayıcı geçişine için varsayılan eylem olması gerekir. IDE alabilirsiniz [IDebugExceptionEvent2](../../../extensibility/debugger/reference/idebugexceptionevent2.md) olay ve arama [devam](../../../extensibility/debugger/reference/idebugprocess3-continue.md) yöntemi çağırmadan `CanPassToDebuggee` yöntemi. Bu nedenle DE özel veya geçirme için varsayılan durumda olması gerekir.  
+ Hata ayıklanan iletilecek bir varsayılan eylem DE olması gerekir. IDE alabilirsiniz [IDebugExceptionEvent2](../../../extensibility/debugger/reference/idebugexceptionevent2.md) olay ve arama [devam](../../../extensibility/debugger/reference/idebugprocess3-continue.md) yöntemi çağırmadan `CanPassToDebuggee` yöntemi. Bu nedenle DE özel durum veya geçirmek için bir varsayılan durumda olması gerekir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExceptionEvent2](../../../extensibility/debugger/reference/idebugexceptionevent2.md)   
- [Devam etmek](../../../extensibility/debugger/reference/idebugprocess3-continue.md)
+ [Continue](../../../extensibility/debugger/reference/idebugprocess3-continue.md)

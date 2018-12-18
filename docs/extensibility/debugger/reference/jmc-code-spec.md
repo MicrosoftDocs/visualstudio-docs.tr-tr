@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d3abf59cb55bd64004750be7b24e00e42eb79d9e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b24c052bc3345443e8bcbe474f881906f420a74c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49821714"
 ---
 # <a name="jmccodespec"></a>JMC_CODE_SPEC
-Bu yapı, bir modül JustMyCode bilgilerini ayarlamak için kullanılır.  
+Bu yapı, modül JustMyCode bilgilerini ayarlamak için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,21 +43,21 @@ public struct JMC_CODE_SPEC {
   
 ## <a name="members"></a>Üyeler  
  fIsUserCode  
- Sıfır olmayan (`TRUE`) kullanıcı kodu; olarak kabul edilmesi için modül ise, aksi takdirde, sıfır (`FALSE`) modülü dış kodu olarak kabul edilmesi için değil ayıklanacak ise.  
+ Sıfır olmayan (`TRUE`) modülü kullanıcı kodu; göz önünde bulundurulması, aksi takdirde, sıfır (`FALSE`) modülü harici kod olarak işlem görecek ve değil ayıklanacak ise.  
   
  bstrModuleName  
  Söz konusu modülün adı.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı böyle yapılara listesi olarak geçirilen [SetJustMyCodeState](../../../extensibility/debugger/reference/idebugengine3-setjustmycodestate.md) yöntemi.  
+ Bu yapı için tür yapıları listesi olarak geçirilen [SetJustMyCodeState](../../../extensibility/debugger/reference/idebugengine3-setjustmycodestate.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [SetJustMyCodeState](../../../extensibility/debugger/reference/idebugengine3-setjustmycodestate.md)

@@ -19,18 +19,19 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: afbc3bc7b50b30ed651921d09d0fe766810992d3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cfe789c5dd16cd55d48c8c1470877a7df60e3caf
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37120423"
 ---
-# <a name="how-to-create-a-sharepoint-web-part-by-using-a-designer"></a>Nasıl Yapılır: Tasarımcı Kullanarak SharePoint Web Bölümü Oluşturma
+# <a name="how-to-create-a-sharepoint-web-part-by-using-a-designer"></a>Nasıl yapılır: Tasarımcı kullanarak bir SharePoint Web Bölümü oluşturma
   Bir web bölümü ekleyerek oluşturabileceğiniz bir **Visual Web Bölümü** herhangi bir SharePoint proje öğesi. Bu, Visual Studio'da web bölümü, denetimleri ile kod ekleyebileceğiniz Visual Web Developer Tasarımcısı'nı açar. Visual web bölümleri Web Bölümleri olduğu gibi aynı şekilde işlev. Visual web bölümleri Visual Web Developer tasarımcısında tasarım yalnızca farktır.  
   
 ### <a name="to-create-a-project-for-visual-web-parts"></a>Visual web bölümleri için bir proje oluşturmak için  
   
-1.  Menü çubuğunda seçin **dosya**, **yeni**, **proje**.  
+1.  Menü çubuğunda seçin **dosya** >**yeni** > **proje**.  
   
      **Yeni proje** iletişim kutusu açılır.  
   
@@ -46,7 +47,7 @@ ms.lasthandoff: 04/16/2018
   
 ### <a name="to-add-a-visual-web-part-to-an-existing-sharepoint-project"></a>Varolan bir SharePoint projesine visual web bölümü eklemek için  
   
-1.  Menü çubuğunda seçin **proje**, **Yeni Öğe Ekle**.  
+1.  Menü çubuğunda seçin **proje** > **Yeni Öğe Ekle**.  
   
 2.  İçinde **Yeni Öğe Ekle** iletişim kutusunda, seçin **Office/SharePoint** düğümü.  
   
@@ -54,10 +55,10 @@ ms.lasthandoff: 04/16/2018
   
      İçinde **Çözüm Gezgini**, web bölümü görünür. Visual Web Developer Tasarımcısı'nda web bölümü tasarladıktan sonra belirttiğiniz sitesinde sınayacaksınız.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [SharePoint için Web bölümleri oluşturma](../sharepoint/creating-web-parts-for-sharepoint.md)   
- [Nasıl yapılır: bir SharePoint Web Bölümü oluşturma](../sharepoint/how-to-create-a-sharepoint-web-part.md)   
- [İzlenecek yol: SharePoint için bir Web Bölümü oluşturma](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint.md)   
- [İzlenecek Yol: Tasarımcı Kullanarak SharePoint için bir Web Bölümü Oluşturma](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint-by-using-a-designer.md)  
+## <a name="see-also"></a>Ayrıca bkz.
+ [SharePoint Web bölümleri oluşturma](../sharepoint/creating-web-parts-for-sharepoint.md)   
+ [Nasıl yapılır: bir SharePoint web bölümü oluşturma](../sharepoint/how-to-create-a-sharepoint-web-part.md)   
+ [İzlenecek yol: SharePoint için bir web bölümü oluşturma](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint.md)   
+ [İzlenecek yol: Tasarımcı kullanarak bir web bölümü SharePoint için oluşturma](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint-by-using-a-designer.md)  
   
   

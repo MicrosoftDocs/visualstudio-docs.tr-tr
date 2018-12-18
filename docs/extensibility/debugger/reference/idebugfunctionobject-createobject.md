@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 15b41cc5ff9f60143cdbf006005358cb86eb7f30
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d0af1607d8352b158c28248fc4bd85ed0fbaf7b3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49908650"
 ---
 # <a name="idebugfunctionobjectcreateobject"></a>IDebugFunctionObject::CreateObject
-Bir Oluşturucu kullanarak bir nesne oluşturur.  
+Bir oluşturucu kullanılarak bir nesne oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,24 +47,24 @@ int CreateObject(
   
 #### <a name="parameters"></a>Parametreler  
  `pConstructor`  
- [in] Bir [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) oluşturulacak nesnenin oluşturucusu temsil eden nesne.  
+ [in] Bir [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) Oluşturucusu oluşturulacak nesne, temsil eden nesne.  
   
  `dwArgs`  
- [in] Parametre sayısı `pArg` dizi. Oluşturucuya geçirilen parametre sayısını temsil eder.  
+ [in] Parametre sayısı `pArg` dizisi. Oluşturucuya geçirilen parametrelerin sayısını temsil eder.  
   
  `pArg`  
- [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) parametreleri temsil eden oluşturucuya geçirilen nesneleri.  
+ [in] Bir dizi [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oluşturucuya geçirilen parametreleri temsil eden nesneleri.  
   
  `ppObject`  
- [out] Döndürür bir `IDebugObject` yeni oluşturulan nesnenin temsil eden.  
+ [out] Döndürür bir `IDebugObject` temsil eden yeni oluşturulan nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir sınıf (veya bir oluşturucu gerektiren diğer karmaşık tür) örneğini temsil eden bir nesne oluşturmak için bu yöntemi çağırın diğer bir deyişle, tarafından temsil edilen işlevi parametresi [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
+ Bir sınıf (veya bir oluşturucu gerektiren başka bir karmaşık tür) örneğini temsil eden bir nesne oluşturmak için bu yöntemi çağıran bir parametresi tarafından temsil edilen işlevi için diğer bir deyişle [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) arabirimi.  
   
- Nesne parametresi bir oluşturucu gerektirmiyorsa çağrısı [CreateObjectNoConstructor](../../../extensibility/debugger/reference/idebugfunctionobject-createobjectnoconstructor.md) yöntemi.  
+ Nesne parametresi bir oluşturucu gerektirmiyorsa, çağrı [CreateObjectNoConstructor](../../../extensibility/debugger/reference/idebugfunctionobject-createobjectnoconstructor.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md)   

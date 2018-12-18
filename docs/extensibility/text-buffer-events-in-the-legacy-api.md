@@ -1,5 +1,5 @@
 ---
-title: Metin arabelleği olayları eski API'sindeki | Microsoft Docs
+title: Metin arabelleği olayları eski API | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,44 +13,44 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ab2812d30c0f02063e9ed3672e9b01855c77da22
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f147171d8af075029a4a763a84fd48c5209f8fe1
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39080614"
 ---
-# <a name="text-buffer-events-in-the-legacy-api"></a>Eski API metin arabelleği olayları
-Metin arabellek nesnesi farklı durumlarda yanıt olanak sağlayan birkaç farklı olayları gösterir.  
+# <a name="text-buffer-events-in-the-legacy-api"></a>Metin arabelleği olayları eski API
+Metin arabelleği nesne farklı durumlar için yanıt olanak tanıyan birkaç farklı olaylar gönderir.  
   
- Eski API'si kullanılırken metin arabelleği değişikliklerle ilgili bildirim almak için aşağıdaki arabirimleri uygulamanız gerekir. Metin arabelleği kullanarak arabirimleri kullanıma `IConnectionPointContainer` satır bildirim almak için metin arabelleğini arabirimde arabelleğinden değiştirir. Daha fazla bilgi için bkz: [nasıl yapılır: kayıt eski API olan metin arabelleği olaylar için](../extensibility/how-to-register-for-text-buffer-events-with-the-legacy-api.md). Durumunda `IVsTextStreamEvents` veya `IVsTextLinesEvents` arabirimleri, değişiklikleri döndürülür ya da bir veya two dimensional koordinatlarında, sırasıyla.  
+ Eski API'si kullanılırken, metin arabelleğini değişiklikleri bildirim almak için aşağıdaki arabirimlerinden uygulamalıdır. Metin arabelleği kullanılarak arabirimleri kullanıma `IConnectionPointContainer` satır bildirim almak için metin arabelleği arabirimde arabellekteki değiştirir. Daha fazla bilgi için [nasıl yapılır: metin arabelleği olayları eski API'si ile kaydolma](../extensibility/how-to-register-for-text-buffer-events-with-the-legacy-api.md). Durumunda, `IVsTextStreamEvents` veya `IVsTextLinesEvents` arabirimleri, değişiklikleri geri gönderilir ya da bir veya two dimensional koordinatlarında, sırasıyla.  
   
 ## <a name="text-buffer-interfaces"></a>Metin arabelleği arabirimleri  
  Metin arabelleği nesne tarafından uygulanan arabirimler aşağıda verilmiştir.  
   
 |Arabirim|Açıklama|  
 |---------------|-----------------|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompoundAction>|Bileşik eylemleri (diğer bir deyişle, bir tek geri alma/yineleme biriminde gruplandırılır Eylemler) oluşturulmasını sağlar.|  
-|<xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData>|Metin arabelleğini tarafından yönetilen belge veri kalıcılığını etkinleştirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBuffer>|Temel hizmetleri sağlayan; birçok istemciler tarafından kullanılır.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines>|Sağlar okuma ve yazma iki boyutlu koordinatları kullanarak yetenekleri. Öğesinden devralınan `IVsTextBuffer`.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextScanner>|Hızlı, metin arabelleği akış odaklı, sıralı erişim sağlar.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream>|Sağlar okuma ve yazma yeteneklerini tek boyutlu koordinatları kullanarak. Öğesinden devralınan `IVsTextBuffer`.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsUserData>|Bir genel koleksiyon özelliklerinin erişim sağlar. En önemli özelliğinin adı veya arabellek ad olmalıdır. Bir GUID oluşturarak ve bir anahtar olarak kullanarak rastgele verilerinizi bu arabirimle arabellek depolayabilirsiniz.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompoundAction>|Bileşik eylemleri (diğer bir deyişle, bir tek geri al/Yinele biriminde gruplandırılır eylemleri) oluşturulmasını sağlar.|  
+|<xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData>|Metin arabelleği tarafından yönetilen belge veri kalıcılığını etkinleştirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBuffer>|Temel hizmetleri sağlar. birden çok istemci tarafından kullanılır.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines>|Sağlar okuma ve yazma iki boyutlu koordinatlarını kullanarak özellikleri. Devralınan `IVsTextBuffer`.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextScanner>|Hızlı, arabellekteki metni akışa dayalı olarak sıralı erişim sağlar.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStream>|Sağlar okuma ve yazma özellikleri kullanarak tek boyutlu koordinatları. Devralınan `IVsTextBuffer`.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsUserData>|Genel Özellikler koleksiyonu erişim sağlar. En önemli özellik adını veya bilinen ad, arabellek olur. Bir GUID oluşturma ve bir anahtar olarak kullanarak rastgele verilerinizi bu arabirimle arabellek depolayabilirsiniz.|  
 |<xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer>|Bağlantı noktaları için olayları destekler.|  
   
 ## <a name="text-buffer-event-interfaces"></a>Metin arabelleği olay arabirimleri  
- Metin arabelleği olay bildirimi arabirimleri aşağıda verilmiştir.  
+ Metin arabelleği olay bildirimi için arabirimleri aşağıda verilmiştir.  
   
 |Arabirim|Açıklama|  
 |---------------|-----------------|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferEvents>|Yeni bir dil hizmeti bir metin arabelleği ile ilişkili olduğunda istemcilere bildirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferDataEvents>|İstemciler, bir metin arabelleği başlatıldığında ve metin arabelleği verilerde değişiklik yapıldığında bildirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStreamEvents>|Tek boyutlu koordinatlarında temel metin arabellek değişiklikleri istemcilere bildirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents>|Temel metin arabellek iki boyutlu koordinatlarında değişiklikleri istemcilere bildirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsUserDataEvents>|Kullanıcı verilerde yapılan değişiklikleri istemcilere bildirir.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsPreliminaryTextChangeCommitEvents>|Olayı tetiklemek için son yürütme hareketi istemcilere bildirir ve değiştirilen metin aralığını sağlar. `IVsPreliminaryTextChangeCommitEvents` Arabirimi değil geri veya komutları yinelemek için yanıt olarak tetiklenir. Olaylar, yalnızca bir geri alma yöneticisi olan arabelleklerini kov. `IVsPreliminaryTextChangeCommitEvents` Asıl listenin gibi diğer olayları önce değişiklikler kaydedilmeden önce diğer olaylarla metni değiştirmeyin emin olmak için tetiklenir. VSPackage ya da izlemelisiniz `IVsPreliminaryTextChangeCommitEvents` arabirimi veya `IVsFinalTextChangeCommitEvents` arabirimi, ancak ikisini birden değil.|  
-|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsFinalTextChangeCommitEvents>|Olayı tetiklemek için son yürütme hareketi istemcilere bildirir ve değiştirilen metin aralığını sağlar. `IVsFinalTextChangeCommitEvents` Arabirimi değil geri veya komutları yinelemek için yanıt olarak tetiklenir. Olaylar, yalnızca bir geri alma yöneticisi olan arabelleklerini kov. `IVsFinalTextChangeCommitEvents` Yalnızca dil hizmetler veya düzenleme üzerinde tam denetime sahip diğer nesneleri tarafından kullanılmaya yöneliktir. VSPackage ya da izlemelisiniz `IVsPreliminaryTextChangeCommitEvents` arabirimi veya `IVsFinalTextChangeCommitEvents` arabirimi, ancak ikisini birden değil.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferEvents>|Yeni bir dil hizmeti bir metin arabelleği ile ilişkili olduğunda istemciler bildirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferDataEvents>|İstemciler, bir metin arabelleği başlatıldığında ve metin arabelleğini verilerde değişiklik yapıldığında size bildirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextStreamEvents>|Tek boyutlu koordinatlarını temel alınan metin arabellekteki değişiklikler istemcileri bildirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextLinesEvents>|İstemcileri iki boyutlu koordinatlarını temel alınan metin arabellekteki değişiklikler bildirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsUserDataEvents>|Kullanıcı verilerini değişiklikleri istemcileri bildirir.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsPreliminaryTextChangeCommitEvents>|Son Yürütme hareket olayı tetiklemek için istemcileri size bildirir ve metin değiştirildi yelpazesi sunar. `IVsPreliminaryTextChangeCommitEvents` Arabirimi değil geri alınacak veya yinelenecek komutları yanıt olarak harekete geçirilir. Olayları yalnızca bir geri alma yöneticisi olan arabelleklerini kov. `IVsPreliminaryTextChangeCommitEvents` düzgün listeleme gibi diğer olayları önce değişiklikleri uygulanmadan önce diğer olaylarla metni değiştirmeyin emin olmak için tetiklenir. VSPackage'ı ya da izlemelidir `IVsPreliminaryTextChangeCommitEvents` arabirimi veya `IVsFinalTextChangeCommitEvents` arabirimi, ancak ikisine birden değil.|  
+|<xref:Microsoft.VisualStudio.TextManager.Interop.IVsFinalTextChangeCommitEvents>|Son Yürütme hareket olayı tetiklemek için istemcileri size bildirir ve metin değiştirildi yelpazesi sunar. `IVsFinalTextChangeCommitEvents` Arabirimi değil geri alınacak veya yinelenecek komutları yanıt olarak harekete geçirilir. Olayları yalnızca bir geri alma yöneticisi olan arabelleklerini kov. `IVsFinalTextChangeCommitEvents` Yalnızca dil Hizmetleri ya da düzenleme üzerinde tam denetime sahip diğer nesneler tarafından kullanıma yöneliktir. VSPackage'ı ya da izlemelidir `IVsPreliminaryTextChangeCommitEvents` arabirimi veya `IVsFinalTextChangeCommitEvents` arabirimi, ancak ikisine birden değil.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Eski API kullanarak metin arabelleği erişme](../extensibility/accessing-the-text-buffer-by-using-the-legacy-api.md)   
- [Nasıl yapılır: metin arabelleği olayları eski API ile kaydetme](../extensibility/how-to-register-for-text-buffer-events-with-the-legacy-api.md)
+## <a name="see-also"></a>Ayrıca bkz.
+ [Eski API'yi kullanarak metin arabelleğini erişim](../extensibility/accessing-the-text-buffer-by-using-the-legacy-api.md) [nasıl yapılır: metin arabelleği olayları eski API'si ile kaydolma](../extensibility/how-to-register-for-text-buffer-events-with-the-legacy-api.md)

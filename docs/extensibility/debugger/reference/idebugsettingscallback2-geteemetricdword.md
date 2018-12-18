@@ -13,11 +13,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7d98e4015443cab56e45b5b0b4ed6c084b89f023
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 449b2e5659b6db670f1b95e0e26e3df70db7f9fc
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49853278"
 ---
 # <a name="idebugsettingscallback2geteemetricdword"></a>IDebugSettingsCallback2::GetEEMetricDword
 İfade değerlendirici belirtilen ölçüm için karşılık gelen bir değer alır.  
@@ -44,7 +45,7 @@ private int GetEEMetricDword(
   
 #### <a name="parameters"></a>Parametreler  
  `guidLang`  
- [in] Programlama dili benzersiz tanımlayıcısı.  
+ [in] Programlama diline benzersiz tanımlayıcısı.  
   
  `guidVendor`  
  [in] Satıcı benzersiz tanımlayıcısı.  
@@ -53,10 +54,10 @@ private int GetEEMetricDword(
  [in] Ölçüm adı.  
   
  `pdwValue`  
- [out] Karşılık gelen değer ölçüm dizesi olarak döndürür.  
+ [out] Ölçüm dizesine karşılık gelen bir değer döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

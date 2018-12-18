@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131586"
 ---
 # <a name="providing-automation-for-vspackages"></a>Otomasyon VSPackages için sağlama
 Otomasyon için VSPackages sağlamak için başlıca iki yolu vardır: VSPackage özgü nesneler uygulayarak ve standart Otomasyon nesneleri uygulayarak. Genellikle, bunlar birlikte ortamının otomasyon modeli genişletmek için kullanılır.  

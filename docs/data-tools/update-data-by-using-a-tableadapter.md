@@ -1,5 +1,5 @@
 ---
-title: TableAdapter kullanarak veri güncelleştirme
+title: TableAdapter kullanarak verileri güncelleştirme
 ms.date: 11/04/2016
 ms.topic: conceptual
 dev_langs:
@@ -16,16 +16,18 @@ ms.assetid: 5e32e10e-9bac-4969-9bdd-b8f6919d3516
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 05a61aa42c086ba3fd0a71fa221426c763df14d7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 88d4da868174396bfed148fc6088e5675e1198b2
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37116899"
 ---
-# <a name="update-data-by-using-a-tableadapter"></a>TableAdapter kullanarak veri güncelleştirme
+# <a name="update-data-by-using-a-tableadapter"></a>TableAdapter kullanarak verileri güncelleştirme
 
 Veri kümenizi verilerde değişiklik ve doğrulanmış sonra güncelleştirilen verileri bir veritabanına geri çağırarak gönderebilirsiniz `Update` yöntemi bir [TableAdapter](../data-tools/create-and-configure-tableadapters.md). `Update` Yöntemi bir tek veri tablosunu güncelleştirir ve göre doğru komutu (INSERT, UPDATE veya DELETE) çalıştıran <xref:System.Data.DataRow.RowState%2A> tablosundaki her veri satırının. Bir veri kümesi ilişkili tabloları, Visual Studio güncelleştirmeler yapmak için kullandığınız bir TableAdapterManager sınıfı oluşturur. TableAdapterManager sınıfı güncelleştirmeleri veritabanında tanımlı yabancı anahtar kısıtlamaları göre doğru sırada yapılan sağlar. Verilere bağlı denetimler kullandığınızda, veri bağlama mimarisi tableAdapterManager adlı TableAdapterManager sınıfının üye değişkeni oluşturur.
 

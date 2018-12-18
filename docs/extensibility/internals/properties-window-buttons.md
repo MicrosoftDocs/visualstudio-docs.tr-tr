@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31130709"
 ---
 # <a name="properties-window-buttons"></a>Özellikler penceresi düğmeleri
 Geliştirme dilini ve ürün türüne bağlı olarak, belirli düğmeleri varsayılan araç çubuğunda görüntülenir **özellikleri** penceresi. Tüm durumlarda **kategoriler**, **Alphabetized**, **özellikleri**, ve **özellik sayfaları** düğmeleri görüntülenir. Visual C# ve Visual Basic **olayları** düğmesini de görüntülenir. Belirli Visual C++ projelerinde **VC ++ iletileri** ve **VC geçersiz kılmaları** düğmeleri görüntülenir. Diğer proje türleri için ek düğmeler görüntülenebilir. Düğmeleri hakkında daha fazla bilgi için **özellikleri** penceresinde bkz [Özellikler penceresini](../../ide/reference/properties-window.md).  

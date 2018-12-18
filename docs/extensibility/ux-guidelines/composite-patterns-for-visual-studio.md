@@ -1,5 +1,5 @@
 ---
-title: Visual Studio için bileşik desenleri | Microsoft Docs
+title: Visual Studio için bileşik desenler | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -11,69 +11,70 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 6515b5aefc0536ea92f09a92b1a17050b820008d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 14d9f233d41638092d1a722094cb0c86f368a748
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951606"
 ---
-# <a name="composite-patterns-for-visual-studio"></a>Visual Studio için bileşik desenleri
-Bileşik desenleri farklı yapılandırmayı etkileşim ve tasarım öğeleri birleştirin. Visual Studio tutarlılık açısından en önemli bileşik düzenleri bazıları şunlardır:  
-  
+# <a name="composite-patterns-for-visual-studio"></a>Visual Studio için bileşik desenler
+Bileşik desenler farklı yapılandırmalarda etkileşim ve tasarım öğeleri birleştirin. Tutarlılık açısından en önemli bileşik desenler Visual Studio'da bazıları şunlardır:  
+
 -   [Veri Görselleştirme](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_DataVisualization)  
-  
+
 -   [Nesne üzerinde kullanıcı Arabirimi ve gözatma](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_OnObjectUI)  
-  
--   [Seçim modelleri](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_SelectionModels)  
-  
+
+-   [Seçimi modelleri](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_SelectionModels)  
+
 -   [Kalıcılığı ve ayarları kaydediliyor](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_PersistenceAndSavingSettings)  
-  
--   [Dokunmatik giriş](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_TouchInput)  
-  
+
+-   [Dokunma girişi](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_TouchInput)  
+
 ##  <a name="BKMK_DataVisualization"></a> Veri Görselleştirme  
-  
+
 ### <a name="overview"></a>Genel Bakış  
- Grafikler, toplama ve işlerinize geliştirmek için verileri görselleştirmek için görsel bir yoludur. Bunlar çok miktarda veri ancak bkz: ne dikkat hak ve hangi eylemin gerekebilecek küçük anlamına gelir ile karşılaştığı kullanıcıların yardımcı olur.  
-  
- Aşağıdaki koşullardan herhangi biri doğruysa, kullanıcı bir grafik yararlı olacaktır:  
-  
--   Grafik çalışabilmek için görevleri tanımlamak kullanıcılara yardımcı olur?  
-  
--   Grafik, olası değişiklikleri sonuçlarını tahmin etmek kullanıcıların olanak sağlar?  
-  
--   Grafik eğilimleri bulmak ve düzenleri tanımlamak kullanıcılara yardımcı olur?  
-  
--   Grafik daha iyi kararlar almak kullanıcılara izin verecek misiniz?  
-  
--   Grafik verilen içerikte kullanıcınız belirli bir soruya yanıt yardımcı olur?  
-  
-#### <a name="general-rules-for-charts"></a>Grafik için genel kurallar  
-  
--   Açıkça etiket verileri. Açıklama olmadan çizimler olan yalnızca resim asıl.  
-  
--   Eksen eğriltme oranları önlemek için sıfırdan başlatın. Veri noktaları arasındaki ilişkileri anlamak için önemli görsel ipuçları satır uzunluğu ve çubuğu boyutu var.  
-  
--   Grafikler, değil infographics oluşturun. Infographics veri Artistik gösterimlerini, ve bunların birincil hedef visual storytelling. Grafikler olabilir ve gereken görsel olarak çekici, ancak kendini ifade etmesini veri sağlar.  
-  
--   Skeumorphism, resimsel çubuk grafikler, karşıtlık hashmarks ve diğer bilgi grafiği rötuşları kaçının.  
-  
--   3B efektler dekoratif bir öğe olarak kullanmayın. Bunları yalnızca kullanırsanız, kullanıcının özelliğine bilgileri kavrama gerçekten tam sayı.  
-  
--   Bu grafik türü birden fazla iki renkten okuyun ve doğru şekilde yorumlamak zor hale getirebilir gibi birden çok satır ve dolgular kullanmaktan kaçının.  
-  
--   Bir kavram anlama veya verilerle etkileşim tek yolu olarak bir grafik (veya tüm çizim) kullanmayın. Bu, görme engelli kullanıcılara zorluklarla kullanıcılar için gösterir.  
-  
--   Grafikler, bir sayfadaki gereksiz veya dekoratif öğeler olarak kullanmayın. Diğer bir deyişle, bir grafik herhangi bir değer veya Yardım kullanıcının bir sorunu çözmek değil eklerseniz, kullanmayın.  
-  
+ Grafikler, toplamak ve karar alma geliştirmek için verileri görselleştirmek için görsel bir yoludur. Bunlar, kullanıcıların karşılaştığı veri ancak ne dikkat hak ve eylem ihtiyaç duyabilirsiniz az anlamına gelen çok fazla ile yardımcı olabilir.  
+
+ Aşağıdaki koşullardan herhangi biri doğruysa, kullanıcı bir grafikten yararlı olacaktır:  
+
+-   Grafik üzerinde işlem yapabileceğiniz görevleri tanımasına yardımcı olur?  
+
+-   Grafik olası değişikliklerin sonuçlarını tahmin olanak tanıyacak?  
+
+-   Grafik, eğilimleri ve desenleri kullanıcılara yardımcı olur?  
+
+-   Grafik daha iyi kararlar açmasına izin veriyor musunuz?  
+
+-   Grafik, kullanıcılar verilen içerikte olabilecek belirli bir soruya yanıt yardımcı olur?  
+
+#### <a name="general-rules-for-charts"></a>Grafikler için genel kurallar  
+
+-   Açıkça etiket verileri. Açıklama olmadan çizimler olan yalnızca yapıyorsak resim.  
+
+-   Eksen eğriltme oranlarını önlemek için sıfırdan başlayın. Veri noktaları arasındaki ilişkileri anlamak için önemli görsel ipuçları satır uzunluğu ve çubuğu boyutu var.  
+
+-   Grafikler, değil infografikleri oluşturun. İnfografikleri veri Artistik temsillerini ve bunların birincil hedef visual Öykü anlatımı olduğundan. Grafikleri kullanabilirsiniz ve kullanmalısınız görsel olarak çekici ancak şeklini veri sağlar.  
+
+-   Skeumorphism, anlatımlarda çubuk grafikler, karşıtlık hashmarks ve diğer bilgi grafiği dokunmalar kaçının.  
+
+-   3B Efektleri dekoratif bir öğe olarak kullanmayın. Yalnızca aşağıdaki durumlarda kullanın, kullanıcının yeteneği bilgileri kavrama gerçekten tam sayı.  
+
+-   Bu grafik türünü ikiden fazla renkleri okumak ve yorumlamak doğru zor hale getirebilir olarak birden fazla satır ve dolgular kullanma kaçının.  
+
+-   Bir kavramı anlamak veya veri etkileşimi tek yolu olarak bir grafik (veya herhangi bir çizim) kullanmayın. Bu görsel engelli kullanıcılar için sorunlar sunar.  
+
+-   Bir sayfadaki karşılıksız veya dekoratif öğeleri olarak grafikleri kullanmayın. Diğer bir deyişle, herhangi bir değer ya da Yardım kullanıcı sorunu bir grafik eklemez, kullanmayın.  
+
 ### <a name="chart-types"></a>Grafik türleri  
- Visual Studio'da kullanılan grafik türleri şunlardır çubuk grafikler, çizgi grafiklerde, bir halka grafik ya da "halka grafiği," zaman çizelgelerini, bilinen değiştirilmiş bir pasta grafik dağılım ("grafikleri küme" da denir) çizimleri ve Gantt grafikleri. Grafik türlerinin farklı türde bilgi iletişim kurmak için yararlıdır.  
-  
-### <a name="other-charting-considerations"></a>Diğer grafik konuları  
-  
+ Visual Studio'da kullanılan grafik türleri dahil çubuk grafikler, çizgi grafikleri, halka grafik ya da "halka grafiği," zaman çizelgeleri olarak bilinen değiştirilmiş bir pasta grafiğinin dağılım çizimleri ("grafikleri küme" da denir) ve Gantt grafikleri. Grafik türlerinin farklı türde bilgi iletişim kurmak için kullanışlıdır.  
+
+### <a name="other-charting-considerations"></a>Grafik dikkat edilecek diğer noktalar  
+
 #### <a name="color"></a>Renk  
- Visual Studio'da kullanılmak üzere tanımlanmış renkleri grafik, belirli bir palet yoktur. Palet renk görme engeli ana türleri için erişilebilir olduğundan ve renklerin renk çok dar dilimler kullanıldığında bile Ayrıştırılan. Bu renkleri herhangi bir bileşimini, kullanıcı Arabiriminde herhangi bir türde grafiği veya grafiği için kullanabilirsiniz. Bu kadar sayıda tek tek renkler gerekmiyorsa tüm yedi renklerini kullan gerekmez. Bu renkleri metin ya da bu renkleri üstünde karakterlerin yerleştirmeyin için tüm ön plan öğeleri ile kullanılmak üzere tasarlanmamıştır. Bu tonlar sabit kodlanmış ve gerekir kullanıcı özelleştirme altında maruz **Araçlar > Seçenekler** (bkz [son kullanıcılar için renk gösterme](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_ExposingColorsForEndUsers)).  
-  
-|Renk örneği|Onaltılık|RGB|  
+ Visual Studio'da kullanmak için tanımlanmış renkleri grafiği, belirli bir palet yoktur. Palet ana renk körlüğü türleri için erişilebilir olduğundan ve renklerin renk çok dar dilimleri kullanıldığında bile ayırt edilebilir. Bu renklerin herhangi bir birleşimini, kullanıcı Arabiriminde grafik veya graf herhangi bir türü için kullanabilirsiniz. Diğer birçok farklı renkler ihtiyacınız yoksa, tüm yedi renklerini kullan gerekmez. Bu renklerin metin veya karakterleri bu renklerin üzerine yerleştirmeyin için tüm ön plan öğeleri ile kullanılmak üzere tasarlanmamıştır. Bu tonları sabit kodlanmış verilecek ve kullanıcı özelleştirmesinde maruz **Araçlar > Seçenekler** (bkz [son kullanıcılar için renk gösterme](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_ExposingColorsForEndUsers)).  
+
+|Renk örneği|onaltılık|RGB|  
 |------------|---------|---------|  
 |![Renk örneği 71B252](../../extensibility/ux-guidelines/media/0711_71b252.png "0711_71B252")|#71B252|113,178,82|  
 |![Renk örneği BF3F00](../../extensibility/ux-guidelines/media/0711_bf3f00.png "0711_BF3F00")|#BF3F00|191,63,0|  
@@ -82,453 +83,455 @@ Bileşik desenleri farklı yapılandırmayı etkileşim ve tasarım öğeleri bi
 |![Renk örneği 117AD1](../../extensibility/ux-guidelines/media/0711_117ad1.png "0711_117AD1")|#117AD1|17,122,209|  
 |![Renk örneği 79D7F2](../../extensibility/ux-guidelines/media/0711_79d7f2.png "0711_79D7F2")|#79D7F2|121,215,242|  
 |![Renk örneği B5B5B5](../../extensibility/ux-guidelines/media/0711_b5b5b5.png "0711_B5B5B5")|#B5B5B5|181,181,181|  
-  
+
 ##  <a name="BKMK_OnObjectUI"></a> Nesne üzerinde kullanıcı Arabirimi ve gözatma  
- Bu bölümde, kod gözlem görünümü olarak da bilinen, nesne üzerindeki UI Visual Studio için benzersiz bir tür gözatma için bağlamı sağlar.  
-  
+ Bu bölüm, kod Özet görünümü olarak da bilinir, nesne üzerindeki kullanıcı Arabirimi Visual Studio için benzersiz bir tür gözatma için bağlam sağlar.  
+
 ### <a name="overview"></a>Genel Bakış  
-  
--   Nesne üzerinde UI kullanıcının daha fazla bilgi veya etkileşim kendi ana görevden detracting olmadan vermesi gerekir.  
-  
--   Visual Studio'da nesne üzerindeki UI ana deseni "bilgileri dikkat noktasında." olarak bilinir  
-  
--   Visual Studio'da nesne üzerinde UI ya da satır içi veya kayan ve dayanıklı veya geçici değil.  
-  
-    -   Kod gözlem Visual Studio'da nesne üzerindeki UI türü satır içi ve dayanıklı görünümüdür.  
-  
-    -   Kayan ve geçici CodeLens, Visual Studio'da nesne üzerindeki UI türü  
-  
- Bir kod parçasını nasıl çalıştığını anlamak veya bu kodu ayrıntılarını bulma genellikle bağlamı değiştirmek ve diğer içerik veya başka bir gitmek bir geliştirici gerektirir penceresi. Kendi ana penceresi bırakırsanız kullanıcılar kendi özgün görev odaklanmak kaybedebilir olduğundan bu bağlamda kaydırmalar kesintiye uğratan, olabilir. Ayrıca, özgün bağlamı geri özellikle windows geçiş diğer kullanıcı Arabirimi tarafından görünmeyebilir kendi özgün kod neden olursa zor olabilir alınıyor.  
-  
- Nesne üzerinde UI "bilgileri dikkat noktasında." olarak adlandırılan bir deseni takip eder Bu iletiler, açılır pencereleri ve iletişim kutuları kullanıcılara açıklama veya etkileşim ana görevini odaklanmak kaybetmeden ekler, ilgili ek bilgi verin. Bir kullanıcı kendi işaretçi geldiğinde bildirim alanında bir simge, yanlış yazılmış bir sözcük ve Visual Studio 2013'te tanıtılan gözlem görünüm altında kırmızı dalgalı üzerinden görüntülenen açılır pencereleri nesne üzerindeki UI örneklerindendir.  
-  
+
+- Nesne üzerindeki UI kullanıcı daha fazla bilgi veya etkileşim olmadan kendi ana görevden detracting vermeniz gerekir.  
+
+- Nesne üzerindeki Visual Studio kullanıcı Arabiriminde ana desenini "bilgileri dikkat noktasında." olarak bilinir  
+
+- Nesne üzerindeki Visual Studio kullanıcı Arabiriminde veya satır içi veya kayan ve dayanıklı veya geçici değil.  
+
+  -   Kod göz atma görünümünde, bir nesne üzerindeki Visual Studio kullanıcı Arabiriminde türü satır içi ve dayanıklı ' dir.  
+
+  -   CodeLens, bir tür nesne üzerindeki Visual Studio kullanıcı Arabiriminde kayan ve geçici  
+
+  Kod parçasını nasıl çalıştığını anlamak ve bu kodu ayrıntılarını bulma genellikle bağlam değiştirmek ve diğer içerik veya başka bir geliştirici gerektirir penceresi. Bunlar, ana pencereyi bırakırsanız kullanıcıların özgün görevini odaklanmak kaybedebilir bu bağlam kaydırmalar aksatıcı olabilir. Ayrıca, özgün içerik geri özellikle pencereler arasında geçiş yapma özgün kodlarını diğer kullanıcı Arabirimi tarafından gizlenmesine neden oluyorsa zor olabilir alınıyor.  
+
+  Nesne üzerinde kullanıcı Arabirimi "bilgileri dikkat noktasında." adlı bir desen izler Bu iletiler, açılan pencereler ve iletişim kutuları, kullanıcılara kendi ana görev odağınızı kaybetmeden bildirimizi veya açıklamanızı etkileşim ekler, ilgili ek bilgi verin. Bir kullanıcı kendi işaretçi geldiğinde bildirim alanında bir simge, bir sözcüğü ve Visual Studio 2013'te göz atma görünümünde altında kırmızı dalgalı çizgi üzerinde görünen açılır pencereleri nesne üzerindeki UI örnekleridir.  
+
 ### <a name="decision-points"></a>Karar noktaları  
- Visual Studio içinde dikkat noktasında bilgilerinin bu deseni kullanılacak birkaç yolu vardır. Genel deneyimi sağ mekanizmasını seçme ve tutarlı ve öngörülebilir bir şekilde uygulama gereklidir. Aksi halde, kullanıcıların içeriği odağı detracts kafa karıştırıcı veya tutarlı bir deneyim sunulabilir.  
-  
-#### <a name="relationships-between-master-and-detail-content"></a>Ana ve ayrıntı içerik arasındaki ilişkileri  
- Bir ilişki görüntülemek için bilgi dikkat noktasında kullanılan arasında içerik ("ana" içerik) odaklanmıştır ve ek kullanıcıdır ilgili içerik ("ayrıntı" içeriği). Bu modelinde ayrıntı içeriği, kullanıcı ile çalışma ve yakın ana içerik görüntülenebilir içeriğe açıkça ilişkilidir. Ek bilgiler veya ana içerik yayma olmadan özetlenen olamaz bilgilerini araç penceresi gibi başka bir deseni izlemelidir.  
-  
--   **Her zaman** ana içerik yakın ayrıntı içeriği görüntüle.  
-  
--   **Her zaman** ayrıntı içeriği hala bir kullanıcının ana içerik odaklanmış kalmasına olanak tanıdığından emin olun. Genellikle, bunu başarmak için en iyi ana içerik mümkün olduğunca yakın ayrıntı içeriği olarak işlemek için yoludur. Bu ana içerik yanındaki açılır pencerede ayrıntı içeriğini işlemek ya da ana içerik altında ayrıntı içerik satır içi işleme yapılabilir.  
-  
--   **Hiçbir zaman** ana içerik çıktığınızda kullanıcı alır dikkat noktasında bilgileri kullanın. Kullanıcıların ayrıntı içeriği ayrı olarak görüntülemek gerekiyorsa, bunu yapmak kullanıcının sağlayan açık bir eylem kullanıma sunar.  
-  
+ Visual Studio içinden dikkat noktasında bilgilerinin bu düzeni kullanmak için birkaç yol vardır. Doğru mekanizması seçme ve tutarlı, öngörülebilir bir şekilde uygulama genel deneyimi için gereklidir. Aksi takdirde, kullanıcıların içeriği odağı detracts karmaşık veya tutarsız deneyimi ile sunulabilir.  
+
+#### <a name="relationships-between-master-and-detail-content"></a>Ana ve ayrıntılı içerik arasındaki ilişkileri  
+ Bir ilişki görüntülemek için kullanılan bilgi noktasında dikkat arasında içeriğiyle ilgili içerik ("ayrıntılı" içerik) ("ana" içerik) odaklanır ve ek kullanıcıdır. Bu düzende, ayrıntılı içerik açıkça kullanıcı ile çalışma ve yakın ana içerik görüntülenebilir içerik ilişkilidir. Ek veya ana içerik aşırı yüklenilmesini olmadan özetlenen olamaz bilgileri araç penceresi gibi başka bir deseni izlemelidir.  
+
+-   **Her zaman** ana içerik yakınında ayrıntılı içeriklerin.  
+
+-   **Her zaman** yine de ana içerik odaklanmış kalmasına olanak ayrıntılı içerik olanak tanıdığından emin olun. Genellikle, bunu yapmanın en iyi ana içerik mümkün olduğunca yakın ayrıntılı içerik olarak işlemek için yoludur. Bu, ana içeriğin yanındaki açılır pencerede ayrıntılı içerik işleme ya da işleme ayrıntıları, ana içerik altındaki içeriği satır içi yapılabilir.  
+
+-   **Hiçbir zaman** ana içerik uzağa kullanıcının gerçekleştirdiği dikkat noktasında bilgileri kullanın. Kullanıcılar, ayrıntılı içerik ayrı olarak görüntülemek gerekiyorsa, bunu yapmak kullanıcının sağlayan belirli bir işlem kullanıma sunar.  
+
 #### <a name="design-details"></a>Tasarım ayrıntıları  
- Nesne üzerinde UI doğru seçim olduğunu belirledikten sonra dört ana tasarım konuları vardır:  
-  
-1.  **Kalıcılık:** içeriği kalıcı veya geçici olması bekleniyor?   
-    Kullanıcıların bilgilere başvurun veya etkileşimde görünsün etmek istiyor musunuz? Veya kullanıcılar bilgilerine Hızlı bakış ve ana görevini ile devam etmek istiyor musunuz?  
-  
-2.  **İçerik türü:** içeriği bilgi, işlem yapılabilir veya gezinme olacak?   
-    Kullanıcı ana içerik hakkında ek ayrıntılar gerekiyor mu? Kullanıcı ana içeriği etkiler bir görevi tamamlamak gerekiyor mu? Ya da kullanıcı başka bir kaynağa yönlendirilmesi gerekiyor mu?  
-  
-3.  **Gösterge türü:** bir ortam göstergesi için anlamlı mı?   
-    Bilgilerin kullanılabilir kullanışlı şekilde özetlenmiş ve ana içerik yayma olmadan görüntülenen?  
-  
-4.  **Hareketleri:** hangi hareketleri çağırma ve kullanıcı arabirimini kapatmak için kullanılacak?   
-    Nasıl kullanıcı ayrıntı içeriğin getirin ve hemen gönder? Geçici ve kalıcı durumları arasında geçiş yapmak için sabitleme gibi hareket ekleme değer var?  
-  
- Bu dört karar noktaları her bir nesne üzerindeki UI başlıca bileşenleri üzerinde etkisi olacaktır.  
-  
-### <a name="on-object-ui-components"></a>Nesne üzerinde UI bileşenleri  
-  
+ Nesne üzerinde kullanıcı Arabirimi doğru seçim olduğunu belirledikten sonra dört temel tasarım hakkında önemli noktalar vardır:  
+
+1. **Kalıcılık:** içeriği kalıcı veya geçici olması beklenir?   
+   Kullanıcılar bilgileri bakın veya etkileşime geçmek için görünür tutmak istersiniz? Veya kullanıcılar bilgilerine Hızlı bakış ve ana görevini ile devam etmek istersiniz?  
+
+2. **İçerik türü:** içeriği bilgilendirici, eyleme dönüştürülebilir veya gezinme olur?   
+   Kullanıcı ana içerik hakkında ek ayrıntılar gerekiyor mu? Ana içerik etkileyen bir görevi tamamlamak kullanıcının gerekir? Veya kullanıcı başka bir kaynağa yönlendirilen olması gerekiyor mu?  
+
+3. **Gösterge türünü:** bir ortam göstergesi mantıklı?   
+   Bilgilerin kullanılabilir yararlı bir şekilde özetlenen ve ana içerik aşırı yüklenilmesini olmadan görüntülenir?  
+
+4. **Hareketlerini:** ne hareketlerine çağırır ve kullanıcı arabirimini kapatmak için kullanılacak?   
+   Nasıl kullanıcı ayrıntılı içerik getirin ve hemen gönderebilir? Geçici ve kalıcı durumlar arasında geçiş yapmak için sabitleme gibi hareket ekleme değeri mı?  
+
+   Bu dört karar noktaları her bir nesne üzerindeki kullanıcı Arabirimi ana bileşenleri üzerinde etkisi olacaktır.  
+
+### <a name="on-object-ui-components"></a>Nesne üzerinde kullanıcı Arabirimi bileşenleri  
+
 1.  Kapsayıcı (içerik sunan) türü  
-  
+
     -   Kayan  
-  
+
     -   Satır içi  
-  
+
 2.  İçerik türü  
-  
+
     -   Bilgi amaçlı: veri, statik veya dinamik olabilir  
-  
-    -   İşlem yapılabilir: ana içerik değiştirme komutları  
-  
-    -   Gezinme: başka bir pencere veya MSDN gibi uygulama için kullanıcı götüren bağlantılar  
-  
-3.  Hareketleri  
-  
+
+    -   Eyleme dönüştürülebilir: ana içerik değiştirme komutları  
+
+    -   Gezinme: başka bir pencereye veya MSDN gibi uygulamanın kullanıcı yönlendiren bağlantılar  
+
+3.  Hareketler  
+
     -   Çağırma  
-  
+
     -   İşten çıkarma  
-  
+
     -   Sabitleme  
-  
+
     -   Diğer etkileşimler  
-  
+
 4.  Kalıcılığı ve yürütme modeli  
-  
+
     -   Geçici  
-  
+
     -   dayanıklı  
-  
+
     -   Otomatik  
-  
+
     -   İsteğe bağlı  
-  
+
 5.  Ortam göstergeleri (isteğe bağlı)  
-  
-    -   Dalgalı alt çizgi  
-  
+
+    -   Dalgalı çizgi  
+
     -   Akıllı etiket simgesi  
-  
+
     -   Diğer ortam göstergeleri  
-  
+
 #### <a name="container-content-presenter-type"></a>Kapsayıcı (içerik sunan) türü  
- İçerik dikkat noktasında sunmak kullanılabilecek iki ana seçenek vardır:  
-  
-1.  **Satır içi:** varolan içeriğin değiştirerek Visual Studio 2013 Kod düzenleyicisinde, sunulan gözlem görünümü gibi bir satır içi sunan yeni içerik için alanı sağlar.  
-  
-    -   **Tercih** kullanıcılar önemli miktarda başvurma veya içeriği ile etkileşim zaman harcamanız istediğiniz bekliyorsanız, satır içi sunucuları sunar.  
-  
-    -   **Kaçının** kullanıcılar bekliyorsanız, satır içi sunucuları sunmak, sonra en az kesintiyi ile ana görevini devam bilgilerine bakışta istediğiniz.  
-  
-2.  **Kayan:** kayan sunucu seçilen içeriği gibi mümkün olduğunca yakın yerleştirilmiş ancak mevcut içeriğinin düzenini değiştirmez. Üzerinden bir kayan İçerik paneli görüntüleme gibi çeşitli stratejileri çalıştırılacağı seçili simgesine kullanılabilir boşluk en yakın.  
-  
-    -   **Tercih** kullanıcılar bekliyorsanız sunucuları kayan istediğiniz sunmak, sonra en az kesintiyi ile ana görevini devam bilgilerine genel bakış.  
-  
-    -   **Kaçının** kullanıcılar bekliyorsanız sunucuları kayan istediğiniz önemli miktarda başvurma veya içeriği ile etkileşim zaman harcamanız, mevcut.  
-  
+ Dikkat etmeniz noktasında içerik sunmak kullanılabilir iki ana seçeneğiniz vardır:  
+
+1.  **Satır içi:** var olan içeriğin ilerletmeniz Visual Studio 2013 Kod Düzenleyicisi'nde kullanıma sunulmuştur Özet görünümü gibi bir satır içi sunan yeni içerik için alan sağlar.  
+
+    -   **Tercih ettiğiniz** , kullanıcılar önemli miktarda başvuran veya içeriğiyle etkileşimde bulunmaya zaman harcamamız Environment bekliyorsanız satır içi sunucuları sunar.  
+
+    -   **Önlemek** kullanıcılar bekliyorsanız satır içi sunucuları sunmak ve ardından ana görevini en az devam bilgilere genel bakış istediğiniz.  
+
+2.  **Kayan:** kayan sunucu seçilen içeriği gibi mümkün olduğunca yakın konumlandırılır, ancak mevcut içeriğinin düzenini değiştirmez. Kayan bir içerik bölmesi üzerinden görüntüleme gibi çeşitli stratejiler çalıştırılacağı boşluk seçili sembol kullanılabilir en yakın.  
+
+    -   **Tercih ettiğiniz** kullanıcılar bekliyorsanız sunucuları kayan istediğiniz sunmak ve ardından ana görevini en az devam bilgilere genel bakış.  
+
+    -   **Önlemek** kullanıcılar bekliyorsanız sunucuları kayan Environment başvuran veya içeriğiyle etkileşimde bulunmaya süresi önemli ölçüde harcayabileceğiniz, mevcut.  
+
 #### <a name="content-type"></a>İçerik türü  
- Üç ana içinde herhangi bir nesne üzerinde UI kapsayıcısına görüntülenen içerik türleri vardır. Bu tür bilgiler herhangi bir bileşimini gösterilebilir. Üç tür şunlardır:  
-  
-1.  **Bilgi amaçlı:** çoğu üzerinde nesne UI kapsayıcıları bazı bilgilendirme içerik türünü görüntüler. İçerik ortamının mevcut durumu hakkındaki bilgileri gösterebilir veya ortam bir olası gelecekteki durumu hakkındaki bilgileri gösterebilir. Örneğin, bir, varolan kod yeniden düzenleme gibi belirli bir komutun etkisini göstermek için kullanılabilir.  
-  
-    -   **Her zaman** görüntü bilgileri kurallı gösterimini kullanın. Örneğin, kod kod, sözdizimi vurgulama, tamamlandı gibi görünmelidir ve yazı tipinde ve kullanıcı diğer ortam ayarları dikkate.  
-  
-    -   **Her zaman** aynı bilgileri ana içerik olarak verilirse sağlayabileceğinizden bilgilendirici içerik üzerinde herhangi bir eylem destekleme göz önünde bulundurun. Örneğin, bir nesne üzerinde UI kapsayıcısı içinde var olan kod sunan, kesinlikle göz atın ve bu kodu değiştirme yeteneğini destekleme düşünün.  
-  
-    -   **Her zaman** bilgilendirme içeriği sunan bir olası gelecekteki durumu temsil ediyorsa farklı arka plan rengi kullanmayı düşünün.  
-  
-2.  İşlem yapılabilir: Bazı nesne üzerinde UI kapsayıcılar yeniden düzenleme işlemi gerçekleştirme gibi ana içerik üzerinde bazı eylemleri gerçekleştirmenize olanak sağlar.  
-  
-    -   **Her zaman** getirin tıklatılabilir komutları ayrı ayrı bilgi içeriği.  
-  
-    -   **Her zaman** etkinleştirin ve uygun olduğunda eylemleri devre dışı.  
-  
-    -   **Her zaman** iletişim kutuları içindeki komutları temsil etmek için standart yönergelere bakın.  
-  
-    -   **Her zaman** mutlak bir nesne üzerinde UI kapsayıcıya sunulan eylemlerin sayısını en düşük tutun. Nesne üzerindeki kullanıcı Arabirimi ile etkileşim basit, hızlı bir deneyim olmalıdır. Kullanıcı nesnesi üzerinde UI kapsayıcı kendisini yönetme enerji harcaması olmalıdır.  
-  
-    -   **Her zaman** nasıl ve ne zaman bir nesne üzerinde UI kapsayıcısı kapalı kapatıldığında veya göz önünde bulundurun. Bu eylem çalıştırıldığında en iyi uygulama, ana ve ayrıntı içerik arasındaki iletişim sonucuna herhangi bir eylem ayrıca nesne üzerinde UI kapsayıcısı kapatmanız gerekir.  
-  
-3.  **Gezinme:** bazı üzerinde UI kapsayıcıları başka bir pencere veya bir MSDN makalesine kullanıcının web tarayıcısında açarak gibi uygulama, kullanıcının götüren bağlantılar içeren nesne.  
-  
-    -   **Her zaman** böylece kullanıcılar diğer içerikler gittiğinizde tarafından sürprizle değil "Açık" herhangi bir gezinme bağlantıyı önüne ekleyin.  
-  
-    -   **Her zaman** gezinme bağlantıları tıklatılabilir bağlantılarından ayırın.  
-  
+ İçinde herhangi bir nesne üzerinde kullanıcı Arabirimi kapsayıcısına görüntülenebilir içerik üç ana türü vardır. Bu tür bilgilerin herhangi bir birleşimini gösterilebilir. Üç tür şunlardır:  
+
+1.  **Bilgi amaçlı:** çoğu nesne üzerindeki UI kapsayıcıları, bazı tür bilgilendirici içerik görüntülenir. İçerik ortamın mevcut durumu hakkındaki bilgileri gösterebilir veya ortam olası gelecekteki durumuyla ilgili bilgileri temsil edebilir. Örneğin, bir, mevcut kodu yeniden düzenleme gibi belirli bir komut etkisini göstermek için kullanılabilir.  
+
+    -   **Her zaman** görüntü bilgileri kurallı gösterimini kullanın. Örneğin, kod söz dizimi vurgulama, tam kod gibi görünmelidir ve yazı tipinde ve kullanıcı diğer ortam ayarları dikkate.  
+
+    -   **Her zaman** ana içerik olarak aynı bilgileri sunulmazsa sağlayabileceğinizden bilgilendirme içerik üzerinde herhangi bir eylem desteklemeyi düşünün. Örneğin, bir nesne üzerinde kullanıcı Arabirimi kapsayıcısı içinde var olan kod sunma, kesinlikle göz atın ve bu kodu değiştirme olanağı desteklemeyi düşünün.  
+
+    -   **Her zaman** farklı arka plan rengi, bilgilendirici içerik sunma olası gelecekteki bir durumu temsil ediyorsa kullanmayı düşünün.  
+
+2.  Eyleme dönüştürülebilir: Bazı nesne üzerinde kullanıcı Arabirimi kapsayıcıları yeniden düzenleme işlemi gerçekleştirme gibi ana içerik üzerinde bazı eylemler gerçekleştirme olanağı sunar.  
+
+    -   **Her zaman** bilgilendirici içeriğinden ayrı olarak eyleme dönüştürülebilir komutları getirin.  
+
+    -   **Her zaman** etkinleştirin ve uygun olduğunda eylemleri devre dışı bırakın.  
+
+    -   **Her zaman** iletişim kutusu içindeki komutları temsil eden standart yönergelere bakın.  
+
+    -   **Her zaman** mutlak bir nesne üzerinde kullanıcı Arabirimi kapsayıcıya sunulan eylemleri sayısı en düşük tutun. Nesne üzerindeki kullanıcı Arabirimi ile etkileşim basit, hızlı bir deneyim olmalıdır. Kullanıcı nesne üzerinde kullanıcı Arabirimi Kapsayıcının kendisi yönetme enerji harcaması gerekmez.  
+
+    -   **Her zaman** nasıl ve ne zaman bir nesne üzerinde kullanıcı Arabirimi kapsayıcısı kapalı kapatıldı veya göz önünde bulundurun. En iyi uygulama, bu eylem çalıştırıldığında ana ayrıntı içerik arasındaki iletişim sonucuna herhangi bir işlem nesne üzerinde kullanıcı Arabirimi kapsayıcısı da kapatmalısınız.  
+
+3.  **Gezinme:** bazı kullanıcı Arabirimi kapsayıcılar dahil başka bir pencereye veya bir MSDN makalesi kullanıcının web tarayıcısında açarak gibi uygulama, kullanıcının yönlendiren bağlantılar nesne üzerindeki.  
+
+    -   **Her zaman** böylece kullanıcılar diğer içerikler çıkıldığında tarafından sürprizle değil "Açık" herhangi bir gezinme bağlantısına önüne ekleyin.  
+
+    -   **Her zaman** gezinme bağlantılarını eyleme dönüştürülebilir bağlantılardan ayırın.  
+
 #### <a name="ambient-indicators-optional"></a>Ortam göstergeleri (isteğe bağlı)  
- Ortam göstergeleri hafif, kod geri kalanından karşıt renkte sunulan metin dahil veya açıktır, dalgalı alt çizgiler ve akıllı etiket simgeler gibi tickler semboller de dahil olmak üzere olabilir. Ortam göstergeleri ilgili ek bilgiler kullanılabilirliğini iletişim kurar. İdeal olarak, hatta onlarla etkileşime girmesini gerektirmeden yararlı bilgiler sağlar.  
-  
--   **Her zaman** bırakmaz gelen rahatsız veya kullanıcı doldurmaya böylece bir ortam gösterge getirin. Bir ortam gösterge biçimde konumlandırmak mümkün değildir, başka bir çözüm düşünün.  
-  
--   **Her zaman** ortam göstergesi için ilgili içeriğe mümkün olduğunca yakın getirin.  
-  
--   **Her zaman** kullanılabilir kolaylaştırır bilgileri özetler bir gösterge oluşturmayı deneyin. Kullanılabilir veri öğesi sayısı, (örneğin, "3 başvurular" Basit "Başvurular" yerine) sayısı sağlamayı düşünün veya özetlemek için başka bir şekilde düşünün.  
-  
-    -   Burada bir gösterge verileri her zaman hesaplanan görüntülenir ve durumlarda değerler hesaplanan gibi aşamalı geribildirim sağlama hemen göz önünde bulundurun. Örneğin, benzer bir Windows Phone e-posta Canlı kutucuğu okunmamış e-postaları artar sayı olarak yeniler biçimde kullanılabilir verilere güncelleştirmelerini yansıtma değişiklikleri animasyonu göz önünde bulundurun.  
-  
--   **Hiçbir zaman** bir kullanıcı belirli bir içerik için makul biçimde ele çok daha fazla göstergeleri ekleyin. Ortam göstergeleri kullanıcı etkileşimi gerektirmeden kullanışlı olması gerekir. Taşma ve diğer yönetim denetimleri görünüme getirilmesi gerekiyorsa göstergeleri kendi çevre kaybedersiniz.  
-  
-#### <a name="gestures"></a>Hareketleri  
- Ana içerik odaklanmak korumak kullanıcının önemli nokta, açmak ve ek ayrıntı içerik kapatmak için sağ hareketleri destekleyerek ' dir.  
-  
--   **Her zaman** ek içeriği açmak için bazı açık hareketi gerçekleştirmek kullanıcının gerektirir. Ortak açık hareketleri şunları içerir:  
-  
-    -   **Vurgulu:** araç ipuçları veya etkileşimli olmayan bilgilendirme içeriği  
-  
-    -   **Açık komutu:** satır içi sunum  
-  
+ Ortam göstergeleri, zarif, metin, kodun geri kalanını renklerden bir renk sunulan dahil olmak üzere veya belirgin dalgalı alt çizgiler ve akıllı etiket simgeler gibi tickler simgeleri dahil olabilir. Ortam göstergeleri ilgili ek bilgiler kullanılabilirliğini iletişim kurar. İdeal olarak, kullanıcının etkileşime geçilebileceği bile gerek kalmadan yararlı bilgiler sağlar.  
+
+-   **Her zaman** bir ortam göstergesi bırakmaz departmanınızı veya kullanıcının sık zora şekilde konumlandırın. Bir ortam göstergesi biçimde konumlandırmak mümkün değildir, başka bir çözümü göz önünde bulundurun.  
+
+-   **Her zaman** ortam göstergesi ilişkili içeriğe mümkün olduğunca yakın yerleştirin.  
+
+-   **Her zaman** kullanılabilir bilgi özetleyen bir göstergesi oluşturmayı deneyin. Bir sayısını kullanılabilir olan veri öğeleri (örneğin, "3 başvurular" Basit "başvuru" yerine) sağlamayı göz önüne alın veya verileri özetlemek için başka bir şekilde düşünün.  
+
+    -   Burada bir göstergesi için veriler her zaman hesaplanan görüntülenir ve durumlarda değerler hesaplanan aşamalı geri bildirim sağlayarak hemen göz önünde bulundurun. Örneğin, benzer şekilde, Windows Phone şirket e-posta Canlı kutucuk sayısı arttıkça okunmamış e-postaları yeniler kullanılabilir veri güncelleştirmeleri yansıtan değişiklikler hareketlendirme göz önünde bulundurun.  
+
+-   **Hiçbir zaman** bir kullanıcı belirli bir içerik parçasına için makul bir şekilde ele çok daha fazla göstergeleri ekleyin. Ortam göstergeleri kullanıcı etkileşimi gerektirmeden faydalı olması gerekir. Taşma ve bunları görüntülenebilmesi için diğer yönetim denetimleri gerekiyorsa göstergeleri, çevre kaybedersiniz.  
+
+#### <a name="gestures"></a>Hareketler  
+ Ana içerik odaklanmak korumak kullanıcı izin vermenin bir anahtar açıp ek ayrıntı içeriği kapatmak için sağ hareketlerini destekleyerek yönüdür.  
+
+-   **Her zaman** gerektirmek ek içeriği açmak için bazı açık hareketi gerçekleştirin. Ortak açık hareketlerini içerir:  
+
+    -   **Vurgulu:** araç ipuçları veya etkileşimli olmayan bilgi içeriği  
+
+    -   **Açık komut:** satır içi sunan  
+
     -   **Ortam göstergesi çift:** CodeLens açılır penceresi  
-  
--   **Her zaman** her kullanıcı Esc tuşuna bastığında ayrıntı içerik yok sayın.  
-  
--   **Her zaman** nesnesi üzerinde UI bağlamında göz önünde bulundurun. Kapsayıcı içinde etkileşim için izin içerik sunucuları için ek bilgiler gidildiğinde, büyük olasılıkla kullanıcının iş akışını kesintiye uğratan olduğu gösterilip gösterilmeyeceğini dikkatlice düşünün.  
-  
--   **Hiçbir zaman** düzenlenebilir gibi görünüyor veya kullanıcı etkileşimi başvurulmasını gidildiğinde içeriği görüntüle. İmleci, üretilen içeriği asıl artık olduğunda hemen kapatmak için bir araç ipucu için standart davranış olduğu gibi imleci ayrıntı içerik taşımaya çalışırsanız bu davranış kullanıcıları rahatsız.  
-  
-##  <a name="BKMK_SelectionModels"></a> Seçim modelleri  
-  
+
+-   **Her zaman** her kullanıcı Esc tuşuna bastığında ayrıntılı içerik yok sayın.  
+
+-   **Her zaman** nesne üzerindeki UI bağlamı göz önünde bulundurun. Kapsayıcı içinde etkileşimi için izin içerik sunucuları için ek bilgi üzerine gelindiğinde, kullanıcının iş akışı için karışıklığa neden olma olasılığı olan gösterilip gösterilmeyeceğini dikkatlice düşünün.  
+
+-   **Hiçbir zaman** düzenlenebilir özelliğe sahip gibi görünüyor veya kullanıcı etkileşimi davet üzerine gelindiğinde içeriği görüntüler. İmleci, üretilen içerik ana artık olduğunda hemen kapatmak için bir araç ipucu için standart davranış olduğu gibi bunlar ayrıntı içeriklerde imleç çalışırsanız, bu davranışı kullanıcıları rahatsız edebilir.  
+
+##  <a name="BKMK_SelectionModels"></a> Seçimi modelleri  
+
 ### <a name="overview"></a>Genel Bakış  
- Bir seçim modeli belirtmek ve bir veya daha fazla nesneleri kullanıcı arabiriminden ilgi işlemleri onaylamak için kullanılan mekanizmadır. Bu konuda seçimi etkileşim desenleri Visual Studio belge düzenleyiciler içinde ele alınmıştır: metin düzenleyicileri, tasarım yüzeyleriyle ve modelleme yüzeyleri.  
-  
- Kullanıcıların ne üzerinde çalıştıkları Visual Studio'ya belirten bir yol olmalıdır ve Visual Studio ne üzerinde çalışıyor hakkında kullanıcılara geri bildirim beklendiği yanıtlaması gerekir. Farklılıkları veya kullanıcı ve kullanıcı arabirimi arasında miscommunication sahip olabilen bir eylem değil haberiniz bile kullanıcı sonuçlanabilir istenmeyen sonuçları. Genellikle, bir şeyin eksik veya değişti kullanıcının gördüğü kadar hata gözden kaçan gider. Seçim modelleri olan bu nedenle kullanıcı arabirimi tasarımı en önemli parçaları biri. Visual Studio seçimi modellerinde Windows ile tutarlı olmasına rağmen hafif Çeşitlemeler vardır.  
-  
- Visual Studio'da, Windows, olduğu gibi seçim modelleri etkileşim gerçekleştiği bağlamı bağlı olarak farklılık gösterir. Seçimleri nesneleri dört tür oluşabilir:  
-  
--   Metin  
-  
--   Grafik nesneleri  
-  
--   Listeler ve ağaçları  
-  
--   Kılavuzları  
-  
- Bu nesneler içinde seçimleri üç tür vardır:  
-  
--   Bitişik  
-  
--   Ayrık  
-  
--   Bölge  
-  
+ Bir seçim modeli belirtin ve onaylayın veya daha fazla nesne kullanıcı arabiriminde ilgilendiğiniz işlemleri için kullanılan mekanizmadır. Bu konu Visual Studio belge Düzenleyicisi içinde seçimi etkileşim desenleri açıklar: metin düzenleyiciler, tasarım yüzeyleriyle ve modelleme yüzeyleri.  
+
+ Kullanıcıların ne üzerinde çalıştıkları için Visual Studio belirten bir yol olmalıdır ve Visual Studio, kullanıcılara ne üzerinde çalışıyor hakkında geri bildirim ile tahmin edilebilir bir biçimde yanıtlamalıdır. Farklılıkları veya kullanıcı ve kullanıcı arabirimi arasında bir miscommunication içerebilen bir eylem, bildirimde bulunmadan değil kullanıcı sonuçlanabilir istenmeyen sonuçları. Genellikle, bir şeyin eksik olduğunu veya değişti kullanıcının gördüğü kadar hata gözden kaçan gider. Seçimi modelleridir bu nedenle en önemli parçaları kullanıcı arabirimi tasarım birine. Visual Studio'da seçim modelleri Windows ile tutarlı olsa da, küçük farklılıklar vardır.  
+
+ Windows, olduğu gibi Visual Studio'da seçim modelleri etkileşimi gerçekleştiği bağlamı bağlı olarak farklılık gösterir. Seçim nesneleri dört tür oluşabilir:  
+
+- Metin  
+
+- Grafik nesneleri  
+
+- Listeler ve ağaç  
+
+- Kılavuzları  
+
+  Bu nesneler içinde seçimleri üç tür vardır:  
+
+- Bitişik  
+
+- Ayrık  
+
+- Bölge  
+
 #### <a name="scope"></a>Kapsam  
- Seçim en önemli bileşeni, kullanıcının hangi penceresinde (etkinleştirme) çalışma ve odağı bulunduğu (seçim) olduğu bildiği sağlamaktır. Visual Studio Windows penceresi yönetim işlevselliği genişletir, ancak etkinleştirme düzeni aynı: bir pencere ile etkileşim odak pencereyi getirir. Visual Studio etkinleştirme için iki göstergeleri vardır: biri belge windows için ve biri aracı windows için.  
-  
- Belge pencereleri için etkin pencereyi öne çıkacak ve arka plan rengi değiştirerek bir belge penceresi sekmesine tarafından belirtilir:  
-  
+ Seçimi en önemli bileşeni, kullanıcının hangi penceresinde (etkinleştirme) çalışan ve odağı bulunduğu (seçim) olduğu bildiği sağlamaktır. Visual Studio Windows penceresi yönetim işlevselliği genişletir, ancak etkinleştirme şeması aynıdır: bir pencere ile etkileşim kurma, penceresine odak getirir. Visual Studio etkinleştirme için iki göstergeleri sahiptir: biri belge pencereleri ve bir araç pencereleri için.  
+
+ Belge pencereleri için etkin pencere öne çıkacak ve arka plan rengini değiştirerek bir belge penceresi sekmesine tarafından belirtilir:  
+
  ![Visual Studio'da etkin sekme seçimi](../../extensibility/ux-guidelines/media/0713-01_activetab.png "0713 01_ActiveTab")  
-  
- **Etkin sekme seçimi**  
-  
- Aracı windows için araç penceresinin başlık çubuğunu alanı rengini değişikliği etkin pencereyi gösterilir:  
-  
- ![Visual Studio'da etkin araç penceresi seçimi](../../extensibility/ux-guidelines/media/0713-02_activetoolwindow.png "0713 02_ActiveToolWindow")  
-  
+
+ **Etkin sekmede seçimi**  
+
+ Araç pencereleri için etkin pencere bir araç penceresinin başlık çubuğu alanına rengi değişiklik belirtilir:  
+
+ ![Visual Studio'da etkin araç penceresini seçimi](../../extensibility/ux-guidelines/media/0713-02_activetoolwindow.png "0713 02_ActiveToolWindow")  
+
  **Bir düğümün birincil seçimi gösteren etkin araç penceresi**  
-  
- ![Visual Studio'da etkin araç penceresi seçimi](../../extensibility/ux-guidelines/media/0713-03_inactivetoolwindow.png "0713 03_InactiveToolWindow")  
-  
- **Etkin olmayan araç penceresi, düğümün görünmeyen seçimi gösterme**  
-  
- Bir pencere etkin olduğunda, kendi odak yönergeleri Bu bölümde özetlendiği seçimi modelleri göre belirtilir.  
-  
+
+ ![Visual Studio'da etkin araç penceresini seçimi](../../extensibility/ux-guidelines/media/0713-03_inactivetoolwindow.png "0713 03_InactiveToolWindow")  
+
+ **Düğümün görünmeyen seçimi gösteren etkin olmayan araç penceresi**  
+
+ Bir pencere etkin olduktan sonra odak yönergeleri Bu bölümde açıklanan seçimi modelleri göre belirtilir.  
+
 #### <a name="context"></a>Bağlam  
- Visual Studio, kullanıcı nerede çalışma izleme tutma bağlamı, güçlü bir kavramı korumak için tasarlanmıştır. Bir aracı ya da belge penceresi olup yalnızca bir pencere etkindir. Ancak, en üstteki belge penceresi, her zaman görünmeyen bir seçim korur. Odağı araç penceresinde olabilir, ancak son etkin belge penceresine bile etkin olmayan bir durumda bir seçim görüntüler. Bu, kullanıcının bağlamında bunlar, böylece dönün ve sorunsuz bir şekilde araç pencereleri ve belge pencereleri arasında kaydırma Visual Studio durumlarına koruduğunu gösteren düzenlemekte olduğunuz belgeyi korumak için gerçekleştirilir.  
-  
+ Visual Studio, kullanıcının nerede çalıştığını, izleme tutma bağlam, güçlü bir kavramı korumak için tasarlanmıştır. Yalnızca bir pencere bir araç veya belge penceresi olup olmadığını etkindir. Ancak, en üstteki belge penceresi, her zaman görünmeyen bir seçim korur. Araç penceresine odak olabilir, ancak son etkin belge penceresi bile etkin olmayan bir durumda bir seçim görüntüler. Bu, kullanıcının bağlamında bunlar, böylece geri dönün ve araç pencerelerini ve belge pencereleri arasında sorunsuz bir şekilde kaydırma Visual Studio durumlarına korudu gösteren düzenlemekte olduğunuz belgeyi korumak için gerçekleştirilir.  
+
 ### <a name="text-selection"></a>Metin seçimi  
- Gibi yerleşik metin düzenleyicide, kesinlikle metinsel visual Studio düzenleyicilerini kullanın aynı metin seçimi modeli ve görünüm açıklanan [işaretçileri ve fare](https://msdn.microsoft.com/en-us/library/dn742466.aspx) Windows kullanıcı deneyimi etkileşim kuralları sayfası MSDN. Giriş odağını metin düzenleyicisinde ekleme noktasını adlı dikey bir çubukla belirtilir. Tek bir piksel kalın ve arkasında görünür tersi olarak renkli ekleme noktasıdır. Tarafından belirlenen oranı göre yanıp **imleç blink hızı** ayarı **hızı** sekmesinde **klavye** Denetim Masası'ndaki uygulaması.  
-  
+ Aynı metin seçim modeli gibi yerleşik metin düzenleyici, kesin olarak metinsel visual Studio düzenleyicisi kullanın ve görünüm açıklanan [işaretçileri ve fare](/windows/desktop/uxguide/inter-mouse) üzerinde Windows kullanıcı deneyimi etkileşim kuralları sayfası MSDN. Giriş odağını metin düzenleyicisinde, ekleme noktasını adlı bir çubukla gösterilir. Ekleme, tek bir piksel kalın ve renkli arkasında görünür tersi olarak noktasıdır. Belirlenen oranı göre yanıp **imleç yanıp sönme hızı** ayarı **hızı** sekmesinde **klavye** uygulaması Denetim Masası'nda.  
+
 #### <a name="contiguous-and-disjoint-selection"></a>Sürekli ve ayrık seçimi  
- Metin Düzenleyici içinde yalnızca bitişik seçimdir. Seçimleri izin verilmez, ancak grafik nesnesi düzenleyicilerde ele alınması gereken metin ayrık. İmleci, kullanıcının fare işaretçisini metin alanı olduğunda, bir ı ışını değiştirir. Tek bir tıklamayla ekleme noktasını tıklatın konumda metin düzenleyicisinde yerleştirir. Fare düğmesini basılı seçim Vurgusu başlatır ve fare düğmesini bırakmadan seçim Vurgusu sona erer.  
-  
-#### <a name="region-selection-box-selection"></a>Bölge Seçimi (kutusu seçimi)  
- Visual Studio bölgesi seçimlerin Metin Düzenleyicisi'nde destekler ve bu kutusu seçimi çağrılır. Kutusu seçimi normal metin akış izlemez metnin bir bölge seçin olanak tanır. Standart metin seçimle gibi seçimi bitişik olmalıdır. Kutusu seçimi fareyle sürükleme sırasında Alt tuşunu basılı tutarak başlatılır. Kutusu seçimi, Alt ve üst karakter tuşları aşağı seçimi bölge belirtmek için ok tuşlarını kullanırken tutarak da başlatılabilir. Kutusu seçimi normal seçim Vurgusu kullanır ve seçim alanı sonunda yanıp sönen ekleme noktası imleç gösterir.  
-  
- ![Bölgesel &#40;kutusunu&#41; Visual Studio'da seçimi](../../extensibility/ux-guidelines/media/0713-04_boxselection.png "0713 04_BoxSelection")  
-  
- **Visual Studio'da bölge (kutusu) Seçimi**  
-  
+ Seçimi Metin Düzenleyicisi içinde yalnızca bitişik değil. Seçimleri izin verilmez, ancak grafik nesnesi düzenleyicilerde ele alınması gereken metin ayrık. Kullanıcının fare işaretçisi bir metin alanı üzerinde olduğunda, imleç bir ı ışını için değiştirir. Tek tıklamayla noktasını tıklatın konumda metin düzenleyicisinde yerleştirir. Fare düğmesini basılı seçimi Vurgu başlar ve fare düğmesini bırakmadan seçim Vurgusu sona erer.  
+
+#### <a name="region-selection-box-selection"></a>Kayıt seçimi (seçim kutusu)  
+ Visual Studio Metin Düzenleyicisi'nde bölge seçimleri destekler ve bu seçim kutusu çağrılır. Seçim kutusunu kullanıcının normal metin akışına izlemez metnin bir bölge seçin izin verir. İle gibi standart metin seçimi, seçim bitişik olması gerekir. Fare ile sürüklerken Alt tuşunu basılı tutarak seçim kutusunu başlatılır. Seçim kutusunu Alt ve üst karakter tuşları seçimi bölgesini belirtmek için ok tuşlarını kullanarak tutarak da başlatılabilir. Seçim kutusu normal seçim Vurgusu kullanır ve seçim alanı sonunda yanıp sönen ekleme noktası imleç gösterir.  
+
+ ![Bölgesel &#40;kutusu&#41; Visual Studio'da seçim](../../extensibility/ux-guidelines/media/0713-04_boxselection.png "0713 04_BoxSelection")  
+
+ **Visual Studio'da bölge (kutu) Seçimi**  
+
 #### <a name="text-selection-appearance"></a>Metin seçimi görünümü  
- Etkin ve etkin olmayan seçim Düzenleyicisi'nde için kullanılan renkleri özelleştirilebilir. Düzenleyici görsel görünümünü özelleştirmek için bir kullanıcı gidebilirsiniz **Araçlar > Seçenekler**ve kısmına bakın **ortam > yazı tiplerini ve renkleri > Metin Düzenleyicisi**.  
-  
+ Düzenleyicide etkin ve etkin olmayan seçim için kullanılan renkleri özelleştirilebilir. Düzenleyici görünümünü özelleştirmek için bir kullanıcı giderek **Araçlar > Seçenekler**, altında olup olmadığına bakın **ortam > yazı tipleri ve renkler > Metin Düzenleyicisi**.  
+
 ### <a name="graphical-selection"></a>Grafik seçimi  
-  
-#### <a name="interaction"></a>Etkileşim  
- Grafik Nesne Seçimi karmaşık olabilir ve bir dizi etkene bağlıdır:  
-  
--   **Düzenleyicinin birincil seçimi modeli.** Grafik nesneleri içeren düzenleyicileri, metin veya kılavuzları düzenlemek için de kullanılabilir. Örneğin, düzenleyici de Visual Studio XAML Tasarımcısı gibi grafik nesneleri yerleşimini destekler metin tabanlı bir düzenleyici olabilir. Birden çok nesne türlerini destekleyen kullanıcı nesneleri farklı türdeki oluşan grupları nasıl seçtiği etkileyebilir.  
-  
--   **Birincil ve ikincil seçimi durumları için destek.** Bir düzenleyici nesneleri çubuğuyla içinde düzenlenebilir böylece durumları birbirleri ile birlikte, vb. yeniden boyutlandırılabilir hizalı birincil ve ikincil seçimi sağlayabilirsiniz.  
-  
--   **Yerinde düzenleme desteği.** Düzenleyiciler düzenlenmesi grafik nesnelerine içeriğini de izin verebilirsiniz. Örneğin, bir dikdörtgen kullanıcı tarafından değiştirilmiş iç metni içerebilir. Ayrıca, bu metin ortalanmış hizalı veya açılamadı. Yerinde düzenleme kullanıcı etkileşimi daha ayrıntılı bir düzeyde içerir ve bu nedenle kullanıcıya durum bilgileri sunmak için uygun bir görsel ipuçları kümesi gerektirir.  
-  
+
+#### <a name="interaction"></a>Etkileşimi  
+ Grafik Nesne Seçimi karmaşık olabilir ve bir dizi faktöre bağlıdır:  
+
+-   **Editör'ün birincil seçim modeli.** Grafik nesneleri içeren düzenleyicileri, metin ya da kılavuzlarda düzenlemek için de kullanılabilir. Örneğin, düzenleyici ayrıca Visual Studio XAML Tasarımcısı gibi grafik nesneleri yerleşimini destekler metin tabanlı bir düzenleyici olabilir. Birden çok nesne türlerini destekleyen nasıl farklı türde nesne oluşan gruplar kullanıcının seçtiği etkileyebilir.  
+
+-   **Birincil ve ikincil seçimi durumları için destek.** Bir düzenleyici, böylece çubuğuyla, nesneleri düzenlenebilir durumları, yeniden boyutlandırılabilir birlikte, vb. hizada birincil ve ikincil seçimi sağlayabilirsiniz.  
+
+-   **Yerinde düzenleme desteği.** Ayrıca düzenleyicileri düzenlenmesi için kendi grafik nesneleri içeriğini izin verebilirsiniz. Örneğin, bir dikdörtgen kullanıcı tarafından değiştirilebilir iç metin içerebilir. Ayrıca, bu metni ortalanmış açısından haklı bir gerekçesi veya açılamadı. Yerinde düzenleme daha ayrıntılı bir düzeyde kullanıcı etkileşimini gerektirir ve bu nedenle kullanıcıya durum bilgileri sunmak için uygun bir görsel ipuçları kümesi gerektirir.  
+
 #### <a name="mouse-interaction"></a>Fare etkileşimi  
-  
+
 |Giriş|Sonuç|  
 |-----------|------------|  
-|Seçili nesneyi tıklatın|Nesneyi seçer ve nesne yeniden boyutlandırılabilir ise kesikli çizgi ve seçim tanıtıcıları görüntüler.|  
-|Seçili nesneyi tıklatın|Nesne destekliyorsa yerinde düzenleme etkinleştirir. Nesneyi dışında tıklatarak yerinde düzenleme modunu devre dışı bırakır.|  
-|Bir nesneyi çift|Nesneyi düzenlemek üzere arkasındaki kodda açar ve bir varsayılan olay işleyicisi uygunsa ekleyebilirsiniz.|  
-|Bir nesneye işaret|Taşıma imleci işaretçi. Kendi parlaklığını veya renk gibi nesnenin görünümü değişebilir.|  
-|Bir seçim tutamacını işaretleyin|Yeniden boyutlandırma imlecini işaretçi. İşaretçinin (uzağa taşınmış farklı Örneğin,) göre seçim tutamacını konumlandırılır gibi döndürme desteği nesneler için bazı seçimi tanıtıcıları için döndürme imleç işaretçinin değişebilir.|  
-|Sürükleme|Nesne önceden seçili değilse, taşıma imleci işaretçi ve nesne taşır.|  
-|Düzenleyici odağı kaybettiğinde|Nesne içeriğini ve son işlemi/seçim durumuna sırasında vardı görünüm korusa da yerinde düzenleme modunu devre dışı bırakır.|  
-|Nesne Seçimi|Bir sınır, noktalı çizgi ya da nesne sınır vurgulamak için diğer görsel olarak ayrı işleme gösterilir.|  
-|Seçili nesneyi yeniden boyutlandırma|Seçim tanıtıcıları tarafından belirtilir.<br /><br /> Yeniden boyutlandırılabilir bir nesne, onu yeniden boyutlandırılabilir her yönünü temsil eden sekiz tanıtıcıları vardır. Nesne yalnızca belirli yönde yeniden boyutlandırılabilir, daha az tanıtıcıları kullanılabilir. Burada sekiz tanıtıcıları etkileşimli olmayacaktır aşağıya doğru bir nesne kullanıcı boyutları, dört tanıtıcıları kullanılabilir. Tanıtıcı boyutları bağlı pencere kenarlık ve kenar Ölçümleriyle için **GetSystemMetrics** API işlevi ekran çözünürlüğünü orantılı olarak bir boyut.<br /><br /> ![Tanıtıcıları yeniden boyutlandırma](../../extensibility/ux-guidelines/media/0713-05_resizehandles.png "0713 05_ResizeHandles")|  
-|Seçili nesneyi Döndür|![Tanıtıcıları döndürme](../../extensibility/ux-guidelines/media/0713-06_rotate.png "0713 06_Rotate")|  
-  
+|Seçili olmayan bir nesneye tıklayın|Nesneyi seçer ve nesne yeniden boyutlandırılabilir ise kesik çizgi ve seçim tutamaçları görüntüler.|  
+|Seçili nesneye tıklayın|Nesne destekliyorsa, yerinde düzenleme etkinleştirir. Yerinde düzenleme modu dışında nesneye tıklayarak devre dışı bırakır.|  
+|Bir nesneyi çift|Kodu düzenleme için nesnenin arkasında açılır ve uygunsa bir varsayılan olay işleyicisini ekleyebilirsiniz.|  
+|Bir nesneye işaret|İşaretçi taşıma imlecine dönüşür. Parlaklık ya da rengi gibi nesnenin görünümünü değiştirebilirsiniz.|  
+|Bir seçim tutamacını işaretleyin|İşaretçi yeniden boyutlandırma imlecine dönüşür. İşaretçi (uzağa taşınmış farklı Örneğin,) göre tutamacı konumlandırılmış şekilde döndürme desteği nesneler için bazı seçimi işleyen bir döndürme imlece kadar işaretçiyi değişebilir.|  
+|Sürükle|Nesne önceden seçili değilse, taşıma imleci işaretçi ve nesneyi taşır.|  
+|Düzenleyici odağından|Nesne içeriği ve görünümü en son işlem/seçim durumunda sırasında vardı korusa da, yerinde düzenleme modunu devre dışı bırakır.|  
+|Nesne Seçimi|Kenarlık, noktalı çizgi veya diğer görsel olarak ayrı bir işleme nesnesinin sınır vurgulamak için gösterilir.|  
+|Seçili nesneyi yeniden boyutlandırma|Seçimi tutamaçları ile gösterilir.<br /><br /> Yeniden boyutlandırılabilir bir nesne içinde boyutlandırılabilir her yönünü temsil eden sekiz tanıtıcıları sahiptir. Nesne yalnızca belirli bir yönde boyutlandırılabilir daha az tanıtıcıları kullanılabilir. Kullanıcı nesneyi nereye sekiz tanıtıcıları etkileşimli olmazdı aşağı boyutları, dört tanıtıcıları kullanılabilir. Tanıtıcı boyutları bağlı ile penceresi kenarlık ve edge ölçümlerine **GetSystemMetrics** ekran çözünürlüğünü derlemekten boyuta API işlevi.<br /><br /> ![Yeniden boyutlandırma tutamaçları](../../extensibility/ux-guidelines/media/0713-05_resizehandles.png "0713 05_ResizeHandles")|  
+|Seçilen bir nesne döndürme|![Döndürme tutamaçları](../../extensibility/ux-guidelines/media/0713-06_rotate.png "0713 06_Rotate")|  
+
 #### <a name="keyboard-interaction"></a>Klavye etkileşimi  
-  
+
 |Giriş|Sonuç|  
 |-----------|------------|  
-|Tab|Nesnelerin mantıksal sırası arasında odak göstergesi Düzenleyicisi'nde taşır. Bu soldan sağa veya üst alt bağlı olarak olabilir **TabIndex** (veya eşdeğer) özellik değeri, nesne oluşturma sırası ve düzenleyici genel amacı. Üst karakter + sekme odak göstergesi yönünü tersine çevirir.|  
-|Boşluk çubuğu|Tuş vuruşu korunur sırasında panlama modunu etkinleştirir. Ek fare girdisi, Görünüm penceresi konumu kaydırmak için gereklidir.|  
-|Ctrl+Ara Çubuğu|Tuş vuruşu korunur sırada yakınlaştırma modunu etkinleştirir. Ek fare girdisi artırmak ve yakınlaştırma faktörünü azaltmak için gereklidir.|  
-|Ctrl + Alt + eksi işareti|Bir düzey yakınlaştırma faktörüyle azaltır.|  
-|Ctrl + Alt + artı işareti|Bir düzey yakınlaştırma faktörüyle artırır.|  
-|SHIFT veya Ctrl|Nesne seçim grubuna ekler. CTRL nesneleri tek tek seçim grubundan kaldırmanızı sağlar.|  
-|Enter|Nesne için varsayılan komut gerçekleştirir (genellikle açın veya Düzenle).|  
+|Tab|Odak göstergesi arasında nesnelerin mantıksal sırası Düzenleyicisi'nde taşır. Bu soldan sağa veya üste alt bağlı olarak olabilir **TabIndex** (veya eşdeğer) özellik değeri, nesne oluşturma sırası ve genel amaçlı Düzenleyici. Shift + Sekme odağı belirtecini yönünü tersine çevirir.|  
+|Ara çubuğu|Tuş vuruşu korunur ancak kaydırma modunu etkinleştirir. Ek fare girdisi, Görünüm penceresi konumu kaydırmak için gereklidir.|  
+|Ctrl+Ara Çubuğu|Tuş vuruşu korunur ancak yakınlaştırma modunu etkinleştirir. Ek fare girişi artırmak ve yakınlaştırma faktörünü azaltmak için gereklidir.|  
+|Ctrl + Alt + eksi işareti|Yakınlaştırma faktörünü bir düzey azalır.|  
+|Ctrl + Alt + artı işareti|Yakınlaştırma faktörünü bir düzeyine göre artar.|  
+|SHIFT veya Ctrl|Nesne Seçimi gruba ekler. CTRL nesneleri ayrı ayrı seçimi gruptan kaldırmanızı sağlar.|  
+|Enter|Nesne için varsayılan komut gerçekleştirir (genellikle açın veya düzenleyin).|  
 |F2|Nesne için yerinde düzenleme etkinleştirir.|  
-|Ok tuşları|Seçili nesneleri için ok tuşunu basılı (örneğin, aynı anda 1 piksel) küçük artışlarla yönünde taşır|  
-|CTRL + ok tuşları|Seçili nesneleri için ok tuşunu basılı (örneğin, 10 piksel birer birer) daha büyük artışlarla yönünde taşır|  
-|Shift + ok tuşları|Seçili nesneleri (örneğin, aynı anda 1 piksel) küçük artışlarla ilgili yönüne göre yeniden boyutlandırır|  
-|Ctrl + Shift + ok tuşları|Seçili nesneleri (örneğin, 10 piksel birer birer) daha büyük artışlarla ilgili yönüne göre yeniden boyutlandırır|  
-  
- Kullanıcıların denetimlerin düzenlediğinizde, bu kullanıcı girişi ile otomatik olarak yeniden boyutlandırmak nesneler için mantıklı olabilir. Etiket denetimi kullanıcı düzenlemeleri, örneğin, ardından etiketi kullanıcı yalnızca yazılan metni görüntülemek için büyümesini. Bu yapılmazsa, kullanıcı denetimi el ile metni düzenledikten sonra yeniden boyutlandırma gerekir. Kullanıcı denetimleri çok sahipse, bu rote ve üretken görevi haline gelir.  
-  
+|Ok tuşları|Seçilen nesneler ok tuşu basılı küçük artışlarla (örneğin, aynı anda 1 piksel) yönünde taşır|  
+|CTRL + ok tuşları|Seçilen nesneler ok tuşu basılı büyük artışlarla (örneğin, aynı anda 10 piksel) yönünde taşır|  
+|SHIFT + ok tuşları|Seçilen nesneler (örneğin, aynı anda 1 piksel) küçük artışlarla karşılık gelen yönde yeniden boyutlandırır|  
+|CTRL + SHIFT + ok tuşları|Seçilen nesneler (örneğin, aynı anda 10 piksel) daha büyük artışlarla karşılık gelen yönde yeniden boyutlandırır|  
+
+ Kullanıcı denetimleri düzenlediğinizde, bu kullanıcı girişi ile otomatik olarak yeniden boyutlandırmak nesneler için mantıklı olabilir. Kullanıcının bir etiket denetimi düzenlerse, örneğin, ardından etiketin yalnızca kullanıcının yazdığı metni görüntülemek için büyümesini. Bu yapılmazsa, kullanıcı denetimi el ile metni düzenledikten sonra yeniden boyutlandırmanız gerekir. Kullanıcı denetimleri çok fazla varsa, bu rote ve üretken bir görev haline gelir.  
+
 #### <a name="graphical-containers"></a>Grafik kapsayıcıları  
- Bazı durumlarda, grafik düzenleyicilerden Windows Forms Panel denetimi veya HTML Tasarımcısı'nda Kılavuz düzeni denetimi gibi diğer grafik nesneleri için kapsayıcı sağlar. Düzenleyicinizi diğer grafik nesneler için kapsayıcıları sağlıyorsa, aşağıdaki seçim modelin kapsayıcısı için yalnızca (standart model olarak yukarıda kapsayıcı izleyin nesnelerinde) kullanılmalıdır:  
-  
+ Bazı durumlarda, grafik düzenleyicilerden Windows Forms Panel denetimi veya kılavuz düzeni denetimin HTML Tasarımcısı'nda gibi diğer grafik nesneleri için kapsayıcılar sağlar. Düzenleyici için diğer grafik nesneleri kapsayıcıları sağlıyorsa, aşağıdaki seçim modeli kapsayıcısı için yalnızca (standart model olarak yukarıda açıklanan kapsayıcı izleme nesnelerinde) kullanılmalıdır:  
+
 |Giriş|Sonuç|  
 |-----------|------------|  
-|Tek tıklamayla kapsayıcısında|Kapsayıcı nesnesinin içerdiği nesnelerden herhangi birini doğrudan seçmeden seçer. Kapsayıcı taşınır ve/veya standart fare ve klavye (yukarıda açıklandığı gibi) ile yeniden boyutlandırılabilir. Kapsanan nesneleri kapsayıcısına ilişkisinde taşınır, ancak aynı zamanda doğrudan seçmediğiniz sürece kapsanan nesneleri yeniden boyutlandırılıyor değil.|  
-|Kapsayıcının sınır bölgesini üzerine getirin|Fare kapsayıcı taşınabilmesi belirten taşıma imleci etkinleştirir.|  
-|Kapsayıcının sınır bölgesi sürükleyin|Fare taşıma imleci değiştirir ve kapsayıcı (ve içinde kapsanan nesneler) taşır. Kapsayıcı ilk taşınamaz tek bir tıklatmayla seçilmesini.|  
-|Kapsayıcı içindeki bir nesne üzerinde tek tıklamayla|Kapsayıcı (seçildiyse) seçimini kaldırır ve yalnızca tıklatılan nesneyi seçer.|  
-|Shift + tıklatın veya Ctrl + bir kapsanan nesne ve/veya kapsayıcı üzerinde tıklatın|Tıklatılan nesnesi bir varolan seçimi veya seçim gruba ekler. Tıklatılan nesne seçim grubunun bir üyesi ise, seçim grubundan kaldırılır.|  
-  
- Kapsanan nesneler, önceki bölümde açıklandığı gibi temel seçim modeline uymanız gerekir. Windows Forms Tasarımcısı kullanılabilirlik sınama gelen kullanıcılar kapsanan nesneler sorunsuz erişim (kapsama nesne tarafından uygulanan) müdahalede bulunan adımları olmadan bekleniyordu.  
-  
+|Tek tıklamayla kapsayıcıdaki|Kapsayıcı nesnesi herhangi bir kapsanan nesneleri doğrudan seçmeden seçer. Kapsayıcı taşınır ve/veya standart fare ve klavye (yukarıda açıklandığı gibi) ile yeniden boyutlandırıldı. Kapsanan nesneler kapsayıcıya ilişkisinde taşınır, ancak aynı zamanda doğrudan seçmediğiniz sürece kapsanan nesneleri yeniden boyutlandırılacağını değil.|  
+|Kapsayıcının sınırları bölgesini üzerine gelme|Fare kapsayıcının taşınabilir belirten taşıma imleci açar.|  
+|Kapsayıcının sınır bölgesi sürükleyin|Fare imleci taşıma değiştirir ve kapsayıcı (ve içinde kapsanan nesneler) hareket ettirir. Kapsayıcı ilk taşınamaz tek bir tıklamayla seçili.|  
+|Kapsayıcı içindeki bir nesnede tek tıkla|Kapsayıcı (belirlediyseniz) dilimleyiciye ve yalnızca tıklandı nesneyi seçer.|  
+|Shift + tıklayın veya Ctrl + bir kapsanan nesne ya da kapsayıcı tıklayın|Tıklandı nesne bir varolan seçimi veya seçimi gruba ekler. Tıklandı Nesne Seçimi grubunun bir üyesi ise, seçim gruptan kaldırılır.|  
+
+ Kapsanan nesneler, önceki bölümde açıklandığı gibi temel seçim modeli uymanız gerekir. Windows Forms tasarımcısına kullanılabilirlik testing'e kullanıcılar kapsanan nesneler sorunsuz erişim (kapsama nesne tarafından uygulanan) müdahalede bulunan adımlar olmadan bekleniyor.  
+
 #### <a name="disjoint-and-region-selections"></a>Ayrık ve bölge seçimleri  
- Grafik nesne düzenleyicileri ayrık seçimleri desteklemelidir. Bu grafik Visual Studio için Denetim görünümü göstermez unutmayın. Bkz: [grafik nesne seçim görünümü](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_GraphicalObjectSelectionAppearance) ayrıntılı visual özellikleriyle ilgili.  
-  
- ![Ayrık ve bölge seçiciler](../../extensibility/ux-guidelines/media/0713-07_disjointregionselectors.png "0713 07_DisjointRegionSelectors")  
-  
+ Grafik nesne düzenleyicileri ayrık seçimleri desteklemelidir. Bu grafik Visual Studio için Denetim görünümü göstermez unutmayın. Bkz: [grafik Nesne Seçimi görünümü](../../extensibility/ux-guidelines/composite-patterns-for-visual-studio.md#BKMK_GraphicalObjectSelectionAppearance) visual ayrıntılı belirtimler için.  
+
+ ![Ayrık ve bölge Seçici](../../extensibility/ux-guidelines/media/0713-07_disjointregionselectors.png "0713 07_DisjointRegionSelectors")  
+
  **Ayrık seçimi**  
-  
- Grafik düzenleyicilerden ayrıca bir kayan yazı tipi seçimi göstergesi bölge seçimlerinde sağlamalıdır. Grafik düzenleyicisini diğer nesne türleri (örneğin, metin) destekliyorsa, bölge seçimleri bu nesne türleri kısıtlamaları bağlı olarak mümkün olmayabilir.  
-  
+
+ Grafik düzenleyicilerden Kayan yazı tipi seçimi göstergesi ile bölgeye seçimleri da sağlamanız gerekir. Grafik düzenleyicisini (metin gibi) diğer nesne türlerini destekliyorsa, bölge seçimleri bu diğer nesne türlerini kısıtlamalarına bağlı olarak mümkün olmayabilir.  
+
  ![Seçim çerçevesi](../../extensibility/ux-guidelines/media/0713-08_marqueeselection.png "0713 08_MarqueeSelection")  
-  
+
  **Seçim çerçevesi**  
-  
+
 #### <a name="primary-and-secondary-selections"></a>Birincil ve ikincil seçimleri  
- Bazı grafik nesnesi düzenleyicileri düzenleyin veya gruplardaki nesneleri hizalama izin verin. Bu durumda, birincil ve ikincil seçimleri kavramı sunulması gereken. Birincil seçimin tüm diğer nesnelerin grup işlemlerinde yanıt vermek nesnesidir. Kullanıcının ilk seçtiği nesne birincil denetim olur ve sonraki seçimleri ikincil seçim haline gelir. Birincil seçimin hangi nesne birincil belirtmek için ikincil selection(s) gelen farklı bir görsel işlemden sahiptir:  
-  
+ Bazı grafik nesnesi düzenleyicileri düzenlemek veya gruplardaki nesneleri Hizala izin verin. Bu durumda, birincil ve ikincil seçimleri kavramını olması gerekir. Birincil seçimin diğer tüm nesnelerin grubunu işlemlerinde yanıt verme nesnedir. Birincil denetimden önce kullanıcının seçtiği nesne haline gelir ve sonraki seçimleri ikincil seçim haline gelir. Birincil seçimi hangi nesnenin birincil belirtmek için ikincil selection(s)'dan farklı bir visual işlemden sahiptir:  
+
  ![Birincil ve ikincil seçimi](../../extensibility/ux-guidelines/media/0713-09_primarysecondary.png "0713 09_PrimarySecondary")  
-  
+
  **İki ikincil seçimleri birincil seçimi**  
-  
-####  <a name="BKMK_GraphicalObjectSelectionAppearance"></a> Grafik nesne seçim görünümü  
- Sınırlama kutusu nesnenin etrafında dikdörtgen desende çizilmiş kareler seçimi tanıtıcılarıdır. Grafik bir grafik nesnesi tanıtıcı, boyutlandırma ve yerinde düzenleme görünümü olabilir çeşitli durumlarını örnekleri gösterilir. Tanıtıcıları boyutunu pencere kenarlık ve kenar ölçümleri kullanarak bağlı olması **GetSystemMetrics** API.  
-  
-|Durum|Görünüm|Visual ayrıntıları|  
-|-----------|----------------|--------------------|  
-|**Seçilmemiş**|Varsayılan|![Varsayılan düğme durumu](../../extensibility/ux-guidelines/media/0713-10_defaultstate.png "0713 10_DefaultState")||  
-|**Birincil seçimi**|Yeniden boyutlandırılabilir|![Birincil seçimi ile yeniden boyutlandırın tanıtıcıları](../../extensibility/ux-guidelines/media/0713-11_primaryresize.png "0713 11_PrimaryResize")|![Birincil seçimi ile yeniden boyutlandırın tanıtıcıları &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-12_primaryresizezoom.png "0713 12_PrimaryResizeZoom")|  
-|**Birincil seçimi**|Yeniden boyutlandırılabilir değil|![Birincil seçim olmadan yeniden boyutlandırma tanıtıcıları](../../extensibility/ux-guidelines/media/0713-13_primarynoresize.png "0713 13_PrimaryNoResize")|![Birincil seçim olmadan yeniden boyutlandırma tanıtıcıları &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-14_primarynoresizezoom.png "0713 14_PrimaryNoResizeZoom")|  
-|**Birincil seçimi**|Kilitli|![Kilitli birincil seçimi](../../extensibility/ux-guidelines/media/0713-15_primarylocked.png "0713 15_PrimaryLocked")|![Kilitli birincil seçimi &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-16_primarylockedzoom.png "0713 16_PrimaryLockedZoom")|  
-|**İkincil seçimi**|Yeniden boyutlandırılabilir|![İkincil seçimi ile yeniden boyutlandırın tanıtıcıları](../../extensibility/ux-guidelines/media/0713-17_secondaryresize.png "0713 17_SecondaryResize")|![İkincil seçimi ile yeniden boyutlandırın tanıtıcıları &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-18_secondaryresizezoom.png "0713 18_SecondaryResizeZoom")|  
-|**İkincil seçimi**|Yeniden boyutlandırılabilir değil|![İkincil seçim olmadan yeniden boyutlandırma tanıtıcıları](../../extensibility/ux-guidelines/media/0713-19_secondarynoresize.png "0713 19_SecondaryNoResize")|![Yeniden boyutlandırma olmadan ikincil seçimi &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-20_secondarynoresizezoom.png "0713 20_SecondaryNoResizeZoom")|  
-|**İkincil seçimi**|Kilitli|![Kilitli ikincil seçimi](../../extensibility/ux-guidelines/media/0713-21_secondarylocked.png "0713 21_SecondaryLocked")|![Kilitli ikincil seçimi &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-22_secondarylockedzoom.png "0713 22_SecondaryLockedZoom")|  
-|**Etkin kullanıcı Arabirimi**|Varsayılan|![Kullanıcı Arabirimi etkin durumu](../../extensibility/ux-guidelines/media/0713-23_uiactive.png "0713 23_UIActive")|![Kullanıcı Arabirimi etkin durumu &#40;uzaklaştırılacağını&#41;](../../extensibility/ux-guidelines/media/0713-24_uiactivezoom.png "0713 24_UIActiveZoom")|  
-  
-### <a name="view-selection-models"></a>Seçim modelleri görüntüle  
-  
+
+####  <a name="BKMK_GraphicalObjectSelectionAppearance"></a> Grafik Nesne Seçimi Görünümü  
+ Seçim tutamaçlarını, nesnenin sınırlayıcı kutu çevresinde bir dikdörtgen deseninde çizilmiş karelerdir. Aşağıdaki grafik, bir grafik nesnesi tanıtıcı, boyutlandırma ve yerinde düzenleme görünümü ile olabilen çeşitli durumları örneklerini gösterir. Tutamaçları boyutunu pencere sınırı ve edge ölçümleri kullanarak bağlı olması **GetSystemMetrics** API.  
+
+
+| Durum | Görünüm | Görsel ayrıntıları |
+|-------------------------|---------------| - |
+| **Seçimi kaldırıldı** | Varsayılan | ![Varsayılan düğme durumu](../../extensibility/ux-guidelines/media/0713-10_defaultstate.png "0713 10_DefaultState") |
+| **Birincil seçimi** | Yeniden boyutlandırılabilir | ![Birincil seçimiyle yeniden boyutlandırma tutamaçları](../../extensibility/ux-guidelines/media/0713-11_primaryresize.png "0713 11_PrimaryResize") |
+| **Birincil seçimi** | Yeniden boyutlandırılabilir değil | ![Birincil seçimi olmadan yeniden boyutlandırma tutamaçları](../../extensibility/ux-guidelines/media/0713-13_primarynoresize.png "0713 13_PrimaryNoResize") |
+| **Birincil seçimi** | Kilitli | ![Kilitli birincil seçimi](../../extensibility/ux-guidelines/media/0713-15_primarylocked.png "0713 15_PrimaryLocked") |
+| **İkincil seçimi** | Yeniden boyutlandırılabilir | ![İkincil seçimiyle yeniden boyutlandırma tutamaçları](../../extensibility/ux-guidelines/media/0713-17_secondaryresize.png "0713 17_SecondaryResize") |
+| **İkincil seçimi** | Yeniden boyutlandırılabilir değil | ![İkincil seçimi olmadan yeniden boyutlandırma tutamaçları](../../extensibility/ux-guidelines/media/0713-19_secondarynoresize.png "0713 19_SecondaryNoResize") |
+| **İkincil seçimi** | Kilitli | ![Kilitli ikincil seçimi](../../extensibility/ux-guidelines/media/0713-21_secondarylocked.png "0713 21_SecondaryLocked") |
+| **Etkin kullanıcı Arabirimi** | Varsayılan | ![Etkin durumdaki kullanıcı Arabirimi](../../extensibility/ux-guidelines/media/0713-23_uiactive.png "0713 23_UIActive") |
+
+### <a name="view-selection-models"></a>Seçimi modelleri görüntüle  
+
 #### <a name="tree-view"></a>Ağaç görünümü  
- Ağaç görünümünde seçimi basit vurgulanmış gösterilir. Kullanıcı bir düğüm adı veya bir düğüm simgesi tıklarsa, düğüm seçili duruma gelir. Düğüm solundaki üçgen karakterlerin genişletin veya ağaç denetimi sözleşme ancak tek bir istisna, kullanıcının seçimini etkilemez: üst düğümü seçimi o düğümün bir alt olduğunda daraltma bağlı seçimi üst öğeye taşır.  
-  
+ Ağaç görünümünde seçimi ile basit bir vurgulama gösterilmektedir. Kullanıcı, bir düğüm adı veya bir düğüm simgesi tıklarsa, düğüm seçili olur. Üçgen karakterleri sol tarafındaki düğümü genişletin veya ağaç denetimi sözleşme ancak bir özel durum ile bir kullanıcının seçimi etkilemez: seçim bu düğümün alt düğümü üzerinde olduğunda bir üst düğümün daraltma bağlı üst seçimi taşır.  
+
  ![Visual Studio tipik ağaç görünümünde](../../extensibility/ux-guidelines/media/0713-25_treeview.png "0713 25_TreeView")  
-  
+
  **Visual Studio'da tipik ağaç görünümü**  
-  
- Ağaç görünümleri bile ağacında birden çok düzeyi arasında bitişik ve ayrık seçimlerinizi destekleyebilir. Bitişik veya ayrık görünür ağaç düğümleri üzerinde birden çok seçimin yapılması gerekir. Bir düğüm daraltılmışsa, ayrık seçimi kaybolur ve daraltılmış düğümü seçimi alır. Bu şekilde, kullanıcı bir işlem tarafından etkilenen düğümleri görebilirsiniz. Düğümleri daraltıldığında bu hangi düğümlerin etkilenebilir belirsiz olur.  
-  
- Üst düğümü seçildiğinde olabilir ancak burada üst ve tüm alt uygulamak bir işlem için bir anlam durumlarda işlemi üst öğeye uygulamalıdır. Bu durumda, bir onay kutusu veya "tüm alt öğelerini uygulama" seçeneği kullanıcıya açık yapmak için onay iletişim kutusu gibi işlemi sırasında ek kullanıcı Arabirimi sağlar.  
-  
+
+ Ağaç görünümlerini ağacında birden çok düzeyi arasında sürekli ve ayrık seçimleri destekleyebilir. Bitişik veya ayrık görünür ağaç düğümleri üzerinde birden fazla seçim yapılması gerekir. Bir düğüm daraltılmışsa, ayrık seçimi kaybolur ve seçim sbalil düğümünü alır. Bu şekilde, kullanıcı bir işlemden etkilenen düğümleri görebilirsiniz. Düğümleri daraltıldığında hangi düğümleri etkilenebilecek belirsiz olur.  
+
+ Üst düğümü seçildiğinde olabilir ancak üst ve tüm alt öğelerini uygulamak bir işlem için yarayacak yerde çalışmaları işlemi üst öğeye uygulamanız gerekir. Bu durumda, onay kutusu veya "tüm alt öğelere uygula" seçeneği kullanıcıya açık hale getirmek için onay iletişim kutusu gibi işlemi sırasında ek kullanıcı Arabirimi sağlar.  
+
 ##### <a name="renaming"></a>Yeniden adlandırma  
- Ağaçtaki düğümler yeniden adlandırma destekliyorsa, yeniden adlandırma yerinde yapılması gerekir. Yerinde işlemi standart, Visual Studio tüm ağaç denetimlerinde arasında olmalıdır. Hemen tüm düğümünün adı, kullanıcı girişi kabul etmeye hazır kapsayan metin seçimle yerinde düzenleme modunu etkinleştirir rename komutu sağlar. Bir dosya düğümünü temsil ediyorsa, dosya adı uzantısını içermelidir. Seçim Vurgusu dosya adı uzantısını değil yalnızca gövdesini içermelidir.  
-  
+ Yeniden adlandırma Ağaçtaki düğümler destekliyorsa, yeniden adlandırma yerinde yapılması gerekir. Yerinde işlemi standart, Visual Studio tüm ağaç denetimlerinde arasında olmalıdır. Yerinde düzenleme modu, adın tamamını düğümünün, kullanıcı girişi kabul etmeye hazır kapsayan metin seçimi ile hemen etkinleştiren bir yeniden adlandırma komutu belirtin. Düğüm bir dosyayı temsil ediyorsa, dosya adı uzantısını içermelidir. Seçim Vurgusu, yalnızca dosya adını ve uzantısını değil gövdesi içermelidir.  
+
 |Giriş|Sonuç|  
 |-----------|------------|  
-|Enter tuşu|Yeniden adlandırma işlemi tamamlar|  
-|ESC tuşuna|Yeniden adlandırma işlemi iptal eder|  
-|Yerinde düzenleme bölgesinin dışındaki tıklatarak|Yeniden adlandırma işlemi tamamlar|  
-|Geri alma|Yeniden adlandırma işlemi iptal etmek için kolayca geri sağlayın|  
-  
+|Enter tuşu|Yeniden adlandırma işlemi tamamlar.|  
+|ESC tuşu|Yeniden adlandırma işlemi iptal eder|  
+|Yerinde düzenleme bölgesi dışında tıklayarak|Yeniden adlandırma işlemi tamamlar.|  
+|Geri alma|Yeniden adlandırma işlemi iptal etmek için bir kolayca geri alma sağlayın|  
+
 #### <a name="selection-within-lists-and-grid-controls"></a>Seçim listeleri ve kılavuz denetimleri içinde  
- Anahtar listesi seçimdeki kavramıdır satır tabanlı olduğundan, tüm satırı bir seçim yapıldığında, yani bir birim olarak seçilir. Bunun aksine, kılavuzları belirli herhangi bir satır yönünü etkilemeden seçilmesi hücrelere izin verebilirsiniz. Kılavuzları Ayrıca seçili ve üst satırları ile etkileşim kurarak seçimi hiyerarşinin tüm dalları izin iç içe geçmiş satır (TreeGrid olduğu gibi) bir hiyerarşi içermiyor olabilir. Seçim listesindeki tüm veri satırının üzerinde basit vurgulama renk tarafından gösterilir. Odağı geçerli düzenlenebilir satır veya hücre (tüm hücreleri salt okunur ise satır) çevresine tek pikselli noktalı kenarlık tarafından gösterilir.  
-  
+ Liste seçimdeki en önemli kavram olan satır tabanlı, tam satır seçimi yapıldığında, yani bir birim olarak seçilir. Aksine, kılavuzlar, belirli bir satırın herhangi bir özelliği etkilemeden seçilmesi hücrelere izin verebilirsiniz. Kılavuzlar hiyerarşisi seçili ve üst satırları ile etkileşim kurarak seçimi için hiyerarşinin tüm dalları sağlayan iç içe geçmiş satırlar (olduğu gibi bir TreeGrid gibi) de içerebilir. Seçim listeleri tüm veri satırı üzerinde basit Vurgu rengi tarafından gösterilir. Odağı geçerli düzenlenebilir satır veya hücre (satır tüm hücreler salt okunur ise) çevresine tek pikselli noktalı bir kenarlık tarafından gösterilir.  
+
 > [!NOTE]
->  **Odak** ve **seçimi** farklı kavram olmasıdır. *Odak* göstergesidir hangi UI öğesi hedeflediği açıkça başka bir nesnede yönlendirilmiş giriş almaya çalışırken *seçimi* nesneleri izleyen bir dizi eklenmek üzere bir nesnenin durumunu gösterir Operations yer alabilir.  
-  
- Seçimleri listelerinde bitişik, ayrık, olabilir veya bölge. Ne zaman birden çok seçimin izin verilen, sürekli ve ayrık seçimi her zaman, bölge (kutusu) seçimleri desteği sırasında desteklenmesi gereken isteğe bağlıdır. Bölgesi seçimlerin listesi gövdesi boşluk içinde sürükleyerek başlatılır.  
-  
-|Nesne|Seçim|  
-|------------|---------------|  
-|List|Bitişik|(Birden çok seçimin izin verildiğinde) her zaman desteklenir.|  
-|List|Ayrık|(Birden çok seçimin izin verildiğinde) her zaman desteklenir.|  
-|List|Bölge|İsteğe bağlı destek. Fare listesi gövdesi boşluk içinde sürükleyerek başlattı.|  
-  
- Bir listede bir kere tıklatarak tıklatın oluştuğu satırı seçer. Kullanıcı yerinde düzenleme destekleyen bir liste hücreyi tıklatın olursa, hücre de hemen yerinde düzenleme için etkinleştirilir. Aksi takdirde, tüm satırı hemen seçilir ve Vurgu gösterir.  
-  
+>  **Odak** ve **seçimi** farklı kavram olmasıdır. *Odak* göstergesidir hangi UI öğesi hedeflediği açıkça başka bir nesnede yönlendirilmiş giriş almaya çalışırken *seçimi* sonraki olan bir nesne nesnenin edilme durumunu gösterir işlemleri yer alabilir.  
+
+ Bitişik, ayrık, seçim listelerindeki olabilir veya bölge. Ne zaman birden çok seçime izin verilen, sürekli ve ayrık seçimi her zaman, bölge (kutu) seçimleri için destek sırasında desteklenmelidir isteğe bağlıdır. Bölge seçim listesi gövdesi içinde beyaz boşluk sürükleyerek başlatılır.  
+
+
+| Nesne | Seçim |
+|--------|------------|
+| List | Bitişik |
+| List | Ayrık |
+| List | Bölge |
+
+ Bir listede bir kez tıklayarak tıklayarak oluştuğu satırı seçer. Kullanıcı yerinde düzenleme destekleyen bir liste hücreyi tıklatın olursa, hücre da hemen yerinde düzenleme için etkinleştirilir. Aksi takdirde, tüm satırı hemen seçilir ve bir vurgulama gösterilmektedir.  
+
  Liste gövdesinde sürükleyerek üç şey yapar:  
-  
--   Bir bölge seçim listesi destekliyorsa ve fare aşağı boşluk ise başlatır  
-  
--   Sürükleme kaynağı olan liste hücre veya satır destekliyorsa, bir Sürükle ve bırak işlemi başlatır  
-  
--   Geçerli satırda seçer  
-  
+
+-   Kayıt Seçimi liste destekliyorsa ve fare aşağı boşluk varsa başlatır.  
+
+-   Bir sürükleme kaynağı olan bir listesi veya satır destekliyorsa, bir Sürükle ve bırak işlemi başlatır.  
+
+-   Geçerli satırı seçer  
+
 ##### <a name="in-place-editing"></a>Yerinde düzenleme  
- Yerinde düzenlemeye izin verirken, iki temel modeli vardır: Basit Düzen denetimi ve özellik Seçici. Basit Düzen denetimi ile içerik vurgulanmış ve kullanıcı yerinde düzenleme etkinleştirilir hemen girişi için hazır olur. Bir özellik Seçici uygulanan burada özelliği Seçici çağırır düğmesi yerinde düzenleme modu etkinleştirildikten sonra geçerli seçim değil vurgulanır görüntülenir. Seçici düğmesi hücrede sağa hizalı olması gerekir. Yerinde düzenleme örnekler için bkz: **Özellikler penceresini** ve **görev listesi** Visual Studio.  
-  
+ Yerinde düzenleme izin verildiğinde, iki temel modeli vardır: Basit Düzen denetimi ve özellik Seçici. Bir basit düzen denetimi ile içeriği vurgulanan ve kullanıcı yerinde düzenleme etkin olarak girişi için hazır olur. Özellik Seçici uygulanan burada özellik Seçici çağıran düğme yerinde düzenleme modu etkinleştirilir ve geçerli seçimi Vurgulanmayan sonra görüntülenir. Seçici düğmesi hücresinde sağa dayalı olmalıdır. Yerinde düzenleme örnekler için bkz **Özellikler penceresi** ve **görev listesi** Visual Studio'da.  
+
 ##### <a name="keyboard-support"></a>Klavye desteği  
- Seçim listeleri ve kılavuzları klavye desteği standart Windows kuralları aşağıdaki gibidir:  
-  
--   Ok tuşları odağı taşındıkça her satır/hücresi seçerek listenin gidin.  
-  
--   Shift + ok ok tuşlarını yönde bitişik seçim gerçekleştirir.  
-  
--   Ctrl + Ara çubuğu değiştirir tarafından ekleme ve liste öğeleri ayrık bir seçim oluşturma seçimden kaldırma arasında ardından OK.  
-  
--   İç içe geçmiş hiyerarşileri içeren kılavuzları, bir üst satırın sağ ok tuşu genişletir ve sol ok tuşunu bir daraltır.  
-  
--   Hücreleri düzenlenebilir olup olmadığını SEKME tuşuna odağı geçerli satır hücrelerde arasında taşır.  
-  
--   Enter tuşuna varsayılan komutu yerine getirir, listedeki bir öğe (genellikle **açık**).  
-  
--   Şu anda seçili hücre için yerinde düzenleme F2 anahtar etkinleştirir.  
-  
+ Seçim listeleri ve Kılavuzlar klavye desteği, standart Windows kuralları aşağıdaki gibidir:  
+
+-   Ok tuşları listenin odağı hareket ettirildiğinde her satır/hücre Ekle'ye gidin.  
+
+-   SHIFT + ok ok tuşlarını yönünde bir aralık seçimi gerçekleştirir.  
+
+-   CTRL + ok ekleme ve ayrık bir seçim oluşturma seçim, liste öğelerini kaldırma arasında boşluk değiştirir tarafından izlenen.  
+
+-   İç içe Hiyerarşiler içermelidir kılavuzlar, üst satırın sağ ok tuşu genişletir ve bir sol ok tuşunu daraltır.  
+
+-   Sekme tuşunu odak hücreler düzenlenebilir durumlarda geçerli satırda hücreleri arasında taşır.  
+
+-   Varsayılan komut Enter tuşunu listedeki öğeye gerçekleştirir (genellikle **açık**).  
+
+-   Yerinde düzenleme için şu anda seçili hücreden F2 tuşuna etkinleştirir.  
+
 ##  <a name="BKMK_PersistenceAndSavingSettings"></a> Kalıcılığı ve ayarları kaydediliyor  
-  
+
 ### <a name="overview"></a>Genel Bakış  
- Visual Studio'da her yazılım bileşeni kendi durumu ve kalıcılığı genellikle sorumlu olsa da, Visual Studio gibi bazı durumlarda, ayarları otomatik olarak pencere boyutları ve konumları ile kaydeder. Aşağıdaki tabloda, otomatik olarak kaydedilir ve açık bir kullanıcının gerektiren veya gerçekleştirilecek eylemin programlanmış ayarlarını birleşimidir.  
-  
-|Nesne|Ne kaydetmek için|Zaman kaydetmek için|Kaydedileceği yeri|  
+ Visual Studio'da her yazılım bileşen kendi durumu ve Kalıcılık için genellikle sorumlu olsa da, Visual Studio gibi bazı durumlarda, ayarları otomatik olarak penceresi boyutları ve pozisyonları ile kaydeder. Aşağıdaki tabloda, otomatik olarak kaydedilir ve açık bir kullanıcı gerektiren veya gerçekleştirilecek eylemi programlanmış ayarlarını birleşimidir.  
+
+|Nesne|Ne kaydetmek için|Ne zaman Kaydet|Kaydedileceği yeri|  
 |------------|------------------|------------------|-------------------|  
-|Seçilebilir nesne (örneğin, kod satırı)|Kod satırında bir kesme noktası<br /><br /> Kod satırı ile ilişkili bir kullanıcı kısayolu|Proje zaman kaydedilir|**Kullanıcı seçenekleri (.suo)** proje dosyası|  
-|İletişim kutusu|Taşıdıysanız iletişim kutusunda, konumu<br /><br /> Kullanıcı iletişim kutusunda en son kullanılan görünümü|Ne zaman iletişim kutusunu kapatır<br /><br /> Visual Studio oturumu sona erdiğinde|Bellek<br /><br /> Kayıt defterinde **HKEY_Current_User**|  
-|Pencere|Boyut ve konum penceresi|Ne zaman penceresini kapatır<br /><br /> Visual Studio modu değiştiğinde<br /><br /> Visual Studio oturumu sona erdiğinde|**Kullanıcı seçenekleri (.suo)** proje dosyası<br /><br /> Pencere ayarları için özel seçenekleri dosyası|  
-|Belge|Belgedeki geçerli seçim<br /><br /> Belgenin görünümü<br /><br /> Kullanıcının ziyaret son çeşitli yerlerde|Ne zaman Belge kaydedildiğinde|**Kullanıcı seçenekleri (.suo)** proje dosyası|  
-|Proje|Dosyalara başvurular<br /><br /> Disk üzerindeki dizinlere başvuruları<br /><br /> Diğer yazılım başvurular<br /><br /> Bileşenler<br /><br /> Projeyle ilgili durum bilgileri|Proje zaman kaydedilir|Proje dosyası|  
-|Çözüm|Proje başvuruları<br /><br /> Dosyalara başvurular|Proje ve çözüm zaman kaydedilir|**Çözüm (.sln)** dosyası|  
+|Seçilebilir nesne (örneğin, bir kod satırı)|Kod satırında bir kesme noktası<br /><br /> Kod satırı ile ilişkili bir kullanıcı kısayol|Proje zaman kaydedilir|**Kullanıcı seçenekleri (. suo)** proje dosyası|  
+|İletişim kutusu|Taşınmış, iletişim kutusunda, konumu<br /><br /> Kullanıcı iletişim kutusundaki en son kullanılan görünümü|Ne zaman iletişim kutusunu kapatır<br /><br /> Visual Studio oturumu sona erdiğinde|Bellekte<br /><br /> Kayıt defterinde **HKEY_Current_User**|  
+|Pencere|Pencerenin konumunu ve boyutunu|Ne zaman pencereyi kapatır<br /><br /> Visual Studio modu değiştiğinde<br /><br /> Visual Studio oturumu sona erdiğinde|**Kullanıcı seçenekleri (. suo)** proje dosyası<br /><br /> Pencere ayarları için özel seçenekleri dosyası|  
+|Belge|Belgedeki geçerli seçimi<br /><br /> Belgenin görünümünü<br /><br /> Kullanıcı ziyaret son çeşitli yerlerde|Belgenin ne zaman kaydedilir|**Kullanıcı seçenekleri (. suo)** proje dosyası|  
+|Proje|Dosya başvuruları<br /><br /> Disk üzerindeki dizinler başvuruları<br /><br /> Diğer yazılım başvuruları<br /><br /> Bileşenler<br /><br /> Proje hakkında durum bilgileri|Proje zaman kaydedilir|Proje dosyası|  
+|Çözüm|Proje başvuruları<br /><br /> Dosya başvuruları|Ne zaman proje veya çözüm kaydedildi|**Çözüm (.sln)** dosyası|  
 |Ayarlarında **Araçlar > Seçenekler**|Klavye özelleştirmeleri<br /><br /> Araç çubuğunu özelleştirme<br /><br /> Renk düzenleri|Zaman **Araçlar > Seçenekler** iletişim kutusunu kapatır<br /><br /> Visual Studio oturumu sona erdiğinde|Kayıt defterinde **HKEY_Current_User**|  
-  
- Hangi kullanıcı yapıyor ve, yaptıklarını zaman proje ya da çözüm dosyanın bir parçası olarak bir parçası olarak bir ayar (oturumu sırasında), diske (oturumlarında bir kayıt defteri ayarı olarak), kaydedilen bellekte kaydedilmekte olduğu olup olmadığını belirleyen **çözümü Seçenekler (.suo)** dosya ya da bir özel ayarlar yalnızca yazılım bileşeninin dosyası olarak bilmektedir. Yukarıdaki tabloda ayarları kaydedilebilmesi için çeşitli olayları gösterir. Ancak, bazen durumu kaydetmek isteyebilirsiniz vardır:  
-  
--   Kullanıcı bir iletişim kutusu veya penceresi içinde konuma değiştiğinde  
-  
--   Ne zaman kullanıcı başka bir pencere için odak aktarır.  
-  
--   Hata ayıklama modu olarak gelen kullanıcı geçiş yaptığında tasarlama  
-  
--   Kullanıcı hesaplarında devre dışı oturum açtığında  
-  
--   Bilgisayar zaman hazırda beklemeye geçtiğinde veya kapatıldığında  
-  
--   Bilgisayar/sabit sürücüyü hakkında ve yeniden biçimlendirilen yeniden kurmak için olduğunda  
-  
+
+ Hangi kullanıcı yapıyor ve bunlar yaparken, proje veya çözüm dosyasının kendisini bir parçası olarak bir parçası olarak bir ayar (oturumu sırasında), diske kaydedilir (oturumları arasında bir kayıt defteri ayarı olarak), bellekte kaydediliyor olup olmadığını belirleyen **çözümü Seçenekleri (. suo)** dosya ya da yazılım bileşeni yalnızca o özel ayarlar dosyası olarak bilmektedir. Yukarıdaki tabloda ayarları kaydedilebilmesi için çeşitli olayları gösterir. Ancak, bazen durumu kaydetmek isteyebilirsiniz vardır:  
+
+-   Kullanıcı iletişim kutusu veya pencere konumu değiştiğinde  
+
+-   Ne zaman kullanıcı için başka bir pencere odağı aktarır.  
+
+-   Hata ayıklama modu olarak kullanıcı gelen geçiş yaptığında tasarlama  
+
+-   Kullanıcı hesabını devre dışı oturum açtığında  
+
+-   Ne zaman bilgisayar hazırda beklemeye veya kapatıldığında  
+
+-   Bilgisayar/sabit sürücüyü hakkında yeniden biçimlendirildi ve yeniden kurmanız olduğunda  
+
 ### <a name="window-configurations"></a>Pencere yapılandırmaları  
- Geliştirme ortamı temel sunumunu bir pencere yapılandırmadır - aracı windows mevcut listesi ve düzenlenmiş şekilde oluşan bir düzeni. Pencere düzenini IDE aynı görünür bir kullanıcı başlatır, bunlar zaman en son Visual Studio çıkıldı şekilde (IDE windows) IDE tarafından yönetilen windows için kullanıcı başına düzeni bilgileri kalıcıdır. IDE windows konumunu ve durumunu XML biçimi özel seçenekleri dosyasında kalıcıdır. IDE içinde yüklenen paketler tarafından oluşturulan aracı windows kayıt defterinde, durum bilgilerini kalıcı hale getirmek ve olabilir veya kullanıcı başına olmayabilir.  
-  
-#### <a name="profile-specific-layouts"></a>Profil özel düzenler  
- Her profil özel Geliştirici kişiler için tanıdık bir şekilde düzenlenmiştir aracı pencere düzenlerini içerir (Visual C++ geliştiriciler beklediğiniz görmek **Çözüm Gezgini** C# geliştiricileri görmeyibeklediğinizsıradaIDEsoltarafındaki **Çözüm Gezgini** sağ taraftaki). Kullanıcı profili başlangıçta seçtikten sonra profili özel pencere düzenlerini yüklenir. Bir paket yazarına, müşterinin deneyim için en uygun pencere düzenini penceresini yapılandırmanın kullanıcının yaptığı değişiklikler sonra kalıcı olduğunu bilmek belirlemeniz gerekir.  
-  
-##  <a name="BKMK_TouchInput"></a> Dokunmatik giriş  
- Kullanıcılar, dokunmatik aygıtlarda Microsoft geliştirme ürün giderek kullanıyor. Ancak, dokunmatik aygıtlarda geliştirme araçlarını kullanmayı zor hale engelleri vardır. Kullanıcıların bir güvenilir ve kesin dokunma deneyimi sağlamak için Ürünlerimiz beklediğiniz. Bu yönergeleri amacı, hangi dokunma özellikleri eklemenizi ve Visual Studio ve ilgili ürünler arasında tutarlı dokunmatik deneyimini teşvik eden hakkında kararlar bildirmek sağlamaktır.  
-  
+ Bir pencere yapılandırmasının geliştirme ortamının temel sunu'dur - mevcut araç pencereleri listesini ve bunların düzenlenme şeklini oluşan bir düzeni değildir. Bunlar en son ne zaman Visual Studio IDE, pencere düzenini aynı görünür bir kullanıcı başlatır, çıkıldı şekilde IDE (IDE windows) tarafından yönetilen windows için kullanıcı başına düzen bilgilerini kalıcı hale getirilir. IDE pencerelerinde konumu ve durumu XML biçimi özel seçenekleri dosyasında kalıcıdır. IDE'ye yüklü paketleri tarafından oluşturulan araç pencereleri, durum bilgilerinin kayıt defterinde kalıcı olabilir veya kullanıcı başına olabilir.  
+
+#### <a name="profile-specific-layouts"></a>Profili özel düzenler  
+ Her profil aracı pencere düzenlerini, belirli bir geliştirici kişilikler için tanıdık bir şekilde organize içerir (Visual C++ geliştiricileri beklediğiniz görmek **Çözüm Gezgini** görmekC#geliştiricilerinsıradaIDE'ninsoltarafındaki **Çözüm Gezgini** sağ). Kullanıcı bir başlatma profilinde seçtikten sonra profili özel pencere düzenlerini yüklenir. Bir paket yazarı için pencere yapılandırmasının kullanıcının yaptığı değişiklikleri daha sonra kalıcı olduğunu bilmek, müşteri deneyimi için en uygun pencere düzenini belirlemeniz gerekir.  
+
+##  <a name="BKMK_TouchInput"></a> Dokunma girişi  
+ Kullanıcılar, dokunmatik cihazlarda giderek Microsoft geliştirme ürünleri kullanıyorsunuz. Ancak, dokunmatik cihazlarda geliştirme araçlarını kullanmayı zorlaştıran engelleri vardır. Kullanıcılar, güvenilir ve kesin dokunma deneyimi sağlamak üzere Ürünlerimizin istedikleri. Bu yönergelerin amacı hangi touch özellikleri eklemelerine ve Visual Studio ve ilgili ürünler arasında tutarlı dokunma deneyimi teşvik etmek için hakkında kararlar bildirmektir.  
+
 ### <a name="levels-of-experience"></a>Deneyimi düzeyleri  
- Deneyimi aşağıdaki düzeylerini sunmak için hangi dokunma özellikleri dokunma yatırım ilgi istenen düzeyini göre takımlar karar vermenize yardımcı olacak bir kılavuz hizmet vermek üzere tasarlanmıştır.  
-  
--   **Temel deneyimi** hiçbir geçerliliği sona erer işlerini boyunca tanımlanabilmesini sağlamak istediğiniz takımlar özellikleri dokunma aranır.  
-  
--   **Deneyimi en iyi duruma getirilmiş** en yaygın dokunma özellikleri (örneğin, internet tarayıcı uygulamalarında genellikle mevcut kodlar) sağlamak istediğiniz takımlar içindir.  
-  
--   **Yükseltilmiş deneyimi** yetenekleri gibi eklemek istediğiniz ekipleri olarak hareketleri veya kendi uygulama yapabilirsiniz diğer isteğe bağlı özellikleri dokunma-ilk kolay.  
-  
-||Temel deneyimi|En iyi duruma getirilmiş deneyiminin|Yükseltilmiş deneyimi|  
+ Aşağıdaki düzeylerde deneyimi sunmak için gereken touch özellikleri istenen touch yatırım ilgi düzeyini temel ekiplerin karar vermenize yardımcı olmak için bir kılavuz olarak görev yapacak yöneliktir.  
+
+-   **Temel deneyim** hiçbir atılacak uçlarını işlerini boyunca olduklarından yetenekleri sağlamak isteyen takımlara touch aranır.  
+
+-   **Deneyimi en iyi duruma getirilmiş** en ortak dokunma özellikler (örneğin, Internet tarayıcı uygulamalarında genellikle mevcut kodlar) sağlamak isteyen takımlara yöneliktir.  
+
+-   **Yükseltilmiş deneyimi** gibi özellikleri eklemek isteyen takımlar için olarak hareketlerine veya kendi uygulama yapabileceğiniz diğer isteğe bağlı özellikleri ilk dokunmatik ekranları kolay.  
+
+||Temel deneyim|En iyi duruma getirilmiş deneyimi|Yükseltilmiş deneyimi|  
 |-|----------------------|--------------------------|-------------------------|  
-|Kullanıcılara sağlar...|Kod ve çözüm/proje geçerliliği sona erer okuma düzeyi Düzelt|Bakım, refactors ve gezinme görevleri|Tutarlı, sezgisel ve akıcı bir deneyim güvenle çalışmayabilir|  
-|Düzenleyici|Dokunma kaydırma ve seçimi<br /><br /> Scrollbar dokunma atlamak ve basın + sürükleme için|Tutarak yakınlaştırma<br /><br /> Hızlı kaydırma<br /><br /> Seçim<br /><br /> Bağlam menüsünün kullanımı kolay||  
-|Üst araç pencereleri|Liste kaydırma<br /><br /> Öğe seçimi<br /><br /> Scrollbar dokunma atlamak ve basın + sürükleme için|Kolay öğesi kaydırma ve seçimi||  
+|Kullanıcılara sağlar...|Kod ve çözüm/proje-seviyesi atılacak uçlarını okuma|Bakım, refactors ve gezinme görevleri|Tutarlı, sezgisel ve akıcı bir deneyim güvenle çalışır.|  
+|Düzenleyici|Dokunmatik kaydırma ve seçim<br /><br /> Atlama ve basın + sürükleme için kaydırma çubuğunu dokunun|Sıkıştırarak yakınlaştırma<br /><br /> Hızlı kaydırma<br /><br /> Seçim<br /><br /> Bağlam menüsünün kullanımı kolay||  
+|Üst araç pencereleri|Liste kaydırma<br /><br /> Öğe seçimi<br /><br /> Atlama ve basın + sürükleme için kaydırma çubuğunu dokunun|Kolay öğesi kaydırmayı ve seçimi||  
 |Pencereleme||Pencereyi yeniden boyutlandırma<br /><br /> Hızlı erişim||  
-|Belge iyi||Açık dosyalar arasında kolay gezinme||  
-|Hareketleri||Ortak hareketleri IDE üzerinde çalıştığından emin olmak|Hareketi tabanlı Eylemler<br /><br /> Sürükle ve bırak ve tasarımcıları desteği|  
-|Diğer konular|||Özel Ekran Klavyesi|  
-  
-#### <a name="gestures"></a>Hareketleri  
- Hareketleri kullanıcıların daha karmaşık bir etkileşim aksi gerektirebilir komutları bir kısayol sağlar. Üzerinde Windows yönergelerine başvurun [Masaüstü uygulamaları için ortak dokunma hareketleri](http://msdn.microsoft.com/en-us/library/windows/desktop/dd940543\(v=vs.85\).aspx)ve kaydırma ve yakınlaştırma gibi basit hareketler dahil olmak üzere çoğu hareketleri için bu yönergeleri izleyin.
+|Belge iyi||Açık dosyalar arasında kolay gezinti||  
+|Hareketler||IDE arasında ortak hareketlerini çalıştığından emin olmak|Hareket tabanlı eylemleri<br /><br /> Sürükle ve bırak ve tasarımcıları destekler|  
+|Dikkat edilecek diğer noktalar|||Özel Ekran Klavyesi|  
+
+#### <a name="gestures"></a>Hareketler  
+ Hareketlerini kullanıcılar, aksi takdirde daha karmaşık bir etkileşimi gerektiren komutlar için bir kısayol sağlar. Üzerinde Windows yönergelerine başvurun [Masaüstü uygulamaları için ortak dokunma hareketlerini](/windows/desktop/wintouch/windows-touch-gestures-overview)ve kaydırma ve yakınlaştırma gibi basit hareketler dahil olmak üzere çoğu hareketler için bu yönergeleri izleyin.

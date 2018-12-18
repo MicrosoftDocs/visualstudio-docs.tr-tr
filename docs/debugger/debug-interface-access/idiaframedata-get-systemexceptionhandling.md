@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 218cc1c9bc9b031621df1d6a3722d698f82999e1
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 889f2cf72d27b84cff86792f7b0ba3a43d63d09e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882736"
 ---
 # <a name="idiaframedatagetsystemexceptionhandling"></a>IDiaFrameData::get_systemExceptionHandling
-Sistem özel durum işleme etkin olup olmadığını belirten bir bayrak alır.  
+Sistem özel durum işleme etkin olup olmadığını gösteren bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,15 +34,15 @@ HRESULT get_systemExceptionHandling (
   
 #### <a name="parameters"></a>Parametreler  
  pRetVal  
- [out] Döndürür `TRUE` sistem özel durum işleme döndürür yürürlükte; Aksi takdirde ise `FALSE`.  
+ [out] Döndürür `TRUE` sistem özel durum işleme döndürür yürürlükte; Aksi halde ise `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Sistem özel durum işleme daha yaygın olarak yapılandırılmış özel durum işleme olarak bilinir.  
+ Sistem özel durum işleme, daha sık olarak yapılandırılmış özel durum işleme adı verilir.  
   
- C++ özel durum işleme etkin olup olmadığını belirlemek için arama [Idiaframedata::get_cplusplusexceptionhandling](../../debugger/debug-interface-access/idiaframedata-get-cplusplusexceptionhandling.md) yöntemi.  
+ C++ özel durum işleme etkin olup olmadığını belirlemek için çağrı [Idiaframedata::get_cplusplusexceptionhandling](../../debugger/debug-interface-access/idiaframedata-get-cplusplusexceptionhandling.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaframedata](../../debugger/debug-interface-access/idiaframedata.md)   

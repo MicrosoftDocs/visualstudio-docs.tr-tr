@@ -1,7 +1,7 @@
 ---
 title: VSTU tarafından oluşturulan proje dosyalarını özelleştirme | Microsoft Docs
 ms.custom: ''
-ms.date: 11/04/2016
+ms.date: 07/26/2018
 ms.technology: vs-unity-tools
 ms.topic: conceptual
 ms.assetid: 60b8cc1d-cacc-404d-b768-77e81bc354f8
@@ -10,14 +10,15 @@ ms.author: crdun
 manager: crdun
 ms.workload:
 - unity
-ms.openlocfilehash: 7393d023b8c581b95d3ac39b8501ca9dbb30228d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ad52e9f97dfbb9a5d0b3d65085c6c2627ccb2232
+ms.sourcegitcommit: e6ef03cc415ca67f75fd1f26e0e7b8846857166d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39310091"
 ---
-# <a name="customize-project-files-created-by-vstu"></a>VSTU Tarafından Oluşturulan Proje Dosyalarını Özelleştirme
-Unity için Visual Studio Araçları Unity stili geri çağırma proje dosyası oluşturma sırasında sağlar. Kaydetme `VisualStudioIntegration.ProjectFileGeneration` yeniden oluşturulur her proje dosyasını değiştirmek için olay.
+# <a name="customize-project-files-created-by-vstu"></a>VSTU tarafından oluşturulan proje dosyalarını özelleştirme
+Unity için Visual Studio Araçları proje dosyası oluşturma sırasında bir Unity stili geri çağırma sağlar. Kaydolmalı `VisualStudioIntegration.ProjectFileGeneration` yeniden oluşturuldu her proje dosyasını değiştirmek için olay.
 
 ## <a name="demonstrates"></a>Gösteriler
  Unity için Visual Studio Araçları tarafından oluşturulan Visual Studio proje dosyalarını özelleştirme yapma.
@@ -25,6 +26,7 @@ Unity için Visual Studio Araçları Unity stili geri çağırma proje dosyası 
 ## <a name="example"></a>Örnek
 
 ```csharp
+#if ENABLE_VSTU
 using System;
 using System.IO;
 using System.Linq;
@@ -64,7 +66,8 @@ public class ProjectFileHook
         };
     }
 }
+#endif
 ```
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
  [Örnek: Günlük geri çağırma](../cross-platform/share-the-unity-log-callback-with-vstu.md)

@@ -1,5 +1,5 @@
 ---
-title: Office çözümü dağıtımında sorunu giderme | Microsoft Docs
+title: Office çözümü dağıtımında sorunlarını giderme
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,117 +17,116 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 29c3cfdcf31609eb5b6aec0111fe2297ba8c01ef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bba978da26a2aa7b7263fa5d2e88fa8acdc272f0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49886009"
 ---
-# <a name="troubleshooting-office-solution-deployment"></a>Office Çözümü Dağıtımında Sorunu Giderme
-  Bu konu, Office çözümlerini dağıtırken karşılaşabileceğiniz yaygın sorunların nasıl çözüleceği hakkında bilgi içerir.  
+# <a name="troubleshoot-office-solution-deployment"></a>Office çözümü dağıtımında sorunlarını giderme
+  Bu konuda, Office çözümleri dağıtırken karşılaşabileceğiniz genel sorunları nasıl çözeceğinizi hakkında bilgi içerir.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
-## <a name="troubleshooting-office-solutions-by-using-the-event-viewer"></a>Olay Görüntüleyicisi'ni kullanarak Office çözümlerinde sorun giderme  
- Tarafından kaydedilen hata iletilerini görmek için Windows Olay Görüntüleyicisi'ni kullanabilirsiniz [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] yüklediğinizde veya Office çözümleri kaldırın. Bu olay günlükçüsü iletilerden yükleme ve dağıtım sorunlarını gidermek için kullanabilirsiniz. Daha fazla bilgi için bkz: [Office çözümleri için olay günlüğü](../vsto/event-logging-for-office-solutions.md).  
+## <a name="troubleshoot-office-solutions-by-using-the-event-viewer"></a>Olay Görüntüleyicisi'ni kullanarak, Office çözümlerinde sorun giderme  
+ Tarafından yakalanan hata iletilerini görmek için Windows Olay Görüntüleyicisi'ni kullanabilirsiniz [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] yüklediğinizde veya Office çözümleri kaldırın. Olay günlüğü ileti, yükleme ve dağıtım sorunlarını gidermek için kullanabilirsiniz. Daha fazla bilgi için [Office çözümleri için olay günlüğü](../vsto/event-logging-for-office-solutions.md).  
   
-## <a name="changing-the-assembly-name-causes-conflicts"></a>Derleme adını değiştirmenin çakışmalarına neden olur  
- Değiştirirseniz **derleme adı** değeri **uygulama** sayfasında **Proje Tasarımcısı** zaten bir çözüm dağıttıktan sonra yayımlama araçları değiştirir Bir Setup.exe dosyasını ve iki dağıtım bildirimleri için Kurulum paketini. İki bildirim dosyası dağıtırsanız, aşağıdaki durumlardan ortaya çıkabilir:  
+## <a name="change-the-assembly-name-causes-conflicts"></a>Değişiklik derleme adı çakışmalarına neden olur.  
+ Değiştirirseniz **derleme adı** değerini **uygulama** sayfasının **Proje Tasarımcısı** zaten bir çözüm dağıttıktan sonra yayımlama araçları değiştirir İçin bir Kurulum paketini *Setup.exe* dosya ve iki dağıtım bildirimleri. İki bildirim dosyalarını dağıtırsanız, aşağıdaki durumlardan ortaya çıkabilir:  
   
--   Son kullanıcı her iki sürümü de yüklerse, uygulama hem VSTO eklentileri yükler.  
+- Son kullanıcı her iki sürümü yüklerse, uygulama her iki VSTO eklentileri yükler.  
   
--   VSTO eklenti derleme adı değiştirilmeden önce yüklenmişse, son kullanıcı hiçbir zaman güncelleştirmeleri almazlar.  
+- VSTO eklenti bütünleştirilmiş kod adı değiştirilmeden önce yüklenmişse, son kullanıcı asla güncelleştirmeleri alırsınız.  
   
- Bu durumlardan kaçınmak için çözümün değişmez **derleme adı** çözümü dağıttıktan sonra değer.  
+  Bu koşullar önlemek için çözümün değişmez **derleme adı** çözümü dağıttıktan sonra değeri.  
   
-## <a name="checking-for-updates-takes-a-long-time"></a>Güncelleştirmeleri denetleme uzun sürüyor  
- Office çalışma zamanı için Visual Studio 2010 Araçları Yöneticiler bildirimlerinde ve çözümü indirme zaman aşımı değerini ayarlamak için kullanabileceğiniz bir kayıt defteri girişi sağlar.  
+## <a name="check-for-updates-takes-a-long-time"></a>Güncelleştirmeleri alan uzun olup olmadığını denetleyin  
+ Visual Studio 2010 Tools for Office runtime Yöneticiler için bildirimler ve çözümü indirme zaman aşımı değerini ayarlamak için kullanabileceğiniz bir kayıt defteri girişi sağlar.  
   
 #### <a name="to-set-the-time-out-value"></a>Zaman aşımı değerini ayarlamak için  
   
-1.  Kayıt defterinde aşağıdaki anahtarına gidin:  
+1.  Kayıt defterinde şu anahtara gidin:  
   
-     HKEY_CURRENT_USER\Software\Microsoft\VSTA  
+     **HKEY_CURRENT_USER\Software\Microsoft\VSTA**  
   
-2.  İçinde **AddInTimeout** alt anahtar, zaman aşımı değerini milisaniye olarak ayarlayın.  
+2.  İçinde **AddInTimeout** alt anahtarını, zaman aşımı değerini milisaniye cinsinden ayarlayın.  
   
      Varsa **AddInTimeout** alt değil, mevcut bir DWORD olarak oluşturun.  
   
-## <a name="cant-update-or-publish-to-a-network-file-share"></a>Güncelleştirilemiyor veya bir ağ dosya paylaşımına Yayımla  
- Çözümün Setup.exe dosyasını güncelleştirme yayımlanırken bir işlemde kilitliyse bir ağ dosya paylaşımında bulunan office çözümleri güncelleştirmeleri sırasında yanıltıcı iletisi görüntülenebilir. Aşağıdaki ileti diyebilirsiniz: "'setup.exe' Web'e eklenemiyor. "Setup.exe' dosyası zaten bu Web'de var."  
+## <a name="cant-update-or-publish-to-a-network-file-share"></a>Güncelleştirilemiyor veya ağ dosya paylaşımına yayımlayın  
+ Bir ağ dosya paylaşımında bulunan office çözümlerini görüntülenebilir yanıltıcı bir ileti güncelleştirirken, çözümün *Setup.exe* dosya güncelleştirme yayımlanırken bir işlem kilitlenmiş. Aşağıdaki ileti diyebilirsiniz: "'setup.exe' Web'de eklenemiyor. "Setup.exe' dosyası zaten bu Web var."  
   
- Dosya kilitleme önlemeye yardımcı olmak için paylaşımın salt okunur son kullanıcılara yapabilirsiniz. Belgeleri paylaşımında varsa, Bununla birlikte, bunlar Ayrıca son kullanıcılara salt okunur olur.  
+ Dosya kilitleme önlemeye yardımcı olmak için paylaşımın salt okunur son kullanıcılara yapabilirsiniz. Belgeler paylaşımındaysa, ancak bunlar Ayrıca son kullanıcılara salt okunur hale gelir.  
   
 ## <a name="prerequisites-for-microsoft-office-arent-installed"></a>Microsoft Office için Önkoşullar yüklü değil  
- .NET Framework ekleyebilirsiniz [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)]ve Office birincil birlikte çalışma derlemeleri Kurulum paketinize Office çözümünüzle birlikte dağıtılan bir önkoşul olarak. Birincil birlikte çalışma derlemelerini yükleme hakkında daha fazla bilgi için bkz: [Office çözümleri geliştirmek için bilgisayarı yapılandırma](../vsto/configuring-a-computer-to-develop-office-solutions.md) ve [nasıl yapılır: yükleme Office birincil birlikte çalışma derlemeleri](../vsto/how-to-install-office-primary-interop-assemblies.md).  
+ .NET Framework, eklediğiniz [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)]ve Office birincil birlikte çalışma derlemelerini kurulum paketi Office çözümünüzü ile dağıtılan bir önkoşul olarak. Birincil birlikte çalışma derlemelerini yükleme hakkında daha fazla bilgi için bkz: [Office çözümleri geliştirmek için bilgisayarı yapılandırma](../vsto/configuring-a-computer-to-develop-office-solutions.md) ve [nasıl yapılır: yükleme Office birincil birlikte çalışma derlemelerini](../vsto/how-to-install-office-primary-interop-assemblies.md).  
   
-## <a name="publishing-using-localhost-can-cause-installation-problems"></a>'Localhost' kullanarak yayımlamanın yükleme sorunlarına neden olabilir  
- Kullandığınızda, "http://localhost" için belge düzeyi çözümleri yayımlama ya da yükleme konumu olarak **Yayımlama Sihirbazı** dize gerçek bilgisayar adına dönüştürmez. Bu durumda, çözüm geliştirme bilgisayarına yüklenmesi gerekir. Dağıtılan çözümleri geliştirme bilgisayarınızda IIS kullanan yapmak için localhost yerine tüm HTTP/HTTPS/FTP konumları için tam ad kullanın.  
+## <a name="publish-using-localhost-can-cause-installation-problems"></a>Kullanarak Yayımla 'Localhost' yükleme sorunlara neden olabilir  
+ Kullandığınızda, "<http://localhost>" için belge düzeyi çözümleri yayımlama ya da yükleme konumu olarak **Yayımlama Sihirbazı** dize gerçek bilgisayar adını dönüştürmez. Bu durumda, çözüm geliştirme bilgisayarına yüklenmesi gerekir. Geliştirme bilgisayarınızda IIS kullanan dağıtılmış çözümlere yapmak için localhost yerine tüm HTTP/HTTPS/FTP konumlar için tam ad kullanın.  
   
-## <a name="cached-assemblies-are-loaded-instead-of-updated-assemblies"></a>Önbelleğe alınan derlemelerin yerine güncelleştirilen derlemelerin yüklü olduğundan  
- Fusion, .NET Framework derleme yükleyicisi proje çıktı yolu bir ağ dosya paylaşımında olduğunda, derleme tanımlayıcı bir ad ile imzalanır ve özelleştirme derleme sürümü değişmez derlemeleri önbelleğe alınmış bir kopyasını yükler. Bu koşullara uyan bir derlemeyi güncelleştirirseniz, güncelleştirme önbelleğe alınan kopya yüklendiği proje sonraki çalıştırmanızda görünmez.  
+## <a name="cached-assemblies-are-loaded-instead-of-updated-assemblies"></a>Önbelleğe alınmış derlemeler yerine güncelleştirilmiş derlemeleri yüklenir  
+ Fusion, .NET Framework derleme yükleyicisi, proje çıktı yolu bir ağ dosya paylaşımında olduğunda, derleme, tanımlayıcı ad ile imzalanması ve özelleştirmenin derleme sürümünü değiştirmez derlemeleri önbelleğe alınmış kopyasını yükler. Bu koşullara uyan bir derlemeyi güncelleştirirseniz, güncelleştirme, önbelleğe alınmış kopyayı yüklendiği için projeyi çalıştırın sonraki sefer görünmez.  
   
- Visual Studio Fusion projenin her çalıştırılışında derlemeleri yükleyecek şekilde yapılandırabilirsiniz.  
+ Visual Studio projeyi her çalıştırıldığında Fusion derlemeleri karşıdan yükler yapılandırabilirsiniz.  
   
-#### <a name="to-download-assemblies-instead-of-loading-cached-copies"></a>Önbelleğe alınan kopyaları yüklenirken yerine derlemeleri indirmek için  
+### <a name="to-download-assemblies-instead-of-loading-cached-copies"></a>Önbelleğe alınan kopyaları yükleme yerine derlemeleri yüklemek için  
   
-1.  Menü çubuğunda seçin **proje**, * ProjectName ***özellikleri**.  
+1. Menü çubuğunda, **proje**, _ProjectName_**özellikleri**.  
   
-2.  Üzerinde **uygulama** sayfasında, **derleme bilgilerini**.  
+2. Üzerinde **uygulama** sayfasında **derleme bilgileri**.  
   
-3.  İlk **derleme sürümü** kutusunda, bir yıldız işareti girin (\*) ve ardından **Tamam** düğmesi.  
+3. İlk **derleme sürümü** kutusunda, bir yıldız işareti girin (\*) ve ardından **Tamam** düğmesi.  
   
- Derleme sürümünü değiştirdikten sonra derlemeyi tanımlayıcı adla imzalamak devam edebilirsiniz ve Fusion özelleştirmenin en son sürümünü yükler.  
+   Derleme sürümü değiştirdikten sonra derlemeyi bir katı adla imzalamak devam edebilirsiniz ve Fusion özelleştirme en son sürümünü yükler.  
   
-## <a name="installation-fails-when-the-uri-has-characters-that-aret-us-ascii"></a>URI bu Are't US-ASCII karakter olduğunda yükleme başarısız olur.  
- Bir HTTP/HTTPS/FTP konumuna Office çözümü yayımladığınızda, yolun US-ASCII olmayan herhangi bir Unicode karakteri bulunamaz. Bu tür karakterler Kurulum programında tutarsız davranışa neden olabilir. US-ASCII karakter yükleme yolu için kullanın.  
+## <a name="installation-fails-when-the-uri-has-characters-that-arent-us-ascii"></a>URI US-ASCII olmayan karakterler içeriyorsa yüklemesi başarısız olur.  
+ Yolu, HTTP/HTTPS/FTP konumu için bir Office çözümü yayımladığınızda, US-ASCII olmayan Unicode karakterlerini sahip olamaz. Bu tür karakterler, Kurulum programına tutarsız davranışa neden olabilir. US-ASCII karakterlerini, yükleme yolu için kullanın.  
   
-## <a name="prompt-to-manually-uninstall-appears-when-you-publish-and-install-a-solution-on-the-development-computer"></a>Yayımlama ve bir çözüm geliştirme bilgisayarınızda yüklediğinizde el ile kaldırmak için istemi belirir.  
- Office çözümünü derlerken, derleme sürümü otomatik olarak kaydedilir. Önceden yayımlanan ve aynı çözüm geliştirme bilgisayarınızda yüklü değilse [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] yükleme yolu çözümü sonraki oluşturulduktan sonra yayımlanan sürümü ve yerleşik sürümü farklı için yeniden veya yayımlanan olduğunu algılar. "Başka bir sürümü yüklü olan ve bu konumdan yükseltilemez özelleştirme yüklenemez." hata iletisi diyor. Bir çözümü yeniden her kayıt defteri anahtarlarını güncelleştirilir. Bu nedenle, yayımlama, hata ayıklama veya yeni sürümü çalıştırmadan önce önceki sürümü kaldırmanız gerekir.  
+## <a name="prompt-to-manually-uninstall-appears-when-you-publish-and-install-a-solution-on-the-development-computer"></a>Yayımlama ve bir çözüm geliştirme bilgisayarına el ile kaldırmak için istemi görünür  
+ Office çözüm derlerken, derleme sürümü otomatik olarak kaydedilir. Önceden yayımlanan ve aynı çözüm geliştirme bilgisayarınıza yüklü değilse [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] yükleme yolu çözümü sonraki oluşturulduktan sonra yayımlanmış sürüm ve derleme sürümü farklıdır yeniden veya yayımlanan olduğunu algılar. Hata iletisi "başka bir sürümü yüklü olan ve bu konumdan yükseltilemez özelleştirme yüklenemez." diyor. Kayıt defteri anahtarlarını bir çözümün yeniden her güncelleştirilir. Bu nedenle, yayımlama, hata ayıklama veya yeni sürümü çalıştıran önce önceki sürümü kaldırmanız gerekir.  
   
- İletinin görünmesini engellemek üzere, dağıtımınızı test etmek için geliştirme bilgisayarınızda başka bir kullanıcı hesabı oluşturun. Alternatif olarak, sonraki yayımlama, hata ayıklama veya çözümü yeniden derleyin önce bilgisayarda yüklü programlar listesinde sürümünü kaldırın.  
+ İletinin görüntülenmesini engellemek için dağıtımınızı test etmek için geliştirme bilgisayarınızda başka bir kullanıcı hesabı oluşturun. Sonraki yayımlama, hata ayıklama veya çözümü yeniden önce alternatif olarak, sürümü bilgisayarda yüklü programlar listesinde kaldırabilirsiniz.  
   
-## <a name="uncaught-exception-or-method-not-found-error-when-you-install-a-solution"></a>Bir çözüm yüklediğinizde Yakalanmayan Özel durum veya yöntemi bulunamadı hatası  
- Office çözümleri (.vsto dosyası) dağıtım bildirimini açarak yüklediğinizde, aşağıdaki koşullar Office uygulama, belge veya çalışma kitabı, hata iletileri görünebilir:  
+## <a name="uncaught-exception-or-method-not-found-error-when-you-install-a-solution"></a>Bir çözüm yüklediğinizde Yakalanmayan Özel durum veya yöntem bulunamadı hatası  
+ Dağıtım bildirimini açarak Office çözümleri yüklerken (bir *.vsto* dosyası), aşağıdaki koşulların Office uygulama, belge veya çalışma kitabı, hata iletileri görünebilir:  
   
--   Yöntem bulunamadı.  
+- Metoda nebyla nalezena.  
   
--   MissingMethodException.  
+- MissingMethodException.  
   
--   Yakalanmayan Özel durum.  
+- Yakalanmayan Özel durum.  
   
- Bu hata iletilerini önlemek için Kurulum programını çalıştırarak çözümü yükleyin.  
+  Bu hata iletilerini önlemek için Kurulum programını çalıştırarak çözümü yükleyin.  
   
- Kurulum programı çalıştırmadan çözümü yüklediğinizde, yükleyici için denetleyin değil veya önkoşulları yükleyin. Kurulum programı önkoşulları doğru sürümünü denetler ve bunları gerektiği şekilde yükler.  
+  Kurulum programını çalıştırmadan çözüm yüklediğinizde, yükleyici değil olup olmadığını denetleyin veya önkoşulları yükleyin. Kurulum programı, Önkoşullar için doğru sürümünü denetler ve bunları gerektiği şekilde yükler.  
   
-## <a name="manifest-registry-keys-for-add-ins-change-after-an-installshield-limited-edition-project-is-built"></a>InstallShield Limited Edition Proje oluşturulduktan sonra kayıt defteri anahtarları için eklentiler değişikliği bildirimi  
- VSTO eklenti Kurulum parçasıdır bildirim kayıt defteri anahtarı program bazen vsto'dan. bir InstallShield Limited Edition projeyi derlerken dll.manifest.  
+## <a name="manifest-registry-keys-for-add-ins-change-after-an-installshield-limited-edition-project-is-built"></a>Bir InstallShield Limited Edition projesi oluşturulduktan sonra kayıt defteri anahtarları için Add-Ins değişiklik bildirimi  
+ Bir VSTO eklenti kurulumunun bir parçası olan bildirim kayıt defteri anahtarı program bazen değişikliklerden *.vsto* için *. dll.manifest* bir InstallShield Limited Edition projesi oluşturduğunuzda.  
   
- Bu sorunu çözmek için farklı bir çözümde InstallShield Limited Edition projesi oluşturma veya ŞirketAdı.EklentiAdı'nı VSTO eklenti adını içeren kayıt defteri anahtarının değeri kullanın.  
+ Bu sorunu geçici olarak çözmek için farklı bir çözümde InstallShield Limited Edition projesi oluşturun veya ŞirketAdı.EklentiAdı'nı VSTO eklentisi adını içeren bir kayıt defteri anahtarı değeri olarak kullanın.  
   
-## <a name="the-clickonce-installer-for-your-office-solution-doesnt-install-the-primary-interop-assemblies"></a>Office çözümünüz için ClickOnce yükleyici birincil birlikte çalışma derlemelerini yükleme değil  
- Office çözümünüz için ClickOnce oluşturur Kurulum programını çalıştırdığınızda, yalnızca hiçbir PIA zaten yüklüyse Office birincil birlikte çalışma derlemeleri (PIA) için yükleyiciyi çalıştırır.  
+## <a name="the-clickonce-installer-for-your-office-solution-doesnt-install-the-primary-interop-assemblies"></a>ClickOnce yükleyicisi Office çözümünüz için birincil birlikte çalışma derlemelerini yüklemez  
+ Office çözümünüz için ClickOnce'ı oluşturan kurulum programını çalıştırdığınızda, yalnızca hiçbir PIA'ların zaten yüklüyse yükleyici için Office birincil birlikte çalışma derlemeleri (PIA) çalıştırır.  
   
- Kurulum programı PIA doğru yüklenmiyorsa, bunları el ile yükleme dizininden o2007pia.msi adlı yükleyici dosyasını çalıştırarak yükleyin.  
+ Kurulum programı PIA'ların düzgün yüklenmiyorsa, bunları el ile adlı yükleyici dosyasını çalıştırarak yükleyin *o2007pia.msi* yükleme dizininden.  
   
-## <a name="reinstalling-office-solutions-causes-an-argument-out-of-range-exception"></a>Office çözümleri yeniden aralığı özel durum dışında bir bağımsız değişken neden olur.  
- Office çözümünü yeniden yüklediğinizde bir <xref:System.ArgumentOutOfRangeException> özel durum şu hata iletisiyle görüntülenebilir: Belirtilen bağımsız değişken geçerli değer aralığının dışında.  
+## <a name="reinstall-office-solutions-causes-an-argument-out-of-range-exception"></a>Office çözümleri nedenleri aralığı özel durum dışında bir bağımsız değişken yeniden yükleyin.  
+ Bir Office çözümü yeniden yüklerken bir <xref:System.ArgumentOutOfRangeException> özel durum, şu hata iletisiyle görünebilir: Belirtilen bağımsız değişken geçerli değerler aralığının dışında.  
   
- Yükleme konumu için URL için büyük/küçük harf farklıysa, bu durum oluşur. Örneğin, Office çözümünü yüklü değilse bu hata görüneceği [ http://fabrikam.com/ExcelSolution.vsto ](http://fabrikam.com/ExcelSolution.vsto) ilk kez ve ardından kullanılan [ http://fabrikam.com/excelsolution.vsto ](http://fabrikam.com/excelsolution.vsto) ikinci kez.  
+ Yükleme konumu için URL için büyük küçük harfleri farklı olduğunda bu durum meydana gelir. Örneğin, Office çözümünü yüklü değilse bu hata görüneceği [ http://fabrikam.com/ExcelSolution.vsto ](http://fabrikam.com/ExcelSolution.vsto) ilk kez ve ardından kullanılan [ http://fabrikam.com/excelsolution.vsto ](http://fabrikam.com/excelsolution.vsto) ikinci kez.  
   
- İletinin görüntülenmesini engellemek için Office çözümleri yüklediğinizde aynı büyük küçük harf kullanın.  
+ İletinin görüntülenmesini engellemek için Office çözümleri yüklediğinizde aynı büyük/küçük harf kullanın.  
   
-## <a name="cant-install-a-clickonce-solution-by-opening-the-deployment-manifest-from-the-web"></a>ClickOnce çözüm Web'den dağıtım bildirimini açarak yükleyemezsiniz  
- Kullanıcıların Office çözümleri Web'den dağıtım bildirimini açarak yükleyebilirsiniz. Ancak, bir bazı yüklemeler Internet Information Services (IIS) .vsto dosya adı uzantısını engeller. Office çözümünü dağıtmak için kullanmadan önce IIS'de MIME türü tanımlamanız gerekir.  
+## <a name="cant-install-a-clickonce-solution-by-opening-the-deployment-manifest-from-the-web"></a>ClickOnce çözüm Web'den dağıtım bildirimini açarak yükleyemezsiniz.  
+ Kullanıcılar, web dağıtım bildirimini açarak Office çözümleri yükleyebilir. Ancak, bazı Internet Information Services (IIS) engelleyecek *.vsto* dosya adı uzantısı. Office çözümünü dağıtmak için kullanmadan önce MIME türü IIS'de tanımlamanız gerekir.  
   
- IIS 6 MIME türü tanımlama hakkında daha fazla bilgi için bkz: [yapılandırma MIME türleri (IIS 6.0)](http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/cd72c0dc-c5b8-42e4-96c2-b3c656f99ead.mspx?mfr=true).  
+ IIS 7'de aynı zamanda MIME türü tanımlama hakkında daha fazla bilgi için bkz: [MIME türü (IIS7) eklemek](http://technet.microsoft.com/library/cc725608(WS.10).aspx).  
   
- IIS 7'de MIME türü tanımlama hakkında daha fazla bilgi için bkz: [bir MIME türü (IIS7) ekleyin.](http://technet.microsoft.com/library/cc725608(WS.10).aspx).  
+ Uzantı kümesine **.vsto** ve MIME tür **application/x-ms-vsto**.  
   
- Uzantı kümesine **.vsto** ve için MIME türü **uygulama/x-ms-vsto**.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [ClickOnce dağıtım sorunlarını giderme](/visualstudio/deployment/troubleshooting-clickonce-deployments)   
- [Office Çözümünü Dağıtma](../vsto/deploying-an-office-solution.md)  
+ [Office çözümünü dağıtma](../vsto/deploying-an-office-solution.md)  
   
   

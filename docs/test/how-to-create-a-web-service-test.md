@@ -1,5 +1,5 @@
 ---
-title: Visual Studio'da Web hizmet testi oluşturma | Microsoft Docs
+title: Web hizmeti testi oluşturma
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -10,40 +10,44 @@ ms.assetid: fbcd57ee-06ad-4260-8694-09f8e0f93e39
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 64530780a3e599df7e623ea5232c6890bf7b97a5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 99d4c413dcb02efd56bf89dae3aa24b7f6905216
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53053405"
 ---
-# <a name="how-to-create-a-web-service-test"></a>Nasıl yapılır: Web Hizmet Testi Oluşturma
+# <a name="how-to-create-a-web-service-test"></a>Nasıl yapılır: web hizmeti testi oluşturma
 
-Bir Web performans testi için test Web hizmetlerini kullanabilirsiniz. Kullanarak **istek Ekle** ve **Web hizmeti isteği Ekle** seçenekleri, tek tek isteklerinde özelleştirebilirsiniz **Web Performans Testi Düzenleyicisi** Web bulmak için Hizmet sayfaları. Genellikle, bu sayfaları Web uygulamasında görüntülenmez. Bu nedenle, bu sayfaları erişmek için isteği özelleştirmeniz gerekir.
+Web performans testi, web hizmetleri test etmek için kullanabilirsiniz. Kullanarak **istek Ekle** ve **Web hizmeti isteği Ekle** seçenekleri, istekleri tek tek özelleştirebilirsiniz **Web Performans Testi Düzenleyicisi** web bulmak için hizmeti sayfaları. Genellikle, web uygulamasında bu sayfa görüntülenmez. Bu nedenle, bu sayfaları için erişim isteği özelleştirmeniz gerekir.
 
-Aşağıdaki yordamlar Commerce Starter Kit içinde yer alan bir Web hizmetini kullanır. Buradan indirebilirsiniz [ASP.NET ticaret Starter Kit](http://go.microsoft.com/fwlink/?LinkId=181469).
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
- **Gereksinimler**
+Ticaret başlangıç Seti içinde yer alan bir web hizmeti aşağıdaki yordamları kullanın. Buradan indirebileceğiniz [gt;ASP.NET ticaret başlangıç Seti](http://go.microsoft.com/fwlink/?LinkId=181469).
 
--   Visual Studio Enterprise
+**Gereksinimler**
 
-## <a name="to-test-a-web-service"></a>Bir Web hizmeti test etmek için
+Visual Studio Enterprise
 
-1.  Yeni bir Web performans testi oluşturun. Tarayıcı açar açmaz seçin **durdurmak**.
+## <a name="to-test-a-web-service"></a>Bir web hizmeti test etmek için
 
-2.  İçinde **Web Performans Testi Düzenleyicisi**, Web performans testini sağ tıklatın ve seçin **Web hizmeti isteği Ekle**.
+1.  Yeni bir web performans testi oluşturun. Tarayıcı açıldığı anda, seçin **Durdur**.
 
-3.  İçinde **Url** yeni istek özelliğinin türü Web hizmeti adı gibi **http://localhost/storecsvs/InstantOrder.asmx**.
+2.  İçinde **Web Performans Testi Düzenleyicisi**, web performans testi sağ tıklatın ve seçin **Web hizmeti isteği Ekle**.
 
-4.  Ayrı bir tarayıcı oturumu açın ve .asmx sayfanın URL'sini yazın **adresi** araç. Test ve SOAP iletisi incelemek istediğiniz yöntemi seçin. İçerdiği bir `SOAPAction`.
+3.  İçinde **Url** türü adı web hizmetinin gibi yeni isteğin özelliğini **http://localhost/storecsvs/InstantOrder.asmx**.
 
-5.  İçinde **Web Performans Testi Düzenleyicisi**, isteği sağ tıklatın ve seçin **üst bilgi Ekle** yeni bir üstbilgi eklemek için. İçinde **adı** özelliği, türü `SOAPAction`. İçinde **değeri** özelliği, gördüğünüz değeri yazın `SOAPAction`, gibi `"http://tempuri.org/CheckStatus"`.
+4.  Ayrı bir tarayıcı oturumu açın ve URL'sini yazın *.asmx* sayfasını **adresi** araç çubuğu. Test ve SOAP iletisi incelemek istediğiniz yöntemi seçin. İçerdiği bir `SOAPAction`.
 
-6.  Düzenleyicideki URL düğümünü genişletin, seçin **dize gövde** düğümü ve **içerik türü** özellik değeri girin `text/xml`.
+5.  İçinde **Web Performans Testi Düzenleyicisi**, istek sağ tıklayıp **üst bilgi Ekle** yeni üst bilgi eklemek için. İçinde **adı** özelliği, türü `SOAPAction`. İçinde **değer** özelliği, gördüğünüz değeri yazın `SOAPAction`, gibi `"http://tempuri.org/CheckStatus"`.
 
-7.  4. adımda tarayıcıya dönün, Web hizmeti Açıklama sayfasından SOAP isteği XML bölümünü seçin ve panoya kopyalayın.
+6.  Düzenleyicide URL düğümünü genişletin, seçin **dize gövdesi** düğüm ve **içerik türü** özellik değerini girin `text/xml`.
 
-8.  XML içeriği aşağıdaki örneğe benzer:
+7.  4. adımda tarayıcıya dönün, web hizmeti açıklaması sayfasından SOAP isteği XML bölümünü seçin ve panoya kopyalayın.
+
+8.  XML içeriği, aşağıdaki örneğe benzer:
 
      ```xml
      <?xml version="1.0" encoding="utf-8"?>
@@ -58,19 +62,19 @@ Aşağıdaki yordamlar Commerce Starter Kit içinde yer alan bir Web hizmetini k
      </soap:Envelope>
      ```
 
-9. Geri dönüp **Web Performans Testi Düzenleyicisi** ve ardından üç nokta (...) içinde **dize gövde** özelliği. Panonun içeriğini özelliğe yapıştırın.
+9. Geri dönüp **Web Performans Testi Düzenleyicisi** ve ardından üç noktayı seçin **(...)**  içinde **dize gövdesi** özelliği. Pano içeriğini özelliğine yapıştırın.
 
-10. Herhangi bir yer tutucu değerlerini XML geçirmek test için geçerli değerlerle değiştirmelisiniz. Önceki örnekte iki örneğini değiştirirler `string` ve bir `int`. Sipariş verdiği bir kayıtlı bir kullanıcı varsa bu Web hizmeti işlemi yalnızca işlemini tamamlar.
+10. XML içindeki herhangi bir yer tutucu değerlerini geçirmek test için geçerli değerlerle değiştirmeniz gerekir. Önceki örnekte iki örneğinden birini değiştirirler `string` diğeri `int`. Sipariş kayıtlı bir kullanıcı varsa bu web hizmeti işlemi yalnızca tamamlanır.
 
-11. Web hizmeti isteğine sağ tıklatıp **URL sorgu dizesi parametresi Ekle**.
+11. Web servisi isteği sağ tıklayıp **URL QueryString parametresi Ekle**.
 
-12. Sorgu dizesi parametresi, bir ad ve değer atayın. Önceki örnekte addır `op` değer `CheckStatus`. Bu Web hizmeti işlemi gerçekleştirmek için tanımlar.
+12. Sorgu dizesi parametresi ad ve değer atayın. Önceki örnekte addır `op` ve değer `CheckStatus`. Bu web hizmeti işlemi gerçekleştirmek için tanımlar.
 
     > [!NOTE]
-    > Veri bağlama SOAP gövdesi kullanarak veri bağlama değerleri ile herhangi bir yer tutucu değerini değiştirmek için kullanabileceğiniz `{{DataSourceName.TableName.ColumnName}}` sözdizimi.
+    > Veri bağlama kullanarak veri bağlama değerleriyle herhangi bir yer tutucu değerini değiştirmek için SOAP'daki kullanabileceğiniz `{{DataSourceName.TableName.ColumnName}}` söz dizimi.
 
-13. Testi çalıştırın. Web Performans Testi Sonuçları Görüntüleyicisi'nin üst bölmesinde Web hizmeti isteği seçin. Alt bölmede Web tarayıcısı sekmesini seçin. Web hizmeti ve herhangi bir işlem sonucu tarafından döndürülen XML görüntülenir.
+13. Testi çalıştırın. Üst bölmesindeki **Web Performans Test Sonuçları Görüntüleyicisi**, web hizmeti isteğini seçin. Alt bölmede web tarayıcı sekmesini seçin. Web hizmeti ve sonuçları herhangi bir işlem tarafından döndürülen bir XML görüntülenir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Özel kod ve eklentiler yük testleri için oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md)
+- [Özel kod ve yük testleri için eklentiler oluşturma](../test/create-custom-code-and-plug-ins-for-load-tests.md)

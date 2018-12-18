@@ -15,13 +15,14 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 464c71d7caeca1b9b8c4c3455dad1737649f5ea4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6ed7cde8d02706e03f98b98251f919cb5e756247
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49832803"
 ---
-# <a name="scchistory-function"></a>SccHistory işlevi
+# <a name="scchistory-function"></a>SccHistory İşlevi
 Bu işlev, belirtilen dosyaları geçmişini görüntüler.  
   
 ## <a name="syntax"></a>Sözdizimi  
@@ -39,45 +40,45 @@ SCCRTN SccHistory(
   
 #### <a name="parameters"></a>Parametreler  
  `pvContext`  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  `hWnd`  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  `nFiles`  
- [in] Belirtilen dosya sayısı `lpFileName` dizi.  
+ [in] Belirtilen dosya sayısı `lpFileName` dizisi.  
   
  `lpFileName`  
- [in] Dosyaların tam olarak nitelenmiş adlar dizisi.  
+ [in] Dosyaların tam adları dizisi.  
   
  `fOptions`  
- [in] Komutunu bayrakları (şu anda kullanılmaz).  
+ [in] Komut bayrakları (şu anda değil kullanılır).  
   
  `pvOptions`  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Sürüm Geçmişi başarıyla alındı.|  
-|SCC_I_RELOADFILE|Diskteki dosya gerçekten değişiklik geçmişini getirilirken (örneğin, eski bir sürümü alarak), kaynak denetim sistemi IDE bu dosyayı yeniden şekilde.|  
+|SCC_I_RELOADFILE|Diskteki dosyanın gerçekten değişiklik geçmişini getirilirken (örneğin, eski bir sürümünü alarak), kaynak denetim sistemi IDE bu dosyayı yeniden yüklemek için.|  
 |SCC_E_FILENOTCONTROLLED|Dosya kaynak denetimi altında değil.|  
-|SCC_E_OPNOTSUPPORTED|Kaynak Denetim sistem bu işlemi desteklemiyor.|  
+|SCC_E_OPNOTSUPPORTED|Kaynak denetim sistemi bu işlemi desteklemiyor.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için izin verilmiyor.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
 |SCC_E_PROJNOTOPEN|Proje değiştirilmediğinden açılır.|  
 |SCC_E_NONSPECIFICERROR|Belirli olmayan hata oluştu. Dosya geçmişi alınamadı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kaynak Denetim eklentisi her dosya geçmişini görüntülemek için kendi iletişim kutusundaki görüntüleyebilirsiniz kullanarak `hWnd` üst pencere olarak. Alternatif olarak, isteğe bağlı geri çağırma çıktıyı işlevi sağlanan için [SccOpenProject](../extensibility/sccopenproject-function.md) onu destekleniyorsa, kullanılabilir.  
+ Kaynak denetimi eklentisi her dosyanın geçmişini görüntülemek için kendi iletişim kutusunu görüntüleyebilirsiniz kullanarak `hWnd` olarak üst pencere. Alternatif olarak, isteğe bağlı geri çağırma çıktıyı işlevi sağlanan için [SccOpenProject](../extensibility/sccopenproject-function.md) , destekleniyorsa, kullanılabilir.  
   
- Belirli koşullar altında bu çağrıyı yürütülmesi sırasında incelenmesi dosyayı değiştirmek olduğunu unutmayın. Örneğin, [!INCLUDE[vsvss](../extensibility/includes/vsvss_md.md)] geçmişi komutu kullanıcı dosyanın eski bir sürümünü almak için bir fırsat sunar. Böyle bir durumda, kaynak denetim eklentisi döndürür `SCC_I_RELOAD` dosyayı yeniden yüklemeniz gerektiğini IDE uyarmak için.  
+ Belirli koşullar altında bu çağrı yürütülmesi sırasında incelenmekte olan dosyayı değiştirmek olduğunu unutmayın. Örneğin, [!INCLUDE[vsvss](../extensibility/includes/vsvss_md.md)] history komutu kullanıcı dosyanın eski bir sürümünü almak için bir fırsat sunar. Böyle bir durumda, kaynak denetimi eklentisi döndürür `SCC_I_RELOAD` dosyayı yeniden yüklemeniz gerekir IDE uyarır.  
   
 > [!NOTE]
->  Kaynak Denetim eklentisi dosyaları dizisi için bu işlevi desteklemiyorsa, yalnızca ilk dosya için dosya geçmişi görüntülenebilir.  
+>  Kaynak denetimi eklentisi dosyaları dizisi için bu işlevi desteklemiyorsa, yalnızca ilk dosyası için dosya geçmişi görüntülenebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
  [SccOpenProject](../extensibility/sccopenproject-function.md)

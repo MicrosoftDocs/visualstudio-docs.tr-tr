@@ -1,5 +1,5 @@
 ---
-title: VSCodeWindow nesne | Microsoft Docs
+title: VSCodeWindow nesnesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,25 +16,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c2b1d85eea974e67ae37f8d4d5bfd7aa0069e92b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dcd2bf5768b26237c5bc9301de9480b549ce01de
+ms.sourcegitcommit: 9765b3fcf89375ca499afd9fc42cf4645b66a8a2
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46495368"
 ---
 # <a name="vscodewindow-object"></a>VSCodeWindow nesnesi
-Bir kod, bir veya daha fazla metin görünümü, genellikle dahil edebileceğiniz bir özelleştirilmiş belge penceresidir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView> nesnesi.  
+Bir veya daha fazla metin görünümleri genellikle içerebilir bir özel belge penceresi bir kod penceredir <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView> nesne.  
   
- Mimari, kod içinde bir pencere çerçevesi olan bir belge penceresidir. İşlevsellik, kod yalnızca bir belge ek özelliklerle penceresidir. Birden çok belge arabirimi (MDI) modunda kod penceresi MDI alt çerçevesidir. Daha fazla bilgi için bkz: [eski API'yi kullanarak kod Windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md).  
+ Bu mimari, kod penceresi bir pencere çerçevesinde bir belge penceresi ' dir. İşlevsel olarak, kod penceresi ek özelliklere sahip bir belge penceresi yalnızca ' dir. Çok Belgeli Arabirim (MDI) modunda kod penceresinde MDI alt çerçeve ' dir. Daha fazla bilgi için [eski API'sini kullanarak kod windows özelleştirme](../extensibility/customizing-code-windows-by-using-the-legacy-api.md).  
   
- Aşağıdaki tablo arabirimler içerir <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow> nesnesi.  
+ Aşağıdaki tablo, arabirimlerini içerir <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow> nesne.  
   
 |Yöntem|Açıklama|  
 |------------|-----------------|  
-|<xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider>|Bir genel benzersiz tanımlayıcı (GUID) tanımlayan bir hizmeti bulmak için bir genel erişim mekanizma sağlar.|  
+|<xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider>|Bir genel benzersiz tanıtıcısı (GUID) tanımlayan bir hizmet bulmak için bir genel erişim mekanizması sağlar.|  
 |<xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow>|Bir veya daha fazla kod görünümleri içeren birden çok belge arabirimi (MDI) alt temsil eder.|  
 |<xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowPane>|Pencere çerçevesi doldurur.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.OLE.Interop.IServiceProvider>   
- [Şekiller Düzenle](http://msdn.microsoft.com/en-us/f08872bd-fd9c-4e36-8cf2-a2a2622ef986)
+ [Şekil Düzenle](https://www.microsoft.com/download/details.aspx?id=55984)

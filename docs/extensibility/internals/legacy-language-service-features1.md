@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131746"
 ---
 # <a name="legacy-language-service-features"></a>Eski dil hizmeti özellikleri
 Yönetilen paket framework (MPF) dil hizmeti bir veya daha fazla destekleyebilir [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] sözdizimi vurgulama, IntelliSense ve kesme noktası doğrulama gibi özellikleri. Her bir özelliğin diğer bağımsız olarak uygulanabilir ancak tüm bir Ayrıştırıcıyı ve yalnızca bir tarayıcı gerektiren sözdizimi vurgulama dışında bir tarayıcı gerektirir.  

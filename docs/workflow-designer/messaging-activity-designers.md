@@ -1,21 +1,25 @@
 ---
-title: Etkinlik tasarımcıları Mesajlaşma | Microsoft Docs
+title: İş Akışı Tasarımcısı - etkinlik tasarımcıları Mesajlaşma
 ms.date: 11/04/2016
 ms.topic: reference
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 ms.assetid: 897e63cf-a42f-4edd-876f-c4ccfffaf6d6
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 38c34dea2dd0265d156bb4b379323559be4825b3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 97279d92b9853f183778d069aa81182fa6cf8b56
+ms.sourcegitcommit: 30f653d9625ba763f6b58f02fb74a24204d064ea
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36755238"
 ---
-# <a name="messaging-activity-designers"></a>Etkinlik tasarımcıları Mesajlaşma
-İleti etkinlik tasarımcıları oluşturmak ve göndermek ve almak Mesajlaşma etkinlikleri yapılandırmak için kullanılan [!INCLUDE[indigo1](../workflow-designer/includes/indigo1_md.md)] iletileri içinden bir [!INCLUDE[wf](../workflow-designer/includes/wf_md.md)] uygulama. [!INCLUDE[netfx40_long](../workflow-designer/includes/netfx40_long_md.md)] Beş tanıtır etkinlikleri ve Windows iş akışı Tasarımcısı ileti bir iş akışı içinde ileti yönetmenizi sağlayan iki yeni Şablon tasarımcıları sağlar. Bu bölümde yer alan ve aşağıdaki tabloda listelenen konular nasıl kullanılacağı hakkında kılavuzluk [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] etkinliği ve Şablon tasarımcıları.
+# <a name="messaging-activity-designers"></a>Mesajlaşma Etkinlik Tasarımcıları
+
+İleti etkinlik tasarımcıları oluşturmak ve Windows Workflow Foundation (WF) uygulamasından gelen Windows Communication Foundation (WCF) ileti gönderme ve alma Mesajlaşma etkinlikleri yapılandırmak için kullanılır. .NET Framework 4 beş Mesajlaşma etkinlikleri tanıtır ve bir iş akışı içinde ileti yönetmenizi sağlayan iki yeni Şablon tasarımcıları iş akışı Tasarımcısı sağlar. Bu bölümde yer alan ve aşağıdaki tabloda listelenen konular nasıl iş akışı Tasarımcısı etkinliği ve Şablon tasarımcıları kullanılacağı hakkında yönergeler sağlar.
 
 ## <a name="reference"></a>Başvuru
  <xref:System.Activities.Activity>

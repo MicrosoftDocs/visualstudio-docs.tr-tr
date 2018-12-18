@@ -1,0 +1,181 @@
+- name: İş Akışı Tasarımcısı ile uygulamaları geliştirme
+  href: developing-applications-with-the-workflow-designer.md
+  items:
+    - name: İş Akışı projesi Oluşturma
+      href: creating-a-workflow-project.md
+      items:
+        - name: Bir İş Akışı Projesine Yeni Öğe Ekleme
+          href: how-to-add-a-new-item-to-a-workflow-project.md
+    - name: Araç Kutusuna Etkinlik Ekleme
+      href: how-to-add-activities-to-the-toolbox.md
+    - name: Bağımsız Değişken Tasarımcısını Kullanma
+      href: how-to-use-the-argument-designer.md
+    - name: Değişken Tasarımcısını Kullanma
+      href: how-to-use-the-variable-designer.md
+    - name: İfade Düzenleyicisini Kullanma
+      href: how-to-use-the-expression-editor.md
+    - name: İçeri Aktarmalar Tasarımcısını Kullanma
+      href: how-to-use-the-imports-designer.md
+    - name: İçerik Haritalı Gezinmeyi Kullanma
+      href: how-to-use-breadcrumb-navigation.md
+    - name: İş Akışı Tasarımcısında Aramayı kullanma
+      href: how-to-use-search-in-the-workflow-designer.md
+    - name: İş Akışı Tasarımcısında etkinlik temsilcileri tanımlama ve kullanma
+      href: how-to-define-and-consume-activity-delegates-in-the-workflow-designer.md
+    - name: İş Akışı Tasarımcısında bir iş akışına açıklama ekleme
+      href: how-to-add-comments-to-a-workflow-in-the-workflow-designer.md
+    - name: Etkinlik tasarımcıları
+      href: using-the-activity-designers.md
+      items:
+        - name: Akış Etkinliği Tasarımcılarını denetleme
+          href: control-flow-activity-designers.md
+          items:
+            - name: DoWhile Etkinlik Tasarımcısı
+              href: dowhile-activity-designer.md
+            - name: ForEach<T> Etkinlik Tasarımcısı
+              href: foreach-t-activity-designer.md
+            - name: If Etkinlik Tasarımcısı
+              href: if-activity-designer.md
+            - name: Parallel Etkinlik Tasarımcısı
+              href: parallel-activity-designer.md
+            - name: ParallelForEach<T> Etkinlik Tasarımcısı
+              href: parallelforeach-t-activity-designer.md
+            - name: Pick Etkinlik Tasarımcısı
+              href: pick-activity-designer.md
+            - name: PickBranch Etkinlik Tasarımcısı
+              href: pickbranch-activity-designer.md
+            - name: Sequence Etkinlik Tasarımcısı
+              href: sequence-activity-designer.md
+            - name: Switch<T> Etkinlik Tasarımcısı
+              href: switch-t-activity-designer.md
+            - name: While Etkinlik Tasarımcısı
+              href: while-activity-designer.md
+        - name: Flowchart Etkinlik Tasarımcıları
+          href: flowchart-activity-designers.md
+          items:
+            - name: Flowchart Etkinlik Tasarımcısı
+              href: flowchart-activity-designer.md
+            - name: FlowDecision Etkinlik Tasarımcısı
+              href: flowdecision-activity-designer.md
+            - name: FlowSwitch<T> Etkinlik Tasarımcısı
+              href: flowswitch-t-activity-designer.md
+        - name: Durum Makinesi Etkinlik Tasarımcıları
+          href: state-machine-activity-designers.md
+          items:
+            - name: StateMachine Etkinlik Tasarımcısı
+              href: statemachine-activity-designer.md
+            - name: State Etkinlik Tasarımcısı
+              href: state-activity-designer.md
+            - name: FinalState Etkinlik Tasarımcısı
+              href: finalstate-activity-designer.md
+            - name: Transition Etkinlik Tasarımcısı
+              href: transition-activity-designer.md
+        - name: Mesajlaşma Etkinlik Tasarımcıları
+          href: messaging-activity-designers.md
+          items:
+            - name: CorrelationScope Etkinlik Tasarımcısı
+              href: correlationscope-activity-designer.md
+            - name: InitializeCorrelation Etkinlik Tasarımcısı
+              href: initializecorrelation-activity-designer.md
+            - name: Receive Etkinlik Tasarımcısı
+              href: receive-activity-designer.md
+            - name: ReceiveAndSendReply Şablon Tasarımcısı
+              href: receiveandsendreply-template-designer.md
+            - name: Send Etkinlik Tasarımcısı
+              href: send-activity-designer.md
+            - name: SendAndReceiveReply Şablon Tasarımcısı
+              href: sendandreceivereply-template-designer.md
+            - name: TransactedReceiveScope Etkinlik Tasarımcısı
+              href: transactedreceivescope-activity-designer.md
+        - name: Çalışma Zamanı Etkinlik Tasarımcıları
+          href: runtime-activity-designers.md
+          items:
+            - name: Persist Etkinlik Tasarımcısı
+              href: persist-activity-designer.md
+            - name: TerminateWorkflow Etkinlik Tasarımcısı
+              href: terminateworkflow-activity-designer.md
+        - name: Temel Öğeler Etkinlik Tasarımcıları
+          href: primitives-activity-designers.md
+          items:
+            - name: Assign Etkinlik Tasarımcısı
+              href: assign-activity-designer.md
+            - name: Delay Etkinlik Tasarımcısı
+              href: delay-activity-designer.md
+            - name: InvokeDelegate
+              href: invokedelegate.md
+            - name: InvokeMethod Etkinlik Tasarımcısı
+              href: invokemethod-activity-designer.md
+            - name: WriteLine Etkinlik Tasarımcısı
+              href: writeline-activity-designer.md
+        - name: İşlem Etkinlik Tasarımcıları
+          href: transaction-activity-designers.md
+          items:
+            - name: CancellationScope Etkinlik Tasarımcısı
+              href: cancellationscope-activity-designer.md
+            - name: CompensableActivity Etkinlik Tasarımcısı
+              href: compensableactivity-activity-designer.md
+            - name: Compensate Etkinlik Tasarımcısı
+              href: compensate-activity-designer.md
+            - name: Confirm Etkinlik Tasarımcısı
+              href: confirm-activity-designer.md
+            - name: TransactionScope Etkinlik Tasarımcısı
+              href: transactionscope-activity-designer.md
+        - name: Koleksiyon Etkinlik Tasarımcıları
+          href: collection-activity-designers.md
+          items:
+            - name: AddToCollection<T> Etkinlik Tasarımcısı
+              href: addtocollection-t-activity-designer.md
+            - name: ClearCollection<T> Etkinlik Tasarımcısı
+              href: clearcollection-t-activity-designer.md
+            - name: ExistsInCollection<T> Etkinlik Tasarımcısı
+              href: existsincollection-t-activity-designer.md
+            - name: RemoveFromCollection<T> Etkinlik Tasarımcısı
+              href: removefromcollection-t-activity-designer.md
+        - name: Hata İşleme Etkinlik Tasarımcıları
+          href: error-handling-activity-designers.md
+          items:
+            - name: Rethrow Etkinlik Tasarımcısı
+              href: rethrow-activity-designer.md
+            - name: Throw Etkinlik Tasarımcısı
+              href: throw-activity-designer.md
+            - name: TryCatch Etkinlik Tasarımcısı
+              href: trycatch-activity-designer.md
+        - name: Geçiş Etkinlik Tasarımcıları
+          href: migration-activity-designers.md
+          items:
+            - name: Interop Etkinlik Tasarımcısı
+              href: interop-activity-designer.md
+    - name: İş akışları hata ayıklama
+      href: debugging-workflows-with-the-workflow-designer.md
+      items:
+        - name: İş Akışlarında Kesme Noktası Ayarlama
+          href: how-to-set-breakpoints-in-workflows.md
+        - name: İş Akışı Tasarımcısı ile XAML Hatalarını Ayıklama
+          href: how-to-debug-xaml-with-the-workflow-designer.md
+        - name: Hata ayıklama desteklenmeyen senaryolar
+          href: unsupported-debugging-scenarios-in-the-workflow-designer.md
+    - name: UI başvurusu
+      href: workflow-designer-ui-help.md
+      items:
+        - name: .NET Türüne Gözat ve Seç İletişim Kutusu
+          href: browse-and-select-a-dotnet-type-dialog-box.md
+        - name: CorrelatesOn Tanımı İletişim Kutusu
+          href: correlateson-definition-dialog-box.md
+        - name: CorrelationInitializer Ekle İletişim Kutusu
+          href: add-correlationinitializers-dialog-box.md
+        - name: Parametreler ve Bağımsız Değişkenler Ekle İletişim Kutuları
+          href: add-parameters-and-add-arguments-dialog-boxes.md
+        - name: Tür Koleksiyonu Düzenleyicisi İletişim Kutusu
+          href: type-collection-editor-dialog-box.md
+        - name: İçerik Tanımı İletişim Kutusu
+          href: content-definition-dialog-box.md
+        - name: Bağıntıyı Başlat İletişim Kutusu
+          href: initialize-correlation-dialog-box.md
+        - name: 'System.Activities Sekmesi, Araç Kutusu Öğelerini Seç İletişim Kutusu'
+          href: system-activities-tab-choose-toolbox-items-dialog-box.md
+        - name: İş Akışı Tasarımcısı Kabuk Özellikleri
+          href: workflow-designer-shell-features.md
+        - name: Klavye Kısayolları
+          href: keyboard-shortcuts-in-the-workflow-designer.md
+        - name: Hata İletileri
+          href: error-messages-in-workflow-designer.md

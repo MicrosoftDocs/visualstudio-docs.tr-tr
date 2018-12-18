@@ -1,5 +1,5 @@
 ---
-title: Kod bağlam | Microsoft Docs
+title: Kod bağlamı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,25 +13,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 9a84596246ae930cdffc0265f2f2e09652661819
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 31b1f3d91fd44308c1737f8066c13af730454abe
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203351"
 ---
 # <a name="code-context"></a>Kod bağlamı
-İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama, bir **kodu bağlamı**:  
+İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] hata ayıklama, bir **kod bağlamı**:  
   
--   Bir Özet konumlarından kodda hata ayıklama altyapısı (DE) bilinen sağlar. Çoğu çalışma zamanı mimari için bugün, bir kod bağlamı, adresi bir programın yönerge akış olarak düşünülebilir. Burada kod yönergeleri ile temsil edilebilir değil, nontraditional diller için başka bir şekilde bir kod bağlamı temsil edilebilir.  
+-   Hata ayıklama Altyapısı'na (DE) bilinen bir konum kod bir soyutlamasıdır sağlar. Çoğu çalışma zamanı mimarileri için bugün, bir kod bağlamı, bir programın yönerge stream'de adresi olarak düşünülebilir. Burada kod yönergeleri ile gösterilebilir değil, nontraditional diller için kod bağlamı başka bir yolla tarafından temsil edilebilir.  
   
--   Ayıklanacak program yürütme akışında geçerli konumu açıklar.  
+-   Hata ayıklama programı yürütme stream'de geçerli konumu açıklar.  
   
--   Yalnızca bir program kesme noktasında zaman durdurdu bulunmaktadır.  
+-   Yalnızca bir programın bir kesme noktasında ne zaman durdurdu var.  
   
--   Bir ilişkili belge bağlamının vardır.  
+-   İlişkili belge içeriğine sahiptir.  
   
 -   Tarafından uygulanan bir [IDebugCodeContext2](../../extensibility/debugger/reference/idebugcodecontext2.md) arabirimi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Belge bağlamı](../../extensibility/debugger/document-context.md)   
- [Hata Ayıklayıcı Bağlamları](../../extensibility/debugger/debugger-contexts.md)
+ [Hata ayıklayıcı bağlamları](../../extensibility/debugger/debugger-contexts.md)

@@ -1,5 +1,5 @@
 ---
-title: Hata ayıklama altyapısı özel oluşturma | Microsoft Docs
+title: Hata ayıklama motoru özel oluşturma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,53 +15,54 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 66ec73a13a3494ae6642e6d0f7397c9f3c1f0b0b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ece2b480890054526552ad3aeea4f3bd1a437f74
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203686"
 ---
-# <a name="creating-a-custom-debug-engine"></a>Bir özel hata ayıklama altyapısı oluşturma
-Hata ayıklama altyapısı (DE) belirli çalışma zamanı mimarilerini hata ayıklama sağlayan bir bileşendir. Genellikle çalışma zamanı ortamı başına yalnızca bir DE uygulama yok.  
+# <a name="create-a-custom-debug-engine"></a>Bir özel hata ayıklama altyapısı oluşturma
+Hata ayıklama altyapısı (DE), belirli çalışma zamanı mimarileri hata ayıklamasını sağlayan bir bileşendir. Genellikle çalışma zamanı ortam başına yalnızca bir DE uygulama yok.  
   
 > [!NOTE]
->  Transact-SQL ve JScript için ayrı DE uygulamaları olsa da, VBScript ve JScript tek SE paylaşır.  
+>  Transact-SQL ve JScript için ayrı DE uygulamaları olsa da, tek bir DE VBScript ve JScript paylaşın.  
   
- Yürütme denetimi, kesme noktaları ve ifade değerlendirme hata ayıklama gibi hizmetleri sağlamak için yorumlayıcı veya işlem sistemiyle SE çalışır. Bu hizmetler DE arabirimleri aracılığıyla uygulanır ve hata ayıklayıcısı farklı işletimsel modlar arasında geçiş için neden olabilir. Daha fazla bilgi için bkz: [işlem modları](../../extensibility/debugger/operational-modes.md).  
+ Yürütme denetimi, kesme noktaları ve ifade değerlendirme gibi hata ayıklama hizmetleri sağlamak için yorumlayıcı veya işlemi sistemi bir DE çalışır. Bu hizmetler DE arabirimleri aracılığıyla uygulanır ve farklı çalışma modları arasında geçiş için hata ayıklayıcı neden olabilir. Daha fazla bilgi için [çalışma modları](../../extensibility/debugger/operational-modes.md).  
   
- SE oluşturma aşağıdaki adımlardan oluşur:  
+ Bir DE oluşturma, aşağıdaki adımlardan oluşur:  
   
-1.  Visual Studio ile SE kaydetme  
+1.  Bir DE Visual Studio ile kaydetme  
   
-2.  Ayıklanacak bir program etkinleştirme  
+2.  Bir program görüntüde hata ayıklamayı etkinleştir  
   
-3.  Yürütme denetimi ve durum değerlendirme  
+3.  Yürütme denetimi ve durum değerlendirme uygulayın  
   
-4.  Gönderen olaylar  
+4.  Olayları gönderme  
   
-5.  Sonlandırma ve ayırma  
+5.  Sonlandırma ve ayırma ayarlama  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Özel Bir Hata Ayıklama Altyapısını Kaydetme](../../extensibility/debugger/registering-a-custom-debug-engine.md)  
- Böylece kullanılabilmesi için bir hata ayıklama altyapısı Visual Studio ile kaydetmek için gereken adımları açıklar.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Bir özel hata ayıklama altyapısını kaydetme](../../extensibility/debugger/registering-a-custom-debug-engine.md)  
+ Böylece kullanılabilmesi için Visual Studio ile hata ayıklama altyapısı kaydetmek için gereken adımları açıklar.  
   
- [Bir Programı Hataları Ayıklanacak Şekilde Etkinleştirme](../../extensibility/debugger/enabling-a-program-to-be-debugged.md)  
- Sizin DE bir program ayıklayabilirsiniz önce gerekir ilk DE başlatın veya varolan bir program eklemek olduğunu açıklar.  
+ [Bir program görüntüde hata ayıklamayı etkinleştir](../../extensibility/debugger/enabling-a-program-to-be-debugged.md)  
+ Sizin DE bir program hata ayıklama yapılabilmesi gerekir ilk DE başlatın veya varolan bir program ekleyin, açıklar.  
   
- [Yürütme Denetimi ve Durum Değerlendirmesi](../../extensibility/debugger/execution-control-and-state-evaluation.md)  
- Neden bir uygulamada hata ayıklama yürütme denetim özelliklerini uygulama gerektirir açıklanır.  
+ [Yürütme denetimi ve durum değerlendirme uygulayın](../../extensibility/debugger/execution-control-and-state-evaluation.md)  
+ Neden bir uygulamada hata ayıklama yürütme denetimi özelliklerini uygulama gerektirir açıklanır.  
   
- [Olayları Gönderme](../../extensibility/debugger/sending-events.md)  
- Hata ayıklayıcı DE arasındaki iletişimi DCOM göre bir olay modeli olarak açıklar.  
+ [Olayları gönderme](../../extensibility/debugger/sending-events.md)  
+ Hata ayıklayıcı ve DE arasındaki iletişim, DCOM göre bir olay modeli olarak açıklar.  
   
- [Sonlandırma ve Ayırma](../../extensibility/debugger/termination-and-detaching.md)  
- Hiçbir kesme noktaları, özel durumlar, çalışma zamanı hataları veya sonsuz döngüler ayıklanacak uygulamada olduğu anlamına gelir normal sonlandırma elde etmek açıklanmaktadır.  
+ [Sonlandırma ve ayırma ayarlama](../../extensibility/debugger/termination-and-detaching.md)  
+ Hiçbir kesme noktaları, özel durumlar, çalışma zamanı hataları veya uygulamada hata ayıklaması için sonsuz döngüler olduğu anlamına gelir normal sonlandırması elde etmek açıklanmaktadır.  
   
- [Hata Ayıklayıcısı Olaylarını Çağırma](../../extensibility/debugger/calling-debugger-events.md)  
- Hata ayıklama oturumunda gerçekleşen olayların arama sırasını belgeler.  
+ [Hata ayıklayıcı olayları çağırma](../../extensibility/debugger/calling-debugger-events.md)  
+ Hata ayıklama oturumunda gerçekleşen olayların arama sırası belgeler.  
   
- [Nasıl Yapılır: Özel Hata Ayıklama Altyapısında Hata Ayıklama](../../extensibility/debugger/how-to-debug-a-custom-debug-engine.md)  
- Özel SE hata ayıklama açıklanmaktadır.  
+ [Nasıl yapılır: bir özel hata ayıklama altyapısında hata ayıklama](../../extensibility/debugger/how-to-debug-a-custom-debug-engine.md)  
+ Özel bir DE hata ayıklama açıklanmaktadır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Hata Ayıklayıcı Genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio hata ayıklayıcı genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)

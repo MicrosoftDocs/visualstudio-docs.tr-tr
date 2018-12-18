@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d3d7dd317cf24f2580d72fdc05ccbb8f60668fd1
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: b39cd627ab41d44ac65acbe13516fc3e5597b8a7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875651"
 ---
 # <a name="idialinenumbergetcolumnnumberend"></a>IDiaLineNumber::get_columnNumberEnd
-İfade veya deyimin bittiği tabanlı kaynak sütun sayısını alır.  
+İfade veya deyimin sona ereceği bir tabanlı bir kaynak sütun sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_columnNumberEnd (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] İfade veya deyimin bittiği sütun sayısını döndürür. Değerin sıfır ise, sütun son bilgisi yok.  
+ [out] İfade veya deyimin sona ereceği sütun sayısını döndürür. Değer sıfır ise son sütun bilgisi mevcut değil.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem tarafından döndürülen sütun satırında deyiminin son karakterinin konumuna satırına uzaklığı bir bayt değerdir.  
+ Bu yöntem tarafından döndürülen sütun satırında ifadesinin son karakterden sonra satırına konumuna uzaklık bir bayt değeridir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaLineNumber](../../debugger/debug-interface-access/idialinenumber.md)

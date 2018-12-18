@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 619e2a38c794a6823f7efcfb5606bd9fbe9f461c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6f9ad65a81820e37c01d55a0ddba441dd30977b4
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35256064"
 ---
 # <a name="modules-view---contention-data"></a>Modüller görünümü - çakışma verileri
 Profil oluşturma verileri örneklenen modülleri göre gruplandırılmış eşzamanlılık verileri çakışma verileri modülleri görünümünü görüntüler. Her modül hiyerarşik bir köküdür. Çekişme olayları meydana geldiği modülündeki işlevlerin modülü düğümünün altında listelenir.  
@@ -43,7 +44,7 @@ Profil oluşturma verileri örneklenen modülleri göre gruplandırılmış eşz
 |**İşlem adı**|İşlemin adı.|  
 |**Kaynak dosya**|Bu işlev için tanım içeriyor kaynak dosya.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Modüller görünümü](../profiling/modules-view.md)   
  [Modüller görünümü - izleme](../profiling/modules-view-dotnet-memory-instrumentation-data.md)   

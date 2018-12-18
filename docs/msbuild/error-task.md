@@ -20,35 +20,37 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0f43f585320c34da17948e30d2672de9c9aa51e4
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: a9568b27b65045c1b3a4495adff83f0b972e342f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49911271"
 ---
-# <a name="error-task"></a>Hata Görevi
-Bir yapı durdurur ve değerlendirilen bir koşullu ifadesine dayalı olarak bir hatayı günlüğe kaydeder.  
-  
+# <a name="error-task"></a>Hata görevi
+Bir derleme durdurur ve değerlendirilen bir koşullu ifadeye göre bir hatayı günlüğe kaydeder.  
+
 ## <a name="parameters"></a>Parametreler  
- Parametreleri ayarlayamadı tablo açıklar `Error` görev.  
-  
-|Parametre|Açıklama|  
-|---------------|-----------------|  
-|`Code`|İsteğe bağlı `String` parametresi.<br /><br /> Şu hata ile ilişkilendirilecek hata kodu.|  
-|`File`|İsteğe bağlı `String` parametresi.<br /><br /> Hatayı içeren dosya adı. Hiçbir dosya adı sağlanmazsa, hata görevini içeren dosya kullanılır.|  
-|`HelpKeyword`|İsteğe bağlı `String` parametresi.<br /><br /> Şu hata ile ilişkilendirmek için Yardım anahtar sözcük.|  
-|`Text`|İsteğe bağlı `String` parametresi.<br /><br /> Hata metni, [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] günlüğe `Condition` parametresi hesaplar için `true`.|  
-  
+ Parametreleri aşağıdaki tabloda açıklanmıştır `Error` görev.  
+
+
+| Parametre | Açıklama |
+|---------------| - |
+| `Code` | İsteğe bağlı `String` parametresi.<br /><br /> Şu hata ile ilişkilendirilecek hata kodu. |
+| `File` | İsteğe bağlı `String` parametresi.<br /><br /> Hata içeren dosyanın adı. Hata görevi içeren dosyanın dosya adı sağlanmazsa, kullanılır. |
+| `HelpKeyword` | İsteğe bağlı `String` parametresi.<br /><br /> Şu hata ile ilişkilendirmek için Yardım anahtar sözcüğü. |
+| `Text` | İsteğe bağlı `String` parametresi.<br /><br /> Hata metni, [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] günlüğe `Condition` parametresi değerlendirilen `true`. |
+
 ## <a name="remarks"></a>Açıklamalar  
- `Error` Görev verir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] projeleri için günlükçüleri hata metni vermek ve yapı yürütme durdurun.  
-  
- Varsa `Condition` parametresi hesaplar için `true`, yapı durdurulursa ve bir hata günlüğe kaydedilir. Varsa bir `Condition` parametresi yok, hata günlüğe kaydedilir ve yapı yürütme durdurur. Günlüğe kaydetme hakkında daha fazla bilgi için bkz: [yapı günlükleri alma](../msbuild/obtaining-build-logs-with-msbuild.md).  
-  
- Yukarıda listelenen parametreleri ek olarak, bu görev parametrelerinden devralır <xref:Microsoft.Build.Tasks.TaskExtension> sınıfı, kendisi <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametreler ve açıklamalarının listesi için bkz: [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
-  
+ `Error` Görev sağlayan [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] durdurmak ve hata metni günlükçüler için sorun projeleri yürütme oluşturun.  
+
+ Varsa `Condition` parametresi değerlendirilen `true`derleme durdurulur ve bir hata günlüğe kaydedilir. Varsa bir `Condition` parametresi mevcut değil, hata günlüğe kaydedilir ve yapı yürütmeyi durdurur. Günlüğe kaydetme hakkında daha fazla bilgi için bkz. [derleme günlükleri alma](../msbuild/obtaining-build-logs-with-msbuild.md).  
+
+ Yukarıda listelenen parametrelerin yanı sıra, bu görev parametreleri devralan <xref:Microsoft.Build.Tasks.TaskExtension> kendisi sınıfının devraldığı <xref:Microsoft.Build.Utilities.Task> sınıfı. Bu ek parametrelerin ve Tanımlamaların bir listesi için bkz. [TaskExtension taban sınıfı](../msbuild/taskextension-base-class.md).  
+
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod örneği, tüm gerekli özellikleri ayarlayın doğrular. Bunlar ayarlanmamışsa, projenin hata olayını başlatır ve değerini günlüklerini `Text` parametresinin `Error` görev.  
-  
+ Aşağıdaki kod örneği, tüm gerekli özellikleri ayarlayın doğrular. Bunlar ayarlanmazsa, projeye bir hata olayı oluşturur ve değerini günlüklerini `Text` parametresinin `Error` görev.  
+
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
     <Target Name="ValidateCommandLine">  
@@ -62,7 +64,7 @@ Bir yapı durdurur ve değerlendirilen bir koşullu ifadesine dayalı olarak bir
     ...  
 </Project>  
 ```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+
+## <a name="see-also"></a>Ayrıca bkz.  
  [Görev başvurusu](../msbuild/msbuild-task-reference.md)   
- [Derleme günlüklerini alma](../msbuild/obtaining-build-logs-with-msbuild.md)
+ [Derleme günlükleri alın](../msbuild/obtaining-build-logs-with-msbuild.md)

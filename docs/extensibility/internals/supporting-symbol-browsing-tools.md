@@ -26,6 +26,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31134597"
 ---
 # <a name="supporting-symbol-browsing-tools"></a>Simgenin tarama araçları destekleme
 **Nesne Tarayıcısı**, **sınıf görünümü**, **çağrısı tarayıcı** ve **Bul simgesi sonuçlarınızı** araçları Visual Studio özellikleri gözatma simgesi sunar. Bu araçları simgelerin hiyerarşik ağaç görünümleri görüntülemek ve simgeleri ağacında arasındaki ilişkileri gösterir. Simgeleri ad alanları, nesneler, sınıflar, sınıf üyeleri ve çeşitli bileşenlerinde bulunan diğer dil öğeleri temsil edebilir. Visual Studio projeleri, dış bileşenler dahil [!INCLUDE[dnprdnshort](../../code-quality/includes/dnprdnshort_md.md)] bileşenleri ve tür (.tlb) kitaplıkları. Daha fazla bilgi için bkz: [kodunu yapısı görüntüleme](../../ide/viewing-the-structure-of-code.md).  

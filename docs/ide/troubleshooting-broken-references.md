@@ -1,10 +1,9 @@
 ---
-title: Bozuk başvurularda sorun giderme | Microsoft Docs
-ms.custom: ''
+title: Bozuk başvurularda sorun giderme
 ms.date: 03/21/2017
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: troubleshooting
 helpviewer_keywords:
 - C# projects, references
 - Visual Basic projects, references
@@ -16,11 +15,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 256e7018b29402a2d67693de3c8e2cfe18ea2f71
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3c1879b67558cb57fba7bc462e4c7df03fb5efc8
+ms.sourcegitcommit: 04a717340b4ab4efc82945fbb25dfe58add2ee4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
+ms.locfileid: "32064356"
 ---
 # <a name="troubleshoot-broken-references"></a>Bozuk başvurularda sorun giderme
 
@@ -43,11 +43,11 @@ Bu sorunları çözümler aşağıda verilmiştir.
 
 ## <a name="reference-path-is-incorrect"></a>Başvuru yolu geçersiz
 
-Farklı bilgisayarlarda Paylaşılan projeleri, her bilgisayarda farklı bir dizinde bir bileşen bulunduğunda bazı başvuruları bulunmayabilir. Başvurular (örneğin, MyComponent) bileşeni dosyasının adı altında depolanır. Bir başvuru projeye eklendiğinde, bileşen dosya klasör konumunu (örneğin, C:\MyComponents\\) eklenir **ReferencePath** proje özelliği.
+Farklı bilgisayarlarda Paylaşılan projeleri, her bilgisayarda farklı bir dizinde bir bileşen bulunduğunda bazı başvuruları bulunmayabilir. Başvuruları bileşen dosya adı altında depolanır (örneğin, *MyComponent*). Bir başvuru projeye eklendiğinde, bileşen dosya klasör konumunu (örneğin, *C:\MyComponents*) eklenir **ReferencePath** proje özelliği.
 
-Proje açıldığında, başvuru yolundaki dizinlerde bakarak bu başvurulan bileşen dosyaları bulmaya çalışır. Proje D:\MyComponents gibi farklı bir dizinde bileşen depolayan bir bilgisayarda açık olduğunda\\, başvurusu bulunamıyor ve bir hata görev listesinde görünür.
+Proje açıldığında, başvuru yolundaki dizinlerde bakarak bu başvurulan bileşen dosyaları bulmaya çalışır. Proje bileşeni gibi farklı bir dizinde depolayan bir bilgisayarda açılırsa *D:\MyComponents*, başvurusu bulunamıyor ve bir hata görünür **görev listesi**.
 
-Bu sorunu gidermek için kırık referans silin ve ardından Başvuru Ekle iletişim kutusunu kullanarak değiştirin. Başka bir çözüm **başvuru yolu** projenin özellik sayfalarında madde ve klasörler listesinde doğru konuma işaret edecek şekilde değiştirin. **Başvuru yolu** özelliği, her bilgisayardaki her kullanıcı için kalıcıdır. Bu nedenle, başvuru yolun değiştirilmesi projenin diğer kullanıcıların etkilemez.
+Bu sorunu gidermek için kırık referans silin ve sonra onu kullanarak değiştirmek **Başvuru Ekle** iletişim kutusu. Başka bir çözüm **başvuru yolu** projenin özellik sayfalarında madde ve klasörler listesinde doğru konuma işaret edecek şekilde değiştirin. **Başvuru yolu** özelliği, her bilgisayardaki her kullanıcı için kalıcıdır. Bu nedenle, başvuru yolun değiştirilmesi projenin diğer kullanıcıların etkilemez.
 
 > [!TIP]
 > Proje Proje başvuruları bu sorunları gerekmez. Şunları yapabilirsiniz, bu nedenle, dosya referansları yerine kullanın.
@@ -92,4 +92,4 @@ Bir kullanıcı bir COM bileşeni başvuru ekledi ve kod bu bileşeni yüklü ol
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Başvurular Sayfası, Proje Tasarımcısı (Visual Basic)](../ide/reference/references-page-project-designer-visual-basic.md)
+- [Başvurular Sayfası, Proje Tasarımcısı (Visual Basic)](../ide/reference/references-page-project-designer-visual-basic.md)

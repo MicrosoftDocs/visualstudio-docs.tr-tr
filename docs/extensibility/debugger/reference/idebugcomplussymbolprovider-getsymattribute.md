@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 283333c8d505952e36dc8524d1377fd828142aca
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ae9bafa3aa97146abd63cd6f98516632d079bfd3
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903250"
 ---
 # <a name="idebugcomplussymbolprovidergetsymattribute"></a>IDebugComPlusSymbolProvider::GetSymAttribute
-Belirtilen üst özniteliği için belirtilen modülü hata ayıklama sembolleriyle alır.  
+Belirtilen modül için belirtilen üst öznitelik ile hata ayıklama sembolleri alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,28 +55,28 @@ int GetSymAttribute (
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `tokParent`  
- [in] Üst öznitelik için belirteci.  
+ [in] Üst öznitelikte belirteci.  
   
  `pstrName`  
- [in] Modül adı.  
+ [in] Modülün adı.  
   
  `cBuffer`  
  [in] Çıkış için gereken bayt sayısını `buffer`.  
   
  `pcBuffer`  
- [out] Çıkış uzunluğu `buffer`.  
+ [out] Çıkış uzunluğunu `buffer`.  
   
  `buffer`  
- [out] Sembolleri içeren bir dizi.  
+ [out] Simgeleri içeren bir dizi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::GetSymAttribute(  

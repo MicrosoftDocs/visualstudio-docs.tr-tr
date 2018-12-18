@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 41b7812db05b61c351346e5f0dcfa1bf4bd7bd1f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9dcadfdbfa52815fdd6d88f78afb88d421e203c7
+ms.sourcegitcommit: 269b55b413d2c82e6aa56c6ab8e53da7926fb2e8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35237916"
 ---
 # <a name="gpu-activity-graph"></a>GPU Etkinlik Grafiği
 Eşzamanlılık görselleştiricisi GPU etkinliği grafikte DirectX etkinlik düzeyi sistemde zaman içinde kullanılan DirectX altyapısı sayısı ölçülen görüntüler.  Grafik, hangi belirli motorları kullanılan göstermez.  Altyapının herhangi bir GPU iş işliyorsa kullanımda olarak kabul edilir.  
@@ -28,5 +29,5 @@ Eşzamanlılık görselleştiricisi GPU etkinliği grafikte DirectX etkinlik dü
   
  Beyaz sistem kullanılmayan DirectX motorlarına kullanılabilirliğini gösterir. Daha fazla bunları yararlanma fırsatı bulabilirsiniz bu motorları işleminiz için kullanılabilir. Bazı motorları yalnızca belirli tür görevleri için kullanılabilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Kullanım Görünümü](../profiling/utilization-view.md)

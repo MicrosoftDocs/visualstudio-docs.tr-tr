@@ -1,10 +1,9 @@
 ---
-title: Sekmeler ve pencereler, ortam, Seçenekler iletişim kutusu | Microsoft Docs
-ms.custom: ''
+title: Sekmeler ve Pencereler, Ortam, Seçenekler İletişim Kutusu
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - VS.ToolsOptionsPages.Environment.TabsAndWindows
 ms.assetid: f5167564-0a4e-4f98-9580-fc6cb7d9dd8d
@@ -13,14 +12,17 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d90c4f6606c22a99ebc6a0df8f00e609c2a44cfd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 49230a20bf8279548687d38e1ff3811e0b1730d7
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31944287"
 ---
 # <a name="tabs-and-windows-environment-options-dialog-box"></a>Sekmeler ve Pencereler, Ortam, Seçenekler İletişim Kutusu
-Nasıl sekmeli windows seçeneklerini ayarlamak için bu sayfayı davranır Düzenleyicisi bölmesinde ve aracı windows nasıl davranacağını kullanın. Daha fazla bilgi için bkz: [Visual Studio'da pencere düzenlerini özelleştirme](../../ide/customizing-window-layouts-in-visual-studio.md)  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Ortam Seçenekleri İletişim Kutusu](../../ide/reference/environment-options-dialog-box.md)
+
+Nasıl sekmeli windows seçeneklerini ayarlamak için bu sayfayı davranır Düzenleyicisi bölmesinde ve aracı windows nasıl davranacağını kullanın. Daha fazla bilgi için bkz: [Visual Studio'da pencere düzenlerini özelleştirme](../../ide/customizing-window-layouts-in-visual-studio.md)
+
+### <a name="see-also"></a>Ayrıca bkz.
+
+- [Ortam Seçenekleri İletişim Kutusu](../../ide/reference/environment-options-dialog-box.md)

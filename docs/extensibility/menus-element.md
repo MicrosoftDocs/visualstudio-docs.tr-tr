@@ -1,5 +1,5 @@
 ---
-title: Menü öğesi | Microsoft Docs
+title: Menus öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,25 +14,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 801bdf945f7f963168a83f8291d78e4751354269
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e0bfb702b9465ee4d00547f5d965bfbaae18742b
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39637636"
 ---
-# <a name="menus-element"></a>Menü öğesi
-Menüler ve bir VSPackage uygulayan araç çubukları tanımlar.  
+# <a name="menus-element"></a>Menus öğesi
+Tüm bir VSPackage'ı uygulayan araç çubukları ve menüler tanımlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Menus>  
   <Menu>... </Menu>  
   <Menu>... </Menu>  
 </Menus>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
@@ -45,18 +46,18 @@ Menüler ve bir VSPackage uygulayan araç çubukları tanımlar.
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Menus Öğesi](../extensibility/menus-element.md)|Menüler ve bir VSPackage uygulayan araç çubukları tanımlar.|  
-|[Menu Öğesi](../extensibility/menu-element.md)|Bir tek menü veya araç temsil eder.|  
+|[Menus öğesi](../extensibility/menus-element.md)|Tüm bir VSPackage'ı uygulayan araç çubukları ve menüler tanımlar.|  
+|[Menü öğesi](../extensibility/menu-element.md)|Tek bir menü veya araç çubuğunu temsil eder.|  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Commands Öğesi](../extensibility/commands-element.md)|VSPackage komutlarda koleksiyonunu temsil eder.|  
+|[Commands öğesi](../extensibility/commands-element.md)|VSPackage'ı komutlarında koleksiyonunu temsil eder.|  
   
 ## <a name="example"></a>Örnek  
   
-```  
+```xml  
 <Commands package="guidMyPackage">  
     <Menus>  
       <Menu Condition="'%(DEBUG)' != 'true'"   
@@ -79,6 +80,6 @@ Menüler ve bir VSPackage uygulayan araç çubukları tanımlar.
 <Commands>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kullanıcı arabirimi öğeleri VSPackages nasıl eklenir](../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
- [Komutlar, Menüler ve Araç Çubukları](../extensibility/internals/commands-menus-and-toolbars.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [VSPackage kullanıcı arabirimi öğelerini nasıl eklenir](../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
+ [Komutlar, menüler ve araç çubukları](../extensibility/internals/commands-menus-and-toolbars.md)

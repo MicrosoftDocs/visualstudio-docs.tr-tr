@@ -1,6 +1,7 @@
 ---
 title: 'CA1033: Arabirim yöntemleri alt türler tarafından çağırılabilir olmalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c41b19d9d4a82e25223a9cf7b04034b37c3f45fb
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: b56cd055fa8413d7d98a1c0d6d8b538a8a858af6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49941327"
 ---
 # <a name="ca1033-interface-methods-should-be-callable-by-child-types"></a>CA1033: Arabirim yöntemleri alt türler tarafından çağırılabilir olmalıdır
+
 |||
 |-|-|
 |TypeName|InterfaceMethodsShouldBeCallableByChildTypes|
@@ -32,21 +35,21 @@ ms.lasthandoff: 04/19/2018
 ## <a name="cause"></a>Sebep
  Ağzı açık dışarıdan görünen bir tür açık yöntem uygulaması ortak bir arabirim sağlar ve aynı ada sahip alternatif dışarıdan görünen bir yöntem sağlamaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Açıkça ortak arabirim yöntemini kullanan bir taban türü göz önünde bulundurun. Taban türünden türeyen bir tür devralınan arabirim yöntemini yalnızca geçerli örneğine başvuru erişebilirsiniz (`this` C#) arabirimine atamalısınız. Türetilen türü (açıkça) devralınan arabirim yöntemini yeniden uygularsa, temel uygulamayı artık erişilebilir. Geçerli örnek başvuru çağrısıyla türetilmiş uygulamasına çağıracağı; Bu özyineleme ve nihai yığın taşması neden olur.
+## <a name="rule-description"></a>Kural açıklaması
+ Açıkça bir ortak arabirim yöntemini uygulayan bir taban türü göz önünde bulundurun. Temel türünden türetilen bir tür devralınan arabirim yöntemi yalnızca geçerli örneğe bir başvuru erişebilirsiniz (`this` C#) arabirimine dönüştürün. Temel uygulama artık türetilmiş bir tür devralınan arabirim yöntemini (açıkça) in, erişilebilir. Geçerli örnek başvuru çağrısıyla türetilen uygulamaya çağırır; Bu, özyineleme ve bir nihai yığın taşmasına neden olur.
 
- Bu kural, açık bir uygulama için bir ihlali bildirmez <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> bir harici olarak görünür olduğunda `Close()` veya `System.IDisposable.Dispose(Boolean)` yöntemi sağlanır.
+ Bu kural açık bir uygulama için bir ihlali raporlamaz <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> dışarıdan görünür olduğunda `Close()` veya `System.IDisposable.Dispose(Boolean)` yöntemi sağlanır.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için aynı işlevselliği sunar ve türetilmiş türler için görünür olan yeni bir yöntem veya açıkça verilmemiş bir uygulama değiştirin. Önemli bir değişiklik kabul edilebilir ise, bir alternatif korumalı türü olmasını sağlamaktır.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için aynı işlevselliği kullanıma sunma ve türetilmiş türlere de görünür olan yeni bir yöntem uygulayın veya açıkça verilmemiş bir uygulama için değiştirin. Bir değişiklik kabul edilebilir ise, korumalı tür alternatiftir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Açıkça gerçekleştirilen yöntem adından farklı ancak aynı işlevselliğe sahip sağlanan dışarıdan görünür bir yöntemi ise bir uyarı bu kuraldan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Dışarıdan görünen bir yöntem sağlanır, ancak açıkça uygulanan yöntem yerine farklı bir ad ile aynı işlevlere sahiptir, bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, bir tür gösterir `ViolatingBase`, kural ve bir tür ihlal `FixedBase`, ihlalin için bir düzeltme gösterir.
+ Aşağıdaki örnek, bir tür gösterir `ViolatingBase`, kural ve bir tür ihlal `FixedBase`, ihlalin düzeltme gösterir.
 
  [!code-csharp[FxCop.Design.ExplicitMethodImplementations#1](../code-quality/codesnippet/CSharp/ca1033-interface-methods-should-be-callable-by-child-types_1.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
  [Arabirimler](/dotnet/csharp/programming-guide/interfaces/index)

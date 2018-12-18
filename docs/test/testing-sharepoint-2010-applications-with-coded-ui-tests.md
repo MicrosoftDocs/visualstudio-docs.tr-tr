@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da kodlanmış UI testleriyle SharePoint uygulamaları test etme | Microsoft Docs
+title: Kodlanmış UI testleriyle SharePoint uygulamaları test etme
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
 ms.topic: conceptual
 ms.author: gewarren
@@ -8,17 +9,20 @@ manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: 0ed08d82e186f83b71a01dab0b267410fde7267d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 91d17857f1d20508041ad6c5daa90a962d6d30e6
+ms.sourcegitcommit: ae46be4a2b2b63da7e7049e9ed67cd80897c8102
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52895450"
 ---
-# <a name="test-sharepoint-applications-with-coded-ui-tests"></a>Kodlanmış UI testleriyle SharePoint uygulamaları sınama
+# <a name="test-sharepoint-applications-with-coded-ui-tests"></a>Kodlanmış UI testleriyle SharePoint uygulamaları test etme
 
-Kodlanmış UI testleri bir SharePoint uygulama da dahil olmak üzere, kendi kullanıcı Arabirimi denetimlerini dahil olmak üzere tüm uygulama düzgün çalıştığını doğrulamak olanak tanır. Kodlanmış UI testleri, değerler ve kullanıcı arabirimi mantığı da doğrulayabilirsiniz.
+Kodlanmış UI testleri içindeki bir SharePoint uygulaması da dahil olmak üzere, kendi kullanıcı Arabirimi denetimleri de dahil olmak üzere tüm uygulamanın düzgün çalıştığını doğrulamak olanak tanır. Kodlanmış UI testleri, değerleri ve kullanıcı arabirimi mantığı da doğrulayabilirsiniz.
 
 Kodlanmış UI testleri kullanmanın avantajları hakkında daha fazla bilgi için bkz: [kodunuzu test etmek için kullanım UI Otomasyonu](../test/use-ui-automation-to-test-your-code.md).
+
+[!INCLUDE [coded-ui-test-deprecation](includes/coded-ui-test-deprecation.md)]
 
 **Gereksinimler**
 
@@ -26,44 +30,44 @@ Kodlanmış UI testleri kullanmanın avantajları hakkında daha fazla bilgi iç
 
 ## <a name="create-a-coded-ui-test-for-a-sharepoint-app"></a>Bir SharePoint uygulaması için kodlanmış UI testi oluşturma
 
-[Kodlanmış UI testleri oluşturma](../test/use-ui-automation-to-test-your-code.md) SharePoint uygulamalarınız için uygulamalarının diğer türleri için testler oluşturma ile aynıdır. Kaydı ve kayıttan yürütme Web düzenleme arabirimi tüm denetimler için desteklenir. Kategoriler ve web bölümleri seçme arabirimi olan tüm standart web denetimleri.
+[Kodlanmış UI testleri oluşturma](../test/use-ui-automation-to-test-your-code.md) SharePoint uygulamalarınız için diğer uygulama türleri için testleri oluşturma ile aynıdır. Kayıt ve kayıttan yürütme desteklenir tüm denetimler için **Web'den düzenlemeyi** arabirimi. Kategorileri ve web bölümleri seçme arabirimi, tüm standart web denetimler bulunur.
 
 ![SharePoint web bölümleri](../test/media/cuit_sharepoint.png)
 
 > [!NOTE]
-> Eylem kaydı yapıyorsanız, kod oluşturmadan önce eylemleri doğrulayın. Bazı davranışları fare vurgulu ile ilişkili olduğundan, varsayılan olarak açıktır. Yedek gezinen kodlanmış UI testleri kaldırmak dikkatli olun. Test için kodu düzenleme veya kullanarak bunu yapabilirsiniz [kodlanmış UI Test Düzenleyicisi](../test/editing-coded-ui-tests-using-the-coded-ui-test-editor.md).
+> Eylem kaydı yapıyorsanız, kod oluşturmadan önce eylemleri doğrulayın. Bazı davranışları fareyle üzerine gelindiğinde ile ilişkili olduğundan, varsayılan olarak açıktır. Yedekli eklenmemesi, kodlanmış UI testlerini kaldırmak dikkatli olun. Test için kod düzenleme veya kullanarak bunu yapabilirsiniz [kodlanmış UI Test Düzenleyicisi](../test/editing-coded-ui-tests-using-the-coded-ui-test-editor.md).
 
 ## <a name="test-office-controls-within-a-sharepoint-app"></a>Bir SharePoint uygulama içinde test Office denetimleri
 
-Bazı office web bölümleri SharePoint uygulamanızda otomasyonunu sağlamak için bazı küçük kod değişiklikler yapmanız gerekir.
+Bazı office web bölümleri SharePoint uygulamanızda Otomasyon etkinleştirmek için bazı küçük bir kod değişikliği yapmanız gerekir.
 
 > [!NOTE]
-> Bir SharePoint uygulamasında Visio ve PowerPoint denetimleri sınama desteklenmiyor.
+> Bir SharePoint uygulamasında Visio ve PowerPoint denetimleri test desteklenmiyor.
 
 ### <a name="excel-cell-controls"></a>Excel hücre denetimleri
 
-Excel hücre denetimleri eklemek için kodlanmış UI testin kodda bazı değişiklikler yapmanız gerekir.
+Excel hücre denetimleri eklemek için kodlanmış UI test kodu bazı değişiklikler yapmanız gerekir.
 
 > [!WARNING]
-> Ok anahtar eylemi tarafından izlenen tüm Excel hücresindeki metin girerek doğru kaydetmez. Hücreleri seçmek için fareyi kullanın.
+> Ok anahtar eylemi tarafından izlenen herhangi bir Excel hücreyi metin girme doğru kaydetmez. Hücreleri seçmek için fare kullanın.
 
-Boş bir hücre eylemleri kaydediyorsanız çift tıklayarak hücreyi tıklayarak ve kümesi metin işlemi gerçekleştirme kodu değiştirmeniz gerekir. Tüm klavye eylemi tarafından izlenen hücre tıklama etkinleştirir olduğundan bu gereklidir `textarea` hücre içinde. Yalnızca kaydı bir `setvalue` üzerinde boş bir hücre arama `editbox` hücre tıklattınız kadar var olmayan. Örneğin:
+Boş bir hücreye eylemleri kaydediyorsanız, double hücreyi tıklayarak ve ardından kümesi metin işlemi gerçekleştirme kodu değiştirmeniz gerekir. Tüm klavye eylemi tarafından izlenen hücre click etkinleştirir çünkü bu gerekli `textarea` hücresi içinde. Yalnızca kaydı bir `setvalue` boş hücreyi aramak `editbox` tıklanan hücre kadar mevcut değil. Örneğin:
 
 ```csharp
 Mouse.DoubliClick(uiItemCell,new Point(31,14));
 uiGridKeyboardInputEdit.Text=value;
 ```
 
-Boş olmayan hücre eylemleri kaydı sonra çünkü kaydı biraz daha karmaşık alır bir hücreye metin ekleme şu anda yeni bir \<div > denetimi hücrenin bir alt öğesi olarak eklenir. Yeni \<div > Denetim girdiğiniz metni içerir. Kaydedici eylemleri yeni kaydetmek gereken \<div > kontrol; ancak, çünkü olamaz yeni \<div > Denetim yok kadar test girildikten sonra. Bu sorunu uyum sağlamak için aşağıdaki kod değişiklikleri el ile yapmalısınız.
+Eylemler boş olmayan hücre kaydetmekte olduğunuz sonra çünkü kaydı biraz daha karmaşık alır bir hücre için metni ekleme şu anda yeni bir \<div > denetimi hücrenin alt olarak eklenir. Yeni \<div > girdiğiniz metin denetimi içerir. Kaydedici eylemleri yeni kaydetmek gereken \<div > denetimi; ancak, çünkü olamaz yeni \<div > Denetim yok kadar test girildikten sonra. Bu sorunu uyum sağlamak için aşağıdaki kod değişikliklerini el ile yapmalısınız.
 
-1. Hücre başlatma gidin ve olun `RowIndex` ve `ColumnIndex` birincil özellikleri:
+1. Hücre başlatma için gidin ve olun `RowIndex` ve `ColumnIndex` birincil özellikleri:
 
     ```csharp
     this.mUIItemCell.SearchProperties[HtmlCell.PropertyNames. RowIndex] = "3";
     this.mUIItemCell.SearchProperties[HtmlCell.PropertyNames. ColumnIndex] = "3";
     ```
 
-2. Bul `HtmlDiv` hücrenin alt:
+2. Bulma `HtmlDiv` alt hücrenin:
 
     ```csharp
     private UITestControl getControlToDoubleClick(HtmlCell cell)
@@ -78,7 +82,7 @@ Boş olmayan hücre eylemleri kaydı sonra çünkü kaydı biraz daha karmaşık
     }
     ```
 
-3. Fare çift için eylem kodu ekleyin `HtmlDiv`:
+3. Kod bir fare çift tıklatın için eylem ekleme `HtmlDiv`:
 
     ```csharp
     Mouse.DoubleClick(uIItemPane, new Point(31, 14)); )
@@ -92,8 +96,8 @@ Boş olmayan hücre eylemleri kaydı sonra çünkü kaydı biraz daha karmaşık
 
 ## See also
 
-- [Use UI Automation To Test Your Code](../test/use-ui-automation-to-test-your-code.md)
-- [Create SharePoint Solutions](/office-dev/office-dev/create-sharepoint-solutions)
-- [Verifying and Debugging SharePoint Code](/office-dev/office-dev/verifying-and-debugging-sharepoint-code)
-- [Building and Debugging SharePoint Solutions](/office-dev/office-dev/building-and-debugging-sharepoint-solutions)
-- [Profiling the Performance of SharePoint Applications](/office-dev/office-dev/profiling-the-performance-of-sharepoint-applications)
+- [Use UI automation to test your code](../test/use-ui-automation-to-test-your-code.md)
+- [Create SharePoint solutions](../sharepoint/create-sharepoint-solutions.md)
+- [Verify and debug SharePoint code](../sharepoint/verifying-and-debugging-sharepoint-code.md)
+- [Build and debug SharePoint solutions](../sharepoint/building-and-debugging-sharepoint-solutions.md)
+- [Profile the performance of SharePoint applications](../sharepoint/profiling-the-performance-of-sharepoint-applications.md)

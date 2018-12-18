@@ -16,6 +16,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31145418"
 ---
 # <a name="writing-to-the-user-settings-store"></a>Kullanıcı ayarları deposu yazma
 Kullanıcı ayarlarıdır Listedekilerin gibi yazılabilir ayarları **Araçlar / Seçenekler** iletişim kutusu, özellikleri windows ve belirli bir iletişim kutusu. Visual Studio uzantıları bunlar küçük miktarda veri depolamak için kullanabilirsiniz. Bu kılavuzda Notepad Visual Studio'ya dış bir araç okuma ve yazma için kullanıcı ayarları deposu tarafından nasıl ekleyeceğiniz gösterilmiştir.  

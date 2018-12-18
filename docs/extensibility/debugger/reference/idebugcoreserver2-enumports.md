@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 805d42a460adb40fffa94d6b0c6ab1881546ccc6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dd974f625f011819b8360ddcd327cffec602dac0
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926078"
 ---
 # <a name="idebugcoreserver2enumports"></a>IDebugCoreServer2::EnumPorts
-Tüm kullanılabilir bağlantı noktalarının listesini alır.  
+Tüm kullanılabilir bağlantı noktalarının bir listesini alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int EnumPorts(
   
 #### <a name="parameters"></a>Parametreler  
  `ppEnum`  
- [out] Döndürür bir [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) tüm bağlantı noktası tedarikçileri gelen tüm bağlantı noktalarının bir listesini içeren nesne.  
+ [out] Döndürür bir [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) tüm bağlantı noktalarından tüm bağlantı noktası sağlayıcıları listesini içeren nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md)   

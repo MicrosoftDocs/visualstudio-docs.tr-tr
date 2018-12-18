@@ -10,16 +10,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b759d5ac7f86fe366a5a0394b4c288904ef5c589
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 62c7f173f278e03f5e28d6b03c117c7b69415abb
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255151"
 ---
 # <a name="profiling-tools-apis"></a>Profil Araçları API'leri
 API'lerinin yönetilen veya özgün yöntemlerinin ekleyebilirsiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları denetim veri koleksiyonuna profil çalıştırın. Bu bölümde API yöntemlerini açıklar ve bunların nasıl kullanılacağını açıklar.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [Visual Studio profil oluşturucu API Başvurusu (yerel)](../profiling/visual-studio-profiler-api-reference-native.md)  
  C++ profil oluşturma araçları yöntemleri açıklar.  
   
@@ -29,8 +30,8 @@ API'lerinin yönetilen veya özgün yöntemlerinin ekleyebilirsiniz [!INCLUDE[vs
  [İzlenecek yol: Profilini Oluşturucu API'ler kullanma](../profiling/walkthrough-using-profiler-apis.md)  
  Bu tam örnekte .NET profil oluşturma araçları yöntemleri kullanmayı öğrenin.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Veri toplama denetimi](../profiling/controlling-data-collection.md)  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Veri toplamayı denetleme](../profiling/controlling-data-collection.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans Gezgini](../profiling/performance-explorer.md)

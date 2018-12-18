@@ -21,6 +21,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31129741"
 ---
 # <a name="persistence-and-the-running-document-table"></a>Kalıcılığı ve çalışan belge tablosu
 İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE projeleri bunlar hizmet kullanarak gerçekleştirmek, kullanıcıların proje öğeleri kalıcılığı yönetmek için tamamen sorumlu <xref:Microsoft.VisualStudio.Shell.Interop.SVsRunningDocumentTable>. Visual Studio ortamında Kalıcılık temel birimidir belgelerdir. Proje açma, kaydetme ve çalışan belge tablosu (RDT), tüm açık belgeleri durumunu izleyen bir kaynak belgelerle adlandırılmasını koordine.  

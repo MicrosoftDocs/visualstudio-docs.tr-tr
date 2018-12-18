@@ -1,5 +1,5 @@
 ---
-title: Öğesi tanımlama | Microsoft Docs
+title: Define öğesi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 336c0b52e50731ff63fb790a1a1b201b0646caea
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2596023628086ce5e921eeb8499956828d4c8a5c
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39497167"
 ---
-# <a name="define-element"></a>Öğe tanımlayın
-Sembol ad ve değer çifti tanımlar. Bu simgenin koşullu özniteliklere göre değerlendirilebilir. Daha fazla bilgi için bkz: [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md). Ayrıca bkz. [simgeleri öğesi](../extensibility/symbols-element.md).  
+# <a name="define-element"></a>Define öğesi
+Sembol ad ve değer çifti tanımlar. Bu simge, koşullu özniteliklere göre değerlendirilebilir. Daha fazla bilgi için [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md). Ayrıca bkz: [Symbols öğesi](../extensibility/symbols-element.md).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -29,25 +30,25 @@ Sembol ad ve değer çifti tanımlar. Bu simgenin koşullu özniteliklere göre 
 <Define name="Mode" value="Standard" />  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|name|Gerekli. Simgenin adını:<br /><br /> Name = "Modu"|  
-|value|Gerekli. Simgenin değeri:<br /><br /> değer = "Standard"|  
-|Koşul|İsteğe bağlı. Daha fazla bilgi için bkz: [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
+|name|Gerekli. Sembol adı:<br /><br /> ad = "Modu"|  
+|value|Gerekli. Sembol değeri:<br /><br /> değer = "Standart"|  
+|Koşul|İsteğe bağlı. Daha fazla bilgi için [koşullu öznitelikler](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[CommandTable Öğesi](../extensibility/commandtable-element.md)|Tümleşik geliştirme ortamı (IDE) bir VSPackage sağlar komutları temsil eden tüm öğeleri tanımlar. Örneğin, menü öğeleri, menüler, araç çubukları ve birleşik giriş kutuları.|  
+|[CommandTable öğesi](../extensibility/commandtable-element.md)|VSPackage sağlayan komutlar tümleşik geliştirme ortamı (IDE) temsil eden tüm öğeleri tanımlar. Örneğin, menü öğeleri, menüler, araç çubukları ve birleşik giriş kutuları.|  
   
 ## <a name="example"></a>Örnek  
   
@@ -56,5 +57,5 @@ Sembol ad ve değer çifti tanımlar. Bu simgenin koşullu özniteliklere göre 
 <Define name="MODE" value="Standard"/>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Komut Tablosu (.Vsct) Dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio komut tablosu (.vsct) dosyaları](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

@@ -14,11 +14,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 0a29de8f18a9d3123d73210d0e362c2ae2d32641
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 501defcd2274ab32624a97b9a1463e8f4a515c1e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49819062"
 ---
 # <a name="diaaddressmapentry"></a>DiaAddressMapEntry
 Bir adres eşlemesi bir girişe açıklar.  
@@ -34,27 +35,27 @@ struct DiaAddressMapEntry {
   
 ## <a name="elements"></a>Öğeleri  
  `rva`  
- A. görüntüsündeki göreli sanal adres (RAV)  
+ A. görüntüdeki göreli sanal adres (RVA)  
   
  `rvaTo`  
- Göreli sanal adres `rva` görüntü B. eşlendi  
+ Göreli sanal adres `rva` görüntüde b eşlenir  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir adres eşlemesi tek bir görüntü düzeninden çeviri (A) için başka bir (B) sağlar. Bir dizi `DiaAddressMapEntry` göre sıralanmış yapıları `rva` bir adres eşlemesi tanımlar.  
+ Bir adres eşlemesi tek bir görüntü düzeninden bir çeviri (A) için başka bir (B) sağlar. Bir dizi `DiaAddressMapEntry` ölçütü yapıları `rva` adres Haritası tanımlar.  
   
- Bir adresi çevirmek için `addrA`, bir adresi için bir görüntüde `addrB`, görüntü B, aşağıdaki adımları gerçekleştirin:  
+ Bir adresi çevrilecek `addrA`, bir adrese bir görüntüdeki `addrB`, görüntü B, aşağıdaki adımları gerçekleştirin:  
   
-1.  Eşleme girişi için arama `e`, en büyük ile `rva` küçük veya eşit `addrA`.  
+1. Eşleme girişi için arama `e`, en büyük ile `rva` ya da eşit `addrA`.  
   
-2.  Ayarlama `delta = addrA - e.rva`.  
+2. Ayarlama `delta = addrA - e.rva`.  
   
-3.  Ayarlama `addrB = e.rvaTo + delta`.  
+3. Ayarlama `addrB = e.rvaTo + delta`.  
   
- Bir dizi `DiaAddressMapEntry` yapıları iletilir [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi.  
+   Bir dizi `DiaAddressMapEntry` yapıları geçirildiğinde [Idiaaddressmap::set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: dia2.h  
+ Üstbilgi: dia2.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [IDiaAddressMap::set_addressMap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md)

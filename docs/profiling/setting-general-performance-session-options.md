@@ -11,38 +11,40 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 61d4506f4b9ee68e7920fa4bbb4c463d00cceb73
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d6c44435f69b5a94433081a518be14f8ffd1756e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49834234"
 ---
-# <a name="setting-general-performance-session-options"></a>Genel Performans Oturumunu Ayarlama Seçenekleri
+# <a name="set-general-performance-session-options"></a>Genel performans oturumunu ayarlama seçenekleri
 
-Koleksiyon yöntemini ve Visual Studio Profil Araçları performans oturumu için profil oluşturma veri adlandırma kuralları ayarlayabilirsiniz **genel** performans oturumu için Özellikler iletişim kutusunun sayfası. Bu iletişim kutusu açmak için **performans Gezgini**, performans oturumu sağ tıklatın ve ardından **özellikleri**.
+Toplama yöntemi ve Visual Studio Profil Araçları performans oturumu için profil oluşturma veri adlandırma kuralları ayarlayabilirsiniz **genel** için performans oturumu Özellikleri iletişim kutusu sayfası. Bu iletişim kutusu açmak için **performans Gezgini**performans oturumu sağ tıklayın ve ardından **özellikleri**.
 
-## <a name="choosing-data-collection-methods"></a>Veri toplama yöntemi seçme
+## <a name="choosing-data-collection-methods"></a>Veri toplama metotlarını seçme
 
-Altındaki seçeneklerden birini seçerek temel toplama yöntemi ayarlayın **koleksiyonu profil**. Aşağıdaki tabloda aşağıdaki seçenekleri açıklanmıştır:
-
-|||
-|-|-|
-|**Örnekleme**. Örnekleme yöntemi düzenli aralıklarla profil bilgilerini toplar. Bu yöntem, işlemci kullanım sorunları bulmak için yararlıdır ve çoğu performans araştırmalar başlatmak için önerilen yöntemdir.|- [Örnekleme kullanarak performans istatistikleri toplama](../profiling/collecting-performance-statistics-by-using-sampling.md)|
-|**İzleme**. İzleme yöntemi her giriş, çıkış ve işlevlerin işlev çağrısı modülünde bir çalıştırma profili oluşturma sırasında kaydeder kod profili oluşturma bir modülün bir kopyasını içine yerleştirir. Bu yöntem, kodunuzu bir bölümünü hakkında ayrıntılı zamanlama bilgi toplama ve girdi ve çıktı işlemleri uygulama performansı üzerindeki etkisini anlamak için kullanışlıdır.|- [İzleme kullanarak ayrıntılı zamanlama verileri toplama](../profiling/collecting-detailed-timing-data-by-using-instrumentation.md)|
-|**Eşzamanlılık**. Eşzamanlılık yöntemi blokları yürütme gibi bir iş parçacığı zaman bekler, kodunuzu boşaltılacak Uygulama kaynağı erişimi kilitli her olay için verileri toplar. Bu yöntem, çok iş parçacıklı uygulamalar çözümlemek için kullanışlıdır.|- [İş parçacığı ve işlem eşzamanlılık verileri toplama](../profiling/collecting-thread-and-process-concurrency-data.md)|
-
- Örnekleme veya izleme yöntemleri kullanarak .NET bellek verileri toplayabilir. Altında veri türünü seçin **.NET bellek profili oluşturma**.
+Altında seçeneklerden birini seçerek temel koleksiyonu yöntemi ayarlamak **profil oluşturma koleksiyonu**. Aşağıdaki tabloda aşağıdaki seçenekleri açıklanmıştır:
 
 |||
 |-|-|
-|**.NET nesne ayırma bilgilerini toplamak**. Varsayılan olarak, veri sayısını ve boyutunu tahsis edilen nesnelerin içerir. Seçin veya etkinleştirmek veya .NET bellek verileri toplama devre dışı bırakmak için bu onay kutusunu temizleyin.<br /><br /> **Ayrıca .NET nesne ömrü bilgileri toplamak**. Bellek nesneleri geri kazanmak için kullanılan atık toplama nesli hakkındaki verileri eklemek için bu onay kutusunu seçin.|- [.NET bellek ayırma ve yaşam süresi verilerini toplama](../profiling/collecting-dotnet-memory-allocation-and-lifetime-data.md)|
+|**Örnekleme**. Örnekleme yöntemi düzenli aralıklarla profil bilgilerini toplar. Bu yöntem çoğu performans araştırmalar başlangıç için önerilen yöntem ve işlemci kullanım sorunları bulmak için kullanışlıdır.|- [Örnekleme kullanarak performans istatistikleri toplama](../profiling/collecting-performance-statistics-by-using-sampling.md)|
+|**İzleme**. Araçlar yöntemini bir profil oluşturma sırasında modüldeki her giriş, çıkış ve işlevlerin işlev çağrısı kaydeden kod profil oluşturma modülü bir kopyasını içine yerleştirir. Bu yöntem, kodunuzu bir bölümünü hakkında ayrıntılı zamanlama bilgileri toplamak ve giriş ve çıkış işlemleri uygulama performansı üzerindeki etkisini anlamak için kullanışlıdır.|- [İzleme kullanarak ayrıntılı zamanlama verileri toplama](../profiling/collecting-detailed-timing-data-by-using-instrumentation.md)|
+|**Eşzamanlılık**. Eşzamanlılık yöntemi gibi bir iş parçacığı zaman bekler, kodunuzun yürütülmesini engeller serbest bırakılacak Uygulama kaynağı için erişim kilitli her olay için veri toplar. Bu yöntem, çok iş parçacıklı uygulamalar çözümlemek için kullanışlıdır.|- [İş parçacığı ve işlem eşzamanlılık verileri toplama](../profiling/collecting-thread-and-process-concurrency-data.md)|
 
- Burada, duraklatma, sürdürme ve profil oluşturmayı durdurmak, bir uygulamaya profil başladığında bir profil oluşturma oturumu sayfası görüntülenir.
-
- ![Profil oluşturma oturumu sayfa](../profiling/media/prof_profilingsessionpage.png "PROF_ProfilingSessionPage")
-
-## <a name="setting-profiling-data-file-options"></a>Profil oluşturma veri dosyası seçeneklerini ayarlama
+ Örnekleme ve araç yöntemleri kullanarak, .NET bellek verileri toplayabilirsiniz. Altında veri türünü seçin **.NET bellek profili oluşturma**.
 
 |||
 |-|-|
-|**Rapor**. Varsayılan olarak, profil oluşturma veri (.vsp) dosyası profili uygulamanın adı verilir ve çözüm ya da proje klasöründe bulunur. Bir tarih dizesi de ada eklenir ve artan bir sayı yinelenen adları Aksi durumda olması gereken veri dosyalarına eklenir. Bu seçenekleri değiştirebilirsiniz.|- [Nasıl yapılır: performans veri dosyası adlandırma seçeneklerini ayarlama](../profiling/how-to-set-performance-data-file-name-options.md)|
+|**.NET nesnesi ayırma bilgilerini topla**. Varsayılan olarak, veri sayısını ve ayrılan nesnelerin boyutunu içerir. Seçin veya etkinleştirin veya .NET bellek verileri toplama devre dışı bırakmak için bu onay kutusunu temizleyin. |- [.NET bellek ayırma ve yaşam süresi verilerini toplama](../profiling/collecting-dotnet-memory-allocation-and-lifetime-data.md)|
+|**Ayrıca .NET nesnesi ömür bilgilerini toplayın**. Bellek nesneleri geri kazanmak için kullanılan çöp toplama kuşakları hakkında veri eklemek için bu onay kutusunu seçin.|- [.NET bellek ayırma ve yaşam süresi verilerini toplama](../profiling/collecting-dotnet-memory-allocation-and-lifetime-data.md) |
+
+ Burada, duraklatma, sürdürme ve profil oluşturmayı durdurmak bir uygulamanın profilini başladığınızda bir profil oluşturma oturumu sayfasında görünür.
+
+ ![Profil oluşturma oturumu sayfasında](../profiling/media/prof_profilingsessionpage.png "PROF_ProfilingSessionPage")
+
+## <a name="set-profiling-data-file-options"></a>Profil oluşturma veri dosyası seçeneklerini ayarlama
+
+|||
+|-|-|
+|**Rapor**. Varsayılan olarak, profil oluşturma veri (.vsp) dosyasının profillenen uygulamanın adı verilir ve çözüm veya proje klasöründe bulunur. Bir tarih dizesini de adının sonuna eklenir ve artan bir sayı, aksi halde yinelenen adlara sahip olabileceği veri dosyalarına eklenir. Bu seçenekleri değiştirebilirsiniz.|- [Nasıl yapılır: performans veri dosyası adlandırma seçeneklerini ayarlama](../profiling/how-to-set-performance-data-file-name-options.md)|

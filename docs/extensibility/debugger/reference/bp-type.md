@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 823b2b4bd53aabfdbcc887fe8ce4e1bf1bf858d7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c525b30a290a1a0c5f732f65967acb50219c9647
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49905175"
 ---
 # <a name="bptype"></a>BP_TYPE
-Kesme noktası kodu konumunda, veri konumu veya başka türde bir kesme noktası olduğunu belirtir.  
+Kesme noktası bir kod konumu, veri konumu veya başka türde bir kesme noktası olduğunu belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,10 +48,10 @@ public enum enum_BP_TYPE {
   
 ## <a name="members"></a>Üyeler  
  BPT_NONE  
- Kesme noktası türünü belirtir.  
+ Hiçbir kesme noktası türünü belirtir.  
   
  BPT_CODE  
- Kod kesme noktası belirtir.  
+ Bir kod kesme noktası belirtir.  
   
  BPT_DATA  
  Veri kesme noktası belirtir.  
@@ -62,13 +63,13 @@ public enum enum_BP_TYPE {
  Bir parametre olarak geçirilen [GetBreakpointType](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getbreakpointtype.md) ve [GetBreakpointType](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getbreakpointtype.md) yöntemleri.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetBreakpointType](../../../extensibility/debugger/reference/idebugbreakpointresolution2-getbreakpointtype.md)   
  [GetBreakpointType](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getbreakpointtype.md)

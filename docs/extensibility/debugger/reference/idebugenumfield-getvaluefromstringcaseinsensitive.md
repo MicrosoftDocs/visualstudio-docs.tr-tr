@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 05d838bc91949ea5023fe61c6eb0c1b5c5220e68
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 96e1e98a8d095a2fd7fc9c63b42267fc70cab065
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49933332"
 ---
 # <a name="idebugenumfieldgetvaluefromstringcaseinsensitive"></a>IDebugEnumField::GetValueFromStringCaseInsensitive
-Bu yöntem duyarsız arama bir numaralandırma sabiti adı ile ilişkili değer döndürmek için kullanır.  
+Bu yöntem, numaralandırma sabiti adla ilişkilendirilmiş değeri döndürmek için büyük küçük harf duyarsız arama kullanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int GetValueFromStringCaseInsensitive(
   
 #### <a name="parameters"></a>Parametreler  
  `pszValue`  
- [in] Değerin alınacağı adını belirten dize. C++ için bu bir geniş karakter dizesi olduğunu unutmayın.  
+ [in] Değerin alınacağı adını belirten dize. C++ için geniş karakter dizesi bu olduğunu unutmayın.  
   
  `pValue`  
  [out] İlişkili sayısal değeri döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi halde döndürür `S_FALSE`, ad numaralandırma veya bir hata kodu parçası değil.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde döndürür `S_FALSE`, ad sabit listesi veya bir hata kodu bir parçası değil.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, büyük/küçük harf duyarlıdır. Büyük küçük harfe duyarlı arama (örneğin, bir dilde burada adları büyük küçük harfe duyarlı C++ gibi) gerekiyorsa, kullanın [GetValueFromString](../../../extensibility/debugger/reference/idebugenumfield-getvaluefromstring.md).  
+ Bu yöntem, büyük/küçük harf duyarlıdır. Büyük küçük harfe duyarlı bir arama (örneğin, bir dilde burada adları büyük/küçük harfe C++ gibi) gerekiyorsa kullanın [GetValueFromString](../../../extensibility/debugger/reference/idebugenumfield-getvaluefromstring.md).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEnumField](../../../extensibility/debugger/reference/idebugenumfield.md)   

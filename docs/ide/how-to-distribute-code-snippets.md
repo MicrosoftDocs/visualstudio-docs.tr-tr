@@ -1,9 +1,8 @@
 ---
-title: 'Nasıl yapılır: kod parçacıklarını dağıtma | Microsoft Docs'
-ms.custom: ''
+title: 'Nasıl yapılır: kod parçacıklarını dağıtma'
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - code snippets, distributing
@@ -15,93 +14,101 @@ dev_langs:
 - VB
 ms.workload:
 - multiple
-ms.openlocfilehash: e51abd2aa96c5313dfeeb31aabc492d8cfbcd82d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: cd6aba7c20c920c0c4351a1e9aa263fc73cd4415
+ms.sourcegitcommit: 495bba1d8029646653f99ad20df2f80faad8d58b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39380423"
 ---
 # <a name="how-to-distribute-code-snippets"></a>Nasıl yapılır: kod parçacıklarını dağıtma
-Kod parçacıkları arkadaşlarınıza verin ve bunları parçacıkları kod parçacıkları Yöneticisi'ni kullanarak kendi bilgisayarlarına yükleyin. Ancak, dağıtmak için birkaç parçacıkları varsa veya daha yaygın olarak dağıtmak istediğiniz parçacığı dosyanızı hangi Visual Studio kullanıcıların yükleyebilmek için bir Visual Studio uzantısına ekleyin.  
 
-Visual Studio uzantıları oluşturmak için Visual Studio SDK'yı yüklemeniz gerekir. Visual Studio yüklemenizin eşleşen VSSDK sürümünü bulmak [Visual Studio indirmeleri](https://www.visualstudio.com/downloads/).  
+Kod parçacıklarınızı arkadaşlarınıza verebilir ve bunları kullanarak kendi bilgisayarlarındaki parçacıkları yükleme **kod parçacıkları Yöneticisi**. Bununla birlikte, dağıtılacak çok sayıda kod olması ya da daha yaygın olarak dağıtmak istiyorsanız, kod parçacığı dosyanızı bir Visual Studio uzantısına dahil etme. Visual Studio kullanıcılarına, uzantıyı daha sonra yükleyebilirsiniz.
 
-## <a name="set-up-the-extension"></a>Uzantı ayarlayın  
-Bu yordamda oluşturduğunuz Hello World kod parçacığını kullanacağız [izlenecek yol: kod parçacığı oluşturma](../ide/walkthrough-creating-a-code-snippet.md). Biz sağlayacak *.snippet* geri dönüp birini yapmak zorunda kalmamak için metin.  
+Visual Studio uzantıları oluşturmak için Visual Studio SDK'yı yüklemeniz gerekir. Visual Studio yüklemenizle eşleşen VSSDK sürümünü bulun [Visual Studio indirmeleri](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
-1.  Adlı yeni bir VSIX proje oluşturma **TestSnippet**. (**Dosya** > **yeni** > **proje** > **Visual C# (veya Visual Basic)**  >  **Genişletilebilirlik**.)  
+## <a name="set-up-the-extension"></a>Uzantı ayarlayın
 
-2.  İçinde **TestSnippet** proje, yeni bir XML dosyası ekleyin ve bunu *VBCodeSnippet.snippet*. İçeriği aşağıdakiyle değiştirin:  
+Bu yordamda oluşturulan Hello World kod parçacığını kullanacağız [izlenecek yol: bir kod parçacığı oluşturma](../ide/walkthrough-creating-a-code-snippet.md). Biz verin *.snippet* geri dönün ve bir yapmak zorunda kalmamak için metin.
 
-    ```xml  
-    <?xml version="1.0" encoding="utf-8"?>  
-    <CodeSnippets  
-        xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
-      <CodeSnippet Format="1.0.0">  
-        <Header>  
-          <Title>Hello World VB</Title>  
-          <Shortcut>HelloWorld</Shortcut>  
-          <Description>Inserts code</Description>  
-          <Author>MSIT</Author>  
-          <SnippetTypes>  
-            <SnippetType>Expansion</SnippetType>  
-            <SnippetType>SurroundsWith</SnippetType>  
-          </SnippetTypes>  
-        </Header>  
-        <Snippet>  
-          <Code Language="VB">  
-            <![CDATA[Console.WriteLine("Hello, World!")]]>  
-          </Code>  
-        </Snippet>  
-      </CodeSnippet>  
-    </CodeSnippets>  
-    ```  
+1. Adlı yeni bir VSIX projesi oluşturun **TestSnippet**. (**Dosya** > **yeni** > **proje** > **Visual C# (veya Visual Basic)**  >  **Genişletilebilirlik**.)
 
-#### <a name="set-up-the-directory-structure"></a>Dizin yapısını oluşturma  
+2. İçinde **TestSnippet** proje, yeni bir XML dosyası ekleyin ve onu çağırmak *VBCodeSnippet.snippet*. İçerik, aşağıdaki XML ile değiştirin:
 
-1.  İçinde **Çözüm Gezgini**, proje düğümünü seçin ve zorunda parçacığı istediğiniz ada sahip bir klasör eklemek **kod parçacıkları Yöneticisi**. Bu durumda, olmalıdır **HelloWorldVB**.  
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <CodeSnippets
+        xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+      <CodeSnippet Format="1.0.0">
+        <Header>
+          <Title>Hello World VB</Title>
+          <Shortcut>HelloWorld</Shortcut>
+          <Description>Inserts code</Description>
+          <Author>MSIT</Author>
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+            <SnippetType>SurroundsWith</SnippetType>
+          </SnippetTypes>
+        </Header>
+        <Snippet>
+          <Code Language="VB">
+            <![CDATA[Console.WriteLine("Hello, World!")]]>
+          </Code>
+        </Snippet>
+      </CodeSnippet>
+    </CodeSnippets>
+    ```
 
-2.  Taşıma *.snippet* dosya *HelloWorldVB* klasör.  
+### <a name="set-up-the-directory-structure"></a>Dizin yapısını oluşturma
 
-3.  Seçin *.snippet* dosyasını **Çözüm Gezgini**hem de **özellikleri** penceresi emin olun **yapı eylemi** içinayarlanmış**İçerik**, **çıktı dizinine Kopyala** ayarlanır **her zaman Kopyala**, ve **Include in VSIX** ayarlanır **true**.  
+1. İçinde **Çözüm Gezgini**, proje düğümünü seçin ve üzerindeki kod parçacığı, istediğiniz ada sahip bir klasör eklemek **kod parçacıkları Yöneticisi**. Bu durumda, olmalıdır **HelloWorldVB**.
 
-#### <a name="add-the-pkgdef-file"></a>.Pkgdef dosyası ekleme  
+2. Taşıma *.snippet* dosyasını *HelloWorldVB* klasör.
 
-1.  Bir metin dosyasına eklemek *HelloWorldVB* klasörü ve adlandırın *HelloWorldVB.pkgdef*. Bu dosya, belirli anahtarları için kayıt eklemek için kullanılır. Bu durumda, yeni bir anahtar ekler:  
+3. Seçin *.snippet* dosyası **Çözüm Gezgini**hem de **özellikleri** penceresi emin olun **derleme eylemi** içinayarlanmış**İçerik**, **çıkış dizinine Kopyala** ayarlanır **her zaman Kopyala**, ve **VSIX Ekle** ayarlanır **true**.
 
-     `HKCU\Software\Microsoft\VisualStudio\15.0\Languages\CodeExpansions\Basic`  
+### <a name="add-the-pkgdef-file"></a>.Pkgdef dosyası ekleyin
 
-2.  Aşağıdaki satırları dosyasına ekleyin.  
+1. Bir metin dosyasına ekleme *HelloWorldVB* klasörünü adlandırın *HelloWorldVB.pkgdef*. Bu dosya, belirli anahtarlar kayıt defterinde eklemek için kullanılır. Bu durumda, yeni bir alt anahtar ekler **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\15.0\Languages\CodeExpansions\Basic** anahtarı.
 
-    ```  
-    // Visual Basic   
-    [$RootKey$\Languages\CodeExpansions\Basic\Paths]   
-    "HelloWorldVB"="$PackageFolder$"  
-    ```  
+2. Dosyasına aşağıdaki satırları ekleyin.
 
-    Bu anahtar incelerseniz, farklı diller belirtme görebilirsiniz.  
+    ```txt
+    // Visual Basic
+    [$RootKey$\Languages\CodeExpansions\Basic\Paths]
+    "HelloWorldVB"="$PackageFolder$"
+    ```
 
-3.  Seçin *.pkgdef* dosyasını **Çözüm Gezgini**hem de **özellikleri** penceresi emin olun **yapı eylemi** içinayarlanmış**İçerik**, **çıktı dizinine Kopyala** ayarlanır **her zaman Kopyala**, ve **Include in VSIX** ayarlanır **true**.  
+    Bu anahtar incelerseniz, farklı dillerde belirleme görebilirsiniz.
 
-4.  Ekleme *.pkgdef* dosyası VSIX bildiriminde bir varlık olarak. İçinde *source.extension.vsixmanifest* dosya, Git **varlıklar** sekmesinde **yeni**.  
+3. Seçin *.pkgdef* dosyası **Çözüm Gezgini**hem de **özellikleri** penceresi emin olun:
 
-5.  İçinde **ekleme yeni varlık** iletişim, kümesi **türü** için **Microsoft.VisualStudio.VsPackage**, **kaynak** için **üzerinde dosya dosya sistemi**ve **yolu** için **HelloWorldVB.pkgdef** (hangi görünmelidir açılır listede).  
+   - **Derleme eylemi** ayarlanır **içerik**
+   - **Çıkış Dizinine Kopyala** ayarlanır **her zaman Kopyala**
+   - **VSIX'e Ekle** ayarlanır **true**
 
-### <a name="test-the-snippet"></a>Kod parçacığını test  
+4. Ekleme *.pkgdef* VSIX bildirimi bir varlığı olarak dosya. İçinde *source.extension.vsixmanifest* dosya, Git **varlıklar** sekmesine **yeni**.
 
-1.  Şimdi kod parçacığında Visual Studio deneysel örneğinde çalıştığını emin olabilirsiniz. Kod yazmak için kullandığınız diskten ayrı Visual Studio ikinci bir kopyası Deneysel örneğidir. Geliştirme ortamınızı etkilemeden uzantı üzerinde çalışmanıza olanak sağlar.  
+5. İçinde **yeni varlık Ekle** iletişim kutusunda, kümesi **türü** için **Microsoft.VisualStudio.VsPackage**, **kaynak** için **dosya çubuğunda dosya sistemi**ve **yolu** için **HelloWorldVB.pkgdef** (hangi açılır listede görüntülenecek).
 
-2.  Projeyi derleyin ve hata ayıklamayı Başlat. Visual Studio ikinci bir örneğini görüntülenmesi gerekir.  
+### <a name="test-the-snippet"></a>Kod parçacığını test
 
-3.  Deneysel örneğinde Git **Araçlar > kod parçacıkları Yöneticisi** ve **dil** için **temel**. Görmeniz gerekir *HelloWorldVB* klasörleri ve biri görmek için klasörü genişletmek mümkün olması gerektiği gibi *HelloWorldVB* parçacığı.  
+1. Artık kod parçacığının Visual Studio'nun deneysel örneğinde çalıştığından emin olmak. Deneysel örneği, Visual Studio'nun kod yazmak için kullandığınız diskten ayrı olan ikinci bir kopyasıdır. Uzantı üzerinde geliştirme ortamınızı etkilemeden çalışmanıza olanak sağlar.
 
-4.  Kod parçacığını test edin. Deneysel örneğinde, Visual Basic projesinde açın ve kod dosyalarından birini açın. İmlecinizi kodda yere yerleştirin sağ tıklatın ve bağlam menüsünü seçin **Ekle parçacığı**.  
+2. Projeyi oluşturmak ve hata ayıklamaya başlayın.
 
-5.  Görmeniz gerekir *HelloWorldVB* klasörlerden biri olarak. Çift tıklatın. Açılır pencere görmeniz gerekir **parçacığını ekleyin: HelloWorldVB >** bir açılır olan **HelloWorldVB**. Tıklatın **HelloWorldVB** açılır. Dosyaya eklenen aşağıdaki satırı görmeniz gerekir:  
+   Visual Studio ikinci bir örneğini görünür.
 
-    ```vb  
-    Console.WriteLine("Hello, World!")  
-    ```  
+3. Deneysel örneğinde Git **Araçları** > **kod parçacıkları Yöneticisi** ayarlayıp **dil** için **temel**. Görmelisiniz *HelloWorldVB* klasörler için ve biri görmek için klasörü genişletmek mümkün olması gerektiği gibi *HelloWorldVB* kod parçacığı.
 
-## <a name="see-also"></a>Ayrıca bkz.  
-[Kod parçacıkları](../ide/code-snippets.md)
+4. Kod parçacığını test edin. Deneysel örneğinde, bir Visual Basic projesi açın ve kod dosyalarından birini açın. İmleci kodda bir yere yerleştirinceye sağ tıklatın ve bağlam menüsünü seçin **parçacık Ekle**.
+
+5. Görmelisiniz *HelloWorldVB* klasörlerden biri olarak. Çift tıklatın. Bir açılır pencere görmeniz gerekir **parçacık Ekle: HelloWorldVB >** bir açılan olan **HelloWorldVB**. Tıklayın **HelloWorldVB** açılır. Dosyaya eklenen aşağıdaki satırı görmeniz gerekir:
+
+    ```vb
+    Console.WriteLine("Hello, World!")
+    ```
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Kod parçacıkları](../ide/code-snippets.md)

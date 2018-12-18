@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c49cc87352c3869fd8a954457ad14ec1486b4198
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 23a4ec112c33100a2eed8e4853f5a6280a741e12
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49942146"
 ---
 # <a name="idebugprocess2candetach"></a>IDebugProcess2::CanDetach
-Oturum hata ayıklama Yöneticisi'ni (SDM) işlem ayırma durumunda belirler.  
+Oturum hata ayıklama Yöneticisi (SDM) bir işlem ayırabilirsiniz belirler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,7 +38,7 @@ int CanDetach();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK.` döndürür `S_FALSE` hata ayıklayıcı işleminden ayırırsanız. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK.` döndürür `S_FALSE` hata ayıklayıcı işlemden ayırma yapılamıyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [CanDetach](../../../extensibility/debugger/reference/idebugprogram2-candetach.md)   

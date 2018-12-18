@@ -12,54 +12,55 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: cb92e37a8bc1543cfdf2efa142768d9edbea4f69
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 67148180fab5c712ee15551cf60a8874f427dc0a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49854851"
 ---
 # <a name="lines-view---net-memory-sampling-data"></a>Satırlar görünümü - .NET bellek örnekleme verileri
-Satırlar görünümü örnekleme yöntemini kullanan .NET bellek ayırma profil oluşturma verileri için profil oluşturma çalışması sırasında bellek tahsis deyimleri listeler. Sütunları ayırmaları sayısı ve boyutu da içerir.  
+Satırlar görünümü örnekleme yöntemini kullanan .NET bellek ayırma profil oluşturma verileri için ayrılan bellek profil oluşturma çalışması süresince deyimleri listeler. Sütunları ayırmaların sayısı ve boyutu de içerir.  
   
- Bir kaynak dosyasında bir deyim bir kaynak dosyasında birden fazla satırı kapsayabilir ve tek bir satıra birden fazla deyim içerebilir.  
+ Bir kaynak dosyasında bir deyimi kaynak dosyasında birden fazla satırı kapsayabilir ve tek bir satır birden fazla deyim içerebilir.  
   
- Bir deyim aşağıdaki tarafından tanımlanır:  
+ Bir deyimi aşağıdaki tarafından tanımlanır:  
   
--   Function deyimi içeren kaynak dosyası.  
+- Function deyimi içeren kaynak dosyası.  
   
--   Deyimi içeren işlev.  
+- Deyimi içeren işlev.  
   
--   Deyim başlatan kaynak satırı.  
+- Deyim başladığı kaynak satırı.  
   
--   Deyim başlatan kaynak satırdaki karakter.  
+- Deyim başladığı kaynak satırı karakter.  
   
--   Deyim erdiği kaynak satırı.  
+- Kaynak satırı başlangıçtan deyimini sonlandırır.  
   
--   Deyim erdiği kaynak satırdaki karakter.  
+- Deyim erdiği kaynak satırı karakter.  
   
- Satır ad sütunu tanımlayıcısı verileri sıralanabilir bir birleşimini sağlar.  
+  Satır adı sütunu tanımlayıcısı veri sıralanabilir bir birleşimini sağlar.  
   
- Tanımı gereği, diğer işlevleri bir deyim çağırmaz. Bu nedenle, yalnızca özel değerler listelenmektedir.  
+  Tanımı gereği, diğer işlevler bir deyim çağırmaz. Bu nedenle, yalnızca özel değerler listelenmiştir.  
   
 |Sütun|Açıklama|  
 |------------|-----------------|  
-|**İşlem kimliği**|İşlemi çalıştırmak profil oluşturma kimliği (PID).|  
+|**İşlem kimliği**|İşlem, profil oluşturma çalışması Kimliğine (PID).|  
 |**İşlem adı**|İşlemin adı.|  
-|**Modül adı**|Deyim içeren modülü adı.|  
-|**Modül yolu**|Deyim içeren modülü yolu.|  
-|**Kaynak dosya**|Deyimi içeren kaynak dosya.|  
-|**İşlev adı**|Deyimi içeren işlevin adı.|  
-|**İşlev satır numarası**|Bu işlev kaynak dosyadaki başlangıç satır sayısı.|  
+|**Modül adı**|Deyim içeren modül adı.|  
+|**Modül yolu**|Deyim içeren modül yolu.|  
+|**Kaynak dosyası**|Deyimi içeren kaynak dosya.|  
+|**İşlev adı**|Deyim içeren işlevin adı.|  
+|**İşlevin satır numarası**|Satır numarası kaynak dosyada bu işlevin başlangıcı.|  
 |**İşlev adresi**|İşlev başlangıç adresi.|  
-|**Kaynak satırı başlangıç**|Ayırma gerçekleştiği kaynak dosyasında başlangıç satır numarası.|  
-|**Kaynak satır sonu**|Ayırma gerçekleştiği kaynak dosyasında bitiş satır numarası.|  
-|**Kaynak karakter başlangıç**|Ayırma gerçekleştiği kaynak dosyası satırı başlangıç karakteri uzaklığı.|  
-|**Kaynak karakter ucu**|Ayırma gerçekleştiği kaynak dosya satırında bir bitiş karakteri uzaklığı.|  
-|**Satırı adı**|Aşağıdaki söz dizimini içeren satırı profil oluşturucu ürettiği tanıtıcısı:`Source File`**; [**  `Line Number Start` **,**`Character Start`**] ->; [** `Line Number Start,Character Start`**]**|  
-|**Özel ayırmaları**|Bu satırda oluşturulan nesneleri toplam sayısı.|  
-|**Özel ayırmaları %**|Bu satırda ayrılan çalıştırmak profil oluşturulan tüm nesneler yüzdesi.|  
-|**Özel bayt sayısı**|Bu satırda ayrılan tüm profil çalıştırmak ayrılan belleği bayt yüzdesi.|  
-|**Özel bayt %**|Bu satırda ayrılan tüm profil çalıştırmak ayrılan belleği bayt yüzdesi.|  
+|**Kaynak satır başlangıcı**|Ayırma oluşan kaynak dosyasındaki başlangıç satırı numarası.|  
+|**Kaynak satır sonu**|Ayırma oluşan kaynak dosyasındaki bitiş satır sayısı.|  
+|**Kaynak karakter başlangıcı**|Ayırma oluşan kaynak dosya satırında başlangıç karakteri uzaklığı.|  
+|**Kaynak karakter sonu**|Öğesindeki taban karakterin bitiş ayırma oluşan kaynak dosya satır uzaklığı.|  
+|**Satır adı**|Profil Oluşturucu tarafından oluşturulan bir satırın aşağıdaki sözdizimiyle tanıtıcısı:`Source File`**; [**  `Line Number Start` **,**`Character Start`**] ->; [** `Line Number Start,Character Start`**]**|  
+|**Dışlamalı ayırmalar**|Bu satırı içinde oluşturulan nesnelerin toplam sayısı.|  
+|**Dışlamalı ayırma yüzdesi**|Bu satırda ayrılan profil oluşturma çalışmasında oluşturulan tüm nesneleri yüzdesi.|  
+|**Dışlamalı bayt**|Bu satırda ayrılan tüm profil oluşturma çalışmasında ayrılan belleği bayt yüzdesi.|  
+|**Dışlamalı bayt yüzdesi**|Bu satırda ayrılan tüm profil oluşturma çalışmasında ayrılan belleği bayt yüzdesi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Satırlar Görünümü](../profiling/lines-view-sampling-data.md)

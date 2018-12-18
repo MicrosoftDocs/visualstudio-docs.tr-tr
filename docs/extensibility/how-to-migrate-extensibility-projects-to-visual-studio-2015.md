@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: Visual Studio 2015 genişletilebilirlik projeleri geçirme | Microsoft Docs'
+title: "Nasıl yapılır: genişletilebilirlik projelerini Visual Studio 2015'e geçirme | Microsoft Docs"
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,45 +13,46 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5adad311c1696d958902d9ad33ed1d1872606458
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 09b8950a05c4e4181209190af17eb0d6ccdb35ba
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39639714"
 ---
-# <a name="how-to-migrate-extensibility-projects-to-visual-studio-2015"></a>Nasıl yapılır: Visual Studio 2015 genişletilebilirlik projeleri geçirme
-Uzantınızı yükseltme bırakılır.  
+# <a name="how-to-migrate-extensibility-projects-to-visual-studio-2015"></a>Nasıl yapılır: genişletilebilirlik projelerini Visual Studio 2015'e geçirme
+Uzantınızı yükseltme açıklanmıştır.  
   
 > [!IMPORTANT]
->  Uzantı çözümünüz için Visual Studio'nun önceki bir sürümünü sürümünü korumak istiyorsanız, yükseltmeden önce bir kopya yapmak emin olun. Yükseltilmiş sürüm önceki durumuna geri döndürmek zor olabilir.  
+>  Visual Studio'nun önceki bir sürümü için uzantı çözümünüzü sürümünü korumak istiyorsanız, yükseltmeden önce bir kopyasını emin olun. Yükseltilmiş sürümü önceki durumuna geri döndürmek zor olabilir.  
   
-#### <a name="to-upgrade-an-extensibility-solution"></a>Genişletilebilirlik çözümünü yükseltmek için  
+### <a name="to-upgrade-an-extensibility-solution"></a>Genişletilebilirlik çözümünü yükseltmek için  
   
-1.  Kopyalama kullanarak istediğiniz yükseltme, yeni sürümde açın. Yükseltme ters çevrilebilir değil göre artırılmıştır.  
+1.  Kopyalama kullanarak istediğiniz yükseltme yeni sürümünde açın. Yükseltme geri alınamaz olduğunu önerilecektir.  
   
-2.  Yükseltme tamamlandıktan sonra dış program yolu devenv.exe yeni sürüm olarak değiştirin. Proje düğümüne sağ tıklayın **Çözüm Gezgini**, ardından **özellikleri**. İçinde **hata ayıklama** sekmesinde, textbox tarafından Bul **başlangıç dış program** ve bu gibi görünmelidir Visual Studio 2015 yoluna devenv.exe yolunu değiştirin:  
+2.  Yükseltme tamamlandıktan sonra en yeni sürümüne dış program yolunu değiştirmek *devenv.exe*. ' Nde proje düğümüne sağ **Çözüm Gezgini**, ardından **özellikleri**. İçinde **hata ayıklama** sekmesinde, metin kutusu tarafından Bul **harici program Başlat** ve yolunu değiştirmek *devenv.exe* Visual Studio 2015 yoluna hangi görünmelidir aşağıdakine benzer:  
   
-     **%ProgramFiles%\Microsoft visual Studio 14.0\Common7\IDE\devenv.exe**  
+     *%ProgramFiles%\Microsoft visual Studio 14.0\Common7\IDE\devenv.exe*  
   
-3.  Microsoft.VisualStudio.Shell.14.0.dll bir başvuru ekleyin. (Proje düğümüne sağ tıklayın **Çözüm Gezgini** ve ardından **ekleme / Reference**. Select **uzantıları** sekmesini ve ardından denetleyin **Microsoft.VisualStudio.Shell.14.0**.)  
+3.  Bir başvuru ekleyin *Microsoft.VisualStudio.Shell.14.0.dll*. ('nde proje düğümüne sağ **Çözüm Gezgini** seçip **Ekle** > **başvuru**. Select **uzantıları** sekmesini ve ardından **Microsoft.VisualStudio.Shell.14.0**.)  
   
 4.  Çözümü oluşturun. Yerleşik dosyaları dağıtılır:  
   
-     **%LocalAppData%\Microsoft\VisualStudio.14.0Exp\Extensions\\< yazar adı\>\\< proje adı\>\\< proje sürüm\>\\**.  
+     *%LocalAppData%\Microsoft\VisualStudio.14.0Exp\Extensions\\< yazar adı\>\\< proje adı\>\\< proje sürüm\>\\*.  
   
-#### <a name="to-update-an-extensibility-project-to-nuget-vs-sdk-reference-assemblies"></a>Genişletilebilirlik projesi için NuGet VS SDK başvuru derlemeleri güncelleştirmek için  
+### <a name="to-update-an-extensibility-project-to-nuget-vs-sdk-reference-assemblies"></a>Bir genişletilebilirlik projesi için NuGet VS SDK başvurusu derlemeleri'nin güncelleştirmek için  
   
-1.  Projenizi gereken VS SDK başvuru derlemeleri belirler.  İçinde **Çözüm Gezgini**, projenin genişletin **başvuruları** düğümü ve proje başvuruları listesini gözden geçirin.  VS SDK başvuruları derlemeleri öneki olacaktır **Microsoft.VisualStudio** adında (örneğin: Microsoft.VisualStudio.Shell.14.0).  
+1.  Projenize gereken VS SDK başvurusu derlemeleri'nin belirleyin.  İçinde **Çözüm Gezgini**, projenin genişletin **başvuruları** düğüm ve proje başvuruları listesini gözden geçirin.  VS SDK başvuru bütünleştirilmiş kodları önekine sahip olacak **Microsoft.VisualStudio** adında (örneğin: Microsoft.VisualStudio.Shell.14.0).  
   
-2.  Bunları seçerek VS SDK başvuru derlemeleri projeden kaldırmak için sağ tıklayın ve **kaldırmak**.  
+2.  Bunları, sütuna sağ tıklayıp seçerek VS SDK başvurusu derlemeleri'nin projeden Kaldır **Kaldır**.  
   
-3.  VS SDK başvuru derlemeleri NuGet sürümleri ekleyin.  Hala while **Solution Explorer başvuruları** düğümü, açık **NuGet paketlerini Yönet...**  iletişim.  Bu iletişim kutusu hakkında daha fazla bilgi edinmek istiyorsanız, bkz: [Paket Yöneticisi kullanıcı Arabirimi](/NuGet/Tools/Package-Manager-UI). VS SDK başvuru derlemeleri üzerinde yayımlanan [nuget.org](http://www.nuget.org) tarafından [VisualStudioExtensibility](http://www.nuget.org/profiles/VisualStudioExtensibility).  
+3.  VS SDK başvurusu derlemeleri'nin NuGet sürümlerini ekleyin.  Yine **Çözüm Gezgini başvuruları** düğümü, açık **NuGet paketlerini Yönet** iletişim.  Bu iletişim kutusu hakkında daha fazla bilgi edinmek istiyorsanız bkz [Paket Yöneticisi UI](/NuGet/Tools/Package-Manager-UI). VS SDK başvurusu derlemeleri'nin yayımlanan [nuget.org](http://www.nuget.org) tarafından [VisualStudioExtensibility](http://www.nuget.org/profiles/VisualStudioExtensibility).  
   
-4.  Kullanarak **nuget.org** olarak, **paket kaynağı**, istenen referans derlemesini eşleşen NuGet paket adı arayın (örneğin: Microsoft.VisualStudio.Shell.14.0) ve bunu yüklemek, Proje.  NuGet ilk derlemenin bağımlılıklarını karşılamak için birden fazla başvuru derlemeleri ekleyebilir.  
+4.  Kullanarak **nuget.org** olarak, **paket kaynağı**, istenen başvuru bütünleştirilmiş kodu ile eşleşen NuGet paket adı arayın (örneğin: Microsoft.VisualStudio.Shell.14.0) ve içinde yükleme, Proje.  NuGet, ilk derleme bağımlılıklarını karşılamak için birden fazla başvuru bütünleştirilmiş kodları ekleyebilirsiniz.  
   
-     Tercih ederseniz, tüm VS SDK başvuru derlemeleri aynı anda VS SDK yükleyerek ekleyebileceğiniz [Meta paket](http://www.nuget.org/packages/VSSDK_Reference_Assemblies).  
+     İsterseniz, tüm VS SDK başvurusu derlemeleri'nin tek seferde VS SDK'sını yükleyerek ekleyebileceğiniz [Meta paket](http://www.nuget.org/packages/VSSDK_Reference_Assemblies).  
   
-5.  Ayrıca, VS SDK derleme araçlarını NuGet sürümünü kullanmaya geçiş yapabilirsiniz. Bu NuGet paketi [Microsoft.VSSDK.BuildTools](http://www.nuget.org/packages/Microsoft.VSSDK.BuildTools) ve bir kez eklenir projeniz gerekli araçlar içerir ve hedef dosyaları genişletilebilirlik projenizi bir bilgisayarda yüklü VS SDK oluşturmanızı sağlar.  
+5.  Ayrıca NuGet sürümü VS SDK derleme araçlarını kullanarak geçiş yapabilirsiniz. Bu NuGet paketi [Microsoft.VSSDK.BuildTools](http://www.nuget.org/packages/Microsoft.VSSDK.BuildTools) ve bir kez eklenen projenize gerekli araçlar içerir ve hedef dosyaların genişletilebilirlik projenize bir bilgisayarda yüklü VS SDK oluşturmanıza olanak sağlar.  
   
 > [!NOTE]
->  Olmayan NuGet başvuru derlemeler ve Araçlar kullanmak için mevcut genişletilebilirlik projelerinizi güncelleştirmeniz gerekiyor.  Bunlar başvuru derlemeleri ve VS SDK ile birlikte yüklenen araçları kullanarak oluşturmaya devam edebilirsiniz.
+>  Bu, var olan genişletilebilirlik projeleri NuGet başvuru bütünleştirilmiş kodları ve araçları kullanmak için güncelleştirme gerekiyor.  Bunlar, başvuru bütünleştirilmiş kodları ve araçları VS SDK'sı ile yüklü kullanarak oluşturmaya devam edebilirsiniz.

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6015658a72c264f1421c782a1e6e6c28038748a1
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 9a8c00aa5b3d6e6a9b9251075cc5cc065119cc95
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910062"
 ---
 # <a name="idiaenumlinenumbersnext"></a>IDiaEnumLineNumbers::Next
-Belirtilen bir numaralandırma sırası satır numaralarını sayısını alır.  
+Belirtilen bir numaralandırma sıralı satır numaralarını sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,14 +38,14 @@ HRESULT Next (
  celt  
  [in] Alınacak Numaralandırıcı satır numaralarını sayısı.  
   
- rgelt  
- [out] Bir dizi döndürür [Idialinenumber](../../debugger/debug-interface-access/idialinenumber.md) istenen satır numaralarını temsil eden nesne.  
+ http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/winui/windowsuserinterface/userinput/rawinput/rawinputreference/rawinputstructures/rawinputdevice.asp  
+ [out] Bir dizi döndürür [Idialinenumber](../../debugger/debug-interface-access/idialinenumber.md) istenen satır numaralarını temsil eden nesneleri.  
   
  pceltFetched  
- [out] Satır numaraları getirilen Numaralandırıcı döndürür.  
+ [out] Satır numaraları getirilen bir numaralandırıcı döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` olması durumunda daha fazla satır numarası yok. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa daha fazla satır numarası yok. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaenumlinenumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md)   

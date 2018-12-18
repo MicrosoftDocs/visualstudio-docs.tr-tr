@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 01a18b52a964d993be6328bf3057263ededd2320
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 687ae8207fac97dde84b803fb01477d53114ad6e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49847976"
 ---
 # <a name="idebugprogramnode2getengineinfo"></a>IDebugProgramNode2::GetEngineInfo
-Bir programı çalıştırmasını hata ayıklama altyapısı (DE) tanıtıcısı ve adını alır.  
+Ad ve tanımlayıcı bir programı çalıştırma hata ayıklama altyapısı (DE) alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,13 +43,13 @@ int GetEngineInfo(
   
 #### <a name="parameters"></a>Parametreler  
  `pbstrEngine`  
- [out] Programın çalıştırılması DE adını döndürür (C++ özgü: Bu çağrıyı adına altyapısı ilgilenen değil belirten bir null işaretçi olabilir).  
+ [out] Programın çalıştırılması DE adını döndürür (C++ diline özgü: Bu çağrı altyapısı adını ilgilenen değil gösteren null bir işaretçi olabilir).  
   
  `pguidEngine`  
- [out] Programın çalıştırılması DE genel benzersiz tanımlayıcısını döndürür (C++ özgü: Bu çağıran altyapısı GUID ilginizi olmadığını belirten bir null işaretçi olabilir).  
+ [out] Programın çalıştırılması DE genel benzersiz tanımlayıcısını döndürür (C++ diline özgü: Bu çağırana ilişkin GUID'i altyapısının ilgilenen değil gösteren null bir işaretçi olabilir).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md)

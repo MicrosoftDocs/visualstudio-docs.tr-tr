@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 65398ac0c4bde18dc772d75ceea203bdbfe3b189
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1e1e344ff5adb51d118370f81de10ba01c8950e1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49904225"
 ---
 # <a name="bpunboundreason"></a>BP_UNBOUND_REASON
 Bir kesme noktası ilişkisiz nedeni sağlar.  
@@ -50,24 +51,24 @@ public enum enum_BP_UNBOUND_REASON {
  Bunun nedeni bilinmiyor.  
   
  BPUR_CODE_UNLOADED  
- Kesme noktası içeren kodu kaldırıldı.  
+ Kesme noktasını içeren kod kaldırıldı.  
   
  BPUR_BREAKPOINT_REBIND  
- Kesme noktası farklı bir konuma DataSet'e. Bu düzen sonra gerçekleşir ve kesme taşındığında veya artık geçerli olmayan bir yola sahip bir dosyaya kesme bağlandığında işlemleri devam edebilirsiniz.  
+ Farklı bir konuma kesme noktası yansıdı. Bu düzenlemeden sonra gerçekleşir ve kesme noktası hareket ettiğinde veya artık geçerli olmayan bir yola sahip bir dosya kesme noktasına bağlandığında işlemler devam edebilirsiniz.  
   
  BPUR_ BREAKPOINT_ERROR  
- Kesme noktası bağlı olduğu sonra hata olduğu belirlenir. Bu, koşullar artık geçerli olmayan yönetilen kesme noktaları için gerçekleşir.  
+ Kesme noktasına bağlı sonra hata olarak değerlendirilir. Bu, koşullar artık geçerli olmayan yönetilen kesme noktaları için gerçekleşir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Tarafından döndürülen [GetReason](../../../extensibility/debugger/reference/idebugbreakpointunboundevent2-getreason.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetReason](../../../extensibility/debugger/reference/idebugbreakpointunboundevent2-getreason.md)

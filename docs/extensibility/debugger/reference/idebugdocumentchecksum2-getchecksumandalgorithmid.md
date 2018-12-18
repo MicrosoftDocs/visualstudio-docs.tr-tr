@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 36cacd8ba313c9beb7565ebb20cbce23f7b6c12e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fbb12f315bc0e83e14ad4a342443ed3207411dae
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49846388"
 ---
 # <a name="idebugdocumentchecksum2getchecksumandalgorithmid"></a>IDebugDocumentChecksum2::GetChecksumAndAlgorithmId
-Kullanmak için bayt sayısını verilen belge sağlama toplamı ve algoritma tanımlayıcısını alır.  
+Kullanılacak bayt sayısı belirtilen belge sağlama toplamı ve algoritma tanımlayıcısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,10 +46,10 @@ public int GetChecksumAndAlgorithmId(
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Sağlama toplamı algoritması için benzersiz tanımlayıcı.  
+ [out] Sağlama algoritması için benzersiz tanımlayıcı.  
   
  `cMaxBytes`  
- [in] En fazla sağlama toplamı için kullanılacak bayt sayısı.  
+ [in] Sağlama toplamı için kullanılacak bayt sayısı.  
   
  `pChecksum`  
  [out] Sağlama toplamı değeri.  
@@ -57,10 +58,10 @@ public int GetChecksumAndAlgorithmId(
  [out] Gerçek sağlama toplamı için kullanılan bayt sayısı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek bir belge için algoritma ve sağlama toplamı almak için bu yöntemi kullanır.  
+ Aşağıdaki örnek, bir belge için algoritma ve sağlama toplamı almak için bu yöntemi kullanır.  
   
 ```cpp  
 HRESULT CDebugCodeContext::GetDocumentChecksumAndAlgorithmId(GUID *pguidAlgorithm, BYTE **ppChecksum, ULONG *pcNumBytes)  

@@ -10,30 +10,31 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 11038ebe930789967b2d0092805787a8d4f24f6c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2aa23601ff1f85aa4e2d28be5664c4bccb8d2eff
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49828402"
 ---
 # <a name="threadon-and-threadoff"></a>ThreadOn ve ThreadOff
-VSPerfCmd.exe **ThreadOff** ve **ThreadOn** subcommands izleme yöntemini kullanan komut satırı profil oturumlarında kullanılabilir yalnızca. **ThreadOff** ve **ThreadOn** belirtilen iş parçacığı için profil oluşturmayı durdur. **ThreadOff** iş parçacığı profil durdurur ve **ThreadOn** iş parçacığı profil başlatır.  
+*VSPerfCmd.exe* **ThreadOff** ve **ThreadOn** alt komutları şüpheli işlem yöntemini kullanan komut satırı profil oluşturma oturumunda kullanılabilir yalnızca. **ThreadOff** ve **ThreadOn** duraklatma ve sürdürme belirtilen iş parçacığı profil oluşturma. **ThreadOff** iş parçacığı profil oluşturmayı durdurur ve **ThreadOn** iş parçacığı profil oluşturmaya başlar.  
   
- Çoğu durumda, belirttiğiniz **ThreadOn** veya **ThreadOff** yalnızca seçeneği bir VSPerfCmd.exe olarak komut satırı, ancak bunlar da birleştirilebilir ile **GlobalOn**, **GlobalOff**, **ProcessOn**, ve **ProcessOff** subcommands.  
+ Çoğu durumda, belirttiğiniz **ThreadOn** veya **ThreadOff** yalnızca seçeneği olarak bir *VSPerfCmd.exe* komut satırı, ancak bunlar ile de birleştirilebilir  **GlobalOn**, **GlobalOff**, **ProcessOn**, ve **ProcessOff** alt komutları.  
   
- **ThreadOn** ve **ThreadOff** subcommands etkileşimde **GlobalOn** ve **GlobalOff** veri denetimi komutları komut satırı profil oluşturma oturumu tüm işlemler için koleksiyonda ve **ProcessOn** ve **ProcessOff** belirtilen işlem için veri toplama denetim komutları.  
+ **ThreadOn** ve **ThreadOff** alt komutları etkileşimde **GlobalOn** ve **GlobalOff** veri denetimi komutları komut satırı profil oluşturma oturumunu, tüm işlemler için koleksiyonda ve **ProcessOn** ve **ProcessOff** belirtilen işlem için veri toplamayı kontrol alt komutları.  
   
- **ThreadOff** ve **ThreadOn** subcommands profil oluşturucu API işlevleri tarafından yönetilebilir Başlat/Durdur iş parçacığı sayısı da etkiler.  
+ **ThreadOff** ve **ThreadOn** alt komutları da profil oluşturucu API işlevleri tarafından yönlendirilen iş parçacığı Başlat/Durdur sayısını etkiler.  
   
--   **ThreadOff** hemen Başlat/Durdur iş parçacığı sayısı 0 olarak ayarlar ve bu nedenle profil duraklatır.  
+- **ThreadOff** hemen iş parçacığı Başlat/Durdur sayısı 0 olarak ayarlar ve bu nedenle profil oluşturma duraklatır.  
   
--   **ThreadOn** hemen Başlat/Durdur iş parçacığı sayısı 1'e ayarlar ve bu nedenle sürdürür profil oluşturma.  
+- **ThreadOn** hemen iş parçacığı Başlat/Durdur sayısını 1 olarak ayarlar ve bu nedenle sürdürür profil oluşturma.  
   
- Daha fazla bilgi için bkz: [profil oluşturma araçları API'leri](../profiling/profiling-tools-apis.md).  
+  Daha fazla bilgi için [Profil Araçları API'leri](../profiling/profiling-tools-apis.md).  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cmd  
 VSPerfCmd.exe /{ThreadOff|ThreadOn}:TID [Options]  
   
 ```  
@@ -42,22 +43,22 @@ VSPerfCmd.exe /{ThreadOff|ThreadOn}:TID [Options]
  `TID`  
  İş parçacığı başlatmak veya durdurmak için tamsayı tanımlayıcısı.  
   
-## <a name="valid-options"></a>Geçerli seçenekleri  
- **ThreadOn** ve **ThreadOff** de aşağıdaki komutları içeren komut satırları belirtilebilir.  
+## <a name="valid-options"></a>Geçerli seçenekler şunlardır:  
+ **ThreadOn** ve **ThreadOff** de aşağıdaki komutları içeren komut satırlarında belirtilebilir.  
   
  **Başlat:** `Method`  
  Komut satırı profil oluşturma oturumu başlatır ve belirtilen profil oluşturma yöntemini ayarlar.  
   
  **GlobalOff**&#124;**GlobalOn**  
- Durdurur veya bir komut satırı profil oluşturma oturumu tüm işlemler için profil başlatır.  
+ Durdurur veya komut satırı profil oluşturma oturumu içinde tüm işlemler için profil oluşturmaya başlar.  
   
  {**ProcessOff**&#124;**ProcessOn**}**:**`TID`  
- Durdurur veya belirtilen işlem için profil oluşturma başlatır.  
+ Durdurur veya belirtilen işlem için profil oluşturmaya başlar.  
   
 ## <a name="example"></a>Örnek  
- Bu örnekte, **ThreadOff** alt, böylece yalnızca uygulama başlangıç veriler toplanır profil oluşturma veri toplamayı durdurmak için kullanılır.  
+ Bu örnekte, **ThreadOff** alt, böylece yalnızca uygulama başlangıç verileri toplanır, profil oluşturma veri toplamayı durdurmak için kullanılır.  
   
-```  
+```cmd  
 ; Initialize the profiler.  
 VSPerfCmd.exe /Start:Trace /Output:Instrument.vsp   
 ; Start the instrumented application.  
@@ -69,8 +70,8 @@ VSPerfCmd /Shutdown
   
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
- [Bağımsız uygulamaların profilini oluşturma](../profiling/command-line-profiling-of-stand-alone-applications.md)   
- [ASP.NET Web uygulamalarında profil oluşturma](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
- [Profil oluşturma hizmetleri](../profiling/command-line-profiling-of-services.md)
+ [Bağımsız uygulamalar profili](../profiling/command-line-profiling-of-stand-alone-applications.md)   
+ [Profil ASP.NET web uygulamaları](../profiling/command-line-profiling-of-aspnet-web-applications.md)   
+ [Profil hizmetler](../profiling/command-line-profiling-of-services.md)

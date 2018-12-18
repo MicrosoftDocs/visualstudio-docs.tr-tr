@@ -1,6 +1,7 @@
 ---
-title: Visual Studio'da Kod Analizi kural kümesi
+title: Kod analizi kural kümeleri
 ms.date: 04/02/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 f1_keywords:
@@ -12,23 +13,26 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 3a445aecdd5a9f02bca8d43e42646c991742a626
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ced442c0fafc47b5cdae1568dbbfb6df7c2f2f50
+ms.sourcegitcommit: 54c65f81a138fc1e8ff1826f7bd9dcec710618cc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51948402"
 ---
-# <a name="use-rule-sets-to-group-code-analysis-rules"></a>Kod çözümleme kurallarını gruplandırmak için kullanım kural kümesi
+# <a name="use-rule-sets-to-group-code-analysis-rules"></a>Kural Kod Analizi kurallarını gruplandırmak için kümeleri kullanma
 
-Visual Studio'da Kod Analizi yapılandırdığınızda, yerleşik listesinden seçebilirsiniz *kural kümeleri*. Bir kural kümesi bir proje için de geçerlidir ve kod hedeflenen sorunlar ve bu proje için belirli koşullar tanımlamak çözümleme kurallarını grubudur. Örneğin, genel kullanıma açık API'ler kodu taramak için tasarlanmış bir kural kümesi uygulayabilir veya kuralları yalnızca en düşük önerilir. Tüm kuralları içeren bir kural kümesi de uygulayabilirsiniz.
+Visual Studio'da Kod Analizi yapılandırdığınızda, yerleşik bir listeden seçebilirsiniz *kural kümeleri*. Bir kural kümesi bir proje için de geçerlidir ve bir kod hedeflenen sorunlar ve bu proje için belirli koşullar belirlemek çözümleme kurallarını gruplandırmasıdır. Örneğin, kod genel kullanıma açık API'leri taramak için tasarlanmış bir kural kümesi uygulayabilir veya önerilen minimum kurallar. İçeren tüm kurallar kural kümesi de uygulayabilirsiniz.
 
-Bir kural uyarı veya hata olarak görünmesi ekleyerek veya silerek kuralları ya da kural önem derecelerine değiştirerek kümesini özelleştirebilirsiniz **hata listesi**. Özelleştirilmiş kural kümeleri belirli geliştirme ortamınızı gereksinimini karşılayabilir. Bir kural kümesi özelleştirdiğinizde, kural kümesi Düzenleyici arama ve filtreleme süreçte yardımcı olacak araçlar sağlar.
+Bir kural uyarılar veya hatalar olarak görüntülenecek kümesi ekleyerek veya silerek kural veya kural önem dereceleri değiştirerek özelleştirebilirsiniz **hata listesi**. Özel kural kümeleri belirli geliştirme ortamınızı gereksinimini karşılayabilir. Bir kural kümesi özelleştirdiğinizde, kural kümesi Düzenleyici'sini arama ve filtreleme süreçte yardımcı olacak araçlar sağlar.
+
+Kural kümeleri için kullanılabilir [yönetilen kodu statik analizini](how-to-configure-code-analysis-for-a-managed-code-project.md), [C++ Kod Analizi](using-rule-sets-to-specify-the-cpp-rules-to-run.md), ve [Roslyn Çözümleyicileri](analyzer-rule-sets.md).
 
 ## <a name="rule-set-format"></a>Kural kümesi biçimi
 
-Bir kural kümesi XML biçiminde belirtilen bir *.ruleset* dosya. Kimliği oluşur kuralları ve bir *eylem*, Çözümleyicisi kimliği ve ad alanı dosyasındaki göre gruplandırılır.
+XML biçiminde kural kümesi belirtilen bir *.ruleset* dosya. Kuralları, bir kimliği oluşur ve bir *eylem*, çözümleyici kimliği ve ad alanı dosyasındaki göre gruplandırılır.
 
-XML içeriğini bir *.ruleset* dosyası şuna benzer görünür:
+İçeriği bir *.ruleset* dosya bu XML'e benzer görünür:
 
 ```xml
 <RuleSet Name="Rules for Hello World project" Description="These rules focus on critical issues for the Hello World app." ToolsVersion="10.0">
@@ -52,12 +56,17 @@ XML içeriğini bir *.ruleset* dosyası şuna benzer görünür:
 ```
 
 > [!TIP]
-> Daha kolay [bir kural kümesi Düzenle](../code-quality/working-in-the-code-analysis-rule-set-editor.md) grafik **kural kümesi düzenleyici** el ile daha.
+> Kolaydır [bir kural kümesini Düzenle](../code-quality/working-in-the-code-analysis-rule-set-editor.md) grafik **kural kümesi Düzenleyicisi** el ile daha.
 
-Kural tarafından belirtilen proje için kümesi `CodeAnalysisRuleSet` Visual Studio Proje dosyasında özellik. Örneğin:
+## <a name="specify-a-rule-set-for-a-project"></a>Bir kural kümesi için bir proje belirtin
+
+Kural için bir proje tarafından belirtilen kümesi **CodeAnalysisRuleSet** Visual Studio Proje dosyasındaki özellik. Örneğin:
 
 ```xml
-<CodeAnalysisRuleSet>HelloWorld.ruleset</CodeAnalysisRuleSet>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  ...
+  <CodeAnalysisRuleSet>HelloWorld.ruleset</CodeAnalysisRuleSet>
+</PropertyGroup>
 ```
 
 ## <a name="see-also"></a>Ayrıca bkz.

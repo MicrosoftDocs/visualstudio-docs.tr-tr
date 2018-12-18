@@ -1,37 +1,37 @@
 ---
-title: Visual Studio abonelikleri - birincil ilgili kişinin bulma | Microsoft Docs
+title: Visual Studio abonelikleri - birincil ilgili kişi bulma | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 01/22/2018
 ms.topic: Get-Started-Article
-description: Visual Studio abonelikleri - birincil ilgili kişinin bulma
+description: Visual Studio abonelikleri - birincil ilgili kişi bulma
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: a50fef244d7b656271adf36544166c9f8256c1ae
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: 2a9108009e497a4685659cdc904e77352f94365a
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39637987"
 ---
-# <a name="locating-the-primary-contact-associated-with-visual-studio-subscriptions"></a>Visual Studio abonelik ile ilişkili birincil ilgili bulma
+# <a name="locating-the-primary-contact-associated-with-visual-studio-subscriptions"></a>Visual Studio abonelikleriyle ilişkili birincil ilgili bulma
 
-Onboarding abonelikleri Yönetim Portalı, kuruluşunuzun tamamlamak için birincil kişiniz tanımlamak gerekir.  Bu makalede, bu bilgileri bulmak nereye açıklanmaktadır.
+Kuruluşunuzun abonelik yönetimi portalında ekleme işlemini tamamlamak için birincil kişinizi tanımlamak gerekir.  Bu makalede, bu bilgileri bulmak nereye açıklanmaktadır.
 
-1. Birincil kişiniz bulmak için Toplu Lisans Hizmet Merkezi ziyaret edin: https://www.Microsoft.com/licensing/servicecenter tıklatıp **oturum**.
+1. Birincil ilgili kişinizi bulmak için adresinden Toplu Lisanslama Hizmet Merkezi ziyaret edin: https://www.Microsoft.com/licensing/servicecenter tıklatıp **oturum**.
 
-    ![VLSC'ye oturum açın](_img/locate-primary-contact/vlsc-sign-in.png)
-
-2. Lisansları sekmesinden seçin **ilişki Özet** açılır.
-
-    ![İlişki seçin](_img/locate-primary-contact/vlsc-relationship.png)
-
+2. Lisans sekmesinden seçin **ilişki özeti** açılır.
+    > [!div class="mx-imgBorder"]
+    > ![İlişkiyi seçin](_img/locate-primary-contact/vlsc-relationship.png)
+   
 3. Geçerli anlaşma numarası seçin. 
+    > [!div class="mx-imgBorder"]
+    > ![Sözleşme seçin](_img/locate-primary-contact/vlsc-agreement.png)
 
-    ![Anlaşma seçin](_img/locate-primary-contact/vlsc-agreement.png)
+4. Seçin **kişiler** sekmesi.  Birincil ilgili kişinin sözleşme ile ilişkili kişiler listesinden listelenir. 
+    > [!div class="mx-imgBorder"]
+    > ![Kişileri seçin](_img/locate-primary-contact/vlsc-contacts.png)
 
-4. Seçin **kişiler** sekmesi.  Birincil ilgili kişinin Sözleşmesi ile ilişkili kişiler listesinde listelenir. 
 
-    ![Kişileri seçin](_img/locate-primary-contact/vlsc-contacts.png)
- 

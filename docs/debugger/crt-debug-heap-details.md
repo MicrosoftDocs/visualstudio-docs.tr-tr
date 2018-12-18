@@ -75,40 +75,41 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4bf71bd4d424c372a6dadf85593fd3b456bc7ec0
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: df3dbcd36bdb72bdd76972ff03a295ba9310f8f7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49897088"
 ---
 # <a name="crt-debug-heap-details"></a>CRT Hata Ayıklama Öbeği Ayrıntıları
-Bu konu CRT hata ayıklama yığınını ayrıntılı bir bakış sağlar.  
+Bu konu, CRT hata ayıklama yığınındaki ayrıntılı bilgi sağlar.  
   
-##  <a name="BKMK_Contents"></a> içeriği  
- [Hata ayıklama yığınını ile arabellek taşmaları Bul](#BKMK_Find_buffer_overruns_with_debug_heap)  
+##  <a name="BKMK_Contents"></a> İçeriği  
+ [Arabellek taşmaları ile hata ayıklama Kaçağı bulma](#BKMK_Find_buffer_overruns_with_debug_heap)  
   
- [Hata ayıklama yığınındaki blokları türleri](#BKMK_Types_of_blocks_on_the_debug_heap)  
+ [Hata ayıklama öbek üzerindeki blokları türleri](#BKMK_Types_of_blocks_on_the_debug_heap)  
   
  [Yığın bütünlüğü ve bellek sızıntıları denetle](#BKMK_Check_for_heap_integrity_and_memory_leaks)  
   
- [Hata ayıklama yığınını yapılandırın](#BKMK_Configure_the_debug_heap)  
+ [Hata ayıklama yığınını yapılandırma](#BKMK_Configure_the_debug_heap)  
   
- [Yeni, silme ve _CLIENT_BLOCKs c++ hata ayıklama yığını](#BKMK_new__delete__and__CLIENT_BLOCKs_in_the_C___debug_heap)  
+ [Yeni, silme ve _clıent_blocks C++ hata ayıklama yığını](#BKMK_new__delete__and__CLIENT_BLOCKs_in_the_C___debug_heap)  
   
- [Yığın durumu raporlama işlevleri](#BKMK_Heap_State_Reporting_Functions)  
+ [Öbek durumu raporlama işlevleri](#BKMK_Heap_State_Reporting_Functions)  
   
- [Yığın ayırma isteklerini izleme](#BKMK_Track_Heap_Allocation_Requests)  
+ [Parça yığın ayırma istekleri](#BKMK_Track_Heap_Allocation_Requests)  
   
-##  <a name="BKMK_Find_buffer_overruns_with_debug_heap"></a> Hata ayıklama yığınını ile arabellek taşmaları Bul  
- İki programcıları karşılaştığınız en yaygın ve çözümü sorunları (artık gerekli olmayan sonra ayırmaları boşaltmak başarısız olan) bir ayrılmış arabellek ve bellek sızıntıları sonuna üzerine. Hata ayıklama yığınını bu tür bellek ayırma sorunlarını çözmek için güçlü araçlar sağlar.  
+##  <a name="BKMK_Find_buffer_overruns_with_debug_heap"></a> Arabellek taşmaları ile hata ayıklama Kaçağı bulma  
+ Programcıların karşılaştığı en yaygın ve izlenebilir sorunların ikisi (artık gerekli olmayan ayırmalar serbest bırakılamıyor) ayrılan bir arabellek ve bellek sızıntıları sonuna üzerine yazıyor. Hata ayıklama öbeği bu tür bellek ayırma sorunlarını çözmek için güçlü araçlar sağlar.  
   
- Heap işlevleri sürümleri sürümde kullanılan standart ya da temel sürümleri çağrısı hata ayıklama derlemeleri. Bir bellek bloğu istediğinde, hata ayıklama yığını Yöneticisi temel yığınından biraz daha büyük bir blok istenir ve bu bloğu, kısmı için bir işaretçi döndürür daha bellek ayırır. Örneğin, uygulamanızın içeren çağrı varsayalım: `malloc( 10 )`. Yayın derlemesi içinde [malloc](/cpp/c-runtime-library/reference/malloc) 10 bayt ayırma isteyen temel öbek ayırma yordamı çağırırdı. Ancak, bir hata ayıklama derlemesi içinde `malloc` çağırırdı [_malloc_dbg](/cpp/c-runtime-library/reference/malloc-dbg), hangi ardından çağıran bir ayırma 10 bayt artı yaklaşık 36 bayt ek bellek isteme temel öbek ayırma yordamı. Hata ayıklama yığınını ortaya çıkan tüm bellek blokları olduğunda bunlar ayrılan göre sıralanmış tek bağlı bir liste bağlanır.  
+ Hata ayıklama yığın işlevlerin sürümleri sürümde kullanılan standart veya temel sürümleri çağırır oluşturur. Bir bellek bloğunu istediğinizde, hata ayıklama yığını Yöneticisi temel yığından biraz daha büyük bir, o blok kısmı için bir işaretçi döndürür ve istenen bellek bloğu ayırır. Örneğin, uygulamanızın çağrısını içerdiğini varsayın: `malloc( 10 )`. Derleme, [malloc](/cpp/c-runtime-library/reference/malloc) 10 bayt ayırma isteyen temel yığın ayırma rutinin çağırın. Ancak, bir hata ayıklama derlemesinde `malloc` çağıracak [_malloc_dbg](/cpp/c-runtime-library/reference/malloc-dbg), hangi ' ı çağırın yanı sıra yaklaşık 36 bayt bellek ek bir 10 bayt ayırma isteyen temel yığın ayırma rutinin. Hata ayıklama yığınında sonuçta elde edilen tüm bellek blokları, ayrıldığı göre sıralanmış tek bir bağlantılı listede bağlanır.  
   
- Hata ayıklama yığını yordamları tarafından ayrılan ek bellek muhasebe bilgileri bağlantı hata ayıklama bellek blokları birlikte ve yakalamak için verilerinizin her iki tarafında küçük arabellekleri için üzerine yazılacağını ayrılmış bölgesini işaretçileri için kullanılır.  
+ Hata ayıklama yığın yordamları tarafından ayrılmış ek bellek bağlantısı hata ayıklama bellek bloklarını birlikte ve yakalamak için verilerinizin her iki tarafındaki küçük arabellekler için yazıldığını ve ayrılan bölgenin işaretçileri, muhasebe bilgileri kullanılır.  
   
- Şu anda, hata ayıklama yığınını 's muhasebe bilgilerini depolamak için kullanılan bloğu üst bilgisi yapısı şu şekilde DBGINT bildirildi. H üstbilgi dosyası:  
+ Şu anda, hata ayıklama yığınının muhasebe bilgilerini depolamak için kullanılan blok üstbilgisi yapısı içinde DBGINT şu şekilde bildirilir. H üst bilgi dosyası:  
   
-```  
+```cpp
 typedef struct _CrtMemBlockHeader  
 {  
 // Pointer to the block allocated just before this one:  
@@ -131,49 +132,49 @@ typedef struct _CrtMemBlockHeader
  */  
 ```  
   
- `NoMansLand` Arabellek bloğunun kullanıcı veri alanının her iki tarafında şu anda 4 bayt boyutunda olan ve kullanıcının bellek bloğu sınırları değil üzerine yazıldı olduğunu doğrulamak için hata ayıklama yığını yordamları tarafından kullanılan bir bilinen bayt değeri ile doldurulur. Hata ayıklama yığınını ayrıca yeni bellek blokları bilinen bir değerle doldurur. Aşağıda açıklandığı gibi boşaltılmış blokları öbek 's bağlantılı listesinde tutmak seçerseniz, bu boşaltılmış blokları da bilinen bir değerle doldurulur. Şu anda kullanılan gerçek bayt değerleri şunlardır:  
+ `NoMansLand` Blok kullanıcı veri alanının her iki tarafındaki arabellekleri şu anda 4 bayt boyutundadır ve sınırları kullanıcının bellek bloğu sınırlarının üzerine yazılmadığını olduğunu doğrulamak için hata ayıklama yığın rutinleri tarafından kullanılan bilinen bayt değeri ile doldurulur. Hata ayıklama öbeği ayrıca yeni bellek bloklarını bilinen bir değerle doldurur. Bırakılmış blokları yığının bağlantılı listesinde aşağıda açıklandığı gibi tutmayı seçerseniz, bu bırakılmış bloklar da bilinen bir değerle doldurulur. Şu anda kullanılan gerçek bayt değerleri şunlardır:  
   
  NoMansLand (0xFD)  
- Her iki tarafında bir uygulama tarafından kullanılan bellek "NoMansLand" arabellekleri şu anda 0xFD ile doldurulur.  
+ Bir uygulama tarafından kullanılan belleğin her iki tarafındaki "NoMansLand" arabellekler, şu anda 0xFD ile doludur.  
   
- Boşaltılmış blokları (0xDD)  
- Hata ayıklama yığınını içinde kullanılmayan tutulan boşaltılmış blokları bağlı ne zaman listesinde `_CRTDBG_DELAY_FREE_MEM_DF` bayrağı ayarlanmış şu anda 0xDD ile doldurulur.  
+ Boşaltılmış bloklar (0xDD)  
+ Tutulan bırakılmış bloklar hata ayıklama yığınının bağlantılı listesinde `_CRTDBG_DELAY_FREE_MEM_DF` bayrağı ayarlandığında şu anda 0xDD ile doldurulur.  
   
  Yeni nesneler (0xCD)  
- Yeni nesneler bunlar ayırırken 0xCD ile doldurulur.  
+ Yeni nesneler ayrıldıkları zaman 0xCD ile doldurulmuştur.  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop")  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
-##  <a name="BKMK_Types_of_blocks_on_the_debug_heap"></a> Hata ayıklama yığınındaki blokları türleri  
- Her bellek bloğu hata ayıklama yığınındaki ayırma beş türden biri için atanır. Bu tür izlenen ve farklı sızıntısı algılama ve durumu raporlama amaçları doğrultusunda bildirdi. Hata ayıklama yığın ayırma işlevleri birine doğrudan çağrı gibi kullanarak ayırarak bir bloğun türünü belirtebilirsiniz [_malloc_dbg](/cpp/c-runtime-library/reference/malloc-dbg). Bellek blokları hata ayıklama yığınındaki beş türleri (kümesinde **nBlockUse** üyesi **_CrtMemBlockHeader** yapısı) aşağıdaki gibidir:  
+##  <a name="BKMK_Types_of_blocks_on_the_debug_heap"></a> Hata ayıklama öbek üzerindeki blokları türleri  
+ Hata ayıklama yığınındaki her bellek bloğu, beş ayırma türünden birine atanır. Bu tür izlenir ve sızıntı algılaması ve durum raporlama amaçları için farklı bildirdi. Hata ayıklama yığın ayırma işlevlerinden birine doğrudan çağrı aşağıdaki gibi kullanarak ayırarak bir bloğu ayırıp, türünü belirtebilirsiniz [_malloc_dbg](/cpp/c-runtime-library/reference/malloc-dbg). Bellek bloklarını hata ayıklama yığınındaki beş tip (kümesinde **nBlockUse** üyesi **_CrtMemBlockHeader** yapısı) aşağıdaki gibidir:  
   
  **_NORMAL_BLOCK**  
- Çağrı [malloc](/cpp/c-runtime-library/reference/malloc) veya [calloc](/cpp/c-runtime-library/reference/calloc) Normal bir blok oluşturur. Yalnızca Normal blokları kullanın ve istemci blokları için gerekli olan yapmak istiyorsanız, tanımlamak isteyebilirsiniz [_CRTDBG_MAP_ALLOC](/cpp/c-runtime-library/crtdbg-map-alloc), hata ayıklama eşdeğerlerine hata ayıklama derlemelerinde eşleştirilmesini neden olan tüm yığın ayırma çağırır. Bu dosya adı ve satır numarası hakkında bilgi karşılık gelen blok üstbilgisinde depolanması için her ayırma çağrı olanak tanır.  
+ Bir çağrı [malloc](/cpp/c-runtime-library/reference/malloc) veya [calloc](/cpp/c-runtime-library/reference/calloc) Normal bir blok oluşturur. Yalnızca Normal blokları kullanmaya ve istemci blokları gerek sahip olmasını istiyorsanız, tanımlamak isteyebilirsiniz [_CRTDBG_MAP_ALLOC](/cpp/c-runtime-library/crtdbg-map-alloc), hangi tüm yığın ayırma çağrılarına neden hata ayıklama yapılarında hata ayıklama eşdeğerleriyle eşlenmiş. Bu dosya adı ve satır numarası bilgilerinin ilgili öbek üstbilgisinde depolanması için her bir ayırma çağrısıyla ilgili olanak tanır.  
   
  `_CRT_BLOCK`  
- Ayrı olarak işlenebilir için dahili olarak birçok çalışma zamanı kitaplığı işlevleri tarafından ayrılan bellek blokları blokları CRT işaretlenir. Sonuç olarak, algılama sızıntısı ve diğer işlemleri onlar tarafından etkilenmez. Bir ayırma gerekir hiçbir zaman ayırmak, yeniden tahsis veya herhangi bir bloğuna CRT türü boş.  
+ Bunlar ayrı olarak işlenebilmeleri birçok çalışma zamanı kitaplığı işlevleri tarafından dahili olarak ayrılan bellek blokları blokları CRT işaretlenir. Sonuç olarak, sızıntı algılama ve diğer işlemler tarafından bunları etkilenmemesi gerekir. Ayırma gerekir hiçbir zaman ayırın, yeniden tahsis veya herhangi bir bloğu ayırmamalı ücretsiz.  
   
  `_CLIENT_BLOCK`  
- Bir uygulama bellek bloğu, hata ayıklama yığını işlevleri için açık çağrılarını kullanarak bu tür olarak ayırarak hata ayıklama amacıyla ayırmalarının belirli bir grupta özel izini kullanmaya devam edebilir. MFC, örneğin, ayırır tüm **CObjects** istemci blokları; diğer uygulamaların istemci bloklarında farklı bellek nesneleri tutabilirsiniz. İstemci blokları subtypes için büyük İzleme ayrıntı düzeyi de belirtilebilir. İstemci blokları subtypes belirtmek için sayı shift tarafından 16 bit sol ve `OR` ile `_CLIENT_BLOCK`. Örneğin:  
+ Bir uygulama belirli bir grupta bellek bloğu, hata ayıklama yığın işlevlerine yapılan açık çağrıları kullanarak bu türü olarak ayırarak hata ayıklama amacıyla ayırma grubunun özel izini tutabilir. MFC, örneğin, ayırdığı tüm **CObjects** istemci bloklar olarak; diğer uygulamalar istemci bloklarda farklı bellek nesneleri tutabilir. İstemci blokların alt türleri de büyük parçalı yapı izleme için belirtilebilir. İstemci blokların alt türleri belirtmek için kaç kaydırma 16 sola ve `OR` kendisiyle `_CLIENT_BLOCK`. Örneğin:  
   
-```  
+```cpp
 #define MYSUBTYPE 4  
 freedbg(pbData, _CLIENT_BLOCK|(MYSUBTYPE<<16));  
 ```  
   
- İstemci blokları içinde depolanan nesneleri dökme için bir istemci tarafından sağlanan kanca işlevi kullanılarak yüklenebilir [_CrtSetDumpClient](/cpp/c-runtime-library/reference/crtsetdumpclient)ve bir istemci bloğu hata ayıklama işlevi tarafından yazılan her sonra çağrılır. Ayrıca, [_CrtDoForAllClientObjects](/cpp/c-runtime-library/reference/crtdoforallclientobjects) hata ayıklama yığınındaki her istemci bloğu için uygulama tarafından sağlanan belirli bir işlevi çağırmak için kullanılabilir.  
+ İstemci bloklarında depolanan nesnelerin dökümünü almak için bir istemci tarafından sağlanan bir kanca işlevi kullanılarak yüklenebilir [_CrtSetDumpClient](/cpp/c-runtime-library/reference/crtsetdumpclient)ve ardından her bir hata ayıklama işlevi tarafından istemci bloğunun dökümü yapıldığında çağrılır. Ayrıca, [_CrtDoForAllClientObjects](/cpp/c-runtime-library/reference/crtdoforallclientobjects) hata ayıklama yığınındaki her istemci bloğu için uygulama tarafından sağlanan belirli bir işlevi çağırmak için kullanılabilir.  
   
  **_FREE_BLOCK**  
- Normalde, kurtulurlar blokları listesinden kaldırılır. Bellek serbest denetlemek için değil hala olma yazılır veya yetersiz bellek koşulları benzetimini yapmak için ücretsiz işaretlenmiş ve bilinen bayt değeri (şu anda 0xDD) ile doldurulan bağlantılı liste boşaltılmış blokları tutmak seçebilirsiniz.  
+ Normalde, serbest bırakılan bloklar listeden kaldırılır. Denetlemek için serbest bırakılan belleğe hala yazılmakta olmadığını veya yetersiz bellek durumları benzetimini yapmak için serbest bırakılan bloklar bağlantılı listede serbest olarak işaretli ve bilinen bir bayt değeriyle (şu anda 0xDD) doldurulmuş tutmak seçebilirsiniz.  
   
  **_IGNORE_BLOCK**  
- Bir süre için hata ayıklama yığını işlemleri devre dışı bırakmak mümkündür. Bu süre boyunca bellek blokları listede tutulur, ancak blokları Yoksay olarak işaretlenir.  
+ Hata ayıklama yığın işlemleri bir süre devre dışı bırakmak mümkündür. Bu süre boyunca bellek blokları listede tutulur, ancak blokları Yoksay olarak işaretlenir.  
   
- Türüne ve alt verilen bloğunun belirlemek için işlevi kullanmak [_CrtReportBlockType](/cpp/c-runtime-library/reference/crtreportblocktype) ve makrolar **_BLOCK_TYPE** ve **_BLOCK_SUBTYPE**. Makrolar (crtdbg.h içinde), şu şekilde tanımlanır:  
+ Türünü ve belirli bir bloğu alt belirlemek için bu işlevi kullanın [_CrtReportBlockType](/cpp/c-runtime-library/reference/crtreportblocktype) ve makroları **_BLOCK_TYPE** ve **_BLOCK_SUBTYPE**. Makrolar (crtdbg.h) aşağıdaki gibi tanımlanır:  
   
-```  
+```cpp
 #define _BLOCK_TYPE(block)          (block & 0xFFFF)  
 #define _BLOCK_SUBTYPE(block)       (block >> 16 & 0xFFFF)  
 ```  
@@ -181,46 +182,46 @@ freedbg(pbData, _CLIENT_BLOCK|(MYSUBTYPE<<16));
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
 ##  <a name="BKMK_Check_for_heap_integrity_and_memory_leaks"></a> Yığın bütünlüğü ve bellek sızıntıları denetle  
- Hata ayıklama yığınını ait özelliklerin çoğunu kodunuzu içinde erişilen gerekir. Aşağıdaki bölümde bazı özellikleri ve bunların nasıl kullanılacağını açıklar.  
+ Hata ayıklama öbek özelliklerin çoğu gelen kodunuz içinden erişilmelidir. Aşağıdaki bölümde bazı özellikler ve bunların nasıl kullanılacağı açıklanmaktadır.  
   
  `_CrtCheckMemory`  
- Çağrı kullanabilirsiniz [_CrtCheckMemory](/cpp/c-runtime-library/reference/crtcheckmemory), örneğin, herhangi bir noktada öbek 's bütünlüğünü denetlemek için. Bu işlev her bellek bloğu yığınındaki inceler, bellek bloğu üst bilgileri geçerli olduğunu doğrular ve arabellek değiştirilmemiş onaylar.  
+ Bir çağrı kullanabileceğiniz [_CrtCheckMemory](/cpp/c-runtime-library/reference/crtcheckmemory), örneğin, herhangi bir noktada yığının bütünlüğünü kontrol etmek için. Bu işlev yığınındaki her bellek bloğu inceler, bellek bloğu üst bilgi bilgileri geçerli olduğunu ve arabelleklerin değiştirilmemiş olduğunu doğrular.  
   
  `_CrtSetDbgFlag`  
- Nasıl hata ayıklama yığınını kullanan bir iç bayrağı ayırmaları izler denetleyebilirsiniz [_crtDbgFlag](/cpp/c-runtime-library/crtdbgflag), hangi okunabilir ve kullanılarak ayarlanan [_CrtSetDbgFlag](/cpp/c-runtime-library/reference/crtsetdbgflag) işlevi. Bu bayrak değiştirilerek, program çıktığında bellek sızıntıları için denetleyin ve algılanan sızıntıları raporlamak için hata ayıklama yığınını söyleyebilirsiniz. Benzer şekilde, boşaltılmış bellek blokları düşük bellek durumlarda benzetimini yapmak için bağlantılı listesinden kaldırılmaması belirtebilirsiniz. Öbek işaretlendiğinde, bu boşaltılmış blokları kendi bütün bunlar rahatsız edilmemiş emin olmak için denetlenir.  
+ Nasıl hata ayıklama yığınının ayırmaları bir iç bayrağını kullanarak izler denetleyebilirsiniz [_crtDbgFlag](/cpp/c-runtime-library/crtdbgflag), hangi okunabilir ve kullanılarak ayarlanan [_CrtSetDbgFlag](/cpp/c-runtime-library/reference/crtsetdbgflag) işlevi. Bu bayrağı değiştirerek hata ayıklama yığınına program çıkış yaptığı andaki bellek sızıntılarını denetlemesini ve algılanan sızıntıları raporlamasını bildirebilirsiniz. Benzer şekilde, bırakılmış bellek bloklarının düşük bellek durumları benzetimini yapmak için bağlantılı listesinden Kaldırılmamasını belirtebilirsiniz. Yığın denetlendiğinde, rahatsız verilmemiş emin olmak için bu bırakılmış bloklar incelenir.  
   
- **_CrtDbgFlag** bayrağı aşağıdaki bit alanları içerir:  
+ **_CrtDbgFlag** bayrak aşağıdaki bit alanlarını içerir:  
   
-|Bit alan|Varsayılan<br /><br /> value|Açıklama|  
+|Bit alanı|Varsayılan<br /><br /> value|Açıklama|  
 |---------------|-----------------------|-----------------|  
-|**_CRTDBG_ALLOC_MEM_DF**|Açık|Hata ayıklama ayırma açar. Birbirine zincirlenmiş bu bit olduğunda kapalı, ayırmaları kalır ancak bunların blok türü **_ıgnore_block**.|  
-|**_CRTDBG_DELAY_FREE_MEM_DF**|Kapalı|Aslında, düşük bellek koşulları benzetimi için olduğu gibi bırakılan gelen bellek engeller. Bu bit açık olduğunda, boşaltılmış blokları hata ayıklama yığınını 's bağlantılı listesinde tutulur ancak olarak işaretlenmiş **_FREE_BLOCK** ve özel bayt değeri ile doldurulur.|  
-|**_CRTDBG_CHECK_ALWAYS_DF**|Kapalı|Neden **_CrtCheckMemory** her ayırma ve ayırmayı kaldırma sırasında çağrılabilir. Bu, yürütme yavaşlatır, ancak hataları hızla yakalar.|  
-|**_CRTDBG_CHECK_CRT_DF**|Kapalı|Neden türü olarak işaretlenmiş blokları **_CRT_BLOCK** sızıntısı algılama ve durumu fark işlemlerinde dahil edilecek. Bu bit kapalıyken, dahili olarak çalışma zamanı kitaplığı tarafından kullanılan bellek gibi işlemleri sırasında göz ardı edilir.|  
-|**_CRTDBG_LEAK_CHECK_DF**|Kapalı|Programdan çıkılırken bir çağrı aracılığıyla gerçekleştirilmek üzere sızıntısı denetimi neden **_CrtDumpMemoryLeaks**. Uygulama, ayrılmış tüm belleği boşaltmak başarısız olursa bir hata raporu oluşturulur.|  
+|**_CRTDBG_ALLOC_MEM_DF**|Açık|Hata ayıklama ayırmayı etkinleştirir. Birbirine zincirlenmiş bu bit olduğunda kapalı, ayırmaları kalır ancak kendi blok türü **_ıgnore_block**.|  
+|**_CRTDBG_DELAY_FREE_MEM_DF**|Kapalı|Bellek, aslında, düşük bellek koşulları benzetimi için olduğu gibi belleğin bırakılmasını engeller. Bu bit açık olduğunda, serbest bırakılan bloklar hata ayıklama yığının bağlantılı listesinde saklanır ancak olarak işaretlenmiş **_FREE_BLOCK** ve özel bir bayt değeriyle doldurulur.|  
+|**_CRTDBG_CHECK_ALWAYS_DF**|Kapalı|Neden **_CrtCheckMemory** her ayırmayı ve ayırmayı kaldırma sırasında çağrılabilir. Bu yürütmeyi yavaşlatır, ancak hataları hızlı bir şekilde yakalar.|  
+|**_CRTDBG_CHECK_CRT_DF**|Kapalı|Neden türü olarak işaretlenmiş blokların **_CRT_BLOCK** sızıntı algılama ve durum işlemlerinde dahil edilecek. Bu bit kapalıyken, çalışma zamanı kitaplığı tarafından dahili olarak kullanılan bellek bu tür işlemler sırasında yoksayılır.|  
+|**_CRTDBG_LEAK_CHECK_DF**|Kapalı|Sızıntı denetlemesinin bir çağrı aracılığıyla program çıkışında gerçekleştirilmesine neden neden **_CrtDumpMemoryLeaks**. Uygulama, ayırdığı tüm belleği boşaltamazsa bir hata raporu oluşturulur.|  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
-##  <a name="BKMK_Configure_the_debug_heap"></a> Hata ayıklama yığınını yapılandırın  
- Heap işlevleri gibi tüm çağrıları `malloc`, `free`, `calloc`, `realloc`, `new`, ve `delete` hata ayıklama sürümleri hata ayıklama yığınında çalışması bu işlevlerin çözümlenemiyor. Bir bellek bloğu boş olduğunda hata ayıklama yığınını otomatik olarak ayrılmış alanınızı her iki tarafında arabellekleri bütünlüğünü denetler ve üzerine oluştu, hata raporu verir.  
+##  <a name="BKMK_Configure_the_debug_heap"></a> Hata ayıklama yığınını yapılandırma  
+ Gibi yığın işlevlerine yapılan tüm çağrılar `malloc`, `free`, `calloc`, `realloc`, `new`, ve `delete` hata ayıklama yığınında bu işlevleri hata ayıklama sürümleri çözümlenemiyor. Bir bellek öbeğini serbest bıraktığınızda, hata ayıklama yığınını otomatik olarak ayrılan alanınızın her iki tarafındaki arabelleklerin bütünlüğünü denetler ve üzerine yazma olduysa bir hata raporu yayınlar.  
   
  **Hata ayıklama yığınını kullanmak için**  
   
--   C çalışma zamanı kitaplığı hata ayıklama sürümü, uygulamanızın hata ayıklama derlemesi bağlayın.  
+- Uygulamanızı hata ayıklama yapısını C çalışma zamanı kitaplığı hata ayıklama sürümü ile bağlayın.  
   
- **Bir veya daha fazla _crtDbgFlag bit alanları değiştirin ve bayrağı için yeni bir durum oluşturmak için**  
+  **Bir veya birden çok _crtDbgFlag bit alanını değiştirmek ve yeni bir bayrak durumu oluşturmak için**  
   
-1.  Çağrı `_CrtSetDbgFlag` ile `newFlag` parametre kümesine `_CRTDBG_REPORT_FLAG` (geçerli edinme `_crtDbgFlag` durumu) ve döndürülen değer geçici bir değişkende saklayın.  
+1. Çağrı `_CrtSetDbgFlag` ile `newFlag` parametresini `_CRTDBG_REPORT_FLAG` (geçerli edinme `_crtDbgFlag` durumu) ve döndürülen değer, geçici bir değişkende depolayın.  
   
-2.  Herhangi bir BITS tarafından Aç `OR`- lık (bit düzeyinde &#124; simgesi) (uygulama kodunda bildirim sabitler tarafından gösterilen) karşılık gelen bit maskesi geçici değişkenle.  
+2. Tüm kapatma `OR`- ing (bit düzeyinde &#124; sembol) (uygulama kodunda bildirim sabitleriyle gösterilir) karşılık gelen bit maskesi ile geçici değişken.  
   
-3.  Diğer BITS tarafından devre dışı bırakma `AND`- lık (bit düzeyinde & simgesi) değişkenle bir `NOT` (bit düzeyinde ~ simgesi), uygun bit maskesi.  
+3. Diğer bitleri tarafından devre dışı bırakın `AND`- ing (bit düzeyinde & sembol) değişkenle bir `NOT` (bit düzeyinde ~ sembol), uygun bir bit maskesi.  
   
-4.  Çağrı `_CrtSetDbgFlag` ile `newFlag` parametre kümesine geçici değişkeninde depolanan değer için yeni durum oluşturmak için `_crtDbgFlag`.  
+4. Çağrı `_CrtSetDbgFlag` ile `newFlag` yeni durumu oluşturmak üzere parametre ayarlamak geçici değişkende depolanan değere `_crtDbgFlag`.  
   
- Örneğin, aşağıdaki kod satırlarını otomatik sızıntısı algılamayı etkinleştirme ve türü bloklarını için denetimini devre dışı bırakma `_CRT_BLOCK`:  
+   Örneğin, aşağıdaki kod satırları otomatik sızıntı algılamayı açar ve tür bloklarının denetimini kapatır `_CRT_BLOCK`:  
   
-```  
+```cpp
 // Get current flag  
 int tmpFlag = _CrtSetDbgFlag( _CRTDBG_REPORT_FLAG );  
   
@@ -236,10 +237,10 @@ _CrtSetDbgFlag( tmpFlag );
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
-##  <a name="BKMK_new__delete__and__CLIENT_BLOCKs_in_the_C___debug_heap"></a> Yeni, silme ve _CLIENT_BLOCKs c++ hata ayıklama yığını  
- C çalışma zamanı kitaplığı hata ayıklama sürümleri C++ hata ayıklama sürümleri içeren `new` ve `delete` işleçler. Kullanırsanız `_CLIENT_BLOCK` ayırma türü, hata ayıklama sürümü çağırmalıdır `new` doğrudan işleci veya değiştirme makroları oluşturmak `new` hata ayıklama modunda aşağıdaki örnekte gösterildiği gibi işleci:  
+##  <a name="BKMK_new__delete__and__CLIENT_BLOCKs_in_the_C___debug_heap"></a> Yeni, silme ve _clıent_blocks C++ hata ayıklama yığını  
+ C++ hata ayıklama sürümü C çalışma zamanı kitaplığı hata ayıklama sürümlerini içeren `new` ve `delete` işleçleri. Kullanırsanız `_CLIENT_BLOCK` ayırma türü, hata ayıklama sürümünü çağırmalıdır `new` doğrudan işleci veya değiştiren makroları `new` aşağıdaki örnekte gösterildiği gibi hata ayıklama modunda, işleç:  
   
-```  
+```cpp
 /* MyDbgNew.h  
  Defines global operator new to allocate from  
  client blocks  
@@ -270,16 +271,16 @@ int main( )   {
 }  
 ```  
   
- Hata ayıklama sürümü `delete` tüm blok işleci çalışır türleri ve yayın sürümünü derlediğinizde programınızdaki herhangi bir değişiklik gerektirmez.  
+ Hata ayıklama sürümünü `delete` tüm blok işleç çalışır türleri ve bir yayım sürümünü derlediğinizde programınızda herhangi bir değişiklik gerektirmez.  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
-##  <a name="BKMK_Heap_State_Reporting_Functions"></a> Yığın durumu raporlama işlevleri  
+##  <a name="BKMK_Heap_State_Reporting_Functions"></a> Öbek durumu raporlama işlevleri  
  **_CrtMemState**  
   
- Belirli bir zamanda öbek durumunun Özet bir anlık görüntü yakalamak için CRTDBG içinde tanımlanan _CrtMemState yapısı kullanın. Y:  
+ Belirli bir zamanda yığının durumunun Özet anlık görüntüsünü yakalamak için CRTDBG içinde tanımlanan _CrtMemState yapısını kullanın. Y:  
   
-```  
+```cpp
 typedef struct _CrtMemState  
 {  
     // Pointer to the most recently allocated block:  
@@ -295,38 +296,38 @@ typedef struct _CrtMemState
 } _CrtMemState;  
 ```  
   
- Bu yapı işaretçi hata ayıklama yığınını 's bağlantılı listesinin ilk (en yakın zamanda ayrılmış) bloğunda kaydeder. Ardından, iki dizide, her tür bir bellek kaç engelleme kaydeder (_NORMAL_BLOCK, `_CLIENT_BLOCK`, _FREE_BLOCK, vb.) listesini ve her blok türünde ayrılan bayt sayısı. Son olarak, bu noktaya kadar bir bütün olarak yığınında ayrılan bayt sayısı en yüksek sayıda ve şu anda ayrılan bayt sayısını kaydeder.  
+ Bu yapı bir işaretçiyi hata ayıklama yığının bağlantılı listesinde ilk (en son ayrılmış) bloğa kaydeder. Daha sonra iki dizide onu her tür bellek kaç block kaydeder (_NORMAL_BLOCK, `_CLIENT_BLOCK`, _FREE_BLOCK, vb.) listesini ve her tür blokta ayrılan bayt sayısı. Son olarak, en fazla o noktaya kadar bir bütün olarak yığında ayrılan bayt sayısı ve şu anda ayrılan bayt sayısını kaydeder.  
   
- **Raporlama diğer CRT işlevleri**  
+ **Diğer CRT raporlama işlevleri**  
   
- Aşağıdaki işlevleri öbek içeriğini ve durum raporu ve bellek sızıntıları ve diğer sorunları saptamaya yardımcı olmak için bilgileri kullanın.  
+ Aşağıdaki işlevler yığının içeriği ve durumu raporu ve bellek sızıntıları ve diğer sorunların algılanmasına yardımcı olmak için bilgileri kullanın.  
   
 |İşlev|Açıklama|  
 |--------------|-----------------|  
-|[_CrtMemCheckpoint](/cpp/c-runtime-library/reference/crtmemcheckpoint)|Yığın anlık kaydeder bir **_CrtMemState** uygulama tarafından sağlanan yapısı.|  
-|[_CrtMemDifference](/cpp/c-runtime-library/reference/crtmemdifference)|İki bellek durumu yapıları karşılaştırır, üçüncü durumu yapısındaki aralarındaki farkı kaydeder ve iki durumlu farklı varsa TRUE değerini döndürür.|  
-|[_CrtMemDumpStatistics](/cpp/c-runtime-library/reference/crtmemdumpstatistics)|Dökümleri bir verilen **_CrtMemState** yapısı. Yapısı, belirli bir süre veya iki anlık görüntüsü arasındaki farkı hata ayıklama yığınını durumunun anlık görüntü içerebilir.|  
-|[_CrtMemDumpAllObjectsSince](/cpp/c-runtime-library/reference/crtmemdumpallobjectssince)|Belirli bir anlık görüntü öbek veya yürütme başından alındıktan sonra ayrılan tüm nesneler hakkındaki bilgileri dökümünü yapar. Bunu dökümleri her zaman bir **_clıent_block** bloğu biri kullanılarak yüklenmişse, uygulama tarafından sağlanan bir kanca işlevini çağırır **_CrtSetDumpClient**.|  
-|[_CrtDumpMemoryLeaks](/cpp/c-runtime-library/reference/crtdumpmemoryleaks)|Tüm bellek program yürütme başladığından bu yana oluştu sızdırıyor ve bu durumda, tüm ayrılmış nesneleri dökümleri, belirler. Her zaman **_CrtDumpMemoryLeaks** dökümleri bir **_clıent_block** bloğu biri kullanılarak yüklenmişse, uygulama tarafından sağlanan bir kanca işlevini çağırır **_CrtSetDumpClient**.|  
+|[_CrtMemCheckpoint](/cpp/c-runtime-library/reference/crtmemcheckpoint)|Yığının anlık görüntüsünü kaydeder bir **_CrtMemState** uygulama tarafından sağlanan yapı.|  
+|[_CrtMemDifference](/cpp/c-runtime-library/reference/crtmemdifference)|İki bellek durumu yapısını karşılaştırır, bunların üçüncü bir durum yapısına arasındaki farkı kaydeder ve iki durum farklıysa TRUE değerini döndürür.|  
+|[_CrtMemDumpStatistics](/cpp/c-runtime-library/reference/crtmemdumpstatistics)|Dökümleri bir verilen **_CrtMemState** yapısı. Yapısı bir anlık görüntü hata ayıklama yığının durumunun belirli bir anda veya iki anlık görüntü arasındaki farkı içerebilir.|  
+|[_CrtMemDumpAllObjectsSince](/cpp/c-runtime-library/reference/crtmemdumpallobjectssince)|Belirli bir anlık görüntü, yürütme başından itibaren veya yığının alındıktan sonra ayrılan tüm nesneler hakkında bilgi dökümünü yapar. Bunu dökümleri her zaman bir **_clıent_block** bloğu biri kullanılarak yüklenmişse, uygulama tarafından sağlanan bir kanca işlevini çağırır **_CrtSetDumpClient**.|  
+|[_CrtDumpMemoryLeaks](/cpp/c-runtime-library/reference/crtdumpmemoryleaks)|Herhangi bir bellek sızıntısı program yürütme başlangıcından ve bu durumda, tüm ayrılan nesnelerin dökümünü alır olup olmadığını belirler. Her zaman **_CrtDumpMemoryLeaks** dökümleri bir **_clıent_block** bloğu biri kullanılarak yüklenmişse, uygulama tarafından sağlanan bir kanca işlevini çağırır **_CrtSetDumpClient**.|  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
-##  <a name="BKMK_Track_Heap_Allocation_Requests"></a> Yığın ayırma isteklerini izleme  
- Konumundaki kaynak dosya adı ve satır numarası yerini tam olarak belirtmekte rağmen bir assert ya da raporlama makrosu yürüten genellikle bir sorunun nedenini bulmak faydalıdır, aynı yığın ayırma işlevleri true olarak büyük olasılıkla uygun değildir. Bir uygulamanın mantığı ağacında birçok uygun noktalarda makroları eklenebilir, ancak bir ayırma genellikle birçok farklı yerlerden birçok farklı zamanlarda adlı özel bir yordama içinde kaçınma. Hangi satır kod hatalı bir ayırma oluşturulmayan soru genellikle olan ancak yerine hangisinin ayırmaları binlerce kod satırını tarafından yapılan hatalı ve neden oldu.  
+##  <a name="BKMK_Track_Heap_Allocation_Requests"></a> Parça yığın ayırma istekleri  
+ Kaynak dosya adı ve satır numarasının yerinin bir onay veya Raporlama makrosunun yürütüldüğü genellikle bir sorunun nedenini bulmak için de faydalı olan, aynı yığın ayırma işlevleri doğru olarak olası değildir. Makrolar, bir uygulamanın mantık ağacında uygun birçok noktalarında eklenebilir, ancak bir ayırma genellikle birçok farklı zamanlarda pek çok farklı yerden çağrılan özel bir yordama içinde gömülü. Soru genellikle hangi kod satırında bozuk bir ayırma olduğu değil, ancak bunun yerine bu kod satırı tarafından yapılan ayırmaları binlerce birinin bozulduğu ve bunun neden oluyordu.  
   
  **Benzersiz ayırma isteği numaraları ve _crtBreakAlloc**  
   
- Yanlış gittiğini belirli öbek ayırma çağrısı tanımlamak için basit hata ayıklama yığınını her blok ile ilişkili benzersiz ayırma isteği numarası yararlanmak için yoldur. Bir blok hakkında bilgi döküm işlevleri biri tarafından bildirildiğinde bu ayırma isteği sayı ayraçları (örneğin, "{36}") içine alınır.  
+ Bozuk gitti belirli bir yığın ayırma çağrısını tanımlamak için en basit yolu, hata ayıklama yığınındaki her blokla ilişkili benzersiz ayırma isteği numarasından yararlanmak sağlamaktır. Bir öbekle ilgili bilgiler döküm işlevlerinden biri tarafından raporlandığında, bu ayırma isteği numarası parantez içine alınır (örneğin, "{36}").  
   
- Yanlış ayrılmış bir blok ayırma isteği sayısını öğrendikten sonra bu sayı için geçirebilirsiniz [_CrtSetBreakAlloc](/cpp/c-runtime-library/reference/crtsetbreakalloc) bir kesme noktası oluşturmak için. Yürütme yalnızca blok ayırma önce çalışmamasına neden olur ve hangi yordam için hatalı çağrı sorumlu belirlemek için geri izlemeyi. Yeniden derlenmesi önlemek için hata ayıklayıcı aynı şeyi ayarlayarak gerçekleştirebilirsiniz **_crtBreakAlloc** ilgilendiğiniz ayırma isteği sayısı.  
+ Yanlış ayrılmış bir blok ayırma isteği sayısını öğrendikten sonra bu numarayı geçirebilirsiniz [_CrtSetBreakAlloc](/cpp/c-runtime-library/reference/crtsetbreakalloc) bir kesme noktası oluşturmak için. Yürütme blok ayrılmadan hemen önce kesilecek ve hangi yordamın hatalı çağrıdan sorumlu olduğunu belirlemek için geri izleme. Yeniden derlemeden kaçınmak için aynı şeyi hata ayıklayıcıda ayarlayarak gerçekleştirebilirsiniz **_crtBreakAlloc** ilgilendiğiniz ayırma isteği numarası.  
   
- **Hata ayıklama sürümleri ayırma yordamları oluşturma**  
+ **Ayırma yordamlarınızın hata ayıklama sürümlerini oluşturma**  
   
- Biraz daha karmaşık bir yaklaşım için karşılaştırılabilir kendi ayırma yordamları hata ayıklama sürümleri oluşturmaktır **_dbg** sürümleri [yığın ayırma işlevleri](../debugger/debug-versions-of-heap-allocation-functions.md). Sonra kaynak dosyasını ve satır numarası bağımsız değişkenleri aracılığıyla için temel alınan öbek ayırma yordamları geçirebilirsiniz ve hemen hatalı bir ayırma geldiği görmeye devam.  
+ Daha karmaşık bir yaklaşım, kendi ayırma yordamlarınızın hata ayıklama sürümlerini oluşturmaktır **_dbg** sürümlerini [yığın ayırma işlevleri](../debugger/debug-versions-of-heap-allocation-functions.md). Ardından kaynak dosya ve satır numarası bağımsız değişkenlerini temel yığın ayırma yordamlarını geçirebilirsiniz ve hemen kötü bir ayırmanın nereden geldiğini görmek mümkün olacaktır.  
   
- Örneğin, aşağıdakine benzer bir sık kullanılan yordamı uygulamanız bulunduğunu varsayın:  
+ Örneğin, uygulamanızın aşağıdakine benzer bir sık kullanılan yordamı içerdiğini varsayın:  
   
-```  
+```cpp
 int addNewRecord(struct RecStruct * prevRecord,  
                  int recType, int recAccess)  
 {  
@@ -336,18 +337,18 @@ int addNewRecord(struct RecStruct * prevRecord,
 }  
 ```  
   
- Bir üstbilgi dosyasında aşağıdaki gibi kod ekleyebilirsiniz:  
+ Bir üstbilgi dosyasında şunun gibi kod ekleyebilirsiniz:  
   
-```  
+```cpp
 #ifdef _DEBUG  
 #define  addNewRecord(p, t, a) \  
             addNewRecord(p, t, a, __FILE__, __LINE__)  
 #endif  
 ```  
   
- Ardından, bunu ayırma kaydı oluşturma yordamında aşağıdaki gibi değiştirebilirsiniz:  
+ Ardından, bunu ayırma, kayıt oluşturma yordamı şu şekilde değiştirebilirsiniz:  
   
-```  
+```cpp
 int addNewRecord(struct RecStruct *prevRecord,  
                 int recType, int recAccess  
 #ifdef _DEBUG  
@@ -362,9 +363,9 @@ int addNewRecord(struct RecStruct *prevRecord,
 }  
 ```  
   
- Artık kaynak dosyanın adı ve satır numarası nerede `addNewRecord` çağrıldı hata ayıklama yığınında ayrılan her elde edilen bloğu depolanır ve bu blok incelenir zaman bildirilir.  
+ Artık kaynak dosyanın adı ve satır numarası nerede `addNewRecord` çağrıldı hata ayıklama yığınında sonuçta elde edilen her blok içinde saklanacak ve o blok incelendiği zaman raporlanacaktır.  
   
  ![Başa dön](../debugger/media/pcs_backtotop.png "PCS_BackToTop") [içeriği](#BKMK_Contents)  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yerel kodda hata ayıklama](../debugger/debugging-native-code.md)
+ [Yerel Kodda Hata Ayıklama](../debugger/debugging-native-code.md)

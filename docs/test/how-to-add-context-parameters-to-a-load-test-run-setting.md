@@ -1,5 +1,5 @@
 ---
-title: Bağlam parametreleri bir yük testi çalışma ayarına Visual Studio'da ekleme | Microsoft Docs
+title: Bir yük testi çalışma ayarına bağlam parametreleri ekleme
 ms.date: 10/19/2016
 ms.topic: conceptual
 helpviewer_keywords:
@@ -9,64 +9,68 @@ ms.assetid: a8a0b97e-8040-4711-85ab-36548b130ed2
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.openlocfilehash: 0d563adc5e6b43aa5371fe08f410880a6aba0a09
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cefa93a6f65b4b84b4ece5a4eb428d909dd0596d
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53048502"
 ---
-# <a name="how-to-add-context-parameters-to-a-load-test-run-setting"></a>Nasıl yapılır: Bir Yük Testi Çalışma Ayarına Bağlam Parametreleri Ekleme
+# <a name="how-to-add-context-parameters-to-a-load-test-run-setting"></a>Nasıl yapılır: yük testi çalışma ayarı için bağlam parametreleri ekleme
 
-Kullanarak yük testi oluşturduktan sonra **Yeni Yük Testi Sihirbazı**, kullanabileceğiniz **Yük Testi Düzenleyicisi** senaryoları özelliklerini test gereksinimlerini ve hedeflerinizi karşılayacak şekilde değiştirmek için.
+Kullanarak yük testi oluşturduktan sonra **Yeni Yük Testi Sihirbazı**, kullanabileceğiniz **Yük Testi Düzenleyicisi** test ihtiyaçlarınızı ve hedeflerinizi karşılayacak şekilde değiştirmek için.
+
+[!INCLUDE [web-load-test-deprecated](includes/web-load-test-deprecated.md)]
 
 > [!NOTE]
-> Çalışma ayarları özelliklerini ve açıklamalarının tam listesi için bkz: [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
+> Çalıştırma ayarları özellikleri ve açıklamalarının tam listesi için bkz: [yük testi çalıştırma ayarları özellikleri](../test/load-test-run-settings-properties.md).
 
-Yük testi çalışma ayarı Yük Testi Düzenleyicisini kullanarak kullanmak üzere bağlam parametreleri oluşturabilirsiniz. Bağlam parametreleri, bir dize Parametreleştirme olanak tanır.
+Çalışma ayarları Yük Testi Düzenleyicisi'ni kullanarak bir yük testinde kullanmak için bağlam parametreleri oluşturabilirsiniz. Bağlam parametreleri bir dizeyi parametre haline getirmek olanak tanır.
 
-Zaten bir bağlam parametresi kullanılarak bir parametreli Web sunucusu URL'si kullanan bir Web performans testi yük testlerini içeren varsayalım. Web performans testinde kullanılan hesapla aynı ad değerini kullanan ayarı yük testi için bir bağlam parametresi ekleyebilirsiniz. Yük testi çalıştırdığınızda, bu Web performans testi farklı bir sunucuya eşler. Örneğin, yük test ederseniz WebServer1 URL'sini de Web sunucusu adı için adlı bir bağlam parametresi kullanan bir Web performans testi içerir. Çalışma da WebServer1 adlı ayarı yük testinde bağlam parametresi sonra belirtirseniz, yük testi çalışma ayarı yük testinde atanan bağlam parametresi kullanın. Yük testi Web performans testinde yük testinde bağlam parametresi olarak aynı bağlam parametresi adını kullanıyorsa, açıklamak için bağlam parametresi yük testinde Web performans testinde kullanılan bağlam parametresi geçersiz kılar.
+Zaten bir bağlam parametresi kullanılarak bir parametreli web sunucusu URL'sini kullanan bir web performans testi, yük testi içerdiğini varsayın. Web performans testinde kullanılan olarak aynı adı değeri kullanan ayarı yük testi için bir bağlam parametresi ekleyebilirsiniz. Yük testi çalıştırdığınızda, bu farklı bir sunucuya web performans testini eşleyecektir. Örneğin, yük testi, URL'deki web sunucusunun adı için websunucusu1 adlı bir bağlam parametresi kullanan bir web performans testi içerir. Yük testi, Yük testiniz çalışma ayarı da WebServer1 adlı bir bağlam parametresi ardından belirtirseniz, yük testi çalışma ayarı atanan bağlam parametresi kullanır. Web performans testi yük testinde yük testinde bağlam parametresi olarak aynı bağlam parametresi adı kullanıyorsa, anlaşılması için yük testinde bağlam parametresi ve web performans testinde kullanılan bağlam parametresi geçersiz kılar.
 
 > [!WARNING]
-> Bir çalışma ayarına bağlam parametreleri kullandığınızda kasıtsız olarak Web performans testine bağlam parametresi geçersiz dikkat edin. Bu kasıtlı olarak olmadığınız sürece aynı bağlam parametre adlarını kullanmaktan kaçının.
+> Bağlam parametreleri bir çalışma ayarında kullandığınızda yanlışlıkla bir web performans testi bağlam parametresi geçersiz dikkat edin. Bu kasıtlı olarak yapmadığınız sürece aynı bağlam parametre adları kullanmaktan kaçının.
 
-Websunucusu1 bağlam parametresi değerini atamaktır `http://CorporateStagingWebServer`, sonra kullanabileceğiniz `WebServer1` boyunca yük test ve böylelikle kolayca değerini farklı bir Web sunucusuna herhangi bir zamanda değiştirin.
+Websunucusu1 bağlam parametresi değeri atamanız durumunda `http://CorporateStagingWebServer`, ardından `WebServer1` yük boyunca, test ve böylece bir kolayca değeri farklı bir web sunucusuna dilediğiniz zaman değiştirin.
 
-Ayrıca, farklı bir yük testi çalışma ayarlarında aynı adı kullanarak bir bağlam parametresi için farklı değerler atama tarafından yük testi farklı ortamlar kullanarak çalıştırabilirsiniz:
+Ayrıca, farklı bir yük testi çalışma ayarlarında aynı adı kullanarak bir bağlam parametresi için farklı değerler atama tarafından yük testi farklı ortamları kullanarak çalıştırabilirsiniz:
 
--   Kurumsal hazırlama Web Server çalıştırma ayarı: WebServer1 adlı bağlam parametresi =http://CorporateStagingWebServer
+- Kurumsal hazırlama Web sunucusuna çalışma ayarına: adlı bağlam parametresi `WebServer1=http://CorporateStagingWebServer`
 
--   Kurumsal üretim Web Server çalıştırma ayarı: WebServer1 adlı bağlam parametresi =http://CorporateProductionWebServer
+- Kurumsal üretim Web sunucusu çalıştırma ayarı: adlı bağlam parametresi `WebServer1=http://CorporateProductionWebServer`
 
- **Komut satırından çalıştırma ayarını değiştirme**
+  **Komut satırından çalıştırma ayarını değiştirme**
 
- Bağlam parametresi stratejisi yararlanmak için komut satırından farklı çalışma ayarları kullanmak istiyorsanız, aşağıdaki komutları kullanın:
+  Bağlam parametresi stratejisi yararlanmak için farklı çalıştırma ayarları komut satırından kullanmak istiyorsanız, aşağıdaki komutları kullanın:
 
- **Test.UseRunSetting= CorporateStagingWebServer ayarlayın**
+  **Test.UseRunSetting= CorporateStagingWebServer ayarlayın**
 
- - ve -
+  - ve -
 
- **mstest'i /testcontainer:loadtest1.loadtest**
+  **MSTest /testcontainer:loadtest1.loadtest**
 
 ## <a name="to-add-a-context-parameter-to-a-run-setting"></a>Bir çalışma ayarına bağlam parametresi eklemek için
 
 1.  Bir yük testi açın.
 
-2.  Genişletme **çalıştırma ayarları** Yük Testi Düzenleyicisi yük testi ağacında klasöründe.
+2.  Genişletin **çalıştırma ayarları** Yük Testi Düzenleyicisi'nde yük testi ağacında klasör.
 
-3.  Çalışma ayarı özel sağ bağlam parametresi ekleyin ve ardından istediğiniz **bağlam parametresi Ekle**.
+3.  Belirli çalıştırma ayarını sağ bağlam parametresi ekleyin ve ardından istediğiniz **bağlam parametresi Ekle**.
 
-     Yeni bir bağlam parametresi eklenen **bağlam parametreleri** klasöründe **çalıştırma ayarları** yük testi ağacı klasöründe.
+     Yeni bir bağlam parametresi eklenir **bağlam parametreleri** klasöründe **çalıştırma ayarları** yük testi ağacında klasör.
 
-     -veya-
+     veya
 
-     Zaten çalışma ayarı içeriyorsa, bir **bağlam parametreleri** klasörünü sağ tıklatın ve ardından **bağlam parametresi Ekle**.
+     Çalıştırma ayarı zaten varsa bir **bağlam parametreleri** klasörüne sağ tıklayın ve ardından **bağlam parametresi Ekle**.
 
-4.  Özellikler penceresinde değerini değiştirin **adı** (örneğin, websunucusu1) uygun şekilde. Özellikler penceresinde değiştirin **değeri** kullanmak istediğiniz parametre (örneğin, http://CorporateStagingWebServer).
+4.  İçinde **özellikleri** penceresinde değerini **adı** uygun şekilde (örneğin, WebServer1). İçinde **özellikleri** penceresinde değişiklik **değer** kullanmak istediğiniz parametre (örneğin, `http://CorporateStagingWebServer`).
 
-5.  (İsteğe bağlı) 3 ile 5 arasındaki adımları yineleyin ve kullanmak için farklı bir dize **değeri** özelliği (örneğin, http://CorporateProductionWebServer).
+5.  (İsteğe bağlı) 3 ile 5 arasındaki adımları yineleyin ve kullanmak için farklı bir dize **değer** özelliği (örneğin, `http://CorporateProductionWebServer`).
 
-6.  Hangi çalışma etkin olmasını istediğiniz ayarları seçin. Çalışma ayarları kısayol menüsünü açın ve seçin **etkin olarak ayarla**.
+6.  Hangi çalışma etkin olmasını istediğiniz ayarları seçin. Çalıştırma ayarlarını kısayol menüsünü açın ve seçin **etkin olarak ayarla**.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

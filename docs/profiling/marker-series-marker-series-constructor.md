@@ -14,18 +14,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d9b1e33d845dd07306d9a6b59bfb57fd9cc2acc3
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: bbc397fa88c722f6a7f16ac92f4388525073c0fa
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34845629"
 ---
 # <a name="markerseriesmarkerseries-constructor"></a>marker_series::marker_series Oluşturucusu
 Yeni bir örneğini başlatır `marker_series` sınıfı.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```cpp  
 marker_series();  
 marker_series(  
    _In_ LPCTSTR _SeriesName  
@@ -47,9 +48,9 @@ marker_series(
  Seri sağlayıcı GUID.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkersobj.h  
+ **Başlık:** *cvmarkersobj.h*  
   
  **Namespace:** Concurrency::diagnostic  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [marker_series Sınıfı](../profiling/marker-series-class.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [marker_series sınıfı](../profiling/marker-series-class.md)

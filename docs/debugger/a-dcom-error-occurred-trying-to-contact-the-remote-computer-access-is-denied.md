@@ -1,5 +1,5 @@
 ---
-title: Uzak bilgisayarla iletişim kurmaya çalışırken bir DCOM hata oluştu. Erişim reddedildi. | Microsoft Docs
+title: Uzak bilgisayara erişilmeye çalışılırken DCOM hatası oluştu. Erişim reddedildi. | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -22,33 +22,34 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8533201bfd052b2131ba302e8e1c451f62e5b50a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 193c93e7c29d3ea9fa13c08c9d77e4e88026d814
+ms.sourcegitcommit: 97204b85caadbcf14baeb6738710e287a196673e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "49900520"
 ---
-# <a name="a-dcom-error-occurred-trying-to-contact-the-remote-computer-access-is-denied"></a>Uzak bilgisayarla iletişim kurmaya çalışırken bir DCOM hata oluştu. Erişim reddedildi.
+# <a name="a-dcom-error-occurred-trying-to-contact-the-remote-computer-access-is-denied"></a>Uzak bilgisayara erişilmeye çalışılırken DCOM hatası oluştu. Erişim reddedildi.
 Uzaktan hata ayıklama, aşağıdaki durumlarda yerel ve uzak bilgisayarlar arasında iletişim kurmak için DCOM kullanır:  
   
--   Hata ayıklayıcı kümesine **yerel uyumluluk modu** veya **uyumluluk modu yönetilen** iade **Araçlar > Seçenekler > hata ayıklama** sayfası  
+- Hata ayıklayıcısını ayarlamak **yerel uyumluluk modu** veya **yönetilen uyumluluk modu** iade **Araçlar > Seçenekler > hata ayıklama** sayfası  
   
--   Hata ayıklama yönetilen C++ (C + +/ CLI) kodu.  
+- Yönetilen C++ hata ayıklama (C + +/ CLI) kodu.  
   
--   Visual Studio 2013'te zaman **yerel Düzenle ve devam et etkinleştirmek** iade **Araçlar > Seçenekler > hata ayıklama** sayfası  
+- Visual Studio 2013'te zaman **yerel Düzenle ve Devam Et'i etkinleştir** iade **Araçlar > Seçenekler > hata ayıklama** sayfası  
   
--   Bazı üçüncü taraf senaryoları hata ayıklama  
+- Bazı üçüncü taraf hata ayıklama senaryoları  
   
- Bu hata Visual Studio işlemini kendi kimlik doğrulaması yapamaz (veya sağlanan kimlik bilgileri yetersiz olarak kabul) oluşur DCOM üzerinden uzaktan hata ayıklayıcı işlem. Bir veya daha fazla aşağıdaki geçici çözümlerden sorunu çözebilecek:  
+  Visual Studio işlemini kendi kimlik doğrulaması yapamaz (veya sağlanan kimlik bilgilerinin yeterli kabul zaman) Bu hata oluşur. DCOM üzerinden uzaktan hata ayıklayıcı işleme. Bir veya daha fazla aşağıdaki geçici çözümlerden sorunu çözebilir:  
   
--   Kapatma **yerel uyumluluk modu** ve **uyumluluk modu yönetilen**.  
+- Devre dışı **yerel uyumluluk modu** ve **yönetilen uyumluluk modu**.  
   
--   Visual Studio 2013'te kapatmak **yerel Düzenle ve devam et etkinleştirmek**.  
+- Visual Studio 2013'te kapatmak **yerel Düzenle ve Devam Et'i etkinleştir**.  
   
--   Her iki bilgisayarı yeniden başlatın.  
+- Her iki bilgisayar yeniden başlatın.  
   
--   Uzaktan hata ayıklama kimlik bilgilerini girme gerektiriyorsa, kimlik bilgilerini kaydetme seçeneğini denetleyin.  
+- Uzaktan hata ayıklama kimlik bilgilerinin girilmesi gerekir, kimlik bilgilerini kaydetme seçeneğini denetleyin.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Uzaktan hata ayıklama ve sorun giderme](../debugger/remote-debugging-errors-and-troubleshooting.md)   
- [Uzaktan hata ayıklama](../debugger/remote-debugging.md)
+ [Uzaktan Hata Ayıklama](../debugger/remote-debugging.md)

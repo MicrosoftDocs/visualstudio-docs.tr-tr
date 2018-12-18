@@ -1,5 +1,5 @@
 ---
-title: s_taskIdCounter alan | Microsoft Docs
+title: s_taskıdcounter alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,28 +13,29 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7d49881eb16e05edfc1cfc57dd9520de8991942d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bf5c6b0578495e56086abb8637054e0650b07195
+ms.sourcegitcommit: 71b307ce86c4079cc7ad686d8d5f96a6a123aadd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39252400"
 ---
-# <a name="staskidcounter-field"></a>s_taskIdCounter alan
-Sonraki kullanılabilir tanımlayıcısını bir <xref:System.Threading.Tasks.Task> nesnesi.  
+# <a name="staskidcounter-field"></a>s_taskIdCounter Alanı
+Sonraki kullanılabilir tanımlayıcısı bir <xref:System.Threading.Tasks.Task> nesne.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (mscorlib.dll içinde)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```csharp  
 .field static assembly int32 s_taskIdCounter  
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Task sınıfı](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görev sınıfı](../../extensibility/debugger/task-class-internal-members.md)

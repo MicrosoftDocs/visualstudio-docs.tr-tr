@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 39fe9bf3a67d3ad5f26ff7c4ccdaa9772cf1346b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 8266102e8bc2c347ed8a554a3c64d9504f1e863b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49933514"
 ---
 # <a name="idiadatasourceopensession"></a>IDiaDataSource::openSession
-Simgeler sorgulama için bir oturum açar.  
+Semboller sorgulamak için bir oturum açar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,21 +34,21 @@ HRESULT openSession (
   
 #### <a name="parameters"></a>Parametreler  
  ppSession  
- [out] Döndürür bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) açık oturum temsil eden nesne.  
+ [out] Döndürür bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) Oturum Aç'ı temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda bu yöntem için olası dönüş değerleri gösterir.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Aşağıdaki tabloda, bu yöntem olası dönüş değerleri gösterir.  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|E_UNEXPECTED|[Idiadatasource](../../debugger/debug-interface-access/idiadatasource.md) nesne daha önce başlatılmadı simgelerin bir kaynağı.|  
+|E_UNEXPECTED|[Idiadatasource](../../debugger/debug-interface-access/idiadatasource.md) nesne daha önce başlatılmamış bir simge kaynağı ile.|  
 |E_INVALIDARG|Geçersiz `ppSession` parametresi.|  
 |E_OUTOFMEMORY|Oturum açmak için bellek yetersiz.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem açılır bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) nesne bir veri kaynağı için.  
+ Bu yöntem açılan bir [Idiasession](../../debugger/debug-interface-access/idiasession.md) bir veri kaynağı için nesne.  
   
- `IDiaSession` nesneleri veri kaynağında sorgu uygular. Bir oturum hata ayıklama simgeleri her kümesi için bir adres alanı yönetir. Veri kaynağı simgeleriyle açıklanan .exe veya .dll dosyası ise (örneğin, birden çok işlem yüklü olması nedeniyle) etkin olan, birden çok adres aralıkları, ardından her bir adres aralığı için bir oturum kullanılmalıdır.  
+ `IDiaSession` nesneleri sorgular veri kaynağına uygulayın. Bir oturum her kümesi, hata ayıklama sembolleri için bir adres alanı yönetir. Veri kaynağı simgeleri tarafından açıklanan .exe veya .dll dosyası ise (örneğin, birden çok işlem yüklü olması nedeniyle) etkin durumda birden çok adres aralıkları ve tek bir oturum için her bir adres aralığı kullanılmalıdır.  
   
 ## <a name="example"></a>Örnek  
   

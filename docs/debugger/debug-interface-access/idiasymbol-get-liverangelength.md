@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f6668a5c33c34ffce3cdebba0802c57e9bbf598a
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 23a24a4d88e181a447b5228080ae89b8853060ee
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49880058"
 ---
 # <a name="idiasymbolgetliverangelength"></a>IDiaSymbol::get_liveRangeLength
-Yerel simgenin geçerli adres aralığını uzunluğunu döndürür.  
+Yerel sembol geçerli olduğu adres aralığının uzunluğunu döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -36,17 +37,17 @@ HRESULT get_liveRangeLength (
  [out] Adres aralığının uzunluğunu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 > [!NOTE]
->  Döndürülen hata kodu simgenin dinamik aralık bilgileri yok anlamına gelir.  
+>  Döndürülen hata kodu sembol Canlı aralığı bilgisi yok anlamına gelir.  
   
 ## <a name="remarks"></a>Açıklamalar  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: Dia2.h  
+ Üstbilgi: Dia2.h  
   
- Kitaplığı: diaguids.lib  
+ Kitaplık: diaguids.lib  
   
  DLL: msdia100.dll  
   

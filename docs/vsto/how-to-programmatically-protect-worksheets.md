@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: çalışma sayfalarını program aracılığıyla koruma | Microsoft Docs'
+title: 'Nasıl yapılır: çalışma sayfalarını program aracılığıyla koruma'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,56 +18,57 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 23e0706f7436355e2308fbde8d945968da5348c8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 819a1f4e07397720d806d887408b9e45aeda9ea5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867188"
 ---
-# <a name="how-to-programmatically-protect-worksheets"></a>Nasıl yapılır: Çalışma Sayfalarını Program Aracılığıyla Koruma
-  Microsoft Office Excel koruma özelliği, kullanıcıların ve kodun çalışma sayfasındaki nesneleri değiştirmesini önlemeye yardımcı olur. Koruma etkinleştirildikten sonra varsayılan olarak, tüm hücreler kilitlenir.  
+# <a name="how-to-programmatically-protect-worksheets"></a>Nasıl yapılır: çalışma sayfalarını program aracılığıyla koruma
+  Microsoft Office Excel koruma özelliği, kullanıcıları ve kod çalışma sayfasındaki nesneleri değiştirmesini önlemeye yardımcı olur. Korumayı etkinleştirme sonra varsayılan olarak, tüm hücreler kilitlenir.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- Belge düzeyi özelleştirmelerindeki çalışma sayfalarını Excel Tasarımcısını kullanarak koruyabilirsiniz. Aynı zamanda bir çalışma sayfasına program aracılığıyla herhangi bir proje türü çalışma zamanında koruyabilirsiniz.  
+ Belge düzeyi özelleştirmelerde çalışma sayfalarını Excel Tasarımcısı kullanarak koruyabilirsiniz. Ayrıca çalışma programlı olarak çalışma zamanında herhangi bir proje türünde koruyabilirsiniz.  
   
 > [!NOTE]  
->  Windows Forms denetimleri korunan çalışma alanlarının için eklenemiyor.  
+>  Windows Forms denetimleri için korumalı alanlarına çalışma sayfası eklenemiyor.  
   
-## <a name="using-the-designer"></a>Tasarımcı kullanarak  
+## <a name="use-the-designer"></a>Tasarımcısını kullanma  
   
-#### <a name="to-protect-a-worksheet-in-the-designer"></a>Tasarımcıda çalışma sayfasını korumak için  
+### <a name="to-protect-a-worksheet-in-the-designer"></a>Tasarımcıda bir çalışma sayfasını korumak için  
   
-1.  İçinde **değişiklikleri** grubunu **gözden geçirme** sekmesini tıklatın, **sayfayı koru**.  
+1. İçinde **değişiklikleri** grubunu **gözden geçirme** sekmesinde **koruma sayfası**.  
   
-     **Sayfayı koru** iletişim kutusu görüntülenir. Bir parola ayarlayın ve isteğe bağlı olarak kullanıcıların çalışma sayfası hücreleri biçimlendir gibi ile gerçekleştirmek veya satır eklemek için izin verilen belirli eylemleri belirtin.  
+    **Koruma sayfası** iletişim kutusu görüntülenir. Bir parola ayarlamanız ve isteğe bağlı olarak kullanıcıların çalışma sayfası hücreleri biçimlendirme gibi ile gerçekleştirmek veya satır eklemek için izin verilen eylemlerin belirtin.  
   
- Ayrıca, kullanıcıların korunan çalışma sayfalarında belirli aralıkları düzenlemek de izin verebilirsiniz.  
+   Ayrıca, korumalı çalışma sayfalarında belirli aralıkları düzenlenecek kullanıcılar izin verebilirsiniz.  
   
-#### <a name="to-allow-editing-in-specific-ranges"></a>Belirli aralıkları düzenlemeye izin vermek için  
+### <a name="to-allow-editing-in-specific-ranges"></a>Belirli aralıkları düzenlemeye izin vermek için  
   
-1.  İçinde **değişiklikleri** grubunu **gözden geçirme** sekmesini tıklatın, **kullanıcıların aralıkları düzenlemesine izin**.  
+1.  İçinde **değişiklikleri** grubunu **gözden geçirme** sekmesini tıklatın, **düzenlemesine izin kullanıcılara**.  
   
-     **Kullanıcıların aralıkları düzenlemesine izin** iletişim kutusu görüntülenir. Bir parola ve parola olmadan aralıkları düzenleyebilirsiniz kullanıcılar kullanarak kilidi aralıkları belirtebilirsiniz.  
+     **Düzenlemesine izin kullanıcılara** iletişim kutusu görüntülenir. Bir parola ve parola kullanmadan aralıkları düzenleyebilecek kullanıcıları kullanarak kilitsiz aralıkları belirtebilirsiniz.  
   
-## <a name="using-code-at-run-time"></a>Çalışma zamanında kod kullanma  
- Aşağıdaki kod (kullanıcıdan elde edilen parolayı içeren getPasswordFrom kullanarak) parolasını ayarlar ve sadece sıralamaya izin verir.  
+## <a name="use-code-at-runtime"></a>Çalışma zamanında kodu kullanın  
+ Aşağıdaki kod (kullanıcıdan alınan bir parola içeren getPasswordFrom kullanarak) parolayı ayarlar ve yalnızca sıralama sağlar.  
   
-#### <a name="to-protect-a-worksheet-by-using-code-in-a-document-level-customization"></a>Belge düzeyi özelleştirmelerinde kodu kullanarak bir çalışma sayfasını korumak için  
+### <a name="to-protect-a-worksheet-by-using-code-in-a-document-level-customization"></a>Belge düzeyi özelleştirmesinde kod kullanarak bir çalışma sayfasını korumak için  
   
-1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Worksheet.Protect%2A> çalışma sayfasının yöntemi. Bu örnekte adlı bir çalışma çalıştığınız varsayılır `Sheet1`.  
+1.  Çağrı <xref:Microsoft.Office.Tools.Excel.Worksheet.Protect%2A> çalışma sayfasının yöntemi. Bu örnek adlı bir çalışma sayfası ile çalıştığını varsayar `Sheet1`.  
   
      [!code-csharp[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#27)]
      [!code-vb[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#27)]  
   
-#### <a name="to-protect-a-worksheet-by-using-code-in-a-vsto-add-in"></a>Bir VSTO eklenti kod kullanarak bir çalışma sayfasını korumak için  
+### <a name="to-protect-a-worksheet-by-using-code-in-a-vsto-add-in"></a>Bir VSTO eklenti kod kullanarak bir çalışma sayfasını korumak için  
   
 1.  Çağrı <xref:Microsoft.Office.Interop.Excel._Worksheet.Protect%2A> etkin çalışma sayfasının yöntemi.  
   
      [!code-csharp[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#17)]
      [!code-vb[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#17)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Çalışma sayfaları ile çalışma](../vsto/working-with-worksheets.md)   
  [Nasıl yapılır: çalışma sayfalarından program aracılığıyla korumayı kaldırma](../vsto/how-to-programmatically-remove-protection-from-worksheets.md)   
  [Nasıl yapılır: çalışma kitaplarını program aracılığıyla koruma](../vsto/how-to-programmatically-protect-workbooks.md)   
@@ -75,6 +76,6 @@ ms.lasthandoff: 04/16/2018
  [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)   
  [Çalışma sayfası konak öğesi](../vsto/worksheet-host-item.md)   
  [Office projelerindeki nesnelere genel erişim](../vsto/global-access-to-objects-in-office-projects.md)   
- [Office Çözümlerinde İsteğe Bağlı Parametreler](../vsto/optional-parameters-in-office-solutions.md)  
+ [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)  
   
   

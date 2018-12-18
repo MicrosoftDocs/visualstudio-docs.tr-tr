@@ -1,6 +1,7 @@
 ---
 title: 'CA1046: Başvuru türlerinde eşittir işleçlerini aşırı yüklemeyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 90564decd351969ed78f1cca18016454b87c6953
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3f0aeb519fdc22d3fb68812d24979c7aa6c23f85
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551713"
 ---
 # <a name="ca1046-do-not-overload-operator-equals-on-reference-types"></a>CA1046: Başvuru türlerinde eşittir işleçlerini aşırı yüklemeyin
+
 |||
 |-|-|
 |TypeName|DoNotOverloadOperatorEqualsOnReferenceTypes|
@@ -30,35 +33,42 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Bir genel veya iç içe geçmiş genel başvuru türü eşitlik işleci aşırı yüklemeler.
+ Bir ortak veya iç içe geçmiş genel başvuru türü eşitlik işlecini aşırı yüklemeleri.
 
-## <a name="rule-description"></a>Kural Tanımı
+## <a name="rule-description"></a>Kural açıklaması
  Başvuru türleri için, varsayılan eşitlik işleci neredeyse her zaman doğrudur. Varsayılan olarak, yalnızca aynı nesneye gelirseniz iki başvuru eşit olur.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için eşitlik işleci uyarlamasını kaldırın.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için eşitlik işlecini uygulamasını kaldırın.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Başvuru türü bir yerleşik değer türü gibi davranır olduğunda bir uyarı bu kuraldan bastırmak güvenlidir. Ekleme veya çıkarma türü örneklerinde yapmak için anlamlı ise eşitlik işleci uygulamak ve ihlali bastırma muhtemelen doğrudur.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Başvuru türü davranacağını gibi yerleşik değer türünde olduğunda bu kuraldan bir uyarıyı bastırmak güvenlidir. Ekleme veya çıkarma türü örneklerinde yapmak için anlamlı olması durumunda, eşitlik işlecini uygulamak ve ihlalin bastırmak muhtemelen doğrudur.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte, iki başvuru karşılaştırılırken varsayılan davranış gösterir.
+ Aşağıdaki örnek, iki başvuru karşılaştırılırken varsayılan davranış gösterir.
 
  [!code-csharp[FxCop.Design.RefTypesNoEqualityOp#1](../code-quality/codesnippet/CSharp/ca1046-do-not-overload-operator-equals-on-reference-types_1.cs)]
 
 ## <a name="example"></a>Örnek
- Aşağıdaki uygulama bazı başvuruları karşılaştırır.
 
- [!code-csharp[FxCop.Design.TestRefTypesNoEqualityOp#1](../code-quality/codesnippet/CSharp/ca1046-do-not-overload-operator-equals-on-reference-types_2.cs)]
+Aşağıdaki uygulama bazı başvuruları karşılaştırır.
 
- Bu örnek şu çıkışı üretir.
+[!code-csharp[FxCop.Design.TestRefTypesNoEqualityOp#1](../code-quality/codesnippet/CSharp/ca1046-do-not-overload-operator-equals-on-reference-types_2.cs)]
 
- **bir yeni (2,2) ve b = = yeni (2,2) eşit? Hayır**
-**c ve eşit bir misiniz? Evet**
-**b ve bir ==? Hayır**
-**c ve bir ==? Evet**
+Bu örnek aşağıdaki çıktıyı üretir:
+
+```txt
+a = new (2,2) and b = new (2,2) are equal? No
+c and a are equal? Yes
+b and a are == ? No
+c and a are == ? Yes
+```
+
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1013: Eşittir işlecini ekleme ve çıkarmayı aşırı yükleyerek aşırı yükleyin](../code-quality/ca1013-overload-operator-equals-on-overloading-add-and-subtract.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Object.Equals%2A?displayProperty=fullName> [Eşitlik işleçleri](/dotnet/standard/design-guidelines/equality-operators)
+[CA1013: Eşittir işlecini ekleme ve çıkarmayı aşırı yükleyerek aşırı yükleyin](../code-quality/ca1013-overload-operator-equals-on-overloading-add-and-subtract.md)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Object.Equals%2A?displayProperty=fullName>
+- [Eşitlik İşleçleri](/dotnet/standard/design-guidelines/equality-operators)

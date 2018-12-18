@@ -1,0 +1,1 @@
+Windows 8.x Mağazası uygulamaları için .NET

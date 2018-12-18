@@ -1,129 +1,143 @@
 ---
-title: Visual Studio klavye kısayolları | Microsoft Docs
-ms.date: 06/21/2017
+title: Klavye kısayolları
+ms.date: 11/02/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a4d53ec38ee006e73f7d3f0d454e928527cc0120
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a2b2c520a98d1bc3fa9d162889794ed1524d7d82
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062276"
 ---
 # <a name="keyboard-shortcuts-for-visual-studio"></a>Visual Studio için klavye kısayolları
 
-Bu makalede klavye kısayollarını kullanarak Visual Studio'da daha kolay gidebilirsiniz.
+Bu makalede klavye kısayollarını kullanarak, Visual Studio'da daha kolay gezinebilirsiniz.
 
 > [!TIP]
-> Burada listelenen kısayolları kullanılabilir klavye kısayolları yalnızca bir alt kümesidir. Daha kapsamlı bir liste için bkz: [varsayılan klavye kısayolları](../ide/default-keyboard-shortcuts-in-visual-studio.md).
+> Burada listelenen kısayolları, kullanılabilir klavye kısayollarını yalnızca bir alt kümesidir. Daha kapsamlı bir liste için bkz. [varsayılan klavye kısayolları](../ide/default-keyboard-shortcuts-in-visual-studio.md).
+
+> [!NOTE]
+> Bu konu, Windows üzerinde Visual Studio için geçerlidir. Mac için Visual Studio için bkz: [Mac için Visual Studio'da ortak klavye kısayollarının](/visualstudio/mac/keyboard-shortcuts).
 
 ## <a name="window-management"></a>Pencere Yönetimi
 
 |||
 |-|-|
-|Sekme Wells kayan kapalı sürükleyin|CTRL + çoklu seçim için tıklatın|
-|Kayan penceresinin ekranı kaplamasını sağlayın|Başlık çubuğunda çift tıklatın|
-|Yüzen pencere yeniden yerleştirme|CTRL + çift tıklatma başlık çubuğu|
-|Etkin belgeyi Kapat|Ctrl+F4|
-|Dosya Aç listesini göster|Ctrl + Alt + Aşağı Ok|
-|Tüm kayan Windows Göster|Ctrl+Shift+M|
+|Kayan sekme gruplarını sürükleme|**CTRL**+ çoklu seçim için tıklayın|
+|Yüzen Ekranı Kapla|Başlık çubuğunu çift tıklatma|
+|Yüzen pencereyi yeniden Tuttur|**CTRL**+ başlık çubuğunu çift tıklatın|
+|Etkin belgeyi Kapat|**CTRL**+**F4**|
+|Açık dosya listesini göster|**CTRL**+**Alt**+**aşağı**|
+|Tüm kayan Windows Göster|**CTRL**+**Shift**+**M**|
 
 ## <a name="window-shortcuts"></a>Pencere kısayolları
 
 |||
 |-|-|
-|Windows kayan taşıma/yerleştirme|Win + Sol / Win + sağ ok|
-|En üst düzeye/pencereleri simge durumuna küçültün|Win + yukarı / Win + aşağı ok|
-|Atlama listesi göster|Win + Alt + N|
-|Yeni örnek Başlat|Win + Shift + N|
-|Windows arasında geçiş yapma|Win + N|
+|Taşı/Dock kayan Windows|**Win**+**sol** / **Win**+**sağ**|
+|En üst düzeye/Windows simge durumuna küçült|**Win**+**yukarı** / **Win**+**aşağı**|
+|Atlama listesi göster|**Win**+**Alt**+**N**|
+|Yeni örnek Başlat|**Win**+**Shift**+**N**|
+|Windows arasında geçiş yapma|**Win**+**N**|
 
 ## <a name="visual-studio-search"></a>Visual Studio arama
 
 |||
 |-|-|
-|Çözüm Gezgini arama|Ctrl+;|
-|Herhangi bir aracı penceresi arama kutusuna odakta Yerleştir|Alt +' odak olduğunda araç penceresi|
-|Hızlı Başlat|Ctrl+Q|
-|Hızlı Başlatma kapsam sonuçları|- @opt Seçenekleri<br />- @cmd Komutları<br />- @mru En son kullanılan<br />- @doc Belgeleri Aç|
-|Araçlar Seçenekler arama|Ctrl + E|
+|Çözüm Gezgini araması|**CTRL**+**;**|
+|Herhangi bir araç penceresine arama kutusuna odak Yerleştir|**Alt** + **`** araç penceresi odağa sahip olduğunda|
+|Hızlı Başlat|**CTRL**+**Q**|
+|Kapsam sonuçlarını Hızlı Başlat|- @opt Seçenekleri<br />- @cmd Komutları<br />- @mru En son kullanılan<br />- @doc Açık belgeler|
+|Araçlar seçeneklerinde arayın|**CTRL**+**E**|
 
-## <a name="editor-find"></a>Düzenleyici Bul
+## <a name="editor-find"></a>Düzenleyici bulma
 
 |||
 |-|-|
-|Hızlı Bul|Ctrl+F|
-|Sonraki sonuç Hızlı Bul|Enter|
-|Hızlı Bul önceki sonucu|Shift+Enter|
-|Hızlı Bul, aşağı açılan genişletin|Alt + Aşağı Ok|
-|Bul kapatın|Esc|
-|Hızlı Değiştir|Ctrl+H|
-|Hızlı sonraki değiştirin|Alt+R|
-|Hızlı Değiştir Tümünü Değiştir|Alt + A|
-|Dosyalarda Bul|Ctrl+Shift+F|
-|Dosyalarda Değiştir|Ctrl+Shift+H|
+|Hızlı Bul|**CTRL**+**F**|
+|Sonraki sonucu Hızlı Bul|**Girin**|
+|Önceki sonucu Hızlı Bul|**Shift**+**girin**|
+|Hızlı Bul açılır liste Genişlet|**Alt**+**aşağı**|
+|Bul seçeneğini bırakma|**ESC**|
+|Hızlı Değiştir|**CTRL**+**H**|
+|Hızlı Değiştir Sonrakini Değiştir|**Alt**+**R**|
+|Hızlı Değiştir Tümünü Değiştir|**Alt**+**A**|
+|Dosyalarda Bul|**CTRL**+**Shift**+**F**|
+|Dosyalarda Değiştir|**CTRL**+**Shift**+**H**|
 
 ##  <a name="BKMK_CodeEditor"></a> Kod Düzenleyicisi
 
-|Komut|Kısayol|Sürüm kullanılabilirliği|
+|Komut|Kısayol|Sürüm kullanılabilirlik|
 |-|-|-|
-|IntelliSense Öneri Modu|Ctrl + Alt + boşluk (geçiş)||
-|Zorla Göster IntelliSense|Ctrl+J||
-|Hızlı Eylemler|Ctrl+.||
-|Parçacığı Seçici|CTRL + K, X veya?, sekme (VB)||
-|İle surround|CTRL + K, S||
-|Hızlı bilgi göster|CTRL + K, t||
+|Tümüne Git|**CTRL**+**T**|
+|Son kullanılan dosyalar için Git|**CTRL**+**T**,**R**|
+|Birden çok giriş işaretini birden çok ekleme noktası|**CTRL**+**Alt**+**tıklayın**|
+|Birden çok giriş işaretini eşleşen seçimi Ekle|**Shift**+**Alt**+**bileşenleri**|
+|Belgeyi Biçimlendir|**CTRL**+**K**,**D**|Visual Studio 2017 sürüm 15,8|
+|IntelliSense Öneri Modu|**CTRL**+**Alt**+**alanı** (geçiş)||
+|IntelliSense göstermeye zorlama|**CTRL**+**J**||
+|Hızlı Eylemler|**Ctrl**+**.**||
+|Kod parçacığı Seçici|**CTRL**+**K**,**X** veya **?**,**sekmesini** (VB)||
+|Şununla Çevrele|**CTRL**+**K**,**S**||
+|Hızlı bilgi göster|**CTRL**+**K**,**ediyorum**||
 |Gidin|**CTRL**+**,**||
-|Vurgulanan başvuruları gidin|Ctrl + Shift + Yukarı (önceki), Ctrl + Shift + aşağı ok (İleri)||
-|Düzenleyici yakınlaştırma|**CTRL**+**Shift** + **>** (gelen) **Ctrl**+**Shift** + **<** (Giden)||
-|Blok seçimi|Tutun **Alt** ve fare, Shift + Alt + ok tuşları sürükleyin||
-|Satırı Yukarı/Aşağı Taşı|Alt + Yukarı / Alt + Aşağı Ok||
-|Yinelenen satır|Ctrl+E,V|Visual Studio 2017 sürüm 15,6|
-|Seçimi genişletin|**Shift**+**Alt**+**=**|Visual Studio 2017 sürüm 15,5|
-|Sözleşme seçimi|**Shift**+**Alt**+**-**|Visual Studio 2017 sürüm 15,5|
-|Tanıma gitme|F12||
-|Özet tanımı|Alt+F12||
-|Tanımı yığınına gidin|Ctrl + Shift + 8 (arka), Ctrl + Shift + 7 (İleri)||
-|Peek tanımı penceresini kapatın|Esc||
-|Normal belge sekmesine Peek tanımı penceresi Yükselt|Ctrl+Alt+Home||
-|Birden çok tanımı gözatma pencereleri arasında gezinme|**CTRL**+**Alt** + **-** ve **Ctrl**+**Alt**+**=**||
-|Birden çok gözlem sonuçları arasında gezinme|**F8** ve **Shift**+**F8**||
-|Kod Düzenleyicisi penceresini ve Peek tanımı penceresi arasında geçiş yapma|Shift+Esc||
+|Vurgulanan başvurulara gidin|**CTRL**+**Shift**+**yukarı** (önceki) **Ctrl**+**Shift** + **Aşağı** (İleri)||
+|Düzenleyici yakınlaştırma|**CTRL**+**Shift** + **>** (gelen) **Ctrl**+**Shift** + **<** (Çıkış)||
+|Blok seçimi|Basılı **Alt** ve fareyi sürükleyin **Shift**+**Alt**+**ok tuşları**||
+|Satırı Yukarı/Aşağı Taşı|**Alt**+**yukarı** / **Alt**+**aşağı**||
+|Satırı Yinele|**Ctrl**+**E**,**V**|Visual Studio 2017 sürüm 15.6|
+|Seçimi Genişlet|**Shift**+**Alt**+**=**|Visual Studio 2017 sürüm 15.5|
+|Anlaşma seçimi|**Shift**+**Alt**+**-**|Visual Studio 2017 sürüm 15.5|
+|Tanıma Git|**F12**||
+|Tanıma göz at|**Alt**+**F12**||
+|Tanıma Git yığını|**CTRL**+**Shift**+**8** (geri), **Ctrl**+**Shift** + **7** (İleri)||
+|Özet tanım penceresini kapatın|**ESC**||
+|Özet tanım penceresini normal belge sekemsine yükseltin|**CTRL**+**Alt**+**giriş**||
+|Birden fazla gözlem tanım pencereleri arasında gezinme|**CTRL**+**Alt** + **-** ve **Ctrl**+**Alt**+**=**||
+|Birden fazla gözlem sonuçları arasında gezinin|**F8** ve **Shift**+**F8**||
+|Kod Düzenleyicisi penceresi ve Özet tanım penceresi arasında geçiş yapma|**Shift**+**Esc**||
+|Blok kapsayan için Git|**CTRL**+**Alt**+**UpArrow**|
+|Sonraki/önceki soruna gidin|**Alt**+**PgUp**/**PgDn**|
+|Bağlamsal Gezinti Menüsü|**Alt**+**`**|
 
 ## <a name="toolbars"></a>Araç Çubukları
 
 |||
 |-|-|
-|Düğme ekleme|Araç çubuğu taşma düğmesini seçin|
+|Düğme ekleme|Araç çubuğu taşma düğmesini seçin.|
 |Standart araç çubuğundaki açılan Bul|**Ctrl**+**D**|
-|TextBox komut modu Bul|Türü ">"|
-|Yeni diğer adı oluştur|> diğer ad NewAlias komutu|
+|Metin kutusu komut modunu bulma|Tür ">"|
+|Yeni diğer ad oluştur|> diğer ad NewAlias komutu|
 
 ## <a name="debugging"></a>Hata Ayıklama
 
 |||
 |-|-|
-|Hata ayıklama başlatılamıyor|F5|
-|Hata ayıklamayı durdurun|Shift+F5|
-|Hata ayıklamayı yeniden başlatın|Ctrl+Shift+F5|
-|Adımlama|F10|
-|Girme|F11|
-|Dışarı Adım|Shift+F11|
-|İmleci çalıştırın|Ctrl+F10|
-|Sonraki Deyimi Belirle|Ctrl+Shift+F10|
-|Kümesi ve kesme|F9|
-|Kesme noktası devre dışı bırak|Ctrl+F9|
-|Komut Penceresi|Ctrl+Alt+I|
-|Komut penceresi komut modu|Türü ">"|
-|Komut penceresi açık arabellek|> cls|
+|Hata Ayıklamayı Başlat|**F5**|
+|Hata ayıklamayı Durdur|**Shift**+**F5**|
+|Hata ayıklamayı yeniden başlatın|**CTRL**+**Shift**+**F5**|
+|Üzerinden adımla|**F10**|
+|Adımla|**F11**|
+|Dışına adımla|**Shift**+**F11**|
+|İmlece kadar Çalıştır|**CTRL**+**F10**|
+|Sonraki Deyimi Belirle|**CTRL**+**Shift**+**F10**|
+|Küme ve iki durumlu kesme noktası|**F9**|
+|Kesme noktasını devre dışı bırak|**CTRL**+**F9**|
+|Komut Penceresi|**CTRL**+**Alt**+**ediyorum**|
+|Komut penceresi komut modu|Tür ">"|
+|Komut penceresi temizleme arabelleği|> cls|
 |Komut penceresi yazdırma değeri|? varname|
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [Erişilebilirlik ipuçları ve püf noktaları](../ide/reference/accessibility-tips-and-tricks.md)
-- [Klavye kısayolları (VSTS ve TFS)](/vsts/collaborate/keyboard-shortcuts)
-- [Visual Studio ipuçları ve püf noktaları blogu](http://blogs.msdn.com/b/zainnab)
+- [Klavye kısayolları (Azure DevOps Hizmetleri ve TFS)](/azure/devops/project/navigation/keyboard-shortcuts?view=vsts)
+- [Visual Studio ipuçları ve püf noktaları blogu](https://blogs.msdn.microsoft.com/zainnab/)
+- [Mac için Visual Studio'da ortak klavye kısayolları](/visualstudio/mac/keyboard-shortcuts)

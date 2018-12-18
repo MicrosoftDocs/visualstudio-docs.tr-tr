@@ -12,17 +12,18 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 9f5b35c04d34143731ccf9fe5e8fe02f5389a2e5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3700074a1d087c0626a86559ff1342698d8a4628
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39176121"
 ---
-# <a name="msbuild-targets"></a>MSBuild Hedefleri
-Hedefler, belirli bir sırada görevleri gruplamak ve daha küçük birimlere oluşturmak amacıyla yapı işlemine izin. Örneğin, bir hedef başka bir proje için girişleri derler ve boş dizinde yerleştirir derleme için hazırlamak için çıktı dizindeki tüm dosyaları silebilirsiniz. Görevler hakkında daha fazla bilgi için bkz: [görevleri](../msbuild/msbuild-tasks.md).  
+# <a name="msbuild-targets"></a>MSBuild hedefleri
+Hedefler görevleri belirli bir sıraya göre gruplandırabilir ve daha küçük birimlere factored için derleme işlemindeki izin. Örneğin, bir hedef başka bir proje için girişler derler ve bunları boş dizine yerleştirir, derleme için hazırlamak için çıkış dizinindeki tüm dosyaları silebilirsiniz. Görevler hakkında daha fazla bilgi için bkz. [görevleri](../msbuild/msbuild-tasks.md).  
   
-## <a name="declaring-targets-in-the-project-file"></a>Proje dosyasında hedefleri bildirme  
- Proje dosyası ile içinde bildirilen hedefleri [hedef](../msbuild/target-element-msbuild.md) öğesi. Örneğin, aşağıdaki XML derleme öğe türüne sahip Csc görevi çağırır yapı adlı bir hedef oluşturur.  
+## <a name="declare-targets-in-the-project-file"></a>Hedefler proje dosyasında bildirme  
+ Hedefleri, bir proje dosyasında bildirilir [hedef](../msbuild/target-element-msbuild.md) öğesi. Örneğin, aşağıdaki XML Csc görevi derleme öğe türüne sahip'ı çağırır ve yapı adında bir hedef oluşturur.  
   
 ```xml  
 <Target Name="Construct">  
@@ -43,10 +44,10 @@ Hedefler, belirli bir sırada görevleri gruplamak ve daha küçük birimlere ol
   
  AfterBuild yürütülürse, yalnızca "ikinci oluşum" görüntüler.  
   
-## <a name="target-build-order"></a>Hedef Derleme Sırası  
- Bir hedef girdisi başka bir hedef Çıkışta bağımlıysa hedefleri sıralanmalıdır. Çalıştırma hangi hedeflerin sırayı belirtmek için çeşitli yolları vardır.  
+## <a name="target-build-order"></a>Hedef derleme sırası  
+ Başka bir hedef üzerinde çıkışını bir hedef girişi bağlıysa hedefleri sıralanmış olmaları gerekmektedir. Hangi hedeflerin çalıştırma sırasını belirlemek için çeşitli yollar vardır.  
   
--   İlk hedefleri  
+-   Başlangıç hedefleri  
   
 -   Varsayılan hedefler  
   
@@ -55,13 +56,13 @@ Hedefler, belirli bir sırada görevleri gruplamak ve daha küçük birimlere ol
 -   Hedef bağımlılıklar  
   
 -   `BeforeTargets` ve `AfterTargets` (MSBuild 4.0)  
-  
- Bir sonraki hedef derlemede bağımlı olsa bile bir hedef iki kez tek derleme sırasında hiçbir zaman çalışır. Çalıştıran bir hedef sonra yapı kendi katkısı tamamlanır.  
-  
- Derleme sırası ayrıntılarını ve hedef hakkında daha fazla bilgi için bkz: [hedef derleme sırası](../msbuild/target-build-order.md).  
-  
+
+Bir sonraki hedef yapı ona bağlı olsa bile bir hedef iki kez tek bir yapı sırasında hiçbir zaman çalışır. Bir hedef çalıştırıldıktan sonra derleme katkısı tamamlanmıştır.  
+
+Derleme sırası ayrıntılarını ve hedef hakkında daha fazla bilgi için bkz: [hedef derleme sırası](../msbuild/target-build-order.md).  
+
 ## <a name="target-batching"></a>Toplu hedef işlemede  
- Hedef öğe olabilir bir `Outputs` form % (meta verileri) meta veri belirten özniteliği. Bu durumda, MSBuild gruplandırma veya "Bu meta verileri değere sahip öğeleri toplu işleme" hedef her benzersiz meta veri değeri için bir kez çalışır. Örneğin,  
+Hedef öğe olabilir bir `Outputs` meta veri biçiminde belirten %(özniteliği\<meta veri >). Bu durumda, MSBuild gruplandırma veya "Bu meta veri değeri içeren öğelerinin toplu işleme" hedefi için her bir benzersiz meta veri değeri için bir kez çalışır. Örneğin,  
   
 ```xml  
 <ItemGroup>  
@@ -82,20 +83,20 @@ Hedefler, belirli bir sırada görevleri gruplamak ve daha küçük birimlere ol
 </Target>  
 ```  
   
- Başvuru öğeleri kendi RequiredTargetFramework meta verileri toplu işler. Hedef çıktısı şu şekildedir:  
+ Başvuru öğelerini RequiredTargetFramework meta verilerine göre toplu olarak işler. Hedefin çıktı şuna benzer:  
   
 ```  
 Reference: 3.5;3.5  
 Reference: 4.0  
 ```  
   
- Toplu hedef işlemede gerçek derlemelerde nadiren kullanılır. Toplu görev işleme daha yaygın bir durumdur. Daha fazla bilgi için bkz: [Batching](../msbuild/msbuild-batching.md).  
+ Toplu hedef işlemede gerçek yapılarında nadiren kullanılır. Toplu Görev işlemede daha yaygındır. Daha fazla bilgi için [toplu işleme](../msbuild/msbuild-batching.md).  
   
-## <a name="incremental-builds"></a>Artımlı Derlemeler  
- Artımlı derlemeler en iyi duruma getirilir ve böylece hedefleri ile ilgili giriş dosyalarına göre güncel çıktı dosyaları yürütülmez derlemeleri ' dir. Hedef öğe hem de sağlayabilirsiniz `Inputs` ve `Outputs` öznitelikler, hangi hedef öğeler belirten giriş olarak bekler ve hangi üretir çıkış olarak öğeler.  
+## <a name="incremental-builds"></a>Artımlı derlemeler  
+ Artımlı derlemeleri en iyi duruma getirilir ve böylece hedefleri ile ilgili giriş dosyaları ile ilgili güncel Çıkış dosyalarını yürütülmez derlemeleri ' dir. Hedef öğe olabilir `Inputs` ve `Outputs` öznitelikler, hangi hedef öğeler belirten giriş olarak bekliyor ve hangi, çıktı olarak üretir öğeler.  
   
- Tüm çıktı öğeleri güncel olup olmadığını MSBuild yapı hızı önemli ölçüde iyileştirir hedef atlar. Bu artımlı bir yapı hedef çağrılır. Yalnızca bazı dosyaları güncel MSBuild hedef güncel öğeleri olmadan yürütür. Bu, kısmi bir artımlı derleme hedef adı verilir. Daha fazla bilgi için bkz: [artımlı derlemeler](../msbuild/incremental-builds.md).  
+ Tüm çıkış öğeleri güncel olduğundan, MSBuild derleme hızını önemli ölçüde geliştiren hedef atlar. Bu, artımlı derleme hedefi olarak adlandırılır. Bazı dosyalar güncel olduğundan, yalnızca MSBuild hedefi güncel öğeler olmadan yürütür. Bu, kısmi bir artımlı derleme hedefi olarak adlandırılır. Daha fazla bilgi için [artımlı derlemeleri](../msbuild/incremental-builds.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [MSBuild kavramları](../msbuild/msbuild-concepts.md)   
- [Nasıl Yapılır: Birden Çok Proje Dosyasında Aynı Hedefi Kullanma](../msbuild/how-to-use-the-same-target-in-multiple-project-files.md)
+ [Nasıl yapılır: birden çok proje dosyasında aynı hedefi kullanma](../msbuild/how-to-use-the-same-target-in-multiple-project-files.md)

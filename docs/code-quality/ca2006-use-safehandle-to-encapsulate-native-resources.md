@@ -1,6 +1,7 @@
 ---
 title: 'CA2006: Yerel kaynakları kapsamak için SafeHandle kullanın'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: dc059f606da3229351e749a4e27ad87f2055fa8c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c845185c031e7c7d066aebbb1a28634358f11ce5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49941379"
 ---
 # <a name="ca2006-use-safehandle-to-encapsulate-native-resources"></a>CA2006: Yerel kaynakları kapsamak için SafeHandle kullanın
+
 |||
 |-|-|
 |TypeName|UseSafeHandleToEncapsulateNativeResources|
@@ -30,20 +33,23 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Yönetilen kod kullanan <xref:System.IntPtr> yerel kaynaklara erişmek için.
+ Yönetilen kod kullandığı <xref:System.IntPtr> yerel kaynaklara erişmek için.
 
-## <a name="rule-description"></a>Kural Tanımı
- Kullanımı `IntPtr` yönetilen kodda olası bir güvenlik ve güvenilirlik sorunu gösterebilir. Tüm kullanımlarını `IntPtr` belirlemek için gözden geçirilmesi gereken olup olmadığını kullanımını bir <xref:System.Runtime.InteropServices.SafeHandle> , veya benzer bir teknoloji, onun yerine gereklidir. Sorunları varsa gerçekleşeceği `IntPtr` bellek, bir dosya tanıtıcısı veya yönetilen kod için kendi olarak değerlendirilir, bir yuva gibi bazı yerel kaynak temsil eder. Yönetilen kod kaynak sahipse, bir Sağlanamaması kaynak sızıntısına neden olacağından, ilişkili yerel kaynaklar de serbest gerekir.
+## <a name="rule-description"></a>Kural açıklaması
+ Kullanım `IntPtr` yönetilen kodda olası bir güvenlik ve güvenilirlik sorunu belirtebilir. Tüm kullanımları `IntPtr` belirlemek için gözden geçirilmesi gereken olup olmadığını kullanımı bir <xref:System.Runtime.InteropServices.SafeHandle> , veya benzer teknoloji ve onun yerine gereklidir. Sorunları varsa gerçekleşir `IntPtr` bazı bellek, dosya tanıtıcısı veya yönetilen kod için kendi olarak değerlendirilir, bir yuva gibi yerel bir kaynak temsil eder. Yönetilen kod kaynak sahipse, bunu yapmak için bir hata kaynak sızıntısına neden olacağından, ayrıca ilişkili yerel kaynakları bırakmalıdır.
 
- Birden çok iş parçacıklı erişime izin verilip verilmediğini gibi senaryolarda, güvenlik ve güvenilirlik sorunları da bulunacağı `IntPtr` ve tarafından temsil edilen kaynak yayınlama şekilde `IntPtr` sağlanır. Bu sorunları, geri dönüşüm içeren `IntPtr` kaynak eşzamanlı kullanımı başka bir iş parçacığında yapıldığı sırada kaynak sürüm değeri. Bu, burada bir iş parçacığı okuma veya yazma yanlış kaynakla ilişkili verileri yarış durumları neden olabilir. Örneğin, bir işletim sistemi tanıtıcısı olarak türünüz depolar bir `IntPtr` ve kullanıcıların her ikisi de çağrı olanak tanır **Kapat** ve aynı anda hem bir tür eşitleme olmadan o tanıtıcının kullanan başka bir yöntem, kodunuzun geri dönüştürme tanıtıcı sahiptir. sorun.
+ Çok iş parçacıklı erişimi izni olup olmadığını böyle senaryolarda, güvenlik ve güvenilirlik sorunları da sunulacaktır `IntPtr` ve tarafından temsil edilen kaynak serbest bir şekilde `IntPtr` sağlanır. Bu sorunları, geri dönüştürme içeren `IntPtr` başka bir iş parçacığında eşzamanlı kullanım kaynak yapılırken kaynak sürüm değeri. Bu, burada bir iş parçacığı okuma veya yanlış kaynakla ilişkilendirilen veri yazma yarış durumlarını neden olabilir. Örneğin, bir işletim sistemi tanıtıcısı olarak türünüz depolar bir `IntPtr` ve kullanıcıların çağırın olanak tanıyan **Kapat** ve aynı anda ve eşitleme tür olmadan, tanıtıcı kullanan başka bir yöntem, kodunuzu bir tanıtıcı geri dönüştürme vardır. sorun oluştu.
 
- Sorun geri dönüştürme bu tanıtıcıyı veri bozulması ve genellikle, bir güvenlik açığı neden olabilir. `SafeHandle` ve onun eşdüzey sınıfını <xref:System.Runtime.InteropServices.CriticalHandle> tür iş parçacığı oluşturma sorunları önlenebilir böylece bir kaynak için yerel bir tanıtıcı kapsülleyen bir mekanizma sağlar. Ayrıca, kullanabileceğiniz `SafeHandle` ve onun eşdüzey sınıfını `CriticalHandle` dikkatle yerel yöntem çağrıları üzerinden yerel işleyici bir kopyasını içeren yönetilen nesnelerin ömrü denetlemek için diğer iş parçacığı oluşturma sorunları, örneğin,. Bu durumda, genellikle çağrıları kaldırabilirsiniz `GC.KeepAlive`. Tabi kullanırken performans genel gider thay `SafeHandle` ve daha düşük bir dereceye `CriticalHandle`, sık dikkatli tasarım azaltılabilir.
+ Bu tanıtıcı geri dönüştürme sorun veri bozulması ve genellikle, bir güvenlik açığına neden olabilir. `SafeHandle` ve kendi eşdüzey sınıfı <xref:System.Runtime.InteropServices.CriticalHandle> tür iş parçacığı oluşturma sorunları önlenebilir bir kaynak için yerel bir tanıtıcı yalıtılacak bir mekanizma sağlar. Ayrıca, kullanabileceğiniz `SafeHandle` ve kendi eşdüzey sınıfı `CriticalHandle` dikkatle yerel yöntemlere yapılan çağrılar üzerinden yerel tanıtıcı bir kopyasını içeren, yönetilen nesnelerin ömrünü denetlemek için diğer iş parçacığı oluşturma sorunları gibi. Bu durumda, genellikle çağrıları kaldırabilirsiniz `GC.KeepAlive`. Kullanırken gerçekleştirdiğiniz performansa `SafeHandle` ve daha düşük bir düzeyde `CriticalHandle`, dikkatli bir tasarım sık azaltılabilir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Dönüştürme `IntPtr` kullanımı `SafeHandle` yerel kaynaklara erişimi güvenli bir şekilde yönetmek için. Bkz: <xref:System.Runtime.InteropServices.SafeHandle> örnekleri için başvuru konusu.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu uyarı engelleme.
+Dönüştürme `IntPtr` kullanımı `SafeHandle` yerel kaynaklara erişimi güvenli bir şekilde yönetmek için. Bkz: <xref:System.Runtime.InteropServices.SafeHandle> başvurusu makalesinde örnekler.
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.IDisposable>
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+
+Bu uyarıyı bastırmayın.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.IDisposable>

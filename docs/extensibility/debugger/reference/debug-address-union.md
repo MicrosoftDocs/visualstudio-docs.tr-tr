@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0b0fcd662e3a4831b78ca55c139ce1511ea04b24
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 37b22b6a67df981920b2288e6f917d57a67dd762
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49872089"
 ---
 # <a name="debugaddressunion"></a>DEBUG_ADDRESS_UNION
 Adresleri farklı türleri açıklanmaktadır.  
@@ -53,7 +54,7 @@ public struct DEBUG_ADDRESS_UNION {
   
 ## <a name="terms"></a>Koşulları  
  dwKind  
- Arasında bir değer [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) belirterek birleşimi yorumlama numaralandırması.  
+ Bir değer [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) sabit listesi, UNION yorumlama belirtme.  
   
  addr.addrNative  
  [Yalnızca C++] İçeren [NATIVE_ADDRESS](../../../extensibility/debugger/reference/native-address.md) , yapı `dwKind` ADDRESS_KIND_NATIVE =.  
@@ -83,18 +84,18 @@ public struct DEBUG_ADDRESS_UNION {
  [Yalnızca C++] İçeren[METADATA_ADDRESS_RETVAL](../../../extensibility/debugger/reference/metadata-address-retval.md) , yapı `dwKind` ADDRESS_KIND_RETVAL =.  
   
  addr.Unused  
- [C++ yalnızca] doldurma.  
+ [Yalnızca C++ için] doldurma.  
   
- Adr  
- [Yalnızca C++] UNION adı.  
+ addr  
+ [Yalnızca C++] Union adıdır.  
   
  unionmember  
- [Sadece C#] Bu değer göre uygun bir yapı türüne sıralanması gerekiyor `dwKind`. Açıklamalar arasındaki ilişkiyi bkz `dwKind` ve UNION yorumu.  
+ [Yalnızca C#] Bu değer, uygun yapı türüne göre sıralanması gerekiyor `dwKind`. Arasındaki ilişki için açıklamalara bakın `dwKind` ve birleşimin yorumu.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı parçası olan [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) yapısı ve adresleri farklı türde bir dizi birini temsil eder ( `DEBUG_ADDRESS` yapısı doldurulur çağrısıyla [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md) yöntemi).  
+ Bu yapı parçasıdır [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md) yapısı ve birkaç farklı türde adresleri birini temsil eder ( `DEBUG_ADDRESS` yapı doldurulur yapılan bir çağrıyla [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md) yöntemi).  
   
- [Sadece C#] Aşağıdaki tabloda yorumlama gösterilmektedir `unionmember` adresi her türdeki üye. Bu örnek, bu adresi bir tür için nasıl yapıldığını gösterir.  
+ [Yalnızca C#] Aşağıdaki tablo nasıl yorumlanacağını gösterir `unionmember` üyesi için her türde bir adres. Bu örnek, bir türde bir adres için nasıl yapıldığını gösterir.  
   
 |`dwKind`|`unionmember` yorumlanan|  
 |--------------|----------------------------------|  
@@ -109,7 +110,7 @@ public struct DEBUG_ADDRESS_UNION {
 |`ADDRESS_KIND_RETVAL`|[METADATA_ADDRESS_RETVAL](../../../extensibility/debugger/reference/metadata-address-retval.md)|  
   
 ## <a name="example"></a>Örnek  
- Bu örnek, bir tür adres yorumlama gösterir (`METADATA_ADDRESS_ARRAYELEM`), `DEBUG_ADDRESS_UNION` C# yapısı. Kalan öğeleri tam olarak aynı şekilde yorumlanabilir.  
+ Bu örnek, bir türde bir adres yorumlama gösterir (`METADATA_ADDRESS_ARRAYELEM`), `DEBUG_ADDRESS_UNION` C# yapısı. Kalan öğelerin tam olarak aynı şekilde yorumlanabilir.  
   
 ```csharp  
 using System;  
@@ -134,14 +135,14 @@ namespace MyPackage
 ```  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [DEBUG_ADDRESS](../../../extensibility/debugger/reference/debug-address.md)   
  [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md)   
  [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md)

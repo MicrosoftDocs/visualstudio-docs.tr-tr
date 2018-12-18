@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 676ec19fec1406d85e6a7d9e66865b2794f72aa6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f61247bafe95039b89b43e740ce69693b584604f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49866345"
 ---
 # <a name="bperrortype"></a>BP_ERROR_TYPE
 Bir kesme noktası hata türünü belirtir.  
@@ -61,51 +62,51 @@ public enum enum_BP_ERROR_TYPE {
   
 ## <a name="members"></a>Üyeler  
  BPET_NONE  
- Kesme noktası hata belirtir.  
+ Hiçbir kesme noktası hatası belirtir.  
   
  BPET_TYPE_WARNING  
- Bir uyarı stili kesme hatası belirtir.  
+ Bir uyarı stili kesme noktası hatası belirtir.  
   
  BPET_TYPE_ERROR  
- Bir hata stili kesme noktası hata belirtir.  
+ Bir hata stili kesme Notası hatası belirtir.  
   
  BPET_SEV_HIGH  
- Bir yüksek önem derecesi kesme hatası belirtir.  
+ Yüksek önem derecesi kesme noktası hatası belirtir.  
   
  BPET_SEV_GENERAL  
- Orta önem kesme hatası belirtir.  
+ Orta önem derecesi kesme noktası hatası belirtir.  
   
  BPET_SEV_LOW  
- Düşük önem kesme hatası belirtir.  
+ Düşük önem derecesi kesme noktası hatası belirtir.  
   
  BPET_TYPE_MASK  
- Bir maskesi stili kesme hatası belirtir.  
+ Bir stil maskesi kesme noktası hatası belirtir.  
   
  BPET_SEV_MASK  
- Bir önem derecesi maskesi stili kesme hatası belirtir.  
+ Önem derecesi maskesi stili kesme noktası hatası belirtir.  
   
  BPET_GENERAL_WARNING  
- Genel uyarı stili kesme hatası belirtir.  
+ Genel uyarı stili kesme noktası hatası belirtir.  
   
  BPET_GENERAL_ERROR  
- Bir genel hata stili kesme hatası belirtir.  
+ Genel hata stili kesme noktası hatası belirtir.  
   
  BPET_ALL  
  Tüm kesme noktası hata türlerini belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu değerlerin Bitsel ile birleştirilebilir `OR` ve için kullanılan `dwType` üyesi [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) yapısı. Bir parametre olarak geçirilen [EnumErrorBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumerrorbreakpoints.md) yöntemi.  
+ Bu değerler, bit düzeyinde ile birleştirilebilir `OR` ve kullanılacak `dwType` üyesi [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) yapısı. Bir parametre olarak geçirilen [EnumErrorBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumerrorbreakpoints.md) yöntemi.  
   
- Kesme noktası hata türü bir türü ve bir önem derecesi oluşur. Bu bir kesme noktası hata türü hiçbir zaman yalnızca bir tür olduğu anlamına gelir (örneğin, `BPET_TYPE_ERROR`,) veya bir önem derecesi (örneğin, `BPET_SEV_GENERAL`) kendisi tarafından. `BPET_GENERAL_WARNING` ve `BPET_GENERAL_ERROR` önceden tanımlanmış değerler için genel uyarı ve hata olan kesme noktaları sağlar.  
+ Bir kesme noktası hata türü bir tür ve bir önem derecesi oluşur. Bu bir kesme noktası hata türü hiçbir zaman bir tür olduğu anlamına gelir (örneğin, `BPET_TYPE_ERROR`,) ya da bir önem derecesi (örneğin, `BPET_SEV_GENERAL`) seçemez. `BPET_GENERAL_WARNING` ve `BPET_GENERAL_ERROR` genel uyarı ve hata kesme noktaları için önceden tanımlanmış değerler sağlayın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md)   
  [EnumErrorBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumerrorbreakpoints.md)

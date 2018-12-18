@@ -13,11 +13,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: c52cecb30bdaa4daab46c7359e255d52d71d1597
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: e85e1c571ecb900d5ce7ffdecf8e85b8c367de5c
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844140"
 ---
 # <a name="how-to-specify-the-net-framework-runtime"></a>Nasıl yapılır: .NET Framework çalışma zamanı belirtin
 
@@ -37,9 +38,9 @@ Sürümü ile [!INCLUDE[net_v40_long](../code-quality/includes/net_v40_long_md.m
 
 ## <a name="to-specify-the-net-framework-run-time-to-profile-when-attaching-the-profiler-to-an-application"></a>.NET Framework çalışma zamanı profili için bir uygulamaya profil oluşturucu eklerken belirtmek için
 
-1. Çözümle menüsünde için profil oluşturucu, sonra Attach/Detach'yi tıklatın.
+1. Üzerinde **Çözümle** menüsündeki **profil oluşturucu**, ardından **Attach/Detach**.
 
-2. Attach profil oluşturucu üzerinde işlem iletişim kutusu, profil oluşturmayı istediğiniz işlemi'ı tıklatın.
+2. Üzerinde **profil oluşturucu ekleme işlemi için** iletişim kutusu, profil oluşturmayı istediğiniz işlemi'ı tıklatın.
 
      **Hedef CLR sürümü** liste kutusu s **otomatik** ve sürümleri [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] bilgisayarda yüklü olan çalışma zamanı.
 

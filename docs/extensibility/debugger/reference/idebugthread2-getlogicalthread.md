@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: ab093cb4ca4760737f8216452cfde7340b0329fd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b7acf0cbb99fc9541088a339931110e56363213b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920150"
 ---
 # <a name="idebugthread2getlogicalthread"></a>IDebugThread2::GetLogicalThread
-Hata ayıklama motorları, bu yöntem kullanılmaz.  
+Hata ayıklama altyapısı, bu yöntemi uygulaması değil.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,13 +43,13 @@ int GetLogicalThread(
   
 #### <a name="parameters"></a>Parametreler  
  `pStackFrame`  
- [in] Bir [IDebugStackFrame2](../../../extensibility/debugger/reference/idebugstackframe2.md) yığın çerçevesi temsil eden nesne.  
+ [in] Bir [IDebugStackFrame2](../../../extensibility/debugger/reference/idebugstackframe2.md) yığın çerçevesini temsil eden nesne.  
   
  `ppLogicalThread`  
- [out] Döndürür bir `IDebugLogicalThread2` ilişkili mantıksal iş parçacığı temsil eden arabirim. Hata ayıklama engine uygulaması bu null bir değere ayarlamanız gerekir.  
+ [out] Döndürür bir `IDebugLogicalThread2` ilişkili mantıksal iş parçacığını temsil eden arabirim. Hata ayıklama altyapısı uygulama bu null bir değere ayarlamanız gerekir.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Her zaman dönüş altyapısı uygulamalarında hata ayıklama `E_NOTIMPL`.  
+ Hata ayıklama altyapısı uygulamaları her zaman dönüş `E_NOTIMPL`.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)

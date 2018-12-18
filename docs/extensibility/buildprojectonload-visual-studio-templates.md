@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 58493c8e3c4668f1cd94c7f892d727479b755f3f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b70cc3522d59c2abe4633f38f746aeeb3159fe8a
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39150671"
 ---
-# <a name="buildprojectonload-visual-studio-templates"></a>BuildProjectOnLoad (Visual Studio Şablonları)
-Oluşturulduktan hemen sonra projeyi derlemek belirtir.  
+# <a name="buildprojectonload-visual-studio-templates"></a>BuildProjectOnLoad (Visual Studio şablonları)
+Oluşturulduktan hemen sonra projeyi oluşturmak belirtir.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -35,31 +36,31 @@ Oluşturulduktan hemen sonra projeyi derlemek belirtir.
 <BuildProjectOnLoad> true/false </BuildProjectOnLoad>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
  Yok.  
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablon kategorilere ayırır ve nasıl ya da görüntüler tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Şablonu kategorilere ayırır ve nasıl görüntülendiğini tanımlar **yeni proje** veya **Yeni Öğe Ekle** iletişim kutusu.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- Metin ya da olmalıdır `true` veya `false`, oluşturulduktan hemen sonra projeyi derlemek tutulmayacağını gösteren.  
+ Metin olmalıdır `true` veya `false`, oluşturulduktan hemen sonra projeyi derlemek etkinleştirilip etkinleştirilmeyeceğini belirten.  
   
 ## <a name="remarks"></a>Açıklamalar  
  `BuildProjectOnLoad` İsteğe bağlı bir özniteliktir. Varsayılan değer `false` şeklindedir.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için meta veriler gösterilmektedir bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
+ Meta veriler için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] şablonu.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -86,7 +87,7 @@ Oluşturulduktan hemen sonra projeyi derlemek belirtir.
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [TemplateContent öğesi (Visual Studio şablonları)](../extensibility/templatecontent-element-visual-studio-templates.md)   
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)

@@ -1,6 +1,7 @@
 ---
 title: 'CA2235: Tüm serileştirilebilir olmayan alanları işaretleyin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,36 +14,41 @@ ms.assetid: 599ad877-3a15-426c-bf17-5de15427365f
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 640fd26b7e75b566ccc159d8c41ff8f70d260897
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ad4328c13403b1bea6a4358661b3347404592c02
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45549725"
 ---
 # <a name="ca2235-mark-all-non-serializable-fields"></a>CA2235: Tüm serileştirilebilir olmayan alanları işaretleyin
+
 |||
 |-|-|
 |TypeName|MarkAllNonSerializableFields|
 |CheckId|CA2235|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
  Seri hale getirilemeyen bir örnek alan türü seri hale getirilebilir bir tür içinde bildirilir.
 
-## <a name="rule-description"></a>Kural Tanımı
- İle işaretlenen serileştirilebilir bir türde olduğundan <xref:System.SerializableAttribute?displayProperty=fullName> özniteliği. Türü seri olduğunda, bir <xref:System.Runtime.Serialization.SerializationException?displayProperty=fullName> türü seri hale getirilebilir olmayan türünün bir örneği alanı içeriyorsa, özel durum.
+## <a name="rule-description"></a>Kural açıklaması
+ Seri hale getirilebilir bir tür ile işaretlenmiş biridir <xref:System.SerializableAttribute?displayProperty=fullName> özniteliği. Türü seri olduğunda, bir <xref:System.Runtime.Serialization.SerializationException?displayProperty=fullName> serileştirilebilir değil bir türde bir örnek alanıyla bir tür içeriyorsa, özel durum harekete geçirilir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için uygulama <xref:System.NonSerializedAttribute?displayProperty=fullName> özniteliği alanın seri hale getirilemez.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için geçerli <xref:System.NonSerializedAttribute?displayProperty=fullName> getirilemeyen alanına öznitelik.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Yalnızca, bu kuraldan bir uyarı bastırma bir <xref:System.Runtime.Serialization.ISerializationSurrogate?displayProperty=fullName> türü bildirilen serileştirilmiş ve seri durumdan alanın örneklerini sağlar.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yalnızca, bu kuraldan bir uyarıyı bastırmak bir <xref:System.Runtime.Serialization.ISerializationSurrogate?displayProperty=fullName> türü bildirilen serileştirilmiş ve seri durumdan alanın örneklerini sağlar.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek kuralını ihlal eden bir tür ile kural karşılayan bir tür gösterir.
+ Aşağıdaki örnek, kuralını ihlal eden bir tür ile kural karşılayan bir tür gösterir.
 
  [!code-csharp[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/CSharp/ca2235-mark-all-non-serializable-fields_1.cs)]
  [!code-vb[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/VisualBasic/ca2235-mark-all-non-serializable-fields_1.vb)]

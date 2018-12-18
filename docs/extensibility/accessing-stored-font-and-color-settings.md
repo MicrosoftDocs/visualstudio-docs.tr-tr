@@ -15,71 +15,72 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1280555a2b8a293fcdd0f86891a1d198ef3c99d6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 953f74b309d8dc147d04d86b843f138002de972f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910686"
 ---
-# <a name="accessing-stored-font-and-color-settings"></a>Saklı yazı tipi ve renk ayarlarını erişme
-[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Tümleşik geliştirme ortamı (IDE) yazı tipleri için değiştirilmiş ayarları depolar ve kayıt defterinde renkleri. Kullanabileceğiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> bu ayarlara erişmek için arabirim.
+# <a name="access-stored-font-and-color-settings"></a>Yazı tipi ve renk ayarlarını erişim depolanan
+[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Tümleşik geliştirme ortamı (IDE) depolar değiştirilen ayarların yazı tipi ve renkler kayıt defterinde. Kullanabileceğiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> bu ayarlara erişmek için arabirim.
 
-## <a name="to-initiate-state-persistence-of-fonts-and-colors"></a>Yazı tipleri ve renkler durum kalıcılığı başlatmak için
- Yazı tipi ve renk bilgileri aşağıdaki kayıt defteri konumda kategoriye göre depolanır: [HKCU\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >*\FontAndColors\\  *\<CategoryGUID >*] burada  *\<CategoryGUID >* GUID kategorisi.
+## <a name="to-initiate-state-persistence-of-fonts-and-colors"></a>Yazı tipleri ve renkler durumu kalıcılığını başlatmak için
+ Yazı tipi ve renk bilgileri, aşağıdaki kayıt defteri konumunda kategoriye göre depolanır: [HKCU\SOFTWARE\Microsoft \Visual Studio\\*\<Visual Studio sürümü >* \FontAndColors\\  *\<CategoryGUID >*] burada  *\<CategoryGUID >* GUID kategorisidir.
 
  Bu nedenle, Kalıcılık başlatmak için bir VSPackage gerekir:
 
--   Elde bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> çağırarak arabirim `QueryService` karşı genel hizmet sağlayıcısı.
+-   Elde bir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> çağırarak arabirim `QueryService` küresel hizmet sağlayıcısına.
 
-     `QueryService` bir hizmet kimliği bağımsız değişkeni kullanarak çağrılmalıdır `SID_SVsFontAndColorStorage` ve arabirim kimliği bağımsız değişkeninin `IID_IVsFontAndColorStorage`.
+     `QueryService` bir hizmet kimliği bağımsız değişkeni kullanılarak çağrılmalıdır `SID_SVsFontAndColorStorage` ve arabirimi kimliği bağımsız değişkeninin `IID_IVsFontAndColorStorage`.
 
--   Kullanım <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.OpenCategory%2A> kategorinin GUID ve modu bayrağını bağımsız değişken olarak kullanarak kalıcı için bir kategori açmak için yöntem.
+-   Kullanım <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.OpenCategory%2A> bağımsız değişken olarak kategorinin GUID ve modu bayrağını kullanarak kalıcı için bir kategori açmak için yöntemi.
 
-     Tarafından belirtilen modu `fFlags` değerlerinden bağımsız değişkeni, oluşturulan <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS> numaralandırması. Bu modu denetler:
+     Tarafından belirtilen modu `fFlags` değerden bağımsız değişkeni, oluşturulan <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS> sabit listesi. Bu modu denetler:
 
-    -   Üzerinden erişilen ayarları <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
+    -   Erişilebilir ayarları <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
 
-    -   Tüm ayarları veya kullanıcıları değiştirin ve aracılığıyla alınabilir, yalnızca bu ayarları <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
+    -   Tüm ayarları veya kullanıcıları değiştirin ve aracılığıyla alınabilir olan yalnızca bu ayarları <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi.
 
-    -   Kullanıcı ayarlarında yapılan değişiklikler yayılıyor şekli.
+    -   Değişiklikleri kullanıcı ayarlarına yayma şekilde.
 
     -   Kullanılan renk değerleri biçimi.
 
-## <a name="to-use-state-persistence-of-fonts-and-colors"></a>Yazı tipleri ve renkler durum kalıcılığı kullanmak için
- Kalıcı yazı tiplerini ve renkleri içerir:
+## <a name="to-use-state-persistence-of-fonts-and-colors"></a>Yazı tipleri ve renkler durumu kalıcılığını kullanmak için
+ Kalıcı yazı tipleri ve renkler içerir:
 
--   Kayıt defterinde depolanan ayarlarla IDE ayarları eşitleniyor.
+- Kayıt defterinde depolanan ayarlarla IDE ayarları eşitleniyor.
 
--   Kayıt defteri değişikliği bilgilerini yayılıyor.
+- Kayıt defteri değişikliği bilgilerini yayılıyor.
 
--   Ayarlama ve kayıt defterinde depolanan ayarları alınıyor.
+- Ayarlama ve kayıt defterinde depolanan ayarları alınıyor.
 
- Depolama ayarı ile IDE ayarları eşitleniyor büyük ölçüde saydamdır. Temel alınan IDE ayarları güncelleştirildi otomatik olarak Yazar **öğeleri görüntüleme** kayıt defteri girişleri kategoriler.
+  IDE ayarları ile depolama ayarını eşitleme büyük ölçüde saydamdır. Temel IDE için güncelleştirilmiş ayarları otomatik olarak Yazar **görünen öğeler** kategoriler kayıt defteri girişleri.
 
- Birden çok VSPackages belirli bir kategoriye paylaşıyorsanız, bir VSPackage olaylar oluşturulur gerektirmelidir zaman yöntemlerini <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi depolanmış kayıt defteri ayarlarını değiştirmek için kullanılır.
+  Birden çok VSPackages belirli bir kategoriye paylaşıyorsanız, VSPackage olaylar oluşturulur gerektirmelidir olduğunda yöntemlerinin <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> arabirimi depolanmış kayıt defteri ayarlarını değiştirmek için kullanılır.
 
- Varsayılan olarak, olay oluşturma etkin değil. Olay oluşturma etkinleştirmek için bir kategori kullanarak açılmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS>. Bir kategori açma neden uygun çağırmak IDE <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> bir VSPackage uygulayan yöntemi.
-
-> [!NOTE]
->  Değişiklikleri aracılığıyla **yazı tipi ve renk** özellik sayfası oluşturma olayları bağımsız olarak <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage>. Kullanabileceğiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> önbelleğe alınmış yazı tipi ve renk ayarlarını yönelik bir güncelleştirme yöntemleri çağrılmadan önce gerekli olup olmadığını belirlemek için arabirimi <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> sınıfı.
-
-### <a name="storing-and-retrieving-information"></a>Depolama ve bilgileri alınıyor
- Edinmek veya açık bir kategori adlandırılmış görüntü öğesi için bir kullanıcı değiştirebilir bilgi yapılandırmak için VSPackages çağrısı <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.SetItem%2A> yöntemleri.
-
- Yazı tipi hakkında bilgi öznitelikleri kullanarak belirli bir kategoriye elde için <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.SetFont%2A> yöntemleri.
+  Varsayılan olarak, olay oluşturma etkin değil. Olay oluşturma etkinleştirmek için bir kategori kullanarak açılmalıdır <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS>. Bir kategori açma neden uygun çağırmak IDE <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> bir VSPackage'ı uygulayan bir yöntem.
 
 > [!NOTE]
->  `fFlags` İçin geçirilen bağımsız değişken <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.OpenCategory%2A> kategoriye açıldığında yöntemi davranışını tanımlar <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> yöntemleri. Varsayılan olarak, bu yöntemleri yalnızca değişmiş öğeleri görüntüleme hakkında bilgi döndürür. Ancak, bir kategori kullanarak açtıysanız <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS> bayrak, hem güncelleştirilir ve değişmeden görünen öğeleri tarafından erişilebilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A>.
+>  Değişiklikleri **yazı tipi ve renk** özellik sayfası oluşturma bağımsız olayları <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage>. Kullanabileceğiniz <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorCacheManager> yöntemleri çağrılmadan önce önbelleğe alınmış yazı tipi ve renk ayarlarını güncelleştirmesi gerekli olup olmadığını belirlemek için arabirim <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> sınıfı.
 
- Varsayılan olarak, yalnızca değiştirilen **öğeleri görüntüleme** bilgileri, kayıt defterinde tutulur. <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> Arabirimi, yazı tipleri ve renkler için tüm ayarları almak için kullanılamaz.
+### <a name="store-and-retrieve-information"></a>Store ve bilgileri alınamıyor
+ VSPackage elde etmek veya bir kullanıcı için açık bir kategorideki bir adlandırılmış görüntü öğesini değiştirebilirsiniz bilgi yapılandırmak için çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.SetItem%2A> yöntemleri.
+
+ Yazı tipi hakkında bilgi için belirli bir kategoriye kullanılarak elde öznitelikleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.SetFont%2A> yöntemleri.
 
 > [!NOTE]
->  <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> Ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> yöntemleri REGDB_E_KEYMISSING, (bilgi almak için kullanıldıklarında 0x80040152L) hakkında değişmeden döndürür **öğeleri görüntüleme**.
+>  `fFlags` Geçirilen bağımsız değişken <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.OpenCategory%2A> kategori açıldığında yöntemi davranışını tanımlar <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> yöntemleri. Varsayılan olarak, bu yöntemler, yalnızca değişen öğeleri görüntüleme hakkında bilgi döndürür. Ancak, bir kategori kullanarak açtıysanız <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS> bayrak, hem güncelleştirildi ve değişmeden görünen öğeler tarafından erişilebilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A>.
 
- Tüm ayarları **öğeleri görüntüleme** belirli bir **kategori** yöntemlerini kullanarak elde edilebilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi.
+ Varsayılan olarak, yalnızca değiştirilen **görünen öğeler** bilgileri, kayıt defterinde tutulur. <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage> Arabirimi, yazı tipleri ve renkler için tüm ayarları almak için kullanılamaz.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+> [!NOTE]
+>  <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetItem%2A> Ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage.GetFont%2A> yöntemleri REGDB_E_KEYMISSING, (bilgi almaya kullanıldıklarında 0x80040152L) hakkında değişmeden döndürür **görünen öğeler**.
+
+ Tüm ayarları **görünen öğeler** belirli bir **kategori** yöntemleri kullanılarak elde edilebilir <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaults> arabirimi.
+
+## <a name="see-also"></a>Ayrıca bkz.
 
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorStorage>
 - <xref:Microsoft.VisualStudio.Shell.Interop.__FCSTORAGEFLAGS>
-- [Uygulama özel kategoriler ve öğeleri görüntüleme](../extensibility/implementing-custom-categories-and-display-items.md)
+- [Özel kategoriler uygulamak ve öğeleri görüntüleme](../extensibility/implementing-custom-categories-and-display-items.md)

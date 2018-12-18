@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2933d00b7450f946a5fd5409bcaeecc2527a9f64
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: defb9a682b7f382f414d7bedfe60509d73cea64b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840031"
 ---
 # <a name="sccadd-function"></a>SccAdd işlevi
-Bu işlev için kaynak denetim sisteminizle yeni dosyaları ekler.  
+Bu işlev, yeni dosyaların kaynak denetim sistemine ekler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,62 +39,62 @@ SCCRTN SccAdd(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pvContext  
- [in] Kaynak Denetim eklentisi bağlam yapısı.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı.  
   
  hWnd  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  nFiles  
- [in] İçinde belirtilen geçerli projeye eklemek için seçilen dosya sayısı `lpFileNames` dizi.  
+ [in] Geçerli projeye, verilen eklenecek seçili dosya sayısı `lpFileNames` dizisi.  
   
  lpFileNames  
- [in] Eklenecek dosyaların tam yerel adlarını dizisi.  
+ [in] Eklenecek dosyaların tam yerel adları dizisi.  
   
  lpComment  
- [in] Eklenmekte olan dosyaları tümüne uygulanacak açıklama.  
+ [in] Eklenmekte olan dosyalar tümüne uygulanacak açıklama.  
   
  pfOptions  
- [in] Bir dosya başına temelinde sağlanan komut bayrakları dizisi.  
+ [in] Sağlanan dosya başına temelinde, komut bayrakları dizisi.  
   
  pvOptions  
  [in] Kaynak denetimi fişi özel seçenekleri.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Ekleme işlemi başarılı oldu.|  
-|SCC_E_FILEALREADYEXISTS|Seçilen dosya kaynak denetimi altında zaten var.|  
-|SCC_E_TYPENOTSUPPORTED|(Örneğin, ikili) dosya türü, kaynak denetim sistemi tarafından desteklenmiyor.|  
-|SCC_E_OPNOTSUPPORTED|Kaynak Denetim sistem bu işlemi desteklemiyor.|  
-|SCC_E_ACCESSFAILURE|Kaynak Denetim sistem ağ veya Çekişme sorun büyük olasılıkla erişilirken bir sorun oluştu. Yeniden deneme önerilir.|  
+|SCC_E_FILEALREADYEXISTS|Seçili dosya kaynak denetimi altında zaten var.|  
+|SCC_E_TYPENOTSUPPORTED|Kaynak denetim sistemi tarafından (örneğin, ikili) dosya türü desteklenmiyor.|  
+|SCC_E_OPNOTSUPPORTED|Kaynak denetim sistemi bu işlemi desteklemiyor.|  
+|SCC_E_ACCESSFAILURE|Kaynak denetim sistemi, ağ veya çakışma sorunları nedeniyle muhtemelen erişilirken sorun oluştu. Bir yeniden deneme önerilir.|  
 |SCC_E_NOTAUTHORIZED|Kullanıcı bu işlemi gerçekleştirmek için izin verilmiyor.|  
-|SCC_E_NONSPECIFICERROR|Belirli olmayan hata; gerçekleştirilemiyor ekleyin.|  
+|SCC_E_NONSPECIFICERROR|Belirli olmayan hata; ekleme gerçekleştirilemiyor.|  
 |SCC_I_OPERATIONCANCELED|İşlem tamamlanmadan önce iptal edildi.|  
-|SCC_I_RELOADFILE|Bir dosya veya projeyi yeniden yüklenmesi gerekiyor.|  
+|SCC_I_RELOADFILE|Bir dosya veya projenin yeniden yüklenmesi gerekiyor.|  
 |SCC_E_FILENOTEXIST|Yerel dosya bulunamadı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Normal `fOptions` bir dizi tarafından buraya değiştirilir `pfOptions`, biriyle `LONG` seçeneği dosya başına belirtimi. Bu durum, dosya türünü dosya dosyasından farklı olabilir çünkü.  
+ Normal `fOptions` burada bir dizi tarafından değiştirilir `pfOptions`, biriyle `LONG` seçeneği her dosya belirtimi. Dosya türü dosyası başka bir dosya değişebilir olmasıdır.  
   
 > [!NOTE]
->  Her ikisi de belirtmek için geçersiz `SCC_FILETYPE_TEXT` ve `SCC_FILETYPE_BINARY` hiçbiri belirtmek için aynı dosyayı, ancak seçeneklerini geçerlidir. Hiçbiri ayardır ayarı ile aynı `SCC_FILETYPE_AUTO`, bu durumda kaynak denetim eklentisi autodetects dosya türü.  
+>  Her ikisini de belirtmek için geçersiz `SCC_FILETYPE_TEXT` ve `SCC_FILETYPE_BINARY` ne belirtmek için aynı dosyayı, ancak seçeneklerini geçerlidir. Hiçbiri ayardır ayarı ile aynı `SCC_FILETYPE_AUTO`, bu durumda, kaynak denetim eklentisi autodetects dosya türü.  
   
- Kullanılan bayrakların listesi aşağıdadır `pfOptions` dizi:  
+ Kullanılan bayrakların listesi aşağıdadır `pfOptions` dizisi:  
   
 |Seçenek|Değer|Açıklama|  
 |------------|-----------|-------------|  
-|SCC_FILETYPE_AUTO|0x00|Kaynak Denetim eklentisi dosya türünü algıla.|  
+|SCC_FILETYPE_AUTO|0x00|Kaynak Denetimi Eklentisi, dosya türü algılanmalıdır.|  
 |SCC_FILETYPE_TEXT|0x01|Bir ASCII metin dosyası gösterir.|  
-|SCC_FILETYPE_BINARY|0x02|ASCII metni farklı bir dosya türünü belirtir.|  
-|SCC_ADD_STORELATEST|0x04|Hiçbir farkları dosyanın yalnızca en yeni kopyasını saklar.|  
-|SCC_FILETYPE_TEXT_ANSI|0x08|Dosyası ANSI metin olarak değerlendirir.|  
-|SCC_FILETYPE_UTF8|0x10|UTF8 biçiminde Unicode metin olarak dosyası değerlendirir.|  
-|SCC_FILETYPE_UTF16LE|0x20|Dosyası biraz Endian biçiminde Unicode metin UTF16 olarak değerlendirir.|  
-|SCC_FILETYPE_UTF16BE|0x40|Davranır dosyanın UTF16 Big Endian Unicode metin olarak biçimlendirin.|  
+|SCC_FILETYPE_BINARY|0x02|ASCII metni başka bir dosya türünü belirtir.|  
+|SCC_ADD_STORELATEST|0x04|Dosya hiçbir deltaları yalnızca en son kopyasını depolar.|  
+|SCC_FILETYPE_TEXT_ANSI|0x08|Dosya ANSI metin olarak değerlendirir.|  
+|SCC_FILETYPE_UTF8|0x10|UTF8 biçiminde bir Unicode metin olarak dosyanın değerlendirir.|  
+|SCC_FILETYPE_UTF16LE|0x20|Küçük Endian biçiminde UTF16 Unicode metin olarak dosyanın değerlendirir.|  
+|SCC_FILETYPE_UTF16BE|0x40|Davranır dosya UTF16 Big Endian Unicode metin olarak biçimlendirir.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetimi Eklentisi API İşlevleri](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)

@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31138453"
 ---
 # <a name="tool-windows-in-the-registry"></a>Kayıt defterinde araç pencereleri
 Araç pencereleri sağlamak VSPackages kaydetmeniz gerekir [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] olarak araç penceresi sağlayıcıları. Varsayılan olarak bunu Visual Studio Paketi şablonu kullanılarak oluşturulan araç pencereleri. Araç penceresi sağlayıcıları varsayılan aracı pencere boyutunu ve konumunu, aracı pencere bölmesine ve yerleştirme stilini hizmet veren penceresinin GUID gibi görünürlük öznitelikleri belirtin sistem kayıt defteri anahtarlarının vardır.  

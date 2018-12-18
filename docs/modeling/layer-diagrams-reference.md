@@ -1,6 +1,6 @@
 ---
 title: Bağımlılık diyagramları başvurusu
-ms.date: 11/04/2016
+ms.date: 09/28/2018
 ms.topic: reference
 f1_keywords:
 - vs.teamarch.layerdiagram.layerexplorer.artifactlink
@@ -20,50 +20,55 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 5235d459a77ef85212b9e03cd18149c4bfb539a2
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 1ef2d68cb0f8e3d6904bdf3f3ebbab321649c3e1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49920939"
 ---
 # <a name="dependency-diagrams-reference"></a>Bağımlılık diyagramları: başvuru
 
-Visual Studio'da kullanabileceğiniz bir *bağımlılık diyagramı* sisteminizin üst düzey, mantıksal mimarisini görselleştirmek için. Bir bağımlılık diyagramı fiziksel yapıları sisteminizde adlı mantıksal, soyut gruplar halinde düzenler *katmanları*. Bu katmanlar yapıları gerçekleştirir ana görevleri ya da sisteminizin ana bileşenlerini açıklar. Her katman daha ayrıntılı görevleri tanımlayan iç içe geçmiş katmanları de içerebilir.
+Visual Studio'da kullanabileceğiniz bir *bağımlılık diyagramı* sisteminizin üst düzey, mantıksal mimarisini görselleştirmek için. Bir bağımlılık diyagramı fiziksel yapıları sisteminizde adı verilen mantıklı, soyut gruplar halinde düzenler *katmanları*. Bu katmanlar, yapıların gerçekleştirdiği temel görevleri veya sistemin ana bileşenlerini açıklar. Her katman aynı zamanda daha ayrıntılı görevleri açıklayan iç içe katmanlar içerebilir.
 
-Bu özellik, Visual Studio'nun hangi sürümleri desteklemek için bkz [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
+Bu özellik, Visual Studio'nun hangi sürümlerinin desteklediğini görmek için bkz: [mimari ve Modelleme Araçları sürüm desteği](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).
 
-Katmanlar arasında hedeflenen veya var olan bağımlılıkları belirtebilirsiniz. Oklar temsil edilir, bu bağımlılıklar hangi katmanların kullanabilir veya şu anda diğer katmanları tarafından temsil edilen işlevselliği kullanmak gösterir. Sisteminiz farklı rolleri ve işlevleri açıklayan katmanlara düzenleyerek, bir bağımlılık diyagramı anlamak, yeniden ve kodunuzu bakımını kolaylaştırır yardımcı olabilir.
+> [!NOTE]
+> Bağımlılık diyagramları Visual Studio 2017'de .NET Core projeleri için desteklenmiyor.
 
-Aşağıdaki görevleri gerçekleştirmenize yardımcı olacak bir bağımlılık diyagramı kullanın:
+Katmanlar arasındaki hedeflenen veya varolan bağımlılıkları belirtebilirsiniz. Oklar olarak temsil edilen Bu bağımlılıklar, hangi katmanların kullanın veya diğer Katmanlar tarafından temsil edilen işlevi kullanmakta gösterir. Sisteminiz farklı rolleri ve işlevleri açıklayan katmanlara düzenleyerek, bir bağımlılık diyagramı anlamak, yeniden kullanmak ve kodunuzu bakımını kolaylaştırmak yardımcı olabilir.
 
--   Sisteminizin varolan veya hedeflenen mantıksal mimarisi iletişim kurar.
+Aşağıdaki görevleri gerçekleştirmenize yardımcı olması için bir bağımlılık diyagramı kullanın:
 
--   Mevcut kodunuzu ve hedeflenen mimari arasındaki çakışmaları keşfedin.
+-   Sisteminizde varolan veya hedeflenen mantıksal mimarisi iletişim kurar.
 
--   Yeniden Düzenle, güncelleştirme ya da sisteminizi gelişmesi hedeflenen mimari üzerindeki değişikliklerin etkisini düşünün.
+-   Mevcut kodunuzu ve hedeflenen mimariyi arasında çakışmalar keşfedin.
 
--   Hedeflenen mimari geliştirme ve kodunuzu bakımı sırasında iade ile doğrulama içererek ve yapı işlemleri.
+-   Yeniden düzenleyin, güncelleştirin veya sisteminizin evrim Geçiren hedeflenen mimari üzerindeki değişikliklerin etkisini görselleştirin.
 
-Bu konu, bir bağımlılık diyagramında kullanabileceğiniz öğeleri açıklar. Oluşturma ve bağımlılık diyagramlar çizin, bkz: hakkında daha ayrıntılı bilgi için [bağımlılık diyagramları: yönergeler](../modeling/layer-diagrams-guidelines.md). Katman desenleri hakkında daha fazla bilgi için ziyaret [desenleri ve uygulamalar site](http://go.microsoft.com/fwlink/?LinkId=145794).
+-   İadeniz doğrulama dahil ederek geliştirme ve kodunuzun bakım sırasında hedeflenen mimariyi güçlendirmek ve yapı işlemleri.
+
+Bu konuda, bir bağımlılık diyagram üzerinde kullanabileceğiniz öğeleri açıklar. Oluşturma ve bağımlılık diyagramları çizmek için bkz hakkında daha ayrıntılı bilgi için [bağımlılık diyagramları: yönergeler](../modeling/layer-diagrams-guidelines.md). Katman desenleri hakkında daha fazla bilgi için ziyaret [desenler ve uygulamalar site](http://go.microsoft.com/fwlink/?LinkId=145794).
 
 ## <a name="reading-dependency-diagrams"></a>Bağımlılık diyagramları okuma
 
-![Bağımlılık diyagramlarındaki öğelerin](../modeling/media/uml_layerrefreading.png)
+![Bağımlılık diyagramları üzerinde öğeler](../modeling/media/uml_layerrefreading.png)
 
-Aşağıdaki tabloda, bir bağımlılık diyagramında kullanabileceğiniz öğeleri açıklar.
+Aşağıdaki tabloda, bir bağımlılık diyagram üzerinde kullanabileceğiniz öğeleri açıklar.
 
-|**Şekil**|**Öğesi**|**Açıklama**|
-|---------------|-----------------|---------------------|
-|1.|**Katman**|Sisteminizdeki fiziksel yapıları mantıksal bir grubudur. Bu yapıtların ad alanları, projeler, sınıfları, yöntemleri vb. olabilir.<br /><br /> Bir katmana bağlı yapıları görmek için katman için kısayol menüsünü açın ve ardından **bağlantıları görüntüleme** açmak için **Katman Gezgini**.<br /><br /> Daha fazla bilgi için bkz: [Katman Gezgini](#Explorer).<br /><br /> -   **Namespace bağımlılıkları Yasak** -Bu katman ile ilişkilendirilmiş yapıların belirtilen ad alanında bulunan bağımlı olamaz belirtir.<br />-   **Ad alanları Yasak** -Bu katman ile ilişkilendirilmiş yapıların belirli ad alanlarına ait değil belirtir.<br />-   **Ad alanları gerekli** -Bu katman ile ilişkilendirilmiş yapıların belirtilen ad alanlarını birine ait olması gerektiğini belirtir.|
-|2|**bağımlılık**|Bir katmanın işlevselliği kullanabileceğini gösterir başka bir katmanında ancak tersi geçerli değildir.<br /><br /> -   **Yön** -bağımlılığın yönünü belirtir.|
-|3|**Çift yönlü bağımlılık**|Bir katmanın işlevselliği kullanabileceğini gösterir başka bir katmanında ve tersi.<br /><br /> -   **Yön** -bağımlılığın yönünü belirtir.|
-|4|**Yorum**|Genel Notlar diyagramı veya diyagramındaki öğeler eklemek için kullanın.|
-|5|**Açıklama bağlantısı**|Diyagram üzerinde öğelerin açıklamaları bağlamak için kullanın.|
+|**Şekil**|**Öğe**|**Açıklama**|
+|-|-|-|
+|1.|**Katman**|Sisteminizdeki fiziksel yapıları mantıksal grubudur. Bu yapılar ad alanları, projeler, sınıflar, yöntemler vb. olabilir.<br /><br /> Bir katmana bağlı yapıların listesini görmek için katmanın kısayol menüsünü açın ve ardından **bağlantıları görüntüle** açmak için **Katman Gezgini**.<br /><br /> Daha fazla bilgi için [Katman Gezgini](#Explorer).<br /><br /> -   **Namespace bağımlılıkları Yasak** -Bu katman ile ilişkili yapıların belirli ad alanlarına bağlı olamayacağını belirtir.<br />-   **Ad Yasak** -Bu katman ile ilişkili yapıların belirli ad alanlarına ait olmaması gerektiğini belirtir.<br />-   **Gerekli ad alanları** -Bu katman ile ilişkili yapıların belirli ad alanlarına birine ait olduğunu belirtir.|
+|2|**Bağımlılık**|Bir katmanın işlevselliği kullanabileceğini belirtir başka bir katmanda ancak tersi doğru değildir.<br /><br /> -   **Yön** -Bağımlılık yönünü belirtir.|
+|3|**Çift yönlü bağımlılık**|Bir katmanın işlevselliği kullanabileceğini belirtir başka bir katmanda ve bunun tersi de geçerlidir.<br /><br /> -   **Yön** -Bağımlılık yönünü belirtir.|
+|4|**Yorum**|Genel Notlar ve diyagramı diyagram üzerindeki öğeleri eklemek için bu seçeneği kullanın.|
+|5|**Açıklama bağlantısı**|Açıklamalar diyagram üzerindeki öğeleri bağlamak için bu seçeneği kullanın.|
 
-##  <a name="Explorer"></a> Katman Gezgini
+## <a name="Explorer"></a> Katman Gezgini
 
-Çözümünüzdeki projeleri, sınıflar, ad alanları, proje dosyalarını ve diğer bölümleri yazılımınızı gibi her katman yapılara bağlayabilirsiniz. Bir katmana numarasını katmana bağlı yapıların sayısını gösterir. Bununla birlikte, bir katmandaki yapı sayısını okurken, aşağıdakileri unutmayın:
+Her katman, çözümünüzdeki projeler, sınıflar, ad alanları, proje dosyaları ve diğer bölümlerini yazılım gibi yapıtları bağlayabilirsiniz. Bir katmandaki sayı katmana bağlı olan yapıların sayısını gösterir. Ancak, bir katmandaki yapı sayısını okurken aşağıdakileri unutmayın:
 
 -   Bir katman diğer yapıları içeren bir yapıya bağlanırsa, ancak katman doğrudan diğer yapılara bağlanmazsa, sayı yalnızca bağlı yapıyı içerir. Bununla birlikte, diğer yapılar katman doğrulanırken analiz için alınır.
 
@@ -71,28 +76,28 @@ Aşağıdaki tabloda, bir bağımlılık diyagramında kullanabileceğiniz öğe
 
 -   Bir katman yapılarla bağlantılı diğer katmanları içeriyorsa, kapsayıcı katman da üzerindeki sayı bu yapıları içermese bile bu yapılara bağlıdır.
 
-Bağlama katmanları ve yapıları hakkında daha fazla bilgi için bkz:
+Katmanlar ve yapılar bağlama hakkında daha fazla bilgi için bkz:
 
 -   [Bağımlılık diyagramları: yönergeler](../modeling/layer-diagrams-guidelines.md)
 
 -   [Kodunuz aracılığıyla bağımlılık diyagramları oluşturma](../modeling/create-layer-diagrams-from-your-code.md)
 
-#### <a name="to-examine-the-linked-artifacts"></a>Bağlı yapıları incelemek için
+### <a name="examine-the-linked-artifacts"></a>Bağlı yapıtlar inceleyin
 
--   Bağımlılık diyagramdaki bir veya daha fazla katmanları için kısayol menüsünü açın ve ardından **bağlantıları görüntüleme**.
+Bağımlılık diyagramında bir veya daha fazla katmanı için kısayol menüsünü açın ve ardından **bağlantıları görüntüle**.
 
-     **Explorer katman** açar ve Seçili katmanlara bağlı yapıları gösterir. **Explorer katman** her yapı bağlantılarını özelliklerini gösteren bir sütun vardır.
+**Katman Gezgini** açılır ve Seçili katmanlara bağlanmış yapılar gösterir. **Katman Gezgini** her yapı bağlantılarını özelliklerini gösteren bir sütun vardır.
 
-    > [!NOTE]
-    > Bu özelliklerin tümünü göremiyorsanız, genişletin **Katman Gezgini** penceresi.
+> [!NOTE]
+> Bu özelliklerin tümünü göremiyorsanız genişletin **Katman Gezgini** penceresi.
 
-    |**Katman Gezgini'nde sütun**|**Açıklama**|
-    |----------------------------------|---------------------|
-    |**kategorileri**|Sınıfı, ad alanı, kaynak dosya ve benzerleri gibi yapı türü|
-    |**Katman**|Yapıya katmanı|
-    |**Doğrulamayı destekler**|Varsa **doğru**, sonra da katman doğrulama işlemi projenin için veya öğeden olan bağımlılıklara doğrulayabilirsiniz.<br /><br /> Varsa **yanlış**, bağlantı katman doğrulama işlemine katılmayan sonra.<br /><br /> Daha fazla bilgi için bkz: [bağımlılık diyagramları: yönergeler](../modeling/layer-diagrams-guidelines.md).|
-    |**Tanımlayıcı**|Bağlı yapıya başvurusu|
+|**Katman Gezgini'nde sütun**|**Açıklama**|
+|-|-|
+|**Kategorileri**|Sınıfı, ad alanı, kaynak dosyasını ve benzeri gibi bir yapı türü|
+|**Katman**|Yapıya katmanı|
+|**Doğrulamayı destekler**|Varsa **True**, sonra da katman doğrulama işlemine proje ya da bu öğeden bağımlılıklara uygun olduğunu doğrulayabilirsiniz.<br /><br /> Varsa **False**, sonra bağlantının katman doğrulama işleminde yer almaz.<br /><br /> Daha fazla bilgi için [bağımlılık diyagramları: yönergeler](../modeling/layer-diagrams-guidelines.md).|
+|**tanımlayıcı**|Bağlantılı yapıt başvurusu|
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
 - [Uygulamanız için model oluşturma](../modeling/create-models-for-your-app.md)

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8033e0f769c0222dc8c3ee90d680ea6f2de279fa
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 635d435cd81286c96a3949168dc27f2b8983c4d7
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49843086"
 ---
 # <a name="idiaframedatagetlengthprolog"></a>IDiaFrameData::get_lengthProlog
-Başlangıç kod bloğundaki bayt sayısını alır.  
+Bloğu içindeki kod prolog bayt sayısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,13 +34,13 @@ HRESULT get_lengthProlog (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Başlangıç kodu bayt sayısını döndürür.  
+ [out] Prolog kodunun bayt sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` bu özellik desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` varsa bu özelliği desteklenmiyor. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Başlangıç kodu kayıtlarını saklayan, CPU durumunu ayarlar ve işlev için yığın kurar yönergeler dizisidir.  
+ Yazmaçları korur, CPU durumu ayarlar ve işlev için yığını kurar bir dizi yönergeleri prolog kodudur.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)

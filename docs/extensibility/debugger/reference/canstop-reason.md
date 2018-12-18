@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 791132d94526126e8fc611b2becbb8b7545bb578
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4129839094b7f5cf9907f6b92fa11fe1847f5806
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49938818"
 ---
 # <a name="canstopreason"></a>CANSTOP_REASON
-Bir program yürütmesinde belirli bir noktaya ulaştıktan sonra yürütmeyi durdur durumunda belirlemek için kullanılır.  
+Bir program yürütme belirli bir noktaya ulaştıktan sonra yürütmeyi durdurmak, belirlemek için kullanılır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,21 +44,21 @@ public enum enum_CANSTOP_REASON {
   
 ## <a name="members"></a>Üyeler  
  CANSTOP_ENTRYPOINT  
- Verilen programı giriş noktasını belirtir.  
+ Belirli bir programın giriş noktasını belirtir.  
   
  CANSTOP_STEPIN  
- Bir işlevdeki atlama belirtir.  
+ Bir işlevin Adımlama belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bağımsız değişken olarak geçirilen [GetReason](../../../extensibility/debugger/reference/idebugcanstopevent2-getreason.md) programının giriş noktası ulaştıktan sonra veya bir işlev veya yöntem Adımlama durdurmak doğrularsa oturum hata ayıklama Yöneticisi (SDM) ile doğrulamak için yöntem.  
+ Bağımsız değişken olarak geçirilen [GetReason](../../../extensibility/debugger/reference/idebugcanstopevent2-getreason.md) oturum hata ayıklama Yöneticisi (SDM) ile programın giriş noktası ulaştıktan sonra veya bir işlev veya metot Adımlama durdurmak uygun olup olmadığını onaylamak için yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetReason](../../../extensibility/debugger/reference/idebugcanstopevent2-getreason.md)

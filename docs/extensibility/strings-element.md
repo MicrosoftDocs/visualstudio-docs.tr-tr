@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31143897"
 ---
 # <a name="strings-element"></a>Dizeleri öğesi
 Dizeleri öğesi en az bir içermelidir **■ ButtonText** alt öğesi. Diğer tüm alt öğeler isteğe bağlıdır. Geçersiz XML karakterleri gibi '&' ve ' <' varlıklar kodlanmış olmalıdır ('&amp;'ve'&lt;' vb.).  

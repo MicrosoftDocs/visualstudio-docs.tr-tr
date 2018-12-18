@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d9250467aeec5a032c8e88054d868aa45ae7dda0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cc2c710e7fbd9a6fef3283f6dc5790707c65d30a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49933059"
 ---
 # <a name="idebuggenericfielddefinitionconstructinstantiation"></a>IDebugGenericFieldDefinition::ConstructInstantiation
-Tür bağımsız değişkenleri dizisini verilen bir alan örneği oluşturur.  
+Tür bağımsız değişkenleri dizisini verilen bir alanda örneği oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,16 +44,16 @@ int ConstructInstantiation(
   
 #### <a name="parameters"></a>Parametreler  
  `cArgs`  
- [in] Bağımsız değişkenler sayısı `ppArgs` dizi.  
+ [in] Bağımsız değişken sayısı `ppArgs` dizisi.  
   
  `ppArgs`  
- [in] Tür bağımsız değişkenleri içeren bir dizi. Tür bağımsız değişkenleri kapalı türleri (genel olmayan veya tam olarak oluşturulmuş genel türler) olması gerekir.  
+ [in] Tür bağımsız değişkenleri içeren bir dizi. Tür bağımsız değişkenlerini kapalı türler (genel olmayan veya tümüyle izlenen genel türler) olmalıdır.  
   
  `ppConstructedField`  
  [out] Döndürür [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) yeni alanını temsil eden arabirim.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Kısıtlamaları denetlenmez.  

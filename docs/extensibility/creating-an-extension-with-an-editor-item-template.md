@@ -1,5 +1,5 @@
 ---
-title: Bir düzenleyici öğesi şablonuyla bir uzantısı oluşturma | Microsoft Docs
+title: Bir düzenleyici öğesi şablonuyla uzantı oluşturma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,90 +13,91 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 60f10479e0ce6fa08e888d92556ff47b5d82af66
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a13c62d9fadfe105bd8e645ba6e7758c2b3195a3
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39500901"
 ---
-# <a name="creating-an-extension-with-an-editor-item-template"></a>Bir düzenleyici öğesi şablonuyla bir uzantısı oluşturma
-Sınıflandırıcı, adornments ve kenar boşlukları düzenleyiciye eklemek temel Düzenleyici uzantıları oluşturmak için Visual Studio SDK içinde yer alan öğe şablonları kullanabilirsiniz. Düzenleyici öğe şablonları, Visual C# veya Visual Basic VSIX projeleri için kullanılabilir.  
+# <a name="create-an-extension-with-an-editor-item-template"></a>Bir düzenleyici öğesi şablonuyla uzantı oluşturma
+Sınıflandırıcılar, kenarlıklar ve kenar boşlukları Düzenleyici ekleme temel Düzenleyici uzantıları oluşturmak için Visual Studio SDK'sı dahil edilen öğe şablonları kullanabilirsiniz. Düzenleyici öğesi şablonları, Visual C# veya Visual Basic VSIX projeleri için kullanılabilir.  
   
 ## <a name="prerequisites"></a>Önkoşullar  
- Visual Studio 2015'ten başlayarak, Visual Studio SDK'sını İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda bir isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yı daha sonra da yükleyebilirsiniz. Daha fazla bilgi için bkz: [Visual Studio SDK'sını yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
+ Visual Studio 2015'ten başlayarak, size Visual Studio SDK İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yi daha sonra yükleyebilirsiniz. Daha fazla bilgi için [Visual Studio SDK'yı yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
   
-## <a name="creating-a-classifier-extension"></a>Bir sınıflandırıcı uzantısı oluşturma  
- Uygun metni renkleri bir düzenleyici sınıflandırıcı Düzenleyicisi sınıflandırıcı öğesi şablon oluşturur (Bu durumda, her şeyi) herhangi bir metin dosyası olarak.  
+## <a name="create-a-classifier-extension"></a>Bir sınıflandırıcı uzantısı oluşturma  
+ Uygun metni renkler bir düzenleyici sınıflandırıcı Düzenleyicisi sınıflandırıcı öğe şablonu oluşturur (Bu durumda, her şeyi) herhangi bir metin dosyası olarak.  
   
-1.  İçinde **yeni proje** iletişim kutusunda, genişletin **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde, **VSIX proje**. İçinde **adı** kutusuna `TestClassifier`. **Tamam**'ı tıklatın.  
+1.  İçinde **yeni proje** iletişim kutusunda **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde **VSIX projesi**. İçinde **adı** kutusuna `TestClassifier`. **Tamam**'ı tıklatın.  
   
-2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. Git Visual C# **genişletilebilirlik** düğümü ve select **Düzenleyicisi sınıflandırıcı**. Varsayılan dosya adı (EditorClassifier1.cs) bırakın.  
+2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. Git için Visual C# **genişletilebilirlik** düğümünü seçip alt **Düzenleyicisi sınıflandırıcı**. Varsayılan dosya adı bırakın (*EditorClassifier1.cs*).  
   
-3.  Aşağıdaki gibi üç kod dosyaları vardır:  
+3.  Aşağıdaki gibi dört kod dosyası vardır:  
   
-    -   EditorClassifier1.cs içeren `EditorClassifier1` sınıfı.  
+    -   *EditorClassifier1.cs* içeren `EditorClassifier1` sınıfı.  
   
-    -   EditorClassifier1ClassificationDefinition.cs içeren `OEditorClassifier1ClassificationDefinition` sınıfı.  
+    -   *EditorClassifier1ClassificationDefinition.cs* içeren `EditorClassifier1ClassificationDefinition` sınıfı.  
   
-    -   EditorClassifier1Format.cs içeren `EditorClassifier1Format` sınıfı.  
+    -   *EditorClassifier1Format.cs* içeren `EditorClassifier1Format` sınıfı.  
   
-    -   EditorClassifier1Provider.cs içeren `EditorClassifier1Provider` sınıfı.  
+    -   *EditorClassifier1Provider.cs* içeren `EditorClassifier1Provider` sınıfı.  
   
-4.  Projeyi derleyin ve hata ayıklamayı Başlat. Visual Studio'nun deneysel örneği görüntülenir.  
+4.  Projeyi oluşturmak ve hata ayıklamaya başlayın. Visual Studio'nun deneysel örneğinde görünür.  
   
-     Bir metin dosyası açarsanız, tüm metni karşı mor arka plan altı çizilir.  
+     Bir metin dosyası açarsanız, tüm metin karşı Menekşe arka plan çizilir.  
   
-## <a name="creating-a-text-relative-adornment-extension"></a>Bir metin göreli Adornment uzantısı oluşturma  
- Metin karakteri tüm örneklerini süsler metin göreli adornment düzenleyici metin Adornment şablon oluşturur kırmızı anahattı ve mavi bir arka plana sahip bir kutusunu kullanarak ' bir'. Metin göreli çünkü kutusunu her zaman bile bunlar taşınmış yeniden biçimlendirilen ya da kapatıldığında 'bir' karakterleri, yer paylaşımları.  
+## <a name="create-a-text-relative-adornment-extension"></a>Bir metin göreli kenarlığı uzantısı oluşturma  
+ Tüm metin karakteri örneklerini düzenler bir metin göreli kenarlığı düzenleyici metin kenarlığı şablon oluşturur kırmızı anahat ve mavi bir arka plana sahip bir kutusunu kullanarak ' bir'. Metin göreli olduğundan kutusunu her zaman katmanları bile bunlar yeniden biçimlendirildi veya taşınırsa 'bir' karakter.  
   
-1.  İçinde **yeni proje** iletişim kutusunda, genişletin **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde, **VSIX proje**. İçinde **adı** kutusuna `TestAdornment`. **Tamam**'ı tıklatın.  
+1.  İçinde **yeni proje** iletişim kutusunda **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde **VSIX projesi**. İçinde **adı** kutusuna `TestAdornment`. **Tamam**'ı tıklatın.  
   
-2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. Git Visual C# **genişletilebilirlik** düğümü ve select **düzenleyici metin Adornment**. Varsayılan dosya adı (TextAdornment1.cs/vb) bırakın.  
+2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. Git için Visual C# **genişletilebilirlik** düğümünü seçip alt **düzenleyici metin kenarlığı**. Varsayılan dosya adı bırakın (*TextAdornment1.cs/vb*).  
   
-3.  Aşağıdaki gibi iki kod dosyaları vardır:  
+3.  Şu şekilde iki kod dosyası vardır:  
   
-    -   TextAdornment1.cs içeren `TextAdornment1` sınıfı.  
+    -   *TextAdornment1.cs* içeren `TextAdornment1` sınıfı.  
   
-    -   extAdornment1TextViewCreationListener.cs içeren `TextAdornment1TextViewCreationListener` sınıfı.  
+    -   *TextAdornment1TextViewCreationListener.cs* içeren `TextAdornment1TextViewCreationListener` sınıfı.  
   
-4.  Projeyi derleyin ve hata ayıklamayı Başlat. Deneysel örneği görüntülenir. Bir metin dosyası açarsanız, tüm 'bir' karakterlerini kırmızı mavi arka plan özetlenmiştir.  
+4.  Projeyi oluşturmak ve hata ayıklamaya başlayın. Deneysel örneği açılır. Bir metin dosyası açarsanız, metindeki 'bir' tüm karakterleri mavi arka plan kırmızı özetlenmiştir.  
   
-## <a name="creating-a-viewport-relative-adornment-extension"></a>Bir görünüm penceresinin göreli Adornment uzantısı oluşturma  
- Düzenleyici görünüm penceresinin Adornment şablon görünüm penceresinin sağ üst köşesinde kırmızı anahattına sahip bir mor kutusu ekler bir görünüm penceresinin göreli adornment oluşturur.  
+## <a name="create-a-viewport-relative-adornment-extension"></a>Görünüm penceresi göreli kenarlığı uzantısı oluşturma  
+ Görünüm penceresinin sağ üst köşesinde kırmızı bir anahattına içeren bir Menekşe kutusu ekleyen bir Görünüm penceresi göreli kenarlığı Düzenleyicisi Görünüm penceresi kenarlığı şablon oluşturur.  
   
 > [!NOTE]
->  *Görünüm penceresinin* şu anda görüntülenen metin görünümü alanıdır.  
+>  **Görünüm penceresi** şu anda görüntülenen metin görünümünü alanıdır.  
   
-#### <a name="to-create-a-viewport-adornment-extension-by-using-the-editor-viewport-adornment-template"></a>Düzenleyici görünüm penceresinin Adornment şablonu kullanarak bir görünüm penceresinin adornment uzantısı oluşturmak için  
+### <a name="to-create-a-viewport-adornment-extension-by-using-the-editor-viewport-adornment-template"></a>Düzenleyici Görünüm penceresi kenarlığı şablonu kullanarak bir Görünüm penceresi kenarlığı uzantısı oluşturmak için  
   
-1.  İçinde **yeni proje** iletişim kutusunda, genişletin **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde, **VSIX proje**. İçinde **adı** kutusuna `ViewportAdornment`. **Tamam**'ı tıklatın.  
+1.  İçinde **yeni proje** iletişim kutusunda **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde **VSIX projesi**. İçinde **adı** kutusuna `ViewportAdornment`. **Tamam**'ı tıklatın.  
   
-2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. Git Visual C# **genişletilebilirlik** düğümü ve select **Düzenleyicisi görünüm penceresinin Adornment**. Varsayılan dosya adı (ViewportAdornment1.cs/vb) bırakın.  
+2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. Git için Visual C# **genişletilebilirlik** düğümünü seçip alt **Düzenleyicisi Görünüm penceresi kenarlığı**. Varsayılan dosya adı bırakın (*ViewportAdornment1.cs/vb*).  
   
-3.  Aşağıdaki gibi iki kod dosyaları vardır:  
+3.  Şu şekilde iki kod dosyası vardır:  
   
-    -   ViewportAdornment1.cs içeren `ViewportAdornment1` sınıfı.  
+    -   *ViewportAdornment1.cs* içeren `ViewportAdornment1` sınıfı.  
   
-    -   ViewportAdornment1TextViewCreationListener.cs içeren `ViewportAdornment1TextViewCreationListener` sınıfı  
+    -   *ViewportAdornment1TextViewCreationListener.cs* içeren `ViewportAdornment1TextViewCreationListener` sınıfı  
   
-4.  Projeyi derleyin ve hata ayıklamayı Başlat. Deneysel örneği görüntülenir. Yeni bir metin dosyası oluşturursanız, kırmızı anahattı sahip bir mor kutusu görünüm penceresinin sağ üst köşesinde görüntülenir.  
+4.  Projeyi oluşturmak ve hata ayıklamaya başlayın. Deneysel örneği açılır. Yeni bir metin dosyası oluşturursanız, görünüm penceresinin sağ üst köşesinde kırmızı anahat içeren bir Menekşe kutusu görüntülenir.  
   
-## <a name="creating-a-margin-extension"></a>Kenar boşluğu uzantısı oluşturma  
- "Hello world!" sözcükler ile birlikte görüntülenir yeşil bir kenar boşluğu Düzenleyicisi kenar boşluğu şablon oluşturur Yatay kaydırma çubuğu aşağıda.  
+## <a name="create-a-margin-extension"></a>Bir kenar boşluğu uzantısı oluşturma  
+ Düzenleyici kenar şablon sözcükleri birlikte görünen yeşil bir kenar boşluğu oluşturur **Merhaba Dünya!* Yatay kaydırma çubuğunun altında.  
   
-#### <a name="to-create-a-margin-extension-by-using-the-editor-margin-template"></a>Düzenleyici kenar boşluğu şablonu kullanarak bir kenar boşluğu uzantısı oluşturmak için  
+### <a name="to-create-a-margin-extension-by-using-the-editor-margin-template"></a>Düzenleyici kenar şablonu kullanarak bir kenar boşluğu uzantısı oluşturma  
   
-1.  İçinde **yeni proje** iletişim kutusunda, genişletin **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde, **VSIX proje**. İçinde **adı** kutusuna `MarginExtension`. **Tamam**'ı tıklatın.  
+1.  İçinde **yeni proje** iletişim kutusunda **Visual C#** veya **Visual Basic** ve ardından **genişletilebilirlik**. İçinde **şablonları** bölmesinde **VSIX projesi**. İçinde **adı** kutusuna `MarginExtension`. **Tamam**'ı tıklatın.  
   
-2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. Git Visual C# **genişletilebilirlik** düğümü ve select **Düzenleyicisi görünüm penceresinin Adornment**. Varsayılan dosya adı (EditorMargin1.cs/vb) bırakın.  
+2.  İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. Git için Visual C# **genişletilebilirlik** düğümünü seçip alt **Düzenleyici kenar**. Varsayılan dosya adı (EditorMargin1.cs/vb) bırakın.  
   
-3.  Aşağıdaki gibi iki kod dosyaları vardır:  
+3.  Şu şekilde iki kod dosyası vardır:  
   
-    -   EditorMargin1.cs içeren `EditorMargin1` sınıfı.  
+    -   *EditorMargin1.cs* içeren `EditorMargin1` sınıfı.  
   
-    -   EditorMargin1Factory.cs içeren `EditorMargin1Factory` sınıfı.  
+    -   *EditorMargin1Factory.cs* içeren `EditorMargin1Factory` sınıfı.  
   
-4.  Bu projeyi derleyin ve hata ayıklamayı Başlat. Deneysel örneği görüntülenir. Bir metin dosyası açarsanız, "Merhaba EditorMargin1" sözcükler sahip yeşil bir kenar boşluğu altında yatay kaydırma çubuğu görüntülenir.  
+4.  Bu projeyi oluşturun ve hata ayıklamayı başlatın. Deneysel örneği açılır. Sözcükleri olan yeşil bir kenar boşluğu bir metin dosyası açarsanız **Hello EditorMargin1** yatay kaydırma çubuğunun altında görüntülenir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Dil Hizmeti ve Düzenleyici Uzantı Noktaları](../extensibility/language-service-and-editor-extension-points.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Dil hizmeti ve düzenleyici uzantı noktaları](../extensibility/language-service-and-editor-extension-points.md)

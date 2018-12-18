@@ -19,6 +19,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31136035"
 ---
 # <a name="project-configuration-object"></a>Proje yapılandırma nesnesi
 Proje yapılandırma nesnesi kullanıcı Arabirimi için yapılandırma bilgilerini görüntüleme yönetir.  

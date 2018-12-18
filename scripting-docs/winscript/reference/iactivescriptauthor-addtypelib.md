@@ -1,11 +1,11 @@
 ---
 title: IActiveScriptAuthor::AddTypeLib | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IActiveScriptAuthor.AddTypeLib
@@ -14,18 +14,19 @@ apilocation:
 helpviewer_keywords:
 - IActiveScriptAuthor::AddTypeLib
 ms.assetid: d6696547-3eb5-4f31-9c5c-60aa29b6f083
-caps.latest.revision: 
+caps.latest.revision: 9
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: 150628f1822c721f1e349005de457951e226ef1b
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: e1122b5327da5573071bc534b5eb1a16fa69b873
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44283385"
 ---
 # <a name="iactivescriptauthoraddtypelib"></a>IActiveScriptAuthor::AddTypeLib
-Ad alanı komut dosyası için tür kitaplığı ekler.  
+Komut dosyası için ad alanı için bir tür kitaplığı ekler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,7 +41,7 @@ HRESULT AddTypeLib(
   
 #### <a name="parameters"></a>Parametreler  
  `rguidTypeLib`  
- [in] Eklenecek CLSID (sınıf tanımlayıcısı) tür kitaplığı.  
+ [in] Eklenecek CLSID (sınıfı tanımlayıcısı) tür kitaplığının.  
   
  `dwMajor`  
  [in] Ana sürüm numarası.  
@@ -59,9 +60,9 @@ HRESULT AddTypeLib(
 |`S_OK`|Yöntem başarılı oldu.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntemi çağırır `LoadTypeLib` tür kitaplığı yüklenemiyor. Başarılı, bu yöntemi çağırır `IActiveScriptAuthor::AddNamedItem` tür bilgisi eklemek için.  
+ Bu yöntemin çağırdığı `LoadTypeLib` tür kitaplığı yüklenemiyor. Başarılı olduktan sonra bu yöntemin çağırdığı `IActiveScriptAuthor::AddNamedItem` tür bilgisi eklemek için.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Iactivescriptauthor arabirimi](../../winscript/reference/iactivescriptauthor-interface.md)   
  [IActiveScriptAuthor::AddNamedItem](../../winscript/reference/iactivescriptauthor-addnameditem.md)   
- [LoadTypeLib](http://msdn.microsoft.com/en-us/155b48e5-5438-409e-9342-630a6a500f60)
+ [LoadTypeLib](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelib)

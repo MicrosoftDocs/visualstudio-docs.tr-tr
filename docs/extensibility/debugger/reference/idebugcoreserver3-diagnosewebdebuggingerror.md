@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d0facdbd5da7d17061039e0a9e7faed2be3bbe4b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b450af1437f9522509913d34976e648da31b91fb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49843346"
 ---
 # <a name="idebugcoreserver3diagnosewebdebuggingerror"></a>IDebugCoreServer3::DiagnoseWebDebuggingError
 Bir auto-attach neden belirleme girişimi başarısız oldu.  
@@ -40,16 +41,16 @@ int DiagnoseWebDebuggingError(
   
 #### <a name="parameters"></a>Parametreler  
  `pszUrl`  
- [in] Şu anda kullanılmıyor; her zaman null bir değere ayarlamanız gerekir.  
+ [in] Şu anda kullanılmıyor; her zaman null değerine ayarlanmalıdır.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Diğer tipik dönüş kodları şunlardır:  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Tipik diğer dönüş kodları şunlardır:  
   
 |Kod|Açıklama|  
 |----------|-----------------|  
-|`S_WEBDBG_UNABLE_TO_DIAGNOSE`|Hata ayıklamayı başlatmak uzak sunucu neden başarısız belirleyemiyor.|  
-|`S_WEBDBG_DEBUG_VERB_BLOCKED`|Büyük olasılıkla yetersiz izinler nedeniyle uzak sunucuda hata ayıklaması yapılamıyor veya DEBUG fiilini etkin olmadığından.|  
-|`E_WEBDBG_DEBUG_VERB_BLOCKED`|Web sunucusu kilitli ve hata ayıklamayı etkinleştirmek için gerekli olan DEBUG fiilini engelliyor.|  
+|`S_WEBDBG_UNABLE_TO_DIAGNOSE`|Hata ayıklamayı başlatmak uzak sunucu başarısız olmasının belirlenemiyor.|  
+|`S_WEBDBG_DEBUG_VERB_BLOCKED`|Büyük olasılıkla yetersiz izinler nedeniyle uzak sunucuda hata ayıklaması yapılamıyor veya DEBUG fiilini etkin değil.|  
+|`E_WEBDBG_DEBUG_VERB_BLOCKED`|Web sunucusu kilitlenmiş ve hata ayıklamayı etkinleştirmek için gerekli olan DEBUG fiilini engelliyor.|  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)

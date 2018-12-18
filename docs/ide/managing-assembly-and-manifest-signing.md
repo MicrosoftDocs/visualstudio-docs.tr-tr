@@ -1,9 +1,8 @@
 ---
-title: Derleme ve bildirim imzalamayı yönetme | Microsoft Docs
-ms.custom: ''
+title: Derleme ve bildirim imzalamayı yönetme
 ms.date: 02/17/2017
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 helpviewer_keywords:
 - manifests [Visual Studio]
@@ -16,59 +15,64 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 2104ea0a86b351d0300bb7327c338dfcb0cd1818
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fb2113ed091d99ed66b13955ea468c376bba9490
+ms.sourcegitcommit: 495bba1d8029646653f99ad20df2f80faad8d58b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39379572"
 ---
-# <a name="managing-assembly-and-manifest-signing"></a>Derleme ve Bildirim İmzalamayı Yönetme
-Tanımlayıcı ad imzası bir yazılım bileşeni genel olarak benzersiz bir kimliği verir. Tanımlayıcı adlar derleme başka birisi tarafından gibi görünerek edilemez olduğunu garanti ve bileşen bağımlılıklar ve yapılandırma deyimleri doğru bileşeni ve bileşen sürümü harita sağlamak için kullanılır.  
-  
- Güçlü bir ad, bir ortak anahtar belirteci ve dijital imza derlemenin kimliğini (düz metin ad, sürüm numarasını ve kültür bilgilerini) oluşur.  
-  
- Visual Basic ve C# projelerine imzalama derlemeler hakkında daha fazla bilgi için bkz: [bkz](http://msdn.microsoft.com/Library/ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9).  
-  
- Visual C++ projelerinde imzalama derlemeler hakkında daha fazla bilgi için bkz: [tanımlayıcı ad derlemeleri (derleme imzalama) (C + +/ CLI)](/cpp/dotnet/strong-name-assemblies-assembly-signing-cpp-cli).  
+# <a name="manage-assembly-and-manifest-signing"></a>Derleme ve bildirim imzalamayı yönetme
+
+Tanımlayıcı ad imzalama bir yazılım bileşeni genel olarak benzersiz bir kimlik sağlar. Güçlü adlar derleme başkası tarafından görünerek edilemez olduğunu garanti ve bileşen bağımlılıklar ve yapılandırma deyimleri bileşen sürümü ve doğru bileşeni eşleme emin olmak için kullanılır.
+
+Güçlü bir ad derlemenin kimliğinden (basit metin adından, sürüm numarası ve kültür bilgilerini) bir ortak anahtar belirteci ve dijital imza oluşur.
+
+Visual Basic ve C# projelerinde imzalama derlemeler hakkında daha fazla bilgi için bkz: [tanımlayıcı adlı derlemeler oluşturma ve kullanma](/dotnet/framework/app-domains/create-and-use-strong-named-assemblies).
+
+Visual C++ projelerinde imzalama derlemeler hakkında daha fazla bilgi için bkz: [tanımlayıcı adlandırılmış derlemeler (C + +/ CLI)](/cpp/dotnet/strong-name-assemblies-assembly-signing-cpp-cli).
 
 > [!NOTE]
->  Tanımlayıcı ad imzası ters mühendislik karşı derlemenin korumaz.  Ters mühendislik karşı korumak için bkz: [Dotfuscator Community Edition (CE)](dotfuscator/index.md).
-  
-## <a name="asset-types-and-signing"></a>Varlık türleri ve imzalama  
- .NET derleme ve uygulama bildirimlerini imzalayabilirsiniz. Bunlar aşağıdakileri içerir:  
-  
--   yürütülebilir dosyalar (.exe)  
-  
--   uygulama bildirimleri (. exe.manifest)  
-  
--   dağıtım bildirimleri (.application)  
-  
--   Paylaşılan bileşen derlemeleri (.dll)  
-  
-Aşağıdaki varlık türlerini oturum açmanız gerekir:  
-  
-1.  Derlemeleri genel derleme önbelleği (GAC) dağıtmak istiyorsanız.  
-  
-2.  [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] Uygulama ve dağıtım bildirimlerini. Visual Studio, varsayılan olarak bu uygulamalar için imzalama sağlar.  
-  
-3.  COM birlikte çalışabilirlik için kullanılan birincil birlikte çalışma derlemeleri. Birincil birlikte çalışma derlemesi COM tür kitaplığından oluştururken, TLBIMP yardımcı programı güçlü adlandırma zorlar.  
-  
-Genel yürütülebilir dosyalar oturumunuzu. Kesin adlandırılmış bir bileşeni uygulama ile dağıtılan kesin adlandırılmış bir bileşen başvuramaz. Visual Studio uygulama yürütülebilir dosyalar oturum değil, ancak bunun yerine zayıf adlı yürütülebilir dosyaya işaret uygulama bildirimi imzalanır. Genellikle, imzalama daha bağımlılıkları yönetmek zorlaştırabilir olduğundan, uygulamanız için özel bileşenleri imzalama kaçınmalısınız.  
-  
-## <a name="how-to-sign-an-assembly-in-visual-studio"></a>Visual Studio'da bir derleme imzalama  
- Bir uygulama veya bileşenin kullanarak oturum **imzalama** proje penceresinin sekmesinde (proje düğümüne sağ tıklayın **Çözüm Gezgini** seçip **özellikleri**, veya türü **proje özellikleri** içinde **hızlı başlatma** penceresinde veya içinde alt + ENTER tuşuna basın **Çözüm Gezgini** penceresi). Seçin **imzalama** sekmesini ve ardından **derlemeyi imzalamak** onay kutusu.  
-  
- Bir anahtar dosyası belirtin. Yeni bir anahtar dosyası oluşturmayı seçerseniz, yeni anahtar dosyaları .pfx biçiminde her zaman oluşturulduğunu unutmayın. Yeni dosya için bir ad ve parola gerekir.  
-  
+> Ters mühendislik karşı derlemenin tanımlayıcı ad imzalama korumaz. Ters mühendislik karşı korumak için bkz: [Dotfuscator Community Edition'ı (CE)](dotfuscator/index.md).
+
+## <a name="asset-types-and-signing"></a>Varlık türleri ve imzalama
+
+.NET derlemelerini ve uygulama bildirimleri imzalayabilirsiniz:
+
+- Yürütülebilir dosyalar (*.exe*)
+
+- Uygulama bildirimleri (*. exe.manifest*)
+
+- Dağıtım bildirimleri (*.application*)
+
+- Paylaşılan bileşen derlemeler (*.dll*)
+
+Aşağıdaki varlık türleri imzalayın:
+
+1. Derlemeleri, Genel Derleme Önbelleği (GAC) bunları dağıtmak istiyorsanız.
+
+2. ClickOnce Uygulama ve dağıtım bildirimleri. Visual Studio, bu uygulamalar için varsayılan olarak imzalama sağlar.
+
+3. COM birlikte çalışabilirlik için kullanılan birincil birlikte çalışma derlemelerini. Birincil birlikte çalışma derlemesi bir COM tür kitaplığından oluştururken, TLBIMP yardımcı programı güçlü adlandırma zorlar.
+
+Genel olarak, yürütülebilir dosyalar kaydolma. Kesin adlandırılmış bir bileşeni uygulama ile dağıtılan kesin adlandırılmış bir bileşen başvuramaz. Visual Studio uygulama yürütülebilir dosyaları oturum açmasını sağlamayan ancak bunun yerine zayıf adlı yürütülebilir öğeye işaret uygulama bildirimini imzalar. İmzalama, bağımlılıkları yönetmek daha zor zorlaştırabilir çünkü uygulamanıza özel bileşenler imzalama kaçının.
+
+## <a name="how-to-sign-an-assembly-in-visual-studio"></a>Bir derlemeyi Visual Studio'da oturum açma
+
+Bir uygulama veya bileşenin kullanarak oturum **imzalama** Proje Özellikleri penceresi için sekmesinde ('nde proje düğümüne sağ tıklayın **Çözüm Gezgini** seçip **özellikleri**, veya tür **proje özellikleri** içinde **hızlı başlatma** penceresi veya tuşuna **Alt**+**Enter** içinde **Çözüm Gezgini**). Seçin **imzalama** sekmesine ve ardından seçin **derlemeyi imzalamayı** onay kutusu.
+
+Bir anahtar dosyası belirtin. Yeni bir anahtar dosyası oluşturmayı seçerseniz, yeni anahtar dosyaları her zaman oluşturulan *.pfx* biçimi. Yeni dosya için bir ad ve parola gerekir.
+
 > [!WARNING]
->  Her zaman başka birinin kullanmasını önlemek için bir parola ile anahtar dosyanızı korumanız gerekir. Ayrıca sağlayıcılar veya sertifika depolarını kullanarak anahtarlarınızı güvenliğini sağlayabilirsiniz.  
-  
- Ayrıca, önceden oluşturduğunuz bir anahtarı işaret edebilir. Anahtarları oluşturma hakkında daha fazla bilgi için bkz: [nasıl yapılır: bir genel-özel anahtar çifti oluşturma](/dotnet/framework/app-domains/how-to-create-a-public-private-key-pair).  
-  
- Yalnızca bir ortak anahtar erişimi varsa, anahtar atama erteleme imzalamayı geciktirme kullanabilirsiniz. Seçerek imzalamayı geciktirme etkinleştirmek **gecikme yalnızca oturum** onay kutusu. Gecikmeli imzalanmış bir proje çalışmaz ve hata ayıklaması yapılamıyor. Ancak, kullanarak doğrulama geliştirme sırasında atlayabilirsiniz [Sn.exe (tanımlayıcı ad aracı)](/dotnet/framework/tools/sn-exe-strong-name-tool) ile `-Vr` seçeneği.  
-  
- Bildirimleri imzalama hakkında daha fazla bilgi için bkz: [nasıl yapılır: oturum uygulama ve dağıtım bildirimlerini](../ide/how-to-sign-application-and-deployment-manifests.md).  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Tanımlayıcı adlı derlemeler](/dotnet/framework/app-domains/strong-named-assemblies)   
- [Tanımlayıcı Ad Derlemeleri (Derleme İmzalama) (C++/CLI)](/cpp/dotnet/strong-name-assemblies-assembly-signing-cpp-cli)
+> Anahtar dosyanızı başkası kullanmasını önlemek için bir parola ile her zaman korur. Sağlayıcıları veya sertifika depolarını kullanarak, anahtarlarınızın güvenliğini sağlayabilirsiniz.
+
+Ayrıca, önceden oluşturduğunuz bir anahtara işaret edebilir. Anahtarları oluşturma hakkında daha fazla bilgi için bkz. [ortak-özel anahtar çifti oluşturma](/dotnet/framework/app-domains/how-to-create-a-public-private-key-pair).
+
+Yalnızca ortak anahtar erişimi varsa, anahtar atama erteleneceği Gecikmeli imzalama'ı kullanabilirsiniz. Seçerek imzalamayı geciktirme etkinleştirme **gecikme yalnızca oturum** onay kutusu. Gecikmeli imzalanmış bir proje çalıştırmaz ve hata ayıklaması yapılamıyor. Ancak, geliştirme sırasında doğrulama kullanarak atlayabilir [Sn.exe tanımlayıcı ad aracı](/dotnet/framework/tools/sn-exe-strong-name-tool) ile `-Vr` seçeneği.
+
+Bildirimleri imzalama hakkında daha fazla bilgi için bkz: [nasıl yapılır: uygulama ve dağıtım bildirimlerini imzalama](../ide/how-to-sign-application-and-deployment-manifests.md).
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Tanımlayıcı adlı derlemeler](/dotnet/framework/app-domains/strong-named-assemblies)
+- [Tanımlayıcı adlandırılmış derlemeler (C + +/ CLI)](/cpp/dotnet/strong-name-assemblies-assembly-signing-cpp-cli)

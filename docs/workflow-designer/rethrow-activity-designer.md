@@ -1,7 +1,9 @@
 ---
-title: Etkinlik Tasarımcısı yeniden oluşturulması | Microsoft Docs
+title: İş Akışı Tasarımcısı - Rethrow etkinlik Tasarımcısı
 ms.date: 11/04/2016
 ms.topic: reference
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 f1_keywords:
 - System.Activities.Statements.Rethrow.UI
 ms.assetid: 9cfa2eda-395f-4cf3-9154-83fadd4f7452
@@ -10,29 +12,32 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 28982b16f9eebcaf34eba900303b92eaef870e31
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2b1d1832a7c0c44abb1e8c97ec4c8265262d117e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49857555"
 ---
-# <a name="rethrow-activity-designer"></a>Etkinlik Tasarımcısı yeniden oluşturma
-**Yeniden oluşturulması** etkinlik Tasarımcısı oluşturmak ve yapılandırmak için kullanılan bir <xref:System.Activities.Statements.Rethrow> etkinlik.
+# <a name="rethrow-activity-designer"></a>Rethrow Etkinlik Tasarımcısı
 
-## <a name="the-rethrow-activity"></a>Yeniden oluşturma etkinliği
- <xref:System.Activities.Statements.Rethrow> Etkinlik önceden oluşturulan bir özel durum oluşturur. Bu etkinlik yalnızca, kullanılabilir bir <xref:System.Activities.Statements.Catch> işleyicisinde <xref:System.Activities.Statements.TryCatch> etkinlik.
+**Rethrow** etkinlik Tasarımcısı oluşturmak ve yapılandırmak için kullanılan bir <xref:System.Activities.Statements.Rethrow> etkinlik.
 
-### <a name="using-the-rethrow-activity-designer"></a>Etkinlik yeniden oluşturulması Tasarımcısı'nı kullanarak
- **Yeniden oluşturulması** etkinlik Tasarımcısı bulunabilir **işleme hatası** kategorisini **araç**, hangi tıklayarak erişildiğinde **araç**sol tarafındaki sekmesinde [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] (Alternatif olarak, seçin **araç** gelen **Görünüm** menüsü veya CTRL + ALT + X.)
+## <a name="the-rethrow-activity"></a>Rethrow etkinlik
 
- **Yeniden oluşturulması** gelen etkinlik Tasarımcısı sürüklenebilir **araç** ve oturum bırakılan [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] yüzey yerde etkinlikleri genellikle yerleştirilir, gibi olarak içinde bir <xref:System.Activities.Statements.Sequence>. Bu oluşturur bir <xref:System.Activities.Statements.Rethrow> varsayılan etkinlik **DisplayName** Throw biri. <xref:System.Activities.Activity.DisplayName%2A> Değeri üstbilgisinde düzenlenebilir **yeniden oluşturulması** etkinlik Tasarımcısı veya **DisplayName** ve özellik ızgarasının kutusu.
+<xref:System.Activities.Statements.Rethrow> Etkinlik, daha önce oluşturulan bir özel durum oluşturur. Bu etkinlik yalnızca kullanılabilir bir <xref:System.Activities.Statements.Catch> işleyicisinde <xref:System.Activities.Statements.TryCatch> etkinlik.
 
-### <a name="the-rethrow-properties"></a>Yeniden oluşturma özellikleri
- Aşağıdaki tabloda <xref:System.Activities.Statements.Rethrow> özellikleri ve bunların Tasarımcısı'nda nasıl kullanıldığı açıklanmaktadır.
+### <a name="use-the-rethrow-activity-designer"></a>ReThrow etkinlik Tasarımcısı kullanma
+
+Erişim **Rethrow** etkinlik Tasarımcısı'nda **hata işleme** kategorisi **araç kutusu**. **Rethrow** etkinlik Tasarımcısı, gelen sürüklenebilir **araç kutusu** ve etkinlikleri genellikle yerleştirilen her yerde, gibi olarak içinde iş akışı Tasarımcısı yüzeyine açın bırakılan bir <xref:System.Activities.Statements.Sequence>. Etkinlik Tasarımcısı bırakarak oluşturur bir <xref:System.Activities.Statements.Rethrow> etkinliği ile bir varsayılan **DisplayName** Throw biri. <xref:System.Activities.Activity.DisplayName%2A> Değeri üst bilgisinde düzenlenebilir **Rethrow** etkinlik Tasarımcısı veya **DisplayName** özellik kılavuzunda kutusu.
+
+### <a name="the-rethrow-properties"></a>Rethrow özellikleri
+
+Aşağıdaki tabloda <xref:System.Activities.Statements.Rethrow> özelliklerini ve bunların Tasarımcısı'nda nasıl kullanıldığı açıklanmaktadır:
 
 |Özellik adı|Gerekli|Kullanım|
-|-------------------|--------------|-----------|
-|<xref:System.Activities.Activity.DisplayName%2A>|False|İsteğe bağlı kolay adı belirtir <xref:System.Activities.Statements.Rethrow> etkinlik. Yeniden oluşturma varsayılandır.|
+|-|--------------|-|
+|<xref:System.Activities.Activity.DisplayName%2A>|False|İsteğe bağlı kolay adı belirtir <xref:System.Activities.Statements.Rethrow> etkinlik. Rethrow varsayılandır.|
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

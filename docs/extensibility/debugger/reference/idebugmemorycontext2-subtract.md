@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c6cc7265def2d1a4b184f27865461706e62b98f3
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 3303d86abed596f35f714c4389770c613fa09b6b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896659"
 ---
 # <a name="idebugmemorycontext2subtract"></a>IDebugMemoryContext2::Subtract
-Geçerli bağlamdan belirtilen değeri çıkarır ve yeni bir bağlam döndürür.  
+Belirtilen değer geçerli bağlamdan çıkarır ve yeni bir bağlam döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,15 +47,15 @@ int Subtract(
  [in] Düşürmek için bellek bayt sayısı.  
   
  `ppMemCxt`  
- [out] Yeni bir döndürür [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesnesi.  
+ [out] Yeni bir [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bellek bağlamı bir adresi olduğundan, yeni bir bağlam arabirimi gerektirir yeni bir adres bir adres arasında bir değer çıkarılmasıyla üretir.  
+ Bir bellek bağlamı bir adresi olduğundan bir değeri bir adresinden çıkararak yeni bir bağlam arabirimi gerektiren yeni bir adres üretir.  
   
- Bu bağlamla ilişkili bellek alanı dışında elde edilen adresi olsa bile, bu yöntem her zaman yeni bir bağlam üretmek gerekir. Yeni bağlam için ayrılan bellek yok ya da tek özel durum olan `ppMemCxt` (bir hata olan) bir null değer.  
+ Bu bağlamla ilişkilendirilen bellek alanını elde edilen adresi dışında olsa bile, bu yöntem her zaman yeni bir bağlam üretmesi gerekir. Yeni bağlam için ayrılan bellek yok ise veya tek özel durumu olan `ppMemCxt` (Bu bir hatadır) null bir değerdir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md)

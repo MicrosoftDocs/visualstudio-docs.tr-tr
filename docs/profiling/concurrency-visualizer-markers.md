@@ -12,57 +12,58 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a1e713292421613e835697037d5298a4a2c854f6
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: cf07f939a9ce15d2ebca7afb0ee37695fa5fbf98
+ms.sourcegitcommit: bccb05b5b4e435f3c1f7c36ba342e7d4031eb398
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51220605"
 ---
-# <a name="concurrency-visualizer-markers"></a>Eşzamanlılık Görselleştiricisi İşaretleyicileri
-Eşzamanlılık görselleştiricisi içinde işaretlerinin bir uygulama olayları temsil eden simgelerdir.  Genellikle, bu olayların aşamaları veya bir uygulamadaki oluşum belirlemek için uygulama oluşturur.  Olayları, uygulama veya kitaplıkları ve uygulamanın kullandığı çalışma zamanları tarafından oluşturulabilir.  
+# <a name="concurrency-visualizer-markers"></a>Eşzamanlılık görselleştiricisi işaretleyicileri
+Eşzamanlılık görselleştiricisi içinde temsil eden bir uygulama olayları simgeleri işaretleyicileri şunlardır.  Genellikle, bu olayları aşamaları veya bir uygulamadaki oluşum belirlemek için bir uygulama oluşturur.  Olayları, uygulama veya kitaplıkları ve uygulamanın kullandığı çalışma zamanları oluşturulabilir.  
   
-## <a name="kinds-of-markers"></a>İşaretçileri türleri  
- Eşzamanlılık görselleştiricisi işaretleyicileri üç tür uygulama olayları temsil etmek için kullanır.: bayrakları, iletileri ve yayılır.  
+## <a name="kinds-of-markers"></a>Tür işaretleyicileri  
+ Eşzamanlılık görselleştiricisi işaretleyicileri üç tür uygulama olayları göstermek için kullanır.: işaretler, iletileri ve yayılır.  
   
-1.  Kullanım bir *bayrağı* uygulamanızı zamanda ilginç bir noktanın belirtmek için.  Örneğin, bir değişken değerini belirli bir eşiğe ulaştı veya bir özel durum oluştu temsil edecek bayrak kullanabilirsiniz.  
+1.  Kullanım bir *bayrağı* zamanlı uygulamanızda ilgi çekici bir noktası belirtmek için.  Örneğin, bir değişken değeri belirli bir eşiği ulaştı veya bir özel durum oluştu göstermenin bir bayrak kullanabilirsiniz.  
   
-2.  A *ileti* de işaretleri zaman, ancak noktasında günlük stili izleme için kullanabilirsiniz.  Örneğin, ne; böylece, izleme ve eşzamanlılık görselleştiricisi görüntülemek bir ileti çağrısında şimdi kayabilir bir günlük dosyasına yazılan. Eşzamanlılık görselleştiricisi, bu verileri bir CSV dosyasına dışarı aktarmak için de kullanabilirsiniz.  
+2.  A *ileti* de işaretler, fakat bir noktasında günlük stili izleme için kullanabilirsiniz.  Örneğin, ne, izleme ve eşzamanlılık görselleştiricisi içinde görüntülemek için artık bir ileti arama kaydırılabilir bir günlük dosyasına yazılan. Bu veri bir CSV dosyasına aktarmak için eşzamanlılık görselleştiricisi'ni de kullanabilirsiniz.  
   
-3.  A *span* bir, uygulamanızda kendi aşamaları Örneğin, bir zaman aralığı temsil eder.  
+3.  A *span* uygulamanızda, örneğin, biri, bir aşamaya, zaman aralığını temsil eder.  
   
-## <a name="marker-linkage-to-threads"></a>İş parçacıklarını işaret bağlantı  
- İşaretçileri oluşturur her iş parçacığı ayrı zaman çizelgesi kanal vardır.  İşaretçi olayları oluşturmaktan sorumlu iş parçacığı kimliği işaret kanal açıklama yanında gösterilir.  İşaretçi kanal sol tarafta gösterilen kimliği geçerli işlemdeki başka bir iş parçacığı kimliği eşleşir.  
+## <a name="marker-linkage-to-threads"></a>İşaret bağlantı iş parçacıkları  
+ Ayrı zaman çizelgesi kanal işaretçileri oluşturan her bir iş parçacığı vardır.  İşaret olayları oluşturmaktan sorumlu bir iş parçacığı Kimliğini yanındaki işaret kanal açıklaması gösterilir.  İşaret kanal sol tarafında gösterilen kimliği, geçerli işlemdeki başka bir iş parçacığı kimliği eşleşir.  
   
-## <a name="marker-importance"></a>İşaretçi önem derecesi  
- İşaretçileri dört önem düzeyinden birine sahip olabilir: Düşük, normal, yüksek ve kritik.  Önem düzeyi temelinde işaretçileri kaynakları filtreleyebilirsiniz.  Örneğin, yalnızca normal veya kritik önemi olan belirli bir kaynaktan işaretçileri görmek istiyorsanız, filtrede yapılandırabilirsiniz [Gelişmiş ayarları](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) iletişim kutusu. Araç ipucu ve buna bir işaret önemini görüntülenen [işaretçiler raporu](../profiling/markers-report.md).  
+## <a name="marker-importance"></a>İşaret önem derecesi  
+ İşaretçileri dört önem düzeyinden birine sahip olabilir: Düşük, normal, yüksek ve kritik.  Önem derecesi düzeyine dayalı işaretçileri kaynaklarını filtreleyebilirsiniz.  Örneğin, yalnızca normal veya kritik önemi olan belirli bir kaynaktan işaretçileri görmek istiyorsanız, filtrede yapılandırabilirsiniz [Gelişmiş ayarlar](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) iletişim kutusu. Araç ipucu ve buna bir işaret önemini görüntülenen [işaretçiler raporu](../profiling/markers-report.md).  
   
-## <a name="marker-category"></a>İşaretçi kategorisi  
- Bir işaretçi kategori aynı kaynaktan geldiği işaret olaylar grubu gösterir.  Eşzamanlılık görselleştiricisi renk bayrakları ve yayılma farklı kategorileri ayırmak için kullanır. Eşzamanlılık görselleştiricisi kategorileri, belirli bir olay Sağlayıcısı'ndan işaret olayları filtrelemek için kullanmak için yapılandırabilirsiniz.  Kullanım [Gelişmiş ayarları](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) filtre yapılandırmak için iletişim kutusu.  
+## <a name="marker-category"></a>İşaret kategorisi  
+ Bir işaretleyici kategori grubu aynı kaynaktan geldiği işaret olayları gösterir.  Eşzamanlılık görselleştiricisi renk bayrakları ve yayılma farklı kategorilere ayırmak için kullanır. Eşzamanlılık görselleştiricisi kategorileri belirli olay sağlayıcısı işaret olayları filtrelemek için kullanmak için yapılandırabilirsiniz.  Kullanım [Gelişmiş ayarlar](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) filtre yapılandırmak için iletişim kutusu.  
   
 ## <a name="known-sources-of-markers"></a>İşaretçileri bilinen kaynakları  
- Sağlayıcı için bazı kısıtlamalar aynılarını sürece tüm ETW sağlayıcı işaretleyicileri oluşturabilir. Eşzamanlılık görselleştiricisi işaretçileri için ek olay kaynaklarına dinleyecek şekilde yapılandırabilirsiniz. Varsayılan olarak, bu olay kaynaklarını dinler:  
+ Sağlayıcı için bazı kısıtlamalar aynılarını sürece herhangi bir ETW sağlayıcısı işaretleyicileri oluşturabilirsiniz. Eşzamanlılık görselleştiricisi işaretleyicileri için ek olay kaynakları için dinleyecek şekilde yapılandırabilirsiniz. Varsayılan olarak, bu olay kaynaklarını dinler:  
   
--   [Eşzamanlılık Görselleştiricisi SDK](../profiling/concurrency-visualizer-sdk.md)  
+- [Eşzamanlılık Görselleştiricisi SDK](../profiling/concurrency-visualizer-sdk.md)  
   
--   [Görev Paralel Kitaplığı (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl)  
+- [Görev Paralel Kitaplığı (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl)  
   
--   [Veri akışı](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)  
+- [Veri akışı](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)  
   
--   [Paralel LINQ (PLINQ)](/dotnet/standard/parallel-programming/parallel-linq-plinq)  
+- [Paralel LINQ (PLINQ)](/dotnet/standard/parallel-programming/parallel-linq-plinq)  
   
--   [Eşzamanlılık Çalışma Zamanı](/cpp/parallel/concrt/concurrency-runtime)  
+- [Eşzamanlılık Çalışma Zamanı](/cpp/parallel/concrt/concurrency-runtime)  
   
--   [Senaryo işaret desteği](http://msdn.microsoft.com/en-us/e3b55bc2-b451-4214-ae00-0c7f5a5baec8)  
+- [Senaryo işaretçisi desteği](/previous-versions/visualstudio/visual-studio-2010/dd984115\(v\=vs.100\))  
   
--   [C++ AMP (C++ Accelerated Massive Parallelism)](/cpp/parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism)  
+- [C++ AMP (C++ Accelerated Massive Parallelism)](/cpp/parallel/amp/cpp-amp-cpp-accelerated-massive-parallelism)  
   
- İşaretçileri sekmesindeki kullanabilir [Gelişmiş ayarları](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) çeşitli kaynaklardan işaretçileri eşzamanlılık görselleştiricisi ve, görüntülenen denetlemek için iletişim kutusunu işaretlerin önem ve kategorisine göre filtre uygulayabilirsiniz.  
+  İşaretçileri sekmede kullanabileceğiniz [Gelişmiş ayarlar](../profiling/advanced-settings-dialog-box-concurrency-visualizer.md) iletişim kutusu, işaretçiler çeşitli kaynaklardan eşzamanlılık görselleştiricisi ve, görüntülenip görüntülenmeyeceğini denetlemenizi önem ve kategoriye göre işaretçiler için filtre uygulayabilirsiniz.  
   
 ## <a name="markers-from-eventsource"></a>EventSource işaretçilerini  
- Eşzamanlılık görselleştiricisi EventSource olaylarını da görüntüleyebilirsiniz.  Daha fazla bilgi için bkz: [EventSource olaylarını işaretleyici olarak görselleştirme](../profiling/visualizing-eventsource-events-as-markers.md).  
+ Eşzamanlılık görselleştiricisi EventSource olaylarını da görüntüleyebilirsiniz.  Daha fazla bilgi için [görselleştirme EventSource olaylarını işaretleyici olarak](../profiling/visualizing-eventsource-events-as-markers.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Bayrak işaretleyicileri](../profiling/flag-markers.md)   
  [İleti işaretçileri](../profiling/message-markers.md)   
  [Kapsam işaretleyicileri](../profiling/span-markers.md)   
- [EventSource Olaylarını İşaretleyici Olarak Görselleştirme](../profiling/visualizing-eventsource-events-as-markers.md)
+ [EventSource olaylarını işaretleyici olarak Görselleştirme](../profiling/visualizing-eventsource-events-as-markers.md)

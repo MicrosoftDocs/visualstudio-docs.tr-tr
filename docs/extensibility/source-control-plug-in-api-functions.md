@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31144375"
 ---
 # <a name="source-control-plug-in-api-functions"></a>Kaynak Denetim eklentisi API işlevleri
 Kaynak Denetim eklentisi API uygun olarak bu API eklentisinin kaynak denetimi tarafından uygulanan gerekir aşağıdaki işlevleri sağlar. Her işlev ve semantiğini imzalarını bit bayrakları ile ilişkili olan ve diğer parametreleri bu başvuru kaynağında ayrıntılı olarak açıklanmıştır.  
@@ -85,7 +86,7 @@ Kaynak Denetim eklentisi API uygun olarak bu API eklentisinin kaynak denetimi ta
 ## <a name="requirements"></a>Gereksinimler  
  Başlık: scc.h  
   
- (Ortamı SDK'ın sağlanan ortak klasörü, varsayılan olarak, içerir *[sürücü]*\Program Files\VSIP 8.0\EnvSDK\common\inc; ayrıca MSSCCI örnekle VSIP klasöründe sağlanan *[sürücü]*\Program Files\VSIP 8.0\MSSCCI).  
+ (Ortamı SDK'ın sağlanan ortak klasörü, varsayılan olarak, içerir *[sürücü]* \Program Files\VSIP 8.0\EnvSDK\common\inc; ayrıca MSSCCI örnekle VSIP klasöründe sağlanan *[sürücü]* \Program Files\VSIP 8.0\MSSCCI).  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Kaynak Denetim Eklentileri](../extensibility/source-control-plug-ins.md)   

@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31125909"
 ---
 # <a name="reference-visual-studio-debugging-apis"></a>Başvuru (Visual Studio API hata ayıklama)
 Visual Studio hata ayıklama SDK başvuruları işlevselliği, hata ayıklayıcı ve bileşenlerinin ve çalışma zamanı mimarisi için temel modeli ana hatlarını vermektedir. Belgeleri, arabirimleri aracılığıyla tanımlar davranışı dışında açıkladığı bileşenleri ve arabirimleri hakkında mümkün olduğunca olabildiğince az varsayımlarda bulunur.  

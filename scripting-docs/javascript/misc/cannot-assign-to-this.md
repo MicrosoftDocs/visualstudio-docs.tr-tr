@@ -1,13 +1,13 @@
 ---
-title: Olamaz atanacak &#39; &#39; | Microsoft Docs
-ms.custom: 
+title: Atayamazsınız &#39;bu&#39; | Microsoft Docs
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-client-threshold
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - javascript
-ms.tgt_pltfrm: 
+ms.tgt_pltfrm: ''
 ms.topic: article
 f1_keywords:
 - VS.WebClient.Help.SCRIPT5000
@@ -16,34 +16,36 @@ dev_langs:
 - TypeScript
 - DHTML
 ms.assetid: ba2b0a2b-f0f8-4698-b335-a4ab6c166671
-caps.latest.revision: 
+caps.latest.revision: 7
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: c164b9b7d2989076a9dc0ef0bafba6159bc08885
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 47e55d39e85675b37d2ac9741d1207a9e81d369e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49856659"
 ---
-# <a name="cannot-assign-to-39this39"></a>Olamaz atanacak &#39; &#39;
-Bir değer atadığınız çalışıldı **bu**. **Bu** olan bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] ya da başvuruyor anahtar sözcüğü:  
-  
--   şu anda yürütülmekte olan bir yöntem nesnesi  
-  
--   Genel nesne geçerli bir yöntem yoktur (veya yöntemi başka bir nesneye ait değil varsa).  
-  
- Bir yöntem bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] nesne üzerinden çağrılan işlev. Bir yöntemin içinde **bu** sözcüktür yöntemi üzerinden çağrıldığı nesneye bir başvurusu (sınıf oluşturucu çağırarak oluşturulan nesne olmasını olur **yeni** işleci).  
-  
- Bir yöntem içinde kullandığınız **bu** geçerli nesne, ancak için başvurmak için yeni bir değer atayamazsınız **bu**.  
-  
-### <a name="to-correct-this-error"></a>Bu hatayı düzeltmek için  
-  
--   Atamak çalışmayın **bu**. Bir özellik veya yöntem başlatılan bir nesnenin erişmek için nokta işleci kullanın (örneğin, yuvarlak**.** RADIUS).  
-  
-    > [!NOTE]
-    >  Bir kullanıcı tarafından oluşturulan değişken adlandıramazsınız **bu**; bu bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] ayrılmış sözcük.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Bu bildirimi](../../javascript/reference/this-statement-javascript.md)   
- [Betiklerinizin sorunlarını giderme](../../javascript/advanced/troubleshooting-your-scripts-javascript.md)
+# <a name="cannot-assign-to-39this39"></a>Atayamazsınız &#39;bu&#39;
+Bir değer atayın çalışıldı **bu**. **Bu** olduğu bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] anahtar sözcüğü ya da ifade eder:
+
+- bir yöntem yürütülmekte nesnesi
+
+- Genel nesne geçerli bir yöntem (veya başka bir nesneye yöntemi ait değil ise).
+
+Bir yöntem bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] nesneyle çağrılan işlev. Bir yöntem içinde **bu** anahtar sözcüğü yöntemi aracılığıyla çağrıldığı nesneye bir başvurudur (ile sınıfın Oluşturucusu çağrılarak oluşturulan nesne olmasını olur **yeni** işleci).
+
+Bir yöntem içinde kullanabilirsiniz **bu** geçerli nesne, ancak sizin için yeni bir değere atanamaz **bu**.
+
+## <a name="to-correct-this-error"></a>Bu hatayı düzeltmek için
+
+- Atama çalışmayın **bu**. Bir özellik veya yöntem örneklenmiş bir nesnenin erişmek için nokta işlecini kullanın (örneğin, **circle.radius**).
+
+  > [!NOTE]
+  > Örneğin bir kullanıcı tarafından oluşturulan değişken adı **bu**; bu bir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] ayrılmış sözcük.
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [this Deyimi](../../javascript/reference/this-statement-javascript.md)
+- [Komut Dosyalarınızda Sorun Giderme](../../javascript/advanced/troubleshooting-your-scripts-javascript.md)

@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c6ae2716fc76d77d1c670bb206168826c66c48ed
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 41add9a334dd6e78a476134845db7d31664755c9
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49871088"
 ---
 # <a name="ipropertyproxyeesideinitsourcedataprovider"></a>IPropertyProxyEESide::InitSourceDataProvider
 Bu nesne için kaynak verilerini başlatır ve ilk veri içeren bir nesne döndürür.  
@@ -43,10 +44,10 @@ int InitSourceDataProvider(
  [out] Döndürür bir [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) nesnesi  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem ne olursa olsun, dönebilmeniz bir nesneyi başlatmak gereken işlemleri yapar bir [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) nesnenin veri arabirimde. Bu, nesnenin verilerin görüntülenebilir ve izin veriliyorsa, türü Görselleştirici tarafından değiştirilen olanak tanır.  
+ Bu yöntem ne olursa olsun, dönebilmeniz nesneyi başlatmak gerekli olan mu bir [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) nesnenin veri çubuğunda arabirimi. Bu nesnenin veri görüntülenebilir ve izin verilirse, bir tür görselleştiricisi tarafından değiştirilen sağlar.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IPropertyProxyEESide](../../../extensibility/debugger/reference/ipropertyproxyeeside.md)   

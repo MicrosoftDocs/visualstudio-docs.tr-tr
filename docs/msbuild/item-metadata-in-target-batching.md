@@ -14,19 +14,20 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e512ad9f932e34a6ddd95e165b116465aa359a09
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 486169788ad4533f5d45bf48c979ce3d0f5f7920
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081065"
 ---
-# <a name="item-metadata-in-target-batching"></a>Toplu Hedef İşlemede Öğe Meta Verileri
-[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] girişleri ve çıkışları derleme hedefi üzerinde bağımlılık çözümlemesi özelliğine sahiptir. Giriş veya çıkış hedef güncel belirlenir, hedef atlanacak ve yapı procede olur. `Target` öğeleri kullanmak `Inputs` ve `Outputs` bağımlılık Çözümleme sırasında incelemek için öğelerini belirtmek için öznitelikler.  
+# <a name="item-metadata-in-target-batching"></a>Toplu hedef işlemede öğe meta verileri
+[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] Giriş ve çıkışlarını yapı hedef üzerinde bağımlılık analizleri gerçekleştirmek özelliğine sahiptir. Giriş veya çıkış hedefin güncel olduğunu belirlenirse hedef atlanacak ve derleme devam edecek. `Target` öğeleri kullanın `Inputs` ve `Outputs` bağımlılık analizi sırasında incelemek için öğeleri belirtmek için öznitelikler.  
   
- Bir hedef toplu öğeleri girişleri veya çıkışları, kullanan bir görevi içeriyorsa `Target` hedef öğe içinde toplu işleme kullanması gereken kendi `Inputs` veya `Outputs` etkinleştirmek için öznitelikler [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] zaten güncel olan öğelerin toplu atlamak için.  
+ Bir hedef toplu öğeler giriş veya çıkış, olarak kullanan bir görev içeriyorsa `Target` hedef öğenin de toplu işleme kullanması gereken, `Inputs` veya `Outputs` etkinleştirmek için öznitelikleri [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] maddelerini toplu olarak, zaten güncel olduğundan atlanacak.  
   
-## <a name="batching-targets"></a>Hedefleri toplu işleme  
- Aşağıdaki örnek, adlı bir öğe listesi içerir `Res` göre iki toplu içine bölünmüş `Culture` öğe meta verileri. Bu toplu her içine geçirilir `AL` bir çıkış derlemesi için her bir toplu iş oluşturur görev. Üzerinde toplu işleme kullanarak `Outputs` özniteliği `Target` öğesi, [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] her biri ayrı toplu hedef çalıştırmadan önce güncel olup olmadığını belirleyebilirsiniz. Toplu hedef işlemede kullanmadan hedef yürütüldü her zaman iki toplu öğelerinin görev tarafından çalıştırılmaz.  
+## <a name="batch-targets"></a>Toplu iş hedefleri  
+ Aşağıdaki örnekte adlı bir öğe listesini içeren `Res` göre iki gruplayın bölünmüş `Culture` öğe meta verileri. Yöntemlere geçirilen her biri bu toplu `AL` bir çıkış derlemesi için her toplu iş oluşturan bir görev. Üzerinde işlem grubu oluşturma kullanılarak `Outputs` özniteliği `Target` öğesi [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] her biri ayrı ayrı toplu işler hedef çalıştırmadan önce güncel olup olmadığını belirleyebilirsiniz. Toplu hedef işlemede kullanmadan hedef yürütülen her zaman her iki maddelerini toplu olarak görev tarafından çalıştırılmaz.  
   
 ```xml  
 <Project  
@@ -66,8 +67,8 @@ ms.lasthandoff: 04/19/2018
 </Project>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: artımlı olarak derleme](../msbuild/how-to-build-incrementally.md)   
  [Toplu işleme](../msbuild/msbuild-batching.md)   
  [Hedef öğe (MSBuild)](../msbuild/target-element-msbuild.md)   
- [Toplu Görev İşlemede Öğe Meta Verileri](../msbuild/item-metadata-in-task-batching.md)
+ [Toplu Görev işlemede öğe meta verileri](../msbuild/item-metadata-in-task-batching.md)

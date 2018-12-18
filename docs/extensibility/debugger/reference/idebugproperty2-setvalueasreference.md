@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4f8d871e6193835b51336a48355fde78fe95e103
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: af0f31ba2bff7effce91232fd7e5cfc6f96afd9f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833869"
 ---
 # <a name="idebugproperty2setvalueasreference"></a>IDebugProperty2::SetValueAsReference
-Bu özellik değerini verilen başvuru değerine ayarlar.  
+Bu özelliğin değeri, belirtilen başvurunun değerini ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -46,24 +47,24 @@ int SetValueAsReference(
   
 #### <a name="parameters"></a>Parametreler  
  `rgpArgs`  
- [in] Yönetilen kod özellik ayarlayıcısı geçirilecek bağımsız değişkenleri bir dizi. Özellik ayarlayıcısı bağımsız değişken almaz veya bu [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) nesne böyle bir özellik ayarlayıcı için başvurmuyor `rgpArgs` boş bir değer olmalıdır. Bu parametre bir null değer genellikle olur.  
+ [in] Yönetilen kod özellik ayarlayıcı geçirilecek bağımsız değişkenler dizisi. Özellik ayarlayıcısını bağımsız değişken almaz veya bu [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) nesne, böyle bir özellik ayarlayıcı, başvurmuyor `rgpArgs` null bir değer olmalıdır. Bu parametre, genellikle bir null değer olur.  
   
  `dwArgCount`  
- [in] İçinde bağımsız değişken sayısı `rgpArgs` dizi.  
+ [in] Bağımsız değişken sayısı `rgpArgs` dizisi.  
   
  `pValue`  
- [in] Başvuru biçiminde bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nesnesine bu özelliği ayarlamak için kullanılacak bir değer.  
+ [in] Biçiminde bir başvuru bir [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md) nesnesine bu özelliği ayarlamak için kullanılacak değer.  
   
  `dwTimeout`  
- [in] Ne kadar süre değerini milisaniye cinsinden ayarlamak için gerçekleştirin. Tipik bir değeridir `INFINITE`. Bu, tüm olası değerlendirme alabilir süreyi etkiler.  
+ [in] Değeri, milisaniye cinsinden ayarlamak için yapmanız ne kadar. Tipik bir değer `INFINITE`. Bu, olası tüm değerlendirmesi sürebilir süreyi etkiler.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu, genellikle aşağıdakilerden biri:  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu, genellikle aşağıdakilerden biri:  
   
 |Hata|Açıklama|  
 |-----------|-----------------|  
-|`E_SETVALUEASREFERENCE_NOTSUPPORTED`|Bir başvuru değeri ayarlanması desteklenmez.|  
-|`E_SETVALUE_VALUE_CANNOT_BE_SET`|Bu özellik bir yönteme başvuran değeri ayarlanamaz.|  
+|`E_SETVALUEASREFERENCE_NOTSUPPORTED`|Başvuru değeri ayarı desteklenmiyor.|  
+|`E_SETVALUE_VALUE_CANNOT_BE_SET`|Bu özelliği bir yönteme başvuran değeri ayarlanamaz.|  
 |`E_SETVALUE_VALUE_IS_READONLY`|Değer salt okunur ve ayarlanamaz.|  
 |`E_NOTIMPL`|Yöntem uygulanmadı.|  
   

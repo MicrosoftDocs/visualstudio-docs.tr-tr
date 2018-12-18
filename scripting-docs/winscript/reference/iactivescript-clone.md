@@ -1,11 +1,11 @@
 ---
 title: IActiveScript::Clone | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IActiveScript.Clone
@@ -14,7 +14,7 @@ apilocation:
 helpviewer_keywords:
 - IActiveScript_Clone
 ms.assetid: aa000b2a-7085-448d-a422-f7adac7851cb
-caps.latest.revision: 
+caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -23,6 +23,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24791999"
 ---
 # <a name="iactivescriptclone"></a>IActiveScript::Clone
 Geçerli iş parçacığının hiçbir sitede sahip yüklenen bir komut dosyası altyapısı döndürme geçerli komut dosyası altyapısı (tüm geçerli yürütme durumu), eksi klonlar. Bu yeni bir komut dosyası motoru özelliklerini özgün komut dosyası altyapısı olarak da geçti varsa Başlatıldı durumuna geri olacaktır özellikler için aynı olacaktır.  

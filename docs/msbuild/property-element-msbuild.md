@@ -18,54 +18,55 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5f98e1cc8b3ce016580e477dfa648a493df1c1e8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d44b88f5d97fb8c70391506dc2daab99482d6a44
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39154986"
 ---
-# <a name="property-element-msbuild"></a>Özellik Öğesi (MSBuild)
-Kullanıcı tanımlı özellik adını ve değerini içerir. Kullanılan her özellik bir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] bir alt öğesi olarak proje belirtilen bir `PropertyGroup` öğesi.  
+# <a name="property-element-msbuild"></a>Özellik öğesi (MSBuild)
+Bir kullanıcı tanımlı özellik adını ve değerini içerir. Kullanılan her bir özellik bir [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] alt öğesi olarak proje belirtilen bir `PropertyGroup` öğesi.  
 
  \<Proje >  
  \<PropertyGroup >  
 
 ## <a name="syntax"></a>Sözdizimi  
 
-```  
+```xml  
 <Property Condition="'String A' == 'String B'">  
     Property Value  
 </Property>  
 ```  
 
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Öznitelikler, alt ve üst öğeler aşağıdaki bölümlerde açıklanmaktadır.  
 
 ### <a name="attributes"></a>Öznitelikler  
 
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Condition`|İsteğe bağlı öznitelik.<br /><br /> Değerlendirilecek koşulu. Daha fazla bilgi için bkz: [koşullar](../msbuild/msbuild-conditions.md).|  
+|`Condition`|İsteğe bağlı öznitelik.<br /><br /> Değerlendirilecek koşul. Daha fazla bilgi için [koşullar](../msbuild/msbuild-conditions.md).|  
 
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
 
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
 
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[PropertyGroup](../msbuild/propertygroup-element-msbuild.md)|Grouping öğesi özellikleri.|  
+|[PropertyGroup](../msbuild/propertygroup-element-msbuild.md)|Özellikler için gruplandırma öğesi.|  
 
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Metin değeri isteğe bağlıdır.  
 
- Bu metin özellik değerini belirtir ve XML içeriyor olabilir.  
+ Bu metin değerini belirtir ve XML içeriyor olabilir.  
 
 ## <a name="remarks"></a>Açıklamalar  
- Özellik adları, yalnızca ASCII karakterleri sınırlıdır. Özellik değerlerini başvurulan projede arasında özellik adı girerek "`$(`"ve"`)`". Örneğin, `$(builddir)\classes` "build\classes", çözümlemek `builddir` özellik değeri olan `build`. Özellikleri hakkında daha fazla bilgi için bkz: [MSBuild özellikleri](../msbuild/msbuild-properties.md).  
+ Özellik adları yalnızca ASCII karakterleri sınırlıdır. Özellik değerlerini başvurulan projede arasında özellik adı girerek "`$(`"ve"`)`". Örneğin, `$(builddir)\classes` çözümlemek *build\classes*, `builddir` özellik değeri olan `build`. Özellikler hakkında daha fazla bilgi için bkz. [MSBuild özellikleri](../msbuild/msbuild-properties.md).  
 
 ## <a name="example"></a>Örnek  
- Aşağıdaki kod kümeleri `Optimization` özelliğine `false` ve `DefaultVersion` özelliğine `1.0` varsa `Version` özelliği boşsa.  
+ Aşağıdaki kod kümeleri `Optimization` özelliğini `false` ve `DefaultVersion` özelliğini `1.0` varsa `Version` özelliği boşsa.  
 
 ```xml  
 <PropertyGroup>  
@@ -74,6 +75,6 @@ Kullanıcı tanımlı özellik adını ve değerini içerir. Kullanılan her öz
 </PropertyGroup>  
 ```  
 
-## <a name="see-also"></a>Ayrıca Bkz.
-[MSBuild Özellikleri](../msbuild/msbuild-properties.md)  
+## <a name="see-also"></a>Ayrıca bkz.
+[MSBuild özellikleri](../msbuild/msbuild-properties.md)  
  [Proje dosyası şema başvurusu](../msbuild/msbuild-project-file-schema-reference.md)

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1dd2dcaa930db97ee8bab9b2bba168c80444dda8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1e245087cdd74ced1b47e2cd02da1e450474fa1b
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49875144"
 ---
 # <a name="idebugprogramprovider2watchforproviderevents"></a>IDebugProgramProvider2::WatchForProviderEvents
-Bağlantı noktası olayları hakkında bildirim almak işlem sağlar.  
+Bağlantı noktası olaylarını almak işlem sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,38 +51,38 @@ int WatchForProviderEvents(
   
 #### <a name="parameters"></a>Parametreler  
  `Flags`  
- [in] Bayraklarını bileşimini [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) numaralandırması. Aşağıdaki bayraklar bu çağrı için tipik şunlardır:  
+ [in] Bayraklarının bir birleşimi [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) sabit listesi. Bu çağrı için tipik aşağıdaki bayraklar:  
   
 |Bayrağı|Açıklama|  
 |----------|-----------------|  
 |`PFLAG_REMOTE_PORT`|Çağıran uzak makinede çalışıyor.|  
-|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (her düğüm için dizimi hakkında ek bilgi döndürülen).|  
+|`PFLAG_DEBUGGEE`|Arayan şu anda hata ayıklaması (her düğüm için taşıma hakkında ek bilgi döndürülür).|  
 |`PFLAG_ATTACHED_TO_DEBUGGEE`|Arayan bağlı, ancak hata ayıklayıcı tarafından başlatılan değil.|  
-|`PFLAG_REASON_WATCH`|Arayan olaylarını izlemek istiyor. Bu bayrak ayarlanmazsa. Daha sonra geri çağırma olay kaldırılır ve arayan artık bildirimleri alır.|  
+|`PFLAG_REASON_WATCH`|Arayan için olayları izlemek istiyor. Bu bayrak ayarlanmazsa. Daha sonra geri çağırma olay kaldırılır ve arayanın artık bildirimleri alır.|  
   
  `pPort`  
- [in] Arama işlemi bağlantı noktası çalışıyor.  
+ [in] Çağırma işlemi bağlantı noktası çalışıyor.  
   
  `processId`  
- [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programı içeren işlem Kimliğini söz konusu bulunduran yapısı.  
+ [in] Bir [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) programını içeren işlemin Kimliğini söz konusu tutan yapı.  
   
  `EngineFilter`  
- [in] Hata ayıklama altyapısını işlemle ilişkili GUID dizisi.  
+ [in] Hata ayıklama altyapısı işlemle ilişkili GUID'leri dizisi.  
   
  `guidLaunchingEngine`  
- [in] Bu işlem (varsa) başlatılan hata ayıklama altyapısı GUID.  
+ [in] Bu işlemi (varsa) her hata ayıklama altyapısı GUİD'si.  
   
  `pEventCallback`  
- [in] Bir [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md) olay bildirimleri alan nesne.  
+ [in] Bir [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md) olay bildirimleri alan bir nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem önceki çağrısıyla kurulan olay işleyicisi kaldırmak çağıran istediği zaman, devre dışı bırakır ancak ilk kez yaptığınız gibi çağıran aynı parametreleri geçirir `PFLAG_REASON_WATCH` bayrağı.  
+ Bu yöntemin önceki bir çağrı ile oluşturulmuş bir olay işleyicisi kaldırmak bir çağıranın istediği zaman, devre dışı bırakır ancak ilk kez yaptığınız gibi çağıran aynı parametrelerini geçirir `PFLAG_REASON_WATCH` bayrağı.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugEngine** gösteren nesne [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugEngine** gösteren nesne [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md) arabirimi.  
   
 ```cpp  
 STDMETHODIMP CDebugEngine::WatchForProviderEvents(  

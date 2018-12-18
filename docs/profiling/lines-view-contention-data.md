@@ -12,58 +12,59 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b01c8aa176fe92cb4309990693063dcd27cf15a8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 7c05f928d7c5c6f35226985147b6a4545e2a2937
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49890055"
 ---
 # <a name="lines-view---contention-data"></a>Satırlar görünümü - çakışma verileri
-Satırlar görünümü Çekişme veri örnekleri profil Çalıştır toplanan yükleyen yürütülmekte deyimleri için performans verilerini listeler. Bir kaynak dosyasında bir deyim bir kaynak dosyasında birden fazla satırı kapsayabilir ve tek bir satıra birden fazla deyim içerebilir.  
+Çekişme verisi satırları görünümünü profil oluşturma çalıştırmasını örnek toplanmadı olduğunda yürüten deyimleri için performans verilerini listeler. Bir kaynak dosyasında bir deyimi kaynak dosyasında birden fazla satırı kapsayabilir ve tek bir satır birden fazla deyim içerebilir.  
   
- Bir deyim tarafından aşağıdaki veri tanımlanır:  
+ Bir ifade, aşağıdaki veriler tarafından tanımlanır:  
   
--   Function deyimi içeren kaynak dosyası.  
+- Function deyimi içeren kaynak dosyası.  
   
--   Deyimi içeren işlev.  
+- Deyimi içeren işlev.  
   
--   Deyim başlatan kaynak satırı.  
+- Deyim başladığı kaynak satırı.  
   
--   Deyim başlatan kaynak satırdaki karakter.  
+- Deyim başladığı kaynak satırı karakter.  
   
--   Deyim erdiği kaynak satırı.  
+- Kaynak satırı başlangıçtan deyimini sonlandırır.  
   
--   Deyim erdiği kaynak satırdaki karakter.  
+- Deyim erdiği kaynak satırı karakter.  
   
- Satır ad sütunu tanımlayıcısı verileri sıralanabilir bir birleşimini sağlar.  
+  Satır adı sütunu tanımlayıcısı veri sıralanabilir bir birleşimini sağlar.  
   
- Satırlar görünümü rapor sütunlarını aşağıdaki tabloda açıklanmaktadır.  
+  Satırlar görünümü raporun sütunları aşağıdaki tabloda açıklanmaktadır.  
   
 |Sütun|Açıklama|  
 |------------|-----------------|  
-|**Özel engellenen süresi**|Bir çakışma olayı nedeniyle deyiminde kod yürütülmesini sırasında bu bildirimi engellendi süre miktarı. Engellenen zamanında deyim adlı işlevleri dahil değildir.|  
-|**Özel engellenen süresi %**|Özel engellenen süresi deyiminin işlemdeki tüm engellenen zamanı yüzdesi.|  
-|**Özel çekişmeleri**|Bu deyim bir çakışma olayı nedeniyle deyiminde kod yürütülmesini engellendi sayısı. Çekişme olayları deyim adlı işlevlerinde dahil edilmez.|  
-|**Özel çekişmeleri %**|Bu deyiminin özel çekişmeleri olan tüm Çekişme olayları işleminde yüzdesi.|  
+|**Dışlamalı engellenme süresi**|Bu sırada bu bildirimi nedeniyle bir çakışma olay deyiminde kodun yürütülmesini engellendi süre miktarı. Deyim çağıran işlevler engellenme süresi dahil değildir.|  
+|**Dışlamalı engellenme süresi yüzdesi**|Dışlamalı engellenme süresi deyiminin olan işlemdeki tüm engellenme süresi yüzdesi.|  
+|**Dışlamalı Çekişmeler**|Bu bildirimi nedeniyle bir çakışma olay deyiminde kodun yürütülmesini engellendi sayısı. Çekişme olayları deyim çağıran işlevler de dahil edilmez.|  
+|**Dışlamalı Çekişme yüzdesi**|Bu deyim dışlamalı çekişmeler olan tüm Çekişme olayları işleminde yüzdesi.|  
 |**İşlev adresi**|Bu deyim içeren işlevi adresi.|  
-|**İşlev adı**|Bu deyim içeren işlevi tam adı.|  
-|**Dahil engellenen süre**|Engellenen bu deyimi ve İşlevler deyiminde çağrılır.|  
-|**Kapsayıcı engellenen süresi %**|Deyiminin dahil engellenen süresi işlemdeki tüm engellenen zamanı yüzdesi.|  
-|**Kapsayıcı çekişmeleri**|Kaç kez bu deyimi ve deyiminde adı veriliyordu işlevleri yürütülmesini engellendi olduğunu.|  
-|**Kapsayıcı çekişmeleri %**|Bu deyiminin dahil çekişmeleri olan tüm Çekişme olayları işleminde yüzdesi.|  
-|**Satırı adı**|Satırı profil oluşturucu ürettiği tanıtıcısı. Tanımlayıcı aşağıdaki söz dizimini kullanır:`SourceFile`**; [**  `LineNumberStart` **,**`CharacterStart`**] ->; [** `LineNumberEnd`**,**`CharacterEnd`**]**|  
-|**İşlev satır numarası**|Bu işlev kaynak dosyadaki başlangıç satır sayısı.|  
-|**Modül adı**|Deyim içeren modülü adı.|  
-|**Modül yolu**|Deyim içeren modülü yolu.|  
-|**İşlem kimliği**|İşlem kimliği (PID) profili işleminin.|  
+|**İşlev adı**|Bu deyim içeren işlev tam adı.|  
+|**Kapsamlı engellenme süresi**|Bu ifade ve işlevleri engellenme süresi deyiminde çağrılır.|  
+|**Kapsamlı engellenme süresi yüzdesi**|Kapsamlı engellenme süresi deyiminin olan işlemdeki tüm engellenme süresi yüzdesi.|  
+|**Kapsamlı Çekişmeler**|Kaç kez bu deyim ve deyim içinde çağrılan işlevler çalıştırılması engellenen olduğunu.|  
+|**Kapsamlı Çekişme yüzdesi**|Bu deyim kapsayıcı çekişmelerini olan tüm Çekişme olayları işleminde yüzdesi.|  
+|**Satır adı**|Profil Oluşturucu tarafından oluşturulan bir tanımlayıcı satırı. Tanımlayıcı aşağıdaki sözdizimini kullanır:`SourceFile`**; [**  `LineNumberStart` **,**`CharacterStart`**] ->; [** `LineNumberEnd`**,**`CharacterEnd`**]**|  
+|**İşlevin satır numarası**|Satır numarası kaynak dosyada bu işlevin başlangıcı.|  
+|**Modül adı**|Deyim içeren modül adı.|  
+|**Modül yolu**|Deyim içeren modül yolu.|  
+|**İşlem kimliği**|İşlem kimliği (PID) profilli işlemin.|  
 |**İşlem adı**|İşlemin adı.|  
-|**Kaynak karakter başlangıç**|Bu bildirimi başlatan kaynak dosyası satırı başlangıç karakteri uzaklığı.|  
-|**Kaynak karakter ucu**|Bu bildirimi erdiği kaynak dosyası satırı başlangıç karakteri uzaklığı.|  
-|**Kaynak dosya**|Function deyimi içeren kaynak dosyasının adı.|  
-|**Kaynak satırı başlangıç**|Deyim başlatan kaynak dosyasında satır numarası.|  
-|**Kaynak satır sonu**|Deyim erdiği kaynak dosyasında satır numarası.|  
+|**Kaynak karakter başlangıcı**|Bu bildirimi başladığı kaynak dosya satırında başlangıç karakteri uzaklığı.|  
+|**Kaynak karakter sonu**|Bu bildirimi erdiği kaynak dosya satırında başlangıç karakteri uzaklığı.|  
+|**Kaynak dosyası**|Function deyimi içeren kaynak dosyanın adı.|  
+|**Kaynak satır başlangıcı**|Deyim başladığı kaynak dosyadaki satır numarası.|  
+|**Kaynak satır sonu**|Deyim erdiği kaynak dosyadaki satır numarası.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Satırlar görünümü](../profiling/lines-view.md)   
  [Satırlar görünümü - örnekleme](../profiling/lines-view-dotnet-memory-sampling-data.md)   

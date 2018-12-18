@@ -13,14 +13,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 6bd2b335635f4fc83eb4b0857f9b5d785eb9dccc
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 17fc42eab94d98ceb636e53e3ed6efd39a08f920
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35254276"
 ---
-# <a name="performance-report-view-filter"></a>Performans Rapor Görünümü Filtresi
-Profil Oluşturucusu Rapor Görünümü Filtresi penceresi performans raporu penceresinin en üstünde yer alır. Göremiyorsanız, tıklatın **Göster filtre** düğmesi.  
+# <a name="performance-report-view-filter"></a>Performans Raporu Görünüm Filtresi
+**Profil Oluşturucusu Rapor Görünümü Filtresi** penceredir en üstünde bulunan **performans raporu** penceresi. Göremiyorsanız, tıklatın **Göster filtre** düğmesi.  
   
  Sonuçlarınızı daraltmak için her filtre yan tümcesi değiştirebilirsiniz. Aşağıdaki sütunlar filtresi Oluşturucu'da kullanılabilir.  
   
@@ -35,8 +36,8 @@ Profil Oluşturucusu Rapor Görünümü Filtresi penceresi performans raporu pen
   
  Gelen **işaretleri** rapor görünümü, verileri iki işaretleri arasında toplanan veriler için rapor görünümlerini sınırlandırmak için filtre yan tümcesi oluşturabilir. Başlangıç ve bitiş verileri, sonra sağ tıklatın ve seçin raporu istediğiniz işaretleri seçin **işaretleri üzerinde filtre Ekle** veya **zaman damgaları üzerinde filtre Ekle**. Her iki süzgeçleri aynı aralığa geçerli veri dosyasındaki verilerin sınırlar; **İşaretleri üzerinde filtre Ekle** diğer .vsp dosyalara uygulanabilir.  
   
- Filtre kaydetmek için tıklatın **verme filtresi** performans raporu araç çubuğunda ve .vspf dosyanın konumu ve dosya adını belirtin. Daha önce kaydedilen bir filtreyi yüklemek için tıklayın **alma filtresi** ve kaydedilmiş filtre dosyasını bulun. Filtre dosyalar, veri dosyalarını bağımsız profil oluşturma araçları yüklü olan bilgisayarlarda filtre uygulamak için de kullanılabilir. Daha fazla bilgi için bkz: [VSPerfReport](../profiling/vsperfreport.md).  
+ Filtre kaydetmek için tıklatın **verme filtresi** üzerinde **performans raporu** araç için bir konum ve dosya adı belirtin. *vspf* dosya. Daha önce kaydedilen bir filtreyi yüklemek için tıklayın **alma filtresi** ve kaydedilmiş filtre dosyasını bulun. Filtre dosyalar, veri dosyalarını bağımsız profil oluşturma araçları yüklü olan bilgisayarlarda filtre uygulamak için de kullanılabilir. Daha fazla bilgi için bkz: [VSPerfReport](../profiling/vsperfreport.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Araçları verilerini performansını analiz etme](../profiling/analyzing-performance-tools-data.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Performans araçları verilerini çözümleme](../profiling/analyzing-performance-tools-data.md)   
  [VSPerfReport](../profiling/vsperfreport.md)

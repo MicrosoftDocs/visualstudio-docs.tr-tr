@@ -19,6 +19,7 @@ ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31584145"
 ---
 # <a name="resource-contentions-view---contention-data"></a>Kaynak çekişmeleri görünümü - çakışma verileri
 Kaynak çakışması görünümü Çekişme olayları kaynağı olan kaynakları için Çekişme verileri listeler. Kaynağa erişim için başka bir iş parçacığı işlevinde kaynağa özel erişim aldığından beklenecek bir iş parçacığı işlevinde zorlandığında Çekişme olayı oluşur. Her kaynak Çekişme olayları sonuçlandı işlevi yürütme yollarını görüntüler bir çağrı ağacı kök düğümü değil.  

@@ -14,11 +14,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5f67c1f0566f9e5749f4ff9233f1d2a803754550
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5ef642e48ee4389e48c1141c18a70f9ad5d0b793
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49949675"
 ---
 # <a name="ieevisualizerservicegetvaluedisplaystringcount"></a>IEEVisualizerService::GetValueDisplayStringCount
 Belirtilen özellik veya alan için görüntülenecek değer dizeleri sayısını alır.  
@@ -43,7 +44,7 @@ int GetValueDisplayStringCount (
   
 #### <a name="parameters"></a>Parametreler  
  `displayKind`  
- [in] Değeri [DisplayKind](../../../extensibility/debugger/reference/displaykind.md) numaralandırması.  
+ [in] Değerini [DisplayKind](../../../extensibility/debugger/reference/displaykind.md) sabit listesi.  
   
  `propertyOrField`  
  [in] Bir [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) bir özellik veya alan temsil eden arabirim.  
@@ -52,7 +53,7 @@ int GetValueDisplayStringCount (
  [out] Görüntülenecek değer dizeleri sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEEVisualizerService](../../../extensibility/debugger/reference/ieevisualizerservice.md)

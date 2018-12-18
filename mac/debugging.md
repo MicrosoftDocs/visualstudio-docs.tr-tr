@@ -1,101 +1,99 @@
 ---
 title: Xamarin ile hata ayıklama
-description: Hata ayıklama, programlama, ortak ve gerekirse, bir parçasıdır. Olgun bir IDE Mac için Visual Studio tüm dizisi kolay hata ayıklama kolaylaştıran özellikler içerir. Güvenli, veri görselleştirme için hata ayıklama gelen bu makalede Mac için Visual Studio'da hata ayıklama tam olası kullanmayı açıklar
-author: asb3993
-ms.author: amburns
-ms.date: 04/14/2017
+description: Hata ayıklama, programlama, ortak ve gerekli bir parçasıdır. Olgun bir IDE Mac için Visual Studio kolay hata ayıklama yapmak için özellikleri içeren tam bir paketi içerir. Güvenli, veri görselleştirme için hata ayıklamasından bu makalede Mac için Visual Studio'da hata ayıklama tam potansiyelini kullanmayı açıklar
+author: conceptdev
+ms.author: crdun
+ms.date: 05/06/2018
 ms.technology: vs-ide-debug
 ms.assetid: BB7A084D-9AC2-48B5-8076-6C8518796BBA
-ms.openlocfilehash: 98ad12d43021b76f884e50826f09ddee2e1c765f
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: e17a423e9db6826c8cc693e1c75c75bb067a19e8
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51295299"
 ---
 # <a name="debugging-with-xamarin"></a>Xamarin ile hata ayıklama
 
+Mac için Visual Studio yerel hata ayıklayıcı bir izin verme hata ayıklama desteği Xamarin.iOS ve Xamarin.Mac Xamarin.Android uygulamaları için sahiptir.
 
-Mac için Visual Studio yerel hata ayıklayıcı bir izin verme hata ayıklama desteği Xamarin.iOS, Xamarin.Mac ve Xamarin.Android uygulamaları için vardır.
-Mac kullanımlar için Visual Studio [ *Mono yumuşak hata ayıklayıcı*](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/), Visual Studio tüm platformlarda yönetilen kodda hata ayıklama için Mac için izin verme Mono çalışma zamanı içine uygulanmadı.
+Kullandığı Mac için Visual Studio [ *Mono geçici hata ayıklayıcı*](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/), tüm platformlardaki yönetilen kodda hata ayıklamak Mac için Visual Studio izin vererek Mono çalışma zamanı içinde uygulanır.
 
 ## <a name="the-debugger"></a>Hata ayıklayıcı
 
-Mac için Visual Studio Mono yumuşak hata ayıklayıcı tüm Xamarin uygulamaları yönetilen (C# veya F #) kodda hata ayıklamak için kullanır. Mono yumuşak hata ayıklayıcı farklıdır normal debuggers Mono çalışma zamanına; yerleşik birlikte operative bir hata ayıklayıcı olması oluşturulan kod ve Mono çalışma zamanı hata ayıklama deneyimini sağlamak üzere IDE ile birlikte çalışır. Mono çalışma zamanı hata ayıklama işlevselliği hakkında daha fazla bilgiyi kablo protokolü aracılığıyla kullanıma sunan [Mono belgelerinde](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger-wire-format/).
+Visual Studio hata ayıklamak için Mono geçici hata ayıklayıcı Mac kullanan yönetilen (C# veya F#) tüm Xamarin uygulamaları kod. Mono geçici hata ayıklayıcı farklıdır; Mono çalışma zamanına yerleşik birlikte operative bir hata ayıklayıcı olması normal hata ayıklayıcıları oluşturulan kodun ve Mono çalışma zamanı hata ayıklama deneyimini sağlamak için IDE ile birlikte çalışır. Mono çalışma zamanı daha fazla bilgi edinebilirsiniz kablo protokolü aracılığıyla hata ayıklama işlevselliği kullanıma sunan [Mono belgelerinde](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger-wire-format/).
 
-
-Sabit hata ayıklayıcıları gibi [LLDB]( http://lldb.llvm.org/index.html) veya [GDB]( https://www.gnu.org/software/gdb/), Bilgi Bankası veya iş Birliği hata ayıklaması programdan olmadan bir programı denetlemek, ancak hala Xamarin uygulamaları olayda hata ayıklarken yararlı olabilir, Yerel iOS veya Android kod hatalarını ayıklamak gerekir.
+Sabit hata ayıklayıcıları gibi [LLDB]( http://lldb.llvm.org/index.html) veya [GDB]( https://www.gnu.org/software/gdb/), bilgi veya hata ayıklanan programın işbirliği olmadan bir programı denetleme, ancak yine de olay Xamarin uygulamalarında hata ayıklama sırasında yararlı olabilir, Yerel iOS veya Android kod hatalarını ayıklamak gerekir.
 
 ## <a name="using-the-debugger"></a>Hata ayıklayıcıyı kullanma
 
-Herhangi bir uygulama hata ayıklamayı başlatmak için her zaman yapılandırma ayarlandığından emin olun **hata ayıklama**. Hata ayıklama yapılandırmasını yararlı birtakım, hata ayıklama kesme noktaları gibi veri görselleştiriciler kullanarak ve çağrı yığını görüntüleme desteklemek için araçlar sağlar:
+Herhangi bir uygulamanın hatalarını ayıklamaya başlamak için her zaman yapılandırma emin olun **hata ayıklama**. Hata ayıklama yapılandırması yararlı birtakım Araçlar, kesme noktaları gibi hata ayıklama, görselleştiriciler verileri kullanarak ve çağrı yığınını görüntüleme desteği sağlar:
 
 ![Hata ayıklama yapılandırması](media/debugging-image_0.png)
 
-## <a name="setting-a-breakpoint"></a>Kesme noktası ayarlama
+## <a name="setting-a-breakpoint"></a>Bir kesme noktası ayarlama
 
-IDE içinde bir kesme noktası ayarlamak için kesme istediğiniz yere kod satırının numarasını yanındaki düzenleyicinizi kenar boşluğu alanını tıklatın:
+IDE içinde bir kesme noktası ayarlamak için düzenleyicinizi nerede kesmek istediğiniz kod satırı sayısını yanındaki kenar boşluğu alanının tıklayın:
 
-![Kenar boşluğunda kesme noktası ayarlama](media/debugging-image0.png)
+![Kenar boşluğu kesme noktası ayarlama](media/debugging-image0.png)
 
-
-Kodunuzda giderek ayarlanan tüm kesme noktaları görüntüleyebilirsiniz **kesme noktaları paneli**:
+Kodunuzda giderek ayarlanan kesme noktaları görüntüleyebileceğiniz **kesme noktaları paneli**:
 
 ![Kesme noktaları listesi](media/debugging-image0a.png)
 
+## <a name="start-debugging"></a>Hata Ayıklamayı Başlat
 
-## <a name="start-debugging"></a>Hata ayıklama başlatılamıyor
+Hata ayıklamayı başlatmak için IDE içinde bir hedef cihaz veya benzer/öykünücü'ı seçin:
 
-Hata ayıklamayı başlatmak için IDE içinde hedef cihaz veya benzer/öykünücü seçin:
+![Hedef cihaz seçin](media/debugging-image1.png)
 
-![Hedef cihazı seçin](media/debugging-image1.png)
+Tuşuna basarak uygulamanızı dağıtmaya **Play** düğmesini veya **Cmd + return**. Kod, bir kesme noktasına ulaştığınızda, vurgulanan sarı olur:
 
-Ardından tuşlarına basarak uygulamanızı dağıtmak **Yürüt** düğmesini veya **Cmd + return**. Bir kesme noktası isabet zaman kodu vurgulanan sarı olur:
+![Vurgu gösteriliyor kesme noktası isabet](media/debugging-image2.png)
 
-![Vurgu gösteren kesme noktası isabet](media/debugging-image2.png)
+Hata ayıklama araçları, nesneleri değerlerini incelemek için kullanılan gibi bu noktada kodunuzda olup bitenler hakkında daha fazla bilgi almak için kullanılabilir:
 
-Hata ayıklama araçları gibi nesnelerin değerleri incelemek için kullanılan bu noktada, kodunuzda neler olduğunu hakkında daha fazla bilgi almak için kullanılabilir:
-
-![Görselleştirmeleri hata ayıklama](media/debugging-image3.png)
+![Görselleştirmeler hata ayıklama](media/debugging-image3.png)
 
 ## <a name="conditional-breakpoints"></a>Koşullu kesme noktaları
 
-Ayrıca ayarlayabileceğiniz altında bir kesme noktası gerçekleşmelidir durumlarda dikte kuralları, bu ekleme olarak bilinen bir *koşullu kesme noktası*. Koşullu kesme noktası ayarlamak için erişim **kesme noktası Özellikleri penceresinde**, hangi yapılabilir iki yolla:
+Ayrıca ayarlayabilirsiniz koşullar altında bir kesme noktası ortaya dikte kuralları, bu ekleme olarak bilinen bir *koşullu kesme noktası*. Koşullu kesme noktası ayarlamak için erişim **kesme noktası Özellikler penceresi**, hangi yapılabilir iki yolla:
 
-
-* Yeni koşullu kesme noktası eklemek için bir kesme noktası ayarlamak istediğiniz kodu satır numarasını solundaki Düzenleyicisi kenar boşluğu sağ tıklatın ve yeni kesme seçin:
-
+* Yeni bir koşullu kesme noktası eklemek için bir kesme noktası ayarlamak istediğiniz kod için satır numarası solundaki Düzenleyici kenar sağ tıklayın ve yeni kesme noktası seçin:
 
  ![Kesme noktası bağlam menüsü](media/debugging-image4.png)
 
-* Varolan bir kesme noktası için bir koşul eklemek için kesme noktası sağ tıklatın ve **kesme noktası özellikleri**, veya **kesme noktaları paneli**, aşağıda gösterilen kesme noktası Düzenle düğmesini seçin:
+* Varolan bir kesme noktası için bir koşul eklemek için kesme noktasına sağ tıklatın ve **kesme noktası özelliklerini**, veya **kesme noktaları paneli**, aşağıda gösterilen kesme noktasını Düzenle düğmesini seçin:
 
+ ![Kesme noktaları panelinde mevcut kesme noktasını Düzenle](media/debugging-image5.png)
 
- ![Kesme noktaları panelinde varolan kesme düzenleme](media/debugging-image5.png)
-
-
-Daha sonra gerçekleşecek şekilde kesme altında istediğiniz koşulu girebilirsiniz:
+Daha sonra gerçekleşecek şekilde kesme noktası altında istediğiniz koşulun girebilirsiniz:
 
  ![Kesme noktası koşulları Düzenle](media/debugging-image6.png)
 
-## <a name="stepping-through-code"></a>Kod atlama
+## <a name="stepping-through-code"></a>Kod boyunca ilerleme
 
-Bir kesme noktası erişildiğinde hata ayıklama araçları program yürütme üzerinde denetim elde etmenizi sağlar. Mac için Visual Studio dört düğmeleri, çalıştırmak ve kod üzerinden adım sağlayan görüntüler. Mac için Visual Studio'da, bunlar aşağıdaki gibi görünür:
+Bir kesme noktasına ulaşıldığında hata ayıklama araçları program yürütme denetime yararlanmanıza olanak tanıyacak. Mac için Visual Studio, böylece çalıştırma ve kodunuz içinde adım adım dört düğme görüntülenir. Mac için Visual Studio'da, bunlar aşağıdaki gibi görünür:
 
- ![Kod üzerinden adım için düğmeler](media/debugging-image7.png)
+ ![Kodunuz içinde adım adım için düğmeler](media/debugging-image7.png)
 
 Dört düğme şunlardır:
 
-*   **Yürüt** -bu kadar sonraki kesme yürütme kodu başlar.
-*   **Step Over** -bu kodun sonraki satırında, yürütülür. Sonraki satıra bir işlev çağrısı ise, Step Over işlevi yürütecek ve kodun sonraki satırında durdurulacak *sonra* işlevi.
-*   **Step Into** -bu kodun sonraki satırında, ayrıca yürütülür. Sonraki satıra bir işlev çağrısı ise, Step Into işlevi ilk satırında, satır satır hata ayıklama işlevinin devam etmenize izin vererek durdurur. Sonraki satıra bir işlev değil, aynı Step Over olarak davranır.
-*   **Step Out** -bu satırına geçerli işlevi burada çağrıldı döndürür.
+*   **Play** -bu kodun sonraki kesme noktasına kadar yürütme başlar.
+*   **Step Over** -Bu kod sonraki satırı yürütür. Sonraki satır bir işlev çağrısı ise, Step Over işlev yürütülür ve kodun sonraki satırında durdurur *sonra* işlevi.
+*   **İçine adımla** -Bu ayrıca sonraki kod satırına yürütülür. Sonraki satır bir işlev çağrısı ise, içine adımla işlevin ilk satır, satır satır işlevi, hata ayıklamaya devam etmenize imkan sağlar durdurur. Sonraki satır bir işlev değilse, aynı Step Over olarak davranır.
+*   **Step Out** -bu satıra burada geçerli işlev çağrıldı döndürür.
 
+## <a name="debugging-monos-class-libraries"></a>Mono'nın sınıf kitaplıklarında hata ayıklama
 
-## <a name="debugging-monos-class-libraries"></a>Mono'nın sınıf kitaplıkları hata ayıklama
-Xamarin ürünleri Mono'nın sınıf kitaplıkları için kaynak kodu ile birlikte gelen ve bu hata ayıklayıcı tek adımda şeyler başlık altında nasıl çalıştığınız incelemek için kullanabilirsiniz.
+Mono'nın sınıf kitaplıkları için kaynak kodu ile Xamarin ürünleri gönderin ve hata ayıklayıcı'dan tek adım bu şeyleri nasıl başlık altında çalışmakta olduğunuz incelemek için kullanabilirsiniz.
 
 Bu özellik, hata ayıklama sırasında daha fazla bellek tüketir olduğundan, varsayılan olarak kapalıdır.
 
-Bu özelliği etkinleştirmek için Gözat **Mac için Visual Studio > Tercihler > hata ayıklayıcı** ve emin olun "**yalnızca; proje kodunda hata ayıklama Framework koda adım değil.** " seçenek **seçilmemiş**aşağıda gösterildiği gibi:
+Bu özelliği etkinleştirmek için Gözat **Mac için Visual Studio > Tercihler > hata ayıklayıcısı** olduğundan emin olun "**yalnızca; proje kodu hatalarını ayıklama Çerçeve kodunu adımlamadan adım değil.** " seçenek **seçilmemiş**, aşağıda gösterildiği gibi:
 
- ![Framework'te kod seçeneği adım değil](media/debugging-image8.png)
+![Framework kod seçeneğe kodlarındaki](media/debugging-image8.png)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [(Windows üzerinde) Visual Studio'da hata ayıklama](/visualstudio/debugger/)

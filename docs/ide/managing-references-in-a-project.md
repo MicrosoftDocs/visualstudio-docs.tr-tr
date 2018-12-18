@@ -1,6 +1,7 @@
 ---
 title: Bir projedeki başvuruları yönetme
 ms.date: 04/11/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
@@ -22,17 +23,18 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ef62d3ab0436ff8b20766f2ffe88506d73c8f03b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e772f4d861e4b16499ad9be9d7c814320e1a14f9
+ms.sourcegitcommit: e13e61ddea6032a8282abe16131d9e136a927984
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/26/2018
+ms.locfileid: "31950952"
 ---
 # <a name="manage-references-in-a-project"></a>Bir projedeki başvuruları yönetme
 
 Dış bileşen karşı kod yazın veya hizmeti bağlı önce projenize önce bir başvuru içermelidir. Aslında Visual Studio bileşen veya hizmet bulmak gerekli bilgileri içeren bir proje dosyasındaki bir giriş başvurudur.
 
-Bir başvuru eklemek için sağ tıklayın **başvuruları** veya **bağımlılıkları** düğümünde **Çözüm Gezgini** ve **Başvuru Ekle**. Ayrıca proje düğümüne sağ tıklayın ve seçin **Ekle** > **başvuru**. Daha fazla bilgi için bkz: [nasıl yapılır: başvuru ekleme veya kaldırma](../ide/how-to-add-or-remove-references-by-using-the-reference-manager.md).
+Bir başvuru eklemek için sağ tıklayın **başvuruları** veya **bağımlılıkları** düğümünde **Çözüm Gezgini** ve **Başvuru Ekle**. Ayrıca proje düğümüne sağ tıklayın ve seçin **Ekle** > **başvuru**. Daha fazla bilgi için bkz: [nasıl yapılır: başvuru ekleyip](../ide/how-to-add-or-remove-references-by-using-the-reference-manager.md).
 
 ![Visual C bir başvuru ekleyin&#43;&#43;](../ide/media/vs2015_cpp_add_reference.png)
 
@@ -89,9 +91,9 @@ Projenizi derleme için bir başvuru yaptığınızda, Visual Studio derleme aş
 - Diğer aynı çözüme proje dizinlerde. (Bu derlemeler bulabilirsiniz **projeleri** sekmesi.)
 
 > [!NOTE]
-> - Tüm projeleri mscorlib dolaylı bir başvuru içeriyor.
+> - Tüm projeleri için dolaylı bir başvuru içeren **mscorlib**.
 > - Tüm projeleri için dolaylı bir başvuru içeren `System.Core`olsa bile `System.Core` başvuruları listesinden kaldırılır.
-> - Visual Basic projeleri için dolaylı bir başvuru içeren `Microsoft.VisualBasic`.
+> - Visual Basic projeleri için dolaylı bir başvuru içeren <xref:Microsoft.VisualBasic>.
 
 ## <a name="references-to-shared-components-at-run-time"></a>Paylaşılan bileşenler çalışma zamanında başvurular
 
@@ -111,7 +113,7 @@ Daha fazla bilgi için bkz: [çoklu sürüm desteğine genel bakış](../ide/vis
 
 Proje Proje başvuruları derlemeleri içeren projelere başvurular; yine de uygun istiyor musunuz? bunları kullanarak oluşturduğunuz **proje** sekmesi. Visual Studio derleme yolu projeye verildiğinde bulabilirsiniz.
 
-Bir derlemeyi üreten bir proje sahip olduğunuzda, proje başvurusu ve dosya başvurusu (aşağıya bakın) kullanmamanız gerekir. Proje proje başvurusu avantajlarından yapı sistem projeler arasında bir bağımlılık oluşturmasıdır. Başvuru proje oluşturulan en son ne zaman beri değişmişse bağımlı proje oluşturulacak. Dosya başvurusu, başvuru proje bağımlı proje oluşturmadan oluşturmak mümkün müdür ve başvuru geçersiz hale gelebilir derleme bağımlılığına oluşturmaz. (Diğer bir deyişle, proje önceden oluşturulmuş bir projenin sürümü başvurabilir.) Bu mümkün olmayan bin dizininde, gerekli tek bir DLL birçok sürümü neden olabilir. Bu çakışma oluştuğunda bir ileti gibi görürsünüz "Uyarı: 'dosya' başvuru üzerine yazacağından 'proje' projesindeki ' dosya' bağımlılığı çalıştırma dizinine kopyalanamıyor". Daha fazla bilgi için bkz: [bozuk başvuruları sorun giderme](../ide/troubleshooting-broken-references.md) ve [nasıl yapılır: oluşturun ve proje bağımlılıkları kaldırın](../ide/how-to-create-and-remove-project-dependencies.md).
+Bir derlemeyi üreten bir proje sahip olduğunuzda, proje başvurusu ve dosya başvurusu (aşağıya bakın) kullanmamanız gerekir. Proje proje başvurusu avantajlarından yapı sistem projeler arasında bir bağımlılık oluşturmasıdır. Başvuru proje oluşturulan en son ne zaman beri değişmişse bağımlı proje oluşturulacak. Dosya başvurusu, başvuru proje bağımlı proje oluşturmadan oluşturmak mümkün müdür ve başvuru geçersiz hale gelebilir derleme bağımlılığına oluşturmaz. (Diğer bir deyişle, proje önceden oluşturulmuş bir projenin sürümü başvurabilir.) Bu gerekli tek bir DLL birkaç sürümlerinde sonuçlanabilir *bin* mümkün olmayan dizin. Bu çakışma oluştuğunda bir ileti gibi görürsünüz "Uyarı: 'dosya' başvuru üzerine yazacağından 'proje' projesindeki ' dosya' bağımlılığı çalıştırma dizinine kopyalanamıyor". Daha fazla bilgi için bkz: [başvuruları bozuk sorun giderme](../ide/troubleshooting-broken-references.md) ve [nasıl yapılır: oluşturun ve proje bağımlılıkları kaldırın](../ide/how-to-create-and-remove-project-dependencies.md).
 
 > [!NOTE]
 > Bir dosya başvurusu proje proje başvurusu yerine hedef bir proje .NET Framework sürüm 4.5 sürümüdür ve diğer projenin hedef sürüm 2, 3, 3.5 veya 4.0 sürümünü ise oluşturulur.

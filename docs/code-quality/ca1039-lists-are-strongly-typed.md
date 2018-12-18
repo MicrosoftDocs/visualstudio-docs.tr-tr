@@ -1,6 +1,7 @@
 ---
 title: 'CA1039: Listelerin türü kesin olarak belirlenmiştir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4dc14aca81f20a33bce5be99a2ccaf5ccad7d5b0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 961052d778551818942977b4d8895b85e96091d6
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551827"
 ---
 # <a name="ca1039-lists-are-strongly-typed"></a>CA1039: Listelerin türü kesin olarak belirlenmiştir
+
 |||
 |-|-|
 |TypeName|ListsAreStronglyTyped|
@@ -30,35 +33,37 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Genel veya korumalı yazın uygulayan <xref:System.Collections.IList?displayProperty=fullName> ancak bir veya daha fazlasını için kesin türü belirtilmiş bir yöntem sağlamaz:
 
--   IList.Item
+Ortak veya korumalı tür uygular <xref:System.Collections.IList?displayProperty=fullName> ancak bir veya daha fazlasını için türü kesin belirlenmiş bir yöntem sağlamaz:
 
--   IList.Add
+- IList.Item
 
--   IList.Contains
+- IList.Add
 
--   IList.IndexOf
+- IList.Contains
 
--   IList.Insert
+- IList.IndexOf
 
--   IList.Remove
+- IList.Insert
 
-## <a name="rule-description"></a>Kural Tanımı
- Bu kural gerektirir <xref:System.Collections.IList> kesinlikle sağlamak için uygulamaları, böylece kullanıcılar, cast bağımsız değişken gerekmez. üyeleri yazılan <xref:System.Object?displayProperty=fullName> arabirimi tarafından sağlanan işlevselliği kullanılırken yazın. <xref:System.Collections.IList> Arabirimi dizini tarafından erişilen nesne koleksiyonları tarafından gerçekleştirilir. Bu kural türü uygulayan varsayar <xref:System.Collections.IList> bu daha güçlü bir türün örneklerinin bir koleksiyonunu yönetmenizi <xref:System.Object>.
+- IList.Remove
 
- <xref:System.Collections.IList> uygulayan <xref:System.Collections.ICollection?displayProperty=fullName> ve <xref:System.Collections.IEnumerable?displayProperty=fullName> arabirimleri. Öğesini uygularsanız <xref:System.Collections.IList>, gerekli kesin türü belirtilmiş üyeler için sağlamalısınız <xref:System.Collections.ICollection>. Koleksiyonundaki nesneleri genişletirseniz <xref:System.ValueType?displayProperty=fullName>, kesin türü belirtilmiş bir üye için sağlamalısınız <xref:System.Collections.IEnumerable.GetEnumerator%2A> performans düşüşünü önlemek için tarafından kutulama neden; koleksiyonu nesnelerin bir başvuru türü olduğunda bu zorunlu değildir.
+## <a name="rule-description"></a>Kural açıklaması
 
- Bu kurala uygun için arabirim üyelerini açıkça adları gibi InterfaceName.InterfaceMemberName, formunda kullanarak uygulama <xref:System.Collections.IList.Add%2A>. Açık arabirim üyeleri arabirimi tarafından bildirilen veri türlerini kullanın. Kesin türü belirtilmiş üyeler arabirim üye adı gibi kullanarak uygulama `Add`. Genel olarak kesin türü belirtilmiş üyeleri bildirme ve parametreleri bildirme ve dönüş değerleri koleksiyon tarafından yönetilen güçlü türünde olmalıdır. Güçlü türleri gibi zayıf türlerini değiştirecek <xref:System.Object> ve <xref:System.Array> arabirimi tarafından bildirilmedi.
+Bu kural gerektirir <xref:System.Collections.IList> kesin sağlamak için uygulamaları yazılan üyeleri, böylece kullanıcılar bağımsız değişkenleri atamaları gerekli değildir <xref:System.Object?displayProperty=fullName> arabirim tarafından sağlanan işlevselliği kullandığı zaman yazın. <xref:System.Collections.IList> Arabirimi dizin tarafından erişilebilen bir nesne koleksiyonları tarafından uygulanır. Bu kural, türün uyguladığı varsayar <xref:System.Collections.IList> değerinden daha güçlü bir türün örneklerinin bir koleksiyonunu yönetir <xref:System.Object>.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için açıkça uygulama <xref:System.Collections.IList> üyeleri ve daha önce belirtilen üyeler için kesin türü belirtilmiş alternatifleri sağlayın. Doğru uygulayan kod için <xref:System.Collections.IList> arabirim ve gerekli sağlar kesin türü belirtilmiş üyeler, aşağıdaki örnekte bkz.
+<xref:System.Collections.IList> uygulayan <xref:System.Collections.ICollection?displayProperty=fullName> ve <xref:System.Collections.IEnumerable?displayProperty=fullName> arabirimleri. Uygularsanız <xref:System.Collections.IList>, gerekli türü kesin belirlenmiş üyeler için sağlamanız gereken <xref:System.Collections.ICollection>. Koleksiyondaki nesneleri genişletirseniz <xref:System.ValueType?displayProperty=fullName>, türü kesin belirlenmiş bir üye için sağlamanız gereken <xref:System.Collections.IEnumerable.GetEnumerator%2A> performans düşüşünü önlemek için kutulama tarafından neden; koleksiyon nesnelerini bir başvuru türü olduğunda bu zorunlu değildir.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Yeni nesne tabanlı bir koleksiyon, burada yeni koleksiyon genişletmek türleri güçlü tür belirlemek bağlantılı bir liste gibi uygularken bu kural bir uyarıdan engelleyin. Bu tür, bu kurala uygun ve kesin türü belirtilmiş üyeler kullanıma sunar.
+Bu kurala uygun için arabirim üyelerini açıkça InterfaceName.InterfaceMemberName, formun gibi adları kullanarak uygulama <xref:System.Collections.IList.Add%2A>. Açık arabirim üyeleri arabirim tarafından bildirilen veri türlerini kullanın. Arabirim üye adı gibi kullanarak türü kesin belirlenmiş üyeler uygulama `Add`. Türü kesin belirlenmiş üyeler genel olarak bildirmek ve parametreleri bildirmek ve dönüş değerleri koleksiyon tarafından yönetilen sağlam türünde olması. Tanımlayıcı türleri gibi daha zayıf türlerine değiştirin <xref:System.Object> ve <xref:System.Array> arabirim tarafından bildirilir.
+
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için açıkça uygulama <xref:System.Collections.IList> üyeleri ve daha önce not aldığınız üyeler için türü kesin belirlenmiş alternatifler sağlar. Doğru uygulayan kodu için <xref:System.Collections.IList> gerekli sağlar ve arabirim türü kesin belirlenmiş üyeler, aşağıdaki örnekte bakın.
+
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Yeni nesne tabanlı bir koleksiyon, burada yeni koleksiyon genişleten türler güçlü tür belirlemek bağlantılı liste gibi uyguladığınızda bu kuraldan bir uyarıyı gizler. Bu türler, bu kurala uygun ve türü kesin belirlenmiş üyeler kullanıma sunar.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnekte, türü `YourType` genişletir <xref:System.Collections.CollectionBase?displayProperty=fullName>, tüm kesin türü belirtilmiş koleksiyonları gerektiği gibi. Unutmayın <xref:System.Collections.CollectionBase> açık uygulamasını sağlar <xref:System.Collections.IList> , arabirimi. Bu nedenle, yalnızca kesin türü belirtilmiş üyeler için sağlamanız gereken <xref:System.Collections.IList> ve <xref:System.Collections.ICollection>.
+ Aşağıdaki örnekte, türü `YourType` genişletir <xref:System.Collections.CollectionBase?displayProperty=fullName>, tüm kesin türde koleksiyonlar gibi. <xref:System.Collections.CollectionBase> Açık uygulamasını sağlar <xref:System.Collections.IList> arabirimi. Bu nedenle, yalnızca türü kesin belirlenmiş üyeler için sağlamanız gereken <xref:System.Collections.IList> ve <xref:System.Collections.ICollection>.
 
  [!code-csharp[FxCop.Design.IListStrongTypes#1](../code-quality/codesnippet/CSharp/ca1039-lists-are-strongly-typed_1.cs)]
 
@@ -67,5 +72,10 @@ ms.lasthandoff: 04/19/2018
 
  [CA1038: Numaralandırıcıların türü kesin olarak belirtilmelidir](../code-quality/ca1038-enumerators-should-be-strongly-typed.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Collections.CollectionBase?displayProperty=fullName> <xref:System.Collections.ICollection?displayProperty=fullName> <xref:System.Collections.IEnumerable?displayProperty=fullName> <xref:System.Collections.IList?displayProperty=fullName> <xref:System.Object?displayProperty=fullName>
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Collections.CollectionBase?displayProperty=fullName>
+- <xref:System.Collections.ICollection?displayProperty=fullName>
+- <xref:System.Collections.IEnumerable?displayProperty=fullName>
+- <xref:System.Collections.IList?displayProperty=fullName>
+- <xref:System.Object?displayProperty=fullName>

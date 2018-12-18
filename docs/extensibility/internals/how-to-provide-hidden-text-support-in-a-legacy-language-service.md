@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: eski dil hizmetindeki gizli metin desteği | Microsoft Docs'
+title: 'Nasıl yapılır: eski dil hizmetinde gizli metin desteği | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,37 +15,37 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 54e508c6bcbb9cb79459e0b61a97f51350c00708
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d368caaa9b65f6f9ab8b12c1f49994e3bfe16670
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39511966"
 ---
-# <a name="how-to-provide-hidden-text-support-in-a-legacy-language-service"></a>Nasıl yapılır: eski dil hizmetindeki gizli metin desteği sağlar
-Anahat bölgeler yanı sıra gizli metni bölgeler oluşturabilirsiniz. Gizli metni bölgeler, istemci tarafından denetlenen veya Düzenleyicisi denetimli olabilir ve bir bölge metnin tamamen gizlemek için kullanılır. Düzenleyici gizli bir bölge yatay çizgiler olarak görüntüler. Bu komut yalnızca görünümünde HTML düzenleyicisi örneğidir.  
+# <a name="how-to-provide-hidden-text-support-in-a-legacy-language-service"></a>Nasıl yapılır: gizli metin sağlayın eski dil hizmetinde desteği
+Anahat bölgelerin yanı sıra gizli metin bölgeler oluşturabilirsiniz. İstemci tarafından denetlenen veya Düzenleyicisi tarafından denetlenen gizli metin bölgeleri olabilir ve metnin bir bölge tamamen gizlemek için kullanılır. Düzenleyici gizli bölge yatay çizgiler olarak görüntüler. Bunun bir örneği **yalnızca betik** HTML düzenleyicisinde görüntüle.  
   
-## <a name="procedure"></a>Yordam  
   
-#### <a name="to-implement-a-hidden-text-region"></a>Gizli metni bölgeye uygulamak için  
+## <a name="to-implement-a-hidden-text-region"></a>Bir gizli metin bölgeye uygulamak için  
   
 1.  Çağrı `QueryService` için <xref:Microsoft.VisualStudio.TextManager.Interop.SVsTextManager>.  
   
      Bu bir işaretçi döndürür <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager>.  
   
-2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin belgesi için bir işaretçi geçen. Bu, gizli metin oturumu zaten için arabellek var olup olmadığını belirler.  
+2.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.GetHiddenTextSession%2A>, verilen metin arabelleği için bir işaretçi olarak geçen. Bu, gizli metin oturumu zaten için arabellek var olup olmadığını belirler.  
   
-3.  Zaten bir tane sonra biri ve var olan bir işaretçi oluşturun gerekmez <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür. Bu işaretçinin numaralandırır ve gizli metni bölgeler oluşturmak için kullanın. Aksi halde çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A> arabellek için gizli metni oturum oluşturmak için.  
+3.  Zaten bir tane sonra biri ve var olan bir işaretçi oluşturun gerekmez <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür. Bu işaretçinin, listeleme ve gizli metin bölgeler oluşturmak için kullanın. Aksi takdirde, çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextManager.CreateHiddenTextSession%2A> arabellek için gizli metin oturum oluşturmak için.  
   
      Bir işaretçi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession> nesne döndürülür.  
   
     > [!NOTE]
-    >  Çağırdığınızda `CreateHiddenTextSession`, gizli metin istemci belirtebilirsiniz (diğer bir deyişle, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextClient>). Gizli metni istemci gizli metni veya anahat oluşturma genişletilmiş veya kullanıcı tarafından daraltılmış size bildirir.  
+    >  Çağırdığınızda `CreateHiddenTextSession`, gizli metin istemci belirtebilirsiniz (diğer bir deyişle, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextClient>). Gizli metin istemci gizli metni veya anahat oluşturma genişletilmiş veya daraltılmış kullanıcı tarafından size bildirir.  
   
-4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession.AddHiddenRegions%2A> ekleyin veya daha yeni bir kerede anahat aşağıdaki bilgileri belirtme bölgeler için `reHidReg` (<xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion>) parametre:  
+4.  Çağrı <xref:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession.AddHiddenRegions%2A> ekleyin ya da daha yeni aşağıdakileri belirten bölgeleri teker teker anahat `reHidReg` (<xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion>) parametre:  
   
-    1.  Değerini belirtin `hrtConcealed` içinde `iType` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> anahat bölge yerine gizli bir bölge oluşturduğunuzu belirtmek için yapısı.  
+    1.  Bir değer belirleyebilirsiniz `hrtConcealed` içinde `iType` üyesi <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı bir anahat bölgesi yerine gizli bir bölge oluşturduğunuzu belirtmek için.  
   
         > [!NOTE]
-        >  Gizli bilgiler bölgeler gizlidir, Düzenleyicisi'ni otomatik olarak kendi varlığını göstermek için gizli bölgeler etrafında çizgiler görüntüler.  
+        >  Bölgeleri altına gizlenmiş gizlendiğinde Düzenleyicisi satırları kendi varlığını göstermek için gizli bölgeler etrafında otomatik olarak görüntüler.  
   
-    2.  Bölge içinde düzenleyicisi olarak kontrol ya da istemci denetlenen olup olmadığını belirtin `dwBehavior` üyeleri <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Akıllı anahat uygulamanızı Düzenleyicisi ve istemci denetlenen anahat ve gizli metni bölgeler bir karışımını içerebilir.
+    2.  Bölge istemci tarafından denetlenen veya Düzenleyicisi tarafından denetlenen içinde olup olmadığını belirtin `dwBehavior` üyeleri <xref:Microsoft.VisualStudio.TextManager.Interop.NewHiddenRegion> yapısı. Akıllı ana hat oluşturma uygulamanız Düzenleyicisi ve istemci denetlenen anahat ve gizli metin bölgeleri bir karışımını içerebilir.

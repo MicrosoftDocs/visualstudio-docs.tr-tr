@@ -1,10 +1,9 @@
 ---
-title: Gelişmiş Güvenlik Ayarları iletişim kutusu | Microsoft Docs
-ms.custom: ''
-ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+title: Gelişmiş Güvenlik Ayarları İletişim Kutusu
+ms.date: 06/27/2018
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - vs.err.debug_in_zone_no_hostproc
 helpviewer_keywords:
@@ -15,30 +14,31 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a1dad7843d42aeaf0c2871f8b76c840a12cd4186
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dce482f53f9f3e6dd0b57d6cb905f97cdfaa601a
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39180522"
 ---
-# <a name="advanced-security-settings-dialog-box"></a>Gelişmiş Güvenlik Ayarları İletişim Kutusu
-Bu iletişim kutusu bölgesinde hata ayıklama için ilgili güvenlik ayarları belirtmenize olanak sağlar.  
-  
- Bu iletişim kutusunu erişmek için bir proje düğümünde seçin **Çözüm Gezgini**ve ardından **proje** menüsünde tıklatın **özellikleri**. Zaman **Proje Tasarımcısı** görünen tıklatın **güvenlik** sekmesi. Üzerinde **güvenlik** sayfasında, **ClickOnce güvenlik ayarlarını etkinleştir**, tıklatın **kısmi güven uygulamasıdır**ve ardından **Gelişmiş**.  
-  
-## <a name="uielement-list"></a>UIElement Listesi  
- **Bu uygulama seçili izin kümesi ile hata ayıklama**  
- Bu onay kutusunu seçerseniz, izin kümesi seçili **güvenlik** sayfası, hata ayıklama sırasında kullanılır. Varsayılan olarak, bu seçenek seçilidir.  
-  
- İş için bir güvenlik bölgesi hata ayıklama için bu seçeneği etkinleştirilmelidir; Ayrıca, **barındırma işlemi Visual Studio'nun** seçeneği (kullanılabilir **hata ayıklama** sayfasında **Proje Tasarımcısı**) etkinleştirilmiş olması gerekir.  
-  
- WPF Web tarayıcı uygulaması projeleri için **seçili izin kümesi ile bu uygulamanın hatalarını ayıklama** seçeneği işaretli ve devre dışı.  
-  
- **Kaynak siteye uygulama erişim**  
- Bu onay kutusunu seçerseniz, uygulama Web sitesi veya sunucu paylaşımı üzerinde yayımlanır erişebilir. Varsayılan olarak, bu seçenek seçilidir.  
-  
- **Aşağıdaki URL'yi yüklenen gibi bu uygulamanın hatalarını ayıklama**  
- Web sitesi veya karşılık gelen sunucu paylaşımı erişmesine izin vermek varsa **yükleme URL'si** , belirtilen **Yayımla** sayfasında, bu URL'yi buraya yazın. Bu seçenek yalnızca olan **kaynak siteye uygulama erişim** seçilir.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Güvenlik Sayfası, Proje Tasarımcısı](../../ide/reference/security-page-project-designer.md)
+# <a name="advanced-security-settings-dialog-box"></a>Gelişmiş Güvenlik Ayarları iletişim kutusu
+
+Bu iletişim kutusu, ilgili bölgede hata ayıklama için güvenlik ayarları belirtmenize olanak sağlar.
+
+![Visual Studio'da Gelişmiş Güvenlik Ayarları iletişim kutusu](../media/advanced-security-settings.png)
+
+Bu iletişim kutusuna erişmek için bir proje düğümü seçin **Çözüm Gezgini**ve ardından **proje** menüsünde tıklatın **özellikleri**. Zaman **Proje Tasarımcısı** görünen tıklayın **güvenlik** sekmesi. Üzerinde **güvenlik** sayfasında **ClickOnce güvenlik ayarlarını etkinleştirme**, tıklayın **kısmi güven uygulamasıdır**ve ardından **Gelişmiş**.
+
+## <a name="uielement-list"></a>UIElement listesi
+
+**Gulamaya erişim ver**
+
+Bu onay kutusunu seçerseniz, uygulama, yayımlanan Web sitesi veya sunucu paylaşımına erişebilirsiniz. Varsayılan olarak, bu seçenek seçilidir.
+
+**Bu uygulama aşağıdaki URL'den yüklendiyse hata ayıklayın**
+
+Karşılık gelen Web sitesi veya sunucu paylaşımına erişmek uygulamayı izni varsa **yükleme URL'si** , belirtilen **Yayımla** sayfasında, bu URL'yi buraya girin. Bu seçenek yalnızca, **gulamaya erişim izni** seçilir.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Güvenlik Sayfası, Proje Tasarımcısı](../../ide/reference/security-page-project-designer.md)

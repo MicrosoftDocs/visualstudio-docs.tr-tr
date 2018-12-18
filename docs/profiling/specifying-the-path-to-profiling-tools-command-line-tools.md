@@ -10,25 +10,26 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 8e25d5052cbc70e4a45040f8ebadb8cb36daa053
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1afb0b00a7e121c611dedbc235684a67cc9cec53
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34814501"
 ---
-# <a name="specifying-the-path-to-profiling-tools-command-line-tools"></a>Profil Oluşturma Araçları Komut Satırı Araçları Yolunu Belirtme
+# <a name="specify-the-path-to-profiling-tools-command-line-tools"></a>Profil oluşturma araçları komut satırı araçları yolunu belirtin
 Yolunu [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları komut satırı araçları PATH ortam değişkenine eklenmez. 32-bit bilgisayarlarda, tek bir dizin araçlardır. 32 bit ve 64-bit sürümü 64-bit bilgisayarlarda profil oluşturma araçları vardır.  
   
 ## <a name="32-bit-computers"></a>32-bit bilgisayarlar  
- 32-bit bilgisayarlarda, varsayılan profil oluşturucu Araçlar dizinidir *sürücü*\Program Visual Studio 11.0\Team Araçlar\Performans araçları.  
+ 32-bit bilgisayarlarda, varsayılan profil oluşturucu Araçlar dizinidir *önyükleme sürücüsü\Program Files\Microsoft Visual Studio 11.0\Team Araçlar\Performans Araçları*.  
   
 ## <a name="64-bit-computers"></a>64 bit bilgisayarlar  
  64-bit bilgisayarlarda, profili uygulamanın hedef platformu göre yolu belirtin.  
   
 -   32-bit uygulamalar için varsayılan profil oluşturucu Araçlar dizindir:  
   
-     *Sürücü*\Program dosyaları (x86) \Microsoft Visual Studio 11.0\Team Araçlar\Performans araçları  
+     *önyükleme sürücüsü\Program dosyaları (x86) \Microsoft Visual Studio 11.0\Team Araçlar\Performans araçları*  
   
 -   64-bit uygulamalar için varsayılan profil oluşturucu Araçlar dizindir:  
   
-     *Sürücü*\Program dosyaları (x86) \Microsoft Visual Studio 11.0\Team Araçlar\Performans Tools\x64
+     *önyükleme sürücüsü\Program dosyaları (x86) \Microsoft Visual Studio 11.0\Team Araçlar\Performans Tools\x64*

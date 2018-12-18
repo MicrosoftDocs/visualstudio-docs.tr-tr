@@ -15,34 +15,45 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e325ab2d5a5a54a9aaf8378753ccbe8f3a72a5a8
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 701db598872f6dde5a07740ef7601a6c8de7c5f0
+ms.sourcegitcommit: 6672a1e9d135d7e5cca3cceea07c6fe5a0871475
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47443408"
 ---
-# <a name="how-to-escape-special-characters-in-msbuild"></a>Nasıl Yapılır: MSBuild'de Kaçış Özel Karakterleri
-Özel bir anlamı belirli karakterler olmayan [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] proje dosyaları. Noktalı virgül (;) ve yıldız işareti (*) karakterlerini örneklerindendir. Şu özel karakterleri tam bir listesi için bkz: [MSBuild özel karakterleri](../msbuild/msbuild-special-characters.md).  
+# <a name="how-to-escape-special-characters-in-msbuild"></a>Nasıl yapılır: özel msbuild'de kaçış karakterleri
+
+Belirli karakterler özel bir anlamı olmayan [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] proje dosyaları. Karakterler örnekleri noktalı virgül (`;`) ve yıldız işaretlerini (`*`). Bu özel karakterlerin tam bir listesi için bkz. [MSBuild özel karakterleri](../msbuild/msbuild-special-characters.md).
   
- Proje dosyası değişmez değerlerine olarak şu özel karakterleri kullanmak için bunlar sözdizimi % kullanarak belirtilmelidir*xx*, burada *xx* karakter ASCII onaltılı değerini temsil eder.  
+Bu özel karakterlerin bir proje dosyasında sabit değer olarak kullanmak için bunlar sözdizimi kullanılarak belirtilmelidir `%<xx>`burada `<xx>` karakter ASCII onaltılık değerini temsil eder.
   
-## <a name="msbuild-special-characters"></a>MSBuild Özel Karakterleri  
- Bir özel karakterler kullanıldığı örnek konusu `Include` öğesi listeleri özniteliğidir. Örneğin, aşağıdaki öğeyi listede iki öğeleri bildirir: `MyFile.cs` ve `MyClass.cs`.  
+## <a name="msbuild-special-characters"></a>MSBuild özel karakterleri
+
+ Bir özel karakter kullanıldığı örnek konusu `Include` öğesi listeleri özniteliği. Örneğin, aşağıdaki madde listesini iki öğe bildirir: *dosyam.cs* ve *MyClass.cs*.  
   
 ```xml  
 <Compile Include="MyFile.cs;MyClass.cs"/>  
 ```  
   
- Adı noktalı virgül içeren bir öğeyi bildirmek isterseniz, % kullanmalısınız*xx* noktalı kaçış ve engellemek için sözdizimi [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] iki ayrı öğeleri bildirme gelen. Örneğin, aşağıdaki öğeyi noktalı çıkışları ve bir öğe adlı bildirir `MyFile.cs;MyClass.cs`.  
+Noktalı virgül adını içeren bir öğe bildirmek istiyorsanız, kullanmanız gerekir `%<xx>` noktalı virgül kaçış ve önlemek için söz dizimi [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] gelen iki ayrı öğeleri bildirme. Örneğin, aşağıdaki öğe noktalı virgül çıkışları ve bir öğe adlı bildirir `MyFile.cs;MyClass.cs`.
   
 ```xml  
 <Compile Include="MyFile.cs%3BMyClass.cs"/>  
 ```  
-  
-#### <a name="to-use-an-msbuild-special-character-as-a-literal-character"></a>MSBuild özel karakter harf karakter olarak kullanmak için  
-  
--   Gösterimi % kullanın*xx* özel karakter yerine burada *xx* ASCII karakter onaltılı değerini temsil eder. Örneğin, bir harf karakter olarak yıldız işareti (*) kullanmak için değeri kullanın `%2A`.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
+
+Ayrıca bir [özelliği işlevi](../msbuild/property-functions.md) kaçış dizeleri. Örneğin, bu yukarıdaki örneğe eşdeğerdir.
+
+```xml
+<Compile Include="$([MSBuild]::Escape('MyFile.cs;MyClass.cs'))" />
+```
+
+### <a name="to-use-an-msbuild-special-character-as-a-literal-character"></a>MSBuild özel karakter değişmez değer olarak kullanmak için
+
+Gösterimini kullanın `%<xx>` özel karakter yerine burada `<xx>` ASCII karakter onaltılık değerini temsil eder. Örneğin bir yıldız işareti kullanın (`*`) değerini sabit karakter olarak kullanın `%2A`.
+
+ 
+## <a name="see-also"></a>Ayrıca bkz.  
  [MSBuild kavramları](../msbuild/msbuild-concepts.md)   
- [MSBuild](../msbuild/msbuild.md) [öğeleri](../msbuild/msbuild-items.md)
+ [MSBuild](../msbuild/msbuild.md)   
+ [Öğeler](../msbuild/msbuild-items.md)   

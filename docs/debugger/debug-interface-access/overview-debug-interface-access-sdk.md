@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31471446"
 ---
 # <a name="overview-debug-interface-access-sdk"></a>Genel Bakış (Arabirim Erişimi SDK'sında Hata Ayıklama)
 Microsoft hata ayıklama bilgileri erişmek için DIA SDK'yı kullanın. Microsoft hata ayıklama bilgileri biçimi değiştiğinde kodunuzu yeniden yazma gereğini ortadan kaldırır API kümesi bir COM tabanlı DIA SDK'sı sağlar. DIA SDK'sı tarafından oluşturulan .pdb ve .dbg dosyaları bulunan hata ayıklama bilgileri önceki sürümlerinin bir dizi okuma da sağlar [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] 5.0 ve sonraki sürümleri.  

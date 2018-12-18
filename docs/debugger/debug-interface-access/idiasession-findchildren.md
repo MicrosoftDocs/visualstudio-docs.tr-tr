@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cc9b9aabf920fa33828d86e2f0c3ac96f7e6dbdb
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 16033fc289e5a1fe2a8331e927bba51ce1671fd2
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896178"
 ---
 # <a name="idiasessionfindchildren"></a>IDiaSession::findChildren
-Ad ve simge türüyle eşleşen tüm alt öğeleri belirtilen üst tanımlayıcı alır.  
+Ad ve simge türüyle eşleşen tüm alt öğelerini belirtilen üst tanımlayıcı alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,25 +38,25 @@ HRESULT findChildren (
   
 #### <a name="parameters"></a>Parametreler  
  `parent`  
- [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) üst temsil eden nesne. Bu üst simgeyi işlevi, modül veya blok olan sonra sözcük alt döndürülür `ppResult`. Üst simge türü ise, sınıf alt döndürülür. Bu parametre ise `NULL`, ardından `symtag` ayarlanmalıdır `SymTagExe` veya `SymTagNull`, genel kapsam (.exe dosyası) döndürür.  
+ [in] Bir [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md) üst temsil eden nesne. İşlevi, modül veya blok bu üst semboldür sonra sözcük alt öğeleri döndürülür `ppResult`. Ardından, üst simge türü ise, sınıf alt döndürülür. Bu parametre `NULL`, ardından `symtag` ayarlanmalıdır `SymTagExe` veya `SymTagNull`, genel kapsam (.exe dosyası) döndürür.  
   
  `symtag`  
- [in] Alınacak alt simge etiketi belirtir. Değerleri gerçekleştirilecek [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) numaralandırması. Kümesine `SymTagNull` tüm alt öğeleri alınamadı.  
+ [in] Alınacak alt simge etiketi belirtir. Değerleri verilerinden alınır [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md) sabit listesi. Kümesine `SymTagNull` tüm alt öğeleri almak için.  
   
  `name`  
- [in] Alınacak öğenin alt öğelerine adını belirtir. Kümesine `NULL` alınması tüm alt öğeleri için.  
+ [in] Alınacak alt adını belirtir. Kümesine `NULL` alınacak tüm alt öğeleri için.  
   
  `compareFlags`  
- [in] Ad eşleştirme için uygulanan karşılaştırma seçeneklerini belirtir. Gelen değerleri [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma tek başına veya birlikte kullanılabilir.  
+ [in] Ad eşleştirme için uygulanan karşılaştırma seçeneklerini belirtir. Değerlerini [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md) numaralandırma, tek başına veya birlikte kullanılabilir.  
   
  `ppResult`  
- [out] Döndürür bir [Idiaenumsymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) alt simge listesini içeren nesne alındı.  
+ [out] Döndürür bir [Idiaenumsymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) alt simge listesini içeren bir nesne alındı.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek, yerel değişkenleri işlevinin bulmak gösterilmiştir `pFunc` eşleşen ada `szVarName`.  
+ Aşağıdaki örnek, yerel değişkenleri işlevinin bulmak gösterilmektedir `pFunc` ad eşleştir `szVarName`.  
   
 ```C++  
 IDiaEnumSymbols* pEnum;  
@@ -68,4 +69,4 @@ pSession->findChildren( pFunc, SymTagData, szVarName, nsCaseSensitive, &pEnum );
  [Idiasession](../../debugger/debug-interface-access/idiasession.md)   
  [Idiasymbol](../../debugger/debug-interface-access/idiasymbol.md)   
  [NameSearchOptions numaralandırması](../../debugger/debug-interface-access/namesearchoptions.md)   
- [SymTagEnum numaralandırması](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum Numaralandırması](../../debugger/debug-interface-access/symtagenum.md)

@@ -15,14 +15,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ee8404deaeeadd65a4e032266422520721a50a51
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: eeb9f26091deaf995ef1221d39aa7264553f5c70
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34815385"
 ---
 # <a name="how-to-compare-performance-data-files"></a>Nasıl yapılır: performans veri dosyalarını karşılaştırma
-Bir karşılaştırma ("fark") raporu ya da görünüm oluşturarak iki farklı profil oluşturucu veri dosyalarını (.vsp veya .vsps) sonuçlarını karşılaştırabilirsiniz. Karşılaştırma farkları, performans gerileme ve diğer bir profil oluşturma oturumu oluştu iyileştirmeleri gösterir.  
+İki farklı profil oluşturucu veri dosyalarını sonuçlarını karşılaştırabilirsiniz (. *Vsp* veya. *vsps*) karşılaştırma ("fark") oluşturarak rapor veya görüntüleyin. Karşılaştırma farkları, performans gerileme ve diğer bir profil oluşturma oturumu oluştu iyileştirmeleri gösterir.  
   
  Diff rapor verileri içeren bir tablo görünümü gösterir. Tablo delta veya taban çizgisiyle değişiklik gösterir. Bu, yeni analiz eski değer, taban çizgisi değeri ve sonuç değeri arasındaki farkı belirleyerek hesaplanır.  
   
@@ -32,9 +33,9 @@ Bir karşılaştırma ("fark") raporu ya da görünüm oluşturarak iki farklı 
   
 ### <a name="to-create-comparison-file-view-for-a-project-in-performance-explorer"></a>Performans Gezgini içinde bir proje için karşılaştırma dosya görünümü oluşturmak için  
   
-1.  İçinde **performans Gezgini**altında **raporları**, karşılaştırma için temel değerleri olarak kullanmak istediğiniz .vsp veya .vsps rapor dosyası seçin.  
+1.  İçinde **performans Gezgini**altında **raporları**seçin. *Vsp* veya. *vsps* taban çizgisi değerlerini karşılaştırma için kullanmak istediğiniz rapor dosyası.  
   
-2.  Karşılaştırmak istediğiniz .vsp veya .vsps rapor dosyaları seçin.  
+2.  Seçin. *vsp* veya. *vsps* rapor karşılaştırmak istediğiniz dosyaları.  
   
 3.  Seçili dosyaları birine sağ tıklayın ve ardından **karşılaştırmak raporları**.  
   
@@ -54,6 +55,6 @@ Bir karşılaştırma ("fark") raporu ya da görünüm oluşturarak iki farklı 
   
 1.  Üzerinde **Çözümle** menüsünde, select **karşılaştırmak performans raporları**.  
   
-2.  İçinde **karşılaştırma için analiz dosyaları seçin** penceresi, göz atma ve seçme **temel dosya** analiz dosyası (.vsp veya .vsps) ve **karşılaştırma dosya** (.vsp veya .vsps).  
+2.  İçinde **karşılaştırma için analiz dosyaları seçin** penceresi, Gözat ' nı seçip **temel dosya** analiz dosyası (. *Vsp* veya. *vsps*) ve **karşılaştırma dosya** (. *Vsp* veya. *vsps*).  
   
 3.  **Tamam**'ı tıklatın.

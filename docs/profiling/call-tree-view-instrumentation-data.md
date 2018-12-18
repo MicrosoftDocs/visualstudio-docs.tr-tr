@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: eaf8e9176c389aecf2844f3e4bcaeea9bcaa5803
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3b42cce6c9134a668d5096150d986e950ed8a8e7
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262237"
 ---
 # <a name="call-tree-view---instrumentation-data"></a>Çağrı ağacı görünümü - izleme verileri
 Bir işlev çağrısı ağacında değerlerini çağrısı ağacında üst işlevi tarafından çağrılan işlev örnekleri için zaman belirtin. Yüzde değerleri, toplam geçen dahil süre işlevi örneklerine profil çalıştırmada tüm işlevlerin değerini karşılaştırılmasıyla hesaplanır.  
@@ -83,7 +84,7 @@ Bir işlev çağrısı ağacında değerlerini çağrısı ağacında üst işle
 |**En fazla uygulama özel süresi**|Bu işlevi bu bağlamda çağrısı en fazla uygulama özel saati.|  
 |**Min uygulama özel süresi**|Bu işlevi bu bağlamda çağrısı minimum uygulama özel saati.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: rapor görünümü sütunlarını özelleştirme](../profiling/how-to-customize-report-view-columns.md)   
  [Çağrı ağacı görünümü](../profiling/call-tree-view-sampling-data.md)   
  [Çağrı ağacı görünümü - izleme](../profiling/call-tree-view-dotnet-memory-instrumentation-data.md)   

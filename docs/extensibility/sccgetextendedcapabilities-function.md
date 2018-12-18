@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 46ae3e051028e8239be5949500ebb710d67eee17
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 94b8ec5b095b30054ca03a1a7acb86ed78e16c23
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926520"
 ---
 # <a name="sccgetextendedcapabilities-function"></a>SccGetExtendedCapabilities işlevi
 Bu işlev, kaynak denetimi eklentisi tarafından desteklenen ek özellikleri döndürür.  
@@ -34,28 +35,28 @@ SCCRTN SccGetExtendedCapabilities(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametreler  
+### <a name="parameters"></a>Parametreler  
  pContext  
- [in] Kaynak Denetim eklentisi bağlam işaretçi.  
+ [in] Kaynak Denetimi Eklentisi bağlam işaretçisi.  
   
  lSccExCaps  
- [in] Hangi test etmek için bir genişletilmiş özelliği belirten bir bayrak (genişletilmiş özellik kodu tablosunda görmek [yetenek bayrakları](../extensibility/capability-flags.md) olası bayraklar için).  
+ [in] Test etmek istediğiniz genişletilmiş bir özellik belirten bir bayrak (genişletilmiş özelliği kodu tablosuna bakın [özellik bayrakları](../extensibility/capability-flags.md) olası bayrakları için).  
   
  pbSupported  
- [out] Sıfır olmayan döndürür (`TRUE`) belirtilen yeteneği destekleniyorsa; Aksi halde, sıfır döndürür (`FALSE`).  
+ [out] Sıfır olmayan döndürür (`TRUE`) belirtilen yeteneği desteklenir; Aksi takdirde, sıfır döndürür (`FALSE`).  
   
-## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+## <a name="return-value"></a>Dönüş değeri  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
-|SCC_OK|Get yetenek işlemi başarıyla tamamlandı.|  
+|SCC_OK|Alma özelliği işlemi başarıyla tamamlandı.|  
 |SCC_E_UNKNOWNERROR<br /><br /> SCC_E_NONSPECIFICERROR|Bilinmeyen veya belirtilmeyen bir hata oluştu.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, isteğe bağlı olarak adlandırılır; bir yetenek sınanacak gerektiğinde, diğer bir deyişle, bu yöntem belirlemek için yetenek desteklenen çağrılır. Bir seferde yalnızca bir bayrağı belirtilmiş.  
+ İsteğe bağlı olarak bu yöntem çağrılır; Test edilecek bir yetenek gerektiğinde, diğer bir deyişle, bu yöntem belirlemek için özellik desteklenen çağrılır. Aynı anda yalnızca bir bayrağı belirtilmiş.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
  [Hata kodları](../extensibility/error-codes.md)   
- [Özellik Bayrakları](../extensibility/capability-flags.md)
+ [Özellik bayrakları](../extensibility/capability-flags.md)

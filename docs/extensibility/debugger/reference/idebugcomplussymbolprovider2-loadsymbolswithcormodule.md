@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1529f1645adcd1aaa18b5f17448068de3da6efe4
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6bde1c3aa8ced1b82d20af6d9e777a030d201a01
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49874611"
 ---
 # <a name="idebugcomplussymbolprovider2loadsymbolswithcormodule"></a>IDebugComPlusSymbolProvider2::LoadSymbolsWithCorModule
-Yükleri hata ayıklama simgeleri verilen **Icordebugmodule** nesnesi.  
+Yükleri hata ayıklama sembolleri verilen **Icordebugmodule** nesne.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -54,28 +55,28 @@ int LoadSymbolsWithCorModule(
  [in] Uygulama etki alanı tanımlayıcısı.  
   
  `guidModule`  
- [in] Modül benzersiz tanımlayıcısı.  
+ [in] Modülün benzersiz tanımlayıcısı.  
   
  `baseAddress`  
- [in] Temel bellek adresi.  
+ [in] Temel bir bellek adresi.  
   
  `pUnkMetadataImport`  
- [in] Hata ayıklama simgesi meta verileri içeren nesne.  
+ [in] Hata ayıklama sembol meta veriler içeren nesne.  
   
  `pUnkCorDebugModule`  
  [in] Uygulayan nesne [Icordebugmodule arabirimi](/dotnet/framework/unmanaged-api/debugging/icordebugmodule-interface).  
   
  `bstrModuleName`  
- [in] Modül adı.  
+ [in] Modülün adı.  
   
  `bstrSymSearchPath`  
- [in] Sembol dosyayı aramak için yolu.  
+ [in] Sembol dosyası için arama yolu.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="example"></a>Örnek  
- Aşağıdaki örnek için bu yöntemi uygulaması gösterilmektedir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider2](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2.md) arabirimi.  
+ Aşağıdaki örnek için bu yöntemi uygulaması gösterilmiştir bir **CDebugSymbolProvider** gösteren nesne [IDebugComPlusSymbolProvider2](../../../extensibility/debugger/reference/idebugcomplussymbolprovider2.md) arabirimi.  
   
 ```cpp  
 HRESULT CDebugSymbolProvider::LoadSymbolsWithCorModule(  

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a6e43d7540ad48eac1ff8603ef41b38f8d247ae0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f3f4215cee924aa5df0f312685ca241a1f7bb73f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49882619"
 ---
 # <a name="idebugfieldgetaddress"></a>IDebugField::GetAddress
-Bu yöntem, bir alanın hata ayıklama adresini alır.  
+Bu yöntem, bir alan için hata ayıklama adresi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int GetAddress(
   
 #### <a name="parameters"></a>Parametreler  
  `ppAddress`  
- [out] Adresi olarak döndüren bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesnesi.  
+ [out] Adresi olarak döndüren bir [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodunu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   

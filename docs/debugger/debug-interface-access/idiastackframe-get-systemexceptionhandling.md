@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 033122a925313117d007c20bb7a6d4f5f513b76c
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 196bc890458d820b4280144e6f6a76655e7d8c93
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49923881"
 ---
 # <a name="idiastackframegetsystemexceptionhandling"></a>IDiaStackFrame::get_systemExceptionHandling
-Sistem özel durum işleme etkin olup olmadığını belirten bir bayrak alır.  
+Sistem özel durum işleme etkin olup olmadığını gösteren bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,15 +34,15 @@ HRESULT get_systemExceptionHandling (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` sistem özel durum işleme için bu çerçeve; etkinse, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür `TRUE` sistem özel durum işleme aslında bu çerçeve için; Aksi halde döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Sistem özel durum işleme yapılandırılmış özel durum işleme de denir. C++ özel durum işleme aynı şeyi değil.  
+ Sistem özel durum işleme yapılandırılmış özel durum işleme de denir. C++ özel durum işleme ile aynı şeydir değil.  
   
- C++ özel durum işleme etkin olup olmadığını belirlemek için arama [Idiastackframe::get_cplusplusexceptionhandling](../../debugger/debug-interface-access/idiastackframe-get-cplusplusexceptionhandling.md) yöntemi.  
+ C++ özel durum işleme etkin olup olmadığını belirlemek için çağrı [Idiastackframe::get_cplusplusexceptionhandling](../../debugger/debug-interface-access/idiastackframe-get-cplusplusexceptionhandling.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiastackframe](../../debugger/debug-interface-access/idiastackframe.md)   

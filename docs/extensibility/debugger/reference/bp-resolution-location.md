@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 032228596773d4a5a164f904c1caae161b693f64
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0dda42a65824b8fdb93ec8561f3affb59ee5d166
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926130"
 ---
 # <a name="bpresolutionlocation"></a>BP_RESOLUTION_LOCATION
-Kesme noktası çözümleme konum yapısını belirtir.  
+Kesme noktası çözünürlüğü konumu yapısını belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -49,7 +50,7 @@ public struct BP_RESOLUTION_LOCATION {
   
 ## <a name="members"></a>Üyeler  
  `bpType`  
- Arasında bir değer [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) yorumlama belirten numaralandırma `bpResLocation` Birliği veya `unionmemberX` üyeleri.  
+ Bir değer [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md) yorumlama belirten numaralandırma `bpResLocation` birleşim veya `unionmemberX` üyeleri.  
   
  `bpResLocation.bpresCode`  
  [Yalnızca C++] İçeren [BP_RESOLUTION_CODE](../../../extensibility/debugger/reference/bp-resolution-code.md) , yapı `bpType`  =  `BPT_CODE`.  
@@ -58,29 +59,29 @@ public struct BP_RESOLUTION_LOCATION {
  [Yalnızca C++] İçeren [BP_RESOLUTION_DATA](../../../extensibility/debugger/reference/bp-resolution-data.md) , yapı `bpType`  =  `BPT_DATA`.  
   
  `bpResLocation.unused`  
- [Yalnızca C++] Yer tutucu.  
+ [Yalnızca C++] Bir yer tutucu.  
   
  `unionmember1`  
- [Sadece C#] Yorumlama ilgili açıklamalar bakın.  
+ [Yalnızca C#] Yorumlama konusunda açıklamalara bakın.  
   
  `unionmember2`  
- [Sadece C#] Yorumlama ilgili açıklamalar bakın.  
+ [Yalnızca C#] Yorumlama konusunda açıklamalara bakın.  
   
  `unionmember3`  
- [Sadece C#] Yorumlama ilgili açıklamalar bakın.  
+ [Yalnızca C#] Yorumlama konusunda açıklamalara bakın.  
   
  `unionmember4`  
- [Sadece C#] Yorumlama ilgili açıklamalar bakın.  
+ [Yalnızca C#] Yorumlama konusunda açıklamalara bakın.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı üyesi olan [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) ve [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapıları.  
+ Bu yapı üyesidir [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md) ve [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md) yapıları.  
   
- [Sadece C#] `unionmemberX` Üyeleri aşağıdaki tabloya göre yorumlanır. Sol sütunda için aşağıya bakın `bpType` her belirlemek için çapraz değer `unionmemberX` üye temsil eder ve sıralama `unionmemberX` uygun şekilde. Bu yapı C# yorumlamak için bir yol örneğine bakın.  
+ [Yalnızca C#] `unionmemberX` Üyeleri aşağıdaki tabloya göre yorumlanır. Sol sütundaki için konum `bpType` boyunca hangi her belirlemek için değer `unionmemberX` üye temsil eder ve sıralama `unionmemberX` uygun şekilde. Bu yapı C# yorumlamak bir yol için örneğe bakın.  
   
 |`bpLocationType`|`unionmember1`|`unionmember2`|`unionmember3`|`unionmember4`|  
 |----------------------|--------------------|--------------------|--------------------|--------------------|  
 |`BPT_CODE`|[IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md)|-|-|-|  
-|`BPT_DATA`|`string` (veri ifade)|`string` (işlev adı)|`string` (görüntü adı)|`enum_BP_RES_DATA_FLAGS`|  
+|`BPT_DATA`|`string` (veri ifadesi)|`string` (işlev adı)|`string` (görüntü adı)|`enum_BP_RES_DATA_FLAGS`|  
   
 ## <a name="example"></a>Örnek  
  Bu örnek nasıl yorumlanacağını gösterir `BP_RESOLUTION_LOCATION` C# yapısı.  
@@ -113,14 +114,14 @@ namespace MyPackage
 ```  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [BP_TYPE](../../../extensibility/debugger/reference/bp-type.md)   
  [BP_ERROR_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-error-resolution-info.md)   
  [BP_RESOLUTION_INFO](../../../extensibility/debugger/reference/bp-resolution-info.md)   

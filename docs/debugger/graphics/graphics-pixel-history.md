@@ -17,13 +17,14 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31479961"
 ---
 # <a name="graphics-pixel-history"></a>Grafik Piksel Geçmişi
 Visual Studio grafik Çözümleyicisi grafik piksel geçmişi penceresinde, belirli bir piksel oyun veya uygulama bir çerçevesinde oluşan Direct3D olaylar tarafından nasıl etkilendiğini anlamanıza yardımcı olur.  
   
  Piksel Geçmişi penceresini şudur:  
   
- ![Piksel geçmişi üç Direct3D olayları ile. ] (media/gfx_diag_demo_pixel_history_orientation.png "gfx_diag_demo_pixel_history_orientation")  
+ ![Piksel geçmişi üç Direct3D olayları ile. ](media/gfx_diag_demo_pixel_history_orientation.png "gfx_diag_demo_pixel_history_orientation")  
   
 ## <a name="understanding-the-pixel-history-window"></a>Piksel Geçmişi penceresini anlama  
  Piksel geçmişi kullanarak, belirli bir piksel işleme hedef çerçevesi sırasındaki Direct3D olaylar tarafından nasıl etkilenir analiz edebilirsiniz. Belirli bir Direct3D olaya bile sonraki olayları işleme sorununu saptayabilirler — ya da aynı olayda sonraki temelleri — piksel son renk değeri değiştirmeye devam. Örneğin, bir piksel yanlış işlenemiyor ve böylece kendi renkleri birlikte framebuffer karıştırılan başka yarı saydam piksel getirilmemeli. Bu tür bir sorun yalnızca size yol göstermesi için işleme hedefi son içeriğini olsaydı tanılamak zor olurdu.  
@@ -41,9 +42,9 @@ Visual Studio grafik Çözümleyicisi grafik piksel geçmişi penceresinde, beli
   
 |Simge|Dışlama nedeni|  
 |----------|--------------------------|  
-|![Derinlik test hata simgesi. ] (media/vsg_hist_icon_failed_depth.png "vsg_hist_icon_failed_depth")|Derinlik test başarısız olduğundan piksel hariç tutuldu.|  
-|![Makaslı test hata simgesi. ] (media/vsg_hist_icon_failed_scissor.png "vsg_hist_icon_failed_scissor")|Makaslı test başarısız olduğundan piksel hariç tutuldu.|  
-|![Şablon test hata simgesi. ] (media/vsg_hist_icon_failed_stencil.png "vsg_hist_icon_failed_stencil")|Şablon test başarısız olduğundan piksel hariç tutuldu.|  
+|![Derinlik test hata simgesi. ](media/vsg_hist_icon_failed_depth.png "vsg_hist_icon_failed_depth")|Derinlik test başarısız olduğundan piksel hariç tutuldu.|  
+|![Makaslı test hata simgesi. ](media/vsg_hist_icon_failed_scissor.png "vsg_hist_icon_failed_scissor")|Makaslı test başarısız olduğundan piksel hariç tutuldu.|  
+|![Şablon test hata simgesi. ](media/vsg_hist_icon_failed_stencil.png "vsg_hist_icon_failed_stencil")|Şablon test başarısız olduğundan piksel hariç tutuldu.|  
   
 ### <a name="draw-call-exclusion"></a>Çağrı dışlama çizme  
  Tüm bir çizim elemanlar çağırırsanız, işleme hedef çizim çağrısı genişletilemiyor ve yanındaki dışlama nedeni karşılık gelen bir simge görüntülenir sonra bir test başarısız olduğundan etkileyen hariç tutulur. Draw çağrısı dışlama nedenlerle ilkel dışlama nedenlerle benzer ve simgelerine benzerdir.  

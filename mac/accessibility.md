@@ -1,77 +1,82 @@
 ---
 title: Erişilebilirlik
-description: ''
-author: asb3993
-ms.author: amburns
+description: Bu makale, Mac ve bunların nasıl etkinleştirilebilir için Visual Studio'nun erişilebilirlik özellikleri tanıtır.
+author: conceptdev
+ms.author: crdun
 ms.date: 08/15/2017
 ms.assetid: 2C4AAC2E-3B4A-4496-8BE0-1F5A7F81D1CA
-ms.openlocfilehash: b434a1cf0290c1c43d0f309850e112843907d6da
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: f90f5fca9d68ed00162fd746ddf291343c8d51f7
+ms.sourcegitcommit: 0a8ac5f2a685270d9ca79bb39d26fd90099bfa29
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51296352"
 ---
 # <a name="accessibility"></a>Erişilebilirlik
 
-Özellikleri ve macOS yardımcı programlara ek olarak, Visual Studio Mac için daha erişilebilir engelli kişiler için kolaylaştırarak aşağıdaki özelliklere sahiptir:
+Özellikler ve macOS yardımcı programlara ek olarak, Mac için Visual Studio daha erişilebilir engelli kişiler için kolaylaştırır aşağıdaki özelliklere sahiptir:
 
-- Çözüm ve düzenleyici klavye takımı metin büyütme
-- Düzenleyicilerde metin boyutu seçenekleri
-- Düzenleyicilerde renk özelleştirme
-- Klavye kısayolu özelleştirme
-- Yöntem ve parametreler için kod tamamlama 
+- Çözüm ve Düzenleyicisi bölmeleri metin büyütme
+- Metin düzenleyicilerde boyut seçenekleri
+- Düzenleyicilerde özelleştirme rengi
+- Klavye kısayolunu özelleştirme
+- Yöntem ve parametreler için kod tamamlama
 
-MacOS erişilebilirlik özellikleri hakkında daha fazla bilgi için bkz: [Apple'nın Web sitesi](https://www.apple.com/accessibility/mac/).
+MacOS erişilebilirlik özellikleri hakkında daha fazla bilgi için bkz. [Apple'nın Web sitesi](https://www.apple.com/accessibility/mac/).
 
 ## <a name="using-accessibility-features-in-visual-studio-for-mac"></a>Mac için Visual Studio'da erişilebilirlik özelliklerini kullanma
 
-Mac için Visual Studio'da erişilebilirlik özellikleri varsayılan olarak kapalıdır. Bunları etkinleştirmek için aşağıdaki adımları uygulayın:
+Mac için Visual Studio'nun erişilebilirlik özellikleri varsayılan olarak kapalıdır. Bunları etkinleştirmek için aşağıdaki adımları uygulayın:
 
 1. Git **Visual Studio > Tercihler > Diğer > Erişilebilirlik**.
 
-2. Seçin **etkinleştirmek erişilebilirlik** aşağıdaki çizimde gösterildiği gibi onay kutusunu:
+2. Seçin **etkinleştirme erişilebilirlik** Aşağıdaki diyagramda gösterildiği gibi onay kutusunu:
 
     ![Erişilebilirlik onay kutusunu etkinleştir](media/accessibility-image1.png)
 
 3. Tuşuna **Visual Studio'yu yeniden başlatın** erişilebilirlik özellikleri etkili şekilde düğmesi.
 
-
-Alternatif olarak, erişilebilirlik özelliklerini etkinleştirmek için komut satırını kullanabilirsiniz. Bunu yapmak için terminal içinde aşağıdaki komutu girin: 
+Alternatif olarak, erişilebilirlik özelliklerini etkinleştirmek için komut satırını kullanabilirsiniz. Bunu yapmak için terminalde aşağıdaki komutu girin:
 
 ```bash
-defaults write com.microsoft.visual-studio com.monodevelop.AccessibilityEnabled 1 
+defaults write com.microsoft.visual-studio com.monodevelop.AccessibilityEnabled 1
 ```
 
-Erişilebilirliği etkinleştirdikten sonra Visual Studio yeniden başlatmanız gerekir.
+Erişilebilirliği açtıktan sonra Visual Studio'yu yeniden başlatmanız gerekir.
 
-## <a name="how-to-use-keyboard-navigation"></a>Nasıl yapılır: klavye gezinti kullanın
+## <a name="how-to-use-keyboard-navigation"></a>Nasıl yapılır: klavye gezintisini kullanma
 
-Klavye gezinme, tam Klavye erişimi seçeneğini ayarlayarak etkinleştirilebilir **sistem tercihleri > klavye > kısayolları** için **tüm denetimler**:
+Klavye ile gezinme, tam klavye erişim seçeneğini ayarlayarak etkinleştirilebilir **sistem tercihleri > klavye > kısayolları** için **tüm denetimleri**:
 
-  ![Macos sistemleri Tercihler panelinde](media/accessibility-image2.png)
+![Macos sistemleri Tercihler panelinde](media/accessibility-image2.png)
 
-Tam klavye erişimini ayarını odak dikdörtgeni etkinleştirir. Daha sonra kullanarak denetimleri seçebilirsiniz:
-- Denetimlerde İleri Git sekmesi
-- Geriye dönük denetimlerde gitmek için Shift-sekmesi
-- Oklar yönünü denetimlerinde arasında gezinmek için ok tuşları. 
+Odak dikdörtgenini üzerinde tam klavye erişim ayarı kapatır. Denetimleri kullanarak daha sonra seçebilirsiniz:
 
-Ara çubuğu tuşlarına odaklı denetimin etkinleştirir.
+- Denetim boyunca ileri gitmek için sekmesinde
+- Shift-Sekme denetim boyunca geriye Git
+- Oklar yönünü denetimlerin arasında gezinmek için ok tuşları'ni kullanın.
 
-## <a name="how-to-enable-and-use-voice-over"></a>Nasıl yapılır: etkinleştirme ve ses üzerinden kullanma
+Boşluk çubuğuna basarak odaklı denetimin etkinleştirir.
 
-VoiceOver tuşuna açılıp **Cmd CTRL + F5**
+## <a name="how-to-enable-and-use-voice-over"></a>Nasıl yapılır: etkinleştirme ve Voice Over kullanma
+
+VoiceOver tuşuna açıp kapatması **Cmd + F5**
 
 UI VoiceOver komutları gitmek için aşağıdaki komutları kullanın:
 
-- VoiceOver imleç denetimler arasında taşıma: **Ctrl + Alt + Sol ok tuşunu / sağ ok tuşu**
+- VoiceOver imleci denetimler arasında taşıma: **Ctrl + Alt + Sol Ok tuşu / sağ ok tuşu**
 
-Denetimleri, bazı ayrıntıları ve onunla yapabileceklerinizi adını çıkışı voiceOver okur. 
+   Denetimleri, bazı ayrıntılarını ve onunla yapabileceklerinizi adı voiceOver okur.
 
-- Grupları ve denetimleri (örneğin, çözüm paneli, araç ve diğer klavye takımı) girin: **Ctrl + Alt + üst karakter + aşağı ok**
+- Gruplar ve denetimler (örneğin, çözüm bölmesi, araç ve diğer doldurmalar) girin: **Ctrl + Alt + Shift + aşağı ok**
 
-İçindeki bir denetim, kullandığınız sonra **Ctrl + Alt + okları** içinde hareket etmek için. 
- 
-MacOS içinde VoiceOver kullanma hakkında genel bilgi için aşağıdaki kılavuzlara bakın:
+   Kullanabileceğiniz bir denetimi içinde bir kez **Ctrl + Alt + ok** içinde hareket etmek için.
+
+MacOS VoiceOver kullanma hakkında genel bilgi için aşağıdaki kılavuzlara bakın:
 
 - [VoiceOver ile çalışmaya başlama](https://help.apple.com/voiceover/info/guide/10.12/)
 - [MacOS voiceOver komutları](http://lab.dotjay.com/notes/voiceover-commands/)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [(Windows üzerinde) Visual Studio'nun erişilebilirlik özellikleri](/visualstudio/ide/reference/accessibility-features-of-visual-studio)

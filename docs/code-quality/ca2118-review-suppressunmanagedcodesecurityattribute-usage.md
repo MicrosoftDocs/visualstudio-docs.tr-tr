@@ -1,6 +1,7 @@
 ---
 title: 'CA2118: SuppressUnmanagedCodeSecurityAttribute kullanımını gözden geçir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - cplusplus
-ms.openlocfilehash: be5ebf971d7a852edafc2b54e954c5b06ef81c88
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 900abe516ebd07cf5a8849f269f915623500731e
+ms.sourcegitcommit: ad5fb20f18b23eb8bd2568717f61edc6b7eee5e7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47859711"
 ---
 # <a name="ca2118-review-suppressunmanagedcodesecurityattribute-usage"></a>CA2118: SuppressUnmanagedCodeSecurityAttribute kullanımını gözden geçir
+
 |||
 |-|-|
 |TypeName|ReviewSuppressUnmanagedCodeSecurityUsage|
@@ -30,43 +33,47 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Genel veya korumalı tür veya üye olan <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute?displayProperty=fullName> özniteliği.
+ Bir ortak veya korumalı tür veya üye <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute?displayProperty=fullName> özniteliği.
 
-## <a name="rule-description"></a>Kural Tanımı
- <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> COM birlikte çalışma veya platform çağırma kullanma yönetilmeyen kod yürütmek için üyeleri için varsayılan güvenlik sistem davranışını değiştirir. Genellikle, sistem yapar bir [veri ve modelleme](/dotnet/framework/data/index) yönetilmeyen kod izni. Bu isteğe bağlı üye her çalıştırılışı için çalışma zamanında gerçekleşir ve her çağıran çağrı yığınında izin denetler. Öznitelik mevcut olduğunda, sistemin yapar bir [bağlantı talepleri](/dotnet/framework/misc/link-demands) izni: arayan JIT derlenmiş olduğunda anında arayanlar izinleriyle denetlenir.
+## <a name="rule-description"></a>Kural açıklaması
+ <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> COM birlikte çalışma veya platform çağırma kullanan yönetilmeyen kodu yürüten üyeler için varsayılan güvenlik sistemi davranışını değiştirir. Genellikle, sistemi yapan bir [veri ve modelleme](/dotnet/framework/data/index) yönetilmeyen kod izni. Bu isteğe bağlı üye her çalıştırılışı için çalışma zamanında gerçekleştirilir ve izin için çağrı yığınında her çağıranı denetler. Özniteliği olduğunda sistemi yapan bir [bağlantı talepleri](/dotnet/framework/misc/link-demands) izni: şu anki çağırıcı izinlerini arayan JIT olarak derlenmiş olduğunda denetlenir.
 
- Bu öznitelik, öncelikle performansı artırmak için kullanılır; ancak, gelen performans artışı önemli güvenlik riskleri ile gelir. Yerel yöntemlerini çağıran ortak üye öznitelik yerleştirirseniz (dışında anında arayanlar) çağrı yığınında arayanlar yönetilmeyen kod yönetilmeyen kod yürütme izni gerekmez. Ortak üyenin eylemleri ve giriş işleme bağlı olarak, normalde güvenilir kodu kısıtlı erişim işlevselliği güvenilmez arayanlara izin verebilir.
+ Bu öznitelik, öncelikle performansı artırmak için kullanılır; ancak, gelen performans artışı önemli güvenlik riskleri ile gelir. Öznitelik yerel yöntemlerini çağıran ortak üyelerde yerleştirirseniz, çağıranlar çağrı yığını (şu anki çağırıcı dışında) yönetilmeyen kod yönetilmeyen kod yürütme izni gerekmez. Genel üye Eylemler ve giriş işleme bağlı olarak, normalde güvenilir koda kısıtlı erişim işlevini güvenilmez arayanlara izin verebilir.
 
- [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] Arayanlar doğrudan geçerli işlemin adres alanı erişmesini engellemek için güvenlik denetimlerini kullanır. Bu öznitelik normal güvenlik atladığından okumak veya yazmak için işlemin bellek için kullanılabiliyorsa, kodunuzun bir ciddi tehdidi. Risk bilerek bellek işlemek için erişim sağlayan yöntemler için sınırlı olduğunu unutmayın; Burada kötü amaçlı kod erişim herhangi bir yolla, örneğin, şaşırtıcı, hatalı biçimlendirilmiş veya geçersiz giriş sağlayarak elde edebilirsiniz herhangi bir senaryoda de mevcuttur.
+ .NET Framework Güvenlik denetimleri çağıranlar geçerli işlemin adres alanına doğrudan erişim kazanmasını engellemek için kullanır. Bu öznitelik normal güvenlik atladığından okumak veya yazmak için işlemin belleğinin için kullanılabiliyorsa kodunuzu önemli bir tehlike doğurur. Risk kasıtlı olarak işlem bellek erişimi sağlayan yöntemler için sınırlı olduğunu unutmayın; Mevcut hiçbir senaryoda burada kötü amaçlı kod erişim herhangi bir yolla, örneğin, şaşırtıcı, hatalı biçimlendirilmiş veya geçersiz bir giriş sağlayarak elde edebilirsiniz.
 
- Yerel bilgisayardan yürütüyor veya aşağıdaki gruplardan birinin üyesi olduğu sürece varsayılan güvenlik ilkesi bir derlemeye yönetilmeyen kod izin vermez:
+ Yerel bilgisayardan yürütme ya da aşağıdaki gruplardan birinin üyesi olduğu sürece varsayılan güvenlik ilkesini yönetilmeyen kodu bir bütünleştirilmiş kod izni vermez:
 
--   Bilgisayar bölge kodu grubum
+- Bilgisayar bölge kodu grubum
 
--   Microsoft Güçlü ad kod grubu
+- Microsoft güçlü adı kod grubu
 
--   ECMA tanımlayıcı adı kod grubu
+- ECMA tanımlayıcı adı kod grubu
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu öznitelik kesinlikle gerekli olduğundan emin olmak için kodunuzu dikkatle gözden geçirin. Yönetilen kod güvenlik ile ilgili bilginiz ya da bu özniteliği kullanılarak güvenlik etkilerini anlaşılmıyor kodunuzdan kaldırın. Öznitelik gerekiyorsa, arayanlar kodunuzu amaçla kullanamazsınız emin olmalısınız. Kodunuzu yönetilmeyen kod yürütmek için izni yok, bu öznitelik herhangi bir etkisi olmaz ve kaldırılması gerekir.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu öznitelik kesinlikle gerekli olduğundan emin olmak için kodunuzu dikkatle inceleyin. İle yönetilen kod güvenlik bilginiz ya da bu özniteliği kullanarak güvenlik etkilerini anlamak değil, kodunuzdan kaldırın. Öznitelik gerekliyse, Arayanların kodunuzu amaçla kullanamazsınız emin olmanız gerekir. Kodunuzu yönetilmeyen kod yürütmek için izinlere sahip değilse, bu öznitelik etkiye sahip değildir ve kaldırılması gerekiyor.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kural bir uyarıdan güvenle gizlemek için kodunuzu arayanlar yerel operations veya zararlı bir şekilde kullanılabilir kaynaklara erişim sağlamaz emin olmalısınız.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Güvenli bir şekilde bu kuraldan bir uyarıyı bastırmak için kodunuzu yerel işlemler veya yıkıcı bir şekilde kullanılabilecek kaynaklara erişim çağıranlar sağlamaz emin olmanız gerekir.
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnek kural ihlal ediyor.
+## <a name="example-1"></a>Örnek 1
+ Aşağıdaki örnek bu kuralı ihlal ediyor.
 
  [!code-csharp[FxCop.Security.TypesDoNotSuppress#1](../code-quality/codesnippet/CSharp/ca2118-review-suppressunmanagedcodesecurityattribute-usage_1.cs)]
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnekte, `DoWork` yöntemi sağlar platform çağırma yöntemi için bir genel olarak erişilebilir kod yolu `FormatHardDisk`.
+## <a name="example-2"></a>Örnek 2
+ Aşağıdaki örnekte, `DoWork` yöntemi sağlayan platform çağırma yöntemi genel olarak erişilebilir kod yolu `FormatHardDisk`.
 
  [!code-csharp[FxCop.Security.PInvokeAndSuppress#1](../code-quality/codesnippet/CSharp/ca2118-review-suppressunmanagedcodesecurityattribute-usage_2.cs)]
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnekte, genel yöntem `DoDangerousThing` bir ihlaline neden olur. İhlali çözümlemek için `DoDangerousThing` özel yapılmalıdır ve erişimi olmalıdır güvenlik isteğe bağlı güvenli bir genel yöntem aracılığıyla tarafından gösterildiği gibi `DoWork` yöntemi.
+## <a name="example-3"></a>Örnek 3
+ Aşağıdaki örnekte, genel yöntem `DoDangerousThing` bir ihlaline neden olur. İhlali gidermek için `DoDangerousThing` özel yapılmalıdır ve erişimi olmalıdır bir güvenlik talebi tarafından güvenli bir genel yöntem aracılığıyla tarafından gösterildiği gibi `DoWork` yöntemi.
 
  [!code-csharp[FxCop.Security.TypeInvokeAndSuppress#1](../code-quality/codesnippet/CSharp/ca2118-review-suppressunmanagedcodesecurityattribute-usage_3.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute?displayProperty=fullName> [Güvenli kodlama yönergeleri](/dotnet/standard/security/secure-coding-guidelines) [veri ve modelleme](/dotnet/framework/data/index) [bağlantı talepleri](/dotnet/framework/misc/link-demands)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute?displayProperty=fullName>
+- [Güvenli Kodlama Yönergeleri](/dotnet/standard/security/secure-coding-guidelines)
+- [Veri ve Modelleme](/dotnet/framework/data/index)
+- [Bağlantı talepleri](/dotnet/framework/misc/link-demands)

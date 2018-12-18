@@ -1,5 +1,5 @@
 ---
-title: Kullanıcı geri bildirim | Microsoft Docs
+title: Kullanıcıya geri bildirim | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,50 +16,51 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 629d12974a52bca30c0db96e838c5c731ae1abf7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 39ab61615ed00504259909339734ab7874a6dfc6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49860376"
 ---
-# <a name="feedback-to-the-user"></a>Kullanıcı geri bildirim
-İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE) görsel geribildirim ilgili kullanılabilir İşlevler, kullanıcının geçerli seçim ve genel seçimi bağlam dayanır. Aşağıdaki tabloda farklı seçim bağlamlarında kullanılabilir işlevselliği listeler.  
+# <a name="feedback-to-the-user"></a>Kullanıcıya geri bildirim
+İçinde [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] tümleşik geliştirme ortamı (IDE), kullanıcının geçerli seçimi ve genel seçim bağlamını ilgili kullanılabilir işlevler temel görsel geri bildirim. Aşağıdaki tabloda farklı seçim bağlamlarında kullanılabilir olan işlevleri listeler.  
   
-|Seçim bağlamı|Kullanılabilir işlevi|  
+|Seçim bağlamı|Kullanılabilir işlevleri|  
 |-----------------------|-----------------------------|  
 |IDE|Global|  
-|Geçerli ürün kümesi|Ürün belirli|  
+|Geçerli ürün kümesi|Belirli bir ürün|  
 |Etkin olan hiyerarşi|Hiyerarşi türü özel|  
 |Etkin olan hiyerarşi öğesi|Hiyerarşi öğesi türü özel|  
 |Etkin belge|Belge türü özel|  
-|En üstteki birden çok belge arabirimi (MDI) penceresi|Pencere türü özel|  
-|Geçerli seçim bağlamı|Belirli seçim bağlamı|  
+|En üstteki Çok Belgeli Arabirim (MDI) penceresi|Pencere türü özel|  
+|Geçerli seçim bağlamı|Seçim bağlamını belirli|  
   
- Yalnızca kullanıcıların gerekir ve sürekli olarak tutarlı seçimi ve ortam bağlamı geri bildirim sağlayın işlevselliği yüzey, IDE içinde karmaşıklığı azaltın. Her bir pencere IDE içinde açıldığında aşağıdaki kurallar geçerlidir:  
+ Yalnızca kullanıcılar gereken ve sürekli olarak tutarlı seçimi ve ortam bağlamı geri bildirim sağlamak işlevselliğini yüzey, IDE karmaşıklığını azaltın. Her bir pencere IDE içinde açıldığında aşağıdaki kurallar geçerlidir:  
   
--   Pencerenin onun seçimi içeriği değişirse, seçim geri bildirim açıkça penceresinde gösterilen ve dinamik Yardım penceresini geçerli bağlamı yansıtacak şekilde güncelleştirilir gösterilen.  
+- Pencerenin alt seçim bağlamını değişirse, seçim geri bildirimi penceresinde açıkça belirtilir ve **dinamik Yardım** penceresinde gösterilen, güncelleştirildiğinde geçerli bağlam yansıtacak şekilde.  
   
--   Pencerenin genel seçimi bağlam değişirse, tüm özel bağlam menülerini, etkin olan hiyerarşi pencere ve uygulama başlık çubuğunda geçerli bağlamı yansıtacak şekilde güncelleştirilir.  
+- Pencerenin genel seçim bağlamını değişirse, tüm özel bağlam menüleri, etkin olan hiyerarşi pencere ve uygulama başlık çubuğunun geçerli bağlam yansıtacak şekilde güncelleştirilir.  
   
--   Geçerli seçim için Özellikler penceresini yüzey **özellikleri** penceresi ve isteğe bağlı olarak gösterilen, **özellik sayfaları** iletişim kutusu.  
+- Pencerenin geçerli seçimde özelliklerini yüzey **özellikleri** penceresi ve isteğe bağlı olarak gösteriliyorsa, **özellik sayfaları** iletişim kutusu.  
   
--   Pencere özellikleri yüzey veya değil genel seçimi bağlamını değiştirmek artık etkin pencereyi IDE içinde olduğunda seçimi geri bildirim penceresinde kalır değil.  
+- Pencere özellikleri surface etmez veya genel seçim bağlamını değiştirme, artık IDE'de etkin pencere olduğunda seçim geri bildirimi penceresinde kalmalıdır değil.  
   
--   Tüm belge özgü aracı windows sürekli etkin belgeyi yansıtmalıdır.  
+- Tüm belge özel araç pencereleri, sürekli olarak etkin belgeyi yansıtmalıdır.  
   
--   Menüleri ve araç çubukları uygulama başlık çubuğunda en üstteki birden çok belge arabirimi (MDI) istemcisi penceresinde yansıtmalıdır.  
+- Menüleri ve araç çubukları uygulama başlık çubuğunda en üstteki Çok Belgeli Arabirim (MDI) istemci penceresi yansıtmalıdır.  
   
- Örneğin, ne zaman bir Visual Basic Web uygulaması projesi içinde Web formunun HTML görünümü açılır ve kullanıcının seçtiği bir `<td>` etiketi, geri bildirim aşağıdaki şekilde sağlanır:  
+  Örneğin, HTML görüntülediğinizde bir **Web formu** içindeki Visual Basic Web uygulama projesi açıldığında ve kullanıcının seçtiği bir `<td>` etiketi, geri bildirim aşağıdaki şekilde sağlanır:  
   
--   Seçimi etkin pencerede gösterilen ve yansıtılan **özellikleri** penceresi.  
+- Seçimi etkin pencerede gösterilir ve yansıtılan **özellikleri** penceresi.  
   
--   Belge özgü **araç** etkin belgeyi yansıtacak şekilde güncelleştirilir.  
+- Belgeye özgü **araç kutusu** etkin belgeyi yansıtacak şekilde güncelleştirilir.  
   
--   **Düzenleyicisi** araç ve **tablo** menüsü görüntülenir ve başlık çubuğunda Web Form penceresi yansıtacak şekilde güncelleştirir.  
+- **Düzenleyicisi** araç ve **tablo** menüsü görüntülenir ve Web formu pencerenin yansıtmak için başlık çubuğunda güncelleştirir.  
   
--   Genellikle etkin olan hiyerarşi penceresinde **Çözüm Gezgini**ve geçerli bağlamı ve bağlama duyarlı yansıtmak için kendi başlık çubuğu güncelleştirme **proje** menü komutlarını etkin Web şimdi Uygula Uygulama projesi.  
+- Genellikle etkin olan hiyerarşi penceresinde **Çözüm Gezgini**ve geçerli bağlamı ve bağlama duyarlı yansıtmak için başlık çubuğunda güncelleştirme **proje** menü komutları, etkin Web şimdi Uygula Uygulama projesi.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Seçim ve IDE içinde para birimi](../../extensibility/internals/selection-and-currency-in-the-ide.md)   
- [Seçim bağlam nesneleri](../../extensibility/internals/selection-context-objects.md)   
- [Hiyerarşiler ve Seçim](../../extensibility/internals/hierarchies-and-selection.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Seçim ve para birimi IDE](../../extensibility/internals/selection-and-currency-in-the-ide.md)   
+ [Seçim bağlamı nesneleri](../../extensibility/internals/selection-context-objects.md)   
+ [Hiyerarşiler ve seçim](../../extensibility/internals/hierarchies-and-selection.md)

@@ -19,27 +19,28 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 6376abc29f6f06541b9cd7f3d181b97ab7b38e5f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: bd1d899d3b3a84af2b07602b959dd031874e972c
+ms.sourcegitcommit: 0e5289414d90a314ca0d560c0c3fe9c88cb2217c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39155457"
 ---
-# <a name="troubleshooting-net-framework-targeting-errors"></a>.NET Framework Hedefleme Hatalarının Sorunlarını Giderme
-Bu konu, başvuru nedeniyle ortaya çıkabilir MSBuild hataları açıklar sorunlar ve bu hataların nasıl çözebilirsiniz.  
+# <a name="troubleshoot-net-framework-targeting-errors"></a>.NET Framework hedefleme hatalarının sorunlarını giderme
+Bu konuda başvurusu nedeniyle oluşabilecek MSBuild hataları açıklanır sorunlar ve bu hataların nasıl çözebilirsiniz.  
   
-## <a name="you-have-referenced-a-project-or-assembly-that-targets-a-different-version-of-the-net-framework"></a>Bir proje veya farklı bir .NET Framework sürümünü hedefler derleme başvurulan  
- Projeleri veya farklı sürümlerini hedefleyen derlemeleri başvuruda bulunan uygulamaları oluşturabilirsiniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)]. Örneğin, istemci profilini hedefleyen bir uygulama oluşturabilir [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] ancak .NET Framework 2.0 hedefleyen bir derlemeye başvurur. Ancak, önceki bir sürümünü hedefleyen bir proje oluşturduğunuzda, [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], bu proje bir proje veya istemci profilini hedefler derleme için bir başvuru ayarlanamıyor [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] veya [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] kendisi. Hatayı gidermek için uygulamanızın bir profil ya da projeleri veya derlemeleri tarafından uygulamanızı başvuran hedeflenen profili ile uyumlu olan profilleri hedefler emin olun.  
+## <a name="you-have-referenced-a-project-or-assembly-that-targets-a-different-version-of-the-net-framework"></a>Bir proje ya da farklı bir .NET Framework sürümünü hedefleyen derlemeye başvuru  
+ Projelere veya farklı sürümlerini hedefleyen derlemelere başvuran uygulamalar oluşturabilirsiniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)]. Örneğin, için istemci Profili'ni hedefleyen bir uygulama oluşturabilirsiniz [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] ancak .NET Framework 2. 0'ı hedefleyen bir derlemeye başvurur. Ancak, önceki bir sürümünü hedefleyen bir proje oluşturursanız, [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], projeye bir proje ya da için istemci Profili'ni hedefleyen derlemeye başvuru ayarlanamıyor [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] veya [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)] kendisi. Hatayı gidermek için uygulamanızın bir profil veya projelere veya derlemelere göre uygulamanızı başvuran hedeflenen profiliyle uyumlu olan profilleri hedefler emin olun.  
   
-## <a name="you-have-re-targeted-a-project-to-a-different-version-of-the-net-framework"></a>Proje .NET Framework'ün farklı bir sürüme yeniden hedeflenen  
- Hedef sürümü değiştirirseniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] uygulamanız için Visual Studio başvuruları bazıları değişir, ancak bazı başvuruları el ile güncelleştirmeniz gerekebilir. Hedef alınacak bir uygulama değiştirirseniz, örneğin, yukarıda açıklanan hatalardan biri gerçekleşebilir [!INCLUDE[net_v35SP1_long](../msbuild/includes/net_v35sp1_long_md.md)] ve uygulama kaynaklar veya istemci profilini Bel ayarları olduğunu [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)].  
+## <a name="you-have-re-targeted-a-project-to-a-different-version-of-the-net-framework"></a>Bir proje .NET Framework'ün farklı bir sürüme yeniden hedeflenen  
+ Hedef sürümü değiştirirseniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] uygulamanız için Visual Studio bazı başvuruları değiştirir, ancak bazı başvuruları el ile güncelleştirmeniz gerekebilir. Hedef uygulama değiştirirseniz, örneğin, bir durum önceden bahsedilmiş hatalarla oluşabilir [!INCLUDE[net_v35SP1_long](../msbuild/includes/net_v35sp1_long_md.md)] ve uygulama kaynaklarına veya istemci profilini kullanan ayarları olduğunu [!INCLUDE[net_v40_short](../code-quality/includes/net_v40_short_md.md)].  
   
- Uygulama ayarları olarak çözmek için açık **Çözüm Gezgini**, seçin **tüm dosyaları göster**ve ardından Visual Studio XML düzenleyicisinde app.config dosyasını düzenleyin. .NET Framework'ün uygun sürümüne eşleşen ayarlarını sürümünde değiştirin. Örneğin, 4.0.0.0 2.0.0.0 için sürüm ayarını değiştirebilirsiniz. Benzer şekilde, uygulamanın her zaman kaynakları ekledi açmak **Çözüm Gezgini**, seçin **tüm dosyaları göster** düğmesini tıklatın, **My proje** (Visual Basic) veya **Özellikleri** (C#) ve Visual Studio XML düzenleyicisinde Resources.resx dosyasını düzenleyin. Sürüm ayarını 4.0.0.0 2.0.0.0 için değiştirin.  
+ Uygulama ayarlarını geçici olarak çözmek için açık **Çözüm Gezgini**, seçin **tüm dosyaları göster**ve ardından düzenleme *app.config* dosyasını Visual Studio XML düzenleyicisinde. Sürümü .NET Framework'ün uygun sürümünü eşleştirmek için ayarları değiştirin. Örneğin, 4.0.0.0 2.0.0.0 için sürüm ayarını değiştirebilirsiniz. Benzer şekilde, uygulamanın her zaman kaynakları eklemiştir açın **Çözüm Gezgini**, seçin **tüm dosyaları göster** sırasıyla, düğme **Projem** (Visual Basic) veya **Özellikleri** (C#) ve ardından düzenleme *Resources.resx* dosyasını Visual Studio XML düzenleyicisinde. Sürüm ayarı 4.0.0.0 2.0.0.0 için değiştirin.  
   
- Uygulamanız, bit eşlemler veya simgeler gibi kaynakları veya veri bağlantı dizelerini gibi ayarları varsa, size ayrıca hata tüm öğeler üzerinde kaldırarak çözebilirsiniz **ayarları** sayfasında **Proje Tasarımcısı**ve gerekli ayarları yeniden ekleniyor.  
+ Uygulamanızın simgeleri veya bit eşlemleri gibi kaynaklara veya veri bağlantı dizeleri gibi ayarları varsa, ayrıca hata üzerinde tüm öğeleri kaldırarak çözebilirsiniz **ayarları** sayfasının **Proje Tasarımcısı**ve ardından gereken ayarları yeniden ekleme.  
   
-## <a name="you-have-re-targeted-a-project-to-a-different-version-of-the-net-framework-and-references-do-not-resolve"></a>Proje .NET Framework'ün farklı bir sürüme yeniden hedeflenmiş ve başvurular çözümlenmiyor  
- Farklı bir sürümü için bir proje yeniden hedefleyin varsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], başvurular düzgün bazı durumlarda çözülebilir değildir. Derlemeler açık tam başvurular genellikle bu soruna neden ancak çözümlenmiyor başvuruları kaldırma ve bunları projeye ekleyerek çözülebilir. Alternatif olarak, proje dosyası başvuruları değiştirin düzenleyebilirsiniz. İlk olarak, aşağıdaki biçimde başvuruları kaldırın:  
+## <a name="you-have-re-targeted-a-project-to-a-different-version-of-the-net-framework-and-references-do-not-resolve"></a>Bir proje .NET Framework'ün farklı bir sürüme yeniden hedeflenmiş ve başvuruları çözümlenmiyor  
+ Bir proje farklı bir sürümüne yeniden hedefle varsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], başvurularınızı düzgün bazı durumlarda çözülemiyor olabilir. Açık tam derlemelere başvuruları genellikle bu soruna neden ancak çözümlenmiyor başvurularının kaldırılması ve sonra bunları projeye geri ekleyerek çözebilirsiniz. Alternatif olarak, başvuruları değiştirmek için proje dosyasını düzenleyebilirsiniz. İlk olarak, aşağıdaki biçimde başvuruları kaldırın:  
   
 ```xml  
 <Reference Include="System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />  
@@ -52,10 +53,10 @@ Bu konu, başvuru nedeniyle ortaya çıkabilir MSBuild hataları açıklar sorun
 ```  
   
 > [!NOTE]
->  Projenizi kapatıp sonra aynı zamanda tüm başvurular düzgün çözümlenmesini sağlamak için yeniden oluşturmalısınız.  
+>  Projenizi kapatıp sonra ayrıca tüm başvuruları doğru çözümleyemiyorsa emin olmak için yeniden oluşturmalısınız.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Nasıl yapılır: .NET Framework sürümü hedef](../ide/how-to-target-a-version-of-the-dotnet-framework.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Nasıl yapılır: .NET Framework sürümü hedefleme](../ide/how-to-target-a-version-of-the-dotnet-framework.md)   
  [.NET framework istemci profili](/dotnet/framework/deployment/client-profile)   
  [Belirli bir .NET Framework sürümünü hedefleme](../ide/targeting-a-specific-dotnet-framework-version.md)   
  [Çoklu sürüm desteği](../msbuild/msbuild-multitargeting-overview.md)

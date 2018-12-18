@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a8908b61323c80891f93158046b9c7e821287d2e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0527cefeaed58e990d8474c25a522788e4dba6fa
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49924258"
 ---
 # <a name="bpstate"></a>BP_STATE
-İlişkili bir kesme noktası varlığını ve ayrıca etkin olup olmadığını belirtir.  
+İlişkili bir kesme noktası varlığı ve de etkin olup olmadığını belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,27 +48,27 @@ public enum enum_BP_STATE {
   
 ## <a name="members"></a>Üyeler  
  BPS_NONE  
- Hiçbir kesme noktası var olduğunu belirtir.  
+ Hiçbir kesme noktası bulunduğunu belirtir.  
   
  BPS_DELETED  
- Kesme noktası silinmiş olduğunu belirtir.  
+ Kesme noktası silindiğini belirtir.  
   
  BPS_DISABLED  
- Kesme noktası devre dışı olduğunu belirtir.  
+ Kesme noktasını devre dışı olduğunu belirtir.  
   
  BPS_ENABLED  
- Kesme noktası etkinleştirilip etkinleştirilmediğini belirtir.  
+ Kesme noktası etkin olduğunu belirtir.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md) yöntemi.  
+ Öğesinden döndürülen [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md) yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
+ [Sabit listeleri](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md)

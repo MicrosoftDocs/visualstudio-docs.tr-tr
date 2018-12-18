@@ -16,17 +16,18 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 8a7dfbfd03df24c2968dc9dae141ffc7a300e8be
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 585615c07d9f11f75468bccde1bae05a355bf98f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49899961"
 ---
-# <a name="projectitem-element-visual-studio-project-templates"></a>ProjectItem Öğesi (Visual Studio Proje Şablonları)
-Proje şablonu içeren bir dosyayı belirtir.  
+# <a name="projectitem-element-visual-studio-project-templates"></a>ProjectItem öğesi (Visual Studio Proje şablonları)
+Proje şablonunda içeren bir dosyayı belirtir.  
   
 > [!NOTE]
->  `ProjectItem` Öğesi şablonu için bir proje veya öğeyi olup olmamasına bağlı olarak farklı öznitelikleri kabul eder. Bu konuda açıklanmaktadır `ProjectItem` öğesi proje şablonları için. Bir açıklaması için `ProjectItem` öğesi öğe şablonları için bkz: [ProjectItem öğesi (Visual Studio öğe şablonları)](../extensibility/projectitem-element-visual-studio-item-templates.md).  
+>  `ProjectItem` Öğesi şablonu için bir proje veya bir öğe olmasına bağlı olarak farklı öznitelikleri kabul eder. Bu konu başlığı altında açıklanır `ProjectItem` öğesi için proje şablonları. Bir açıklaması için `ProjectItem` öğesi için öğe şablonları görmek [ProjectItem öğesi (Visual Studio öğe şablonları)](../extensibility/projectitem-element-visual-studio-item-templates.md).  
   
  \<VSTemplate >  
  \<TemplateContent >  
@@ -47,73 +48,73 @@ Proje şablonu içeren bir dosyayı belirtir.
 </ProjectItem>  
 ```  
   
-## <a name="attributes-and-elements"></a>Öznitelikler ve Öğeler  
+## <a name="attributes-and-elements"></a>Öznitelikler ve öğeler  
  Aşağıdaki bölümlerde öznitelik, alt öğeler ve üst öğeler açıklanmaktadır.  
   
 ### <a name="attributes"></a>Öznitelikler  
   
-|Öznitelik|Açıklama|  
-|---------------|-----------------|  
-|`TargetFileName`|İsteğe bağlı öznitelik.<br /><br /> Bir proje şablonu oluşturulduğunda, adını ve proje öğesi yolunu belirtir. Bu öznitelik, bir dizin yapısına şablon .zip dosyası dizin yapısını farklı oluşturmak veya parametre değiştirme kullanarak bir öğe adı oluşturmak için kullanışlıdır.|  
-|`ReplaceParameters`|İsteğe bağlı öznitelik.<br /><br /> Öğe bir proje şablonu oluşturduğunuzda, değiştirilmesi gereken parametre değerlerini sahip olup olmadığını belirten bir Boole değeri. Varsayılan değer `false`.|  
-|`OpenInEditor`|İsteğe bağlı öznitelik.<br /><br /> Öğesi kendi ilgili Düzenleyicisi'nde açtığınız olup olmadığını belirten bir Boole değeri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bir proje şablonu oluşturulduğunda.<br /><br /> `OpenInWebBrowser` Ve `OpenInHelpBrowser` öznitelikleri yok sayılır sahip bir öğe üzerinde bir `OpenInEditor` değerini `true`.<br /><br /> Varsayılan değer `false` şeklindedir.|  
-|`OpenInWebBrowser`|İsteğe bağlı öznitelik.<br /><br /> Bir proje şablonu oluşturulduğunda öğesi Web tarayıcısı açtığınız olup olmadığını belirten bir Boole değeri.<br /><br /> Web tarayıcısında, yalnızca HTML dosyaları ve projeye yerel metin dosyalarını açılabilir. Bu öznitelik ile dış URL'ler açılamaz.<br /><br /> Varsayılan değer `false` şeklindedir.|  
-|`OpenInHelpBrowser`|İsteğe bağlı öznitelik.<br /><br /> Bir proje şablonu oluşturulduğunda öğesi Yardım Görüntüleyicisi'nde açtığınız olup olmadığını belirten bir Boole değeri.<br /><br /> Yalnızca HTML dosyaları ve projeye yerel metin dosyalarını Yardım tarayıcıda açılabilir. Bu öznitelik ile dış URL'ler açılamaz.<br /><br /> Varsayılan değer `false` şeklindedir.|  
-|`OpenOrder`|İsteğe bağlı öznitelik.<br /><br /> Öğeleri kendi ilgili düzenleyicilerde açılacak sırasını temsil eden bir sayısal değer belirtir. Tüm değerlerin 10'ün katları olmalıdır. Daha yüksek öğelerini `OpenOrder` değerleri ilk açıldığında.|  
+| Öznitelik | Açıklama |
+|---------------------| - |
+| `TargetFileName` | İsteğe bağlı öznitelik.<br /><br /> Bir proje şablondan oluşturulduğunda proje öğesi yolunu ve adını belirtir. Bu öznitelik, bir dizin yapısına dizin yapısının farklı şablonu oluşturmak için kullanışlıdır *.zip* dosyası veya bir öğe adı oluşturmak için parametre değiştirme kullanma. |
+| `ReplaceParameters` | İsteğe bağlı öznitelik.<br /><br /> Öğe bir proje şablondan oluşturulduğunda değiştirilmelidir parametre değerleri içerip içermediğini belirten bir Boole değeri. Varsayılan değer `false`. |
+| `OpenInEditor` | İsteğe bağlı öznitelik.<br /><br /> Öğesi içinde kendi ilgili Düzenleyicisi'nde açtığınız olup olmadığını belirten bir Boole değeri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bir proje şablondan oluşturulduğunda.<br /><br /> `OpenInWebBrowser` Ve `OpenInHelpBrowser` öznitelikleri yoksayıldı sahip bir öğe üzerinde bir `OpenInEditor` değerini `true`.<br /><br /> Varsayılan değer `false` şeklindedir. |
+| `OpenInWebBrowser` | İsteğe bağlı öznitelik.<br /><br /> Bir proje şablondan oluşturulduğunda öğesi Web tarayıcısını açık olup olmadığını belirten bir Boole değeri.<br /><br /> Web tarayıcısında, HTML dosyaları ve projeye yerel olan metin dosyaları açabilirsiniz. Dış URL bu özniteliği ile açılamaz.<br /><br /> Varsayılan değer `false` şeklindedir. |
+| `OpenInHelpBrowser` | İsteğe bağlı öznitelik.<br /><br /> Bir proje şablondan oluşturulduğunda öğesi Yardım Görüntüleyicisi'nde açtığınız olup olmadığını belirten bir Boole değeri.<br /><br /> HTML dosyaları ve metin dosyaları projeye yerel Yardım tarayıcıda açabilirsiniz. Dış URL bu özniteliği ile açılamaz.<br /><br /> Varsayılan değer `false` şeklindedir. |
+| `OpenOrder` | İsteğe bağlı öznitelik.<br /><br /> Öğeleri, ilgili düzenleyicilerde açılacak sırasını temsil eden sayısal bir değer belirtir. Tüm değerlerin 10'ın katları olmalıdır. Daha yüksek olan öğeler `OpenOrder` değerleri ilk kez açıldığında. |
   
-### <a name="child-elements"></a>Alt Öğeler  
+### <a name="child-elements"></a>Alt öğeleri  
  Yok.  
   
-### <a name="parent-elements"></a>Üst Öğeler  
+### <a name="parent-elements"></a>Üst öğeler  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|[Project](../extensibility/project-element-visual-studio-templates.md)|Dosya veya dizinlerin projeye eklemek için belirtir.|  
+|[Project](../extensibility/project-element-visual-studio-templates.md)|Projeye eklemek için dizinleri ve dosyaları belirtir.|  
   
-## <a name="text-value"></a>Metin Değeri  
+## <a name="text-value"></a>Metin değeri  
  Bir metin değeri gereklidir.  
   
- A `string` , adı veya yolu şablon .zip dosyası dosyasında temsil eder.  
+ A `string` şablon dosyasının adı veya yolu temsil *.zip* dosya.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `ProjectItem` İsteğe bağlı bir alt `Project`.  
+ `ProjectItem` İsteğe bağlı bir alt öğesi olan `Project`.  
   
- `TargetFileName` Öznitelik, bir dizin yapısına dizin yapısını farklı şablon .zip dosyası oluşturmak için kullanılabilir. Örneğin, varsa dosyayı `MyFile.vb` şablon .zip dosyası kök dizininde var ancak adlı bir dizinde yerleştirilecek dosya istediğiniz `CustomFiles` şablondan oluşturulan tüm projelerde aşağıdaki XML kullanırsınız:  
+ `TargetFileName` Öznitelik, bir dizin yapısına dizin yapısının farklı şablonu oluşturmak için kullanılabilir *.zip* dosya. Örneğin, dosyayı *MyFile.vb* şablon kök dizininde mevcut *.zip* dosya, ancak isterseniz adlı bir dizinde yerleştirilecek dosya *CustomFiles* tüm projelerde Şablondan oluşturulan, aşağıdaki XML kullanırsınız:  
   
-```  
+```xml  
 <ProjectItem TargetFileName="CustomFiles\MyFile.vb">MyFile.vb</ProjectItem>  
 ```  
   
- `TargetFileName` Özniteliği de kendi dosya adları uluslararası karakterler içeren dosyaları yeniden adlandırmak için kullanılabilir. Örneğin, bir .zip dosyasına sıkıştırılmış önce dosyayı yeniden adlandırılması gerekir böylece bir şablon .zip dosyası dosya adları, Unicode karakteri içeremez. `TargetFileName` Özniteliği, özgün Unicode dosya adı dosya adını ayarlamanız için kullanılabilir.  
+ `TargetFileName` Özniteliği de kullanılabilir, uluslararası karakter, dosya adlarını içeren dosyaları yeniden adlandırmak için. Örneğin, bir şablon *.zip* dosya Unicode karakterleri, dosya adları içeremez, dosyanın içine sıkıştırılabilir önce kaydedilmelidir şekilde bir *.zip* dosya. `TargetFileName` Özniteliği, dosyanın adı özgün Unicode dosya adı ayarlamak için kullanılabilir.  
   
- `TargetFileName` Özniteliği de parametrelere sahip dosyaları yeniden adlandırmak için kullanılabilir. Aşağıdaki yordam, dosyayı yeniden adlandırmak açıklanmaktadır `MyFile.vb`, proje adına göre bir dosya adına şablon .zip dosyasının kök dizininde bulunmaktadır.  
+ `TargetFileName` Özniteliği de parametrelere sahip dosyaları yeniden adlandırmak için kullanılabilir. Aşağıdaki yordam, dosyayı yeniden adlandırmak açıklanmaktadır *MyFile.vb*, şablonun kök dizininde mevcut *.zip* dosyasına proje adına göre bir dosya adı.  
   
-### <a name="to-rename-files-with-parameters"></a>Parametrelere sahip dosyaları yeniden adlandırmak için  
+### <a name="to-rename-files-with-parameters"></a>Parametrelerle dosyaları yeniden adlandırmak için  
   
-1.  Aşağıdaki XML .vstemplate dosyasında kullanın:  
+1. Aşağıdaki XML'de kullanmak *.vstemplate* dosyası:  
   
-    ```  
-    <ProjectItem TargetFileName="$safeprojectname$.vb">MyFile.vb</ProjectItem>  
-    ```  
+   ```xml  
+   <ProjectItem TargetFileName="$safeprojectname$.vb">MyFile.vb</ProjectItem>  
+   ```  
   
-2.  Proje dosyasını açın (.vbproj için bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Proje) bir metin düzenleyicisinde veya [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+2. Proje dosyasını açın (*.vbproj* için bir [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Proje) bir metin düzenleyicisinde veya [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
-3.  Aşağıdaki XML benzer proje dosyasında satırı bulun:  
+3. Proje dosyasında aşağıdaki XML'e benzer satırı bulun:  
   
-    ```  
-    <Compile Include="MyFile.vb">  
-    ```  
+   ```xml  
+   <Compile Include="MyFile.vb">  
+   ```  
   
-4.  Kod satırı aşağıdaki XML ile değiştirin:  
+4. Kod satırının şu XML ile değiştirin:  
   
-    ```  
-    <Compile Include="$safeprojectname$.vb">  
-    ```  
+   ```xml  
+   <Compile Include="$safeprojectname$.vb">  
+   ```  
   
-     Bu şablonu kullanarak bir proje oluşturduğunuzda, dosya adı kullanıcı girilen ad dayalı olacak **yeni proje** olan tüm güvenli olmayan karakter ve boşlukları kaldırılmış iletişim kutusu. Daha fazla bilgi için bkz: [şablon parametreleri](../ide/template-parameters.md).  
+    Bu şablondan bir proje oluşturulduğunda dosya adı girilen kullanıcı adı hesaplanır **yeni proje** olan tüm güvenli olmayan karakterleri ve boşlukları kaldırılmış bir iletişim kutusu. Daha fazla bilgi için [şablon parametreleri](../ide/template-parameters.md).  
   
 ## <a name="example"></a>Örnek  
- Meta veriler için bir proje şablonu için aşağıdaki örnekte bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
+ Aşağıdaki örnek, bir proje şablonu için meta verileri gösterir. bir [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] uygulama.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -139,8 +140,8 @@ Proje şablonu içeren bir dosyayı belirtir.
 </VSTemplate>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio Şablon Şeması Başvurusu](../extensibility/visual-studio-template-schema-reference.md)   
  [Proje ve öğe şablonları oluşturma](../ide/creating-project-and-item-templates.md)   
  [Şablon parametreleri](../ide/template-parameters.md)   
- [ProjectItem Öğesi (Visual Studio Öğe Şablonları)](../extensibility/projectitem-element-visual-studio-item-templates.md)
+ [ProjectItem öğesi (Visual Studio öğe şablonları)](../extensibility/projectitem-element-visual-studio-item-templates.md)

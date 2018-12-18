@@ -1,9 +1,10 @@
 ---
-title: "&lt;eklentisi&gt; öğesi (Visual Studio'da Office Geliştirme) | Microsoft Docs"
+title: "&lt;eklenti&gt; öğesi (Visual Studio'da Office Geliştirme)"
+titleSuffix: ''
 ms.custom: ''
 ms.date: 02/02/2017
-ms.technology:
-- office-development
+ms.technology: office-development
+ms.prod: visual-studio-dev15
 ms.topic: conceptual
 dev_langs:
 - VB
@@ -12,23 +13,24 @@ helpviewer_keywords:
 - application manifests [Office development in Visual Studio], <addIn> element
 - addin element
 - <addin> element
-author: TerryGLee
-ms.author: tglee
+author: John-Hart
+ms.author: johnhart
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 5795c15b4e7ecaa29a26d942fb09122aae6a579f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 06c3941e73ee1825d1dc0f593bd3aa6563c511df
+ms.sourcegitcommit: 20c0991d737c540750c613c380cd4cf5bb07de51
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53247987"
 ---
-# <a name="ltaddingt-element-office-development-in-visual-studio"></a>&lt;eklentisi&gt; öğesi (Visual Studio'da Office Geliştirme)
-  `addin` Öğesinin `vstav3` ad alanı, Microsoft Office VSTO eklentileri ve Visual Studio ile geliştirilen belge düzeyi özelleştirmeleri özgü bilgileri içerir.  
+# <a name="ltaddingt-element-office-development-in-visual-studio"></a>&lt;eklenti&gt; öğesi (Visual Studio'da Office Geliştirme)
+  **Eklentisi** öğesinin `vstav3` ad alanı, Microsoft Office, VSTO eklentileri ve Visual Studio ile geliştirilen belge düzeyi özelleştirmeleri için özel bilgiler içerir.  
 
 ## <a name="syntax"></a>Sözdizimi  
 
-```  
+```xml
 <addIn>  
   <entryPointsCollection>  
     <entryPoints>  
@@ -50,33 +52,33 @@ ms.lasthandoff: 04/16/2018
 </addIn>  
 ```  
 
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `addin` Öğesinin `vstav3` ad alanı, Office çözümü ve Microsoft Office uygulaması hakkında bilgi içerir. Bu öğe aşağıdaki ad alanında olması gerekir: `vstav3=urn:schemas-microsoft-com:vsta.v3`. Alt öğeler de bu ad alanında olması gerekir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ **Eklentisi** öğesinin `vstav3` ad alanı Office çözümünün ve Microsoft Office uygulamasının hakkındaki bilgileri içerir. Bu öğe aşağıdaki ad alanında olması gerekir: `vstav3=urn:schemas-microsoft-com:vsta.v3`. Alt öğeleri de bu ad alanında olması gerekir.  
 
  `addin` Öğesi özniteliklere sahip değildir.  
 
- `addin` Öğe aşağıdaki alt öğeleri vardır.  
+ `addin` Öğesi şu alt öğelerden sahiptir.  
 
 ### <a name="entrypoints"></a>giriş noktaları  
- Gerekli. `entryPoints` Öğesi açıklanan [ &#60;giriş noktaları&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/entrypoints-element-office-development-in-visual-studio.md).  
+ Gerekli. **Giriş noktaları** öğesi açıklanan [ &#60;giriş noktaları&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/entrypoints-element-office-development-in-visual-studio.md).  
 
 ### <a name="update"></a>Güncelleştirme  
- Gerekli. `update` Öğesi açıklanan [ &#60;güncelleştirme&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/update-element-office-development-in-visual-studio.md).  
+ Gerekli. **Güncelleştirme** öğesi açıklanan [ &#60;güncelleştirme&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/update-element-office-development-in-visual-studio.md).  
 
 ### <a name="postactions"></a>postActions  
- İsteğe bağlı. `postActions` Öğesi açıklanan [ &#60;postActions&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/postactions-element-office-development-in-visual-studio.md).  
+ İsteğe bağlı. **PostActions** öğesi açıklanan [ &#60;postActions&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/postactions-element-office-development-in-visual-studio.md).  
 
 ### <a name="application"></a>uygulama  
- Gerekli. `application` Öğesi açıklanan [ &#60;uygulama&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/application-element-office-development-in-visual-studio.md).  
+ Gerekli. **Uygulama** öğesi açıklanan [ &#60;uygulama&#62; öğesi &#40;Visual Studio'da Office geliştirme&#41;](../vsto/application-element-office-development-in-visual-studio.md).  
 
-## <a name="document-level-customization-example"></a>Belge düzeyi özelleştirme örnek  
+## <a name="document-level-customization-example"></a>Belge düzeyi özelleştirmesi örneği  
 
 ### <a name="description"></a>Açıklama  
- Aşağıdaki kod örneği gösterilmektedir `addin` kullanılarak dağıtılan bir belge düzeyi Office çözümü öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği sağlanan daha büyük bir örneğin parçasıdır [uygulama bildirimleri Office çözümleri için](../vsto/application-manifests-for-office-solutions.md).  
+ Aşağıdaki kod örneğinde gösterilmiştir **eklentisi** kullanılarak dağıtılan bir belge düzeyinde Office çözüm öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği, sağlanan daha büyük bir örneğin parçasıdır [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md).  
 
 ### <a name="code"></a>Kod  
 
-```  
+```xml
 <vstav3:addIn   
   xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">  
   <vstav3:entryPointsCollection>  
@@ -133,14 +135,14 @@ ms.lasthandoff: 04/16/2018
 </vstav3:addIn>  
 ```  
 
-## <a name="vsto-add-in-example"></a>VSTO eklentileri örneği  
+## <a name="vsto-add-in-example"></a>VSTO eklenti örneği  
 
 ### <a name="description"></a>Açıklama  
- Aşağıdaki kod örneği gösterilmektedir `addin` kullanılarak dağıtılan uygulama düzeyi Office çözümünü öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği sağlanan daha büyük bir örneğin parçasıdır [uygulama bildirimleri Office çözümleri için](../vsto/application-manifests-for-office-solutions.md).  
+ Aşağıdaki kod örneğinde gösterilmiştir **eklentisi** kullanılarak dağıtılmış uygulama düzeyi Office çözümünü öğesinde [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)]. Bu kod örneği, sağlanan daha büyük bir örneğin parçasıdır [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md).  
 
 ### <a name="code"></a>Kod  
 
-```  
+```xml
 <vstav3:addIn   
   xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">  
   <vstav3:entryPointsCollection>  
@@ -191,7 +193,7 @@ ms.lasthandoff: 04/16/2018
 </vstav3:addIn>  
 ```  
 
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Office çözümleri için uygulama bildirimleri](../vsto/application-manifests-for-office-solutions.md)   
  [Office çözümleri için dağıtım bildirimleri](../vsto/deployment-manifests-for-office-solutions.md)   
- [ClickOnce Uygulama Bildirimi](/visualstudio/deployment/clickonce-application-manifest)  
+ [ClickOnce Uygulama bildirimi](/visualstudio/deployment/clickonce-application-manifest)  

@@ -10,13 +10,14 @@ ms.author: kraigb
 manager: douge
 ms.workload:
 - data-science
-ms.openlocfilehash: bc8ffe0f6d3cdc0cd572c39dedb5f059e63525cb
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 1bb6779e0e8174dd10f209d9825ffb861d00455d
+ms.sourcegitcommit: f685fa5e2df9dc307bf1230dd9dc3288aaa408b5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36238382"
 ---
-# <a name="creating-r-markdown-documents"></a>R Markdown belgeleri oluşturma
+# <a name="create-r-markdown-documents"></a>R Markdown belgeleri oluşturma
 
 [R Markdown](https://rmarkdown.rstudio.com/) yüksek kaliteli belgeleri, raporları, sunuları ve panolar analiz R etkinleştiren bir belge biçimidir.
 
@@ -34,7 +35,7 @@ R araçları için Visual Studio (RTVS) bir R Markdown öğesi şablonu sağlar,
     install.packages("rmarkdown")
 
     ```
-1. Yeni bir R Markdown dosyası kullanarak oluşturmak **Dosya > Yeni > Dosya** menü komutu ve seçerek **R > R Markdown** listeden. Bir proje bağlamında, Çözüm Gezgini'nde projeye sağ tıklayın ve seçin **eklemek R Markdown** (veya **Ekle > Yeni öğe...**  ve seçerek **R Markdown** listeden).
+1. Yeni bir R Markdown dosyası kullanarak oluşturmak **dosya** > **yeni** > **dosya** menü komutu ve seçerek **R**  >  **R Markdown** listeden. Bir proje bağlamında, Çözüm Gezgini'nde projeye sağ tıklayın ve seçin **eklemek R Markdown** (veya **Ekle** > **yeni öğe** ve seçerek**R Markdown** listeden).
 
 1. Yeni dosya varsayılan içeriğini aşağıdaki gibidir:
 
@@ -64,8 +65,8 @@ R araçları için Visual Studio (RTVS) bir R Markdown öğesi şablonu sağlar,
 
 ## <a name="previews"></a>Önizlemeler
 
-Visual Studio 2017 15,5 ve sonraki sürümleri, Canlı Önizleme R Markdown için otomatik olarak sağlayın. Düzenleyici ve önizleme arasında otomatik eşitlemeyi etkinleştirmek için seçin **R Araçlar > Markdown > otomatik eşitleme** (Ctrl + Shift + Y). Otomatik eşitleme kullanmıyorsanız, Önizleme kullanarak yenileyebilirsiniz **R Araçlar > Markdown > yeniden R Markdown önizlemesini**.
+Visual Studio 2017 15,5 ve sonraki sürümleri, Canlı Önizleme R Markdown için otomatik olarak sağlayın. Düzenleyici ve önizleme arasında otomatik eşitlemeyi etkinleştirmek için seçin **R Araçları** > **Markdown** > **otomatik eşitleme** ( **CTRL**+**Shift**+**Y**). Otomatik eşitleme kullanmıyorsanız, Önizleme kullanarak yenileyebilirsiniz **R Araçları** > **Markdown** > **yeniden R Markdown önizlemesini**.
 
-Microsoft Word biçimleri Düzenleyicisi'nde sağ tıklayıp aşağıdakilerden birini seçerek ve HTML, PDF, dosyasında da önizleyebilirsiniz **Önizleme** komutları. Aynı komutları da kullanılabilir **R Araçlar > Markdown** menüsü. (Visual Studio'nun önceki sürümleri, bu komutları üzerinde bulunan **R Araçlar > Yayımla** menü.)
+Microsoft Word biçimleri Düzenleyicisi'nde sağ tıklayıp aşağıdakilerden birini seçerek ve HTML, PDF, dosyasında da önizleyebilirsiniz **Önizleme** komutları. Aynı komutları da kullanılabilir **R Araçları** > **Markdown** menüsü. (Visual Studio'nun önceki sürümleri, bu komutları üzerinde bulunan **R Araçları** > **Yayımla** menü.)
 
 ![RMarkdown Canlı Önizleme ve diğer Önizleme menü komutları](media/rmarkdown-live-preview.png)

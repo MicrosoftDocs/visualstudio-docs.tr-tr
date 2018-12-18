@@ -1,5 +1,6 @@
 ---
-title: Bir veritabanı dosyası oluşturma ve Visual Studio'da Tablo Tasarımcısı kullanma
+title: Bir veritabanı dosyası oluşturma ve Tablo Tasarımcısı kullanma
+description: Bu öğretici Visual Studio'daki tablo tasarımcısını kullanarak tablolar ve yabancı anahtarlar bir veritabanına ekleme işlemi açıklanmaktadır. Ayrıca, grafik arabirim üzerinden veri ekleme gösterir.
 ms.date: 11/03/2017
 ms.topic: conceptual
 helpviewer_keywords:
@@ -10,69 +11,76 @@ ms.assetid: 99c2b06f-47aa-414e-8057-a3453712fd23
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 305374cbce519a87f1d40e09efac7f490b28fe0d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c071daeaa1ffe10aa9de995b375e33b76b358da7
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53159873"
 ---
-# <a name="create-a-database-and-add-tables-in-visual-studio"></a>Bir veritabanı oluşturun ve Visual Studio'da tablolar ekleyin
-Visual Studio oluşturmak ve SQL Server Express LocalDB yerel veritabanı dosyasında güncelleştirmek için kullanabilirsiniz. Transact-SQL deyimlerinde yürüterek bir veritabanı oluşturabilirsiniz **SQL Server Nesne Gezgini** Visual Studio'daki aracı. Bu konuda, biz .mdf dosyası oluşturun ve Tablo Tasarımcısı kullanarak tablolar ile anahtarlar eklemek.
+# <a name="create-a-database-and-add-tables-in-visual-studio"></a>Bir veritabanı oluşturun ve Visual Studio'da tablo ekleme
+
+Visual Studio, SQL Server Express LocalDB içinde yerel veritabanı dosyası oluşturmak için kullanabilirsiniz. Transact-SQL deyimlerinde yürüterek bir veritabanı oluşturabilirsiniz **SQL Server Nesne Gezgini** Visual Studio'da araç penceresi. Bu konu başlığında, oluşturacağız bir *.mdf* dosya ve tablo tasarımcısını kullanarak tablolar ile anahtarlar ekleyebilirsiniz.
 
 ## <a name="prerequisites"></a>Önkoşullar
-Bu izlenecek yolu tamamlamak için isteğe bağlı olmalıdır **veri depolama ve işleme** Visual Studio'da yüklü iş yükü. Yüklemek için açık **Visual Studio yükleyicisi** ve **iş yükleri** sekmesi. Altında **Web ve bulut**, seçin **veri depolama ve işleme**. Seçin **Değiştir** iş yükü için Visual Studio eklemek için düğmeyi.
 
-## <a name="create-a-project-and-a-local-database-file"></a>Proje ve bir yerel veritabanı dosyası oluşturma
+Bu izlenecek yolu tamamlamak için isteğe bağlı olmalıdır **veri depolama ve işleme** Visual Studio'da yüklü iş yükü. Yüklemek için açık **Visual Studio yükleyicisi** ve **iş yükleri** sekmesi. Altında **Web ve bulut**, seçin **veri depolama ve işleme**. Seçin **Değiştir** düğmesini iş yükünü Visual Studio'ya ekleyin.
 
-### <a name="to-create-a-project-and-a-database-file"></a>Bir proje ve yerel veritabanı dosyası oluşturmak için
-1.  Adlı bir Windows Forms projesi oluşturma `SampleDatabaseWalkthrough`.
+## <a name="create-a-project-and-a-local-database-file"></a>Bir proje ve yerel veritabanı dosyası oluştur
 
-2.  Menü çubuğunda seçin **proje**, **Yeni Öğe Ekle**.
+1. Adlı bir Windows Forms projesi oluşturun **SampleDatabaseWalkthrough**.
 
-3.  Öğe şablonları listesinde aşağı kaydırın ve seçin **hizmet tabanlı veritabanı**.
+2. Menü çubuğunda, seçin **proje** > **Yeni Öğe Ekle**.
 
-     ![Öğe şablonları iletişim kutusu](../data-tools/media/raddata-vsitemtemplates.png "raddata VSItemTemplates")
+3. Öğe şablonları listesinde, aşağı kaydırın ve **hizmet tabanlı veritabanı**.
 
-4.  Veritabanı adı **SampleDatabase**ve ardından **Ekle** düğmesi.
+     ![Öğe şablonları iletişim kutusu](../data-tools/media/raddata-vsitemtemplates.png)
 
-### <a name="to-add-a-data-source"></a>Bir veri kaynağı eklemek için
-5.  Varsa **veri kaynakları** penceresi açık değilse, seçerek açın **Shift + Alt + D** anahtarları veya menü çubuğu seçme **Görünüm**, **diğer pencereler**, **Veri kaynakları**.
+4. Veritabanı adı **SampleDatabase**ve ardından **Ekle** düğmesi.
 
-6.  İçinde **veri kaynakları** penceresinde, seçin **yeni veri kaynağı Ekle** bağlantı.
+### <a name="add-a-data-source"></a>Veri Kaynağı Ekle
 
-    **Veri kaynağı Yapılandırma Sihirbazı** açar.
+1. Varsa **veri kaynakları** penceresi açık değilse, tuşlarına basarak açın **Shift**+**Alt**+**D** veya seçme **Görünümü** > **diğer Windows** > **veri kaynakları** menü çubuğundaki.
 
-7. Üzerinde **bir veri kaynağı türü seç** sayfasında, **veritabanı** ve ardından **sonraki**.
+1. İçinde **veri kaynakları** penceresinde **yeni veri kaynağı Ekle** bağlantı.
 
-8. Üzerinde **bir veritabanı modeli seçin** sayfasında, **sonraki** varsayılan (veri kümesi) kabul etmek için.
+   **Veri kaynağı Yapılandırma Sihirbazı** açılır.
 
-9. Üzerinde **veri bağlantınızı** sayfasında, **SampleDatabase.mdf** aşağı açılan listede dosya ve ardından **sonraki**.
+1. Üzerinde **bir veri kaynağı türü seçin** sayfasında **veritabanı** seçip **sonraki**.
 
-10. Üzerinde **bağlantı dizesini uygulama yapılandırma dosyasını Kaydet** sayfasında, **sonraki**.
+1. Üzerinde **veritabanı modeli seçin** sayfasında **sonraki** (veri kümesi) varsayılanı kabul edin.
 
-11. Bir **veritabanı nesnelerini seçin** sayfası, veritabanı belirten bir ileti, tüm nesneler içermiyor göreceksiniz. Seçin **son**.
+1. Üzerinde **veri bağlantınızı seçin** sayfasında **SampleDatabase.mdf** aşağı açılan listede dosya ve ardından **sonraki**.
 
-### <a name="to-view-properties-of-the-data-connection"></a>Veri bağlantısı özelliklerini görüntülemek için
-Veri bağlantısı Özellikler penceresini açarak SampleDatabase.mdf dosyası için bağlantı dizesini görüntüleyebilirsiniz:
+1. Üzerinde **bağlantı dizesini uygulama yapılandırma dosyasına Kaydet** sayfasında **sonraki**.
 
--   Visual Studio'da seçin **Görünüm**, **SQL Server Nesne Gezgini** Bu pencere zaten açık değilse. Özellikler penceresini genişleterek açmak **veri bağlantıları** düğümü, SampleDatabase.mdf için kısayol menüsünü açarak ve ardından seçerek **özellikleri**.
+1. Bir **veritabanı nesnelerinizi seçin** sayfasında, veritabanı belirten bir ileti, herhangi bir nesne içermiyor göreceksiniz. Seçin **son**.
 
--   Alternatif olarak, seçebileceğiniz **Görünüm**, **Sunucu Gezgini**, bu pencereyi zaten açık değilse. Özellikler penceresini genişleterek açmak **veri bağlantıları** düğümü. SampleDatabase.mdf için kısayol menüsünü açın ve ardından **özellikleri**.
+### <a name="view-properties-of-the-data-connection"></a>Veri bağlantısı özelliklerini görüntüleme
 
-## <a name="create-tables-and-keys-by-using-table-designer"></a>Tablo Tasarımcısı kullanarak tablolar ile anahtarlar oluşturma
-Bu bölümde, iki tablo, her bir tablo ve birkaç örnek veri satırı bir birincil anahtar oluşturmayı öğreneceksiniz. Ayrıca, bir tablodaki kayıtları kaydeder ve diğer tabloda nasıl karşılık belirtmek için yabancı anahtar oluşturacaksınız.
+Bağlantı dizesini görüntüleyebileceğiniz *SampleDatabase.mdf* veri bağlantısı Özellikler penceresini açarak dosya:
 
-### <a name="to-create-the-customers-table"></a>Müşteriler tablosu oluşturmak için
-1.  İçinde **Sunucu Gezgini** veya **SQL Server Nesne Gezgini**, genişletin **veri bağlantıları** düğümünü genişletin ve ardından **SampleDatabase.mdf**düğüm.
+- Visual Studio'da **görünümü** > **SQL Server Nesne Gezgini** Bu pencere hala açık değilse. Özellikler penceresini genişleterek açmak **veri bağlantıları** düğümü için kısayol menüsünü açarak, *SampleDatabase.mdf*, belirledikten sonra **özellikleri**.
 
-2.  Kısayol menüsünü açın **tabloları**ve ardından **Yeni Tablo Ekle**.
+- Alternatif olarak, seçebileceğiniz **görünümü** > **Sunucu Gezgini**, bu pencere hala açık değilse. Özellikler penceresini genişleterek açmak **veri bağlantıları** düğümü. Kısayol menüsünü açın *SampleDatabase.mdf*ve ardından **özellikleri**.
 
-     **Tablo Tasarımcısı** açılır ve oluşturmakta olduğunuz tablo tek bir sütunda temsil eden bir varsayılan satır içeren bir kılavuz gösterir. Kılavuza satırlar ekleyerek, tabloda sütunlar ekleyeceksiniz.
+## <a name="create-tables-and-keys-by-using-table-designer"></a>Tablo tasarımcısını kullanarak tablolar ile anahtarlar oluşturma
 
-3.  Kılavuzda, aşağıdaki girişlerin her biri için bir satır ekleyin:
+Bu bölümde, iki tablo, her bir tabloyu ve birkaç satırlık örnek verileriniz birincil bir anahtar oluşturmak. Ayrıca, bir tablodaki kayıtların diğer tablodaki kayıtlara nasıl karşılık gelen belirtmek için yabancı anahtar da oluşturacaksınız.
+
+### <a name="create-the-customers-table"></a>Müşteriler tablosu oluşturma
+
+1. İçinde **Sunucu Gezgini** veya **SQL Server Nesne Gezgini**, genişletme **veri bağlantıları** düğümünü ve ardından **SampleDatabase.mdf**düğümü.
+
+2. Kısayol menüsünü açın **tabloları**ve ardından **Yeni Tablo Ekle**.
+
+     **Tablo Tasarımcısı** açılır ve oluşturmakta olduğunuz tablodaki tek bir sütunu temsil eden tek bir varsayılan satır içeren bir kılavuz gösterir. Kılavuza satırlar ekleyerek, tabloda sütunlar ekleyeceksiniz.
+
+3. Kılavuzda, aşağıdaki girişlerin her biri için bir satır ekleyin:
 
     |Sütun adı|Veri türü|Null'lere izin ver|
     |-----------------|---------------|-----------------|
@@ -81,28 +89,29 @@ Bu bölümde, iki tablo, her bir tablo ve birkaç örnek veri satırı bir birin
     |`ContactName`|`nvarchar (50)`|True (seçili)|
     |`Phone`|`nvarchar (24)`|True (seçili)|
 
-4.  Kısayol menüsünü açın `CustomerID` satır ve ardından **birincil anahtarı ayarlama**.
+4. Kısayol menüsünü açın `CustomerID` satır ve ardından **birincil anahtarı Ayarla**.
 
-5.  Varsayılan satır için kısayol menüsünü açın ve ardından **silmek**.
+5. Varsayılan satır için kısayol menüsünü açın ve ardından **Sil**.
 
-6.  Betik bölmesindeki ilk satırı aşağıdaki örnekle eşleşecek şekilde değiştirerek Müşteriler tablosunu adlandırın:
+6. Betik bölmesindeki ilk satırı aşağıdaki örnekle eşleşecek şekilde değiştirerek Müşteriler tablosunu adlandırın:
 
-    ```
+    ```sql
     CREATE TABLE [dbo].[Customers]
     ```
 
-    Şöyle bir şey görmeniz gerekir:
+    Bunun gibi bir şey görmeniz gerekir:
 
-    ![Tablo Tasarımcısı](../data-tools/media/raddata-table-designer.png "raddata Tablo Tasarımcısı")
+    ![Tablo Tasarımcısı](../data-tools/media/raddata-table-designer.png)
 
-7.  Sol üst köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
+7. Sol alt köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
 
-8.  İçinde **Önizleme veritabanı güncelleştirmeleri** iletişim kutusunda **güncelleştirme veritabanı** düğmesi.
+8. İçinde **veritabanı güncelleştirmelerini Önizle** iletişim kutusunda **veritabanını Güncelleştir** düğmesi.
 
     Değişiklikleriniz yerel veritabanı dosyasına kaydedildi.
 
-### <a name="to-create-the-orders-table"></a>Siparişler tablosu oluşturmak için
-1.  Başka bir tablo ekleyin ve sonra aşağıdaki tabloda her giriş için bir satır ekleyin:
+### <a name="create-the-orders-table"></a>Siparişler tablosu oluşturma
+
+1. Başka bir tablo ekleyin ve sonra aşağıdaki tabloda her giriş için bir satır ekleyin:
 
     |Sütun adı|Veri türü|Null'lere izin ver|
     |-----------------|---------------|-----------------|
@@ -111,61 +120,60 @@ Bu bölümde, iki tablo, her bir tablo ve birkaç örnek veri satırı bir birin
     |`OrderDate`|`datetime`|True (seçili)|
     |`OrderQuantity`|`int`|True (seçili)|
 
-2.  Ayarlama **OrderID** birincil anahtar ve ardından Sil'i varsayılan satır olarak.
+2. Ayarlama **OrderID** birincil anahtar ve ardından varsayılan satırı silin.
 
-3.  Betik bölmesindeki ilk satırı aşağıdaki örnekle eşleşecek şekilde değiştirerek Siparişler tablosunu adlandırın:
+3. Betik bölmesindeki ilk satırı aşağıdaki örnekle eşleşecek şekilde değiştirerek Siparişler tablosunu adlandırın:
 
     ```sql
     CREATE TABLE [dbo].[Orders]
     ```
 
-4.  Sol üst köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
+4. Sol alt köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
 
-5.  İçinde **Önizleme veritabanı güncelleştirmeleri** iletişim kutusunda **güncelleştirme veritabanı** düğmesi.
+5. İçinde **veritabanı güncelleştirmelerini Önizle** iletişim kutusunda **veritabanını Güncelleştir** düğmesi.
 
     Değişiklikleriniz yerel veritabanı dosyasına kaydedildi.
 
-### <a name="to-create-a-foreign-key"></a>Yabancı anahtar oluşturmak için
-1.  Izgaranın sağ tarafındaki içerik bölmesinde için kısayol menüsünü açın **yabancı anahtarlar**ve ardından **yeni yabancı anahtar Ekle**, aşağıdaki çizimde gösterildiği gibi.
+### <a name="create-a-foreign-key"></a>Yabancı anahtar oluşturma
 
-     ![Tablo Tasarımcısı'nda bir yabancı anahtar ekleme](../data-tools/media/foreignkey.png "ForeignKey")
+1. Kılavuz sağ tarafında bulunan bağlam bölmesinde, kısayol menüsünü açın **yabancı anahtarlar**ve ardından **yeni yabancı anahtar Ekle**aşağıdaki çizimde gösterildiği gibi.
 
-2.  Görüntülenen metin kutusunda, yerine **ToTable** ile `Customers`.
+     ![Tablo Tasarımcısı'nda bir yabancı anahtar ekleme](../data-tools/media/foreignkey.png)
 
-3.  T-SQL bölmesinde aşağıdaki örnekle eşleşmesi için son satırında güncelleştirin:
+2. Görüntülenen metin kutusunda, yerine **ToTable** ile **müşteriler**.
+
+3. T-SQL bölmesinde son satırı aşağıdaki örnekle eşleşecek şekilde güncelleştirin:
 
     ```sql
     CONSTRAINT [FK_Orders_Customers] FOREIGN KEY ([CustomerID]) REFERENCES [Customers]([CustomerID])
     ```
 
-4.  Sol üst köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
+4. Sol alt köşesindeki **Tablo Tasarımcısı**seçin **güncelleştirme** düğmesi.
 
-5.  İçinde **Önizleme veritabanı güncelleştirmeleri** iletişim kutusunda **güncelleştirme veritabanı** düğmesi.
+5. İçinde **veritabanı güncelleştirmelerini Önizle** iletişim kutusunda **veritabanını Güncelleştir** düğmesi.
 
     Değişiklikleriniz yerel veritabanı dosyasına kaydedildi.
 
 ## <a name="populate-the-tables-with-data"></a>Tabloları verilerle doldurma
 
-### <a name="to-populate-the-tables-with-data"></a>Tabloları veriyle doldurmak için
+1. İçinde **Sunucu Gezgini** veya **SQL Server Nesne Gezgini**, örnek veritabanları düğümünü genişletin.
 
-1.  İçinde **Sunucu Gezgini** veya **SQL Server Nesne Gezgini**, örnek veritabanı düğümünü genişletin.
+2. Kısayol menüsünü açın **tabloları** düğümünü **Yenile**ve ardından **tabloları** düğümü.
 
-2.  Kısayol menüsünü açın **tabloları** düğümü, select **yenileme**, genişletin ve ardından **tabloları** düğümü.
+3. Müşteriler tablosu için kısayol menüsünü açın ve ardından **tablo verilerini Göster**.
 
-3.  Müşteriler tablosu için kısayol menüsünü açın ve ardından **Show Table Data**.
-
-4.  Bazı müşteriler için istediğiniz veriyi ekleyin.
+4. Bazı müşteriler için istediğiniz verileri ekleyin.
 
     Müşteri kimliklerini beş karakterli olarak istediğiniz gibi belirtebilirsiniz, ancak en azından bu yordamda daha sonra kullanmak üzere hatırlayabileceğiniz bir kimlik olmalıdır.
 
-5.  Siparişler tablosundaki için kısayol menüsünü açın ve ardından **Show Table Data**.
+5. Siparişler tablosu için kısayol menüsünü açın ve ardından **tablo verilerini Göster**.
 
-6.  Bazı siparişler için verileri ekleyin.
+6. Bazı sipariş verileri ekleyin.
 
     > [!IMPORTANT]
-    > Tüm sipariş kimlikleri ve sipariş miktarları tamsayılar olduğunu ve her müşteri kimliği Müşteriler tablosunu CustomerID sütununda belirtilen bir değerle eşleşen emin olun.
+    > Tüm sipariş kimlikleri ve sipariş miktarlarının tam sayılar olduğundan ve her bir müşteri Kimliğini belirtilen bir değerle eşleştiğinden emin olun **CustomerID** Müşteriler tablosundaki sütun.
 
-7.  Menü çubuğunda seçin **dosya**, **Tümünü Kaydet**.
+7. Menü çubuğunda, seçin **dosya** > **Tümünü Kaydet**.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

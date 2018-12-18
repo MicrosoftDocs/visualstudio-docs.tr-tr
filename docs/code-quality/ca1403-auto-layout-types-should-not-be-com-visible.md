@@ -1,6 +1,7 @@
 ---
 title: 'CA1403: Otomatik yerleşim türleri COM görünebilir olmamalıdır'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: a7007714-f9b4-4730-94e0-67d3dc68991f
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: 2559f5d281a9669d2d36419eaeccd5ad879ce926
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d84fdd4f352a823614832cc8d5d1b9e57c7a9dfb
+ms.sourcegitcommit: 0bf2aff6abe485e3fe940f5344a62a885ad7f44e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37058080"
 ---
 # <a name="ca1403-auto-layout-types-should-not-be-com-visible"></a>CA1403: Otomatik yerleşim türleri COM görünebilir olmamalıdır
+
 |||
 |-|-|
 |TypeName|AutoLayoutTypesShouldNotBeComVisible|
@@ -30,27 +36,35 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Bileşen Nesne Modeli (COM) görünür değer türü ile işaretlenmiş <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=fullName> özniteliği kümesine <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=fullName>.
 
-## <a name="rule-description"></a>Kural Tanımı
- <xref:System.Runtime.InteropServices.LayoutKind> Yerleşim türleri, ortak dil çalışma zamanı tarafından yönetilir. Bu tür düzeni belirli bir düzen beklediğiniz COM istemcileri kesintiye uğrar .NET Framework sürümleri arasında değiştirebilirsiniz. Unutmayın <xref:System.Runtime.InteropServices.StructLayoutAttribute> özniteliği belirtilmezse, C#, [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], ve C++ Derleyicileri belirtin <xref:System.Runtime.InteropServices.LayoutKind> değer türleri için düzeni.
+Bileşen Nesne Modeli (COM) görünür değer türü ile işaretlenmiş <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=fullName> özniteliği kümesine <xref:System.Runtime.InteropServices.LayoutKind.Auto?displayProperty=fullName>.
 
- Aksi takdirde işaretlenmiş sürece, tüm genel türlere COM görünür; Tüm özel ve genel türleri COM'a görünmez Ancak, hatalı pozitif sonuçları azaltmak için bu kural türünü açıkça belirtilen COM görünürlüğünü gerektirir; içeren derleme ile işaretlenmiş olmalıdır <xref:System.Runtime.InteropServices.ComVisibleAttribute?displayProperty=fullName> kümesine `false` ve tür ile işaretlenmelidir <xref:System.Runtime.InteropServices.ComVisibleAttribute> kümesine `true`.
+## <a name="rule-description"></a>Kural açıklaması
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için değerini değiştirme <xref:System.Runtime.InteropServices.StructLayoutAttribute> özniteliğini <xref:System.Runtime.InteropServices.LayoutKind> veya <xref:System.Runtime.InteropServices.LayoutKind>, veya türü COM'a görünmez yapma
+<xref:System.Runtime.InteropServices.LayoutKind> Yerleşim türleri, ortak dil çalışma zamanı tarafından yönetilir. Bu tür düzeni belirli bir düzen beklediğiniz COM istemcileri keser .NET Framework sürümleri arasında değiştirebilirsiniz. Varsa <xref:System.Runtime.InteropServices.StructLayoutAttribute> özniteliği belirtilmezse, C#, Visual Basic ve C++ Derleyicileri belirtin [LayoutKind.Auto](<xref:System.Runtime.InteropServices.LayoutKind.Auto>) değer türleri için.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın.
+Aksi takdirde işaretlenmiş sürece, tüm ortak, genel olmayan türleri COM görünür ve tüm genel ve genel türleri COM'a görünmez Ancak, hatalı pozitif sonuçları azaltmak için bu kural türünü açıkça belirtilen COM görünürlüğünü gerektirir. İçeren derleme ile işaretlenmiş olmalıdır <xref:System.Runtime.InteropServices.ComVisibleAttribute?displayProperty=fullName> kümesine `false` ve tür ile işaretlenmelidir <xref:System.Runtime.InteropServices.ComVisibleAttribute> kümesine `true`.
+
+## <a name="how-to-fix-violations"></a>İhlallerini düzeltmek nasıl
+
+Bu kural ihlal düzeltmek için değerini değiştirme <xref:System.Runtime.InteropServices.StructLayoutAttribute> özniteliğini [LayoutKind.Explicit](<xref:System.Runtime.InteropServices.LayoutKind.Explicit>) veya [LayoutKind.Sequential](<xref:System.Runtime.InteropServices.LayoutKind.Sequential>), veya türü COM'a görünmez yapma
+
+## <a name="when-to-suppress-warnings"></a>Ne zaman uyarıları bastırma
+
+Bu kuraldan uyarıyı bastırmayın.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek kuralını ihlal eden bir tür ile kural karşılayan bir tür gösterir.
 
- [!code-csharp[FxCop.Interoperability.AutoLayout#1](../code-quality/codesnippet/CSharp/ca1403-auto-layout-types-should-not-be-com-visible_1.cs)]
- [!code-vb[FxCop.Interoperability.AutoLayout#1](../code-quality/codesnippet/VisualBasic/ca1403-auto-layout-types-should-not-be-com-visible_1.vb)]
+Aşağıdaki örnek kuralını ihlal eden bir tür ile kural karşılayan bir tür gösterir.
+
+[!code-csharp[FxCop.Interoperability.AutoLayout#1](../code-quality/codesnippet/CSharp/ca1403-auto-layout-types-should-not-be-com-visible_1.cs)]
+[!code-vb[FxCop.Interoperability.AutoLayout#1](../code-quality/codesnippet/VisualBasic/ca1403-auto-layout-types-should-not-be-com-visible_1.vb)]
 
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1408: AutoDual ClassInterfaceType kullanma](../code-quality/ca1408-do-not-use-autodual-classinterfacetype.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [Birlikte çalışma için .NET türlerini niteleme](/dotnet/framework/interop/qualifying-net-types-for-interoperation) [yönetilmeyen kod ile birlikte çalışma](/dotnet/framework/interop/index)
+[CA1408: AutoDual ClassInterfaceType kullanma](../code-quality/ca1408-do-not-use-autodual-classinterfacetype.md)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Birlikte çalışma için .NET türleri nitelemek](/dotnet/framework/interop/qualifying-net-types-for-interoperation)
+- [Yönetilmeyen kod ile birlikte çalışma](/dotnet/framework/interop/index)

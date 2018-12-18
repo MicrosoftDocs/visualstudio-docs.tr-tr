@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 606ddb5380da2bfe0c75d20bc70bf0da911ea4e5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 07e62715bc5bdce655c4fa5493bb9043ce241dca
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49939741"
 ---
 # <a name="idebugengine2setregistryroot"></a>IDebugEngine2::SetRegistryRoot
-Hata ayıklama altyapısı (DE) için kayıt defteri kök ayarlar.  
+Kayıt defteri kökü (DE) hata ayıklama altyapısı için ayarlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,13 +41,13 @@ int SetRegistryRoot(
   
 #### <a name="parameters"></a>Parametreler  
  `pszRegistryRoot`  
- [in] Kullanmak için kayıt defteri kök dizini.  
+ [in] Kullanılacak kayıt defteri kökü.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem tanır [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] DE kayıt defteri ayarlarını; almak için kullanması gereken bir diğer kayıt defteri kökünü belirtmek için "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\8.0Exp".  
+ Bu yöntem tanır [!INCLUDE[vsprvs](../../../code-quality/includes/vsprvs_md.md)] DE; kayıt defteri ayarlarını almak için kullanması gereken bir alternatif kayıt defteri kökü belirtmek için "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\8.0Exp".  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)

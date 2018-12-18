@@ -1,7 +1,7 @@
 ---
-title: AI araçlarında için Visual studio projesi oluşturma
-description: azure machine learning Galerisi'nden örnek kullanarak proje oluşturma
-keywords: AI, visual studio, azure machine learning
+title: Yapay ZEKA araçları için Visual studio projesi oluşturma
+description: örneğini kullanarak azure machine learning Galeriden proje oluşturma
+keywords: yapay zeka, visual studio, azure machine learning
 author: lisawong19
 ms.author: liwong
 manager: routlaw
@@ -12,53 +12,54 @@ ms.service: multiple
 ms.technology: vs-ai-tools
 ms.workload:
 - multiple
-ms.openlocfilehash: 495c0d256fc6c8f36ded67166f7d12aace7a9202
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 18cf719b100aa7c216de2903c05a24a3abcca244
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49916497"
 ---
-## <a name="create-an-ai-project-from-the-azure-machine-learning-gallery-in-visual-studio"></a>Visual Studio'da Azure Machine Learning Galeriden bir AI projesi oluşturma
+## <a name="create-an-ai-project-from-the-azure-machine-learning-gallery-in-visual-studio"></a>Yapay ZEKA proje Visual Studio'da Azure Machine Learning Galerisi oluşturma
 
-Azure Machine Learning AI için Visual Studio Araçları ile tümleşiktir. Azure sanal makineler, Spark kümeleri ve daha fazlası gibi uzak işlem hedefleri machine learning iş göndermek için kullanabilirsiniz. Daha fazla bilgi edinmek [Azure Machine Learning deneme](https://docs.microsoft.com/azure/machine-learning/preview/experimentation-service-configuration)
+Azure Machine Learning, yapay ZEKA için Visual Studio Araçları ile tümleşiktir. Machine learning gibi Azure sanal makineleri, Spark kümelerine ve daha fazla uzak bilgisayar hedefine göndermek için kullanabilirsiniz. Daha fazla bilgi edinin [Azure Machine Learning denemesi](https://docs.microsoft.com/azure/machine-learning/preview/experimentation-service-configuration)
 
-Seçtiğiniz sonra [AI için Visual Studio Araçları yüklü](installation.md), Azure Machine Learning örnek Galerisi'nde önceden yapılmış tarif kullanarak yeni bir Python proje oluşturmak kolaydır.
+Kaydederler [yapay ZEKA için Visual Studio Araçları yüklü](installation.md), Azure Machine Learning örnek galerideki önceden yapılmış tarifleri kullanarak yeni Python projesi oluşturmak daha kolaydır.
 
 > [!NOTE]
-> Azure Machine Learning çalışma ekranı yüklü olması gerekir. Bkz: Lütfen yüklemek için [Azure Machine Learning yükleme hızlı başlangıç](https://docs.microsoft.com/azure/machine-learning/preview/quickstart-installation)
+> Azure Machine Learning Workbench yüklenmiş olmalıdır. Lütfen bkz. yüklemek için [Azure Machine Learning yükleme hızlı başlangıç](https://docs.microsoft.com/azure/machine-learning/preview/quickstart-installation)
 
-1. Visual Studio'yu başlatın. Açık **Sunucu Gezgini** açarak **AI Araçları** menü ve seçme **küme seçin**
+1. Visual Studio'yu başlatın. Açık **Sunucu Gezgini** açarak **yapay ZEKA Araçları** menü ve seçme **kümesi seçin**
 
-    ![Küme Seçici](media\create-project-gallery\select-cluster.png)
+    ![Küme Seçici](media/create-project-gallery/select-cluster.png)
 
-1. Azure Machine Learning aboneliğinize sağ tıklayarak oturum açın **Azure Machine Learning** Sunucu Gezgininde seçip **oturum açma** ve yönergeleri izleyin.
+2. Azure Machine Learning aboneliğinize sağ tıklayarak oturum açın **Azure Machine Learning** Sunucu Gezgininde seçip **oturum açma** ve yönergeleri izleyin.
 
-    ![oturum açma](media\create-project-gallery\azureml-login.png)
+    ![Oturum açma](media/create-project-gallery/azureml-login.png)
 
-2. Seçin **AI Araçlar > Azure Machine Learning örnek Galerisi**.
+3. Seçin **yapay ZEKA araçları > Azure Machine Learning örnek Galerisi**.
 
-    ![Örnek Galerisi](media\create-project-gallery\gallery.png)
+    ![Örnek Galerisi](media/create-project-gallery/gallery.png)
 
-1. Bu Hızlı Başlangıç için seçin "**TensorFlow kullanarak MNIST**" örnek ve tıklayın **yükleme**. Aşağıdakileri sağlar:
+4. Bu hızlı başlangıçta seçin "**TensorFlow kullanarak MNIST**" örnek ve tıklayın **yükleme**. Aşağıdakileri sağlar:
 
- - **Kaynak grubu**: meta verilerinizin depolanacağı Azure kaynak grubu
- - **Hesap**: Azure Machine Learning deneme hesabı
- - **Çalışma alanı**: Azure Machine Learning çalışma alanı
- - **Proje türü**: machine learning framework. Bu durumda seçin **TensorFlow**
- - **Çözüme eklemek**: geçerli Visual Studio çözümünüzü veya bir oluşturma eklemek ve yeni bir çözüm açmak belirler
- - **Proje yolu**: kod kaydetmek için konum
- - **Proje adı**: türü **TensorFlowMNIST**
+   - **Kaynak grubu**: meta verilerinizi depolanacağı Azure kaynak grubu
+   - **Hesap**: Azure Machine Learning denemesi hesabı
+   - **Çalışma alanı**: Azure Machine Learning çalışma alanı
+   - **Proje türü**: Makine öğrenmesi çerçeveleri. Bu durumda seçin **TensorFlow**
+   - **Çözüme eklemek**: geçerli Visual Studio çözümünüzü veya bir oluşturma eklemek ve yeni bir çözüm açın belirler
+   - **Proje yolu**: kod kaydetmek için konum
+   - **Proje adı**: türü **TensorFlowMNIST**
 
-![Python uygulama şablonu kullanırken sonuç projesi](media/create-project-gallery/new-AzureSampleProject.png)
+   ![Python uygulaması şablonu kullanılarak elde edilen proje](media/create-project-gallery/new-AzureSampleProject.png)
 
-1. Visual Studio Proje dosyası oluşturur (bir `.pyproj` diskteki dosya) örnekte tanımlanan diğer dosyaların yanı sıra. "MNIST" şablonu ile proje pek çok dosya içeriyor.
+5. Visual Studio Proje dosyası oluşturur (bir `.pyproj` diskteki dosyanın) birlikte örnekte tanımlanan diğer dosyalar. "MNIST" şablonu ile çeşitli dosyalar projesi içerir.
 
-    ![mnist](media\create-project-gallery\azml-mnist.png)
+    ![mnıst](media/create-project-gallery/azml-mnist.png)
 
-1. Azure Machine Learning projeye gönderin.
+6. Azure Machine Learning iş gönderin.
 
-    ![mnist](media\create-project-gallery\submit-azml.png)
+    ![mnıst](media/create-project-gallery/submit-azml.png)
 
-1. Docker kapsayıcısı veya yerel makinenizde çalıştırma
+7. Yerel makinenizde veya bir Docker kapsayıcısında çalıştırma
 
-    ![mnist](media\create-project-gallery\azml-local.png)
+    ![mnıst](media/create-project-gallery/azml-local.png)

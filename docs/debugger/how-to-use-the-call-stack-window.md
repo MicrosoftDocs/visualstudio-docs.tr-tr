@@ -1,7 +1,7 @@
 ---
-title: Visual Studio Hata Ayıklayıcısı'ndaki çağrı yığınını görüntülemek | Microsoft Docs
-ms.custom: H1Hack27Feb2017
-ms.date: 04/06/2017
+title: Hata ayıklayıcıda çağrı yığınını görüntüleme | Microsoft Docs
+ms.custom: seodec18
+ms.date: 10/29/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 f1_keywords:
@@ -30,115 +30,118 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: d20a1ac9f1a09b93f577c6aa90f550ccd6ff0def
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: fe3b266ee44b326749ed555df77dee66b8e82aae
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53062357"
 ---
-# <a name="view-the-call-stack-and-use-the-call-stack-window-in-the-visual-studio-debugger"></a>Çağrı yığınını görüntülemek ve Visual Studio hata ayıklayıcısında çağrı yığını penceresini kullanma
+# <a name="view-the-call-stack-and-use-the-call-stack-window-in-the-debugger"></a>Çağrı yığınını görüntüleme ve hata ayıklayıcı çağrı yığını penceresini kullanma
 
-Kullanarak **çağrı yığını** penceresinde, şu anda yığında olan işlev veya yordam çağrıları görüntüleyebilirsiniz. **Çağrı yığını** penceresi içinde yöntemleri ve işlevleri denir sipariş gösterir. Çağrı yığınını incelemek ve bir uygulamanın yürütme akışını anlamak için iyi bir yoludur.
-  
-Zaman [hata ayıklama simgeleri](#bkmk_symbols) çağrı yığını bölümü için kullanılabilir değil **çağrı yığını** penceresi çağrı yığını kısmı doğru bilgilerini görüntülemek kuramıyor olabilir. Bu gerçekleşirse, aşağıdaki gösterim görünür:  
-  
+Kullanarak **çağrı yığını** penceresinde yığında olan işlev veya yordam çağrılarını görüntüleyebilirsiniz. **Çağrı yığını** penceresi, yöntemleri ve işlevleri çağrılır sırasını gösterir. Çağrı yığınını inceleyebilir ve bir uygulamanın yürütme akışını anlamanıza için iyi bir yoludur.
+
+Zaman [hata ayıklama simgeleri](#bkmk_symbols) bir çağrı yığının bir bölümü için kullanılabilir değil **çağrı yığını** penceresi yükleyemeyebilir yerine görüntüleme çağrı yığını o kısmı için doğru bilgileri görüntülemek:
+
 `[Frames below may be incorrect and/or missing, no symbols loaded for name.dll]`
 
->  [!NOTE]
-> **Çağrı yığını** penceresi benzer hata ayıklama perspektife Eclipse gibi bazı IDE içinde. 
+> [!NOTE]
+> **Çağrı yığını** penceresi benzer hata ayıklama perspektifi için Eclipse gibi bazı IDE içinde.
 
 > [!NOTE]
->  İletişim kutuları ve menü komutlarını gördüğünüz açıklanana burada etkin ayarlarınıza veya sürümünüze bağlı olarak farklı olabilir. Ayarlarınızı değiştirmek için seçin **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü.  Bkz: [IDE'yi kişiselleştirme](../ide/personalizing-the-visual-studio-ide.md)
-  
-## <a name="view-the-call-stack-while-in-the-debugger"></a>Çağrı yığını ayıklayıcısında görüntüleyin 
-  
--   Hata ayıklama, buna **hata ayıklama** menüsünde, select **Windows > çağrı yığını**.
+> İletişim kutuları ve menü komutları gördüğünüz, etkin ayarlarınıza ve sürüm bağlı olarak burada açıklananlar farklılık gösterebilir. Ayarlarınızı değiştirmek için seçin **içeri ve dışarı aktarma ayarları** üzerinde **Araçları** menüsü.  Bkz: [ayarlarına](../ide/environment-settings.md#reset-settings).
 
- ![Çağrı yığını penceresi](../debugger/media/dbg_basics_callstack_window.png "CallStackWindow")
+## <a name="view-the-call-stack-while-in-the-debugger"></a>Hata ayıklayıcı sırasında çağrı yığınını görüntüleme
 
-Sarı bir ok yürütme işaretçinin şu anda bulunduğu yığın çerçevesi tanımlar. Varsayılan olarak, bu, bilgileri kaynağında görünür yığın çerçevesi olan **Yereller**, **otomobiller**, **izleme**, ve **ayrıştırılmış** windows . Hata ayıklayıcı bağlamını yığında başka bir çerçeve değiştirmek istiyorsanız, bunu yapabilirsiniz [başka bir yığın çerçevesine geçme](#bkmk_switch).   
-  
-## <a name="display-non-user-code-in-the-call-stack-window"></a>Çağrı yığını penceresinde kullanıcı olmayan kodu görüntüleme  
-  
--   Sağ **çağrı yığını** penceresini açın ve select **Göster harici kod**.
+- Hata ayıklarken, buna **hata ayıklama** menüsünde **Windows > çağrı yığını**.
 
-Kullanıcı olmayan kodudur ne zaman gösterilmez herhangi bir kod [sadece kendi kodumu](../debugger/just-my-code.md) etkinleştirilir. Yönetilen kodda kullanıcı olmayan kod çerçeveleri varsayılan olarak gizlidir. Aşağıdaki gösterim yerine kullanıcı olmayan kod çerçeveleri görünür:  
-  
-**[\<Harici kod >]**  
-  
-## <a name="bkmk_switch"></a> Başka bir yığın çerçevesi (hata ayıklayıcı bağlamını değiştirme) geçiş
-  
-1.  İçinde **çağrı yığını** penceresinde, yığın çerçeve olan kodu ve görüntülemek istediğiniz verileri sağ tıklatın.
+  ![Çağrı yığını penceresi](../debugger/media/dbg_basics_callstack_window.png "CallStackWindow")
 
-    Veya, bir çerçevede çift tıklayarak **çağrı yığını** penceresinde seçili çerçeveye geçiş. 
-  
-2.  Seçin **geçiş çerçeveye**.  
-  
-     Süslü kuyruklu yeşil bir ok seçtiğiniz yığın çerçevesi yanında görüntülenir. Hala sarı ok ile işaretlenmiş özgün çerçevesinde yürütme işaretçi kalır. Seçerseniz **adım** veya **devam** gelen **hata ayıklama** menüsünde yürütme devam özgün çerçevede, seçtiğiniz çerçevenin.  
-  
-## <a name="view-the-source-code-for-a-function-on-the-call-stack"></a>Çağrı yığınındaki işlevi için kaynak kodu görüntüleme  
-  
--   İçinde **çağrı yığını** penceresinde, sağ tıklatın, kaynak kodu işlevi istediğiniz görebilir ve **gitmek için kaynak kodunu**.
+Sarı bir ok, yürütme işaretçisinin şu anda bulunduğu yığın çerçevesini tanımlar. Varsayılan olarak, kaynak, bu yığın çerçeve bilgi görünür **Yereller**, **Otolar**, **Watch**, ve **ayrıştırılmış kodu** windows. Yığındaki çerçeveye hata ayıklayıcı bağlamı değiştirmek için [başka bir yığın çerçevesine geçiş](#bkmk_switch).
 
-## <a name="run-to-a-specific-function-from-the-call-stack-window"></a>Belirli bir işlev çağrı yığını penceresinde çalıştırma  
-  
--  İçinde **çağrı yığını** penceresinde işlevi seçin, sağ tıklatın ve seçin **çalıştırmak için imleç**.  
-  
-## <a name="set-a-breakpoint-on-the-exit-point-of-a-function-call"></a>Bir işlev çağrısı çıkış noktasında bir kesme noktası ayarlama  
-  
--   Bkz: [bir çağrı yığını işlevini bir kesme noktası belirleyerek](../debugger/using-breakpoints.md#BKMK_Set_a_breakpoint_in_the_call_stack_window).
+## <a name="display-non-user-code-in-the-call-stack-window"></a>Kullanıcı olmayan kod çağrı yığını penceresinde görüntüleme
 
-## <a name="display-calls-to-or-from-another-thread"></a>İçin veya başka bir iş parçacığından çağrıları görüntüleme  
-  
--   Sağ **çağrı yığını** penceresini açın ve select **dahil çağrıları To/From diğer iş parçacıkları**.   
-  
-## <a name="visually-trace-the-call-stack"></a>Görsel olarak çağrı yığınını izleme  
+-   Sağ **çağrı yığını** penceresi ve select **harici kodu Göster**.
 
-Visual Studio Enterprise (yalnızca) kullanıyorsanız, hata ayıklarken çağrı yığınında için kod haritalarını görüntüleyebilirsiniz.
+Kullanıcı olmayan kod olduğu zaman gösterilmez herhangi bir kod [yalnızca kendi kodum](../debugger/just-my-code.md) etkinleştirilir. Yönetilen kodda kullanıcı olmayan kod çerçevelerini varsayılan olarak gizlidir. Aşağıdaki gösterim, kullanıcı olmayan kod çerçevelerini yerine görüntülenir:
 
-- İçinde **çağrı yığını** penceresinde kısayol menüsünü açın. Seçin **çağrı yığını kod haritasında Göster**. (Klavye: **CTRL** + **SHIFT** + **`**)  
-  
-    Ayrıntılı bilgi için bkz: [hata ayıklarken çağrı yığınında yöntemler eşleme](../debugger/map-methods-on-the-call-stack-while-debugging-in-visual-studio.md).
+`[<External Code>]`
 
-![Çağrı yığını kod haritasında Göster](../debugger/media/dbg_basics_show_call_stack_on_code_map.gif "ShowCallStackOnCodeMap")
-  
-## <a name="view-the-disassembly-code-for-a-function-on-the-call-stack"></a>Çağrı yığınındaki bir işlev için ayrıştırılmış kodu görüntüleme  
-  
--   İçinde **çağrı yığını** penceresinde, sağ tıklatın, Ayrıştırılmış kod işlevi istediğiniz görebilir ve **ayrıştırılmış Git**.    
+## <a name="bkmk_switch"></a> (Hata ayıklayıcı bağlamını değiştirme) başka bir yığın çerçevesine geçiş
 
-## <a name="change-the-optional-information-displayed"></a>Değişiklik görüntülenen isteğe bağlı bilgiler  
-  
--   Sağ **çağrı yığını** penceresi ve kümesi ya da temizleyin **Göster \< ***istediğiniz bilgileri***>**.  
-  
-## <a name="bkmk_symbols"></a> Bir modül için yük simgeleri
-İçinde **çağrı yığını** penceresinde, şu anda yüklenen simgeleri yok kod simgelerini hata ayıklama yükleyebilirsiniz. Bu simgeleri .NET Framework veya Microsoft ortak simgesi sunucularından indirilen sistem simgeleri ya da bir simge yolu ayıkladığınız bilgisayarda sembolleri olabilir.  
-  
-Bkz: [simge (.pdb) belirtin ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)  
-  
-### <a name="to-load-symbols"></a>Simgeler yüklemek için  
-  
-1.  İçinde **çağrı yığını** penceresinde, hangi simgeleri yığın çerçevesi yüklenmedi sağ tıklatın. Çerçeve soluk.  
-  
-2.  İşaret **yük simgeleri** ve ardından **Microsoft simge sunucuları** (varsa) veya sembol yoluna göz atın.  
-  
-### <a name="to-set-the-symbol-path"></a>Simge yolu ayarlamak için  
-  
-1.  İçinde **çağrı yığını** penceresinde, seçin **simge ayarlarını** kısayol menüsünden.  
-  
-     **Seçenekleri** iletişim kutusu açılır ve **simgeleri** sayfası görüntülenir.  
-  
-2.  Tıklatın **simge ayarları**.  
-  
-3.  İçinde **seçenekleri** iletişim kutusunda, klasör simgesine tıklayın.  
-  
-     İçinde **simge (.pdb) dosya konumları** kutusunda, bir imleç görüntülenir.  
-  
-4.  Simgenin konumu bir directory yol adı ayıkladığınız bilgisayarda yazın. Yerel ve uzaktan hata ayıklama için yerel bilgisayarınızda bir yolu budur.
-  
-5.  Tıklatın **Tamam** kapatmak için **seçenekleri** iletişim kutusu.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Karışık kod ve eksik bilgileri çağrı yığını penceresi](../debugger/mixed-code-and-missing-information-in-the-call-stack-window.md)  
- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)   
- [Simge (.pdb) belirtin ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)   
- [Kesme noktalarını kullanma](../debugger/using-breakpoints.md)
+1.  İçinde **çağrı yığını** penceresinde, yığın çerçeve kodunu ve görüntülemek istediğiniz veri sağ tıklatın.
+
+    Veya çerçevede çift tıkladığınızda **çağrı yığını** penceresinde bu çerçeveye geçiş yap.
+
+2.  Seçin **çerçeveye geçiş yap**.
+
+     Kıvrık kuyruklu yeşil bir ok, seçtiğiniz yığın çerçevenin yanında görünür. Yürütme işaretçisi halen sarı ok ile işaretlenmiş olan özgün çerçevede kalır. Seçerseniz **adım** veya **devam** gelen **hata ayıklama** menüsünde, yürütme devam eder özgün çerçevede, seçtiğiniz çerçevenin.
+
+## <a name="view-the-source-code-for-a-function-on-the-call-stack"></a>Çağrı yığınındaki bir işlevi için kaynak kodu görüntüleme
+
+-   İçinde **çağrı yığını** penceresinde, istediğiniz kaynak kodunu işlevi görmek ve seçmek için sağ tıklama **kaynak koda Git**.
+
+## <a name="run-to-a-specific-function-from-the-call-stack-window"></a>Çağrı yığını penceresinden belirli bir işleve çalıştırın
+
+-  İçinde **çağrı yığını** penceresinde işlevi seçin, sağ tıklayın ve ardından **imlece kadar Çalıştır**.
+
+## <a name="set-a-breakpoint-on-the-exit-point-of-a-function-call"></a>Bir işlev çağrısının çıkış noktası üzerinde bir kesme noktası ayarlayın
+
+-   Bkz: [bir çağrı yığını işlevi bir kesme noktası ayarlamak](../debugger/using-breakpoints.md#BKMK_Set_a_breakpoint_in_the_call_stack_window).
+
+## <a name="display-calls-to-or-from-another-thread"></a>İçin veya başka bir iş parçacığından çağrıları görüntüleme
+
+-   Sağ **çağrı yığını** penceresi ve select **dahil çağrıları öğesine/öğesinden diğer iş parçacıkları**.
+
+## <a name="visually-trace-the-call-stack"></a>Çağrı yığınını görsel olarak izleme
+
+Visual Studio Enterprise'da (yalnızca), hata ayıklama sırasında çağrı yığınını için kod haritaları görüntüleyebilir.
+
+- İçinde **çağrı yığını** penceresinde, kısayol menüsünü açın. Seçin **kod haritasında çağrı yığınını Göster** (**Ctrl** + **Shift** + **`**).
+
+    Daha fazla bilgi için [hata ayıklarken çağrı yığınında yöntemler harita](../debugger/map-methods-on-the-call-stack-while-debugging-in-visual-studio.md).
+
+![Kod haritasında çağrı yığınını Göster](../debugger/media/dbg_basics_show_call_stack_on_code_map.gif "ShowCallStackOnCodeMap")
+
+## <a name="view-the-disassembly-code-for-a-function-on-the-call-stack-c-c-visual-basic-f"></a>Çağrı yığınındaki bir işleve ilişkin ayrıştırma kodunu görüntülemek (C#, C++, Visual Basic F#)
+
+-   İçinde **çağrı yığını** penceresinde, sökme kodunu istediğiniz işlevi görebilir ve sağ **Ayrıştırılımış**.
+
+## <a name="change-the-optional-information-displayed"></a>Görüntülenen isteğe bağlı bilgileri değiştirmek
+
+-   Sağ **çağrı yığını** penceresi ve kümesi ya da temizleyin **Göster \<**  _istediğiniz bilgilerin_ **>**.
+
+## <a name="bkmk_symbols"></a> Bir modüle ilişkin simgeleri yüklemek (C#, C++, Visual Basic F#)
+
+İçinde **çağrı yığını** penceresi, hata ayıklama simgelerinin şu anda yüklü olmayan kod için semboller yükleyebilirsiniz. Bu simgeler, .NET Framework veya Microsoft ortak simge sunucularından yüklenen sistem simgeleri veya hata ayıklaması yaptığınız bilgisayarda simge yolunu sembolleri olabilir.
+
+Bkz: [belirtin, sembol (.pdb) ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).
+
+### <a name="to-load-symbols"></a>Simgeleri yüklemek için
+
+1.  İçinde **çağrı yığını** penceresinde, simgelerin yığın çerçevesi yüklenmedi sağ tıklatın. Çerçeve soluk görünecektir.
+
+2.  İşaret **sembolleri Yükle** seçip **Microsoft sembol sunucuları** (varsa), ya da sembol yoluna göz atın.
+
+### <a name="to-set-the-symbol-path"></a>Sembol yolunu ayarlamak için
+
+1.  İçinde **çağrı yığını** penceresinde seçin **sembol ayarları** kısayol menüsünden.
+
+     **Seçenekleri** iletişim kutusu açılır ve **sembolleri** sayfası görüntülenir.
+
+2.  Seçin **sembol ayarları**.
+
+3.  İçinde **seçenekleri** iletişim kutusunda, klasör simgesine tıklayın.
+
+     İçinde **sembol dosyası (.pdb) konumlar** kutusunda, bir imleç görüntülenir.
+
+4.  Bir dizin yol adı, hata ayıklaması yaptığınız bilgisayarda simge konumuna girin. Yerel ve uzak hata ayıklama için yerel bilgisayarınızda bir yolu budur.
+
+5.  Seçin **Tamam** kapatmak için **seçenekleri** iletişim kutusu.
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [Çağrı Yığını penceresinde karışık kod ve eksik bilgiler](../debugger/mixed-code-and-missing-information-in-the-call-stack-window.md)
+- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)
+- [Sembol (.pdb) ve kaynak dosyaları belirtme](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)
+- [Kesme noktaları kullanma](../debugger/using-breakpoints.md)

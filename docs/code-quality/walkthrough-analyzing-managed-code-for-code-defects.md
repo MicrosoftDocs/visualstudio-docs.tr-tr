@@ -1,6 +1,7 @@
 ---
 title: Kod kusurları için yönetilen kod gözden geçirme analiz etme | Microsoft Docs
 ms.date: 01/29/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: conceptual
 helpviewer_keywords:
@@ -11,11 +12,12 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 98d1bbd347870bd704a0d17d7ae559da00e9adb5
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 49c122e5cf22e9290f6dab1d45539887c68c01bd
+ms.sourcegitcommit: d9e4ea95d0ea70827de281754067309a517205a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37117725"
 ---
 # <a name="walkthrough-analyzing-managed-code-for-code-defects"></a>İzlenecek yol: Kod çözümleme yönetilen kod kusurlarını
 
@@ -27,9 +29,9 @@ Bu kılavuzda Microsoft .NET Framework tasarım yönergeleri ile uyumluluk için
 
 ### <a name="to-create-a-class-library"></a>Sınıf kitaplığı oluşturmak için
 
-1. Üzerinde **dosya** menüsünde seçin **yeni** > **proje...** .
+1. Üzerinde **dosya** menüsünde seçin **yeni** > **proje**.
 
-1. İçinde **yeni proje** iletişim kutusunda, genişletin **yüklü** > **Visual C#** ve ardından **Windows Klasik Masaüstü**.
+1. İçinde **yeni proje** iletişim kutusunda, genişletin **yüklü** > **Visual C#** ve ardından **Windows Masaüstü**.
 
 1. Seçin **sınıf kitaplığı (.NET Framework)** şablonu.
 

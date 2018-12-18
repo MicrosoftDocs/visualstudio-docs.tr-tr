@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f95d5ed2e91b847b99d063b6fcba485fb96c3290
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: c4b8771ad1bf2ee97ec1f22636a4684bc9aa7ee8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49950348"
 ---
 # <a name="namesearchoptions"></a>NameSearchOptions
-Simge ve dosya adları için arama seçeneklerini belirtir.  
+Sembol ve dosya adları için arama seçeneklerini belirtir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -45,22 +46,22 @@ enum NameSearchOptions {
   
 ## <a name="elements"></a>Öğeleri  
  `nsNone`  
- Hiçbir seçenek belirtildi.  
+ Hiçbir seçenek belirtilmedi.  
   
  `nsfCaseSensitive`  
- Büyük küçük harfe duyarlı adı eşleşir geçerlidir.  
+ Büyük/küçük harfe adı eşleştirmesi uygular.  
   
  `nsfCaseInsensitive`  
- Büyük küçük harf duyarsız adı eşleşir geçerlidir.  
+ Büyük küçük harf duyarsız adı eşleştirmesi uygular.  
   
  `nsfFNameExt`  
- Adları yolları olarak değerlendirir ve DosyaAdı.uzn adı eşleşir uygular.  
+ Adları, yollar olarak değerlendirir ve DosyaAdı.uzn adı eşleştirmesi uygular.  
   
  `nsfRegularExpression`  
- Büyük küçük harfe duyarlı adı eşleşen bir joker karakter olarak yıldız işareti (*) ve soru işareti (?) kullanarak uygular.  
+ Joker karakter olarak yıldız işareti (*) ve soru işareti (?) kullanarak bir büyük/küçük harfe adı eşleştirmesi uygular.  
   
  `nsfUndecoratedName`  
- Ve hem de adlar simgeleri geçerlidir.  
+ Hem tamamlanmamış ve düzenlenmiş adları sembolleri geçerlidir.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu numaralandırma değerleri için aşağıdaki yöntemlerden geçirilir:  
@@ -72,10 +73,10 @@ enum NameSearchOptions {
 -   [IDiaSymbol::findChildren](../../debugger/debug-interface-access/idiasymbol-findchildren.md)  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: dia2.h  
+ Üstbilgi: dia2.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [Idiasession::findchildren](../../debugger/debug-interface-access/idiasession-findchildren.md)   
  [Idiasession::findfile](../../debugger/debug-interface-access/idiasession-findfile.md)   
  [IDiaSymbol::findChildren](../../debugger/debug-interface-access/idiasymbol-findchildren.md)

@@ -9,147 +9,148 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: 50753da026f091d541bffd664f0aa964b4cba3f0
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 76e7b9433fe76464e7af385081ac3577d53919e1
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49813904"
 ---
 # <a name="customizing-the-properties-window"></a>Özellikler Penceresini Özelleştirme
-İçinde etki alanına özgü dil (DSL) penceresinin davranış ve görünümünü özelleştirebilirsiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. DSL tanımınızı her etki alanı sınıf üzerinde etki alanı özellikleri tanımlayın. Sınıfının bir örneği, diyagram veya Model Gezgini'nde seçtiğinizde varsayılan olarak, her etki alanı özelliği Özellikler penceresinde listelenir. Bunları diyagramda şekli alanlara eşlenmedi olsa bile bu bakın ve etki alanı özelliklerinin değerlerini düzenlemenizi sağlar.
+Etki alanına özgü dil (DSL) Visual Studio içinde Özellikler penceresinde davranışını ve görünümünü özelleştirebilirsiniz. DSL tanımındaki her etki alanı sınıfı üzerinde etki alanı özelliklerini tanımlayın. Diyagram üzerinde veya Model Gezgini'nde sınıfının bir örneğini seçtiğinizde varsayılan olarak, her etki alanı özelliği Özellikler penceresinde listelenir. Bunları diyagramdaki şekil alanları eşlenmedi olsa bile bu görmek ve etki alanı özelliklerinin değerlerini düzenlemek, sağlar.
 
 ## <a name="names-descriptions-and-categories"></a>Adları ve açıklamaları kategorileri
- **Ad ve görünen ad**. Bir etki alanı özelliği tanımı içinde özellik görünen adı Özellikler penceresinde çalışma zamanında görüntülenen addır. Bunun aksine, özelliği güncelleştirmek için program kodu yazarken adı kullanılır. Adın doğru bir CLR alfasayısal adı olması gerekir, ancak görünen ad boşluk içeremez.
+ **Adı ve görünen adı**. Bir alan özelliği tanımında, özellik görünen adı Özellikler penceresinde çalışma zamanında görüntülenen adıdır. Özellik Güncelleştirme için program kodu yazarken aksine, adı kullanılır. Adın doğru bir CLR alfasayısal adı olması gerekir, ancak görünen adı boşluk içeremez.
 
- Bir özelliğin adını DSL tanımında ayarladığınızda, görünen adını bir kopyası adı otomatik olarak ayarlanır. "FuelGauge" gibi bir Pascal cased adı yazarsanız, görünen adı otomatik olarak bir boşluk içerir: "Yakıt ölçer". Ancak, görünen adı başka bir değere açıkça ayarlayabilirsiniz.
+ DSL tanımındaki bir özelliğin adını ayarladığınızda, onun görünür ismini adının bir kopyasını otomatik olarak ayarlanır. "FuelGauge" gibi bir Pascal cased adını yazarsanız, görünen adı otomatik olarak bir boşluk içeriyor: "Yakıt ölçer". Ancak, görünen ad başka bir değere açıkça ayarlayabilirsiniz.
 
- **Açıklama**. Bir etki alanı özellik açıklaması iki yerde görüntülenir:
+ **Açıklama**. Bir etki alanı özelliğin açıklamasını iki yerde görüntülenir:
 
--   Kullanıcı özelliği seçtiğinde penceresinin alt. Hangi özelliği temsil eden kullanıcıya açıklamak için kullanabilirsiniz.
+- Kullanıcı özelliği seçtiğinde Özellikler penceresinin alt. Kullanıcıya ne özelliği temsil eden açıklamak için kullanabilirsiniz.
 
--   Oluşturulan program kodu içinde. API belgelerine ayıklamak için belge özelliklerini kullanıyorsanız, bu özellikte API açıklaması olarak görünür.
+- Oluşturulan program kodu içinde. API belgeleri ayıklamak için belge özelliklerini kullanıyorsanız, bu özelliğin API açıklamasını olarak görünür.
 
- **Kategori**. Bir kategori, Başlık Özellikleri penceresinde grubudur.
+  **Kategori**. Özellikler penceresinde başlık kategorisidir.
 
-## <a name="exposing-style-features"></a>Stil özellikleri gösterme
- Dinamik özelliklerin bir grafik öğelerinin temsil edilebilir veya *açığa* etki alanı özellikleri olarak. Bu şekilde kullanıma sunulan bir özellik kullanıcı tarafından güncelleştirilebilir ve daha fazla program kodu tarafından kolayca güncelleştirilebilir.
+## <a name="exposing-style-features"></a>Stil özelliklerini gösterme
+ Grafik öğelerin dinamik özelliklerin bazıları temsil edilebilir veya *kullanıma sunulan* olarak etki alanı özellikleri. Bu şekilde sunulan bir özellik kullanıcı tarafından güncelleştirilebilir ve daha fazlasını kolayca program kodu tarafından güncelleştirilebilir.
 
- Shape sınıfı DSL tanımında sağ tıklayın, fareyle **eklemek açığa**ve ardından bir özellik seçin.
+ Bir DSL tanımındaki şekil sınıf sağ tıklatın, **ekleme kullanıma sunulan**, bir özellik seçin.
 
- Şekilleri, getirebilir **FillColor**, **OutlineColor**, **TextColor**, **OutlineDashStyle**,  **OutlineThickness** ve **FillGradientMode** özellikleri. Bağlayıcıların, getirebilir **renk**`,`**TextColor**, **DashStyle**, ve **kalınlığı** özellikleri. Diyagramlar üzerinde getirebilir **FillColor** ve **TextColor** özellikleri.
+ Diyagramdaki şekilleri kullanıma sunabileceğiniz **FillColor**, **OutlineColor**, **TextColor**, **OutlineDashStyle**,  **OutlineThickness** ve **FillGradientMode** özellikleri. Bağlayıcılarda kullanıma sunabileceğiniz **renk**`,`**TextColor**, **DashStyle**, ve **kalınlığı** özellikleri. Diyagramlar üzerinde kullanıma sunabileceğiniz **FillColor** ve **TextColor** özellikleri.
 
 ## <a name="forwarding-displaying-properties-of-related-elements"></a>İletme: İlgili öğelerin özelliklerini görüntüleme
- DSL kullanıcı bir model öğeyi seçtiğinde, bu öğenin özellikleri Özellikler penceresinde görüntülenir. Ancak, belirtilen ile ilgili öğeleri özelliklerini görüntüleyebilirsiniz. Birlikte çalışan öğeleri grubunu tanımladıysanız, bu yararlıdır. Örneğin, bir ana öğesi ve isteğe bağlı eklenti öğenin tanımlayabilirsiniz. Main öğesi şekle eşlenen ve diğer değil, bir öğede değilmiş gibi tüm özelliklerini görmek yararlıdır.
+ Kullanıcı, DSL'nin bir model bir öğe seçtiğinde, o öğenin özellikleri Özellikler penceresinde görüntülenir. Ancak, belirtilen ilgili öğelerin özelliklerini görüntüleyebilirsiniz. Birlikte çalışan bir grup öğelerin tanımladıysanız, bu yararlıdır. Örneğin, bir ana öğesi ve isteğe bağlı bir eklenti öğesi tanımlayabilir. Main öğesi bir şekle eşlenir ve diğer değil, bir öğede değilmiş gibi tüm özelliklerini görmek kullanışlıdır.
 
- Bu etkiyi adlı *özelliği iletme*, ve bazı durumlarda otomatik olarak gerçekleşir. Diğer durumlarda, bir etki alanı tür tanımlayıcı tanımlayarak iletme özelliği elde edebilirsiniz.
+ Bu etkiyi adlı *özelliği iletme*, ve bazı durumlarda otomatik olarak gerçekleşir. Diğer durumlarda, bir etki alanı tür tanımlayıcısı tanımlayarak iletme özellik elde edebilirsiniz.
 
-### <a name="default-property-forwarding-cases"></a>Varsayılan özellik iletme durumları
- Kullanıcı Explorer'ın bir şekli veya Bağlayıcısı veya bir öğe seçtiğinde, aşağıdaki özellikleri Özellikler penceresinde görüntülenir:
+### <a name="default-property-forwarding-cases"></a>Varsayılan özellik iletme durumlar
+ Kullanıcı Gezgini'nde bir şekil veya Bağlayıcısı veya bir öğe seçtiğinde, aşağıdaki özellikleri Özellikler penceresinde görüntülenir:
 
--   Temel sınıflarda tanımlanan dahil olmak üzere model öğesi etki alanı sınıfının üzerinde tanımlanan etki alanı özellikleri. Etki alanı özellikleri için ayarlanmış bir istisnadır **olan gözatılamaz** için `False`.
+-   Etki alanı sınıfı, temel sınıflarında tanımlanan de dahil olmak üzere model öğesi üzerinde tanımlanan etki alanı özellikleri. Etki alanı özellikleri, ayarladığınız bir istisnası **olan gözatılabilir** için `False`.
 
--   0.. 1 çokluğa çokluğu olan ilişkileri bağlı öğeleri adları. İlişki için bir bağlayıcı eşlemesi tanımlı değil olsa bile bu öğeleri, isteğe bağlı olarak görülmesi için kullanışlı bir yöntem bağlı sağlar.
+-   0..1 çokluğu olan ilişkileri bağlı öğelerin adları. İlişki için bir bağlayıcı eşlemesi tanımlanmamış olsa bile bu isteğe bağlı olarak görmek için kullanışlı bir yöntem öğeleri, bağlı sağlar.
 
--   Öğesini hedefleyen katıştırma ilişkisinin özelliklerini etki alanı. Katıştırma ilişkileri genellikle açıkça görüntülenmez olduğundan, bu kullanıcının kendi özelliklerine bakın sağlar.
+-   Öğesini hedefleyen bir gömme ilişkisi etki alanı özellikleri. Gömme ilişkiler genellikle açıkça gösterilmez olduğundan, bu kullanıcının özelliklerine bakın olanak tanır.
 
--   Seçilen şekil veya bağlayıcı üzerinde tanımlanan etki alanı özellikleri.
+-   Seçilen şekil veya bağlayıcının üzerinde tanımlanan etki alanı özellikleri.
 
-### <a name="adding-property-forwarding"></a>Özellik iletme ekleme
- Bir özellik iletmek için bir etki alanı tür tanımlayıcı tanımlayın. İki etki alanı sınıf arasında bir etki alanı ilişkisi varsa, ikinci etki alanı sınıfının bir etki alanı özelliği ilk sınıfının değeri için bir etki alanı özelliği ayarlamak için bir etki alanı tür tanımlayıcı kullanabilirsiniz. Arasında bir ilişki varsa, örneğin, bir **defteri** etki alanı sınıfı ve bir **Yazar** etki alanı sınıfı bir etki alanı tür tanımlayıcı yapmak için kullanabileceğiniz **adı** özelliğinin bir Kitaptaki **Yazar** kullanıcı rehberi seçtiğinde Özellikler penceresinde görünür.
+### <a name="adding-property-forwarding"></a>İletme özelliği ekleme
+ Bir özellik iletmek için bir etki alanı tür tanımlayıcısı tanımlayın. İki alan sınıfı arasındaki bir etki alanı ilişkisi varsa, ikinci etki alanı sınıfı, bir etki alanı özelliğinin değeri ilk sınıf bir etki alanı özelliği ayarlamak için bir etki alanı tür tanımlayıcısı'nı kullanabilirsiniz. Arasında bir ilişki varsa, örneğin, bir **kitap** etki alanı sınıfı ve bir **Yazar** etki alanı sınıfı, bir etki alanı tür tanımlayıcısı yapmak için kullanabileceğiniz **adı** özelliği bir Kitaptaki **Yazar** kullanıcının kitaptan seçtiğinde, Özellikler penceresinde görünür.
 
 > [!NOTE]
->  Kullanıcı bir model düzenlerken özelliği iletme sadece Özellikler penceresinde etkiler. Alıcı sınıf üzerinde bir etki alanı özelliği tanımlamıyor. İletilen etki alanı özelliği DSL tanımı diğer bölümleri veya program kodunun erişmek isterseniz, iletme öğesi erişmeniz gerekir.
+>  Kullanıcı bir model düzenlerken iletme özelliği yalnızca Özellikler penceresini etkiler. Alıcı sınıfta bir alan özelliği tanımlamıyor. İletilen domain özelliği DSL tanımının diğer bölümlerinde veya program kodunda erişmek istiyorsanız, iletme öğesi erişmeniz gerekir.
 
- Aşağıdaki yordam, DSL oluşturduğunuzu varsayar. İlk birkaç adımda önkoşulları özetler.
+ Aşağıdaki yordam, DSL oluşturmuş olduğunuzu varsayar. İlk birkaç adım önkoşulları özetler.
 
-##### <a name="to-forward-a-property-from-another-element"></a>Bir özellik başka bir öğeden iletmek için
+##### <a name="to-forward-a-property-from-another-element"></a>Başka bir öğeden bir özellik iletmek için
 
-1.  Oluşturma bir [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] olarak adlandırılır, bu örnekte en az iki sınıf içeren çözüm **defteri** ve **Yazar**. Her iki tür arasında bir ilişki olmalıdır **defteri** ve **Yazar**.
+1. Oluşturma bir [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] olarak adlandırılır, bu örnekte, en az iki sınıf içeren çözüm **kitap** ve **Yazar**. İki tür arasında bir ilişki olmalıdır **kitap** ve **Yazar**.
 
-     Kaynak role çokluğu (rolde **defteri** yan) olmalıdır 0.. 1 çokluğa veya 1..1, bu nedenle, her **defteri** varsa **Yazar**.
+    Kaynak rolünün çokluğu (rolün **kitap** tarafı) 0.. 1 veya 1..1, olmalıdır böylece her **kitap** varsa **Yazar**.
 
-2.  İçinde **DSL Explorer**, sağ **kitap** etki alanı sınıfı ve ardından **ekleme yeni DomainTypeDescriptor**.
+2. İçinde **DSL Gezgini**, sağ **kitap** etki alanı sınıfı ve ardından **ekleme yeni DomainTypeDescriptor**.
 
-     Adlı bir düğüm **özel özellik tanımlayıcılarının yolları** altında görünür **özel tür tanımlayıcı** düğümü.
+    Adlı bir düğüm **özel özellik tanımlayıcılarının yolları** altında görünür **özel tür tanımlayıcısının** düğümü.
 
-3.  Sağ **özel tür tanımlayıcı** düğümünü ve ardından **ekleme yeni PropertyPath**.
+3. Sağ **özel tür tanımlayıcısının** düğümünü ve ardından **ekleme yeni PropertyPath**.
 
-     Yeni bir özellik yolu altında görünür **özel özellik tanımlayıcılarının yolları** düğümü.
+    Yeni bir özellik yolu altında görünür **özel özellik tanımlayıcılarının yolları** düğümü.
 
-4.  Yeni özellik yolu seçin ve **özellikleri** penceresindeki ayarlayın **özelliğe yol** uygun model öğesi yolu.
+4. Yeni özellik yolu seçin ve **özellikleri** penceresinde **özelliğinin yolu** uygun model öğesi yolu.
 
-     Bu özellik sağındaki aşağı oka tıklayarak ağaç görünümünde yolu düzenleyebilirsiniz. Etki alanı yolları hakkında daha fazla bilgi için bkz: [etki alanı yolu sözdizimi](../modeling/domain-path-syntax.md). Düzenlediğinizde, yolun benzemelidir **BookReferencesAuthor.Author/! Yazar**.
+    Bu özellik sağındaki aşağı oka tıklayarak ağaç görünümünde yolu düzenleyebilirsiniz. Etki alanı yolları hakkında daha fazla bilgi için bkz. [etki alanı yolu sözdizimi](../modeling/domain-path-syntax.md). Düzenlediğinizde, yolun benzemelidir **BookReferencesAuthor.Author/! Yazar**.
 
-5.  Ayarlama **özelliği** için **adı** etki alanı özelliği **Yazar**.
+5. Ayarlama **özelliği** için **adı** etki alanı özelliğine **Yazar**.
 
-6.  Ayarlama **görünen adı** için **yazar adı**.
+6. Ayarlama **görünen adı** için **yazar adı**.
 
-7.  Tüm Şablonları dönüştürme, yapı ve DSL çalıştırın.
+7. Tüm Şablonları dönüştürme, oluşturma ve DSL çalıştırın.
 
-8.  Bir model diyagramı kitap, bir yazarın oluşturabilir ve bunları başvuru ilişkisi kullanarak bağlayabilirsiniz. Kitap öğesini seçin ve Özellikler penceresinde kitap özelliklerine ek olarak yazar adı görmeniz gerekir. Bağlantılı yazarının adını değiştirin veya başka bir yazar kitap bağlayın ve rehberi yazar adı değiştiğini gözlemleyin.
+8. Bir modeli diyagramı yazar, kitap oluşturur ve başvuru ilişkisi kullanarak bunları bağlayabilirsiniz. Kitap öğesini seçin ve Özellikler penceresinde kitabı özelliklerine ek olarak yazar adını görmeniz gerekir. Bağlantılı yazarının adını değiştirin veya başka bir yazar kitap bağlayın ve kitap yazar adını değiştiğini gözlemleyin.
 
-## <a name="custom-property-editors"></a>Özel özellik düzenleyiciler
- Özellik penceresi düzenleme deneyimi her bir etki alanı özellik türü için uygun bir varsayılan sağlar. Örneğin, numaralandırılmış bir türü için kullanıcı aşağı açılan listesini görür ve bir sayısal özellik için kullanıcı basamak girebilirsiniz. Bu yalnızca yerleşik türleri için geçerlidir. Bir dış türe belirtirseniz, kullanıcı özellikte bakın, ancak düzenlemek değil mümkün olacaktır.
+## <a name="custom-property-editors"></a>Özel özellik düzenleyicileri
+ Özellik penceresi, düzenleme deneyimi her bir etki alanı özellik türü için uygun bir varsayılan sağlar. Örneğin, bir listeden seçimli türü için bir açılan liste kullanıcının gördüğü ve sayısal bir özellik için kullanıcı basamak girebilirsiniz. Bu yalnızca yerleşik türler için geçerlidir. Dış tür belirtirseniz, kullanıcının özellik değerleri görebilirsiniz, ancak düzenleme olmadan mümkün olacaktır.
 
- Ancak, aşağıdaki düzenleyicileri ve türlerini belirtebilirsiniz:
+ Ancak, aşağıdaki düzenleyiciler ve türleri belirtebilirsiniz:
 
-1.  Standart bir türüyle kullanılan başka bir düzenleyici. Örneğin, bir dize özelliği için bir dosya yolu Düzenleyici belirtebilirsiniz.
+1. Standart türüyle kullanılan başka bir düzenleyici. Örneğin, bir dize özelliği için bir dosya yolu Düzenleyicisi belirtebilirsiniz.
 
-2.  Bir dış türe etki alanı özelliği ve bunun için bir düzenleyici.
+2. Etki alanı özelliği ve bunun için bir düzenleyici için dış tür.
 
-3.  Dosya yolu Düzenleyicisi'ni veya gibi bir .NET Düzenleyicisi, kendi özel özellik düzenleyici oluşturabilirsiniz.
+3. Bir .NET Düzenleyicisi gibi dosya yolu Düzenleyicisi veya kendi özel özellik düzenleyici oluşturabilirsiniz.
 
-     Bir dış türe ve varsayılan düzenleyici sahip dize gibi bir türü arasında dönüştürme.
+    Bir dış tür ve varsayılan Düzenleyicisi olan dize gibi bir tür arasında dönüştürme.
 
- Bir DSL içinde bir *dış türü* basit türleri (örneğin, Boole veya Int32) veya dize biri değil herhangi bir tür.
+   Bir DSL içinde bir *dış tür* basit türleri (örneğin, Boole veya Int32) veya dize biri değil herhangi bir tür.
 
-#### <a name="to-define-a-domain-property-that-has-an-external-type"></a>Bir dış türe sahip bir etki alanı özelliği tanımlamak için
+#### <a name="to-define-a-domain-property-that-has-an-external-type"></a>Bir dış türe sahip bir alan özelliği tanımlamak için
 
-1.  İçinde **Çözüm Gezgini**, dış türü içeren derleme (DLL) için bir başvuru ekleyin **Dsl** projesi.
+1. İçinde **Çözüm Gezgini**, dış tür içeren derleme (DLL) bir başvuru ekleyin **Dsl** proje.
 
-     Derleme bir .NET derlemesi veya tarafından sağlanan bir derleme olabilir.
+    Derleme, bir .NET bütünleştirilmiş kodu ya da sizin tarafınızdan sağlanan derleme olabilir.
 
-2.  Türüne ekleme **etki alanı türleri** bunu yapmış olduğunuz sürece listeleyin.
+2. Türüne eklemek **etki alanı türleri** zaten yapmış sürece listesi.
 
-    1.  DslDefinition.dsl, açın ve **DSL Explorer**, kök düğüme sağ tıklayın ve ardından **yeni dış türü Ekle**.
+   1.  DslDefinition.dsl, açın ve **DSL Gezgini**kök düğümüne sağ tıklayın ve ardından **yeni dış türü Ekle**.
 
-         Altında yeni bir giriş belirir **etki alanı türleri** düğümü.
+        Altında yeni bir giriş belirir **etki alanı türleri** düğümü.
 
-        > [!WARNING]
-        >  Menü öğesi DSL kök düğümde değil **etki alanı türleri** düğümü.
+       > [!WARNING]
+       >  Menü öğesi DSL kök düğümde değil **etki alanı türleri** düğümü.
 
-    2.  Ad ve yeni türünün ad alanını Özellikler penceresinde ayarlayın.
+   2.  Özellikler penceresinde, adı ve yeni türünün ad alanını ayarlayın.
 
-3.  Bir etki alanı özelliği normal şekilde bir etki alanı sınıfına ekleyin.
+3. Bir alan özelliği için bir etki alanı sınıfı, her zamanki şekilde ekleyin.
 
-     Özellikler penceresinde dış aşağı açılan listeden seçin **türü** alan.
+    Özellikler penceresinde, aşağı açılan listeden dış türünü seçin. **türü** alan.
 
- Bu aşamada, kullanıcıların özelliği değerlerini görüntüleyebilir, ancak bunlar düzenleyemezsiniz. Görüntülenen değerleri elde edilen `ToString()` işlevi. Özelliğinin değeri, örneğin bir komut veya kural ayarlar program kodu yazabilirsiniz.
+   Bu aşamada, kullanıcılar özelliğinin değerlerini görüntüleyebilir, ancak panoyu düzenleyemez. Görüntülenen değerleri elde edilir `ToString()` işlevi. Özelliğinin değeri, örneğin bir komut veya kuralın ayarlar program kodu yazabilirsiniz.
 
-### <a name="setting-a-property-editor"></a>Özellik Düzenleyici ayarlama
- Etki alanı özelliği aşağıdaki biçimde bir CLR özniteliği ekleyin:
+### <a name="setting-a-property-editor"></a>Özellik Düzenleyicisi'ni ayarlama
+ Etki alanı özelliğine aşağıdaki biçimde bir CLR özniteliği ekleyin:
 
-```
+```csharp
 [System.ComponentModel.Editor (
    typeof(AnEditor),
    typeof(System.Drawing.Design.UITypeEditor))]
-
 ```
 
- Öznitelik, bir özellik kullanarak ayarlayabileceğiniz **özel öznitelik** Özellikleri penceresinde girişi.
+ Bir özellik özniteliğini kullanarak ayarlayabilirsiniz **özel özniteliği** Özellikler penceresindeki girişi.
 
- Türü `AnEditor` ikinci parametresinde belirtilen türünden türetilmelidir. İkinci parametre aşağıdakilerden biri olması gerekir <xref:System.Drawing.Design.UITypeEditor> veya <xref:System.ComponentModel.ComponentEditor>. Daha fazla bilgi için bkz. <xref:System.ComponentModel.EditorAttribute>.
+ Türünü `AnEditor` ikinci parametresinde belirtilen türünden türetilmesi gerekir. İkinci parametre olmalıdır <xref:System.Drawing.Design.UITypeEditor> veya <xref:System.ComponentModel.ComponentEditor>. Daha fazla bilgi için bkz. <xref:System.ComponentModel.EditorAttribute>.
 
- Kendi Düzenleyicisi veya, sağlanan bir düzenleyici belirtebilirsiniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], gibi <xref:System.Windows.Forms.Design.FileNameEditor> veya <xref:System.Drawing.Design.ImageEditor>. Örneğin, kullanıcının bir dosya adı girebileceği bir özellik olması için aşağıdaki yordamı kullanın.
+ Kendi düzenleyicinizi ya da bir düzenleyici sağlanan belirtebilirsiniz [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], gibi <xref:System.Windows.Forms.Design.FileNameEditor> veya <xref:System.Drawing.Design.ImageEditor>. Örneğin, kullanıcının bir dosya adı girebilirsiniz bir özelliği için aşağıdaki yordamı kullanın.
 
 ##### <a name="to-define-a-file-name-domain-property"></a>Bir dosya adı etki alanı özelliği tanımlamak için
 
-1.  Bir etki alanı özelliği DSL tanımında bir etki alanı sınıfına ekleyin.
+1.  Bir etki alanı sınıfı, DSL tanımındaki alan özelliği ekleyin.
 
-2.  Yeni özellik seçin. İçinde **özel öznitelik** alanında Özellikler penceresinde, aşağıdaki öznitelik girin. Bu öznitelik girmek için üç nokta düğmesine **[...]**  öznitelik adı ve parametreleri ayrı ayrı girin:
+2.  Yeni özellik seçin. İçinde **özel özniteliği** alanına Özellikler penceresinde, aşağıdaki öznitelik. Bu öznitelik girmek için üç noktaya tıklayın **[...]**  ve öznitelik adı ve parametreleri ayrı olarak girin:
 
-    ```
+    ```csharp
     [System.ComponentModel.Editor (
        typeof(System.Windows.Forms.Design.FileNameEditor)
        , typeof(System.Drawing.Design.UITypeEditor))]
@@ -158,31 +159,31 @@ ms.lasthandoff: 04/20/2018
 
 3.  Etki alanı özelliğinin türü, kendi varsayılan ayarını bırakın **dize**.
 
-4.  Düzenleyici sınamak için kullanıcılar, etki alanı özelliği düzenlemek için dosya adı Düzenleyicisi'ni açabilir doğrulayın.
+4.  Düzenleyici test etmek için kullanıcılar, etki alanı özelliği düzenlemek için dosya adı Düzenleyicisi'ni açabilir doğrulayın.
 
-    1.  CTRL + F5'e veya F5 tuşuna basın. Hata ayıklama çözümde test dosyasını açın. Etki alanı sınıfının bir öğe oluşturun ve bunu seçin.
+    1.  CTRL + F5 veya F5 tuşuna basın. Hata ayıklama çözümde test dosyasını açın. Etki alanı sınıfı, bir öğe oluşturun ve seçin.
 
-    2.  Özellikler penceresinde etki alanı özelliğini seçin. Değer alanı üç nokta gösterir **[...]** .
+    2.  Özellikler penceresinde etki alanı özelliğini seçin. Üç nokta değerini alan gösterir **[...]** .
 
-    3.  Üç nokta işaretine tıklayın. Dosya iletişim kutusu görünür. Bir dosya seçin ve iletişim kutusunu kapatın. Dosya yolu, etki alanı özelliğinin değeri bir sunulmuştur.
+    3.  Üç nokta simgesine tıklayın. Dosya iletişim kutusu görünür. Bir dosya seçin ve iletişim kutusunu kapatın. Dosya yolu, etki alanı özelliğinin değeri bir sunulmuştur.
 
 ### <a name="defining-your-own-property-editor"></a>Kendi özellik Düzenleyici tanımlama
- Kendi Düzenleyicisi tanımlayabilirsiniz. Kullanıcı ya da tanımladığınız bir türü düzenlemek için bir standart türü özel bir yolla düzenlemek için izin vermek için bunu. Örneğin, bir formül temsil eden bir dize giriş kullanıcıya izin verebilir.
+ Kendi düzenleyicinizi tanımlayabilirsiniz. Kullanıcı, tanımladığınız bir türü düzenleyin veya standart bir türü özel bir şekilde düzenlemek için izin vermek için bunu. Örneğin, bir formül temsil eden bir dize girişi kullanıcıya izin verebilir.
 
- Türetilmiş bir sınıf yazarak bir düzenleyici tanımladığınız <xref:System.Drawing.Design.UITypeEditor>. Sınıfınızda geçersiz kılmanız gerekir:
+ Türetilen bir sınıf yazarak bir düzenleyici tanımladığınız <xref:System.Drawing.Design.UITypeEditor>. Sınıfınıza geçersiz kılmanız gerekir:
 
--   <xref:System.Drawing.Design.UITypeEditor.EditValue%2A>, kullanıcıyla etkileşim ve özellik değerini güncelleştirmek için.
+- <xref:System.Drawing.Design.UITypeEditor.EditValue%2A>, kullanıcı ile etkileşim kurmanızı ve özellik değerini güncelleştirin.
 
--   <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>, düzenleyicinizi bir iletişim kutusunu açın veya bir açılır menü sağlamak belirtin.
+- <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>, Düzenleyici bir iletişim kutusunu açın veya bir açılan menü sağlamak belirtmek için.
 
- Özellik kılavuzunda görüntülenecek özelliğin değerini grafik gösterimi sağlar. Bunu yapmak için geçersiz kılma `GetPaintValueSupported`, ve `PaintValue`.  Daha fazla bilgi için bkz. <xref:System.Drawing.Design.UITypeEditor>.
+  Grafik gösterimi özellik kılavuzunda görüntülenecek özelliğin değerini de sağlayabilirsiniz. Bunu yapmak için geçersiz kılma `GetPaintValueSupported`, ve `PaintValue`.  Daha fazla bilgi için bkz. <xref:System.Drawing.Design.UITypeEditor>.
 
 > [!NOTE]
->  Ayrı kod dosyasında aşağıdaki kodu ekleyip **Dsl** projesi.
+>  Ayrı bir kod dosyasında kod ekleme **Dsl** proje.
 
  Örneğin:
 
-```
+```csharp
 internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor
 {
   protected override void InitializeDialog(System.Windows.Forms.OpenFileDialog openFileDialog)
@@ -192,35 +193,32 @@ internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor
     openFileDialog.Title = "Select a text file";
   }
 }
-
 ```
 
- Bu düzenleyici kullanmak üzere ayarlanmış **özel öznitelik** bir etki alanı özelliği:
+ Bu düzenleyici kullanmak için ayarlanmış **özel özniteliği** etki alanı özellik:
 
-```
+```csharp
 [System.ComponentModel.Editor (
    typeof(MyNamespace.TextFileNameEditor)
    , typeof(System.Drawing.Design.UITypeEditor))]
-
 ```
 
  Daha fazla bilgi için bkz. <xref:System.Drawing.Design.UITypeEditor>.
 
-## <a name="providing-a-drop-down-list-of-values"></a>Aşağı açılan liste değerlerinin sağlama
+## <a name="providing-a-drop-down-list-of-values"></a>Aşağı açılan listesini değerleri sağlama
  Aralarından seçim yapabileceğiniz bir kullanıcı için değerler listesini sağlayabilirsiniz.
 
 > [!NOTE]
->  Bu teknik çalışma zamanında değiştirebilirsiniz değerler listesini sağlar. Değişmeyen bir listesi sağlamak istiyorsanız, bunun yerine göz önünde bulundurun Numaralandırılmış türe, etki alanı özellik türü olarak kullanma.
+>  Bu teknik, çalışma zamanında değiştirebileceğiniz değerler listesini sağlar. Değişmeyen bir listesini sağlamak istiyorsanız, bunun yerine göz önünde bulundurun, etki alanı özellik türü olarak bir listeden seçimli türü kullanarak.
 
- Standart bir değer listesi tanımlamak için aşağıdaki biçime sahiptir bir CLR öznitelik etki alanı özelliğinizi ekleyin:
+ Standart değerlerin bir listesini tanımlamak için aşağıdaki biçimde bir CLR özniteliğinin, etki alanı özelliğine ekleyin:
 
-```
+```csharp
 [System.ComponentModel.TypeConverter
 (typeof(MyTypeConverter))]
-
 ```
 
- Türeyen bir sınıf tanımlama <xref:System.ComponentModel.TypeConverter>. Ayrı bir dosyada aşağıdaki kodu ekleyip **Dsl** projesi. Örneğin:
+ Türetilen bir sınıf tanımlama <xref:System.ComponentModel.TypeConverter>. Ayrı bir dosyaya kod eklemek **Dsl** proje. Örneğin:
 
 ```csharp
 /// <summary>
@@ -311,7 +309,6 @@ public class MyTypeConverter : System.ComponentModel.TypeConverter
   }
 
 }
-
 ```
 
 ## <a name="see-also"></a>Ayrıca Bkz.

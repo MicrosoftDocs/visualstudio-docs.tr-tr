@@ -12,24 +12,25 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e79893e7f06afead4a327ce9a342b77f6acb8ca9
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 5e3d372823d3dc3e8d874bfd50e361f23ec056da
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833624"
 ---
 # <a name="how-to-change-fonts"></a>Nasıl yapılır: Yazı Tiplerini Değiştirme
-Yazı tipi, yazı tipi stili ve yazı tipi boyutunu Spy ++ windows için değiştirebilirsiniz.  
+Yazı tipini, yazı tipi stili ve yazı tipi boyutu Spy ++ windows için değiştirebilirsiniz.  
   
-### <a name="to-change-font-options"></a>Yazı tipini değiştirmek için Seçenekler  
+### <a name="to-change-font-options"></a>Yazı tipi seçeneklerini değiştirmek için  
   
-1.  Gelen **Görünüm** menüsünde seçin **yazı tipi**.  
+1. Gelen **görünümü** menüsünde seçin **yazı tipi**.  
   
-2.  Yazı tipi, yazı tipi stili ve yazı tipi boyutu seçin.  
+2. Yazı tipini, yazı tipi stili ve yazı tipi boyutu seçin.  
   
-3.  **Tamam**'ı tıklatın.  
+3. **Tamam**'ı tıklatın.  
   
- Seçme **varsayılan olarak yazı tipi Kaydet** bu yazı tipini kullanmak tüm gelecekteki Spy ++ windows neden olur.  
+   Seçme **varsayılan olarak yazı tipi Kaydet** bu yazı tipini kullanmak tüm Spy ++ pencerelerine neden olur.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Spy ++ kullanma](../debugger/using-spy-increment.md)   

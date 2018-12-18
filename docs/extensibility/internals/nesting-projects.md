@@ -21,6 +21,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31131166"
 ---
 # <a name="nesting-projects"></a>İç içe geçme projeleri
 VS paketinizi kullanan kurumsal uygulama geliştiricileri rahat projeleri bir araya benzer türde grup [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] kullanarak *proje iç içe geçme*. Örneğin, kuruluş şablon proje grubu projeleri iç içe geçmiş projelerine kategoriye kullanır. İş cephesi projeleri, Web kullanıcı arabirimini projeleri ve benzeri bir kategoride birlikte gruplandırılır.  

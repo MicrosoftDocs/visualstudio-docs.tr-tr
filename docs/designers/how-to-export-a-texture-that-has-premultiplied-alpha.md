@@ -1,6 +1,7 @@
 ---
 title: 'Nasıl yapılır: Ön Çarpımlı Alfa kullanan Doku Dışa Aktarma'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: 05348afa-f079-4f53-a05b-ecd91d13adab
@@ -9,40 +10,42 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 91da0e1a08cc75bfce86a5d14985c371e17bcded
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c39d7ae466f48bed8bd6fe4c53662c0c8b3c801e
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49855527"
 ---
-# <a name="how-to-export-a-texture-that-has-premultiplied-alpha"></a>Nasıl yapılır: Ön Çarpımlı Alfa kullanan Doku Dışa Aktarma
-Görüntü içerik ardışık düzen önceden çoğaltılmış alfa dokuları kaynak görüntüden oluşturabilir. Bunlar kullanmak daha basit ve daha sağlamdır önceden çoğaltılmış alfa içermeyen dokuları olabilir.
+# <a name="how-to-export-a-texture-that-has-premultiplied-alpha"></a>Nasıl yapılır: ön çarpımlı Alfaya bir dokuyu dışarı aktarma
 
- Bu belgede, bu etkinlikler gösterir:
+Görüntü içeriği ardışık düzeni bir kaynak görüntüden önceden çoğaltılmış alfa dokular oluşturabilir. Bunlar, kullanımı daha basit ve daha sağlamdır ön çarpımlı alfa içermeyen dokular olabilir.
 
--   Görüntü içerik ardışık düzen tarafından işlenmek üzere kaynak görüntü yapılandırma.
+Bu belgede şu faaliyetler gösterilmiştir:
 
--   Görüntü içerik önceden çoğaltılmış alfa oluşturmak için ardışık düzen yapılandırma.
+-   Görüntü içeriği ardışık düzeni tarafından işlenecek kaynak görüntüyü yapılandırma.
 
-## <a name="premultiplied-alpha"></a>Önceden çoğaltılmış alfa
- Önceden çoğaltılmış alfa texel'ın renk katkı ayırarak daha iyi fiziksel malzemeleri ışık gerçek etkileşim olabilmesinden dolayı Geleneksel, önceden çoğaltılmış olmayan alfa, birkaç avantaj sunar (ekler rengi Sahne) gelen kendi translucency (aracılığıyla sağlayan temel renk miktarı). Önceden çoğaltılmış alfa kullanmanın yararları bazıları şunlardır:
+-   Ön çarpımlı alfa oluşturmak için görüntü içeriği ardışık yapılandırma.
 
--   İle önceden çoğaltılmış Alfa karışım ilişkilendirilebilir bir işlemdir; birden çok saydam dokuları karıştırma, bakılmaksızın aynı dokuları karıştırılan sipariş sonucudur.
+## <a name="premultiplied-alpha"></a>Ön çarpımlı alfa
+ Ön çarpımlı alfa, texel'ın renk katkısı ayırarak daha iyi fiziksel malzemelerle ışığın gerçek etkileşimi temsil ettiğinden alfa, Geleneksel, önceden çoğaltılmamış Alfaya kıyasla çeşitli avantajlar sunar (ekler rengi Sahne) kendi saydamlığından (izin verdiği temel rengin miktarını). Önceden çoğaltılmış alfa kullanmanın avantajlarından bazıları şunlardır:
 
--   İle önceden çoğaltılmış Alfa karışım ilişkilendirilebilir yapısı nedeniyle, çok geçişi işleme saydam nesnelerin basitleştirilmiştir.
+-   Ön çarpımlı alfa karıştırma ilişkilendirilebilir bir işlemdir; birden çok saydam Dokuların karıştırılması sonucu, hangi dokular karışık sıra bağımsız olarak aynıdır.
 
--   Önceden çoğaltılmış alfa kullanarak, saf eklenebilir (göre ayarlama alfa sıfıra) karıştırma hem doğrusal olarak ara değerli karıştırma aynı anda elde edilebilir. Örneğin, bir parçacık sisteminde additively karışık yangın parçacık doğrusal ilişkilendirme kullanarak karıştırılan saydam bir Duman parçacık haline gelebilir. Önceden çoğaltılmış alfa yangın parçacık ayrı olarak Duman parçacık çizme ve çizim çağrıları arasında işleme durumunu değiştirmek gerekir.
+-   Ön çarpımlı alfa karıştırmanın ilişkilendirilebilir yapısı nedeniyle saydam nesnelerin çoklu geçiş işlemesi basitleştirilir.
 
--   Önceden çoğaltılmış alfa kullanmak dokuları Sıkıştır içermeyen olandan daha yüksek kalitesiyle ve rengi kenarları sergilemesine yok — veya "etkin hale" — önceden çoğaltılmış alfa kullanmayan dokuları blend zaman sonuçlanabilir.
+-   Ön çarpımlı alfa kullanarak hem saf artırıcı (alfayı sıfıra ayarlayarak tarafından) karıştırma hem de doğrusal Ara değerli karıştırma aynı anda elde edilebilir. Örneğin, bir sistemde harmanlanan bir Ateş partikülü doğrusal enterpolasyon kullanılarak harmanlanan bir yarı saydam Duman partikülü olabilir. Önceden çoğaltılmış alfa olmadan, Ateş parçacıklarını Duman parçacıklarından ayrı olarak çizme ve çizim çağrıları arasında işleme durumunu değiştirmek gerekir.
 
-#### <a name="to-create-a-texture-that-uses-premultiplied-alpha"></a>Önceden çoğaltılmış alfa kullanan bir doku oluşturmak için
+-   Ön çarpımlı alfa kullanan doku sıkıştırma Eşleşmeyenleri daha yüksek kaliteli ve rengi kenarları göstermesi yoksa — veya "halo etkisi" — önceden çoğaltılmış alfa kullanmayan dokuları karıştırdığınızda neden olur.
 
-1.  Temel bir doku ile başlar. Varolan bir görüntü dosyası yüklemek ya da açıklandığı gibi oluşturmak [nasıl yapılır: temel bir doku oluşturma](../designers/how-to-create-a-basic-texture.md).
+#### <a name="to-create-a-texture-that-uses-premultiplied-alpha"></a>Ön çarpımlı alfa kullanan doku oluşturma
 
-2.  Görüntü içerik ardışık düzen tarafından işlenen doku dosyasını yapılandırın. İçinde **Çözüm Gezgini**, doku dosyası için kısayol menüsünü açın ve ardından **özellikleri**. Üzerinde **yapılandırma özellikleri**, **genel** sayfasında **öğesi türü** özelliğine **görüntü içerik ardışık düzen**. Olduğundan emin olun **içerik** özelliği ayarlanmış **Evet** ve **gelen hariç yapı** ayarlanır **Hayır**ve ardından  **Uygulama** düğmesi. **Görüntü içerik ardışık düzen** yapılandırması özellik sayfası görüntülenir.
+1. Temel doku ile başlayın. Varolan bir resim dosyasını yükleyin ya da açıklandığı gibi oluşturmak [nasıl yapılır: temel doku oluşturma](../designers/how-to-create-a-basic-texture.md).
 
-3.  Görüntü içerik önceden çoğaltılmış alfa oluşturmak için ardışık düzenini yapılandırın. Üzerinde **yapılandırma özellikleri**, **görüntü içerik ardışık düzen**, **genel** sayfasında **önceden çarpılan alfa biçimine dönüştürme** özelliğine **Evet (/ generatepremultipliedalpha)**.
+2. Doku dosyasını yapılandırarak, böylece görüntü içeriği ardışık düzeni tarafından işlenir. İçinde **Çözüm Gezgini**, doku dosyası için kısayol menüsünü açın ve ardından **özellikleri**. Üzerinde **yapılandırma özellikleri** > **genel** sayfasında **öğesi türü** özelliğini **görüntü içeriği ardışık düzeni**. Emin olun **içerik** özelliği **Evet** ve **yapıdan hariç tut** ayarlanır **Hayır**ve ardından  **Uygulama** düğmesi. **Görüntü içeriği ardışık düzeni** yapılandırma özellik sayfası görüntülenir.
 
-4.  Seçin **Tamam** düğmesi.
+3. Ön çarpımlı alfa oluşturmak için görüntü içeriği ardışık yapılandırın. Üzerinde **yapılandırma özellikleri** > **görüntü içeriği ardışık düzeni** > **genel** sayfasında **Dönüştür Ön çarpımlı alfa biçimine** özelliğini **Evet (/ generatepremultipliedalpha)**.
 
- Projeyi derlerken görüntü içerik ardışık düzen kaynak görüntü çalışma biçiminden belirttiğiniz çıkış biçimine dönüştürür — bu görüntüyü dönüştürme önceden çoğaltılmış alfa biçimine içerir — ve sonucu için proje çıktı kopyalanır Dizin.
+4. Seçin **Tamam** düğmesi.
+
+   Proje oluşturduğunuzda, görüntü içeriği ardışık düzeni kaynak görüntüyü çalışma biçiminden sizin belirttiğiniz çıkış biçimine dönüştürür — bu görüntünün önceden çoğaltılmış alfa biçimine dönüştürülmesi içerir — ve sonuç projenin çıkış için kopyalanır. Dizin.

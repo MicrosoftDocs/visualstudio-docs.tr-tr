@@ -20,6 +20,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31121381"
 ---
 # <a name="idebugprocess2"></a>IDebugProcess2
 Bu arabirim, bir bağlantı noktası üzerinde çalışan bir işlemi temsil eder. Yerel bağlantı noktası, bağlantı noktası ise, `IDebugProcess2` genellikle yerel makinedeki fiziksel bir işlem temsil eder.  

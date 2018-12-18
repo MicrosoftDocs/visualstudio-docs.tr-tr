@@ -1,5 +1,5 @@
 ---
-title: Şerit XML | Microsoft Docs
+title: Şerit XML
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -26,79 +26,80 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 76527949bcfc5b3023ebd75fe15726b02938d39e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e5502ed118bf5b8bf622f18fd777889127e12aab
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50672458"
 ---
 # <a name="ribbon-xml"></a>Şerit XML
-  Şerit (XML) öğesi bir Şerit XML kullanarak özelleştirmenize olanak sağlar. Şerit (Görsel Tasarımcı) öğesi tarafından desteklenmeyen bir yolla Şerit'özelleştirmek istiyorsanız Şerit (XML) öğesini kullanın. Her bir öğeyle ne yapabileceğinizi karşılaştırması için bkz: [Şerite Genel Bakış](../vsto/ribbon-overview.md).  
+  Şerit (XML) öğesini Şerit XML kullanarak özelleştirmenize olanak sağlar. Şerit (Görsel Tasarımcı) öğesi tarafından desteklenmeyen bir biçimde Şerit özelleştirmek istiyorsanız Şerit (XML) öğesini kullanın. Her bir öğeyle neler yapabileceğinizi bir karşılaştırması için bkz [Şerite Genel Bakış](../vsto/Ribbon-overview.md).  
   
  [!INCLUDE[appliesto_ribbon](../vsto/includes/appliesto-ribbon-md.md)]  
   
-## <a name="adding-a-ribbon-xml-item-to-a-project"></a>Projeye Şerit (XML) öğesi ekleme  
- Ekleyebileceğiniz bir **Şerit (XML)** tüm Office projeden öğesine **Yeni Öğe Ekle** iletişim kutusu. Visual Studio, aşağıdaki dosyaları projenize otomatik olarak ekler:  
+## <a name="add-a-ribbon-xml-item-to-a-project"></a>Bir Şerit (XML) öğesini projeye ekleme  
+ Ekleyebileceğiniz bir **Ribbon (XML)** herhangi bir Office projesinden öğesine **Yeni Öğe Ekle** iletişim kutusu. Visual Studio, otomatik olarak aşağıdaki dosyaları projenize ekler:  
   
--   Şerit XML dosyası. Bu dosya, Şerit kullanıcı arabirimi (UI) tanımlar. Bu dosya, sekmeler, gruplar ve denetimler gibi kullanıcı Arabirimi öğeleri eklemek için kullanın. Ayrıntılar için bkz [Şerit XML dosya başvurusu](#RibbonDescriptorFile) bu konuda daha sonra.  
+- Bir Şerit XML dosyası. Bu dosya, Şerit kullanıcı arabirimini (UI) tanımlar. Sekmeler, gruplar ve denetimler gibi kullanıcı Arabirimi öğeleri eklemek için bu dosyayı kullanın. Ayrıntılar için bkz [Ribbon XML dosya başvurusu](#RibbonDescriptorFile) bu konuda.  
   
--   Şerit kod dosyası. Bu dosyayı içeren *Şerit sınıfı*. Bu sınıf için belirtilen ada sahip **Şerit (XML)** öğesi **Yeni Öğe Ekle** iletişim kutusu. Microsoft Office uygulamaları, özel Şerit yüklemek için bu sınıfın örneğini kullanın. Ayrıntılar için bkz [Şerit sınıfı başvurusu](#RibbonExtensionClass) bu konuda daha sonra.  
+- Bir Şerit kod dosyası. Bu dosyayı içeren *Şerit sınıfı*. Bu sınıf için belirttiğiniz ada sahip **Ribbon (XML)** öğesi **Yeni Öğe Ekle** iletişim kutusu. Microsoft Office uygulamaları, Şerit yüklemek için bu sınıfın bir örneği kullanın. Ayrıntılar için bkz [Şerit sınıf başvurusu](#RibbonExtensionClass) bu konuda.  
   
- Varsayılan olarak, bu dosyaları özel bir gruba eklemek **eklentileri** Şerit sekmesindedir.  
+  Varsayılan olarak, bu dosyaları için özel bir grup ekleme **eklentileri** Şerit sekmesi.  
   
-## <a name="displaying-the-custom-ribbon-in-a-microsoft-office-application"></a>Özel Şerit bir Microsoft Office uygulamasında görüntüleme  
- Eklediğiniz sonra bir **Şerit (XML)** öğesi projeniz için kod eklemelisiniz **ThisAddIn**, **ThisWorkbook**, veya **ThisDocument** sınıfı yöntemini geçersiz kılar ve Şerit XML sınıfını Office uygulamaya döndürür.  
+## <a name="display-the-custom-ribbon-in-a-microsoft-office-application"></a>Özel bir Microsoft Office uygulamasının şeridinde görüntüleme  
+ Siz ekledikten sonra bir **Ribbon (XML)** öğesi için kod projenize eklemelisiniz **ThisAddIn**, **ThisWorkbook**, veya **ThisDocument** sınıfı Bu geçersiz kılmaları `CreateRibbonExtensibilityObject` Office uygulamasına sınıf yöntemi ve Şerit XML döndürür.  
   
- Aşağıdaki kod örneğinde yöntemini geçersiz kılar ve MyRibbon adlı bir Şerit XML sınıf döndürür.  
+ Aşağıdaki kod örneği geçersiz kılmaları `CreateRibbonExtensibilityObject` adlandırılmış MyRibbon sınıf yöntemi ve bir Şerit XML döndürür.  
   
  [!code-csharp[Trin_Ribbon_Custom_Tab_XML#1](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab_XML_O12/ThisAddIn.cs#1)]
  [!code-vb[Trin_Ribbon_Custom_Tab_XML#1](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab_XML_O12/ThisAddIn.vb#1)]  
   
-## <a name="defining-the-behavior-of-the-custom-ribbon"></a>Özel Şerit davranışını tanımlama  
- Oluşturarak Şerit üzerindeki bir düğmeye tıklanması gibi kullanıcı eylemleri yanıt verebilirsiniz *geri arama yöntemleri*. Windows Forms denetimlerindeki olaylar geri arama yöntemleri benzer, ancak UI öğesinin XML bir öznitelik tarafından tanımlanır. Şerit sınıfında yöntemler yazmak ve bir denetim öznitelik değeri olarak aynı ada sahip yöntemini çağırır. Örneğin, bir kullanıcı Şerit üzerindeki düğmesine tıkladığında çağrılan bir geri çağırma yöntemi oluşturabilirsiniz. İki adımı, bir geri çağırma yöntemi oluşturmak için gereklidir:  
+## <a name="define-the-behavior-of-the-custom-ribbon"></a>Özel Şerit davranışını tanımlayın  
+ Oluşturarak Şeritte bir düğmeye tıklanması gibi kullanıcı eylemlerine yanıtlayabilir *geri çağırma yöntemleri*. Windows Forms denetimlerindeki olaylar geri çağırma yöntemleri benzer, ancak UI öğesinin bir öznitelik tarafından tanımlanır. Şerit sınıfında yöntemleri yazın ve bir denetim öznitelik değeri aynı ada sahip bir yöntemi çağırır. Örneğin, bir kullanıcı Şeritteki bir düğmeyi tıkladığında çağrılan bir geri çağırma yöntemi oluşturabilirsiniz. Bir geri çağırma yöntemi oluşturmak için iki adım gerekir:  
   
--   Bir geri çağırma yöntemi kodunuzda tanımlayan Şerit XML dosyasındaki bir denetim için bir öznitelik atayın.  
+-   Kodunuzda bir geri çağırma yöntemi tanımlayan Ribbon XML dosyasındaki bir denetim için bir öznitelik atayın.  
   
--   Geri çağırma yöntemi Şerit sınıfında tanımlayın.  
+-   Geri çağırma yöntemi, Şerit sınıfında tanımlayın.  
   
 > [!NOTE]  
->  Outlook için ek bir adım gereklidir. Daha fazla bilgi için bkz: [Outlook için Şerit özelleştirme](../vsto/customizing-a-ribbon-for-outlook.md).  
+>  Outlook için ek bir adım gereklidir. Daha fazla bilgi için [Outlook için Şerit özelleştirme](../vsto/customizing-a-ribbon-for-outlook.md).  
   
- Şerit'ten bir uygulamanın nasıl izlenecek yol için bkz: [izlenecek yol: Şerit XML kullanarak tarafından özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md).  
+ Şeritte bir uygulamanın nasıl oluşturulduğunu gösteren bir kılavuz için bkz. [izlenecek yol: Şerit XML kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md).  
   
-### <a name="assigning-callback-methods-to-controls"></a>Geri arama yöntemleri denetimlere atama  
- Şerit XML dosyasındaki bir denetim için bir geri çağırma yöntemi atamak için geri çağırma yöntemi türünü ve yöntemin adını belirten bir özniteliği ekleyin. Örneğin, aşağıdaki öğeyi sahip iki durumlu düğme tanımlayan bir **eylem anında** adlı geri çağırma yöntemi `OnToggleButton1`.  
+### <a name="assign-callback-methods-to-controls"></a>Geri çağırma yöntemleri denetimleri atama  
+ Ribbon XML dosyasındaki bir denetim için bir geri çağırma yöntemi atamak için geri çağırma yöntemi türünü ve yöntemin adını belirten bir özniteliği ekleyin. Örneğin, aşağıdaki öğe olan iki durumlu düğme tanımlar bir **onAction** adlı geri çağırma yöntemi `OnToggleButton1`.  
   
-```  
+```xml  
 <toggleButton id="toggleButton1" onAction="OnToggleButton1" />  
 ```  
   
- **Eylem anında** kullanıcı belirli bir denetim ile ilişkili olan ana görevi gerçekleştirdiğinde olarak adlandırılır. Örneğin, **eylem anında** kullanıcı düğmesini tıklattığında iki durumlu düğme geri arama yöntemi çağrılır.  
+ **onAction** kullanıcı belirli bir denetimle ilişkili ana görev yaptığında çağrılır. Örneğin, **onAction** iki durumlu bir düğmenin geri çağırma yöntemi, kullanıcı düğmeye tıkladığında çağrılır.  
   
- Öznitelikte belirttiğiniz yöntemi herhangi bir ad olabilir. Ancak, bu Şerit kod dosyasında tanımladığınız yöntemin adı eşleşmelidir.  
+ Öznitelik, belirttiğiniz yöntemi herhangi bir ad olabilir. Ancak, bu Şerit kod dosyasını tanımlayan yöntemin adı eşleşmelidir.  
   
- Farklı türlerde Şerit denetimleri atayabilirsiniz geri arama yöntemleri vardır. Her denetim için geri çağırma yöntemlerini tam bir listesi için teknik makalesine bakın [geliştiriciler (Bölüm 3 / 3) için Office (2007) Şerit kullanıcı arabirimi özelleştirme](http://msdn.microsoft.com/en-us/a16c7df5-93f3-4920-baa8-7b7290794c15).  
+ Farklı türlerde Şerit denetimleri atamak için geri çağırma yöntemleri vardır. Her denetim için geri çağırma yöntemleri tam listesi için teknik makaleye bakın [(Bölüm 3 / 3) geliştiriciler için Office (2007) Şerit kullanıcı arabirimini özelleştirme](/previous-versions/office/developer/office-2007/aa722523(v=office.12)).  
   
-###  <a name="CallBackMethods"></a> Geri arama yöntemleri tanımlama  
- Şerit kod dosyası Şerit sınıfındaki geri arama yöntemleri tanımlar. Bir geri çağırma yöntemi birkaç gereksinimlere sahiptir:  
+###  <a name="CallBackMethods"></a> Geri Çağırma yöntemlerini tanımlamak  
+ Şerit kod dosyasını Şerit sınıfında, geri çağırma yöntemleri tanımlar. Bir geri çağırma yöntemi, birkaç gereksinim vardır:  
   
--   Bu genel olarak bildirilmesi gerekir.  
+- Bu genel olarak bildirilmelidir.  
   
--   Şerit XML dosyasındaki bir denetime atanmış bir geri çağırma yöntemi adı adıyla eşleşmelidir.  
+- Ribbon XML dosyasındaki bir denetime atanmış bir geri çağırma yöntemi adını adının eşleşmesi gerekir.  
   
--   İmzası ilişkili Şerit denetimi için kullanılabilir geri çağırma yöntemi türü imza eşleşmesi gerekir.  
+- İmzası bir tür bir geri çağırma yöntemi, ilişkili Şerit denetimi için kullanılabilir imzayla eşleşmelidir.  
   
- Şerit denetimleri geri arama yöntemi imzalarının tam listesi için teknik makalesine bakın [geliştiriciler (Bölüm 3 / 3) için Office (2007) Şerit kullanıcı arabirimi özelleştirme](http://msdn.microsoft.com/en-us/a16c7df5-93f3-4920-baa8-7b7290794c15). Visual Studio Şerit kod dosyasında oluşturduğunuz geri arama yöntemleri için IntelliSense desteği sağlamaz. Bir geri çağırma yöntemi oluşturursanız, geçerli bir imzası eşleşmiyor, kod derlenir, ancak kullanıcı denetimi tıklattığında hiçbir şey olmaz.  
+  Şerit denetimleri için geri çağırma yöntem imzaları tam listesi için teknik makaleye bakın [(Bölüm 3 / 3) geliştiriciler için Office (2007) Şerit kullanıcı arabirimini özelleştirme](/previous-versions/office/developer/office-2007/aa722523(v=office.12)). Visual Studio, Şerit kod dosyasını oluşturma geri çağırma yöntemleri için IntelliSense desteği sağlamaz. Bir geri çağırma yöntemi oluşturursanız, geçerli bir imzası eşleşmiyor, kod derlenir, ancak hiçbir kullanıcı denetimi tıklattığında oluşur.  
   
- Tüm geri arama yöntemleri sahip bir <xref:Microsoft.Office.Core.IRibbonControl> denetimi temsil eden yönteminden parametresi. Birden çok denetim için aynı geri çağırma yöntemi yeniden kullanmak için bu parametreyi kullanın. Aşağıdaki kod örneğinde gösteren bir **eylem anında** bağlı olarak, kullanıcı denetimi tıklattığında farklı görevler gerçekleştiren geri çağırma yöntemi.  
+  Tüm geri çağırma yöntemleri bir <xref:Microsoft.Office.Core.IRibbonControl> yöntem denetimini temsil eden bir parametre. Bu parametre, birden çok denetim aynı geri çağırma yöntemini yeniden kullanabilirsiniz. Aşağıdaki kod örneğinde bir **onAction** bağlı olarak, kullanıcı denetimi tıklattığında farklı görevler gerçekleştiren bir geri çağırma yöntemi.  
   
- [!code-csharp[Trin_RibbonOutlookBasic#2](../vsto/codesnippet/CSharp/Trin_RibbonOutlookBasic/Ribbon1.cs#2)]
- [!code-vb[Trin_RibbonOutlookBasic#2](../vsto/codesnippet/VisualBasic/Trin_RibbonOutlookBasic/Ribbon1.vb#2)]  
+  [!code-csharp[Trin_RibbonOutlookBasic#2](../vsto/codesnippet/CSharp/Trin_RibbonOutlookBasic/Ribbon1.cs#2)]
+  [!code-vb[Trin_RibbonOutlookBasic#2](../vsto/codesnippet/VisualBasic/Trin_RibbonOutlookBasic/Ribbon1.vb#2)]  
   
-##  <a name="RibbonDescriptorFile"></a> Şerit XML dosya başvurusu  
- Şerit XML dosyasına, özel bir Şerit ekleme öğeleri ve öznitelikleri tarafından tanımlayabilirsiniz. Varsayılan olarak, aşağıdaki XML Şerit XML dosyası içeriyor.  
+##  <a name="RibbonDescriptorFile"></a> Şerit XML dosyası başvurusu  
+ Şerit öğe ekleme ve öznitelikleri için Ribbon XML dosyasındaki tanımlayabilirsiniz. Varsayılan olarak, aşağıdaki XML Ribbon XML dosyasındaki içerir.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="UTF-8"?>  
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnLoad">  
   <ribbon>  
@@ -113,41 +114,41 @@ ms.lasthandoff: 04/16/2018
 </customUI>  
 ```  
   
- Aşağıdaki tabloda Şerit XML dosyasının varsayılan öğeleri açıklanır.  
+ Aşağıdaki tabloda Ribbon XML dosyasındaki varsayılan öğeleri açıklar.  
   
 |Öğe|Açıklama|  
 |-------------|-----------------|  
-|**customUI**|Özel Şerit VSTO eklenti projesindeki temsil eder.|  
+|**Customuı**|Şerit VSTO eklenti projesinde temsil eder.|  
 |**Şerit**|Şerit temsil eder.|  
 |**Sekmeleri**|Şerit Sekmeleri kümesini temsil eder.|  
-|**Sekmesi**|Tek bir Şerit sekmesini temsil eder.|  
-|**Grup**|Şerit sekmesindeki denetimleri grubunu temsil eder.|  
+|**sekmesi**|Tek bir Şerit sekmesi temsil eder.|  
+|**Grup**|Şerit sekmesinde denetimlerin bir grubu temsil eder.|  
   
- Bu öğeleri görünümünü ve özel Şerit davranışını belirtin özniteliklere sahiptir. Aşağıdaki tabloda Şerit XML dosyasındaki varsayılan öznitelikleri açıklanmaktadır.  
+ Bu öğeleri görünümünü ve davranışını özel Şerit belirten öznitelikleri vardır. Aşağıdaki tabloda Ribbon XML dosyasındaki varsayılan öznitelikleri açıklar.  
   
-|Öznitelik|Üst öğesi|Açıklama|  
+|Öznitelik|Üst öğe|Açıklama|  
 |---------------|--------------------|-----------------|  
-|**Yüklendiğinde**|**customUI**|Uygulama Şerit yüklediğinde çağrılan bir yöntemi tanımlar.|  
-|**idMso**|**Sekmesi**|Şerit'i görüntülemek üzere yerleşik bir sekmeyi tanımlar.|  
+|**Yüklendiğinde**|**Customuı**|Şerit uygulama yüklendiğinde çağrılan bir yöntemi tanımlar.|  
+|**idMso**|**sekmesi**|Şeritte görüntülemek için yerleşik bir sekmeyi belirtir.|  
 |**id**|**Grup**|Grubu tanımlar.|  
-|**Etiket**|**Grup**|Görüntülenen metni grubunda belirtir.|  
+|**Etiket**|**Grup**|Grup üzerinde görüntülenen metni belirtir.|  
   
- Varsayılan öğeleri ve öznitelikleri Şerit XML dosyasındaki öğeleri ve kullanılabilir özniteliklerinin küçük bir alt kümesidir. Kullanılabilir öğeleri ve öznitelikleri tam listesi için teknik makalesine bakın [geliştiriciler (Kısım 2 / 3) için Office (2007) Şerit kullanıcı arabirimi özelleştirme](http://msdn.microsoft.com/en-us/6b904f55-525f-4520-9b81-a017db65657b).  
+ Varsayılan öğeler ve öznitelikler Ribbon XML dosyasındaki kullanılabilen öznitelikleri ve öğeleri küçük alt kümesidir. Kullanılabilir öğeler ve öznitelikler tam listesi için teknik makaleye bakın [(Kısım 2 / 3) geliştiriciler için Office (2007) Şerit kullanıcı arabirimini özelleştirme](/previous-versions/office/developer/office-2007/aa338199(v=office.12)).  
   
-##  <a name="RibbonExtensionClass"></a> Şerit sınıfı başvurusu  
- Visual Studio Şerit sınıfı Şerit kod dosyasında oluşturur. Şerit üzerindeki denetimleri için geri çağırma yöntemleri bu sınıfına ekleyin. Bu sınıf uygulayan <xref:Microsoft.Office.Core.IRibbonExtensibility> arabirimi.  
+##  <a name="RibbonExtensionClass"></a> Şerit sınıf başvurusu  
+ Visual Studio Şerit sınıfı Şerit kod dosyasını oluşturur. Bu sınıf için Şerit üzerindeki denetimleri için geri çağırma yöntemleri ekleyin. Bu sınıfın uyguladığı <xref:Microsoft.Office.Core.IRibbonExtensibility> arabirimi.  
   
- Aşağıdaki tabloda bu sınıftaki varsayılan yöntemleri açıklar.  
+ Aşağıdaki tabloda, bu sınıf varsayılan yöntemleri açıklar.  
   
 |Yöntem|Açıklama|  
 |------------|-----------------|  
-|`GetCustomUI`|Şerit XML dosyasının içeriğini döndürür. Microsoft Office uygulamaları, özel bir Şerit kullanıcı arabiriminin tanımlayan bir XML dizesini elde etmek için bu yöntemi çağırır. Bu yöntem uygulayan <xref:Microsoft.Office.Core.IRibbonExtensibility.GetCustomUI%2A> yöntemi. **Not:** `GetCustomUI` sadece Şerit XML dosyasının; içeriğini döndürmek için uygulanması VSTO Eklentinizi başlatmak için kullanılmamalıdır.   Özellikle, iletişim kutularını veya diğer windows görüntülemeye denemelisiniz değil, `GetCustomUI` uygulaması. Aksi takdirde, özel Şerit doğru çalışmayabilir. VSTO eklentinizi başlatır kodu çalıştırmak varsa, kodu ekleyin `ThisAddIn_Startup` olay işleyicisi.|  
-|`OnLoad`|Atar <xref:Microsoft.Office.Core.IRibbonControl> parametresi `ribbon` alan. Özel Şerit yüklediğinizde Microsoft Office uygulamaları bu yöntemi çağırın. Özel Şerit dinamik olarak güncelleştirmek için bu alanı kullanabilirsiniz. Daha fazla bilgi için teknik makalesine bakın [geliştiriciler (Kısım 1 / 3) için Office (2007) Şerit kullanıcı arabirimi özelleştirme](http://msdn.microsoft.com/en-us/a4fd6d18-d4a8-4e64-bd89-f437208573d3).|  
-|`GetResourceText`|Tarafından çağrılır `GetCustomUI` Şerit XML dosyasının içeriğini elde etmek için yöntemi.|  
+|`GetCustomUI`|Şerit XML dosyasının içeriğini döndürür. Microsoft Office uygulamaları, Şerit kullanıcı arabirimini tanımlayan bir XML dizesi elde etmek için bu yöntemi çağırır. Bu yöntem <xref:Microsoft.Office.Core.IRibbonExtensibility.GetCustomUI%2A> yöntemi. **Not:** `GetCustomUI` yalnızca Ribbon XML dosyasındaki; içeriğini döndürmek için uygulanması gereken VSTO eklenti başlatmak için kullanılmamalıdır. Özellikle, görünen iletişim kutuları veya diğer windows çalışmamanız gerekir, `GetCustomUI` uygulaması. Aksi takdirde, özel Şerit düzgün çalışmayabilir. VSTO eklenti başlatan kodu çalıştırmak varsa, kodu ekleyin `ThisAddIn_Startup` olay işleyicisi.|  
+|`OnLoad`|Atar <xref:Microsoft.Office.Core.IRibbonControl> parametresi `Ribbon` alan. Şerit'i yüklediğinizde, Microsoft Office uygulamaları bu yöntemi çağırın. Özel Şerit dinamik olarak güncelleştirmek için bu alanı kullanabilirsiniz. Daha fazla bilgi için teknik makaleye bakın [(Kısım 1 / 3) geliştiriciler için Office (2007) Şerit kullanıcı arabirimini özelleştirme](/previous-versions/office/developer/office-2007/aa338202(v=office.12)).|  
+|`GetResourceText`|Çağıran `GetCustomUI` Ribbon XML dosyasının içeriğini almak için yöntemi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Şerite Genel Bakış](../vsto/ribbon-overview.md)   
  [İzlenecek yol: Şerit XML kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md)   
- [Office Kullanıcı Arabirimini Özelleştirme](../vsto/office-ui-customization.md)  
+ [Office kullanıcı arabirimini özelleştirme](../vsto/office-ui-customization.md)  
   
   

@@ -21,6 +21,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31144443"
 ---
 # <a name="templategroupid-element-visual-studio-templates"></a>TemplateGroupID Öğesi (Visual Studio Şablonları)
 Ne tür bir proje öğesi şablonları kategoride görüneceğini belirtir. Bu öğe önemlidir [ShowByDefault (Visual Studio şablonları)](../extensibility/showbydefault-visual-studio-templates.md) ayarlanır `false`. Zaman [ShowByDefault (Visual Studio şablonları)](../extensibility/showbydefault-visual-studio-templates.md) ayarlanır `true`, bir öğe şablonu tüm proje türlerinde kullanılabilir olur.  
@@ -58,7 +59,7 @@ Ne tür bir proje öğesi şablonları kategoride görüneceğini belirtir. Bu �
 ## <a name="remarks"></a>Açıklamalar  
  `TemplateGroupID` bir öğedir.  
   
- Değeri `TemplateGroupID` öğe proje sistemi kaydı ile birlikte kullanılır (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\\*\<sürüm numarası >*\Projects\\) görünür filtre şablonlarına **Yeni Öğe Ekle** iletişim kutusu.  
+ Değeri `TemplateGroupID` öğe proje sistemi kaydı ile birlikte kullanılır (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\\*\<sürüm numarası >* \Projects\\) görünür filtre şablonlarına **Yeni Öğe Ekle** iletişim kutusu.  
   
 |Visual C++ değeri|Açıklama|  
 |------------------------|-------------|  

@@ -11,45 +11,47 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: b9ffdf12daa93da9a5f7190866682bc60401dbcc
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 6f9abc191bdecce244581e7427116b05427de215
+ms.sourcegitcommit: 768d7877fe826737bafdac6c94c43ef70bf45076
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50966745"
 ---
 # <a name="properties-of-swimlanes"></a>Kulvarların Özellikleri
-Bir diyagrama kulvarları ekleyebilirsiniz. Kulvarları diyagram dikey veya yatay alanlarına bölün. İçinde kulvarları görüntülenecek diğer şekiller tanımlayabilirsiniz. Daha fazla bilgi için bkz: [bir etki alanına özgü dil tanımlamak nasıl](../modeling/how-to-define-a-domain-specific-language.md). Bu özellikleri kullanma hakkında daha fazla bilgi için bkz: [özelleştirme ve bir etki alanına özgü dil genişletme](../modeling/customizing-and-extending-a-domain-specific-language.md).
+Bir diyagrama Kulvarlar ekleyebilirsiniz. Kulvarlar dikey veya yatay alana bir diyagram bölün. Diğer şekiller Kulvarlar içinde görüntülenecek tanımlayabilirsiniz. Daha fazla bilgi için [etki alanına özgü bir dili tanımlama nasıl](../modeling/how-to-define-a-domain-specific-language.md). Bu özellikler kullanma hakkında daha fazla bilgi için bkz. [bir etki alanına özgü dili özelleştirme ve genişletme](../modeling/customizing-and-extending-a-domain-specific-language.md).
 
- Kulvarları aşağıdaki tabloda listelenen özellikleri vardır.
+ Kulvarlar aşağıdaki tabloda listelenen özelliklere sahiptir.
 
 |Özellik|Açıklama|Varsayılan|
-|--------------|-----------------|-------------|
-|Gövde dolgu rengi|Kulvar gövdesi için dolgu rengi.|Beyaz|
-|Üstbilgi dolgu rengi|Kulvar üstbilgisinin dolgu rengi.|Koyu gri|
+|-|-|-|
+|Gövde dolgu rengi|Kulvar gövdesinin dolgu rengi.|Beyaz|
+|Başlık dolgu rengi|Kulvar üst bilgisinin dolgu rengi.|Koyu gri|
 |Ayırıcı rengi|Ayırıcı çizginin rengi.|LightGray|
-|Ayırıcı çizgi stili|Ayırıcı çizgi stilini (`Solid`, `Dash`, `Dot`, `DashDot`, `DashDotDot`, veya `Custom`).|`Dash`|
-|Ayırıcı kalınlığı|İnç ayırıcı çizgi kalınlığı.|0.03125|
-|Metin rengi|Bu Kulvar ile ilişkili metin dekoratörler için kullanılan rengi.|Siyah|
-|Erişim değiştiricisi|Sınıfının erişim düzeyini (`public` veya `internal`).|Ortak|
-|Özel Öznitelikler|Bu Kulvar oluşturulan kod sınıfı öznitelikler eklemek için kullanılır.|\<yok >|
-|Çift oluşturur türetilmiş|Varsa `True`, bir taban sınıf ve bir parçalı sınıf (geçersiz kılmaları özelleştirmeyi desteklemek için) oluşturulur. Daha fazla bilgi için bkz: [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
-|Özel bir oluşturucuya sahip|Varsa `True`, özel bir oluşturucu kaynak kodunda sağlanacaktır. Daha fazla bilgi için bkz: [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
-|Devralma değiştiricisi|Kulvar oluşturulan kaynak kodu sınıf devralma türünü açıklar (`none`, `abstract` veya `sealed`).|yok|
-|Temel Kulvar|Bu Kulvar temel sınıf.|(hiçbiri)|
-|Ad|Bu Kulvar adı.|Geçerli adı|
-|Ad Alanı|Bu Kulvar ile bağlantılı olan ad alanı.|Geçerli ad alanı|
-|Araç İpucu türü|Araç İpucu nasıl tanımlanır (`fixed`, `variable`, veya `none`). Varsa `fixed`, ardından değeri `Fixed Tooltip Text` özelliği kullanılır; varsa `variable`, araç ipucu özel kod içinde tanımlanan daha sonra.|\<yok >|
-|Notlar|Bu Kulvar ile ilişkili resmi olmayan notları.|\<yok >|
+|Ayırıcı çizgi stili|Ayırıcı çizginin stili (`Solid`, `Dash`, `Dot`, `DashDot`, `DashDotDot`, veya `Custom`).|`Dash`|
+|Ayırıcı kalınlığı|İnç ayırıcı çizginin kalınlığı.|0.03125|
+|Metin rengi|Bu kulvarın ile ilişkili metin dekoratörleri için kullanılan renk.|Siyah|
+|Erişim değiştiricisi|Sınıf erişim düzeyini (`public` veya `internal`).|Ortak|
+|Özel Öznitelikler|Bu kulvarın oluşturulan kod sınıfı öznitelikler eklemek için kullanılır.|\<yok >|
+|Çift oluşturur türetilmiş|Varsa `True`, hem temel sınıf hem de (geçersiz kılmalar aracılığıyla özelleştirmeyi desteklemek için) bir kısmi sınıf oluşturulur. Daha fazla bilgi için [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
+|Özel oluşturucu vardır.|Varsa `True`, kaynak kodunda özel bir oluşturucu sağlanacaktır. Daha fazla bilgi için [geçersiz kılma ve oluşturulan sınıflar genişletme](../modeling/overriding-and-extending-the-generated-classes.md).|False|
+|Devralma değiştiricisi|Kulvar oluşturulan kaynak kodu sınıf devralma türü açıklar (`none`, `abstract` veya `sealed`).|yok|
+|Temel Kulvar|Bu kulvarın temel sınıf.|(hiçbiri)|
+|Ad|Bu kulvarın adı.|Geçerli ad|
+|Ad Alanı|Bu kulvarın ile bağlantılı olan ad alanı.|Geçerli ad alanı|
+|Araç İpucu türü|Araç İpucu nasıl tanımlandığını (`fixed`, `variable`, veya `none`). Varsa `fixed`, ardından değerini `Fixed Tooltip Text` özelliği kullanılır; varsa `variable`, sonra araç ipucu özel kodda tanımlanır.|\<yok >|
+|Notlar|Bu kulvarın ile ilişkili resmi olmayan notlar.|\<yok >|
 |Hizalama|Yatay veya dikey hizalama.|Dikey|
-|İlk yükseklik|İnç bu Kulvar ilk yüksekliği. Yalnızca yatay kulvarları uygulanabilir.|0|
-|İlk genişliği|İnç bu Kulvar başlangıç genişliği. Yalnızca dikey kulvarları uygulanabilir.|0|
-|Metin rengi gösterir|Varsa `True`, kullanıcı bir Kulvar rengini oluşturulan Tasarımcısı'nda ayarlayabilirsiniz. Bunu ayarlamak için Kulvar şekli sağ tıklatın ve **eklemek açığa**.|False|
-|Açıklama|Oluşturulan Tasarımcısı belgelemek için kullanılır.|\<yok >|
-|Görünen ad|Bu Kulvar sınıfa başvurmak için oluşturulan Tasarımcısı'nda görüntülenen ad.|\<yok >|
+|İlk yükseklik|Bu kulvarın inç cinsinden başlangıç yüksekliği. Yalnızca yatay Kulvarlar için geçerlidir.|0|
+|Başlangıç genişliği|Bu kulvarın inç cinsinden başlangıç genişliği. Yalnızca dikey Kulvarlar için geçerlidir.|0|
+|Kullanıma sunan metin rengi|Varsa `True`, kullanıcı oluşturulan tasarımcıdaki bir Kulvar rengini ayarlayabilirsiniz. Bunu ayarlamak için Kulvar şekle sağ tıklayın ve **ekleme kullanıma sunulan**.|False|
+|Açıklama|Oluşturulan tasarımcının belge için kullanılır.|\<yok >|
+|Görünen ad|Bu kulvarın sınıfa başvurmak için oluşturulan tasarımcıda görüntülenecek ad.|\<yok >|
 |Sabit araç ipucu metni|Sabit bir araç ipucu için kullanılan metin.|\<yok >|
-|Yardım anahtar sözcüğü|Bu Kulvar için F1 Yardımı dizin oluşturmak için kullanılan anahtar sözcük.|\<yok >|
+|Yardım anahtar sözcüğü|Bu kulvarın için F1 Yardımı dizini oluşturmak için kullanılan anahtar sözcüğü.|\<yok >|
 
 ## <a name="see-also"></a>Ayrıca Bkz.
 
-- [Etki alanına özgü dil araçları sözlüğü](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)
+- [Etki alanına özgü dil araçları sözlüğü](https://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

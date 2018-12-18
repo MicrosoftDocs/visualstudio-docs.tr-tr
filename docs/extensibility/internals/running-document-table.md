@@ -22,6 +22,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31134106"
 ---
 # <a name="running-document-table"></a>Çalışan belge tablosu
 IDE çalışan belge tablosu (RDT) olarak adlandırılan bir iç yapısındaki tüm açık belgelerin listesini tutar. Bu liste, bellekte olup bu belgeleri şu anda düzenlenmekte olan bağımsız olarak tüm açık belgeleri içerir. Kalıcı, dosyaları bir proje veya ana proje dosyası (örneğin, bir .vcxproj) dahil olmak üzere herhangi bir öğeyi belgedir.  

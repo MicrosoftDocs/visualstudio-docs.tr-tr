@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla belgeleri kapatma | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla belgeleri kapatma'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,21 +16,22 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 2cfe248dddfa1e176ea3ebc051863461db5dd5ec
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9a846aded5d24f84fdaeac79a1bad6c61a3f5570
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35257780"
 ---
-# <a name="how-to-programmatically-close-documents"></a>Nasıl yapılır: Program Aracılığıyla Belgeleri Kapatma
+# <a name="how-to-programmatically-close-documents"></a>Nasıl yapılır: program aracılığıyla belgeleri kapatma
   Etkin belgeyi Kapat veya kapatmak için bir belge belirtebilirsiniz.  
   
  [!INCLUDE[appliesto_wdalldocapp](../vsto/includes/appliesto-wdalldocapp-md.md)]  
   
-## <a name="closing-the-active-document"></a>Etkin belgeyi kapatma  
+## <a name="close-the-active-document"></a>Etkin belgeyi Kapat  
  Etkin belgeyi kapatmak için iki yordam vardır: biri belge düzeyi özelleştirmeleri ve biri VSTO eklentileri için.  
   
-#### <a name="to-close-the-active-document-in-a-document-level-customization"></a>Belge düzeyi özelleştirmelerinde etkin belgeyi kapatmak için  
+### <a name="to-close-the-active-document-in-a-document-level-customization"></a>Belge düzeyi özelleştirmelerinde etkin belgeyi kapatmak için  
   
 1.  Çağrı <xref:Microsoft.Office.Tools.Word.Document.Close%2A> yöntemi `ThisDocument` özelleştirme ile ilişkilendirilmiş belgeyi kapatmak için projenizdeki sınıfı. Aşağıdaki kod örneğini kullanmak için çalıştırın `ThisDocument` sınıfı.  
   
@@ -40,7 +41,7 @@ ms.lasthandoff: 04/16/2018
      [!code-vb[Trin_VstcoreWordAutomation#3](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#3)]
      [!code-csharp[Trin_VstcoreWordAutomation#3](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#3)]  
   
-#### <a name="to-close-the-active-document-in-a-vsto-add-in"></a>Bir VSTO eklenti etkin belgede kapatmak için  
+### <a name="to-close-the-active-document-in-a-vsto-add-in"></a>Bir VSTO eklenti etkin belgede kapatmak için  
   
 1.  Çağrı <xref:Microsoft.Office.Interop.Word._Document.Close%2A> yöntemi <xref:Microsoft.Office.Interop.Word._Application.ActiveDocument%2A> özelliği etkin belgeyi kapat. Aşağıdaki kod örneğini kullanmak için çalıştırın `ThisAddIn` projenizdeki sınıfı.  
   
@@ -50,10 +51,10 @@ ms.lasthandoff: 04/16/2018
      [!code-vb[Trin_VstcoreWordAutomationAddIn#3](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationAddIn/ThisAddIn.vb#3)]
      [!code-csharp[Trin_VstcoreWordAutomationAddIn#3](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationAddIn/ThisAddIn.cs#3)]  
   
-## <a name="closing-a-document-that-you-specify-by-name"></a>Belirttiğiniz bir belgeyi ada göre kapatma  
+## <a name="close-a-document-that-you-specify-by-name"></a>Ada göre belirttiğiniz bir belgeyi Kapat  
  Ada göre belirttiğiniz bir belgeyi Kapat şekilde VSTO eklentileri ve belge düzeyi özelleştirmeleri ile aynıdır.  
   
-#### <a name="to-close-a-document-that-you-specify-by-name"></a>Ada göre belirttiğiniz bir belgeyi kapatmak için  
+### <a name="to-close-a-document-that-you-specify-by-name"></a>Ada göre belirttiğiniz bir belgeyi kapatmak için  
   
 1.  Bağımsız değişken olarak belge adı belirtin <xref:Microsoft.Office.Interop.Word._Application.Documents%2A> koleksiyonu ve ardından arama <xref:Microsoft.Office.Interop.Word._Document.Close%2A> yöntemi. Aşağıdaki kod örneği bir belge adlı varsayar **NewDocument** Word'de açıktır.  
   
@@ -63,10 +64,10 @@ ms.lasthandoff: 04/16/2018
      [!code-vb[Trin_VstcoreWordAutomation#4](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#4)]
      [!code-csharp[Trin_VstcoreWordAutomation#4](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#4)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: varolan belgeleri program aracılığıyla açma](../vsto/how-to-programmatically-open-existing-documents.md)   
  [Nasıl yapılır: program aracılığıyla belgeleri kaydetme](../vsto/how-to-programmatically-save-documents.md)   
  [Konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md)   
  [Konak denetimlerinin ve konak öğelerinin programlama sınırlamaları](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)   
- [Office Çözümlerinde İsteğe Bağlı Parametreler](../vsto/optional-parameters-in-office-solutions.md)  
+ [Office çözümlerinde isteğe bağlı parametreler](../vsto/optional-parameters-in-office-solutions.md)  
   

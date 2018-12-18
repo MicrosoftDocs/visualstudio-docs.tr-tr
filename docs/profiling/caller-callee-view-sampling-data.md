@@ -13,13 +13,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c04c3d6e9df1bc761fdbcd3e78a5e43ab3efd1f2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9b9b740689175f91f4bc69396121da0bed336532
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34548716"
 ---
-# <a name="caller--callee-view---sampling-data"></a>Arayan / Aranan görünümü - örnekleme verileri
+# <a name="callercallee-view---sampling-data"></a>Arayan/Aranan görünümü - örnekleme verileri
 Arayan/Aranan görünümü seçili işlev ve üst ve alt işlevleri için profil bilgilerini görüntüler. Arayan/Aranan görünümü üç kılavuzları içerir.  
   
  **Geçerli işlevi** Orta Kılavuz ve bunun görüntülenen bilgi seçili işlevi için profil oluşturmayı gösterir. Tüm örneklenen işlev çağrıları değerlerini içerir.  
@@ -48,7 +49,7 @@ Arayan/Aranan görünümü seçili işlev ve üst ve alt işlevleri için profil
 |**Özel örnekleri**|-Bu işlev doğrudan yürütülürken için geçerli işlevi, çalışmasını profil örneklerin sayısını toplanan; diğer bir deyişle, bu işlev çağrı yığını en üstünde zaman oluştu. Bu işlev, alt işlevleri yürütülürken toplanan örnek özel sayılar sayılmaz.<br />-Çağıran işlev için bu işlev geçerli işlevi çağrıldığında, toplanan özel geçerli işlevi örnek sayısı.<br />-Çağrılan işlev için geçerli işlevi bu işlev çağrıldığında toplanmış olan bir özel kullanım örnekleri bu işlevin sayısı.|  
 |**Özel örnekleri %**|Profil çalıştıran tüm örneklerini yüzdesi bu işlev özel örnekleri yoktu.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Arayan/Aranan görünümü - .NET bellek örnekleme verileri](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
- [Arayan/Aranan görünümü - NET bellek izleme verileri](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
+ [Arayan/Aranan görünümü - .NET bellek izleme verileri](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
  [Arayan/Aranan görünümü - izleme verileri](../profiling/caller-callee-view-instrumentation-data.md)

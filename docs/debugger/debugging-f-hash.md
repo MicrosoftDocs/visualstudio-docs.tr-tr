@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31473796"
 ---
 # <a name="debugging-f"></a>F# Hata Ayıklama
 F # hata ayıklama birkaç istisna dışında herhangi bir yönetilen dil hata ayıklama için benzer:  

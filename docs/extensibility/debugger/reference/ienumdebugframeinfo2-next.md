@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 87e6010a99a52168dfab22dd3f21d907885b15a8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f1e5cd32e9ed7a82b82dde737438048be00fdeb4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49833921"
 ---
 # <a name="ienumdebugframeinfo2next"></a>IEnumDebugFrameInfo2::Next
-Numaralandırma içinden öğeleri sonraki kümesini döndürür.  
+Sabit listesinden alınmış sonraki öğe kümesini döndürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,16 +45,16 @@ int Next(
   
 #### <a name="parameters"></a>Parametreler  
  `celt`  
- [in] Alınacak öğe sayısı. Ayrıca en büyük boyutunu belirtir `rgelt` dizi.  
+ [in] Alınacak öğelerin sayısı. Ayrıca en büyük boyutunu belirtir `rgelt` dizisi.  
   
  `rgelt`  
- [içinde out] Dizi [FRAMEINFO](../../../extensibility/debugger/reference/frameinfo.md) doldurulacak öğeleri.  
+ [out içinde] Dizi [FRAMEINFO](../../../extensibility/debugger/reference/frameinfo.md) doldurulacak öğeleri.  
   
  `pceltFetched`  
  [out] Gerçekte döndürülen öğe sayısını döndürür `rgelt`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` İstenen öğe sayısından daha az döndürülebilen; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` istenen öğelerin sayısından daha az döndürülebilen; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IEnumDebugFrameInfo2](../../../extensibility/debugger/reference/ienumdebugframeinfo2.md)   

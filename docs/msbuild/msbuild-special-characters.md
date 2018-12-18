@@ -14,30 +14,31 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5c1a2f67204fd6df7c8eb12ce5f13e8d1f4ec29d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: aa1e52e61f4003a9495e1bff5bd64e4edc40a323
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39078660"
 ---
-# <a name="msbuild-special-characters"></a>MSBuild Özel Karakterleri
-[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] bazı karakterler belirli bağlamlarda özel kullanımı için ayırır. Bunları tam anlamıyla Bunlar ayrılmış olan bağlamda kullanmak istiyorsanız, bu tür karakterlerinden Çık yeterlidir. Örneğin, yalnızca özel anlamı bir yıldız işareti olan `Include` ve `Exclude` öznitelikleri öğesi tanımının ve çağrılarında `CreateItem`. Bu içeriklerden birinde bir yıldız işareti olarak görünmesi için bir yıldız işareti istiyorsanız, kaçış gerekir. Her bağlamda, yalnızca görünmesini istediğiniz yere yıldız işareti girin.  
+# <a name="msbuild-special-characters"></a>MSBuild özel karakterleri
+[!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] belirli bağlamlarda özel kullanım için bazı karakterler ayırır. Bunları tam anlamıyla ayrılmış oldukları bağlamda kullanmak istiyorsanız bu tür karakter kaçış yeterlidir. Örneğin, bir yıldız işareti yalnızca özel anlamı vardır `Include` ve `Exclude` öznitelikleri bir öğe tanımının ve yapılan çağrıda `CreateItem`. Bu bağlamı birinde bir yıldız işareti olarak görünmesi için bir yıldız işareti istiyorsanız, atlatmak gerekir. Diğer her bir bağlam içinde görünmesini istediğiniz yere yıldız yazmanız yeterlidir.  
   
- Bir özel karakter kaçınmak için sözdizimi % kullanın*xx*, burada *xx* karakter ASCII onaltılı değerini temsil eder. Daha fazla bilgi için bkz: [nasıl yapılır: MSBuild kaçış özel karakterleri](../msbuild/how-to-escape-special-characters-in-msbuild.md).  
+ Bir özel karakter kaçış için söz dizimi % kullanın\<xx >, burada \<xx > karakter ASCII onaltılık değerini temsil eder. Daha fazla bilgi için [nasıl yapılır: MSBuild özel karakterleri kaçış](../msbuild/how-to-escape-special-characters-in-msbuild.md).  
   
-## <a name="special-characters"></a>Özel Karakterler  
+## <a name="special-characters"></a>Özel karakterler  
  Aşağıdaki tabloda [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] özel karakterler:  
   
 |**Karakter**|**ASCII**|**Ayrılmış kullanım**|  
 |-------------------|---------------|------------------------|  
 |%|%25|Meta veri başvurma|  
-|$|%24|Özellikler başvurma|  
+|$|%24|Başvuru özellikleri|  
 |@|%40|Başvuru öğesi listeleri|  
-|'|%27|Koşullar ve diğer ifadeleri|  
-|;|% 3B|Liste ayırıcısı|  
+|'|%27|Koşullar ve diğer ifadeler|  
+|;|% 3B|Liste ayırıcı|  
 |?|% 3F|Dosya adlarında joker karakter `Include` ve `Exclude` öznitelikleri|  
 |*|%2A|Dosya adlarında kullanmak için joker karakter `Include` ve `Exclude` öznitelikleri|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Gelişmiş kavramlar](../msbuild/msbuild-advanced-concepts.md)   
  [Öğeleri](../msbuild/msbuild-items.md)

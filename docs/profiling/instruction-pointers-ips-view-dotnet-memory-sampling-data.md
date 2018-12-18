@@ -12,11 +12,12 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: 34d06b3223b6c0bea059c333bd107068fd0adcee
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 3b3d0d0334ed8073a125d8b2c435f8e5d58299d4
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844878"
 ---
 # <a name="instruction-pointers-ips-view---net-memory-sampling-data"></a>Yönerge işaretçileri (IP) görünümü - .NET bellek örnekleme verileri
 Profil oluşturma çalışması sırasında bellek tahsis derleme yönergeleri örnekleme yöntemini kullanarak toplanan .NET bellek ayırma profil oluşturma verileri IP'leri görünümünü listeler. Görünümün sütunlarını ayırmaları sayısı ve boyutu da listeler.  
@@ -43,5 +44,5 @@ Profil oluşturma çalışması sırasında bellek tahsis derleme yönergeleri �
 |**Özel bayt sayısı**|Profil çalışmasını ayrılan belleğin bayt sayısı yönergesi tarafından ayrılan.|  
 |**Özel bayt %**|Yönerge tarafından ayrılan tüm profil çalıştırmak ayrılan belleği bayt yüzdesi.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Yönerge İşaretçileri (IP) Görünümü](../profiling/instruction-pointers-ips-view-sampling-data.md)

@@ -1,0 +1,1 @@
+genel bütünleştirilmiş kod önbelleği (GAC)

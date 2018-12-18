@@ -1,5 +1,5 @@
 ---
-title: m_stateObject alan | Microsoft Docs
+title: m_stateObject alanı | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,20 +13,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 79313460d380b2b505f6fa75f35351811ddaa470
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4d33879ca8aaaba08288f9e16d54ab462d92f67b
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231323"
 ---
-# <a name="mstateobject-field"></a>m_stateObject alan
-Eylem kullanacağı verisini temsil eden bir nesne.  
+# <a name="mstateobject-field"></a>m_stateObject alanı
+Eylem kullanacağı veri temsil eden bir nesne.  
   
  **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Derleme:** mscorlib (içinde mscorlib.dll)  
+ **Bütünleştirilmiş kod:** mscorlib (içinde *mscorlib.dll*)  
   
- İç bu üye .NET Framework'teki erişemediği için aşağıdaki söz dizimini ortak Ara dile (CIL) sağlanır.  
+ .NET Framework'den bu iç üye erişemediği için aşağıdaki söz dizimini ortak Ara dil (CIL) sağlanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -35,7 +36,7 @@ Eylem kullanacağı verisini temsil eden bir nesne.
 ```  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu `state` parametresinde <xref:System.Threading.Tasks.Task.%23ctor%2A> Oluşturucusu. Ayrıca Yedekleme alanı için olan <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=fullName> özelliği.  
+ Bu `state` parametresinde <xref:System.Threading.Tasks.Task.%23ctor%2A> Oluşturucusu. Ayrıca bir destek alanı olan <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=fullName> özelliği.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Task sınıfı](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Görev sınıfı](../../extensibility/debugger/task-class-internal-members.md)

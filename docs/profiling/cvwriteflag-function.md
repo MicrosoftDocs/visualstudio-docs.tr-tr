@@ -20,18 +20,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 654f2db738648409f015e84015996b9e9696800f
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 371be943dc062c5c3b5aac7f59493aa5f4f53002
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49897157"
 ---
-# <a name="cvwriteflag-function"></a>CvWriteFlag İşlevi
-Bir bayrak eşzamanlılık görselleştiricisi izleme dosyasına yazar.  
+# <a name="cvwriteflag-function"></a>CvWriteFlag işlevi
+Bayrak eşzamanlılık görselleştiricisi izleme dosyasına yazar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```C  
 HRESULT CvWriteFlagExW(  
     _In_reads_bytes_(16) PCV_MARKERSERIES pMarkerSeries,  
     _In_ CV_IMPORTANCE level,  
@@ -65,7 +66,7 @@ HRESULT CvWriteFlagExVA(
   
 #### <a name="parameters"></a>Parametreler  
  `argList`  
- Bağımsız değişkenler listesi.  
+ Bağımsız değişken listesi.  
   
  `category`  
  Kategori.  
@@ -79,15 +80,15 @@ HRESULT CvWriteFlagExVA(
  `pMessage`  
  İleti biçimi dizesi. NULL olamaz.  
   
-## <a name="return-value"></a>Dönüş Değeri  
- İletiyi başarıyla yazıldığında S_OK. Hata kodu vardı herhangi bir hata durumunda. Hata koşulu denetlemek için başarılı/başarısız makroları kullanın.  
+## <a name="return-value"></a>Dönüş değeri  
+ İletinin başarılı bir şekilde yazıldığında S_OK. Hata kodu: var olan herhangi bir hata durumunda. Hata koşulu denetleyen için başarılı/başarısız makroları kullanın.  
   
 ## <a name="requirements"></a>Gereksinimler  
- **Başlık:** cvmarkers.h  
+ **Başlık:** *cvmarkers.h*  
   
  **Unicode:** CvWriteFlagExW, CvWriteFlagExVW  
   
- **ANSI:** CvWriteFlagExA, CvWriteFlagExVA  
+ <strong>ANSI:</strong>CvWriteFlagExA, CvWriteFlagExVA  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [C++ Kitaplık Başvurusu](../profiling/cpp-library-reference.md)

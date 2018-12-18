@@ -14,18 +14,19 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2c940319cd0ce3204f6dd9bb62e731de49b8baac
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: fd181bb7daca21ff263dcb7989a0aecbef3ed278
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39081702"
 ---
 # <a name="about-file-name-extensions"></a>Dosya adı uzantıları hakkında
-Dosya uzantısına sahip bir VSPackage kaydederken bunu bir sürümü ile ilişkilendirmeniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu önemli IF bundan daha yüksek bir sürümü olan [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bir bilgisayarda yüklü.  
+VSPackage dosya uzantısına kaydolduğunuzda, bunu bir sürümü ile ilişkilendirirsiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Bu sürümü, birden çok önemli ise, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] bir bilgisayarda yüklü.  
   
- Dosya uzantıları VSPackages için ilişkili programlı tanımlayıcısına (ProgID) işaret eden varsayılan bir değerle HKEY_CLASSES_ROOT anahtarı altında kaydedilir.  
+ Vspackage'lar için dosya uzantıları altında kayıtlı **HKEY_CLASSES_ROOT** varsayılan değerle ilişkili program tanımlayıcısı (ProgID) için işaret eden bir anahtar.  
   
- .Vcproj dosya uzantısı için kayıt bilgilerinin bir örnek verilmiştir:  
+ Kayıt bilgileri için aşağıdaki örnekte *.vcproj* dosya uzantısı:  
   
 ```  
 HKEY_CLASSES_ROOT\  
@@ -33,10 +34,10 @@ HKEY_CLASSES_ROOT\
       (default)=" VisualStudio.vcproj.8.0"   
 ```  
   
- İle ilişkili dosyalar [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] sürümü tutulan ProgID gibi olmalıdır `VisualStudio.vcproj.8.0`yan yana yüklemeler ürün sürümleri arasında dosya uzantısı ilişkilendirmeyi korumak için ürün izin vermek için. Sürüme özgü ProgID ayrıca gibi açık, düzenleme ve benzeri üzerine veya diğer uygulamalar veya sürümleri tarafından üzerine yazılmasını sorun olmadan standart fiillerin sayesinde [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+ İle ilişkili dosyaları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] tutulan bir ProgID gibi olmalıdır `VisualStudio.vcproj.8.0`. Tutulan ProgID ürün sürümleri arasında dosya uzantısı ilişkilendirmeyi korumak için ürün yan yana yüklemesini sağlar. Sürüme özgü ProgID de açık düzenleme gibi ve benzeri üzerine yazmasını ya da diğer uygulamalar veya sürümleri tarafından üzerine yazılmasını kaygısı olmadan standart fiiller kullanmanıza olanak tanır [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
- Bazı durumlarda, bir dosya uzantısıyla ilişkili ProgID değiştirilmemelidir. Örneğin, ProgID .htm dosya uzantısı için (ProgID htmlfile =) işletim sisteminde basamak sayısını kodlanmış zordur ve yaygın olarak bilinen ve kullanılan .htm ve .html dosyalarla ilişkidir.  
+ Bazı durumlarda, bir dosya uzantısıyla ilişkili ProgID değiştirilmemelidir. Örneğin, program *.htm* dosya uzantısı (ProgID htmlfile =) çok sayıda işletim sisteminde yer sabit kodlanmış ve yaygın olarak bilinen ve kullanılan ilişkilendirmesini *.htm* ve *.html* dosyaları.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Yan yana dağıtımlar için dosya adı uzantılarını kaydetme](../extensibility/registering-file-name-extensions-for-side-by-side-deployments.md)   
- [Dosya Adı Uzantıları için Dosya İşleyicileri Belirtme](../extensibility/specifying-file-handlers-for-file-name-extensions.md)
+ [Dosya adı uzantıları için dosya işleyicileri belirtme](../extensibility/specifying-file-handlers-for-file-name-extensions.md)

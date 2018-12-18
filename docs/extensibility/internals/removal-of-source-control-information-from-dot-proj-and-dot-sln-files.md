@@ -18,6 +18,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31128993"
 ---
 # <a name="removal-of-source-control-information-from-proj-and-sln-files"></a>Kaynak Denetim bilgileri kaldırma. Proj ve. Sln dosyaları
 Sürüm kaynak denetim eklentisi API SCC 1.2 bilgiler MSSCCPRJ içinde depolanır. SCC dosyası. MSSCCPRJ yararlanabilir. SCC SCC bilgilerin olduğu değil kaynak - .proj ve .sln dosyalarında olduğu gibi denetlenen bir dosyadır.  

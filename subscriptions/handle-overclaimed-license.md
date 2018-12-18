@@ -1,33 +1,34 @@
 ---
-title: Aşırı talep edilen lisansları işlemek | Microsoft Docs
+title: Talep lisans tanıtıcı | Microsoft Docs
 author: evanwindom
 ms.author: jaunger
 manager: evelynp
 ms.date: 02/13/2018
 ms.topic: Get-Started-Article
-description: Yöneticiler aşırı talep edilen abonelikleri nasıl çözebilirsiniz öğrenin
+description: Yöneticiler talep abonelikleri nasıl giderebileceğinize öğrenin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 80420dd72416d5de1a96734ae532cfbad93f68d9
-ms.sourcegitcommit: 3724338a5da5a6d75ba00452b0a607388b93ed0c
+ms.openlocfilehash: e571f47abccbd725c5ee19f214726296b9dabb71
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49909100"
 ---
-# <a name="handling-over-claimed-subscriptions"></a>İşleme 'aşırı talep edilen' abonelikleri
+# <a name="handling-over-claimed-subscriptions"></a>'Talep' abonelikleri işleme
 
-Aboneler, daha fazla olması neden eklendikten sonra siparişleri bazen değiştirilir, şirketiniz tarafından sahip olunan lisansı sayısından abonelikleri atanmış. Bu gerçekleştiğinde, aboneler sekmesinde bir uyarı gösterir ve daha fazla bilgi sağlar. 
+Aboneler, daha fazla olması neden eklendikten sonra siparişler bazen değiştirilir şirketiniz tarafından sahip olunan lisansı sayısından abonelik atanmış. Bu durumda, abonelerin sekmesinde bir uyarı gösterir ve daha fazla bilgi sağlar. 
 
-> [!NOTE] 
-> Açık Lisans programlarında overclaimed senaryoları izin verilmiyor.
+> [!NOTE]
+> Overclaimed senaryoları Açık Lisans programları içinde izin verilmez.  Ayrıca, diğer programları bu bilgi Portalı'nda farklı görüntüleyebilir. 
+> 
+> [!div class="mx-imgBorder"]
+> ![Talep abonelik bildirimi](_img/over-claimed/over-claimed-alert.png)
 
- ![Aşırı talep edilen abonelikleri duyuru](_img\over-claimed\over-claimed-alert.png)
 
-1.  Aşırı talep edilen lisansları çözmek için uyarı metni tıklatın. Bu abonelik düzeyinde atanır aboneleri ve aşırı talep edilen sona erme tarihi filtre uygulanmış bir listesini görüntüler. 
+1.  Talep lisansları çözmek için uyarı metni tıklayın. Bu işlem için abonelik düzeyinde atanmış olan aboneler ve talep sona erme tarihi filtrelenmiş bir listesini görüntüler. 
 
-2.  Aboneler aşırı talep edilen lisansları düzeltmek için gerektiği şekilde kaldırın. 
+2.  Aboneler, talep lisansları düzeltmek için gerektiği şekilde kaldırın. 
 
-3.  Genel Bakış sayfanın sol tarafında bir kez daha uyumlu olan ve tüm aşırı talep edilen bildirimleri kaybolur gösterecek şekilde güncelleştirir. 
-
-    ![Aşırı talep edilen aboneliklerini silme](_img\over-claimed\delete-over-claimed.png)
+3.  Sayfanın sol tarafındaki genel bakış, yeniden uyumlu olan ve tüm talep bildirimleri kaybolur gösterecek şekilde güncelleştirilir. 

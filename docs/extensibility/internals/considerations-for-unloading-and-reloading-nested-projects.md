@@ -1,5 +1,5 @@
 ---
-title: Yüklemeyi kaldırma ve yeniden değerlendirmeleri iç içe projeleri | Microsoft Docs
+title: Kaldırma ve yeniden yüklemeyi konuları iç içe projeleri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -14,29 +14,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 7f22575c4affa6e6a13ea80b32674a3e517202fb
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: c38b50f661ed7ea16c56d9a877b809d2d60dd51c
+ms.sourcegitcommit: 206e738fc45ff8ec4ddac2dd484e5be37192cfbd
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39513464"
 ---
-# <a name="considerations-for-unloading-and-reloading-nested-projects"></a>Yüklemeyi kaldırma ve yeniden iç içe geçmiş projeleri için ilgili önemli noktalar
+# <a name="considerations-for-unloading-and-reloading-nested-projects"></a>Konuları kaldırma ve iç içe projeler yeniden yükleniyor
 
-İç içe proje türleri uyguladığınızda, kaldırma ve projeleri yeniden ek adımları gerçekleştirmeniz gerekir. Çözüm olayları dinleyicileri doğru şekilde bildirmek için doğru şekilde yükseltmeniz gerekir `OnBeforeUnloadProject` ve `OnAfterLoadProject` olaylar.
+İç içe proje türleri uyguladığınızda, kaldırma ve projeleri yeniden ek adımları gerçekleştirmeniz gerekir. Doğru dinleyicileri çözüm olayları bildirmek için doğru şekilde yükseltmeniz gerekir `OnBeforeUnloadProject` ve `OnAfterLoadProject` olayları.
 
-Bu olaylar yükseltmek için bir kaynak kodu denetimi (SCC) nedenidir. Sunucudan öğeleri silin ve sonra bunları eklemek için SCC istemediğiniz olarak geri *yeni* varsa bir `Get` SCC işlemi. Bu durumda, yeni bir dosya SCC dışında yüklenmesi. Unload ve farklı durumunda tüm dosyaları yeniden etmesi gerekir.
+Bu olay bir kaynak kodu denetimi (SCC) nedenidir. Sunucudan öğelerini silin ve sonra eklemek için SCC istemediğiniz olarak geri *yeni* varsa bir `Get` SCC işlemi. Bu durumda, yeni bir dosya SCC dışında yüklenir. Kaldırma ve bunlar farklı durumunda tüm dosyaları yeniden etmesi gerekir.
 
-Kaynak kodu denetim çağrıları `ReloadItem`. Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> çağırmak için arabirimi `OnBeforeUnloadProject` ve `OnAfterLoadProject` projeyi silin ve yeniden oluşturun. Bu şekilde arabirimi uyguladığınızda SCC proje geçici olarak silinmiş ve yeniden eklenmesi, bilgilendirilir. Bu nedenle, projeyi boşmuş gibi projeye SCC çalışmaz *gerçekten* silinir ve yeniden eklendi.
+Kaynak kodu denetim çağrıları `ReloadItem`. Uygulama <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> çağrılacak arabirimi `OnBeforeUnloadProject` ve `OnAfterLoadProject` projeyi silin ve yeniden oluşturun. Bu şekilde arabirimi uyguladığınızda, SCC proje geçici olarak silindi ve tekrar eklenmelidir, bilgisi verilir. Bu nedenle, proje olarak ise SCC proje üzerinde çalışmaz *gerçekten* silinmesi ve yeniden eklenir.
 
-## <a name="reloading-projects"></a>Projeleri yeniden yükleme
+## <a name="reload-projects"></a>Projeleri yeniden yükle
 
-İç içe geçmiş projeleri yeniden yükleme desteklemek için uygulamanız <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.ReloadItem%2A> yöntemi. Uygulamanızda `ReloadItem`, iç içe geçmiş projeleri kapatın ve sonra yeniden oluşturun.
+İç içe projeler yeniden yükleniyor desteklemek için uygulamanız <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.ReloadItem%2A> yöntemi. Uygulamanızda `ReloadItem`, iç içe projeler kapatın ve sonra yeniden oluşturun.
 
-Genellikle bir projeyi yeniden yüklendiğinde, IDE başlatır <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeUnloadProject%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterLoadProject%2A> olaylar. Ancak, silindiğinde ve yeniden iç içe geçmiş projeleri için ana proje IDE işlemi başlatır. Ana proje çözümü olayları yükseltmek değil ve IDE başlatma işleminin hakkında hiçbir bilgi olduğundan olayları yükseltilmiş değil.
+Genellikle bir proje yeniden yüklendiğinde, IDE başlatır <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeUnloadProject%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterLoadProject%2A> olayları. Ancak, silinmesi ve yeniden iç içe projeler için ana proje işlemi, IDE başlatır. Ana proje çözüm olayları başlatmaz ve IDE başlatma işleminin hakkında bir bilgi bulunmaz çünkü tetiklenen olayları değil.
 
-Bu işlem, ana proje çağrıları işlemek için `QueryInterface` üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> arabirimi. `IVsFireSolutionEvents` yükseltmek için IDE söyleyin işlevleri sahip `OnBeforeUnloadProject` iç içe proje kaldırın ve ardından yükseltmek için olay `OnAfterLoadProject` olay aynı projeyi yeniden yükleyin.
+Bu işlem, ana proje aramaları işlenecek `QueryInterface` üzerinde <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> arabirimi. `IVsFireSolutionEvents` yükseltmek için IDE bildiren bir işleve sahiptir `OnBeforeUnloadProject` iç içe geçmiş projeyi kaldırmak ve ardından yükseltmek için olay `OnAfterLoadProject` olayı aynı projeyi yeniden yükleyin.
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
 - <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3>
-- [Projeleri İç İçe Geçirme](../../extensibility/internals/nesting-projects.md)
+- [İç içe projeler](../../extensibility/internals/nesting-projects.md)

@@ -1,16 +1,16 @@
 ---
-title: Seçenekler, metin düzenleyici, temel (Visual Basic) | Microsoft Docs
-ms.custom: ''
+title: Gelişmiş Seçenekler, metin düzenleyici, Basic (VB)
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - VS.ToolsOptionsPages.Visual_Basic.Editor
 - VS.ToolsOptionsPages.Text_Editor.Basic.Editor
 - VS.ToolsOptionsPages.Visual_Basic_Editor.Editor
 - VS.ToolsOptionsPages.Text_Editor.Basic.SimplifiedEditorPage
 - VS.ToolsOptionsPages.Text_Editor.Basic
+- VS.ToolsOptionsPages.Text_Editor.Basic.Advanced
 - VS.ToolsOptionsPages.Text_Editor.Basic.VB_Specific
 helpviewer_keywords:
 - Basic Text Editor Options dialog box
@@ -20,56 +20,63 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 89b73138617583b621b33b31525e3b2f9c89e9e5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: b15617dce090a3aacde71ad48bf4984f5efbcac4
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50218931"
 ---
-# <a name="options-text-editor-basic-visual-basic"></a>Seçenekler, Metin Düzenleyici, Temel (Visual Basic)
-**VB belirli** özellik sayfasında **temel** klasöründe **metin düzenleyici** klasöründe **seçenekleri** (**Araçları** menüsü) iletişim kutusu aşağıdaki özellikleri içerir:  
-  
- **Uç yapılar otomatik ekleme**  
- Yazdığınızda — Örneğin, ilk satır bir yordam bildiriminin `Sub Main—`ve ENTER tuşuna basın, eşleşen bir metin Düzenleyicisi'ni ekler `End Sub` satır. Benzer şekilde, eklerseniz bir [için](/dotnet/visual-basic/language-reference/statements/for-next-statement) döngü, metin düzenleyici ekler eşleşen bir `Next` deyimi. Bu seçenek belirlendiğinde, Kod düzenleyicisinde son yapı otomatik olarak ekler.  
-  
- **Kod asıl listesi (biçimlendirme)**  
- Metin Düzenleyici kodunuzu uygun şekilde yeniden biçimlendirir. Bu seçenek belirlendiğinde, Kod düzenleyicisinde olur:  
-  
--   Kodunuzun doğru sekme konumuna hizalayın  
-  
--   Anahtar sözcükler, değişkenler ve doğru çalışması için nesneleri recase  
-  
--   Eksik ekleme `Then` için bir `If...Then` deyimi  
-  
--   İşlev çağrılarını parantez ekleyin  
-  
--   Eksik son teklifleri dizelere ekleme  
-  
--   Üstel gösterimde yeniden biçimlendirin  
-  
--   Tarihleri yeniden biçimlendirin  
-  
-**Anahat modunu etkinleştir**  
-Kod Düzenleyicisi'nde bir dosyayı açtığınızda, belge modu anahat oluşturma görüntüleyebilirsiniz. Bkz: [anahat](../../ide/outlining.md) daha fazla bilgi için. Bu seçenek belirlendiğinde, bir dosyayı açtığınızda özelliği etkinleştirilir.  
-  
-**Arabirim ve MustOverride üyelerinin otomatik ekleme**  
-Ne zaman yürüttükten bir `Implements` deyimi veya bir `Inherits` deyimi bir sınıf için metin düzenleyici ekler prototipleri uygulanan veya geçersiz, sırasıyla üyeler için.  
-  
-**Satır ayırıcı yordamı Göster**  
-Metin Düzenleyici yordamların görsel kapsamını belirtir. Aşağıdaki tabloda listelenen konumlara projenizin .vb kaynak dosyalarında bir çizgi çizilir:  
-  
-|.Vb kaynak dosya konumu|Satır konumu örneği|  
-|---------------------------------|------------------------------|  
-|Bir blok bildirimi yapısı Kapat sonra|-Sonunda sınıfı, yapısı, modül, arabirim veya enum<br />-Özelliği, işlev veya alt sonra<br />-Get ve set arasında değil bir özellik yan tümcelerinde|  
-|Tek satırlı yapıları bir dizi sonra|-İçeri aktarma deyimlerini sonra bir sınıf dosyası tür tanımında önce<br />-Bir sınıftaki tüm yordamları önce değişkenleri sonra bildirilen|  
-|Tek satırlı bildirimlerinden sonra (blok olmayan düzey bildirimleri)|-İçeri aktarma deyimlerini aşağıdaki deyimleri, değişken bildirimleri, olay bildirimleri, temsilci bildirimleri devralır ve DLL bildirme deyimleri|  
-  
-**Hata düzeltme önerileri etkinleştir**  
-Metin düzenleyici, sık karşılaşılan çözümleri önermek ve daha sonra kodunuzda uygulanan uygun düzeltme seçmenize olanak tanır.  
-  
-**Başvuruları ve anahtar sözcüklerini vurgulama etkinleştir**  
-Metin Düzenleyici bir simge tüm örnekleri veya tüm yan tümcesindeki anahtar sözcükler gibi vurgulayın `If..Then`, `While...End While`, veya `Try...Catch...Finally`. CTRL + SHIFT + Aşağı Ok veya CTRL + SHIFT + Yukarı ok tuşlarına basarak vurgulanan başvuruları veya anahtar sözcükleri arasında gidebilirsiniz.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
-[Genel, ortam, Seçenekler iletişim kutusu](../../ide/reference/general-environment-options-dialog-box.md)   
-[Seçenekler, metin düzenleyici, tüm diller, sekmeler](../../ide/reference/options-text-editor-all-languages-tabs.md)
+# <a name="options-text-editor-basic-visual-basic-advanced"></a>Gelişmiş Seçenekler, metin düzenleyici, temel (Visual Basic)
+**VB belirli** özellik sayfasında **temel** klasörü **metin düzenleyici** klasörü **seçenekleri** (**araçları** menüsü) iletişim kutusu aşağıdaki özellikleri içerir:
+
+ **Başvuruları ve anahtar sözcükleri vurgulamasını etkinleştirmenin**
+
+Metin Düzenleyicisi gibi bir simgenin tüm örnekleri veya tüm yan tümcesindeki anahtar sözcüklerin vurgulayabilirsiniz `If..Then`, `While...End While`, veya `Try...Catch...Finally`. Vurgulanan başvurulara veya anahtar sözcükler tuşlarına basarak gezinebilirsiniz **Ctrl** + **Shift** + **aşağı ok** veya **Ctrl**   +  **Shift** + **yukarı ok**.
+
+**Anahat oluşturma modunu etkinleştir**
+
+Kod Düzenleyicisi'nde bir dosyayı açtığınızda, belge anahat modunda görüntüleyebilirsiniz. Bkz: [anahat](../../ide/outlining.md) daha fazla bilgi için. Bu seçenek belirlendiğinde, bir dosyayı açtığınızda anahat oluşturma özelliği etkinleştirilir.
+
+**Yordam satır ayıraçlarını Göster**
+
+Metin düzenleyici, yordamların görsel kapsamını belirtir. Bir çizgi çizilir *.vb* konumlarda projenizin kaynak dosyaları aşağıdaki tabloda listelenen:
+
+|.Vb kaynak dosya konumu|Satır konumu örneği|
+|---------------------------------|------------------------------|
+|Sonra bir blok bildirimi yapısı kapatma|-Sonunda sınıfı, yapısı, modülü, arabirim veya numaralandırma<br />-Özelliği, işlev veya alt after<br />-Get ve set değil arasında bir özellikte yan tümceleri|
+|Tek satır yapıları bir dizi sonra|-İçeri aktarma deyimlerini after, önce bir sınıf dosyası içinde bir tür tanımı<br />-Bir sınıftaki tüm yordamları önce tanımlanan değişkenleri after|
+|Tek satır bildirimlerinden sonra (blok düzey bildirimleri)|-İçeri aktarma deyimlerini aşağıdaki deyimleri, değişken bildirimleri, olay bildirimleri, temsilci bildirimleri devralır ve DLL ifadeleri bildirme|
+
+ **(Kodu yeniden biçimlendirme) düzgün listeleme** metin düzenleyici, uygun şekilde kodunuzu yeniden biçimlendirir. Bu seçenek belirlendiğinde, Kod Düzenleyici olur:
+
+-   Kodunuz doğru sekme konumuna Hizala
+
+-   Anahtar sözcükler, değişkenler ve doğru çalışması için nesneler recase
+
+-   Eksik ekleme `Then` için bir `If...Then` deyimi
+
+-   İşlev çağrıları için parantez ekleyin
+
+-   Bitiş tırnak işaretleri eksik dizelere ekleme
+
+-   Üstel gösterim yeniden biçimlendirin
+
+-   Tarihleri yeniden biçimlendirin
+
+**Bitiş yapılarını otomatik ekleme**
+
+ Yazdığınızda — Örneğin, bir yordam bildirimi ilk satırını `Sub Main—`tuşuna basın **Enter**, eşleşen bir metin düzenleyicisi ekler `End Sub` satır. Benzer şekilde, eklerseniz bir [için](/dotnet/visual-basic/language-reference/statements/for-next-statement) döngüsü, metin düzenleyici ekler eşleşen `Next` deyimi. Bu seçenek belirlendiğinde, Kod Düzenleyicisi bitiş yapısı otomatik olarak ekler.
+
+**Interface ve MustOverride üyelerinin otomatik ekleme**
+
+İşlerseniz bir `Implements` deyimi veya bir `Inherits` ifadesi için bir sınıf, metin düzenleyici ekler prototipleri uygulanan ya da geçersiz, sırasıyla sahip üyeler için.
+
+**Hata düzeltme önerilerini etkinleştirmek**
+
+Metin düzenleyici, sık karşılaşılan çözümler önermek ve uygun düzeltmeyi kodunuza sonra uygulanır seçmenize olanak tanır.
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Genel, Ortam, Seçenekler İletişim Kutusu](../../ide/reference/general-environment-options-dialog-box.md)
+- [Seçenekler, Metin Düzenleyici, Tüm Diller, Sekmeler](../../ide/reference/options-text-editor-all-languages-tabs.md)

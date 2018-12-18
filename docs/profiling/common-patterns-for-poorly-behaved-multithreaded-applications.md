@@ -13,13 +13,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ea0937af4a697b3cf789738d06b5e2ad0282a7d0
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9929fc5acfe58d51de9142abc7addd539cf2b74e
+ms.sourcegitcommit: 0aafcfa08ef74f162af2e5079be77061d7885cac
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34549012"
 ---
-# <a name="common-patterns-for-poorly-behaved-multithreaded-applications"></a>Hatalı Davranan Çok İş Parçacıklı Uygulamalar için Ortak Desenler
+# <a name="common-patterns-for-poorly-behaved-multithreaded-applications"></a>Hatalı davranan çok iş parçacıklı uygulamalar için ortak desenler
 
 Eşzamanlılık görselleştiricisi çok iş parçacıklı uygulamada davranışını görselleştirmek için geliştiricilere yardımcı olur. Bu araç, hatalı davranan çok iş parçacıklı uygulamalar için ortak desenler Galerisi içerir. Galeri araçla bunu çözmek için büyük olasılıkla sonucunu bu davranışı ve en yaygın yaklaşımı her düzeni tarafından temsil edilen davranışının bir açıklaması ile birlikte sunulan tipik ve tanınabilir visual düzenleri içerir.
 
@@ -31,7 +32,7 @@ Bazen parallelized uygulama stubbornly seri olarak birkaç iş parçacığı var
 
 Aşağıdaki çizimde gösterildiği gibi eşzamanlılık görselleştiricisi de bu belirti nerede, birden çok iş parçacığı varlığını rağmen uygulamayı yalnızca bir mantıksal çekirdek tüketir CPU Kullanımı görünümü içinde getirebilir.
 
-"Performans düzeni 1: tanımlayan kilit çakışması" Hazim Shafi'nın içinde daha fazla bilgi için bkz: [paralel performans Tools For Windows](http://go.microsoft.com/fwlink/?LinkID=160569) MSDN blog Web sitesinde blogu.
+Daha fazla bilgi için "performans düzeni 1: tanımlayıcı kilit çakışması" Hazim Shafi'nın içinde [Windows için performans araçları paralel](http://go.microsoft.com/fwlink/?LinkID=160569) blog MSDN blog Web sitesinde.
 
 ![Kilit çakışması](../profiling/media/lockcontention_2.png "LockContention_2")
 

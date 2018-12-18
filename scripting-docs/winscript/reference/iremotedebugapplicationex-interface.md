@@ -1,16 +1,16 @@
 ---
 title: Iremotedebugapplicationex arabirimi | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 helpviewer_keywords:
 - IRemoteDebugApplicationEx Interface
 ms.assetid: 8e16164d-dbb2-4488-9507-25ae34f343dc
-caps.latest.revision: 
+caps.latest.revision: 5
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
@@ -19,6 +19,7 @@ ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 10/27/2017
+ms.locfileid: "24794975"
 ---
 # <a name="iremotedebugapplicationex-interface"></a>IRemoteDebugApplicationEx Arabirimi
 Çalışan bir uygulama temsil eder. Bir işletim sistemi işlemi karşılık gelecek şekilde gerekmez. Genellikle, bir hata ayıklayıcısı hata ayıklama için bir uygulama hedefler. Hata ayıklama işlem yöneticisi, genellikle uygulama nesnesi uygular.  

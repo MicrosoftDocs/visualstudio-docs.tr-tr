@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: program aracılığıyla belirli bir kişi arama | Microsoft Docs'
+title: 'Nasıl yapılır: program aracılığıyla belirli bir kişi arama'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -16,14 +16,15 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 6799041283fab154be40233729dd3c14b1978ed9
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a8454795af30c6e6174b40de94ce85fe9647f618
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35677767"
 ---
-# <a name="how-to-programmatically-search-for-a-specific-contact"></a>Nasıl yapılır: Program Aracılığıyla Belirli bir Kişi Arama
-  Bu örnek ilk ve son ada göre belirli bir kişi için Outlook Kişiler klasörü arar. Bir kişi adlı örnek varsayar **John Evans** Kişiler klasöründe bulunmaktadır.  
+# <a name="how-to-programmatically-search-for-a-specific-contact"></a>Nasıl yapılır: program aracılığıyla belirli bir kişi arama
+  Bu örnek, belirli bir kişi için Outlook Kişiler klasörü adı ve Soyadı arar. Örnek bir kişi adlı olduğunu varsayar **John Evans** Kişiler klasöründe bulunur.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
@@ -31,8 +32,8 @@ ms.lasthandoff: 04/16/2018
  [!code-csharp[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/CSharp/trin_outlook_rl_searchforcontact/thisaddin.cs#1)]
  [!code-vb[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/VisualBasic/trin_outlook_rl_searchforcontact/thisaddin.vb#1)]  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Kişi öğeleriyle çalışma](../vsto/working-with-contact-items.md)   
- [VSTO Eklentilerini Programlamaya Başlama](../vsto/getting-started-programming-vsto-add-ins.md)  
+ [VSTO eklentileri programlama kullanmaya başlayın](../vsto/getting-started-programming-vsto-add-ins.md)  
   
   

@@ -16,14 +16,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d6d29f5b37dca86f25083479f819217e665a0cef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: a80912aeed3ed5a3a93cad92f6d1613661692da6
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49819661"
 ---
 # <a name="idebugmemorycontext2getname"></a>IDebugMemoryContext2::GetName
-Bu bağlam için kullanıcı görüntülenebilir adını alır.  
+Bu bağlam için görüntülenebilir kullanıcı adını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,10 +45,10 @@ int GetName(
  [out] Bellek bağlam adını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bellek bağlam adını normal olarak kullanılmaz.  
+ Bir bellek bağlam adı normal olarak kullanılmaz.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md)

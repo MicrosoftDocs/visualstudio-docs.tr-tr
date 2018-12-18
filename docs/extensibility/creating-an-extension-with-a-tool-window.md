@@ -1,5 +1,5 @@
 ---
-title: Bir uzantısı bir araç penceresi oluşturma | Microsoft Docs
+title: Araç penceresi içeren bir uzantı oluşturma | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -11,30 +11,31 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: f918a5b8b48a7b9553cf3ca2e6c8fe9d38fbc9b8
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6170c5d418f1778af242bb4eb08cccffe0c031be
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39499809"
 ---
-# <a name="creating-an-extension-with-a-tool-window"></a>Bir uzantısı bir araç penceresi oluşturma
-Bu yordamda, VSIX proje şablonu kullanmayı öğrenin ve **özel araç penceresi** öğe şablonu uzantı bir araç penceresi oluşturulamadı.  
+# <a name="create-an-extension-with-a-tool-window"></a>Araç penceresi içeren bir uzantı oluşturma
+Bu yordamda, VSIX proje şablonu kullanmayı öğrenin ve **özel araç penceresi** öğe şablonu, araç penceresi içeren bir uzantı oluşturma.  
   
 ## <a name="prerequisites"></a>Önkoşullar  
- Visual Studio 2015'ten başlayarak, Visual Studio SDK'sını İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda bir isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yı daha sonra da yükleyebilirsiniz. Daha fazla bilgi için bkz: [Visual Studio SDK'sını yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
+ Visual Studio 2015'ten başlayarak, size Visual Studio SDK İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yi daha sonra yükleyebilirsiniz. Daha fazla bilgi için [Visual Studio SDK'yı yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
   
-### <a name="creating-a-tool-window"></a>Araç penceresi oluşturma  
+### <a name="create-a-tool-window"></a>Araç penceresi oluşturma  
   
-1.  Adlı VSIX proje oluşturma **FirstWindow**. VSIX proje şablonu bulabilirsiniz **yeni proje** altında iletişim **Visual C# / genişletilebilirlik**.  
+1.  Adlı bir VSIX projesi oluşturun **FirstWindow**. VSIX proje şablonunda bulabilirsiniz **yeni proje** iletişim altında **Visual C#** > **genişletilebilirlik**.  
   
-2.  Proje açıldığında adlı bir aracı pencere öğesi şablonu Ekle **MyWindow**. İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayın ve seçin **Ekle / yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusunda, Git **Visual C# / genişletilebilirlik** seçip **özel araç penceresi**. İçinde **adı** alan penceresinin alt kısmında, araç penceresi dosya adını değiştirmek **MyWindow.cs**.  
+2.  Projeyi açtığında, adlı bir araç penceresi öğesi şablonu ekleme **MyWindow**. İçinde **Çözüm Gezgini**, proje düğümüne sağ tıklayıp **Ekle** > **yeni öğe**. İçinde **Yeni Öğe Ekle** iletişim kutusunda, Git **Visual C#** > **genişletilebilirlik** seçip **özel araç penceresi**. İçinde **adı** alan penceresinin en altında bir araç penceresi dosya adını değiştirerek *MyWindow.cs*.  
   
-3.  Projeyi derleyin ve hata ayıklamayı Başlat.  
+3.  Projeyi oluşturmak ve hata ayıklamaya başlayın.  
   
-     Visual Studio'nun deneysel örneği görüntülenir. Deneysel örneği hakkında daha fazla bilgi için bkz: [deneysel örneği](../extensibility/the-experimental-instance.md).  
+     Visual Studio'nun deneysel örneğinde görünür. Deneysel örnek hakkında daha fazla bilgi için bkz. [deneysel örneğinde](../extensibility/the-experimental-instance.md).  
   
-4.  Deneysel örneğinde Git **görünüm / diğer pencereler**.  
+4.  Deneysel örneğinde Git **görünümü** > **diğer Windows**.  
   
-     Menü öğesi için görmelisiniz **MyWindow**. Tıklayın.  
+     Bir menü öğesi için görmelisiniz **MyWindow**. Tıklayın.  
   
-     Başlığa sahip araç penceresi görmeniz gerekir **MyWindow** ve düğmesi bildiren **bana tıklayın!**
+     Başlığa sahip araç penceresi görmeniz gerekir **MyWindow** ve bir düğmeyi bildiren **Me tıklayın!**

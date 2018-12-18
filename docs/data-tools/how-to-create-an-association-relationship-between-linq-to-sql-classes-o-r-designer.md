@@ -6,31 +6,33 @@ ms.assetid: 56133e65-81f3-44c3-bc28-ffdd0671a0d2
 author: gewarren
 ms.author: gewarren
 manager: douge
+ms.prod: visual-studio-dev15
 ms.technology: vs-data-tools
 ms.workload:
 - data-storage
-ms.openlocfilehash: 9eb6237af696dc1f56ae82bd99a1ddfc54851484
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: d247603e14f431e44aa7c1589ba2ecd7463fac02
+ms.sourcegitcommit: e9d1018a01af62c3dc5aeb6b325faba7e20bd496
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089535"
 ---
 # <a name="how-to-create-an-association-between-linq-to-sql-classes-or-designer"></a>Nasıl yapılır: LINQ-SQL sınıfları (O/R Tasarımcısı) arasında bir ilişkilendirme oluşturun
 Varlık sınıflar arasındaki ilişkileri [!INCLUDE[vbtecdlinq](../data-tools/includes/vbtecdlinq_md.md)] veritabanındaki tablolar arasında ilişkiler benzer. Kullanarak sınıflar arasındaki ilişkileri oluşturabilirsiniz **ilişkilendirme Düzenleyicisi** iletişim kutusu.
 
-Kullandığınızda, bir üst ve alt sınıf seçmelisiniz **ilişkilendirme Düzenleyicisi** iletişim kutusu bir ilişki oluşturun. Birincil anahtarı içeren varlık sınıfı üst sınıftır; yabancı anahtar içeren varlık sınıfı alt sınıfıdır. Örneğin, sınıflar Northwind müşterileri ve Siparişler tablolarını eşlenen oluşturulmuşsa, müşteri sınıf üst sınıf olur ve sipariş sınıfı alt sınıf olur.
+Kullandığınızda, bir üst ve alt sınıf seçmelisiniz **ilişkilendirme Düzenleyicisi** iletişim kutusu bir ilişki oluşturun. Birincil anahtarı içeren varlık sınıfı üst sınıftır; yabancı anahtar içeren varlık sınıfı alt sınıfıdır. Örneğin, sınıflar eşlenen oluşturulmuşsa `Northwind Customers` ve `Orders` tabloları, `Customer` sınıfı, üst sınıf olacaktır ve `Order` sınıf alt sınıfı olması.
 
 > [!NOTE]
->  Tablodan sürüklediğinizde **Sunucu Gezgini**/**Database Explorer** üzerine [!INCLUDE[vs_ordesigner_long](../data-tools/includes/vs_ordesigner_long_md.md)] ([!INCLUDE[vs_ordesigner_short](../data-tools/includes/vs_ordesigner_short_md.md)]), ilişkileri otomatik olarak oluşturulan var olan tabanlı veritabanında yabancı anahtar ilişkileri.
+>  Tablodan sürüklediğinizde **Sunucu Gezgini** veya **Database Explorer** üzerine **Nesne İlişkisel Tasarımcısı** (**O/R Tasarımcısı**), ilişkileri, veritabanında varolan yabancı anahtar ilişkileri temel alarak otomatik olarak oluşturulur.
 
 ## <a name="association-properties"></a>İlişki özellikleri
-O/R Tasarımcısı'nda ilişkilendirme seçtiğinizde bir ilişkilendirme oluşturduktan sonra bazı yapılandırılabilir özellik vardır **özellikleri** penceresi. (Satırın ilgili sınıflar arasındaki ilişkidir.) Aşağıdaki tabloda bir ilişkilendirmenin özellikleri için açıklamalar sağlanır.
+Association'ında seçtiğinizde bir ilişkilendirme oluşturduktan sonra **O/R Tasarımcısı**, bazı yapılandırılabilir özellik **özellikleri** penceresi. (Satırın ilgili sınıflar arasındaki ilişkidir.) Aşağıdaki tabloda bir ilişkilendirmenin özellikleri için açıklamalar sağlanır.
 
 |Özellik|Açıklama|
 |--------------|-----------------|
 |**Önem düzeyi**|İlişki bire çok veya birebir olup olmadığını denetler.|
-|**Alt özelliği**|Bir koleksiyon veya başvuru ilişki yabancı anahtar taraftaki alt kayıtlarına olan üst bir özellik oluşturulup oluşturulmayacağını belirtir. Örneğin, müşteri siparişi arasındaki ilişki içinde varsa **alt özellik** ayarlanır **True**, siparişleri adlı bir özellik üst sınıf üzerinde oluşturulur.|
-|**Üst özelliği**|İlişkili üst sınıfın başvuran alt sınıf özelliği. Örneğin, müşteri siparişi arasındaki ilişkide bir sipariş için ilişkili müşteri başvuran müşteri adlı bir özellik sipariş sınıfını oluşturulur.|
+|**Alt özelliği**|Bir koleksiyon veya başvuru ilişki yabancı anahtar taraftaki alt kayıtlarına olan üst bir özellik oluşturulup oluşturulmayacağını belirtir. Arasındaki ilişki, örneğin, `Customer` ve `Order`, **alt özelliği** ayarlanır **True**, adında bir özellik `Orders` üst sınıf üzerinde oluşturulur.|
+|**Üst özelliği**|İlişkili üst sınıfın başvuran alt sınıf özelliği. Örneğin, arasında ilişki içinde `Customer` ve `Order`, adlı bir özellik `Customer` sipariş üzerinde oluşturulan için ilişkili müşteri başvuran `Order` sınıfı.|
 |**Katılımcı özellikleri**|İlişki özellikleri görüntüler ve sağlayan bir **üç nokta** yeniden açar (...) düğmesini **ilişkilendirme Düzenleyicisi** iletişim kutusu.|
 |**Benzersiz**|Yabancı hedef sütunlar benzersizlik kısıtlamasını sahip olup olmadığını belirtir.|
 
@@ -42,14 +44,14 @@ O/R Tasarımcısı'nda ilişkilendirme seçtiğinizde bir ilişkilendirme oluşt
 
 3.  Seçin **alt sınıf** açılan kutuya.
 
-4.  Seçin **ilişki özellikleri** sınıfları ilişkilidir. Genellikle, bu veritabanında tanımlı yabancı anahtar ilişkisi eşler. Örneğin, müşteriler ve siparişler ilişkisi içinde **ilişki özellikleri** her sınıf CustomerID şunlardır.
+4.  Seçin **ilişki özellikleri** sınıfları ilişkilidir. Genellikle, bu veritabanında tanımlı yabancı anahtar ilişkisi eşler. Örneğin, `Customers` ve `Orders` association **ilişki özellikleri** olan `CustomerID` her sınıf için.
 
 5.  Tıklatın **Tamam** bir ilişki oluşturmak için.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 - [LINQ-SQL Visual Studio Araçları](../data-tools/linq-to-sql-tools-in-visual-studio2.md)
-- [İzlenecek yol: LINQ-SQL sınıfları oluşturma](how-to-create-linq-to-sql-classes-mapped-to-tables-and-views-o-r-designer.md)
+- [İzlenecek yol: LINQ SQL sınıfları için oluşturma](how-to-create-linq-to-sql-classes-mapped-to-tables-and-views-o-r-designer.md)
 - [LINQ to SQL](/dotnet/framework/data/adonet/sql/linq/index)
 - [DataContext yöntemleri (O/R Tasarımcısı)](../data-tools/datacontext-methods-o-r-designer.md)
-- [Nasıl yapılır: Birincil Anahtarları Temsil Etme](/dotnet/framework/data/adonet/sql/linq/how-to-represent-primary-keys)
+- [Nasıl yapılır: birincil anahtarlar temsil eder](/dotnet/framework/data/adonet/sql/linq/how-to-represent-primary-keys)

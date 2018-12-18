@@ -15,34 +15,35 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2bec2b4ab834eb55bd34a80f9e6a30931e3cd325
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 96b280221ba7efdefd3023f015bd4075b8c03aaa
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49910505"
 ---
-# <a name="adding-user-control-to-the-start-page"></a>Kullanıcı denetimi için başlangıç sayfası ekleme
-Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmiştir. Örnek bir kullanıcı denetimi çözüme kullanıcı denetimi oluşturur ve ardından başlangıç sayfası .xaml dosyasından yerleşik bütünleştirilmiş koduna başvuruyor ekler. Yeni bir sekme temel bir Web tarayıcısı olarak işlev kullanıcı Denetim barındırır.  
+# <a name="add-user-control-to-the-start-page"></a>Başlangıç sayfasına kullanıcı denetimi Ekle
+Bu izlenecek yol, özel bir başlangıç sayfası için bir DLL başvurusu ekleme işlemi gösterilmektedir. Örnek bir kullanıcı denetimi çözüme ekler, kullanıcı denetimi oluşturur ve ardından derlemesi başlangıç sayfasından başvuran *.xaml* dosya. Yeni bir sekmede temel bir Web tarayıcısı olarak işlevler kullanıcı denetimi barındırır.  
   
- Aynı işlem .xaml dosyasından çağrılabilir derleme eklemek için kullanabilirsiniz.  
+ Aynı işlem öğesinden çağrılması herhangi bir derleme eklemek için kullanabileceğiniz bir *.xaml* dosya.  
   
-## <a name="adding-a-wpf-user-control-to-the-solution"></a>WPF kullanıcı denetimi çözüme ekleniyor  
+## <a name="add-a-wpf-user-control-to-the-solution"></a>Çözüme bir WPF kullanıcı denetimi Ekle  
  İlk olarak, bir Windows Presentation Foundation (WPF) kullanıcı denetimi başlangıç sayfası çözüme ekleyin.  
   
-1.  Bir başlangıç sayfası oluşturma kullanarak içinde oluşturduğumuz [bir özel başlangıç sayfası oluşturma](../extensibility/creating-a-custom-start-page.md).  
+1.  Kullanarak başlangıç sayfası oluşturma oluşturduğumuz [özel bir başlangıç sayfası oluşturma](../extensibility/creating-a-custom-start-page.md).  
   
 2.  İçinde **Çözüm Gezgini**, çözüme sağ tıklayın, **Ekle**ve ardından **yeni proje**.  
   
-3.  Sol bölmesinde **yeni proje** iletişim kutusunda, genişletin **Visual Basic** veya **Visual C#** düğümü ve tıklatın **Windows**. Orta bölmede seçin **WPF kullanıcı denetimi Kitaplığı**.  
+3.  Sol bölmesinde **yeni proje** iletişim kutusunda, ya da genişletin **Visual Basic** veya **Visual C#** düğüm seçeneğine tıklayıp **Windows**. Orta bölmede seçin **WPF kullanıcı denetimi Kitaplığı**.  
   
 4.  Denetim adı `WebUserControl` ve ardından **Tamam**.  
   
-## <a name="implementing-the-user-control"></a>Kullanıcı denetimini uygulama  
- WPF kullanıcı denetimi için XAML kullanıcı arabiriminde (UI) oluşturun ve ardından arka plan kodu olayları C# veya başka bir .NET dil yazın.  
+## <a name="implement-the-user-control"></a>Kullanıcı denetimi uygulayın  
+ WPF kullanıcı denetimi uygulamak için XAML kullanıcı arabiriminde (UI) oluşturma ve arka plan kod olayları C# veya başka bir .NET dil yazın.  
   
-#### <a name="to-write-the-xaml-for-the-user-control"></a>XAML kullanıcı denetimi için yazmak için  
+### <a name="to-write-the-xaml-for-the-user-control"></a>XAML için kullanıcı denetimi yazmak için  
   
-1.  Kullanıcı denetimi için XAML dosyasını açın. İçinde \<kılavuz > öğesi, aşağıdaki satırı tanımları denetimine ekleyin.  
+1.  Kullanıcı denetimi için XAML dosyasını açın. İçinde `<Grid>` öğesi, aşağıdaki satır tanımları denetimine ekleyin.  
   
     ```vb  
     <Grid.RowDefinitions>  
@@ -52,7 +53,7 @@ Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmişt
   
     ```  
   
-2.  Ana `Grid` öğesi, aşağıdaki yeni ekleyin `Grid` yeni adresini ayarlamak için bir düğmeyi ve Web adresleri yazmak için bir metin kutusu içeren öğe.  
+2.  Ana `<Grid>` öğesi, aşağıdaki yeni `<Grid>` Web adresleri ve yeni adresini ayarlamak için bir düğme yazmak için bir metin kutusu içeren öğe.  
   
     ```xml  
     <Grid Grid.Row="0">  
@@ -65,13 +66,13 @@ Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmişt
     </Grid>  
     ```  
   
-3.  Aşağıdaki çerçevesi için üst düzey ekleme `Grid` öğesi hemen sonra `Grid` düğmesi ve metin kutusu içeren öğe.  
+3.  Aşağıdaki çerçeve için üst düzey ekleme `<Grid>` öğesi hemen sonrasına `<Grid>` düğme ve metin kutusu içeren öğe.  
   
     ```vb  
     <Frame Grid.Row="1" x:Name="WebFrame" Source="http://www.bing.com" Navigated="WebFrame_Navigated" />  
     ```  
   
-4.  Aşağıdaki örnekte kullanıcı denetimi tamamlanmış XAML gösterir.  
+4.  Aşağıdaki örnekte, tamamlanmış XAML için kullanıcı denetimi gösterilmektedir.  
   
     ```xml  
     <UserControl x:Class="WebUserControl.UserControl1"  
@@ -100,13 +101,13 @@ Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmişt
   
     ```  
   
-#### <a name="to-write-the-code-behind-events-for-the-user-control"></a>Kullanıcı denetimi için arka plan kodu olayları yazmak için  
+### <a name="to-write-the-code-behind-events-for-the-user-control"></a>Kullanıcı denetiminin arka plan kod olayları yazmak için  
   
-1.  XAML Tasarımcısı'nda çift **adresi kümesinin** düğme denetimine eklendi.  
+1.  XAML Tasarımcısı'nda çift **adresinde** düğmesi denetimi eklendi.  
   
-     UserControl1.cs dosyası Kod Düzenleyicisi'nde açar.  
+     *UserControl1.cs* dosyası Kod Düzenleyicisi'nde açılır.  
   
-2.  SetButton_Click olay işleyicisini aşağıdaki gibi doldurun.  
+2.  SetButton_Click olay işleyicisi aşağıdaki gibi doldurun.  
   
     ```csharp  
     private void SetButton_Click(object sender, RoutedEventArgs e)  
@@ -122,7 +123,7 @@ Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmişt
     }  
     ```  
   
-     Bu kod, Web tarayıcısı için hedef olarak metin kutusuna yazdığınız Web adresini ayarlar. Adresi geçerli değil, kodu bir hata oluşturur.  
+     Bu kod, Web tarayıcısı için hedef olarak metin kutusuna yazdığınız Web adresini ayarlar. Adres geçerli değilse, kod bir hata oluşturur.  
   
 3.  Ayrıca WebFrame_Navigated olay işlemesi gerekir:  
   
@@ -133,59 +134,59 @@ Bu kılavuz, özel bir başlangıç sayfası DLL başvuru eklemek gösterilmişt
   
 4.  Çözümü oluşturun.  
   
-## <a name="adding-the-user-control-to-the-start-page"></a>Kullanıcı denetimi için başlangıç sayfası ekleme  
- Bu denetim başlangıç sayfası proje dosyasında başlangıç sayfası proje kullanılabilir hale getirmek için yeni denetim kitaplığına bir başvuru ekleyin. Daha sonra Başlat Sayfası XAML biçimlendirme denetimi ekleyebilirsiniz.  
+## <a name="add-the-user-control-to-the-start-page"></a>Başlangıç sayfasına kullanıcı denetimi Ekle  
+ Bu denetim başlangıç sayfası proje dosyasında başlangıç sayfası projenin kullanılabilir hale getirmek için yeni denetim kitaplığına bir başvuru ekleyin. Ardından, başlangıç sayfası XAML biçimlendirme denetimi ekleyebilirsiniz.  
   
-1.  İçinde **Çözüm Gezgini**, başlangıç sayfası projeye sağ tıklayın **başvuruları** ve ardından **Başvuru Ekle**.  
+1. İçinde **Çözüm Gezgini**, başlangıç sayfası projeye sağ **başvuruları** ve ardından **Başvuru Ekle**.  
   
-2.  Üzerinde **projeleri** sekmesine **WebUserControl** ve ardından **Tamam**.  
+2. Üzerinde **projeleri** sekmesinde **WebUserControl** ve ardından **Tamam**.  
   
-3.  Üzerinde **yapı** menüsünde tıklatın **yapı çözümü**.  
+3. Üzerinde **derleme** menüsünde tıklatın **Çözümü Derle**.  
   
-     Çözümü derledikten kullanıcı denetimi için IntelliSense çözümdeki diğer dosyalar için kullanılabilmesini sağlar.  
+    Çözümü derledikten kullanıcı denetimi için IntelliSense çözümdeki diğer dosyalar için kullanılabilmesini sağlar.  
   
- Başlangıç sayfası XAML işaretleme denetim eklemek için derleme ad alanı referansı ekleyin, sonra denetimi sayfasına yerleştirin.  
+   Başlangıç sayfası XAML biçimlendirme denetimi eklemek için bir ad alanı derlemesine başvuru ekleyin ve denetimi sayfasına yerleştirin.  
   
-#### <a name="to-add-the-control-to-the-markup"></a>Biçimlendirme denetim eklemek için  
+### <a name="to-add-the-control-to-the-markup"></a>Denetim için biçimlendirme eklemek için  
   
-1.  İçinde **Çözüm Gezgini**, başlangıç sayfası .xaml dosyasını açın.  
+1. İçinde **Çözüm Gezgini**, başlangıç sayfasını açmak *.xaml* dosya.  
   
-2.  İçinde **XAML** bölmesinde, aşağıdaki ad alanı bildirimi için üst düzey ekleyin <xref:System.Windows.Controls.Grid> öğesi.  
+2. İçinde **XAML** bölmesinde, aşağıdaki ad alanı bildirimi için üst düzey ekleme <xref:System.Windows.Controls.Grid> öğesi.  
   
-    ```xml  
-    xmlns:vsc="clr-namespace:WebUserControl;assembly=WebUserControl"  
-    ```  
+   ```xml  
+   xmlns:vsc="clr-namespace:WebUserControl;assembly=WebUserControl"  
+   ```  
   
-3.  İçinde **XAML** bölmesinde, kaydırın \<kılavuz > bölümü.  
+3. İçinde **XAML** bölmesinde gidin \<kılavuz > bölümü.  
   
-     Bölüm içeren bir <xref:System.Windows.Controls.TabControl> öğesinde bir <xref:System.Windows.Controls.Grid> öğesi.  
+    Bölüm içeren bir <xref:System.Windows.Controls.TabControl> öğesinde bir <xref:System.Windows.Controls.Grid> öğesi.  
   
-4.  Ekleme bir \<TabControl > öğesi içeren bir \<TabItem >, kullanıcı denetimi için bir başvuru içeriyor.  
+4. Ekleme bir \<TabControl > öğesini içeren bir \<TabItem >, kullanıcı denetiminiz bir başvuru içeriyor.  
   
-    ```xml  
+   ```xml  
   
-    <TabItem Header="Web" Height="Auto">  
-        <vsc:UserControl1 />  
-    </TabItem>  
+   <TabItem Header="Web" Height="Auto">  
+       <vsc:UserControl1 />  
+   </TabItem>  
   
-    ```  
+   ```  
   
- Artık denetimi test edebilirsiniz.  
+   Artık denetim test edebilirsiniz.  
   
-## <a name="testing-a-manually-created-custom-start-page"></a>El ile oluşturulan özel bir başlangıç sayfası test etme  
+## <a name="test-a-manually-created-custom-start-page"></a>Testi el ile oluşturulan özel bir başlangıç sayfası  
   
-1.  XAML dosyanızı ve destekleyici metin dosyaları veya işaretleme dosyaları, çok kopya **%USERPROFILE%\My Documents\Visual Studio 2015\StartPages\\**  klasör.  
+1.  XAML dosyanızın ve destekleyici metin dosyaları veya biçimlendirme dosyaları, çok kopya *%USERPROFILE%\My Documents\Visual Studio 2015\StartPages\\*  klasör.  
   
-2.  Başlangıç sayfanızı herhangi bir denetimleri veya Visual Studio tarafından yüklenmemiş derlemelerindeki başvuruyorsa, derlemeler kopyalayıp sonra bunları * Visual Studio yükleme klasörü ***\Common7\IDE\PrivateAssemblies\\** .  
+2.  Başlangıç sayfanızı herhangi bir denetim veya Visual Studio yüklü olmayan bütünleştirilmiş kodlar içindeki türleri başvuruyorsa, derlemeleri kopyalamak ve ardından bunları yapıştırın _Visual Studio yükleme klasörü_**\Common7\IDE\ PrivateAssemblies\\**.  
   
-3.  Bir Visual Studio komut isteminde **devenv /rootsuffix Exp** Visual Studio deneysel örneği açın.  
+3.  Bir Visual Studio komut isteminde **devenv /rootsuffix Exp** Visual Studio'nun deneysel örneği açın.  
   
-4.  Deneysel örneğinde Git **Araçlar / Seçenekler / ortamı / başlangıç** sayfasında ve XAML dosyanızdan seçin **başlangıç sayfasını özelleştirme** açılır.  
+4.  Deneysel örneğinde Git **Araçları** > **seçenekleri** > **ortam** > **başlatma** sayfasında ve XAML dosyanızı seçin **başlangıç sayfasını Özelleştir** açılır.  
   
-5.  Üzerinde **Görünüm** menüsünde tıklatın **başlangıç sayfası**.  
+5.  Üzerinde **görünümü** menüsünü tıklatın **başlangıç sayfası**.  
   
-     Özel başlangıç sayfanızı görüntülenmesi gerekir. Tüm dosyaları değiştirmek istiyorsanız, gerekir deneysel örneği kapatın, değişiklik, kopyalamak ve değişen dosyaları yapıştırın ve değişiklikleri görmek için deneysel örneği yeniden açın.  
+     Özel başlangıç sayfanızı görüntülenmesi gerekir. Dosyaları değiştirmek istiyorsanız, size gerekir deneysel örneği kapatın, değişiklik, kopyalayın ve değiştirilen dosyaları yapıştırın ve ardından değişiklikleri görüntülemek için deneysel örneğinde yeniden açın.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [WPF kapsayıcı denetimleri](http://msdn.microsoft.com/en-us/a0177167-d7db-4205-9607-8ae316952566)   
- [İzlenecek Yol: Başlangıç Sayfasına Özel XAML Ekleme](../extensibility/walkthrough-adding-custom-xaml-to-the-start-page.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [WPF kapsayıcı denetimleri](https://msdn.microsoft.com/library/a0177167-d7db-4205-9607-8ae316952566)   
+ [İzlenecek yol: başlangıç sayfasına özel XAML ekleme](../extensibility/walkthrough-adding-custom-xaml-to-the-start-page.md)

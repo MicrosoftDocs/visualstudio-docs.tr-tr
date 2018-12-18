@@ -1,63 +1,54 @@
 ---
-title: Birim Visual Studio'da Test etmek için onay sınıfları kullanma | Microsoft Docs
-ms.date: 11/04/2016
+title: Mstest'i assert sınıflar ve yöntemler
+ms.date: 06/07/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Assert classes
-- Assert statements
-- unit tests, Assert statements
+- Assert methods
 - unit tests, Assert classes
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: ff40f25e9beffa848185fe2c1f95df96928543d6
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 91198e9b7048b384bf2095840abbd012042025ed
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844267"
 ---
-# <a name="use-the-assert-classes"></a>Onay sınıfları kullanma
+# <a name="use-assert-classes-for-unit-testing"></a>Birim testi için onay sınıfları kullanma
 
-Onay sınıfları UnitTestingFramework ad alanının belirli işlevselliğini doğrulamak için kullanın. Birim testi yöntemine geliştirme kodunuzu yönteminde kod uygular ancak yalnızca Assert deyimleri eklerseniz kodun davranışı doğruluğunu bildiriyor.
+Assert sınıflarını kullanmak <xref:Microsoft.VisualStudio.TestTools.UnitTesting> belirli işlevselliğini doğrulamak için ad alanı. Birim testi yöntemine uygulamanızın kodu yönteminde kod uygular ancak yalnızca Assert deyimleri eklerseniz kodun davranışı doğruluğunu bildiriyor.
 
 ## <a name="kinds-of-asserts"></a>Tür, onaylar
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting> Ad alanı, çeşitli türlerde onay sınıfları sağlar:
 
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert>
+<xref:Microsoft.VisualStudio.TestTools.UnitTesting> Ad alanı, çeşitli türlerde onay sınıfları sağlar.
 
- Assert sınıfının Assert.AreEqual() gibi yöntemlerini herhangi bir sayıda test yönteminize çağırabilirsiniz. Assert sınıfı aralarından seçim yapabileceğiniz birçok yöntem ve bu yöntemleri çoğunu birçok aşırı yüklemeye sahip.
+Test yönteminize, herhangi bir yöntem çağrısı <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert?displayProperty=fullName> gibi sınıfı <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual%2A?displayProperty=nameWithType>. <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> Sınıfı aralarından seçim yapabileceğiniz birçok yöntem ve birçok yöntem birçok aşırı yüklemeye sahip.
 
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.CollectionAssert>
+### <a name="compare-strings-and-collections"></a>Dizeler ve koleksiyonları karşılaştırma
 
- CollectionAssert sınıfı nesne koleksiyonları Karşılaştırılacak ve bir veya daha fazla koleksiyon durumunu doğrulamak için kullanın.
+Kullanım <xref:Microsoft.VisualStudio.TestTools.UnitTesting.CollectionAssert> sınıfı nesne koleksiyonları karşılaştırmak ya da bir koleksiyon durumunu doğrulayın.
 
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.StringAssert>
+Kullanım <xref:Microsoft.VisualStudio.TestTools.UnitTesting.StringAssert> karşılaştırın ve dizeleri incelemek için sınıf. Bu sınıf gibi çeşitli kullanışlı yöntemler içerir <xref:Microsoft.VisualStudio.TestTools.UnitTesting.StringAssert.Contains%2A?displayProperty=nameWithType>, <xref:Microsoft.VisualStudio.TestTools.UnitTesting.StringAssert.Matches%2A?displayProperty=nameWithType>, ve <xref:Microsoft.VisualStudio.TestTools.UnitTesting.StringAssert.StartsWith%2A?displayProperty=nameWithType>.
 
- StringAssert sınıfı, dizeleri karşılaştırmak için kullanın. Bu sınıf, çeşitli StringAssert.Contains, StringAssert.Matches ve StringAssert.StartsWith gibi kullanışlı yöntemler içerir.
+### <a name="exceptions"></a>Özel Durumlar
 
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException>
+<xref:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException> Bir test başarısız olduğunda özel durum. Zaman aşımına uğradı, beklenmeyen bir özel durum oluşturur veya üreten bir onay deyimi içeriyorsa, bir test başarısız bir **başarısız** sonucu.
 
- Bir test başarısız olduğunda AssertFailedException özel durum oluşur. Zaman aşımına uğradı, beklenmeyen bir özel durum oluşturur veya başarısız sonucu üreten bir onay deyimi içeren bir sınama başarısız olur.
-
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.AssertInconclusiveException>
-
- Bir test Inconclusive sonucunu üreten her AssertInconclusiveException atılır. Genellikle, bir Assert.Inconclusive deyimi hala henüz çalıştırılmaya hazır değil belirtmek için çalışmakta olduğunuz bir test ekleyin.
+<xref:Microsoft.VisualStudio.TestTools.UnitTesting.AssertInconclusiveException> Bir test sonucu üreten her durum **Inconclusive**. Genellikle, eklediğiniz bir <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert.Inconclusive%2A?displayProperty=nameWithType> hala, onu henüz çalıştırılmaya hazır değil belirtmek için çalışmakta olduğunuz bir test bildirimi.
 
 > [!NOTE]
->  Alternatif bir strateji Ignore özniteliği ile çalıştırmak hazır değil bir test işaretlemek için olur. Ancak, bu kolayca uygulamak üzere bıraktıysanız sınamaların sayısı raporda üretilemiyor olumsuz sahiptir.
+> Bir alternatif ile çalıştırmak hazır değil bir test işaretlemek için stratejidir <xref:Microsoft.VisualStudio.TestTools.UnitTesting.IgnoreAttribute> özniteliği. Ancak, bu uygulanmadı sınamaların sayısı üzerinde bir rapor kolayca oluşturamıyor olumsuz sahiptir.
 
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.UnitTestAssertException>
+Yeni bir özel durum sınıfı assert yazarsanız temel sınıfından <xref:Microsoft.VisualStudio.TestTools.UnitTesting.UnitTestAssertException> özel bir onaylama işlemi hatasına yerine test veya üretim kodunuzdan durum beklenmeyen bir özel durum olarak tanımlamak daha kolay.
 
- Yeni bir Assert özel durum sınıfı yazarsanız, UnitTestAssertException taban sınıftan devralın o sınıfın sahip özel bir onaylama işlemi hatasına yerine test veya üretim kodunuzdan durum beklenmeyen bir özel durum olarak tanımlamak kolaylaştırır.
-
- <xref:Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute>
-
- Geliştirme kodunuzda yöntemi tarafından oluşturulan beklediğiniz gerçekten bu yöntemi özel durum olduğunu doğrulamak için test yöntemi istediğinizde bir test yöntemi ExpectedExceptionAttribute özniteliği ile işaretleme.
+Bir test yöntemi ile işaretleme <xref:Microsoft.VisualStudio.TestTools.UnitTesting.ExpectedExceptionAttribute> özniteliği, uygulama kodunuzda yöntemi tarafından oluşturulan beklediğiniz bir özel durum gerçekten durum doğrulamak için test yöntemi istediğinizde.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- <xref:Microsoft.VisualStudio.TestTools.UnitTesting>
 - [Birim testi kodunuz](../test/unit-test-your-code.md)

@@ -1,7 +1,7 @@
 ---
-title: İş parçacığı Hata Ayıklayıcısı'ndaki görüntülemek | Microsoft Docs
+title: İş parçacığı hata ayıklayıcıda görüntüleme | Microsoft Docs
 ms.custom: ''
-ms.date: 04/25/2017
+ms.date: 10/29/2018
 ms.technology: vs-ide-debug
 ms.topic: conceptual
 f1_keywords:
@@ -25,144 +25,150 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ec5cdf340002c9f454c67b170b4e849360de0166
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 764eb46fb387e1a007362b02a0f62cf478c771fe
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53066229"
 ---
-# <a name="view-threads-in-the-debugger-in-visual-studio-using-the-threads-window"></a>İş parçacıkları penceresini kullanarak Visual Studio hata ayıklayıcısında görünüm iş parçacıkları
-İçinde **iş parçacığı** penceresinde inceleyin ve hata ayıklama yaptığınız uygulama iş parçacığı ile çalışırsınız. Nasıl kullanılacağını hakkında adım adım yönergeler için **iş parçacığı** penceresinde bkz [izlenecek yol: iş parçacıkları penceresini kullanarak hata ayıklama](../debugger/how-to-use-the-threads-window.md).
-  
- **İş parçacığı** penceresi, her satır bir iş parçacığı, uygulamanızda temsil ettiği bir tablo içerir. Varsayılan olarak, uygulamanızdaki tüm iş parçacıklarının tablo listeler, ancak sizi ilgilendiren iş parçacığı göstermek için listedeki filtreleyebilirsiniz. Her sütun farklı türde bilgi içerir. Ayrıca, bazı sütunları gizleyebilirsiniz. Tüm sütunları görüntülemek, aşağıdaki bilgileri, soldan sağa görünür:  
-  
--   Burada, özellikle dikkat istediğiniz bir iş parçacığı işaretleyebilirsiniz bayrağı sütun. Bir iş parçacığı bayrak hakkında daha fazla bilgi için bkz: [nasıl yapılır: bayrağı ve iş parçacıklarını bayrakla](../debugger/how-to-flag-and-unflag-threads.md).  
-  
--   Sarı bir ok (ok anahat geçerli olmayan bir iş parçacığı için geçerli hata ayıklayıcı bağlamını gösterir) geçerli iş parçacığının gösterir geçerli iş parçacığı sütununun.
-  
--   **Kimliği** her iş parçacığı kimliği numarasını içeren sütun.  
-  
--   **Yönetilen kimliği** yönetilen iş parçacığı için yönetilen kimliği sayıları içeren sütun.  
-  
--   **Kategori** iş parçacığı kullanıcı arabirimi iş parçacıkları, uzak yordam çağrısı işleyicileri ya da çalışan iş parçacığı kategorilere ayıran sütun. Özel bir kategori uygulamanın ana iş parçacığı tanımlar.  
-  
--   **Adı** varsa veya olarak ada göre her iş parçacığı tanımlayan sütun \<No Name >.  
-  
--   **Konumu** sütun, iş parçacığı çalıştığı hangi gösterir. İş parçacığı için tam çağrı yığını göstermek için bu konuma genişletebilirsiniz.  
-  
--   **Öncelik** öncelik veya sistem için her bir iş parçacığı atanan öncelik içeren sütun.  
-  
--   **Benzeşim maskesi** (genellikle gizli) gelişmiş bir sütunu olan sütun. Bu sütun her iş parçacığı için İşlemci benzeşim maskesi gösterir. İşlemcili bir sistemde, bir iş parçacığı çalıştırılabileceği hangi İşlemci benzeşim maskesi belirler.  
-  
--   **Askıya sayısı** askıya alınmış sayısı içerir ve genellikle gizli (genellikle gizli), bir sütun. Bu sayaç, bir iş parçacığı çalıştırılıp çalıştırılamayacağını belirler. Askıya alınan sayısı açıklaması için "Dondurma ve çözme iş parçacığı sayısı" bölümüne bakın.  
-  
--   **İşlem adı** (genellikle gizli), her iş parçacığı ait olduğu için işlem içeren sütun. Bu sütun, birden çok işlem ayıklarken yararlı olabilir.  
-  
-### <a name="to-display-the-threads-window-in-break-mode-or-run-mode"></a>Kesme modunda veya çalışma modunda iş parçacıkları penceresini görüntülemek için  
-  
--   Hata ayıklama sırasında seçin **hata ayıklama** menüsündeki **Windows**ve ardından **iş parçacığı**.  
-  
-### <a name="to-display-or-hide-a-column"></a>Görüntülemek veya bir sütun gizlemek için  
-  
--   En üstündeki araç çubuğunda **iş parçacığı** penceresinde, tıklatın **sütunları**, ardından seçin veya göstermek veya gizlemek istediğiniz sütunun adını temizleyin.    
+# <a name="view-threads-in-the-visual-studio-debugger-by-using-the-threads-window"></a>İş parçacıkları penceresini kullanarak Visual Studio hata ayıklayıcı iş parçacıkları görünümü
+İçinde **iş parçacıkları** penceresini inceleyin ve ayıkladığınız uygulama iş parçacıkları ile çalışır. Nasıl kullanılacağını adım adım yönergeler için **iş parçacıkları** penceresinde görmek [izlenecek yol: iş parçacıkları penceresini kullanarak hata ayıklama](../debugger/how-to-use-the-threads-window.md).
 
-## <a name="display-flagged-threads"></a>Bayrak eklenmiş iş parçacığı görüntüleme  
- Bir simge ile işaretleyerek özel dikkat vermek istediğiniz bir iş parçacığı bayrak **iş parçacığı** penceresi. Daha fazla bilgi için bkz: [nasıl yapılır: bayrağı ve iş parçacıklarını bayrakla](../debugger/how-to-flag-and-unflag-threads.md). İçinde **iş parçacığı** penceresi tüm iş parçacıkları veya yalnızca bayraklı iş parçacığı görüntülemek için seçin.  
+## <a name="use-the-threads-window"></a>İş Parçacıkları penceresini kullanma 
+ **İş parçacıkları** penceresi içeren bir tablo, her satır ayrı bir iş parçacığı, uygulamanızda nerede açıklar. Varsayılan olarak, uygulamanızı tüm iş parçacıklarının tabloda listelenir, ancak yalnızca sizi ilgilendiren iş parçacıklarını gösterilecek listeyi filtreleyebilirsiniz. Her sütun, farklı türden bilgileri açıklar. Ayrıca, bazı sütunları gizleyebilirsiniz. Tüm sütunları görüntülemek, aşağıdaki sütunlar, soldan sağa doğru görünür:  
   
-#### <a name="to-display-only-flagged-threads"></a>Yalnızca görüntülemek için iş parçacıklarını bayrakla  
+- **Bayrağı**: etiketlenmemiş bu sütunda adlandırdığınızdan istediğiniz bir iş parçacığı işaretleyebilirsiniz. Bir iş parçacığı bayrak hakkında daha fazla bilgi için bkz: [nasıl yapılır: bayrağı iş parçacıklarını bayrakla işaretleme ve](../debugger/how-to-flag-and-unflag-threads.md).  
   
--   Seçin **yalnızca iş parçacıklarını bayrakla Göster** en üstündeki düğmesi **iş parçacığı** penceresi. (Bunu görünüyorsa, bazı iş parçacıkları ilk bayrak gerekir.) 
+- **Geçerli iş parçacığı**: etiketlenmemiş bu sütunda bir sarı ok geçerli iş parçacığı gösterir. Ok anahat geçerli olmayan bir iş parçacığı için geçerli hata ayıklayıcı bağlamını gösterir.
+  
+- **Kimliği**: her iş parçacığı kimlik numarasını görüntüler.  
+  
+- **Kimliği yönetilen**: yönetilen kimlik numaraları için yönetilen iş parçacıklarını görüntüler.  
+  
+- **Kategori**: kullanıcı arabirimi iş parçacıkları, uzak yordam çağrı işleyicisi veya çalışan iş parçacığı iş parçacığı kategorisini görüntüler. Uygulamanın ana iş parçacığı bir özel kategori tanımlar.  
+  
+- **Adı**: her iş parçacığı varsa veya olarak ada göre tanımlayan \<No Name >.  
+  
+- **Konum**: iş parçacığı nerede çalıştığını gösterir. Bu konum iş parçacığı için tam çağrı yığınını Göster genişletebilirsiniz.  
+  
+- **Öncelik**: öncelik ya da sistem her iş parçacığı için atanan öncelik görüntüler (varsayılan olarak gizlidir) bir Gelişmiş sütunu.  
+  
+- **Benzeşim maskesi**: her iş parçacığı için İşlemci benzeşim maskesi gösterir (varsayılan olarak gizlidir) bir Gelişmiş sütunu. Çok işlemcili bir sistemde, bir iş parçacığı üzerinde çalışabileceği hangi İşlemci benzeşim maskesi belirler.  
+  
+- **Sayısı askıya**: askıya alınma sayısını görüntüler (varsayılan olarak gizlidir) bir Gelişmiş sütunu. Bu sayaç, bir iş parçacığı çalıştırılıp çalıştırılamayacağını belirler. Askıya alınmış sayıları hakkında daha fazla bilgi için bkz: [dondurma ve iş parçacıklarını çözme](#freeze-and-thaw-threads).  
+  
+- **İşlem adı**: her iş parçacığı ait olduğu için işlem gösterir (varsayılan olarak gizlidir) bir Gelişmiş sütunu. Bu sütundaki veriler, birçok işlemi hata ayıklama işlemi yaparken yararlı olabilir.  
 
-## <a name="freeze-and-thaw-threads"></a>Dondurma ve çözme iş parçacıkları  
- Bir iş parçacığı dondurmak, kaynaklar kullanılabilir olsa bile sistem yürütme iş parçacığının başlatılmaz.  
+- **İşlem Kimliği**: işlem gösterir (varsayılan olarak gizlidir) bir Gelişmiş sütun kimliği her iş parçacığı ait olduğu. 
+
+- **Aktarım niteleyicisi**: hata ayıklayıcı bağlı makineyi benzersiz olarak tanımlayan (varsayılan olarak gizlidir) bir Gelişmiş sütunu. 
   
- Yerel kodda askıya alma veya Windows işlevleri çağırarak iş parçacıklarını sürdürme `SuspendThread` ve `ResumeThread` veya MFC işlevleri [CWinThread::SuspendThread](/cpp/mfc/reference/CWinThread-class.md#cwinthread__suspendthread) ve [CWinThread::ResumeThread](/cpp/mfc/reference/CWinThread-class.md#cwinthread__resumethread). Çağırırsanız `SuspendThread` veya `ResumeThread`, değiştirdiğiniz *askıya sayısı*, göründüğü içinde **iş parçacığı** penceresi. Ancak, donmasına veya yerel bir iş parçacığı çözme, askıya alınmış sayısı değiştirmeyin. Çözülmüş ve askıya alınmış sayısı sıfır sahip sürece yerel kodda iş parçacığı yürütülemiyor.  
+### <a name="to-display-the-threads-window-in-break-mode-or-run-mode"></a>İş parçacıkları penceresini kesme modunda veya çalıştırma modunda görüntülemek için  
   
- Yönetilen kodda dondurma ya da bir iş parçacığı çözme askıya alınmış sayısı değişmez. Yönetilen kodda askıya alınmış sayısını 1 dondurulmuş bir iş parçacığı vardır. Yerel kodda iş parçacığı tarafından askıya sürece askıya alınmış sayısı 0 dondurulmuş bir iş parçacığı sahip bir `SuspendThread` çağırın.  
+-   Visual Studio hata ayıklama modunda olsa da, seçin **hata ayıklama** menüsünde **Windows**ve ardından **iş parçacıkları**.  
+  
+### <a name="to-display-or-hide-a-column"></a>Bir sütunu sakla ya da görüntülemek için  
+  
+-   Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde **sütunları**. Daha sonra seçin veya göstermek veya gizlemek istediğiniz sütunun adını temizleyin.  
+
+## <a name="display-flagged-threads"></a>Bayraklı iş parçacıklarını görüntüleme  
+ Bir simge ile işaretleyerek özel dikkat vermek istediğiniz bir iş parçacığı işaretleyebilirsiniz **iş parçacıkları** penceresi. Daha fazla bilgi için [nasıl yapılır: iş parçacıklarını bayrakla işaretleme ve bayrak](../debugger/how-to-flag-and-unflag-threads.md). İçinde **iş parçacıkları** penceresinde tercih edebilirsiniz tüm iş parçacıkları veya yalnızca bayraklı iş parçacıklarını görüntüler.  
+  
+### <a name="to-display-only-flagged-threads"></a>Yalnızca bayraklı iş parçacıklarını görüntülemek için  
+  
+-   Seçin **sadece iş parçacığı bayrak eklenmiş Göster** en üstündeki araç çubuğunda **iş parçacıkları** penceresi. (Bunu soluksa, bazı iş parçacıkları ilk bayrak gerekir.) 
+
+## <a name="freeze-and-thaw-threads"></a>Dondurma ve iş parçacıklarını çözme  
+ Bir iş parçacığını Dondur, sistem kaynakları kullanılabilir olsa bile, iş parçacığının yürütülmesini başlatılamıyor.  
+  
+ Yerel kodda askıya alma veya Windows işlevleri çağırarak iş parçacıklarını sürdürme `SuspendThread` ve `ResumeThread`. Ya da MFC işlevlerini [CWinThread::SuspendThread](/cpp/mfc/reference/CWinThread-class#suspendthread) ve [CWinThread::ResumeThread](/cpp/mfc/reference/CWinThread-class#resumethread). Çağırırsanız `SuspendThread` veya `ResumeThread`, *askıya sayısı* gösterilen **iş parçacıkları** penceresi değiştirilebilir. Dondurma veya çözme yerel bir iş parçacığı askıda sayma değiştirmez. Çözülmüş ve askıya alınmış sayısı sıfır sahip sürece bir iş parçacığı yerel kodda yürütülemiyor.  
+  
+ Yönetilen kodda dondurma veya çözme iş parçacığı askıda sayma değiştirir. Yönetilen kodda bir iş parçacığını Dondur ise, askıya alınmış sayısı 1'dir. Yerel kodda bir iş parçacığını Dondur, kullandığınız sürece, askıya alınmış sayısı 0 ' dır `SuspendThread` çağırın.  
   
 > [!NOTE]
->  Yerel koddan yönetilen koda çağrısı hata ayıklamasını yaparken, yönetilen kod adlı yerel kod olarak aynı fiziksel iş parçacığı çalıştırır. Yönetilen kod ayrıca askıya alma veya yerel iş parçacığı dondurma donuyor.  
+>  Yönetilen koda yerel koddan bir çağrı hata ayıklaması yaparken, yönetilen kod aynı fiziksel iş parçacığında adlı yerel kod olarak çalışır. Yönetilen kod da askıya alma ya da yerel iş parçacığını dondurma donuyor.  
   
-#### <a name="to-freeze-or-thaw-execution-of-a-thread"></a>Freeze veya bir iş parçacığı yürütülmesi çözme  
+### <a name="to-freeze-or-thaw-execution-of-a-thread"></a>Dondurma veya çözme iş parçacığı yürütme için  
   
--   Üstündeki araç çubuğunda **iş parçacığı** penceresinde tıklatın **iş parçacıklarını dondurmak** veya **çözme iş parçacığı**.  
+-   Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde **iş parçacıklarını dondurma** veya **çözme iş parçacığı**.  
   
-     Bu eylem, seçili iş parçacığı etkiler **iş parçacığı** penceresi. 
+     Bu eylem, seçili iş parçacıklarını etkiler **iş parçacıkları** penceresi. 
 
-### <a name="switch-to-another-thread"></a>Başka bir iş parçacığı için geçiş 
+### <a name="switch-to-another-thread"></a>Başka bir iş parçacığına geçiş 
 
-Sarı bir ok geçerli iş parçacığının (ve yürütme işaretçi konumunu) gösterir. Süslü kuyruklu yeşil bir ok geçerli hata ayıklayıcı bağlamını geçerli olmayan bir iş parçacığı olduğunu gösterir.
+Sarı bir ok, geçerli iş parçacığı (ve yürütme işaretçisi konumunu) gösterir. Kıvrık kuyruklu yeşil bir ok, geçerli hata ayıklayıcı bağlamı geçerli olmayan bir iş parçacığı olduğunu gösterir.
 
-#### <a name="to-switch-to-another-thread"></a>Başka bir iş parçacığı için geçiş yapmak için  
+#### <a name="to-switch-to-another-thread"></a>Başka bir iş parçacığına geçiş yapmak için  
   
--   Aşağıdaki adımlardan birini gerçekleştirin:  
+-   Aşağıdaki adımlardan birini izleyin:  
   
-    -   Hiçbir iş parçacığı çift tıklayın.  
+    -   Herhangi bir iş parçacığı çift tıklayın.  
   
-    -   Bir iş parçacığı sağ tıklatın ve **geçiş iş parçacığına**.
+    -   Bir iş parçacığı sağ tıklayıp **iş parçacığı anahtarı**.
 
 ## <a name="group-and-sort-threads"></a>Grup ve sıralama iş parçacıkları  
- İş parçacığı gruplandırdığınızda, tablodaki her grup için bir başlığı görüntülenir. Başlık "Çalışan iş parçacığı" veya "Bayrak yok iş parçacığı sayısı" ve ağaç denetimi gibi Grup açıklamasını içerir. Her grup üyesi iş parçacıklarının grup başlığı altında görünür. Bir grup için üye iş parçacıklarını gizlemek istiyorsanız, Grup daraltmak için ağaç denetimi kullanabilirsiniz.  
+ İş parçacıkları gruplandırdığınızda, tablodaki her grup için bir başlık görünür. Bir Grup açıklaması gibi başlık içeren **çalışan iş parçacığı** veya **bayrak yok iş parçacıkları**ve bir ağaç denetimi. Her grup üyesi iş parçacıklarının grubunun başlığının altında görünür. Bir grubun üyesi iş parçacıklarının gizlemek istiyorsanız, grubu daraltmak için ağaç denetimi kullanın.  
   
- Gruplandırma sıralama üzerinden öncelikli olduğundan, kategoriye, örneğin, iş parçacıkları grup ve ardından her kategoride Kimliğine göre sıralayın.  
+ Gruplandırma sıralama üzerinden öncelikli olduğundan, kategoriye, örneğin, iş parçacığı grubu ve alanlarını her kategoride Kimliğine göre sıralayabilirsiniz.  
   
-#### <a name="to-sort-threads"></a>İş parçacığı sıralamak için  
+### <a name="to-sort-threads"></a>İş parçacıkları sıralamak için  
   
-1.  Üstündeki araç çubuğunda **iş parçacığı** penceresinde herhangi bir sütun üst düğmesini tıklatın.  
+1.  Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde herhangi bir sütunun üst düğmeyi seçin.  
   
-     İş parçacığı, artık bu sütundaki değerlere göre sıralanır.  
+     İş parçacıkları, artık bu sütundaki değerlere göre sıralanır.  
   
-2.  Sıralama düzenini tersine istiyorsanız, tekrar aynı düğmeye tıklayın.  
+2.  Sıralama düzenini tersine çevirmek istiyorsanız, aynı düğmesini tekrar seçin.  
   
-     Listenin başında şimdi görünen iş parçacığı altta görünür.  
+     Artık listesinin üstünde görünen iş parçacıkları ve en altında görünür.  
   
-#### <a name="to-group-threads"></a>Grup iş parçacığı  
+### <a name="to-group-threads"></a>İş parçacıklarını gruplandırma  
   
--   İçinde **iş parçacığı** penceresi araç tıklatın **Group by** listelemek ve Grup iş parçacığı tarafından istediğiniz ölçütü'i tıklatın.  
+-   İçinde **iş parçacıkları** penceresi araç çubuğu, select **gruplandırma ölçütü** listelemek ve iş parçacıklarını gruplandırma istediğiniz ölçütleri seçin.  
   
-#### <a name="to-sort-threads-within-groups"></a>İş parçacığı grupları içindeki sıralamak için  
+### <a name="to-sort-threads-within-groups"></a>Grupları içindeki dizileri sıralama  
   
-1.  En üstündeki araç çubuğunda **iş parçacığı** penceresinde tıklatın **Group by** listelemek ve Grup iş parçacığı tarafından istediğiniz ölçütü'i tıklatın.  
+1.  Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde **gruplandırma ölçütü** listelemek ve iş parçacıklarını gruplandırma istediğiniz ölçütleri seçin.  
   
-2.  İçinde **iş parçacığı** penceresinde herhangi bir sütun üst düğmesini tıklatın.  
+2.  İçinde **iş parçacıkları** penceresinde herhangi bir sütunun üst düğmeyi seçin.  
   
-     İş parçacığı, artık bu sütundaki değerlere göre sıralanır.  
+     İş parçacıkları, artık bu sütundaki değerlere göre sıralanır.  
   
-#### <a name="to-expand-or-collapse-all-groups"></a>Genişlet veya daralt tüm gruplar için  
+### <a name="to-expand-or-collapse-all-groups"></a>Tüm grupları genişletin veya daraltın için  
   
--   Üstündeki araç çubuğunda **iş parçacığı** penceresinde tıklatın **Grupları Genişlet** veya **grupları Daralt**.  
+-   Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde **genişletin grupları** veya **grupları Daralt**.  
   
-## <a name="search-for-specific-threads"></a>Belirli iş parçacığı arama  
- İçinde [!INCLUDE[vs_dev11_long](../data-tools/includes/vs_dev11_long_md.md)], belirtilen bir dizeyle Eşleştir iş parçacığı arama yapabilirsiniz. İş parçacıkları için arama yaptığınızda **iş parçacığı** penceresini penceresi herhangi sütununda arama dizesiyle eşleşen tüm iş parçacıklarının görüntüler. Çağrı yığınında üstündeki görüntülenen iş parçacığı konum bilgilerdir **konumu** sütun. Varsayılan olarak, ancak, tam çağrı yığını aranmaz.  
+## <a name="search-for-specific-threads"></a>Belirli bir iş parçacığı arama  
+ Belirtilen bir dize içinde eşleşen iş parçacığı arayabilirsiniz **iş parçacıkları** penceresi. İş parçacıkları için arama yaparken, herhangi bir sütun arama dizesinde eşleşen tüm iş parçacıkları penceresini görüntüler. Bu bilgiler çağrı yığınında üstünde görünen iş parçacığı konum içeren **konumu** sütun. Varsayılan olarak, tam çağrı yığınını Aranan değil.  
   
-#### <a name="to-search-for-specific-threads"></a>Belirli iş parçacığı arama  
+### <a name="to-search-for-specific-threads"></a>Belirli iş parçacığı arama  
   
--   Üstündeki araç çubuğunda **iş parçacığı** penceresinde, Git **arama** kutusu ve ya da:  
+1. Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde, Git **arama** kutusu ve ya da:  
+
+     - Bir arama dizesi girin ve sonra basın **Enter**.  
   
-    -   Bir arama dizesi yazın ve ENTER tuşuna basın.  
+     \- veya -  
   
-         \- veya -  
+     - Aşağı açılan listesinde seçin **arama** kutusunda ve bir önceki aramaya ait arama dizesini seçin.  
   
-    -   Aşağı açılan listeye tıklayın **arama** kutusunda ve bir arama dizesi önceki aramadan seçin.  
+2. (İsteğe bağlı) Tam çağrı yığınını aramanızda eklemek için işaretleyin **arama çağrı yığını**.   
   
--   (İsteğe bağlı) Tam çağrı yığını aramanızda eklemek için seçin **arama çağrı yığını**.   
-  
-## <a name="display-thread-call-stacks-and-switching-between-frames"></a>Görüntü iş parçacığının çağrı yığınları ve çerçeveler arasında geçiş yapma  
-Birden çok iş parçacıklı bir programda kendi çağrı yığını her iş parçacığı vardır. **İş parçacığı** penceresi bu yığınları görüntülemek için kolay bir yol sağlar.
+## <a name="display-thread-call-stacks-and-switch-between-frames"></a>İş parçacığı çağrı yığınlarını görüntüleyebilir ve arasında çerçeveleri Değiştir  
+Bir çoklu iş parçacığı kullanan programda her iş parçacığı kendi çağrı yığınına sahiptir. **İş parçacıkları** penceresi bu yığınlarını görüntülemek için kullanışlı bir yol sağlar.
 
 > [!TIP]
-> Her iş parçacığı için çağrı yığını görsel için kullanmak [Paralel Yığınlar](../debugger/get-started-debugging-multithreaded-apps.md) penceresi.
+> Her iş parçacığı için çağrı yığınını görsel bir temsilini için kullanmak [Paralel Yığınlar](../debugger/get-started-debugging-multithreaded-apps.md) penceresi.
   
-#### <a name="to-view-the-call-stack-of-a-thread"></a>Bir iş parçacığı çağrı yığınını görüntülemek için  
+### <a name="to-view-the-call-stack-of-a-thread"></a>İş parçacığı çağrı yığınını görüntülemek için  
   
--   İçinde **konumu** sütun, iş parçacığı konumun yanındaki ters üçgen'ı tıklatın.  
+-   İçinde **konumu** sütun, iş parçacığı konumu yanındaki ters üçgeni seçin.  
   
-     İş parçacığı için çağrı yığını göstermek için konum genişletir.  
+     İş parçacığı için çağrı yığınını Göster konumuna genişletir.  
   
-#### <a name="to-view-or-collapse-the-call-stacks-of-all-threads"></a>Görüntülemek veya tüm iş parçacıklarının çağrı yığınları daraltmak için  
+### <a name="to-view-or-collapse-the-call-stacks-of-all-threads"></a>Görüntüleme veya tüm iş parçacığı çağrı yığınlarını Daralt  
   
--   Üstündeki araç çubuğunda **iş parçacığı** penceresinde tıklatın **çağrı yığınları genişletin** veya **Daralt çağrı yığınları**.  
+-   Üst kısmındaki araç çubuğunda **iş parçacıkları** penceresinde **çağrı yığınlarını genişletme** veya **Daralt çağrı yığınlarını**.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Birden çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
- [Çok iş parçacıklı uygulamada hata ayıklama kullanmaya başlama](../debugger/get-started-debugging-multithreaded-apps.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
+ [Çok iş parçacıklı uygulamalarda hata ayıklamaya başlama](../debugger/get-started-debugging-multithreaded-apps.md)

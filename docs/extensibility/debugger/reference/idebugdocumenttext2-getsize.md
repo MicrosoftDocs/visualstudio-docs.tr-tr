@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: fe37c7157f96a905e52fb6656d5ebb8ff6f4971a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0c62ca1695de65b005fa839c69cbcc02452f1207
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49819673"
 ---
 # <a name="idebugdocumenttext2getsize"></a>IDebugDocumentText2::GetSize
-Belgenin bu konumda metin boyutunu alır.  
+Belgedeki bu konumda metin boyutunu alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,18 +43,18 @@ int GetSize(
   
 #### <a name="parameters"></a>Parametreler  
  `pcNumLines`  
- [out] Metin satırı sayısını döndürür.  
+ [out] Metin satırlarını döndürür.  
   
  `pcNumChars`  
- [out] Metnin karakterlerin sayısını döndürür.  
+ [out] Metin karakter sayısını döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- [Yalnızca C++] Belirli bir değeri olmayan istenirse, parametre için NULL geçin.  
+ [Yalnızca C++] Belirli bir değeri istenildiği gibi değilse, parametre için NULL geçirin.  
   
- [Sadece C#] Her iki parametre belirtilmelidir.  
+ [Yalnızca C#] Her iki parametre belirtilmelidir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugDocumentText2](../../../extensibility/debugger/reference/idebugdocumenttext2.md)

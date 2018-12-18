@@ -1,45 +1,51 @@
 ---
-title: 'Nasıl yapılır: bir iş akışı projesine yeni öğe eklemek | Microsoft Docs'
-ms.date: 11/04/2016
-ms.topic: reference
+title: 'İş Akışı Tasarımcısı - nasıl yapılır: bir iş akışı projesine yeni öğe ekleme'
+ms.date: 06/25/2018
+ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-workflow-designer
 ms.assetid: 5c6180ca-af10-4513-b0cb-7d478fd84eab
 author: gewarren
 ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cb3024573a9ca4732066610c2c29c05fa1d73891
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dbed404f2cdd69446d8945fc9ff96703eccd161f
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49814240"
 ---
 # <a name="how-to-add-a-new-item-to-a-workflow-project"></a>Nasıl yapılır: bir iş akışı projesine yeni öğe ekleme
-Bir iş akışı projesi oluşturduktan sonra iş akışı etkinlikleri, tasarımcıları ve diğer tanıdık ekleyebilirsiniz [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] öğelerini projenize.
 
- Aşağıdaki tabloda [!INCLUDE[wf](../workflow-designer/includes/wf_md.md)] bir iş akışı projesine eklemek öğeleri.
+Bir iş akışı projesi oluşturduktan sonra iş akışı etkinlikleri, tasarımcılar ve diğer tanıdık Visual Studio öğelerini projenize ekleyebilirsiniz.
 
-|Ad|Açıklama|
-|----------|-----------------|
-|Etkinlik|Diğer etkinliklerini gibi bir etkinlik. Bu öğeyi seçerek ekler aynı XAML dosyası projeye seçerken elde edebilirsiniz gibi **etkinlik Kitaplığı** için yeni bir proje şablonu. Hakkında daha fazla bilgi için bu yordamı, bkz: [nasıl yapılır: bir etkinlik kitaplığı oluşturma](../workflow-designer/how-to-create-an-activity-library.md).|
-|Etkinlik Tasarımcısı|Bir etkinliğin tasarım zamanı deneyimini özelleştirmek için bir tasarımcı. Bu öğeyi seçerek ekler aynı dosyaları projeye seçerken elde edebilirsiniz gibi **etkinlik Tasarımcısı Kitaplığı** için yeni bir proje şablonu. Hakkında daha fazla bilgi için bu yordamı, bkz: [nasıl yapılır: bir etkinlik Tasarımcısı kitaplığı oluşturma](../workflow-designer/how-to-create-an-activity-designer-library.md).|
-|Kod etkinliği|Kod içinde yazılmış yürütme mantığı ile etkinlik. Kaynak kodu dosyasının geçersiz kılma ile <xref:System.Activities.CodeActivity.Execute%2A> yöntemi zaten oluşturulur sizin için.|
-|WCF iş akışı hizmeti|A [!INCLUDE[indigo2](../workflow-designer/includes/indigo2_md.md)] iş akışı etkinlikleri kullanılarak oluşturulan hizmet. Bu öğeyi seçerek ekler aynı dosyaları projeye seçerken elde edebilirsiniz gibi **WCF iş akışı hizmeti uygulaması** için yeni bir proje şablonu. Bu yordam hakkında daha fazla bilgi için bkz: [nasıl yapılır: bir WCF iş akışı hizmeti uygulaması oluştur](../workflow-designer/how-to-create-a-wcf-workflow-service-application.md).|
+Aşağıdaki tabloda, bir iş akışı projesine eklediğiniz Windows Workflow Foundation (WF) öğeleri listeler:
 
-### <a name="to-add-a-new-item-to-a-workflow-project"></a>Bir iş akışı projesine yeni öğe eklemek için
 
-1.  Üzerinde **proje** menüsünde tıklatın **Yeni Öğe Ekle...** .
+| Ad | Açıklama |
+|-| - |
+| Etkinlik | Diğer etkinliklerini oluşmasına bir etkinlik. Bu öğeyi seçerseniz ekler aynı XAML dosyasını projeye seçerken elde edebilirsiniz gibi **etkinlik Kitaplığı** için yeni bir proje şablonu. Hakkında daha fazla bilgi için bu yordamı, bkz: [nasıl yapılır: etkinlik kitaplığı oluşturma](../workflow-designer/how-to-create-an-activity-library.md). |
+| Etkinlik Tasarımcısı | Bir etkinliğin tasarım zamanı deneyimi özelleştirmek için bir tasarımcı. Bu öğeyi seçerseniz ekler aynı dosyaları projeye seçerken elde edebilirsiniz gibi **etkinlik Tasarımcısı Kitaplığı** için yeni bir proje şablonu. Hakkında daha fazla bilgi için bu yordamı, bkz: [nasıl yapılır: etkinlik Tasarımcısı kitaplığı oluşturma](../workflow-designer/how-to-create-an-activity-designer-library.md). |
+| Kod etkinliği | Yürütme mantığı kod olarak yazılmış bir etkinlik. Bir kaynak kodu dosyası geçersiz kılma ile <xref:System.Activities.CodeActivity.Execute%2A> yöntemi zaten oluşturulan sizin için. |
+| WCF iş akışı hizmeti | A [!INCLUDE[indigo2](../workflow-designer/includes/indigo2_md.md)] iş akışı etkinlikleri kullanılarak yapılmış bir hizmet. Bu öğeyi seçerseniz ekler aynı dosyaları projeye seçerken elde edebilirsiniz gibi **WCF iş akışı hizmeti uygulaması** için yeni bir proje şablonu. Bu yordam hakkında daha fazla bilgi için bkz. [nasıl yapılır: WCF iş akışı hizmeti uygulaması oluşturma](../workflow-designer/how-to-create-a-wcf-workflow-service-application.md). |
 
-     **Yeni Öğe Ekle** iletişim kutusu açılır.
+## <a name="to-add-a-new-item-to-a-workflow-project"></a>Bir iş akışı projesine yeni bir öğe eklemek için
 
-2.  İçinde **yüklü şablonlar** bölmesinde, **iş akışı** grubu.
+1. Üzerinde **proje** menüsünde **Yeni Öğe Ekle**.
 
-3.  Dört öğelerden birini seçin. Önceki tabloda kullanılabilir seçenekler listeler.
+   **Yeni Öğe Ekle** iletişim kutusu açılır.
 
-4.  Öğe için uygun bir ad yazın **adı** iletişim kutusunun altındaki kutusunu.
+1. Sol bölmede seçin **iş akışı** kategoriye ve iş akışı öğesi şablonu seçin.
 
-5.  Tıklatın **Ekle** geçerli iş akışı projeye öğe eklemek için.
+   > [!NOTE]
+   > Görmüyorsanız **iş akışı** kategori, ilk yükleme **Windows Workflow Foundation** Visual Studio 2017'in bileşeni. Ayrıntılı yönergeler için bkz. [Windows Workflow Foundation'ı yükleme](developing-applications-with-the-workflow-designer.md#install-windows-workflow-foundation).
+
+1. Öğe için bir ad girin **adı** iletişim kutusunun alt kısmındaki kutusu.
+
+1. Seçin **Ekle** projeye öğe eklemek için.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [İş Akışı Projesi Oluşturma](../workflow-designer/creating-a-workflow-project.md)
+- [Bir iş akışı projesi oluşturma](../workflow-designer/creating-a-workflow-project.md)

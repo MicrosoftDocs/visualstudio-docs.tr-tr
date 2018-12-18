@@ -1,32 +1,34 @@
 ---
 title: Hızlı Başlangıç - var olan koddan bir Python projesi oluşturma
-description: Bu hızlı başlangıç varolan bir klasörden uygun bir şablon kullanarak Python için Visual Studio projesi oluşturun.
-ms.date: 01/08/2018
+description: Bu hızlı başlangıçta, mevcut bir klasörden uygun bir şablon kullanarak Python için bir Visual Studio projesi oluşturun.
+ms.date: 12/06/2018
 ms.prod: visual-studio-dev15
 ms.technology: vs-python
 ms.topic: quickstart
 author: kraigb
 ms.author: kraigb
 manager: douge
+ms.custom: seodec18
 ms.workload:
 - python
 - data-science
-ms.openlocfilehash: 497e32e2be5babe16b82e9b06ab12f4f5c2c0ba7
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 9cded32adb57b84c01710c8a47491901d50b7bd1
+ms.sourcegitcommit: 708f77071c73c95d212645b00fa943d45d35361b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53065332"
 ---
 # <a name="quickstart-create-a-python-project-from-existing-code"></a>Hızlı Başlangıç: Varolan koddan bir Python projesi oluşturma
 
-Seçtiğiniz sonra [Python desteği Visual Studio 2017 yüklü](installing-python-support-in-visual-studio.md), var olan Python kodu bir Visual Studio projeye Getir kolaydır.
+Kaydederler [Python desteği Visual Studio 2017'de yüklü](installing-python-support-in-visual-studio.md), varolan bir Python kodu bir Visual Studio projesine getirmek kolaydır.
 
 > [!Important]
-> Burada anlatılan işlemine taşımayın veya özgün kaynak dosyalarını kopyalayın. Bir kopya ile çalışmak isterseniz, klasörü ilk çoğaltma.
+> Burada açıklanan işlemi taşıma veya kopyalama orijinal kaynak dosyalarına desteklemez. Bir kopya ile çalışmak istiyorsanız, klasörü ilk çoğaltma.
 
 [!INCLUDE[project-from-existing](includes/project-from-existing.md)]
 
-8. İsterseniz, Ctrl + F5 tuşuna basarak veya seçerek program Çalıştır **hata ayıklama > hata ayıklama olmadan Başlat**.
+İsterseniz, tuşlarına basarak programı çalıştırın **Ctrl**+**F5** veya seçerek **hata ayıklama** > **ayıklamadanBaşla**.
 
 ## <a name="next-steps"></a>Sonraki adımlar
 
@@ -35,6 +37,6 @@ Seçtiğiniz sonra [Python desteği Visual Studio 2017 yüklü](installing-pytho
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [El ile varolan bir Python yorumlayıcısı tanımlayan](managing-python-environments-in-visual-studio.md#manually-identifying-an-existing-environment).
-- [Python desteği Visual Studio 2015 ve daha önce yükleme](installing-python-support-in-visual-studio.md).
-- [Konumları yüklemek](installing-python-support-in-visual-studio.md#install-locations).
+- [El ile var olan bir Python yorumlayıcısı tanımlayın](managing-python-environments-in-visual-studio.md#manually-identify-an-existing-environment)
+- [Visual Studio 2015'te ve daha önce Python desteğini yükleme](installing-python-support-in-visual-studio.md)
+- [Yükleme konumları](installing-python-support-in-visual-studio.md#install-locations)

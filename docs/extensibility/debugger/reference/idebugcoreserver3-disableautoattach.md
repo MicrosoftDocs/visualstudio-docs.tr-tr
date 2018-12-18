@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 5c8a36e867d4ee7c180b96db6dec004ed4d5227e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0e8a00b4b0b7b485d5f419128e18a5fd0bf65e4a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49821337"
 ---
 # <a name="idebugcoreserver3disableautoattach"></a>IDebugCoreServer3::DisableAutoAttach
-Bu sunucu ile ilişkilendirilen tüm hata ayıklama altyapıları için otomatik ekleme devre dışı bırakır.  
+Bu sunucuyla ilişkili tüm hata ayıklama motorlarını otomatik iliştirme devre dışı bırakır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,7 +38,7 @@ int DisableAutoAttach();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde, hata kodunu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi halde hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)

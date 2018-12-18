@@ -1,7 +1,7 @@
 ---
-title: 'Nasıl yapılır: scrollbar özelleştirerek kodunuzu izlemek | Microsoft Docs'
-ms.custom: ''
-ms.date: 11/04/2016
+title: Kaydırma çubuğu eşleme modu ve çubuğu modu
+ms.date: 09/25/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
 ms.topic: conceptual
 author: gewarren
@@ -9,52 +9,66 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1ff36af9a034f3a369369a0916f468826c053d05
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 6f60d7f573ed275ff4d827e0a4209f21444ee64c
+ms.sourcegitcommit: d462dd10746624ad139f1db04edd501e7737d51e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50219958"
 ---
-# <a name="how-to-track-your-code-by-customizing-the-scrollbar"></a>Nasıl yapılır: scrollbar özelleştirerek kodunuzu izleme
+# <a name="how-to-customize-the-scroll-bar"></a>Nasıl yapılır: kaydırma çubuğunu özelleştirme
 
-Uzun kod dosyaları ile çalışırken, her şeyi göz önünde bulundurmanız zor olabilir. Kaydırma çubuğu neler olduğuna dair kodunuzda bir Kuşbakışı görünüm vermek için kod penceresinin özelleştirebilirsiniz.
+Uzun kod dosyaları ile çalışırken, her şeyi dosyasında olduğu, izlenmesi zor olabilir. Kodunuzda olup bitenleri genel bir resmini vermek için Kod Düzenleyicisi, kaydırma çubuğu özelleştirebilirsiniz.
 
-## <a name="to-show-annotations-on-the-scroll-bar"></a>Ek açıklamalar kaydırma çubuğunda göstermek için
+## <a name="annotations"></a>Ek Açıklamalar
 
-1. Kod değişiklikleri, kesme noktaları, hataları ve yer işaretleri göstermek için kaydırma çubuğunun ayarlayabilirsiniz.
+Kaydırma çubuğu ek açıklamaları gibi kod değişiklikleri, kesme noktaları, yer işaretleri, hataları ve şapka gösterip göstermediği seçebilirsiniz.
 
-    Açık **kaydırma çubuğu** seçerek seçenekleri sayfasında **Araçları** > **seçenekleri** > **metin düzenleyici**  >  **Tüm diller** veya belirli bir dil veya girerek **kaydırma çubuğu** içinde **hızlı başlatma** penceresi.
+   1. Açık **kaydırma çubukları** seçerek seçenekler sayfası **Araçları** > **seçenekleri** > **metin düzenleyici**  >  **Tüm diller** > **kaydırma çubukları**.
 
-2. Seçin **ek açıklamaları Göster dikey kaydırma çubuğu üzerinden**, görmek istediğiniz ek açıklamaları seçin.
+   2. Seçin **dikey kaydırma çubuğunun üzerinde ek açıklamalarını göster**, görmek istediğiniz ek açıklamaları'ı seçin. Kullanılabilir ek açıklamalar şunlardır:
 
-    **İşaretleri** kesme noktaları ve yer işaretleri seçeneği içerir.
+      - değişiklikler
+      - işaretler
+      - hatalar
+      - şapka
 
-3. Şimdi deneyin. Büyük kod dosyasını açın ve dosyanın çeşitli yerlerde oluşan bir şey değiştirin. Kaydırma çubuğu şey olması gerekmiyor değiştirirse, değişikliklerinizi yedekleyebilirsiniz şekilde değişiklik etkisini gösterir.
+      > [!TIP]
+      > **İşaretleri Göster** seçeneği, kesme noktaları ve yer imlerini içerir.
 
-    İşte nasıl bir dize için bir arama sonra kaydırma çubuğu arar. Dizesinin tüm örnekleri görüntülendiğine dikkat edin.
+Büyük kod bir dosyası açarak ve metin dosyasında çeşitli yerlerde meydana değiştirerek deneyin. Kaydırma çubuğu bir şey kaydetmemeniz değiştirirse, değişikliklerinizi yedekleyebilirsiniz bu nedenle değişiklik etkisini gösterir.
 
-    ![Bir dize için arama sonra kaydırma çubuğu. ] (../ide/media/enhancedscrollbarsearch.png "EnhancedScrollbarSearch")
+İşte nasıl bir dize için arama yaptıktan sonra kaydırma çubuğu görünür. Dizesinin tüm örnekleri kaydırma çubuğunda görüntülendiğine dikkat edin.
 
-    Dizesinin tüm örnekleri değiştirildikten sonra kaydırma çubuğu aşağıdadır. İşlemi bazı sorunlara neden hemen görebilirsiniz.
+![Bir dize için arama sonra visual Studio kaydırma çubuğu](../ide/media/enhancedscrollbarsearch.png)
 
-    ![Bir dize hatalarla değiştirildikten sonra scrollbar](../ide/media/enhancedscrollbarreplace.png "EnhancedScrollbarReplace")
+Dizesinin tüm örnekleri değiştirildikten sonra kaydırma çubuğu aşağıdadır. Metin değişimi hataları Burada sunulan kaydırma çubuğunu göster kırmızı işaretler.
 
-## <a name="to-set-the-display-mode-for-the-scroll-bar"></a>Kaydırma çubuğu görüntü modu ayarlamak için
+![Visual Studio kaydırma çubuğuna hatalarla bir dize değiştirdikten sonra](../ide/media/enhancedscrollbarreplace.png)
 
-1. Kaydırma çubuğu iki modu vardır: çubuk modu (varsayılan) ve eşleme modu. Modu yalnızca ek açıklama göstergeleri kaydırma çubuğunda görüntüler. Harita modunda kod satırlarını kaydırma çubuğunda gösterilir. Oldukları nasıl geniş ve fare işaretçisini üzerlerinde getirdiğinizde olup arka plandaki kod gösterdikleri seçebilirsiniz. Bir kaydırma çubuğunun konumunda tıkladığınızda, imleci kodda bu konuma taşır. Daraltılmış bölgeleri farklı gölgeli; bunları çift tıkladığınızda genişletilir.
+## <a name="display-modes"></a>Görüntü modları
 
-    Üzerinde **kaydırma çubuğu** seçenekleri sayfasında, seçin **dikey kaydırma çubuğu için kullanım çubuk modu** veya **dikey kaydırma çubuğu için eşleme kullanma modu**. Genişliği seçebilirsiniz **kaynak genel bakış** açılır.
+Kaydırma çubuğu iki modu vardır: çubuk modu ile eşleme modu.
 
-    İşte eşleme modu açık olduğunda arama örnek nasıl göründüğünü ve genişliği ayarı **orta**:
+### <a name="bar-mode"></a>Çubuğu modu
 
-    ![Kaydırma çubuğu harita modunda](../ide/media/enhancedscrollbar.png "EnhancedScrollbar")
+*Çubuk modunu* ek açıklama göstergeleri kaydırma çubuğundaki görüntüler. Kaydırma çubuğundaki sayfa yukarı veya aşağı kaydır ancak dosyayı bu konuma geçmez.
 
-2. İmleç kaydırma çubuğu yukarı ve Aşağı Taşı kodunun önizlemeleri etkinleştirmek için eşleme modu seçin **Göster önizleme araç ipucu** seçeneği. İşte bu şekilde görünür:
+### <a name="map-mode"></a>Eşleme modu
 
-    ![Kaydırma çubuğu araç ipucu ile](../ide/media/enhancedscrollbarsearchtooltip.png "EnhancedScrollbarSearchTooltip")
+İçinde *eşleme modu*, kaydırma çubuğu, imleç atlar yerine yalnızca bir sayfa aşağı veya yukarı kaydırma dosyanın bu konumda bir konuma tıklayın. Kod satırlarını, kaydırma çubuğundaki küçük gösterilir. Ne kadar geniş sütun eşleme olan bir değer seçerek seçebilirsiniz **kaynak genel bakış**. Harita üzerinde işaretçiyi getirdiğinizde, kodun daha büyük bir önizlemesini etkinleştirmek için seçin **önizleme araç ipucunu göster** seçeneği. Daraltılmış bölgeleri farklı şekilde gölgeli ve bunları çift tıkladığınızda genişletin.
 
-    Davranış ve önizleme araç ipucu kaydırma eşleme modu tutmak istiyor, ancak kaynak kod genel bakış görmek istemiyorsanız, ayarlayabileceğiniz **kaynak genel bakış** için **devre dışı**.
+> [!TIP]
+> Küçük kod görünümü eşleme modunda ayarlayarak kapatabilirsiniz **kaynak genel bakış** için **kapalı**. Varsa **önizleme araç ipucunu göster** olan seçildiğinde kodunun bu konumunda bir önizleme kaydırma çubuğundaki işaretçinizi üzerine gelin ve tıkladığınızda imleç hala dosyanın bu konumda atlar görmeye.
+
+Eşleme modu etkin ve genişliğini ayarlamak aşağıdaki görüntüde arama örnek gösterilmektedir **orta**:
+
+![Visual Studio kaydırma çubuğu eşleme modunda](../ide/media/enhancedscrollbar.png)
+
+Aşağıdaki görüntüde **önizleme araç ipucunu göster** seçeneği:
+
+![Visual Studio kaydırma çubuğu içeren bir araç ipucu](../ide/media/enhancedscrollbarsearchtooltip.png)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-[Düzenleyici'de kod yazma](../ide/writing-code-in-the-code-and-text-editor.md)
+- [Kod Düzenleyicisi özellikleri](../ide/writing-code-in-the-code-and-text-editor.md)

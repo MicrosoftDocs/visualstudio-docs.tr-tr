@@ -1,5 +1,5 @@
 ---
-title: Performans çözümleme araçları veri | Microsoft Docs
+title: Performans analiz araçlarını veri | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -18,29 +18,30 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fe9ddcc2a374661525744e064929ca20daa83c97
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 628c7149a4f79a208ee9258ab2158cf8808a7fb5
+ms.sourcegitcommit: be938c7ecd756a11c9de3e6019a490d0e52b4190
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744839"
 ---
-# <a name="analyzing-performance-tools-data"></a>Araçları verilerini performansını analiz etme
-Performans raporları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları görüntülemek ve uygulama performans sorunları çözümlemek etkinleştirin. Bu bölümde performans raporları ve performans verilerini incelemek için kullanılan görünümleri genel bakış sağlar.  
+# <a name="analyze-performance-tools-data"></a>Performans araçları verilerini analiz etme
+Performans raporları [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] profil oluşturma araçları görüntüleyip uygulama performans sorunlarını analiz etmek etkinleştirin. Bu bölümde, performans verileri incelemek için kullanılabilir görünümleri ve performans raporları hakkında genel bir bakış sağlar.  
   
-## <a name="common-tasks"></a>Ortak Görevler  
+## <a name="common-tasks"></a>Ortak görevler  
   
 |Görev|İlgili içerik|  
 |----------|---------------------|  
-|**Hızlı bir şekilde sorunları belirlemek için performans kurallarını kullanın:** Profil Araçları performans kurallarını tanımlamak ortak sorunlar ve Yardım sorunu içeren kaynak koduna kolayca gidin. Ayrıntılı Yardım konuları genellikle bir çözüm önerebilir.|-   [Verileri çözümlemek için performans kurallarını kullanma](../profiling/using-performance-rules-to-analyze-data.md)|  
-|**Rapor Görünümü Ayrıntıları Anlama:** profil oluşturma Araçlar rapor görünümlerini işlemler, iş parçacıkları, modüller ve bir çalıştırma profil oluşturma işlevler için toplanan performans verilerini sağlar. Görüntülenen verileri verileri toplamak için kullanılan profil yöntemine bağlıdır.|-   [Performans rapor görünümleri](../profiling/performance-report-views.md)|  
-|**Yapılandırma, sıralama ve filtreleme rapor görünümleri:** belirtin ve bir rapor görüntülemek için Rapor satırları sıralama veri sütunları sıralama ve yalnızca belirttiğiniz bir zaman diliminin dahil edilecek verileri filtreleyin.|-   [Rapor görünümlerini özelleştirme performans araçları](../profiling/customizing-performance-tools-report-views.md)|  
+|**Sorunları hızlı bir şekilde tanımlamak için performans kurallarını kullanma:** sık karşılaşılan sorunlar ve sorunu içeren kaynak kod için kolayca gezinin Yardım Profil Araçları performans kuralları tanımlayın. Ayrıntılı Yardım konuları, genellikle bir çözüm önerebilir.|-   [Verileri çözümlemek için performans kurallarını kullanma](../profiling/using-performance-rules-to-analyze-data.md)|  
+|**Rapor Görünümü ayrıntıları kavramanız gerekir:** profil oluşturma araçları rapor görünümlerini işlemler, iş parçacıkları, modüller ve işlevleri, bir profil oluşturma için toplanan performans verilerini sağlar. Görünen veriler veri toplamak için kullanılan profil oluşturma yöntemine bağlıdır.|-   [Performans raporu görünümleri](../profiling/performance-report-views.md)|  
+|**Yapılandırma, sıralama ve filtreleme rapor görünümlerini:** belirtin ve bir raporda görüntülemek için Rapor satırları sıralama veri sütunları sıralama ve verileri yalnızca belirttiğiniz süre kesimi içerecek şekilde filtreleyin.|-   [Performans araçları rapor görünümlerini özelleştirme](../profiling/customizing-performance-tools-report-views.md)|  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="related-sections"></a>İlgili bölümler  
  [Performans veri dosyalarını karşılaştırma](../profiling/comparing-performance-data-files.md)  
   
- [Araçları verilerini kaydetme ve performans dışarı aktarma](../profiling/saving-and-exporting-performance-tools-data.md)  
+ [Performans araçları verilerini kaydetme ve dışarı aktarma](../profiling/saving-and-exporting-performance-tools-data.md)  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans Gezgini](../profiling/performance-explorer.md)  
- [Visual Studio'da profil oluşturma](../profiling/index.md)  
- [Özellik turu profil oluşturma](../profiling/profiling-feature-tour.md)
+ [Visual Studio profil oluşturma](../profiling/index.md)  
+ [Araçlar profil oluşturmaya ilk bakış](../profiling/profiling-feature-tour.md)

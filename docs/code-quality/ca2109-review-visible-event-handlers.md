@@ -1,6 +1,7 @@
 ---
 title: 'CA2109: Görünen olay işleyicileri gözden geçirin'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,13 +16,15 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: cf11564e7420231ac6ab65c6dc00762bb4077ef2
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 4df271f5427d005ef94c4c09d6c0a1eb05c850b0
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548890"
 ---
 # <a name="ca2109-review-visible-event-handlers"></a>CA2109: Görünen olay işleyicileri gözden geçirin
+
 |||
 |-|-|
 |TypeName|ReviewVisibleEventHandlers|
@@ -32,33 +35,35 @@ ms.lasthandoff: 04/19/2018
 ## <a name="cause"></a>Sebep
  Ortak veya korunan olay işleme yöntemi algılandı.
 
-## <a name="rule-description"></a>Kural Tanımı
- Dışarıdan görünür bir olay işleme yöntemi gözden geçirme gerektiren bir güvenlik sorunu gösterir.
+## <a name="rule-description"></a>Kural açıklaması
+ Dışarıdan görünen bir olay işleme yöntem gözden geçirme gerektiren bir güvenlik sorunu gösterir.
 
- Olay işleme yöntemleri kesinlikle gerekli olmadığı sürece maruz bırakılmamalıdır. İşleyici ve olay imzaları eşleştiği sürece gösterilen yöntemini çağıran bir temsilci türü, bir olay işleyicisi için herhangi bir olay eklenebilir. Olaylar, olası tüm kodu tarafından gerçekleştirilen ve yüksek oranda güvenilir bir sistem kodu yanıt olarak bir düğmeye tıklanması gibi kullanıcı eylemleri tarafından sık gerçekleştirilen. Güvenlik denetimi için bir olay işleme yöntemi ekleme, kod yöntemini çağıran bir olay işleyicisi kaydetme engellemez.
+Olay işleme yöntemleri sürece açığa çıkarmamak kesinlikle gerekli. İmzalar işleyici ve olay eşleştiği sürece herhangi bir olay için bir olay işleyicisi kullanıma sunulan bir yöntemi çağıran bir temsilci türü eklenebilir. Olaylar, büyük olasılıkla herhangi bir kod tarafından oluşturulan ve yanıt olarak bir düğmeye tıklanması gibi kullanıcı eylemlerini yüksek derecede Güvenilen Sistem kodu tarafından sık gerçekleştirilen. Güvenlik denetimi, bir olay işleme yöntemine ekleyerek, kod yöntemi çağıran bir olay işleyicisi kaydetmesinin engellemez.
 
- İsteğe bağlı bir olay işleyici tarafından başlatılan bir yöntem güvenilir bir şekilde koruyamaz. Güvenlik Yardım talep çağrı yığınında arayanlar inceleyerek güvenilmeyen arayanlar kod koruma. Olay işleyicinin yöntemleri çalıştırdığınızda, olay işleyicisi olaya ekleyen kod çağrı yığınındaki mutlaka mevcut değil. Bu nedenle, olay işleyicisi yöntemi çağrıldığında çağrı yığını arayanlar yalnızca yüksek oranda güvenilir. Bu, başarılı olması için olay işleyici yöntemiyle yapılan talepleri neden olur. Ayrıca, yöntemi çağrıldığında talep edilen izni uygulanan. Bu nedenlerle, olay işleme yöntemi gözden geçirdikten sonra bu kural ihlal düzelttikten değil riskini yalnızca belirlenebilir. Kodunuzu gözden geçirin, aşağıdaki noktaları dikkate alın:
+ İsteğe bağlı bir olay işleyicisi tarafından çağrılan bir yöntem güvenilir bir şekilde koruyamaz. Güvenlik talepleri Yardım çağrı yığınında çağıranlar inceleyerek güvenilmeyen çağrı yapanlardan kod koruma. Olay işleyicinin yöntemleri çalıştırdığınızda bir olay için bir olay işleyicisi ekler kod çağrı yığınındaki mutlaka mevcut değil. Bu nedenle, olay işleyicisi yöntemi çağrıldığında çağrı yığınını çağıranlar yalnızca yüksek oranda güvenilir. Bu, başarılı olması için olay işleyicisi yöntemi tarafından yapılan talepleri neden olur. Ayrıca, yöntem çağrıldığında talep edilen izni onaylanan. Bu nedenlerle, olay işleme yöntemi gözden geçirdikten sonra riskini bu kural ihlalini düzeltmek için değil yalnızca belirlenebilir. Kodunuzu gözden geçirirken, aşağıdaki konuları göz önünde bulundurun:
 
--   Olay işleyicisi tehlikeli veya Etkilenme izinleri sunduğundan veya yönetilmeyen kod izni gizleme gibi herhangi bir işlem yapıyor mu?
+- Olayı işleyicinizi tehlikeli ya da açıklardan izinleri bırakmışsa veya yönetilmeyen kod iznini gizleme gibi herhangi bir işlem gerçekleştirir?
 
--   İle herhangi bir zamanda yalnızca yüksek oranda çalışması için hangi güvenlik tehditleri için ve kodunuzdan yığında arayanlar güvenilir?
+- İle herhangi bir zamanda yalnızca yüksek oranda çalışması için kodunuzu gelen ve giden güvenlik tehditlerini nelerdir yığında çağıranlar güvenilen?
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için yöntem gözden geçirin ve aşağıdakileri değerlendirin:
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için yöntemin gözden geçirin ve aşağıdakileri değerlendirin:
 
--   Genel olay işleme yöntemi yapabilirsiniz?
+- Olay işleme yöntemi genel olmayan yapabilirsiniz?
 
--   Olay işleyicisi dışında tüm tehlikeli işlevselliği taşıyabilir miyim?
+- Olay işleyicisi tehlikeli tüm işlevsellik taşıyabilir miyim?
 
--   Güvenlik isteğe uygulanan varsa, bu diğer herhangi bir biçimde gerçekleştirilebilir?
+- Bir güvenlik talebi uygulanmaz, bu diğer herhangi bir biçimde gerçekleştirilebilir?
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Kodunuzu bir güvenlik tehdidi yol açmaz emin olmak için bu kural bir uyarıdan dikkatli güvenlik incelemesi sonra yalnızca engelleyin.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Kodunuzu bir güvenlik tehdidi yol açmaz emin olmak için dikkatli bir güvenlik incelemesinden sonra yalnızca uyarı bu kuraldan gösterme.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki kod, kötü amaçlı kod tarafından kötüye bir olay işleme yöntemini gösterir.
+ Aşağıdaki kod, kötü amaçlı kod tarafından kötüye bir olay işleme yöntemi gösterir.
 
  [!code-csharp[FxCop.Security.EventSecLib#1](../code-quality/codesnippet/CSharp/ca2109-review-visible-event-handlers_1.cs)]
 
-## <a name="see-also"></a>Ayrıca Bkz.
- <xref:System.Security.CodeAccessPermission.Demand%2A?displayProperty=fullName><xref:System.EventArgs?displayProperty=fullName>
+## <a name="see-also"></a>Ayrıca bkz.
+
+- <xref:System.Security.CodeAccessPermission.Demand%2A?displayProperty=fullName>
+- <xref:System.EventArgs?displayProperty=fullName>

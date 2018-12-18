@@ -1,6 +1,8 @@
 ---
-title: Test Gezgini ile birim testleri çalıştırma | Microsoft Docs
+title: Çalıştırma, yapı ve Test Gezgini ile birim testlerinin hatalarını ayıklama
+description: Visual Studio'da Test Exlorer ile testleri çalıştırmayı öğrenin. Bu konu, otomatik test çalıştırmaları derlemeden sonra etkinleştirmek, test sonuçlarını görüntülemek, Grup ve test listesini filtrelemek, çalma listeleri oluşturmak, Testlerde Hata Ayıkla ve test kısayolları kullanma kapsar.
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-test
 ms.topic: conceptual
 f1_keywords:
@@ -10,217 +12,218 @@ manager: douge
 ms.workload:
 - multiple
 author: gewarren
-ms.openlocfilehash: eda6a63b8d6e10b3eec3139ffa29143b0b5733ba
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dc918adb6a66f64cdcda46ea535cd0ab017c0676
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49939525"
 ---
 # <a name="run-unit-tests-with-test-explorer"></a>Test Gezgini ile birim testleri çalıştırma
 
-Kullanım **Test Gezgini** Visual Studio ya da üçüncü taraf birim testi projelerini birim testleri çalıştırmak için. Aynı zamanda **Test Gezgini** testleri kategoriler halinde gruplandırabilirsiniz, test listesini filtrelemek ve oluşturmak, kaydetme ve çalma testleri çalıştırmak için. Testleri hata ayıklama ve test performans ve kod kapsamı analiz edin.
+Kullanım **Test Gezgini** birim testlerini Visual Studio ya da üçüncü taraf birim testi projelerini çalıştırmak için. Ayrıca **Test Gezgini** testleri kategoriler halinde gruplandırmak, test listesini filtrelemek ve oluşturma, kaydedin ve test çalma listeleri çalıştırın. Testlerde hata ayıklama yaparak test performansı ve kod kapsamını analiz etme.
 
-Visual Studio hem yönetilen hem de yerel kod için Microsoft birim test çerçevelerini içerir. Ancak, **Test Gezgini** herhangi bir birimi bir Test Gezgini bağdaştırıcısı uyguladı test çerçevesi de çalıştırabilirsiniz. Üçüncü şahıs birim test çerçevelerini yükleme hakkında daha fazla bilgi için bkz: [üçüncü taraf birim test çerçevelerini yükleme](../test/install-third-party-unit-test-frameworks.md)
+Visual Studio, hem yönetilen hem de yerel kod için Microsoft birim testi çerçevelerini içerir. Ancak, **Test Gezgini** herhangi bir birim Test Gezgini bağdaştırıcısı uygulayan test çerçevesi de çalıştırabilirsiniz. Üçüncü taraf birim test çerçeveleri yükleme hakkında daha fazla bilgi için bkz. [üçüncü taraf birim testi çerçevelerini yükleme](../test/install-third-party-unit-test-frameworks.md)
 
-**Test Gezgini** testleri bir çözümde birden çok test proje ve üretim kodu projeleri parçası olan test sınıfları'ndan çalıştırabilirsiniz. Test projeleri farklı birim test çerçevelerini kullanabilirsiniz. .NET Framework için test altındaki kodun yazıldığında test projesinin Ayrıca, hedef kod dilini bağımsız olarak .NET Framework hedefler herhangi bir dilde yazılabilir. Yerel C/C++ kod projeleri, C++ birim test çerçevesi kullanılarak test edilebilir. Daha fazla bilgi için bkz: [C/C++ için birim testleri yazma](writing-unit-tests-for-c-cpp.md).
+**Test Gezgini** bir çözümde birden çok test projesini ve üretim kodu projelerin bir parçası olan test sınıflarından testler çalıştırabilirsiniz. Test projeleri farklı birim test çerçeveleri kullanabilir. Test altındaki kod .NET Framework için yazıldığında, test projesi, ayrıca hedef kodun dili ne olursa olsun .NET Framework hedefleyen herhangi bir dilde yazılabilir. Yerel C/C++ kod projeleri, bir C++ birim test çerçevesi kullanılarak test edilmelidir. Daha fazla bilgi için [C/C++ için birim testleri yazma](writing-unit-tests-for-c-cpp.md).
 
-## <a name="run-tests-in-test-explorer"></a>Test Gezgini testleri çalıştırma
+## <a name="run-tests-in-test-explorer"></a>Testleri Test Gezgini'nde çalıştırma
 
-Test projesi derlerken, testleri Test Gezgini'nde görünür. Test Gezgini görünür durumda değilse, seçin **Test** Visual Studio menüsünde, **Windows**ve ardından **Test Gezgini**.
+Test projesi oluşturduğunuzda, testler Test Gezgini'nde görünür. Test Gezgini görünür değilse seçin **Test** Visual Studio menüsünde **Windows**ve ardından **Test Gezgini**.
 
-![Birim Test Gezgini](../test/media/ute_failedpassednotrunsummary.png "UTE_FailedPassedNotRunSummary")
+![Birim Test Gezgini](../test/media/ute_failedpassednotrunsummary.png)
 
-Test Gezgini çalıştırmak, yazma ve testleri yeniden çalıştırmak gibi sonuçları varsayılan gruplar halinde görüntülenir. **başarısız testler**, **testleri geçti**, **atlandı testleri** ve  **Testler değil**. Test Gezgini testlerinizi grupları şekilde değiştirebilirsiniz.
+Çalıştırma, yazma ve testlerinizi yeniden çalıştırın, Test Gezgini sonuçları varsayılan gruplarında görüntüler **başarısız testler**, **başarılı testler**, **Atlanan testler** ve  **Testleri Çalıştır**. Test Gezgini'nin testlerinizi gruplandırma şeklini değiştirebilirsiniz.
 
-Bulma, düzenleme ve testleri Test Gezgini araç çubuğundan çalışan işin çoğunu gerçekleştirebilirsiniz.
+Bulma, düzenleme ve testleri çalıştıran işin çoğunu gerçekleştirebilirsiniz **Test Gezgini** araç çubuğu.
 
-![Test Gezgini araç çubuğundan testler](../test/media/ute_toolbar.png "UTE_ToolBar")
+![Test Gezgini araç çubuğundan Testleri Çalıştır](../test/media/ute_toolbar.png)
 
 ### <a name="run-tests"></a>Testleri çalıştırma
 
-Bir grup veya seçtiğiniz testleri kümesi tüm testleri Çözümdeki tüm testleri çalıştırın. Aşağıdakilerden birini yapın:
+Tüm testler, Çözümdeki tüm testleri bir grup veya seçtiğiniz test kümesini çalıştırabilirsiniz. Aşağıdakilerden birini yapın:
 
-- Bir çözümde tüm testleri çalıştırmak için tercih **tümünü Çalıştır**.
+- Bir çözümdeki tüm testleri çalıştırmak için tercih **tümünü Çalıştır**.
 
-- Bir varsayılan grubundaki tüm testleri çalıştırmak için tercih **Çalıştır...**  ve grubun menüsünde'i seçin.
+- Varsayılan bir grupta tüm testleri çalıştırmak için tercih **çalıştırma** ve sonra menüde grubu seçin.
 
-- Seçilen test bağlam menüsünü açın ve ardından çalıştırmak istediğiniz tek tek testlerin seçin **seçili Testleri Çalıştır**.
+- Seçilmiş test için bağlam menüsünü açın ve ardından çalıştırmak istediğiniz testleri tek tek seçin **seçili Testleri Çalıştır**.
 
-- Tek tek testlerin herhangi bir sırayla çalıştırmak engelleyen bağımlılık varsa, paralel test yürütmesi ile Aç ![UTE&#95;parallelicon&#45;küçük](../test/media/ute_parallelicon-small.png "UTE_parallelicon küçük") iki durumlu düğme araç çubuğunda. Bu, tüm testleri çalıştırmak için geçen süre önemli ölçüde azaltabilir.
+- Bireysel testler herhangi bir sırada çalıştırılan engelleyen bağımlılık varsa, paralel test yürütme ile Aç ![ALIŞTIR&#95;parallelicon&#45;küçük](../test/media/ute_parallelicon-small.png) araç çubuğundaki iki durumlu düğme. Bu durum, tüm testleri çalıştırmak için geçen süre önemli ölçüde azaltabilir.
 
-Test Gezgini penceresinin üst geçişi/hata çubuğu Testleri Çalıştır animasyon eklenir. Tüm testleri geçirilen ya da herhangi bir test başarısız olursa kırmızı kapatır testi sonuç geçişi/hata çubuğu yeşil olur.
+**Geçer/başarısız çubuğu** en üstündeki **Test Gezgini** penceresi Testler çalışırken animasyonlu. Test çalıştırması, sonunda **geçer/başarısız çubuğu** tüm testler geçildi, yeşile döner veya herhangi bir test başarısız olursa kırmızıya döner.
 
-### <a name="run-tests-after-every-build"></a>Her yapıdan sonra testleri çalıştırma
+### <a name="run-tests-after-every-build"></a>Her derleme sonrasında Testleri Çalıştır
 
-|||
+|Düğme|Açıklama|
 |-|-|
-|![Derleme sonrası çalıştırın](../test/media/ute_runafterbuild_btn.png)|Her yerel yapıdan sonra birim testleri çalıştırmak için tercih **Test** standart menüsünde ve ardından **çalıştırmak sonra yapı testleri** Test Gezgini araç çubuğunda.|
+|![Yapıdan sonra çalıştırmak](../test/media/ute_runafterbuild_btn.png)|Her bir yerel oluşturmadan sonra birim testlerinizi çalıştırmak için tercih **Test** standart menüde seçip **oluşturmadan sonra Testleri Çalıştır** üzerinde **Test Gezgini** araç çubuğu.|
 
-## <a name="view-test-results"></a>Test sonuçlarını görüntüleme
+## <a name="view-test-results"></a>Test sonuçlarını görüntüle
 
-Test Gezgini çalıştırmak, yazma ve testleri yeniden çalıştırmak gibi sonuçları gruplar halinde görüntülenir. **başarısız testler**, **testleri geçti**, **atlandı testleri** ve **çalışmıyor Testleri**. Test Gezgini görüntüler altındaki ayrıntılar bölmesini test özetini çalıştırın.
+Test Gezgini çalıştırma, yazma ve testlerinizi yeniden çalıştırın gibi sonuçları gruplarında görüntüler. **başarısız testler**, **başarılı testler**, **Atlanan testler** ve **çalıştırma Testleri**. Test Gezgini görüntüler altındaki ayrıntılar bölmesi test özeti çalıştırın.
 
-### <a name="view-test-details"></a>Test ayrıntıları görüntüle
+### <a name="view-test-details"></a>Test ayrıntılarını görüntüleme
 
-Bir test ayrıntılarını görüntülemek için test'i seçin.
+Tek bir testin ayrıntılarını görüntülemek için testi seçin.
 
-![Test yürütme ayrıntıları](../test/media/ute_testdetails.png "UTE_TestDetails")
+![Test yürütme ayrıntıları](../test/media/ute_testdetails.png)
 
-Test Ayrıntılar bölmesinde aşağıdaki bilgileri görüntüler:
+Test ayrıntıları bölmesinde aşağıdaki bilgileri görüntüler:
 
-- Kaynak dosya adı ve test yöntemi satır sayısı.
+- Kaynak dosya adı ve test yönteminin satır sayısı.
 
-- Test durumu.
+- Testin durumu.
 
-- Test yöntemi sürdüğü geçen süre.
+- Test yöntemini çalıştırmak için geçen geçen süre.
 
-Sınama başarısız olursa, Ayrıntılar bölmesinde de görüntüler:
+Test başarısız olursa, Ayrıntılar bölmesinde de görüntüler:
 
 - Test için birim test çerçevesi tarafından döndürülen ileti.
 
-- Yığın izleme testi başarısız zaman.
+- Yığın izleme zaman test başarısız oldu.
 
-### <a name="view-the-source-code-of-a-test-method"></a>Bir test yönteminin kaynak kodu görüntüleme
+### <a name="view-the-source-code-of-a-test-method"></a>Test yönteminin kaynak kodunu görüntüleme
 
- Visual Studio Düzenleyicisinde test yöntemi için kaynak kodunu görüntülemek için test seçin ve ardından **açık Test** bağlam menüsünde (klavye: **F12**).
+ Visual Studio düzenleyicisinde bir test yöntemi için kaynak kodunu görüntülemek için testi seçin ve ardından **testi Aç** bağlam menüsünde (klavye: **F12**).
 
-## <a name="group-and-filter-the-test-list"></a>Grup ve test listesini filtreleme
+## <a name="group-and-filter-the-test-list"></a>Grup ve test listesini Filtrele
 
-Test Gezgini testlerinizi önceden tanımlanmış kategoriler halinde gruplandırabilirsiniz olanak sağlar. Test Gezgini let çalıştırdığınız çoğu birim test çerçevelerini kendi kategorileri ve testlerinizi gruplamak için kategori/değer çiftleri tanımlayın. Eşleşen dizeler karşı test özellikleri tarafından testleri listesi filtre uygulayabilirsiniz.
+Test Gezgini, testlerinizi önceden tanımlanmış kategoriler halinde gruplamanızı sağlar. Test Gezgini izin verir, çalışan çoğu test çerçeveleri, kendi kategorileri ve testlerinizi gruplamak için kategori/değer çiftlerini tanımlayın. Ayrıca test özelliklerine karşı dizeleri eşleştirerek test listesine filtre uygulayabilirsiniz.
 
-### <a name="group-tests-in-the-test-list"></a>Test listesi grup testlerinde
+### <a name="group-tests-in-the-test-list"></a>Grup testleri test listesi
 
- Seçin yanındaki aşağı oka testleri düzenlenir yöntemini değiştirmek için **Group By** düğmesini ![Test Gezgini grubu düğmesini](../test/media/ute_groupby_btn.png "UTE_GroupBy_btn") ve yeni bir grup seçin ölçütleri.
+ Testlerin düzenlenme şeklini değiştirmek için aşağı yanındaki oku seçin **Group By** düğmesi ![Test Gezgini Grup düğmesi](../test/media/ute_groupby_btn.png) ve bir gruplandırma ölçütü.
 
- ![Test Gezgini'nda kategoriye göre testleri grup](../test/media/ute_groupbycategory.png "UTE_GroupByCategory")
+ ![Grup testler Test Gezgini'nde kategoriye göre](../test/media/ute_groupbycategory.png)
 
 ### <a name="test-explorer-groups"></a>Test Gezgini grupları
 
 |Grup|Açıklama|
-|-----------|-----------------|
-|**Süre**|Test grupları göre yürütme süresini: **hızlı**, **orta**, ve **yavaş**.|
-|**Sonucu**|Testleri yürütme sonuçları göre gruplandırır: **başarısız testler**, **atlandı testleri**, **testleri geçti**.|
-|**Özellikleri**|Belirlediğiniz kategori/değer çiftleri test grubu. Ayırdedici nitelik kategorileri ve değerleri belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanır.|
-|**Project**|Projeleri adıyla test grubu.|
+|-|-----------------|
+|**Süresi**|Yürütme süresine göre testi gruplandırır: **hızlı**, **orta**, ve **yavaş**.|
+|**Sonucu**|Yürütme sonuçlarına göre testleri gruplandırır: **başarısız testler**, **Atlanan testler**, **başarılı testler**.|
+|**Nitelikler**|Tanımladığınız kategori/değer çiftlerine göre testi gruplandırır. Nitelik kategorileri ve değerlerini belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanır.|
+|**Project**|Projelerin adına göre testi gruplandırır.|
 
-### <a name="group-by-traits"></a>Nitelikler göre gruplandırmak
+### <a name="group-by-traits"></a>Niteliklere göre gruplandırma
 
- Bir ayırdedici nitelik genellikle bir kategori ad/değer çifti adıdır, ancak tek bir kategori olabilir. Test yöntemi olarak birim testi çerçevesi tarafından tanımlanan yöntemler nitelikler atanabilir. Birim testi çerçevesi ayırdedici nitelik kategorileri tanımlayabilir. Kendi kategori ad/değer çiftleri tanımlamak için ayırdedici nitelik kategoriler değerleri ekleyebilirsiniz. Ayırdedici nitelik kategorileri ve değerleri belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanır.
+ Ayırt edici nitelik genellikle bir kategori ad/değer çifti olan, ancak tek bir kategori de olabilir. Nitelikler, birim test çerçevesi tarafından bir test yöntemi olarak tanımlanan yöntemlere atanabilir. Bir birim test çerçevesi, ayırt edici nitelik kategorilerini tanımlayabilir. Kendi kategori ad/değer çiftlerinizi tanımlamak için ayırdedici nitelik kategorilerine değerler ekleyebilirsiniz. Nitelik kategorileri ve değerlerini belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanır.
 
- **Yönetilen kod için Framework sınama Microsoft biriminde özellikleri**
+ **Microsoft birim testi için yönetilen kod çerçevesi içindeki nitelikler**
 
- Microsoft birim test çerçevesi yönetilen uygulamalar için de ayırdedici nitelik adı tanımla / değer çiftini bir <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute> özniteliği. Test çerçevesi aynı zamanda bu önceden tanımlanmış özellikleri içerir:
+ Yönetilen uygulamalar için Microsoft birim test çerçevesi, ayırt edici nitelik adını tanımlamak / değer çiftinin bir <xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute> özniteliği. Test çerçevesi, önceden tanımlanmış bu nitelikleri de içerir:
 
-|Ayırdedici nitelik|Açıklama|
-|-----------|-----------------|
-|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.OwnerAttribute>|Sahiplik kategorisi birim test çerçevesi tarafından tanımlanır ve bir dize değeri sahibinin sağlamanızı gerektirir.|
-|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.PriorityAttribute>|Öncelik kategori birim test çerçevesi tarafından tanımlanır ve öncelik tamsayı değerini sağlamanızı gerektirir.|
-|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute>|TestCategory öznitelik, bir değer içermeyen bir kategori sağlamanıza izin verir. TestCategory özniteliği tarafından tanımlanan bir kategori TestProperty özniteliği kategorisini de olabilir.|
-|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute>|TestProperty özniteliği ayırdedici nitelik kategori/değer çifti tanımlamanızı sağlar.|
+|Nitelik|Açıklama|
+|-|-----------------|
+|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.OwnerAttribute>|Sahip kategorisi birim test çerçevesi tarafından tanımlanır ve sahibin bir dize değerini vermenizi gerektirir.|
+|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.PriorityAttribute>|Öncelik kategorisi birim test çerçevesi tarafından tanımlanır ve bir tamsayı öncelik değeri vermenizi gerektirir.|
+|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute>|TestCategory özniteliği bir değer olmadan bir kategori girmenize olanak tanır. TestCategory özniteliği tarafından tanımlanan bir kategori, TestProperty özniteliği kategorisi de olabilir.|
+|<xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute>|TestProperty özniteliği ayırdedici nitelik kategorisi/değer çifti tanımlamanızı sağlar.|
 
- **C++ için Microsoft birim testi çerçevesi nitelikler** bkz [C++ için Microsoft birim testi çerçevesi kullanmayı](how-to-use-microsoft-test-framework-for-cpp.md).
+ **C++ için Microsoft birim testi çerçevesi içindeki nitelikler** bkz [C++ için Microsoft birim testi çerçevesi kullanmayı](how-to-use-microsoft-test-framework-for-cpp.md).
 
-### <a name="search-and-filter-the-test-list"></a>Arama ve filtre test listesi
+### <a name="search-and-filter-the-test-list"></a>Arama ve test listesini Filtrele
 
-Test Gezgini filtreleri test yöntemleri, görüntüleme ve çalıştırma projelerinizde sınırlamak için kullanabilirsiniz.
+Projelerinizde görüntüleyip çalıştırabileceğiniz, test yöntemlerini sınırlamak için Test Gezgini filtreleri kullanabilirsiniz.
 
-Bir dizede Test Gezgini arama kutusuna yazın ve ENTER seçin, yalnızca tam adları dizeyi içeren testleri görüntülemek için test listesi filtrelenir.
+Bir dizede yazdığınızda **Test Gezgini** seçin ve arama kutusuna **Enter**, test listesi yalnızca tam adları dizeyi içeren testleri görüntüleyecek şekilde filtrelenmiştir.
 
-Farklı bir ölçüte göre filtre uygulamak için:
+Farklı ölçütlere göre filtrelemek için:
 
-1. Arama kutusunun sağındaki açılan listesini açın.
+1. Arama kutusunun sağındaki açılan listeyi açın.
 
-2. Yeni bir ölçütü seçin.
+2. Yeni bir ölçüt seçin.
 
 3. Filtre değeri tırnak işaretleri arasında girin.
 
-![Test Gezgini testlerinde filtre](../test/media/ute_filtertestlist.png "UTE_FilterTestList")
+![Testleri Test Gezgini'nde Filtrele](../test/media/ute_filtertestlist.png)
 
 > [!NOTE]
-> Aramalar büyük küçük harfe duyarlı ve herhangi bir kısmını ölçütleri değeri için belirtilen dize eşleşmesi.
+> Arama büyük/küçük harfe duyarsızdır ve belirtilen dizeyi ölçüt değeri herhangi bir bölümü eşleştir.
 
-|Niteleyici|Açıklama|
-|---------------|-----------------|
-|**Ayırdedici nitelik**|Ayırdedici nitelik kategori ve değeri için eşleşme arar. Ayırdedici nitelik kategorileri ve değerleri belirlemek için söz dizimi birim test çerçevesi tarafından tanımlanır.|
-|**Project**|Eşleşme için test proje adları arar.|
-|**Hata iletisi**|Kullanıcı tanımlı hata iletilerinin tarafından geri döndürülen başarısız aramaları için eşleşen onaylar.|
-|**Dosya yolu**|Test kaynak dosyaların tam dosya adı için eşleşen arar.|
-|**Tam adı**|Test ad alanları, sınıflar ve yöntemler tam dosya adı için eşleşen arar.|
-|**Output**|Standart çıkış (stdout) veya standart hata (stderr) için yazılmış kullanıcı tanımlı hata iletilerinin arar. Çıktı iletileri belirlemek için söz dizimi birim test çerçevesi tarafından tanımlanır.|
-|**Sonucu**|Test Gezgini kategori adları eşleştirmeleri arar: **başarısız testler**, **atlandı testleri**, **testleri geçti**.|
+|Niteleyicisi|Açıklama|
+|-|-----------------|
+|**Nitelik**|Hem ayırdedici nitelik kategorisini hem de değer eşleşmelerini arar. Nitelik kategorileri ve değerlerini belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanır.|
+|**Project**|Test proje adı eşleşmeleri arar.|
+|**Hata iletisi**|Arama tarafından döndürülen başarısız kullanıcı tanımlı hata iletileri için eşleşme onaylar.|
+|**Dosya yolu**|Test kaynak dosyaları tam olarak nitelenmiş dosya adını eşleşmelerini arar.|
+|**Tam adı**|Test ad alanları, sınıflar ve yöntemler tam olarak nitelenmiş dosya adını eşleşmelerini arar.|
+|**Output**|Standart çıkış (stdout) veya standart hata (stderr) yazılmış kullanıcı tanımlı hata iletileri arar. Çıktı iletilerini belirtmek için sözdizimi birim test çerçevesi tarafından tanımlanmıştır.|
+|**Sonucu**|Eşleşmeleri için Test Gezgini kategori adlarını arar: **başarısız testler**, **Atlanan testler**, **başarılı testler**.|
 
-Bir filtre sonuçlarını kümesini dışarıda bırakmak için aşağıdaki sözdizimini kullanın:
+Bir alt kümesini bir filtre sonuçlarını tutmak için aşağıdaki sözdizimini kullanın:
 
-```
+```cpp
 FilterName:"Criteria" -FilterName:"SubsetCriteria"
 ```
 
-Örneğin, `FullName:"MyClass" - FullName:"PerfTest"` "PerfTest" adında da dahil testler dışındaki kullanıcıların adı "MyClass" dahil tüm testleri döndürür.
+Örneğin, `FullName:"MyClass" - FullName:"PerfTest"` adında "adında PerfTest" de testler dışındaki, adında "Sınıfım" içeren tüm testleri döndürür.
 
 ## <a name="create-custom-playlists"></a>Özel çalma listeleri oluşturma
 
- Oluşturun ve çalıştırın veya bir grup olarak görüntülemek istediğiniz testleri listesini kaydedin. Bir çalma listesi seçtiğinizde, listedeki testler görüntülenir Test Gezgini. Bir test birden fazla çalma listesine ekleyin ve varsayılan seçtiğinizde projenizdeki tüm testleri kullanılabilir **tüm testleri** çalma listesi.
+ Oluşturun ve çalıştırın veya bir grup olarak görüntülemek istediğiniz testlerin listesini kaydedin. Çalma listesi seçtiğinizde listedeki testler Test Gezgini'nde görüntülenir. Bir testi birden fazla çalma listesine ekleyebilirsiniz ve varsayılan seçtiğinizde projenizdeki tüm testler kullanılabilir **tüm testleri** çalma listesi.
 
- ![Bir çalma listesi seçin](../test/media/ute_playlist.png "UTE_Playlist")
+ ![Bir çalma listesini seçin](../test/media/ute_playlist.png)
 
- **Bir çalma listesi oluşturmak için**, bir veya daha fazla testleri Test Explorer'da seçin. Bağlam menüsünde seçin **eklemek için çalma**, **NewPlaylist**. Ad ve belirttiğiniz konuma sahip dosyayı kaydedin **yeni çalma listesi oluştur** iletişim kutusu.
+ **Bir çalma listesi oluşturmak için**, Test Gezgini'nde bir veya birden çok test seçin. Bağlam menüsünde **çalma listesine Ekle** > **NewPlaylist**. Dosya adı ve belirttiğiniz konuma kaydetmek **yeni çalma listesi oluştur** iletişim kutusu.
 
- **Testleri çalma listesine eklemek için**, bir veya daha fazla testleri Test Explorer'da seçin. Bağlam menüsünde seçin **eklemek için çalma**ve ardından sınamaları eklemek istediğiniz çalma listesi seçin.
+ **Bir çalma listesine testler eklemek için**, Test Gezgini'nde bir veya birden çok test seçin. Bağlam menüsünde **çalma listesine Ekle**, testleri eklemek istediğiniz çalma listesini seçin.
 
- **Bir çalma listesi açmak için**, Test, Visual Studio menüsünde çalma listesi seçin ve son kullanılan çalma listesinden seçin veya çalma çalma konumunu ve adını belirtmek için Aç'ı seçin.
+ **Bir çalma listesini açmak için**, seçin **Test** > **çalma listesi** Visual Studio menüsünde ve ya da son kullanılan çalma listesinden seçin veya seçin **açın Çalma listesi** çalma konumunu ve adını belirtmek için.
 
- Tek tek testlerin herhangi bir sırayla çalıştırmak engelleyen bağımlılık varsa, paralel test yürütmesi ile Aç ![UTE&#95;parallelicon&#45;küçük](../test/media/ute_parallelicon-small.png "UTE_parallelicon küçük") iki durumlu düğme araç çubuğunda. Bu, tüm testleri çalıştırmak için geçen süre önemli ölçüde azaltabilir.
+ Bireysel testler herhangi bir sırada çalıştırılan engelleyen bağımlılık varsa, paralel test yürütme ile Aç ![ALIŞTIR&#95;parallelicon&#45;küçük](../test/media/ute_parallelicon-small.png) araç çubuğundaki iki durumlu düğme. Bu durum, tüm testleri çalıştırmak için geçen süre önemli ölçüde azaltabilir.
 
-## <a name="debug-and-analyze-unit-tests"></a>Hata ayıklama ve birim testleri çözümleme
+## <a name="debug-and-analyze-unit-tests"></a>Hata ayıklama ve birim testlerini çözümleme
 
-### <a name="debug-unit-tests"></a>Birim testleri hata ayıklama
+### <a name="debug-unit-tests"></a>Birim testlerinin hatalarını ayıklama
 
-Test Gezgini, testleriniz için hata ayıklama oturumu başlatmak için kullanabilirsiniz. Kodunuz Visual Studio hata ayıklayıcısı ile sorunsuz bir şekilde Adımlama, İleri ve geri birim testleri ve test altındaki proje arasında alır. Hata ayıklama başlatmak için:
+Test Gezgini, testleriniz için hata ayıklama oturumu başlatmak için kullanabilirsiniz. Kodunuzu Visual Studio hata ayıklayıcısı ile sorunsuz bir şekilde Adımlama, İleri ve geri birim testleri ve test altındaki projeye arasında sürer. Hata ayıklamayı başlatmak için:
 
-1. Visual Studio Düzenleyicisi'nde hata ayıklamak istediğiniz bir veya daha fazla test yöntemler bir kesme noktası ayarlayın.
+1. Visual Studio düzenleyicisinde, hatalarını ayıklamak istediğiniz bir veya daha fazla test yöntemlerinde kesme noktası ayarlayın.
 
     > [!NOTE]
-    > Test yöntemleri herhangi bir sırada çalıştığından hata ayıklamak istediğiniz tüm test yöntemler kesme noktalarını ayarlayın.
+    > Test yöntemleri herhangi bir sırada çalışabileceğinden, hata ayıklamak istediğiniz tüm test yöntemlerinde kesme noktalarını ayarlayın.
 
-2. Test Gezgini test yöntemleri seçin ve ardından **seçili Testlerde Hata Ayıkla** bağlam menüsünde.
+2. Test Gezgini'nde test yöntemlerini seçin ve ardından **seçilen Testlerde Hata Ayıkla** bağlam menüsünde.
 
- Hata ayıklayıcı hakkında daha fazla bilgi için bkz: [Visual Studio'da hata ayıklamayı](../debugger/debugging-in-visual-studio.md).
+   Hata ayıklayıcısı hakkında daha fazla bilgi için bkz. [Visual Studio'da hata ayıklama](../debugger/debugging-in-visual-studio.md).
 
-### <a name="diagnose-test-method-performance-issues"></a>Test yöntemi performans sorunlarını tanılamanıza
+### <a name="diagnose-test-method-performance-issues"></a>Test yöntemi performans sorunlarını tanılama
 
- Test yöntemi çok fazla zaman ayırdığınız neden tanılamak için Test Gezgini'nde yöntemi seçin ve ardından bağlam menüsünden profilini seçin. Bkz: [performans Gezgini](../profiling/performance-explorer.md).
+ Neden bir test yöntemi, çok fazla zaman aldığını tanılamak için yöntemi Test Gezgini'nde seçin ve ardından **profili** bağlam menüsünde. Bkz: [performans Gezgini](../profiling/performance-explorer.md).
 
-### <a name="analyze-unit-test-code-coverage"></a>Birim testi kod kapsamını çözümleme
+### <a name="analyze-unit-test-code-coverage"></a>Birim testi kod kapsamını analiz etme
 
-Visual Studio kod kapsamı aracını kullanarak, birim testleri tarafından gerçekten sınanan ürün kodunuzu miktarını belirleyebilir. Kod kapsamı seçili testleri ya da bir çözümde tüm testleri çalıştırabilirsiniz.
+Visual Studio kod kapsamı Aracı'nı kullanarak birim testleriniz tarafından gerçekten edildiğini, ürün kodu miktarını belirleyebilirsiniz. Kod kapsamı Seçili testler ya da bir çözümdeki tüm testleri çalıştırabilirsiniz.
 
-Bir çözümde test yöntemleri için kod kapsamı çalıştırmak için:
+Bir çözümde test yöntemleri için kod kapsamını çalıştırmak için:
 
-1. Seçin **testleri** Visual Studio menüsünde ve ardından **kod kapsamını çözümleme**.
+1. Seçin **testleri** Visual Studio menüsünde seçip **kod kapsamını analiz etme**.
 
-2. Alt menüsünden aşağıdaki komutlardan birini seçin:
+2. Alt menüden olarak aşağıdaki komutlardan birini seçin:
 
-    - **Seçili testleri** Test Gezgini'nde seçtiğiniz test yöntemleri çalıştırır.
+    - **Seçili testler** Test Gezgini'nde seçtiğiniz test yöntemlerini çalıştırır.
 
     - **Tüm testler** Çözümdeki tüm test yöntemlerini çalıştırır.
 
-Kod Kapsamı Sonuçları penceresi satır, işlev, sınıf, ad alanı ve modülü tarafından kullanılabilecek ürün kod bloklarını yüzdesini görüntüler.
+**Kod kapsamı sonuçlarını** penceresi satır, işlevi, sınıf, ad alanı ve modül tarafından uygulanan ürünün kodu bloklarının yüzdesini görüntüler.
 
-Daha fazla bilgi için bkz: [kullanarak kod kapsamı belirleme ne kadar kodun için test](../test/using-code-coverage-to-determine-how-much-code-is-being-tested.md).
+Daha fazla bilgi için [ne kadar kodun test edildiğini belirlemek için kod kapsamı kullanın](../test/using-code-coverage-to-determine-how-much-code-is-being-tested.md).
 
 ## <a name="test-shortcuts"></a>Test kısayolları
 
-Testleri çalıştırılabilir **Test Gezgini**, Kod düzenleyicisinde test üzerinde sağ tıklatıp seçerek **testi**, varsayılan kullanarak veya [Test Gezgini kısayolları](../ide/default-keyboard-shortcuts-in-visual-studio.md#bkmk_testexplorerGLOBAL) içinde Visual Studio. Bazı kısayollar içerik tabanlı. Bu, çalıştırmak veya imlecinizi Kod Düzenleyicisi'nde olduğu dayanarak testleri hata ayıklama anlamına gelir. İmlecinizi bir test yöntemi içinde ise, yöntemi çalışır sınayın. İmlecinizi sınıf düzeyinde ise, o sınıfta tüm testleri çalıştırın. Bu ad alanı düzeyinde de aynıdır.
+Test çalıştırılabilir **Test Gezgini**, Kod düzenleyicisinde bir test üzerinde sağ tıklatıp seçerek **test çalıştırması**, veya varsayılan kullanarak [Test Gezgini kısayolları](../ide/default-keyboard-shortcuts-in-visual-studio.md#bkmk_testexplorerGLOBAL) içinde Visual Studio. Bazı kısayolları, içerik tabanlı. Bu, çalıştırmak veya imleci Kod Düzenleyicisi'nde olduğu temel Testlerde Hata Ayıkla anlamına gelir. İmleci test yönteminin içinde ise, ardından, yöntemi test çalıştırmaları. İmlecinizi sınıf düzeyinde ise, ardından o sınıfta tüm testleri çalıştırın. Bu ad alanı düzeyinde de aynıdır.
 
-|Sık kullanılan komutlar| Klavye Kısayolları|
-|--------------|------------------------|
-|TestExplorer.DebugAllTestsInContext|Ctrl+R, Ctrl+T|
-|TestExplorer.RunAllTestsInContext|Ctrl+R, T|
+|Sık kullanılan komutları| Klavye Kısayolları|
+|-|------------------------|
+|TestExplorer.DebugAllTestsInContext|**CTRL**+**R**, **Ctrl**+**T**|
+|TestExplorer.RunAllTestsInContext|**CTRL**+**R**, **T**|
 
 > [!NOTE]
-> Testleri yalnızca soyut sınıflarda tanımlanır ve değil örneği için bir Özet sınıfta bir test çalıştırılamıyor. Soyut sınıflar testleri çalıştırmak için soyut sınıftan türeyen bir sınıf oluşturun.
+> Testleri yalnızca soyut sınıflar tanımlanır ve değil örneği için soyut bir sınıf, bir test çalıştırılamıyor. Soyut sınıflar testleri çalıştırmak için soyut sınıftan türeyen bir sınıf oluşturun.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-- [Kodunuza Birim Testi Uygulama](../test/unit-test-your-code.md)
+- [Birim testi kod](../test/unit-test-your-code.md)
 - [64 bitlik bir işlem olarak birim testi çalıştırma](../test/run-a-unit-test-as-a-64-bit-process.md)

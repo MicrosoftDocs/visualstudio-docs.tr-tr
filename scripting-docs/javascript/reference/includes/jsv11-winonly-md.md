@@ -1,3 +1,0 @@
-Explorer 11 standartları belge modunda desteklenir. Windows Mağazası uygulamalarında da desteklenir (Windows 8.1). Bkz. [Sürüm Bilgisi](../../../javascript/reference/javascript-version-information.md).  
-  
- Şu belge modlarında desteklenmez: Quirks, Internet Explorer 6 standartları, Internet Explorer 7 standartları, Internet Explorer 8 standartları, Internet Explorer 9 standartları ve Internet Explorer 10 standartları. Windows 8 veya Windows Phone 8.1'de desteklenmez.

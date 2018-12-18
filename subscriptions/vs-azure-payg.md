@@ -5,43 +5,44 @@ ms.author: jaunger
 manager: evelynp
 ms.date: 10/03/2017
 ms.topic: Get-Started-Article
-description: Azure Kullandıkça Öde hesabınızı ayarlama öğrenin.
+description: Azure Kullandıkça Öde hesabınızı ayarlama konusunda bilgi edinin.
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: cd1b545e4b3f6300431c6bfd7c28c9998572dacf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: bc2305ed1b8d51ed77a9c5863c5b7071e7a73af4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49844549"
 ---
-# <a name="setting-up-an-azure-devtest-pay-as-you-go-subscription"></a>Bir Azure geliştirme ve Test Kullandıkça Öde aboneliğine ayarlama
-Bulutta ekibinizle işbirliği.  Diğer aboneleri işbirliğiyle ekipleri ve ortamlar arasında yalıtım da sağlarken etkinleştirme, birden çok geliştirme ve Test Kullandıkça Öde abonelikleri oluşturun.  Geliştirme ve test için saatlik özel indirimli fiyatlar alma ve abonelik yazılımınızın Azure ile ilgili kullanım hakları bulut.
+# <a name="setting-up-an-azure-devtest-pay-as-you-go-subscription"></a>Azure geliştirme ve Test Kullandıkça Öde aboneliği ayarlama
+Ekibinizle bulutta işbirliği yapın.  Diğer abonelerle işbirliğine yandan ekipler ve ortamlar arasında yalıtımı da sağlar etkinleştirme, çeşitli geliştirme ve Test Kullandıkça Öde abonelikleri oluşturun.  Geliştirme/test için özel indirimli saat ücretleri alın ve kullanım hakları, azure'da abonelik yazılımınızın bulut.
 
-1.  Azure Kullandıkça Öde abonelik teklifi kullanmak için oturum açın [ https://my.visualstudio.com/benefits ](https://my.visualstudio.com/benefits?wt.mc_id=o~msft~docs) ve tıklayın **etkinleştirme** avantajı döşemenin altındaki bağlantıyı.   
+1. Azure Kullandıkça Öde aboneliği teklifinizi kullanmak için oturum açın [ https://my.visualstudio.com/benefits ](https://my.visualstudio.com/benefits?wt.mc_id=o~msft~docs) tıklayın **etkinleştirme** avantajı kutucuğun alt kısmındaki bağlantı.   
+   > [!div class="mx-imgBorder"]
+   > ![Azure PAYG kutucuğu](_img/vs-azure-payg/vs-azure-payg-tile.png) 
 
-    ![Azure PAYG döşeme](_img\vs-azure-payg\vs-azure-payg-tile.png) 
+2. Abonelik Avantajlarınızı (örneğin, bir kuruluş aboneliğiniz varsa ve 150 ABD Doları aylık Azure kredinizi etkinleştirilmiş) bir parçası olarak bir Azure hesabı zaten etkinleştirdiyseniz, 5. adıma atlayın.
 
-2.  Abonelik Avantajlarınızı (örneğin, Kurumsal aboneliği varsa ve 150 ABD dolarını aylık Azure kredi etkinleştirilmiş) bir parçası olarak zaten bir Azure hesabı etkinleştirdiyseniz, 5. adıma atlayın.
+3. Microsoft Azure oturum açma sayfasını, Kullandıkça Öde geliştirme/Test teklifi (PAYG) ayarlayın veya Visual Studio Enterprise teklifine yükseltme seçeneği sunulur.  Tıklayın **devam et (Kullandıkça Öde geliştirme/Test) geçerli teklif** yükseltmek istemiyorsanız. 
+   > [!div class="mx-imgBorder"]
+   > ![Azure PAYG kaydolma](_img/vs-azure-payg/vs-azure-payg-signup-cropped.png) 
 
-3.  Microsoft Azure oturum açma sayfasını, Kullandıkça Öde geliştirme ve Test teklif (PAYG) ayarlayın ya da Visual Studio Enterprise teklifine yükseltme seçeneğine sahip olacaksınız.  Tıklatın **geçerli teklif (Kullandıkça Öde geliştirme ve Test) ile devam** yükseltme istemiyorsanız durumunda. 
-
-    ![Azure PAYG kaydolma](_img\vs-azure-payg\vs-azure-payg-signup-cropped.png) 
-
-4.  Kimliğinizi doğrulamak için bir telefon numarası girin ve "Metin iletisi gönder" veya "beni Ara" seçin.  Aldığınız kodu girin.  Tıklatın **kodunu doğrulayın**. 
-
-    ![Azure PAYG kaydolma](_img\vs-azure-payg\vs-azure-payg-identity-cropped.png) 
+4. Kimliğinizi doğrulamak için bir telefon numarası girin ve "SMS mesajı Gönder" veya "beni Ara" öğesini seçin.  Aldığınız kodu girin.  Tıklayın **kodunu doğrulayın**. 
+   > [!div class="mx-imgBorder"]
+   > ![Azure PAYG kaydolma](_img/vs-azure-payg/vs-azure-payg-identity-cropped.png) 
 
 
-5.  Ardından, Lütfen hesabınızı için faturalama bilgilerini girin ve tıklatın **sonraki**.  (Bu, tüm, Azure satın alma işlemleri için ücret kredi kartı olacaktır.)  
-
-    ![Azure PAYG ödeme](_img\vs-azure-payg\vs-azure-payg-payment-cropped.png) 
+5. Ardından, lütfen hesabınız için fatura bilgileri sağlayın ve tıklayın **sonraki**.  (Bu, Azure tüm satın alımlarda ücretlendirilir kredi kartı olacaktır.)  
+   > [!div class="mx-imgBorder"]
+   > ![Azure PAYG ödeme](_img/vs-azure-payg/vs-azure-payg-payment-cropped.png) 
         
 
-6.  Abonelik Sözleşmesi'ni kabul, Ayrıntılar ve gizlilik bildirimini sunar ve ardından için onay kutusu sözleşmesi bölümünde tıklayın **satın alma**. 
+6. Sözleşme bölümünde abonelik sözleşmesini kabul edin, ayrıntıları ve gizlilik bildirimini sunar ve ardından onay kutusunu tıklatın **satın alma**. 
 
-7.  Üzerinde **Microsoft azure'a Hoş Geldiniz** sayfa bir destek planı satın alın veya aboneliğinizi kullanmaya başlamak için seçeneği olması.   
+7. Üzerinde **Microsoft Azure'a Hoş Geldiniz** sayfası bir destek planı satın alın veya aboneliğinizi kullanmaya başlayın seçeneğine sahip olacaksınız.   
 
-8.  Aboneliğiniz göreceğiniz kullanmaya başlamak isterseniz [Microsoft Azure portal](https://portal.azure.com) ve ilk kez ziyaret ise, bazı özelliklerinin hızlı turuna sunulan.  Tamamlanan veya dışında turu seçti sonra Pano görürsünüz.  Azure'ı kullanmaya başlamak hazırsınız!
-  
-    ![Azure PAYG Panosu](_img\vs-azure-payg\vs-azure-payg-dashboard-cropped.png) 
+8. Göreceğiniz aboneliğinizi kullanmaya başlamak isterseniz [Microsoft Azure Portal'da](https://portal.azure.com) ve ilk kez ziyaret varsa, bazı özellikler hızlı bir tura sunulur.  Tamamlanmış veya dışında turu kabul sonra bir Pano görürsünüz.  Azure'u kullanmaya başlamak hazırsınız!
+   > [!div class="mx-imgBorder"]  
+   > ![Azure PAYG Panosu](_img/vs-azure-payg/vs-azure-payg-dashboard-cropped.png) 

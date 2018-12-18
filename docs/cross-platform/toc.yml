@@ -1,0 +1,82 @@
+items:
+- name: Visual Studio’da Platformlar Arası Mobil Geliştirme
+  href: cross-platform-mobile-development-in-visual-studio.md
+- name: Xamarin için Visual Studio Araçları
+  displayName: .NET Mobile Developer Tools (Android & iOS)
+  href: /xamarin/
+- name: Apache Cordova için Visual Studio Araçları
+  href: /visualstudio/cross-platform/tools-for-cordova/
+- name: Unity için Visual Studio Araçları
+  href: visual-studio-tools-for-unity.md
+  items:
+  - name: Unity için Visual Studio Araçları ile Başlarken
+    href: getting-started-with-visual-studio-tools-for-unity.md
+  - name: Unity için Visual Studio Araçları’nı Kullanma
+    href: using-visual-studio-tools-for-unity.md
+  - name: Unity’de .NET 4.x kullanma
+    href: unity-scripting-upgrade.md
+  - name: Unity için Visual Studio Araçları’nı Programlama
+    href: programming-visual-studio-tools-for-unity.md
+    items:
+    - name: VSTU Tarafından Oluşturulan Proje Dosyalarını Özelleştirme
+      href: customize-project-files-created-by-vstu.md
+    - name: VSTU ile Unity Günlük Geri Çağırması paylaşma
+      href: share-the-unity-log-callback-with-vstu.md
+  - name: Unity ve Azure ile Programlama
+    href: visual-studio-tools-for-unity-azure.md
+  - name: Sorun Giderme ve Bilinen Sorunlar (Unity için Visual Studio Araçları)
+    href: troubleshooting-and-known-issues-visual-studio-tools-for-unity.md
+  - name: Değişiklik Günlüğü (Unity için Visual Studio Araçları, Windows)
+    href: change-log-visual-studio-tools-for-unity.md
+  - name: Değişiklik Günlüğü (Unity için Visual Studio Araçları, Mac)
+    href: change-log-visual-studio-tools-for-unity-mac.md
+  - name: Unity Uygulamaları ile DevOps
+    href: application-lifecycle-management-alm-with-unity-apps.md
+- name: Çoklu Platform Mobil Uygulama Geliştirme için Visual C++
+  href: visual-cpp-for-cross-platform-mobile-development.md
+  items:
+  - name: Çoklu Platform Mobil Uygulama Geliştirme için Visual C++’ı yükleme
+    href: install-visual-cpp-for-cross-platform-mobile-development.md
+    items:
+    - name: iOS Kullanarak Derlemeye Yönelik Araçları Yükleme ve Yapılandırma
+      href: install-and-configure-tools-to-build-using-ios.md
+  - name: Android Yerel Etkinlik Uygulaması Oluşturma
+    href: create-an-android-native-activity-app.md
+  - name: Android ve iOS Üzerinde OpenGL ES Uygulaması Oluşturma
+    href: build-an-opengl-es-application-on-android-and-ios.md
+  - name: Bir XCode Projesini İçeri Aktarma
+    href: import-an-xcode-project.md
+  - name: XCode ve Visual Studio Arasındaki Eşitleme Değişiklikleri
+    href: sync-changes-between-xcode-and-visual-studio.md
+  - name: Platformlar Arası Mobil Geliştirme Örnekleri
+    href: cross-platform-mobile-development-examples.md
+  - name: C++ Platformlar Arası Proje Özellikleri
+    href: cross-platform-prop-pages.md
+    items:
+    - name: Genel Proje Özellikleri (Android C++)
+      href: general-android-prop-page.md
+    - name: Android Hata Ayıklayıcıyı Özellikleri
+      href: android-debugger-prop-page.md
+    - name: Clang Projesi Özellikleri (Android C++)
+      href: clang-android-prop-page.md
+    - name: Genel Proje Özellikleri (Android C++ Derleme Görevleri Dosyası)
+      href: general-makefile-android-prop-page.md
+    - name: Clang Bağlayıcısı Özellikleri (Android C++)
+      href: clanglink-prop-page.md
+    - name: NMake Özellikleri (Android C++)
+      href: nmake-android-prop-page.md
+- name: Evrensel Windows Platformu (UWP) için uygulama geliştirme
+  href: develop-apps-for-the-universal-windows-platform-uwp.md
+- name: Android için Visual Studio Öykünücüsü
+  href: visual-studio-emulator-for-android.md
+  items:
+  - name: Android için Visual Studio Öykünücüsü Sistem Gereksinimleri
+    href: system-requirements-for-the-visual-studio-emulator-for-android.md
+  - name: Android için Visual Studio Öykünücüsü’nde Sorun Giderme
+    href: troubleshooting-the-visual-studio-emulator-for-android.md
+ms.openlocfilehash: 0126179459596c389703c065e85e2f5da41e070c
+ms.sourcegitcommit: 97204b85caadbcf14baeb6738710e287a196673e
+ms.translationtype: HT
+ms.contentlocale: tr-TR
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49991529"

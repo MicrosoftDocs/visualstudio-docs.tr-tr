@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2e317f360eaa796eb8bdbea2a58950c8b72a3fef
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cf2138a96245e46057fb8ca4bca73b7146a48318
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49877783"
 ---
 # <a name="bprequestinfo"></a>BP_REQUEST_INFO
 Bir kesme noktası uygulamak için gereken bilgileri içerir.  
@@ -58,49 +59,49 @@ public struct BP_REQUEST_INFO {
   
 ## <a name="members"></a>Üyeler  
  `dwFields`  
- Bayraklarını bileşimini [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) hangi alanların doldurulmuş belirtir numaralandırması.  
+ Bayraklarının bir birleşimi [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) hangi alanların doldurulmuş belirten sabit listesi.  
   
  `guidLanguage`  
  Dil GUID.  
   
  `bpLocation`  
- [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı kesme noktası konum türünü belirtir.  
+ [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) yapısı kesme noktası konumu türünü belirtir.  
   
  `pProgram`  
- [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) kesme oluştuğu uygulama temsil eden nesne.  
+ [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) kesme noktası oluştuğu uygulamanın temsil eden nesne.  
   
  `bstrProgramName`  
  Kesme noktası oluştuğu uygulamanın adı.  
   
  `pThread`  
- [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme oluştuğu iş parçacığı temsil eden nesne.  
+ [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) kesme noktası oluştuğu iş parçacığını temsil eden nesne.  
   
  `bstrThreadName`  
  Kesme noktası oluştuğu iş parçacığı adı.  
   
  `bpCondition`  
- [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md) altında kesme yangın koşulları açıklar yapısı.  
+ [BP_CONDITION](../../../extensibility/debugger/reference/bp-condition.md) yapısı altında kesme noktası yangın koşullar açıklanmaktadır.  
   
  `bpPassCount`  
- [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) kesme noktası geçişi sayısı bilgilerinin içeren yapısı.  
+ [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) kesme noktası geçişi sayısı bilgilerini içeren yapısı.  
   
  `dwFlags`  
- Bayraklarını bileşimini [BP_FLAGS](../../../extensibility/debugger/reference/bp-flags.md) istenen kesme noktası bayrakları belirtir numaralandırması.  
+ Bayraklarının bir birleşimi [BP_FLAGS](../../../extensibility/debugger/reference/bp-flags.md) istenen kesme noktası için bayrakları belirten sabit listesi.  
   
 ## <a name="remarks"></a>Açıklamalar  
  Bu yapı tarafından döndürülen [GetRequestInfo](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getrequestinfo.md) yöntemi.  
   
- Hata ayıklama altyapısı satıcı GUID edinmek ihtiyacınız varsa, kesme kısıtlama veya tracepoint bkz [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) yapısı.  
+ Hata ayıklama altyapısı satıcı GUID edinmeniz gerekiyorsa, kesme noktası kısıtlama veya izleme noktası bkz [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) yapısı.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetRequestInfo](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getrequestinfo.md)   
  [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md)   
  [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md)   

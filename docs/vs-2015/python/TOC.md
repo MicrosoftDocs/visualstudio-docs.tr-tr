@@ -1,0 +1,7 @@
+# [Python](getting-started-with-python.md)
+## [PTVS Kullanmaya Başlarken: Visual Studio’yu Ayarlama](getting-started-with-ptvs-setting-up-visual-studio.md)
+## [PTVS Kullanmaya Başlarken: Kod Yazmaya Başlama (Projeler)](getting-started-with-ptvs-start-coding-projects.md)
+## [PTVS Kullanmaya Başlarken: Kodları Düzenleme](getting-started-with-ptvs-editing-code.md)
+## [PTVS Kullanmaya Başlarken: Hata Ayıklama](getting-started-with-ptvs-debugging.md)
+## [PTVS Kullanmaya Başlarken: Etkileşimli Python](getting-started-with-ptvs-interactive-python.md)
+## [PTVS Kullanmaya Başlarken: Azure’da Web Sitesi Oluşturma](getting-started-with-ptvs-building-a-website-in-azure.md)

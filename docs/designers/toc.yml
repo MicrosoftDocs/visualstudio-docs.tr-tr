@@ -1,0 +1,177 @@
+- name: Kullanıcı arabirimleri tasarlama
+  href: designing-user-interfaces.md
+  items:
+    - name: Visual Studio’da XAML tasarlama
+      href: designing-xaml-in-visual-studio.md
+      items:
+        - name: XAML Tasarımcısı’nı kullanarak bir kullanıcı arabirimi oluşturma
+          href: creating-a-ui-by-using-xaml-designer-in-visual-studio.md
+          items:
+            - name: XAML Tasarımcısı’nda öğelerle çalışma
+              href: working-with-elements-in-xaml-designer.md
+            - name: XAML Tasarımcısı’nda nesneleri düzen kapsayıcılarına yerleştirme
+              href: organize-objects-into-layout-containers-in-xaml-designer.md
+            - name: Kaynak oluşturma ve uygulama
+              href: how-to-create-and-apply-a-resource.md
+            - name: 'İzlenecek yol: XAML Tasarımcısı’nda verilere bağlama'
+              href: walkthrough-binding-to-data-in-xaml-designer.md
+            - name: XAML Tasarımcısı için klavye kısayolları
+              href: keyboard-shortcuts-for-xaml-designer.md
+            - name: XAML Tasarımcısı’nda proje kodu hatalarını ayıklama veya proje kodunu devre dışı bırakma
+              href: debugging-or-disabling-project-code-in-xaml-designer.md
+            - name: XAML hataları ve uyarıları
+              href: xaml-errors-warnings.md
+        - name: Visual Studio için Blend’i kullanarak kullanıcı arabirimi oluşturma
+          href: creating-a-ui-by-using-blend-for-visual-studio.md
+          items:
+            - name: XAML Tasarımcısı'de denetimler ekleme ve bunların davranışlarını değiştirme
+              href: insert-controls-and-modify-their-behavior-in-xaml-designer.md
+            - name: 'XAML Tasarımcısı’nda görüntü, video ve ses klipleri ekleme'
+              href: insert-images-videos-and-audio-clips-in-xaml-designer.md
+            - name: Şekiller ve yollar çizin
+              href: draw-shapes-and-paths.md
+            - name: Blend'de nesnlerin stilini değiştirme
+              href: modify-the-style-of-objects-in-blend.md
+            - name: XAML Tasarımcısı’nda nesnelere animasyon ekleme
+              href: animate-objects-in-xaml-designer.md
+            - name: Verileri görüntüleme
+              href: display-data-in-blend.md
+            - name: Blend’de klavye kısayolları ve değiştirici tuşlar
+              href: keyboard-shortcuts-and-modifier-keys-in-blend.md
+              items:
+                - name: Klavye kısayolları
+                  href: keyboard-shortcuts-in-blend.md
+                - name: Çalışma yüzeyi değiştirici tuşları
+                  href: artboard-modifier-keys-in-blend.md
+                - name: Kalem aracı değiştirici tuşları
+                  href: pen-tool-modifier-keys-in-blend.md
+                - name: Doğrudan seçim aracı değiştirici tuşları
+                  href: direct-selection-tool-modifier-keys-in-blend.md
+            - name: Blend için erişilebilirlik ürünleri ve hizmetleri
+              href: accessibility-products-and-services-blend.md
+    - name: Windows Presentation Foundation (WPF)
+      href: getting-started-with-wpf.md
+      items:
+        - name: WPF’ye genel bakış
+          href: introduction-to-wpf.md
+        - name: LINQ to XML ile WPF verilerini bağlama
+          href: wpf-data-binding-with-linq-to-xml-overview.md
+          items:
+            - name: LINQ to XML dinamik özellikleri
+              href: linq-to-xml-dynamic-properties.md
+              items:
+                - name: XAttribute sınıfı dinamik özellikleri
+                  href: xattribute-class-dynamic-properties.md
+                  items:
+                    - name: Değer (XAttribute dinamik özelliği)
+                      href: value-xattribute-dynamic-property.md
+                - name: XElement sınıfı dinamik özellikleri
+                  href: xelement-class-dynamic-properties.md
+                  items:
+                    - name: Öznitelik (XElement dinamik özelliği)
+                      href: attribute-xelement-dynamic-property.md
+                    - name: Öğe (XElement dinamik özelliği)
+                      href: element-xelement-dynamic-property.md
+                    - name: Öğeler (XElement dinamik özelliği)
+                      href: elements-xelement-dynamic-property.md
+                    - name: Alt Öğeler (XElement dinamik özelliği)
+                      href: descendants-xelement-dynamic-property.md
+                    - name: Değer (XElement dinamik özelliği)
+                      href: value-xelement-dynamic-property.md
+                    - name: Xml (XElement dinamik özelliği)
+                      href: xml-xelement-dynamic-property.md
+                - name: Örnek
+                  href: wpf-data-binding-using-linq-to-xml-example.md
+                  items:
+                    - name: LinqToXmlDataBinding oluşturma ve çalıştırma örneği
+                      href: how-to-build-and-run-the-linqtoxmldatabinding-example.md
+                    - name: 'İzlenecek yol: LINQ to XML verilerini bağlama'
+                      href: walkthrough-linqtoxmldatabinding-example.md
+                      items:
+                        - name: L2DBForm.xaml kaynak kodu
+                          href: l2dbform-xaml-source-code.md
+                        - name: L2DBForm.xaml.cs kaynak kodu
+                          href: l2dbform-xaml-cs-source-code.md
+    - name: Oyunlar ve uygulamalar için 3B varlıklarla çalışma
+      href: working-with-3-d-assets-for-games-and-apps.md
+      items:
+        - name: Dokularla ve görüntülerle çalışma
+          href: working-with-textures-and-images.md
+          items:
+            - name: Görüntü düzenleyicisi
+              href: image-editor.md
+            - name: Görüntü düzenleyicisi örnekleri
+              href: image-editor-examples.md
+              items:
+                - name: Temel doku oluşturma
+                  href: how-to-create-a-basic-texture.md
+                - name: MIP düzeyleri oluşturma ve değiştirme
+                  href: how-to-create-and-modify-mip-levels.md
+        - name: 3B modeller ile çalışma
+          href: working-with-3-d-models.md
+          items:
+            - name: Model düzenleyicisi
+              href: model-editor.md
+            - name: Model düzenleyicisi örnekleri
+              href: model-editor-examples.md
+              items:
+                - name: Temel 3B model oluşturma
+                  href: how-to-create-a-basic-3-d-model.md
+                - name: 3B modelin pivot noktasını değiştirme
+                  href: how-to-modify-the-pivot-point-of-a-3-d-model.md
+                - name: 3B arazi modeli oluşturma
+                  href: how-to-model-3-d-terrain.md
+                - name: 3B modele gölgelendirici uygulama
+                  href: how-to-apply-a-shader-to-a-3-d-model.md
+        - name: Gölgelendiricilerle çalışma
+          href: working-with-shaders.md
+          items:
+            - name: Gölgelendirici tasarımcısı
+              href: shader-designer.md
+            - name: Gölgelendirici tasarımcısı düğümleri
+              href: shader-designer-nodes.md
+              items:
+                - name: Sabit düğümler
+                  href: constant-nodes.md
+                - name: Parametre düğümleri
+                  href: parameter-nodes.md
+                - name: Doku düğümleri
+                  href: texture-nodes.md
+                - name: Matematik düğümleri
+                  href: math-nodes.md
+                - name: Yardımcı program düğümleri
+                  href: utility-nodes.md
+                - name: Filtre düğümleri
+                  href: filter-nodes.md
+            - name: Gölgelendirici tasarımcısı örnekleri
+              href: shader-designer-examples.md
+              items:
+                - name: Temel renk gölgelendiricisi oluşturma
+                  href: how-to-create-a-basic-color-shader.md
+                - name: Temel Lambert gölgelendiricisi oluşturma
+                  href: how-to-create-a-basic-lambert-shader.md
+                - name: Temel Phong gölgelendiricisi oluşturma
+                  href: how-to-create-a-basic-phong-shader.md
+                - name: Temel doku gölgelendiricisi oluşturma
+                  href: how-to-create-a-basic-texture-shader.md
+                - name: Gri tonlamalı doku gölgelendiricisi oluşturma
+                  href: how-to-create-a-grayscale-texture-shader.md
+                - name: Geometri tabanlı gradyan gölgelendirici oluşturma
+                  href: how-to-create-a-geometry-based-gradient-shader.md
+                - name: Gerçekçi bir 3B bilardo topu oluşturma
+                  href: walkthrough-creating-a-realistic-3-d-billiard-ball.md
+                - name: Gölgelendiriciyi dışarı aktarma
+                  href: how-to-export-a-shader.md
+        - name: Oyununuzda veya uygulamanızda 3B varlıklar kullanma
+          href: using-3-d-assets-in-your-game-or-app.md
+          items:
+            - name: Mipmap'leri içeren dokuyu dışarı aktarma
+              href: how-to-export-a-texture-that-contains-mipmaps.md
+            - name: Ön çarpımlı alfa kullanan dokuyu dışarı aktarma
+              href: how-to-export-a-texture-that-has-premultiplied-alpha.md
+            - name: Direct2D veya Javascript uygulamaları kullanmak için dokuyu dışarı aktarma
+              href: how-to-export-a-texture-for-use-with-direct2d-or-javascipt-apps.md
+    - name: Visual Studio görüntü kitaplığı
+      href: the-visual-studio-image-library.md
+- name: İş Akışı Tasarımcısı ile uygulamaları geliştirme
+  href: ../workflow-designer/developing-applications-with-the-workflow-designer.md

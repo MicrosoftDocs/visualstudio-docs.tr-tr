@@ -1,5 +1,5 @@
 ---
-title: Dil Hizmetleri ve çekirdek Düzenleyici | Microsoft Docs
+title: Dil Hizmetleri ve çekirdek Düzenleyicisi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,37 +13,38 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cd9e0cdbcb10ac670ac1a0947fb9a43c16c7fccf
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: e7f439cf1564e14857b3a609191cc0bea05e0e04
+ms.sourcegitcommit: 06db1892fff22572f0b0a11994dc547c2b7e2a48
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39636245"
 ---
 # <a name="language-services-and-the-core-editor"></a>Dil Hizmetleri ve çekirdek Düzenleyicisi
-Visual Studio'da düzenleyicileri sık bir dil hizmeti ile ilişkilendirilmiş. Bunun yanı sıra, bir dil hizmeti söz dizimi renklendirme, deyim tamamlama, IntelliSense ve metin biçimlendirmesini sağlar.  
+Visual Studio düzenleyicilerinde sık dil hizmeti ile ilişkilendirilmiştir. Diğerlerinin yanı sıra bir dil hizmeti söz dizimi renklendirme, deyim tamamlama, IntelliSense ve metin biçimlendirme sağlar.  
   
-## <a name="core-editors-and-document-data-objects"></a>Çekirdek düzenleyicileri ve belge veri nesneleri  
- Çekirdek Düzenleyici eriştiğinizde, düzenleme belge verileri ve belge görünümü nesneleri oluşturmayın. IDE oluşturur ve bu iki nesne denetler ve uygun çağrıları düzenleyicinizde Üreteç uygulaması yaparak bunları işleyicilerine elde edin.  
+## <a name="core-editors-and-document-data-objects"></a>Çekirdek düzenleyici ve belge veri nesneleri  
+ Çekirdek Düzenleyici eriştiğinizde, belge verileri ve belge görünümü nesneleri oluşturma. IDE oluşturur ve bu iki nesne denetler ve Üreteç uygulaması Düzenleyicisi'nde uygun çağrıları yaparak bunları tanıtıcıları alırsınız.  
   
- Daha fazla bilgi için bkz: [projede açılır bir dosyayı hangi Düzenleyicisi'ni belirleme](../extensibility/internals/determining-which-editor-opens-a-file-in-a-project.md).  
+ Daha fazla bilgi için [belirlemek hangi Düzenleyicisi, bir projede bir dosya açar](../extensibility/internals/determining-which-editor-opens-a-file-in-a-project.md).  
   
 ## <a name="language-services-and-the-core-editor"></a>Dil Hizmetleri ve çekirdek Düzenleyicisi  
- Bir dil hizmeti uygulayarak, verilerin bir belge görünümünde nasıl görüntüleneceğini kontrol edebilirsiniz. Bir dil hizmeti bilgileri ve Visual C++ gibi belirli bir dile özgü davranış sağlar. Bir metin arabelleği oluşturduğunuzda ve açmakta olduğunuz belge için dosya adı uzantısı belirlemek metin arabelleği HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Editors bir kayıt defteri anahtarından bu dosya adı uzantısıyla ilişkili dil hizmeti belirler. \\{YourLanguageService GUID} \Extensions. Yordam sonra yükleme standart VSPackage, VSPackage yükler ve dil hizmetinin bir örneği oluşturulur.  
+ Dil hizmeti kullanarak, belge görünümü'nde verilerin nasıl görüntüleneceğini denetleyebilirsiniz. Dil hizmeti bilgileri ve Visual C++ gibi belirli bir dile özgü davranış sağlar. Bir metin arabelleği açmakta belgenin dosya adı uzantısı belirlemek, bir kayıt defteri anahtarından bu dosya adı uzantısıyla ilişkili dil hizmeti metin arabelleğini belirler **HKEY_LOCAL_MACHINE\SOFTWARE\ Microsoft\Editors\\{YourLanguageService GUID} \Extensions**. Yordam sonra yükleme standart VSPackage'ı, VSPackage'ı yükler ve, dil hizmetinin bir örneği oluşturulur.  
   
- Temel dil hizmeti aşağıdaki çizimde gösterilmiştir.  
+ Temel dil hizmeti aşağıdaki çizimde gösterilmektedir.  
   
- ![Dil Hizmet Modeli grafiği](../extensibility/media/vslanguageservicemodel.gif "vsLanguageServiceModel")  
+ ![Dil hizmetinin Modeli grafiği](../extensibility/media/vslanguageservicemodel.gif "vsLanguageServiceModel")  
 Çekirdek düzenleyici ve dil hizmeti nesneleri  
   
- Çekirdek düzenleyici için belge veri nesnesi bir metin arabelleği olarak adlandırılır ve tarafından temsil edilen <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer> nesnesi. Belge görünüm nesnesi bir metin görünüm olarak adlandırılır ve tarafından temsil edilen <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow> nesnesi. Bu iki nesne çekirdek Düzenleyici birleşik bir görünümünü sağlamak için dil hizmeti ile birlikte çalışır. Metin arabelleği ve metin görünümü görüntüler belge penceresindeki bilgileri kod penceresi çağrılır. Kod penceresini belge kod Pencere Yöneticisi tarafından yönetilir.  
+ İçin çekirdek Düzenleyici belge veri nesnesi bir metin arabelleği olarak adlandırılır ve tarafından temsil edilen <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextBuffer> nesne. Belge görünüm nesnesi bir metin görünümü olarak adlandırılır ve tarafından temsil edilen <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow> nesne. Bu iki nesne, çekirdek Düzenleyici birleşik bir görünümünü sağlamak için dil hizmeti ile birlikte çalışır. Metin arabelleği ve belge penceresinde metin görünümünü görüntüler bilgilerinden bir kod penceresinde çağrılır. Kod penceresi belgenin bir kod penceresinde Yöneticisi tarafından yönetilir.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLanguageInfo>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorizer>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.VsCodeWindow>   
- [Eski API kullanarak bir dil Hizmet bağlamı sağlama](../extensibility/providing-a-language-service-context-by-using-the-legacy-api.md)   
+ [Eski API'yi kullanarak bir dil Hizmet bağlamı sağlar.](../extensibility/providing-a-language-service-context-by-using-the-legacy-api.md)   
  [IntelliSense barındırma](../extensibility/intellisense-hosting.md)   
  [Kapsanan dilleri](../extensibility/contained-languages.md)   
- [Eski Dil Hizmeti Geliştirme](../extensibility/internals/developing-a-legacy-language-service.md)
+ [Eski dil hizmeti geliştirme](../extensibility/internals/developing-a-legacy-language-service.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Hata: Web sitesi çalışan işlemi IIS tarafından sonlandırıldı | Microsoft Docs'
+title: 'Hata: Web sitesi çalışan işlemi IIS tarafından sonlandırıldı. | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-debug
@@ -16,46 +16,47 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ca76a0e66073d0102adb97d8cc4ca35087399297
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 582cf1b5faf0cc62d85e17544aa03c4ede4ab0a8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49852849"
 ---
 # <a name="error-web-site-worker-process-has-been-terminated-by-iis"></a>Hata: Web sitesi çalışan işlemi IIS tarafından sonlandırıldı
-Hata ayıklayıcı Web sitesinde kodu yürütme durduruldu. Bu, Internet Information Services'ın (IIS) çalışan işlem yanıt durmuş varsaymak neden oldu. Bu nedenle, IIS çalışan işlemi sona erdirildi.  
+Hata ayıklayıcı Web sitesinde kod yürütme durduruldu. Bu, çalışan işlemi yanıt durmuş varsaymak Internet Information Services (IIS) neden oldu. Bu nedenle, IIS çalışan işlemi sonlandırıldı.  
   
- Hata ayıklamak devam etmek için IIS çalışan işlemi devam etmek izin verecek şekilde yapılandırmanız gerekir. Bu hata iletisi, IIS 7'den önceki IIS sürümleriyle görünmez.  
+ Hatalarını ayıklamaya devam etmek için IIS çalışan işleminin devam izin verecek şekilde yapılandırmanız gerekir. Bu hata iletisi, IIS 7'den önceki IIS sürümleriyle görünmüyor.  
   
-### <a name="to-configure-iis-7-to-allow-the-worker-process-to-continue"></a>IIS 7'yi devam etmek çalışan işlemi izin verecek şekilde yapılandırmak için  
+### <a name="to-configure-iis-7-to-allow-the-worker-process-to-continue"></a>IIS 7, devam etmek çalışan işlemi izin verecek şekilde yapılandırmak için  
   
-1.  Açık **Yönetimsel Araçlar** penceresi.  
+1. Açık **Yönetimsel Araçlar** penceresi.  
   
-    1.  Tıklatın **Başlat**ve ardından **Denetim Masası**.  
+   1.  Tıklayın **Başlat**ve ardından **Denetim Masası**.  
   
-    2.  İçinde **Denetim Masası**, seçin **Klasik Görünüm'e geçiş**gerekirse, çift tıklayın ve ardından **Yönetimsel Araçlar**.  
+   2.  İçinde **Denetim Masası**, seçin **Klasik görünümüne geç**, gerekirse ve çift tıklatarak **Yönetimsel Araçlar**.  
   
-2.  İçinde **Yönetimsel Araçlar** penceresinde çift **Internet Information Services (IIS) Yöneticisi'ni**.  
+2. İçinde **Yönetimsel Araçlar** penceresinde çift **Internet Information Services (IIS) Yöneticisi'ni**.  
   
-     IIS Yöneticisi'ni açar.  
+    IIS Yöneticisi'ni açar.  
   
-3.  İçinde **bağlantıları** bölmesinde genişletin \<bilgisayar adı > düğümü gerekiyorsa.  
+3. İçinde **bağlantıları** bölmesini genişletin \<bilgisayar adı > gerekirse düğümü.  
   
-4.  Altında \<bilgisayar adı > düğümü tıklatın **uygulama havuzları**.  
+4. Altında \<bilgisayar adı > düğümünü tıklatın **uygulama havuzları**.  
   
-5.  İçinde **uygulama havuzları** listesinde, uygulamanızın çalıştığı havuzunun adını sağ tıklatın ve ardından **Gelişmiş ayarları**.  
+5. İçinde **uygulama havuzları** listesinde, uygulamanızın çalıştığı havuzun adına sağ tıklayın ve ardından **Gelişmiş ayarlar**.  
   
-6.  İçinde **Gelişmiş ayarları** iletişim kutusunda, bulun **işlem modeli** bölümünde ve aşağıdaki eylemlerden birini gerçekleştirin:  
+6. İçinde **Gelişmiş ayarlar** iletişim kutusunda, bulun **işlem modeli** bölümünde ve aşağıdaki eylemlerden birini gerçekleştirin:  
   
-    -   Ayarlama **Ping etkinleştirilmiş** için **False**.  
+   - Ayarlama **Ping etkin** için **False**.  
   
-    -   Ayarlama **Ping en büyük yanıt süresi** 90 saniyeden daha büyük bir değer.  
+   - Ayarlama **Ping en yüksek yanıt süresi** 90 saniyeden büyük olan bir değer.  
   
-     Ayarı **Ping etkinleştirilmiş** için **False** IIS çalışan işlemi hala çalışıyor ve hata ayıklaması işleminizi durduruncaya kadar çalışan işlem etkin tutar denetlemesini durdurur. Ayarı **Ping en büyük yanıt süresi** IIS çalışan işlemi izlemeye devam etmek için büyük bir değere izin verir.  
+     Ayarı **Ping etkin** için **False** IIS çalışan işlemi hala çalışıyor ve siz, hataları ayıklanan işlem kadar çalışan işlemi etkin tutar denetlemesini durdurur. Ayarı **Ping en yüksek yanıt süresi** IIS çalışan işlemi izlemeye devam etmek için büyük bir değer sağlar.  
   
-7.  Tıklatın **Tamam** kapatmak için **Gelişmiş ayarları** iletişim kutusu.  
+7. Tıklayın **Tamam** kapatmak için **Gelişmiş ayarlar** iletişim kutusu.  
   
-8.  IIS Yöneticisi'ni kapatın ve **Yönetimsel Araçlar** penceresi.  
+8. IIS Yöneticisi'ni kapatın ve **Yönetimsel Araçlar** penceresi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Uzaktan hata ayıklama ve sorun giderme](../debugger/remote-debugging-errors-and-troubleshooting.md)
+ [Uzaktan Hata Ayıklama Hataları ve Sorun Giderme](../debugger/remote-debugging-errors-and-troubleshooting.md)

@@ -1,9 +1,9 @@
 ---
-title: -UseEnv (devenv.exe) | Microsoft Docs
-ms.custom: ''
+title: -UseEnv (devenv.exe)
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-general
-ms.topic: conceptual
+ms.topic: reference
 f1_keywords:
 - VC.Project.UseEnvVars.ExcludePath
 - VC.Project.UseEnvVars.LibraryPath
@@ -21,18 +21,19 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5fd76e44b2e503bd7b444e83bb9a64abceeaa561
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0a11d8eceec682e37f9bf34c79980c37880bdbe6
+ms.sourcegitcommit: 54c65f81a138fc1e8ff1826f7bd9dcec710618cc
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "51948497"
 ---
 # <a name="useenv-devenvexe"></a>/UseEnv (devenv.exe)
 
-Visual Studio başlar ve ortam değişkenlerini içine yükler **VC ++ dizinleri** iletişim kutusu.
+Visual Studio başlatılır ve ortam değişkenlerini uygulamasına yükler **VC ++ dizinleri** iletişim kutusu.
 
 > [!NOTE]
-> Bu anahtarı ile yüklenen **C++ ile masaüstü geliştirme** iş yükü.
+> Bu anahtar ile birlikte yüklenir **C++ ile masaüstü geliştirme** iş yükü.
 
 ## <a name="syntax"></a>Sözdizimi
 
@@ -42,7 +43,7 @@ Devenv /useenv
 
 ## <a name="example"></a>Örnek
 
-Aşağıdaki örnek Visual Studio başlatır ve ortam değişkenleri içine yükler **VC ++ dizinleri** iletişim kutusu.
+Aşağıdaki örnek, Visual Studio başlatılır ve ortam değişkenlerini uygulamasına yükler **VC ++ dizinleri** iletişim kutusu.
 
 ```shell
 Devenv.exe /useenv
@@ -50,4 +51,4 @@ Devenv.exe /useenv
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
-* [Devenv Komut Satırı Anahtarları](../../ide/reference/devenv-command-line-switches.md)
+* [Devenv komut satırı anahtarları](../../ide/reference/devenv-command-line-switches.md)

@@ -15,19 +15,20 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 247a152cd04a262115cbde78a7a06ad2e95f250c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: ace6b0eaf71b4bfb992d0ff0ccdb09351eac2c19
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844176"
 ---
-# <a name="how-to-reference-windows-symbol-information"></a>Nasıl yapılır: Başvuru Pencereleri Sembol Bilgileri
-Profil oluşturma Visual Studio Araçları, program ikili dosyaları işlevi adları gibi simgesel adları çözümlemek için simge (.pdb) dosyalarını kullanın. Otomatik olarak karşıdan yükle ve yerel bilgisayarda Windows sürümü için doğru .pdb dosyaları güncelleştirmek için aşağıdaki adımları izleyebilirsiniz.  
+# <a name="how-to-reference-windows-symbol-information"></a>Nasıl yapılır: başvuru Windows sembol bilgileri
+Profil oluşturma Visual Studio Araçları simgesini kullanın (. *pdb*) gibi simgesel adları çözümlemek için dosyaları işlev program ikili adları. Otomatik olarak karşıdan yükle ve doğru güncelleştirmek için aşağıdaki adımları izleyebilirsiniz. *pdb* dosyaları yerel bilgisayarda Windows sürümü için.  
   
 > [!NOTE]
 >  Bu ayar, varolan raporları etkilemez. Yalnızca simge sunucusunu belirttikten sonra oluşturulan raporlar sembol bilgileri gerekir.  
   
- Daha fazla bilgi için bkz: [belirtin simge (.pdb) ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).  
+ Daha fazla bilgi için bkz: [belirt simgesi (. *pdb*) ve kaynak dosyaları](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md).  
   
 ### <a name="to-use-the-microsoft-symbol-server"></a>Microsoft Simge sunucusunu kullanmak için  
   
@@ -47,6 +48,6 @@ Profil oluşturma Visual Studio Araçları, program ikili dosyaları işlevi adl
   
      Üç nokta düğmesini tıklatarak (**...** ) ve ardından bir dizinden **klasöre Gözat** iletişim kutusu.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Performans oturumlarını yapılandırma](../profiling/configuring-performance-sessions.md)   
- [Nasıl yapılır: sembol bilgilerini serileştirme](../profiling/how-to-serialize-symbol-information.md)
+ [Nasıl yapılır: Sembol bilgilerini seri hale getirme](../profiling/how-to-serialize-symbol-information.md)

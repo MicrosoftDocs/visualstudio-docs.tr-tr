@@ -1,5 +1,5 @@
 ---
-title: 'Sık sorulan sorular: Eklentiler VSPackage Uzantıları dönüştürme | Microsoft Docs'
+title: 'SSS: Eklentileri VSPackage uzantılarına dönüştürme | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -11,172 +11,173 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: daec495ee71bf27bc40174b74cd95a6df47c247f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 56088e45af5ed45b3a303ffc99679e77b51f56ae
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49826524"
 ---
-# <a name="faq-converting-add-ins-to-vspackage-extensions"></a>SSS: Eklentileri VSPackage Uzantılarına Dönüştürme
-Eklentiler artık kullanım dışı bırakılmıştır. Yeni bir Visual Studio uzantısı yapmak için bir VSIX uzantısı oluşturmanız gerekir. Burada, VSIX uzantısı için bir Visual Studio eklentisi dönüştürmek hakkında sık sorulan bazı sorular için yanıtlar bulunmaktadır.  
+# <a name="faq-converting-add-ins-to-vspackage-extensions"></a>SSS: eklentileri VSPackage uzantılarına dönüştürme
+Eklentileri artık kullanım dışı bırakılmıştır. Yeni bir Visual Studio uzantısı yapmak için bir VSIX uzantısı oluşturmak gerekir. Bir Visual Studio eklentisi, bir VSIX uzantısı dönüştürme hakkında sık sorulan soruların yanıtları aşağıdadır.  
   
 > [!WARNING]
->  C# ve Visual Basic projeleri için Visual Studio 2015'te başlangıç VSIX proje kullanın ve öğe şablonları menü komutları, aracı windows ve VSPackages ekleyin. Daha fazla bilgi için bkz: [Visual Studio 2015 SDK yenilikler](../extensibility/what-s-new-in-the-visual-studio-2015-sdk.md).  
+>  C# ve Visual Basic projeleri için Visual Studio 2015'te başlangıç VSIX projesi kullanın ve menü komutları, araç pencereleri ve VSPackages için öğe şablonları ekleyin. Daha fazla bilgi için [Visual Studio 2015 SDK yenilikler](../extensibility/what-s-new-in-the-visual-studio-2015-sdk.md).  
   
 > [!IMPORTANT]
->  Çoğu durumda, eklenti kodunuzun VSPackage proje öğesi içeren bir VSIX proje yalnızca aktarabilir. Çağırarak DTE Otomasyon nesnesi alabilirsiniz <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> içinde <xref:Microsoft.VisualStudio.Shell.Package.Initialize%2A> yöntemi.  
+>  Çoğu durumda bir VSPackage proje öğesi ile bir VSIX projesine eklentisi kodunuzu yalnızca aktarabilirsiniz. Çağırarak DTE Otomasyon nesnesi alabilirsiniz <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> içinde <xref:Microsoft.VisualStudio.Shell.Package.Initialize%2A> yöntemi.  
 >   
 >  `DTE2 dte = (DTE2)GetService(typeof(DTE));`  
 >   
->  Daha fazla bilgi için bkz: [nasıl ı çalıştırabilirsiniz eklenti kodumu bir VSPackage?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_RunAddin) aşağıda.  
+>  Daha fazla bilgi için [VSPackage içinde eklenti kodumu nasıl çalıştırırım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_RunAddin) aşağıda.  
   
-## <a name="what-software-do-i-need-to-develop-vsix-extensions"></a>VSIX uzantılar geliştirmek üzere hangi yazılım gerekiyor mu?  
- Visual Studio 2015'ten başlayarak, Visual Studio SDK'sını İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda bir isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yı daha sonra da yükleyebilirsiniz. Daha fazla bilgi için bkz: [Visual Studio SDK'sını yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
+## <a name="what-software-do-i-need-to-develop-vsix-extensions"></a>VSIX Uzantıları Geliştirme hangi yazılım gerekiyor?  
+ Visual Studio 2015'ten başlayarak, size Visual Studio SDK İndirme Merkezi'nden yüklemeyin. Visual Studio kurulumunda isteğe bağlı bir özellik olarak eklenmiştir. VS SDK'yi daha sonra yükleyebilirsiniz. Daha fazla bilgi için [Visual Studio SDK'yı yükleme](../extensibility/installing-the-visual-studio-sdk.md).  
   
-## <a name="wheres-the-extension-documentation"></a>Uzantı nerededir?  
- İle başlayan [Visual Studio uzantılar geliştirmek üzere başlangıç](../extensibility/starting-to-develop-visual-studio-extensions.md). MSDN'de VSSDK uzantısı geliştirme hakkında diğer makaleler bir ilgilidir.  
+## <a name="wheres-the-extension-documentation"></a>Uzantı belgeleri nerede?  
+ İle başlayan [Visual Studio uzantılarını geliştirmeye başlamak](../extensibility/starting-to-develop-visual-studio-extensions.md). MSDN'de VSSDK uzantısı geliştirme hakkında diğer makaleler bir ' dir.  
   
-## <a name="can-i-convert-my-add-in-project-to-a-vsix-project"></a>Eklenti proje VSIX projeye dönüştürebilir miyim?  
- VSIX projelerinde kullanılan mekanizmaları eklenti projelerinde olanlarla aynı olmadığından bir eklenti projesi doğrudan bir VSIX proje dönüştürülemiyor. VSIX proje şablonu yanı sıra, doğru proje öğesi şablonları görece kolay hale getirmek ve bir VSIX uzantısı olarak çalışan kolaylaştırır kodu çok vardır.  
+## <a name="can-i-convert-my-add-in-project-to-a-vsix-project"></a>Bir VSIX projesine eklentisi Projem dönüştürebilir miyim?  
+ VSIX projelerinde kullanılan mekanizma olarak eklentisi projeleri dışındaki aynı olmadığından, bir eklenti projesi doğrudan bir VSIX projesi dönüştürülemiyor. VSIX proje şablonunu yanı sıra, doğru proje öğesi şablonları görece getirmek kolay ve VSIX uzantısı olarak çalışan kolaylaştırır kod vardır.  
   
-##  <a name="BKMK_StartDeveloping"></a> VSIX Uzantıları Geliştirme nasıl başlamanız gerekir?  
- Menü komutu sahip bir VSIX nasıl yaptığınız aşağıda verilmiştir:  
+##  <a name="BKMK_StartDeveloping"></a> VSIX uzantılarını geliştirmeye nasıl başlarım?  
+ Bir menü komutu içeren bir VSIX nasıl yaptığınız aşağıda verilmiştir:  
   
-#### <a name="to-make-a-vsix-extension-that-has-a-menu-command"></a>Menü komutu sahip bir VSIX uzantısı yapma  
+#### <a name="to-make-a-vsix-extension-that-has-a-menu-command"></a>Bir menü komutu içeren bir VSIX uzantısı yapmak için  
   
-1.  VSIX projesi oluşturun. (**Dosya**, **yeni**, **proje**, veya türü **proje** içinde **hızlı başlatma** penceresi). Buna **yeni proje** iletişim kutusunda, genişletin **Visual C# / genişletilebilirlik** veya **Visual Basic / genişletilebilirlik** seçip **VSIX proje**.) Proje adı **TestExtension** ve bunun için bir konum belirtin.  
+1.  Bir VSIX projesi oluşturun. (**Dosya** > **yeni** > **proje**, veya tür **proje** içinde **HızlıBaşlat** pencere). İçinde **yeni proje** iletişim kutusunda **Visual C#** > **genişletilebilirlik** veya **Visual Basic**  >   **Genişletilebilirlik** seçip **VSIX projesi**.) Projeyi adlandırın **TestExtension** ve bunun için bir konum belirtin.  
   
-2.  Ekleme bir **özel komut** proje öğesi şablonu. (Proje düğümüne sağ tıklayın **Çözüm Gezgini** seçip **Ekle / yeni öğe**. Buna **yeni proje** Visual C# veya Visual Basic, Seç iletişim kutusunda **genişletilebilirlik** düğümü ve select **özel komut**.)  
+2.  Ekleme bir **özel komut** proje öğesi şablon. ('nde proje düğümüne sağ **Çözüm Gezgini** seçip **Ekle** > **yeni öğe**. Buna **yeni proje** Visual C# veya Visual Basic seçin iletişim **genişletilebilirlik** düğümünü seçip alt **özel komut**.)  
   
-3.  Derleme ve projeyi hata ayıklama modunda çalıştırmak için F5 tuşuna basın.  
+3.  Tuşuna **F5** oluşturup projeyi hata ayıklama modunda çalıştırın.  
   
-     Visual Studio ikinci bir örneğini görüntülenir. Bu ikinci örneği Deneysel örneği adı verilir ve kod yazmak için kullanmakta olduğunuz Visual Studio örneğini aynı ayarlara sahip olmayabilir. İlk kez deneysel örneği çalıştırdığınızda VS Online'a oturum açın ve tema ve profil belirtin istenir.  
+     Visual Studio ikinci bir örneğini görünür. Bu ikinci bir örneği Deneysel örneği olarak adlandırılır ve Visual Studio'nun kod yazmak için kullandığınız örnekle aynı ayarları olmayabilir. İlk kez deneysel örneği çalıştırdığınızda VS Online'da oturum açın ve tema ve profil belirtmeniz istenir.  
   
-     Üzerinde **Araçları** menüde (deneysel örneği) adlı bir düğme görmeniz gerekir **My komut adı**. Bu düğme seçtiğinizde, bir ileti görüntülenmelidir: **içinde TestVSPackagePackage.MenuItemCallback()**.  
+     Üzerinde **Araçları** menü (deneysel örneğinde) adlı bir düğme görmeniz **My komut adı**. Bu düğmeyi seçtiğinizde, bir ileti şu şekilde görünmelidir: **içinde TestVSPackagePackage.MenuItemCallback()**.  
   
-##  <a name="BKMK_RunAddin"></a> Bir VSPackage eklenti kodumu nasıl çalıştırabilirim?  
- Eklenti kodu genellikle iki yoldan biriyle çalıştırır:  
+##  <a name="BKMK_RunAddin"></a> Eklenti kodum içinde bir VSPackage'ı nasıl çalıştırırım?  
+ Eklenti kodu genellikle iki yöntemden biriyle çalıştırır:  
   
--   Menü komutu tarafından tetiklenen (kod `IDTCommandTarget.Exec` yöntemi)  
+- Bir menü komutu tarafından tetiklenen (kod `IDTCommandTarget.Exec` yöntemi.)  
   
--   Otomatik olarak girişte (kod `OnConnection` olay işleyicisi.)  
+- Otomatik olarak girişte (kod `OnConnection` olay işleyicisi.)  
   
- Bir VSPackage aynı şeyler yapabilirsiniz. Geri arama yönteminde bazı eklenti kodu ekleme şöyledir:  
+  Vspackage'ta aynı şey yapabilirsiniz. Geri çağırma yöntemi eklenti kod ekleme şöyledir:  
   
-#### <a name="to-implement-a-menu-command-in-a-vspackage"></a>Menü komutu bir VSPackage uygulamak için  
+### <a name="to-implement-a-menu-command-in-a-vspackage"></a>VSPackage'ı bir menü komutu uygulamak için  
   
-1.  Menü komutu sahip bir VSPackage oluşturun. (Daha fazla bilgi için bkz: [uzantı menü komutu ile oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).)  
+1. Bir menü komutu içeren bir VSPackage'ı oluşturun. (Daha fazla bilgi için [bir menü komutuyla uzantı oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).)  
   
-2.  VSPackage tanımını içeren dosyayı açın. (C# projesinde, bunun  *\<projenizin adına >*Package.cs.)  
+2. VSPackage'ı tanımını içeren dosyayı açın. (C# projesinde, sahip  *\<, proje adı > Package.cs*.)  
   
-3.  Aşağıdakileri ekleyin `using` deyimlerini dosyaya:  
+3. Aşağıdaki `using` deyimlerini dosyaya:  
   
-    ```csharp  
-    using EnvDTE;  
-    using EnvDTE80;  
-    ```  
+   ```csharp  
+   using EnvDTE;  
+   using EnvDTE80;  
+   ```  
   
-4.  Bul `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
+4. Bulma `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
   
-    ```csharp  
-    DTE2 dte = (DTE2)GetService(typeof(DTE));  
-    ```  
+   ```csharp  
+   DTE2 dte = (DTE2)GetService(typeof(DTE));  
+   ```  
   
-5.  Eklentiniz olan kodu ekleyin, `IDTCommandTarget.Exec` yöntemi. Örneğin, yeni bir bölmesine ekler biraz kod işte **çıkış** penceresini açın ve yeni bölmesinde "Bazı metin" yazdırır.  
+5. Eklentinizi olan kod ekleme, `IDTCommandTarget.Exec` yöntemi. Örneğin, yeni bir bölme ekler bazı kod işte **çıkış** penceresini açın ve yeni bölmesinde "Bazı Text" yazdırır.  
   
-    ```csharp  
-    private void MenuItemCallback(object sender, EventArgs e)  
-    {  
-        DTE2 dte = (DTE2) GetService(typeof(DTE));  
-        OutputWindow outputWindow = dte.ToolWindows.OutputWindow;  
+   ```csharp  
+   private void MenuItemCallback(object sender, EventArgs e)  
+   {  
+       DTE2 dte = (DTE2) GetService(typeof(DTE));  
+       OutputWindow outputWindow = dte.ToolWindows.OutputWindow;  
   
-        OutputWindowPane outputWindowPane = outputWindow.OutputWindowPanes.Add("A New Pane");  
-        outputWindowPane.OutputString("Some Text");  
-    }  
+       OutputWindowPane outputWindowPane = outputWindow.OutputWindowPanes.Add("A New Pane");  
+       outputWindowPane.OutputString("Some Text");  
+   }  
   
-    ```  
+   ```  
   
-6.  Oluşturun ve bu projeyi çalıştırın. F5 tuşuna basın veya seçin **Başlat** üzerinde **hata ayıklama** araç. Visual Studio deneysel örneğinde **Araçları** menü adlı bir düğmeye sahip olmalıdır **My komut adı**. Bu düğme, sözcükler seçtiğinizde **bazı metin** görüntülenmelidir bir **çıkış** bölme. (Açmak zorunda kalabilirsiniz **çıkış** penceresi.)  
+6. Oluşturun ve bu projeyi çalıştırın. Tuşuna **F5** veya **Başlat** üzerinde **hata ayıklama** araç çubuğu. Visual Studio'nun deneysel örneğinde **Araçları** menü adlı bir düğme olmalıdır **My komut adı**. Bu düğme sözcükleri seçtiğinizde **bazı metin** gözükeceğini bir **çıkış** pencere bölmesi. (Açmak zorunda kalabilirsiniz **çıkış** penceresi.)  
   
- Başlangıçta çalıştırmak kodunuzu da sahip olabilirsiniz. Ancak, bu yaklaşım VSPackage uzantıları için genellikle önerilmez. Çok fazla uzantıları Visual Studio başladığında yüklemeye çalışırsanız, başlangıç zamanı önemli ölçüde uzun olabilir. Yalnızca bazı koşul (açılmakta olan bir çözümü gibi) karşılandığında VSPackage otomatik olarak yüklenmesini daha iyi bir uygulamadır.  
+   Başlangıçta Çalıştır kodunuzu da olabilir. Ancak, bu yaklaşım genellikle VSPackage uzantılarına için önerilmez. Çok fazla uzantıları Visual Studio başladığında yüklemeye çalışırsanız, başlangıç zamanı fark edilir derecede uzun olabilir. VSPackage'ı yalnızca (açılan bir çözüm gibi) bazı koşullar karşılandığında otomatik olarak yük daha iyi bir uygulamadır.  
   
- Bu yordamda, bir çözüm açıldığında otomatik olarak yükleyen bir VSPackage eklenti kodu çalıştırmak gösterilmiştir:  
+   Bu yordamı, bir çözüm açıldığında otomatik olarak yükler VSPackage eklenti kodunu çalıştırma işlemi gösterilmektedir:  
   
-#### <a name="to-autoload-a-vspackage"></a>AutoLoad bir VSPackage  
+### <a name="to-autoload-a-vspackage"></a>VSPackage otomatik yükleme için  
   
-1.  VSIX proje ile Visual Studio Paketi proje öğesi oluşturun. (Bunu yapma adımları için bkz: [nasıl geliştirme VSIX uzantıları başlamalıyım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping). Yalnızca Ekle **Visual Studio Paketi** öğesi yerine proje.) VSIX proje adı **TestAutoload**.  
+1. Visual Studio Paket proje öğesi ile bir VSIX projesi oluşturun. (Bunu yapmak adımları için bkz. [nasıl geliştirme VSIX uzantılarını başlarım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping). Eklemeniz yeterlidir **Visual Studio paket** bunun yerine proje öğesi.) VSIX projesi adı **TestAutoload**.  
   
-2.  TestAutoloadPackage.cs açın. Paket sınıfı burada bildirilmiş satırı bulun:  
+2. Açık *TestAutoloadPackage.cs*. Paket sınıfı burada bildirilir satırı bulun:  
   
-    ```csharp  
-    public sealed class <name of your package>Package : Package  
-    ```  
+   ```csharp  
+   public sealed class <name of your package>Package : Package  
+   ```  
   
-3.  Bu satırın üzerine öznitelikleri kümesidir. Bu öznitelik ekleyin:  
+3. Bu satırın üzerine öznitelikleri kümesidir. Bu öznitelik ekleyin:  
   
-    ```csharp  
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]  
-    ```  
+   ```csharp  
+   [ProvideAutoLoad(UIContextGuids80.SolutionExists)]  
+   ```  
   
-4.  Bir kesme noktası kümesinde `Initialize()` yöntemi ve (F5) hata ayıklamayı Başlat.  
+4. Bir kesim noktası `Initialize()` yöntemi ve hata ayıklamayı Başlat (**F5**).  
   
-5.  Deneysel örneğinde bir projeyi açın. VSPackage yükleyeceğini ve, kesme noktası isabet.  
+5. Deneysel örneğinde, bir projeyi açın. VSPackage'ı yüklemeli ve kesme noktasına isabet.  
   
- Alanlarını kullanarak, VSPackage yükleneceği diğer bağlamlarda belirtebilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.UIContextGuids80>. Daha fazla bilgi için bkz: [yüklenirken VSPackages](../extensibility/loading-vspackages.md).  
+   Alanları kullanarak, VSPackage'ı yüklemek için diğer bağlamlarda belirtebilirsiniz <xref:Microsoft.VisualStudio.Shell.Interop.UIContextGuids80>. Daha fazla bilgi için [yük VSPackages](../extensibility/loading-vspackages.md).  
   
-## <a name="how-can-i-get-the-dte-object"></a>DTE nesnesine nasıl alabilirim?  
- Eklentiniz UI görüntülemiyorsa — menü komutları, araç çubuğu düğmeleri veya araç pencereleri — kodunuzu olarak kullanmak mümkün olabilir-VSPackage DTE Otomasyon nesne get kadar uzun. İşte nasıl:  
+## <a name="how-can-i-get-the-dte-object"></a>DTE nesnesini nasıl alabilirim?  
+ Kullanıcı Arabirimi eklentinizin görüntülemez, — örneğin, menü komutlarını, araç çubuğu düğmeleri veya araç pencereleri — kodunuzu olarak kullanmanız mümkün olabilir-VSPackage DTE Otomasyon nesnesini Al kadar uzun. İşte nasıl:  
   
-#### <a name="to-get-the-dte-object-from-a-vspackage"></a>Bir VSPackage DTE nesnesini almak için  
+### <a name="to-get-the-dte-object-from-a-vspackage"></a>Bir VSPackage'ı kullanarak DTE nesnesini almak için  
   
-1.  Visual Studio Paketi öğesi şablona sahip bir VSIX proje ile Ara  *\<proje adı >*Package.cs dosya. Bu türeyen sınıftır <xref:Microsoft.VisualStudio.Shell.Package>; Visual Studio ile etkileşim yardımcı olabilir. Bu durumda, kullandığınız kendi <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi.  
+1. Visual Studio Paket öğe şablonu ile bir VSIX projesinde Ara  *\<proje adı > Package.cs* dosya. Bu, türetilen sınıftır <xref:Microsoft.VisualStudio.Shell.Package>; Visual Studio ile etkileşime yardımcı olabilir. Bu durumda, kullandığınız kendi <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesne.  
   
-2.  Bunlar eklemek `using` deyimleri:  
+2. Bu ekleme `using` ifadeleri:  
   
-    ```csharp  
-    using EnvDTE;  
-    using EnvDTE80;  
-    ```  
+   ```csharp  
+   using EnvDTE;  
+   using EnvDTE80;  
+   ```  
   
-3.  Bul `Initialize` yöntemi. Bu yöntem paket Sihirbazı'nda belirtilen komut işler. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> DTE nesnesini almak için:  
+3. Bulma `Initialize` yöntemi. Bu yöntem paket sihirbazında belirttiğiniz komutu işleyen. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> DTE nesnesini almak için:  
   
-    ```csharp  
-    DTE dte = (DTE)GetService(typeof(DTE));  
-    ```  
+   ```csharp  
+   DTE dte = (DTE)GetService(typeof(DTE));  
+   ```  
   
- Sonra <xref:EnvDTE.DTE> Otomasyon nesnesi, eklenti kodunuzun geri kalanı projeye ekleyebilirsiniz. Gerekirse <xref:EnvDTE80.DTE2> nesne aynısını yapabilir.  
+   Sonra <xref:EnvDTE.DTE> Otomasyon nesnesi, eklenti kodunuzun kalanını projeye ekleyebilirsiniz. Gerekirse <xref:EnvDTE80.DTE2> nesnesi aynı şeyi yapabilir.  
   
-## <a name="how-do-i-change-menu-commands-and-toolbar-buttons-in-my-add-in-to-the-vspackage-style"></a>Nasıl menü komutları ve araç çubuğu düğmeleri my eklenti VSPackage stiline değiştirebilirim?  
- VSPackage uzantıları .vsct dosya menü komutları, araç çubukları, araç çubuğu düğmeleri ve diğer UI çoğunu oluşturmak için kullanın. **Özel komut** proje öğesi şablonu, bir komut oluşturmak için seçeneği verir **Araçları** menüsü. Daha fazla bilgi için bkz: [uzantı menü komutu ile oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).  
+## <a name="how-do-i-change-menu-commands-and-toolbar-buttons-in-my-add-in-to-the-vspackage-style"></a>Nasıl menü komutları ve araç çubuğu düğmeleri my eklentisinde VSPackage stil değiştirebilirim?  
+ VSPackage uzantıları kullanım *.vsct* çoğu menü komutları, araç çubukları, araç çubuğu düğmeleri ve diğer kullanıcı Arabirimi oluşturmak için dosya. **Özel komut** proje öğesi şablonu size bir komut oluşturmak için seçeneği **Araçları** menüsü. Daha fazla bilgi için [bir menü komutuyla uzantı oluşturma](../extensibility/creating-an-extension-with-a-menu-command.md).  
   
- .Vsct dosyaları hakkında daha fazla bilgi için bkz: [nasıl VSPackages ekleme kullanıcı arabirimi öğeleri](../extensibility/internals/how-vspackages-add-user-interface-elements.md). .vsct dosyasının menü öğeleri, araç çubukları ve araç çubuğu düğmeleri eklemek için nasıl kullanılacağını gösteren izlenecek yollar için bkz: [genişletme menüleri ve komutları](../extensibility/extending-menus-and-commands.md).  
+ Hakkında daha fazla bilgi için *.vsct* dosyaları görmek [nasıl VSPackages kullanıcı arabirimi öğeleri ekleyebilir](../extensibility/internals/how-vspackages-add-user-interface-elements.md). Nasıl kullanılacağını gösteren izlenecek yollar için *.vsct* menü öğeleri, araç çubukları ve araç çubuğu düğmeleri için bkz: dosyaya [genişletmek menüler ve komutlar](../extensibility/extending-menus-and-commands.md).  
   
-## <a name="how-do-i-add-custom-tool-windows-in-the-vspackage-way"></a>VSPackage şekilde nasıl özel araç pencereleri eklensin mi?  
- Özel araç penceresi proje öğesi şablonu bir araç penceresi oluşturma seçeneği sunar. Bu proje öğesi şablonu hakkında daha fazla bilgi için bkz: [bir uzantısı bir araç penceresi oluşturma](../extensibility/creating-an-extension-with-a-tool-window.md). Araç pencereleri hakkında daha fazla bilgi için bkz: [genişletme ve Özelleştirme Aracı Windows](../extensibility/extending-and-customizing-tool-windows.md) ve makalelerin altında özellikle [araç penceresi ekleme](../extensibility/adding-a-tool-window.md).  
+## <a name="how-do-i-add-custom-tool-windows-in-the-vspackage-way"></a>Özel araç pencereleri VSPackage şekilde nasıl ekleyebilirim?  
+ Özel araç penceresi proje öğesi şablon araç penceresi oluşturma seçeneğini sunar. Bu proje öğesi şablon hakkında daha fazla bilgi için bkz: [araç penceresi içeren bir uzantı oluşturma](../extensibility/creating-an-extension-with-a-tool-window.md). Araç pencereleri hakkında daha fazla bilgi için bkz. [Genişlet ve araç pencerelerini özelleştirme](../extensibility/extending-and-customizing-tool-windows.md) ve makaleleri altında özellikle [araç penceresi ekleme](../extensibility/adding-a-tool-window.md).  
   
 ## <a name="how-do-i-manage-visual-studio-windows-in-the-vspackage-way"></a>Visual Studio windows VSPackage şekilde nasıl yönetebilirim?  
- Eklentinizi Visual Studio windows yönetiliyorsa, eklenti kodu bir VSPackage çalışması gerekir. Örneğin, bu yordamı nasıl yönetir kodu ekleneceğini gösterir **görev listesi** için `MenuItemCallback` VSPackage yöntemi.  
+ Eklentinizi Visual Studio windows yönetiliyorsa, eklenti kodu VSPackage içinde çalışması gerekir. Örneğin, bu yordamı yöneten kodun nasıl ekleneceği gösterilmektedir **görev listesi** için `MenuItemCallback` VSPackage yöntemi.  
   
-#### <a name="to-insert-window-management-code-from-an-add-in-into-a-vspackage"></a>Pencere Yönetimi kod bir eklentiyi VSPackage ekleme  
+#### <a name="to-insert-window-management-code-from-an-add-in-into-a-vspackage"></a>Pencere Yönetimi kod bir eklentiyi Vspackage'a eklemek için  
   
-1.  Menü komutu, olarak sahip bir VSPackage oluşturma [nasıl geliştirme VSIX uzantıları başlamalıyım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) bölümü.  
+1.  Bir menü komutu olarak içeren bir VSPackage'ı oluşturma [nasıl geliştirme VSIX uzantılarını başlarım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) bölümü.  
   
-2.  VSPackage tanımını içeren dosyayı açın. (C# projesinde, bunun  *\<projenizin adına >*Package.cs.)  
+2.  VSPackage'ı tanımını içeren dosyayı açın. (C# projesinde, sahip  *\<, proje adı > Package.cs*.)  
   
-3.  Bunlar eklemek `using` deyimleri:  
+3.  Bu ekleme `using` ifadeleri:  
   
     ```csharp  
     using EnvDTE;  
     using EnvDTE80;  
     ```  
   
-4.  Bul `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
+4.  Bulma `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
   
     ```csharp  
     DTE2 dte = (DTE2)GetService(typeof(DTE));  
     ```  
   
-5.  Eklentiden kodu ekleyin. Örneğin, yeni görevler ekler biraz kod işte **görev listesi**görevleri sayısını listeler ve bir görevi siler.  
+5.  Eklentinizi kodu ekleyin. Örneğin, yeni görevler ekler bazı kod işte **görev listesi**, görevlerin sayısını listeler ve bir görevi siler.  
   
     ```csharp  
     private void MenuItemCallback(object sender, EventArgs e)   
@@ -204,27 +205,27 @@ Eklentiler artık kullanım dışı bırakılmıştır. Yeni bir Visual Studio u
     }  
     ```  
   
-## <a name="how-do-i-manage-projects-and-solutions-in-a-vspackage"></a>Projeler ve çözümler bir VSPackage içinde nasıl yönetebilirim?  
- Eklentinizi projeler ve çözümler yönetiliyorsa, eklenti kodu bir VSPackage çalışması gerekir. Örneğin, bu yordam nasıl başlangıç projesi alır kodu ekleneceğini gösterir.  
+## <a name="how-do-i-manage-projects-and-solutions-in-a-vspackage"></a>Projeler ve çözümler vspackage'ta nasıl yönetebilirim?  
+ Eklenti kodu, eklenti projeler ve çözümler yönetiliyorsa, içinde bir VSPackage'ı çalışması gerekir. Örneğin, bu yordamı başlangıç projesi alır kodun nasıl ekleneceği gösterilmektedir.  
   
-1.  Menü komutu, olarak sahip bir VSPackage oluşturma [nasıl geliştirme VSIX uzantıları başlamalıyım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) bölümü.  
+1.  Bir menü komutu olarak içeren bir VSPackage'ı oluşturma [nasıl geliştirme VSIX uzantılarını başlarım?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) bölümü.  
   
-2.  VSPackage tanımını içeren dosyayı açın. (C# projesinde, bunun  *\<projenizin adına >*Package.cs.)  
+2.  VSPackage'ı tanımını içeren dosyayı açın. (C# projesinde, sahip  *\<, proje adı > Package.cs*.)  
   
-3.  Bunlar eklemek `using` deyimleri:  
+3.  Bu ekleme `using` ifadeleri:  
   
     ```csharp  
     using EnvDTE;  
     using EnvDTE80;  
     ```  
   
-4.  Bul `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
+4.  Bulma `MenuItemCallback` yöntemi. Bir çağrı ekleyin <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> almak için <xref:EnvDTE80.DTE2> nesnesi:  
   
     ```csharp  
     DTE2 dte = (DTE2)GetService(typeof(DTE));  
     ```  
   
-5.  Eklentiden kodu ekleyin. Örneğin, aşağıdaki kod bir çözümde başlangıç projesi adını alır. (Bu paketi çalıştığında birden çok proje çözümü açık olması gerekir.)  
+5.  Eklentinizi kodu ekleyin. Örneğin, aşağıdaki kod, bir çözümde başlangıç projesinin adını alır. (Bu paketi çalıştığında çok projeli bir çözüm açık olması gerekir.)  
   
     ```csharp  
     private void MenuItemCallback(object sender, EventArgs e)  
@@ -245,8 +246,8 @@ Eklentiler artık kullanım dışı bırakılmıştır. Yeni bir Visual Studio u
     }  
     ```  
   
-## <a name="how-do-i-set-keyboard-shortcuts-in-a-vspackage"></a>Klavye kısayolları bir VSPackage nasıl ayarlarım?  
- Kullandığınız `<KeyBindings>` .vsct dosyasının öğesi. Aşağıdaki örnekte, komutu için klavye kısayolu `idCommand1` Alt + A ve komutu için klavye kısayolu `idCommand2` Alt + Ctrl + a. Anahtar adları sözdizimi dikkat edin.  
+## <a name="how-do-i-set-keyboard-shortcuts-in-a-vspackage"></a>Klavye kısayolları içinde bir VSPackage'ı nasıl ayarlayabilirim?  
+ Kullandığınız `<KeyBindings>` öğesinin *.vsct* dosya. Aşağıdaki örnekte, komut için klavye kısayolunu `idCommand1` olduğu **Alt**+**A**ve komut için klavye kısayolunu `idCommand2` olduğu **Alt**  + **Ctrl**+**A**. Anahtar adları için söz dizimi dikkat edin.  
   
 ```xml  
 <KeyBindings>  
@@ -255,8 +256,8 @@ Eklentiler artık kullanım dışı bırakılmıştır. Yeni bir Visual Studio u
 </KeyBindings>  
 ```  
   
-## <a name="how-do-i-handle-automation-events-in-a-vspackage"></a>Bir VSPackage Otomasyon olayları nasıl işler?  
- Eklentiniz olduğu gibi aynı şekilde bir VSPackage Otomasyon olayları işler. Aşağıdaki kodu nasıl işleneceğini gösterir `OnItemRenamed` olay. (Bu örnekte, DTE nesne zaten kabulünüzü varsayılır.)  
+## <a name="how-do-i-handle-automation-events-in-a-vspackage"></a>Vspackage'ta Otomasyon olaylarına nasıl yapabilirim?  
+ Eklentinizi olduğu gibi aynı şekilde vspackage'ta Otomasyon olayları işleyin. Aşağıdaki kod nasıl işleneceğini gösterir `OnItemRenamed` olay. (Bu örnekte, DTE nesnesi zaten yönettiniz varsayılır.)  
   
 ```csharp  
 Events2 dteEvents = (Events2)dte.Events;  

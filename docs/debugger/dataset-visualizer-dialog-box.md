@@ -28,6 +28,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31457273"
 ---
 # <a name="dataset-visualizer-dialog-box"></a>Veri Kümesi Görselleştiricisi İletişim Kutusu
 Veri kümesi görselleştiricisi DataSet, DataTable, DataView ya da DataViewManager nesnesinin içeriğini görmenizi sağlar. Bu nesneler bir hata ayıklayıcı değişken penceresinde veya bir DataTip biri için değer yanındaki görünür Büyüteç simgesine tıklayarak bu Görselleştirici erişebilir.  

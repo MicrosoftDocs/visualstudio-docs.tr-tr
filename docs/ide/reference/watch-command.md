@@ -1,10 +1,9 @@
 ---
-title: İzle komutu | Microsoft Docs
-ms.custom: ''
+title: İzle Komutu
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: reference
 f1_keywords:
 - debug.watch
 helpviewer_keywords:
@@ -16,38 +15,41 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a82816acfbb995b47dfb34337b20488ad3787f04
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f3226a81e748581cc96b62cb40600864fb9ac805
+ms.sourcegitcommit: fe5a72bc4c291500f0bf4d6e0778107eb8c905f5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "33704466"
 ---
 # <a name="watch-command"></a>İzle Komutu
-Oluşturur ve belirtilen bir örneğini açar bir **izleme** penceresi. Kullanabileceğiniz bir **izleme** değişkenleri, ifadeler ve kayıtları, bu değerleri düzenlemek ve sonuçları kaydetmek için değerleri hesaplamak için penceresi.  
-  
-## <a name="syntax"></a>Sözdizimi  
-  
-```  
-Debug.Watch[index]  
-```  
-  
-## <a name="arguments"></a>Arguments  
- `index`  
- Gerekli. Gözcü penceresi örneği sayısı.  
-  
-## <a name="remarks"></a>Açıklamalar  
- `index` Bir tamsayı olmalıdır. Geçerli değerler 1, 2, 3 veya 4 arasındadır.  
-  
-## <a name="example"></a>Örnek  
-  
-```  
->Debug.Watch1  
-```  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Otomatik değişkenler ve yerel Windows](../../debugger/autos-and-locals-windows.md)   
- [Bir izleme izleme ve QuickWatch Windows Visual Studio kullanarak değişkenleri ayarlayın](../../debugger/watch-and-quickwatch-windows.md)   
- [Visual Studio komutları](../../ide/reference/visual-studio-commands.md)   
- [Komut penceresi](../../ide/reference/command-window.md)   
- [Bul/komut kutusu](../../ide/find-command-box.md)   
- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)
+Oluşturur ve belirtilen bir örneğini açar bir **izleme** penceresi. Kullanabileceğiniz bir **izleme** değişkenleri, ifadeler ve kayıtları, bu değerleri düzenlemek ve sonuçları kaydetmek için değerleri hesaplamak için penceresi.
+
+## <a name="syntax"></a>Sözdizimi
+
+```cmd
+Debug.Watch[index]
+```
+
+## <a name="arguments"></a>Arguments
+ `index`
+
+ Gerekli. Gözcü penceresi örneği sayısı.
+
+## <a name="remarks"></a>Açıklamalar
+ `index` Bir tamsayı olmalıdır. Geçerli değerler 1, 2, 3 veya 4 arasındadır.
+
+## <a name="example"></a>Örnek
+
+```cmd
+>Debug.Watch1
+```
+
+## <a name="see-also"></a>Ayrıca Bkz.
+
+- [Otomatik değişkenler ve yerel Windows](../../debugger/autos-and-locals-windows.md)
+- [Bir izleme izleme ve QuickWatch Windows Visual Studio kullanarak değişkenleri ayarlayın](../../debugger/watch-and-quickwatch-windows.md)
+- [Visual Studio Komutları](../../ide/reference/visual-studio-commands.md)
+- [Komut Penceresi](../../ide/reference/command-window.md)
+- [Bul/komut kutusu](../../ide/find-command-box.md)
+- [Visual Studio Komut Diğer Adları](../../ide/reference/visual-studio-command-aliases.md)

@@ -1,5 +1,5 @@
 ---
-title: Office çözümlerinde sorun giderme | Microsoft Docs
+title: Office çözümlerinde sorun giderme
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -17,39 +17,40 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: c08f2a55e6ff8e04a2bdb691c882104caf0c3063
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9c2997e199699bbae30e5ea02c9be400eb8250fc
+ms.sourcegitcommit: 6944ceb7193d410a2a913ecee6f40c6e87e8a54b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "35676698"
 ---
-# <a name="troubleshooting-office-solutions"></a>Office Çözümlerinde Sorun Giderme
-  Bu bölümde, Visual Studio'da Office geliştirme araçlarını kullanarak çözümleri oluşturma sırasında karşılaşabileceğiniz ortak sorunları çözmek için ipuçları içerir.  
+# <a name="troubleshoot-office-solutions"></a>Office çözümlerinde sorun giderme
+  Bu bölüm, Visual Studio'da Office geliştirme araçlarını kullanarak çözümleri oluşturma sırasında karşılaşabileceğiniz genel sorunları çözmek için ipuçları içerir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Office Çözümleri Hatalarında Sorun Giderme](../vsto/troubleshooting-errors-in-office-solutions.md)  
- Tasarlama, çalıştıran ve Office çözümlerini Visual Studio'da Test sırasında ortaya çıkabilecek yaygın sorunları açıklar.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Office çözümleri hatalarında sorun giderme](../vsto/troubleshooting-errors-in-office-solutions.md)  
+ Tasarlama, çalışan ve Visual Studio'da Office çözümünüzü test sırasında ortaya çıkabilecek yaygın konuları açıklanmaktadır.  
   
- [Nasıl Yapılır: Devre Dışı Bırakılmış VSTO Eklentisini Yeniden Etkinleştirme](../vsto/how-to-re-enable-a-vsto-add-in-that-has-been-disabled.md)  
- VSTO yazılım veya devre dışı bırakılmış eklentiyi yeniden etkinleştirmeyi açıklar.  
+ [Nasıl yapılır: bir VSTO devre dışı bırakılmış eklentiyi yeniden etkinleştirme](../vsto/how-to-re-enable-a-vsto-add-in-that-has-been-disabled.md)  
+ Bir VSTO sabit veya geçici devre dışı bırakılmış eklentiyi yeniden etkinleştirmek açıklar.  
   
- [Office Çözümlerindeki Hatalar İçin Ek Destek](../vsto/additional-support-for-errors-in-office-solutions.md)  
- Hataları ve Uyarıları Office çözümlerinde sorun giderme için diğer kaynakları açıklar.  
+ [Office çözümlerindeki hatalar için ek destek](../vsto/additional-support-for-errors-in-office-solutions.md)  
+ Hataları ve Uyarıları Office çözümlerinde sorun giderme için diğer kaynaklar açıklanır.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
- [Office Çözüm Güvenliğinde Sorunu Giderme](../vsto/troubleshooting-office-solution-security.md)  
- Office çözümleri güvenliğini sağlama ile çalışırken karşılaşabileceğiniz yaygın sorunları açıklar.  
+## <a name="related-sections"></a>İlgili bölümler  
+ [Office çözüm güvenliğinde sorunlarını giderme](../vsto/troubleshooting-office-solution-security.md)  
+ Office çözümleri güvenliğini sağlama ile çalışırken karşılaşabileceğiniz genel sorunları açıklar.  
   
- [Office Çözümü Dağıtımında Sorunu Giderme](../vsto/troubleshooting-office-solution-deployment.md)  
- Office çözümlerini dağıtırken karşılaşabileceğiniz yaygın sorunları açıklar.  
+ [Office çözümü dağıtımında sorunlarını giderme](../vsto/troubleshooting-office-solution-deployment.md)  
+ Office çözümleri dağıtırken karşılaşabileceğiniz genel sorunları açıklar.  
   
- [Office Çözümünü Dağıtma](../vsto/deploying-an-office-solution.md)  
- Güvenlikle ilgili sorunların yanı sıra bir dağıtım modeli seçerken dikkat etmeniz gereken sorunları da dahil olmak üzere, çözümlerinizi dağıtma hakkında bilgi için bağlantılar sağlar.  
+ [Office çözümünü dağıtma](../vsto/deploying-an-office-solution.md)  
+ Güvenlikle ilgili noktalar ve bunun yanı sıra bir dağıtım modeli seçerken dikkat etmeniz gereken sorunlar da dahil olmak üzere çözümlerinizi dağıtma hakkında daha fazla bilgi için bağlantılar sağlar.  
   
- [Office Çözümleri Güvenliğini Sağlama](../vsto/securing-office-solutions.md)  
- Office çözümlerini .NET Framework ile kullanılabilir güvenlik özelliklerini nasıl dahil açıklayan konuları içerir.  
+ [Office çözümleri güvenliğini sağlama](../vsto/securing-office-solutions.md)  
+ Office çözümlerini .NET Framework ile kullanılabilir güvenlik özelliklerine nasıl birleştirmek açıklayan konulara içerir.  
   
- [Office Programlarındaki Ortak Görevler](../vsto/common-tasks-in-office-programming.md)  
- Listeleri sık Office çözümleri programlama hakkında sorular ve sık karşılaşılan sorunları çözmenize yardımcı olabilecek konulara bağlantılar sağlar.  
+ [Office programlarındaki ortak görevler](../vsto/common-tasks-in-office-programming.md)  
+ Listeleri sık Office çözümleri programlama hakkında sorular ve ortak sorunları çözebilecek konulara bağlantılar sağlar.  
   
   

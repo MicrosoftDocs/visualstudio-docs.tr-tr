@@ -14,15 +14,16 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c773d3135cff3d898c93ed6d9df43b36c387747c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c977c147aa9edc7dc83e76dc3d9c07dd959c3f9c
+ms.sourcegitcommit: 4cd4aef53e7035d23e7d1d0f66f51ac8480622a1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34764715"
 ---
-# <a name="export-button-concurrency-visualizer"></a>Dışarı Aktarma Düğmesi (Eşzamanlılık Görselleştiricisi)
-**Verme** düğmesini çağrı yığını kendi kayıtlar için veya Microsoft Excel gibi başka bir aracı ile kullanılmak üzere .csv dosyası olarak dışarı aktarmak etkinleştirir.  
+# <a name="export-button-concurrency-visualizer"></a>Dışa aktarma düğmesi (eşzamanlılık görselleştiricisi)
+**Verme** düğmesini etkinleştirir, çağrı yığını olarak dışarı aktarmak bir. *CSV* kendi kayıtlar için veya Microsoft Excel gibi başka bir aracı ile kullanım için dosya.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Eşzamanlılık görselleştiricisi](../profiling/concurrency-visualizer.md)   
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

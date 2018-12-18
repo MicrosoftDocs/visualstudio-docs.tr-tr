@@ -1,6 +1,7 @@
 ---
 title: 'CA1305: IFormatProvider belirtme'
-ms.date: 11/04/2016
+ms.date: 06/30/2018
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,19 @@ ms.assetid: fb34ed9a-4eab-47cc-8eef-3068a4a1397e
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
 ms.workload:
 - multiple
-ms.openlocfilehash: 73ac9fe384088d509d7eee800b066571f995dd24
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 05e2efde1be3430f95b00edbe8da8f952efad758
+ms.sourcegitcommit: f37affbc1b885dfe246d4b2c295a6538b383a0ca
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37174312"
 ---
 # <a name="ca1305-specify-iformatprovider"></a>CA1305: IFormatProvider belirtme
+
 |||
 |-|-|
 |TypeName|SpecifyIFormatProvider|
@@ -30,49 +35,56 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Bölünemez|
 
 ## <a name="cause"></a>Sebep
- Bir yöntemi veya oluşturucusu kabul aşırı yüklü bir veya daha fazla üye çağıran bir <xref:System.IFormatProvider?displayProperty=fullName> parametresi yöntemi veya oluşturucusu alan aşırı çağırmaz <xref:System.IFormatProvider> parametresi. Bu kural çağrıları yoksayar [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] yoksayılıyor olarak belgelenen yöntemleri <xref:System.IFormatProvider> parametre ve ayrıca aşağıdaki yöntemleri:
 
--   <xref:System.Activator.CreateInstance%2A?displayProperty=fullName>
+Yöntem veya Oluşturucu kabul eden aşırı yüklemelere sahip bir veya daha fazla üye çağıran bir <xref:System.IFormatProvider?displayProperty=fullName> parametresi ve yöntem veya Oluşturucu alan aşırı yüklemesini çağırmaz <xref:System.IFormatProvider> parametresi.
 
--   <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=fullName>
+Bu kural yoksayılıyor olarak belgelenmiş olan .NET Framework yöntemlere yapılan çağrılar yoksayar <xref:System.IFormatProvider> parametresi. Kural ayrıca, aşağıdaki yöntemlerden yok sayar:
 
--   <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=fullName>
+- <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>
+- <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType>
+- <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>
 
-## <a name="rule-description"></a>Kural Tanımı
- Zaman bir <xref:System.Globalization.CultureInfo?displayProperty=fullName> veya <xref:System.IFormatProvider> nesne sağlanmadı, aşırı yüklenmiş üyesi tarafından sağlanan varsayılan değeri, tüm yerel ayarlarda istediğiniz etkiye sahip olmayabilir. Ayrıca, [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] üyeleri varsayılan kültürü seçin ve biçimlendirme temel kodunuz için doğru olmayabilir varsayımlar. Kod senaryolarınız için beklendiği gibi çalıştığından emin olmak için aşağıdaki kılavuzlara göre kültüre özgü bilgileri vermeniz gerekir:
+## <a name="rule-description"></a>Kural açıklaması
 
--   Değeri kullanıcıya görüntülenir, geçerli kültürü kullanın. Bkz: <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName>.
+Olduğunda bir <xref:System.Globalization.CultureInfo?displayProperty=nameWithType> veya <xref:System.IFormatProvider> nesnesi sağlanmadı, aşırı yüklü üye tarafından sağlanan varsayılan değer, tüm yerel ayarlarda istediğiniz etkiyi vermeyebilir. Ayrıca, .NET Framework üyeleri varsayılan kültür seçin ve biçimlendirme, kodunuz için doğru olmayabilir varsayımlar dayanır. Kod senaryolarınız için beklendiği gibi çalıştığından emin olmak için aşağıdaki kılavuzlara göre kültüre özgü bilgileri vermeniz gerekir:
 
--   Değer depolanır ve (bir dosya veya veritabanına kalıcı) yazılım tarafından erişilen, sabit kültür kullanın. Bkz: <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName>.
+- Değeri kullanıcıya görüntülenir, geçerli kültür kullanın. Bkz: <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>.
 
--   Hedef değerinin bilmiyorsanız, veri tüketici sahip veya sağlayıcıyı kültür belirtin.
+- Bir değeri depolanan ve (bir dosyadan veya veritabanından kalıcı) yazılım tarafından erişilen, sabit kültür kullanın. Bkz: <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>.
 
- Unutmayın <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> yalnızca bir örneğini kullanarak yerelleştirilmiş kaynaklar almak için kullanılan <xref:System.Resources.ResourceManager?displayProperty=fullName> sınıfı.
+- Hedef değerin bilmiyorsanız, veri tüketici sahip veya sağlayıcıyı kültür.
 
- Aşırı yüklenmiş üye varsayılan davranışını ihtiyaçlarınız için uygun olsa bile, böylece kodunuzu Self belgelendirme ve daha kolay tutulan kültüre özgü aşırı açıkça çağırmak daha iyidir.
+Varsayılan davranışı, aşırı yüklü üye gereksinimleriniz için uygun olsa bile, böylece kendi belge ve daha kolay tutulan kodunuzu kültüre özgü aşırı açıkça çağırmak daha iyidir.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için alan aşırı yüklemesini kullanın. bir <xref:System.Globalization.CultureInfo> veya <xref:System.IFormatProvider> ve daha önce listelenen yönergelerine göre bağımsız değişken belirtin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Varsayılan kültür/biçim sağlayıcısı doğru seçim ve kod bakımı önemli geliştirme öncelik olduğu olduğunu belirli olduğunda bir uyarı bu kuraldan gizlemek güvenlidir.
+Bu kural ihlalini düzeltmek için alan aşırı yüklemesini kullanın. bir <xref:System.IFormatProvider> bağımsız değişken. Veya, bir [C# ilişkilendirilmiş dize](/dotnet/csharp/tutorials/string-interpolation) ve geçirin <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> yöntemi.
 
-## <a name="example"></a>Örnek
- Aşağıdaki örnekte, `BadMethod` bu kuralın iki ihlalleri neden olur. `GoodMethod` Sabit kültür geçirerek ilk ihlali düzeltir <xref:System.String.Compare%2A>ve ikinci ihlali geçerli kültür geçirerek düzeltir <xref:System.String.ToLower%2A> çünkü `string3` kullanıcıya görüntülenir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
 
- [!code-csharp[FxCop.Globalization.CultureInfo#1](../code-quality/codesnippet/CSharp/ca1305-specify-iformatprovider_1.cs)]
+Varsayılan biçimi doğru seçimdir belirli olduğunda ve kod bakımı önemli geliştirme önceliği olmadığı bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek, varsayılan olarak geçerli kültür etkisini gösterir <xref:System.IFormatProvider> tarafından seçilen <xref:System.DateTime> türü.
 
- [!code-csharp[FxCop.Globalization.IFormatProvider#1](../code-quality/codesnippet/CSharp/ca1305-specify-iformatprovider_2.cs)]
+Aşağıdaki kodda, `example1` dize CA1305 kuralı ihlal ediyor. `example2` Dizesi geçirerek CA1305 kural karşılayan <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, uygulayan <xref:System.IFormatProvider>, <xref:System.String.Format(System.IFormatProvider,System.String,System.Object)?displayProperty=nameWithType>. `example3` Dize bir araya alınmış dizeye geçirerek CA1305 kural karşılayan <xref:System.FormattableString.Invariant%2A?displayProperty=fullName]>.
 
- Bu örnek şu çıkışı üretir.
+```csharp
+string name = "Georgette";
 
- **4/6/1900 12:15:12 PM**
-**06/04/1900 12:15:12**
+// Violates CA1305
+string example1 = String.Format("Hello {0}", name);
+
+// Satisfies CA1305
+string example2 = String.Format(CultureInfo.CurrentCulture, "Hello {0}", name);
+
+// Satisfies CA1305
+string example3 = FormattableString.Invariant($"Hello {name}");
+```
+
 ## <a name="related-rules"></a>İlgili kuralları
- [CA1304: CultureInfo belirtin](../code-quality/ca1304-specify-cultureinfo.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
-[CultureInfo sınıfını kullanma](/dotnet/standard/globalization-localization/globalization#Cultures)
+- [CA1304: CultureInfo belirtin](../code-quality/ca1304-specify-cultureinfo.md)
+
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [CultureInfo sınıfını kullanma](/dotnet/standard/globalization-localization/globalization#Cultures)

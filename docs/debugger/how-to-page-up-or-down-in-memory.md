@@ -21,32 +21,34 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5c87dc65bd48d47e54c4c46099c264a0c7051957
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 7f981dafc6c014080960f2a0652420a00ea6ac6f
+ms.sourcegitcommit: a7de99f36e9ead7ea9e9bac23c88d05ddfc38b00
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52257131"
 ---
 # <a name="how-to-page-up-or-down-in-memory"></a>Nasıl Yapılır: Bellekte Sayfa Yukarı veya Aşağı Gitme
-Bellek içeriğini görüntülerken bir **bellek** penceresi veya **ayrıştırılmış** penceresinde bellek alanı yukarı veya aşağı taşımak için dikey kaydırma çubuğu kullanabilirsiniz.  
+
+Bellek içeriğini görüntülediğinizde bir **bellek** penceresi veya **ayrıştırılmış kodu** penceresinde bellek alanı yukarı veya aşağı taşımak için dikey kaydırma çubuğunu kullanabilirsiniz.  
   
-### <a name="to-page-up-or-down-in-memory"></a>Yukarı veya aşağı bellek sayfası  
+### <a name="to-page-up-or-down-in-memory"></a>Yukarı veya aşağı bellekte sayfa için  
   
-1.  Page DOWN (daha yüksek bellek adresini Git) için dikey kaydırma çubuğu kaydırma kutusunun altına Ek Yardım düğmesini tıklatın.  
+1. Page DOWN (daha yüksek bir bellek adresi taşıma) için dikey bir kaydırma çubuğuna ait kaydırma kutusunun altındaki'ı tıklatın.  
   
-2.  (Düşük bellek adresini Git) sayfasında için dikey kaydırma çubuğu kaydırma üstünde Ek Yardım düğmesini tıklatın.  
+2. (Daha düşük bir bellek adresi taşıma) ayarlama sayfası için thumb yukarıda dikey kaydırma çubuğunu tıklayın.  
   
- Ayrıca dikey kaydırma çubuğu standart olmayan bir şekilde çalıştığını fark edeceksiniz. Modern bir bilgisayarın adres alanı çok büyükse ve scrollbar Flash ele geçirme ve rastgele bir konuma sürükleyerek kayıp kolaydır. Bu nedenle, Flash "springloaded" olduğundan ve her zaman scrollbar Merkezi'nde kalır. Yerel kod uygulamalarında yukarı veya aşağı sayfasında ancak hakkında serbestçe kaydırma yapamıyorsunuz.  
+   Ayrıca dikey kaydırma çubuğu standart olmayan bir şekilde çalıştığını görürsünüz. Çok büyük modern bir bilgisayarın adres alanı ve kaydırma çubuğunun Kaydırma kutusu yazılımdır ve rastgele bir konuma sürükleyerek kayıp kolaydır. Bu nedenle, thumb "springloaded" olduğundan ve her zaman kaydırma çubuğunu Merkezi'nde kalır. Yerel kod uygulamalarında yukarı veya aşağı sayfa ancak hakkında ücretsiz kaydırma yapılamıyor.  
   
- Yönetilen uygulamalarda ayrıştırılmış bir işleve sınırlıdır ve normal şekilde kaydırın.  
+   Yönetilen uygulamalarda Ayrıştırılmış kod bir işleve sınırlıdır ve normalde gezinebilirsiniz.  
   
- Daha yüksek adresleri penceresinin en altında göründüğünü fark edeceksiniz. Daha yüksek bir adresi görüntülemek için aşağı, değil kadar taşımanız gerekir.  
+   Daha büyük adresleri penceresinin en altında göründüğünü fark edeceksiniz. Daha yüksek bir adresi görüntülemek için aşağı, en fazla değil taşımanız gerekir.  
   
-#### <a name="to-move-up-or-down-one-instruction"></a>Bir yönerge aşağı yukarı taşımak için  
+#### <a name="to-move-up-or-down-one-instruction"></a>Bir yönerge aşağı veya yukarı taşımak için  
   
--   Üst veya alt dikey kaydırma çubuğu oka tıklayın.  
+-   Dikey kaydırma çubuğu ortasından altına veya üstüne oka tıklayın.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Bellek pencereleri](../debugger/memory-windows.md)   
+ [Bellek Windows](../debugger/memory-windows.md)   
  [Nasıl yapılır: Ayrıştırılmış kod penceresini kullanma](../debugger/how-to-use-the-disassembly-window.md)   
- [Hata ayıklayıcıda verileri görüntüleme](../debugger/viewing-data-in-the-debugger.md)
+ [Hata Ayıklayıcıda Verileri Görüntüleme](../debugger/viewing-data-in-the-debugger.md)

@@ -1,6 +1,7 @@
 ---
 title: 'CA1000: Genel türlerde statik üyeleri belirtme'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -13,15 +14,20 @@ ms.assetid: 5c0da594-f8d0-4f40-953d-56bf7fbd2087
 author: gewarren
 ms.author: gewarren
 manager: douge
+dev_langs:
+- CSharp
+- VB
 ms.workload:
 - multiple
-ms.openlocfilehash: b1e970f3b0f8cf8e774e78a5318de87d5d30d805
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 5ec0e60302e1d6bff813a7bf0f39e1b71a6f1653
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45548397"
 ---
 # <a name="ca1000-do-not-declare-static-members-on-generic-types"></a>CA1000: Genel türlerde statik üyeleri belirtme
+
 |||
 |-|-|
 |TypeName|DoNotDeclareStaticMembersOnGenericTypes|
@@ -30,10 +36,10 @@ ms.lasthandoff: 04/19/2018
 |Yeni Değişiklik|Yeni|
 
 ## <a name="cause"></a>Sebep
- Dışarıdan görünür bir genel türünü içeren bir `static` (`Shared` Visual Basic'te) üyesi.
+ Dışarıdan görünen bir genel tür içeren bir `static` (`Shared` Visual Basic'te) üye.
 
-## <a name="rule-description"></a>Kural Tanımı
- Zaman bir `static` genel bir tür üyesi çağrılır, tür bağımsız değişkeni türü için belirtilmesi gerekir. Destek çıkarımı desteklenmeyen genel örnek üyesi çağrıldığında tür bağımsız değişkeni üye için belirlenmelidir. Aşağıdaki çağrıları gösterildiği gibi bu iki durumlarda tür bağımsız değişkeni belirtmek için farklı ve kolayca kafası söz dizimi:
+## <a name="rule-description"></a>Kural açıklaması
+ Olduğunda bir `static` genel bir tür üyesi çağrıldığında, tür bağımsız değişkeni türü için belirtilmesi gerekir. Destek çıkarımı desteklenmeyen genel örnek üyesi çağrıldığında tür bağımsız değişkeni üye için belirlenmelidir. Aşağıdaki çağrıları göz atarak bu iki durumda tür bağımsız değişkeni belirtmek için sözdizimi farklıdır ve kolaylıkla karıştırılır aşağıdaki gibidir:
 
 ```vb
 ' Shared method in a generic type.
@@ -51,13 +57,13 @@ GenericType<int>.StaticMethod();
 someObject.GenericMethod<int>();
 ```
 
- Genellikle, tür bağımsız değişkeni, üye ne zaman çağrıldığını belirtilmesi gerekmez. böylece hem de önceki bildirimler kaçınılmalıdır. Genel türler olmayan sözdizimi Hayır farklı genel arama üyeleri için bir söz dizimi sonuçlanır. Daha fazla bilgi için bkz: [CA1004: Genel yöntemler tür parametresi sağlayacağını](../code-quality/ca1004-generic-methods-should-provide-type-parameter.md).
+ Genellikle, tür bağımsız değişkeni, üye ne zaman çağrıldığını belirtilmesi gerekmez. böylece hem de önceki bildirimler kaçınılmalıdır. Bu arama üyeler söz genel olmayan türler için farklı bir genel türler için bir sözdiziminde sonuçlanır. Daha fazla bilgi için [CA1004: Genel metotlar tür parametresi sağlamalıdır](../code-quality/ca1004-generic-methods-should-provide-type-parameter.md).
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Bu kural ihlal düzeltmek için statik üye kaldırma veya bir örnek üyesine değiştirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Bu kural ihlalini düzeltmek için statik üye kaldırma veya bir örnek üyesi için değiştirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Bu kuraldan uyarıyı bastırmayın. Genel türler anlamak ve kullanmak kolay bir sözdiziminde sağlama öğrenmek için gerekli olan ve yeni kitaplıklar benimseme oranı artırır süreyi azaltır.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ Bu kuraldan uyarıyı bastırmayın. Genel türler anlaşılması ve kullanımı kolay bir sözdizimindeki sağlama öğrenmek için gerekli olan ve yeni kitaplıkları benimseme oranını artırır süreyi azaltır.
 
 ## <a name="related-rules"></a>İlgili kuralları
  [CA1005: Genel türlerde aşırı parametrelerden kaçının](../code-quality/ca1005-avoid-excessive-parameters-on-generic-types.md)
@@ -74,5 +80,5 @@ someObject.GenericMethod<int>();
 
  [CA1007: Uygun yerlerde genel türler kullanın](../code-quality/ca1007-use-generics-where-appropriate.md)
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
  [Genel Türler](/dotnet/csharp/programming-guide/generics/index)

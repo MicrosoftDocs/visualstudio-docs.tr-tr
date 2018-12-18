@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 21d4e3f23ae8a66ff4bfa26bdaf6d906a2b008a2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 2b4c7af3a7cedd56b72032ad51ecc6ef4df04d8c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49837938"
 ---
 # <a name="idebugreference2setvalueasstring"></a>IDebugReference2::SetValueAsString
-Bir dizeden başvuru değerini ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
+Bir başvuruyu bir dize değerini ayarlar. Daha sonraki kullanımlar için ayrılmıştır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -47,10 +48,10 @@ int SetValueAsString (
  [in] Bir dize değeri.  
   
  `dwRadix`  
- [in] Herhangi bir sayısal bilgi biçimlendirmede kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine biçimlendirmede kullanılacak sayı tabanı.  
   
  `dwTimeout`  
- [in] Bu yöntemle geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` sonsuza kadar beklenecek.  
+ [in] Bu yöntemden geri dönmeden önce beklenecek milisaniye cinsinden en uzun süre. Kullanım `INFINITE` süresiz bekleme.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Her zaman döndürür `E_NOTIMPL`.  

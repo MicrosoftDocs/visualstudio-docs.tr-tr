@@ -13,16 +13,17 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 854598e6eccfe32cfd74c0c62d25796fed2e9a66
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 516f9addb9dc5ca5f7cc8eac87ec1ce97b0e8415
+ms.sourcegitcommit: 209c2c068ff0975994ed892b62aa9b834a7f6077
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34262263"
 ---
-# <a name="net-memory-data-views"></a>.NETv Bellek Verisi Görünümleri
+# <a name="net-memory-data-views"></a>.NET bellek verisi görünümleri
 Bu bölüm, .NET bellek profil oluşturma verileri içeren görünümler ve raporlar Profil Oluşturucu veri dosyalarının için başvuru bilgileri içerir.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
+## <a name="in-this-section"></a>Bu bölümde  
  [Özet Görünümü](../profiling/summary-view-dotnet-memory-data.md)  
  İşlevler ve en fazla belleği tahsis türlerini listeler.  
   
@@ -72,7 +73,7 @@ Bu bölüm, .NET bellek profil oluşturma verileri içeren görünümler ve rapo
  [İşaretler Görünümü](../profiling/marks-view.md)  
  ETW ve profil oluşturma veri dosyasına eklenen olayları örnekleme listeler.  
   
-## <a name="related-sections"></a>İlgili Bölümler  
+## <a name="related-sections"></a>İlgili bölümler  
  [Örnekleme yöntemi veri görünümleri](../profiling/profiler-sampling-method-data-views.md)  
  Görünümler ve raporlar örnekleme yöntemini kullanarak oluşturulan profil oluşturucu veri dosyalarının için başvuru bilgileri.  
   

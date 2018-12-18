@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cccce3a530aa1871e093ce5a4ab9187f1ce9d4b1
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 91e84d47f7fc60e60c3c7fb58ba66bc0a00daf30
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49840005"
 ---
 # <a name="idebugobjectisequal"></a>IDebugObject::IsEqual
 Bu nesne bir nesneyle karşılaştırır.  
@@ -42,16 +43,16 @@ int IsEqual(
   
 #### <a name="parameters"></a>Parametreler  
  `pObject`  
- [in] Bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) karşılaştırmak üzere nesnesini temsil eden nesne.  
+ [in] Bir [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) karşılaştırma yapılacak nesne temsil eden nesne.  
   
  `pfIsEqual`  
- [out] Sıfır olmayan döndürür (`TRUE`) tersi nesneleri değerleri ise sıfır döndürür (`FALSE`).  
+ [out] Sıfır olmayan döndürür (`TRUE`) nesnelerin değerler, eşit; Aksi takdirde, sıfır döndürür (`FALSE`).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Genellikle, bu yöntem tarafından temsil edilen değerler adreslerini karşılaştırabilirsiniz `pObject` parametresi ve bu [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) nesne; adresleri eşit sonra nesnelerin eşit olarak düşünülebilir.  
+ Genellikle, bu yöntem tarafından temsil edilen değerleri adresleri karşılaştırabilirsiniz `pObject` parametresi ve bu [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) nesne; adresleri eşitse sonra nesneler eşit kabul edilebilir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)

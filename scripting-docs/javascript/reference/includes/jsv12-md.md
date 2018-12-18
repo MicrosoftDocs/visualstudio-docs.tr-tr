@@ -1,3 +1,0 @@
-Microsoft Edge’de (Edge tarayıcısı) desteklenir. Mağaza uygulamalarında da (Windows 10'da Microsoft Edge) desteklenir. Bkz. [Sürüm Bilgisi](../../../javascript/reference/javascript-version-information.md).  
-  
- Şu belge modlarında desteklenmez: Quirks, Internet Explorer 6 standartları, Internet Explorer 7 standartları, Internet Explorer 8 standartları, Internet Explorer 9 standartları, Internet Explorer 10 standartları ve Internet Explorer 11 standartları. Windows 8.1'de desteklenmez.

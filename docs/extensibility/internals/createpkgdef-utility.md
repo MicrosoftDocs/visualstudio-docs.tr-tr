@@ -16,44 +16,53 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b8ae53766a42ac2ed218bc92f59088d27e4434e5
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 47fee24292ee92b34cea6add21bc220a1a17f135
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49867669"
 ---
 # <a name="createpkgdef-utility"></a>CreatePkgDef yardımcı programı
-Bir parametre olarak Visual Studio uzantısı için bir .dll dosyası alır ve .pkgdef dosyayı .dll eşlik oluşturur. .Pkgdef dosya uzantısı yüklü olduğunda, aksi halde sistem kayıt defterine yazılan tüm bilgileri içerir.  
+Bir .dll dosyası için bir Visual Studio uzantısı bir parametre olarak alır ve oluşturur bir *.pkgdef* eşlik eden dosya *.dll* dosya. *.Pkgdef* dosya uzantısı yüklü olduğunda, sistem kayıt defterine yazılması tüm bilgileri içerir.  
   
 > [!NOTE]
->  Visual Studio SDK'ın otomatik olarak dahil edilen proje şablonları çoğunu .pkgdef dosyaları oluşturma işleminin bir parçası olarak oluşturun. Bu belge paketleri el ile oluşturmak veya .pkgdef dağıtımını kullanmak için mevcut paketleri dönüştürmek istediğiniz olanlar için tasarlanmıştır.  
+>  Çoğu Visual Studio SDK'yı otomatik olarak dahil edilen proje şablonları oluşturma *.pkgdef* dosyaları yapı işleminin bir parçası olarak. Bu belge paketleri el ile oluşturmanız veya kullanmak için mevcut paketleri dönüştürmek istediğiniz olanlar için tasarlanmıştır *.pkgdef* dağıtım.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
 ```  
-CreatePkgDef /out=FileName [/codebase] [/assembly] AssemblyPath  
+CreatePkgDef /out=<FileName> [/codebase] [/assembly] <AssemblyPath>  
 ```  
   
 ## <a name="arguments"></a>Arguments  
- / out =`FileName`  
- Gerekli. .Pkgdef çıktı dosyası adını ayarlar`FileName`.  
+ **/ out =&lt;dosya adı&gt;**  
+ Gerekli. Adını ayarlar *.pkgdef* çıktı dosyasına &lt;FileName&gt;.  
   
- /codebase  
- İsteğe bağlı. CodeBase yardımcı programı ile kayıt zorlar.  
+ **/ codebase**  
+ İsteğe bağlı. Kayıt işlemine zorlar **CodeBase** yardımcı programı.  
   
- /Assembly  
- Derleme yardımcı programı ile kayıt zorlar.  
+ **/ Assembly**  
+ Kayıt işlemine zorlar **derleme** yardımcı programı.  
   
- `AssemblyPath`  
- .pkgdef oluşturmak istediğiniz .dll dosyasının yolu.  
+ **&lt;AssemblyPath&gt;**  
+ Yolu *.dll* oluşturmak istediğiniz dosya *.pkgdef*.  
   
 ## <a name="remarks"></a>Açıklamalar  
- .Pkgdef dosyaları kullanarak uzantı dağıtımı, Visual Studio'nun önceki sürümleri kayıt defteri gereksinimlerini değiştirir.  
+ Uzantı dağıtımı kullanarak *.pkgdef* dosyaları Visual Studio'nun önceki sürümleri kayıt defteri gereksinimlerini değiştirir.  
   
- Aşağıdaki konumlardan birinde .pkgdef dosyaları yüklenmelidir: %localappdata%\Microsoft\Visual Studio\14.0\Extensions\ veya %vsinstalldir%\Common7\IDE\Extensions\\. Yükleme klasörünü %localappdata%\Microsoft\Visual Studio\14.0\Extensions ise\\, uzantıyı Visual Studio tarafından tanınan, ancak varsayılan olarak devre dışı bırakılacak. Kullanıcı uzantısını kullanarak etkinleştirebilirsiniz **Uzantılar ve güncelleştirmeler**. Yükleme klasörü %vsinstalldir%\Common7\IDE\Extensions ise\\, uzantı varsayılan olarak etkindir.  
+ *.Pkgdef* dosyaları aşağıdaki konumlardan birinde yüklenmelidir: 
+
+- *%LocalAppData%\Microsoft\Visual Studio\14.0\Extensions\\* 
+ 
+- *%vsinstalldir%\Common7\IDE\Extensions\\*
+    
+  Yükleme klasörünü ise *%localappdata%\Microsoft\Visual Studio\14.0\Extensions\\*, uzantı, Visual Studio tarafından tanınan ancak varsayılan olarak devre dışı bırakılır. Kullanıcı uzantıyı kullanarak etkinleştirebilirsiniz **Uzantılar ve güncelleştirmeler**. 
+   
+  Yükleme klasörünü ise *%vsinstalldir%\Common7\IDE\Extensions\\*, uzantı varsayılan olarak etkindir.  
   
 > [!NOTE]
->  **Uzantılar ve güncelleştirmeler** aracı, VSIX paketi bir parçası olarak yüklenmiş bir uzantı erişmek için kullanılamaz.  
+>  **Uzantılar ve güncelleştirmeler** aracı, bir VSIX paketinin bir parçası yüklü olduğu sürece bir uzantı erişmek için kullanılamaz.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [CreateExpInstance Yardımcı Programı](../../extensibility/internals/createexpinstance-utility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Createexpınstance yardımcı programı](../../extensibility/internals/createexpinstance-utility.md)

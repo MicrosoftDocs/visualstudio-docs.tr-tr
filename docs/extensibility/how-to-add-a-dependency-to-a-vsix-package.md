@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: VSIX paketi için bağımlılık ekleme | Microsoft Docs'
+title: 'Nasıl yapılır: VSIX paketine bağımlılık ekleme | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -16,29 +16,30 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 0704a72ba70e2a00baab99d327702ec6c08f1775
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 84865bf354bd1822ca872ed5f0df89a4330fb690
+ms.sourcegitcommit: 3dd15e019cba7d35dbabc1aa3bf55842a59f5278
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46371049"
 ---
-# <a name="how-to-add-a-dependency-to-a-vsix-package"></a>Nasıl yapılır: VSIX paketi için bağımlılık ekleme
+# <a name="how-to-add-a-dependency-to-a-vsix-package"></a>Nasıl yapılır: VSIX paketine bağımlılık ekleme
 
-Hedef bilgisayarda mevcut olmayan bağımlılıkları yükler VSIX paketi dağıtımı ayarlayabilirsiniz. Bunu gerçekleştirmek için source.extension.vsixmanifest dosyaya VSIX bağımlılıkları ekleyin.
+Zaten hedef bilgisayarda mevcut olmayan herhangi bir bağımlılığın yükleyen bir VSIX paketi dağıtımı ayarlayabilirsiniz. Bunu yapmak için VSIX bağımlılıklarını içeren *source.extension.vsixmanifest* dosya.
 
 ## <a name="to-add-a-dependency"></a>Bir bağımlılık eklemek için
 
-1. Source.extension.vsixmanifest dosyasında açma **tasarım** görünümü. Git **bağımlılıkları** sekmesinde **yeni**.
+1. Açık *source.extension.vsixmanifest* dosyası **tasarım** görünümü. Git **bağımlılıkları** sekmesine **yeni**.
 
-2. Yüklü bir uzantı eklemek için: içinde **yeni bağımlılık Ekle** iletişim kutusunda **yüklü uzantısı** ve daha sonra **adı**, listesindeki bir uzantı seçin.
+2. Yüklü uzantı eklemek için: içinde **yeni bağımlılık Ekle** iletişim kutusunda **uzantısı yüklü** ve ardından **adı**, listedeki bir uzantı seçin.
 
-3. Yüklü olmayan başka bir VSIX eklemek için:: içinde **yeni bağımlılık Ekle** iletişim kutusunda **dosyasının dosya sistemindeki** ve sonra da **Gözat** düğmesine tıklayarak VSIX seçin.
+3. Yüklü başka bir VSIX eklemek için: içinde **yeni bağımlılık Ekle** iletişim kutusunda **dosya sisteminde dosya** ve ardından **Gözat** düğmesine VSIX'i seçin.
 
-## <a name="require-a-specific-visual-studio-release"></a>Belirli bir Visual Studio sürümünü gerektirir
+## <a name="require-a-specific-visual-studio-release"></a>Belirli bir Visual Studio sürüm gerektir
 
-Uzantınızın Visual Studio 2017 belirli bir sürümünü gerektiriyorsa, örneğin, 15.3 serbest bir özellik bağlıdır, yapı numarası, içinde VSIX içine belirtebilirsiniz **InstallationTarget**. Örneğin, yayın 15.3 '15.0.26730.3' derleme sayısı vardır. Yapı numaralarını sürümlerini eşleme görebilirsiniz [burada](../install/visual-studio-build-numbers-and-release-dates.md). '15.3' sürüm numarasını kullanarak düzgün çalışmayacağına dikkat edin.
+Uzantınızı belirli bir Visual Studio 2017 sürümünü gerektiriyorsa, örneğin, 15.3 sürümünde kullanıma sunulan bir özelliği bağımlı, VSIX'İNİZE yapı numarasını belirtebilirsiniz **InstallationTarget**. Örneğin, bir derleme sayısı '15.0.26730.3' sürüm 15.3 vardır. Yapı numaralarını sürümlerinin eşleme gördüğünüz [burada](../install/visual-studio-build-numbers-and-release-dates.md). Sürüm numarasını '15.3' kullanarak doğru çalışmayacağını unutmayın.
 
-Uzantınızı 15.3 gerektirir veya üzeri, bildirmek **InstallationTarget sürüm** olarak [15.0.26730.3, 16.0):
+Uzantınızı 15.3 gerektirir ya da üzeri bildirirsiniz **InstallationTarget sürüm** olarak [15.0.26730.3, 16.0):
 
 ```xml
 <Installation>
@@ -46,9 +47,11 @@ Uzantınızı 15.3 gerektirir veya üzeri, bildirmek **InstallationTarget sürü
 </Installation>
 ```
 
-VSIXInstaller, Visual Studio'nun önceki sürümleri algılar ve kullanıcı bir sonraki güncelleştirme gerekli olduğunu bildiren.
+Vsıxınstaller Visual Studio'nun önceki sürümleri algılamak ve daha yeni bir güncelleştirme gerekli olduğunu kullanıcıya bildirin.
 
 
-## <a name="see-also"></a>Ayrıca Bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
- [VSIX uzantı şema 1.0 başvurusu](http://msdn.microsoft.com/en-us/76e410ec-b1fb-4652-ac98-4a4c52e09a2b) [VSIX paketi anatomisi](../extensibility/anatomy-of-a-vsix-package.md) [uzantıları Windows Installer dağıtımı için hazırlama](../extensibility/preparing-extensions-for-windows-installer-deployment.md)
+ [VSIX Uzantı Şeması 1.0 başvurusu](https://msdn.microsoft.com/library/76e410ec-b1fb-4652-ac98-4a4c52e09a2b)   
+ [Bir VSIX paketinin anatomisi](../extensibility/anatomy-of-a-vsix-package.md)   
+ [Uzantıları Windows Installer dağıtımı için hazırlama](../extensibility/preparing-extensions-for-windows-installer-deployment.md)

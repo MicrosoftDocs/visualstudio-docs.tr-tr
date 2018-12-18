@@ -14,23 +14,24 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - dotnet
-ms.openlocfilehash: cad3d2d02ed27ab46410be6edc024b137bbca7bd
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 0017255b67042a7e42b54325b24512a295ebeaf5
+ms.sourcegitcommit: 5b767247b3d819a99deb0dbce729a0562b9654ba
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39180158"
 ---
-# <a name="registering-extensions-of-the-net-framework"></a>.NET Framework Uzantılarını Kaydetme
-Belirli bir .NET Framework sürümünü genişleten bir derlemeyi geliştirebilirsiniz. Visual Studio'da görünmesi derleme etkinleştirmek için **Başvuru Ekle** iletişim kutusu, sistem kayıt defterine içeren klasörü eklemeniz gerekir.  
+# <a name="register-extensions-of-the-net-framework"></a>.NET Framework uzantılarını kaydetme
+Belirli bir .NET Framework sürümünü genişleten bir derleme geliştirebilirsiniz. Visual Studio'da görüntülenecek derleme etkinleştirmek için **Add References** iletişim kutusu, sistem kayıt defterine içeren klasöre eklemeniz gerekir.  
   
- Örneğin, Trey Research şirket .NET Framework 4 genişleten ve görünmesi kitaplık derlemeleri istediği bir kitaplık geliştirmiştir varsayın **Başvuru Ekle** bir proje .NET Framework 4 hedeflediğinde iletişim kutusu. Ayrıca derlemeler 32 bit bir bilgisayar veya bir 64-bit bilgisayarda 64-bit derlemeleri üzerinde çalışan 32 bit derlemeleri olduğunu ve bunlar C:\TreyResearch\Extensions4\ klasöründe yüklenecek varsayalım.  
+ Örneğin, Trey Research şirket .NET Framework 4 genişletir ve Kütüphane derlemelerini görünmesini istediği bir kitaplığı geliştirmiştir varsayın **Add References** iletişim kutusuna bir proje .NET Framework 4 hedefliyor. Derlemeleri veya bir 64 bit bilgisayarda çalışan 64 bit derlemelerin 32-bit bilgisayarda çalışan 32 bit derlemeleri olduğunu ve bunlar içinde yüklenecek hızında *C:\TreyResearch\Extensions4\\*  klasör.  
   
- Bu klasör, bu anahtarı kullanarak kaydedin: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\. Bu varsayılan değeri anahtar verin: C:\TreyResearch\Extensions4.  
+ Bu klasör, bu anahtarı kullanarak kaydedin: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\**. Bu varsayılan değerin anahtarı ayarlayın: **C:\TreyResearch\Extensions4**.  
   
 > [!NOTE]
 >  .NET Framework sürümünün derleme numarası farklı olabilir.  
   
- Bir 64-bit bilgisayarda 32 bit derleme kaydetmek için Wow6432 düğümü, örneğin kullanın: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\.  
+ Bir 64 bit bilgisayarda 32 bit derleme kaydetmek için Wow6432 düğümü, örneğin kullanın: **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\**.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+### <a name="see-also"></a>Ayrıca bkz.  
  [Visual Studio tümleştirmesi](../msbuild/visual-studio-integration-msbuild.md)

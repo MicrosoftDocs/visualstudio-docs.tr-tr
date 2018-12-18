@@ -1,6 +1,7 @@
 ---
 title: 'CA2243: Öznitelik dize harfleri doğru çözümlenmelidir'
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-code-analysis
 ms.topic: reference
 f1_keywords:
@@ -15,48 +16,51 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fcfb3d3ce0709f95ff864d081ba90c2aa49fad15
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c6808520f3b28a2da8421394619550166d88d52d
+ms.sourcegitcommit: 568bb0b944d16cfe1af624879fa3d3594d020187
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45551944"
 ---
 # <a name="ca2243-attribute-string-literals-should-parse-correctly"></a>CA2243: Öznitelik dize harfleri doğru çözümlenmelidir
+
 |||
 |-|-|
 |TypeName|AttributeStringLiteralsShouldParseCorrectly|
 |CheckId|CA2243|
 |Kategori|Microsoft.Usage|
-|Yeni Değişiklik|Olmayan sonu|
+|Yeni Değişiklik|Bozucu olmayan|
 
 ## <a name="cause"></a>Sebep
- Bir özniteliğin dize değişmez değer parametresi doğru bir URL, GUID veya sürüm için ayrıştırma değil.
+ Bir öznitelik dize literal parametresi, bir URL, GUID ya da sürüm için doğru ayrıştırmaz.
 
-## <a name="rule-description"></a>Kural Tanımı
- Öznitelikleri türetilmiş beri <xref:System.Attribute?displayProperty=fullName>ve öznitelikleri derleme zamanında kullanılıyorsa, yalnızca sabit değerler kendi kurucusuna geçirilebilir. URL'ler, GUID'ler ve sürümleri temsil etmelidir özniteliği parametreleri olamaz yazılan olarak <xref:System.Uri?displayProperty=fullName>, <xref:System.Guid?displayProperty=fullName>, ve <xref:System.Version?displayProperty=fullName>, bu tür sabitleri temsil edilemez. Bunun yerine, dizeler gösterilmelidir.
+## <a name="rule-description"></a>Kural açıklaması
+ Öğesinden türetilen öznitelikler bu yana <xref:System.Attribute?displayProperty=fullName>ve öznitelikleri derleme zamanında kullanılan, yalnızca sabit değerler için oluşturucuları geçirilebilir. URL, GUID ve sürümleri temsil etmelidir öznitelik parametreleri olamaz yazılı olarak <xref:System.Uri?displayProperty=fullName>, <xref:System.Guid?displayProperty=fullName>, ve <xref:System.Version?displayProperty=fullName>, bu tür sabitleri temsil edilemez. Bunun yerine, dizeler gösterilmelidir.
 
- Parametresi bir dize olarak yazıldığından, hatalı biçimlendirilmiş bir parametre derleme zamanında gönderilebilir mümkündür.
+ Parametresi bir dize olarak yazıldığından, hatalı biçimlendirilmiş bir parametre derleme zamanında geçirilebilir mümkündür.
 
- Bu kural bir Tekdüzen Kaynak Tanımlayıcısı (URI) bir genel benzersiz tanımlayıcı (GUID) veya bir sürüm temsil parametreleri bulmak için adlandırma buluşsal yöntemi kullanır ve geçirilen değerin doğru olduğunu doğrular.
+ Bu kural, bir Tekdüzen Kaynak Tanımlayıcısı (URI), sürüm veya bir genel benzersiz tanıtıcısı (GUID) temsil eden parametreleri bulmak için bir adlandırma buluşsal kullanır ve geçirilen değerin doğru olduğunu doğrular.
 
-## <a name="how-to-fix-violations"></a>İhlaller Nasıl Düzeltilir?
- Doğru biçimlendirilmiş bir URL, GUID veya sürüm parametre dizesini değiştirin.
+## <a name="how-to-fix-violations"></a>İhlaller nasıl düzeltilir?
+ Parametre dizesi düzgün biçimlendirilmiş bir URL, GUID veya sürüm değiştirin.
 
-## <a name="when-to-suppress-warnings"></a>Uyarılar Bastırıldığında
- Parametresi, bir URL, GUID veya sürüm göstermiyor varsa bir uyarı bu kuraldan gizlemek güvenlidir.
+## <a name="when-to-suppress-warnings"></a>Uyarılar bastırıldığında
+ URL, GUID ya da sürüm parametresi temsil etmiyorsa bu kuraldan bir uyarıyı bastırmak güvenlidir.
 
 ## <a name="example"></a>Örnek
- Aşağıdaki örnek kod için bu kuralı ihlal AssemblyFileVersionAttribute gösterir.
+ Aşağıdaki örnek bu kuralı ihlal AssemblyFileVersionAttribute için kod gösterir.
 
  [!code-csharp[FxCop.Usage.AttributeStringLiteralsShouldParseCorrectly#1](../code-quality/codesnippet/CSharp/ca2243-attribute-string-literals-should-parse-correctly_1.cs)]
 
- Kural aşağıdaki tarafından tetiklenir:
+ Kural aşağıdaki parametreleri tarafından tetiklenir:
 
--   'Version' içeren ve System.Version için ayrıştırılamıyor parametreleri.
+- 'Version' içerir ve için System.Version nelze analyzovat parametreler.
 
--   'Guid' içeren ve System.Guid için ayrıştırılamıyor parametreleri.
+- 'GUID' içerir ve System.Guid için ayrıştırılamayan parametre.
 
--   İçin System.Uri ayrıştırılamaz ve 'uri', 'urn' veya 'URL'si' içeren parametreleri.
+- 'Uri', 'urn' veya 'url' içerir ve System.Uri olarak ayrıştırılamıyor. parametreler.
 
-## <a name="see-also"></a>Ayrıca Bkz.
- [CA1054: URI parametreleri dizeler olmamalıdır](../code-quality/ca1054-uri-parameters-should-not-be-strings.md)
+## <a name="see-also"></a>Ayrıca bkz.
+
+- [CA1054: URI parametreleri dizeler olmamalıdır](../code-quality/ca1054-uri-parameters-should-not-be-strings.md)

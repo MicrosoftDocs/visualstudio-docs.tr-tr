@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b42e66e51015be02894e3a2d745bfbdfbe77f8e0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5dd64ad2a0d1aa8f4dd361b40597122f3401f232
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49868137"
 ---
 # <a name="idebugprogramprovider2setlocale"></a>IDebugProgramProvider2::SetLocale
-Tüm yerel ayarlara özgü kaynaklar için kullanılacak yerel ayar oluşturur.  
+Tüm yerel ayara özgü kaynaklar için kullanılacak bir yerel ayar oluşturur.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,10 +41,10 @@ int SetLocale(
   
 #### <a name="parameters"></a>Parametreler  
  `wLangID`  
- [in] Kurmak için Dil Kimliği'ni kullanın. Örneğin, İngilizce için 1033.  
+ [in] Dil Kimliği'kurmak için. Örneğin, İngilizce için 1033.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md)

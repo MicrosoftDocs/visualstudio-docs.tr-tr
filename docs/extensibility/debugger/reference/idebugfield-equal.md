@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: b2d195c28123cc786c9a5a97add98b7f67d499b7
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 1ae30cd36d2a3f51b697afa3cb5f4615a5f322da
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49830788"
 ---
 # <a name="idebugfieldequal"></a>IDebugField::Equal
-Bu yöntem, bu alanı eşitlik için belirtilen alan ile karşılaştırır.  
+Bu yöntem, bu alan için eşitlik belirtilen alan ile karşılaştırır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,7 +44,7 @@ int Equal(
  [in] Buna karşılaştırmak için alan.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Alanları aynıysa döndürür `S_OK`. Alanları farklıysa, döndürür `S_FALSE.` Aksi takdirde bir hata kodu döndürür.  
+ Alanları aynıysa döndürür `S_OK`. Alanları farklı ise döndürür `S_FALSE.` Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

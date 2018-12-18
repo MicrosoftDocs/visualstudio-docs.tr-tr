@@ -14,17 +14,18 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: aa6e567f811f163f8b79b277f5e0c8d2e4fc775b
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 091b91cb896d0e2d5753f9c3b55cac58deee8cd5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49848611"
 ---
 # <a name="cvhrege"></a>CV_HREG_e
 Bir hedef kayıt belirtir.  
   
 > [!NOTE]
->  Çünkü `CV_HREG_e` numaralandırma burada tamamının çoğaltmak için çok büyük olduğu, bir kısaltılmış bir başvuru olarak sağlanır. Eksik girdiler italik olarak gösterilen. Tam numaralandırma cvconst.h üstbilgi dosyasında kullanılabilir.  
+>  Çünkü `CV_HREG_e` numaralandırma burada sunabilen çoğaltmak için çok büyük olduğu gibi bir kısaltılmış bir başvuru olarak sağlanır. Eksik girdiler italik gösterilen. Tam numaralandırma cvconst.h üstbilgi dosyasında kullanılabilir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -411,40 +412,40 @@ enum CV_HREG_e {
   
 ## <a name="elements"></a>Öğeleri  
  CV_REG_ *  
- Yazmaçları 80 x 86 ve ix86 işlemciler ve p-kodu Intel tarafından kullanılır.  
+ Intel 80 x 86 ve ix86 işlemciler ve p-code tarafından kullanılan kaydeder.  
   
  CV_R68_ *  
- 68 K işlemcisi tarafından kullanılan kaydeder.  
+ Yazmaçları 68 K işlemcisi tarafından kullanılır.  
   
  CV_M4_ *  
  MIPS 4000 serisi işlemcisi tarafından kullanılan kaydeder.  
   
  CV_ALPHA_ *  
- Dijital ekipman Corporation Alpha AXP serisi işlemcisi tarafından kullanılan kaydeder.  
+ Dijital ekipman Corporation alfa AXP serisi işlemcisi tarafından kullanılan kaydeder.  
   
  CV_PPC_ *  
- Motorola/IBM PowerPC işlemcisi tarafından kullanılan kaydeder.  
+ Yazmaçları Motorola/IBM PowerPC işlemci tarafından kullanılır.  
   
  CV_SH3_ * ve CV_SH_\*  
- Hitachi SH3 ve Hitachi SH serisi işlemcisi tarafından kullanılan kaydeder.  
+ Yazmaçları Hitachi SH3 ve Hitachi SH serisi işlemcisi tarafından kullanılır.  
   
  CV_ARM_ *  
  Gelişmiş RISC makinesi (ARM) işlemcileri tarafından kullanılan kaydeder.  
   
  CV_IA64_ *  
- Intel IA64 serisi işlemciler tarafından kullanılan kaydeder.  
+ Intel IA64 serisi işlemcileri tarafından kullanılan kaydeder.  
   
  CV_TRI_ *  
- Infineon teknolojileri TriCore işlemcisi tarafından kullanılan kaydeder.  
+ Yazmaçları Infineon teknolojileri TriCore işlemcisi tarafından kullanılır.  
   
  CV_AM33_ *  
- Yazmaçları Matsushita/Panasonic AM33 tarafından kullanılan ve işlemci ilgili.  
+ Yazmaçları Matsushita/Panasonic AM33 tarafından kullanılan ve işlemciler ilgili.  
   
  CV_M32R_ *  
  Mitsubishi M32R işlemcisi tarafından kullanılan kaydeder.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Her işlemci türü kendi benzersiz kayıtları kümesini kullanır.  
+ Her işlemci türü kendi benzersiz yazmaç kümesini kullanır.  
   
  Bu numaralandırma değerleri için aşağıdaki yöntemlerden geçirilir:  
   
@@ -458,11 +459,11 @@ enum CV_HREG_e {
   
 -   [IDiaStackFrame::get_registerValue](../../debugger/debug-interface-access/idiastackframe-get-registervalue.md)  
   
-## <a name="requirements"></a>Gereksinimleri:  
- Başlık: cvconst.h  
+## <a name="requirements"></a>Gereksinimler:  
+ Üstbilgi: cvconst.h  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Numaralandırmalar ve yapılar](../../debugger/debug-interface-access/enumerations-and-structures.md)   
+ [Sabit listeleri ve yapıları](../../debugger/debug-interface-access/enumerations-and-structures.md)   
  [Idiastackwalkframe::get_registervalue](../../debugger/debug-interface-access/idiastackwalkframe-get-registervalue.md)   
  [Idiastackwalkframe::put_registervalue](../../debugger/debug-interface-access/idiastackwalkframe-put-registervalue.md)   
  [IDiaStackWalkHelper::get_registerValue](../../debugger/debug-interface-access/idiastackwalkhelper-get-registervalue.md)   

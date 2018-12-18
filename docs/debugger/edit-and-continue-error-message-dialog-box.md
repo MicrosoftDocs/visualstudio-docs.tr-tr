@@ -1,7 +1,7 @@
 ---
 title: Düzenle ve devam et hata iletisi iletişim kutusu | Microsoft Docs
 ms.custom: ''
-ms.date: 06/22/2017
+ms.date: 10/15/2018
 ms.technology: vs-ide-debug
 ms.topic: reference
 f1_keywords:
@@ -20,45 +20,34 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 5b521eafcc62a49f2dd2a4c327158070bdbe62ce
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: ba573a6b6bffdfeebf37c5f46f1f774d699a1131
+ms.sourcegitcommit: dd839de3aa24ed7cd69f676293648c6c59c6560a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52388718"
 ---
-# <a name="edit-and-continue-error-message-dialog-box"></a>Düzenle ve Devam Et Hata İletisi İletişim Kutusu
-Düzenle ve devam et, destekleyen bir dilde ayıklarken bu iletişim kutusu görünür ancak **Düzenle ve devam et** yapmış olduğunuz kod değişiklikleri türü için kullanılamaz. Hata iletisi kutu içinde daha ayrıntılı bir açıklama sağlar. Bu iletişim kutusunu dahil görmek için olası nedenler:  
+# <a name="edit-and-continue-error-message"></a>Düzenle ve devam et hata iletisi 
 
--   SQL Server kod düzenleme çalışıldı.
+**Düzenle ve devam et** Düzenle ve devam et destekleyen bir kod dili ayıklanırken hata ileti kutusu görünür, ancak Düzenle ve devam et yaptığınız kod değişiklikleri için kullanılabilir değildir. Hata iletisi daha ayrıntılı bir açıklama sağlar. İletişim kutusuna yanıt vermek için seçin **Tamam** iletişim kutusunu kapatmak ve düzenleme denemesi iptal etmek için.  
 
--   İyileştirilmiş kod düzenleme çalışıldı. (Sürüm derleme için hata ayıklama derlemesi geçmeniz gerekebilir.)
+Bu hata iletisi için olası nedenler şunlardır:  
 
--   Kod çalıştırılırken düzenlemeye çalıştığınız (yerine hata ayıklayıcısı'ndaki duraklatıldı sırada). Deneyin [kesme noktası ayarlama](../debugger/using-breakpoints.md) ve duraklatıldı sırada kod düzenleme.
-
--   Yönetilmeyen hata ayıklama etkin olduğunda, yönetilen kod düzenleme çalışıldı. Düzenle ve devam et ile çalışmıyor [karışık mod hata ayıklaması](../debugger/how-to-debug-in-mixed-mode.md).
-
--   Düzenle ve devam et tarafından programlama dilinde desteklenmeyen bir kod değişikliği yapılan. Daha fazla bilgi için bkz: desteklenmeyen kod değişiklikleri konular [C#](../debugger/supported-code-changes-csharp.md), [Visual Basic](../debugger/unsupported-edits-in-visual-basic-edit-and-continue.md), ve [C++](../debugger/supported-code-changes-cpp.md).
+-   SQL Server kod düzenlemek çalışıyor.
+-   En iyi duruma getirilmiş kod düzenlemek çalışıyor. Yayın derleme için hata ayıklama derlemesi geçmeniz gerekebilir.
+-   Çalışırken, kod düzenlemeye çalışmak yerine hata ayıklayıcıda duraklatıldığı sırada. Deneyin [bir kesme noktası ayarlamak](../debugger/using-breakpoints.md)ve duraklatıldığı sırada kod düzenleme.
+-   Yalnızca yönetilmeyen hata ayıklama etkinleştirildiğinde, yönetilen kod düzenlemek çalışıyor. Düzenle ve devam et ile çalışmıyor [karışık mod hata ayıklama](../debugger/how-to-debug-in-mixed-mode.md).
+-   Düzenle ve devam et tarafından bir kod, değişikliği yapmadan programlama diliniz desteklenmez. Daha fazla bilgi için bkz: makaleler [C# ' de desteklenen kod değişiklikleri](supported-code-changes-csharp.md), [desteklenmeyen düzenlemeler, Visual Basic Düzenle ve devam et](unsupported-edits-in-visual-basic-edit-and-continue.md), ve [desteklenen kod değişiklikleri C++](supported-code-changes-cpp.md).
+-   Bağlı için hata ayıklamayı başlatma yerine uygulama kodları düzenlemeye çalıştığınız **hata ayıklama** menüsü.  
+-   Bir Dr hata ayıklarken kod düzenlemek çalışıyor. Watson dökümü.  
+-   İşlenmeyen bir özel durum oluştuktan sonra kod düzenlemeye çalıştığınız ve seçeneği **işlenmemiş özel durumlarda çağrı yığınını geriye doğru izleme** seçilmez.  
+-   Kod katıştırılmış çalışma zamanı uygulamasında hata ayıklaması sırasında düzenlemek çalışıyor.
+-   .NET Framework sürüm 4.5.1'den önceki bir 64 bit uygulama hedefle kullanarak yönetilen kod düzenlemek çalışıyor. Düzenle ve devam et için .NET Framework 4.5.1'den önceki kullanmak için hedef ayarlanmış **x86** içinde  **\<ProjectName >** > **özellikleri**  >  **Derleme** sekmesinde **Gelişmiş derleyici** ayarı.  
+-   Hata ayıklama sırasında değiştirildi ve yeniden yüklendi bütünleştirilmiş kodu düzenleme çalışılıyor.  
+-   Yüklenmemiş bir derleme kodu düzenleme çalışılıyor.  
+-   Derleme hataları en son sürüme sahip olduğu bir uygulama eski bir sürümü hata ayıklamayı başlatma.
   
--   Başlayarak yerine bağlı bir program kodunda düzenlemeye çalıştığınız **hata ayıklama** menüsü.  
-  
--   Kod bir Dr hata ayıklama sırasında Düzenle çalışıldı. Watson dökümü.  
-  
--   İşlenmeyen özel durum oluştu sonra kod ve seçeneği düzenlemeye çalıştığınız "**işlenmeyen özel durum çağrı yığınındaki bırakma**" seçilmedi.  
-  
--   Kod katıştırılmış çalışma zamanı uygulama hata ayıklama sırasında Düzenle çalışıldı.
-  
--   Yönetilen kod 4.5.1 önce .NET Framework sürümünü kullanarak düzenlemeye çalıştığınız ve hedef bir 64-bit uygulamadır. İsterseniz kullanım Düzenle ve devam et, hedef x86 için ayarlamanız gerekir. (*projectname* **özellikleri**, **derleme** sekmesinde **Gelişmiş derleyici** ayarı.).  
-  
--   Hata ayıklama sırasında değiştirildi ve yüklenene bütünleştirilmiş kodda Düzenle çalışıldı.  
-  
--   Yüklenmemiş bir bütünleştirilmiş kod düzenleme çalışıldı.  
-  
--   (Yeni sürümü derleme hataları olduğundan), uygulamanın eski bir sürümü hata ayıklama başlatıldı.
-  
-## <a name="uielement-list"></a>UIElement Listesi  
- **TAMAM**  
- İletişim kutusundan çıkmak ve hemen önceki düzenleme denemesini iptal edin.  
-  
-## <a name="see-also"></a>Ayrıca Bkz.  
- [C++ Düzenle ve devam et blog gönderisine](https://blogs.msdn.microsoft.com/vcblog/2016/07/01/c-edit-and-continue-in-visual-studio-2015-update-3/)  
- [Desteklenen Kod Değişiklikleri (C++)](../debugger/supported-code-changes-cpp.md)
+Daha fazla bilgi için bkz.:
+- [C++ Düzenle ve devam et blog gönderisini](https://blogs.msdn.microsoft.com/vcblog/2016/07/01/c-edit-and-continue-in-visual-studio-2015-update-3/)  
+- [Desteklenen kod değişiklikleri (C++)](../debugger/supported-code-changes-cpp.md)
+- [Düzenle ve Devam Et](../debugger/edit-and-continue.md)

@@ -1,9 +1,9 @@
 ---
-title: '6. adım: çıkarma problemi ekleme | Microsoft Docs'
+title: '6. adım: çıkarma problemi ekleme'
 ms.custom: ''
 ms.date: 11/04/2016
-ms.technology:
-- vs-acquisition
+ms.prod: visual-studio-dev15
+ms.technology: vs-acquisition
 ms.topic: conceptual
 ms.assetid: 59204ef9-24bd-4f81-b85f-e3168e518a3e
 author: TerryGLee
@@ -11,13 +11,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4660d4b1ad5f4aa5200fb8c64cfa24f6a02d49a2
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6960f7ca6db9584af8d43b9cee0d0c6bc810bc7f
+ms.sourcegitcommit: 58052c29fc61c9a1ca55a64a63a7fdcde34668a4
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34747899"
 ---
-# <a name="step-6-add-a-subtraction-problem"></a>6. Adım: Çıkarma Problemi Ekleme
+# <a name="step-6-add-a-subtraction-problem"></a>6. adım: çıkarma problemi ekleme
 Bu öğreticinin altıncı bölümünde çıkarma problemi ekleme ve aşağıdaki görevleri nasıl gerçekleştireceğinizi öğrenin:
 
 -   Çıkarma değerleri depolar.
@@ -26,9 +27,9 @@ Bu öğreticinin altıncı bölümünde çıkarma problemi ekleme ve aşağıdak
 
 -   Yanıtlar denetler ve böylece yeni çıkarma problemi çok denetler yöntemi güncelleştirin.
 
--   Zamanlayıcı'nın onay olay işleyicisi süresi dolmadan doğru yanıt olarak olay işleyicisi doldurur şekilde güncelleştirin.
+-   Zamanlayıcı 's güncelleştirme <xref:System.Windows.Forms.Timer.Tick> olay işleyicisi böylece süresi dolmadan doğru yanıt olarak olay işleyicisi doldurur.
 
-### <a name="to-add-a-subtraction-problem"></a>Çıkarma problemi ekleme
+## <a name="to-add-a-subtraction-problem"></a>Çıkarma problemi ekleme
 
 1.  Toplama problemi tamsayı değişkenleri Zamanlayıcı arasındaki formunuza çıkarma problemi iki tamsayı değişkenleri ekleyin. Kod aşağıdaki gibi görünmelidir.
 
@@ -44,18 +45,19 @@ Bu öğreticinin altıncı bölümünde çıkarma problemi ekleme ve aşağıdak
      [!code-vb[VbExpressTutorial3Step5_6#13](../ide/codesnippet/VisualBasic/step-6-add-a-subtraction-problem_2.vb)]
      [!code-csharp[VbExpressTutorial3Step5_6#13](../ide/codesnippet/CSharp/step-6-add-a-subtraction-problem_2.cs)]
 
-     Çıkarma problemi için negatif yanıtları önlemek için bu kod kullanır `Next()` yöntemi `Random` biraz farklı bir toplama problemi nasıl mu sınıfı. Ne zaman size `Next()` yöntemi iki değerleri daha büyük veya eşit olduğu ilk değeri ve küçük rastgele bir sayıyı Çekmeleri ikinciden. Aşağıdaki kod, 1 ile 100 arası bir rastgele sayı seçer ve minuend değişkeninde depolar.
+     Çıkarma problemi için negatif yanıtları önlemek için bu kod kullanır <xref:System.Random.Next> yöntemi <xref:System.Random> biraz farklı bir toplama problemi nasıl mu sınıfı. Ne zaman size `Next()` yöntemi iki değerleri daha büyük veya eşit olduğu ilk değeri ve küçük rastgele bir sayıyı Çekmeleri ikinciden. Aşağıdaki kod, 1 ile 100 arası bir rastgele sayı seçer ve minuend değişkeninde depolar.
 
      [!code-vb[VbExpressTutorial3Step5_6#21](../ide/codesnippet/VisualBasic/step-6-add-a-subtraction-problem_3.vb)]
      [!code-csharp[VbExpressTutorial3Step5_6#21](../ide/codesnippet/CSharp/step-6-add-a-subtraction-problem_3.cs)]
 
-     Çağırabilirsiniz `Next()` yöntemi `Random` , "rasgele Sıralayıcı" daha önce bu öğreticide, birden çok yolla adlandırılan sınıfı. Birden çok yolla çağırabilirsiniz yöntemleri için aşırı yüklü olarak da adlandırılır ve bunları keşfetmek için IntelliSense kullanabilirsiniz. Bakabilir yeniden araç ipucu için IntelliSense penceresinin `Next()` yöntemi.
+     Çağırabilirsiniz `Next()` "rasgele Sıralayıcı" daha önce bu öğreticide, birden çok yolla adlı rastgele sınıfının yöntemi. Birden çok yolla çağırabilirsiniz yöntemleri için aşırı yüklü olarak da adlandırılır ve bunları keşfetmek için IntelliSense kullanabilirsiniz. Bakabilir yeniden araç ipucu için IntelliSense penceresinin `Next()` yöntemi.
 
-     ![IntelliSense penceresi araç ipucu](../ide/media/express_overloads.png "Express_Overloads") IntelliSense penceresi araç ipucu
+     ![IntelliSense penceresi araç ipucu](../ide/media/express_overloads.png)
+**IntelliSense** penceresi araç ipucu
 
-     Araç İpucu gösterir **(+ 2 overload(s))**, çağırabilirsiniz anlamına `Next()` iki yolla yöntemi. Böylece birbirinden biraz farklı çalıştığını aşırı farklı sayılar veya bağımsız değişken türleri içerir. Örneğin, bir yöntem tek tamsayı bağımsız değişkeni sürebilir ve onun aşırı birini bir tamsayı ve bir dize alabilir. Ne yapmak istiyorsunuz üzerinde göre doğru aşırı seçin. Koda eklediğinizde `StartTheQuiz()` yöntemi, daha fazla bilgi IntelliSense penceresinde görünür girdiğiniz hemen `randomizer.Next(`. Aşırı yükleme geçiş yapmak için yukarı ve aşağı ok tuşları aşağıdaki çizimde gösterildiği gibi seçin:
+     Araç İpucu gösterir **(+ 2 overload(s))**, çağırabilirsiniz anlamına `Next()` iki yolla yöntemi. Böylece birbirinden biraz farklı çalıştığını aşırı farklı sayılar veya bağımsız değişken türleri içerir. Örneğin, bir yöntem tek tamsayı bağımsız değişkeni sürebilir ve onun aşırı birini bir tamsayı ve bir dize alabilir. Ne yapmak istiyorsunuz üzerinde göre doğru aşırı seçin. Koda eklediğinizde `StartTheQuiz()` yöntemi, daha fazla bilgi IntelliSense penceresinde görünür girdiğiniz hemen `randomizer.Next(`. Aşırı yükleme geçiş yapmak için seçin **yukarı ok** ve **aşağı ok** anahtarları aşağıdaki çizimde gösterildiği gibi:
 
-     ![Sonraki aşırı&#40; &#41; IntelliSense yönteminde](../ide/media/express_nextoverload.png "Express_NextOverload") IntelliSense Next() yöntemi için aşırı yükleme
+     ![Sonraki aşırı&#40; &#41; IntelliSense yönteminde](../ide/media/express_nextoverload.png) için aşırı yükleme **Next()** yönteminde **IntelliSense**
 
      Bu durumda, minimum ve maksimum değerleri belirttiğinden son aşırı seçin istiyorsunuz.
 
@@ -75,10 +77,11 @@ Bu öğreticinin altıncı bölümünde çıkarma problemi ekleme ve aşağıdak
 
      Programınızı çıkarma problemi, aşağıda gösterildiği gibi içerir:
 
-     ![Matematik testi çıkarma sorunla](../ide/media/express_addsubtract.png "Express_AddSubtract") çıkarma problemi ile matematik testi
+     ![Matematik testi çıkarma sorunla](../ide/media/express_addsubtract.png)
+**matematik testi** çıkarma problemi ile
 
-### <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için
+## <a name="to-continue-or-review"></a>Devam etmek veya gözden geçirmek için
 
--   Öğretici bir sonraki adıma dönmek için bkz: [adım 7: ekleme çarpma ve bölme problemleri](../ide/step-7-add-multiplication-and-division-problems.md).
+-   Öğretici bir sonraki adıma dönmek için bkz: [adım 7: çarpma ve bölme sorunları eklemek](../ide/step-7-add-multiplication-and-division-problems.md).
 
--   Eğitmen önceki adıma dönmek için bkz: [5. adım: ekleme girin olay işleyicileri NumericUpDown denetimleri için](../ide/step-5-add-enter-event-handlers-for-the-numericupdown-controls.md).
+-   Eğitmen önceki adıma dönmek için bkz: [5. adım: NumericUpDown denetimleri için olay işleyicileri ekleme girin](../ide/step-5-add-enter-event-handlers-for-the-numericupdown-controls.md).

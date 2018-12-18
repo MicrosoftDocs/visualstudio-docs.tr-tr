@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31475515"
 ---
 # <a name="process-search-dialog-box"></a>İşlem Arama İletişim Kutusu
 Bulmak ve belirli bir işlemde düğümü seçmek için bu iletişim kutusunu kullanın [işlemleri Görünüm](../debugger/processes-view.md). Bu iletişim kutusunu görüntülemek için odağı taşımak bir **işlemleri** Görünümü penceresi. Ardından **bulma işlemi** gelen **arama** menüsü.  

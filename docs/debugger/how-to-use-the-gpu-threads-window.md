@@ -20,90 +20,91 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: c99e0e1bf64a6a88778d4bfcf27a796916a0f044
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: f4f4577fc7e1a26481ff4ab5aa94888cf5668adf
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49825365"
 ---
 # <a name="how-to-use-the-gpu-threads-window"></a>Nasıl Yapılır: GPU İş Parçacıkları Penceresini Kullanma
-GPU iş parçacıkları penceresinde inceleyin ve uygulamada hata ayıklama yaptığınız GPU üzerinde çalışan iş parçacıkları ile iş. GPU üzerinde çalışan uygulamalar hakkında daha fazla bilgi için bkz: [C++ AMP'ye genel bakış](/cpp/parallel/amp/cpp-amp-overview).  
+GPU iş parçacıkları penceresinde inceleyin ve uygulamada hata ayıklaması yaptığınız GPU üzerinde çalışan iş parçacıklarının çalışın. GPU üzerinde çalışan uygulamalar hakkında daha fazla bilgi için bkz: [C++ AMP'ye genel bakış](/cpp/parallel/amp/cpp-amp-overview).  
   
- GPU iş parçacıkları penceresi, her satır sütunların tümünün aynı değerlere sahip GPU iş parçacıkları kümesi temsil eden bir tablo içeriyor. Sıralama, yeniden sıralamak, kaldırmak ve sütunları olan öğeleri grubu. Bayrak, bayrakla dondurmak, (askıya alma) ve GPU iş parçacıkları penceresi (devam) parçacıklarından çözme. GPU iş parçacıkları penceresinde aşağıdaki sütunlar görüntülenir:  
+ GPU iş parçacıkları penceresi, her satır tüm sütunları aynı değerleri içeren GPU iş parçacıkları kümesini temsil eden bir tablo içeriyor. Sıralama, yeniden sıralama, kaldırmak ve sütunları olan öğeleri gruplayın. Bayrak, işaretsiz dondurma, (askıya alma) ve GPU iş parçacıkları penceresinden (devam) iş parçacıklarını çözme. Aşağıdaki sütunlar, GPU iş parçacıkları penceresinde görüntülenir:  
   
--   Özel dikkat edilmesi gereken istediğiniz bir iş parçacığı işaretleyebilirsiniz bayrağı sütun.  
+- Özel dikkat edilmesi gereken istediğiniz bir iş parçacığını işaretle Bayrak sütunu.  
   
--   Sarı bir ok geçerli iş parçacığının gösterir geçerli iş parçacığı sütununun.  
+- Sarı bir ok geçerli iş parçacığı gösterir geçerli iş parçacığı sütunu.  
   
--   **İş parçacığı sayısı** aynı konumda iş parçacığı sayısını görüntüler sütun.  
+- **İş parçacığı sayısı** sütunuyla aynı konumda iş parçacığı sayısını görüntüler.  
   
--   **Satır** her grup iş parçacığı bulunduğu kod satırını görüntüler sütun.  
+- **Satırı** her iş parçacığı grubunun bulunduğu kod satırını görüntülüyor sütunu.  
   
--   **Adresi** her grup iş parçacığı bulunduğu yönerge adresi görüntüler sütun. Varsayılan olarak, bu sütun gizlenir.  
+- **Adresi** her iş parçacığı grubunun bulunduğu yönerge adresini görüntüleyen bir sütun. Bu sütun varsayılan olarak gizlidir.  
   
--   **Konumu** kaynak kodunu konumdadır sütun.  
+- **Konumu** kaynak kodu konumu olan sütun.  
   
--   **Durum** sütununda, iş parçacığının etkin, engellenmiş, başlatılmamış veya tam olup olmadığını gösterir.  
+- **Durumu** iş parçacığının etkin, engellenmiş, başlatılmamış veya tam olup olmadığını gösteren bir sütun.  
   
--   **Döşeme** iş parçacıklarının döşeme dizini satırda gösterir sütun.  
+- **Döşeme** satırdaki iş parçacıkları için döşeme dizinini gösteren sütunu.  
   
- Tablo üstbilgisinin kutucuğu ve iş parçacığı görüntülenmesini gösterir.  
+  Tablo üstbilgisinin kutucuğu ve iş parçacığı görüntülenmesini gösterir.  
   
- [!INCLUDE[note_settings_general](../data-tools/includes/note_settings_general_md.md)]  
+  [!INCLUDE[note_settings_general](../data-tools/includes/note_settings_general_md.md)]  
   
 ### <a name="to-display-the-gpu-threads-window"></a>GPU iş parçacıkları penceresini görüntülemek için  
   
 1.  İçinde **Çözüm Gezgini**, proje için kısayol menüsünü açın ve ardından **özellikleri**.  
   
-2.  İçinde **özellik sayfaları** projenin penceresine altında **yapılandırma özellikleri**, seçin **hata ayıklama**.  
+2.  İçinde **özellik sayfaları** proje penceresi altında **yapılandırma özellikleri**, seçin **hata ayıklama**.  
   
-3.  İçinde **başlatmak için hata ayıklayıcı** listesinde **yerel Windows hata ayıklayıcı**. İçinde **hata ayıklayıcı türü** listesinde **yalnızca GPU**. Bu hata ayıklayıcı kesme noktalarında GPU üzerinde çalışan bir kod bozan seçmeniz gerekir.  
+3.  İçinde **başlatmak için hata ayıklayıcı** listesinden **yerel Windows hata ayıklayıcı**. İçinde **hata ayıklayıcı türü** listesinden **yalnızca GPU**. Bu hata ayıklayıcı kesme noktalarında GPU'da çalışan kod bölüneceği seçmeniz gerekir.  
   
 4.  Seçin **Tamam** düğmesi.  
   
-5.  GPU kodunda kesme noktası ayarlayın.  
+5.  GPU kodunda bir kesme noktası ayarlayın.  
   
-6.  Menü çubuğunda seçin **hata ayıklama**, **hata ayıklamayı Başlat**. Uygulamayı kesme ulaşmak için bekleyin.  
+6.  Menü çubuğunda, **hata ayıklama**, **hata ayıklamayı Başlat**. Uygulama kesme noktasına ulaşmak bekler.  
   
-7.  Menü çubuğu birini **hata ayıklama**, **Windows**, **GPU iş parçacıkları**.  
+7.  Bir menü çubuğu seçin **hata ayıklama**, **Windows**, **GPU iş parçacıkları**.  
   
-### <a name="to-switch-to-a-different-thread"></a>Farklı bir iş parçacığı için geçiş yapmak için  
+### <a name="to-switch-to-a-different-thread"></a>Farklı bir iş parçacığına geçiş yapmak için  
   
--   Sütun çift tıklayın. (Klavye: satırı seçin ve Enter'i seçin.)  
+-   Sütununu çift tıklatın. (Klavye: satırı seçin ve ENTER tuşuna basın.)  
   
-### <a name="to-display-a-particular-tile-and-thread"></a>Belirli kutucuğu ve iş parçacığı görüntülemek için  
+### <a name="to-display-a-particular-tile-and-thread"></a>Belirli döşeme ve iş parçacığı görüntülemek için  
   
-1.  Seçin **iş parçacığı değiştirici genişletin** GPU iş parçacıkları penceresi düğmesini.  
+1.  Seçin **değiştirici genişletin veya iş parçacığı** GPU iş parçacıkları penceresinde düğmesine.  
   
-2.  Metin kutularına kutucuğu ve iş parçacığı değerler girin.  
+2.  Kutucuk ve iş parçacığı değerleri, metin kutularına girin.  
   
-3.  Üzerinde oku olan düğmesini seçin.  
+3.  Ok bulunan düğmesini seçin.  
   
-### <a name="to-display-or-hide-a-column"></a>Görüntülemek veya bir sütun gizlemek için  
+### <a name="to-display-or-hide-a-column"></a>Bir sütunu sakla ya da görüntülemek için  
   
--   GPU iş parçacıkları penceresi için kısayol menüsünü açın, seçin **sütunları**ve ardından görüntülemek veya gizlemek istediğiniz sütun seçin.  
+-   GPU iş parçacıkları penceresi için kısayol menüsünü açın, **sütunları**, göstermek veya gizlemek istediğiniz sütunu seçin.  
   
 ### <a name="to-sort-by-a-column"></a>Bir sütuna göre sıralamak için  
   
 -   Sütun başlığı seçin.  
   
-### <a name="to-group-threads"></a>Grup iş parçacığı  
+### <a name="to-group-threads"></a>İş parçacıklarını gruplandırma  
   
--   GPU iş parçacıkları penceresi için kısayol menüsünü açın, seçin **Group By**ve ardından görüntülenen sütun adlarından birini seçin. Seçin **hiçbiri** iş parçacıklarının çözmek için.  
+-   GPU iş parçacıkları penceresi için kısayol menüsünü açın, **Group By**, görüntülenen sütun adlarından birini seçin. Seçin **hiçbiri** iş parçacıklarının çözmek için.  
   
-### <a name="to-freeze-or-thaw-a-row-of-threads"></a>Freeze veya iş parçacıkları sırasının çözme  
+### <a name="to-freeze-or-thaw-a-row-of-threads"></a>Dondurma veya çözme iş parçacığı bir satır için  
   
--   Satır için kısayol menüsünü açın ve seçin **Dondur** veya **çözme**.  
+-   Satır için kısayol menüsünü açın ve seçin **dondurma** veya **çözme**.  
   
-### <a name="to-flag-or-unflag-a-row-of-threads"></a>Bayrak veya iş parçacıkları sırasının bayrakla  
+### <a name="to-flag-or-unflag-a-row-of-threads"></a>İş parçacığı satırının işaretleme veya işaretini kaldırma için  
   
--   İş parçacığı için bayrağı sütunu seçin veya iş parçacığı için kısayol menüsünü açın ve seçin **bayrağı** veya **Unflag**.  
+-   İş parçacığının Bayrak sütunu seçin veya iş parçacığı için kısayol menüsünü açın ve seçin **bayrağı** veya **Unflag**.  
   
-### <a name="to-display-only-flagged-threads"></a>Yalnızca görüntülemek için iş parçacıklarını bayrakla  
+### <a name="to-display-only-flagged-threads"></a>Yalnızca bayraklı iş parçacıklarını görüntülemek için  
   
 -   GPU iş parçacıkları penceresinde bayrak düğmesini seçin.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Birden çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
+ [Çok iş parçacıklı uygulamalarda hata ayıklama](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
  [Nasıl yapılır: paralel İzleme penceresini kullanma](../debugger/how-to-use-the-parallel-watch-window.md)   
  [İzlenecek yol: C++ AMP Uygulamasında Hata Ayıklama](/cpp/parallel/amp/walkthrough-debugging-a-cpp-amp-application)

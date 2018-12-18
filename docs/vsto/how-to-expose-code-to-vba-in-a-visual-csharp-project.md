@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: Visual C# projesinde VBA kodu kullanımına sunma | Microsoft Docs'
+title: 'Nasıl yapılır: kodu bir görselde VBA kullanımına sunma C# proje'
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -18,95 +18,96 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 7564d64763549f2fefe8e0a8b9813fdef9a16b6f
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f00f668c3eac9a39251d0a4e19f98ed597c373db
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49873493"
 ---
-# <a name="how-to-expose-code-to-vba-in-a-visual-c-project"></a>Nasıl Yapılır: Visual C# Projesinde Kodu VBA Kullanımına Sunma
-  İki tür kod birbirleri ile etkileşim kurmak istiyorsanız, bir Visual C# projesinde Visual Basic for Applications (VBA) kodunu kodda getirebilir.  
+# <a name="how-to-expose-code-to-vba-in-a-visual-c-project"></a>Nasıl yapılır: kodu bir görselde VBA kullanımına sunma C# proje
+  Bir görseldeki kodunu getirebilir C# iki birbiriyle etkileşim kurmak için kod istiyorsanız, Visual Basic Applications (VBA) kodu için proje.  
   
- Visual C# işlemi Visual Basic işleminden farklıdır. Daha fazla bilgi için bkz: [nasıl yapılır: Visual Basic projesinde VBA'ya kodu kullanıma](../vsto/how-to-expose-code-to-vba-in-a-visual-basic-project.md).  
+ Görsel C# işlem Visual Basic işleminden farklıdır. Daha fazla bilgi için [nasıl yapılır: Visual Basic projesinde kodu VBA kullanımına sunma](../vsto/how-to-expose-code-to-vba-in-a-visual-basic-project.md).  
   
  [!INCLUDE[appliesto_alldoc](../vsto/includes/appliesto-alldoc-md.md)]  
   
-## <a name="exposing-code-in-a-visual-c-project"></a>Visual C# projesinde kodu gösterme  
- Visual C# projesinde kod çağırmak için VBA kodu etkinleştirmek için kodu COM görünür olacak şekilde değiştirin ve ardından **ReferenceAssemblyFromVbaProject** özelliğine **True** Tasarımcısı'nda.  
+## <a name="expose-code-in-a-visual-c-project"></a>Bir görselde bir kodu ortaya C# proje  
+ Bir görselde kodu çağırmak VBA kodunu etkinleştirmek için C# proje kodu COM görünür olacak şekilde değiştirin ve ardından **ReferenceAssemblyFromVbaProject** özelliğini **True** Tasarımcısı'nda.  
   
- Bir yöntemin bir Visual C# projesinde VBA'dan nasıl çağrılacağını izlenecek yol için bkz: [izlenecek yol: Visual C VBA'dan Kod Çağırma&#35; proje](../vsto/walkthrough-calling-code-from-vba-in-a-visual-csharp-project.md).  
+ Bir görselde bir yöntem çağrısı yapmayı gösteren bir anlatım için C# projesine VBA'dan [izlenecek yol: Visual c VBA'dan Kod Çağırma&#35; proje](../vsto/walkthrough-calling-code-from-vba-in-a-visual-csharp-project.md).  
   
-#### <a name="to-expose-code-in-a-visual-c-project-to-vba"></a>VBA Visual C# projesinde kodu kullanıma sunmak için  
+### <a name="to-expose-code-in-a-visual-c-project-to-vba"></a>Kod bir görselde göstermek için C# VBA projesi  
   
-1.  Bir Word belgesi, Excel çalışma kitabı veya makroları destekleyen ve zaten VBA kodu içeren Excel şablonu temel alan bir belge düzeyi projesi oluşturun veya açın.  
+1. Word belgesi, Excel çalışma kitabı veya makroları destekleyen ve VBA kodu zaten içeren Excel şablon tabanlı bir belge düzeyi projesi oluşturun veya açın.  
   
-     Makroları destekleyen belge dosya biçimleri hakkında daha fazla bilgi için bkz: [birleştirme VBA ve belge düzeyi özelleştirmeleri](../vsto/combining-vba-and-document-level-customizations.md).  
+    Makrolar destekleyen belge dosya biçimleri hakkında daha fazla bilgi için bkz. [birleştirmek VBA ve belge düzeyi özelleştirmeleri](../vsto/combining-vba-and-document-level-customizations.md).  
+  
+   > [!NOTE]  
+   >  Bu özellik Word şablonu projelerinde kullanılamaz.  
+  
+2. Belgedeki VBA kodu kullanıcı makroları istemeden çalışmaya izin verildiğinden emin olun. Office proje konumunu Word veya Excel için Güven Merkezi ayarlarında güvenilen konumlar listesine ekleyerek çalıştırılacak VBA kodu güvenebilir.  
+  
+3. Projenizdeki bir genel sınıf VBA için kullanıma sunmak istediğiniz üye eklemek ve yeni üye olarak bildirmek **genel**.  
+  
+4. Aşağıdaki uygulama <xref:System.Runtime.InteropServices.ComVisibleAttribute> ve <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> öznitelikleri için VBA bırakıyorsunuz sınıf. Bu öznitelikler sınıfı görebilmesi com ancak bir sınıf arabirimi oluşturuluyor.  
+  
+   ```csharp  
+   [System.Runtime.InteropServices.ComVisible(true)]  
+   [System.Runtime.InteropServices.ClassInterface(  
+       System.Runtime.InteropServices.ClassInterfaceType.None)]  
+   ```  
+  
+5. Geçersiz kılma **GetAutomationObject** gösterme sınıfının bir örneğini dönmek için projenizdeki ana bilgisayar öğesi sınıfının yöntemi:  
+  
+   - Konak öğesi sınıf VBA bırakıyorsunuz, geçersiz kılma **GetAutomationObject** yönteminin bu sınıfa ait ve sınıfının geçerli örneği döndürür.  
+  
+     ```csharp  
+     protected override object GetAutomationObject()  
+     {  
+         return this;  
+     }  
+     ```  
+  
+   - Bir konak öğesi olmayan bir sınıf bırakıyorsunuz, geçersiz kılma **GetAutomationObject** yöntemi herhangi bir konak öğesi projenizde ve konak öğesi olmayan sınıfının bir örneğini döndürür. Örneğin, aşağıdaki kod adında bir sınıf gösterme varsayar `DocumentUtilities` VBA.  
+  
+     ```csharp  
+     protected override object GetAutomationObject()  
+     {  
+         return new DocumentUtilities();  
+     }  
+     ```  
+  
+     Konak öğeleri hakkında daha fazla bilgi için bkz. [konak öğelerini ve denetimlerine genel bakış için ana bilgisayar](../vsto/host-items-and-host-controls-overview.md).  
+  
+6. Bir arabirim için VBA bırakıyorsunuz sınıfı Al. İçinde **Arabirimi Ayıkla** iletişim kutusunda, arabirimin bildiriminde dahil etmek istediğiniz genel üyeleri seçin. Daha fazla bilgi için [ayıklama arabirimi yeniden düzenleme](../ide/reference/extract-interface.md).
+  
+7. Ekleme **genel** arabirim bildirimi için anahtar sözcüğü.  
+  
+8. Aşağıdakileri ekleyerek arabirime COM görünür yapmak <xref:System.Runtime.InteropServices.ComVisibleAttribute> özniteliği için arabirim.  
+  
+   ```csharp  
+   [System.Runtime.InteropServices.ComVisible(true)]  
+   ```  
+  
+9. Çalışma sayfası (Excel) ve belge (Word) tasarımcıda açmak [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
+  
+10. İçinde **özellikleri** penceresinde **ReferenceAssemblyFromVbaProject** özellik ve değere değiştirin **True**.  
   
     > [!NOTE]  
-    >  Bu özellik Word şablon projelerinde kullanılamaz.  
+    >  Çalışma kitabı veya belge VBA kodu zaten içermiyor veya belgedeki VBA kodu çalıştırmak için güvenilir değilse, ayarlarken bir hata iletisi alırsınız **ReferenceAssemblyFromVbaProject** özelliğini **True**. Bu durum, Visual Studio, bu durumda belgedeki VBA projesine değiştirilemiyor çünkü.  
   
-2.  VBA kodu belgedeki makroları kullanıcıya sormadan çalışmasına izin verildiğinden emin olun. Office proje konumunu Word veya Excel Güven Merkezi ayarlarında güvenilir konumlar listesine ekleyerek çalıştırmak için VBA kodu güvenebilirsiniz.  
+11. Tıklayın **Tamam** iletisinde görüntülenir. Bu ileti eklerseniz VBA kodunu çalışma kitabına veya belge projeden çalıştırırken gerektiğini hatırlatır [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)], projeyi sonraki açışınızda VBA kodu kaybolacak. Klasör projeyi her seferinde üzerine yazılır yapı içinde belge çıkış olmasıdır.  
   
-3.  VBA için ortak bir sınıf projenizdeki kullanıma sunmak istediğiniz üye eklemek ve yeni üye olarak bildirme **ortak**.  
-  
-4.  Aşağıdaki uygulama <xref:System.Runtime.InteropServices.ComVisibleAttribute> ve <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> öznitelikleri için VBA gösterme sınıfa. Bu öznitelikler sınıfı görünür yapmak COM, ancak bir sınıf arabirimi oluşturma olmadan.  
-  
-    ```csharp  
-    [System.Runtime.InteropServices.ComVisible(true)]  
-    [System.Runtime.InteropServices.ClassInterface(  
-        System.Runtime.InteropServices.ClassInterfaceType.None)]  
-    ```  
-  
-5.  Geçersiz kılma **GetAutomationObject** gösterme sınıfının bir örneğini dönmek için projenizdeki konak öğesi sınıfının yöntemi:  
-  
-    -   Konak öğesi sınıfını gösterme, geçersiz kılma **GetAutomationObject** metodun bu sınıfın ait olduğu ve sınıfının geçerli örneği döndürür.  
-  
-        ```csharp  
-        protected override object GetAutomationObject()  
-        {  
-            return this;  
-        }  
-        ```  
-  
-    -   VBA konak öğesi olmayan bir sınıf gösterme, geçersiz kılma **GetAutomationObject** yöntemi herhangi bir konak öğesi projenizde ve konak öğesi olmayan sınıfının bir örneğini döndürür. Örneğin, aşağıdaki kod adlı bir sınıf gösterme varsayar `DocumentUtilities` VBA.  
-  
-        ```csharp  
-        protected override object GetAutomationObject()  
-        {  
-            return new DocumentUtilities();  
-        }  
-        ```  
-  
-     Konak öğeleri hakkında daha fazla bilgi için bkz: [konak öğelerine ve denetimlerine genel bakış](../vsto/host-items-and-host-controls-overview.md).  
-  
-6.  VBA için gösterme sınıfından bir arabirim ayıklayın. İçinde **arayüz** iletişim kutusunda, arabirim bildiriminde dahil etmek istediğiniz ortak üyeleri seçin. Daha fazla bilgi için bkz: [ayıklama arabirimi yeniden düzenleme](../ide/reference/extract-interface.md).
-  
-7.  Ekleme **ortak** arabirim bildiriminde anahtar sözcük.  
-  
-8.  Aşağıdakileri ekleyerek arabirimi COM görünür hale <xref:System.Runtime.InteropServices.ComVisibleAttribute> özniteliği için arabirim.  
-  
-    ```csharp  
-    [System.Runtime.InteropServices.ComVisible(true)]  
-    ```  
-  
-9. Belge (Word) veya çalışma sayfası (Excel) Tasarımcısı'nda açmak [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
-  
-10. İçinde **özellikleri** penceresinde, seçin **ReferenceAssemblyFromVbaProject** özelliği ve değerini değiştirin **doğru**.  
-  
-    > [!NOTE]  
-    >  Çalışma kitabı veya belge VBA kodu zaten içermiyor veya belgedeki VBA kodu çalıştırmak için güvenilir değilse, ayarlarken bir hata iletisi alırsınız **ReferenceAssemblyFromVbaProject** özelliğine **True**. Bu durum, bu durumda belgedeki VBA projesini Visual Studio değiştirilemiyor çünkü.  
-  
-11. Tıklatın **Tamam** iletisi görüntülenir. Bu ileti eklerseniz VBA kodunu çalışma kitabına veya belge projeden çalıştırırken, anımsatır [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)], VBA kodunu projeyi açtığınızda kaybolacak. Klasör projeyi her zaman üzerine belgenin yapı çıktı olmasıdır.  
-  
-     Bu noktada, Visual Studio Proje VBA projesini derlemeye çağırabilirsiniz şekilde yapılandırır. Visual Studio adlı bir yöntem de ekler `GetManagedClass` VBA projesine. Bu yöntem herhangi bir yerden çağırabilir VBA için kullanıma sunulan sınıfa erişmek için VBA projesindeki.  
+     Bu noktada, Visual Studio Proje bütünleştirilmiş kod içine VBA projesi çağırabilirsiniz şekilde yapılandırır. Visual Studio adlı bir yöntemi de ekler `GetManagedClass` VBA projesine. Bu yöntem her yerden çağırabilirsiniz VBA için kullanıma sunulan sınıfa erişme olanağına VBA projesi.  
   
 12. Projeyi oluşturun.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Nasıl yapılır: Visual Studio'da Office projeleri oluşturma](../vsto/how-to-create-office-projects-in-visual-studio.md)   
- [Tasarlama ve Office çözümleri oluşturma](../vsto/designing-and-creating-office-solutions.md)   
+ [Office çözümleri oluşturma ve tasarlama](../vsto/designing-and-creating-office-solutions.md)   
  [VBA ve belge düzeyi özelleştirmelerini birleştirme](../vsto/combining-vba-and-document-level-customizations.md)   
- [İzlenecek yol: Visual C VBA'dan Kod Çağırma&#35; proje](../vsto/walkthrough-calling-code-from-vba-in-a-visual-csharp-project.md)   
- [Nasıl Yapılır: Visual Basic Projesinde Kodu VBA Kullanımına Sunma](../vsto/how-to-expose-code-to-vba-in-a-visual-basic-project.md)  
+ [İzlenecek yol: Visual c VBA'dan Kod Çağırma&#35; proje](../vsto/walkthrough-calling-code-from-vba-in-a-visual-csharp-project.md)   
+ [Nasıl yapılır: Visual Basic projesinde kodu VBA kullanımına sunma](../vsto/how-to-expose-code-to-vba-in-a-visual-basic-project.md)  
   
   

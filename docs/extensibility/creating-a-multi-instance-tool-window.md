@@ -14,27 +14,28 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 910ca8f223d5f4f37242990ba7384afb0dbebd7c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 19a41e172fd68687cffeca91bdfb4bc418ecdf60
+ms.sourcegitcommit: 1c2ed640512ba613b3bbbc9ce348e28be6ca3e45
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39499773"
 ---
-# <a name="creating-a-multi-instance-tool-window"></a>Çok örnekli araç penceresi oluşturma
-Birden çok örneği aynı anda açık olması için bir araç penceresi programlama yapabilirsiniz. Varsayılan olarak, aracı windows açmak yalnızca bir örneği olabilir.  
+# <a name="create-a-multi-instance-tool-window"></a>Çok örnekli araç penceresi oluşturma
+Böylece aynı anda birden çok örneğini açılabilir bir araç penceresi programlayabilirsiniz. Varsayılan olarak, araç pencerelerini açmak yalnızca bir örneğine sahip olabilirsiniz.  
   
- Çok örnekli araç penceresi kullandığınızda, bilgi aynı anda birden fazla ilgili kaynakları gösterebilir. Örneğin, çok satırlı koyabilirsiniz <xref:System.Windows.Forms.TextBox> birkaç kod parçacıkları programlama oturumu sırasında aynı anda kullanılabilir olacak şekilde, birden çok örneği araç penceresinde denetim. Ayrıca, örneğin, size koyabilirsiniz bir <xref:System.Windows.Forms.DataGrid> denetimi ve aşağı açılan liste kutusunu çok örnekli araç penceresinde birkaç gerçek zamanlı veri kaynakları aynı anda izlenebilir şekilde.  
+ Çok örnekli araç penceresi kullandığınızda, aynı zamanda bilgi birkaç ilgili kaynakları gösterebilirsiniz. Örneğin, çok satırlı yerleştirebilirsiniz <xref:System.Windows.Forms.TextBox> birkaç kod parçacıkları bir programlama oturumu sırasında aynı anda kullanılabilir olacak şekilde bir çok örnekli araç penceresinde denetim. Ayrıca, örneğin, size yerleştirebilirsiniz bir <xref:System.Windows.Forms.DataGrid> denetimi ve bir açılan liste kutusunu çok örnekli araç penceresinde birden çok gerçek zamanlı veri kaynakları aynı anda izlenebilir.  
   
-## <a name="creating-a-basic-single-instance-tool-window"></a>Temel (tekli) araç penceresi oluşturma  
+## <a name="create-a-basic-single-instance-tool-window"></a>Temel (tekli) araç penceresi oluşturma  
   
-1.  Adlı bir proje oluşturun **MultiInstanceToolWindow** VSIX şablonu kullanarak ve adlandırılmış bir özel araç pencere öğesi şablonu Ekle **MIToolWindow**.  
+1.  Adlı bir proje oluşturma **MultiInstanceToolWindow** VSIX şablonuyla ve adlı bir özel araç penceresi öğesi şablonu ekleme **MIToolWindow**.  
   
     > [!NOTE]
-    >  Bir araç penceresi uzantı oluşturma hakkında daha fazla bilgi için bkz: [bir uzantısı bir araç penceresi oluşturma](../extensibility/creating-an-extension-with-a-tool-window.md).  
+    >  Araç penceresi içeren bir uzantı oluşturma hakkında daha fazla bilgi için bkz. [araç penceresi içeren bir uzantı oluşturma](../extensibility/creating-an-extension-with-a-tool-window.md).  
   
-## <a name="making-a-tool-window-multi-instance"></a>Araç penceresi çok örnekli yapma  
+## <a name="make-a-tool-window-multi-instance"></a>Bir araç penceresi çok örneği  
   
-1.  Açık **MIToolWindowPackage.cs** dosya ve Bul `ProvideToolWindow` özniteliği. ve `MultiInstances=true` parametresi, aşağıdaki örnekte gösterildiği gibi:  
+1.  Açık *MIToolWindowPackage.cs* dosya ve bulma `ProvideToolWindow` özniteliği. ve `MultiInstances=true` parametresi, aşağıdaki örnekte gösterildiği gibi:  
   
     ```csharp  
     [PackageRegistration(UseManagedResourcesOnly = true)]  
@@ -46,15 +47,15 @@ Birden çok örneği aynı anda açık olması için bir araç penceresi program
     {. . .}  
     ```  
   
-2.  MIToolWindowCommand.cs dosyasında ShowToolWindos() yöntemini bulun. Bu yöntemi çağırın <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi ve kümesi kendi `create` bayrağını `false` mevcut araç penceresi örnekleri kullanılabilir bir kadar yineleme böylece `id` bulunur.  
+2.  İçinde *MIToolWindowCommand.cs* dosya, bulma `ShowToolWindos()` yöntemi. Bu yöntemi çağırmanız <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi ve kümesi kendi `create` bayrak `false` mevcut araç penceresi örnekleri kullanılabilir kadar yineleme böylece `id` bulunur.  
   
-3.  Bir araç penceresi örneği oluşturmak için arama <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi ve kümesi kendi `id` kullanılabilir değerine ve kendi `create` bayrağını `true`.  
+3.  Bir araç penceresi örneği oluşturmak için arama <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi ve kümesi kendi `id` kullanılabilir değerine ve kendi `create` bayrak `true`.  
   
-     Varsayılan olarak, değeri `id` parametresinin <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi `0`. Bu değer, tek örnek araç penceresi yapar. Barındırılması birden fazla örnek için her örneğinin kendi benzersiz olmalıdır `id`.  
+     Varsayılan olarak, değerini `id` parametresinin <xref:Microsoft.VisualStudio.Shell.Package.FindToolWindow%2A> yöntemi `0`. Bu değer, tek örnekli araç penceresi sağlar. Barındırılması birden fazla örnek için her örnek kendi benzersiz olmalıdır `id`.  
   
-4.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> yöntemi <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame> tarafından döndürülen nesne <xref:Microsoft.VisualStudio.Shell.ToolWindowPane.Frame%2A> araç penceresi örneğinin özelliği.  
+4.  Çağrı <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> metodunda <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame> tarafından döndürülen nesne <xref:Microsoft.VisualStudio.Shell.ToolWindowPane.Frame%2A> araç penceresi örneğinin özelliği.  
   
-5.  Varsayılan olarak, `ShowToolWindow` aracı pencere öğesi şablonu tarafından oluşturulan yöntemi, tek örnek araç penceresi oluşturur. Aşağıdaki örnekte nasıl değiştirileceğini gösterir `ShowToolWindow` birden çok örneği oluşturmak için yöntemi.  
+5.  Varsayılan olarak, `ShowToolWindow` araç penceresi öğe şablonu tarafından oluşturulan yöntem, tek örnekli araç penceresi oluşturur. Aşağıdaki örnek nasıl değiştirileceğini gösterir `ShowToolWindow` birden çok örnek oluşturma için yöntemi.  
   
     ```csharp  
     private void ShowToolWindow(object sender, EventArgs e)  

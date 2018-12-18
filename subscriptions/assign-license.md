@@ -1,72 +1,96 @@
 ---
-title: Visual Studio abonelik lisansları atama | Microsoft Docs
-author: evanwindom
-ms.author: jaunger
-manager: evelynp
-ms.date: 10/03/2017
-ms.topic: Get-Started-Article
+title: Visual Studio abonelikleri için lisans atama | Microsoft Docs
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.date: 07/16/2018
+ms.topic: conceptual
 description: Yöneticiler abonelere lisansları nasıl atayabilirsiniz öğrenin
 ms.prod: vs-subscription
 ms.technology: vs-subscriptions
 searchscope: VS Subscription
-ms.openlocfilehash: 62336656e551a085c6c8753e6baea06730f49510
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 6f0bbded7682bd8f7162ae415c6c83711df04a04
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49931239"
 ---
-# <a name="assigning-licenses-in-the-visual-studio-subscriptions-administrator-portal"></a>Visual Studio abonelikleri Yönetici portalı'nı lisansları atama
+# <a name="assign-licenses-in-the-visual-studio-subscriptions-administrator-portal"></a>Visual Studio abonelikleri Yönetici portalında lisansları atama
 
-Visual Studio Abonelik Yöneticisi olarak, abonelikleri bireysel kullanıcılara atamak için Visual Studio abonelikleri Yönetici portalı'nı kullanabilirsiniz.  
-Bir kerede atayın veya abonelik bilgileriyle aboneleri listelerini hızlı ve kolay bir şekilde yüklemek için "toplu Ekle" özelliğini kullanın. 
+Visual Studio abonelikleri Yöneticisi olarak, abonelikleri bireysel kullanıcılar ve kullanıcı gruplarını atamak için Yönetici portalını kullanabilirsiniz.
 
-## <a name="assigning-a-single-user"></a>Tek bir kullanıcı atama
-Visual Studio abonelikler için kullanılabilir lisans varsa, abonelik faydaları erişmek için yeni kullanıcılar için bunları için bu lisansları atayabilirsiniz. 
-1.  Oturum [Yönetici portalı](https://manage.visualstudio.com)
+Kullanıcı grupları için abonelikler için saat veya kullanım atayabilirsiniz **toplu ekleme** hızla ve kolayca listesini abone ve abonelik bilgilerini karşıya yüklemek için özellik.
 
-2.  Tablonun üstündeki tek bir Visual Studio abone atamak için tıklatın **Ekle**.
+## <a name="individual-assignments"></a>Her bir atama
 
-    ![Abonelik Ekle](_img\assign-license-add\assign-license-add.png)
+Abonelik avantajları erişebilmesi için yeni bir kullanıcı için bir Visual Studio Abonelik lisansı atama aşağıda verilmiştir.
 
-3.  Bilgileri form alanlarına yeni abone için girin. Kuruluşunuz Azure Active Directory kullanıyorsanız, bu alan arama sonuçlarından doğru kullanıcı seçebilmeniz için geçerli dizininizde kişiler bulmak için bir arama işlevini görür. Bu kişi seçtiğinizde, aşağıda gördüğünüz gibi kendi adı, e-posta oturum açma ve bildirim e-posta otomatik olarak doldurur. 
+1. Oturum [Yönetici portalı](https://manage.visualstudio.com).
 
-    Kuruluşunuzun dışındaki oturum açmak için kullanılacak e-postaları almak için bir başka e-posta erişimi varsa, burada girme seçeneğiniz vardır. "Farklı e-posta için oturum açma daha iletişimi?" gösterir köprüyü seçin. 
+2. Tablonun üstündeki tek bir Visual Studio abonesi için bir lisans atamak için **Ekle**.
+   > [!div class="mx-imgBorder"]
+   > ![Tek abone ekleme](media/add-single-subscriber.png)
 
-    **Erişim yüklemeler için:**  
-    İçine imzaladığınızda yazılım yüklemeleri için erişim sağlamak için bu abone istiyorsanız [Visual Studio abonelikleri Portal](https://my.visualstudio.com?wt.mc_id=o~msft~docs), indirmeler kutunun işaretli olduğundan emin olun. Bu kutunun işaretini kaldırdığınızdan seçerseniz, kullanıcı yazılım yüklemelerini erişebilir değil, ancak hala aboneliğine dahil tüm diğer avantajları erişebilir. 
-    
-    Tamamladığınızda bu abone için seçenekleri belirleyerek, tıklatın **Ekle**.
+3. Bilgileri yeni bir abone için form alanlara girin. Kuruluşunuz Azure Active Directory kullanıyorsa, bu alan doğru kullanıcı Arama sonuçlarından seçebilmeniz için kişi geçerli dizinde bulmak için bir arama işlevi görür. Söz konusu kişinin seçtikten sonra bunların adı, oturum açma e-posta ve bildirim e-posta otomatik olarak doldurulur.
+   > [!div class="mx-imgBorder"]
+   > ![Yeni bir bildirim e-posta adresi ekleyin](media/add-new-subscriber-notification-email.png)
 
-    ![Abone bilgi girin](_img\assign-license-add\add-subscriber-1.png)
-    ![abone bilgilerini girin](_img\assign-license-add\add-subscriber-2.png)
+    Oturum açtığınızda yazılım indirme işlemleri için erişim sağlamak için bu abone istiyorsanız [Visual Studio abonelikleri portalında](https://my.visualstudio.com?wt.mc_id=o~msft~docs), etkin indirmeler bırakmayı emin **indirme ayarları** bölümü. İndirmeler devre dışı bırakmak isterseniz, kullanıcı yazılım indirme işlemleri erişimi olmaz ancak aboneliğine dahil tüm avantajlara erişime sahip olmaya devam.
+   > [!div class="mx-imgBorder"]
+   > ![İndirmelere erişim](media/access-to-downloads.png)
 
-4.  Abone eklendikten sonra bir atama e-posta otomatik olarak yeni abone daha ayrıntılı yönergeler için gönderilir. Abone seçerek ve tıklayarak herhangi bir zamanda yeniden atama e-posta gönderebilirsiniz **yeniden gönder** üst menü düğmesi.
+    Abone bilgi alır dilini değiştirmek istiyorsanız, bu nedenle, bunu yapabilirsiniz **iletişim tercihleri** bölümü.
+   > [!div class="mx-imgBorder"]
+   > ![Bildirim e-postalar gönderildiğinde kullanılacak dili](media/change-subscriber-communication-preference.png)
 
-    ![Abonelik eklendi](_img\assign-license-add\add-subscriber-complete.png)
+    Kendi başvuru notları aboneliğe eklemek istiyorsanız, bu nedenle, bunu yapabilirsiniz **Başvurusu Ekle** bölümü.
+   > [!div class="mx-imgBorder"]
+   > ![Her abonelik için kendi başvuru Not Ekle](media/add-subscriber-reference-notes.png) 
 
-## <a name="bulk-assignments"></a>Toplu atamaları
-1.  Aynı anda birden çok abone eklemek için gidin **aboneleri** sekmesi. Üst Şeritte tıklatın **toplu ekleme**. 
+    Zaman seçim seçenekleri işiniz bittiğinde ve abone için veri girme seçin **Ekle** kısmındaki **abone ekleme** çıkış.
+   > [!div class="mx-imgBorder"]
+   > ![Ekle düğmesini seçin.](media/add-button.png)
 
-    ![Toplu ekleme](_img\assign-license-add\bulk-assign-add.png)
+4. Abone ekledikten sonra yeni abone ile daha fazla yönerge için otomatik olarak atama e-posta gönderilir. Abone seçerek ve tıklayarak dilediğiniz zaman yeniden atama e-posta gönderebilir **Gönder** üst menü düğmesi.
+   > [!div class="mx-imgBorder"]
+   > ![İstediğiniz zaman etkinleştirme e-posta bir veya birden çok kullanıcıya yeniden gönder](media/resend-subscriber-activation-emails.png) 
 
-2. Toplu Ata aboneleri karşıya yüklemek için Microsoft Excel şablonu kullanır. Birden çok aboneye Karşıya Yükle iletişim kutusunda tıklatın **karşıdan** şablonu karşıdan yüklemek için. Her zaman bu şablonun en son sürümünü yükleyin. Eski bir sürümünü kullanıyorsanız, toplu yükleme başarısız olabilir.
+## <a name="bulk-assignments"></a>Toplu atama
 
-    ![Birden çok aboneye karşıya yükle](_img\assign-license-add\bulk-assign-upload.png)
+1. Tek seferde birden çok abone ekleme için gidin **aboneleri yönetme** sekmesi. Üstteki Şeritte tıklayın **toplu ekleme**.
+   > [!div class="mx-imgBorder"]
+   > ![Birden çok abone ekleme](media/add-multiple-subscribers.png)
 
-3.  Excel elektronik tabloda abonelikleri atamak istediğiniz kişiler bilgilerle alanları doldurun. Başvuru isteğe bağlı bir alandır. Şablonu herhangi bir kısmını yanlış doldurduktan, sorunu açıklayan bir hata iletisi görürsünüz. İşiniz bittiğinde sabit diskinizde dosyayı kaydedin.
-**Kesintisiz bir karşıya yükleme sağlamaya yardımcı olmak için aşağıdaki en iyi yöntemleri inceleyin:**
+2. Toplu atama aboneyi karşıya yükleme için Microsoft Excel şablonu kullanır. Birden çok aboneyi karşıya yükleme iletişim kutusuna tıklayın **indirme** şablonu indirilemedi.
+   > [!div class="mx-imgBorder"]
+   > ![Excel şablonunu birden çok aboneyi karşıya yükle](media/download-template-upload-subscribers.png)
+   > 
+   > [!NOTE]
+   > Her zaman bu şablonun en son sürümünü indirin. Eski bir sürümünü kullanıyorsanız, toplu karşıya yükleme işleminiz başarısız olabilir.
+
+3. Excel elektronik tablosunda abonelikleri atamak istediğiniz kişiler için bilgilerle alanları doldurun. (*Başvuru* isteğe bağlı bir alandır.) Yerel olarak bitirdikten sonra dosyayı kaydedin.
+
+   Kesintisiz bir karşıya yükleme emin olmak için aşağıdaki en iyi yöntemleri inceleyin:
+
     - Form alanlarını hiçbiri virgül içerdiğinden emin olun.
-    - Alanları önce ve sonra kullanıcıların adları gibi form alanlarını kaldırın.
-    - Kullanıcıların adları iki parçalı ilk veya son adları arasında ek boşluk içeremez emin olun (sistem boşluk kırpma değil olarak örneğin iki parçalı ad "Maggie olabilir" gibi "Maggie olabilir" yazılmalıdır değil) ![toplu Şablon Ekle](_img\assign-license-add\bulk-template.png)
+    - Form alanlardan önce ve sonra boşlukları Kaldır.
+    - Kullanıcı adlarını iki parçalı ilk veya son adları arasındaki fazladan boşlukları içermiyor olduğundan emin olun (bir kişinin "Maggie olabilir" gibi iki parçalı ad varsa, sistem fazladan boşluk kesim gerekmez çünkü Örneğin, "MaggieMay" yazılmalıdır.)
 
-4.  İade Visual Studio abonelikleri Yönetim Portalı ve birden çok aboneye Karşıya Yükle iletişim kutusunda, tıklatın **Gözat**. Kaydettiğiniz Excel dosyasına gidin ve tıklatın **Tamam**. Ekranda karşıya yükleme ilerleme durumunu görürsünüz. 
+4. Visual Studio abonelikleri Yönetim Portalı'na dönün. İçinde **birden çok aboneyi karşıya** iletişim kutusu, tıklayın **Gözat**.
+   > [!div class="mx-imgBorder"]
+   > ![Birden çok aboneyi karşıya yükleme için kaydedilen şablonunuza göz atın](media/bulk-add-browse-saved-template.png)
 
-    ![Toplu ekleme karşıya yükleme](_img\assign-license-add\bulk-assign-upload-2.png)
+5. Kaydettiğiniz Excel dosyasına gidin ve ardından **Tamam**.
+   > [!div class="mx-imgBorder"]
+   > ![Excel şablonunu birden çok aboneyi karşıya yükleme](media/bulk-upload-subscribers.png)
 
-Bu nedenle şablonu hatalar içeriyor, karşıya yükleme başarısız olur ve hataları gösterilen şablon düzeltin ve toplu karşıya yükleme yeniden denemeden.
+    Bir karşıya yükleme ilerleme durumu iletişim kutusu görünür.
 
-   ![Karşıya yükleme başarısız](_img\assign-license-add\bulk-assign-upload-fail.png)
+    Şablon hatalıysa, karşıya yükleme başarısız olur ve şablon düzeltin ve toplu karşıya yükleme yeniden deneme hatalar gösterilir.
+   > [!div class="mx-imgBorder"]
+   > ![Birden çok aboneyi karşıya yüklenmesi başarısız olursa hata iletisi](media/bulk-add-template-failed.png)
 
-Karşıya yükleme başarılı olduğunda, aboneleri ve bir onay iletisi listesini görürsünüz.
-
-   ![Karşıya yükleme tamamlandı](_img\assign-license-add\bulk-assign-upload-complete.png)
+    Karşıya yükleme başarılı olduğunda, aboneleri ve bir onay iletisi listesini görürsünüz.
+   > [!div class="mx-imgBorder"]
+   > ![Birden çok aboneyi karşıya yükleme başarılı olursa onay iletisi](media/bulk-add-template-success.png)

@@ -1,5 +1,5 @@
 ---
-title: Hata ayıklama Engine uygulaması stratejisini seçme | Microsoft Docs
+title: Hata ayıklama altyapısı uygulama stratejisi seçme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,25 +13,26 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3c3715bac00b25cd2080a1162c8e2ce8cb33e63a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 058e3d3087a46de4bb3c5d9b721d3c9111b77526
+ms.sourcegitcommit: 36835f1b3ec004829d6aedf01938494465587436
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203718"
 ---
-# <a name="choosing-a-debug-engine-implementation-strategy"></a>Hata ayıklama Engine uygulaması stratejisini seçme
-Hata ayıklama altyapısı (DE) uygulaması stratejinizi belirleme için çalışma zamanı mimarisi kullanın. Hata ayıklama altyapısı işlemdeki hata ayıklaması, olması için program işlemdeki Visual Studio oturumu hata ayıklama Yöneticisi (SDM) ya da zaman, işlem her ikisine de oluşturulabilir. Aşağıdaki yönergeler, bu üç stratejileri arasında seçim yapmanızı yardımcı olmalıdır.  
+# <a name="choose-a-debug-engine-implementation-strategy"></a>Hata ayıklama altyapısı uygulama stratejisi seçme
+Hata ayıklama altyapısı (DE) uygulaması stratejinizi belirleme için çalışma zamanı mimarisi kullanın. Hata ayıklama altyapısı işlem içi hata ayıklama programına oluşturabilirsiniz. Hata ayıklama altyapısı işlem içinde Visual Studio oturumu hata ayıklama Yöneticisi (SDM) oluşturun. Veya hata ayıklama altyapısı giden işlem her ikisine de oluşturabilirsiniz. Aşağıdaki yönergeler bu üç stratejiler arasında seçmenize yardımcı olmalıdır.  
   
 ## <a name="guidelines"></a>Kuralları  
- İşlem dışı olması için DE mümkün olmakla birlikte hem SDM ve program için ayıklanacak genellikle Bunu yapmak için bir neden yoktur. İşlem sınırları boyunca çağrıları görece yavaş.  
+ İşlem dışı olması için DE mümkün olmakla birlikte SDM ve hata ayıklaması program için genellikle Bunu yapmak için bir neden yoktur. Çağrıları işlem sınırları boyunca görece yavaş yükleniyor.  
   
- Hata ayıklama motorları zaten ortak dil çalışma zamanı ortamı ve Win32 yerel çalışma zamanı ortamı için sağlanan. Ya da bu ortamları DE değiştirmeniz gerekir, işlemdeki DE SDM ile oluşturmanız gerekir.  
+ Hata ayıklama altyapıları ve ortak dil çalışma zamanı ortamı Win32 yerel çalışma zamanı ortamı için zaten sağlanır. Her iki ortam için DE değiştirmek varsa, işlemdeki DE SDM ile oluşturmanız gerekir.  
   
- Aksi takdirde, işlem içi SDM olarak veya işlemdeki ayıklanacak programa DE oluşturma arasında tercih edebilirsiniz. Olup DE ifade değerlendiricisi sık program sembol deposu erişmesi ve hızlı erişim için bellek sembol deposu olup yüklenebilir dikkate almak önemlidir. Ayrıca aşağıdakileri dikkate alın:  
+ Aksi takdirde DE işlem içinde SDM oluşturun veya ayıkladığınız işlemde program. İfade değerlendirici DE, sık kullanılan program simge deposuna erişimi gerektirip gerektirmediğini göz önünde bulundurmanız gerekir. Veya, hızlı erişim için belleğe simge deposundaki yüklü. Ayrıca, aşağıdaki yaklaşımlardan göz önünde bulundurun:  
   
--   İfade değerlendirici ve sembol deposu arasındaki birçok aramaları değilse veya sembol deposu SDM bellek alanına okunabiliyorsa DE işlem içi olarak SDM oluşturun. Programınıza iliştirir bulunduğunda SDM hata ayıklama altyapısı CLSID döndürmelidir. SDM bu CLSID DE işlemdeki örneği oluşturmak için kullanır.  
+-   İfade değerlendirici ve sembol deposundaki arasında birçok çağrı varsa veya sembol deposu SDM bellek alanı okunabiliyorsa DE işlem içinde SDM oluşturun. Programınızı ekler, SDM için hata ayıklama altyapısı CLSID değeri döndürmesi gerekir. SDM bu CLSID DE bir işlem örneğini oluşturmak için kullanır.  
   
--   Sembol deposu erişmek için program DE çağırmanız gerekir, işlemdeki DE programla oluşturun. Bu durumda, program DE örneğini oluşturur.  
+-   Sembol deposuna erişmek için program DE çağırmanız gerekir, işlemdeki DE programla oluşturun. Bu durumda, program DE örneğini oluşturur.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Hata Ayıklayıcı Genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio hata ayıklayıcı genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)

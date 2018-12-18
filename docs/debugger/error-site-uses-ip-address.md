@@ -23,6 +23,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31470910"
 ---
 # <a name="error-site-uses-ip-address"></a>Hata: Site IP Adresi Kullanıyor
 Hata ayıklayıcı bir IP adresi kullanarak bir Web uygulaması için otomatik olarak eklemek çalıştığında bu hata oluşur. Değiştirirseniz bu gerçekleşir **Web sitesi tanımlaması** için **belirli bir IP adresi kullanmak** IIS'de.  

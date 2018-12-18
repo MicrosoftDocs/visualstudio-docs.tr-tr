@@ -1,9 +1,8 @@
 ---
-title: 'Nasıl yapılır: oluşturma ve proje bağımlılıkları kaldırma | Microsoft Docs'
-ms.custom: ''
+title: 'Nasıl yapılır: oluşturma ve proje bağımlılıkları Kaldır'
 ms.date: 06/21/2017
-ms.technology:
-- vs-ide-general
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
 ms.topic: conceptual
 f1_keywords:
 - VS.ProjectDependenciesDlg
@@ -20,50 +19,52 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 4b9a655f61c7e91a1626038781601401a539bbb1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: c7075f21f7927a87968dd573863402a71a40c3c4
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49856021"
 ---
-# <a name="how-to-create-and-remove-project-dependencies"></a>Nasıl yapılır: oluşturun ve proje bağımlılıkları kaldırın
-Birden çok proje içeren bir çözüm oluştururken, önce belirli projeler derlemek için diğer projeler tarafından kullanılan kodu oluşturmak için gerekli olabilir. Bir proje başka bir project tarafından oluşturulan yürütülebilir kod kullanır, kod oluşturur proje kodunu tüketen projenin proje bağımlılık olarak adlandırılır. İçinde bu tür bağımlılık ilişkiler tanımlanabilir **proje bağımlılıkları** iletişim kutusu.  
+# <a name="how-to-create-and-remove-project-dependencies"></a>Nasıl yapılır: oluşturma ve proje bağımlılıkları Kaldır
 
-### <a name="to-assign-dependencies-to-projects"></a>Bağımlılıklar projelerine atamak için  
+Birden çok proje içeren bir çözüm derlerken, belirli projeleri ilk oluşturulacak, diğer projeleri tarafından kullanılan kodu oluşturmak için gerekli olabilir. Bir proje başka bir proje tarafından oluşturulan yürütülebilir kodu kullanırken, kodu oluşturan proje kodu kullanan projenin proje bağımlılık olarak adlandırılır. Bu bağımlılık ilişkiler tanımlanabilir **proje bağımlılıkları** iletişim kutusu.
 
-1.  İçinde **Çözüm Gezgini**, bir proje seçin.  
+## <a name="to-assign-dependencies-to-projects"></a>Bağımlılıkları projelerine atamak için
 
-2.  Üzerinde **proje** menüsünde seçin **proje bağımlılıkları**.  
+1. İçinde **Çözüm Gezgini**, bir proje seçin.
 
-     **Proje bağımlılıkları** iletişim kutusu açılır.  
+2. Üzerinde **proje** menüsünde seçin **proje bağımlılıkları**.
+
+    **Proje bağımlılıkları** iletişim kutusu açılır.
+
+   > [!NOTE]
+   > **Proje bağımlılıkları** seçeneği, yalnızca kullanılabilir birden fazla proje içeren bir çözümde.
+
+3. Üzerinde **bağımlılıkları** sekmesinde, bir proje seçin **proje** açılan menüsü.
+
+4. İçinde **bağlıdır** alanında, bu proje önce oluşturmanız gerekir, başka bir projeye ait onay kutusunu seçin.
+
+   Proje bağımlılıkları oluşturmadan önce çözümünüzü birden fazla proje oluşmalıdır.
+
+## <a name="to-remove-dependencies-from-projects"></a>Proje bağımlılıkları kaldırmak için
+
+1.  İçinde **Çözüm Gezgini**, bir proje seçin.
+
+2.  Üzerinde **proje** menüsünde seçin **proje bağımlılıkları**.
+
+     **Proje bağımlılıkları** iletişim kutusu açılır.
 
     > [!NOTE]
-    >  **Proje bağımlılıkları** seçenektir yalnızca bir çözümde birden çok proje ile kullanılabilir.  
+    > **Proje bağımlılıkları** seçeneği, yalnızca kullanılabilir birden fazla proje içeren bir çözümde.
 
-3.  Üzerinde **bağımlılıkları** sekmesinde, bir projeden seçin **proje** açılır menü.  
+3.  Üzerinde **bağımlılıkları** sekmesinde, bir proje seçin **proje** açılan menüsü.
 
-4.  İçinde **bağlıdır** alanında, bu proje yapmadan önce oluşturmalısınız başka bir projeye ait onay kutusunu seçin.  
+4.  İçinde **bağlıdır** alan, bu projenin bağımlılıklarıdır artık herhangi bir projeyi yanındaki onay kutularını temizleyin.
 
- Proje bağımlılıkları oluşturmadan önce çözümünüzün birden fazla projenin oluşmalıdır.  
+## <a name="see-also"></a>Ayrıca bkz.
 
-### <a name="to-remove-dependencies-from-projects"></a>Proje bağımlılıkları kaldırmak için  
-
-1.  İçinde **Çözüm Gezgini**, bir proje seçin.  
-
-2.  Üzerinde **proje** menüsünde seçin **proje bağımlılıkları**.  
-
-     **Proje bağımlılıkları** iletişim kutusu açılır.  
-
-    > [!NOTE]
-    >  **Proje bağımlılıkları** seçenektir yalnızca bir çözümde birden çok proje ile kullanılabilir.  
-
-3.  Üzerinde **bağımlılıkları** sekmesinde, bir projeden seçin **proje** açılır menü.  
-
-4.  İçinde **bağlıdır** alan, artık bu proje bağımlılıkları olmayan diğer projeler yanındaki onay kutularını temizleyin.  
-
-## <a name="see-also"></a>Ayrıca bkz.  
- [Derleme ve projeler ve çözümler Visual Studio'da Temizle](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md)   
- [Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)   
- [Derleme yapılandırmalarını anlama](../ide/understanding-build-configurations.md)   
- [Proje ve çözüm özelliklerini yönetme](managing-project-and-solution-properties.md)
-
+- [Derleme ve temizleme projeleri ve Visual Studio çözümleri](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md)
+- [Derleme ve oluşturma](../ide/compiling-and-building-in-visual-studio.md)
+- [Derleme yapılandırmalarını anlama](../ide/understanding-build-configurations.md)
+- [Proje ve çözüm özelliklerini yönetme](managing-project-and-solution-properties.md)

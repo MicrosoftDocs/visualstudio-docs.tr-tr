@@ -13,14 +13,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 42a8c6cbe2b3a2b5fa559a74dd165b7a729b814d
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d8a273c5e53f9f7086e8dc96bcb4c36e0b0223d0
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39231542"
 ---
 # <a name="com-constants-in-managed-code"></a>Yönetilen kodda COM sabitleri
-Yönetilen paket Framework (MPF), bazı standart COM sabitleri yönetilen kod kullanılabilmesini sağlar. Bu sabitleri başvuru için aşağıda listelenmiştir.  
+Yönetilen paket Framework (MPF) bazı standart COM sabitleri yönetilen kod için kullanılabilir hale getirir. Bu sabitler, başvuru amacıyla aşağıda listelenmiştir.  
   
 ## <a name="boolean-hresult-values"></a>Boole HRESULT değerleri  
  <xref:Microsoft.VisualStudio.VSConstants.S_FALSE>  
@@ -91,7 +92,7 @@ Yönetilen paket Framework (MPF), bazı standart COM sabitleri yönetilen kod ku
   
  <xref:Microsoft.VisualStudio.VSConstants.OLE_E_WRONGCOMPOBJ>  
   
-## <a name="ole-dispatch-errors"></a>OLE gönderme hataları  
+## <a name="ole-dispatch-errors"></a>OLE dağıtım hataları  
  <xref:Microsoft.VisualStudio.VSConstants.DISP_E_ARRAYISLOCKED>  
   
  <xref:Microsoft.VisualStudio.VSConstants.DISP_E_BADCALLEE>  
@@ -128,5 +129,5 @@ Yönetilen paket Framework (MPF), bazı standart COM sabitleri yönetilen kod ku
   
  <xref:Microsoft.VisualStudio.VSConstants.DISP_E_UNKNOWNNAME>  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Hata İşleme ve Dönüş Değerleri](../extensibility/error-handling-and-return-values.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Hata işleme ve dönüş değerleri](../extensibility/error-handling-and-return-values.md)

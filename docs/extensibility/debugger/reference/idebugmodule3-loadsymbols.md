@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: a7f7a08e827b22f7011fe97babf1a57882245649
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: ab00d1bf3743cf3785bcac5491655cf31c12bd39
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49898258"
 ---
 # <a name="idebugmodule3loadsymbols"></a>IDebugModule3::LoadSymbols
-Geçerli modülü simgelerini yükler.  
+Geçerli modül için sembolleri yükler.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -37,12 +38,12 @@ int LoadSymbols();
 ```  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Yöntem başarılı olursa, döndürür `S_OK`. Başarısız olursa bir hata kodu döndürür.  
+ Yöntem başarılı olursa, döndürür `S_OK`. Başarısız olursa hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem geçerli arama yolundan simgeleri yükler (hangi değiştirilebilir çağırarak [SetSymbolPath](../../../extensibility/debugger/reference/idebugengine3-setsymbolpath.md) yöntemi).  
+ Bu yöntem geçerli bir arama yolundan sembolleri yükler (hangi değiştirilebilir çağırarak [SetSymbolPath](../../../extensibility/debugger/reference/idebugengine3-setsymbolpath.md) yöntemi).  
   
- Bu yöntem üzerinden tercih edilir [ReloadSymbols_Deprecated](../../../extensibility/debugger/reference/idebugmodule2-reloadsymbols-deprecated.md) yöntemi.  
+ Bu yöntem üzerinden tercih edilen [ReloadSymbols_Deprecated](../../../extensibility/debugger/reference/idebugmodule2-reloadsymbols-deprecated.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugModule3](../../../extensibility/debugger/reference/idebugmodule3.md)   

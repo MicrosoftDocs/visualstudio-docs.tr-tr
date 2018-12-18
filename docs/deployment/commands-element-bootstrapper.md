@@ -1,5 +1,5 @@
 ---
-title: '&lt;Komutları&gt; öğe (Önyükleyici) | Microsoft Docs'
+title: '&lt;Komutları&gt; öğesi (Önyükleyici) | Microsoft Docs'
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology: vs-ide-deployment
@@ -17,18 +17,19 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: ac3ae61012bec5f8134a48714678110951c03b76
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 785df23b3d76573182eeb97efc5b359e7298a009
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39077961"
 ---
-# <a name="ltcommandsgt-element-bootstrapper"></a>&lt;Komutları&gt; öğe (Önyükleyici)
-`Commands` Öğesi uygulayan altındaki öğeler tarafından açıklanan testleri `InstallChecks` öğesi ve hangi paket bildirir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] önyükleyici sınama başarısız olursa yüklemelisiniz.  
+# <a name="ltcommandsgt-element-bootstrapper"></a>&lt;Komutları&gt; öğesi (Önyükleyici)
+`Commands` Öğesi uygular öğelerce açıklanan testleri `InstallChecks` öğesi ve hangi paket bildirir [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] önyükleyici, test başarısız olursa yüklemelisiniz.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
-```  
+```xml  
 <Commands  
     Reboot  
 >  
@@ -66,70 +67,70 @@ ms.lasthandoff: 04/19/2018
 </Commands>  
 ```  
   
-## <a name="elements-and-attributes"></a>Öğeleri ve öznitelikleri  
- `Commands` Öğesi gereklidir. Öğesi aşağıdaki özniteliklere sahiptir.  
+## <a name="elements-and-attributes"></a>Öğeler ve öznitelikler  
+ `Commands` Öğesi gereklidir. Öğe, aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Reboot`|İsteğe bağlı. Paketlerin herhangi bir yeniden başlatma çıkış kodu döndürmesi durumunda sistemin yeniden başlatılıp başlatılmayacağını belirler. Aşağıdaki listede, geçerli değerleri gösterir:<br /><br /> `Defer`. Yeniden başlatma gelecekteki bir süreye kadar ertelenir.<br /><br /> `Immediate`. Paketlerden birini bir yeniden başlatma çıkış kodu döndürdü, hemen bir yeniden başlatma neden olur.<br /><br /> `None`. Herhangi bir yeniden başlatma isteğinin yoksayılmasına neden olur.<br /><br /> Varsayılan, `Immediate` değeridir.|  
+|`Reboot`|İsteğe bağlı. Paketlerin herhangi bir yeniden başlatma çıkış kodu döndürmesi durumunda sistemin yeniden başlatılıp başlatılmayacağını belirler. Aşağıdaki liste, geçerli değerleri gösterir:<br /><br /> `Defer`. Yeniden başlatma, gelecekte süre kadar ertelenir.<br /><br /> `Immediate`. Hemen bir yeniden başlatma paketlerden birini bir yeniden başlatma çıkış kodu döndürdü neden olur.<br /><br /> `None`. Herhangi bir yeniden başlatma isteğinin yoksayılmasına neden olur.<br /><br /> Varsayılan, `Immediate` değeridir.|  
   
 ## <a name="command"></a>Komut  
- `Command` Öğesi bir alt öğedir `Commands` öğesi. A `Commands` öğesi bir veya daha fazla olabilir `Command` öğeleri. Öğesi aşağıdaki özniteliklere sahiptir.  
+ `Command` Öğesi alt öğesi olan `Commands` öğesi. A `Commands` öğesi bir veya daha fazla olabilir `Command` öğeleri. Öğe, aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`PackageFile`|Gerekli. Bir veya daha fazla tarafından belirtilen koşullar yüklemek için paketin adı gereken `InstallConditions` false döndürür. Paket kullanarak aynı dosyada tanımlanmalıdır bir `PackageFile` öğesi.|  
-|`Arguments`|İsteğe bağlı. Paket dosyasına geçirilecek komut satırı bağımsız değişkenleri kümesi.|  
-|`EstimatedInstallSeconds`|İsteğe bağlı. Tahmini süre, saniye cinsinden, paketi yüklemek için yönlendirir. Bu değer kullanıcı için önyükleyici görüntüler ilerleme çubuğu boyutunu belirler. Varsayılan 0; Bu durumda tahmin belirtilen hiçbir zaman'dır.|  
-|`EstimatedDiskBytes`|İsteğe bağlı. Tahmini disk miktarını, paket yükleme sonrasında kaplar bayt cinsinden tamamlandı. Bu değer, kullanıcıya önyükleyici görüntüler sabit disk alanı gereksinimleri, kullanılır. Varsayılan durumlarda önyükleyici tüm sabit disk alanı gereksinimleri görüntülemez 0 ' dır.|  
-|`EstimatedTempBytes`|İsteğe bağlı. Paket gerektirir bayt cinsinden geçici disk alanı tahmini miktarı.|  
-|`Log`|İsteğe bağlı. Paket, paketin kök dizini göreli oluşturur günlük dosyası yolu.|  
+|`PackageFile`|Gerekli. Bir veya daha fazla tarafından belirtilen koşullar yüklemek için paket adını gereken `InstallConditions` false döndürün. Paket kullanarak aynı dosyayı tanımlanmalıdır bir `PackageFile` öğesi.|  
+|`Arguments`|İsteğe bağlı. Paket dosyaya geçirilecek komut satırı bağımsız değişkenleri kümesi.|  
+|`EstimatedInstallSeconds`|İsteğe bağlı. Paketi yüklemek için saniye cinsinden tahmini süre sürer. Bu değer kullanıcı için önyükleyici görüntülenir ilerleme çubuğu boyutunu belirler. 0, bu durumda tahmin belirtilen hiçbir zaman varsayılandır.|  
+|`EstimatedDiskBytes`|İsteğe bağlı. Tahmini disk alanı, paket yükleme sonrasında kaplayacağı bayt miktarı tamamlandı. Bu değer kullanıcı için önyükleyici görüntülenir sabit disk alanı gereksinimleri kullanılır. Varsayılan, servis talebi önyükleyici herhangi bir sabit disk alanı gereksinimleri görüntülemez 0 ' dır.|  
+|`EstimatedTempBytes`|İsteğe bağlı. Geçici disk alanı, paket gerektiren bayt cinsinden tahmini miktarı.|  
+|`Log`|İsteğe bağlı. Paket, paketin kök dizinine göreli oluşturduğu günlük dosyası yolu.|  
   
 ## <a name="installconditions"></a>InstallConditions  
- `InstallConditions` Bir alt öğedir `Command` öğesi. Her `Command` öğesi en fazla bir olabilir `InstallConditions` öğesi. Öyle değilse `InstallConditions` öğesi yoksa, tarafından belirtilen paket `Condition` her zaman çalışır.  
+ `InstallConditions` Öğesi alt öğesi olan `Command` öğesi. Her `Command` öğesi, en fazla bir olabilir `InstallConditions` öğesi. Hayır ise `InstallConditions` öğesi yoksa, tarafından belirtilen paket `Condition` her zaman çalışır.  
   
 ## <a name="bypassif"></a>BypassIf  
- `BypassIf` Bir alt öğedir `InstallConditions` öğesi ve komut değil yürütülmelidir altında pozitif bir koşulu açıklar. Her `InstallConditions` öğesi sıfır veya daha fazla olabilir `BypassIf` öğeleri.  
+ `BypassIf` Öğesi alt öğesi olan `InstallConditions` öğesi ve bir komut değil yürütülmelidir altında pozitif bir koşul açıklar. Her `InstallConditions` öğesi sıfır veya daha fazla olabilir `BypassIf` öğeleri.  
   
  `BypassIf` Aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Property`|Gerekli. Test edilecek özelliğin adı. Özelliği daha önce alt öğesi tarafından tanımlanmış gerekir `InstallChecks` öğesi. Daha fazla bilgi için bkz: [ \<InstallChecks > öğesi](../deployment/installchecks-element-bootstrapper.md).|  
-|`Compare`|Gerekli. Gerçekleştirmek karşılaştırma türü. Aşağıdaki listede, geçerli değerleri gösterir:<br /><br /> `ValueEqualTo`, `ValueNotEqualTo`, `ValueGreaterThan`, `ValueGreaterThanOrEqualTo`, `ValueLessThan`, `ValueLessThanOrEqualTo`, `VersionEqualTo`, `VersionNotEqualTo`, `VersionGreaterThan`, `VersionGreaterThanOrEqualTo`, `VersionLessThan`, `VersionLessThanOrEqualTo`, `ValueExists`, `ValueNotExists`|  
+|`Property`|Gerekli. Sınanacak özellik adı. Özelliği daha önce bir alt öğesi tarafından tanımlanmış olmalıdır `InstallChecks` öğesi. Daha fazla bilgi için [ \<InstallChecks > öğesi](../deployment/installchecks-element-bootstrapper.md).|  
+|`Compare`|Gerekli. Gerçekleştirilecek karşılaştırma türünü. Aşağıdaki liste, geçerli değerleri gösterir:<br /><br /> `ValueEqualTo`, `ValueNotEqualTo`, `ValueGreaterThan`, `ValueGreaterThanOrEqualTo`, `ValueLessThan`, `ValueLessThanOrEqualTo`, `VersionEqualTo`, `VersionNotEqualTo`, `VersionGreaterThan`, `VersionGreaterThanOrEqualTo`, `VersionLessThan`, `VersionLessThanOrEqualTo`, `ValueExists`, `ValueNotExists`|  
 |`Value`|Gerekli. Özellikle Karşılaştırılacak değer.|  
-|`Schedule`|İsteğe bağlı. Adı bir `Schedule` bu kuralın ne zaman değerlendirilmelidir tanımlayan etiket.|  
+|`Schedule`|İsteğe bağlı. Adı bir `Schedule` kuralın ne zaman değerlendirilmesi gerektiğini tanımlayan etiket.|  
   
 ## <a name="failif"></a>FailIf  
- `FailIf` Bir alt öğedir `InstallConditions` öğesi ve altında yüklemenin durması gereken pozitif bir koşulu açıklar. Her `InstallConditions` öğesi sıfır veya daha fazla olabilir `FailIf` öğeleri.  
+ `FailIf` Öğesi alt öğesi olan `InstallConditions` öğesi ve bir pozitif koşul altında yüklemenin durması açıklar. Her `InstallConditions` öğesi sıfır veya daha fazla olabilir `FailIf` öğeleri.  
   
  `FailIf` Aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
-|`Property`|Gerekli. Test edilecek özelliğin adı. Özelliği daha önce alt öğesi tarafından tanımlanmış gerekir `InstallChecks` öğesi. Daha fazla bilgi için bkz: [ \<InstallChecks > öğesi](../deployment/installchecks-element-bootstrapper.md).|  
-|`Compare`|Gerekli. Gerçekleştirmek karşılaştırma türü. Aşağıdaki listede, geçerli değerleri gösterir:<br /><br /> `ValueEqualTo`, `ValueNotEqualTo`, `ValueGreaterThan`, `ValueGreaterThanOrEqualTo`, `ValueLessThan`, `ValueLessThanOrEqualTo`, `VersionEqualTo`, `VersionNotEqualTo`, `VersionGreaterThan`, `VersionGreaterThanOrEqualTo`, `VersionLessThan`, `VersionLessThanOrEqualTo`, `ValueExists`, `ValueNotExists`|  
+|`Property`|Gerekli. Sınanacak özellik adı. Özelliği daha önce bir alt öğesi tarafından tanımlanmış olmalıdır `InstallChecks` öğesi. Daha fazla bilgi için [ \<InstallChecks > öğesi](../deployment/installchecks-element-bootstrapper.md).|  
+|`Compare`|Gerekli. Gerçekleştirilecek karşılaştırma türünü. Aşağıdaki liste, geçerli değerleri gösterir:<br /><br /> `ValueEqualTo`, `ValueNotEqualTo`, `ValueGreaterThan`, `ValueGreaterThanOrEqualTo`, `ValueLessThan`, `ValueLessThanOrEqualTo`, `VersionEqualTo`, `VersionNotEqualTo`, `VersionGreaterThan`, `VersionGreaterThanOrEqualTo`, `VersionLessThan`, `VersionLessThanOrEqualTo`, `ValueExists`, `ValueNotExists`|  
 |`Value`|Gerekli. Özellikle Karşılaştırılacak değer.|  
-|`String`|İsteğe bağlı. Hata sonrasında kullanıcıya görüntülenecek metin.|  
-|`Schedule`|İsteğe bağlı. Adı bir `Schedule` bu kuralın ne zaman değerlendirilmelidir tanımlayan etiket.|  
+|`String`|İsteğe bağlı. Başarısızlık durumunda kullanıcıya görüntülenecek metin.|  
+|`Schedule`|İsteğe bağlı. Adı bir `Schedule` kuralın ne zaman değerlendirilmesi gerektiğini tanımlayan etiket.|  
   
 ## <a name="exitcodes"></a>ExitCodes  
- `ExitCodes` Bir alt öğedir `Command` öğesi. `ExitCodes` Öğesi içeren bir veya daha fazla `ExitCode` yükleme paketinden yanıt olarak bir çıkış kodu yapmalısınız belirlemek öğeleri. Bir olabilir isteğe bağlı `ExitCode` öğesinin altında bir `Command` öğesi. `ExitCodes` Öznitelikleri yok.  
+ `ExitCodes` Öğesi alt öğesi olan `Command` öğesi. `ExitCodes` Öğesi içeren bir veya daha fazla `ExitCode` paketinden yanıt çıkış kodu olarak ne yükleme yapması gerektiğini belirleyen öğeleri. Bir olabilir isteğe bağlı `ExitCode` öğesinin altında bir `Command` öğesi. `ExitCodes` öznitelikleri yok.  
   
-## <a name="exitcode"></a>exitCode  
- `ExitCode` Bir alt öğedir `ExitCodes` öğesi. `ExitCode` Öğesi belirler yükleme paketinden yanıt olarak bir çıkış kodu yapmalısınız. `ExitCode` Aşağıdaki özniteliklere sahiptir ve alt öğeleri içerir.  
+## <a name="exitcode"></a>ExitCode  
+ `ExitCode` Öğesi alt öğesi olan `ExitCodes` öğesi. `ExitCode` Paketinden yanıt çıkış kodu olarak ne yükleme yapması gerektiğini belirler. `ExitCode` alt öğe içerir ve aşağıdaki özniteliklere sahiptir.  
   
 |Öznitelik|Açıklama|  
 |---------------|-----------------|  
 |`Value`|Gerekli. Bu çıkış kodu değerini `ExitCode` öğesine uygular.|  
-|`Result`|Gerekli. Yükleme bu çıkış koduna nasıl tepki vermelidir. Aşağıdaki listede, geçerli değerleri gösterir:<br /><br /> `Success`. Paket başarıyla yüklendi olarak işaretler.<br /><br /> `SuccessReboot`. Paketi başarıyla yüklendi olarak işaretler ve sistemin yeniden yönlendirir.<br /><br /> `Fail`. Paket başarısız olarak işaretler.<br /><br /> `FailReboot`. Paket başarısız olarak işaretler ve sistemin yeniden yönlendirir.|  
-|`String`|İsteğe bağlı. Bu çıkış koduna yanıtta kullanıcıya görüntülenecek değer.|  
-|`FormatMessageFromSystem`|İsteğe bağlı. Çıkış kodu ile ilişkili sistem tarafından sağlanan hata iletisini kullanın veya sağlanan değer kullanmayı belirler `String`. Geçerli değerler `true`, başka bir deyişle, sistem tarafından sağlanan hata kullanılacak ve `false`, yani tarafından sağlanan dizeyi kullanmak `String`. Varsayılan, `false` değeridir. Bu özellik ise `false`, ancak `String` ayarlanmazsa sistem tarafından sağlanan hata kullanılacaktır.|  
+|`Result`|Gerekli. Yükleme için bu çıkış kodu nasıl tepki. Aşağıdaki liste, geçerli değerleri gösterir:<br /><br /> `Success`. Paket başarıyla yüklendi olarak işaretler.<br /><br /> `SuccessReboot`. Paketi başarıyla yüklendi olarak işaretler ve sistemin yeniden yönlendirir.<br /><br /> `Fail`. Paket başarısız olarak işaretler.<br /><br /> `FailReboot`. Paket başarısız olarak işaretler ve sistemin yeniden yönlendirir.|  
+|`String`|İsteğe bağlı. Bu çıkış kodu yanıt kullanıcıya görüntülenecek değer.|  
+|`FormatMessageFromSystem`|İsteğe bağlı. Çıkış koduna karşılık gelen sistem tarafından sağlanan hata iletisini kullanabilir veya sağlanan değeri belirler `String`. Geçerli değerler `true`, yani sistem tarafından sağlanan hata kullanmak ve `false`, yani tarafından sağlanan dizenin kullanılacak `String`. Varsayılan, `false` değeridir. Bu özellik ise `false`, ancak `String` ayarlanmazsa sistem tarafından sağlanan hata kullanılacaktır.|  
   
 ## <a name="example"></a>Örnek  
  Aşağıdaki kod örneği, .NET Framework 2.0 yükleme komutları tanımlar.  
   
-```  
+```xml  
 <Commands Reboot="Immediate">  
     <Command PackageFile="instmsia.exe"  
              Arguments= ' /q /c:"msiinst /delayrebootq"'  
@@ -204,6 +205,6 @@ ms.lasthandoff: 04/19/2018
 </Commands>  
 ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Ürün ve paket şema başvurusu](../deployment/product-and-package-schema-reference.md)   
  [\<InstallChecks > öğesi](../deployment/installchecks-element-bootstrapper.md)

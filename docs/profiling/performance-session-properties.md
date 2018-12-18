@@ -13,13 +13,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1e2daf2b92073db6b2c9eca9b1ea482142eb3ba4
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 2ce4fb6b9a57db78e3dbb7f3082a87df9ffb7360
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35254699"
 ---
-# <a name="performance-session-properties"></a>Performans Oturum Özellikleri
+# <a name="performance-session-properties"></a>Performans oturumu özellikleri
 
 A **Performans oturumunu** nasıl uygulama profili belirleyen ayarları yapılandırmanıza olanak sağlar. Ayrıca, profil oluşturma oturumu için oluşturulan raporlar depolar.
 
@@ -35,17 +36,17 @@ Bu ayarları profili oluşturma yöntemi, .NET nesne koleksiyonu ve yaşam veris
 
 Daha fazla bilgi için bkz.:
 
-[Nasıl yapılır: Koleksiyon yöntemleri seçme](../profiling/how-to-choose-collection-methods.md)
+[Nasıl yapılır: Toplama metotlarını seçme](../profiling/how-to-choose-collection-methods.md)
 
 [.NET bellek ayırma ve yaşam süresi verilerini toplama](../profiling/collecting-dotnet-memory-allocation-and-lifetime-data.md)
 
- [Nasıl yapılır: performans veri dosyası adlandırma seçeneklerini ayarlama](../profiling/how-to-set-performance-data-file-name-options.md)
+ [Nasıl yapılır: Performans veri dosyası adlandırma seçeneklerini ayarlama](../profiling/how-to-set-performance-data-file-name-options.md)
 
 ## <a name="launch"></a>Başlat
 
 Bu ayarlar, ikili dosyalar listesinden seçin ve ikili dosyaları başlangıç sırasını belirtmenize olanak sağlar.
 
-Daha fazla bilgi için bkz: [nasıl yapılır: başlatma için ikili dosya belirtme](../profiling/how-to-specify-the-binary-to-start.md)
+Daha fazla bilgi için bkz: [nasıl yapılır: başlatmak için ikili belirtin](../profiling/how-to-specify-the-binary-to-start.md)
 
 ## <a name="sampling"></a>Örnekleme
 
@@ -57,12 +58,12 @@ Bu ayarlar örnekleme profili oluşturma yöntemi olarak kullanıldığında, ö
 - -Alt düzey performans sorunları için performans sayaçları
 - Kullanılabilir performans sayaçlarına göre ek örnek olaylar belirtilebilir.
 
-Daha fazla bilgi için bkz: [nasıl yapılır: örnekleme olayları seçin](../profiling/how-to-choose-sampling-events.md)
+Daha fazla bilgi için bkz: [nasıl yapılır: örnekleme olayları seçme](../profiling/how-to-choose-sampling-events.md)
 
 ## <a name="binary"></a>İkili
-Bu ayarlar, izleme eklenmiş ikili başka bir konuma taşıyabilir isteyip istemediğinizi belirtmenizi sağlar. Örneğin, My.DLL profil oluşturma ve izleme eklenmiş ikili taşıyabilir değil seçerseniz My.Orig.DLL adlı My.DLL yedek bir kopyasını oluşturulur. Sonuç olarak, verileri toplamak için araştırmalar ekleyerek My.DLL değiştirilir. İzleme eklenmiş ikili taşıyabilir karar verirseniz, özgün ikili yeniden adlandırılmaz ve izleme eklenmiş ikili sırasında araçları kullanmak için belirtilen konuma kopyalanır.
+Bu ayarlar, izleme eklenmiş ikili başka bir konuma taşıyabilir isteyip istemediğinizi belirtmenizi sağlar. Örneğin, profil, *My.DLL* ve izleme eklenmiş ikili, yedek bir kopyasını taşıyabilir değil seçin *My.DLL* adlı *My.Orig.DLL* oluşturulur. Sonuç olarak, *My.DLL* verileri toplamak için araştırmalar ekleyerek değiştirilir. İzleme eklenmiş ikili taşıyabilir karar verirseniz, özgün ikili yeniden adlandırılmaz ve izleme eklenmiş ikili sırasında araçları kullanmak için belirtilen konuma kopyalanır.
 
-Daha fazla bilgi için bkz: [nasıl yapılır: başlatma için ikili dosya belirtme](../profiling/how-to-specify-the-binary-to-start.md)
+Daha fazla bilgi için bkz: [nasıl yapılır: başlatmak için ikili belirtin](../profiling/how-to-specify-the-binary-to-start.md)
 
 ## <a name="tier-interactions"></a>Katman etkileşimleri
 
@@ -74,23 +75,23 @@ JScript kodda için performans verilerini toplamak bu ayarları etkinleştirmeni
 
 Daha fazla bilgi için bkz.:
 
-[Nasıl yapılır: Web sayfalarında JavaScript kodu profili](../profiling/how-to-profile-javascript-code-in-web-pages.md)
+[Nasıl yapılır: web sayfalarında profili JavaScript kodu](../profiling/how-to-profile-javascript-code-in-web-pages.md)
 
-[Nasıl yapılır: ön ve son izleme komutları belirtme](../profiling/how-to-specify-pre-and-post-instrument-commands.md)
+[Nasıl yapılır: Ön ve son izleme komutları belirtme](../profiling/how-to-specify-pre-and-post-instrument-commands.md)
 
 ## <a name="cpu-counters"></a>CPU sayaçları
 
 Bu ayarlar, izleme profili oluşturma yöntemi kullanırken CPU performans sayaçları hakkında veri toplamak etkinleştirin. Taşınabilir performans sayaçları, CPU tasarım veya üretici bağımsız olarak kullanılabilir. Platform olayları CPU tasarım ve üretici özgüdür. Yongadaki performans sayaçları hakkında daha fazla bilgi için belirli işlemci belgelerine bakın.
 
-Daha fazla bilgi için bkz: [nasıl yapılır: CPU sayaç verileri toplama](../profiling/how-to-collect-cpu-counter-data.md)
+Daha fazla bilgi için bkz: [nasıl yapılır: toplamak CPU sayaç verileri](../profiling/how-to-collect-cpu-counter-data.md)
 
-## <a name="windows-events"></a>Windows Olayları
+## <a name="windows-events"></a>Windows olayları
 
-Profil oluşturma sırasında olay izleme sağlayıcılarından verileri toplayabilir. VSPerfReport.exe komut satırı aracını kullanarak verileri görüntüleyebilirsiniz `/calltrace` seçeneği. İlgili olay Windows için izleme (ETW) daha fazla bilgi için bkz: [hakkında olay izleme](http://go.microsoft.com/fwlink/?linkid=90752).
+Profil oluşturma sırasında olay izleme sağlayıcılarından verileri toplayabilir. Kullanarak verileri görüntüleyebilirsiniz *VSPerfReport.exe* komut satırı aracı `/calltrace` seçeneği. İlgili olay Windows için izleme (ETW) daha fazla bilgi için bkz: [hakkında olay izleme](http://go.microsoft.com/fwlink/?linkid=90752).
 
 Daha fazla bilgi için bkz.:
 
-[Nasıl yapılır: Windows (ETW) toplamak için olay izleme](../profiling/how-to-collect-event-tracing-for-windows-etw-data.md)
+[Nasıl yapılır: Windows için olay izleme (ETW) verileri toplama](../profiling/how-to-collect-event-tracing-for-windows-etw-data.md)
 
 [VSPerfReport](../profiling/vsperfreport.md).
 
@@ -98,7 +99,7 @@ Daha fazla bilgi için bkz.:
 
 Bu seçenek, Windows Performans İzleyicisi sayaçları veri toplamanıza olanak sağlar. Bu verileri toplamak için etiketli onay kutusunu seçin. **Windows performans sayaçlarını Topla**. Toplama aralığı ayarlanabilir **toplama aralığı** kutusu. **Kategori sayacı** ve **örneği** de kullanılabilir. Bazı varsayılan Windows Performans İzleyicisi sayaçları kullanılabilir.
 
- Daha fazla bilgi için bkz: [nasıl yapılır: Windows sayaç verileri toplama](../profiling/how-to-collect-windows-counter-data.md).
+ Daha fazla bilgi için bkz: [nasıl yapılır: toplamak Windows sayaç verileri](../profiling/how-to-collect-windows-counter-data.md).
 
 ## <a name="advanced"></a>Gelişmiş
 
@@ -106,12 +107,12 @@ Bu ayarlar, bir veya daha fazla seçenekleri belirterek araçları işleme seçe
 
 Daha fazla bilgi için bkz.:
 
-[Nasıl yapılır: .NET Framework çalışma zamanı belirtin](../profiling/how-to-specify-the-dotnet-framework-runtime.md)
+[Nasıl yapılır: .NET Framework çalışma zamanını belirtin](../profiling/how-to-specify-the-dotnet-framework-runtime.md)
 
-[Nasıl yapılır: ek izleme seçeneklerini belirtme](../profiling/how-to-specify-additional-instrumentation-options.md)
+[Nasıl yapılır: Ek izleme seçeneklerini belirtme](../profiling/how-to-specify-additional-instrumentation-options.md)
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 [Genel Bakışlar](../profiling/overviews-performance-tools.md)  
 [Performans oturumlarını yapılandırma](../profiling/configuring-performance-sessions.md)  
-[Veri toplama denetimi](../profiling/controlling-data-collection.md)
+[Veri toplamayı denetleme](../profiling/controlling-data-collection.md)

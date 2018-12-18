@@ -1,5 +1,5 @@
 ---
-title: SccInitialize işlevi | Microsoft Docs
+title: Sccınitialize işlevi | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 1146573f3d969ffc5cd56576ba92faa4e6ffdce0
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 136978a6d1dc19a414079ba424ebcd5d50f6840a
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49934580"
 ---
-# <a name="sccinitialize-function"></a>SccInitialize işlevi
-Bu işlev, eklenti kaynak denetimi başlatır ve özellikleri ve sınırları tümleşik geliştirme ortamına (IDE) sağlar.  
+# <a name="sccinitialize-function"></a>SccInitialize İşlevi
+Bu işlev, kaynak denetimi eklentisi başlatır ve özellikler ve sınırlamalar için tümleşik geliştirme ortamı (IDE) sağlar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -41,52 +42,52 @@ SCCRTN SccInitialize (
   
 #### <a name="parameters"></a>Parametreler  
  `ppvContext`  
- [in] Kaynak Denetim eklentisi, bağlam yapısına yönelik işaretçinin buraya koyabilirsiniz.  
+ [in] Kaynak Denetimi Eklentisi bağlam yapısı işaretçisi buraya koyabilirsiniz.  
   
  `hWnd`  
- [in] Kaynak Denetim eklentisi sağladığı tüm iletişim kutuları için üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
+ [in] Kaynak Denetimi Eklentisi sağladığı herhangi bir iletişim kutusu için bir üst öğe olarak kullanabileceğiniz IDE penceresi için bir tanıtıcı.  
   
  `lpCallerName`  
- [in] Kaynak denetimi eklenti çağırma programın adı.  
+ [in] Kaynak Denetimi Eklentisi çağırma programının adı.  
   
  `lpSccName`  
- [içinde out] Burada eklenti kaynak denetimi koyar kendi adına arabellek (aşmayan `SCC_NAME_LEN`).  
+ [out içinde] Burada, kaynak denetimi eklentisi koyar kendi adına arabellek (aşmayan `SCC_NAME_LEN`).  
   
  `lpSccCaps`  
- [out] Kaynak denetimi eklentinin yetenek bayrakları döndürür.  
+ [out] Kaynak denetimi, özellik bayrakları, eklentinin döndürür.  
   
  `lpAuxPathLabel`  
- [içinde out] Burada eklenti kaynak denetimi koyar tanımlayan bir dize arabellek `lpAuxProjPath` parametresi tarafından döndürülen [SccOpenProject](../extensibility/sccopenproject-function.md) ve [SccGetProjPath](../extensibility/sccgetprojpath-function.md) (aşmayan `SCC_AUXLABEL_LEN`).  
+ [out içinde] Burada, kaynak denetimi eklentisi koyar açıklayan bir dize arabellek `lpAuxProjPath` parametresi tarafından döndürülen [SccOpenProject](../extensibility/sccopenproject-function.md) ve [SccGetProjPath](../extensibility/sccgetprojpath-function.md) (aşmayan `SCC_AUXLABEL_LEN`).  
   
  `pnCheckoutCommentLen`  
- [out] Checkout açıklama için izin verilen en fazla uzunluk döndürür.  
+ [out] Kullanıma alma açıklaması izin verilen maksimum uzunluğunu döndürür.  
   
  `pnCommentLen`  
- [out] Diğer açıklamaları için izin verilen maksimum döndürür.  
+ [out] Diğer açıklamaları izin verilen maksimum uzunluğunu döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Aşağıdaki değerlerden birini döndürmek için bu işlevi kaynak denetimi eklenti uyarlamasını beklenen:  
+ Kaynak Denetimi Eklentisi uygulanması bu işlev, aşağıdaki değerlerden birini döndürmesi beklenir:  
   
 |Değer|Açıklama|  
 |-----------|-----------------|  
 |SCC_OK|Kaynak denetimi başlatma başarılı oldu.|  
 |SCC_E_INITIALIZEFAILED|Sistem başlatılamadı.|  
-|SCC_E_NOTAUTHORIZED|Kullanıcı, belirtilen işlem gerçekleştirmek için izin verilmiyor.|  
-|SCC_E_NONSPECFICERROR|Belirli olmayan hata; Kaynak denetim sistemi başlatılamadı.|  
+|SCC_E_NOTAUTHORIZED|Kullanıcı, belirtilen işlemi gerçekleştirmek için izin verilmiyor.|  
+|SCC_E_NONSPECFICERROR|Belirli olmayan hata; Kaynak denetim sistemi başlatılmadı.|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Kaynak Denetim eklentisi ilk kez yüklediğinde IDE bu işlevi çağırır. Eklentiye arayan adı gibi belirli bilgileri geçirmek IDE sağlar. IDE yeniden de açıklamaları ve eklentinin yetenekler için izin verilen uzunluk sınırını gibi belirli bilgileri alır.  
+ Kaynak Denetimi Eklentisi ilk kez yüklediğinde IDE bu işlevi çağırır. Bu eklentiye arayanın adı gibi belirli bilgileri geçirmek IDE sağlar. IDE Ayrıca açıklamalar ve eklentinin özellikleri için izin verilen uzunluk sınırını gibi belirli bilgileri geri alır.  
   
- `ppvContext` İşaret eden bir `NULL` işaretçi. Kaynak Denetim eklentisi kendi kullanımı için bir yapı ayırmak ve o yapısında bir işaretçi depolamak `ppvContext`. IDE this işaretçisi, her diğer VSSCI API işlevi için eklenti için genel depolama başvurmadan bağlam bilgilerini kullanılabilir olmasını ve eklenti birden çok örneğini desteklemek için izin verme geçirin. Bu yapı ne zaman serbest [SccUninitialize](../extensibility/sccuninitialize-function.md) olarak adlandırılır.  
+ `ppvContext` İşaret eden bir `NULL` işaretçi. Kaynak Denetimi Eklentisi, bir yapının kendi kullanımı için ayırma ve bu yapısına bir işaretçi depolar `ppvContext`. IDE this işaretçisi, her diğer VSSCI API işlevi için genel depolama alanına başvurmadan bağlam bilgilere sahip ve birden fazla eklentinin desteklemek için eklenti izin vererek geçirin. Bu yapı ne zaman kaldırılmamalıdır [SccUninitialize](../extensibility/sccuninitialize-function.md) çağrılır.  
   
- `lpCallerName` Ve `lpSccName` parametreleri IDE ve kaynak denetim eklentisi adları Exchange etkinleştirme. Bu adları, yalnızca birden çok örnekler arasında ayrım yapmak için kullanılan veya bunlar aslında menüleri ve iletişim kutularında görünebilir.  
+ `lpCallerName` Ve `lpSccName` parametreleri IDE ve kaynak denetimi eklentisi adları alışverişi olanak tanır. Bu adlar, yalnızca birden fazla örnek arasında ayrım yapmak için kullanılabilir veya bunlar gerçekten menüleri veya iletişim kutusu görünebilir.  
   
- `lpAuxPathLabel` Parametredir çözüm dosyasında depolanır ve kaynak denetimi çağrıda eklenti geçirilen yardımcı proje yolu tanımlamak için bir açıklama olarak kullanılan bir dize [SccOpenProject](../extensibility/sccopenproject-function.md). [!INCLUDE[vsvss](../extensibility/includes/vsvss_md.md)] bir dizeyi kullanan "SourceSafe proje:"; diğer kaynak denetim eklentileri bu belirli dize kullanmamalıdır.  
+ `lpAuxPathLabel` Parametredir çözüm dosyasında depolanan ve kaynak denetimi eklentisi bir çağrıda geçirilen yardımcı proje yolunu tanımlamak için bir açıklama olarak kullanılan bir dize [SccOpenProject](../extensibility/sccopenproject-function.md). [!INCLUDE[vsvss](../extensibility/includes/vsvss_md.md)] dize kullanır "SourceSafe projesinin:"; Bu belirli dize kullanmadığınızdan diğer kaynak denetimi eklentileri.  
   
- `lpSccCaps` Parametresi verir kaynak denetimi eklenti eklentinin özelliklerini belirten bit işaretleri depolamak için bir yer. (Yetenek bit işaretleri tam bir listesi için bkz: [yetenek bayrakları](../extensibility/capability-flags.md)). Örneğin, eklenti özelliği ayarlardı sonuçları bir çağıran tarafından sağlanan geri çağırma işlevini yazmak için eklenti planları SCC_CAP_TEXTOUT bit durumunda. Bu sürüm denetimi sonuçları için bir pencere oluşturmak için IDE sinyal.  
+ `lpSccCaps` Parametre verir kaynak denetimi eklentisi eklentinin özelliklerini gösteren bit bayrakları depolamak için bir yer. (Özellik bit bayrakları tam bir listesi için bkz. [özellik bayrakları](../extensibility/capability-flags.md)). Örneğin, sonuçları çağıran tarafından sağlanan geri çağırma işlevi içinde eklenti ayarlama yeteneği yazmak için eklenti planları SCC_CAP_TEXTOUT bit varsa. Bu, sürüm denetimi sonuçları için bir pencere oluşturmak için IDE sinyal.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Kaynak Denetim eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
+ [Kaynak Denetimi Eklentisi API işlevleri](../extensibility/source-control-plug-in-api-functions.md)   
  [SccUninitialize](../extensibility/sccuninitialize-function.md)   
  [SccOpenProject](../extensibility/sccopenproject-function.md)   
  [Özellik Bayrakları](../extensibility/capability-flags.md)

@@ -18,14 +18,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a160e3298d14d406b756493a97b31f0f12cdad1d
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 247c81d46ee8f5ae916a2a024620e4f4eb864194
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255625"
 ---
 # <a name="object-lifetime-view"></a>Nesne Ömrü Görünümü
-Nesne ömrü görünümü kullanılabilir **ayrıca .NET nesne yaşam verisi toplama** Performans oturumunu özellik sayfalarında karşılaştırılır.  
+Nesne ömrü görünümü kullanılabilir **ayrıca .NET nesne yaşam verisi toplama** üzerinde işaretli **Performans oturumunu** özellik sayfaları.  
   
  Çöp toplayıcı, [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] ayırma ve sürüm, uygulamanız için bellek yönetir. Atık toplayıcının performansını optimize etmek için, yönetilen yığın üç nesle ayrılır: 0, 1 ve 2. Çöp toplayıcı çalışma zamanının yeni nesneler kuşak 0 depolar. Koleksiyonları varlığını sürdürmesini nesneleri yükseltilmiş ve nesil 1 ve 2 depolanır.  
   
@@ -72,5 +73,5 @@ Nesne ömrü görünümü kullanılabilir **ayrıca .NET nesne yaşam verisi top
 |**Toplanan büyük nesne yığın örnekleri**|Bu tür büyük nesne yığın içinde bulunan ve profil toplanan örnek sayısı çalıştırın.|  
 |**Büyük nesne yığın bayt toplanan**|Bu tür örneklerinin büyük nesne yığın içinde bulunan ve Çalıştır profil toplanan bayt cinsinden boyutu.|  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [.NET bellek verisi görünümleri](../profiling/dotnet-memory-data-views.md)

@@ -9,58 +9,29 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-modeling
-ms.openlocfilehash: dad5f3a370f6c5860697ed1844c9f4c86143d0b8
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 930d7ededf4a54aaf75516c59001eaccf38c210c
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49896776"
 ---
-# <a name="navigate-and-update-a-model-in-program-code"></a>Gezinme ve bir modeli Program kodunda güncelleştirme
+# <a name="navigate-and-update-a-model-in-program-code"></a>Program Kodunda Modelde Gezinme ve Modeli Güncelleştirme
 
-Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve öğeler arasındaki bağlantıları silmek üzere kod yazabilirsiniz. Bir işlem içinde yapılan tüm değişiklikler gerekir. Öğeleri bir diyagramda görüntülerse diyagram "otomatik olarak işlem sonunda düzeltilecektir".
+Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturmasına ve öğeler arasında bağlantılar silmek için kod yazabilirsiniz. Bir işlem içinde tüm değişiklik yapılması gerekir. Diyagram üzerindeki öğeleri görüntülerse, diyagram "otomatik olarak işlem sonunda düzeltilecektir".
 
-## <a name="in-this-topic"></a>Bu Konu kapsamında
- [Bir örnek DSL tanımı](#example)
+##  <a name="example"></a> Bir örneği DSL tanımı
+ Bu DslDefinition.dsl ana bölümü için bu konudaki örnekleri.
 
- [Model gezinme](#navigation)
-
- [Sınıf bilgilerine erişme](#metadata)
-
- [Bir işlemin içindeki değişiklikleri gerçekleştirin](#transaction)
-
- [Model öğelerini oluşturma](#elements)
-
- [İlişki bağlantılar oluşturma](#links)
-
- [Öğeleri silme](#deleteelements)
-
- [İlişki bağlantıları silme](#deletelinks)
-
- [Bir ilişki bağlantılar yeniden sıralama](#reorder)
-
- [Kilitler](#locks)
-
- [Kopyala ve Yapıştır](#copy)
-
- [Gezinme ve diyagramları güncelleştiriliyor](#diagrams)
-
- [Şekiller ve öğeleri arasında gezinme](#views)
-
- [Şekiller ve bağlayıcılar özellikleri](#shapeProperties)
-
- [DocView ve DocData](#docdata)
-
-##  <a name="example"></a> Bir örnek DSL tanımı
- Bu ana DslDefinition.dsl için bu konudaki örnekler parçasıdır:
-
- ![DSL tanımı diyagramı &#45; Aile Ağacı Modeli](../modeling/media/familyt_person.png "FamilyT_Person")
+ ![DSL tanım diyagramı &#45; ailesi ağaç modeli](../modeling/media/familyt_person.png)
 
  Bu model, bu DSL örneğidir:
 
- ![Tudor Aile Ağacı Modeli](../modeling/media/tudor_familytreemodel.png "Tudor_FamilyTreeModel")
+ ![Tudor ailesi ağaç modeli](../modeling/media/tudor_familytreemodel.png)
 
-### <a name="references-and-namespaces"></a>References ve ad alanları
+### <a name="references-and-namespaces"></a>Başvurular ve ad alanları
  Bu konudaki kodu çalıştırmak için başvuru:
 
  `Microsoft.VisualStudio.Modeling.Sdk.11.0.dll`
@@ -69,12 +40,12 @@ Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve �
 
  `using Microsoft.VisualStudio.Modeling;`
 
- Ayrıca, DSL tanımlandığı olandan farklı bir proje kodunu yazıyorsanız Dsl projenin oluşturduğu derleme almanız gerekir.
+ DSL'nizi tanımlandığı olandan farklı bir projede kod yazıyorsanız, Dsl proje tarafından oluşturulan derleme içeri aktarmalısınız.
 
 ##  <a name="navigation"></a> Model gezinme
 
 ### <a name="properties"></a>Özellikler
- DSL açıklamasında tanımlayın etki alanı özellikleri program kodunda erişebildiği özellikleri olur:
+ DSL tanımındaki tanımlayan bir etki alanı özellikleri, program kodu içinde erişebildiği özellikleri olur:
 
  `Person henry = ...;`
 
@@ -82,28 +53,28 @@ Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve �
 
  `if (henry.Name.EndsWith("VIII")) ...`
 
- Bir özelliği ayarlamak istiyorsanız, bunu içinde yapmalısınız bir [işlem](#transaction):
+ Bir özelliği ayarlamak istiyorsanız, bunu içine yapmalısınız bir [işlem](#transaction):
 
  `henry.Name = "Henry VIII";`
 
- DSL tanımının, bir özellik içindeki IF **türü** olan **hesaplanan**, bunu göremezsiniz. Daha fazla bilgi için bkz: [hesaplanan ve özel depolama özellikleri](../modeling/calculated-and-custom-storage-properties.md).
+ DSL tanımının, bir özelliğe sahipse **tür** olduğu **hesaplanan**, bunu göremezsiniz. Daha fazla bilgi için [hesaplanan ve özel depolama özellikleri](../modeling/calculated-and-custom-storage-properties.md).
 
 ### <a name="relationships"></a>İlişkiler
- DSL açıklamasında tanımlayın etki alanı ilişkilerini özellikleri, bir sınıf ilişkisinin her iki ucunda çiftlerini haline gelir. Özellik adlarını DslDefinition diyagramda ilişkiyi her tarafında rolleri etiket olarak görünür. Role çokluğu bağlı olarak, ilişkinin diğer ucundaki sınıfı ya da bu sınıfın bir koleksiyon özelliği türüdür.
+ DSL tanımındaki tanımladığınız etki alanı ilişkilerinin özellikleri, bir ilişkinin her iki ucunda sınıfı çiftlerini haline gelir. Özellik adlarının DslDefinition diyagramda her tarafındaki ilişkinin rolleri hakkında daha fazla etiket olarak görüntülenir. Rol'ün çoğulluğunun bağlı olarak, ilişkinin diğer ucundaki sınıfı veya söz konusu sınıfın bir koleksiyon özelliği türüdür.
 
  `foreach (Person child in henry.Children) { ... }`
 
  `FamilyTreeModel ftree = henry.FamilyTreeModel;`
 
- Bir ilişki ters ucundaki her zaman özelliklerdir devrik. Bir bağlantı oluşturulduğunda veya silindiğinde, her iki öğelerde rolü özellikleri güncelleştirilir. Aşağıdaki ifade (uzantılarını kullanan `System.Linq`) örnek ParentsHaveChildren ilişkisinde için her zaman geçerlidir:
+ Bir ilişkinin diğer ucundaki her zaman özelliklerdir tersini. Bir bağlantı oluşturulduğu veya silindiği iki öğeyi rol özellikleri güncelleştirilir. Aşağıdaki ifade (uzantıları kullanan `System.Linq`) örnekte ParentsHaveChildren ilişki her zaman doğrudur:
 
  `(Person p) => p.Children.All(child => child.Parents.Contains(p))`
 
  `&& p.Parents.All(parent => parent.Children.Contains(p));`
 
- **ElementLinks**. Bir ilişki adlı bir model öğesi tarafından temsil edilen bir *bağlantı*, etki alanı ilişki türünün bir örneği değil. Bir bağlantı, bir kaynak öğesi ve bir hedef öğe her zaman vardır. Source öğesi ve hedef öğe aynı olabilir.
+ **ElementLinks**. Bir ilişki de adlı bir model öğesi tarafından temsil edilen bir *bağlantı*, etki alanı ilişki türünün bir örneği olduğu. Bir bağlantı, bir kaynak öğesi ve bir hedef öğe her zaman vardır. Kaynak öğesi ve hedef öğe aynı olabilir.
 
- Bir bağlantı ve özelliklerini erişebilirsiniz:
+ Bir bağlantı ve özelliklerine erişebilirsiniz:
 
  `ParentsHaveChildren link = ParentsHaveChildren.GetLink(henry, edward);`
 
@@ -111,24 +82,24 @@ Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve �
 
  `link == null || link.Parent == henry && link.Child == edward`
 
- Varsayılan olarak, herhangi bir model öğelerini çifti bağlamak için bir ilişki birden fazla örneğine izin verilir. Ancak DSL tanımında varsa, `Allow Duplicates` bayrağı ilişki için doğrudur sonra birden fazla bağlantı olabilir ve kullanmanız gerekir `GetLinks`:
+ Varsayılan olarak, herhangi bir model öğe çiftinin bağlamak için birden fazla örneğini bir ilişki izin verilir. DSL tanımı varsa, ancak `Allow Duplicates` ilişki için bayrağı doğruysa sonra birden fazla bağlantı olabilir ve kullanmalısınız `GetLinks`:
 
  `foreach (ParentsHaveChildren link in ParentsHaveChildren.GetLinks(henry, edward)) { ... }`
 
- Bağlantılar erişmek için diğer yöntemler vardır. Örneğin:
+ Bağlantılar erişmek için başka yöntemler de vardır. Örneğin:
 
  `foreach (ParentsHaveChildren link in     ParentsHaveChildren.GetLinksToChildren(henry)) { ... }`
 
- **Gizli rolleri.** DSL tanımında varsa, **oluşturulur özelliği** olan **false** belirli bir rol için ardından özellik bu role karşılık gelen oluşturulur. Ancak, yine bağlantıları erişebilir ve ilişki yöntemleri kullanılarak bağlantılar:
+ **Gizli roller.** DSL tanımı varsa, **özelliği oluşturulan** olduğu **false** belirli bir rol için ardından hiçbir özelliği bu role karşılık gelen oluşturulur. Ancak, yine de bağlantıları erişebilir ve ilişki yöntemleri kullanılarak bağlantılar:
 
  `foreach (Person p in ParentsHaveChildren.GetChildren(henry)) { ... }`
 
- En sık kullanılan örnek <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> diyagramda görüntüler şeklin bir model öğesi bağlantıları ilişki:
+ En sık kullanılan örnek <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> diyagram üzerinde görüntüleyen şekli bir model öğesine bağlandığı ilişkisi:
 
  `PresentationViewsSubject.GetPresentation(henry)[0] as PersonShape`
 
 ### <a name="the-element-directory"></a>Öğe dizini
- Öğe dizini kullanarak deposundaki tüm öğeleri erişebilirsiniz:
+ Öğe dizini kullanarak mağaza tüm öğeleri erişebilirsiniz:
 
  `store.ElementDirectory.AllElements`
 
@@ -139,7 +110,7 @@ Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve �
  `store.ElementDirectory.GetElement(elementId);`
 
 ##  <a name="metadata"></a> Sınıf bilgilerine erişme
- Sınıfları, ilişkileri ve diğer yönlerini DSL tanımı hakkında bilgi alabilirsiniz. Örneğin:
+ Sınıfları ve ilişkileri DSL tanımını diğer yönleri hakkında bilgi edinebilirsiniz. Örneğin:
 
  `DomainClassInfo personClass = henry.GetDomainClass();`
 
@@ -153,16 +124,16 @@ Model öğelerini silin, bunların özelliklerini ayarlamak ve oluşturulur ve �
 
  `DomainRoleInfo sourceRole = relationship.DomainRole[0];`
 
- Model öğelerini üst sınıflarını aşağıdaki gibidir:
+ Model öğelerinin üst sınıfları aşağıdaki gibidir:
 
--   Model öğesi - tüm öğeleri ve ilişkileri olan ModelElements
+-   ModelElement - tüm öğeleri ve ilişkileri olan ModelElements
 
--   ElementLink - tüm ilişkiler ElementLinks olan
+-   ElementLink - tüm ilişkiler ElementLinks olan.
 
-##  <a name="transaction"></a> Bir işlemin içindeki değişiklikleri gerçekleştirin
- Program kodunuzu deposundaki herhangi bir şey değiştiğinde, bunu bir işlem içinde yapmalısınız. Bu, tüm model öğelerini, ilişkileri, şekiller, diyagramları ve bunların özelliklerini için geçerlidir. Daha fazla bilgi için bkz. <xref:Microsoft.VisualStudio.Modeling.Transaction>.
+##  <a name="transaction"></a> Bir işlem içinde değişiklikleri gerçekleştirin
+ Program kodunuza Store içinde herhangi bir şey değiştiğinde, bunu bir işlem içinde yapmalısınız. Bu, tüm model öğelerini, ilişkiler, şekiller, diyagramları ve özellikleri için geçerlidir. Daha fazla bilgi için bkz. <xref:Microsoft.VisualStudio.Modeling.Transaction>.
 
- Bir işlem yönetme en kolay yöntem olan bir `using` deyimi içine bir `try...catch` deyimi:
+ Bir işlem yönetmenin en kolay yöntemi olan bir `using` ifadesi içine bir `try...catch` deyimi:
 
 ```
 Store store; ...
@@ -188,12 +159,12 @@ catch (Exception ex)
 }
 ```
 
- Herhangi bir sayıda bir işlem içinde değişiklikleri yapabilirsiniz. Yeni bir işlem etkin bir işlem içinde açabilirsiniz.
+ Herhangi bir sayıda bir işlem içinde değişiklik yapabilirsiniz. Yeni işlemlerinin etkin bir işlem içinde açabilirsiniz.
 
- Değişikliklerinizi kalıcı yapmak için şunları yapmalısınız `Commit` bırakılana önce işlem. İşlem içinde yakalandı bir özel durum oluşursa, deposu değişiklikleri önce durumuna sıfırlar.
+ Yaptığınız değişiklikleri kalıcı hale getirmek için gereken `Commit` bırakılana önce işlem. İşlem içinde yakalanmamış özel bir durum oluşursa, Store değişiklikleri önce durumuna sıfırlar.
 
-##  <a name="elements"></a> Model öğelerini oluşturma
- Bu örnek, var olan bir model için bir öğe ekler:
+##  <a name="elements"></a> Model öğeleri oluşturma
+ Bu örnekte, mevcut bir model için bir öğe ekler:
 
 ```
 FamilyTreeModel familyTree = ...; // The root of the model.
@@ -213,97 +184,97 @@ using (Transaction t =
 }
 ```
 
- Bu örnekte, bir öğe oluşturma hakkında daha fazla bu önemli noktaları gösterilmektedir:
+ Bu örnekte, bir öğe oluşturma hakkında daha fazla şu önemli noktaları gösterilmektedir:
 
--   Yeni öğe deposu belirli bir bölüme oluşturun. Model öğelerini ve ilişkileri ancak değil şekiller için bu genellikle varsayılan bölümdür.
+- Store belirli bir bölüme yeni öğe oluşturun. Model öğeleri ve ilişkileri ancak olmayan şekiller için bu genellikle varsayılan bölümdür.
 
--   Katıştırma bir ilişki hedef kolaylaştırır. Bu örnek DslDefinition içinde her kişi ilişki FamilyTreeHasPeople katıştırma hedefi olması gerekir. Bunun için biz kişi nesnesinin FamilyTreeModel rol özelliğini ayarlayın veya FamilyTreeModel nesnesinin kişiler rol özelliğine kişiyi ekler.
+- Gömme ilişkisi hedef kolaylaştırır. Bu örnekte DslDefinition içinde her kişi gömme ilişkisi FamilyTreeHasPeople hedef olmalıdır. Bunu başarmak için biz kişi nesnesinin FamilyTreeModel rolü özelliği ayarlamak veya FamilyTreeModel nesnesinin kişiler rol özelliğine kişiyi ekler.
 
--   Özellikle özelliği olduğu için yeni bir öğe özelliklerini ayarla `IsName` DslDefinition doğrudur. Bu bayrak öğe sahibi içinde benzersiz şekilde tanımlamak için kullanılır özelliği işaretler. Bu durumda, Name özelliği bu bayrağı vardır.
+- Özellikle özelliği olan yeni bir öğe özelliklerini ayarlayın `IsName` DslDefinition geçerlidir. Bu bayrak, öğe sahibi içinde benzersiz şekilde tanımlamak için hizmet veren özelliği işaretler. Bu durumda, Name özelliği bu bayrağı vardır.
 
--   Bu DSL DSL tanımını deposuna yüklenmiş olmalıdır. Uzantı menü komutu gibi yazıyorsanız, bu genellikle önceden true olması gerekir. Diğer durumlarda, açıkça modeli deposuna yüklemek veya için kullanmak <xref:Microsoft.VisualStudio.Modeling.Integration.ModelBus> yüklemek için. Daha fazla bilgi için bkz: [nasıl yapılır: Program kodundaki dosyasından Model açmak](../modeling/how-to-open-a-model-from-file-in-program-code.md).
+- Bu DSL DSL tanımını Store yüklenmiş olmalıdır. Bir menü komutu gibi bir uzantı yazıyorsanız, bu genellikle önceden true olması gerekir. Diğer durumlarda, bunu açıkça modeli Store yüklemek, veya kullanabilirsiniz <xref:Microsoft.VisualStudio.Modeling.Integration.ModelBus> yüklemek için. Daha fazla bilgi için [nasıl yapılır: Program kodunda dosyadan Model açma](../modeling/how-to-open-a-model-from-file-in-program-code.md).
 
- Bu şekilde bir öğeyi oluşturduğunuzda (DSL diyagram varsa) bir şekli otomatik olarak oluşturulur. Varsayılan Şekil, renk ve diğer özellikleri otomatik olarak atanmış bir konumda görünür. Nerede ve nasıl ilişkili şekli görünür denetlemek istiyorsanız bkz [bir öğe ve şeklini oluşturma](#merge).
+  Bu şekilde bir öğe oluşturduğunuzda, bir şekil (DSL diyagram varsa) otomatik olarak oluşturulur. Varsayılan şekli, rengi ve diğer özellikleri otomatik olarak atanmış bir konumda görüntülenir. Nerede ve nasıl ilişkili şekli görünür denetlemek istiyorsanız bkz [bir öğe ve şeklini oluşturma](#merge).
 
 ##  <a name="links"></a> İlişki bağlantılar oluşturma
- DSL tanımı örnekte tanımlanan iki ilişkisi vardır. Her ilişkiyi tanımlayan bir *rol özellik* ilişkisinin her iki ucunda sınıfı.
+ DSL tanımını örnekte tanımlanan iki ilişkisi vardır. Her ilişkiyi tanımlayan bir *rolü özelliği* sınıfındaki ilişkinin her iki ucunda.
 
- Bir ilişki örneği oluşturabileceğiniz üç yolu vardır. Bu üç yöntemlerin her biri aynı etkiye sahiptir:
+ Bir ilişkinin örneğini oluşturabileceğiniz üç yolu vardır. Bu üç yöntemlerin her biri aynı etkiye sahiptir:
 
--   Kaynak rolü player özelliğini ayarlayın. Örneğin:
+- Kaynak rol oyuncusu özelliğini ayarlayın. Örneğin:
 
-    -   `familyTree.People.Add(edward);`
+  -   `familyTree.People.Add(edward);`
 
-    -   `edward.Parents.Add(henry);`
+  -   `edward.Parents.Add(henry);`
 
--   Hedef rolü player özelliğini ayarlayın. Örneğin:
+- Hedef rol oyuncusu özelliğini ayarlayın. Örneğin:
 
-    -   `edward.familyTreeModel = familyTree;`
+  -   `edward.familyTreeModel = familyTree;`
 
-         Bu role çokluğu olan `1..1`, biz değerini atayın.
+       Bu rolün çokluğu olan `1..1`, biz değerini atayın.
 
-    -   `henry.Children.Add(edward);`
+  -   `henry.Children.Add(edward);`
 
-         Bu role çokluğu olan `0..*`, biz koleksiyonuna ekleyin.
+       Bu rolün çokluğu olan `0..*`, koleksiyona ekleriz.
 
--   İlişki örneği açıkça oluşturun. Örneğin:
+- Bir ilişkinin örneğini açıkça oluşturur. Örneğin:
 
-    -   `FamilyTreeHasPeople edwardLink = new FamilyTreeHasPeople(familyTreeModel, edward);`
+  -   `FamilyTreeHasPeople edwardLink = new FamilyTreeHasPeople(familyTreeModel, edward);`
 
-    -   `ParentsHaveChildren edwardHenryLink = new ParentsHaveChildren(henry, edward);`
+  -   `ParentsHaveChildren edwardHenryLink = new ParentsHaveChildren(henry, edward);`
 
- Son yöntem ilişkinin kendisini özelliklerini ayarlamak istiyorsanız kullanışlıdır.
+  Son yöntem, ilişki özellikleri ayarlamak istiyorsanız kullanışlıdır.
 
- Bu şekilde bir öğeyi oluşturduğunuzda, diyagramdan bir bağlayıcı otomatik olarak oluşturulur, ancak varsayılan şekil, renk ve diğer özellikleri vardır. İlişkili bağlayıcısının nasıl oluşturulacağını denetlemek için bkz: [bir öğe ve şeklini oluşturma](#merge).
+  Bu şekilde bir öğe oluşturduğunuzda, diyagram bağlayıcıda otomatik olarak oluşturulur, ancak bir varsayılan şekli, rengi ve diğer özellikleri vardır. İlişkili bağlayıcısının nasıl oluşturulacağını denetlemek için bkz: [bir öğe ve şeklini oluşturma](#merge).
 
 ##  <a name="deleteelements"></a> Öğeleri silme
  Çağırarak öğeyi Sil `Delete()`:
 
  `henry.Delete();`
 
- Bu işlem de silinmesine neden olur:
+ Bu işlem ayrıca silecek:
 
--   Bağlantılar öğeden ilişki. Örneğin, `edward.Parents` artık içerecek `henry`.
+- Bağlantılar öğesinden ilişki. Örneğin, `edward.Parents` artık içerecek `henry`.
 
--   Rollerin öğeler `PropagatesDelete` bayrağı doğrudur. Örneğin, öğenin görüntülediğini şekli silinir.
+- Rollerin öğeler `PropagatesDelete` bayrağı doğrudur. Örneğin, öğeyi görüntüleyen şekli silinir.
 
- Varsayılan olarak, her katıştırma ilişkisine sahip `PropagatesDelete` hedefi rolü true. Silme `henry` silmediği `familyTree`, ancak `familyTree.Delete()` tüm silebilirsiniz `Persons`. Daha fazla bilgi için bkz: [özelleştirme silme davranışı](../modeling/customizing-deletion-behavior.md).
+  Varsayılan olarak, her bir gömme ilişkisi vardır `PropagatesDelete` hedef rolü true. Silme `henry` silmediği `familyTree`, ancak `familyTree.Delete()` tüm siler `Persons`. Daha fazla bilgi için [silme davranışını özelleştirme](../modeling/customizing-deletion-behavior.md).
 
- Varsayılan olarak, `PropagatesDelete` başvuru ilişkileri roller için geçerli değildir.
+  Varsayılan olarak, `PropagatesDelete` başvuru ilişkileri rolleri için geçerli değildir.
 
- Bir nesne sildiğinizde belirli yayma atlamak silme kuralları neden olabilir. Bu için başka bir öğe değiştirerek yararlıdır. Kendisi için silme değil dağıtılmasını bir veya daha fazla rol GUID sağlayın. GUID ilişki sınıfından edinilebilir:
+  Bir nesne sildiğinizde belirli yayılmaları atlamak silme kuralları neden olabilir. Bu işlem için başka bir öğe değiştirerek, kullanışlıdır. Siz kendisi için silme yayılmayacak bir veya daha fazla rol GUID'sini sağlayın. GUID ilişki sınıfı alınabilir:
 
- `henry.Delete(ParentsHaveChildren.SourceDomainRoleId);`
+  `henry.Delete(ParentsHaveChildren.SourceDomainRoleId);`
 
- (Bu belirli örnekte hiçbir etkisi yoktur, çünkü `PropagatesDelete` olan `false` rolleri için `ParentsHaveChildren` ilişkisi.)
+  (Söz konusu örnekte hiçbir etkisi yoktur, çünkü `PropagatesDelete` olduğu `false` rolleri için `ParentsHaveChildren` ilişki.)
 
- Bazı durumlarda, silme, öğe veya yayma tarafından silinecek bir öğe üzerinde bir kilit varlığı tarafından engellenir. Kullanabileceğiniz `element.CanDelete()` öğesi silinmiş olup olmadığını denetlemek için.
+  Bazı durumlarda, silme, öğe veya yayma tarafından silinmiş bir öğe üzerinde bir kilit varlığı tarafından engellenir. Kullanabileceğiniz `element.CanDelete()` öğe silinmiş olup olmadığını denetlemek için.
 
-##  <a name="deletelinks"></a> İlişki bağlantıları silme
- Bir öğenin bir rol özelliğinden kaldırarak bir ilişki bağlantısı silebilirsiniz:
+##  <a name="deletelinks"></a> İlişki bağlantıları siliniyor
+ Bir öğenin bir rol özelliği kaldırarak bir ilişki bağlantı silebilirsiniz:
 
  `henry.Children.Remove(edward); // or:`
 
  `edward.Parents.Remove(henry);  // or:`
 
- Bağlantıyı açıkça silebilirsiniz:
+ Bağlantı açıkça silebilirsiniz:
 
  `edwardHenryLink.Delete();`
 
- Tüm bu üç yöntem aynı etkiye sahiptir. Yalnızca bunlardan birini kullanmanız gerekebilir.
+ Tüm bu üç yöntem aynı etkiye sahiptir. Yalnızca bunlardan birini kullanmanız gerekir.
 
- Rol 0.. 1 çokluğa veya 1..1 Çokluk varsa, onu ayarlayabilirsiniz `null`, veya başka bir değer için:
+ 0..1 veya 1.. 1 Çokluk rolü varsa, bunu ayarlayabilirsiniz `null`, veya başka bir değerle:
 
- `edward.FamilyTreeModel = null;` ya da:
+ `edward.FamilyTreeModel = null;` veya:
 
  `edward.FamilyTreeModel = anotherFamilyTree;`
 
-##  <a name="reorder"></a> Bir ilişki bağlantılar yeniden sıralama
- Belirli bir sırada kaynaklanan veya belirli model öğede hedeflenen belirli bir ilişki bağlantınız. İçinde eklendikleri sırayla görünürler. Örneğin, bu deyimi her zaman aynı sırada alt sunacak:
+##  <a name="reorder"></a> Bir ilişkinin bağlantıları yeniden sıralama
+ Belirli bir sırada kaynaklanan ya da belirli bir model öğesi hedeflenen belirli bir ilişkinin bağlantıları vardır. İçinde eklendikleri sırayla görünürler. Örneğin, bu ifade her zaman aynı sırada alt verir:
 
  `foreach (Person child in henry.Children) ...`
 
- Bağlantıların sırasını değiştirebilirsiniz:
+ Bağlantı sırasını değiştirebilirsiniz:
 
  `ParentsHaveChildren link = GetLink(henry,edward);`
 
@@ -316,12 +287,12 @@ using (Transaction t =
  `link.MoveBefore(role, nextLink);`
 
 ##  <a name="locks"></a> Kilitler
- Değişikliklerinizi kilidi ile engellenebilir. Kilitleri ayrı ayrı öğeler, bölümler ve mağaza ayarlayabilirsiniz. Bu düzeyleri birini yapmak istediğiniz değişikliği tür engelleyen bir kilit varsa, onu çalıştığınızda bir özel durum oluşturulabilir. Kilitleri öğesini kullanarak ayarlanıp ayarlanmadığını bulabilir. Ad alanında tanımlı bir genişletme yöntemi olan GetLocks() <xref:Microsoft.VisualStudio.Modeling.Immutability>.
+ Değişikliklerinizi bir kilit tarafından engellenebilir. Kilitleri, tek tek öğelerine, bölümler ve deponun ayarlanabilir. Bu düzeylerden herhangi birinde yapmak istediğiniz değişiklik türünü engelleyen bir kilit varsa, bunu çalıştığınızda bir özel durum. Kilit öğesi kullanarak ayarlanıp ayarlanmadığını bulabilir. Ad alanında tanımlanan genişletme yöntemi olan GetLocks() <xref:Microsoft.VisualStudio.Modeling.Immutability>.
 
- Daha fazla bilgi için bkz: [kilitleme ilkesi oluşturma salt okunur segmentlere tanımlama](../modeling/defining-a-locking-policy-to-create-read-only-segments.md).
+ Daha fazla bilgi için [için salt okunur kesimler oluşturmak kilitleme ilkesi tanımlama](../modeling/defining-a-locking-policy-to-create-read-only-segments.md).
 
 ##  <a name="copy"></a> Kopyala ve Yapıştır
- Öğeleri veya öğelerine grupları kopyalayabilirsiniz bir <xref:System.Windows.Forms.IDataObject>:
+ Öğeleri ya da grupları öğelerine kopyalayabilirsiniz bir <xref:System.Windows.Forms.IDataObject>:
 
 ```
 Person person = personShape.ModelElement as Person;
@@ -331,9 +302,9 @@ personShape.Diagram.ElementOperations
       .Copy(data, person.Children.ToList<ModelElement>());
 ```
 
- Öğeleri bir seri hale getirilmiş öğesi grubu olarak depolanır.
+ Öğeleri sıralanmış bir öğe grubu depolanır.
 
- Bir modele IDataObject öğelerini birleştirebilirsiniz:
+ Bir modele bir bilgisine birleştirebilirsiniz:
 
 ```
 using (Transaction t = targetDiagram.Store.
@@ -343,32 +314,32 @@ using (Transaction t = targetDiagram.Store.
 }
 ```
 
- `Merge ()` kabul ya da bir `PresentationElement` veya `ModelElement`. Bu bildirimde bir `PresentationElement`, üçüncü parametre olarak hedef diyagramdaki bir konum belirtebilirsiniz.
+ `Merge ()` kabul ya da bir `PresentationElement` veya `ModelElement`. Bu bildirimde bulunursanız bir `PresentationElement`, üçüncü parametre olarak hedef diyagram üzerinde bir konum belirtebilirsiniz.
 
-##  <a name="diagrams"></a> Gezinme ve diyagramları güncelleştiriliyor
- Bir DSL, kişi veya şarkı gibi bir kavram temsil eder, etki alanı model öğesi diyagramı gördükleri temsil eden şekli öğeden ayrıdır. Etki alanı model öğesi ilişkileri kavramları ve önemli özellikleri depolar. Şekil öğesi, konumu ve boyutu nesnenin görünümü diyagramda rengini ve düzenini bileşen parçalarından depolar.
+##  <a name="diagrams"></a> Gezinme ve güncelleştirme diyagramları
+ Bir DSL içinde kişi veya şarkı gibi bir kavram temsil eder, etki alanı model öğesi diyagramda gördüğünüz temsil eder şekil öğesinden ayrıdır. Etki alanı model öğesi önemli özellikler ve ilişkiler kavramları depolar. Şekil öğesi boyutunu, konumunu ve diyagram görünümünde nesnenin rengini ve düzenini bileşen parçalarından depolar.
 
-### <a name="presentation-elements"></a>Sunu öğelerini
- ![Sınıf diyagramında temel şekli ve öğe türleri](../modeling/media/dslshapesandelements.png "DSLshapesAndElements")
+### <a name="presentation-elements"></a>Sunum öğelerini
+ ![Temel şekil ve öğesi türlerinin sınıf diyagramı](../modeling/media/dslshapesandelements.png)
 
- DSL tanımınızı belirttiğiniz her öğesi aşağıdaki standart sınıflarının birinden türetilmiş bir sınıf oluşturur.
+ DSL Tanımınızda, belirttiğiniz her bir öğe aşağıdaki standart sınıflarının birinden türetilmiş bir sınıf oluşturur.
 
-|Öğesinin türü|Taban sınıfı|
-|---------------------|----------------|
+|Öğe türü|Temel sınıf|
+|-|-|
 |Etki alanı sınıfı|<xref:Microsoft.VisualStudio.Modeling.ModelElement>|
 |Etki alanı ilişkisi|<xref:Microsoft.VisualStudio.Modeling.ElementLink>|
 |Şekil|<xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape>|
 |Bağlayıcı|<xref:Microsoft.VisualStudio.Modeling.Diagrams.BinaryLinkShape>|
 |Diyagram|<xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram>|
 
- Bir öğeyi diyagramında genellikle bir model öğesi temsil eder. Genellikle (ancak her zaman), bir <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape> bir etki alanı sınıfı örneğini temsil eder ve bir <xref:Microsoft.VisualStudio.Modeling.Diagrams.BinaryLinkShape> bir etki alanı ilişki örneği temsil eder. <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> İlişkiyi temsil ettiği model öğesi bir düğüme veya bağlantıya şekli bağlar.
+ Bir öğeyi bir diyagram üzerinde genellikle bir model öğesini temsil eder. Genellikle (ama her zaman kullanılmaz), bir <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape> bir etki alanı sınıfı örneğini temsil eder ve bir <xref:Microsoft.VisualStudio.Modeling.Diagrams.BinaryLinkShape> bir etki alanı ilişkisi örneğini temsil eder. <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> İlişki bir düğüm veya bağlantı şekli temsil ettiği model öğesine bağlar.
 
- Her düğüme veya bağlantıya şeklin bir diyagrama ait. Bir ikili bağlantı şekli iki düğüm şekil bağlanır.
+ Her düğüm veya bağlantı şekli bir diyagrama aittir. İkili bağlantı şekli iki düğüm şekillere bağlanır.
 
- Şekilleri alt şekilleri iki kümelerinde olabilir. Bir şekli `NestedChildShapes` kümesi üst sınırlayıcı kutusuna sınırlı. Bir şekli `RelativeChildShapes` liste dışında veya kısmen - örneğin bir etiket veya bağlantı noktası üst sınırları dışında görünebilir. Bir diyagram sahip olmayan `RelativeChildShapes` ve hiçbir `Parent`.
+ Şekiller iki kümelerinde alt şekillere sahip olabilir. Bir şekle `NestedChildShapes` kümesi, üst öğesinin sınırlayıcı kutu için sınırlı. Bir şekle `RelativeChildShapes` listesi dışında ya da kısmen - Örneğin, bir etiket ya da bir bağlantı noktası üst sınırları dışında görünebilir. Bir diyagram sahip olmayan `RelativeChildShapes` ve hiçbir `Parent`.
 
 ###  <a name="views"></a> Şekiller ve öğeleri arasında gezinme
- Etki alanı model öğelerini ve Şekil öğelerine ilgili tarafından <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> ilişki.
+ Etki alanı model öğelerini ve Şekil öğelerine tarafından ilişkilidir <xref:Microsoft.VisualStudio.Modeling.Diagrams.PresentationViewsSubject> ilişki.
 
 ```csharp
 // using Microsoft.VisualStudio.Modeling;
@@ -380,7 +351,7 @@ PersonShape henryShape =
     .FirstOrDefault() as PersonShape;
 ```
 
- Aynı ilişki ilişkileri diyagramda bağlayıcılar bağlantılarını içerir:
+ Aynı ilişki diyagramda bağlayıcılar ilişkileri bağlar:
 
 ```
 Descendants link = Descendants.GetLink(henry, edward);
@@ -390,7 +361,7 @@ DescendantConnector dc =
 // dc.FromShape == henryShape && dc.ToShape == edwardShape
 ```
 
- Bu ilişki diyagrama ayrıca modelin kökü bağlantılarını içerir:
+ Bu ilişki, ayrıca modelin kökü diyagrama bağlar:
 
 ```
 FamilyTreeDiagram diagram =
@@ -398,28 +369,28 @@ FamilyTreeDiagram diagram =
       .FirstOrDefault() as FamilyTreeDiagram;
 ```
 
- Bir şekli tarafından temsil edilen model öğesi almak için kullanın:
+ Bir şekil tarafından temsil edilen model öğesine almak için kullanın:
 
  `henryShape.ModelElement as Person`
 
  `diagram.ModelElement as FamilyTreeModel`
 
 ### <a name="navigating-around-the-diagram"></a>Geçici bir çözüm diyagramı gezinme
- Genel olarak, şekilleri ve bağlayıcıları diyagramda arasında gezinmek için önerilmez. Yalnızca Diyagram görünümünü çalışması gerekli olduğunda bağlayıcılar ve şekiller arasında taşıma modelin ilişkilerde gezinme daha iyidir. Bu yöntemlerin her iki ucunda şekillere bağlayıcılar Bağla:
+ Genel şekilleri ve bağlayıcıları diyagramda arasında gezinmek için önerilir değil. Modelde, yalnızca Diyagram görünümünü üzerinde çalışması gerekli olduğunda şekiller ve bağlayıcılar arasında taşıma ilişkilerde gezinme daha iyidir. Bu yöntemlerin her iki ucunda şekilleri bağlayıcıları bağlantı:
 
  `personShape.FromRoleLinkShapes, personShape.ToRoleLinkShapes`
 
  `connector.FromShape, connector.ToShape`
 
- Birçok şekil bileşik; yine de uygun istiyor musunuz? Bunlar bir üst şekli ve bir veya daha fazla Katmanlar alt oluşur. Başka bir şekil göre konumlandırılmış şekiller denirse olacak şekilde kendi *alt*. Üst şekil taşındığında, alt öğelerini birlikte taşınır.
+ Birçok şekiller bileşik niteliktedir; Bunlar bir ana şeklin ve bir veya daha fazla alt katmanları oluşur. Başka bir şekil göreli konumlu şekiller söylediğiniz olmasını kendi *alt*. Üst şeklin taşındığında alt öğeleri ile taşıyın.
 
- *Göreli alt* üst şekil sınırlayıcı kutunun dışında yer alabilir. *İç içe geçmiş* alt öğe üst sınırları içinde kesinlikle görünür.
+ *Göreli alt* üst şeklin sınırlayıcı kutusunun dışında görünebilir. *İç içe geçmiş* alt ve üst sınırları içinde kesin olarak görünür.
 
- Bir diyagram şekillerdeki üst kümesi almak için kullanın:
+ Şekilleri diyagram üzerinde üst kümesi elde etmek için kullanın:
 
  `Diagram.NestedChildShapes`
 
- Şekiller ve bağlayıcıların üst sınıfları şunlardır:
+ Şekilleri ve bağlayıcıları üst sınıfları şunlardır:
 
  <xref:Microsoft.VisualStudio.Modeling.ModelElement>
 
@@ -439,34 +410,34 @@ FamilyTreeDiagram diagram =
 
  --------- *YourConnector*
 
-###  <a name="shapeProperties"></a> Şekiller ve bağlayıcılar özellikleri
- Çoğu durumda, şekillere açık değişiklik yapmak gerekli değildir. Model öğelerini değiştirildiğinde "Düzelt" kuralları şekilleri ve bağlayıcıları güncelleştirin. Daha fazla bilgi için bkz: [yanıtlama ve yayılıyor değişiklikleri](../modeling/responding-to-and-propagating-changes.md).
+###  <a name="shapeProperties"></a> Şekillerin ve bağlayıcıların özellikleri
+ Çoğu durumda, şekillere açık değişiklik yapmak gerekli değildir. Model öğeleri değiştirildiğinde "Düzelt" kuralları şekilleri ve bağlayıcıları güncelleştirme. Daha fazla bilgi için [yanıt verme ve değişiklikleri yayma](../modeling/responding-to-and-propagating-changes.md).
 
- Ancak, bazı açık şekiller model öğelerini bağımsız özelliklerinde değişiklik kullanışlıdır. Örneğin, bu özellikleri değiştirebilirsiniz:
+ Ancak, model öğelerini bağımsız olan özellikleri şekillerde açık bazı değişiklikler yapmak kullanışlıdır. Örneğin, bu özellikleri değiştirebilir:
 
--   <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape.Size%2A> -Şeklin genişliği ve yüksekliği belirler.
+-   <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape.Size%2A> -Şekil genişliğini ve yüksekliğini belirler.
 
--   <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape.Location%2A> -konumuna göre üst şekli veya diyagramı
+-   <xref:Microsoft.VisualStudio.Modeling.Diagrams.NodeShape.Location%2A> -üst şekil veya diyagram göreli konumu
 
--   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.StyleSet%2A> -kalemler ve Şekil veya bağlayıcı çizmek için kullanılan Fırçalar kümesi
+-   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.StyleSet%2A> -kalemler ve Şekil veya bağlayıcının çizmek için kullanılan Fırçalar
 
--   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.Hide%2A> -Şekli görünmez yapar
+-   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.Hide%2A> -Şekil tarafından görülmez
 
--   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.Show%2A> -Şekli sonra görünür hale getirir bir `Hide()`
+-   <xref:Microsoft.VisualStudio.Modeling.Diagrams.ShapeElement.Show%2A> -Şekil sonra görünür hale getirir bir `Hide()`
 
-###  <a name="merge"></a> Bir öğe ve şeklini oluşturma
- Bir öğe oluşturun ve ilişkileri katıştırma ağacına Bağla bir şekli otomatik olarak oluşturulan ve onunla ilişkili. Bu işlemin sonunda yürütme "düzeltmesi" kuralları tarafından gerçekleştirilir. Ancak, otomatik olarak atanmış bir konumda şekli görünür ve şeklini, rengini ve diğer özellikleri varsayılan değerlere sahip olur. Şeklin nasıl oluşturulacağını denetlemek için birleştirme işlevi kullanabilirsiniz. Önce bir ElementGroup eklemek istediğiniz öğeleri ekleyin ve sonra Grup diyagrama birleştirin.
+###  <a name="merge"></a> Bir öğe ve alt şekil oluşturma
 
- Bu yöntem:
+Bir öğe oluşturma ve ilişkileri ekleme ağacına bağlamak, bir şekil otomatik olarak oluşturulur ve onunla ilişkili. Bu işlem sonunda yürütülen "düzeltme" kuralları tarafından gerçekleştirilir. Ancak, otomatik olarak atanmış bir konumda şekli görünür ve şeklini, rengini ve diğer özellikler varsayılan değerlere sahip olur. Şekil nasıl oluşturulacağını denetlemek için birleştirme işlevi kullanabilirsiniz. Önce ElementGroup eklemek istediğiniz öğeleri ekleyin ve ardından grubun diyagrama birleştirmeniz gerekir.
 
--   Bir özellik öğesi olarak atanmışsa adını ayarlar.
+Bu yöntem:
+
+-   Bir özellik öğe adı olarak atadıysanız adını ayarlar.
 
 -   Hiçbir öğe birleştirme DSL tanımında belirtilen yönergeleri görür.
 
- Kullanıcı diyagram tıkladığında bu örnek bir şekli fare konumunda oluşturur. Bu örnek için DSL tanımında `FillColor` özelliği `ExampleShape` kullanıma sunulan.
+Bu örnek, kullanıcı diyagramda sağ tıkladığında fare konumuna bir şekil oluşturur. Bu örnek, DSL tanımındaki `FillColor` özelliği `ExampleShape` ifşa.
 
 ```
-
 using Microsoft.VisualStudio.Modeling;
 using Microsoft.VisualStudio.Modeling.Diagrams;
 partial class MyDiagram
@@ -497,21 +468,20 @@ partial class MyDiagram
     }
   }
 }
-
 ```
 
- Birden fazla şekil sağlamak istiyorsanız, ilgili konumlarını kullanarak ayarlayın `AbsoluteBounds`.
+ Birden fazla şekil sağlarsanız, göreli konumlarını kullanarak ayarlayın `AbsoluteBounds`.
 
- Renk ve bu yöntemi kullanarak bağlayıcılar sunulan diğer özelliklerini de ayarlayabilirsiniz.
+ Renk ve bu yöntemi kullanarak bağlayıcıların kullanıma sunulan diğer özellikleri de ayarlayabilirsiniz.
 
 ### <a name="use-transactions"></a>İşlemleri kullanma
- Şekil, bağlayıcılar ve diyagramları olan alt türleri, <xref:Microsoft.VisualStudio.Modeling.ModelElement> ve dinamik depolama. Bu nedenle değişiklikler için yalnızca bir işlem içinde yapmanız gerekir. Daha fazla bilgi için bkz: [nasıl yapılır: kullanım modeli güncelleştirmek için işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
+ Şekiller ve bağlayıcılar diyagramları olan alt türlerini <xref:Microsoft.VisualStudio.Modeling.ModelElement> ve Store Canlı. Bu nedenle değişiklikleri için yalnızca bir işlem içinde yapmanız gerekir. Daha fazla bilgi için [nasıl yapılır: modeli güncelleştirmek için kullanım işlemleri](../modeling/how-to-use-transactions-to-update-the-model.md).
 
-##  <a name="docdata"></a> Belge görünümü ve belge verileri
- ![Standart diyagram türleri sınıf diyagramı](../modeling/media/dsldiagramsanddocs.png "DSLDiagramsandDocs")
+##  <a name="docdata"></a> Belge görünüm ve belge verilerini
+ ![Standart diyagram türleri sınıf diyagramı](../modeling/media/dsldiagramsanddocs.png)
 
-## <a name="store-partitions"></a>Bölüm
- Bir model yüklendiğinde eşlik eden diyagramı aynı anda yüklenir. Genellikle, model Store.DefaultPartition yüklenir ve diyagramı içeriği başka bir bölüme yüklenir. Genellikle, her bölümün içeriğini yüklenen ve ayrı bir dosyaya kaydedilir.
+## <a name="store-partitions"></a>Store bölümleri
+ Bir model yüklendiğinde eşlik eden diyagram aynı anda yüklenir. Genellikle, model Store.DefaultPartition yüklenir ve diyagram içeriği başka bir bölüme yüklenir. Genellikle, her bölüm içeriği yüklendi ve ayrı bir dosyaya kaydedilebilir.
 
 ## <a name="see-also"></a>Ayrıca bkz.
 

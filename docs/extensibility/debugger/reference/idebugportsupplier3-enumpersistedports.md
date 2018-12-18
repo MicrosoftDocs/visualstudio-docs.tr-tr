@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 4240a3ba82f3787c1e2e2da9f14c1cee5a8d177e
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: d1bb9348c0dfae477d0c306868991acd13e7a487
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49856060"
 ---
 # <a name="idebugportsupplier3enumpersistedports"></a>IDebugPortSupplier3::EnumPersistedPorts
-Bu yöntem kalıcı bağlantı noktalarının listesini numaralandırması imkan tanıyan bir nesneyi alır.  
+Bu yöntem, kalıcı bağlantı noktalarının listesi numaralandırmasına izin veren bir nesneyi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -42,16 +43,16 @@ int EnumPersistedPorts(
   
 #### <a name="parameters"></a>Parametreler  
  `PortNames`  
- [in] A [BSTR_ARRAY](../../../extensibility/debugger/reference/bstr-array.md) bulacak ve döndürecek kalıcı bağlantı noktaları arasında bağlantı noktası adları listesini içeren yapısı. Yalnızca kalıcı bağlantı noktalarından Bu adlarla döndürülür.  
+ [in] A [BSTR_ARRAY](../../../extensibility/debugger/reference/bstr-array.md) bulun ve kalıcı bağlantı noktaları arasında döndürmek için bağlantı noktası adları listesini içeren yapısı. Yalnızca kalıcı bağlantı noktalarından şu adlara sahip döndürülür.  
   
  `ppEnum`  
- [out] Arabirimini uygulayan bir nesneye [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) arabirimi.  
+ [out] Uygulayan bir nesne [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) arabirimi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bir bağlantı noktası sağlayıcı örneği ve bağlantı noktası tedarikçi bozulduğunda kaydedilmiş kalıcı bağlantı noktalarını yüklenir.  
+ Bağlantı noktası sağlayıcısı örneği ve bağlantı noktası sağlayıcısı kaldırıldığında kaydedilen kalıcı bağlantı noktaları yüklenir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPortSupplier3](../../../extensibility/debugger/reference/idebugportsupplier3.md)   

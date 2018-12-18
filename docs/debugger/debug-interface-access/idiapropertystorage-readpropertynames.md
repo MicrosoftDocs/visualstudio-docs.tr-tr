@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: a13ac0e3a1af8dc20fe63f832e7a19d7bf40c271
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 4d51eaed785932703a5eb97714be8dc7b407fc81
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49891823"
 ---
 # <a name="idiapropertystoragereadpropertynames"></a>IDiaPropertyStorage::ReadPropertyNames
-Dize adları için karşılık gelen alır özelliği tanımlayıcıları verilir.  
+Dize adları için karşılık gelen alır, özellik tanımlayıcıları verilir.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -38,16 +39,16 @@ HRESULT ReadPropertyNames (
  [in] Özellik kimlikleri sayısı `rgpropid`.  
   
  `rgpropid`  
- [in] Özellik kimlikleri adlarını almak istediğiniz için dizisi (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
+ [in] Adları alınacağı özellik kimlikleri dizisi (`PROPID` WTypes.h tanımlanan bir `ULONG`).  
   
  `rglpwstrName`  
- [içinde out] Belirtilen özellik kimlikleri için özellik adları dizisi. Dizi özellik adları istenen sayıda tutmak için önceden ayrılmış olmalıdır ve en az tutun erişemeyeceksiniz `cpropid``BSTR` dizeleri.  
+ [out içinde] Belirtilen özellik kimliklerinin özellik adları dizisi. Dizi istenen sayıda özellik adları tutacak önceden ayrılmış olmalıdır ve en az tutabilecek özellikte `cpropid``BSTR` dizeleri.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen özellik adları serbest (çağırarak `SysFreeString` işlevi) artık gerek.  
+ Döndürülen özellik adlarının serbest (çağırarak `SysFreeString` işlevi) artık gerektiğinde.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDiaPropertyStorage](../../debugger/debug-interface-access/idiapropertystorage.md)

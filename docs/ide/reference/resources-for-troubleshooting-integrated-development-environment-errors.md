@@ -1,10 +1,9 @@
 ---
-title: Tümleşik geliştirme ortamı hatalarında sorun giderme için kaynaklar | Microsoft Docs
-ms.custom: ''
+title: Hatalarında sorun giderme için kaynaklar
 ms.date: 11/04/2016
-ms.technology:
-- vs-ide-general
-ms.topic: conceptual
+ms.prod: visual-studio-dev15
+ms.technology: vs-ide-general
+ms.topic: troubleshooting
 f1_keywords:
 - VS.Message.0x00005A89
 - VS.Message.0x00005A8E
@@ -96,30 +95,35 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 48516bd598719112a3a94216b3510b628579f032
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 5dcdcffbcf947efa7da8471a970d07a23fe90ba4
+ms.sourcegitcommit: bc43970c000f07c9cc2051f1264a9742943a9755
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "51349296"
 ---
-# <a name="resources-for-troubleshooting-integrated-development-environment-errors"></a>Tümleşik Yazılım Geliştirme Ortamı Hatalarında Sorun Giderme Kaynakları
+# <a name="resources-for-troubleshooting-integrated-development-environment-errors"></a>Tümleşik yazılım geliştirme ortamı hatalarında sorun giderme kaynakları
 
-Tüm hata iletilerini belirli bir ilişkili Yardım konusu vardır. Hata iletisindeki bilgiler sorunu gidermenize yardımcı olmazsa, Bilgi Bankası makaleleri, geliştirici topluluğu veya ürün desteği gibi başka kaynaklar başvurabilirsiniz.
+Tüm hata iletilerini belirli ilişkili bir Yardım konusu var. Hata iletisindeki bilgiler sorunu gidermenize yardımcı değil Bilgi Bankası makaleleri, Forum veya ürün desteği gibi diğer kaynaklara başvurabilirsiniz.
 
-## <a name="knowledge-base-articles"></a>Bilgi Bankası Makaleleri
+> [!NOTE]
+> Bu konu, Windows üzerinde Visual Studio için geçerlidir. Mac için Visual Studio için bkz: [Mac için Visual Studio sorunlarını giderme](/visualstudio/mac/troubleshooting).
 
-Ürün sorunları hakkında makaleler için Bilgi Bankası'nda (BB) çevrimiçi arama yapabilirsiniz. Tüm sorunlarla ilgili bir BB makalesi yoktur; ancak çok sayıda müşterinin karşılaştığı hatalar genellikle belgelenmiştir. KB makalelerini erişebileceğiniz [Microsoft Support](https://support.microsoft.com) Web sitesi.
+## <a name="knowledge-base-articles"></a>Bilgi Bankası makaleleri
 
-## <a name="the-developer-community"></a>Geliştirici topluluğu
+Ürün sorunları hakkında makaleler için Bilgi Bankası'nda (BB) çevrimiçi arama yapabilirsiniz. Tüm sorunlarla ilgili bir BB makalesi yoktur; ancak çok sayıda müşterinin karşılaştığı hatalar genellikle belgelenmiştir. BB makalelerine erişebileceğiniz [Microsoft Support](https://support.microsoft.com) Web sitesi.
+
+## <a name="developer-forums"></a>Geliştirici forumları
 
 Forumlar, diğer geliştiriciler ve aynı zamanda Microsoft çalışanları ile etkileşimde bulunmanızı sağlar. Çözüm bulamadığınız bir hata ile karşılaşırsanız, bu sorunla ilgili sorularınızı bir forumda paylaşabilirsiniz. Ayrıca, başkalarının aynı sorunla ilgili paylaşım yapıp yapmadığını görmek için haber gruplarında da arama yapabilirsiniz.
 
-Üzerinde forumlar, blogları, sohbet ve diğer kaynaklara erişebilir [Microsoft Teknik topluluklarına](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities) Web sitesi.
+Üzerindeki forumlar, bloglar, sohbet ve diğer kaynaklara erişebilir [Microsoft Technical Communities](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities) Web sitesi.
 
-## <a name="product-support"></a>Ürün Desteği
+## <a name="product-support"></a>Ürün desteği
 
-Diğer kaynaklar denedikten sonra hala sorularınız varsa, Microsoft Destek Hizmetleri ziyaret ederek başvurabilirsiniz [Microsoft Support](http://go.microsoft.com/fwlink/?linkid=1782) Web sitesi. Bölgenizde kullanılabilen ürün desteği hakkında daha fazla bilgi için bkz: [konuşun bize](../../ide/talk-to-us.md).
+Diğer kaynakları denedikten sonra hala sorularınız varsa, ziyaret ederek Microsoft Destek Hizmetleri başvurabilirsiniz [Microsoft Support](http://go.microsoft.com/fwlink/?linkid=1782) Web sitesi. Bölgenizde mevcut ürün desteği hakkında daha fazla bilgi için bkz. [konuşmak bize](../../ide/talk-to-us.md).
 
- ## <a name="see-also"></a>Ayrıca bkz.
+## <a name="see-also"></a>Ayrıca bkz.
 
-* [Proxy sorun giderme](/visualstudio/install/install-and-use-visual-studio-behind-a-firewall-or-proxy-server#troubleshooting-proxy-errors)
+* [Ağ ile ilgili sorun giderme veya Ara sunucu hataları](../../install/install-and-use-visual-studio-behind-a-firewall-or-proxy-server.md#troubleshoot-network-related-errors)
+* [Sorun giderme (Mac için Visual Studio)](/visualstudio/mac/troubleshooting)

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31480221"
 ---
 # <a name="inspect-xaml-properties-while-debugging"></a>Hata ayıklama sırasında XAML özelliklerini denetleme
 Çalışan XAML kodunuzu ile gerçek zamanlı bir görünümünü elde edebilirsiniz **Canlı görsel ağaç** ve **dinamik özellik Explorer**. Bu araçlar, çalışan XAML uygulamanızın kullanıcı Arabirimi öğeleri ağaç görünümünü sunmak ve seçtiğiniz herhangi bir kullanıcı Arabirimi öğesi çalışma zamanı özelliklerini göster.  

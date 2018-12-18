@@ -15,19 +15,20 @@ f1_keywords:
 - VC.Project.AndroidDebugger.LaunchActivity
 ms.workload:
 - xplat-cplusplus
-ms.openlocfilehash: 7d18125c6666a8eb68becd828da36ecdab077507
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: be240ed2cea05194d51040fd29a17de9a4472fc9
+ms.sourcegitcommit: 25a62c2db771f938e3baa658df8b1ae54a960e4f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39232650"
 ---
 # <a name="android-debugger-properties"></a>Android hata ayıklayıcıyı özellikleri
 
-Özellik | Açıklama | Seçenekler
+Özellik | Açıklama | Seçenekleri
 --- | ---| ---
-Hata ayıklayıcı türü | Hata ayıklama için hangi kod türünü belirtir. | **Yalnızca yerel**<br>**Java yalnızca**<br>
-Hedef hata ayıklama | Öykünücü veya aygıt hata ayıklama için kullanılacak belirtir. Hiçbir Öykünücüler çalıştırıyorsanız, 'Android sanal cihazı (AVD) Yöneticisi' Lütfen kullanan bir cihazı başlatmak için.
-Paket başlatmak için | Hata ayıklaması .apk konumunu belirtir. Uygulama hata ayıklaması sırasında belirli paket (APK) başlaması gerektiğini belirtmek için bu seçeneği belirleyin.
-Etkinlik Başlat | Uygulamayı başlatmak için kullanılacak Android etkinlik bildiriminde kullanılanla eşleşen gerekiyor. AndroidManifest.xml listesini almak ve dinamik olarak doldurmak için Uygula'e basın.
-Ek sembol arama yolları | Hata ayıklama simgeleri için ek arama yolu.
-Ek Java kaynak arama yolları | Java kaynak dosyaları için ek arama yolları. (Yalnızca hata ayıklayıcı türü yalnızca Java olduğunda geçerlidir.)
+Hata ayıklayıcı türü | Hata ayıklanacak kod türlerini belirtir. | **Yalnızca yerel**<br>**Yalnızca Java**<br>
+Hedef hata ayıklama | Hata ayıklama için kullanılacak öykünücüyü veya cihazı belirtir. Hiçbir öykünücü çalışmıyorsa, 'Android sanal cihazı (AVD) Manager' Lütfen kullanan bir cihazı başlatmak için.
+Başlatılacak paket | Konumunu belirtir *.apk* , hataları ayıklanabilir. Uygulamanın hataları ayıklanırken belirli paketin (APK) başlatılmasını belirtmek için bu seçeneği belirleyin.
+Başlatma etkinliği | Uygulamayı başlatmak için kullanılacak Android etkinliği, bildirimde kullanılan kimliğin eşleşmesi gerekir. Listeden almak için Uygula'ya basın *AndroidManifest.xml* ve dinamik olarak doldurma.
+Ek sembol arama yolları | Hata ayıklama sembolleri için ek arama yolu.
+Ek Java kaynağı arama yolları | Java kaynak dosyaları için ek arama yolları. (Yalnızca hata ayıklayıcı türü yalnızca Java olduğunda geçerlidir.)

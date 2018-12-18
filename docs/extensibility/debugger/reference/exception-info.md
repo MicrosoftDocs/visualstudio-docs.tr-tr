@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c48772ed5835daeff9d47773e6e48526993fa425
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 4bbefc02a05d03dc966c05941ca08c05cce0a5a5
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49947920"
 ---
 # <a name="exceptioninfo"></a>EXCEPTION_INFO
-Bir özel durum ya da çalışma zamanı hatası ayıklanacak program tarafından oluşturulan açıklar.  
+Bir özel durum veya çalışma zamanı hata ayıklanacak program tarafından oluşturulan açıklar.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,35 +51,35 @@ public struct EXCEPTION_INFO {
   
 ## <a name="members"></a>Üyeler  
  pProgram  
- [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) özel durumun meydana geldiği programı temsil eden nesne.  
+ [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) özel durumun gerçekleştiği program temsil eden nesne.  
   
  bstrProgramName  
- Özel durumun meydana geldiği programın adı.  
+ Özel durum oluştuğu programın adı.  
   
  bstrExceptionName  
- Özel durum adı.  
+ Özel durumun adı.  
   
  dwCode  
- Özel durum ya da çalışma zamanı hata kimliği kodu.  
+ Özel durum veya çalışma zamanı hatası kimlik kodu.  
   
  dwState  
- Arasında bir değer [EXCEPTION_STATE](../../../extensibility/debugger/reference/exception-state.md) özel durumunu tanımlar numaralandırması.  
+ Bir değer [EXCEPTION_STATE](../../../extensibility/debugger/reference/exception-state.md) özel durumu tanımlayan sabit listesi.  
   
  guidType  
- GUID dil tanımlayıcısı, her iki `guidLang` veya `guidEng`.  
+ GUID dil tanımlayıcısı, ya da `guidLang` veya `guidEng`.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı için bir parametre olarak geçirilen [SetException](../../../extensibility/debugger/reference/idebugengine2-setexception.md) ve [RemoveSetException](../../../extensibility/debugger/reference/idebugengine2-removesetexception.md) yöntemleri. Bu yapı de geçirilir [GetException](../../../extensibility/debugger/reference/idebugexceptionevent2-getexception.md) doldurulacak yöntemi.  
+ Bu yapı için bir parametre olarak geçirilen [SetException](../../../extensibility/debugger/reference/idebugengine2-setexception.md) ve [RemoveSetException](../../../extensibility/debugger/reference/idebugengine2-removesetexception.md) yöntemleri. Bu yapı ayrıca geçirilir [GetException](../../../extensibility/debugger/reference/idebugexceptionevent2-getexception.md) doldurulması için yöntemi.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: msdbg.h  
+ Üstbilgi: msdbg.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [EXCEPTION_STATE](../../../extensibility/debugger/reference/exception-state.md)   
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
  [SetException](../../../extensibility/debugger/reference/idebugengine2-setexception.md)   

@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 2a10a65564682b5c82350eb5c22af3f217a3a993
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0e348666514ea13a901a4c0be0a680ed4f83f688
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49815137"
 ---
 # <a name="idebugexpressionevaluatorparse"></a>IDebugExpressionEvaluator::Parse
-Bu yöntem için ayrıştırılmış bir ifade bir ifade dizesini sayıya dönüştürür.  
+Bu yöntem, ayrıştırılmış bir ifade için bir ifade dizeye dönüştürür.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -50,28 +51,28 @@ int Parse(
   
 #### <a name="parameters"></a>Parametreler  
  `upstrExpression`  
- [in] Ayrıştırılacak ifade dizesi.  
+ [in] Ayrıştırılacak ifade dize.  
   
  `dwFlags`  
- [in] Bir koleksiyonu [PARSEFLAGS](../../../extensibility/debugger/reference/parseflags.md) ifade nasıl ayrıştırılması belirleme sabitleri.  
+ [in] Bir koleksiyonu [PARSEFLAGS](../../../extensibility/debugger/reference/parseflags.md) ifade nasıl ayrıştırılacak belirlemek sabitler.  
   
  `nRadix`  
- [in] Tüm sayısal bilgilerini yorumlamak için kullanılacak sayı tabanını.  
+ [in] Sayısal yedeklenmesine yorumlamak için kullanılacak sayı tabanı.  
   
  `pbstrError`  
- [out] Hata okunabilir metin olarak döndürür.  
+ [out] Hata, insanlar tarafından okunabilen metin olarak döndürür.  
   
  `pichError`  
- [out] Hata başlangıç karakteri konumunu ifade dizesini döndürür.  
+ [out] İfade dizesinde hata başlangıcı karakter konumunu döndürür.  
   
  `ppParsedExpression`  
- [out] Ayrıştırılmış ifadesinde döndüren bir [IDebugParsedExpression](../../../extensibility/debugger/reference/idebugparsedexpression.md) nesnesi.  
+ [out] Döndürür ayrıştırılmış ifadesinde bir [IDebugParsedExpression](../../../extensibility/debugger/reference/idebugparsedexpression.md) nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yöntem, ayrıştırılmış bir ifade, gerçek bir değer oluşturur. Ayrıştırılmış ifadesi başka bir deyişle, değerine dönüştürülüp değerlendirilmesi hazırdır.  
+ Bu yöntem, Ayrıştırılan bir ifade, gerçek bir değer üretir. Ayrıştırılmış bir ifade başka bir deyişle, bir değere dönüştürülür uyumluluğunun değerlendirilebilmesi hazırdır.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugExpressionEvaluator](../../../extensibility/debugger/reference/idebugexpressionevaluator.md)   

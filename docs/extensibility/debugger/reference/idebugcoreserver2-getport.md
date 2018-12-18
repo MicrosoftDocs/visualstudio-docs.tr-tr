@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: c1f889e44895faf9b5afdc2186adc5baadd5a578
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 14172972c77218663da59d36e3e94ffd3c07c2d8
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49887351"
 ---
 # <a name="idebugcoreserver2getport"></a>IDebugCoreServer2::GetPort
 Belirli bir bağlantı noktasını alır.  
@@ -48,7 +49,7 @@ int GetPort(
  [out] Döndürür bir [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) istediğiniz bağlantı noktasını temsil eden nesne.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_PORTSUPPLIER_NO_PORT` verilen tanımlayıcıya sahip hiçbir bağlantı noktası ise.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür. Döndürür `E_PORTSUPPLIER_NO_PORT` hiçbir bağlantı noktası verilen tanımlayıcıya sahip olduğunda.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md)   

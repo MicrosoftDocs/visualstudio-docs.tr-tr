@@ -14,6 +14,7 @@ ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31144336"
 ---
 # <a name="vsix-color-compiler"></a>VSIX renk derleyici
 Visual Studio uzantısı renk derleyici mevcut Visual Studio Tema renkleri temsil eden bir .xml dosyasına götüren bir konsol uygulaması ve böylece bu renkleri Visual Studio'da kullanılabilir bir .pkgdef kendisine dosya öğesine dönüştürür aracıdır. .Xml dosyaları arasındaki farklar karşılaştırmak kolay olduğundan, bu kaynak denetiminde özel renkler yönetmek için yararlı bir araçtır. Böylece yapı çıktı geçerli .pkgdef dosya da yapı ortamlara bağlanabilir.  

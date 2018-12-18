@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 82315e1b2170f38cae296e2a9131f4b235add26b
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 80a70454bd28c3b59e53ee9bc1222361291e2399
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49861104"
 ---
 # <a name="idebugobject2geticordebugvalue"></a>IDebugObject2::GetICorDebugValue
-Bu nesneyle ilişkili değer temsil eden bir yönetilen kod nesnesi alır.  
+Bu nesneyle ilişkili değeri temsil eden bir yönetilen kod nesnesi alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int GetICorDebugValue(
  [out] `IUnknown` bu diğer adı temsil eden arabirim. Bu arabirim için sorgulanabilir `ICorDebugValue` arabirimi.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- `ICorDebugValue` Bir değeri temsil eden bir ortak dil çalışma zamanı arabiriminin nesnesidir.  
+ `ICorDebugValue` Bir değeri temsil eden bir ortak dil çalışma zamanı arabirimi nesnedir.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugObject2](../../../extensibility/debugger/reference/idebugobject2.md)

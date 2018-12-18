@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: e50301149f844e0063deeb970e5bfb5bd46a55c1
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 253aa8c3a8ca5161fbb95e18f38f0ff232cd37bc
+ms.sourcegitcommit: ce154aee5b403d5c1c41da42302b896ad3cf8d82
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34844852"
 ---
-# <a name="io-time-threads-view"></a>G/Ç Zamanı (İş Parçacıkları Görünümü)
+# <a name="io-time-threads-view"></a>G/Ç zamanı (İş Parçacıkları Görünümü)
 Bu kesimler Zaman Çizelgesi'nde, g/ç olarak sınıflandırılır kez engelleme ile ilişkilendirilir. Başka bir deyişle, bir iş parçacığı bir g/ç işlemi tamamlamak bekliyor. İş parçacığı bir API veya eşzamanlılık görselleştiricisi g/ç olarak sayım bir g/Ç ile ilgili çekirdek bekleme engellenmiş. API'leri gibi `CreateFile()`, `ReadFile()`, ve `WSARecv()` bu gruba ayrılır.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [İş Parçacıkları Görünümü](../profiling/threads-view-parallel-performance.md)

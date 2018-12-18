@@ -1,5 +1,5 @@
 ---
-title: 'Nasıl yapılır: Şerit Şerit Tasarımcısından Şerit XML verme | Microsoft Docs'
+title: "Nasıl yapılır: Şerit Şerit Tasarımcısından Şerit XML'ine verebilir."
 ms.custom: ''
 ms.date: 02/02/2017
 ms.technology:
@@ -21,13 +21,14 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - office
-ms.openlocfilehash: 7aff56d1d7ee3533a83ef3edbdd8ba9271efd862
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: f1b9e988ce6d1ad722766f3994c39827cc4272a3
+ms.sourcegitcommit: 34f7d23ce3bd140dcae875b602d5719bb4363ed1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35255083"
 ---
-# <a name="how-to-export-a-ribbon-from-the-ribbon-designer-to-ribbon-xml"></a>Nasıl Yapılır: Şerit Tasarımcısından Şerit XML'ine Dışarıya Şerit Aktarma
+# <a name="how-to-export-a-ribbon-from-the-ribbon-designer-to-ribbon-xml"></a>Nasıl yapılır: Şerit Şerit Tasarımcısından Şerit XML'ine verebilir.
   **Şerit (Görsel Tasarımcı)** öğesi olası tüm Şerit özelleştirme türlerini desteklemiyor. Şerit gelişmiş yollardan özelleştirmek için Şerit Tasarımcısından Şerit XML'ine verebilir ve XML doğrudan düzenleyin.  
   
 > [!NOTE]  
@@ -66,11 +67,11 @@ ms.lasthandoff: 04/16/2018
   
      Geri arama yöntemleri yazma ve RibbonX programlama modelini kullanma hakkında daha fazla bilgi için bkz: [Şerit XML](../vsto/ribbon-xml.md).  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
+## <a name="see-also"></a>Ayrıca bkz.  
  [Şerite Genel Bakış](../vsto/ribbon-overview.md)   
  [Şerit Tasarımcısı](../vsto/ribbon-designer.md)   
  [Şerit XML](../vsto/ribbon-xml.md)   
  [İzlenecek yol: Şerit Tasarımcısını kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer.md)   
- [İzlenecek Yol: Şerit XML Kullanarak Özel Sekme Oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md)  
+ [İzlenecek yol: Şerit XML kullanarak özel sekme oluşturma](../vsto/walkthrough-creating-a-custom-tab-by-using-ribbon-xml.md)  
   
   

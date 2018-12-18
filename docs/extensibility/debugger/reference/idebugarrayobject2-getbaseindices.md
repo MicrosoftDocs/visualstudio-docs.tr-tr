@@ -14,14 +14,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 41b35475bb56b417729fa70d0e980411ae0f0e3a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 8b53b8f2cd7819650abbb4fc88a7ec3f4b6dfe21
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49903198"
 ---
 # <a name="idebugarrayobject2getbaseindices"></a>IDebugArrayObject2::GetBaseIndices
-Dimensions sayısı dizideki verilen her dizin için temel dizinlerini (alt sınırlarını) alır.  
+Dizideki boyutların sayısı verilen her dizin için temel dizin (alt sınırı) alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -44,13 +45,13 @@ int GetBaseIndices (
  [in] Dizi boyutları (derece) sayısı.  
   
  `dwIndices`  
- [out] Dizi temel dizinlerini (alt sınırlarını).  
+ [out] Dizi için temel dizin (alt sınırı).  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Örnek olarak, bu işlevi aşağıdaki C# kod tarafından oluşturulan dizi ' 5' döndürür:  
+ Bir örnek olarak, aşağıdaki tarafından oluşturulan dizisi için '5' Bu işlev döndürecekti C# kod:  
   
 ```  
 int[] lengths = { 12 };  

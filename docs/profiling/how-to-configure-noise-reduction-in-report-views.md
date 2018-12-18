@@ -16,13 +16,14 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: fa2ec4a797b7018a7a9e017760afd8849912cd35
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 460251aaa89c22d7bb1320d19882af4f68736cc0
+ms.sourcegitcommit: 1b9c1e333c2f096d35cfc77e846116f8e5054557
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34815190"
 ---
-# <a name="how-to-configure-noise-reduction-in-report-views"></a>Nasıl yapılır: Rapor Görünümlerinde Gürültü Azaltmayı Yapılandırma
+# <a name="how-to-configure-noise-reduction-in-report-views"></a>Nasıl yapılır: rapor görünümlerinde gürültü azaltmayı yapılandırma
 Performans raporları çağrı ağacı görünümü ve ayırma görünümü sunulan veri miktarını sınırlayarak gürültü azaltma için yapılandırılabilir. Gürültü azaltma kullanarak, performans sorunlarını daha belirgin. Performans raporları çözümlediğinizde kullanışlıdır.  
   
  Gürültü azaltma yapılandırma seçenekleri, aşağıdaki ayarları içerir:  
@@ -77,8 +78,8 @@ Performans raporları çağrı ağacı görünümü ve ayırma görünümü sunu
   
 4.  **Tamam**'ı tıklatın.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Rapor görünümlerini özelleştirme performans araçları](../profiling/customizing-performance-tools-report-views.md)   
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Performans araçları rapor görünümlerini özelleştirme](../profiling/customizing-performance-tools-report-views.md)   
  [Nasıl yapılır: hariç tutma veya kısa işlevleri izlemeden içerir](../profiling/how-to-exclude-or-include-short-functions-from-instrumentation.md)   
  [Çağrı ağacı görünümü](../profiling/call-tree-view.md)   
  [Ayırmalar görünümü](../profiling/dotnet-memory-allocations-view.md)

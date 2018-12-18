@@ -1,8 +1,9 @@
 ---
-title: Devre dışı bırakmak veya paket önbellek taşıma | Microsoft Docs
-description: Devre dışı bırakma, etkinleştirme veya Visual Studio dağıtımlar için paket önbellek taşıma öğrenin.
+title: Paket önbelleğini devre dışı bırakma veya taşıma
+description: Devre dışı bırakma, etkinleştirme veya Visual Studio dağıtımlar için paket önbelleğini taşıma konusunda bilgi edinin.
 ms.date: 04/14/2017
 ms.technology: vs-acquisition
+ms.custom: seodec18
 ms.prod: visual-studio-dev15
 ms.topic: conceptual
 f1_keywords:
@@ -17,54 +18,46 @@ ms.author: tglee
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 1b5b6c605577bede4e6820216397a12d5980a04d
-ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.openlocfilehash: 006e7112a2b6c7b990fb412c6a9a2c458bc9e8b2
+ms.sourcegitcommit: 0cdd8e8a53fb4fd5e869f07c35204419fa12783d
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53159548"
 ---
-# <a name="disable-or-move-the-package-cache"></a>Devre dışı bırakmak veya paket önbellek taşıma
+# <a name="disable-or-move-the-package-cache"></a>Paket önbelleğini devre dışı bırakma veya taşıma
 
-Visual Studio veya ilgili diğer ürünleri Internet bağlantısı sahip olduğu durumlarda onarma gerekebileceği paket önbellek yüklü paketler için kaynak sağlar. Bazı sürücüler veya sistem ups, ancak değil isteyebilirsiniz bu paketleri geçici tutun.
-Yükleyici, bunları kaydetmek veya disk alanı kurtarmak istiyorsanız, devre dışı bırakmak veya paket önbellek taşımak, gerektiğinde indirir.
+Visual Studio veya Internet bağlantısı yok sahip olduğu durumlarda ilgili diğer ürünleri onarmak gerektiği durumlarda paket önbelleğini yüklü paketleri kaynağı sağlar. Bazı sürücüler veya sistem ile çıkarır, ancak istemeyebilirsiniz bu paketleri geçici olarak saklamak.
+Yükleyici, bunları kaydetmek veya disk alanını kurtarmak istiyorsanız devre dışı bırakın veya paket önbelleğini taşıma, gerektiğinde indirir.
 
-## <a name="disable-the-package-cache"></a>Paket önbelleğini devre dışı
+## <a name="disable-the-package-cache"></a>Paket önbelleğini devre dışı bırak
 
-Yüklediğinizde, değiştirme veya Visual Studio veya diğer ürünleri yeni Yükleyici ile onarma önce Yükleyici ile başlayabilirsiniz `--nocache` geçiş için yükleyici.
+Yükleme, değiştirme veya Visual Studio ya da diğer ürünlerle yeni yükleyici onarmak için önce Yükleyici ile başlayabilirsiniz `--nocache` Yükleyici'ye geçiş yapın.
 
 ```cmd
 "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe" --nocache
 ```
 
-Herhangi bir ürün üzerinde yaptığınız herhangi bir işlem bu ürünün mevcut herhangi bir paket kaldırır ve onlar yüklendikten sonra herhangi bir paket kaydetme önlenmiş olur. Değiştirme veya Visual Studio onarın ve paketleri gereklidir, bunlar otomatik olarak yüklenir ve olması onlar yüklendikten sonra kaldırılır.
+Herhangi bir ürün üzerinde yaptığınız herhangi bir işlem bunlar yüklendikten sonra herhangi bir paket kaydetme kaçınır ve bu ürünün mevcut tüm paketler kaldırılır. Değiştirdiğinizde ya da Visual Studio'yu onarmak ve paketleri gereklidir, bunlar otomatik olarak indirilir ve bunlar yüklendikten sonra kaldırıldı.
 
-Önbelleğin yeniden etkinleştirmek istiyorsanız, geçirmek `--cache` yerine. Tüm paketler geri yüklemeniz gerekiyorsa ağ bağlantınızı kesmeden önce Visual Studio onarmanız gerekir böylece, yalnızca gerekli olan paketler önbelleğe alınır.
+Önbellek yeniden etkinleştirmek istiyorsanız, `--cache` yerine. Tüm paketleri geri yüklemeniz gerekirse ağınızdan bağlantısını kesmeden önce Visual Studio'yu onarmak böylece gerekli olan paketleri önbelleğe alınır.
 
 ```cmd
 "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe" repair --passive --norestart --cache
 ```
 
-Ayrıca ayarlayabilirsiniz `KeepDownloadedPayloads` [kayıt defteri ilke](set-defaults-for-enterprise-deployments.md) yüklediğinizde, değiştirme veya Visual Studio'yu onarmak önce önbelleği devre dışı bırakmak için.
+Ayrıca `KeepDownloadedPayloads` [kayıt defteri ilke](set-defaults-for-enterprise-deployments.md) yükleme, değiştirme veya Visual Studio'yu onarmak için önce önbellek devre dışı bırakmak için.
 
-## <a name="move-the-package-cache"></a>Paket önbellek taşıma
+## <a name="move-the-package-cache"></a>Paket önbelleğini taşıma
 
-Yaygın olarak kullanılan sistem yapılandırması, bir SSD daha büyük bir sabit disk (veya daha fazla) yüklü Windows geliştirme için kaynak kodu, program ikili dosyaları ve daha fazlası gibi olmalıdır ' dir. Çevrimdışı Çalış istiyorsanız, bunun yerine paket önbellek taşıyabilirsiniz.
+Ortak bir sistem yapılandırması, bir SSD ile daha geniş bir sabit diske (veya daha fazla) yüklü Windows geliştirmesi için kaynak kodu, program ikili dosyaları ve daha fazlası gibi olmalıdır değil. Çevrimdışı çalışmak istiyorsanız, bunun yerine paket önbelleğini taşıyabilirsiniz.
 
-Ayarlarsanız şu anda yalnızca bunu yapabilirsiniz `CachePath` [kayıt defteri ilke](set-defaults-for-enterprise-deployments.md) yüklediğinizde, değiştirme veya Visual Studio'yu onarmak önce.
+Ayarını yaparsanız şu anda yalnızca bunu yapabilirsiniz `CachePath` [kayıt defteri ilke](set-defaults-for-enterprise-deployments.md) yükleme, değiştirme veya Visual Studio'yu onarmak için önce.
 
-## <a name="get-support"></a>Destek alma
-
-Bazı durumlarda, şeyler yanlış gidebilirsiniz. Visual Studio yüklemenizin başarısız olursa bkz [sorun giderme Visual Studio 2017 yükleme ve yükseltme sorunlarını](troubleshooting-installation-issues.md) sayfası. Sorun giderme adımlarını hiçbiri yardımcı, bize yükleme Yardımı (yalnızca İngilizce) için canlı sohbet tarafından başvurabilirsiniz. Ayrıntılar için bkz [Visual Studio destek sayfası](https://www.visualstudio.com/vs/support/#talktous).
-
-Birkaç diğer destek seçenekleri şunlardır:
-
-* Ürün sorunları bize bildirebilirsiniz [bir sorun bildirmek](../ide/how-to-report-a-problem-with-visual-studio-2017.md) hem Visual Studio Yükleyicisi ve Visual Studio IDE görünür aracı.
-* Üzerinde bir ürün önerisi bizimle paylaşın [UserVoice](https://visualstudio.uservoice.com/forums/121579).
-* Ürün sorunlarını izlemek ve yanıtlar bulmak [Visual Studio Geliştirici topluluğu](https://developercommunity.visualstudio.com/).
-* ABD ve diğer Visual Studio geliştiriciler aracılığıyla devreye [Gitter topluluk Visual Studio konuşmada](https://gitter.im/Microsoft/VisualStudio). (Bu seçenek gerektiren bir [GitHub](https://github.com/) hesabı.)
+[!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
 ## <a name="see-also"></a>Ayrıca bkz.
 
 * [Visual Studio'yu yükleyin](install-visual-studio.md)
-* [Kuruluş dağıtımları için Varsayılanlarını Ayarla](set-defaults-for-enterprise-deployments.md)
+* [Kuruluş dağıtımları için varsayılanları ayarlama](set-defaults-for-enterprise-deployments.md)
 * [Komut satırı parametrelerini kullanarak Visual Studio'yu yükleme](use-command-line-parameters-to-install-visual-studio.md)

@@ -15,44 +15,45 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 3ff2189bd80d2c5bbbc5253763e2ba07ef917d19
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 9d93299702db0c56963eb8f404d05e8e67ab08b0
+ms.sourcegitcommit: 8d38d5d2f2b75fc1563952c0d6de0fe43af12766
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39276825"
 ---
 # <a name="writing-a-common-language-runtime-expression-evaluator"></a>Bir ortak dil çalışma zamanı ifade değerlendiricisi yazma
 > [!IMPORTANT]
->  Visual Studio 2015'te ifade değerlendiricisi uygulama bu şekilde kullanım dışıdır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için lütfen bkz [CLR ifade Değerlendiricileri](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
+>  Visual Studio 2015'te, bu şekilde ifade değerlendiricisi uygulama kullanım dışı bırakılmıştır. CLR ifade değerlendiricisi uygulama hakkında daha fazla bilgi için bkz: [CLR ifade değerlendiricilerini](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/CLR-Expression-Evaluators) ve [yönetilen ifade değerlendiricisi örnek](https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Managed-Expression-Evaluator-Sample).  
   
- İfade değerlendirici (EE) sözdizimi işleme bir hata ayıklama altyapısı (DE) ve ayıklanacak kodu üretilen programlama dili semantiği parçasıdır. İfadeler bir programlama dili bağlamında değerlendirilmelidir. Örneğin, bazı dillerde ifadesi "A + B" anlamına gelir "toplamı, A ve b" Diğer dillerde aynı ifadesi "A veya b" anlamına gelebilir Bu nedenle, ayrı bir EE Visual Studio IDE içinde ayıklanacak nesne kodu oluşturan her programlama dili için yazılmış olmalıdır.  
+ İfade değerlendiricisi (EE) sözdizimi işleme hata ayıklama altyapısı (DE) ve hata ayıklaması yapılan kod üretilen programlama dilini semantikleri parçasıdır. İfadeler bir programlama dili bağlamında değerlendirilmelidir. Örneğin, bazı dillerde, ' % s'ifadesi "A + B" anlamına gelir "sum a ve b" Diğer dillerde aynı ifadesi "A veya b" gelebilir. Bu nedenle, ayrı bir EE Visual Studio IDE içinde hata ayıklama için nesne kodu oluşturan her programlama dili için yazılmış olmalıdır.  
   
- Visual Studio hata ayıklama paketi bazı yönlerini programlama dili bağlamında kodu yorumlar gerekir. Örneğin, ne zaman yürütme işlemindeki bir kesme, içine kullanıcı tarafından yazılan tüm ifadeleri noktasında bir **izleme** penceresi değerlendirilir ve görüntülenir. Bir ifadeyi yazarak kullanıcı yerel bir değişkenin değerini de değiştirebilirsiniz bir **izleme** penceresi veya **hemen** penceresi.  
+ Visual Studio hata ayıklama paketi bazı yönlerini programlama dilini bağlamında kodu yorumlayan gerekir. Örneğin, ne zaman yürütmeyi durduran içine kullanıcı tarafından yazılan tüm ifadeleri bir kesme noktasında bir **Watch** penceresi değerlendirilir ve görüntülenir. Kullanıcı, bir ifadeyi yazarak yerel değişkenin değerini değiştirebilir bir **Watch** penceresi veya **hemen** penceresi.  
   
-## <a name="in-this-section"></a>Bu Bölümde  
- [Ortak Dil Çalışma Zamanı ve İfade Değerlendirme](../../extensibility/debugger/common-language-runtime-and-expression-evaluation.md)  
- Özel programlama dili Visual Studio IDE tümleştirdiğinizde, bir EE yazma özel dil bağlamında ifadeleri değerlendirme yeteneğine, bir Microsoft Ara dili (MSIL) derlemek izin verdiğini açıklar hata ayıklama altyapısı yazmadan.  
+## <a name="in-this-section"></a>Bu bölümde  
+ [Ortak dil çalışma zamanı ve ifade değerlendirme](../../extensibility/debugger/common-language-runtime-and-expression-evaluation.md)  
+ Visual Studio IDE'ye özel programlama dilini tümleştirdiğinizde bir EE yazma özel dil ifadeleri bağlam içinde değerlendirme yeteneğine bir Microsoft Ara dili (MSIL) derleme olanak açıklar hata ayıklama altyapısı yazmak zorunda kalmadan.  
   
- [İfade Değerlendirici Mimarisi](../../extensibility/debugger/expression-evaluator-architecture.md)  
- Gerekli EE arabirimlerini ve ortak dil çalışma zamanı simgesi sağlayıcısı (SP) ve bağlayıcı arabirimleri çağırmak nasıl ele alınmaktadır.  
+ [İfade değerlendirici mimarisi](../../extensibility/debugger/expression-evaluator-architecture.md)  
+ Gerekli EE arabirimi uygulayan ve ortak dil çalışma zamanı sembol sağlayıcısı (SP) ve bağlayıcı arabirimleri çağırmak nasıl ele alınmaktadır.  
   
- [İfade Değerlendiricisi Kaydetme](../../extensibility/debugger/registering-an-expression-evaluator.md)  
- EE kendisini üreteci ortak dil çalışma zamanı ve Visual Studio çalışma zamanı ortamları olarak kaydetmeniz gerekir, notlar.  
+ [İfade değerlendiricisi kaydetme](../../extensibility/debugger/registering-an-expression-evaluator.md)  
+ EE kendisi ortak dil çalışma zamanı ve çalışma zamanı ortamlarını Visual Studio ile bir sınıf üreteci olarak kaydetmeniz gerekir, notlar.  
   
- [ifade Değerlendiricisi Uygulama](../../extensibility/debugger/implementing-an-expression-evaluator.md)  
- Hata ayıklama altyapısı (DE), simge sağlayıcısı (SP), bağlayıcı nesnesi ve ifade değerlendiricisi (EE) bir ifade değerlendirme işlemi nasıl içerir açıklar.  
+ [İfade değerlendiricisi uygulama](../../extensibility/debugger/implementing-an-expression-evaluator.md)  
+ Bir ifade değerlendirme işlemi, hata ayıklama altyapısı (DE), sembol sağlayıcısı (SP), bağlayıcı nesnesi ve ifade değerlendiricisi (EE) nasıl içerir açıklar.  
   
- [Yerel Öğeleri Görüntüleme](../../extensibility/debugger/displaying-locals.md)  
- Hata ayıklama paket yürütme duraklatır, yerel değişkenleri ve bağımsız değişkenler listesini almak için DE nasıl çağırır açıklar.  
+ [Görüntü yerel öğeler](../../extensibility/debugger/displaying-locals.md)  
+ Yürütme durakladığında, hata ayıklama paketi yerel değişkenleri ve bağımsız değişkenler listesini almak için DE çağırması açıklar.  
   
- [Gözcü Penceresi İfadesini Değerlendirme](../../extensibility/debugger/evaluating-a-watch-window-expression.md)  
- Her Gözlem listesi ifadesinde geçerli değeri belirlemek için DE Visual Studio hata ayıklama paketi nasıl çağırır belgeler.  
+ [Gözcü penceresi ifadesini değerlendirme](../../extensibility/debugger/evaluating-a-watch-window-expression.md)  
+ Visual Studio hata ayıklama paketi kendi izleme listesindeki her bir ifadenin geçerli değerini belirlemek için DE çağırması belgeler.  
   
- [Yerel Bir Öğenin Değerini Değiştirme](../../extensibility/debugger/changing-the-value-of-a-local.md)  
- Yerel değerinin değiştirilmesi yerel öğeler penceresi, her satırın adını, türünü ve yerel geçerli değeri sağlayan bir ilişkili nesne olduğunu açıklar.  
+ [Yerel bir değiştirin](../../extensibility/debugger/changing-the-value-of-a-local.md)  
+ Yerel bir değerinin değiştirilmesi her satırı için Yereller penceresine adını, türünü ve yerel geçerli değerini sağlayan ilişkili nesne olduğunu açıklar.  
   
- [Tür Görselleştiricileri ve Özel Görüntüleyiciler Uygulama](../../extensibility/debugger/implementing-type-visualizers-and-custom-viewers.md)  
- Hangi arabirimi türü görselleştiriciler ve özel görüntüleyiciler desteklemek için hangi bileşen tarafından uygulanması gerekiyor açıklanmaktadır.  
+ [Tür görselleştiricileri ve özel görüntüleyiciler uygulama](../../extensibility/debugger/implementing-type-visualizers-and-custom-viewers.md)  
+ Hangi arabirim tür görselleştiricileri ve özel görüntüleyiciler desteklemek için hangi bileşen tarafından uygulanması gereken açıklar.  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [Visual Studio Hata Ayıklayıcı Genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [Visual Studio hata ayıklayıcı genişletilebilirliği](../../extensibility/debugger/visual-studio-debugger-extensibility.md)

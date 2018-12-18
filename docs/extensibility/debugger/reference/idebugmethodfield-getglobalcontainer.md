@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: cb97f61c7c475f41280b78d43c0842e5546fab2c
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: dc7ead16cf796d5ecdd98adfd98bc28b6b2d9fbb
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49947894"
 ---
 # <a name="idebugmethodfieldgetglobalcontainer"></a>IDebugMethodField::GetGlobalContainer
-Metodu genel kapsayıcısını alır.  
+Yöntem genel kapsayıcısını alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -43,10 +44,10 @@ int GetGlobalContainer(
  [out] Döndürür bir [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) bu yöntem tanımlanır modülü temsil eden.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, S_OK verir; Aksi takdirde bir hata kodu döndürür.  
+ Başarılıysa S_OK döndürür; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Döndürülen [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) nesnesi tüm modülü temsil eder ve bir yapay nesne, diğer bir deyişle, modül gerçek bir sınıf yok ancak tarafından gösterilebilir bir `IDebugClassField` nesnesi, çeşitli izin verme Numaralandırılan ve bulunan modülü öğeleri.  
+ Döndürülen [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) nesne tüm modülü temsil eder ve yapay bir nesnedir, diğer bir deyişle, modül gerçek bir sınıf yok ancak tarafından temsil edilebilir bir `IDebugClassField` çeşitli izin nesnesi Numaralandırılan bulunan ve modül öğeleri.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md)   

@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: 81e816edd5b93ffdfec46d36d9aabba154ab035d
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: 00ccf7edbe7eb985c83d56aa8b1e851d6ca21374
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49895255"
 ---
 # <a name="idiaenumdebugstreamdatanext"></a>IDiaEnumDebugStreamData::Next
-Belirtilen bir numaralandırılmış dizisi kayıtlarının sayısını alır.  
+Belirtilen sayıda numaralandırılan sıralı kayıtları alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -40,19 +41,19 @@ HRESULT Next (
  [in] Alınacak kayıt sayısı.  
   
  cbData  
- [in] Veri arabelleğinin bayt cinsinden boyutu.  
+ [in] Veri arabelleğin bayt cinsinden boyutu.  
   
  pcbData  
  [out] Döndürülen bayt sayısını döndürür. Varsa `data` NULL ise `pcbData` tüm kayıtları istenen bayt veri kullanılabilir toplam sayısını içerir.  
   
  veri]  
- [out] Hata ayıklama akışı kayıt veri ile doldurulacak olan bir arabellek.  
+ [out] Hata ayıklama akışı kaydı veri ile doldurulacak olan bir arabellek.  
   
  pceltFetched  
- [içinde out] Kayıt sayısı döndürür `data`.  
+ [out içinde] Kayıt sayısını döndürür `data`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` olması durumunda daha fazla kayıt yok. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` daha fazla kayıt varsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiaenumdebugstreamdata](../../debugger/debug-interface-access/idiaenumdebugstreamdata.md)   

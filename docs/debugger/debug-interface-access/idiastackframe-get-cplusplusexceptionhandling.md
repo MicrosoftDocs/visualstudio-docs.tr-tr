@@ -14,14 +14,15 @@ ms.author: mikejo
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: b342cf82c4a976a9bba7bc500fee308e5a913cbe
-ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.openlocfilehash: ca89decdad3a9cb7fdec221a515341639985dbda
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49936439"
 ---
 # <a name="idiastackframegetcplusplusexceptionhandling"></a>IDiaStackFrame::get_cplusplusExceptionHandling
-C++ özel durum işleme etkin olup olmadığını belirten bir bayrak alır.  
+C++ özel durum işleme etkin olup olmadığını gösteren bir bayrak alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -33,15 +34,15 @@ HRESULT get_cplusplusExceptionHandling (
   
 #### <a name="parameters"></a>Parametreler  
  `pRetVal`  
- [out] Döndürür `TRUE` C++ özel durum işleme için bu çerçeve; etkinse, aksi takdirde, döndürür `FALSE`.  
+ [out] Döndürür `TRUE` C++ özel durum işleme aslında bu çerçeve için; Aksi halde döndürür `FALSE`.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`. Döndürür `S_FALSE` özelliği desteklenmiyorsa. Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- C++ özel durum işleme aynı yapılandırılmış veya sistem özel durum işleme değil.  
+ C++ özel durum işleme, yapılandırılmış aynı veya sistem özel durum işleme değil.  
   
- Yapılandırılmış ise özel durum işleme yürürlükte belirlemek için arama [IDiaStackFrame::get_systemExceptionHandling](../../debugger/debug-interface-access/idiastackframe-get-systemexceptionhandling.md) yöntemi.  
+ Yapılandırılmış özel durum işleme etkindir belirlemek için çağrı [IDiaStackFrame::get_systemExceptionHandling](../../debugger/debug-interface-access/idiastackframe-get-systemexceptionhandling.md) yöntemi.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [Idiastackframe](../../debugger/debug-interface-access/idiastackframe.md)   

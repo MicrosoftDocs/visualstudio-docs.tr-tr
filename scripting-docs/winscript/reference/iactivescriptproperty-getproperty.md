@@ -1,11 +1,11 @@
 ---
 title: IActiveScriptProperty::GetProperty | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 01/18/2017
 ms.prod: windows-script-interfaces
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
 ms.topic: reference
 apiname:
 - IActiveScriptProperty.GetProperty
@@ -14,18 +14,19 @@ apilocation:
 helpviewer_keywords:
 - GetProperty method, IActiveScriptProperty interface
 ms.assetid: a43383db-b148-4d76-83bd-4f0e899b7cb1
-caps.latest.revision: 
+caps.latest.revision: 24
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.openlocfilehash: d55fb2d816931a74827d318e13860b3f97f0fd23
-ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.openlocfilehash: 7cd5c7ac948a9001688de69f9db9ee31624ca33d
+ms.sourcegitcommit: 1ab675a872848c81a44d6b4bd3a49958fe673c56
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 10/27/2017
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44284152"
 ---
 # <a name="iactivescriptpropertygetproperty"></a>IActiveScriptProperty::GetProperty
-Parametresi tarafından belirtilen özelliği alır.  
+Parametresiyle belirtilen özelliği alır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -55,9 +56,9 @@ HRESULT GetProperty(
 |Sabit|Değer|Açıklama|  
 |--------------|-----------|-------------|  
 |SCRIPTPROP_INTEGERMODE|0x00003000|Kayan nokta modu yerine tamsayı modunda bölmek için komut dosyası altyapısı zorlar.|  
-|SCRIPTPROP_STRINGCOMPAREINSTANCE|0x00003001|Değiştirilmesi gereken komut dosyası motoru dize karşılaştırma işlevi sağlar.|  
-|SCRIPTPROP_ABBREVIATE_GLOBALNAME_RESOLUTION|0x70000002|Genel nesne katkıda bulunmak için herhangi bir komut dosyası motorları mevcut komut dosyası altyapısı bildirir.|  
-|SCRIPTPROP_INVOKEVERSIONING|0x00004000|Zorlar [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı tarafından desteklenebilmesi için dil özellikleri kümesi seçin. Tarafından desteklenen dil özellikleri varsayılan kümesini [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] sürümünü 5.7 görünen dil özellik kümesi için komut dosyası altyapısı eşdeğerdir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı.|  
+|SCRIPTPROP_STRINGCOMPAREINSTANCE|0x00003001|Komut dosyası altyapısı değiştirilecek dize karşılaştırma işlevine izin verir.|  
+|SCRIPTPROP_ABBREVIATE_GLOBALNAME_RESOLUTION|0x70000002|Küresel nesneye katkıda bulunmak için herhangi bir komut dosyası motorları mevcut komut dosyası altyapısı bildirir.|  
+|SCRIPTPROP_INVOKEVERSIONING|0x00004000|Zorlar [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] dil özelliklerinin desteklenmesi için bir grubu seçmek için komut dosyası altyapısı. Tarafından desteklenen dil özellikleri varsayılan kümesini [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] sürümünü 5.7 görünen dil özelliği ayarlamak için komut dosyası altyapısı eşdeğerdir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı.|  
   
 ## <a name="return-value"></a>Dönüş Değeri  
  Aşağıdaki değerlerden birini döndürür:  
@@ -66,14 +67,14 @@ HRESULT GetProperty(
 |------------------|-------------|  
 |`S_OK`|Başarılı.|  
 |`E_INVALIDARG`|Bağımsız değişken geçerli değil.|  
-|`E_UNEXPECTED`|Çağrı beklendiği (örneğin, komut dosyası altyapısı henüz yüklenen başlatılmadı veya).|  
+|`E_UNEXPECTED`|Çağrı beklenmiyordu (örneğin, komut dosyası altyapısı henüz yüklenen başlatıldı veya).|  
   
 ## <a name="remarks"></a>Açıklamalar  
- Konak, herhangi bir komut dosyası motorları genel nesne katkıda bulunmak için mevcut bir komut dosyası motoru bildirmek için SCRIPTPROP_ABBREVIATE_GLOBALNAME_RESOLUTION özelliğini kullanabilirsiniz. Örneğin, Internet Explorer bilgilendirebilir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] oluşturulmakta olan sayfaya yalnızca içeren altyapısı [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyaları. Bu nedenle, yalnızca [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] altyapısı, yeni özellikleri genel nesne penceresine ekleyebilir ve aynı yapmak için hiçbir Visual Basic Scripting Edition (VBScript) altyapısı yoktur. Altyapısı bu bayrak yoksayabilirsiniz veya genel nesnesine eklenen yeni üyeler yönetimini iyileştirmek için kullanabilir.  
+ Konak, başka bir komut dosyası motorları küresel nesneye katkıda bulunmak için mevcut bir komut dosyası altyapısı bildirmek için SCRIPTPROP_ABBREVIATE_GLOBALNAME_RESOLUTION özelliğini kullanabilirsiniz. Örneğin, Internet Explorer bilgilendirebilir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] oluşturulmakta olan sayfaya yalnızca içeren altyapısı [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] betikler. Bu nedenle, yalnızca [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] altyapısı, yeni özellikleri genel nesne penceresine ekleyebilir ve aynı yapmak için hiçbir Visual Basic Scripting Edition (VBScript) altyapısı yoktur. Altyapısı bu bayrağı yoksayın veya genel nesnesine eklenen yeni üyeler yönetimini iyileştirmek için kullanabilirsiniz.  
   
- Ana bilgisayar olacak şekilde dil özellikleri kümesi seçmek için SCRIPTPROP_INVOKEVERSIONING özelliğini kullanabilirsiniz ne zaman desteklenen [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı başlatılır. Bu özellik (SCRIPTLANGUAGEVERSION_5_7) 1 olarak ayarlanırsa, kullanılabilir dil özellikleri sürümünü 5.7 görünen aynıdır [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı. 2 (SCRIPTLANGUAGEVERSION_5_8) olarak ayarlanırsa, kullanılabilir dil özellikleri sürüm 5.7 5.8 sürümünde eklenen özellikler ek olarak görünen olanlardır. Varsayılan olarak, bu özellik konak farklı varsayılan davranışı desteklemedikçe sürüm 5.7, görünen dil özellik kümesi eşit olduğu (SCRIPTLANGUAGEVERSION_DEFAULT) 0 olarak ayarlanır. Örneğin, Internet Explorer 8 içine çevrilir [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] 5.8 sürümü tarafından desteklenen dil özellikleri [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] Internet Explorer 8 için belge modunda "Internet Explorer 8 standartları" modu olduğunda varsayılan komut dosyası altyapısı.  
+ Konak kümesi olarak dil özellikleri seçmek için SCRIPTPROP_INVOKEVERSIONING özelliğini kullanabilirsiniz ne zaman desteklenen [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı başlatılır. Bu özellik (SCRIPTLANGUAGEVERSION_5_7) 1 olarak ayarlarsanız, kullanılabilir dil özellikleri sürümünü 5.7 görünen aynıdır [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] komut dosyası altyapısı. 2 (SCRIPTLANGUAGEVERSION_5_8)'ye ayarlanmışsa kullanılabilir dil özellikleri 5.7 Sürüm 5.8 sürümünde eklenen özellikler ek olarak görünen olanlardır. Varsayılan olarak, bu özellik, konak farklı varsayılan davranışını desteklemediği sürece, 5.7 sürümünde görünen dil özellik kümesine eşdeğer olan (SCRIPTLANGUAGEVERSION_DEFAULT) 0 olarak ayarlanır. Örneğin, Internet Explorer 8 olarak kabul eder [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] 5.8 sürümü tarafından desteklenen dil özellikleri [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] Internet Explorer 8 belge modu "Internet Explorer 8 standartları" modunda olduğunda varsayılan komut dosyası altyapısı.  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Belge Uyumluluk tanımlama](http://msdn.microsoft.com/library/cc288325)   
+ [Belge uyumluluğunu tanımlama](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/compatibility/cc288325(v=vs.85))   
  [Iactivescriptproperty](../../winscript/reference/iactivescriptproperty.md)   
- [Sürüm bilgileri](../../javascript/reference/javascript-version-information.md)
+ [Sürüm Bilgileri](../../javascript/reference/javascript-version-information.md)

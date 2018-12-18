@@ -15,14 +15,15 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: 180a968f642b8a4bf26e2e69d1d3ddff45dc1f25
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 0687209b1e4144064c6e6e934cd7443f1aa2c496
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49834558"
 ---
 # <a name="fieldinfo"></a>FIELD_INFO
-Bu yapı, yerel bir değişken, parametre veya diğer alan açıklar.  
+Bu yapı, yerel bir değişken, parametre veya diğer alanlar açıklanır.  
   
 ## <a name="syntax"></a>Sözdizimi  
   
@@ -48,32 +49,32 @@ public struct FIELD_INFO {
   
 ## <a name="members"></a>Üyeler  
  dwFields  
- Bayraklarını bileşimini [FIELD_INFO_FIELDS](../../../extensibility/debugger/reference/field-info-fields.md) olan üyeleri doldurulur belirtir numaralandırması.  
+ Bayraklarının bir birleşimi [FIELD_INFO_FIELDS](../../../extensibility/debugger/reference/field-info-fields.md) hangi üyelerin doldurulur belirten sabit listesi.  
   
  bstrFullName  
  Alanının tam adı.  
   
  bstrName  
- Alan kısa adı.  
+ Kısa ad alanı.  
   
  bstrType  
- Alanın türü.  
+ Alan türü.  
   
  dwModifiers  
- Bayraklarını bileşimini [FIELD_MODIFIERS](../../../extensibility/debugger/reference/field-modifiers.md) alan açıklar numaralandırması.  
+ Bayraklarının bir birleşimi [FIELD_MODIFIERS](../../../extensibility/debugger/reference/field-modifiers.md) alanı açıklayan sabit listesi.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Bu yapı geçirilir [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) yöntemi burada bunu doldurulur.  
+ Bu yapı geçirilir [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) yöntemi burada da doldurulur.  
   
 ## <a name="requirements"></a>Gereksinimler  
- Başlık: sh.h  
+ Üstbilgi: sh.h  
   
  Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Derleme: Microsoft.VisualStudio.Debugger.Interop.dll  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
- [Yapılar ve birleşimleri](../../../extensibility/debugger/reference/structures-and-unions.md)   
+ [Yapılar ve birleşimler](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [FIELD_INFO_FIELDS](../../../extensibility/debugger/reference/field-info-fields.md)   
  [FIELD_MODIFIERS](../../../extensibility/debugger/reference/field-modifiers.md)   
  [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md)

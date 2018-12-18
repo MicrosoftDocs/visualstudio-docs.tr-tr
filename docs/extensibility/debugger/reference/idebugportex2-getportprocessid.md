@@ -15,11 +15,12 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d41f01727ed5ee6a1db348da1c253120b1b13c2a
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: 40135e1b6f9eee192dfa35ac7cae6a80a693f840
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49818971"
 ---
 # <a name="idebugportex2getportprocessid"></a>IDebugPortEx2::GetPortProcessId
 Bağlantı işlem Kimliğini alır.  
@@ -40,13 +41,13 @@ int GetPortProcessId (
   
 #### <a name="parameters"></a>Parametreler  
  `pdwProcessId`  
- [out] Bağlantı noktasının fiziksel işlem kimliği döndürür.  
+ [out] Bağlantı noktasının fiziksel işlem Kimliğini döndürür.  
   
 ## <a name="return-value"></a>Dönüş Değeri  
- Başarılı olursa, döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
+ Başarılı olursa döndürür `S_OK`; Aksi takdirde bir hata kodu döndürür.  
   
 ## <a name="remarks"></a>Açıklamalar  
- Win32 çalışma zamanı'nda Örneğin, bu yöntem genellikle Win32 işlevi çağırır `GetCurrentProcessId` fiziksel işlem kimliklerini almak için  
+ Win32 çalışma zamanı'nda, bu yöntem genellikle Win32 işlevini çağırır `GetCurrentProcessId` fiziksel işlem kimliği alınamıyor  
   
 ## <a name="see-also"></a>Ayrıca Bkz.  
  [IDebugPortEx2](../../../extensibility/debugger/reference/idebugportex2.md)

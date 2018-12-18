@@ -1,6 +1,7 @@
 ---
 title: Gölgelendirici Tasarımcısı Düğümleri
 ms.date: 11/04/2016
+ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 ms.topic: conceptual
 ms.assetid: f5192fbd-c78f-40a8-a4d4-443209610268
@@ -9,43 +10,44 @@ ms.author: gewarren
 manager: douge
 ms.workload:
 - multiple
-ms.openlocfilehash: f7d4bb2633571a552c13bda0795d05447f9e340c
-ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.openlocfilehash: 827da75bb9faadf7506002780273979f628f20cb
+ms.sourcegitcommit: 8ee7efb70a1bfebcb6dd9855b926a4ff043ecf35
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39078579"
 ---
-# <a name="shader-designer-nodes"></a>Gölgelendirici Tasarımcısı Düğümleri
-Bu bölümdeki makaleleri belgelerin grafik efektler oluşturmak için kullanabileceğiniz çeşitli gölgelendirici Tasarımcısı düğümleri hakkında bilgiler içerir.
+# <a name="shader-designer-nodes"></a>Gölgelendirici Tasarımcısı düğümleri
+Belgelerin bu bölümdeki makaleleri grafik efektleri oluşturmak için kullanabileceğiniz çeşitli gölgelendirici Tasarımcısı düğümleri hakkında bilgiler içerir.
 
 ## <a name="nodes-and-node-types"></a>Düğüm ve düğüm türleri
- Gölgelendirici Tasarımcısı görsel efektler bir grafik temsil eder. Bu grafikler, özellikle seçilmiş ve hedeflenen etkileyen elde etmek için kesin yollarla bağlı düğümlerden yerleşik olarak bulunur. Her düğüm bir bilgiyi veya matematik işlevi ve aralarında bağlantı bilgileri sonucu oluşturmak için grafiğin nasıl akacağını temsil eder. Altı farklı düğüm türleri gölgelendirici Tasarımcısı sağlar — filtreleri, doku düğümleri, parametreleri, sabitleri, yardımcı programı düğümleri ve matematik düğümleri — ve birkaç tek düğümler her türe ait. Bu düğüm ve düğüm türleri bu bölümdeki diğer makalelerinde açıklanan — bu belgenin sonundaki bağlantılara bakın.
+ Gölgelendirici Tasarımcısı görsel efekt grafik olarak temsil eder. Bu grafikler, özellikle seçilen ve istenen etkiyi elde etmek için kesin şekilde bağlı düğümlerden oluşturulur. Her düğüme bir bilgi parçasıdır veya bir matematiksel işlev ve aralarındaki bağlantıları bilgileri sonucu üretmek için graph üzerinden nasıl aktığını temsil eder. Gölgelendirici Tasarımcısı altı farklı bir düğüme türlerinin sağlar — filtreleri, doku düğümleri, parametreleri, sabitleri, yardımcı program düğümleri ve matematik düğümleri — ve birkaç tek tek düğümleri her türe ait. Bu düğüm ve düğüm türleri, bu bölümdeki diğer makaleleri açıklanmıştır. Daha fazla bilgi için bu belgenin sonundaki bağlantılara bakın.
 
-## <a name="node-structure"></a>Düğümü yapısı
- Tüm düğümleri ortak öğeler birleşiminden oluşur. Her düğüm (dışında son renk düğümü gölgelendirici çıktısını gösterir), sağ taraftaki en az bir çıkış terminal sahiptir. Hesaplamalar veya doku örnekleyicileri temsil eden düğümleri kendi sol tarafında Terminal giriş ancak hiçbir giriş Terminal bilgileri temsil eden düğümleri sahip. Çıktı Terminal bilgileri bir düğümden diğerine taşımak için Terminal giriş bağlı.
+## <a name="node-structure"></a>Düğüm yapısı
+ Tüm düğümleri ortak öğeler bileşiminden oluşur. Her düğüm (dışında son rengini düğümü gölgelendirici çıktısını gösterir), sağ taraftaki en az bir çıkış terminal sahiptir. Hesaplamaları veya doku örnekleyici temsil eden düğümler terminaller, sol tarafında giriş, ancak hiçbir giriş terminaller bilgileri temsil eden düğümler var. Bir düğümden diğerine bilgi taşımak için terminaller giriş çıkış terminaller bağlıdır.
 
-### <a name="promotion-of-inputs"></a>Girdi yükseltme
- Böylece etkili bir oyun veya uygulama kullanılabilir gölgelendirici Tasarımcısı HLSL kaynak kodu sonuçta oluşturmanız gerekir çünkü gölgelendirici Tasarımcısı düğümleri HLSL kullanan tür yükseltme tabi kurallardır. Grafik donanım öncelikle kayan nokta değerlerine çalıştığından, farklı türler arasında yükseltme yazın; örneğin, `int` için `float`, veya `float` için `double`— nadir bir durumdur. Grafik donanım bilgi aynı anda birden çok parçalarını aynı işlemi kullandığından, bunun yerine, farklı türde bir yükseltme, kısa girişleri sayısının en uzun giriş boyutuna uyacak şekilde uzatılmış ortaya çıkabilir. Nasıl uzatılmış giriş türü ve ayrıca işlemi bağlıdır:
+### <a name="promotion-of-inputs"></a>Giriş yükseltme
+ Etkili bir oyunun veya uygulamanın içinde kullanılabilir, böylece gölgelendirici Tasarımcısı sonuçta HLSL kaynak kodu oluşturmanız gerekir, gölgelendirici Tasarımcısı düğümleri HLSL kullandığı türü promosyon kurallarını tabi olduğu. Grafik donanımının öncelikle kayan nokta değerleri üzerinde çalıştığından, farklı türler arasında yükseltme yazın — örneğin, `int` için `float`, veya `float` için `double`— seyrek olur. Bunun yerine, grafik donanımının bilgileri aynı anda birden çok parça aynı işlemi kullandığından, farklı türde bir yükseltme, daha kısa bir dizi girişleri boyutunu en uzun giriş uyacak şekilde uzatılmış oluşabilir. Giriş türü üzerinde ve üzerinde işlem nasıl uzatılmış bağlıdır:
 
--   **Daha küçük tür bir skaler değere ise:**
+-   **Küçük tür bir skaler değer ise:**
 
-     Skaler değeri büyük giriş boyutları eşit olan bir vektör içine çoğaltılır. Örneğin, skaler giriş 5.0 (5.0, 5.0, 5.0) vektör hale işleminin en büyük giriş işlemi ne olursa olsun ek olarak, üç öğesi vektör olduğunda.
+     Skaler değerini, daha büyük giriş boyutu eşit olan bir vektörü olarak çoğaltılır. Örneğin, skaler giriş 5.0 (5.0, 5.0, 5.0) vektör haline gelir işlemi ne olursa olsun, bir üç öğeli vektör olduğunda işlemin en büyük giriş.
 
--   **Daha küçük bir vektör türüdür ve işlem çarpma (\*, /, % vb.), sonra:**
+-   **Daha küçük bir vektör türüdür ve çarpma işlemi (\*, /, % vb.), ardından:**
 
-     Vektör değeri büyük giriş boyutları eşit olan bir vektör başında öğelerini kopyalanır ve sondaki öğeleri 1.0 ayarlanır. Örneğin, vektör giriş (5.0, 5.0) (5.0, 5.0, 1.0, 1.0) vektör hale zaman onu çarpılır dört öğesi vektörü ile. Bu, üçüncü ve dördüncü öğeleri çıkış 1.0 çarpma kimliğini kullanarak korur.
+     Vektör değeri önde gelen büyük giriş boyutu eşit olan bir vektör öğelerinin kopyalanır ve sondaki öğeler 1.0 için ayarlanır. Örneğin, vektör giriş (5.0, 5.0) (5.0, 5.0, 1.0, 1.0) vektör haline gelir, bu çarpılır dört öğeli vektörü ile. Bu üçüncü ve dördüncü öğeleri çıkış çarpma kimliği, 1.0 kullanarak korur.
 
--   **Daha küçük bir vektör türüdür ve işlem toplama (+,-, vb.), sonra:**
+-   **Daha küçük bir vektör türüdür ve işlem eklenebilir (+,-, vb.), ardından:**
 
-     Vektör değeri büyük giriş boyutları eşit olan bir vektör başında öğelerini kopyalanır ve sondaki öğeleri 0,0 olarak ayarlanır. Örneğin, vektör giriş (5.0, 5.0) (5.0, 5.0, 0.0, 0.0) vektör hale onu eklendiğinde dört öğesi vektör için. Bu, üçüncü ve dördüncü öğeleri çıkış 0,0 ADDITIVE kimliğini kullanarak korur.
+     Vektör değeri önde gelen büyük giriş boyutu eşit olan bir vektör öğelerinin kopyalanır ve sondaki öğeler 0.0 ayarlanır. Örneğin, vektör giriş (5.0, 5.0) (5.0, 5.0, 0.0, 0.0) vektör haline gelir, eklendiğinde için dört öğeli vektör. Bu, çıktının üçüncü ve dördüncü öğeleri 0,0 eklenebilir kimlik kullanarak korur.
 
 ## <a name="related-topics"></a>İlgili konular
 
 |Başlık|Açıklama|
 |-----------|-----------------|
-|[Sabit Düğümler](../designers/constant-nodes.md)|Değişmez değerler ve gölgelendirici hesaplamalarda Ara değerli köşe durum bilgilerini göstermek için kullanabileceğiniz düğümleri açıklar. Köşe durumu ilişkilendirilir çünkü — ve bu nedenle, her bir piksel için farklı olur — her piksel gölgelendirici örneği sabiti farklı bir sürümünü alır.|
-|[Parametre Düğümleri](../designers/parameter-nodes.md)|Kamera konumu, malzeme özelliklerine, aydınlatma parametreleri, saat ve diğer uygulama durum bilgilerini gölgelendirici hesaplamalarda temsil etmek için kullanabileceğiniz düğümleri açıklar.|
-|[Doku Düğümleri](../designers/texture-nodes.md)|Örnek çeşitli doku türleri ve geometri ve üreten veya doku koordinatları yaygın şekilde dönüştürmek için kullanabileceğiniz düğümleri açıklar.|
-|[Matematik Düğümleri](../designers/math-nodes.md)|Cebirsel gerçekleştirmek için kullanabileceğiniz düğümleri, mantığı, trigonometrik ve doğrudan HLSL yönergeleri eşleme diğer matematik işlemlerini açıklar.|
-|[Yardımcı Program Düğümleri](../designers/utility-nodes.md)|Ortak aydınlatma hesaplamaları ve doğrudan HLSL yönergeleri eşlemediğinden diğer yaygın işlemler gerçekleştirmek için kullanabileceğiniz düğümleri açıklar.|
-|[Filtre Düğümleri](../designers/filter-nodes.md)|Doku filtreleme ve renk filtrelemesi gerçekleştirmek için kullanabileceğiniz düğümleri açıklar.|
+|[Sabit düğümler](../designers/constant-nodes.md)|Değişmez değerler ve gölgelendirici hesaplamalarında ilişkilendirilmiş köşe durumu bilgileri temsil etmek için kullanabileceğiniz düğümleri açıklar. Köşe durumu ilişkilendirilmiş olduğundan — ve bu nedenle, her bir pikseli farklıdır — sabiti farklı bir sürümünü her piksel gölgelendiricisi örneği alır.|
+|[Parametre düğümleri](../designers/parameter-nodes.md)|Kamera konumu, malzeme özelliklerine, aydınlatma parametreleri, zaman ve diğer uygulama durumu bilgileri gölgelendirici hesaplamalarında temsil etmek için kullanabileceğiniz düğümleri açıklar.|
+|[Doku düğümleri](../designers/texture-nodes.md)|Çeşitli doku türleri ve geometri, örnek ve oluşturmak veya doku koordinatları yaygın şekilde dönüştürmek için kullanabileceğiniz düğümleri açıklar.|
+|[Matematik düğümleri](../designers/math-nodes.md)|Cebirsel gerçekleştirmek için kullanabileceğiniz düğümleri, trigonometrik, mantıksal ve doğrudan HLSL yönergeleri için harita diğer matematiksel işlemler açıklanmaktadır.|
+|[Yardımcı program düğümleri](../designers/utility-nodes.md)|Genel aydınlatma hesaplama ve doğrudan HLSL yönergeleri eşlemeyin diğer yaygın işlemler gerçekleştirmek için kullanabileceğiniz düğümleri açıklar.|
+|[Filtre düğümleri](../designers/filter-nodes.md)|Doku filtreleme ve renk filtreleme yapmak için kullanabileceğiniz düğümleri açıklar.|

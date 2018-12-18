@@ -1,19 +1,20 @@
 ---
 layout: HubPage
-hide_bc: ''
+hide_bc: true
 title: Visual Studio belgeleri | Microsoft Docs
-description: Uygulamaları, hizmetleri ve platformlar ve cihazlar için tercih ettiğiniz dilde araçları geliştirmek için Visual Studio 2017 kullanmayı öğrenin.
+description: Uygulamaları, hizmetleri ve araçları, platformlar ve cihazlar için tercih ettiğiniz dilde geliştirmek için Visual Studio 2017'yi kullanmayı öğrenin.
 ms.topic: landing-page
 searchScope: []
-ms.openlocfilehash: 86d19020a46c0aeb4d1d5a5d2c72e6881a04ef0c
-ms.sourcegitcommit: 768118d470da9c7164d2f23ca918dfe26a4be72f
+ms.openlocfilehash: d4419aadd8be604918b6793685079053e03d4289
+ms.sourcegitcommit: d7f232a7596420e40ff8051d42cdf90203af4a74
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52821363"
 ---
 <div id="main" class="v2">
     <div class="container">
-        <h1>Visual Studio ürünleri için belgeler</h1>
+        <h1>Visual Studio ürünleri için belgeleri</h1>
         <ul class="pivots">
             <li>
                 <a href="#products"></a>
@@ -33,45 +34,7 @@ ms.lasthandoff: 03/28/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Visual Studio IDE</h3>
-                                                    <p>Uygulamaları ve oyunları, Windows, Android, iOS, Windows, web veya Bulut ile her bir aygıtı ulaşması kullanarak oluşturun.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://docs.microsoft.com/vsts" title="Visual Studio Team Services">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img data-scaleimage="./images/vs-team-services.svg" src="./images/vs-team-services.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Visual Studio Team Services</h3>
-                                                    <p>Çevik proje Araçlar ve raporlar takımı üretkenliği artırır. Derleme, test ve modern CI/CD araçları ile kaynak denetiminden projeleri dağıtın.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://code.visualstudio.com/docs" title="Visual Studio Code">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img data-scaleimage="./images/vs-code.svg" src="./images/vs-code.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Visual Studio Code</h3>
-                                                    <p>Zengin düzenleme ve MacOS, Linux ve Windows dillerden yüzlerce içinde hata ayıklama</p>
+                                                    <p>Uygulamaları ve oyunları, Windows, Android, iOS, Windows, web veya Bulut ile tüm cihazlara ulaşmayı sağlayan kullanarak oluşturun.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +53,7 @@ ms.lasthandoff: 03/28/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Mac için Visual Studio</h3>
-                                                    <p>Uygulamaları ve oyunları, bulut, iOS, Android, macOS ve wearables için Mac kullanarak oluşturun.</p>
+                                                    <p>Uygulamaları ve oyunları, bulut, iOS, Android, macOS ve giyilebilir cihazlar için bir Mac kullanarak oluşturun.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +61,26 @@ ms.lasthandoff: 03/28/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="https://docs.microsoft.com/appcenter" title="Visual Studio App Center">
+                                <a href="https://code.visualstudio.com/docs" title="Visual Studio Code">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img data-scaleimage="./images/vs-code.svg" src="./images/vs-code.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Visual Studio Code</h3>
+                                                    <p>Zengin düzenleme ve yüzlerce MacOS, Linux ve Windows dil hata ayıklama</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/appcenter/" title="Visual Studio App Center">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -109,7 +91,7 @@ ms.lasthandoff: 03/28/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Visual Studio App Center</h3>
-                                                    <p>Sürekli tümleştirme, teslim ve Android, iOS, macOS ve Windows uygulamaları için öğrenme. 5 yıldız, daha yüksek kaliteli uygulamaları daha hızlı ve güvenle birlikte.</p>
+                                                    <p>Sürekli tümleştirme, teslim ve öğrenme Android, iOS, macOS ve Windows uygulamaları için. Daha hızlı ve güvenle 5 yıldızlı, yüksek kaliteli uygulamalar gönderin.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,7 +99,7 @@ ms.lasthandoff: 03/28/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="https://aka.ms/vs-subscriptions" title="Visual Studio App Center">
+                                <a href="/visualstudio/subscriptions/" title="Visual Studio abonelikleri">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -135,10 +117,49 @@ ms.lasthandoff: 03/28/2018
                                     </div>
                                 </a>
                             </li>
-                        </ul>                       
+                            <li>
+                                <a href="/azure/devops/" title="Azure DevOps Hizmetleri">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img data-scaleimage="./images/vs-team-services.svg" src="./images/vs-team-services.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Azure DevOps Hizmetleri</h3>
+                                                    <p>Çevik proje araçları ve raporları takım üretkenliği artırın. Derleme, test ve projeleri modern CI/CD araçlarıyla kaynak denetiminden dağıtın.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/tfs/" title="Azure DevOps sunucusu">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img data-scaleimage="./images/vs-team-services.svg" src="./images/vs-team-services.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Azure DevOps sunucusu</h3>
+                                                    <p>Yüklemek, yükseltmek ve şirket içi dağıtımlarınızı yönetmek.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>
         </ul>
+        <p>Visual Studio Team Services, Azure DevOps Hizmetleri tarafından değiştirilmiştir ve Team Foundation Server (TFS) yeniden adlandırıldı Azure DevOps sunucusu. Bkz: <a href="/azure/devops/user-guide/what-happened-vsts?view=vsts">Visual Studio Team Services ne oldu?</a> ve <a href="/tfs/server/tfs-is-now-azure-devops-server">Team Foundation Server, artık Azure DevOps sunucusu</a>.</p>
     </div>
 </div>

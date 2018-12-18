@@ -1,5 +1,5 @@
 ---
-title: Öznitelik bir proje öğesi ekleme | Microsoft Docs
+title: Bir proje öğesine öznitelik ekleme | Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2016
 ms.technology:
@@ -13,22 +13,21 @@ ms.author: gregvanl
 manager: douge
 ms.workload:
 - vssdk
-ms.openlocfilehash: d601a4cb3a7804520f0c9c95e746275e27db4bcd
-ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.openlocfilehash: cdb911411be2c4398565d05309002b315971b1ff
+ms.sourcegitcommit: 240c8b34e80952d00e90c52dcb1a077b9aff47f6
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49926442"
 ---
-# <a name="adding-an-attribute-to-a-project-item"></a>Öznitelik bir proje öğesi ekleme
-Yöntemleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.GetItemAttribute%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.SetItemAttribute%2A> almak ve bir proje öğesi özniteliklerini değerini ayarlayın. Zaten yoksa, SetItemAttribute proje öğesi meta verilerde ekleme öznitelik oluşturur.  
+# <a name="add-an-attribute-to-a-project-item"></a>Bir proje öğesine öznitelik ekleme
+Yöntemleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.GetItemAttribute%2A> ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.SetItemAttribute%2A> alın ve bir proje öğesi özniteliklerini ayarlayın. Zaten yoksa SetItemAttribute proje öğesi meta verilere ekleme öznitelik oluşturur.  
   
-## <a name="adding-an-attribute-to-a-project-item"></a>Öznitelik bir proje öğesi ekleme  
+## <a name="add-an-attribute-to-a-project-item"></a>Bir proje öğesine öznitelik ekleme  
   
-#### <a name="to-add-an-attribute-to-a-project-item"></a>Öznitelik bir proje öğesi eklemek için  
+-   Aşağıdaki kod <xref:EnvDTE.DTE> Otomasyon nesnesi ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.SetItemAttribute%2A> bir proje öğesine öznitelik eklemek için yöntemi. Proje öğesi Kimliğine proje öğesi adı "program.cs" alınır. ' % S'özniteliği "IMyData" Bu proje öğesine eklenir ve "MyValue" değeri verildiğinde.  
   
--   Aşağıdaki kod <xref:EnvDTE.DTE> Otomasyon nesnesi ve <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.SetItemAttribute%2A> öznitelik bir proje öğesi eklemek için yöntem. Proje öğesi kimliği proje öğesi adı "program.cs" elde edilir. Özniteliği "IMyData" Bu proje öğesi eklenir ve "MyValue" değeri verildiğinde.  
-  
-    ```  
+    ```csharp  
     EnvDTE.DTE dte = (EnvDTE.DTE)Package.GetGlobalService(typeof(EnvDTE.DTE));  
     EnvDTE.Project project = dte.Solution.Projects.Item(1);  
   
@@ -48,5 +47,5 @@ Yöntemleri <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.G
   
     ```  
   
-## <a name="see-also"></a>Ayrıca Bkz.  
- [MSBuild Proje Dosyasında Verileri Kalıcı Hale Getirme](../extensibility/internals/persisting-data-in-the-msbuild-project-file.md)
+## <a name="see-also"></a>Ayrıca bkz.  
+ [MSBuild proje dosyasında verileri kalıcı hale getirmenize](../extensibility/internals/persisting-data-in-the-msbuild-project-file.md)
